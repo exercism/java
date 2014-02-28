@@ -1,0 +1,8 @@
+*.beam
+*.beam
+*.swp
+.DS_Store
+.class
+.gradle/
+build/
+tmp
