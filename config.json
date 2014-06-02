@@ -4,7 +4,16 @@
   "repository": "https://github.com/exercism/xjava",
   "active": false,
   "problems": [
-
+    "etl",
+    "nucleotide-count",
+    "word-count",
+    "anagram",
+    "hamming",
+    "bob",
+    "robot-name",
+    "meetup",
+    "phone-number",
+    "grade-school"
   ],
   "deprecated": [
 
