@@ -18,7 +18,7 @@
   "deprecated": [
 
   ],
-  "ignore": [
+  "ignored": [
     "_template"
   ]
 }
