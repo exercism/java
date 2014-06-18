@@ -20,5 +20,9 @@
   ],
   "ignored": [
     "_template"
+  ],
+  "foregone": [
+    "leap",
+    "grains"
   ]
 }
