@@ -52,15 +52,9 @@ public class NucleotideTest {
   }
 
   @Test
-  public void testDnaHasNoUracil() {
-    DNA dna = new DNA("CGATTGGG");
-    assertThat(dna.count('U')).isEqualTo(0);
-  }
-
-  @Test
-  public void testDnaCountsDoNotChangeAfterCountingUracil() {
+  public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
     DNA dna = new DNA("GATTACA");
-    dna.count('U');
+    dna.count('A');
     assertThat(dna.nucleotideCounts()).hasSize(4).contains(
         entry('A', 3),
         entry('C', 1),
