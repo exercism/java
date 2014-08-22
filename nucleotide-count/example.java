@@ -20,7 +20,7 @@ public final class DNA {
   }
 
   private static boolean isCountable(char base) {
-    final String COUNTABLE_NUCLEOTIDES = "ACGTU";
+    final String COUNTABLE_NUCLEOTIDES = "ACGT";
     return COUNTABLE_NUCLEOTIDES.indexOf(base) == -1;
   }
 
