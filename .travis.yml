@@ -1,4 +1,5 @@
 language: bash
 
 script:
-  - bin/configlet-linux-amd64 .
+  - bin/fetch-configlet
+  - bin/configlet .
