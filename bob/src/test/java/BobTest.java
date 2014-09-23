@@ -16,7 +16,7 @@ public class BobTest {
     @Test
     public void shouting() {
         assertEquals(
-            "Woah, chill out!",
+            "Whoa, chill out!",
             bob.hey("WATCH OUT!")
         );
     }
@@ -55,14 +55,14 @@ public class BobTest {
     @Test
     public void forcefulQuestions() {
         assertEquals(
-            "Woah, chill out!", bob.hey("WHAT THE HELL WERE YOU THINKING?")
+            "Whoa, chill out!", bob.hey("WHAT THE HELL WERE YOU THINKING?")
         );
     }
 
     @Test
     public void shoutingNumbers() {
         assertEquals(
-            "Woah, chill out!", bob.hey("1, 2, 3 GO!")
+            "Whoa, chill out!", bob.hey("1, 2, 3 GO!")
         );
     }
 
@@ -83,14 +83,14 @@ public class BobTest {
     @Test
     public void shoutingWithSpecialCharacters() {
         assertEquals(
-            "Woah, chill out!", bob.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
+            "Whoa, chill out!", bob.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
         );
     }
 
     @Test
     public void shoutingWithUmlauts() {
         assertEquals(
-            "Woah, chill out!", bob.hey("\u00dcML\u00c4\u00dcTS!")
+            "Whoa, chill out!", bob.hey("\u00dcML\u00c4\u00dcTS!")
         );
     }
 
@@ -104,7 +104,7 @@ public class BobTest {
     @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
-            "Woah, chill out!", bob.hey("I HATE YOU")
+            "Whoa, chill out!", bob.hey("I HATE YOU")
         );
     }
 
