@@ -7,7 +7,7 @@ public class Bob {
         if (isSilence(input))
             return "Fine. Be that way!";
         if (isShout(input))
-            return "Woah, chill out!";
+            return "Whoa, chill out!";
         if (isQuestion(input))
             return "Sure.";
         return "Whatever.";
