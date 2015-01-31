@@ -19,7 +19,9 @@
 
   ],
   "ignored": [
-    "_template"
+    "_template",
+    ".gradle",
+    "gradle"
   ],
   "foregone": [
     "leap",
