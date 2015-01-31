@@ -2,7 +2,7 @@
   "slug": "java",
   "language": "Java",
   "repository": "https://github.com/exercism/xjava",
-  "active": false,
+  "active": true,
   "problems": [
     "etl",
     "nucleotide-count",
