@@ -24,6 +24,7 @@
   ],
   "foregone": [
     "leap",
-    "grains"
+    "grains",
+    "say"
   ]
 }
