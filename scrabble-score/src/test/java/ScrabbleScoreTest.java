@@ -1,67 +1,42 @@
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
+
+@RunWith(Parameterized.class)
 public class ScrabbleScoreTest {
 
-    @Test
-    public void emptyWordScoresZero() {
-        Scrabble scrabble = new Scrabble("");
+    private String input;
+    private int expectedOutput;
 
-        assertEquals(scrabble.getScore(), 0);
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {"", 0},
+                {" \t\n", 0},
+                {null, 0},
+                {"a", 1},
+                {"f", 4},
+                {"street", 6},
+                {"quirky", 22},
+                {"MULTIBILLIONAIRE", 20},
+                {"alacrity", 13},
+        });
+    }
+
+    public ScrabbleScoreTest(String input, int expectedOutput) {
+        this.input = input;
+        this.expectedOutput = expectedOutput;
     }
 
     @Test
-    public void whitespaceWordScoresZero() {
-        Scrabble scrabble = new Scrabble(" \t\n");
+    public void test() {
+        Scrabble scrabble = new Scrabble(input);
 
-        assertEquals(scrabble.getScore(), 0);
-    }
-
-    @Test
-    public void nullScoresZero() {
-        Scrabble scrabble = new Scrabble(null);
-
-        assertEquals(scrabble.getScore(), 0);
-    }
-
-    @Test
-    public void scoresVeryShortWord() {
-        Scrabble scrabble = new Scrabble("a");
-
-        assertEquals(scrabble.getScore(), 1);
-    }
-
-    @Test
-    public void scoresAnotherVeryShortWord() {
-        Scrabble scrabble = new Scrabble("f");
-
-        assertEquals(scrabble.getScore(), 4);
-    }
-
-    @Test
-    public void simpleWordScoresTheNumberOfLetters() {
-        Scrabble scrabble = new Scrabble("street");
-
-        assertEquals(scrabble.getScore(), 6);
-    }
-
-    @Test
-    public void complicatedWordScoresMore() {
-        Scrabble scrabble = new Scrabble("quirky");
-
-        assertEquals(scrabble.getScore(), 22);
-    }
-
-    @Test
-    public void scoresAreCaseInsensitive() {
-        Scrabble scrabble = new Scrabble("MULTIBILLIONAIRE");
-
-        assertEquals(scrabble.getScore(), 20);
-    }
-
-    @Test
-    public void convenientScoring() {
-        Scrabble scrabble = new Scrabble("alacrity");
-
-        assertEquals(scrabble.getScore(), 13);
+        assertEquals(expectedOutput, scrabble.getScore());
     }
 }

@@ -48,6 +48,6 @@ public class RomanNumeralsTest {
     public void convertArabicNumberalToRomanNumeral() {
         RomanNumeral romanNumeral = new RomanNumeral(input);
 
-        assertEquals(romanNumeral.getRomanNumeral(), expectedOutput);
+        assertEquals(expectedOutput, romanNumeral.getRomanNumeral());
     }
 }
