@@ -8,7 +8,7 @@ public class Strain {
 	{
 		return coll.stream().filter(func).collect(Collectors.toList());
 	}
-	
+
 	public static <T> Collection<T> discard(Collection<T> coll, Predicate<T> func)
 	{
 		return coll.stream().filter(func.negate()).collect(Collectors.toList());
