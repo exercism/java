@@ -25,7 +25,8 @@
     "allergies",
     "strain",
     "atbash-cipher",
-    "accumulate"
+    "accumulate",
+    "crypto-square"
   ],
   "deprecated": [
   ],
