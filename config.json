@@ -23,7 +23,10 @@
     "prime-factors",
     "raindrops",
     "allergies",
-    "strain"
+    "strain",
+    "atbash-cipher",
+    "accumulate",
+    "crypto-square"
   ],
   "deprecated": [
   ],
