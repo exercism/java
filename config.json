@@ -29,7 +29,8 @@
     "crypto-square",
     "trinary",
     "rna-transcription",
-    "sieve"
+    "sieve",
+    "pascals-triangle"	
   ],
   "deprecated": [
   ],
