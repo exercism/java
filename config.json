@@ -31,7 +31,8 @@
     "rna-transcription",
     "sieve",
     "simple-cipher",
-    "pascals-triangle"	
+    "octal",
+    "pascals-triangle"
   ],
   "deprecated": [
   ],
