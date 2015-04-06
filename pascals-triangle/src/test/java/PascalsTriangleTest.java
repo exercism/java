@@ -7,19 +7,19 @@ public class PascalsTriangleTest {
 
     @Test
     public void testTriangleWithFourRows() {
-        int[][] expected = new int[][]{
+        int[][] expectedOutput = new int[][]{
                 {1},
                 {1, 1},
                 {1, 2, 1},
                 {1, 3, 3, 1},
         };
 
-        assertArrayEquals(expected, PascalsTriangle.computeTriangle(4));
+        assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(4));
     }
 
     @Test
     public void testTriangleWithSixRows() {
-        int[][] expected = new int[][]{
+        int[][] expectedOutput = new int[][]{
                 {1},
                 {1, 1},
                 {1, 2, 1},
@@ -28,16 +28,16 @@ public class PascalsTriangleTest {
                 {1, 5, 10, 10, 5, 1}
         };
 
-        assertArrayEquals(expected, PascalsTriangle.computeTriangle(6));
+        assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(6));
     }
 
     @Test
     public void testExpectEmptyTriangle() {
-        int[][] expected = new int[][]{
+        int[][] expectedOutput = new int[][]{
 
         };
 
-        assertArrayEquals(expected, PascalsTriangle.computeTriangle(0));
+        assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(0));
     }
 
     @Test
@@ -64,7 +64,6 @@ public class PascalsTriangleTest {
 
         assertEquals(false, PascalsTriangle.isTriangle(input));
     }
-
 
     @Test(expected = IllegalArgumentException.class)
     public void testValidatesNotNegativeRows() {
