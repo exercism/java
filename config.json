@@ -28,7 +28,8 @@
     "accumulate",
     "crypto-square",
     "trinary",
-    "rna-transcription"
+    "rna-transcription",
+    "sieve"
   ],
   "deprecated": [
   ],
