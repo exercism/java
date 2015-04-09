@@ -33,6 +33,7 @@
     "simple-cipher",
     "octal",
     "luhn",
+    "pig-latin",
     "pascals-triangle"
   ],
   "deprecated": [
