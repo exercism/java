@@ -32,6 +32,7 @@
     "sieve",
     "simple-cipher",
     "octal",
+    "luhn",
     "pascals-triangle"
   ],
   "deprecated": [
