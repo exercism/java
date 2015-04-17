@@ -6,3 +6,5 @@ build/
 .gradle/
 .idea/
 *.iml
+bin/configlet
+bin/configlet.exe
