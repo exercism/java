@@ -12,27 +12,27 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class PrimeFactorsTest {
 
-    private double input;
-    private List<Integer> expectedOutput;
+    private long input;
+    private List<Long> expectedOutput;
 
-    @Parameters
+    @Parameters(name="Prime factors of {0} = {1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {1, Arrays.asList(new Integer[0])},
-                {2, Arrays.asList(new Integer[]{2})},
-                {3, Arrays.asList(new Integer[]{3})},
-                {4, Arrays.asList(new Integer[]{2, 2})},
-                {6, Arrays.asList(new Integer[]{2, 3})},
-                {8, Arrays.asList(new Integer[]{2, 2, 2})},
-                {9, Arrays.asList(new Integer[]{3, 3})},
-                {27, Arrays.asList(new Integer[]{3, 3, 3})},
-                {625, Arrays.asList(new Integer[]{5, 5, 5, 5})},
-                {901255, Arrays.asList(new Integer[]{5, 17, 23, 461})},
-                {93819012551L, Arrays.asList(new Integer[]{11, 9539, 894119})}
+                {1L, Arrays.asList()},
+                {2L, Arrays.asList(2L)},
+                {3L, Arrays.asList(3L)},
+                {4L, Arrays.asList(2L, 2L)},
+                {6L, Arrays.asList(2L, 3L)},
+                {8L, Arrays.asList(2L, 2L, 2L)},
+                {9L, Arrays.asList(3L, 3L)},
+                {27L, Arrays.asList(3L, 3L, 3L)},
+                {625L, Arrays.asList(5L, 5L, 5L, 5L)},
+                {901255L, Arrays.asList(5L, 17L, 23L, 461L)},
+                {93819012551L, Arrays.asList(11L, 9539L, 894119L)}
         });
     }
 
-    public PrimeFactorsTest(double input, List<Integer> expectedOutput) {
+    public PrimeFactorsTest(long input, List<Long> expectedOutput) {
         this.input = input;
         this.expectedOutput = expectedOutput;
     }
