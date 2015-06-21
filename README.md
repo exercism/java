@@ -1,4 +1,4 @@
-# xJava
+# xJava [![Build Status](https://travis-ci.org/exercism/xjava.svg?branch=master)](https://travis-ci.org/exercism/xjava)
 
 Exercism Exercises in Java
 
