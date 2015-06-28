@@ -1,2 +1,2 @@
-public Etl {
+public class Etl {
 }
