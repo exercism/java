@@ -1,2 +1,2 @@
-public WordCount {
+public class WordCount {
 }

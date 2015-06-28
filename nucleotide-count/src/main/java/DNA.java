@@ -1,2 +1,2 @@
-public DNA {
+public class DNA {
 }
