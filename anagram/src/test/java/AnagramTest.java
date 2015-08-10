@@ -21,6 +21,13 @@ public class AnagramTest {
     }
 
     @Test
+    public void testSameWordIsNotAnagram() {
+        Anagram detector = new Anagram("corn");
+        List<String> anagrams = detector.match(Arrays.asList("corn"));
+        assertTrue(anagrams.isEmpty());
+    }
+
+    @Test
     public void testDetectMultipleAnagrams() {
         Anagram detector = new Anagram("master");
         List<String> anagrams = detector.match(Arrays.asList("stream", "pigeon", "maters"));
