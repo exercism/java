@@ -25,7 +25,7 @@ public class RandomKeyCipherTest {
 
     @Test
     public void cipherKeysAreRandomlyGenerated() {
-        assertTrue(!(new Cipher().getKey().equals(cipher.getKey().length())));
+        assertTrue(!(new Cipher().getKey().equals(cipher.getKey())));
     }
 
     /**
