@@ -6,7 +6,7 @@ jdk:
 sudo: false
 
 script:
+  - gradle --version
+  - TERM=dumb gradle check --continue
   - bin/fetch-configlet
   - bin/configlet .
-  - gradle --version
-  - TERM=dumb gradle check
