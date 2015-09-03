@@ -9,3 +9,7 @@ repositories {
 dependencies {
   testCompile "junit:junit:4.12"
 }
+
+// ignore; used by track maintainers.
+sourceSets { example { } }
+dependencies { testCompile sourceSets.example.output }

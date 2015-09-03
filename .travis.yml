@@ -1,5 +1,12 @@
-language: bash
+language: java
+jdk:
+  - oraclejdk8
+
+# http://docs.travis-ci.com/user/migrating-from-legacy
+sudo: false
 
 script:
   - bin/fetch-configlet
   - bin/configlet .
+  - gradle --version
+  - TERM=dumb gradle check
