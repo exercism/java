@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 
 public class RobotTest {
 
-    private static final String EXPECTED_ROBOT_NAME_PATTERN = "\\w{2}\\d{3}";
+    private static final String EXPECTED_ROBOT_NAME_PATTERN = "[A-Z]{2}\\d{3}";
     private final Robot robot = new Robot();
 
     @Test
