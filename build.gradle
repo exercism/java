@@ -1,9 +1,17 @@
-subprojects {
+subprojects { project ->
   apply plugin: "java"
 
   sourceSets {
+    // Verify that the tests are working by running them against the example code.
+    // By replacing the "main" sourceSet with the example code we avoid any collisions
+    //   with solution code that may have been included as a jumpstart (e.g. etl).
     main {
-      java.srcDirs = ['src/example/java']
+      java.srcDirs = ["src/example/java"]
+    }
+    println "Source directory for " + project.name + "'s main source set: " + main.java.srcDirs
+
+    starterSource {
+      java.srcDirs = ["src/main/java"]
     }
   }
 }

@@ -7,6 +7,6 @@ sudo: false
 
 script:
   - gradle --version
-  - TERM=dumb gradle check --continue
+  - TERM=dumb gradle check compileStarterSourceJava --continue
   - bin/fetch-configlet
   - bin/configlet .
