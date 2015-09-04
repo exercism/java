@@ -1,3 +1,6 @@
+import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 public class Gigasecond {
 
     private LocalDateTime birthDateTime;

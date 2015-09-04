@@ -1,6 +1,9 @@
 public class Hamming {
 
     public static int compute(String leftStrand, String rightStrand) {
+        if(leftStrand.length() != rightStrand.length()) {
+            throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
+        }
         final int length = Math.min(leftStrand.length(), rightStrand.length());
         int distance = 0;
         for (int i = 0; i < length; i++) {
