@@ -4,14 +4,19 @@ subprojects { project ->
   sourceSets {
     // Verify that the tests are working by running them against the example code.
     // By replacing the "main" sourceSet with the example code we avoid any collisions
-    //   with solution code that may have been included as a jumpstart (e.g. etl).
+    //   with solution code that may have been included as a "starter" (e.g. etl).
     main {
       java.srcDirs = ["src/example/java"]
     }
-    println "Source directory for " + project.name + "'s main source set: " + main.java.srcDirs
+    project["compileJava"].doFirst { compileTask ->
+      println "  (source = " + compileTask.source.asPath + ")"
+    }
 
     starterSource {
       java.srcDirs = ["src/main/java"]
+    }
+    project["compileStarterSourceJava"].doFirst { compileTask ->
+      println "  (source = " + compileTask.source.asPath + ")"
     }
   }
 }
