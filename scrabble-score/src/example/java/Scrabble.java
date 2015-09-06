@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.HashMap;
+
 public class Scrabble {
 
     private String word;
