@@ -37,6 +37,7 @@ You'll *need* the following:
 
 * Java 1.8+
 * Gradle 2.x
+* Ruby 1.9+  (to run the [x-api](https://github.com/exercism/x-api)).
 * Git 1.x
 
 If you haven't already, please read our advice on [Git Workflow](http://help.exercism.io/git-workflow.html).
