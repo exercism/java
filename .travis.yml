@@ -6,7 +6,4 @@ jdk:
 sudo: false
 
 script:
-  - gradle --version
-  - TERM=dumb gradle check compileStarterSourceJava --continue
-  - bin/fetch-configlet
-  - bin/configlet .
+  - bin/build.sh
