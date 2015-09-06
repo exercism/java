@@ -14,6 +14,8 @@ For general information about how to contribute to Exercism, please refer to the
   * [The Rootproject](#the-rootproject)
   * [The Problem Subprojects](#the-problem-subprojects)
   * [Running The Build](#running-the-build)
+* [Developing](#developing)
+  *  [Tip: gradle clean before exercism fetch](#tip-gradle-clean-before-exercism-fetch)
 * [Submitting Your Contribution](#submitting-your-contribution)
   * [Doing the Commit Dance](#doing-the-commit-dance)
   * [Making the Pull Request](#making-the-pull-request)
