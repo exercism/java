@@ -21,7 +21,6 @@ For general information about how to contribute to Exercism, please refer to the
 
 
 ## Overview
-----
 
 This guide walks you through how to contribute to the Java language track.  It is opinionated and specific to allow those who are relatively new to Free Open Source Software to have a fighting chance of being successful.  However, if you know what you're doing, we intent these instructions to be guidelines.
 
@@ -33,7 +32,6 @@ If, at any point, you're having any trouble, pop in the [Gitter exercism/dev roo
 
 
 ## Getting Setup
-----
 
 You'll *need* the following:
 
@@ -108,7 +106,6 @@ If you want more details, check out the [x-api README](https://github.com/exerci
 You are now ready to go!
 
 ## Getting Familiar With the Codebase
-----
 
 There are two objectives to the design of this build:
 
@@ -161,7 +158,6 @@ cd ~/workspace/exercism/xjava
 ```
 
 ## Submitting Your Contribution
-----
 
 First of all... Exercism is meant help programmers, world-wide, to develop their skills and in doing so help raise the bar on our industry as a whole.  Your contribution is making that experience even better.  Thank you!
 
