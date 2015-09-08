@@ -8,6 +8,16 @@ import static org.junit.Assert.assertEquals;
 public class AllergiesTest {
 
     @Test
+    public void noAllergiesMeansNotAllergicToAnything() {
+        Allergies allergies = new Allergies(0);
+
+        assertEquals(false, allergies.isAllergicTo(Allergen.EGGS));
+        assertEquals(false, allergies.isAllergicTo(Allergen.PEANUTS));
+        assertEquals(false, allergies.isAllergicTo(Allergen.STRAWBERRIES));
+        assertEquals(false, allergies.isAllergicTo(Allergen.CATS));
+    }
+
+    @Test
     public void allergicToEggs() {
         Allergies allergies = new Allergies(1);
 
