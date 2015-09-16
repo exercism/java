@@ -51,6 +51,10 @@ public class Crypto {
     }
 
     public String getCipherText() {
+        return getNormalizedCipherText().replaceAll("\\s", "");
+    }
+
+    public String getNormalizedCipherText() {
         StringBuilder cipherText = new StringBuilder(normalizedPlaintext.length());
 
         for (int index = 0; index < squareSize; index++) {
@@ -59,14 +63,12 @@ public class Crypto {
                     cipherText.append(segment.charAt(index));
                 }
             }
+
+            if (index < squareSize - 1) {
+                cipherText.append(" ");
+            }
         }
 
         return cipherText.toString();
-    }
-
-    public String getNormalizedCipherText() {
-        String cipher = getCipherText();
-
-        return String.join(" ", getSegmentText(cipher, squareSize - 1));
     }
 }

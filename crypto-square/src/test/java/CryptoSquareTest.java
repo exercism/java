@@ -106,7 +106,7 @@ public class CryptoSquareTest {
     @Test
     public void normalizedCipherNotExactlyDivisibleBy5SpillsIntoSmallerSegment() {
         Crypto crypto = new Crypto("Madness, and then illumination.");
-        String expectedOutput = "msemo aanin dninn dlaet ltshu i";
+        String expectedOutput = "msemo aanin dnin ndla etlt shui";
 
         assertEquals(expectedOutput, crypto.getNormalizedCipherText());
     }
@@ -114,7 +114,7 @@ public class CryptoSquareTest {
     @Test
     public void normalizedCipherIsSplitIntoSegmentsOfCorrectSize() {
         Crypto crypto = new Crypto("If man was meant to stay on the ground god would have given us roots");
-        String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau";
+        String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau";
 
         assertEquals(expectedOutput, crypto.getNormalizedCipherText());
     }
