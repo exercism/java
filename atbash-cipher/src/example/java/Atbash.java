@@ -18,6 +18,17 @@ public class Atbash {
         return splitIntoFiveLetterWords(cyphered);
     }
 
+    public static String decode(String input) {
+        String encoded = stripInvalidCharacters(input).toLowerCase();
+        String deciphered = "";
+
+        for (char c : encoded.toCharArray()) {
+            deciphered += applyCipher(c);
+        }
+
+        return deciphered;
+    }
+
     private static String stripInvalidCharacters(String input) {
         String filteredValue = "";
 
