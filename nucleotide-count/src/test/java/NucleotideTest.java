@@ -10,6 +10,9 @@ public class NucleotideTest {
     assertThat(dna.count('A')).isEqualTo(0);
   }
 
+// nucleotideCounts() <Character, Integer> 
+// Remember "String" 'Character'
+
   @Test
   public void testEmptyDnaStringHasNoNucleotides() {
     DNA dna = new DNA("");
