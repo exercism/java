@@ -1,0 +1,1 @@
+From web applications to games, the Java language is as diverse as it is portable meaning that it is found nearly everywhere. Some notable examples include Minecraft, Android apps, and large parts of websites like Amazon. With a very strong focus on object oriented programming, it is an ideal language in which to implement complex data structures and algorithms. 
