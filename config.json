@@ -34,7 +34,8 @@
     "octal",
     "luhn",
     "pig-latin",
-    "pascals-triangle"
+    "pascals-triangle",
+    "hello-world"
   ],
   "deprecated": [
   ],
