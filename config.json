@@ -4,6 +4,7 @@
   "repository": "https://github.com/exercism/xjava",
   "active": true,
   "problems": [
+    "hello-world",
     "etl",
     "nucleotide-count",
     "word-count",
@@ -34,8 +35,7 @@
     "octal",
     "luhn",
     "pig-latin",
-    "pascals-triangle",
-    "hello-world"
+    "pascals-triangle"
   ],
   "deprecated": [
   ],
