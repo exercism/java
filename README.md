@@ -24,9 +24,9 @@ For general information about how to contribute to Exercism, please refer to the
 
 ## Overview
 
-This guide walks you through how to contribute to the Java language track.  It is opinionated and specific to allow those who are relatively new to Free Open Source Software to have a fighting chance of being successful.  However, if you know what you're doing, we intent these instructions to be guidelines.
+This guide walks you through how to contribute to the Java language track.  It is opinionated and specific to allow those who are relatively new to Free Open Source Software to have a fighting chance of being successful.  However, if you know what you're doing, we intend these instructions to be guidelines.
 
-The steps described herein were composed on OS X.  They will presumably work with no change on any *nix distro.  Almost all of them will work on Windows; though you might want to use cygwin or some other Unix support for creating soft-links.  Otherwise, you'll need to improvise on some steps.  If you *do* find a nice workflow for Windows, please feel free to submit a PR for changes to this doc.  Thanks!
+The steps described herein were composed on OS X.  They will presumably work with no change on any \*nix distro.  Almost all of them will work on Windows; though you might want to use cygwin or some other Unix support for creating soft-links.  Otherwise, you'll need to improvise on some steps.  If you *do* find a nice workflow for Windows, please feel free to submit a PR for changes to this doc.  Thanks!
 
 This guide flows chronologically, from setting-up your environment, taking a quick tour of the build process to finally what it takes to successfully submit.
 
@@ -112,8 +112,8 @@ You are now ready to go!
 
 There are two objectives to the design of this build:
 
-1. when a problem is built from within the xjava repo, the tests run against the "example" code.
-2. when a problem is built outside the xjava repo (namely, when it has been served through the CLI on a user's computer), the tests run against the "main" code.
+1. when a problem is built from within the xjava repo, the tests run against the "example" code (i.e. when you, the contributor, are developing the exercise);
+2. when a problem is built outside the xjava repo (when a participant is solving the exercise), the tests run against the "main" code.
 
 This repo is a mulit-project gradle build.
 
