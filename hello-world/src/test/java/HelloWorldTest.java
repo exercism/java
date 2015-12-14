@@ -16,7 +16,7 @@ public class HelloWorldTest {
     }
 
     @Test
-    public void helloAnotherSampleName() throws Exception {
+    public void helloAnotherSampleName() {
         assertEquals("Hello, Bob!", HelloWorld.hello("Bob"));
     }
 }
