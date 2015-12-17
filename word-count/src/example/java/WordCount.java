@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class WordCount {
 
-    public Map<String, Integer> Phrase( String input ) {
+    public Map<String, Integer> phrase( String input ) {
         Map<String, Integer> countMap = new HashMap<String, Integer>();
         input = input.trim().toLowerCase().replaceAll("[\\W]", " ");
         final String[] tokenizedInput = input.split("\\s+");
