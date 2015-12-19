@@ -17,7 +17,7 @@ public class WordCountTest {
         final Map<String, Integer> expectedWordCount = new HashMap<String, Integer>();
         expectedWordCount.put("word", 1);
 
-        actualWordCount = wordCount.Phrase("word");
+        actualWordCount = wordCount.phrase("word");
         assertEquals(
             expectedWordCount, actualWordCount
         );
@@ -31,7 +31,7 @@ public class WordCountTest {
         expectedWordCount.put("of", 1);
         expectedWordCount.put("each", 1);
 
-        actualWordCount = wordCount.Phrase("one of each");
+        actualWordCount = wordCount.phrase("one of each");
         assertEquals(
             expectedWordCount, actualWordCount
         );
@@ -47,7 +47,7 @@ public class WordCountTest {
         expectedWordCount.put("red", 1);
         expectedWordCount.put("blue", 1);
 
-        actualWordCount = wordCount.Phrase("one fish two fish red fish blue fish");
+        actualWordCount = wordCount.phrase("one fish two fish red fish blue fish");
         assertEquals(
             expectedWordCount, actualWordCount
         );
@@ -63,7 +63,7 @@ public class WordCountTest {
         expectedWordCount.put("java", 1);
         expectedWordCount.put("javascript", 1);
 
-        actualWordCount = wordCount.Phrase("car : carpet as java : javascript!!&@$%^&");
+        actualWordCount = wordCount.phrase("car : carpet as java : javascript!!&@$%^&");
         assertEquals(
             expectedWordCount, actualWordCount
         );
@@ -78,7 +78,7 @@ public class WordCountTest {
         expectedWordCount.put("1", 1);
         expectedWordCount.put("2", 1);
 
-        actualWordCount = wordCount.Phrase("testing, 1, 2 testing");
+        actualWordCount = wordCount.phrase("testing, 1, 2 testing");
         assertEquals(
             expectedWordCount, actualWordCount
         );
@@ -90,7 +90,7 @@ public class WordCountTest {
         final Map<String, Integer> expectedWordCount = new HashMap<String, Integer>();
         expectedWordCount.put("go", 3);
 
-        actualWordCount = wordCount.Phrase("go Go GO");
+        actualWordCount = wordCount.phrase("go Go GO");
         assertEquals(
             expectedWordCount, actualWordCount
         );
