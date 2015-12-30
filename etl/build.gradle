@@ -8,6 +8,6 @@ repositories {
 
 dependencies {
   testCompile "junit:junit:4.10"
-  testCompile "org.easytesting:fest-assert-core:2.0M10"
+  testCompile "org.assertj:assertj-core:3.2.0"
   testCompile "com.google.guava:guava:16+"
 }
