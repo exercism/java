@@ -1,16 +1,5 @@
 subprojects { project ->
   apply plugin: "java"
-  apply plugin: "eclipse"
-  apply plugin: "idea"
-
-  repositories {
-    mavenCentral()
-  }
-
-  dependencies {
-    testCompile "junit:junit:4.12"
-    testCompile 'org.assertj:assertj-core:2.2.0'
-  }
 
   sourceSets {
     // Verify that the tests are working by running them against the example code.
