@@ -42,7 +42,7 @@ You'll *need* the following:
 * Ruby 1.9+  (to run the [x-api](https://github.com/exercism/x-api)).
 * Git 1.x
 
-If you haven't already, please read our advice on [Git Workflow](http://help.exercism.io/git-workflow.html).
+If you haven't already, please read our advice on [Git Workflow](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#maintaining-a-track).
 
 
 Here's one way to get setup:
@@ -60,11 +60,11 @@ Here's one way to get setup:
 	rackup
 	```
 
-If you want more details, check out the [x-api README](https://github.com/exercism/x-api).
+If you want more details, check out the [x-api README](https://github.com/exercism/x-api/blob/master/README.md).
 
 2. **Configure your exercism CLI to point to that x-api.** Out of the box, the CLI is configured to point to the production instances of the API (for account-specific data) and X-API (for problem data).  You need to configure your CLI to point to the X-API instance you stood up in the prior step.
-	
-	If you haven't already, you'll need need to [install the CLI](http://help.exercism.io/installing-the-cli.html).
+
+	If you haven't already, you'll need need to [install the CLI](http://exercism.io/cli).
 
 	```
 	cd ~
@@ -80,7 +80,7 @@ If you want more details, check out the [x-api README](https://github.com/exerci
 	If things are properly setup:
 	* `exercism debug` output will include "`XAPI: http://localhost:9292 [connected]`"
 	* `tree java` will look something like this:
-	
+
 		```
 		java
 		└── bob
@@ -101,7 +101,7 @@ If you want more details, check out the [x-api README](https://github.com/exerci
 	git clone git@github.com:jtigger/xjava.git
 	git remote add upstream https://github.com/exercism/xjava.git
 	git pull --rebase upstream/master
-	cd ~/workspace/exercism/x-api/problems
+	cd ~/workspace/exercism/x-api/tracks
 	rm -rf java
 	ln -s ../../xjava java
 	```
@@ -169,7 +169,7 @@ If you `exercism fetch` after doing a build, the CLI will fail with the followin
 ```
 $ exercism fetch java bob
 2015/09/06 15:03:21 an internal server error was received.
-Please file a bug report with the contents of 'exercism debug' at: https://github.com/exercism/exercism.io/issues 
+Please file a bug report with the contents of 'exercism debug' at: https://github.com/exercism/exercism.io/issues
 ```
 
 and if you review the logs of your x-api, you'll find:
@@ -195,7 +195,6 @@ First of all... Exercism is meant help programmers, world-wide, to develop their
 Before you submit a pull request, please ensure:
 
 - the test suite covers the essential parts of the problem and interesting corner cases.
-- your example solution represents your best attempt at exemplary code. 
 - the build script (`./bin/build.sh`) compiles and tests your code successfully.
 
 
@@ -203,23 +202,23 @@ Before you submit a pull request, please ensure:
 *(These instructions assume you setup your development environment using the instructions above.)*
 
 1. **Run the build script, locally.**
- 
+
    ```
    cd ~/workspace/exercism/xjava
    ./bin/build.sh
    ```
 
    verify that the script runs successfully.
-   
+
 2. **Fetch the problem from your local x-api, using the CLI.**
 
    ```
    cd ~/workspace/exercism/exercises
    exercism fetch java <problem-slug>
    ```
-   
+
    verify that the fetched problem does *not* contain any files not needed for the problem.
-   
+
 3. **Run the tests against the example source.**
 
    ```
@@ -229,12 +228,12 @@ Before you submit a pull request, please ensure:
    ```
 
    verify that all tests pass.
-   
+
 If you've successfully navigated to this point, you're ready to make that pull request!
 
 ### Making the Pull Request
 
-Hopefully you've read our [Git Workflow](http://help.exercism.io/git-workflow.html) and done your work on a clone of a fork of the exercism xjava repo.
+Hopefully you've read our [Git Workflow](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#maintaining-a-track) and done your work on a clone of a fork of the exercism xjava repo.
 
 After you've pushed your changes to your fork (best done on a branch, remember), it's a matter of going to GitHub and submitting a pull request.
 
