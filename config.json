@@ -38,6 +38,7 @@
     "luhn",
     "pig-latin",
     "linked-list",
+    "nth-prime",
     "pascals-triangle"
   ],
   "deprecated": [
