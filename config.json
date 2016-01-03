@@ -37,6 +37,7 @@
     "octal",
     "luhn",
     "pig-latin",
+    "linked-list",
     "pascals-triangle"
   ],
   "deprecated": [
