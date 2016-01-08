@@ -1,45 +1,57 @@
 public final class Deque<T> {
-    private Element head;
+    private Element<T> head;
 
     public void push(T value) {
         if (head == null) {
-            head = new Element(value, null, null);
-            head.setNext(head);
-            head.setPrev(head);
+            head = new Element<>(value, null, null);
+            head.next = head;
+            head.prev = head;
             return;
         }
 
-        Element oldTail = head.getPrev();
-        Element tail = new Element(value, oldTail, head);
-        oldTail.setNext(tail);
-        head.setPrev(tail);
+        Element<T> oldTail = head.prev;
+        Element<T> tail = new Element<>(value, oldTail, head);
+        oldTail.next = tail;
+        head.prev = tail;
     }
 
     public T pop() {
-        head = head.getPrev();
+        head = head.prev;
         return shift();
     }
 
     public void unshift(T value) {
         push(value);
-        head = head.getPrev();
+        head = head.prev;
     }
 
     public T shift() {
-        Object value = head.getValue();
+        T value = head.value;
 
-        Element newHead = head.getNext();
-        Element newTail = head.getPrev();
+        Element<T> newHead = head.next;
+        Element<T> newTail = head.prev;
 
         if (newHead == head) {
             head = null;
         }
         else {
-            newHead.setPrev(newTail);
-            newTail.setNext(newHead);
+            newHead.prev = newTail;
+            newTail.next = newHead;
             head = newHead;
         }
 
-        return (T) value;
+        return value;
+    }
+
+    private static final class Element<T> {
+        private final T value;
+        private Element<T> prev;
+        private Element<T> next;
+
+        public Element(T value, Element<T> prev, Element<T> next) {
+            this.value = value;
+            this.prev = prev;
+            this.next = next;
+        }
     }
 }
