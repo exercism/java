@@ -86,7 +86,7 @@ the OS presents a dialog:
 Clicking on the "More Info..." button takes you to the [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 Download the latest version of the JDK (at the time of writing,
-[JDK 8u45](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+[JDK 8u71](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 and run the installer, using all the defaults.
 
 Skip down to [Verify JDK Install](#verify-jdk-install)
@@ -105,7 +105,7 @@ Or any version that is prior to 1.8, you need to install the 1.8 JDK...
 
 1. Go to [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 and download the latest version of the JDK (at the time of writing,
-[JDK 8u45](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+[JDK 8u71](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 2. Run the installer, using all the defaults.
 
 #### Verify JDK Install
