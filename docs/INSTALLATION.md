@@ -81,12 +81,12 @@ What you do next depends on the output of that command.
 If you have no JDKs installed at all (e.g. you have a fresh install of Mac OS X 10.10 [Yosemite]),
 the OS presents a dialog:
 
-![To use the "java," command-line tool you need to install a JDK.  Click "More Info..." to visit the Java Developer Kit download website.](img/setup/java/mac-osx--install-java-dialog.png)
+![To use the "java," command-line tool you need to install a JDK.  Click "More Info..." to visit the Java Developer Kit download website.](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--install-java-dialog.png)
 
 Clicking on the "More Info..." button takes you to the [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 Download the latest version of the JDK (at the time of writing,
-[JDK 8u45](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+[JDK 8u71](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 and run the installer, using all the defaults.
 
 Skip down to [Verify JDK Install](#verify-jdk-install)
@@ -105,7 +105,7 @@ Or any version that is prior to 1.8, you need to install the 1.8 JDK...
 
 1. Go to [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 and download the latest version of the JDK (at the time of writing,
-[JDK 8u45](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+[JDK 8u71](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 2. Run the installer, using all the defaults.
 
 #### Verify JDK Install
