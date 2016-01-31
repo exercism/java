@@ -74,6 +74,12 @@ public class TriangleTest {
         assertEquals(TriangleKind.SCALENE, triangle.getKind());
     }
 
+    @Test
+    public void edgeCasesAreLegal() throws Exception {
+        Triangle triangle = new Triangle(2, 4, 2);
+        assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
+    }
+
     @Test(expected = TriangleException.class)
     public void trianglesWithNoSizeAreIllegal() throws Exception {
         new Triangle(0, 0, 0);
@@ -89,13 +95,9 @@ public class TriangleTest {
         new Triangle(1, 1, 3);
     }
 
-    @Test(expected = TriangleException.class)
-    public void trianglesViolatingTriangleInequalityAreIllegal2() throws Exception {
-        new Triangle(2, 4, 2);
-    }
 
     @Test(expected = TriangleException.class)
-    public void trianglesViolatingTriangleInequalityAreIllegal3() throws Exception {
+    public void trianglesViolatingTriangleInequalityAreIllegal2() throws Exception {
         new Triangle(7, 3, 2);
     }
 }
