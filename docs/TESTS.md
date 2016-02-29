@@ -66,7 +66,7 @@ Gradle project:    [C:\Users\johndoe\exercism\java\etl\build.gradle   ](...)
 4. In the "Import Project from Gradle" dialog, check the "auto-import" and "create directories"
    checkboxes and select "Use customizable gradle wrapper".
 
-    ![IntelliJ 14 CE -- Gradle import dialog](img/setup/java/mac-osx--idea-ce-gradle-import-dialog.png)
+    ![IntelliJ 14 CE -- Gradle import dialog](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--idea-ce-gradle-import-dialog.png)
 
 5. Click "OK".  IntelliJ will automatically create its project artifacts based on the Gradle project file.
 
@@ -79,7 +79,7 @@ Gradle project:    [C:\Users\johndoe\exercism\java\etl\build.gradle   ](...)
 7. Start by running the test suite: In the "Project" view, right-click on the test file
    (`etl\src\test\java\EtlTest`), select "Run", then pick the "EtlTest" that has a JUnit icon to the
    left of it (red and green arrows), NOT the Gradle icon (circular green).
-   ![Run tests through IDEA JUnit Runner, NOT Gradle](img/setup/java/mac-osx--idea-ce-run-unit-tests.png)
+   ![Run tests through IDEA JUnit Runner, NOT Gradle](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--idea-ce-run-unit-tests.png)
 
  * If these menu options don't appear at first, wait for a few seconds and try again; IntelliJ is still
    configuring the project with a Java nature.
