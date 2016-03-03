@@ -9,3 +9,4 @@ build/
 bin/configlet
 bin/configlet.exe
 gradle/
+/exercises/.nb-gradle/
