@@ -38,6 +38,7 @@
     "octal",
     "luhn",
     "pig-latin",
+    "simple-linked-list",
     "linked-list",
     "nth-prime",
     "pascals-triangle"
