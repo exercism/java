@@ -11,3 +11,8 @@ dependencies {
   testCompile "org.assertj:assertj-core:3.2.0"
 }
 
+test {
+    useJUnit {
+        excludeCategories 'io.exercism.xjava.NotReady'
+    }
+}

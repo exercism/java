@@ -19,4 +19,11 @@ subprojects { project ->
       println "  (source = " + compileTask.source.asPath + ")"
     }
   }
+
+  task fullTest(type: Test) {
+    group = LifecycleBasePlugin.VERIFICATION_GROUP
+    description = "Runs tests without exclusions."
+  }
+
+  check.dependsOn(fullTest)
 }
