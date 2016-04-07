@@ -23,7 +23,7 @@ public class ScrabbleScoreTest {
                 {"f", 4},
                 {"street", 6},
                 {"quirky", 22},
-                {"oxyphenbutazone", 41},
+                {"OXYPHENBUTAZONE", 41},
                 {"alacrity", 13},
         });
     }
