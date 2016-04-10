@@ -33,7 +33,7 @@ This guide flows chronologically, from setting-up your environment, taking a qui
 If, at any point, you're having any trouble, pop in the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
 
 
-## Getting Setup
+## Getting Set Up
 
 You'll *need* the following:
 
@@ -226,6 +226,8 @@ Before you submit a pull request, please ensure:
    ```
 
    verify that the fetched problem does *not* contain any files not needed for the problem.
+   
+   Note: some changes may require that you restart your local copy of the API server.
 
 3. **Run the tests against the example source.**
 
