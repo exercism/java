@@ -136,7 +136,7 @@ public class MeetupTest {
     }
 
     @Test
-    public void test_sunteenth_of_map_2013() {
+    public void test_sunteenth_of_may_2013() {
         DateTime expected = new DateTime(2013, 5, 19, 0, 0);
         Meetup meetup = new Meetup(5, 2013);
         assertThat(meetup.day(SUNDAY, MeetupSchedule.TEENTH)).isEqualTo(expected);
