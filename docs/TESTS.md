@@ -42,6 +42,42 @@ Gradle project:    [C:\Users\johndoe\exercism\java\etl\build.gradle   ](...)
 
 ... and away you go!!!
 
+## Windows with Netbeans
+
+This could also apply, with slight variations, to all OSs that support the Netbeans IDE (Netbeans is a Java-based and is available for Windows, Mac OS X, and Linux). When downloading Netbeans, be sure to get the Java SE, Java EE, or "All" version. You may also need a JDK.
+
+### Getting started 
+
+In the terminal window, get the exercise
+        
+```
+C:\Users\johndoe> exercism fetch java
+
+New:
+java (Etl)      C:\Users\johndoe\exercism\java\etl
+
+unchanged: 0, updated: 0, new: 1
+```
+ 
+### Importing the Project Into Netbeans  
+  
+1. In Netbeans, open a new project: File > New Project
+2. Select "Java" from the Categroies window on the left, then "Java Proejct with Existing Sources" from the Projects window on the right. Click Next.
+3. Type in a project name and use the default Project Folder and Build Script Name settings. Click Next.
+4. Now you will choose your source folders. Under the Source Package Folders window on the top, click "Add Folder..."
+5. Navigate to the folder where exercism created your project and select the "java" folder under "main". For example, `C:\Users\johndoe\exercism\java\etl\src\main\java`
+6. Now do the same for the Test Package Folders window on the bottom, but chose the "java" folder under "test". For example, `C:\Users\johndoe\exercism\java\etl\src\test\java`
+8. Click Next and accept the defaults on the next screen (Includes and Excludes)
+9. Click Finish
+
+If you see a warning about resolving project problems, rigt-click on the project and click "Resolve Project Problems..." and let Netbeans automatically handle this. This is due to the fact the JUnit 4.12 does not bundle the hamcrest matchers library.
+
+### Running the Tests
+To run the tests, simply right-click on the test file under the Test Packages folder, and click *Run File* or *Debug File*. The test results will appear in a window on the bottom - green for pass, red for fail.
+
+Good luck!
+
+
 ## Mac OS X
 
 ### Get started with the first exercise
