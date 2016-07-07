@@ -41,7 +41,8 @@
     "simple-linked-list",
     "linked-list",
     "nth-prime",
-    "pascals-triangle"
+    "pascals-triangle",
+    "beer-song"
   ],
   "deprecated": [
   ],
