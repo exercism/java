@@ -7,4 +7,4 @@ jdk:
 sudo: false
 
 script:
-  - bin/build.sh
+  - bin/journey-setup.sh
