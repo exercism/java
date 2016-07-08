@@ -6,9 +6,13 @@ jdk:
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
 cache: bundler
+addons:
+  apt:
+    packages:
+      - tree
 before_install:
   - rvm install 2.2.1
   - rvm use 2.2.1
 
 script:
-  - bin/journey-setup.sh
+  - bin/journey-setup-ci.sh
