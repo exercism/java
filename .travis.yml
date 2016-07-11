@@ -15,5 +15,5 @@ before_install:
   - rvm use 2.2.1
 
 script:
-  - bin/run-unit-tests-in-ci.sh
-  - bin/run-journey-test-in-ci.sh
+  - bin/unit-tests.sh
+  - bin/journey-test.sh
