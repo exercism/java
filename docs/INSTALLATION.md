@@ -155,12 +155,16 @@ run the installer; accept all the defaults.
 
 ## How work with Exercism using Eclipse
 
-This is not a guide about how to learn to use Eclipse. Please, consult
+This section is about Eclipse, and it is assumed that you already have
+Java development kit for your computing environment installed. If that
+is not the case, see the instructions above.
+
+Additionally, this is not a guide about how to use Eclipse. Please, consult
 your favorite search engine for that because there are plenty of tutorials
 already available.
 
 Once you've got Eclipse installed and running, there are at least two ways
-to get exercism tasks into Eclipse: Letting gradle build Eclipse workspace
+to get exercism tasks into Eclipse: letting gradle build Eclipse workspace
 for you and using Buildship Gradle plugin for Eclipse. 
 
 Firstly, a simpler way of doing things.
@@ -171,7 +175,7 @@ Firstly, a simpler way of doing things.
 2. Change to the directory containing the exercise: `cd ~/exercism/java/
    <exercise>` (by default things will end up in `~/exercism`).
 
-3. Let Gradle prepare things for Eclipse: gradle eclipse.
+3. Let Gradle prepare things for Eclipse: `gradle eclipse`.
 
 4. Start Eclipse.
 
@@ -180,19 +184,24 @@ Firstly, a simpler way of doing things.
 6. Select "Existing Projects Into Workspace" as import source.
 
 7. Browse the directory containing the exercise fetched during the
-   step 1 to "Select root directory:".
+   step 1 to a text field labeled "Select root directory".
 
 8. Hit the button labeled "Finish".
 
-Secondly, a slightly more difficult, but more "Eclipseish" way of
-doing things. This is for those who absolutely despise doing anything
-away from Eclipse.
+Secondly, a slightly more complex and more "Eclipseish" way. This is
+for those who absolutely despise doing anything away from Eclipse.
 
-1. Install "Buildship Gradle Integration plugin from Eclipse
+1. Install the Buildship Gradle Integration plugin from Eclipse
    Marketplace (accessible from Help-menu, under Eclipse Marketplace).
 
+   ![Eclipse Help Menu](/docs/img/eclipse-help-dropdown.png)
+
+   To find the Buildship Gradle Plugin, search for "Buildship Gradle".
+
+   ![Buildship Gradle Plugin](/docs/img/eclipse-mp-search-buildship-gradle.png)
+
    In case you've been reading about the Gradle STS plugin, note that
-   The Buildship Gradle Integration plugin replaces the Gradle STS plugin
+   the Buildship Gradle Integration plugin replaces the Gradle STS plugin
    which is no longer maintained.
 
    Start (or restart) Eclipse after the plugin has been installed.
@@ -204,15 +213,16 @@ away from Eclipse.
 
 5. Select "Gradle" > "Gradle Project" as your import source.
 
-6. Browse the directory containing the exercise fetched during
-   the step 1 to the "Project root directory:".
+6. Browse to the directory containing the exercise fetched during
+   the step 1 to a text field labeled "Project root directory".
 
 7. Hit the button labeled "Finish".
 
-To me it seems that the simple way of doing things is, as usual, the better
-way of doing things. The only caveat I've found this far is that you have
-to run `gradle eclipse` every time you change something affecting Eclipse.
+It seems that the simple way of doing things is, as usual, the better
+way of doing things. The only caveat is that you have to run `gradle eclipse`
+every time you change something affecting Eclipse.
 
 For most exercises there is no need to ever touch build.gradle or anything
-else besides the source files, so this looks like a minor hassle not often
-encountered.
+else besides the source files; so, there is no need to constantly run
+`gradle eclipse`.
+
