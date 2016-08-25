@@ -29,7 +29,7 @@ public class HelloWorld {
 
 ## Step 2
 
-Run the tests again. It will give you a new error, since now the method exists, but the tests are expects the
+Run the tests again. It will give you a new error, since now the method exists, but the tests expect the
 method to accept one argument as input, a name.
 
 The errors will look something like:
