@@ -46,4 +46,11 @@ public class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase));
     }
 
+    @Test
+    public void fromPhraseWithSingleLetterWord() {
+        final String phrase = "Cat in a Hat";
+        final String expected = "CIAH";
+        assertEquals(expected, Acronym.generate(phrase));
+    }
+
 }
