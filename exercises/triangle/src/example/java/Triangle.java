@@ -40,7 +40,7 @@ public class Triangle {
     }
 
     private boolean violatesTriangleInequality() {
-        return side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1;
+        return side1 + side2 < side3 || side1 + side3 < side2 || side2 + side3 < side1;
     }
 
 
