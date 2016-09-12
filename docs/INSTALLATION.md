@@ -1,12 +1,31 @@
-## Windows
+# Installing Java
 
-If you are new-ish to programming in Java, these instructions are for you. This is a step-by-step opinionated guide to getting from zero to submitting your first exercise.
+* [Getting Started Fast](#getting-started-fast)
+  * [On Windows](#on-windows)
+  - [On OS X](#on-os-x)
+* [Command-Line Development Setup](#command-line-development-setup)
+* [Java IDEs](#java-ides)
 
+----
+# Getting Started Fast
 
-### Install Java Development Kit 1.8
+*NOTE: If you prefer using the command-line for development, skip down to [Command-Line Development Setup](#command-line-development-setup)*.
 
+*NOTE: For simplicity's sake, we provide step-by-step instructions for a particular Java IDE: JetBrain's IntelliJ IDEA.  If you actually have a preference, feel free to use any IDE of your choice.  We have included an outline for setting up other IDEs, in the [Java IDEs](#java-ides) section, below.*
 
-First determine if you have Java installed already.
+There are two flavors of these instructions:
+
+* [On Windows](#on-windows)
+* [On OS X](#on-os-x)
+
+## On Windows
+
+* [Step 1 — Ensure JDK 8 is installed](#step-1--ensure-jdk-8-is-installed)
+* [Step 2 — Install IntelliJ IDEA (Community Edition)](#step-2--install-intellij-idea-community-edition)
+
+### Step 1 — Ensure JDK 8 is installed
+
+First, determine if the JDK 8 is installed on your computer.
 
 In a Command Prompt window (Start -> Command Prompt)...
 
@@ -14,86 +33,14 @@ In a Command Prompt window (Start -> Command Prompt)...
 C:\Users\johndoe> java -version
 ```
 
-if you see:
+If you see...
 
 ```
 'java' is not recognized as an internal or external command,
 operable program or batch file.
 ```
 
-You'll need to install the JDK — it contains both a Java Runtime and development tools.
-
-1. Go to [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and download the latest version of the JDK (at the time of writing, [JDK 8u45](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
-2. Run the installer, using all the defaults.
-
-Verify that the install worked.
-
-Close any open Command Prompt windows and in a *new* Command Prompt window...
-
-```
-C:\Users\johndoe> java -version
-```
-
-You should see something like this:
-
-```
-java version "1.8.0_45"
-Java(TM) SE Runtime Environment (build 1.8.0_45-b15)
-Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
-```
-
-The exact version number is not important, just that version 1.8 or better is installed. Circa 2004, Sun Microsystem, in their inifinite wisdom, decided that it would be "better" to have dual numbering conventions.  Java 1.8 == Java 8.0.
-
-### Install IntelliJ IDEA Community Edition
-
-Download, install and configure IntelliJ with the JDK you have installed:
-
-1. Download [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) and run the installer; accept all the defaults.
-
-2. Run IntelliJ (Start -> All Programs -> JetBrains -> IntelliJ IDEA Community Edition).
-    * The first time you do, IntelliJ walks you through some initial setup.  We recommend selecting a UI Theme and then just clicking "Skip All and Set Defaults".
-
-3. In the "Welcome to IntelliJ IDEA" window, open the "Configure" pull-down and select "Project Defaults", then "Project Structure".
-
-3. In the "Default Project Structure" dialog, find the "Project SDK:" section in the right panel.  Click the "New..." button and select "JDK".
-
-4. In the "Select Home Directory for JDK" file open dialog, navigate to "`C:\Program Files\Java\jdk1.8...`".  Be sure to select the JDK, not the JRE.  Click "OK".
-
-5. Back in the "Default Project Structure" dialog, in the "Project language level:" section, select "8 - Lambdas, type annotations etc.".  Click "OK".
-
-## Mac OS X
-
-If you are new-ish to programming in Java on Mac OS X, these instructions are for you.
-This is a step-by-step opinionated guide to getting from zero to submitting your first exercise.
-
-### Step 1 — Install Java Development Kit 1.8
-
-First, determine if the JDK 1.8 is installed:
-
-```bash
-$ java -version
-```
-
-What you do next depends on the output of that command.
-
-#### No JDKs Installed
-
-If you have no JDKs installed at all (e.g. you have a fresh install of Mac OS X 10.10 [Yosemite]),
-the OS presents a dialog:
-
-![To use the "java," command-line tool you need to install a JDK.  Click "More Info..." to visit the Java Developer Kit download website.](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--install-java-dialog.png)
-
-Clicking on the "More Info..." button takes you to the [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-
-Download the latest version of the JDK (at the time of writing,
-[JDK 8u71](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
-and run the installer, using all the defaults.
-
-Skip down to [Verify JDK Install](#verify-jdk-install)
-
-#### Older JDKs Installed
-
-If you see something like...
+... or if you see a version number less than 1.8 ...
 
 ```bash
 java version "1.6.0_65"
@@ -101,22 +48,9 @@ Java(TM) SE Runtime Environment (build 1.6.0_65-b14-462-11M4609)
 Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-462, mixed mode)
 ```
 
-Or any version that is prior to 1.8, you need to install the 1.8 JDK...
+then you need to [install JDK 8](#installing-jdk-8-on-windows)
 
-1. Go to [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-and download the latest version of the JDK (at the time of writing,
-[JDK 8u71](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
-2. Run the installer, using all the defaults.
-
-#### Verify JDK Install
-
-Let's verify that the installation worked...
-
-```bash
-$ java -version
-```
-
-You should see something like this:
+HOWEVER, if you see something like this *(the exact version number is not important, just that it is 1.8 or later)*.
 
 ```bash
 java version "1.8.0_45"
@@ -124,105 +58,160 @@ Java(TM) SE Runtime Environment (build 1.8.0_45-b15)
 Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
 ```
 
-The exact version number is not important, just that version 1.8 or better is installed.
-Circa 2004, Sun Microsystem, in their inifinite wisdom, decided that it would be "better" to
-have dual numbering conventions.  Java 1.8 == Java 8.0.
+... then you *already have* the latest version of Java installed, you can skip to [installing IntelliJ](#step-2--install-intellij-idea-community-edition).
 
-Congratulations, you've ensured you have the proper version of Java, itself, installed!
+#### Installing JDK 8 on Windows
 
-### Step 2 — Install IntelliJ IDEA Community Edition
+1. Go to [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and select the "**Java Platform (JDK)**" download.
+-  At the top of the list of downloads, select "**Accept License Agreement**".
+-  Select the "**Window x86**" download (unless you know for certain you're using 64-bit Windows, then feel free to grab the "Windows x64" version).
+-  Run the installer, using all the defaults.
 
-Download, install and configure IntelliJ with the JDK you have installed:
+### Step 2 — Install IntelliJ IDEA (Community Edition)
 
-1. Download [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) and
-run the installer; accept all the defaults.
+#### Download and Install IntelliJ
 
-2. Run IntelliJ (`/Applications/IntelliJ IDEA 14 CE.app`)
-    * The first time you do, IntelliJ walks you through some initial setup.  We recommend
-      selecting a UI Theme and then just clicking "Skip All and Set Defaults".
+1. Download [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
+-  Run the installer; accept all the defaults.
 
-3. In the "Welcome to IntelliJ IDEA" window, open the "Configure" pull-down and select
-   "Project Defaults", then "Project Structure".
+#### Configure IntelliJ to Use JDK 8
 
-6. In the "Default Project Structure" dialog, find the "Project SDK:" section in the right panel.
-   Click the "New..." button and select "JDK".
+1. Run IntelliJ (**Start** -> **All Programs** -> **JetBrains** -> **IntelliJ IDEA Community Edition**).
+    * The first time you do, IntelliJ walks you through some initial setup.  We recommend selecting a UI Theme and then just clicking "Skip All and Set Defaults".
+- In the "Welcome to IntelliJ IDEA" window, open the "**Configure**" pull-down and select "**Project Defaults**", then "**Project Structure**".
+- In the "Default Project Structure" dialog, find the "Project SDK:" section in the right panel.  Click the "**New...**" button and select "**JDK**".
+- In the "Select Home Directory for JDK" file open dialog, verify that path is set to "`C:\Program Files\Java\jdk1.8...`".  **Be sure to select the JDK, not the JRE.**  Click "**OK**".
+- Click "**OK**" again to get back to the "Welcome to IntelliJ IDEA" window.
 
-5. In the "Select Home Directory for JDK" file open dialog, navigate to
-   `/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home`. Click "OK".
+You now are ready to get started with the Java track of Exercism!
 
-6. Back in the "Default Project Structure" dialog, in the "Project language level:" section,
-   select "8 - Lambdas, type annotations etc.".  Click "OK".
+For help with working on an exercise in IntelliJ, click on "[Running the Tests](http://exercism.io/languages/java/tests)".
 
-## How work with Exercism using Eclipse
+----
 
-This section is about Eclipse, and it is assumed that you already have
-Java development kit for your computing environment installed. If that
-is not the case, see the instructions above.
+## On OS X
 
-Additionally, this is not a guide about how to use Eclipse. Please, consult
-your favorite search engine for that because there are plenty of tutorials
-already available.
+* [Step 1 — Ensure JDK 8 is installed](#step-1--ensure-jdk-8-is-installed-1)
+* [Step 2 — Install IntelliJ IDEA (Community Edition)](#step-2--install-intellij-idea-community-edition-1)
 
-Once you've got Eclipse installed and running, there are at least two ways
-to get exercism tasks into Eclipse: letting gradle build Eclipse workspace
-for you and using Buildship Gradle plugin for Eclipse. 
+### Step 1 — Ensure JDK 8 is installed
 
-Firstly, a simpler way of doing things.
+First, determine if the JDK 8 is installed on your computer.
 
-1. Fetch an exercise: `exercism fetch java <exercise>`
-   (see [the list of available exercises](http://exercism.io/languages/java)).
+In a Terminal window (launch the "Terminal" app)...
 
-2. Change to the directory containing the exercise: `cd ~/exercism/java/
-   <exercise>` (by default things will end up in `~/exercism`).
+```bash
+$ java -version
+```
 
-3. Let Gradle prepare things for Eclipse: `gradle eclipse`.
+If you see...
 
-4. Start Eclipse.
+![To use the "java," command-line tool you need to install a JDK.  Click "More Info..." to visit the Java Developer Kit download website.](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--install-java-dialog.png)
 
-5. From the "File" menu select "Import".
+... or if you see a version number less than 1.8 ...
 
-6. Select "Existing Projects Into Workspace" as import source.
+```bash
+java version "1.6.0_65"
+Java(TM) SE Runtime Environment (build 1.6.0_65-b14-462-11M4609)
+Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-462, mixed mode)
+```
 
-7. Browse the directory containing the exercise fetched during the
-   step 1 to a text field labeled "Select root directory".
+then you need to [install JDK 8](#installing-jdk-8-on-os-x).
 
-8. Hit the button labeled "Finish".
+HOWEVER, if you see something like this *(the exact version number is not important, just that it is 1.8 or later)*.
 
-Secondly, a slightly more complex and more "Eclipseish" way. This is
-for those who absolutely despise doing anything away from Eclipse.
+```bash
+java version "1.8.0_45"
+Java(TM) SE Runtime Environment (build 1.8.0_45-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
+```
 
-1. Install the Buildship Gradle Integration plugin from Eclipse
-   Marketplace (accessible from Help-menu, under Eclipse Marketplace).
+... then you *already have* the latest version of Java installed, you can skip to [installing IntelliJ](#step-2--install-intellij-idea-community-edition-1)
 
-   ![Eclipse Help Menu](/docs/img/eclipse-help-dropdown.png)
+#### Installing JDK 8 on OS X
 
-   To find the Buildship Gradle Plugin, search for "Buildship Gradle".
+1. Either click the "More info..." button -or- go to [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and select the "**Java Platform (JDK)**" download.
+-  Find the latest version of the "Java SE Development Kit".
+-  At the top of the list of downloads, select "**Accept License Agreement**".
+-  select the "**Mac OS X**" download.
+-  Run the installer, using all the defaults.
 
-   ![Buildship Gradle Plugin](/docs/img/eclipse-mp-search-buildship-gradle.png)
+### Step 2 — Install IntelliJ IDEA (Community Edition)
 
-   In case you've been reading about the Gradle STS plugin, note that
-   the Buildship Gradle Integration plugin replaces the Gradle STS plugin
-   which is no longer maintained.
+#### Download and Install IntelliJ
 
-   Start (or restart) Eclipse after the plugin has been installed.
+1. Download [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
+-  Run the installer; accept all the defaults.
 
-2. Fetch an exercise: `exercism fetch java <exercise>`
-   (see [the list of available exercises](http://exercism.io/languages/java)).
+#### Configure IntelliJ to Use JDK 8
 
-3. From the "File" menu select "Import".
+1. Launch IntelliJ (in the Dock, click on Launchpad and find "IntelliJ IDEA CE")
+    * The first time you do, IntelliJ walks you through some initial setup.  We recommend selecting a UI Theme and then just clicking "Skip All and Set Defaults".
+- In the "Welcome to IntelliJ IDEA" window, open the "**Configure**" pull-down and select "**Project Defaults**", then "**Project Structure**".
+- In the "Default Project Structure" dialog, find the "Project SDK:" section in the right panel.  Click the "**New...**" button and select "**JDK**".
+- In the "Select Home Directory for JDK" file open dialog, verify that the path is: `/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home`. Click "**OK**".
+- Click "**OK**" again to get back to the "Welcome to IntelliJ IDEA" window.
 
-5. Select "Gradle" > "Gradle Project" as your import source.
+You now are ready to get started with the Java track of Exercism!
 
-6. Browse to the directory containing the exercise fetched during
-   the step 1 to a text field labeled "Project root directory".
+For help with working on an exercise in IntelliJ, click on "[Running the Tests](http://exercism.io/languages/java/tests)".
 
-7. Hit the button labeled "Finish".
+----
 
-It seems that the simple way of doing things is, as usual, the better
-way of doing things. The only caveat is that you have to run `gradle eclipse`
-every time you change something affecting Eclipse.
+# Command-Line Development Setup
 
-For most exercises there is no need to ever touch build.gradle or anything
-else besides the source files; so, there is no need to constantly run
-`gradle eclipse`.
+Developing Java on the command-line requires:
+
+* the Java Development Kit (JDK) — which includes both a Java Runtime *and* development tools (most notably, the Java compiler).
+* a text editor — presumably, if you are comfortable with the command-line, you have a favorite text editor; use that.
+* Gradle — a Java-oriented make and dependency management tool.  While technically optional, using a build tool like Gradle makes it significantly easier to compile your Java code, download any needed libraries (and included them in your compilation and execution classpath), and execute the tests for each exercise.
+
+We'll manage this install using Homebrew, a popular OS X package manager.
+
+## Installing
+
+1. Ensure [Homebrew](http://brew.sh/) is installed.
+-  Tap the [Homebrew Cask](https://caskroom.github.io/) — this allows us to install pre-built binaries like the JDK.
+-  Install the JDK:
+
+   ```
+   $ brew cask install java
+   ```
+-  Install Gradle:
+
+   ```
+   $ brew install gradle
+   ```
+
+*Tip: this [Stackoverflow answer](https://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/29195815#29195815) provides an in-depth treatment of managing Java versions on OS X.*
+
+You now are ready to get started with the Java track of Exercism!
+
+For help with working on an exercise in IntelliJ, click on "[Running the Tests](http://exercism.io/languages/java/tests)".
+
+----
+
+# Java IDEs
+
+There are many Java IDEs available.  The three most popular are:
+
+* Eclipse (from IBM)
+- NetBeans (from Oracle)
+- IntelliJ IDEA (from JetBrains)
+
+and there are [others](https://en.wikibooks.org/wiki/Java_Programming/Java_IDEs).
+
+## Installing Eclipse
+
+1. Install the JDK, as described above ([Windows](#step-1--ensure-jdk-8-is-installed) or [OS X](#step-1--ensure-jdk-8-is-installed-1)).
+-  Download and install Eclipse from the [download page](https://eclipse.org/downloads/).
+-  Install the [Gradle Eclipse plugin](http://www.vogella.com/tutorials/EclipseGradle/article.html).
+
+## Installing NetBeans
+
+Unlike other IDEs, NetBeans comes bundled *with* the JDK.
+
+1. Download and install NetBeans (and the JDK) from the [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+-  Install and configure the [Gradle NetBeans plugin](http://plugins.netbeans.org/plugin/44510/gradle-support).
+
 
