@@ -1,91 +1,110 @@
-## Windows
+# Running the Tests
 
-1) In the Command Prompt window, get the first exercise...
+Choose your operating system:
 
-```
-C:\Users\johndoe> exercism fetch java
+* [Windows](#windows)
+* [Mac OS X](#mac-os-x)
+* [Linux](#linux)
 
-New:
-java (Etl)      C:\Users\johndoe\exercism\java\etl
+----
 
-unchanged: 0, updated: 0, new: 1
-```
+# Windows
 
-2) In the "Welcome to IntelliJ IDEA" window, click the "Open" option.
+1. Open a Command Prompt.
+-  Get the first exercise:
 
-3) Navigate to the "C:\Users\johndoe\exercism\java\etl" folder.  Make sure you've selected the "etl" folder. Click "OK".
+   ```batchfile
+   C:\Users\JohnDoe>exercism fetch java
+   ﻿
+   Not Submitted:     1 problem
+   java (Hello World) C:\Users\JohnDoe\exercism\java\hello-world
+   
+   New:               1 problem
+   java (Hello World) C:\Users\JohnDoe\exercism\java\hello-world
+   
+   unchanged: 0, updated: 0, new: 1
+   
+   ```
+-  Change directory into the exercism:
 
-4) In the "Import Project from Gradle" dialog, check the "auto-import" and "create directories" checkboxes and select "Use customizable gradle wrapper".
+   ```batchfile
+   C:\Users\JohnDoe>cd C:\Users\JohnDoe\exercism\java\hello-world
+   ```
+   
+-  Run the tests:
 
-```
-Gradle project:    [C:\Users\johndoe\exercism\java\etl\build.gradle   ](...)
+   ```batchfile
+   C:\Users\JohnDoe>gradle test
+   ```
+   *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
+- Solve the exercise.  Find and work through the `GETTING_STARTED.md` guide ([view on GitHub](https://github.com/exercism/xjava/blob/master/exercises/hello-world/GETTING_STARTED.md)).
 
-[X] Use auto-import
-[X] Create directories for empty content roots automatically
 
-( ) Use default gradle wrapper (not configured for the current project)
-(o) Use customizable gradle wrapper
-( ) Use local gradle distribution
+Good luck!  Have fun!
 
-...
-```
+If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
 
-5) Click "OK".  IntelliJ will automatically create its project artifacts based on the Gradle project file.
+----
 
-* After the project has loaded and you've dismissed the "Tip of the Day" dialog, you may see a notice (in the top-right-hand corner), saying, "Unindex remote maven repositories found." you can safely dismiss this notice.
+# Mac OS X
 
-6) Open the `README.md` file and carefully read the background for the assignment.
+1. In the terminal window, get the first exercise:
 
-7) Start by running the test suite: In the "Project" view, right-click on the test file (`etl\src\test\java\EtlTest`), select "Run", then pick the "EtlTest" that has a JUnit icon to the left of it (red and green arrows), NOT the Gradle icon (circular green).
+   ```
+   $ exercism fetch java
 
-* When you first start an exercise, you should expect compilation errors because the test is setting expectations on a class that you need to write.  By trying to run the tests, you get a nice list of what needs to be fixed in the "Messages Make" view.
+   New:                 1 problem
+   Java (Etl) /Users/johndoe/exercism/java/hello-world
 
-... and away you go!!!
+   unchanged: 0, updated: 0, new: 1
 
-## Mac OS X
+  ```
+- Change directory into the exercise:
 
-### Get started with the first exercise
+   ```
+   $ cd /Users/johndoe/exercism/java/hello-world
+   ```
+- Run the tests:
 
-1. In the terminal window, get the first exercise...
+  ```
+  $ gradle test
+  ```
+   *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
+- Solve the exercise.  Find and work through the `GETTING_STARTED.md` guide ([view on GitHub](https://github.com/exercism/xjava/blob/master/exercises/hello-world/GETTING_STARTED.md)).
 
-        $ exercism fetch java
+Good luck!  Have fun!
 
-        Not Submitted:       1 problem
-        Java (Etl) /Users/johndoe/exercism/java/etl
+If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
 
-        New:                 1 problem
-        Java (Etl) /Users/johndoe/exercism/java/etl
+----
 
-        unchanged: 0, updated: 0, new: 1
+# Linux
 
-2. In the "Welcome to IntelliJ IDEA" window, click the "Open" option.
+1. In the terminal window, get the first exercise:
 
-3. Navigate to the `/Users/johndoe/exercism/java/etl` folder.  Make sure you've selected the
-   "etl" folder. Click "OK".
+   ```
+   $ exercism fetch java
 
-4. In the "Import Project from Gradle" dialog, check the "auto-import" and "create directories"
-   checkboxes and select "Use customizable gradle wrapper".
+   New:                 1 problem
+   Java (Etl) /home/johndoe/exercism/java/hello-world
 
-    ![IntelliJ 14 CE -- Gradle import dialog](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--idea-ce-gradle-import-dialog.png)
+   unchanged: 0, updated: 0, new: 1
 
-5. Click "OK".  IntelliJ will automatically create its project artifacts based on the Gradle project file.
+  ```
+- Change directory into the exercise:
 
- * After the project has loaded and you've dismissed the "Tip of the Day" dialog, you may see a
-   notice (in the top-right-hand corner), saying, "Unindex remote maven repositories found." you can
-   safely dismiss this notice.
+   ```
+   $ cd /home/johndoe/exercism/java/hello-world
+   ```
+- Run the tests:
 
-6. Open the `README.md` file and carefully read the background for the assignment.
+  ```
+  $ gradle test
+  ```
+   *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
+- Solve the exercise.  Find and work through the `GETTING_STARTED.md` guide ([view on GitHub](https://github.com/exercism/xjava/blob/master/exercises/hello-world/GETTING_STARTED.md)).
 
-7. Start by running the test suite: In the "Project" view, right-click on the test file
-   (`etl\src\test\java\EtlTest`), select "Run", then pick the "EtlTest" that has a JUnit icon to the
-   left of it (red and green arrows), NOT the Gradle icon (circular green).
-   ![Run tests through IDEA JUnit Runner, NOT Gradle](http://x.exercism.io/v3/tracks/java/docs/img/mac-osx--idea-ce-run-unit-tests.png)
+Good luck!  Have fun!
 
- * If these menu options don't appear at first, wait for a few seconds and try again; IntelliJ is still
-   configuring the project with a Java nature.
+If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
 
- * When you first start an exercise, you should expect compilation errors because the test is
-   setting expectations on a class that you need to write.  By trying to run the tests, you get a
-   nice list of what needs to be fixed in the "Messages Make" view.
-
-... and away you go!!!
