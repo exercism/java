@@ -1,7 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import io.exercism.xjava.NotReady;
-import org.junit.experimental.categories.Category;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -18,14 +16,12 @@ public class SchoolTest {
   }
 
   @Test
-  @Category(NotReady.class)
   public void addsStudents() {
     school.add("Aimee", 2);
     assertThat(school.db().get(2)).contains("Aimee");
   }
 
   @Test
-  @Category(NotReady.class)
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
     school.add("James", grade);
@@ -36,7 +32,6 @@ public class SchoolTest {
   }
 
   @Test
-  @Category(NotReady.class)
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
     school.add("Logan", 7);
@@ -47,7 +42,6 @@ public class SchoolTest {
   }
 
   @Test
-  @Category(NotReady.class)
   public void getsStudentsInAGrade() {
     school.add("Franklin", 5);
     school.add("Bradley", 5);
@@ -56,13 +50,11 @@ public class SchoolTest {
   }
 
   @Test
-  @Category(NotReady.class)
   public void getsStudentsInEmptyGrade() {
     assertThat(school.grade(1)).isEmpty();
   }
 
   @Test
-  @Category(NotReady.class)
   public void sortsSchool() {
     school.add("Jennifer", 4);
     school.add("Kareem", 6);
