@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,6 +7,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class SieveTest {
+
 
     @Test
     public void findFirstPrime() {
@@ -15,6 +17,7 @@ public class SieveTest {
         assertEquals(expectedOutput, sieve.getPrimes());
     }
 
+    @Ignore
     @Test
     public void findPrimesUpTo10() {
         Sieve sieve = new Sieve(10);
@@ -23,6 +26,7 @@ public class SieveTest {
         assertEquals(expectedOutput, sieve.getPrimes());
     }
 
+    @Ignore
     @Test
     public void findPrimesUpTo1000() {
         Sieve sieve = new Sieve(1000);

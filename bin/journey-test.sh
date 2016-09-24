@@ -3,6 +3,9 @@ SCRIPTPATH=$( pushd `dirname $0` > /dev/null && pwd && popd > /dev/null )
 EXECPATH=$PWD
 XAPI_PID=""
 
+# Makes CI output easier to read
+TERM=dumb
+
 function on_exit() {
   echo ">>> on_exit()"
   if [ "$XAPI_PID" != "" ] ; then
@@ -177,6 +180,7 @@ solve_all_exercises() {
   local EXERCISES=`cat config.json | jq '.problems []' --raw-output`
   local TOTAL_EXERCISES=`cat config.json | jq '.problems | length'`
   local CURRENT_EXERCISE_NUMBER=1
+  local TEMPFILE="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
 
   pushd ${EXERCISM_HOME} >/dev/null
   for EXERCISE in $EXERCISES; do
@@ -186,6 +190,9 @@ solve_all_exercises() {
     $EXERCISM fetch java $EXERCISE
     cp -R -H $REPO_ROOT/exercises/$EXERCISE/src/example/java/* $EXERCISM_HOME/java/$EXERCISE/src/main/java/
     pushd $EXERCISM_HOME/java/$EXERCISE/ >/dev/null
+    for TESTFILE in `find . -name "*Test.java"`; do
+      sed 's/@Ignore//' $TESTFILE > "$TEMPFILE" && mv "$TEMPFILE" "$TESTFILE"
+    done
     gradle test
     popd >/dev/null
 

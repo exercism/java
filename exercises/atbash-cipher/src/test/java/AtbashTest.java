@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -35,7 +36,8 @@ public class AtbashTest {
             this.expectedOutput = expectedOutput;
         }
 
-        @Test
+
+    @Test
         public void test() {
             assertEquals(expectedOutput, Atbash.encode(input));
         }
@@ -60,7 +62,8 @@ public class AtbashTest {
             this.expectedOutput = expectedOutput;
         }
 
-        @Test
+        @Ignore
+    @Test
         public void test() {
             assertEquals(expectedOutput, Atbash.decode(input));
         }

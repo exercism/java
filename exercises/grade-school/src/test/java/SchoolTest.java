@@ -1,6 +1,7 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,18 +11,21 @@ import java.util.Map;
 public class SchoolTest {
   private final School school = new School();
 
-  @Test
+
+    @Test
   public void startsWithNoStudents() {
     assertThat(school.db()).isEmpty();
   }
 
-  @Test
+  @Ignore
+    @Test
   public void addsStudents() {
     school.add("Aimee", 2);
     assertThat(school.db().get(2)).contains("Aimee");
   }
 
-  @Test
+  @Ignore
+    @Test
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
     school.add("James", grade);
@@ -31,7 +35,8 @@ public class SchoolTest {
     assertThat(school.db().get(grade)).hasSize(3).contains("James", "Blair", "Paul");
   }
 
-  @Test
+  @Ignore
+    @Test
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
     school.add("Logan", 7);
@@ -41,7 +46,8 @@ public class SchoolTest {
     assertThat(school.db().get(7)).hasSize(1).contains("Logan");
   }
 
-  @Test
+  @Ignore
+    @Test
   public void getsStudentsInAGrade() {
     school.add("Franklin", 5);
     school.add("Bradley", 5);
@@ -49,12 +55,14 @@ public class SchoolTest {
     assertThat(school.grade(5)).hasSize(2).contains("Franklin", "Bradley");
   }
 
-  @Test
+  @Ignore
+    @Test
   public void getsStudentsInEmptyGrade() {
     assertThat(school.grade(1)).isEmpty();
   }
 
-  @Test
+  @Ignore
+    @Test
   public void sortsSchool() {
     school.add("Jennifer", 4);
     school.add("Kareem", 6);

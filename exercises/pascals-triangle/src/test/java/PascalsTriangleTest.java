@@ -1,9 +1,11 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class PascalsTriangleTest {
+
 
     @Test
     public void testTriangleWithFourRows() {
@@ -17,6 +19,7 @@ public class PascalsTriangleTest {
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(4));
     }
 
+    @Ignore
     @Test
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
@@ -31,6 +34,7 @@ public class PascalsTriangleTest {
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(6));
     }
 
+    @Ignore
     @Test
     public void testExpectEmptyTriangle() {
         int[][] expectedOutput = new int[][]{
@@ -40,6 +44,7 @@ public class PascalsTriangleTest {
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(0));
     }
 
+    @Ignore
     @Test
     public void testValidInput() {
         int[][] input = new int[][]{
@@ -53,6 +58,7 @@ public class PascalsTriangleTest {
         assertEquals(true, PascalsTriangle.isTriangle(input));
     }
 
+    @Ignore
     @Test
     public void testInvalidInput() {
         int[][] input = new int[][]{
@@ -65,6 +71,7 @@ public class PascalsTriangleTest {
         assertEquals(false, PascalsTriangle.isTriangle(input));
     }
 
+    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void testValidatesNotNegativeRows() {
         PascalsTriangle.computeTriangle(-1);

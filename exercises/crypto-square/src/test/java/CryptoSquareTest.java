@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,6 +7,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class CryptoSquareTest {
+
 
     @Test
     public void strangeCharactersAreStrippedDuringNormalization() {
@@ -15,6 +17,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getNormalizedPlaintext());
     }
 
+    @Ignore
     @Test
     public void lettersAreLowerCasedDuringNormalization() {
         Crypto crypto = new Crypto("WHOA HEY!");
@@ -23,6 +26,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getNormalizedPlaintext());
     }
 
+    @Ignore
     @Test
     public void numbersAreKeptDuringNormalization() {
         Crypto crypto = new Crypto("1, 2, 3, GO!");
@@ -31,6 +35,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getNormalizedPlaintext());
     }
 
+    @Ignore
     @Test
     public void smallestSquareSizeIs2() {
         Crypto crypto = new Crypto("1234");
@@ -39,6 +44,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getSquareSize());
     }
 
+    @Ignore
     @Test
     public void sizeOfTextWhoseLengthIsPerfectSquareIsItsSquareRoot() {
         Crypto crypto = new Crypto("123456789");
@@ -47,6 +53,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getSquareSize());
     }
 
+    @Ignore
     @Test
     public void sizeOfTextWhoseLengthIsNoPerfectSquareIsNextBiggestSquareRoot() {
         Crypto crypto = new Crypto("123456789abc");
@@ -55,6 +62,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getSquareSize());
     }
 
+    @Ignore
     @Test
     public void sizeIsDeterminedByNormalizedText() {
         Crypto crypto = new Crypto("Oh hey, this is nuts!");
@@ -63,6 +71,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getSquareSize());
     }
 
+    @Ignore
     @Test
     public void segmentsAreSplitBySquareSize() {
         Crypto crypto = new Crypto("Never vex thine heart with idle woes");
@@ -71,6 +80,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getPlaintextSegments());
     }
 
+    @Ignore
     @Test
     public void segmentsAreSplitBySquareSizeUntilTextRunsOut() {
         Crypto crypto = new Crypto("ZOMG! ZOMBIES!!!");
@@ -79,6 +89,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getPlaintextSegments());
     }
 
+    @Ignore
     @Test
     public void cipherTextCombinesTextByColumn() {
         Crypto crypto = new Crypto("First, solve the problem. Then, write the code.");
@@ -87,6 +98,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getCipherText());
     }
 
+    @Ignore
     @Test
     public void cipherTextSkipsCellsWithNoText() {
         Crypto crypto = new Crypto("Time is an illusion. Lunchtime doubly so.");
@@ -95,6 +107,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getCipherText());
     }
 
+    @Ignore
     @Test
     public void normalizedCipherTextIsSplitByHeightOfSquare() {
         Crypto crypto = new Crypto("Vampires are people too!");
@@ -103,6 +116,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getNormalizedCipherText());
     }
 
+    @Ignore
     @Test
     public void normalizedCipherNotExactlyDivisibleBy5SpillsIntoSmallerSegment() {
         Crypto crypto = new Crypto("Madness, and then illumination.");
@@ -111,6 +125,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getNormalizedCipherText());
     }
 
+    @Ignore
     @Test
     public void normalizedCipherIsSplitIntoSegmentsOfCorrectSize() {
         Crypto crypto = new Crypto("If man was meant to stay on the ground god would have given us roots");
@@ -119,6 +134,7 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, crypto.getNormalizedCipherText());
     }
 
+    @Ignore
     @Test
     public void normalizedCipherTextIsSplitIntoSegmentsOfCorrectSizeWithPunctuation() {
         Crypto crypto = new Crypto("Have a nice day. Feed the dog & chill out!");

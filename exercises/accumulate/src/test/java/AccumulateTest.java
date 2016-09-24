@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -8,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class AccumulateTest {
 
+
     @Test
     public void emptyAccumulateProducesEmptyAccumulation() {
         List<Integer> input = new LinkedList<>();
@@ -15,6 +17,7 @@ public class AccumulateTest {
         assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x * x));
     }
 
+    @Ignore
     @Test
     public void accumulateSquares() {
         List<Integer> input = Arrays.asList(1, 2, 3);
@@ -22,6 +25,7 @@ public class AccumulateTest {
         assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x * x));
     }
 
+    @Ignore
     @Test
     public void accumulateUpperCases() {
         List<String> input = Arrays.asList("hello", "world");
@@ -29,6 +33,7 @@ public class AccumulateTest {
         assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x.toUpperCase()));
     }
 
+    @Ignore
     @Test
     public void accumulateReversedStrings() {
         List<String> input = Arrays.asList("the quick brown fox etc".split(" "));
@@ -40,6 +45,7 @@ public class AccumulateTest {
         return new StringBuilder(input).reverse().toString();
     }
 
+    @Ignore
     @Test
     public void accumulateWithinAccumulate() {
         List<String> input1 = Arrays.asList("a", "b", "c");

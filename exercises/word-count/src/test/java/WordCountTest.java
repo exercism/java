@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.lang.Integer;
 import java.lang.String;
@@ -10,6 +11,7 @@ import static org.junit.Assert.*;
 public class WordCountTest {
 
     private final WordCount wordCount = new WordCount();
+
 
     @Test
     public void countOneWord() {
@@ -23,6 +25,7 @@ public class WordCountTest {
         );
     }
 
+    @Ignore
     @Test
     public void countOneOfEach() {
         Map<String, Integer> actualWordCount = new HashMap<String, Integer>();
@@ -37,6 +40,7 @@ public class WordCountTest {
         );
     }
 
+    @Ignore
     @Test
     public void countMultipleOccurences() {
         Map<String, Integer> actualWordCount = new HashMap<String, Integer>();
@@ -53,6 +57,7 @@ public class WordCountTest {
         );
     }
 
+    @Ignore
     @Test
     public void ignorePunctuation() {
         Map<String, Integer> actualWordCount = new HashMap<String, Integer>();
@@ -70,6 +75,7 @@ public class WordCountTest {
 
     }
 
+    @Ignore
     @Test
     public void includeNumbers() {
         Map<String, Integer> actualWordCount = new HashMap<String, Integer>();
@@ -84,6 +90,7 @@ public class WordCountTest {
         );
     }
 
+    @Ignore
     @Test
     public void normalizeCase() {
         Map<String, Integer> actualWordCount = new HashMap<String, Integer>();

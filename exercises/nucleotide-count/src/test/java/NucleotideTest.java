@@ -2,15 +2,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 public class NucleotideTest {
-  @Test
+
+    @Test
   public void testEmptyDnaStringHasNoAdenosine() {
     DNA dna = new DNA("");
     assertThat(dna.count('A')).isEqualTo(0);
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testEmptyDnaStringHasNoNucleotides() {
     DNA dna = new DNA("");
     assertThat(dna.nucleotideCounts()).hasSize(4).contains(
@@ -21,13 +24,15 @@ public class NucleotideTest {
     );
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testRepetitiveCytidineGetsCounted() {
     DNA dna = new DNA("CCCCC");
     assertThat(dna.count('C')).isEqualTo(5);
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testRepetitiveSequenceWithOnlyGuanosine() {
     DNA dna = new DNA("GGGGGGGG");
     assertThat(dna.nucleotideCounts()).hasSize(4).contains(
@@ -38,20 +43,23 @@ public class NucleotideTest {
     );
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testCountsOnlyThymidine() {
     DNA dna = new DNA("GGGGGTAACCCGG");
     assertThat(dna.count('T')).isEqualTo(1);
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testCountsANucleotideOnlyOnce() {
     DNA dna = new DNA("CGATTGGG");
     dna.count('T');
     assertThat(dna.count('T')).isEqualTo(2);
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
     DNA dna = new DNA("GATTACA");
     dna.count('A');
@@ -63,13 +71,15 @@ public class NucleotideTest {
     );
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Ignore
+    @Test(expected = IllegalArgumentException.class)
   public void testValidatesNucleotides() {
     DNA dna = new DNA("GACT");
     dna.count('X');
   }
 
-  @Test
+  @Ignore
+    @Test
   public void testCountsAllNucleotides() {
     String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
     DNA dna = new DNA(s);

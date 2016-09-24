@@ -33,7 +33,7 @@ subprojects { project ->
     from "src/test/java"
     into "build/gen/test/java"
     filter { line ->
-      line.contains("@Ignore") ? null : line
+      line.contains("@Ignore") ? "" : line
     }
   }
 
