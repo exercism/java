@@ -12,20 +12,20 @@ public class SchoolTest {
   private final School school = new School();
 
 
-    @Test
+  @Test
   public void startsWithNoStudents() {
     assertThat(school.db()).isEmpty();
   }
 
   @Ignore
-    @Test
+  @Test
   public void addsStudents() {
     school.add("Aimee", 2);
     assertThat(school.db().get(2)).contains("Aimee");
   }
 
   @Ignore
-    @Test
+  @Test
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
     school.add("James", grade);
@@ -36,7 +36,7 @@ public class SchoolTest {
   }
 
   @Ignore
-    @Test
+  @Test
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
     school.add("Logan", 7);
@@ -47,7 +47,7 @@ public class SchoolTest {
   }
 
   @Ignore
-    @Test
+  @Test
   public void getsStudentsInAGrade() {
     school.add("Franklin", 5);
     school.add("Bradley", 5);
@@ -56,13 +56,13 @@ public class SchoolTest {
   }
 
   @Ignore
-    @Test
+  @Test
   public void getsStudentsInEmptyGrade() {
     assertThat(school.grade(1)).isEmpty();
   }
 
   @Ignore
-    @Test
+  @Test
   public void sortsSchool() {
     school.add("Jennifer", 4);
     school.add("Kareem", 6);
