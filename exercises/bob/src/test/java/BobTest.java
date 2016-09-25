@@ -1,9 +1,11 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import static org.junit.Assert.*;
 
 public class BobTest {
     private final Bob bob = new Bob();
+
 
     @Test
     public void saySomething() {
@@ -13,6 +15,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void shouting() {
         assertEquals(
@@ -21,6 +24,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void askingAQuestion() {
         assertEquals(
@@ -29,6 +33,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void askingANumericQuestion() {
         assertEquals(
@@ -37,6 +42,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void talkingForcefully() {
         assertEquals(
@@ -45,6 +51,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void usingAcronymsInRegularSpeech() {
         assertEquals(
@@ -52,6 +59,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void forcefulQuestions() {
         assertEquals(
@@ -59,6 +67,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void shoutingNumbers() {
         assertEquals(
@@ -66,6 +75,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void onlyNumbers() {
         assertEquals(
@@ -73,6 +83,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void questionWithOnlyNumbers() {
         assertEquals(
@@ -80,6 +91,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void shoutingWithSpecialCharacters() {
         assertEquals(
@@ -87,6 +99,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void shoutingWithUmlauts() {
         assertEquals(
@@ -94,6 +107,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void calmlySpeakingWithUmlauts() {
         assertEquals(
@@ -101,6 +115,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
@@ -108,6 +123,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void statementContainingQuestionMark() {
         assertEquals(
@@ -115,6 +131,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void prattlingOn() {
         assertEquals(
@@ -122,6 +139,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void silence() {
         assertEquals(
@@ -129,6 +147,7 @@ public class BobTest {
         );
     }
 
+    @Ignore
     @Test
     public void prolongedSilence() {
         assertEquals(

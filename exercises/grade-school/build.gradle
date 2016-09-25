@@ -10,4 +10,9 @@ dependencies {
   testCompile "junit:junit:4.10"
   testCompile "org.assertj:assertj-core:3.2.0"
 }
-
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}

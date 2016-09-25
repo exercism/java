@@ -1,5 +1,6 @@
 import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EtlTest {
     private final Etl etl = new Etl();
 
+
     @Test
     public void testTransformOneValue() {
         Map<Integer, List<String>> old = ImmutableMap.of(1, Arrays.asList("A"));
@@ -18,6 +20,7 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
+    @Ignore
     @Test
     public void testTransformMoreValues() {
         Map<Integer, List<String>> old = ImmutableMap.of(
@@ -34,6 +37,7 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
+    @Ignore
     @Test
     public void testMoreKeys() {
         Map<Integer, List<String>> old = ImmutableMap.of(
@@ -50,6 +54,7 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
+    @Ignore
     @Test
     public void testFullDataset() {
         Map<Integer, List<String>> old = ImmutableMap.<Integer, List<String>>builder().

@@ -3,8 +3,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
+import org.junit.Ignore;
 
 public class AnagramTest {
+
 
     @Test
     public void testNoMatches() {
@@ -12,6 +14,7 @@ public class AnagramTest {
         assertThat(detector.match(Arrays.asList("hello", "world", "zombies", "pants"))).isEmpty();
     }
 
+    @Ignore
     @Test
     public void testSimpleAnagram() {
         Anagram detector = new Anagram("ant");
@@ -19,6 +22,7 @@ public class AnagramTest {
         assertThat(anagram).containsExactly("tan");
     }
 
+    @Ignore
     @Test
     public void testDetectMultipleAnagrams() {
         Anagram detector = new Anagram("master");
@@ -26,6 +30,7 @@ public class AnagramTest {
         assertThat(anagrams).contains("maters", "stream");
     }
 
+    @Ignore
     @Test
     public void testDoesNotConfuseDifferentDuplicates() {
         Anagram detector = new Anagram("galea");
@@ -33,6 +38,7 @@ public class AnagramTest {
         assertThat(anagrams).isEmpty();
     }
 
+    @Ignore
     @Test
     public void testIdenticalWordIsNotAnagram() {
         Anagram detector = new Anagram("corn");
@@ -40,18 +46,21 @@ public class AnagramTest {
         assertThat(anagrams).containsExactly("cron");
     }
 
+    @Ignore
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertThat(detector.match(Arrays.asList("last")).isEmpty());
     }
 
+    @Ignore
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
         assertThat(detector.match(Arrays.asList("dog", "goody"))).isEmpty();
     }
 
+    @Ignore
     @Test
     public void testDetectAnagrams() {
         Anagram detector = new Anagram("listen");
@@ -59,6 +68,7 @@ public class AnagramTest {
         assertThat(anagrams).contains("inlets");
     }
 
+    @Ignore
     @Test
     public void testMultipleAnagrams() {
         Anagram detector = new Anagram("allergy");
@@ -66,6 +76,7 @@ public class AnagramTest {
         assertThat(anagrams).contains("gallery", "largely", "regally");
     }
 
+    @Ignore
     @Test
     public void testAnagramsAreCaseInsensitive() {
         Anagram detector = new Anagram("Orchestra");

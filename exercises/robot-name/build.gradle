@@ -10,3 +10,9 @@ dependencies {
   testCompile "junit:junit:4.10"
 }
 
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}

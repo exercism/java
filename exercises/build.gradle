@@ -18,5 +18,24 @@ subprojects { project ->
     project["compileStarterSourceJava"].doFirst { compileTask ->
       println "  (source = " + compileTask.source.asPath + ")"
     }
+
+    // In lieu of being able to disable @Ignore in JUnit tests, we filter
+    // those annotations, placing the edited tests in the path named here.
+    test {
+      java.srcDirs = ["build/gen/test/java"]
+    }
+    project["compileTestJava"].doFirst { compileTask ->
+      println "  (source = " + compileTask.source.asPath + ")"
+    }
   }
+
+  task copyTestsFilteringIgnores(type: Copy) {
+    from "src/test/java"
+    into "build/gen/test/java"
+    filter { line ->
+      line.contains("@Ignore") ? "" : line
+    }
+  }
+
+  test.dependsOn(copyTestsFilteringIgnores)
 }

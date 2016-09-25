@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,6 +7,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class AllergiesTest {
+
 
     @Test
     public void noAllergiesMeansNotAllergicToAnything() {
@@ -17,6 +19,7 @@ public class AllergiesTest {
         assertEquals(false, allergies.isAllergicTo(Allergen.CATS));
     }
 
+    @Ignore
     @Test
     public void allergicToEggs() {
         Allergies allergies = new Allergies(1);
@@ -24,6 +27,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS));
     }
 
+    @Ignore
     @Test
     public void allergicToPeanuts() {
         Allergies allergies = new Allergies(2);
@@ -31,6 +35,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.PEANUTS));
     }
 
+    @Ignore
     @Test
     public void allergicToShellfish() {
         Allergies allergies = new Allergies(4);
@@ -38,6 +43,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.SHELLFISH));
     }
 
+    @Ignore
     @Test
     public void allergicToStrawberries() {
         Allergies allergies = new Allergies(8);
@@ -45,6 +51,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.STRAWBERRIES));
     }
 
+    @Ignore
     @Test
     public void allergicToTomatoes() {
         Allergies allergies = new Allergies(16);
@@ -52,6 +59,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.TOMATOES));
     }
 
+    @Ignore
     @Test
     public void allergicToChocolate() {
         Allergies allergies = new Allergies(32);
@@ -59,6 +67,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.CHOCOLATE));
     }
 
+    @Ignore
     @Test
     public void allergicToPollen() {
         Allergies allergies = new Allergies(64);
@@ -66,6 +75,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.POLLEN));
     }
 
+    @Ignore
     @Test
     public void allergicToCats() {
         Allergies allergies = new Allergies(128);
@@ -73,6 +83,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.CATS));
     }
 
+    @Ignore
     @Test
     public void isAllergicToEggsInAdditionToOtherStuff() {
         Allergies allergies = new Allergies(5);
@@ -80,6 +91,7 @@ public class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS));
     }
 
+    @Ignore
     @Test
     public void noAllergies() {
         Allergies allergies = new Allergies(0);
@@ -87,6 +99,7 @@ public class AllergiesTest {
         assertEquals(0, allergies.getList().size());
     }
 
+    @Ignore
     @Test
     public void isAllergicToJustEggs() {
         Allergies allergies = new Allergies(1);
@@ -95,6 +108,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void isAllergicToJustPeanuts() {
         Allergies allergies = new Allergies(2);
@@ -103,6 +117,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void isAllergicToJustStrawberries() {
         Allergies allergies = new Allergies(8);
@@ -111,6 +126,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void isAllergicToEggsAndPeanuts() {
         Allergies allergies = new Allergies(3);
@@ -122,6 +138,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void isAllergicToEggsAndShellfish() {
         Allergies allergies = new Allergies(5);
@@ -133,6 +150,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void isAllergicToLotsOfStuff() {
         Allergies allergies = new Allergies(248);
@@ -147,6 +165,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void isAllergicToEverything() {
         Allergies allergies = new Allergies(255);
@@ -164,6 +183,7 @@ public class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList());
     }
 
+    @Ignore
     @Test
     public void ignoreNonAllergenScoreParts() {
         Allergies allergies = new Allergies(509);

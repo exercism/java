@@ -11,3 +11,9 @@ dependencies {
   testCompile "org.assertj:assertj-core:3.2.0"
   testCompile "com.google.guava:guava:16+"
 }
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}

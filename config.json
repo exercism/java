@@ -246,7 +246,10 @@
   "ignored": [
     "_template",
     ".gradle",
-    "docs"
+    "build",
+    "docs",
+    "gradle",
+    "scripts"
   ],
   "foregone": [
     "leap",

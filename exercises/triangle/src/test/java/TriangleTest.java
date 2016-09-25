@@ -1,8 +1,10 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
 public class TriangleTest {
+
 
     @Test
     public void equilateralTriangleHaveEqualSides() throws Exception {
@@ -11,6 +13,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.EQUILATERAL, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void largerEquilateralTrianglesAlsoHaveEqualSides() throws Exception {
         Triangle triangle = new Triangle(10, 10, 10);
@@ -18,6 +21,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.EQUILATERAL, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void isoscelesTrianglesHaveLastTwoSidesEqual() throws Exception {
         Triangle triangle = new Triangle(3, 4, 4);
@@ -25,6 +29,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void isoscelesTrianglesHaveFirstAndLastSidesEqual() throws Exception {
         Triangle triangle = new Triangle(4, 3, 4);
@@ -32,6 +37,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void isoscelesTrianglesHaveTwoFirstSidesEqual() throws Exception {
         Triangle triangle = new Triangle(4, 4, 3);
@@ -39,6 +45,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void isoscelesTrianglesHaveInFactExactlyTwoSidesEqual() throws Exception {
         Triangle triangle = new Triangle(10, 10, 2);
@@ -46,6 +53,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void scaleneTrianglesHaveNoEqualSides() throws Exception {
         Triangle triangle = new Triangle(3, 4, 5);
@@ -53,6 +61,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.SCALENE, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void scaleneTrianglesHaveNoEqualSidesAtLargerScaleEither() throws Exception {
         Triangle triangle = new Triangle(10, 11, 12);
@@ -60,6 +69,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.SCALENE, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void scaleneTrianglesHaveNoEqualSidesInDescendingOrderEither() throws Exception {
         Triangle triangle = new Triangle(5, 4, 2);
@@ -67,6 +77,7 @@ public class TriangleTest {
         assertEquals(TriangleKind.SCALENE, triangle.getKind());
     }
 
+    @Ignore
     @Test
     public void verySmallTrianglesAreLegal() throws Exception {
         Triangle triangle = new Triangle(0.4, 0.6, 0.3);
@@ -74,26 +85,31 @@ public class TriangleTest {
         assertEquals(TriangleKind.SCALENE, triangle.getKind());
     }
 
+    @Ignore
     @Test(expected = TriangleException.class)
     public void trianglesWithNoSizeAreIllegal() throws Exception {
         new Triangle(0, 0, 0);
     }
 
+    @Ignore
     @Test(expected = TriangleException.class)
     public void trianglesWithNegativeSidesAreIllegal() throws Exception {
         new Triangle(3, 4, -5);
     }
 
+    @Ignore
     @Test(expected = TriangleException.class)
     public void trianglesViolatingTriangleInequalityAreIllegal() throws Exception {
         new Triangle(1, 1, 3);
     }
 
+    @Ignore
     @Test(expected = TriangleException.class)
     public void trianglesViolatingTriangleInequalityAreIllegal2() throws Exception {
         new Triangle(2, 4, 2);
     }
 
+    @Ignore
     @Test(expected = TriangleException.class)
     public void trianglesViolatingTriangleInequalityAreIllegal3() throws Exception {
         new Triangle(7, 3, 2);
