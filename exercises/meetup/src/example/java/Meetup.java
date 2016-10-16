@@ -1,14 +1,16 @@
-import org.joda.time.DateTime;
+import java.time.LocalDate;
+import java.time.DayOfWeek;
+
 
 public class Meetup {
-    private final DateTime startOfMonth;
+    private final LocalDate startOfMonth;
 
     public Meetup(int monthOfYear, int year) {
-        startOfMonth = new DateTime(year, monthOfYear, 1, 0, 0);
+        startOfMonth = LocalDate.of(year, monthOfYear, 1);
     }
 
-    DateTime day(int dayOfWeek, MeetupSchedule schedule) {
-        DateTime current = cycleToNext(dayOfWeek, startOfMonth);
+    LocalDate day(DayOfWeek dayOfWeek, MeetupSchedule schedule) {
+        LocalDate current = cycleToNext(dayOfWeek, startOfMonth);
         switch (schedule) {
             case FIRST:
                 break;
@@ -35,14 +37,14 @@ public class Meetup {
         return current;
     }
 
-    private DateTime cycleToPrev(int dayOfWeek, DateTime current) {
+    private LocalDate cycleToPrev(DayOfWeek dayOfWeek, LocalDate current) {
         while (current.getDayOfWeek() != dayOfWeek) {
             current = current.minusDays(1);
         }
         return current;
     }
 
-    private DateTime cycleToNext(int dayOfWeek, DateTime current) {
+    private LocalDate cycleToNext(DayOfWeek dayOfWeek, LocalDate current) {
         while (current.getDayOfWeek() != dayOfWeek) {
             current = current.plusDays(1);
         }
