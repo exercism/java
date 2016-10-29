@@ -148,6 +148,9 @@ build_trackler() {
   mkdir -p tracks/java/exercises
   cp $REPO_ROOT/config.json tracks/java
   cp -r $REPO_ROOT/exercises tracks/java
+
+  gem install bundler
+  bundle install
   gem build trackler.gemspec
   gem install --local trackler-*.gem
 
