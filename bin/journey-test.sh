@@ -44,14 +44,14 @@ assert_jq_installed() {
 
 assert_required_ruby_installed() {
   echo ">>> assert_required_ruby_installed(\"$1\")"
-  local RACKAPP_HOME="$1"
+  local RUBY_APP_HOME="$1"
 
-  pushd "${RACKAPP_HOME}" >/dev/null
+  pushd "${RUBY_APP_HOME}" >/dev/null
   local CURRENT_RUBY_VER=`ruby --version | egrep --only-matching "[0-9]+\.[0-9]+\.[0-9]+"`
   local EXPECTED_RUBY_VER=`cat Gemfile | awk -F\' '/ruby /{print $2}'`
   popd >/dev/null
-  if [ "$CURRENT_RUBY_VER" != "$EXPECTED_RUBY_VER" ]; then
-    echo "${RACKAPP_HOME} requires Ruby ${EXPECTED_RUBY_VER}; current Ruby version is ${CURRENT_RUBY_VER}."
+  if [ "$EXPECTED_RUBY_VER" != "" -a "$CURRENT_RUBY_VER" != "$EXPECTED_RUBY_VER" ]; then
+    echo "${RUBY_APP_HOME} requires Ruby ${EXPECTED_RUBY_VER}; current Ruby version is ${CURRENT_RUBY_VER}."
     echo -e "Ruby used: `which ruby`.\n"
     echo -e "Have you completed the setup instructions at https://github.com/exercism/xjava ?\n"
     echo "PATH=${PATH}"
@@ -124,13 +124,35 @@ fetch_x_api() {
   local XAPI_HOME="$1"
 
   git clone https://github.com/exercism/x-api ${XAPI_HOME}
-  pushd ${XAPI_HOME} >/dev/null
-  git submodule init -- metadata
+
+  echo "<<< fetch_x_api()"
+}
+
+fetch_trackler() {
+  echo ">>> fetch_trackler(\"$1\")"
+  local TRACKLER_HOME="$1"
+
+  git clone https://github.com/exercism/trackler ${TRACKLER_HOME}
+
+  echo "<<< fetch_trackler()"
+}
+
+build_trackler() {
+  echo ">>> build_trackler(\"$1\")"
+  local TRACKLER_HOME="$1"
+
+  pushd ${TRACKLER_HOME} >/dev/null
+  git submodule init -- common
   git submodule update
   rmdir tracks/java
-  ln -s $REPO_ROOT tracks/java
+  mkdir -p tracks/java/exercises
+  cp $REPO_ROOT/config.json tracks/java
+  cp -r $REPO_ROOT/exercises tracks/java
+  gem build trackler.gemspec
+  gem install --local trackler-*.gem
+
   popd > /dev/null
-  echo "<<< fetch_x_api()"
+  echo "<<< build_trackler()"
 }
 
 start_x_api() {
@@ -139,10 +161,8 @@ start_x_api() {
 
   pushd $XAPI_HOME >/dev/null
 
-  SET_RUBY_VER_CMD="rbenv local 2.2.1"
   gem install bundler
   bundle install
-
   RACK_ENV=development rackup &
   XAPI_PID=$!
   sleep 5
@@ -208,6 +228,7 @@ main() {
   local REPO_ROOT="${PWD}"
   local BUILD_DIR="${REPO_ROOT}/build"
   local XAPI_HOME="${BUILD_DIR}/x-api"
+  local TRACKLER_HOME="${BUILD_DIR}/trackler"
   local EXERCISM_HOME="${BUILD_DIR}/exercism"
   local EXERCISM_CONFIGFILE=".journey-test.exercism.json"
   local XAPI_PORT=9292
@@ -217,7 +238,10 @@ main() {
   clean_build "${REPO_ROOT}" "${BUILD_DIR}"
   fetch_exercism_cli $(get_operating_system) $(get_cpu_architecture) "${EXERCISM_HOME}"
   fetch_x_api "${XAPI_HOME}"
+  fetch_trackler "${TRACKLER_HOME}"
   assert_required_ruby_installed "${XAPI_HOME}"
+  assert_required_ruby_installed "${TRACKLER_HOME}"
+  build_trackler "${TRACKLER_HOME}"
   start_x_api "${XAPI_HOME}"
   configure_exercism_cli "${EXERCISM_HOME}" "${EXERCISM_CONFIGFILE}" "${XAPI_PORT}"
   solve_all_exercises "${EXERCISM_HOME}" "${EXERCISM_CONFIGFILE}"
