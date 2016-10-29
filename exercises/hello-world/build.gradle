@@ -16,9 +16,3 @@ test {
     events = ["passed", "failed", "skipped"]
   }
 }
-test {
-  testLogging {
-    exceptionFormat = 'full'
-    events = ["passed", "failed", "skipped"]
-  }
-}
