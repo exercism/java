@@ -18,15 +18,12 @@ The language derives much of its syntax from C and C++, but it has fewer low-lev
 
 ## Why Learn JAVA?
 
-- JAVA IS EVERYWHERE. It is one of the most sought after programming languages, as it is a standard for enterprise software, web-based content, games and mobile apps, as well as the [Android operating system](https://developer.android.com/index.html). 
+- JAVA IS EVERYWHERE. It is one of the most sought after programming languages. It is a standard for enterprise software, web-based content, games and mobile apps, as well as the [Android operating system](https://developer.android.com/index.html). 
 
-- [Write once, run anywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere) policy : Programs written in Java, are compiled into machine-independent bytecodes, so it can run on any Java platform.Basically, Java is [Platform Independent](https://en.wikipedia.org/wiki/Cross-platform#Platform-independent_software)
+- [Write once, run anywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere) policy: Programs written in Java are compiled into machine-independent bytecodes, so it can run on any Java platform. Basically, Java is [Platform Independent](https://en.wikipedia.org/wiki/Cross-platform#Platform-independent_software)
 
-- Java has a Rich API:
-Java provides [API](https://en.wikipedia.org/wiki/Application_programming_interface)'s(Application Programming Interface) for I/O, networking, utilities, XML parsing, database connections, and many other functions. Standard libraries can be supplemented by open source libraries like Apache Commons, Google Guava and others.
-
-
+- Java has rich APIs:
+Java has built-in [application programming interfaces](https://en.wikipedia.org/wiki/Application_programming_interface) (APIs) for I/O, networking, data structures, concurrency, and many other functions. Standard libraries can be supplemented by open source libraries like Apache Commons, Google Guava, Netty and others.
 
 - Standardization:
-If you need to write a web/enterprise app, or you need data persistence or you need to do cryptography, no problem! Java is all you require.There are several other standardized stuff in the Java ecosystem, thanks to the [JCP](https://www.jcp.org/en/introduction/overview) (Java Community Process)!
-
+If you need to write a web/enterprise app, or you need data persistence or you need to do cryptography, no problem! Java is all you require. There are many standard tools/practices that extend the Java ecosystem, thanks to the [Java Community Process](https://www.jcp.org/en/introduction/overview) (JCP)!
