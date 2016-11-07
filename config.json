@@ -42,7 +42,8 @@
     "linked-list",
     "nth-prime",
     "pascals-triangle",
-    "beer-song"
+    "beer-song",
+    "difference-of-squares"
   ],
   "exercises": [
     {
@@ -237,6 +238,11 @@
     },
     {
       "slug": "beer-song",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "difference-of-squares",
       "difficulty": 1,
       "topics": []
     }
