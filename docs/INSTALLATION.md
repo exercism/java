@@ -108,6 +108,8 @@ If you are using Debian or its derivatives (like Ubuntu or Linux Mint), use APT:
 -  Install Gradle:
 
    ```sh
+   $ sudo add-apt-repository ppa:cwchien/gradle
+   $ sudo apt-get update
    $ sudo apt-get install gradle
    ```
 
