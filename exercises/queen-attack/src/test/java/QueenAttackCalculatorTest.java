@@ -15,23 +15,9 @@ public final class QueenAttackCalculatorTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    @Test
-    public void testNoExceptionThrownIfBothQueenPositionsValid() {
-        new QueenAttackCalculator(new BoardCoordinate(2, 2), new BoardCoordinate(0, 7));
-    }
-
     @Ignore
     @Test
-    public void testNullInputNotAllowed() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("You must supply valid board coordinates for both Queens.");
-
-        new QueenAttackCalculator(null, new BoardCoordinate(0, 7));
-    }
-
-    @Ignore
-    @Test
-    public void testNegativeRankNotAllowed() {
+    public void testCoordinateWithNegativeRankNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Coordinate must have positive rank.");
 
@@ -40,7 +26,7 @@ public final class QueenAttackCalculatorTest {
 
     @Ignore
     @Test
-    public void testRankGreaterThan7NotAllowed() {
+    public void testCoordinateWithRankGreaterThan7NotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Coordinate must have rank <= 7.");
 
@@ -49,7 +35,7 @@ public final class QueenAttackCalculatorTest {
 
     @Ignore
     @Test
-    public void testNegativeFileNotAllowed() {
+    public void testCoordinateWithNegativeFileNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Coordinate must have positive file.");
 
@@ -58,11 +44,20 @@ public final class QueenAttackCalculatorTest {
 
     @Ignore
     @Test
-    public void testFileGreaterThan7NotAllowed() {
+    public void testCoordinateWithFileGreaterThan7NotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Coordinate must have file <= 7.");
 
         new BoardCoordinate(4, 8);
+    }
+
+    @Ignore
+    @Test
+    public void testNullCoordinateNotAllowed() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("You must supply valid board coordinates for both Queens.");
+
+        new QueenAttackCalculator(null, new BoardCoordinate(0, 7));
     }
 
     @Ignore
@@ -74,6 +69,7 @@ public final class QueenAttackCalculatorTest {
         new QueenAttackCalculator(new BoardCoordinate(2, 2), new BoardCoordinate(2, 2));
     }
 
+    @Ignore
     @Test
     public void testQueensThatDoNotShareRankFileOrDiagonalCannotAttack() {
         final QueenAttackCalculator calculator
