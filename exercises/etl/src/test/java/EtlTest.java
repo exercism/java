@@ -15,7 +15,7 @@ public class EtlTest {
                 put(1, Arrays.asList("A"));
             }
         };
-        Collections.unmodifiableMap(old);
+        old = Collections.unmodifiableMap(old);
 
         Map<String, Integer> expected = new HashMap<String, Integer>() {
             {
@@ -34,7 +34,7 @@ public class EtlTest {
                 put(1, Arrays.asList("A", "E", "I", "O", "U"));
             }
         };
-        Collections.unmodifiableMap(old);
+        old = Collections.unmodifiableMap(old);
 
         Map<String, Integer> expected = new HashMap<String, Integer>() {
             {
@@ -58,7 +58,7 @@ public class EtlTest {
                 put(2, Arrays.asList("D", "G"));
             }
         };
-        Collections.unmodifiableMap(old);
+        old = Collections.unmodifiableMap(old);
 
         Map<String, Integer> expected = new HashMap<String, Integer>() {
             {
@@ -86,7 +86,7 @@ public class EtlTest {
                 put(10, Arrays.asList("Q", "Z"));
             }
         };
-        Collections.unmodifiableMap(old);
+        old = Collections.unmodifiableMap(old);
 
         Map<String, Integer> expected = new HashMap<String, Integer>() {
             {
