@@ -3,6 +3,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public final class QueenAttackCalculatorTest {
@@ -67,6 +68,14 @@ public final class QueenAttackCalculatorTest {
         expectedException.expectMessage("Queens may not occupy the same board coordinate.");
 
         new QueenAttackCalculator(new BoardCoordinate(2, 2), new BoardCoordinate(2, 2));
+    }
+
+    @Test
+    public void testQueensThatDoNotShareRankFileOrDiagonalCannotAttack() {
+        final QueenAttackCalculator calculator
+                = new QueenAttackCalculator(new BoardCoordinate(2, 4), new BoardCoordinate(6, 6));
+
+        assertFalse(calculator.canQueensAttackOneAnother());
     }
 
     @Ignore
