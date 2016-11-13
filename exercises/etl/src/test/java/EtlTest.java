@@ -22,7 +22,7 @@ public class EtlTest {
                 put("a", 1);
             }
         };
-        Collections.unmodifiableMap(expected);
+        expected = Collections.unmodifiableMap(expected);
 
         assertEquals(etl.transform(old), expected);
     }
@@ -45,7 +45,7 @@ public class EtlTest {
                 put("u", 1);
             }
         };
-        Collections.unmodifiableMap(expected);
+        expected = Collections.unmodifiableMap(expected);
 
         assertEquals(etl.transform(old), expected);
     }
@@ -68,7 +68,7 @@ public class EtlTest {
                 put("g", 2);
             }
         };
-        Collections.unmodifiableMap(expected);
+        expected = Collections.unmodifiableMap(expected);
 
         assertEquals(etl.transform(old), expected);
     }
@@ -118,7 +118,7 @@ public class EtlTest {
                 put("z", 10);
             }
         };
-        Collections.unmodifiableMap(expected);
+        expected = Collections.unmodifiableMap(expected);
 
         assertEquals(etl.transform(old), expected);
     }
