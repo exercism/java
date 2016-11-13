@@ -419,7 +419,7 @@ for "good" design of software is a big topic.  The pursuit of it underlies
 much of what makes up the more valuable conversations on Exercism.
 
 For now, let's just take a quick review of our solution and see if there's
-any part of it we'd like to refactor.  Refactoring is changing the the way
+any part of it we'd like to refactor.  Refactoring is changing the way
 a bit of code reads without changing what it does.
 
 Right now, the details of detecting whether the caller of `hello()` has
