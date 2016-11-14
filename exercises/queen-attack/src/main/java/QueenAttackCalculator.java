@@ -1,0 +1,5 @@
+public final class QueenAttackCalculator {
+
+
+
+}
