@@ -43,7 +43,8 @@
     "nth-prime",
     "pascals-triangle",
     "beer-song",
-    "difference-of-squares"
+    "difference-of-squares",
+    "largest-series-product"
   ],
   "exercises": [
     {
@@ -243,6 +244,11 @@
     },
     {
       "slug": "difference-of-squares",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "largest-series-product",
       "difficulty": 1,
       "topics": []
     }
