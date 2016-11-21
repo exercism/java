@@ -45,7 +45,8 @@
     "beer-song",
     "difference-of-squares",
     "largest-series-product",
-    "queen-attack"
+    "queen-attack",
+    "minesweeper"
   ],
   "exercises": [
     {
@@ -255,6 +256,11 @@
     },
     {
       "slug": "queen-attack",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "minesweeper",
       "difficulty": 1,
       "topics": []
     }
