@@ -7,87 +7,87 @@ import org.junit.Ignore;
 public class NucleotideTest {
 
     @Test
-  public void testEmptyDnaStringHasNoAdenosine() {
-    DNA dna = new DNA("");
-    assertThat(dna.count('A')).isEqualTo(0);
-  }
+    public void testEmptyDnaStringHasNoAdenosine() {
+        DNA dna = new DNA("");
+        assertThat(dna.count('A')).isEqualTo(0);
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testEmptyDnaStringHasNoNucleotides() {
-    DNA dna = new DNA("");
-    assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-        entry('A', 0),
-        entry('C', 0),
-        entry('G', 0),
-        entry('T', 0)
-    );
-  }
+    public void testEmptyDnaStringHasNoNucleotides() {
+        DNA dna = new DNA("");
+        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
+            entry('A', 0),
+            entry('C', 0),
+            entry('G', 0),
+            entry('T', 0)
+        );
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testRepetitiveCytidineGetsCounted() {
-    DNA dna = new DNA("CCCCC");
-    assertThat(dna.count('C')).isEqualTo(5);
-  }
+    public void testRepetitiveCytidineGetsCounted() {
+        DNA dna = new DNA("CCCCC");
+        assertThat(dna.count('C')).isEqualTo(5);
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testRepetitiveSequenceWithOnlyGuanosine() {
-    DNA dna = new DNA("GGGGGGGG");
-    assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-        entry('A', 0),
-        entry('C', 0),
-        entry('G', 8),
-        entry('T', 0)
-    );
-  }
+    public void testRepetitiveSequenceWithOnlyGuanosine() {
+        DNA dna = new DNA("GGGGGGGG");
+        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
+            entry('A', 0),
+            entry('C', 0),
+            entry('G', 8),
+            entry('T', 0)
+        );
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testCountsOnlyThymidine() {
-    DNA dna = new DNA("GGGGGTAACCCGG");
-    assertThat(dna.count('T')).isEqualTo(1);
-  }
+    public void testCountsOnlyThymidine() {
+        DNA dna = new DNA("GGGGGTAACCCGG");
+        assertThat(dna.count('T')).isEqualTo(1);
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testCountsANucleotideOnlyOnce() {
-    DNA dna = new DNA("CGATTGGG");
-    dna.count('T');
-    assertThat(dna.count('T')).isEqualTo(2);
-  }
+    public void testCountsANucleotideOnlyOnce() {
+        DNA dna = new DNA("CGATTGGG");
+        dna.count('T');
+        assertThat(dna.count('T')).isEqualTo(2);
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
-    DNA dna = new DNA("GATTACA");
-    dna.count('A');
-    assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-        entry('A', 3),
-        entry('C', 1),
-        entry('G', 1),
-        entry('T', 2)
-    );
-  }
+    public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
+        DNA dna = new DNA("GATTACA");
+        dna.count('A');
+        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
+            entry('A', 3),
+            entry('C', 1),
+            entry('G', 1),
+            entry('T', 2)
+        );
+    }
 
-  @Ignore
+    @Ignore
     @Test(expected = IllegalArgumentException.class)
-  public void testValidatesNucleotides() {
-    DNA dna = new DNA("GACT");
-    dna.count('X');
-  }
+    public void testValidatesNucleotides() {
+        DNA dna = new DNA("GACT");
+        dna.count('X');
+    }
 
-  @Ignore
+    @Ignore
     @Test
-  public void testCountsAllNucleotides() {
-    String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
-    DNA dna = new DNA(s);
-    assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-        entry('A', 20),
-        entry('C', 12),
-        entry('G', 17),
-        entry('T', 21)
-    );
-  }
+    public void testCountsAllNucleotides() {
+        String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
+        DNA dna = new DNA(s);
+        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
+            entry('A', 20),
+            entry('C', 12),
+            entry('G', 17),
+            entry('T', 21)
+        );
+    }
 }
