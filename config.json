@@ -48,11 +48,8 @@
     "largest-series-product",
     "queen-attack",
     "minesweeper",
-<<<<<<< HEAD
+    "series",
     "binary-search"
-=======
-    "series"
->>>>>>> upsetream/master
   ],
   "exercises": [
     {
