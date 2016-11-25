@@ -46,7 +46,8 @@
     "difference-of-squares",
     "largest-series-product",
     "queen-attack",
-    "minesweeper"
+    "minesweeper",
+    "binary-search"
   ],
   "exercises": [
     {
@@ -261,6 +262,11 @@
     },
     {
       "slug": "minesweeper",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "binary-search",
       "difficulty": 1,
       "topics": []
     }
