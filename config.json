@@ -39,6 +39,7 @@
     "luhn",
     "pig-latin",
     "simple-linked-list",
+    "sum-of-multiples",
     "linked-list",
     "nth-prime",
     "pascals-triangle",
@@ -222,6 +223,11 @@
     },
     {
       "slug": "simple-linked-list",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "sum-of-multiples",
       "difficulty": 1,
       "topics": []
     },
