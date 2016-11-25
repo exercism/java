@@ -39,6 +39,7 @@
     "luhn",
     "pig-latin",
     "simple-linked-list",
+    "sum-of-multiples",
     "linked-list",
     "nth-prime",
     "pascals-triangle",
@@ -46,7 +47,10 @@
     "difference-of-squares",
     "largest-series-product",
     "queen-attack",
-    "minesweeper"
+    "minesweeper",
+    "series",
+    "binary-search",
+    "pythagorean-triplet"
   ],
   "exercises": [
     {
@@ -225,6 +229,11 @@
       "topics": []
     },
     {
+      "slug": "sum-of-multiples",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
       "slug": "linked-list",
       "difficulty": 1,
       "topics": []
@@ -261,6 +270,21 @@
     },
     {
       "slug": "minesweeper",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "series",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "binary-search",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "pythagorean-triplet",
       "difficulty": 1,
       "topics": []
     }
