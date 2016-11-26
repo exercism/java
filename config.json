@@ -49,7 +49,8 @@
     "queen-attack",
     "minesweeper",
     "series",
-    "robot-simulator"
+    "robot-simulator",
+    "bracket-push"
   ],
   "exercises": [
     {
@@ -279,6 +280,11 @@
     },
     {
       "slug": "robot-simulator",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "bracket-push",
       "difficulty": 1,
       "topics": []
     }
