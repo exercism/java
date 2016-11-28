@@ -49,7 +49,7 @@
     "queen-attack",
     "minesweeper",
     "series",
-    "binary-search"
+    "binary-search-tree"
   ],
   "exercises": [
     {
@@ -278,7 +278,7 @@
       "topics": []
     },
     {
-      "slug": "binary-search",
+      "slug": "binary-search-tree",
       "difficulty": 1,
       "topics": []
     }
