@@ -1,99 +1,135 @@
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class BinarySearchTest {
 
+    public static final List<Integer> EMPTY_LIST
+            = Collections.unmodifiableList(new ArrayList<Integer>(0));
+
+    public static final List<Integer> LIST_OF_UNIT_LENGTH
+            = Collections.unmodifiableList(
+                    Arrays.asList(6)
+            );
+
     private static final List<Integer> SORTED_LIST
             = Collections.unmodifiableList(
-                    Arrays.asList(1, 2, 3, 4, 5, 6)
+                    Arrays.asList(1, 3, 4, 6, 8, 9, 11)
             );
 
     public static final List<Integer> SORTED_LIST_OF_ODD_LENGTH
             = Collections.unmodifiableList(
-                    Arrays.asList(0, 1, 2, 2, 3, 10, 12)
+                    Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
+                            89, 144, 233, 377, 634)
             );
 
-    public static final List<Integer> UNSORTED_LIST
+    public static final List<Integer> SORTED_LIST_OF_EVEN_LENGTH
             = Collections.unmodifiableList(
-                    Arrays.asList(10, 2, 5, 1)
+                    Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
+                            89, 144, 233, 377)
             );
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
-
     @Test
-    public void shouldRequireASortedListOK() {
-        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
-        List<Integer> actual = sut.getArray();
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(actual.size(), SORTED_LIST.size());
-        assertEquals(actual, SORTED_LIST);
-    }
-
-    @Ignore
-    @Test
-    public void shouldRequireASortedListButNotSorted() {
-        thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage(BinarySearch.ARRAY_MUST_BE_SORTED);
-        new BinarySearch<Integer>(UNSORTED_LIST);
-    }
-
-    @Ignore
-    @Test
-    public void shouldFindTheCorrectIndexInTheMiddleOfArray() {
-        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
-        final int number = 3;
-        final int actual = sut.indexOf(number);
-        final int expected = 2;
-        assertEquals(expected, actual);
-    }
-
-    @Ignore
-    @Test
-    public void shouldFindTheCorrectIndexAtTheBeginningOfArray() {
-        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
-        final int number = 1;
-        final int actual = sut.indexOf(number);
+    public void findsAValueInAnArrayWithOneElement() {
+        BinarySearch<Integer> sut = new BinarySearch<>(LIST_OF_UNIT_LENGTH);
+        final int value = 6;
+        final int actual = sut.indexOf(value);
         final int expected = 0;
         assertEquals(expected, actual);
     }
 
     @Ignore
     @Test
-    public void shouldFindTheCorrectIndexAtTheEndOfArray() {
+    public void findsAValueInTheMiddleOfAnArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
-        final int number = 6;
-        final int actual = sut.indexOf(number);
-        final int expected = 5;
-        assertEquals(expected, actual);
-    }
-
-    @Ignore
-    @Test
-    public void shouldFindTheCorrectIndexInTheMiddleOfArrayOfOddLength() {
-        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST_OF_ODD_LENGTH);
-        final int number = 2;
-        final int actual = sut.indexOf(number);
+        final int value = 6;
+        final int actual = sut.indexOf(value);
         final int expected = 3;
         assertEquals(expected, actual);
     }
 
     @Ignore
     @Test
-    public void shouldReturnMinusOneIfNotFound() {
+    public void findsAValueAtTheBeginningOfAnArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
-        final int number = 10;
-        final int actual = sut.indexOf(number);
+        final int value = 1;
+        final int actual = sut.indexOf(value);
+        final int expected = 0;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void findsAValueAtTheEndOfAnArray() {
+        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
+        final int value = 11;
+        final int actual = sut.indexOf(value);
+        final int expected = 6;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void findsAValueInAnArrayOfOddLength() {
+        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST_OF_ODD_LENGTH);
+        final int value = 144;
+        final int actual = sut.indexOf(value);
+        final int expected = 9;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void findsAValueInAnArrayOfEvenLength() {
+        BinarySearch<Integer> sut
+                = new BinarySearch<>(SORTED_LIST_OF_EVEN_LENGTH);
+        final int value = 21;
+        final int actual = sut.indexOf(value);
+        final int expected = 5;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void identifiesThatAValueIsNotIncludedInTheArray() {
+        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
+        final int value = 7;
+        final int actual = sut.indexOf(value);
+        final int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void aValueSmallerThanTheArraysSmallestValueIsNotIncluded() {
+        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
+        final int value = 0;
+        final int actual = sut.indexOf(value);
+        final int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void aValueLargerThanTheArraysSmallestValueIsNotIncluded() {
+        BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
+        final int value = 13;
+        final int actual = sut.indexOf(value);
+        final int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Ignore
+    @Test
+    public void nothingIsIncludedInAnEmptyArray() {
+        BinarySearch<Integer> sut = new BinarySearch<>(EMPTY_LIST);
+        final int value = 1;
+        final int actual = sut.indexOf(value);
         final int expected = -1;
         assertEquals(expected, actual);
     }
