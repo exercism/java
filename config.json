@@ -48,13 +48,8 @@
     "largest-series-product",
     "queen-attack",
     "minesweeper",
-<<<<<<< HEAD
     "series",
-    "binary-search",
     "pythagorean-triplet"
-=======
-    "series"
->>>>>>> master
   ],
   "exercises": [
     {
@@ -281,19 +276,11 @@
       "slug": "series",
       "difficulty": 1,
       "topics": []
-<<<<<<< HEAD
-    },
-    {
-      "slug": "binary-search",
-      "difficulty": 1,
-      "topics": []
     },
     {
       "slug": "pythagorean-triplet",
       "difficulty": 1,
       "topics": []
-=======
->>>>>>> master
     }
   ],
   "deprecated": [
