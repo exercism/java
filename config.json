@@ -50,6 +50,7 @@
     "minesweeper",
     "series",
     "robot-simulator",
+    "bracket-push",
     "binary-search"
   ],
   "exercises": [
@@ -280,6 +281,11 @@
     },
     {
       "slug": "robot-simulator",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "bracket-push",
       "difficulty": 1,
       "topics": []
     },
