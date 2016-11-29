@@ -49,7 +49,11 @@
     "queen-attack",
     "minesweeper",
     "series",
+<<<<<<< HEAD
     "pythagorean-triplet"
+=======
+    "robot-simulator"
+>>>>>>> master
   ],
   "exercises": [
     {
@@ -278,7 +282,11 @@
       "topics": []
     },
     {
+<<<<<<< HEAD
       "slug": "pythagorean-triplet",
+=======
+      "slug": "robot-simulator",
+>>>>>>> master
       "difficulty": 1,
       "topics": []
     }
