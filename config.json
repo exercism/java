@@ -48,7 +48,8 @@
     "largest-series-product",
     "queen-attack",
     "minesweeper",
-    "series"
+    "series",
+    "robot-simulator"
   ],
   "exercises": [
     {
@@ -273,6 +274,11 @@
     },
     {
       "slug": "series",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "robot-simulator",
       "difficulty": 1,
       "topics": []
     }
