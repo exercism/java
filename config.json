@@ -49,6 +49,7 @@
     "queen-attack",
     "minesweeper",
     "series",
+    "robot-simulator",
     "binary-search-tree"
   ],
   "exercises": [
@@ -274,6 +275,11 @@
     },
     {
       "slug": "series",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "robot-simulator",
       "difficulty": 1,
       "topics": []
     },
