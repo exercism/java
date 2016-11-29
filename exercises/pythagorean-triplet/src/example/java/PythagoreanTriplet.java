@@ -1,55 +1,23 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class PythagoreanTriplet {
 
-    public static final String MAX_FACTOR = "maxFactor";
-    public static final String MIN_FACTOR = "minFactor";
-    public static final String SUM = "sum";
-
     private int a;
     private int b;
     private int c;
 
-    public PythagoreanTriplet(int a, int b, int c) {
+    public PythagoreanTriplet(final int a, final int b, final int c) {
         this.a = a;
         this.b = b;
         this.c = c;
     }
 
-    public static List<PythagoreanTriplet> createTripletsList(
-            Map<String, Integer> searchData) {
-        List<PythagoreanTriplet> triplets = new ArrayList<>();
-        if (searchData == null || searchData.isEmpty()
-                || !searchData.containsKey(MAX_FACTOR)) {
-            return triplets;
-        }
-        final int maxFactor = searchData.get(MAX_FACTOR);
-        Integer tmp = searchData.get(MIN_FACTOR);
-        final int minFactor = (tmp == null) ? 1 : tmp;
-        tmp = searchData.get(SUM);
-        final int sum = (tmp == null) ? -1 : tmp;
-        double sqrt;
-        int floor;
-        for (int n = minFactor; n < maxFactor; n++) {
-            for (int m = n + 1; m < maxFactor; m++) {
-                sqrt = Math.sqrt(n * n + m * m);
-                floor = (int) Math.floor(sqrt);
-                if (sqrt == floor) {
-                    triplets.add(new PythagoreanTriplet(m, n, floor));
-                }
-            }
-        }
-        if (sum >= 0) {
-            return triplets.stream()
-                    .filter(t -> t.calculateSum() == sum)
-                    .collect(Collectors.toList());
-        }
-        return triplets;
+    public static TripletListBuilder makeTripletsList() {
+        return new TripletListBuilder();
     }
 
     public int calculateSum() {
@@ -93,4 +61,57 @@ public class PythagoreanTriplet {
         return true;
     }
 
+    public static class TripletListBuilder {
+
+        private static final int MAX_FACTOR_DEFAULT_VALUE = 0;
+        private static final int SUM_DEFAULT_VALUE = -1;
+
+        private int maxFactor = MAX_FACTOR_DEFAULT_VALUE;
+        private int minFactor = 1;
+        private int sum = SUM_DEFAULT_VALUE;
+
+        public TripletListBuilder() {
+        }
+
+        public TripletListBuilder withFactorsLessThanOrEqualTo(
+                final int maxFactor) {
+            this.maxFactor = maxFactor;
+            return this;
+        }
+
+        public TripletListBuilder withFactorsGreaterThanOrEqualTo(
+                final int minFactor) {
+            this.minFactor = minFactor;
+            return this;
+        }
+
+        public TripletListBuilder thatSumTo(final int sum) {
+            this.sum = sum;
+            return this;
+        }
+
+        public List<PythagoreanTriplet> build() {
+            List<PythagoreanTriplet> triplets = new ArrayList<>();
+            if (this.maxFactor == MAX_FACTOR_DEFAULT_VALUE) {
+                return triplets;
+            }
+            double sqrt;
+            int floor;
+            for (int n = minFactor; n < maxFactor; n++) {
+                for (int m = n + 1; m < maxFactor; m++) {
+                    sqrt = Math.sqrt(n * n + m * m);
+                    floor = (int) Math.floor(sqrt);
+                    if (sqrt == floor) {
+                        triplets.add(new PythagoreanTriplet(m, n, floor));
+                    }
+                }
+            }
+            if (sum != SUM_DEFAULT_VALUE) {
+                return triplets.stream()
+                        .filter(t -> t.calculateSum() == sum)
+                        .collect(Collectors.toList());
+            }
+            return triplets;
+        }
+    }
 }

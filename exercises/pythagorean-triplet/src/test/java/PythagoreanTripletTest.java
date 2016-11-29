@@ -46,14 +46,14 @@ public class PythagoreanTripletTest {
     @Test
     @Ignore
     public void shouldMakeTripletsUpToTen() {
-        final Map<String, Integer> searchData
-                = new HashMap<>();
-        searchData.put(PythagoreanTriplet.MAX_FACTOR, 10);
         final List<Long> actual
-                = PythagoreanTriplet.createTripletsList(searchData)
+                = PythagoreanTriplet
+                        .makeTripletsList()
+                        .withFactorsLessThanOrEqualTo(10)
+                        .build()
                         .stream()
                         .map(t -> t.calculateProduct())
-                        .sorted((p1, p2) -> Double.compare(p1, p2))
+                        .sorted()
                         .collect(Collectors.toList());
         final List<Long> expected = Arrays.asList(60l, 480l);
         assertEquals(expected, actual);
@@ -62,12 +62,12 @@ public class PythagoreanTripletTest {
     @Test
     @Ignore
     public void shouldMakeTripletsElevenToTwenty() {
-        final Map<String, Integer> searchData
-                = new HashMap<>();
-        searchData.put(PythagoreanTriplet.MAX_FACTOR, 20);
-        searchData.put(PythagoreanTriplet.MIN_FACTOR, 11);
         final List<Long> actual
-                = PythagoreanTriplet.createTripletsList(searchData)
+                = PythagoreanTriplet
+                        .makeTripletsList()
+                        .withFactorsGreaterThanOrEqualTo(11)
+                        .withFactorsLessThanOrEqualTo(20)
+                        .build()
                         .stream()
                         .map(t -> t.calculateProduct())
                         .sorted((p1, p2) -> Double.compare(p1, p2))
@@ -79,12 +79,12 @@ public class PythagoreanTripletTest {
     @Test
     @Ignore
     public void shouldMakeTripletsAndFilterOnSum() {
-        final Map<String, Integer> searchData
-                = new HashMap<>();
-        searchData.put(PythagoreanTriplet.MAX_FACTOR, 100);
-        searchData.put(PythagoreanTriplet.SUM, 180);
         final List<Long> actual
-                = PythagoreanTriplet.createTripletsList(searchData)
+                = PythagoreanTriplet
+                        .makeTripletsList()
+                        .withFactorsLessThanOrEqualTo(100)
+                        .thatSumTo(180)
+                        .build()
                         .stream()
                         .map(t -> t.calculateProduct())
                         .sorted((p1, p2) -> Double.compare(p1, p2))
