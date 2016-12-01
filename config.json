@@ -50,7 +50,8 @@
     "minesweeper",
     "series",
     "robot-simulator",
-    "bracket-push"
+    "bracket-push",
+    "pythagorean-triplet"
   ],
   "exercises": [
     {
@@ -285,6 +286,11 @@
     },
     {
       "slug": "bracket-push",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "pythagorean-triplet",
       "difficulty": 1,
       "topics": []
     }
