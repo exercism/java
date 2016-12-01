@@ -51,6 +51,7 @@
     "series",
     "robot-simulator",
     "bracket-push",
+    "pythagorean-triplet",
     "binary-search"
   ],
   "exercises": [
@@ -286,6 +287,11 @@
     },
     {
       "slug": "bracket-push",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "pythagorean-triplet",
       "difficulty": 1,
       "topics": []
     },
