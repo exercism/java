@@ -53,7 +53,8 @@
     "bracket-push",
     "pythagorean-triplet",
     "binary-search-tree",
-    "binary-search"
+    "binary-search",
+    "all-your-base"
   ],
   "exercises": [
     {
@@ -303,6 +304,11 @@
     },
     {
       "slug": "binary-search",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "all-your-base",
       "difficulty": 1,
       "topics": []
     }
