@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertNotNull;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class PalindromesTest {
@@ -40,6 +41,7 @@ public class PalindromesTest {
     }
 
     @Test
+    @Ignore
     public void largestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -69,6 +71,7 @@ public class PalindromesTest {
     }
 
     @Test
+    @Ignore
     public void smallestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -98,6 +101,7 @@ public class PalindromesTest {
     }
 
     @Test
+    @Ignore
     public void largestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -127,6 +131,7 @@ public class PalindromesTest {
     }
 
     @Test
+    @Ignore
     public void smallestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
