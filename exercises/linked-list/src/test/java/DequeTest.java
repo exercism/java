@@ -1,8 +1,9 @@
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 public class DequeTest {
     private Deque<Integer> subject;
@@ -17,8 +18,8 @@ public class DequeTest {
     public void testPushPop() {
         subject.push(10);
         subject.push(20);
-        assertThat(subject.pop()).isEqualTo(20);
-        assertThat(subject.pop()).isEqualTo(10);
+        assertThat(subject.pop(), is(20));
+        assertThat(subject.pop(), is(10));
     }
 
     @Ignore
@@ -26,8 +27,8 @@ public class DequeTest {
     public void testPushShift() {
         subject.push(10);
         subject.push(20);
-        assertThat(subject.shift()).isEqualTo(10);
-        assertThat(subject.shift()).isEqualTo(20);
+        assertThat(subject.shift(), is(10));
+        assertThat(subject.shift(), is(20));
     }
 
     @Ignore
@@ -35,8 +36,8 @@ public class DequeTest {
     public void testUnshiftShift() {
         subject.unshift(10);
         subject.unshift(20);
-        assertThat(subject.shift()).isEqualTo(20);
-        assertThat(subject.shift()).isEqualTo(10);
+        assertThat(subject.shift(), is(20));
+        assertThat(subject.shift(), is(10));
     }
 
     @Ignore
@@ -44,8 +45,8 @@ public class DequeTest {
     public void testUnshiftPop() {
         subject.unshift(10);
         subject.unshift(20);
-        assertThat(subject.pop()).isEqualTo(10);
-        assertThat(subject.pop()).isEqualTo(20);
+        assertThat(subject.pop(), is(10));
+        assertThat(subject.pop(), is(20));
     }
 
     @Ignore
@@ -53,15 +54,15 @@ public class DequeTest {
     public void testExample() {
         subject.push(10);
         subject.push(20);
-        assertThat(subject.pop()).isEqualTo(20);
+        assertThat(subject.pop(), is(20));
 
         subject.push(30);
-        assertThat(subject.shift()).isEqualTo(10);
+        assertThat(subject.shift(), is(10));
 
         subject.unshift(40);
         subject.push(50);
-        assertThat(subject.shift()).isEqualTo(40);
-        assertThat(subject.pop()).isEqualTo(50);
-        assertThat(subject.shift()).isEqualTo(30);
+        assertThat(subject.shift(), is(40));
+        assertThat(subject.pop(), is(50));
+        assertThat(subject.shift(), is(30));
     }
 }
