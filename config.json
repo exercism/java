@@ -56,6 +56,7 @@
     "binary-search",
     "all-your-base",
     "wordy"
+    "palindrome-products"
   ],
   "exercises": [
     {
@@ -315,6 +316,11 @@
     },
     {
       "slug": "wordy",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "palindrome-products",
       "difficulty": 1,
       "topics": []
     }
