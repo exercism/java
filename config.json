@@ -54,7 +54,8 @@
     "pythagorean-triplet",
     "binary-search-tree",
     "binary-search",
-    "all-your-base"
+    "all-your-base",
+    "palindrome-products"
   ],
   "exercises": [
     {
@@ -309,6 +310,11 @@
     },
     {
       "slug": "all-your-base",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "palindrome-products",
       "difficulty": 1,
       "topics": []
     }
