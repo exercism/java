@@ -104,6 +104,7 @@ If you are using Debian or its derivatives (like Ubuntu or Linux Mint), use APT:
    $ sudo add-apt-repository ppa:webupd8team/java
    $ sudo apt-get update
    $ sudo apt-get install oracle-java8-installer
+   $ sudo apt install oracle-java8-set-default
    ```
 -  Install Gradle:
 
