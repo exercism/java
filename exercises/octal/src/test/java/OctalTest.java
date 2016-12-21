@@ -11,10 +11,11 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class OctalTest {
 
-    private String input;
-    private int expectedOutput;
+    private String octalNumberAsString;
+    private int decimalNumber;
 
-    @Parameterized.Parameters(name = "{index}: input is {0}, expected output is {1}")
+    @Parameterized.Parameters(name = "{index}: expected result {1} when converting octal number " +
+            "constructed with string \"{0}\" to decimal.")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"1", 1},
@@ -34,16 +35,16 @@ public class OctalTest {
         });
     }
 
-    public OctalTest(String input, int expectedOutput) {
-        this.input = input;
-        this.expectedOutput = expectedOutput;
+    public OctalTest(String octalNumberAsString, int decimalNumber) {
+        this.octalNumberAsString = octalNumberAsString;
+        this.decimalNumber = decimalNumber;
     }
 
 
     @Test
     public void test() {
-        Octal octal = new Octal(input);
+        Octal octal = new Octal(octalNumberAsString);
 
-        assertEquals(expectedOutput, octal.getDecimal());
+        assertEquals(decimalNumber, octal.getDecimal());
     }
 }
