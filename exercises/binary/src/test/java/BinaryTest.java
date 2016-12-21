@@ -15,7 +15,7 @@ public class BinaryTest {
     private String input;
     private int expectedOutput;
 
-    @Parameters
+    @Parameters(name = "{index}: input is {0}, expected output is {1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"1", 1},

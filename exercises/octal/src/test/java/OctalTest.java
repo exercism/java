@@ -14,7 +14,7 @@ public class OctalTest {
     private String input;
     private int expectedOutput;
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "{index}: input is {0}, expected output is {1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"1", 1},

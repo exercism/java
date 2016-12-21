@@ -18,7 +18,7 @@ public class AtbashTest {
         private String input;
         private String expectedOutput;
 
-        @Parameters
+        @Parameters(name = "{index}: input is {0}, expected output is {1}")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][] {
                     { "no", "ml" },
