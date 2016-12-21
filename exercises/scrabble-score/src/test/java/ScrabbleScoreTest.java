@@ -14,7 +14,7 @@ public class ScrabbleScoreTest {
     private String input;
     private int expectedOutput;
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Test {index}: input is {0}, expected output is {1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"", 0},
