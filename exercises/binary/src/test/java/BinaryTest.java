@@ -12,10 +12,10 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class BinaryTest {
 
-    private String input;
-    private int expectedOutput;
+    private String binaryNumberAsString;
+    private int decimalNumber;
 
-    @Parameters(name = "{index}: input is {0}, expected output is {1}")
+    @Parameters(name = "{index}: expected result {1} when converting binary number \"{0}\" to decimal.")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"1", 1},
@@ -34,16 +34,16 @@ public class BinaryTest {
         });
     }
 
-    public BinaryTest(String input, int expectedOutput) {
-        this.input = input;
-        this.expectedOutput = expectedOutput;
+    public BinaryTest(String binaryNumberAsString, int decimalNumber) {
+        this.binaryNumberAsString = binaryNumberAsString;
+        this.decimalNumber = decimalNumber;
     }
 
 
     @Test
     public void test() {
-        Binary binary = new Binary(input);
+        Binary binary = new Binary(binaryNumberAsString);
 
-        assertEquals(expectedOutput, binary.getDecimal());
+        assertEquals(decimalNumber, binary.getDecimal());
     }
 }
