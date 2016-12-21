@@ -27,7 +27,7 @@ Open an administrative command prompt.  (If you need assistance opening an admin
    ```batchfile
    C:\Windows\system32> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
    ```
--  Install the JDK:
+2.  Install the JDK:
 
    ```batchfile
    C:\Windows\system32> choco install jdk8
@@ -35,7 +35,7 @@ Open an administrative command prompt.  (If you need assistance opening an admin
    C:\Windows\system32> refreshenv
    ...
    ```
--  Install Gradle:
+3.  Install Gradle:
 
    ```batchfile
    C:\Windows\system32>choco install gradle
@@ -61,17 +61,17 @@ Below are instructions for install using the most common method - using Homebrew
    ```sh
    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
-- Tap the [Homebrew Cask](https://caskroom.github.io/) — this allows us to install pre-built binaries like the JDK.
+2. Tap the [Homebrew Cask](https://caskroom.github.io/) — this allows us to install pre-built binaries like the JDK.
 
    ```
    $ brew tap caskroom/cask
    ```
--  Install the JDK:
+3.  Install the JDK:
 
    ```
    $ brew cask install java
    ```
--  Install Gradle:
+4.  Install Gradle:
 
    ```
    $ brew install gradle
@@ -105,7 +105,7 @@ If you are using Debian or its derivatives (like Ubuntu or Linux Mint), use APT:
    $ sudo apt-get update
    $ sudo apt-get install oracle-java8-installer
    ```
--  Install Gradle:
+2. Install Gradle:
 
    ```sh
    $ sudo add-apt-repository ppa:cwchien/gradle
@@ -130,7 +130,7 @@ If you are using Fedora or its derivatives, use DNF:
    ```sh
    $ sudo dnf install java-1.8.0-openjdk-devel
    ```
--  Install Gradle:
+2. Install Gradle:
 
    ```sh
    $ sudo dnf install gradle
@@ -158,7 +158,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 1. Install the JDK:
    1. Download "**Java Platform (JDK)**" from [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
    -  Run the installer, using all the defaults.
--  Install Gradle:
+2. Install Gradle:
    - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
    - Unzip the archive.  We recommend a place like `C:\Users\JohnDoe\Tools`.
    - Add a new system environment variable named `GRADLE_HOME` and set it to the path you just created (e.g. `C:\Users\JohnDoe\Tools\gradle-x.y`).
@@ -177,10 +177,10 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 
 1. Install the JDK:
    1. Download "**Java Platform (JDK)**" from [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-   -  Run the installer, using all the defaults.
--  Install Gradle:
-   - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
-   -  Unpack Gradle:
+   2. Run the installer, using all the defaults.
+2. Install Gradle:
+   1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
+   2. Unpack Gradle:
 
       ```sh
       $ mkdir ~/tools
@@ -188,7 +188,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
       $ unzip ~/Downloads/gradle-*-bin.zip
       $ cd gradle*
       ```
-   -  Configure Gradle and add it to the path:
+   3. Configure Gradle and add it to the path:
 
       ```sh
       $ cat << DONE >> ~/.bashrc
@@ -210,10 +210,10 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 
 1. Install the JDK:
    1. Download "**Java Platform (JDK)**" from [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-   -  Run the installer, using all the defaults.
--  Install Gradle:
-   - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
-   -  Unpack Gradle:
+   2. Run the installer, using all the defaults.
+2. Install Gradle:
+   1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
+   2. Unpack Gradle:
 
       ```sh
       $ mkdir ~/tools
@@ -221,7 +221,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
       $ unzip ~/Downloads/gradle-*-bin.zip
       $ cd gradle*
       ```
-   -  Configure Gradle and add it to the path:
+   3. Configure Gradle and add it to the path:
 
       ```sh
       $ cat << DONE >> ~/.bashrc
