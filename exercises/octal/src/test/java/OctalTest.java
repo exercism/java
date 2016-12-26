@@ -14,8 +14,7 @@ public class OctalTest {
     private String octalNumberAsString;
     private int decimalNumber;
 
-    @Parameterized.Parameters(name = "{index}: expected result {1} when converting octal number " +
-            "constructed with string \"{0}\" to decimal.")
+    @Parameterized.Parameters(name = "{index}: expected {1} when converting \"{0}\" from octal to decimal.")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"1", 1},

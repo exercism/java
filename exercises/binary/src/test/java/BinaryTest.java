@@ -15,8 +15,7 @@ public class BinaryTest {
     private String binaryNumberAsString;
     private int decimalNumber;
 
-    @Parameters(name = "{index}: expected result {1} when converting binary number " +
-            "constructed with string \"{0}\" to decimal.")
+    @Parameters(name = "{index}: expected {1} when converting \"{0}\" from binary to decimal.")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"1", 1},
