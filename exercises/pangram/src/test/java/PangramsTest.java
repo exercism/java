@@ -4,7 +4,7 @@ import org.junit.Ignore;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class PangramTest {
+public class PangramsTest {
 
 
     @Test
