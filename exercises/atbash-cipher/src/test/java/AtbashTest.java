@@ -15,10 +15,10 @@ public class AtbashTest {
 
     @RunWith(Parameterized.class)
     public static class EncodeTest {
-        private String input;
-        private String expectedOutput;
+        private String plaintext;
+        private String ciphertext;
 
-        @Parameters
+        @Parameters(name = "{index}: expected plaintext \"{0}\" to encode to ciphertext \"{1}\".")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][] {
                     { "no", "ml" },
@@ -31,15 +31,15 @@ public class AtbashTest {
             });
         }
 
-        public EncodeTest(String input, String expectedOutput) {
-            this.input = input;
-            this.expectedOutput = expectedOutput;
+        public EncodeTest(String plaintext, String ciphertext) {
+            this.plaintext = plaintext;
+            this.ciphertext = ciphertext;
         }
 
 
     @Test
         public void test() {
-            assertEquals(expectedOutput, Atbash.encode(input));
+            assertEquals(ciphertext, Atbash.encode(plaintext));
         }
     }
 
