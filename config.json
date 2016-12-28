@@ -22,7 +22,6 @@
     "acronym",
     "scrabble-score",
     "roman-numerals",
-    "binary",
     "prime-factors",
     "raindrops",
     "allergies",
@@ -30,12 +29,9 @@
     "atbash-cipher",
     "accumulate",
     "crypto-square",
-    "trinary",
     "rna-transcription",
-    "hexadecimal",
     "sieve",
     "simple-cipher",
-    "octal",
     "luhn",
     "pig-latin",
     "simple-linked-list",
@@ -151,11 +147,6 @@
       "topics": []
     },
     {
-      "slug": "binary",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "prime-factors",
       "difficulty": 1,
       "topics": []
@@ -191,17 +182,7 @@
       "topics": []
     },
     {
-      "slug": "trinary",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "rna-transcription",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "hexadecimal",
       "difficulty": 1,
       "topics": []
     },
@@ -212,11 +193,6 @@
     },
     {
       "slug": "simple-cipher",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "octal",
       "difficulty": 1,
       "topics": []
     },
@@ -332,6 +308,10 @@
     }
   ],
   "deprecated": [
+    "binary",
+    "hexadecimal",
+    "octal",
+    "trinary"
   ],
   "ignored": [
     "_template",
