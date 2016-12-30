@@ -21,15 +21,15 @@ public class SimpleCipherStepOneTest {
      */
     @Test
     public void cipherCanEncode() {
-        String expectedOutput = cipherWithDefaultKey.getKey().substring(0, 10);
-        assertEquals(expectedOutput, cipherWithDefaultKey.encode("aaaaaaaaaa"));
+        String cipherText = cipherWithDefaultKey.getKey().substring(0, 10);
+        assertEquals(cipherText, cipherWithDefaultKey.encode("aaaaaaaaaa"));
     }
 
     @Ignore
     @Test
     public void cipherCanDecode() {
-        String expectedOutput = "aaaaaaaaaa";
-        assertEquals(expectedOutput, cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10)));
+        String cipherText = "aaaaaaaaaa";
+        assertEquals(cipherText, cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10)));
     }
 
     @Ignore

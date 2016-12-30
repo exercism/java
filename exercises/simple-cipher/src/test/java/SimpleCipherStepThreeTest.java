@@ -1,5 +1,7 @@
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +9,8 @@ import static org.junit.Assert.*;
  * Step 3: Generate random key if key isn't specified. Check key is right format
  */
 public class SimpleCipherStepThreeTest {
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Ignore
     @Test
@@ -30,32 +34,30 @@ public class SimpleCipherStepThreeTest {
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithAllCapsKey() {
+        expectedException.expect(IllegalArgumentException.class);
         new Cipher("ABCDEF");
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithAnyCapsKey() {
+        expectedException.expect(IllegalArgumentException.class);
         new Cipher("abcdEFg");
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithNumericKey() {
+        expectedException.expect(IllegalArgumentException.class);
         new Cipher("12345");
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithAnyNumericKey() {
+        expectedException.expect(IllegalArgumentException.class);
         new Cipher("abcd345ef");
-    }
-
-    @Ignore
-    @Test(expected = IllegalArgumentException.class)
-    public void cipherThrowsWithEmptyKey() {
-        new Cipher("");
     }
 }

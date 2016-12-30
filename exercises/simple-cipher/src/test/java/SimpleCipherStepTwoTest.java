@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,31 +11,41 @@ import static org.junit.Assert.assertEquals;
  */
 public class SimpleCipherStepTwoTest {
     private Cipher cipherWithSetKey;
-    private static final String KEY = "abcdefghij";
+    private static final String key = "abcdefghij";
+
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Before
     public void setup() {
-        cipherWithSetKey = new Cipher(KEY);
+        cipherWithSetKey = new Cipher(key);
     }
 
     @Ignore
     @Test
     public void cipherKeepsTheSubmittedKey() {
-        assertEquals(KEY, cipherWithSetKey.getKey());
+        assertEquals(key, cipherWithSetKey.getKey());
+    }
+
+    @Ignore
+    @Test
+    public void cipherThrowsWithEmptyKey() {
+        expectedException.expect(IllegalArgumentException.class);
+        new Cipher("");
     }
 
     @Ignore
     @Test
     public void cipherCanEncodeWithGivenKey() {
-        String expectedOutput = "abcdefghij";
-        assertEquals(expectedOutput, cipherWithSetKey.encode("aaaaaaaaaa"));
+        String cipherText = "abcdefghij";
+        assertEquals(cipherText, cipherWithSetKey.encode("aaaaaaaaaa"));
     }
 
     @Ignore
     @Test
     public void cipherCanDecodeWithGivenKey() {
-        String expectedOutput = "aaaaaaaaaa";
-        assertEquals(expectedOutput, cipherWithSetKey.decode("abcdefghij"));
+        String cipherText = "aaaaaaaaaa";
+        assertEquals(cipherText, cipherWithSetKey.decode("abcdefghij"));
     }
 
     @Ignore
@@ -46,29 +58,29 @@ public class SimpleCipherStepTwoTest {
     @Ignore
     @Test
     public void cipherCanWrapEncode() {
-        String expectedOutput = "zabcdefghi";
-        assertEquals(expectedOutput, cipherWithSetKey.encode("zzzzzzzzzz"));
+        String cipherText = "zabcdefghi";
+        assertEquals(cipherText, cipherWithSetKey.encode("zzzzzzzzzz"));
     }
 
     @Ignore
     @Test
     public void cipherCanEncodeMessageThatIsShorterThanTheKey() {
-        String expectedOutput = "abcde";
-        assertEquals(expectedOutput, cipherWithSetKey.encode("aaaaa"));
+        String cipherText = "abcde";
+        assertEquals(cipherText, cipherWithSetKey.encode("aaaaa"));
     }
 
     @Ignore
     @Test
     public void cipherCanDecodeMessageThatIsShorterThanTheKey() {
-        String expectedOutput = "aaaaa";
-        assertEquals(expectedOutput, cipherWithSetKey.decode("abcde"));
+        String cipherText = "aaaaa";
+        assertEquals(cipherText, cipherWithSetKey.decode("abcde"));
     }
 
     @Ignore
     @Test
     public void cipherCanDoubleShiftEncode() {
         String plainText = "iamapandabear";
-        String expectedOutput = "qayaeaagaciai";
-        assertEquals(expectedOutput, new Cipher(plainText).encode(plainText));
+        String cipherText = "qayaeaagaciai";
+        assertEquals(cipherText, new Cipher(plainText).encode(plainText));
     }
 }
