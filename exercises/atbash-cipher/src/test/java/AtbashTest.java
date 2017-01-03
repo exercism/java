@@ -45,10 +45,10 @@ public class AtbashTest {
 
     @RunWith(Parameterized.class)
     public static class DecodeTest {
-        private String input;
-        private String expectedOutput;
+        private String ciphertext;
+        private String plaintext;
 
-        @Parameters
+        @Parameters(name = "{index}: expected ciphertext \"{0}\" to decode to plaintext \"{1}\".")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][] {
                     { "vcvix rhn", "exercism" },
@@ -57,15 +57,15 @@ public class AtbashTest {
             });
         }
 
-        public DecodeTest(String input, String expectedOutput) {
-            this.input = input;
-            this.expectedOutput = expectedOutput;
+        public DecodeTest(String ciphertext, String plaintext) {
+            this.ciphertext = ciphertext;
+            this.plaintext = plaintext;
         }
 
         @Ignore
     @Test
         public void test() {
-            assertEquals(expectedOutput, Atbash.decode(input));
+            assertEquals(plaintext, Atbash.decode(ciphertext));
         }
     }
 }
