@@ -1,9 +1,6 @@
-This exercise has three test classes: StepOne.java, StepTwo.java and StepThree.java. To run all test classes:
-```
-$ gradle test
-```
+This exercise has three test classes: SimpleCipherStepOneTest.java, SimpleCipherStepTwoTest.java and SimpleCipherStepThreeTest.java.
 
-To run only one test class (e.g. in this example StepOne.java):
+To run only one test class (e.g. in this example SimpleCipherStepOneTest.java):
 ```
 $ gradle test --tests *StepOne*
 ```
