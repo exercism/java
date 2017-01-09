@@ -11,10 +11,10 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class PigLatinTest {
 
-    private String input;
-    private String expectedOutput;
+    private String englishPhrase;
+    private String pigLatinTranslation;
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "{index}: expected \"{0}\" to translate to the pig latin phrase \"{1}\"")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 // Ay is added to words that start with vowels
@@ -59,14 +59,14 @@ public class PigLatinTest {
         });
     }
 
-    public PigLatinTest(String input, String expectedOutput) {
-        this.input = input;
-        this.expectedOutput = expectedOutput;
+    public PigLatinTest(String englishPhrase, String pigLatinTranslation) {
+        this.englishPhrase = englishPhrase;
+        this.pigLatinTranslation = pigLatinTranslation;
     }
 
 
     @Test
     public void test() {
-        assertEquals(expectedOutput, PigLatin.translate(input));
+        assertEquals(pigLatinTranslation, PigLatin.translate(englishPhrase));
     }
 }

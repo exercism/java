@@ -15,7 +15,6 @@ public final class QueenAttackCalculatorTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    @Ignore
     @Test
     public void testCoordinateWithNegativeRankNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);

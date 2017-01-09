@@ -1,53 +1,59 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.entry;
-
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import java.util.Map;
+
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.*;
 
 public class NucleotideTest {
 
     @Test
     public void testEmptyDnaStringHasNoAdenosine() {
         DNA dna = new DNA("");
-        assertThat(dna.count('A')).isEqualTo(0);
+        assertThat(dna.count('A'), is(0));
     }
 
     @Ignore
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
         DNA dna = new DNA("");
-        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-            entry('A', 0),
-            entry('C', 0),
-            entry('G', 0),
-            entry('T', 0)
-        );
+        Map<Character, Integer> counts = dna.nucleotideCounts();
+        assertThat(counts.size(), is(4));
+        assertThat(counts, allOf(
+                hasEntry('A', 0),
+                hasEntry('C', 0),
+                hasEntry('G', 0),
+                hasEntry('T', 0)
+        ));
     }
 
     @Ignore
     @Test
     public void testRepetitiveCytidineGetsCounted() {
         DNA dna = new DNA("CCCCC");
-        assertThat(dna.count('C')).isEqualTo(5);
+        assertThat(dna.count('C'), is(5));
     }
 
     @Ignore
     @Test
     public void testRepetitiveSequenceWithOnlyGuanosine() {
         DNA dna = new DNA("GGGGGGGG");
-        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-            entry('A', 0),
-            entry('C', 0),
-            entry('G', 8),
-            entry('T', 0)
-        );
+        Map<Character, Integer> counts = dna.nucleotideCounts();
+        assertThat(counts.size(), is(4));
+        assertThat(counts, allOf(
+                hasEntry('A', 0),
+                hasEntry('C', 0),
+                hasEntry('G', 8),
+                hasEntry('T', 0)
+        ));
     }
 
     @Ignore
     @Test
     public void testCountsOnlyThymidine() {
         DNA dna = new DNA("GGGGGTAACCCGG");
-        assertThat(dna.count('T')).isEqualTo(1);
+        assertThat(dna.count('T'), is(1));
     }
 
     @Ignore
@@ -55,7 +61,7 @@ public class NucleotideTest {
     public void testCountsANucleotideOnlyOnce() {
         DNA dna = new DNA("CGATTGGG");
         dna.count('T');
-        assertThat(dna.count('T')).isEqualTo(2);
+        assertThat(dna.count('T'), is(2));
     }
 
     @Ignore
@@ -63,12 +69,14 @@ public class NucleotideTest {
     public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
         DNA dna = new DNA("GATTACA");
         dna.count('A');
-        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-            entry('A', 3),
-            entry('C', 1),
-            entry('G', 1),
-            entry('T', 2)
-        );
+        Map<Character, Integer> counts = dna.nucleotideCounts();
+        assertThat(counts.size(), is(4));
+        assertThat(counts, allOf(
+                hasEntry('A', 3),
+                hasEntry('C', 1),
+                hasEntry('G', 1),
+                hasEntry('T', 2)
+        ));
     }
 
     @Ignore
@@ -83,11 +91,13 @@ public class NucleotideTest {
     public void testCountsAllNucleotides() {
         String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
         DNA dna = new DNA(s);
-        assertThat(dna.nucleotideCounts()).hasSize(4).contains(
-            entry('A', 20),
-            entry('C', 12),
-            entry('G', 17),
-            entry('T', 21)
-        );
+        Map<Character, Integer> counts = dna.nucleotideCounts();
+        assertThat(counts.size(), is(4));
+        assertThat(counts, allOf(
+                hasEntry('A', 20),
+                hasEntry('C', 12),
+                hasEntry('G', 17),
+                hasEntry('T', 21)
+        ));
     }
 }

@@ -12,10 +12,10 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class RaindropsTest {
 
-    private int input;
-    private String expectedOutput;
+    private int inputNumber;
+    private String outputFromRaindropConversion;
 
-    @Parameters
+    @Parameters(name = "{index}: expected input number {0} to be converted to \"{1}\"")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 // Non-primes
@@ -46,14 +46,14 @@ public class RaindropsTest {
         });
     }
 
-    public RaindropsTest(int input, String expectedOutput) {
-        this.input = input;
-        this.expectedOutput = expectedOutput;
+    public RaindropsTest(int inputNumber, String outputFromRaindropConversion) {
+        this.inputNumber = inputNumber;
+        this.outputFromRaindropConversion = outputFromRaindropConversion;
     }
 
 
     @Test
     public void test() {
-        assertEquals(expectedOutput, Raindrops.convert(input));
+        assertEquals(outputFromRaindropConversion, Raindrops.convert(inputNumber));
     }
 }

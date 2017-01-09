@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -31,6 +32,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testBinaryToSingleDecimal() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1});
@@ -47,6 +49,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testSingleDecimalToBinary() {
         final BaseConverter baseConverter = new BaseConverter(10, new int[]{5});
@@ -63,6 +66,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testBinaryToMultipleDecimal() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
@@ -79,6 +83,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testDecimalToBinary() {
         final BaseConverter baseConverter = new BaseConverter(10, new int[]{4, 2});
@@ -95,6 +100,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testTrinaryToHexadecimal() {
         final BaseConverter baseConverter = new BaseConverter(3, new int[]{1, 1, 2, 0});
@@ -111,6 +117,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testHexadecimalToTrinary() {
         final BaseConverter baseConverter = new BaseConverter(16, new int[]{2, 10});
@@ -127,6 +134,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void test15BitInteger() {
         final BaseConverter baseConverter = new BaseConverter(97, new int[]{3, 46, 60});
@@ -143,6 +151,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testEmptyDigits() {
         expectedException.expect(IllegalArgumentException.class);
@@ -151,6 +160,7 @@ public final class BaseConverterTest {
         new BaseConverter(2, new int[]{});
     }
 
+    @Ignore
     @Test
     public void testSingleZero() {
         final BaseConverter baseConverter = new BaseConverter(10, new int[]{0});
@@ -167,6 +177,7 @@ public final class BaseConverterTest {
                 actualDigits);
     }
 
+    @Ignore
     @Test
     public void testMultipleZeros() {
         expectedException.expect(IllegalArgumentException.class);
@@ -175,6 +186,7 @@ public final class BaseConverterTest {
         new BaseConverter(10, new int[]{0, 0, 0});
     }
 
+    @Ignore
     @Test
     public void testLeadingZeros() {
         expectedException.expect(IllegalArgumentException.class);
@@ -183,6 +195,7 @@ public final class BaseConverterTest {
         new BaseConverter(7, new int[]{0, 6, 0});
     }
 
+    @Ignore
     @Test
     public void testNegativeDigit() {
         expectedException.expect(IllegalArgumentException.class);
@@ -191,6 +204,7 @@ public final class BaseConverterTest {
         new BaseConverter(2, new int[]{1, -1, 1, 0, 1, 0});
     }
 
+    @Ignore
     @Test
     public void testInvalidPositiveDigit() {
         expectedException.expect(IllegalArgumentException.class);
@@ -199,6 +213,7 @@ public final class BaseConverterTest {
         new BaseConverter(2, new int[]{1, 2, 1, 0, 1, 0});
     }
 
+    @Ignore
     @Test
     public void testFirstBaseIsOne() {
         expectedException.expect(IllegalArgumentException.class);
@@ -207,6 +222,7 @@ public final class BaseConverterTest {
         new BaseConverter(1, new int[]{});
     }
 
+    @Ignore
     @Test
     public void testSecondBaseIsOne() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
@@ -217,6 +233,7 @@ public final class BaseConverterTest {
         baseConverter.convertToBase(1);
     }
 
+    @Ignore
     @Test
     public void testFirstBaseIsZero() {
         expectedException.expect(IllegalArgumentException.class);
@@ -225,6 +242,7 @@ public final class BaseConverterTest {
         new BaseConverter(0, new int[]{});
     }
 
+    @Ignore
     @Test
     public void testSecondBaseIsZero() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
@@ -235,6 +253,7 @@ public final class BaseConverterTest {
         baseConverter.convertToBase(0);
     }
 
+    @Ignore
     @Test
     public void testFirstBaseIsNegative() {
         expectedException.expect(IllegalArgumentException.class);
@@ -243,6 +262,7 @@ public final class BaseConverterTest {
         new BaseConverter(-2, new int[]{});
     }
 
+    @Ignore
     @Test
     public void testSecondBaseIsNegative() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1});

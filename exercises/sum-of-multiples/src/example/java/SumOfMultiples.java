@@ -1,8 +1,7 @@
-import java.util.Arrays;
 public class SumOfMultiples {
     
     
-    public int Sum(int number, int[] set) {
+    public static int sum(int number, int[] set) {
         
         int sum = 0;
         int count = 0;
