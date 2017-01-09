@@ -53,7 +53,8 @@
     "all-your-base",
     "custom-set",
     "wordy",
-    "palindrome-products"
+    "palindrome-products",
+    "sublist"
   ],
   "exercises": [
     {
@@ -303,6 +304,11 @@
     },
     {
       "slug": "palindrome-products",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "sublist",
       "difficulty": 1,
       "topics": []
     }
