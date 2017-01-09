@@ -53,7 +53,8 @@
     "all-your-base",
     "custom-set",
     "wordy",
-    "palindrome-products"
+    "palindrome-products",
+	"twelve-days"
   ],
   "exercises": [
     {
@@ -305,7 +306,12 @@
       "slug": "palindrome-products",
       "difficulty": 1,
       "topics": []
-    }
+    },
+	{
+	  "slug": "twelve-days",
+	  "difficulty": 1,
+	  "topics": []
+	}
   ],
   "deprecated": [
     "binary",
