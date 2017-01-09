@@ -24,7 +24,7 @@ public class EtlTest {
         };
         expected = Collections.unmodifiableMap(expected);
 
-        assertEquals(etl.transform(old), expected);
+        assertEquals(expected, etl.transform(old));
     }
 
     @Test
@@ -47,7 +47,7 @@ public class EtlTest {
         };
         expected = Collections.unmodifiableMap(expected);
 
-        assertEquals(etl.transform(old), expected);
+        assertEquals(expected, etl.transform(old));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class EtlTest {
         };
         expected = Collections.unmodifiableMap(expected);
 
-        assertEquals(etl.transform(old), expected);
+        assertEquals(expected, etl.transform(old));
     }
 
     @Test
@@ -120,6 +120,6 @@ public class EtlTest {
         };
         expected = Collections.unmodifiableMap(expected);
 
-        assertEquals(etl.transform(old), expected);
+        assertEquals(expected, etl.transform(old));
     }
 }
