@@ -54,6 +54,7 @@
     "custom-set",
     "wordy",
     "palindrome-products",
+    "sublist",
     "list-ops"
   ],
   "exercises": [
@@ -304,6 +305,11 @@
     },
     {
       "slug": "palindrome-products",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "sublist",
       "difficulty": 1,
       "topics": []
     },
