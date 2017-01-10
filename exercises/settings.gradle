@@ -52,3 +52,5 @@ include 'triangle'
 include 'trinary'
 include 'word-count'
 include 'wordy'
+include 'twelve-days'
+
