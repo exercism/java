@@ -55,7 +55,8 @@
     "wordy",
     "palindrome-products",
     "twelve-days",
-    "sublist"
+    "sublist",
+    "rectangles"
   ],
   "exercises": [
     {
@@ -315,6 +316,11 @@
     },
     {
       "slug": "sublist",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "rectangles",
       "difficulty": 1,
       "topics": []
     }
