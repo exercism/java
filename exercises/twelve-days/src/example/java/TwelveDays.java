@@ -21,12 +21,10 @@ public class TwelveDays {
     }
 
     public static String verses(int verseNumberStart, int verseNumberEnd) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = verseNumberStart; i <= verseNumberEnd; i++) {
+        StringBuilder stringBuilder = new StringBuilder(constructVerse(verseNumberStart));
+        for (int i = verseNumberStart + 1; i <= verseNumberEnd; i++) {
+            stringBuilder.append("\n");
             stringBuilder.append(constructVerse(i));
-            if (i != 12) {
-                stringBuilder.append("\n");
-            }
         }
         return stringBuilder.toString();
     }
