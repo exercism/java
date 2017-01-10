@@ -54,7 +54,8 @@
     "custom-set",
     "wordy",
     "palindrome-products",
-	"twelve-days"
+	"twelve-days",
+    "sublist"
   ],
   "exercises": [
     {
@@ -311,7 +312,12 @@
 	  "slug": "twelve-days",
 	  "difficulty": 1,
 	  "topics": []
-	}
+	},
+    {
+      "slug": "sublist",
+      "difficulty": 1,
+      "topics": []
+    }
   ],
   "deprecated": [
     "binary",
