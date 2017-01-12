@@ -30,14 +30,14 @@ public class ListOpsTest {
 
     @Test
     @Ignore
-    public void shouldReturnCorrectLengthOfAnNonEmptyList() {
-        final int expected = 4;
+    public void shouldReturnTheCorrectLengthOfAnNonEmptyList() {
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, expected)
+                IntStream.range(0, 4)
                         .boxed()
                         .collect(Collectors.toList())
         );
         final int actual = ListOps.length(list);
+        final int expected = list.size();
 
         assertEquals(expected, actual);
     }
@@ -53,7 +53,7 @@ public class ListOpsTest {
 
     @Test
     @Ignore
-    public void shouldReverseNonEmptyList() {
+    public void shouldReverseANonEmptyList() {
         final int length = 100;
         final int startValue = 0;
         final List<Integer> reversedList
@@ -61,8 +61,6 @@ public class ListOpsTest {
                         .boxed()
                         .collect(Collectors.toList());
         Collections.reverse(reversedList);
-        final List<Integer> expected
-                = Collections.unmodifiableList(reversedList);
         final List<Integer> list = Collections.unmodifiableList(
                 IntStream.range(startValue, length)
                         .boxed()
@@ -70,6 +68,7 @@ public class ListOpsTest {
         );
         final List<Integer> actual
                 = ListOps.reverse(list);
+        final List<Integer> expected = reversedList;
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -78,7 +77,7 @@ public class ListOpsTest {
 
     @Test
     @Ignore
-    public void mapOfAnEmptyListShouldBeAnEmptyList() {
+    public void shouldMapAnEmptyListAndReturnAnEmptyList() {
         final List<Integer> actual = ListOps.map(EMPTY_LIST, x -> x + 1);
 
         assertNotNull(actual);
@@ -88,11 +87,11 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldMapNonEmptyList() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(Arrays.asList(2, 4, 6, 8));
         final List<Integer> list
                 = Collections.unmodifiableList(Arrays.asList(1, 3, 5, 7));
         final List<Integer> actual = ListOps.map(list, x -> x + 1);
+        final List<Integer> expected
+                = Arrays.asList(2, 4, 6, 8);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -101,7 +100,7 @@ public class ListOpsTest {
 
     @Test
     @Ignore
-    public void fileteredEmptyListShouldBeAnEmptyList() {
+    public void shouldFilterAnEmptyListanddReturnAnEmptyList() {
         final List<Integer> actual = ListOps.filter(EMPTY_LIST, x -> x > 0);
 
         assertNotNull(actual);
@@ -111,12 +110,11 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldFilterNonEmptyList() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(Arrays.asList(1, 3));
         final List<Integer> list = Collections.unmodifiableList(
                 IntStream.range(0, 4).boxed().collect(Collectors.toList())
         );
         final List<Integer> actual = ListOps.filter(list, x -> x % 2 > 0);
+        final List<Integer> expected = Arrays.asList(1, 3);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -137,18 +135,16 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldAppendAnEmptyListToANonEmptyList() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
         final List<Integer> listTo
                 = IntStream.range(0, 4)
                         .boxed()
                         .collect(Collectors.toList());
         assertFalse(ListOps.append(listTo, EMPTY_LIST));
         final List<Integer> actual = listTo;
+        final List<Integer> expected
+                = IntStream.range(0, 4)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -158,12 +154,6 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldAppendANonEmptyListToAnEmptyList() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
         List<Integer> listTo = new ArrayList<>();
         final List<Integer> listFrom
                 = Collections.unmodifiableList(
@@ -173,6 +163,10 @@ public class ListOpsTest {
                 );
         assertTrue(ListOps.append(listTo, listFrom));
         final List<Integer> actual = listTo;
+        final List<Integer> expected
+                = IntStream.range(0, 4)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -182,12 +176,6 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldAppendNonEmptyLists() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 8)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
         final List<Integer> listTo
                 = IntStream.range(0, 4)
                         .boxed()
@@ -200,6 +188,10 @@ public class ListOpsTest {
                 );
         assertTrue(ListOps.append(listTo, listFrom));
         final List<Integer> actual = listTo;
+        final List<Integer> expected
+                = IntStream.range(0, 8)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -218,12 +210,6 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldConcatenateOneNonEmptyList() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
         final List<Integer> list
                 = Collections.unmodifiableList(
                         IntStream.range(0, 4)
@@ -231,6 +217,10 @@ public class ListOpsTest {
                                 .collect(Collectors.toList())
                 );
         final List<Integer> actual = ListOps.concat(list);
+        final List<Integer> expected
+                = IntStream.range(0, 4)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -258,12 +248,6 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldConcatenateOneEmptyAndOneNonEmptyLists() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
         final List<Integer> list
                 = Collections.unmodifiableList(
                         IntStream.range(0, 4)
@@ -271,6 +255,10 @@ public class ListOpsTest {
                                 .collect(Collectors.toList())
                 );
         final List<Integer> actual = ListOps.concat(list, EMPTY_LIST);
+        final List<Integer> expected
+                = IntStream.range(0, 4)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -280,12 +268,6 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldConcatenateOneNonEmptyAndOneEmptyLists() {
-        final List<Integer> expected
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
         final List<Integer> list
                 = Collections.unmodifiableList(
                         IntStream.range(0, 4)
@@ -293,6 +275,10 @@ public class ListOpsTest {
                                 .collect(Collectors.toList())
                 );
         final List<Integer> actual = ListOps.concat(EMPTY_LIST, list);
+        final List<Integer> expected
+                = IntStream.range(0, 4)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -308,14 +294,10 @@ public class ListOpsTest {
         final List<Integer> list2 = Collections.unmodifiableList(
                 IntStream.range(1, 6).boxed().collect(Collectors.toList())
         );
-        final List<Integer> sortedCancatenatedList
+        final List<Integer> expected
                 = Stream.concat(list1.stream(), list2.stream())
                         .collect(Collectors.toList());
-        Collections.sort(sortedCancatenatedList);
-        final List<Integer> expected = Collections.unmodifiableList(
-                sortedCancatenatedList);
         final List<Integer> actual = ListOps.concat(list1, list2);
-        Collections.sort(actual);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -343,9 +325,8 @@ public class ListOpsTest {
         sortedCancatenatedList.addAll(list3);
         sortedCancatenatedList.addAll(list4);
         Collections.sort(sortedCancatenatedList);
-        final List<Integer> expected = Collections.unmodifiableList(
-                sortedCancatenatedList
-        );
+        final List<Integer> expected
+                = sortedCancatenatedList;
         final List<Integer> actual
                 = ListOps.concat(list1, list2, EMPTY_LIST, list3, list4);
         Collections.sort(actual);
@@ -420,12 +401,7 @@ public class ListOpsTest {
 
     @Test
     @Ignore
-    public void reduceShouldConcatenateAnEmptyListAndANonEmptyList() {
-        final List<Integer> expected = Collections.unmodifiableList(
-                IntStream.range(0, 5)
-                        .boxed()
-                        .collect(Collectors.toList())
-        );
+    public void shouldReduceAnEmptyListAndANonEmptyListAndReturnConcatenation() {
         final List<Integer> list = Collections.unmodifiableList(
                 IntStream.range(0, 5)
                         .boxed()
@@ -436,6 +412,10 @@ public class ListOpsTest {
                         new ArrayList<Integer>(),
                         accumulator,
                         combiner);
+        final List<Integer> expected
+                = IntStream.range(0, 5)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -444,12 +424,7 @@ public class ListOpsTest {
 
     @Test
     @Ignore
-    public void reduceShouldConcatenateTwoNonEmptyLists() {
-        final List<Integer> expected = Collections.unmodifiableList(
-                IntStream.range(0, 10)
-                        .boxed()
-                        .collect(Collectors.toList())
-        );
+    public void shouldReduceTwoNonEmptyListsAndReturnConcatenation() {
         final List<Integer> listOne = Collections.unmodifiableList(
                 IntStream.range(0, 5)
                         .boxed()
@@ -465,6 +440,10 @@ public class ListOpsTest {
                         listOne,
                         accumulator,
                         combiner);
+        final List<Integer> expected
+                = IntStream.range(0, 10)
+                        .boxed()
+                        .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
