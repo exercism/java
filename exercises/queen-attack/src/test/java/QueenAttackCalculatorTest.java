@@ -8,6 +8,13 @@ import static org.junit.Assert.assertTrue;
 
 public final class QueenAttackCalculatorTest {
 
+    /*
+     * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
+     * ExpectedExceptions in particular.
+     */
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void testQueensThatDoNotShareRankFileOrDiagonalCannotAttack() {
         final QueenAttackCalculator calculator
@@ -69,13 +76,6 @@ public final class QueenAttackCalculatorTest {
 
         assertTrue(calculator.canQueensAttackOneAnother());
     }
-
-    /*
-     * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
-     * ExpectedExceptions in particular.
-     */
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Ignore
     @Test
