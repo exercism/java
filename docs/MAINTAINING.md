@@ -2,19 +2,24 @@
 
 This is a guide/reference for maintainers of the Java track.
 
-- [Your New Permissions](#your-new-permissions)
+- [Your Permissions](#your-permissions)
 - [Maintainer Guides](#maintainer-guides)
 - [The Project Board](#the-project-board)
 - [Miscellaneous](#miscellaneous)
 
-## Your New Permissions 
+## Your Permissions 
 
-You now have write access to four repositories.  "write access" means you can: review, reject, accept and merge PRs; and push changes to these repos.  Despite having permissions to push, we tend to see review of even our own PRs.
+As a maintainer, you have write access to four repositories.  "write access" means you can: review, reject, accept and merge PRs; and push changes to these repos.  Despite having permissions to push directly, we tend to seek review of even our own PRs.
 
-- [x-common](https://github.com/exercism/x-common) — the library of exercises.
+### Track-specific
+
+- [xjava](https://github.com/exercism/xjava) — yeah... you know what this one is. :)
+
+### Exercism-wide
+
+- [x-common](https://github.com/exercism/x-common) — the library of canonical exercises.
 - [discussions](https://github.com/exercism/discussions) — the place where project-wide conversations happen. 
   [issues sorted by most recently updated.](https://github.com/exercism/discussions/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
-- [xjava](https://github.com/exercism/xjava) — yeah... you know what this one is. :)
 - [todo](https://github.com/exercism/todo) — not really used... might just go away completely in the future.
 
 ## Maintainer Guides
@@ -25,7 +30,7 @@ You now have write access to four repositories.  "write access" means you can: r
 
 ## The Project Board
 
-GitHub issues are great, there's no way to easily set priorities.
+GitHub issues are great, but there's no way to easily set priorities.
 To do this, we're using a GitHub Project: https://github.com/exercism/xjava/projects/2.
 
 - **Epics** — issues that really represent bigger ideas.  These inspire creating a set of smaller issues to be elaborated...
