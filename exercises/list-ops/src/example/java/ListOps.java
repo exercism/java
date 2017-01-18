@@ -42,11 +42,6 @@ public class ListOps {
         return list.stream().reduce(identity, accumulator, combiner);
     }
 
-    public static <T> boolean append(final List<T> listTo,
-            List<T> listFrom) {
-        return listTo.addAll(listFrom);
-    }
-
     public static <T> List<T> concat(final List<T>... lists) {
         return Stream.of(lists)
                 .flatMap(Collection::stream)

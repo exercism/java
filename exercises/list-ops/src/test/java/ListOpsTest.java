@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -54,21 +55,13 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldReverseANonEmptyList() {
-        final int length = 100;
-        final int startValue = 0;
-        final List<Integer> reversedList
-                = IntStream.range(startValue, length)
-                        .boxed()
-                        .collect(Collectors.toList());
-        Collections.reverse(reversedList);
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(startValue, length)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8)
         );
         final List<Integer> actual
                 = ListOps.reverse(list);
-        final List<Integer> expected = reversedList;
+        final List<Integer> expected
+                = Arrays.asList(8, 7, 6, 5, 4, 3, 2, 1, 0);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -90,12 +83,10 @@ public class ListOpsTest {
         final List<Integer> list
                 = Collections.unmodifiableList(Arrays.asList(1, 3, 5, 7));
         final List<Integer> actual = ListOps.map(list, x -> x + 1);
-        final List<Integer> expected
-                = Arrays.asList(2, 4, 6, 8);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+        assertEquals(Arrays.asList(2, 4, 6, 8), actual);
     }
 
     @Test
@@ -110,88 +101,14 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldFilterNonEmptyList() {
+        Predicate<Integer> predicate = x -> x % 2 > 0;
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, 4).boxed().collect(Collectors.toList())
+                IntStream.range(0, 100).boxed().collect(Collectors.toList())
         );
-        final List<Integer> actual = ListOps.filter(list, x -> x % 2 > 0);
-        final List<Integer> expected = Arrays.asList(1, 3);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    @Ignore
-    public void shouldReturnAnEmptyListWhenAnEmptyListIsAppendedToAnEmptyList() {
-        List<Integer> listTo = Collections.emptyList();
-        assertFalse(ListOps.append(listTo, EMPTY_LIST));
-        final List<Integer> actual = listTo;
-
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
-    }
-
-    @Test
-    @Ignore
-    public void shouldAppendAnEmptyListToANonEmptyList() {
-        final List<Integer> listTo
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
-        assertFalse(ListOps.append(listTo, EMPTY_LIST));
-        final List<Integer> actual = listTo;
-        final List<Integer> expected
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    @Ignore
-    public void shouldAppendANonEmptyListToAnEmptyList() {
-        List<Integer> listTo = new ArrayList<>();
-        final List<Integer> listFrom
-                = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
-        assertTrue(ListOps.append(listTo, listFrom));
-        final List<Integer> actual = listTo;
-        final List<Integer> expected
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    @Ignore
-    public void shouldAppendNonEmptyLists() {
-        final List<Integer> listTo
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
-        final List<Integer> listFrom
-                = Collections.unmodifiableList(
-                        IntStream.range(4, 8)
-                                .boxed()
-                                .collect(Collectors.toList())
-                );
-        assertTrue(ListOps.append(listTo, listFrom));
-        final List<Integer> actual = listTo;
-        final List<Integer> expected
-                = IntStream.range(0, 8)
-                        .boxed()
-                        .collect(Collectors.toList());
+        final List<Integer> actual = ListOps.filter(list, predicate);
+        final List<Integer> expected = list.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -319,17 +236,14 @@ public class ListOpsTest {
         final List<Integer> list4 = Collections.unmodifiableList(
                 IntStream.range(12, 16).boxed().collect(Collectors.toList())
         );
-        final List<Integer> sortedCancatenatedList
-                = new ArrayList<>(list1);
-        sortedCancatenatedList.addAll(list2);
-        sortedCancatenatedList.addAll(list3);
-        sortedCancatenatedList.addAll(list4);
-        Collections.sort(sortedCancatenatedList);
         final List<Integer> expected
-                = sortedCancatenatedList;
+                = new ArrayList<>(list1);
+        expected.addAll(list2);
+        expected.addAll(list3);
+        expected.addAll(list4);
+
         final List<Integer> actual
                 = ListOps.concat(list1, list2, EMPTY_LIST, list3, list4);
-        Collections.sort(actual);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -349,7 +263,6 @@ public class ListOpsTest {
     @Test
     @Ignore
     public void shouldCalculateTheSumOfANonEmptyIntegerList() {
-        final int expected = 10;
         final List<Integer> list = Collections.unmodifiableList(
                 IntStream.range(0, 5)
                         .boxed()
@@ -359,13 +272,12 @@ public class ListOpsTest {
                 (x, y) -> x + y,
                 Integer::sum);
 
-        assertEquals(expected, actual);
+        assertEquals(10, actual);
     }
 
     @Test
     @Ignore
     public void shouldReduceWithAnticommutativeAccumulator() {
-        final int expected = 0;
         final List<Integer> list = Collections.unmodifiableList(
                 IntStream.range(0, 5)
                         .boxed()
@@ -378,7 +290,7 @@ public class ListOpsTest {
                             "Operation cannot be parallelyzed.");
                 });
 
-        assertEquals(expected, actual);
+        assertEquals(0, actual);
     }
 
     /*
