@@ -14,6 +14,70 @@ import static org.junit.Assert.assertEquals;
 public class MatrixTest {
 
     @RunWith(Parameterized.class)
+    public static class CountRowsTest {
+        private Matrix matrix;
+        private int numberOfRows;
+
+        @Parameterized.Parameters(name = "{index}: expected matrix constructed with string \n\"{0}\" to have {1} row(s).")
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"0", 1},
+                    {"0 1", 1},
+                    {  "0\n"
+                     + "1", 2},
+                    {  "0 1\n"
+                     + "2 3", 2},
+                    {  "0 1 2\n"
+                     + "3 4 5\n"
+                     + "6 7 8", 3}
+            });
+        }
+
+        public CountRowsTest(String matrixAsString, int numberOfRows) {
+            this.matrix = new Matrix(matrixAsString);
+            this.numberOfRows = numberOfRows;
+        }
+
+        @Test
+        public void countRowsTest() {
+            assertEquals(numberOfRows, matrix.getRowsCount());
+        }
+    }
+
+    @Ignore
+    @RunWith(Parameterized.class)
+    public static class CountColumnsTest {
+        private Matrix matrix;
+        private int numberOfColumns;
+
+        @Parameterized.Parameters(name = "{index}: expected matrix constructed with string \n\"{0}\" to have {1} column(s).")
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"0", 1},
+                    {"0 1", 2},
+                    {  "0\n"
+                     + "1", 1},
+                    {  "0 1\n"
+                     + "2 3", 2},
+                    {  "0 1 2\n"
+                     + "3 4 5\n"
+                     + "6 7 8", 3}
+            });
+        }
+
+        public CountColumnsTest(String matrixAsString, int numberOfColumns) {
+            this.matrix = new Matrix(matrixAsString);
+            this.numberOfColumns = numberOfColumns;
+        }
+
+        @Test
+        public void countColumnsTest() {
+            assertEquals(numberOfColumns, matrix.getColumnsCount());
+        }
+    }
+
+    @Ignore
+    @RunWith(Parameterized.class)
     public static class GetFirstRowTest {
         private Matrix matrix;
         private int[] firstRow;
@@ -140,69 +204,4 @@ public class MatrixTest {
             assertArrayEquals(lastColumn, matrix.getColumn(matrix.getColumnsCount() - 1));
         }
     }
-
-    @Ignore
-    @RunWith(Parameterized.class)
-    public static class CountColumnsTest {
-        private Matrix matrix;
-        private int numberOfColumns;
-
-        @Parameterized.Parameters(name = "{index}: expected matrix constructed with string \n\"{0}\" to have {1} column(s).")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", 1},
-                    {"0 1", 2},
-                    {  "0\n"
-                     + "1", 1},
-                    {  "0 1\n"
-                     + "2 3", 2},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", 3}
-            });
-        }
-
-        public CountColumnsTest(String matrixAsString, int numberOfColumns) {
-            this.matrix = new Matrix(matrixAsString);
-            this.numberOfColumns = numberOfColumns;
-        }
-
-        @Test
-        public void countColumnsTest() {
-            assertEquals(numberOfColumns, matrix.getColumnsCount());
-        }
-    }
-
-    @Ignore
-    @RunWith(Parameterized.class)
-    public static class CountRowsTest {
-        private Matrix matrix;
-        private int numberOfRows;
-
-        @Parameterized.Parameters(name = "{index}: expected matrix constructed with string \n\"{0}\" to have {1} row(s).")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", 1},
-                    {"0 1", 1},
-                    {  "0\n"
-                     + "1", 2},
-                    {  "0 1\n"
-                     + "2 3", 2},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", 3}
-            });
-        }
-
-        public CountRowsTest(String matrixAsString, int numberOfRows) {
-            this.matrix = new Matrix(matrixAsString);
-            this.numberOfRows = numberOfRows;
-        }
-
-        @Test
-        public void countRowsTest() {
-            assertEquals(numberOfRows, matrix.getRowsCount());
-        }
-    }
-    
 }
