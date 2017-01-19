@@ -56,7 +56,8 @@
     "palindrome-products",
     "twelve-days",
     "sublist",
-    "rectangles"
+    "rectangles",
+    "matrix"
   ],
   "exercises": [
     {
@@ -321,6 +322,11 @@
     },
     {
       "slug": "rectangles",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "matrix",
       "difficulty": 1,
       "topics": []
     }
