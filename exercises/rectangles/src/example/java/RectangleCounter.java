@@ -15,34 +15,42 @@ final class RectangleCounter {
 
     private static final class Grid {
 
-        private enum Entry {
+        private enum Tile {
             CORNER,
-            HLINE,
-            VLINE,
+            HORIZONTAL_WALL,
+            VERTICAL_WALL,
             SPACE;
 
-            private static Entry fromChar(final char rawGridEntry) {
-                switch (rawGridEntry) {
+            private static Tile fromChar(final char rawGridTile) {
+                switch (rawGridTile) {
                     case '+': return CORNER;
-                    case '-': return HLINE;
-                    case '|': return VLINE;
+                    case '-': return HORIZONTAL_WALL;
+                    case '|': return VERTICAL_WALL;
                     case ' ': return SPACE;
-                    default:  throw new IllegalStateException("Grid entry " + rawGridEntry + " not recognized.");
+                    default:  throw new IllegalStateException("Grid tile " + rawGridTile + " not recognized.");
                 }
+            }
+
+            private boolean isHorizontalConnector() {
+                return this == CORNER || this == HORIZONTAL_WALL;
+            }
+
+            private boolean isVerticalConnector() {
+                return this == CORNER || this == VERTICAL_WALL;
             }
         }
 
         private int nRows, nCols;
-        private final Entry[][] entries;
+        private final Tile[][] tiles;
 
         private Grid(final int nRows, final int nCols, final String[] rawGrid) {
             this.nRows = nRows;
             this.nCols = nCols;
-            this.entries = new Entry[nRows][nCols];
+            this.tiles = new Tile[nRows][nCols];
 
             for (int nRow = 0; nRow < nRows; nRow++) {
                 for (int nCol = 0; nCol < nCols; nCol++) {
-                    entries[nRow][nCol] = Entry.fromChar(rawGrid[nRow].charAt(nCol));
+                    tiles[nRow][nCol] = Tile.fromChar(rawGrid[nRow].charAt(nCol));
                 }
             }
         }
@@ -76,10 +84,10 @@ final class RectangleCounter {
                 final int leftCol,
                 final int rightCol) {
 
-            return entries[topRow][leftCol].equals(Entry.CORNER)
-                    && entries[topRow][rightCol].equals(Entry.CORNER)
-                    && entries[bottomRow][leftCol].equals(Entry.CORNER)
-                    && entries[bottomRow][rightCol].equals(Entry.CORNER)
+            return tiles[topRow][leftCol].equals(Tile.CORNER)
+                    && tiles[topRow][rightCol].equals(Tile.CORNER)
+                    && tiles[bottomRow][leftCol].equals(Tile.CORNER)
+                    && tiles[bottomRow][rightCol].equals(Tile.CORNER)
                     && isHorizontalLineSegment(topRow, leftCol, rightCol)
                     && isHorizontalLineSegment(bottomRow, leftCol, rightCol)
                     && isVerticalLineSegment(leftCol, topRow, bottomRow)
@@ -88,23 +96,23 @@ final class RectangleCounter {
 
         private boolean isHorizontalLineSegment(final int row, final int leftCol, final int rightCol) {
             return stream(copyOfRange(getRow(row), leftCol, rightCol))
-                    .allMatch(entry -> entry.equals(Entry.HLINE) || entry.equals(Entry.CORNER));
+                    .allMatch(Tile::isHorizontalConnector);
         }
 
         private boolean isVerticalLineSegment(final int col, final int topRow, final int bottomRow) {
             return stream(copyOfRange(getCol(col), topRow, bottomRow))
-                    .allMatch(entry -> entry.equals(Entry.VLINE) || entry.equals(Entry.CORNER));
+                    .allMatch(Tile::isVerticalConnector);
         }
 
-        private Entry[] getRow(final int number) {
-            return entries[number];
+        private Tile[] getRow(final int number) {
+            return tiles[number];
         }
 
-        private Entry[] getCol(final int number) {
-            final Entry[] result = new Entry[nRows];
+        private Tile[] getCol(final int number) {
+            final Tile[] result = new Tile[nRows];
 
             for (int nRow = 0; nRow < nRows; nRow++) {
-                result[nRow] = entries[nRow][number];
+                result[nRow] = tiles[nRow][number];
             }
 
             return result;
