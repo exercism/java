@@ -7,22 +7,23 @@ import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class SchoolTest {
   private final School school = new School();
 
-
   @Test
   public void startsWithNoStudents() {
-    assertTrue(school.db().isEmpty());
+    assertThat(school.numberOfStudents(), is(0));
   }
 
   @Ignore
   @Test
   public void addsStudents() {
     school.add("Aimee", 2);
-    assertThat(school.db().get(2), hasItem("Aimee"));
+    assertThat(school.grade(2), hasItem("Aimee"));
   }
 
   @Ignore
@@ -33,8 +34,8 @@ public class SchoolTest {
     school.add("Blair", grade);
     school.add("Paul", grade);
 
-    assertThat(school.db().get(grade).size(), is(3));
-    assertThat(school.db().get(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
+    assertThat(school.grade(grade).size(), is(3));
+    assertThat(school.grade(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
   }
 
   @Ignore
@@ -43,27 +44,30 @@ public class SchoolTest {
     school.add("Chelsea", 3);
     school.add("Logan", 7);
 
-    assertThat(school.db().size(), is(2));
-    assertThat(school.db().get(3).size(), is(1));
-    assertThat(school.db().get(3), hasItem("Chelsea"));
-    assertThat(school.db().get(7).size(), is(1));
-    assertThat(school.db().get(7), hasItem("Logan"));
-  }
-
-  @Ignore
-  @Test
-  public void getsStudentsInAGrade() {
-    school.add("Franklin", 5);
-    school.add("Bradley", 5);
-    school.add("Jeff", 1);
-    assertThat(school.grade(5).size(), is(2));
-    assertThat(school.grade(5), allOf(hasItem("Franklin"), hasItem("Bradley")));
+    assertThat(school.numberOfStudents(), is(2));
+    assertThat(school.grade(3).size(), is(1));
+    assertThat(school.grade(3), hasItem("Chelsea"));
+    assertThat(school.grade(7).size(), is(1));
+    assertThat(school.grade(7), hasItem("Logan"));
   }
 
   @Ignore
   @Test
   public void getsStudentsInEmptyGrade() {
     assertTrue(school.grade(1).isEmpty());
+  }
+
+  @Ignore
+  @Test
+  public void gradeReturnsStudentsInTheOrderTheyWereInserted() {
+    int grade = 4;
+    school.add("Bartimaeus", grade);
+    school.add("Nathaniel", grade);
+    school.add("Faquarl", grade);
+    List<String> studentsInGrade = school.grade(grade);
+    assertThat(studentsInGrade.get(0), is("Bartimaeus"));
+    assertThat(studentsInGrade.get(1), is("Nathaniel"));
+    assertThat(studentsInGrade.get(2), is("Faquarl"));
   }
 
   @Ignore
@@ -77,6 +81,6 @@ public class SchoolTest {
     sortedStudents.put(6, Arrays.asList("Kareem"));
     sortedStudents.put(4, Arrays.asList("Christopher", "Jennifer"));
     sortedStudents.put(3, Arrays.asList("Kyle"));
-    assertEquals(school.sort(), sortedStudents);
+    assertEquals(school.studentsByGradeAlphabetical(), sortedStudents);
   }
 }
