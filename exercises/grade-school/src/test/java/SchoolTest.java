@@ -1,6 +1,9 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.lang.Integer;
+import java.util.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -82,5 +85,31 @@ public class SchoolTest {
     sortedStudents.put(4, Arrays.asList("Christopher", "Jennifer"));
     sortedStudents.put(3, Arrays.asList("Kyle"));
     assertEquals(school.studentsByGradeAlphabetical(), sortedStudents);
+  }
+
+  @Ignore
+  @Test
+  public void modifyingFetchedGradeShouldNotModifyInternalDatabase() {
+    String shouldNotBeAdded = "Should not be added to school";
+    int grade = 1;
+
+    List<String> students = school.grade(grade);
+    students.add(shouldNotBeAdded);
+
+    assertThat(school.grade(grade), not(hasItem(shouldNotBeAdded)));
+  }
+
+  @Ignore
+  @Test
+  public void modifyingSortedStudentsShouldNotModifyInternalDatabase() {
+    int grade = 2;
+    String studentWhichShouldNotBeAdded = "Should not be added";
+    List<String> listWhichShouldNotBeAdded = new ArrayList<>();
+    listWhichShouldNotBeAdded.add(studentWhichShouldNotBeAdded);
+
+    Map<Integer, List<String>> sortedStudents = school.studentsByGradeAlphabetical();
+    sortedStudents.put(grade,listWhichShouldNotBeAdded);
+
+    assertThat(school.studentsByGradeAlphabetical().get(grade), not(hasItem(studentWhichShouldNotBeAdded)));
   }
 }

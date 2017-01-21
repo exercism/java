@@ -13,12 +13,15 @@ public class School {
   }
 
   public void add(String student, int grade) {
-    List<String> students = grade(grade);
+    List<String> students = fetchGradeFromDatabase(grade);
     students.add(student);
   }
 
   public List<String> grade(int grade) {
-    // Leaks internal storage to caller
+    return new ArrayList<>(fetchGradeFromDatabase(grade));
+  }
+
+  private List<String> fetchGradeFromDatabase(int grade) {
     if (!database.containsKey(grade)) {
       database.put(grade, new LinkedList<>());
     }
