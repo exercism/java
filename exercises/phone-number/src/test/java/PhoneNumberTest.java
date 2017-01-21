@@ -39,25 +39,15 @@ public class PhoneNumberTest {
     }
 
     @Ignore
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void invalidWhenOnly11Digits() {
-        final String expectedNumber = "0000000000";
         final String actualNumber = new PhoneNumber("21234567890").getNumber();
-
-        assertEquals(
-            expectedNumber, actualNumber
-        );
     }
 
     @Ignore
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void invalidWhen9Digits() {
-        final String expectedNumber = "0000000000";
         final String actualNumber = new PhoneNumber("123456789").getNumber();
-
-        assertEquals(
-            expectedNumber, actualNumber
-        );
     }
 
     @Ignore

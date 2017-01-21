@@ -16,8 +16,12 @@ public class PhoneNumber {
         }
 
         final boolean numberIsValid = (number.length() == 10);
-        final String normalizedNumber = numberIsValid ? number : "0000000000";
-        return normalizedNumber;
+
+        if(!numberIsValid) {
+            throw new IllegalArgumentException();
+        }
+        
+        return number;
     }
 
     public String getNumber() {
