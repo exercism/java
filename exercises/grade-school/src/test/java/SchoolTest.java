@@ -1,11 +1,12 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import org.hamcrest.Matcher;
+import static org.hamcrest.collection.IsIterableContainingInOrder.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -69,14 +70,22 @@ public class SchoolTest {
   @Ignore
   @Test
   public void sortsSchool() {
+    school.add("Kyle", 4);
+    school.add("Zed", 4);
+    school.add("Adam", 4);
     school.add("Jennifer", 4);
     school.add("Kareem", 6);
     school.add("Christopher", 4);
-    school.add("Kyle", 3);
-    Map<Integer, List<String>> sortedStudents = new HashMap<Integer, List<String>>();
-    sortedStudents.put(6, Arrays.asList("Kareem"));
-    sortedStudents.put(4, Arrays.asList("Christopher", "Jennifer"));
-    sortedStudents.put(3, Arrays.asList("Kyle"));
-    assertEquals(school.sort(), sortedStudents);
+    school.add("Kylie", 3);
+    Map<Integer, Matcher> sortedStudents = new HashMap<Integer, Matcher>();
+    sortedStudents.put(6, contains("Kareem"));
+    sortedStudents.put(4, contains("Adam", "Christopher", "Jennifer", "Kyle", "Zed"));
+    sortedStudents.put(3, contains("Kylie"));
+
+    Map schoolStudents = school.sort();
+    for (Map.Entry<?, Matcher> entry : sortedStudents.entrySet()) {
+
+      assertThat((Collection) schoolStudents.get(entry.getKey()), entry.getValue());
+    }
   }
 }
