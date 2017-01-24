@@ -1,29 +1,34 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Collection;
+import java.lang.Integer;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.Collection;
 
 import org.hamcrest.Matcher;
 import static org.hamcrest.collection.IsIterableContainingInOrder.*;
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class SchoolTest {
   private final School school = new School();
 
-
   @Test
   public void startsWithNoStudents() {
-    assertTrue(school.db().isEmpty());
+    assertThat(school.numberOfStudents(), is(0));
   }
 
   @Ignore
   @Test
   public void addsStudents() {
     school.add("Aimee", 2);
-    assertThat(school.db().get(2), hasItem("Aimee"));
+    assertThat(school.grade(2), hasItem("Aimee"));
   }
 
   @Ignore
@@ -34,8 +39,8 @@ public class SchoolTest {
     school.add("Blair", grade);
     school.add("Paul", grade);
 
-    assertThat(school.db().get(grade).size(), is(3));
-    assertThat(school.db().get(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
+    assertThat(school.grade(grade).size(), is(3));
+    assertThat(school.grade(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
   }
 
   @Ignore
@@ -44,21 +49,11 @@ public class SchoolTest {
     school.add("Chelsea", 3);
     school.add("Logan", 7);
 
-    assertThat(school.db().size(), is(2));
-    assertThat(school.db().get(3).size(), is(1));
-    assertThat(school.db().get(3), hasItem("Chelsea"));
-    assertThat(school.db().get(7).size(), is(1));
-    assertThat(school.db().get(7), hasItem("Logan"));
-  }
-
-  @Ignore
-  @Test
-  public void getsStudentsInAGrade() {
-    school.add("Franklin", 5);
-    school.add("Bradley", 5);
-    school.add("Jeff", 1);
-    assertThat(school.grade(5).size(), is(2));
-    assertThat(school.grade(5), allOf(hasItem("Franklin"), hasItem("Bradley")));
+    assertThat(school.numberOfStudents(), is(2));
+    assertThat(school.grade(3).size(), is(1));
+    assertThat(school.grade(3), hasItem("Chelsea"));
+    assertThat(school.grade(7).size(), is(1));
+    assertThat(school.grade(7), hasItem("Logan"));
   }
 
   @Ignore
@@ -82,10 +77,49 @@ public class SchoolTest {
     sortedStudents.put(4, contains("Adam", "Christopher", "Jennifer", "Kyle", "Zed"));
     sortedStudents.put(3, contains("Kylie"));
 
-    Map schoolStudents = school.sort();
+    Map schoolStudents = school.studentsByGradeAlphabetical();
     for (Map.Entry<?, Matcher> entry : sortedStudents.entrySet()) {
 
       assertThat((Collection) schoolStudents.get(entry.getKey()), entry.getValue());
     }
+  }
+
+  @Ignore
+  @Test
+  public void modifyingFetchedGradeShouldNotModifyInternalDatabase() {
+    String shouldNotBeAdded = "Should not be added to school";
+    int grade = 1;
+
+    Collection<String> students = school.grade(grade);
+
+    try {
+      students.add(shouldNotBeAdded);
+    } catch (Exception exception) {
+      // Also valid that the add operation throws an exception
+      // Such as UnsupportedOperationException when an umodifiable collection type is used
+    }
+
+    assertThat(school.grade(grade), not(hasItem(shouldNotBeAdded)));
+  }
+
+  @Ignore
+  @Test
+  public void modifyingSortedStudentsShouldNotModifyInternalDatabase() {
+    int grade = 2;
+    String studentWhichShouldNotBeAdded = "Should not be added";
+    List<String> listWhichShouldNotBeAdded = new ArrayList<>();
+    listWhichShouldNotBeAdded.add(studentWhichShouldNotBeAdded);
+
+    Map sortedStudents = school.studentsByGradeAlphabetical();
+
+    try {
+      sortedStudents.put(grade, listWhichShouldNotBeAdded);
+    } catch (Exception exception) {
+      // Also valid that the put operation throws an exception
+      // Such as UnsupportedOperationException when an unmodifiableMap is used
+    }
+
+    assertThat(school.studentsByGradeAlphabetical().get(grade), 
+      not(hasItem(studentWhichShouldNotBeAdded)));
   }
 }
