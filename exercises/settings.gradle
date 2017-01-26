@@ -56,3 +56,5 @@ include 'word-count'
 include 'wordy'
 include 'twelve-days'
 include 'matrix'
+include 'clock'
+
