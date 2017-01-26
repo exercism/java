@@ -57,6 +57,7 @@
     "twelve-days",
     "sublist",
     "rectangles",
+    "matrix",
     "list-ops"
   ],
   "exercises": [
@@ -322,6 +323,11 @@
     },
     {
       "slug": "rectangles",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "matrix",
       "difficulty": 1,
       "topics": []
     },

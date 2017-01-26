@@ -33,9 +33,7 @@ public class ListOpsTest {
     @Ignore
     public void shouldReturnTheCorrectLengthOfAnNonEmptyList() {
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4)
         );
         final int actual = ListOps.length(list);
         final int expected = list.size();
@@ -129,15 +127,10 @@ public class ListOpsTest {
     public void shouldConcatenateOneNonEmptyList() {
         final List<Integer> list
                 = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
+                        Arrays.asList(0, 1, 2, 3, 4)
                 );
         final List<Integer> actual = ListOps.concat(list);
-        final List<Integer> expected
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
+        final List<Integer> expected = Arrays.asList(0, 1, 2, 3, 4);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -167,15 +160,11 @@ public class ListOpsTest {
     public void shouldConcatenateOneEmptyAndOneNonEmptyLists() {
         final List<Integer> list
                 = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
+                        Arrays.asList(0, 1, 2, 3, 4)
                 );
         final List<Integer> actual = ListOps.concat(list, EMPTY_LIST);
         final List<Integer> expected
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
+                = Arrays.asList(0, 1, 2, 3, 4);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -187,15 +176,11 @@ public class ListOpsTest {
     public void shouldConcatenateOneNonEmptyAndOneEmptyLists() {
         final List<Integer> list
                 = Collections.unmodifiableList(
-                        IntStream.range(0, 4)
-                                .boxed()
-                                .collect(Collectors.toList())
+                        Arrays.asList(0, 1, 2, 3, 4)
                 );
         final List<Integer> actual = ListOps.concat(EMPTY_LIST, list);
         final List<Integer> expected
-                = IntStream.range(0, 4)
-                        .boxed()
-                        .collect(Collectors.toList());
+                = Arrays.asList(0, 1, 2, 3, 4);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -206,10 +191,10 @@ public class ListOpsTest {
     @Ignore
     public void shouldConcatenateTwoListsWithSameElements() {
         final List<Integer> list1 = Collections.unmodifiableList(
-                IntStream.range(0, 4).boxed().collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4)
         );
         final List<Integer> list2 = Collections.unmodifiableList(
-                IntStream.range(1, 6).boxed().collect(Collectors.toList())
+                Arrays.asList(1, 2, 3, 4, 5, 6)
         );
         final List<Integer> expected
                 = Stream.concat(list1.stream(), list2.stream())
@@ -225,22 +210,20 @@ public class ListOpsTest {
     @Ignore
     public void shouldConcatenateSeveralLists() {
         final List<Integer> list1 = Collections.unmodifiableList(
-                IntStream.range(0, 4).boxed().collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3)
         );
         final List<Integer> list2 = Collections.unmodifiableList(
-                IntStream.range(4, 8).boxed().collect(Collectors.toList())
+                Arrays.asList(4, 5, 6, 7)
         );
         final List<Integer> list3 = Collections.unmodifiableList(
-                IntStream.range(8, 12).boxed().collect(Collectors.toList())
+                Arrays.asList(8, 9, 10, 11)
         );
         final List<Integer> list4 = Collections.unmodifiableList(
-                IntStream.range(12, 16).boxed().collect(Collectors.toList())
+                Arrays.asList(12, 13, 14, 15)
         );
         final List<Integer> expected
-                = new ArrayList<>(list1);
-        expected.addAll(list2);
-        expected.addAll(list3);
-        expected.addAll(list4);
+                = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+                        14, 15);
 
         final List<Integer> actual
                 = ListOps.concat(list1, list2, EMPTY_LIST, list3, list4);
@@ -264,9 +247,7 @@ public class ListOpsTest {
     @Ignore
     public void shouldCalculateTheSumOfANonEmptyIntegerList() {
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, 5)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4)
         );
         final int actual = ListOps.reduce(list, 0,
                 (x, y) -> x + y,
@@ -279,9 +260,7 @@ public class ListOpsTest {
     @Ignore
     public void shouldReduceWithAnticommutativeAccumulator() {
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, 5)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4)
         );
         final int actual
                 = ListOps.reduce(list, 10, (x, y) -> x - y, (x, y)
@@ -315,9 +294,7 @@ public class ListOpsTest {
     @Ignore
     public void shouldReduceAnEmptyListAndANonEmptyListAndReturnConcatenation() {
         final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, 5)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4, 5)
         );
         final List<Integer> actual
                 = ListOps.reduce(list,
@@ -325,9 +302,7 @@ public class ListOpsTest {
                         accumulator,
                         combiner);
         final List<Integer> expected
-                = IntStream.range(0, 5)
-                        .boxed()
-                        .collect(Collectors.toList());
+                = Arrays.asList(0, 1, 2, 3, 4, 5);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());
@@ -338,14 +313,10 @@ public class ListOpsTest {
     @Ignore
     public void shouldReduceTwoNonEmptyListsAndReturnConcatenation() {
         final List<Integer> listOne = Collections.unmodifiableList(
-                IntStream.range(0, 5)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(0, 1, 2, 3, 4)
         );
         final List<Integer> listTwo = Collections.unmodifiableList(
-                IntStream.range(5, 10)
-                        .boxed()
-                        .collect(Collectors.toList())
+                Arrays.asList(5, 6, 7, 8, 9)
         );
         final List<Integer> actual
                 = ListOps.reduce(listTwo,
@@ -353,9 +324,7 @@ public class ListOpsTest {
                         accumulator,
                         combiner);
         final List<Integer> expected
-                = IntStream.range(0, 10)
-                        .boxed()
-                        .collect(Collectors.toList());
+                = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 
         assertNotNull(actual);
         assertFalse(actual.isEmpty());

@@ -11,13 +11,20 @@ public class PhoneNumber {
     }
 
     private String normalize(String number) {
-        if(number.length() == 11 && number.startsWith("1")) {
-            number = number.substring(1, number.length());
+        if(number.length() > 11 || number.length() < 10){
+            throw new IllegalArgumentException("Number must be 10 or 11 digits");
         }
 
-        final boolean numberIsValid = (number.length() == 10);
-        final String normalizedNumber = numberIsValid ? number : "0000000000";
-        return normalizedNumber;
+        if(number.length() == 11){
+            if(number.startsWith("1")){
+                number = number.substring(1, number.length());
+            }
+            else{
+                throw new IllegalArgumentException("Can only have 11 digits if number starts with '1'");
+            }
+        } 
+        
+        return number;
     }
 
     public String getNumber() {
