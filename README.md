@@ -62,7 +62,7 @@ There are two objectives to the design of this build:
 1. when a problem is built from within the xjava repo, the tests run against the "example" code (i.e. when you, the contributor, are developing the exercise);
 2. when a problem is built outside the xjava repo (when a participant is solving the exercise), the tests run against the "main" code.
 
-This repo is a mulit-project gradle build.
+This repo is a multi-project gradle build.
 
 ### The `exercises` Module
 
