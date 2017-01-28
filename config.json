@@ -57,7 +57,8 @@
     "twelve-days",
     "sublist",
     "rectangles",
-    "matrix"
+    "matrix",
+    "diamond"
   ],
   "exercises": [
     {
@@ -327,6 +328,11 @@
     },
     {
       "slug": "matrix",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "diamond",
       "difficulty": 1,
       "topics": []
     }
