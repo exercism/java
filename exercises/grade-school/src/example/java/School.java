@@ -1,38 +1,39 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class School {
 
-  private final Map<Integer, Set<String>> database = new HashMap<Integer, Set<String>>();
+  private final Map<Integer, List<String>> database = new HashMap<>();
 
-  public Map<Integer, Set<String>> db() {
-    // Leaks internal storage to caller
-    return database;
+  public int numberOfStudents() {
+    int result = 0;
+    for (List<String> studentsInGrade: database.values()) {
+      result += studentsInGrade.size();
+    }
+    return result;
   }
 
   public void add(String student, int grade) {
-    Set<String> students = grade(grade);
+    List<String> students = fetchGradeFromDatabase(grade);
     students.add(student);
   }
 
-  public Set<String> grade(int grade) {
-    // Leaks internal storage to caller
+  public List<String> grade(int grade) {
+    return new ArrayList<>(fetchGradeFromDatabase(grade));
+  }
+
+  private List<String> fetchGradeFromDatabase(int grade) {
     if (!database.containsKey(grade)) {
-      database.put(grade, new TreeSet<String>());
+      database.put(grade, new LinkedList<>());
     }
     return database.get(grade);
   }
 
-  public Map<Integer, List<String>> sort() {
-    Map<Integer, List<String>> sortedStudents = new HashMap<Integer, List<String>>();
+  public Map<Integer, List<String>> studentsByGradeAlphabetical() {
+    Map<Integer, List<String>> sortedStudents = new HashMap<>();
     for (Integer grade : database.keySet()) {
-      // Relies on using a TreeSet internally
-      List<String> sortedGrade = new ArrayList<String>(database.get(grade));
-      sortedStudents.put(grade, sortedGrade);
+      List<String> studentsInGrade = database.get(grade);
+      Collections.sort(studentsInGrade);
+      sortedStudents.put(grade, studentsInGrade);
     }
     return sortedStudents;
   }

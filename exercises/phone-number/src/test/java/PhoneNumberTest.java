@@ -1,10 +1,14 @@
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
 public class PhoneNumberTest {
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void cleansNumber() {
@@ -41,23 +45,17 @@ public class PhoneNumberTest {
     @Ignore
     @Test
     public void invalidWhenOnly11Digits() {
-        final String expectedNumber = "0000000000";
-        final String actualNumber = new PhoneNumber("21234567890").getNumber();
-
-        assertEquals(
-            expectedNumber, actualNumber
-        );
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Can only have 11 digits if number starts with '1'");
+        new PhoneNumber("21234567890").getNumber();
     }
 
     @Ignore
     @Test
     public void invalidWhen9Digits() {
-        final String expectedNumber = "0000000000";
-        final String actualNumber = new PhoneNumber("123456789").getNumber();
-
-        assertEquals(
-            expectedNumber, actualNumber
-        );
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Number must be 10 or 11 digits");
+        new PhoneNumber("123456789").getNumber();
     }
 
     @Ignore
