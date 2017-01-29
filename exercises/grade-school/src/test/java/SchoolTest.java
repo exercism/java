@@ -1,16 +1,14 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.lang.Integer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Collection;
 
 import org.hamcrest.Matcher;
-import static org.hamcrest.collection.IsIterableContainingInOrder.*;
+import org.hamcrest.collection.IsIterableContainingInOrder;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -73,9 +71,12 @@ public class SchoolTest {
     school.add("Christopher", 4);
     school.add("Kylie", 3);
     Map<Integer, Matcher> sortedStudents = new HashMap<Integer, Matcher>();
-    sortedStudents.put(6, contains("Kareem"));
-    sortedStudents.put(4, contains("Adam", "Christopher", "Jennifer", "Kyle", "Zed"));
-    sortedStudents.put(3, contains("Kylie"));
+    sortedStudents.put(6, IsIterableContainingInOrder
+      .contains("Kareem"));
+    sortedStudents.put(4, IsIterableContainingInOrder
+      .contains("Adam", "Christopher", "Jennifer", "Kyle", "Zed"));
+    sortedStudents.put(3, IsIterableContainingInOrder
+      .contains("Kylie"));
 
     Map schoolStudents = school.studentsByGradeAlphabetical();
     for (Map.Entry<?, Matcher> entry : sortedStudents.entrySet()) {
@@ -90,7 +91,7 @@ public class SchoolTest {
     String shouldNotBeAdded = "Should not be added to school";
     int grade = 1;
 
-    Collection<String> students = school.grade(grade);
+    Collection students = school.grade(grade);
 
     try {
       students.add(shouldNotBeAdded);

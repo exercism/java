@@ -57,7 +57,10 @@
     "twelve-days",
     "sublist",
     "rectangles",
-    "matrix"
+    "matrix",
+    "diamond",
+    "secret-handshake",
+    "flatten-array"
   ],
   "exercises": [
     {
@@ -327,6 +330,21 @@
     },
     {
       "slug": "matrix",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "diamond",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "secret-handshake",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "flatten-array",
       "difficulty": 1,
       "topics": []
     }
