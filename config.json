@@ -60,7 +60,8 @@
     "matrix",
     "diamond",
     "secret-handshake",
-    "flatten-array"
+    "flatten-array",
+    "change"
   ],
   "exercises": [
     {
@@ -345,6 +346,11 @@
     },
     {
       "slug": "flatten-array",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "change",
       "difficulty": 1,
       "topics": []
     }
