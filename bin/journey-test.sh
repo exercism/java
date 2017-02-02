@@ -192,8 +192,8 @@ solve_all_exercises() {
 
   local xjava=$( pwd )
   local exercism_cli="./exercism --config ${exercism_configfile}"
-  local exercises=`cat config.json | jq '.problems []' --raw-output`
-  local total_exercises=`cat config.json | jq '.problems | length'`
+  local exercises=`cat config.json | jq '.exercises[].slug' --raw-output`
+  local total_exercises=`cat config.json | jq '.exercises | length'`
   local current_exercise_number=1
   local tempfile="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
 
