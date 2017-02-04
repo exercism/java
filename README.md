@@ -1,4 +1,4 @@
-# xJava [![Build Status](https://travis-ci.org/exercism/xjava.svg?branch=master)](https://travis-ci.org/exercism/xjava)
+# xJava [![Build Status](https://travis-ci.org/exercism/xjava.svg?branch=master)](https://travis-ci.org/exercism/xjava) [![Join the chat at https://gitter.im/exercism/xjava](https://badges.gitter.im/exercism/xjava.svg)](https://gitter.im/exercism/xjava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Source for Exercism Exercises in Java.
 
