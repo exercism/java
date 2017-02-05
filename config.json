@@ -58,6 +58,7 @@
     "sublist",
     "rectangles",
     "matrix",
+    "clock",
     "diamond",
     "secret-handshake",
     "flatten-array",
@@ -331,6 +332,11 @@
     },
     {
       "slug": "matrix",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "clock",
       "difficulty": 1,
       "topics": []
     },
