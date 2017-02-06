@@ -61,7 +61,8 @@
     "clock",
     "diamond",
     "secret-handshake",
-    "flatten-array"
+    "flatten-array",
+    "perfect-numbers"
   ],
   "exercises": [
     {
@@ -351,6 +352,11 @@
     },
     {
       "slug": "flatten-array",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "perfect-numbers",
       "difficulty": 1,
       "topics": []
     }
