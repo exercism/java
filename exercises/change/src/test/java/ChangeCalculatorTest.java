@@ -91,6 +91,17 @@ public final class ChangeCalculatorTest {
 
     @Ignore
     @Test
+    public void testChangeLargerThanAllCoinsInCurrencyThatCannotBeRepresented() {
+        ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
+
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("The total 94 cannot be represented in the given currency.");
+
+        changeCalculator.computeMostEfficientChange(94);
+    }
+
+    @Ignore
+    @Test
     public void testNegativeChangeIsRejected() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 2, 5));
 
