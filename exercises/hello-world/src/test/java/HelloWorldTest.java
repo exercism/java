@@ -8,10 +8,16 @@ public class HelloWorldTest {
 
     @Test
     public void helloNoName() {
-        assertEquals("Hello, World!", HelloWorld.hello(new String("")));
+        assertEquals("Hello, World!", HelloWorld.hello(""));
         assertEquals("Hello, World!", HelloWorld.hello(null));
     }
 
+    @Test
+    @Ignore
+    public void emptyStringIsComparedByValue() {
+        assertEquals("Hello, World!", HelloWorld.hello(new String("")));
+    }
+    
     @Test
     @Ignore
     public void helloSampleName() {
