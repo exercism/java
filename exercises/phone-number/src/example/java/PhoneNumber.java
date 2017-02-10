@@ -41,21 +41,4 @@ public class PhoneNumber {
     public String getNumber() {
         return number;
     }
-
-    public String getAreaCode() {
-        return number.substring(0, 3);
-    }
-
-    public String getExchangeCode() {
-        return number.substring(3, 6);
-    }
-
-    public String getSubscriberNumber() {
-        return number.substring(6, 10);
-    }
-
-    public String pretty() {
-        return "(" + getAreaCode() + ") " + getExchangeCode() + "-" + getSubscriberNumber();
-    }
-
 }

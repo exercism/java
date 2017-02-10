@@ -105,38 +105,4 @@ public class PhoneNumberTest {
         expectedException.expectMessage(illegalCharacterExceptionMessage);
         new PhoneNumber("1a2b3c4d5e6f7g8h9i0j");
     }
-
-    @Ignore
-    @Test
-    public void areaCode() {
-        final String expectedAreaCode = "123";
-        final String actualAreaCode = new PhoneNumber("1234567890").getAreaCode();
-
-        assertEquals(
-                expectedAreaCode, actualAreaCode
-        );
-    }
-
-    @Ignore
-    @Test
-    public void prettyPrint() {
-        final String expectedPrettyNumber = "(123) 456-7890";
-        final String actualPrettyNumber = new PhoneNumber("1234567890").pretty();
-
-        assertEquals(
-                expectedPrettyNumber, actualPrettyNumber
-        );
-    }
-
-    @Ignore
-    @Test
-    public void prettyPrintWithFullUSPhoneNumber() {
-        final String expectedPrettyNumber = "(123) 456-7890";
-        final String actualPrettyNumber = new PhoneNumber("11234567890").pretty();
-
-        assertEquals(
-                expectedPrettyNumber, actualPrettyNumber
-        );
-    }
-
 }
