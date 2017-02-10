@@ -1,14 +1,14 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.lang.Integer;
-import java.util.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
+import java.util.Collection;
 
+import org.hamcrest.Matcher;
+import org.hamcrest.collection.IsIterableContainingInOrder;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -62,29 +62,27 @@ public class SchoolTest {
 
   @Ignore
   @Test
-  public void gradeReturnsStudentsInTheOrderTheyWereInserted() {
-    int grade = 4;
-    school.add("Bartimaeus", grade);
-    school.add("Nathaniel", grade);
-    school.add("Faquarl", grade);
-    List<String> studentsInGrade = school.grade(grade);
-    assertThat(studentsInGrade.get(0), is("Bartimaeus"));
-    assertThat(studentsInGrade.get(1), is("Nathaniel"));
-    assertThat(studentsInGrade.get(2), is("Faquarl"));
-  }
-
-  @Ignore
-  @Test
   public void sortsSchool() {
+    school.add("Kyle", 4);
+    school.add("Zed", 4);
+    school.add("Adam", 4);
     school.add("Jennifer", 4);
     school.add("Kareem", 6);
     school.add("Christopher", 4);
-    school.add("Kyle", 3);
-    Map<Integer, List<String>> sortedStudents = new HashMap<Integer, List<String>>();
-    sortedStudents.put(6, Arrays.asList("Kareem"));
-    sortedStudents.put(4, Arrays.asList("Christopher", "Jennifer"));
-    sortedStudents.put(3, Arrays.asList("Kyle"));
-    assertEquals(school.studentsByGradeAlphabetical(), sortedStudents);
+    school.add("Kylie", 3);
+    Map<Integer, Matcher> sortedStudents = new HashMap<Integer, Matcher>();
+    sortedStudents.put(6, IsIterableContainingInOrder
+      .contains("Kareem"));
+    sortedStudents.put(4, IsIterableContainingInOrder
+      .contains("Adam", "Christopher", "Jennifer", "Kyle", "Zed"));
+    sortedStudents.put(3, IsIterableContainingInOrder
+      .contains("Kylie"));
+
+    Map schoolStudents = school.studentsByGradeAlphabetical();
+    for (Map.Entry<?, Matcher> entry : sortedStudents.entrySet()) {
+
+      assertThat((Collection) schoolStudents.get(entry.getKey()), entry.getValue());
+    }
   }
 
   @Ignore
@@ -93,8 +91,14 @@ public class SchoolTest {
     String shouldNotBeAdded = "Should not be added to school";
     int grade = 1;
 
-    List<String> students = school.grade(grade);
-    students.add(shouldNotBeAdded);
+    Collection students = school.grade(grade);
+
+    try {
+      students.add(shouldNotBeAdded);
+    } catch (Exception exception) {
+      // Also valid that the add operation throws an exception
+      // Such as UnsupportedOperationException when an umodifiable collection type is used
+    }
 
     assertThat(school.grade(grade), not(hasItem(shouldNotBeAdded)));
   }
@@ -107,9 +111,16 @@ public class SchoolTest {
     List<String> listWhichShouldNotBeAdded = new ArrayList<>();
     listWhichShouldNotBeAdded.add(studentWhichShouldNotBeAdded);
 
-    Map<Integer, List<String>> sortedStudents = school.studentsByGradeAlphabetical();
-    sortedStudents.put(grade,listWhichShouldNotBeAdded);
+    Map sortedStudents = school.studentsByGradeAlphabetical();
 
-    assertThat(school.studentsByGradeAlphabetical().get(grade), not(hasItem(studentWhichShouldNotBeAdded)));
+    try {
+      sortedStudents.put(grade, listWhichShouldNotBeAdded);
+    } catch (Exception exception) {
+      // Also valid that the put operation throws an exception
+      // Such as UnsupportedOperationException when an unmodifiableMap is used
+    }
+
+    assertThat(school.studentsByGradeAlphabetical().get(grade), 
+      not(hasItem(studentWhichShouldNotBeAdded)));
   }
 }

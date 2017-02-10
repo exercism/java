@@ -58,9 +58,11 @@
     "sublist",
     "rectangles",
     "matrix",
+    "clock",
     "diamond",
     "secret-handshake",
-    "flatten-array"
+    "flatten-array",
+    "perfect-numbers"
   ],
   "exercises": [
     {
@@ -334,6 +336,11 @@
       "topics": []
     },
     {
+      "slug": "clock",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
       "slug": "diamond",
       "difficulty": 1,
       "topics": []
@@ -345,6 +352,11 @@
     },
     {
       "slug": "flatten-array",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "perfect-numbers",
       "difficulty": 1,
       "topics": []
     }
