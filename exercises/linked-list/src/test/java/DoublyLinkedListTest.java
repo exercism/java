@@ -5,12 +5,12 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-public class DequeTest {
-    private Deque<Integer> subject;
+public class DoublyLinkedListTest {
+    private DoublyLinkedList<Integer> subject;
 
     @Before
     public void setUp() {
-        subject = new Deque<>();
+        subject = new DoublyLinkedList<>();
     }
 
 
