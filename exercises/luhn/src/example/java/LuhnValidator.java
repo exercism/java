@@ -9,9 +9,12 @@ final class LuhnValidator {
     boolean isValid(final String candidate) {
         final String sanitizedCandidate = SPACE_PATTERN.matcher(candidate).replaceAll("");
 
+        // We need to alter every second digit counting from the right. Reversing makes this easy!
+        final String reversedSanitizedCandidate = reverse(sanitizedCandidate);
+
         final List<Integer> computedDigits = new ArrayList<>();
 
-        for (int charIndex = 0; charIndex < sanitizedCandidate.length(); charIndex++) {
+        for (int charIndex = 0; charIndex < reversedSanitizedCandidate.length(); charIndex++) {
             int inputDigit = Character.digit(sanitizedCandidate.charAt(charIndex), 10);
 
             /*
@@ -38,6 +41,10 @@ final class LuhnValidator {
 
         final int digitSum = computedDigits.stream().mapToInt(Integer::intValue).sum();
         return digitSum > 0 && digitSum % 10 == 0;
+    }
+
+    private String reverse(final String string) {
+        return new StringBuilder(string).reverse().toString();
     }
 
 }
