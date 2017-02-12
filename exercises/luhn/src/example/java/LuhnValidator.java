@@ -15,7 +15,7 @@ final class LuhnValidator {
         final List<Integer> computedDigits = new ArrayList<>();
 
         for (int charIndex = 0; charIndex < reversedSanitizedCandidate.length(); charIndex++) {
-            int inputDigit = Character.digit(sanitizedCandidate.charAt(charIndex), 10);
+            int inputDigit = Character.digit(reversedSanitizedCandidate.charAt(charIndex), 10);
 
             /*
              * Character.digit returns a negative int if the supplied character does not represent a digit with respect
