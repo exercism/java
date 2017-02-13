@@ -1,1 +1,5 @@
-../../main/java/TriangleException.java
+public class TriangleException extends Exception {
+
+    public TriangleException() {
+    }
+}

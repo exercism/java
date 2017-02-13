@@ -72,6 +72,8 @@ get_operating_system() {
           echo "linux";;
       (Windows*)
           echo "windows";;
+      (MINGW*)
+          echo "windows";;
       (*)
           echo "linux";;
   esac
@@ -102,10 +104,25 @@ download_exercism_cli() {
   # "curl..." :: HTTP 302 headers, including "Location" -- URL to redirect to.
   # "awk..." :: pluck last path segment from "Location" (i.e. the version number)
   local version="$(curl --head --silent ${latest} | awk -v FS=/ '/Location:/{print $NF}' | tr -d '\r')"
-  local download_url=${CLI_RELEASES}/download/${version}/exercism-${os}-${arch}.tgz
+
+  local download_url_suffix
+  local unzip_command
+  local unzip_from_file_option
+  if [[ ${os} == "windows" ]] ; then
+    download_url_suffix="zip"
+    unzip_command="unzip -d"
+    unzip_from_file_option=""
+  else
+    download_url_suffix="tgz"
+    unzip_command="tar xz -C"
+    unzip_from_file_option="-f"
+  fi
+  local download_url=${CLI_RELEASES}/download/${version}/exercism-${os}-${arch}.${download_url_suffix}
 
   mkdir -p ${exercism_home}
-  curl -s --location ${download_url} | tar xz -C ${exercism_home}
+  local temp=`mktemp`
+  curl -s --location ${download_url} > ${temp}
+  ${unzip_command} ${exercism_home} ${unzip_from_file_option} ${temp}
   echo "<<< download_exercism_cli()"
 }
 
@@ -192,8 +209,8 @@ solve_all_exercises() {
 
   local xjava=$( pwd )
   local exercism_cli="./exercism --config ${exercism_configfile}"
-  local exercises=`cat config.json | jq '.problems []' --raw-output`
-  local total_exercises=`cat config.json | jq '.problems | length'`
+  local exercises=`cat config.json | jq '.exercises[].slug + " "' --join-output`
+  local total_exercises=`cat config.json | jq '.exercises | length'`
   local current_exercise_number=1
   local tempfile="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
 

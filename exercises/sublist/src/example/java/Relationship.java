@@ -1,1 +1,5 @@
-../../main/java/Relationship.java
+enum Relationship {
+
+    EQUAL, SUBLIST, SUPERLIST, UNEQUAL
+
+}

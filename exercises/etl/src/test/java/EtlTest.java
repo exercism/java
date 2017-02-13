@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.util.*;
 
@@ -27,6 +28,7 @@ public class EtlTest {
         assertEquals(expected, etl.transform(old));
     }
 
+    @Ignore
     @Test
     public void testTransformMoreValues() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
@@ -50,6 +52,7 @@ public class EtlTest {
         assertEquals(expected, etl.transform(old));
     }
 
+    @Ignore
     @Test
     public void testMoreKeys() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
@@ -73,6 +76,7 @@ public class EtlTest {
         assertEquals(expected, etl.transform(old));
     }
 
+    @Ignore
     @Test
     public void testFullDataset() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {

@@ -3,13 +3,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
-import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -49,18 +46,6 @@ public class ListOps {
         return Stream.of(lists)
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
-    }
-
-    public static <R,T> R collect(final List<T> list,
-            Supplier<R> supplier,
-            BiConsumer<R, ? super T> accumulator,
-            BiConsumer<R, R> combiner) {
-        return list.stream().collect(supplier, accumulator, combiner);
-    }
-
-    public static <R, T, A> R collect(final List<T> list,
-            Collector<T, A, R> collector) {
-        return list.stream().collect(collector);
     }
 
 }

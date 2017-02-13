@@ -1,4 +1,4 @@
-# xJava [![Build Status](https://travis-ci.org/exercism/xjava.svg?branch=master)](https://travis-ci.org/exercism/xjava)
+# xJava [![Build Status](https://travis-ci.org/exercism/xjava.svg?branch=master)](https://travis-ci.org/exercism/xjava) [![Join the chat at https://gitter.im/exercism/xjava](https://badges.gitter.im/exercism/xjava.svg)](https://gitter.im/exercism/xjava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Source for Exercism Exercises in Java.
 
@@ -62,7 +62,7 @@ There are two objectives to the design of this build:
 1. when a problem is built from within the xjava repo, the tests run against the "example" code (i.e. when you, the contributor, are developing the exercise);
 2. when a problem is built outside the xjava repo (when a participant is solving the exercise), the tests run against the "main" code.
 
-This repo is a mulit-project gradle build.
+This repo is a multi-project gradle build.
 
 ### The `exercises` Module
 
