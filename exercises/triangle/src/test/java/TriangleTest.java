@@ -9,6 +9,7 @@ public class TriangleTest {
 
     @Rule
     public final ExpectedException thrown = ExpectedException.none();
+
     @Test
     public void equilateralTriangleHaveEqualSides() throws Exception {
         Triangle triangle = new Triangle(2, 2, 2);
