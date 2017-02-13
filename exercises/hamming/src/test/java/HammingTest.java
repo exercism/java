@@ -3,10 +3,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 public class HammingTest {
     
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    
     @Test
     public void testNoDifferenceBetweenIdenticalStrands() {
         assertThat(Hamming.compute("A", "A"), is(0));
@@ -37,14 +42,16 @@ public class HammingTest {
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesFirstStrandNotLonger() {
-        Hamming.compute("AAAG", "AAA");
+        thrown.expect(IllegalArgumentException.class);
+        Hamming.compute("AAAG", "AAA");                
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesOtherStrandNotLonger() {
+        thrown.expect(IllegalArgumentException.class);
         Hamming.compute("AAA", "AAAG");
     }
 
