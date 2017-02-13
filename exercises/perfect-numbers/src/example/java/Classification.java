@@ -1,1 +1,5 @@
-../../main/java/Classification.java
+enum Classification {
+
+    DEFICIENT, PERFECT, ABUNDANT
+
+}
