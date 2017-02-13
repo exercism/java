@@ -19,19 +19,19 @@ public class LuhnValidatorTest {
 
     @Ignore
     @Test
-    public void testThatASimpleValidCanadianSocialInsuranceNumberIsIdentifiedAsValid() {
+    public void testThatASimpleValidNumberIsIdentifiedAsValid() {
         assertTrue(new LuhnValidator().isValid(" 5 9 "));
     }
 
     @Ignore
     @Test
-    public void testThatAComplexValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV1() {
+    public void testThatAValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV1() {
         assertTrue(new LuhnValidator().isValid("046 454 286"));
     }
 
     @Ignore
     @Test
-    public void testThatAComplexValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV2() {
+    public void testThatAValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV2() {
         assertTrue(new LuhnValidator().isValid("055 444 285"));
     }
 
