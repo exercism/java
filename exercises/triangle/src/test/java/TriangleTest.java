@@ -1,11 +1,13 @@
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.rules.TestWatcher;
 
 import static org.junit.Assert.assertEquals;
 
 public class TriangleTest {
 
-
+    @Rule
+    public final ExpectedException thrown = ExpectedException.none();
     @Test
     public void equilateralTriangleHaveEqualSides() throws Exception {
         Triangle triangle = new Triangle(2, 2, 2);
@@ -86,32 +88,37 @@ public class TriangleTest {
     }
 
     @Ignore
-    @Test(expected = TriangleException.class)
+    @Test
     public void trianglesWithNoSizeAreIllegal() throws Exception {
+        thrown.expect(TriangleException.class);
         new Triangle(0, 0, 0);
     }
 
     @Ignore
-    @Test(expected = TriangleException.class)
+    @Test
     public void trianglesWithNegativeSidesAreIllegal() throws Exception {
+        thrown.expect(TriangleException.class);
         new Triangle(3, 4, -5);
     }
 
     @Ignore
-    @Test(expected = TriangleException.class)
+    @Test
     public void trianglesViolatingTriangleInequalityAreIllegal() throws Exception {
+        thrown.expect(TriangleException.class);
         new Triangle(1, 1, 3);
     }
 
     @Ignore
-    @Test(expected = TriangleException.class)
+    @Test
     public void trianglesViolatingTriangleInequalityAreIllegal2() throws Exception {
+        thrown.expect(TriangleException.class);
         new Triangle(2, 4, 2);
     }
 
     @Ignore
-    @Test(expected = TriangleException.class)
+    @Test
     public void trianglesViolatingTriangleInequalityAreIllegal3() throws Exception {
+        thrown.expect(TriangleException.class);
         new Triangle(7, 3, 2);
     }
 }
