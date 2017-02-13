@@ -338,7 +338,7 @@ public class MeetupTest {
 
     @Ignore
     @Test
-    public void testSeconThursdayOfSeptember2013() {
+    public void testSecondThursdayOfSeptember2013() {
         LocalDate expected = LocalDate.of(2013, 9, 12);
         Meetup meetup = new Meetup(9, 2013);
         assertEquals(expected, meetup.day(DayOfWeek.THURSDAY, MeetupSchedule.SECOND));
