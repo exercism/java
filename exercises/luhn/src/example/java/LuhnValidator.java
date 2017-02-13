@@ -9,10 +9,17 @@ final class LuhnValidator {
     boolean isValid(final String candidate) {
         final String sanitizedCandidate = SPACE_PATTERN.matcher(candidate).replaceAll("");
 
+        if (sanitizedCandidate.length() <= 1) {
+            return false;
+        }
+
+        // We need to alter every second digit counting from the right. Reversing makes this easy!
+        final String reversedSanitizedCandidate = reverse(sanitizedCandidate);
+
         final List<Integer> computedDigits = new ArrayList<>();
 
-        for (int charIndex = 0; charIndex < sanitizedCandidate.length(); charIndex++) {
-            int inputDigit = Character.digit(sanitizedCandidate.charAt(charIndex), 10);
+        for (int charIndex = 0; charIndex < reversedSanitizedCandidate.length(); charIndex++) {
+            int inputDigit = Character.digit(reversedSanitizedCandidate.charAt(charIndex), 10);
 
             /*
              * Character.digit returns a negative int if the supplied character does not represent a digit with respect
@@ -23,21 +30,22 @@ final class LuhnValidator {
             }
 
             if (charIndex % 2 == 1) {
-                /*
-                 * Since our doubled input digit must lie in [2, 18], the operation
-                 *
-                 *   "subtract 9 from the doubled input digit if it exceeds 9 in value"
-                 *
-                 * is equivalent to applying the modulo operation below universally.
-                 */
-                inputDigit = (2 * inputDigit) % 9;
+                inputDigit = 2 * inputDigit;
+
+                if (inputDigit > 9) {
+                    inputDigit -= 9;
+                }
             }
 
             computedDigits.add(inputDigit);
         }
 
         final int digitSum = computedDigits.stream().mapToInt(Integer::intValue).sum();
-        return digitSum > 0 && digitSum % 10 == 0;
+        return digitSum % 10 == 0;
+    }
+
+    private String reverse(final String string) {
+        return new StringBuilder(string).reverse().toString();
     }
 
 }
