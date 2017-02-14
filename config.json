@@ -170,11 +170,6 @@
       "topics": []
     },
     {
-      "slug": "grade-school",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
       "slug": "atbash-cipher",
       "difficulty": 5,
       "topics": []
@@ -206,6 +201,11 @@
     },
     {
       "slug": "linked-list",
+      "difficulty": 6,
+      "topics": []
+    },
+    {
+      "slug": "grade-school",
       "difficulty": 6,
       "topics": []
     },
