@@ -1,5 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 import java.util.Map;
 
@@ -8,6 +10,9 @@ import static org.junit.Assert.*;
 
 public class NucleotideTest {
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    
     @Test
     public void testEmptyDnaStringHasNoAdenosine() {
         DNA dna = new DNA("");
@@ -80,8 +85,9 @@ public class NucleotideTest {
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesNucleotides() {
+        thrown.expect(IllegalArgumentException.class);
         DNA dna = new DNA("GACT");
         dna.count('X');
     }
