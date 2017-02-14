@@ -1,11 +1,16 @@
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 public class PrimeTest {
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    
     @Test
     public void testFirstPrime() {
         assertThat(Prime.nth(1), is(2));
@@ -30,8 +35,10 @@ public class PrimeTest {
     }
 
     @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testUndefinedPrime() {
+        thrown.expect(IllegalArgumentException.class);
         Prime.nth(0);
     }
+    
 }
