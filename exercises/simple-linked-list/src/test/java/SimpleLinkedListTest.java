@@ -1,5 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 import java.util.NoSuchElementException;
 
@@ -8,7 +10,9 @@ import static org.junit.Assert.*;
 
 public class SimpleLinkedListTest {
 
-
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    
     @Test
     public void aNewListIsEmpty() {
         SimpleLinkedList list = new SimpleLinkedList();
@@ -24,8 +28,9 @@ public class SimpleLinkedListTest {
     }
 
     @Ignore
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void popOnEmptyListWillThrow() {
+        thrown.expect(NoSuchElementException.class);
         SimpleLinkedList list = new SimpleLinkedList();
         list.pop();
     }
