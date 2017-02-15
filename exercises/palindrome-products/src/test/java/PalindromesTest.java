@@ -1,14 +1,13 @@
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.SortedMap;
 import java.util.stream.Collectors;
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertNotNull;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import static junit.framework.TestCase.*;
 
 public class PalindromesTest {
 
@@ -22,9 +21,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 9l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes
-                = Palindromes.getPalindromeSortedListBuilder()
-                        .withFactorsLessThanOrEqualTo(9).build();
+        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(1, 9);
 
         assertNotNull(palindromes);
         assertFalse(palindromes.isEmpty());
@@ -50,11 +47,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 9009l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes
-                = Palindromes.getPalindromeSortedListBuilder()
-                        .withFactorsLessThanOrEqualTo(99)
-                        .withFactorsGreaterThanOrEqualTo(10)
-                        .build();
+        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(10, 99);
 
         assertNotNull(palindromes);
         assertFalse(palindromes.isEmpty());
@@ -80,11 +73,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 121l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes
-                = Palindromes.getPalindromeSortedListBuilder()
-                        .withFactorsLessThanOrEqualTo(99)
-                        .withFactorsGreaterThanOrEqualTo(10)
-                        .build();
+        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(10, 99);
 
         assertNotNull(palindromes);
         assertFalse(palindromes.isEmpty());
@@ -110,11 +99,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 906609l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes
-                = Palindromes.getPalindromeSortedListBuilder()
-                        .withFactorsLessThanOrEqualTo(999)
-                        .withFactorsGreaterThanOrEqualTo(100)
-                        .build();
+        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(100, 999);
 
         assertNotNull(palindromes);
         assertFalse(palindromes.isEmpty());
@@ -140,11 +125,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 10201l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes
-                = Palindromes.getPalindromeSortedListBuilder()
-                        .withFactorsLessThanOrEqualTo(999)
-                        .withFactorsGreaterThanOrEqualTo(100)
-                        .build();
+        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(100, 999);
 
         assertNotNull(palindromes);
         assertFalse(palindromes.isEmpty());
