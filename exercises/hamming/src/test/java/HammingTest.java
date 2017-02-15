@@ -19,13 +19,13 @@ public class HammingTest {
 
     @Ignore
     @Test
-    public void testCompleteHammingDistanceOfForSingleNucleotideStrand() {
+    public void testHammingDistanceForSingleNucleotideStrand() {
         assertThat(Hamming.compute("A", "G"), is(1));
     }
 
     @Ignore
     @Test
-    public void testCompleteHammingDistanceForSmallStrand() {
+    public void testHammingDistanceForSmallStrand() {
         assertThat(Hamming.compute("AG", "CT"), is(2)); 
     }
 
@@ -43,14 +43,14 @@ public class HammingTest {
 
     @Ignore
     @Test
-    public void testValidatesFirstStrandNotLonger() {
+    public void testValidatesFirstStrandNotLonger() throws IllegalArgumentException {
         thrown.expect(IllegalArgumentException.class);
         Hamming.compute("AAAG", "AAA");                
     }
 
     @Ignore
     @Test
-    public void testValidatesOtherStrandNotLonger() {
+    public void testValidatesOtherStrandNotLonger() throws IllegalArgumentException {
         thrown.expect(IllegalArgumentException.class);
         Hamming.compute("AAA", "AAAG");
     }
