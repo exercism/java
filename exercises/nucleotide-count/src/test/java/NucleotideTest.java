@@ -35,7 +35,7 @@ public class NucleotideTest {
 
     @Ignore
     @Test
-    public void testRepetitiveCytidineGetsCounted() {
+    public void testRepetitiveCytosineGetsCounted() {
         DNA dna = new DNA("CCCCC");
         assertThat(dna.count('C'), is(5));
     }
