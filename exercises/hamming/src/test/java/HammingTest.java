@@ -43,14 +43,14 @@ public class HammingTest {
 
     @Ignore
     @Test
-    public void testValidatesFirstStrandNotLonger() throws IllegalArgumentException {
+    public void testValidatesFirstStrandNotLonger() {
         thrown.expect(IllegalArgumentException.class);
         Hamming.compute("AAAG", "AAA");                
     }
 
     @Ignore
     @Test
-    public void testValidatesOtherStrandNotLonger() throws IllegalArgumentException {
+    public void testValidatesOtherStrandNotLonger() {
         thrown.expect(IllegalArgumentException.class);
         Hamming.compute("AAA", "AAAG");
     }
