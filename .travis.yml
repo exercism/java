@@ -18,9 +18,14 @@ addons:
   apt:
     packages:
       - tree
+
 before_install:
   - rvm install 2.2.5
   - rvm use 2.2.5
+  - bin/build-jq.sh  # we want jq 1.5 features; not avail through pkg repo.
+
+before_script:
+  - export PATH=$TRAVIS_BUILD_DIR/bin:$PATH  # ensure our tools are prefered over included ones.
 
 script:
   - bin/unit-tests.sh
