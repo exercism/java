@@ -63,6 +63,7 @@
     "secret-handshake",
     "flatten-array",
     "perfect-numbers",
+    "change",
     "list-ops"
   ],
   "exercises": [
@@ -358,6 +359,11 @@
     },
     {
       "slug": "perfect-numbers",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "change",
       "difficulty": 1,
       "topics": []
     },

@@ -3,6 +3,7 @@ import org.junit.Ignore;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
@@ -103,7 +104,7 @@ public class AllergiesTest {
     @Test
     public void isAllergicToJustEggs() {
         Allergies allergies = new Allergies(1);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{Allergen.EGGS});
+        List<Allergen> expectedAllergens = Collections.singletonList(Allergen.EGGS);
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -112,7 +113,7 @@ public class AllergiesTest {
     @Test
     public void isAllergicToJustPeanuts() {
         Allergies allergies = new Allergies(2);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{Allergen.PEANUTS});
+        List<Allergen> expectedAllergens = Collections.singletonList(Allergen.PEANUTS);
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -121,7 +122,7 @@ public class AllergiesTest {
     @Test
     public void isAllergicToJustStrawberries() {
         Allergies allergies = new Allergies(8);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{Allergen.STRAWBERRIES});
+        List<Allergen> expectedAllergens = Collections.singletonList(Allergen.STRAWBERRIES);
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -130,10 +131,10 @@ public class AllergiesTest {
     @Test
     public void isAllergicToEggsAndPeanuts() {
         Allergies allergies = new Allergies(3);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{
+        List<Allergen> expectedAllergens = Arrays.asList(
                 Allergen.EGGS,
                 Allergen.PEANUTS
-        });
+        );
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -142,10 +143,10 @@ public class AllergiesTest {
     @Test
     public void isAllergicToEggsAndShellfish() {
         Allergies allergies = new Allergies(5);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{
+        List<Allergen> expectedAllergens = Arrays.asList(
                 Allergen.EGGS,
                 Allergen.SHELLFISH
-        });
+        );
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -154,13 +155,13 @@ public class AllergiesTest {
     @Test
     public void isAllergicToLotsOfStuff() {
         Allergies allergies = new Allergies(248);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{
+        List<Allergen> expectedAllergens = Arrays.asList(
                 Allergen.STRAWBERRIES,
                 Allergen.TOMATOES,
                 Allergen.CHOCOLATE,
                 Allergen.POLLEN,
                 Allergen.CATS
-        });
+        );
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -169,7 +170,7 @@ public class AllergiesTest {
     @Test
     public void isAllergicToEverything() {
         Allergies allergies = new Allergies(255);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{
+        List<Allergen> expectedAllergens = Arrays.asList(
                 Allergen.EGGS,
                 Allergen.PEANUTS,
                 Allergen.SHELLFISH,
@@ -178,7 +179,7 @@ public class AllergiesTest {
                 Allergen.CHOCOLATE,
                 Allergen.POLLEN,
                 Allergen.CATS
-        });
+        );
 
         assertEquals(expectedAllergens, allergies.getList());
     }
@@ -187,7 +188,7 @@ public class AllergiesTest {
     @Test
     public void ignoreNonAllergenScoreParts() {
         Allergies allergies = new Allergies(509);
-        List<Allergen> expectedAllergens = Arrays.asList(new Allergen[]{
+        List<Allergen> expectedAllergens = Arrays.asList(
                 Allergen.EGGS,
                 Allergen.SHELLFISH,
                 Allergen.STRAWBERRIES,
@@ -195,7 +196,7 @@ public class AllergiesTest {
                 Allergen.CHOCOLATE,
                 Allergen.POLLEN,
                 Allergen.CATS
-        });
+        );
 
         assertEquals(expectedAllergens, allergies.getList());
     }
