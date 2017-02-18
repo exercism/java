@@ -1,1 +1,5 @@
-../../main/java/Orientation.java
+enum Orientation {
+
+    NORTH, EAST, SOUTH, WEST
+
+}
