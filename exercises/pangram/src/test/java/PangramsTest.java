@@ -66,4 +66,10 @@ public class PangramsTest {
     public void panagramInAlphabetOtherThanAscii() {
         assertFalse(Pangrams.isPangram("Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства."));
     }
+
+    @Ignore
+    @Test
+    public void upperAndLowerCaseVersionsOfTheSameCharacterShouldNotBeCountedSeparatelyIsNotPangram() {
+        assertFalse(Pangrams.isPangram("the quick brown fox jumped over the lazy FOX"));
+    }
 }
