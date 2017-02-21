@@ -67,16 +67,16 @@ public class AnagramTest {
 
     @Ignore
     @Test
-    public void testCapitalWordIsNotAnagram() {
-        Anagram detector = new Anagram("BANANA");
-        assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
+    public void testIdenticalWordRepeatedIsNotAnagram() {
+        Anagram detector = new Anagram("go");
+        assertTrue(detector.match(Arrays.asList("go Go GO")).isEmpty());
     }
 
     @Ignore
     @Test
-    public void testIdenticalWordRepeatedIsNotAnagram() {
-        Anagram detector = new Anagram("go");
-        assertTrue(detector.match(Arrays.asList("go Go GO")).isEmpty());
+    public void testCapitalWordIsNotOwnAnagram() {
+        Anagram detector = new Anagram("BANANA");
+        assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
     }
 
     @Ignore
