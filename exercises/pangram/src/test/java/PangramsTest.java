@@ -69,7 +69,7 @@ public class PangramsTest {
 
     @Ignore
     @Test
-    public void upperAndLowerCaseVersionsOfTheSameCharacterShouldNotBeCountedSeparatelyIsNotPangram() {
+    public void upperAndLowerCaseVersionsOfTheSameCharacterShouldNotBeCountedSeparately() {
         assertFalse(Pangrams.isPangram("the quick brown fox jumped over the lazy FOX"));
     }
 }
