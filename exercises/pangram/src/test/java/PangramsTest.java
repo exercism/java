@@ -20,13 +20,13 @@ public class PangramsTest {
 
     @Ignore
     @Test
-    public void missingCharacterXIsNotPangram() {
+    public void phraseMissingCharacterXIsNotPangram() {
         assertFalse(Pangrams.isPangram("a quick movement of the enemy will jeopardize five gunboats"));
     }
 
     @Ignore
     @Test
-    public void anotherMissingCharacterXIsNotPangram() {
+    public void anotherPhraseMissingCharacterXIsNotPangram() {
         assertFalse(Pangrams.isPangram("the quick brown fish jumps over the lazy dog"));
     }
 
@@ -44,7 +44,7 @@ public class PangramsTest {
 
     @Ignore
     @Test
-    public void missingLettersReplacedByNumbers() {
+    public void missingLettersReplacedByNumbersIsNotPangram()() {
         assertFalse(Pangrams.isPangram("\"7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog\""));
     }
 
@@ -63,7 +63,7 @@ public class PangramsTest {
 
     @Ignore
     @Test
-    public void panagramInAlphabetOtherThanAsciiIsNotPangram() {
+    public void panagramInAlphabetOtherThanAsciiIsNotRecognizedAsPangram() {
         assertFalse(Pangrams.isPangram("Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства."));
     }
 }
