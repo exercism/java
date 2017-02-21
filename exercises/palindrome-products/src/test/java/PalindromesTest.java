@@ -23,18 +23,7 @@ public class PalindromesTest {
 
         final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(1, 9);
 
-        assertNotNull(palindromes);
-        assertFalse(palindromes.isEmpty());
-
-        long actualValue = palindromes.lastKey();
-        assertEquals(expectedValue, actualValue);
-
-        List<List<Integer>> actual = palindromes
-                .get(palindromes.lastKey())
-                .stream()
-                .sorted((a, b) -> Integer.compare(a.get(0), b.get(0)))
-                .collect(Collectors.toList());
-        assertEquals(expected, actual);
+        checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
     @Test
@@ -49,18 +38,7 @@ public class PalindromesTest {
 
         final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(10, 99);
 
-        assertNotNull(palindromes);
-        assertFalse(palindromes.isEmpty());
-
-        long actualValue = palindromes.lastKey();
-        assertEquals(expectedValue, actualValue);
-
-        List<List<Integer>> actual = palindromes
-                .get(palindromes.lastKey())
-                .stream()
-                .sorted((a, b) -> Integer.compare(a.get(0), b.get(0)))
-                .collect(Collectors.toList());
-        assertEquals(expected, actual);
+        checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
     @Test
@@ -75,18 +53,7 @@ public class PalindromesTest {
 
         final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(10, 99);
 
-        assertNotNull(palindromes);
-        assertFalse(palindromes.isEmpty());
-
-        long actualValue = palindromes.firstKey();
-        assertEquals(expectedValue, actualValue);
-
-        List<List<Integer>> actual = palindromes
-                .get(palindromes.firstKey())
-                .stream()
-                .sorted((a, b) -> Integer.compare(a.get(0), b.get(0)))
-                .collect(Collectors.toList());
-        assertEquals(expected, actual);
+        checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
 
     @Test
@@ -101,18 +68,7 @@ public class PalindromesTest {
 
         final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(100, 999);
 
-        assertNotNull(palindromes);
-        assertFalse(palindromes.isEmpty());
-
-        long actualValue = palindromes.lastKey();
-        assertEquals(expectedValue, actualValue);
-
-        List<List<Integer>> actual = palindromes
-                .get(palindromes.lastKey())
-                .stream()
-                .sorted((a, b) -> Integer.compare(a.get(0), b.get(0)))
-                .collect(Collectors.toList());
-        assertEquals(expected, actual);
+        checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
     @Test
@@ -127,17 +83,23 @@ public class PalindromesTest {
 
         final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(100, 999);
 
-        assertNotNull(palindromes);
-        assertFalse(palindromes.isEmpty());
+        checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
+    }
 
-        long actualValue = palindromes.firstKey();
-        assertEquals(expectedValue, actualValue);
+    private void checkPalindromeWithFactorsMatchesExpected(List<List<Integer>> expectedPalindromeFactors,
+                                                           long expectedValueOfPalindrome,
+                                                           SortedMap<Long, List<List<Integer>>> actualPalindromes,
+                                                           long actualValueOfPalindrome) {
+        assertNotNull(actualPalindromes);
+        assertFalse(actualPalindromes.isEmpty());
 
-        List<List<Integer>> actual = palindromes
-                .get(palindromes.firstKey())
+        assertEquals(expectedValueOfPalindrome, actualValueOfPalindrome);
+
+        List<List<Integer>> actualPalindromeFactors = actualPalindromes
+                .get(actualValueOfPalindrome)
                 .stream()
                 .sorted((a, b) -> Integer.compare(a.get(0), b.get(0)))
                 .collect(Collectors.toList());
-        assertEquals(expected, actual);
+        assertEquals(expectedPalindromeFactors, actualPalindromeFactors);
     }
 }
