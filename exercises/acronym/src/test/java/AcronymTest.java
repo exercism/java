@@ -47,6 +47,14 @@ public class AcronymTest {
 
     @Ignore
     @Test
+    public void fromPhrasesWithNonAcronymAllCapsWord() {
+        final String phrase = "GNU Image Manipulation Program";
+        final String expected = "GIMP";
+        assertEquals(expected, Acronym.generate(phrase));
+    }
+
+    @Ignore
+    @Test
     public void fromPhrasesWithPunctuationAndSentenceCasing() {
         final String phrase = "Complementary metal-oxide semiconductor";
         final String expected = "CMOS";
