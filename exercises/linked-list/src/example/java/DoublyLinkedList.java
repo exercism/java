@@ -1,4 +1,4 @@
-public final class Deque<T> {
+public final class DoublyLinkedList<T> {
     private Element<T> head;
 
     public void push(T value) {

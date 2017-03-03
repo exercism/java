@@ -1,15 +1,20 @@
-
 import java.util.Arrays;
 import java.util.List;
+
 import org.junit.Test;
+import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import org.junit.Ignore;
 
 public class SeriesTest {
-
+    
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    
     @Test
     public void hasDigitsShort() {
         Series sut = new Series("01234");
@@ -146,9 +151,10 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     @Ignore
     public void throwsAnErrorIfNotEnoughDigitsToSlice() {
+        thrown.expect(IllegalArgumentException.class);
         new Series("01032987583").slices(12);
     }
 }
