@@ -63,6 +63,7 @@
     "secret-handshake",
     "flatten-array",
     "perfect-numbers"
+    "isogram"
   ],
   "exercises": [
     {
@@ -359,6 +360,11 @@
       "slug": "perfect-numbers",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "isogram",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
@@ -381,3 +387,4 @@
     "say"
   ]
 }
+
