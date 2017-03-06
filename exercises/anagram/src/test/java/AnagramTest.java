@@ -116,4 +116,18 @@ public class AnagramTest {
         List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
         assertThat(anagrams, hasItem("Carthorse"));
     }
+
+    @Ignore
+    @Test
+    public void testWordIsNotItsOwnAnagram() {
+        Anagram detector = new Anagram("banana");
+        assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
+    }
+
+    @Ignore
+    @Test
+    public void testAnagramMustUseAllLettersExactlyOnce() {
+        Anagram detector = new Anagram("tapper");
+        assertTrue(detector.match(Arrays.asList("patter")).isEmpty());
+    }
 }

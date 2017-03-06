@@ -53,7 +53,8 @@ public class AtbashTest {
             return Arrays.asList(new Object[][] {
                     { "vcvix rhn", "exercism" },
                     { "zmlyh gzxov rhlug vmzhg vkkrm thglm v", "anobstacleisoftenasteppingstone" },
-                    { "gvhgr mt123 gvhgr mt", "testing123testing" }
+                    { "gvhgr mt123 gvhgr mt", "testing123testing" },
+                    { "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt", "thequickbrownfoxjumpsoverthelazydog" }
             });
         }
 

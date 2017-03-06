@@ -90,6 +90,8 @@ public class AllergiesTest {
         Allergies allergies = new Allergies(5);
 
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS));
+        assertEquals(true, allergies.isAllergicTo(Allergen.SHELLFISH));
+        assertEquals(false, allergies.isAllergicTo(Allergen.STRAWBERRIES));
     }
 
     @Ignore
