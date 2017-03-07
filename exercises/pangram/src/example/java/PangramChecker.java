@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Pangrams {
+public class PangramChecker {
     private static final int alphaLength = 26;
 
     public boolean isPangram(String input) {
