@@ -5,7 +5,7 @@ final class NaturalNumber {
     private final int naturalNumber;
 
     NaturalNumber(int naturalNumber) {
-        if (naturalNumber <= 0) throw new IllegalStateException("Natural numbers are all positive.");
+        if (naturalNumber <= 0) throw new IllegalArgumentException("You must supply a natural number (positive integer)");
         this.naturalNumber = naturalNumber;
     }
 
