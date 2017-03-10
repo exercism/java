@@ -2,7 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import exemple.Isogram;
+import main.Isogram;
 
 public class IsogramTest {
 

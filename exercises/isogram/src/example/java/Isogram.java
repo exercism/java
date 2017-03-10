@@ -1,29 +1,31 @@
-package exemple;
+package main;
 
 import java.util.HashSet;
 import java.util.Set;
+import static java.util.Arrays.stream;
+import static java.util.stream.Collectors.joining;
 
 public class Isogram {
 	
 	public static boolean isIsogram(String word){
 		
-		Set<Character> charset= new HashSet<Character>();
+		Set<Character> charset = new HashSet<>();
+		
 		String[] words = word.split(" ");
-		String newword = concat(words);
-		words = newword.split("-");
-		newword = concat(words).toLowerCase();
+		String newWord = concat(words);
 		
-		for(int i = 0; i < newword.length(); i++)
-			charset.add(newword.charAt(i));
+		words = newWord.split("-");
+		newWord = concat(words).toLowerCase();
 		
-		return charset.size() == newword.length();
+		for(int i = 0; i < newWord.length(); i++){
+			charset.add(newWord.charAt(i));
+		}
+		
+		return charset.size() == newWord.length();
 	}
 	
 	public static String concat(String[] words){
-		String newword = new String("");
-		for(int i = 0; i < words.length; i++)
-			newword = newword + words[i];
-		return newword;
+		return stream(words).collect(joining());
 	}
 	
 }
