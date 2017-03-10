@@ -1,6 +1,6 @@
 public class RnaTranscription {
 
-    public static String ofDna(String strand) {
+    public String ofDna(String strand) {
         StringBuilder sb = new StringBuilder();
         for (char c : strand.toCharArray()) {
             switch (c) {
