@@ -313,6 +313,13 @@
       "slug": "ocr-numbers",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": [
+      "Integers"
+      ]
     }
   ],
   "deprecated": [
