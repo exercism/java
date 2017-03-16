@@ -75,20 +75,4 @@ public class BookStore{
 		return 8 * groupSize * (100 - discountPercentage) / 100; 
 
 	}
-
-
-	public static void main (String[] argv){
-		Integer[] p = {1};
-		List<Integer> books = new ArrayList<>(Arrays.asList(p));
-		BookStore bookStore = new BookStore(books);
-		System.out.println(bookStore.CalculateTotalCost());
-
-
-
-		Integer[] p1 = {1,2};
-		List<Integer> books1 = new ArrayList<>(Arrays.asList(p1));
-		BookStore bookStore1 = new BookStore(books1);
-		System.out.println(bookStore1.CalculateTotalCost());
-
-	}
 }
