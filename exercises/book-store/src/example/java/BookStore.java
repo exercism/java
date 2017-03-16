@@ -1,44 +1,56 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookStore{
-	public static double CalculateTotalCost(List<Integer> books ){
-		return CalculateTotalCost(books,0);
+
+	private int bookPrice, maxGroupSize;
+	private double discountIncrement;
+	private List<Integer> books;	
+
+	public BookStore (List<Integer> books){
+		this.books = books;
+		this.bookPrice = 8;
+		this.maxGroupSize = 5;
+		this.discountIncrement = 0.05;
+	}	
+
+	public double CalculateTotalCost(){
+		return CalculateTotalCost(this.books,0);
 	}
 
-	public static double CalculateTotalCost (List<Integer> books,double priceSoFar ){
+	private double CalculateTotalCost (List<Integer> books,double priceSoFar ){
 		double minPrice = Double.MAX_VALUE;
+
 
 		if(books.size() == 0)
 			return priceSoFar;
 
 		List<Integer> groups = (ArrayList<Integer>) books.stream().distinct().collect(Collectors.toList());
 
-		
+
 		double price = 0;
 
 		for(int i = 0;i<groups.size();i++){
 			books.remove(groups.get(i));	
 		}
-		
-		
+
+
 		try {
 			price = CalculateTotalCost(books,priceSoFar + CostPerGroup(groups.size()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		minPrice = Math.min(minPrice, price);
 		return minPrice;
 
 
 	}
 
-	private static double CostPerGroup(int groupSize) throws Exception{
-		double[] discountPercentage = {0, 0, 0.05, 0.1, 0.2, 0.25};
+	private double CostPerGroup(int groupSize) throws Exception{
 
-		
-	/*		
 		double discountPercentage;
 		switch (groupSize)
 		{
@@ -60,8 +72,23 @@ public class BookStore{
 		default:
 			throw new Exception("Invalide group size : " + groupSize );
 		}
-*/
-		return 8 * groupSize * (1 - discountPercentage[groupSize]);
+		return 8 * groupSize * (100 - discountPercentage) / 100; 
+
 	}
 
+
+	public static void main (String[] argv){
+		Integer[] p = {1};
+		List<Integer> books = new ArrayList<>(Arrays.asList(p));
+		BookStore bookStore = new BookStore(books);
+		System.out.println(bookStore.CalculateTotalCost());
+
+
+
+		Integer[] p1 = {1,2};
+		List<Integer> books1 = new ArrayList<>(Arrays.asList(p1));
+		BookStore bookStore1 = new BookStore(books1);
+		System.out.println(bookStore1.CalculateTotalCost());
+
+	}
 }
