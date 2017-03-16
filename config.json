@@ -270,6 +270,15 @@
       "topics": []
     },
     {
+      "slug": "poker",
+      "difficulty": 7,
+      "topics": [
+        "Parsing",
+        "Sorting",
+        "Games"
+      ]
+    },
+    {
       "slug": "simple-cipher",
       "difficulty": 8,
       "topics": []
