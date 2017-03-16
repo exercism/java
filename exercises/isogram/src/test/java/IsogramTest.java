@@ -2,58 +2,68 @@ package test;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import main.Isogram;
+import exemple.Isogram;
 
 public class IsogramTest {
 
 	@Test
 	public void testIsogram() {
-		assertTrue(Isogram.isIsogram("duplicates"));
+		Isogram iso = new Isogram("duplicates");
+		assertTrue(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testNotIsogram() {
-		assertFalse(Isogram.isIsogram("eleven"));
+		Isogram iso = new Isogram("eleven");
+		assertFalse(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testMediumLongIsogram() {
-		assertTrue(Isogram.isIsogram("subdermatoglyphic"));
+		Isogram iso = new Isogram("subdermatoglyphic");
+		assertTrue(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testCaseInsensitive() {
-		assertFalse(Isogram.isIsogram("Alphabet"));
+		Isogram iso = new Isogram("Alphabet");
+		assertFalse(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testIsogramWithHyphen() {
-		assertTrue(Isogram.isIsogram("thumbscrew-japingly"));
+		Isogram iso = new Isogram("thumbscrew-japingly");
+		assertTrue(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testIgnoresMultipleHyphens() {
-		assertTrue(Isogram.isIsogram("Hjelmqvist-Gryb-Zock-Pfund-Wax"));
+		Isogram iso = new Isogram("Hjelmqvist-Gryb-Zock-Pfund-Wax");
+		assertTrue(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testWorksWithGermanLetters() {
-		assertTrue(Isogram.isIsogram("Heizölrückstoßabdämpfung"));
+		Isogram iso = new Isogram("Heizölrückstoßabdämpfung");
+		assertTrue(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testIgnoresSpaces() {
-		assertFalse(Isogram.isIsogram("the quick brown fox"));
+		Isogram iso = new Isogram("the quick brown fox");
+		assertFalse(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testIgnoresSpaces2() {
-		assertTrue(Isogram.isIsogram("Emily Jung Schwartzkopf"));
+		Isogram iso = new Isogram("Emily Jung Schwartzkopf");
+		assertTrue(iso.isogramChecker());
 	}
 	
 	@Test
 	public void testDuplicateAccentedLetters() {
-		assertFalse(Isogram.isIsogram("éléphant"));
+		Isogram iso = new Isogram("éléphant");
+		assertFalse(iso.isogramChecker());
 	}
 
 }

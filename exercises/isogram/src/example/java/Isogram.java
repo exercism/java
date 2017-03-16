@@ -1,4 +1,4 @@
-package main;
+package exemple;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,24 +7,30 @@ import static java.util.stream.Collectors.joining;
 
 public class Isogram {
 	
-	public static boolean isIsogram(String word){
+	private String word;
+	
+	public Isogram(String word){
+		this.word = word;
+	}
+	
+	public boolean isogramChecker(){
 		
-		Set<Character> charset = new HashSet<>();
+		Set<Character> charSet = new HashSet<>();
 		
-		String[] words = word.split(" ");
+		String[] words = this.word.split(" ");
 		String newWord = concat(words);
 		
 		words = newWord.split("-");
 		newWord = concat(words).toLowerCase();
 		
 		for(int i = 0; i < newWord.length(); i++){
-			charset.add(newWord.charAt(i));
+			charSet.add(newWord.charAt(i));
 		}
 		
-		return charset.size() == newWord.length();
+		return charSet.size() == newWord.length();
 	}
 	
-	public static String concat(String[] words){
+	private String concat(String[] words){
 		return stream(words).collect(joining());
 	}
 	
