@@ -1,18 +1,19 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookStore{
-	public static double CalculateTotalCost(ArrayList<Integer> books ){
+	public static double CalculateTotalCost(List<Integer> books ){
 		return CalculateTotalCost(books,0);
 	}
 
-	public static double CalculateTotalCost (ArrayList<Integer> books,double priceSoFar ){
+	public static double CalculateTotalCost (List<Integer> books,double priceSoFar ){
 		double minPrice = Double.MAX_VALUE;
 
 		if(books.size() == 0)
 			return priceSoFar;
 
-		ArrayList<Integer> groups = (ArrayList<Integer>) books.stream().distinct().collect(Collectors.toList());
+		List<Integer> groups = (ArrayList<Integer>) books.stream().distinct().collect(Collectors.toList());
 
 		
 		double price = 0;
@@ -34,6 +35,10 @@ public class BookStore{
 	}
 
 	private static double CostPerGroup(int groupSize) throws Exception{
+		double[] discountPercentage = {0, 0, 0.05, 0.1, 0.2, 0.25};
+
+		
+	/*		
 		double discountPercentage;
 		switch (groupSize)
 		{
@@ -55,8 +60,8 @@ public class BookStore{
 		default:
 			throw new Exception("Invalide group size : " + groupSize );
 		}
-
-		return 8 * groupSize * (100 - discountPercentage) / 100;
+*/
+		return 8 * groupSize * (1 - discountPercentage[groupSize]);
 	}
 
 }
