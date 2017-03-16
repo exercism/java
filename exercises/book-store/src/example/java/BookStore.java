@@ -12,8 +12,6 @@ public class BookStore{
 	public BookStore (List<Integer> books){
 		this.books = books;
 		this.bookPrice = 8;
-		this.maxGroupSize = 5;
-		this.discountIncrement = 0.05;
 	}	
 
 	public double CalculateTotalCost(){
@@ -72,7 +70,7 @@ public class BookStore{
 		default:
 			throw new Exception("Invalide group size : " + groupSize );
 		}
-		return 8 * groupSize * (100 - discountPercentage) / 100; 
+		return bookPrice * groupSize * (100 - discountPercentage) / 100; 
 
 	}
 }
