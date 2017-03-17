@@ -3,6 +3,7 @@
   "language": "Java",
   "repository": "https://github.com/exercism/xjava",
   "active": true,
+
   "exercises": [
     {
       "slug": "hello-world",
@@ -313,6 +314,11 @@
       "slug": "ocr-numbers",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "isogram",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
@@ -335,3 +341,4 @@
     "say"
   ]
 }
+
