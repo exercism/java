@@ -1,23 +1,20 @@
-package exemple;
+package example;
 
 import java.util.HashSet;
 import java.util.Set;
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.joining;
 
-public class Isogram {
+public class IsogramChecker {
 	
-	private String word;
-	
-	public Isogram(String word){
-		this.word = word;
+	public IsogramChecker(){
 	}
 	
-	public boolean isogramChecker(){
+	public boolean isIsogram(String word){
 		
 		Set<Character> charSet = new HashSet<>();
 		
-		String[] words = this.word.split(" ");
+		String[] words = word.split(" ");
 		String newWord = concat(words);
 		
 		words = newWord.split("-");

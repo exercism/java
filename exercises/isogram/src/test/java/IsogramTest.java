@@ -1,69 +1,80 @@
 package test;
 
 import static org.junit.Assert.*;
+
+import org.junit.Ignore;
 import org.junit.Test;
-import exemple.Isogram;
+import example.IsogramChecker;
 
 public class IsogramTest {
 
 	@Test
 	public void testIsogram() {
-		Isogram iso = new Isogram("duplicates");
-		assertTrue(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertTrue(iso.isIsogram("duplicates"));
 	}
 	
+	@Ignore
 	@Test
 	public void testNotIsogram() {
-		Isogram iso = new Isogram("eleven");
-		assertFalse(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertFalse(iso.isIsogram("eleven"));
 	}
 	
+	@Ignore
 	@Test
 	public void testMediumLongIsogram() {
-		Isogram iso = new Isogram("subdermatoglyphic");
-		assertTrue(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertTrue(iso.isIsogram("subdermatoglyphic"));
 	}
 	
+	@Ignore
 	@Test
 	public void testCaseInsensitive() {
-		Isogram iso = new Isogram("Alphabet");
-		assertFalse(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertFalse(iso.isIsogram("Alphabet"));
 	}
 	
+	@Ignore
 	@Test
 	public void testIsogramWithHyphen() {
-		Isogram iso = new Isogram("thumbscrew-japingly");
-		assertTrue(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertTrue(iso.isIsogram("thumbscrew-japingly"));
 	}
 	
+	@Ignore
 	@Test
 	public void testIgnoresMultipleHyphens() {
-		Isogram iso = new Isogram("Hjelmqvist-Gryb-Zock-Pfund-Wax");
-		assertTrue(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertTrue(iso.isIsogram("Hjelmqvist-Gryb-Zock-Pfund-Wax"));
 	}
 	
+	@Ignore
 	@Test
 	public void testWorksWithGermanLetters() {
-		Isogram iso = new Isogram("Heizölrückstoßabdämpfung");
-		assertTrue(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertTrue(iso.isIsogram("Heizölrückstoßabdämpfung"));
 	}
 	
+	@Ignore
 	@Test
 	public void testIgnoresSpaces() {
-		Isogram iso = new Isogram("the quick brown fox");
-		assertFalse(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertFalse(iso.isIsogram("the quick brown fox"));
 	}
 	
+	@Ignore
 	@Test
 	public void testIgnoresSpaces2() {
-		Isogram iso = new Isogram("Emily Jung Schwartzkopf");
-		assertTrue(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertTrue(iso.isIsogram("Emily Jung Schwartzkopf"));
 	}
 	
+	@Ignore
 	@Test
 	public void testDuplicateAccentedLetters() {
-		Isogram iso = new Isogram("éléphant");
-		assertFalse(iso.isogramChecker());
+		IsogramChecker iso = new IsogramChecker();
+		assertFalse(iso.isIsogram("éléphant"));
 	}
 
 }
