@@ -29,8 +29,9 @@ public class Bookstore{
 		double minPrice = Double.MAX_VALUE;
 
 
-		if(books.size() == 0)	
+		if(books.size() == 0){
 			return priceSoFar;
+		}
 
 		List<Integer> groups = (ArrayList<Integer>) books.stream().distinct().collect(Collectors.toList());
 
