@@ -1,3 +1,4 @@
+import java.awt.print.Printable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,12 +8,18 @@ public class BookStore{
 
 	private int bookPrice, maxGroupSize;
 	private double discountIncrement;
-	private List<Integer> books;	
+	private List<Integer> books;
+	private static double[] discount_tiers = {0,5,10,20,25};   	
 
 	public BookStore (List<Integer> books){
 		this.books = books;
 		this.bookPrice = 8;
+		this.maxGroupSize = 5;
+	        this.discountIncrement = 0.05;
 	}	
+	
+
+
 
 	public double CalculateTotalCost(){
 		return CalculateTotalCost(this.books,0);
@@ -22,25 +29,24 @@ public class BookStore{
 		double minPrice = Double.MAX_VALUE;
 
 
-		if(books.size() == 0)
+		if(books.size() == 0)	
 			return priceSoFar;
 
 		List<Integer> groups = (ArrayList<Integer>) books.stream().distinct().collect(Collectors.toList());
 
-
+		
 		double price = 0;
 
 		for(int i = 0;i<groups.size();i++){
 			books.remove(groups.get(i));	
 		}
-
-
+				
 		try {
 			price = CalculateTotalCost(books,priceSoFar + CostPerGroup(groups.size()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 		minPrice = Math.min(minPrice, price);
 		return minPrice;
 
@@ -48,29 +54,11 @@ public class BookStore{
 	}
 
 	private double CostPerGroup(int groupSize) throws Exception{
-
-		double discountPercentage;
-		switch (groupSize)
-		{
-		case 1:
-			discountPercentage = 0;
-			break;
-		case 2:
-			discountPercentage = 5;
-			break;
-		case 3:
-			discountPercentage = 10;
-			break;
-		case 4:
-			discountPercentage = 20;
-			break;
-		case 5:
-			discountPercentage = 25;
-			break;
-		default:
-			throw new Exception("Invalide group size : " + groupSize );
-		}
-		return bookPrice * groupSize * (100 - discountPercentage) / 100; 
-
+		if (groupSize < 1 || groupSize > maxGroupSize){
+        		throw new Exception("Invalid group size : " + groupSize );
+     		}
+    		return bookPrice * groupSize * (100 - discount_tiers[groupSize-1])/100;
 	}
+
+
 }
