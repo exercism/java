@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BookStore{
+public class Bookstore{
 
 	private int bookPrice, maxGroupSize;
 	private double discountIncrement;
 	private List<Integer> books;
 	private static double[] discount_tiers = {0,5,10,20,25};   	
 
-	public BookStore (List<Integer> books){
+	public Bookstore (List<Integer> books){
 		this.books = books;
 		this.bookPrice = 8;
 		this.maxGroupSize = 5;
@@ -21,11 +21,11 @@ public class BookStore{
 
 
 
-	public double CalculateTotalCost(){
-		return CalculateTotalCost(this.books,0);
+	public double calculateTotalCost(){
+		return calculateTotalCost(this.books,0);
 	}
 
-	private double CalculateTotalCost (List<Integer> books,double priceSoFar ){
+	private double calculateTotalCost (List<Integer> books,double priceSoFar ){
 		double minPrice = Double.MAX_VALUE;
 
 
@@ -42,7 +42,7 @@ public class BookStore{
 		}
 				
 		try {
-			price = CalculateTotalCost(books,priceSoFar + CostPerGroup(groups.size()));
+			price = calculateTotalCost(books,priceSoFar + costPerGroup(groups.size()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -53,7 +53,7 @@ public class BookStore{
 
 	}
 
-	private double CostPerGroup(int groupSize) throws Exception{
+	private double costPerGroup(int groupSize) throws Exception{
 		if (groupSize < 1 || groupSize > maxGroupSize){
         		throw new Exception("Invalid group size : " + groupSize );
      		}
