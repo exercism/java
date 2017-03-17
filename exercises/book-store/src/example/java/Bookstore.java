@@ -6,16 +6,12 @@ import java.util.stream.Collectors;
 
 public class Bookstore{
 
-	private int bookPrice, maxGroupSize;
-	private double discountIncrement;
+	private int BOOK_PRICE = 8, MAX_GROUP_SIZE = 5;
 	private List<Integer> books;
-	private static double[] discount_tiers = {0,5,10,20,25};   	
+	private static double[] DISCOUNT_TIERS = {0,5,10,20,25};   	
 
 	public Bookstore (List<Integer> books){
 		this.books = books;
-		this.bookPrice = 8;
-		this.maxGroupSize = 5;
-	        this.discountIncrement = 0.05;
 	}	
 	
 
@@ -55,10 +51,10 @@ public class Bookstore{
 	}
 
 	private double costPerGroup(int groupSize) throws Exception{
-		if (groupSize < 1 || groupSize > maxGroupSize){
+		if (groupSize < 1 || groupSize > MAX_GROUP_SIZE){
         		throw new Exception("Invalid group size : " + groupSize );
      		}
-    		return bookPrice * groupSize * (100 - discount_tiers[groupSize-1])/100;
+    		return BOOK_PRICE * groupSize * (100 - DISCOUNT_TIERS[groupSize-1])/100;
 	}
 
 
