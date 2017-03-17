@@ -315,8 +315,13 @@
       "difficulty": 1,
       "topics": []
     },
-    {
+     {
       "slug": "isogram",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "book-store",
       "difficulty": 1,
       "topics": []
     }
