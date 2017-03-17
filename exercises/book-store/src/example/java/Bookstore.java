@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Bookstore{
 
-	private int BOOK_PRICE = 8, MAX_GROUP_SIZE = 5;
+	private static int BOOK_PRICE = 8, MAX_GROUP_SIZE = 5;
 	private List<Integer> books;
 	private static double[] DISCOUNT_TIERS = {0,5,10,20,25};   	
 
