@@ -3,6 +3,7 @@
   "language": "Java",
   "repository": "https://github.com/exercism/xjava",
   "active": true,
+
   "exercises": [
     {
       "slug": "hello-world",
@@ -314,6 +315,11 @@
       "difficulty": 1,
       "topics": []
     },
+     {
+      "slug": "isogram",
+      "difficulty": 1,
+      "topics": []
+    },
     {
       "slug": "book-store",
       "difficulty": 1,
@@ -340,3 +346,4 @@
     "say"
   ]
 }
+
