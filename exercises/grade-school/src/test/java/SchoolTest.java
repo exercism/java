@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -15,7 +16,12 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class SchoolTest {
-  private final School school = new School();
+  private School school;
+
+  @Before
+  public void setUp() {
+    school = new School();
+  }
 
   @Test
   public void startsWithNoStudents() {
@@ -120,7 +126,7 @@ public class SchoolTest {
       // Such as UnsupportedOperationException when an unmodifiableMap is used
     }
 
-    assertThat(school.studentsByGradeAlphabetical().get(grade), 
+    assertThat(school.studentsByGradeAlphabetical().get(grade),
       not(hasItem(studentWhichShouldNotBeAdded)));
   }
 }
