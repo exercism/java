@@ -1,6 +1,6 @@
-public class Raindrops {
+public class RaindropConverter {
 
-    public static String convert(int number) {
+    public String convert(int number) {
         String result = "";
 
         if (number % 3 == 0) {

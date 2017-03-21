@@ -10,7 +10,7 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class RaindropsTest {
+public class RaindropConverterTest {
 
     private int inputNumber;
     private String outputFromRaindropConversion;
@@ -46,7 +46,7 @@ public class RaindropsTest {
         });
     }
 
-    public RaindropsTest(int inputNumber, String outputFromRaindropConversion) {
+    public RaindropConverterTest(int inputNumber, String outputFromRaindropConversion) {
         this.inputNumber = inputNumber;
         this.outputFromRaindropConversion = outputFromRaindropConversion;
     }
@@ -54,6 +54,6 @@ public class RaindropsTest {
 
     @Test
     public void test() {
-        assertEquals(outputFromRaindropConversion, Raindrops.convert(inputNumber));
+        assertEquals(outputFromRaindropConversion, new RaindropConverter().convert(inputNumber));
     }
 }
