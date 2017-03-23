@@ -13,7 +13,6 @@ public final class DiamondPrinterTest {
     private DiamondPrinter diamondPrinter;
     
     @Before
-    
     public void setUp() {
         diamondPrinter = new DiamondPrinter();
     }
