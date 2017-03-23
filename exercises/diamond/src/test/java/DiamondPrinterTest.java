@@ -62,7 +62,7 @@ public final class DiamondPrinterTest {
     @Ignore
     @Test
     public void testFullDiamond() {
-        List<String> output = new DiamondPrinter().printToList('Z');
+        List<String> output = diamondPrinter.printToList('Z');
         assertThat(output, is(asList("                         A                         ",
                                      "                        B B                        ",
                                      "                       C   C                       ",
