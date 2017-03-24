@@ -1,4 +1,5 @@
 import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import static java.util.Arrays.asList;
@@ -7,12 +8,19 @@ import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
 public final class HandshakeCalculatorTest {
-
+    private HandshakeCalculator handshakeCalculator;
+    
+    
+    @Before
+    public void setUp() {
+        handshakeCalculator = new HandshakeCalculator();
+    }
+    
     @Test
     public void testThatInput1YieldsAWink() {
         assertEquals(
                 singletonList(Signal.WINK),
-                new HandshakeCalculator().calculateHandshake(1));
+                handshakeCalculator.calculateHandshake(1));
     }
 
     @Ignore
@@ -20,7 +28,7 @@ public final class HandshakeCalculatorTest {
     public void testThatInput2YieldsADoubleBlink() {
         assertEquals(
                 singletonList(Signal.DOUBLE_BLINK),
-                new HandshakeCalculator().calculateHandshake(2));
+                handshakeCalculator.calculateHandshake(2));
     }
 
     @Ignore
@@ -28,7 +36,7 @@ public final class HandshakeCalculatorTest {
     public void testThatInput4YieldsACloseYourEyes() {
         assertEquals(
                 singletonList(Signal.CLOSE_YOUR_EYES),
-                new HandshakeCalculator().calculateHandshake(4));
+                handshakeCalculator.calculateHandshake(4));
     }
 
     @Ignore
@@ -36,7 +44,7 @@ public final class HandshakeCalculatorTest {
     public void testThatInput8YieldsAJump() {
         assertEquals(
                 singletonList(Signal.JUMP),
-                new HandshakeCalculator().calculateHandshake(8));
+               handshakeCalculator.calculateHandshake(8));
     }
 
     @Ignore
@@ -44,7 +52,7 @@ public final class HandshakeCalculatorTest {
     public void testAnInputThatYieldsTwoActions() {
         assertEquals(
                 asList(Signal.WINK, Signal.DOUBLE_BLINK),
-                new HandshakeCalculator().calculateHandshake(3));
+                handshakeCalculator.calculateHandshake(3));
     }
 
     @Ignore
@@ -52,7 +60,7 @@ public final class HandshakeCalculatorTest {
     public void testAnInputThatYieldsTwoReversedActions() {
         assertEquals(
                 asList(Signal.DOUBLE_BLINK, Signal.WINK),
-                new HandshakeCalculator().calculateHandshake(19));
+               handshakeCalculator.calculateHandshake(19));
     }
 
     @Ignore
@@ -60,7 +68,7 @@ public final class HandshakeCalculatorTest {
     public void testReversingASingleActionYieldsTheSameAction() {
         assertEquals(
                 singletonList(Signal.JUMP),
-                new HandshakeCalculator().calculateHandshake(24));
+                handshakeCalculator.calculateHandshake(24));
     }
 
     @Ignore
@@ -68,7 +76,7 @@ public final class HandshakeCalculatorTest {
     public void testReversingNoActionsYieldsNoActions() {
         assertEquals(
                 emptyList(),
-                new HandshakeCalculator().calculateHandshake(16));
+                handshakeCalculator.calculateHandshake(16));
     }
 
     @Ignore
@@ -76,7 +84,7 @@ public final class HandshakeCalculatorTest {
     public void testInputThatYieldsAllActions() {
         assertEquals(
                 asList(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP),
-                new HandshakeCalculator().calculateHandshake(15));
+                handshakeCalculator.calculateHandshake(15));
     }
 
     @Ignore
@@ -84,7 +92,7 @@ public final class HandshakeCalculatorTest {
     public void testInputThatYieldsAllActionsReversed() {
         assertEquals(
                 asList(Signal.JUMP, Signal.CLOSE_YOUR_EYES, Signal.DOUBLE_BLINK, Signal.WINK),
-                new HandshakeCalculator().calculateHandshake(31));
+                handshakeCalculator.calculateHandshake(31));
     }
 
     @Ignore
@@ -92,7 +100,7 @@ public final class HandshakeCalculatorTest {
     public void testThatInput0YieldsNoActions() {
         assertEquals(
                 emptyList(),
-                new HandshakeCalculator().calculateHandshake(0));
+                handshakeCalculator.calculateHandshake(0));
     }
 
     @Ignore
@@ -100,7 +108,7 @@ public final class HandshakeCalculatorTest {
     public void testThatInputWithLower5BitsNotSetYieldsNoActions() {
         assertEquals(
                 emptyList(),
-                new HandshakeCalculator().calculateHandshake(32));
+                handshakeCalculator.calculateHandshake(32));
     }
 
 }
