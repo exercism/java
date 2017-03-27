@@ -63,7 +63,7 @@ public final class DifferenceOfSquaresCalculatorTest {
     @Test
     public void testDifferenceOfSquares0() {
         final int expected = 0;
-        final int actual = calculator.betweenSquareOfSumAndSumOfSquaresTo(0);
+        final int actual = calculator.computeDifferenceOfSquares(0);
         assertEquals(expected, actual);
     }
 
@@ -71,7 +71,7 @@ public final class DifferenceOfSquaresCalculatorTest {
     @Test
     public void testDifferenceOfSquares5() {
         final int expected = 170;
-        final int actual = calculator.betweenSquareOfSumAndSumOfSquaresTo(5);
+        final int actual = calculator.computeDifferenceOfSquares(5);
         assertEquals(expected, actual);
     }
 
@@ -79,7 +79,7 @@ public final class DifferenceOfSquaresCalculatorTest {
     @Test
     public void testDifferenceOfSquares10() {
         final int expected = 2640;
-        final int actual = calculator.betweenSquareOfSumAndSumOfSquaresTo(10);
+        final int actual = calculator.computeDifferenceOfSquares(10);
         assertEquals(expected, actual);
     }
 
@@ -87,7 +87,7 @@ public final class DifferenceOfSquaresCalculatorTest {
     @Test
     public void testDifferenceOfSquares100() {
         final int expected = 25164150;
-        final int actual = calculator.betweenSquareOfSumAndSumOfSquaresTo(100);
+        final int actual = calculator.computeDifferenceOfSquares(100);
         assertEquals(expected, actual);
     }
 

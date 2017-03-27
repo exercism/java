@@ -13,7 +13,7 @@ public final class DifferenceOfSquaresCalculator {
                 .sum();
     }
 
-    public int betweenSquareOfSumAndSumOfSquaresTo(final int input) {
+    public int computeDifferenceOfSquares(final int input) {
         return computeSquareOfSumTo(input) - computeSumOfSquaresTo(input);
     }
 
