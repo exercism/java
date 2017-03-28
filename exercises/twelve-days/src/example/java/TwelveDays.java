@@ -16,11 +16,11 @@ public class TwelveDays {
             "twelve Drummers Drumming, "
     };
 
-    public static String verse(int verseNumber) {
+    public String verse(int verseNumber) {
         return constructVerse(verseNumber);
     }
 
-    public static String verses(int verseNumberStart, int verseNumberEnd) {
+    public String verses(int verseNumberStart, int verseNumberEnd) {
         StringBuilder stringBuilder = new StringBuilder(constructVerse(verseNumberStart));
         for (int i = verseNumberStart + 1; i <= verseNumberEnd; i++) {
             stringBuilder.append("\n");
@@ -29,11 +29,11 @@ public class TwelveDays {
         return stringBuilder.toString();
     }
 
-    public static String sing() {
+    public String sing() {
         return verses(1, 12);
     }
 
-    private static String constructVerse(int verseNumber) {
+    private String constructVerse(int verseNumber) {
         StringBuilder stringBuilder = new StringBuilder("On the " + days[verseNumber - 1]
                 + " day of Christmas my true love gave to me, ");
         for (int i = verseNumber; i > 0; i--) {
