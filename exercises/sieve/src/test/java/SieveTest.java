@@ -2,6 +2,7 @@ import org.junit.Test;
 import org.junit.Ignore;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -12,7 +13,7 @@ public class SieveTest {
     @Test
     public void findFirstPrime() {
         Sieve sieve = new Sieve(2);
-        List<Integer> expectedOutput = Arrays.asList(new Integer[]{2});
+        List<Integer> expectedOutput = Collections.singletonList(2);
 
         assertEquals(expectedOutput, sieve.getPrimes());
     }
