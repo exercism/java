@@ -225,6 +225,8 @@ solve_all_exercises() {
     cp -R -H ${xjava}/exercises/${exercise}/src/example/java/* ${exercism_exercises_dir}/java/${exercise}/src/main/java/
 
     pushd ${exercism_exercises_dir}/java/${exercise}
+    # Check that tests compile before we strip @Ignore annotations
+    gradle compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
     for testfile in `find . -name "*Test.java"`; do
       sed 's/@Ignore//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
