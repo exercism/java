@@ -1,0 +1,8 @@
+# Issues or Pull Requests with these labels will never be considered stale
+exemptLabels:
+  - "first-timers only"
+  - "good first patch"
+  - "policy"
+
+# Label to use when marking as stale
+staleLabel: stale
