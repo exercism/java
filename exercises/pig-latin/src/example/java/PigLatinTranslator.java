@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PigLatin {
+public class PigLatinTranslator {
 
     public static final String AY = "ay";
     public static final String THR = "thr";
@@ -15,7 +15,7 @@ public class PigLatin {
     public static final String YT = "yt";
     public static final String VOWELS_REGEX = "[aeiou]";
 
-    public static String translate(String sentence) {
+    public String translate(String sentence) {
         List<String> translatedWords = Arrays.asList(sentence.split(" "))
                 .stream()
                 .map(x -> translateWord(x))
@@ -24,7 +24,7 @@ public class PigLatin {
         return String.join(" ", translatedWords);
     }
 
-    private static String translateWord(String word) {
+    private String translateWord(String word) {
         if (wordStartsWithVowelLike(word)) {
             return word + AY;
         }
@@ -44,16 +44,16 @@ public class PigLatin {
         return word.substring(1) + word.toCharArray()[0] + AY;
     }
 
-    private static boolean wordStartsWithVowelLike(String word) {
+    private boolean wordStartsWithVowelLike(String word) {
         return word.startsWith(YT) || word.startsWith(XR) || word.substring(0, 1).matches(VOWELS_REGEX);
     }
 
-    private static boolean wordStartsWithPrefixes(String word, String... prefixes) {
-        return Arrays.asList(prefixes).stream()
-                .anyMatch(x -> word.startsWith(x));
+    private boolean wordStartsWithPrefixes(String word, String... prefixes) {
+        return Arrays.stream(prefixes)
+                .anyMatch(word::startsWith);
     }
 
-    private static boolean wordStartsWithConsonantAndQu(String word) {
+    private boolean wordStartsWithConsonantAndQu(String word) {
         return word.substring(1).startsWith(QU);
     }
 }
