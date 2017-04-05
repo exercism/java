@@ -7,6 +7,9 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
+/*
+ * version: 1.1.0
+ */
 public final class FlattenerTest {
 
     private Flattener flattener;
@@ -16,6 +19,18 @@ public final class FlattenerTest {
         flattener = new Flattener();
     }
 
+    @Test
+    public void testFlatListIsPreserved() {
+        assertEquals(
+          asList(0, '1', "two"),
+            flattener.flatten(
+              asList(
+                0,
+                '1',
+                "two")));
+    }
+
+    @Ignore
     @Test
     public void testASingleLevelOfNestingWithNoNulls() {
         assertEquals(
