@@ -1,7 +1,7 @@
 import java.util.stream.IntStream;
 
-public final class Prime {
-    public static int nth(int nth) {
+public final class PrimeCalculator {
+    public int nth(int nth) {
         if (nth < 1) {
             throw new IllegalArgumentException();
         }
@@ -20,7 +20,7 @@ public final class Prime {
         return possiblePrime;
     }
 
-    private static boolean isPrime(int n) {
+    private boolean isPrime(int n) {
         if (n == 1) {
             return false;
         }
