@@ -1,5 +1,4 @@
 import org.junit.Test;
-import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -9,7 +8,7 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class PigLatinTest {
+public class PigLatinTranslatorTest {
 
     private String englishPhrase;
     private String pigLatinTranslation;
@@ -59,14 +58,14 @@ public class PigLatinTest {
         });
     }
 
-    public PigLatinTest(String englishPhrase, String pigLatinTranslation) {
+    public PigLatinTranslatorTest(String englishPhrase, String pigLatinTranslation) {
         this.englishPhrase = englishPhrase;
         this.pigLatinTranslation = pigLatinTranslation;
     }
 
-
     @Test
     public void test() {
-        assertEquals(pigLatinTranslation, PigLatin.translate(englishPhrase));
+        assertEquals(pigLatinTranslation, new PigLatinTranslator().translate(englishPhrase));
     }
+
 }
