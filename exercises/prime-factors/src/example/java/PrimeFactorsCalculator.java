@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrimeFactors {
+public class PrimeFactorsCalculator {
 
-    public static List<Long> getForNumber(long number) {
+    public List<Long> calculatePrimeFactorsOf(long number) {
         List<Long> primes = new ArrayList<>();
         long divisor = 2;
 
