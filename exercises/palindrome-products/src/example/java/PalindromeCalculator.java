@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class Palindromes {
+public class PalindromeCalculator {
 
-    public static SortedMap<Long, List<List<Integer>>> getPalindromeProductsWithFactors(int minFactor, int maxFactor) {
+    public SortedMap<Long, List<List<Integer>>> getPalindromeProductsWithFactors(int minFactor, int maxFactor) {
         SortedMap<Long, List<List<Integer>>> palindromeSortedList = new TreeMap<>();
         long num;
         List<List<Integer>> factors;
@@ -23,7 +23,7 @@ public class Palindromes {
     }
 
     // http://stackoverflow.com/questions/23984654/how-to-print-all-palindromes-upto-1000-without-using-any-string-stringbuilder
-    private static long reverseNumber(long number) {
+    private long reverseNumber(long number) {
         if (number < 10l) {
             return number;
         }
@@ -37,7 +37,7 @@ public class Palindromes {
         return result;
     }
 
-    private static boolean isPalindrome(long number) {
+    private boolean isPalindrome(long number) {
         return number == reverseNumber(number);
     }
 }

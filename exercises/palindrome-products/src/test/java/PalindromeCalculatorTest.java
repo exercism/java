@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -9,7 +10,13 @@ import java.util.stream.Collectors;
 
 import static junit.framework.TestCase.*;
 
-public class PalindromesTest {
+public class PalindromeCalculatorTest {
+    private PalindromeCalculator palindromeCalculator;
+
+    @Before
+    public void setup() {
+        palindromeCalculator = new PalindromeCalculator();
+    }
 
     @Test
     public void largestPalindromeFromSingleDigitFactors() {
@@ -21,7 +28,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 9l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(1, 9);
+        final SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(1, 9);
 
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
@@ -36,7 +43,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 9009l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(10, 99);
+        final SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(10, 99);
 
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
@@ -51,7 +58,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 121l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(10, 99);
+        final SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(10, 99);
 
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
@@ -66,7 +73,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 906609l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(100, 999);
+        final SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(100, 999);
 
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
@@ -81,7 +88,7 @@ public class PalindromesTest {
         );
         final long expectedValue = 10201l;
 
-        final SortedMap<Long, List<List<Integer>>> palindromes = Palindromes.getPalindromeProductsWithFactors(100, 999);
+        final SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(100, 999);
 
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
