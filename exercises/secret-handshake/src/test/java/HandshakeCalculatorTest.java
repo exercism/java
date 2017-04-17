@@ -9,13 +9,13 @@ import static org.junit.Assert.assertEquals;
 
 public final class HandshakeCalculatorTest {
     private HandshakeCalculator handshakeCalculator;
-    
-    
+
+
     @Before
     public void setUp() {
         handshakeCalculator = new HandshakeCalculator();
     }
-    
+
     @Test
     public void testThatInput1YieldsAWink() {
         assertEquals(
