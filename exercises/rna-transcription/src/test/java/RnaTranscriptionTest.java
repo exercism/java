@@ -17,31 +17,31 @@ public class RnaTranscriptionTest {
         Assert.assertEquals("", rnaTranscription.ofDna(""));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfCytosineIsGuanine() {
         Assert.assertEquals("G", rnaTranscription.ofDna("C"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfGuanineIsCytosine() {
         Assert.assertEquals("C", rnaTranscription.ofDna("G"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfThymineIsAdenine() {
         Assert.assertEquals("A", rnaTranscription.ofDna("T"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfAdenineIsUracil() {
         Assert.assertEquals("U", rnaTranscription.ofDna("A"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRnaTranscription() {
         Assert.assertEquals("UGCACCAGAAUU", rnaTranscription.ofDna("ACGTGGTCTTAA"));
