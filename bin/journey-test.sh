@@ -230,7 +230,7 @@ solve_all_exercises() {
     gradle compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
     for testfile in `find . -name "*Test.java"`; do
-      sed 's/@Ignore//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
+      sed 's/@Ignore\(.*\)//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
     done
     gradle test
     popd
