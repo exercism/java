@@ -33,10 +33,6 @@ public final class PrimeCalculator {
                 .rangeClosed(2, (int) Math.ceil(Math.sqrt(n)))
                 .anyMatch((int i) -> n % i == 0);
 
-        if (divisible) {
-            return false;
-        }
-
-        return true;
+        return !divisible;
     }
 }
