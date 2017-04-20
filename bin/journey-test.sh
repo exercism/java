@@ -143,6 +143,11 @@ make_local_trackler() {
 
   local xjava=$( pwd )
   pushd ${trackler}
+
+  # Get the version of Trackler x-api is currently using
+  local version=$( grep -m 1 'trackler' ${xapi_home}/Gemfile.lock | sed 's/.*(//' | sed 's/)//' )
+
+  git checkout v${version}
   git submodule init -- common
   git submodule update
 
@@ -151,10 +156,6 @@ make_local_trackler() {
   mkdir -p tracks/java/exercises
   cp ${xjava}/config.json tracks/java
   cp -r ${xjava}/exercises tracks/java
-
-  # Set the version to that expected by x-api
-  version=$( grep -m 1 'trackler' ${xapi_home}/Gemfile.lock | sed 's/.*(//' | sed 's/)//' )
-  echo "module Trackler VERSION = \"${version}\" end" > lib/trackler/version.rb
 
   gem install bundler
   bundle install
