@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+final class Matrix {
+
+  private final List<List<Integer>> values;
+
+  Matrix(final List<List<Integer>> values) {
+    this.values = values;
+  }
+
+  List<MatrixCoordinate> getSaddlePoints() {
+    final List<MatrixCoordinate> result = new ArrayList<>();
+
+    if (values.isEmpty()) {
+      return result;
+    }
+
+    for (int row = 0; row < values.size(); row++) {
+      for (int column = 0; column < values.get(0).size(); column++) {
+        final int coordinateValue = values.get(row).get(column);
+
+        if (coordinateValue == getRowMax(row) && coordinateValue == getColumnMin(column)) {
+          result.add(new MatrixCoordinate(row, column));
+        }
+      }
+    }
+
+    return result;
+  }
+
+  private int getRowMax(final int row) {
+    return Collections.max(values.get(row));
+  }
+
+  private int getColumnMin(final int column) {
+    return values.stream()
+        .map(row -> row.get(column))
+        .min(Integer::compareTo)
+        .get();
+  }
+
+}
