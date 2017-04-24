@@ -324,6 +324,11 @@
       "slug": "book-store",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "saddle-points",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
