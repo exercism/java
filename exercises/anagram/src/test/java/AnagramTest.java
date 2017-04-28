@@ -16,7 +16,7 @@ public class AnagramTest {
         assertTrue(detector.match(Arrays.asList("hello", "world", "zombies", "pants")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDetectSimpleAnagram() {
         Anagram detector = new Anagram("ant");
@@ -25,7 +25,7 @@ public class AnagramTest {
         assertThat(anagram.size(), is(1));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDetectLongerAnagram() {
         Anagram detector = new Anagram("listen");
@@ -33,7 +33,7 @@ public class AnagramTest {
         assertThat(anagrams, hasItem("inlets"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDetectMultipleAnagrams() {
         Anagram detector = new Anagram("master");
@@ -41,7 +41,7 @@ public class AnagramTest {
         assertThat(anagrams, allOf(hasItem("maters"), hasItem("stream")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDetectMultipleAnagramsForLongerWord() {
         Anagram detector = new Anagram("allergy");
@@ -49,14 +49,14 @@ public class AnagramTest {
         assertThat(anagrams, allOf(hasItem("gallery"), hasItem("largely"), hasItem("regally")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDoesNotConfuseDifferentDuplicates() {
         Anagram detector = new Anagram("galea");
         assertTrue(detector.match(Arrays.asList("eagle")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testIdenticalWordIsNotAnagram() {
         Anagram detector = new Anagram("corn");
@@ -65,35 +65,35 @@ public class AnagramTest {
         assertThat(anagrams.size(), is(1));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testIdenticalWordRepeatedIsNotAnagram() {
         Anagram detector = new Anagram("go");
         assertTrue(detector.match(Arrays.asList("go Go GO")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCapitalWordIsNotOwnAnagram() {
         Anagram detector = new Anagram("BANANA");
         assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertTrue(detector.match(Arrays.asList("last")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
         assertTrue(detector.match(Arrays.asList("dog", "goody")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCaseInsensitiveWhenSubjectStartsWithUpperCaseLetter() {
         Anagram detector = new Anagram("Orchestra");
@@ -101,7 +101,7 @@ public class AnagramTest {
         assertThat(anagrams, hasItem("carthorse"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCaseInsensitiveWhenAnagramStartsWithUpperCaseLetter() {
         Anagram detector = new Anagram("orchestra");
@@ -109,7 +109,7 @@ public class AnagramTest {
         assertThat(anagrams, hasItem("Carthorse"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCaseInsensitiveWhenBothAnagramAndSubjectStartWithUpperCaseLetter() {
         Anagram detector = new Anagram("Orchestra");
@@ -117,14 +117,14 @@ public class AnagramTest {
         assertThat(anagrams, hasItem("Carthorse"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testWordIsNotItsOwnAnagram() {
         Anagram detector = new Anagram("banana");
         assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testAnagramMustUseAllLettersExactlyOnce() {
         Anagram detector = new Anagram("tapper");
