@@ -17,12 +17,12 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added | Prefer instance methods; Starter implementations; Ignore noninitial tests |
-| Exercise updated | Multiple file submissions; Ignore noninitial tests |
-| Track order updated | Multiple file submissions; Starter implementations |
-| New issue observed in track | Good first patches |
-| "Good first patch" issue completed | Good first patches |
-| Installing Java instructions updated | Simple onboarding |
+| Exercise added | [Prefer instance methods](#prefer-instance-methods); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests) |
+| Exercise updated | [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions) |
+| Track order updated | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
+| New issue observed in track | [Good first patches](#good-first-patches) |
+| "Good first patch" issue completed | [Good first patches](#good-first-patches) |
+| Installing Java instructions updated | [Simple onboarding](#simple-onboarding) |
 
 ## Policy Descriptions
 
