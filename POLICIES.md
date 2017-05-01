@@ -26,28 +26,40 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 ## Policy Descriptions
 
-### Prefer instance methods [[1](https://github.com/exercism/xjava/issues/177#issuecomment-261291741)]
+### Prefer instance methods
 
-Most (all?) exercises should be implemented in the form of instance methods since they contain "domain logic" and we (Exercism) want to encourage exemplary software.
+> Most (all?) exercises should be implemented in the form of instance methods since they contain "domain logic" and we (Exercism) want to encourage exemplary software.
 
-### Starter implementations [[1](https://github.com/exercism/xjava/issues/178)]
+References: [[1](https://github.com/exercism/xjava/issues/177#issuecomment-261291741)]
 
-- Exercises 1-10: provide stubs for all required methods.
-- Exercises 11-20: provide stubs for all methods required by the first test; comment-out the bodies of any tests that require non-stubbed methods.
-- Exercises 21+: provide no stubs, but mention any "interesting" interface aspects in the HINT.md file (which gets merged into the README.md for the exercise).
+### Starter implementations
 
-### Ignore noninitial tests [[1](https://github.com/exercism/xjava/issues/101#issuecomment-249349204)]
+> - Exercises 1-10: provide stubs for all required methods.
+> - Exercises 11-20: provide stubs for all methods required by the first test; comment-out the bodies of any tests that require non-stubbed methods.
+> - Exercises 21+: provide no stubs, but mention any "interesting" interface aspects in the HINT.md file (which gets merged into the README.md for the exercise).
 
-All but the first test in an exercise test suite should be annotated `@Ignore`.
+References: [[1](https://github.com/exercism/xjava/issues/178)]
 
-### Multiple file submissions [[1](https://github.com/exercism/xjava/issues/365#issuecomment-292533120)]
+### Ignore noninitial tests
 
-The first exercise in the track whose test suite mandates multiple solution files should be accompanied by a HINT.md file reminding the practitioner that the CLI supports multiple file submissions.
+> All but the first test in an exercise test suite should be annotated `@Ignore`.
 
-### Good first patches [[1](https://github.com/exercism/xjava/issues/220#issue-196447088)]
+References: [[1](https://github.com/exercism/xjava/issues/101#issuecomment-249349204)]
 
-Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label.
+### Multiple file submissions
 
-### Simple onboarding [[1](https://github.com/exercism/xjava/issues/395#issue-215734887)]
+> The first exercise in the track whose test suite mandates multiple solution files should be accompanied by a HINT.md file reminding the practitioner that the CLI supports multiple file submissions.
 
-The Installing Java instructions should seek to minimize the number of steps and the number of concepts a new-to-the-track practitioner needs to learn to get to coding.
+References: [[1](https://github.com/exercism/xjava/issues/365#issuecomment-292533120)]
+
+### Good first patches
+
+> Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label.
+
+References: [[1](https://github.com/exercism/xjava/issues/220#issue-196447088)]
+
+### Simple onboarding
+
+> The Installing Java instructions should seek to minimize the number of steps and the number of concepts a new-to-the-track practitioner needs to learn to get to coding.
+
+References: [[1](https://github.com/exercism/xjava/issues/395#issue-215734887)]
