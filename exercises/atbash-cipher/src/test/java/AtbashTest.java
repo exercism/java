@@ -63,7 +63,7 @@ public class AtbashTest {
             this.plaintext = plaintext;
         }
 
-        @Ignore
+        @Ignore("Remove to run test")
         @Test
         public void test() {
             assertEquals(plaintext, new Atbash().decode(ciphertext));
