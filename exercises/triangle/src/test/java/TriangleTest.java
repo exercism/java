@@ -11,7 +11,7 @@ public class TriangleTest {
     public final ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void equilateralTriangleHaveEqualSides() throws TriangleException {
+    public void equilateralTrianglesHaveEqualSides() throws TriangleException {
         Triangle triangle = new Triangle(2, 2, 2);
 
         assertEquals(TriangleKind.EQUILATERAL, triangle.getKind());
