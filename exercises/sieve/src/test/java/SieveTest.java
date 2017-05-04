@@ -18,7 +18,7 @@ public class SieveTest {
         assertEquals(expectedOutput, sieve.getPrimes());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findPrimesUpTo10() {
         Sieve sieve = new Sieve(10);
@@ -27,7 +27,7 @@ public class SieveTest {
         assertEquals(expectedOutput, sieve.getPrimes());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findPrimesUpTo1000() {
         Sieve sieve = new Sieve(1000);
