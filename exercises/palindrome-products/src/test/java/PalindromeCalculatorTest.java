@@ -34,7 +34,7 @@ public class PalindromeCalculatorTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void largestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -49,7 +49,7 @@ public class PalindromeCalculatorTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void smallestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -64,7 +64,7 @@ public class PalindromeCalculatorTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void largestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -79,7 +79,7 @@ public class PalindromeCalculatorTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void smallestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
