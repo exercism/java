@@ -23,61 +23,61 @@ public final class NaturalNumberTest {
         assertEquals(Classification.PERFECT, new NaturalNumber(6).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testMediumPerfectNumberIsClassifiedCorrectly() {
         assertEquals(Classification.PERFECT, new NaturalNumber(28).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testLargePerfectNumberIsClassifiedCorrectly() {
         assertEquals(Classification.PERFECT, new NaturalNumber(33550336).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSmallAbundantNumberIsClassifiedCorrectly() {
         assertEquals(Classification.ABUNDANT, new NaturalNumber(12).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testMediumAbundantNumberIsClassifiedCorrectly() {
         assertEquals(Classification.ABUNDANT, new NaturalNumber(30).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testLargeAbundantNumberIsClassifiedCorrectly() {
         assertEquals(Classification.ABUNDANT, new NaturalNumber(33550335).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSmallestPrimeDeficientNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, new NaturalNumber(2).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSmallestNonPrimeDeficientNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, new NaturalNumber(4).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testMediumDeficientNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, new NaturalNumber(32).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testLargeDeficientNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, new NaturalNumber(33550337).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     /*
      * The number 1 has no proper divisors (https://en.wikipedia.org/wiki/Divisor#Further_notions_and_facts), and the
@@ -87,7 +87,7 @@ public final class NaturalNumberTest {
         assertEquals(Classification.DEFICIENT, new NaturalNumber(1).getClassification());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatNonNegativeIntegerIsRejected() {
         expectedException.expect(IllegalArgumentException.class);
@@ -96,7 +96,7 @@ public final class NaturalNumberTest {
         new NaturalNumber(0);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatNegativeIntegerIsRejected() {
         expectedException.expect(IllegalArgumentException.class);
