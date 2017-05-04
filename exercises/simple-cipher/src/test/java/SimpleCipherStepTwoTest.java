@@ -21,62 +21,62 @@ public class SimpleCipherStepTwoTest {
         cipherWithSetKey = new Cipher(key);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherKeepsTheSubmittedKey() {
         assertEquals(key, cipherWithSetKey.getKey());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherThrowsWithEmptyKey() {
         expectedException.expect(IllegalArgumentException.class);
         new Cipher("");
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherCanEncodeWithGivenKey() {
         String cipherText = "abcdefghij";
         assertEquals(cipherText, cipherWithSetKey.encode("aaaaaaaaaa"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherCanDecodeWithGivenKey() {
         String cipherText = "aaaaaaaaaa";
         assertEquals(cipherText, cipherWithSetKey.decode("abcdefghij"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherIsReversibleGivenKey() {
         String plainText = "abcdefghij";
         assertEquals(plainText, cipherWithSetKey.decode(cipherWithSetKey.encode("abcdefghij")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherCanWrapEncode() {
         String cipherText = "zabcdefghi";
         assertEquals(cipherText, cipherWithSetKey.encode("zzzzzzzzzz"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherCanEncodeMessageThatIsShorterThanTheKey() {
         String cipherText = "abcde";
         assertEquals(cipherText, cipherWithSetKey.encode("aaaaa"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherCanDecodeMessageThatIsShorterThanTheKey() {
         String cipherText = "aaaaa";
         assertEquals(cipherText, cipherWithSetKey.decode("abcde"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cipherCanDoubleShiftEncode() {
         String plainText = "iamapandabear";
