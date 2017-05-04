@@ -1,5 +1,5 @@
 import org.junit.Before;
-import org.junit.Ignore;
+import org.junit.@Ignore("Remove to run test");
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -23,25 +23,25 @@ public class PrimeCalculatorTest {
         assertThat(primeCalculator.nth(1), is(2));
     }
 
-    @Ignore
+    @@Ignore("Remove to run test")
     @Test
     public void testSecondPrime() {
         assertThat(primeCalculator.nth(2), is(3));
     }
 
-    @Ignore
+    @@Ignore("Remove to run test")
     @Test
     public void testSixthPrime() {
         assertThat(primeCalculator.nth(6), is(13));
     }
 
-    @Ignore
+    @@Ignore("Remove to run test")
     @Test
     public void testBigPrime() {
         assertThat(primeCalculator.nth(10001), is(104743));
     }
 
-    @Ignore
+    @@Ignore("Remove to run test")
     @Test
     public void testUndefinedPrime() {
         thrown.expect(IllegalArgumentException.class);
