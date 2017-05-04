@@ -23,7 +23,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(1));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatInput2YieldsADoubleBlink() {
         assertEquals(
@@ -31,7 +31,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(2));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatInput4YieldsACloseYourEyes() {
         assertEquals(
@@ -39,7 +39,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(4));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatInput8YieldsAJump() {
         assertEquals(
@@ -47,7 +47,7 @@ public final class HandshakeCalculatorTest {
                handshakeCalculator.calculateHandshake(8));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testAnInputThatYieldsTwoActions() {
         assertEquals(
@@ -55,7 +55,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(3));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testAnInputThatYieldsTwoReversedActions() {
         assertEquals(
@@ -63,7 +63,7 @@ public final class HandshakeCalculatorTest {
                handshakeCalculator.calculateHandshake(19));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testReversingASingleActionYieldsTheSameAction() {
         assertEquals(
@@ -71,7 +71,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(24));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testReversingNoActionsYieldsNoActions() {
         assertEquals(
@@ -79,7 +79,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(16));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputThatYieldsAllActions() {
         assertEquals(
@@ -87,7 +87,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(15));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputThatYieldsAllActionsReversed() {
         assertEquals(
@@ -95,7 +95,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(31));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatInput0YieldsNoActions() {
         assertEquals(
@@ -103,7 +103,7 @@ public final class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(0));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatInputWithLower5BitsNotSetYieldsNoActions() {
         assertEquals(
