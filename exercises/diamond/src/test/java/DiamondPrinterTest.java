@@ -23,7 +23,7 @@ public final class DiamondPrinterTest {
         assertThat(output, is(singletonList("A")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testTwoByTwoDiamond() {
         List<String> output = diamondPrinter.printToList('B');
@@ -32,7 +32,7 @@ public final class DiamondPrinterTest {
                                      " A ")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThreeByThreeDiamond() {
         List<String> output = diamondPrinter.printToList('C');
@@ -43,7 +43,7 @@ public final class DiamondPrinterTest {
                                      "  A  ")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testFiveByFiveDiamond() {
         List<String> output = diamondPrinter.printToList('E');
@@ -58,7 +58,7 @@ public final class DiamondPrinterTest {
                                      "    A    ")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testFullDiamond() {
         List<String> output = diamondPrinter.printToList('Z');

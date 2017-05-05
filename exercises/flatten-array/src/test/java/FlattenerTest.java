@@ -30,7 +30,7 @@ public final class FlattenerTest {
                 "two")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testASingleLevelOfNestingWithNoNulls() {
         assertEquals(
@@ -48,7 +48,7 @@ public final class FlattenerTest {
               8)));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testFiveLevelsOfNestingWithNoNulls() {
         assertEquals(
@@ -71,7 +71,7 @@ public final class FlattenerTest {
               "-2")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSixLevelsOfNestingWithNoNulls() {
         assertEquals(
@@ -94,7 +94,7 @@ public final class FlattenerTest {
               "8")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSixLevelsOfNestingWithNulls() {
         assertEquals(
@@ -118,7 +118,7 @@ public final class FlattenerTest {
               "negative two")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testNestedListsFullOfNullsOnly() {
         assertEquals(

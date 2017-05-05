@@ -29,7 +29,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldReturnTheCorrectLengthOfAnNonEmptyList() {
         final List<Integer> list = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3, 4)
@@ -41,7 +41,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldReverseAnEmptyList() {
         final List<Integer> actual = ListOps.reverse(EMPTY_LIST);
 
@@ -50,7 +50,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldReverseANonEmptyList() {
         final List<Integer> list = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8)
@@ -66,7 +66,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMapAnEmptyListAndReturnAnEmptyList() {
         final List<Integer> actual = ListOps.map(EMPTY_LIST, x -> x + 1);
 
@@ -75,7 +75,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMapNonEmptyList() {
         final List<Integer> list
                 = Collections.unmodifiableList(Arrays.asList(1, 3, 5, 7));
@@ -87,7 +87,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldFilterAnEmptyListanddReturnAnEmptyList() {
         final List<Integer> actual = ListOps.filter(EMPTY_LIST, x -> x > 0);
 
@@ -96,7 +96,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldFilterNonEmptyList() {
         Predicate<Integer> predicate = x -> x % 2 > 0;
         final List<Integer> list = Collections.unmodifiableList(
@@ -113,7 +113,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateZeroLists() {
         List<Integer> actual = ListOps.concat();
 
@@ -122,7 +122,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateOneNonEmptyList() {
         final List<Integer> list
                 = Collections.unmodifiableList(
@@ -137,7 +137,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateOneEmptyList() {
         final List<Integer> actual = ListOps.concat(EMPTY_LIST);
 
@@ -146,7 +146,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateTwoEmptyLists() {
         final List<Integer> actual = ListOps.concat(EMPTY_LIST, EMPTY_LIST);
 
@@ -155,7 +155,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateOneEmptyAndOneNonEmptyLists() {
         final List<Integer> list
                 = Collections.unmodifiableList(
@@ -171,7 +171,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateOneNonEmptyAndOneEmptyLists() {
         final List<Integer> list
                 = Collections.unmodifiableList(
@@ -187,7 +187,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateTwoListsWithSameElements() {
         final List<Integer> list1 = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3, 4)
@@ -205,7 +205,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldConcatenateSeveralLists() {
         final List<Integer> list1 = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3)
@@ -232,7 +232,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldReturnIdentityWhenAnEmptyListIsReduced() {
         final int expected = 0;
         final int actual
@@ -242,7 +242,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldCalculateTheSumOfANonEmptyIntegerList() {
         final List<Integer> list = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3, 4)
@@ -273,7 +273,7 @@ public class ListOpsTest {
             };
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldReduceAnEmptyListAndANonEmptyListAndReturnConcatenation() {
         final List<Integer> list = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3, 4, 5)
@@ -292,7 +292,7 @@ public class ListOpsTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldReduceTwoNonEmptyListsAndReturnConcatenation() {
         final List<Integer> listOne = Collections.unmodifiableList(
                 Arrays.asList(0, 1, 2, 3, 4)

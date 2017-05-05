@@ -19,7 +19,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseOne, twelveDays.verse(1));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseTwo() {
         String expectedVerseTwo = "On the second day of Christmas my true love gave to me, two Turtle Doves, " +
@@ -27,7 +27,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseTwo, twelveDays.verse(2));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseThree() {
         String expectedVerseThree = "On the third day of Christmas my true love gave to me, three French Hens, " +
@@ -35,7 +35,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseThree, twelveDays.verse(3));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseFour() {
         String expectedVerseFour = "On the fourth day of Christmas my true love gave to me, four Calling Birds, " +
@@ -43,7 +43,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseFour, twelveDays.verse(4));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseFive() {
         String expectedVerseFive = "On the fifth day of Christmas my true love gave to me, five Gold Rings, " +
@@ -51,7 +51,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseFive, twelveDays.verse(5));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseSix() {
         String expectedVerseSix = "On the sixth day of Christmas my true love gave to me, six Geese-a-Laying, " +
@@ -60,7 +60,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseSix, twelveDays.verse(6));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseSeven() {
         String expectedVerseSeven = "On the seventh day of Christmas my true love gave to me, " +
@@ -69,7 +69,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseSeven, twelveDays.verse(7));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseEight() {
         String expectedVerseEight = "On the eighth day of Christmas my true love gave to me, eight Maids-a-Milking," +
@@ -78,7 +78,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseEight, twelveDays.verse(8));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseNine() {
         String expectedVerseNine = "On the ninth day of Christmas my true love gave to me, nine Ladies Dancing, " +
@@ -87,7 +87,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseNine, twelveDays.verse(9));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseTen() {
         String expectedVerseTen = "On the tenth day of Christmas my true love gave to me, ten Lords-a-Leaping, " +
@@ -97,7 +97,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseTen, twelveDays.verse(10));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseEleven() {
         String expectedVerseEleven = "On the eleventh day of Christmas my true love gave to me, " +
@@ -107,7 +107,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseEleven, twelveDays.verse(11));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testVerseTwelve() {
         String expectedVerseTwelve = "On the twelfth day of Christmas my true love gave to me, " +
@@ -117,7 +117,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseTwelve, twelveDays.verse(12));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testMultipleVerses() {
         String expectedVerseOneToThree = "On the first day of Christmas my true love gave to me, " +
@@ -129,7 +129,7 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseOneToThree, twelveDays.verses(1, 3));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSingWholeSong() {
         String expectedSong = "On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n" +

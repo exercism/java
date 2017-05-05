@@ -94,7 +94,7 @@ public class BSTTest {
         List<Integer> treeData = Collections.unmodifiableList(
                 Arrays.asList(4, 2, 6, 1, 3, 7, 5)
         );
-        treeData.forEach(value -> sut.insert(value));
+        treeData.forEach(sut::insert);
 
         List<Integer> actual = sut.getAsLevelOrderList();
         assertEquals(expected, actual);
@@ -155,7 +155,7 @@ public class BSTTest {
         List<Integer> treeData = Collections.unmodifiableList(
                 Arrays.asList(4, 2, 1, 3, 6, 7, 5)
         );
-        treeData.forEach(value -> sut.insert(value));
+        treeData.forEach(sut::insert);
 
         List<Integer> actual = sut.getAsSortedList();
         assertEquals(expected, actual);
