@@ -20,7 +20,7 @@ public class BookstoreTest {
     assertEquals(8, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void twoOfSameBook() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1));
@@ -28,7 +28,7 @@ public class BookstoreTest {
     assertEquals(16, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void emptyBasket() {
     List<Integer> books = new ArrayList<>();
@@ -36,7 +36,7 @@ public class BookstoreTest {
     assertEquals(0, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void twoDifferentBooks() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 2));
@@ -44,7 +44,7 @@ public class BookstoreTest {
     assertEquals(15.20, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void threeDifferentBooks() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 2, 3));
@@ -52,7 +52,7 @@ public class BookstoreTest {
     assertEquals(21.6, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void fourDifferentBooks() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
@@ -60,7 +60,7 @@ public class BookstoreTest {
     assertEquals(25.6, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void fiveDifferentBooks() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
@@ -68,7 +68,7 @@ public class BookstoreTest {
     assertEquals(30, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void twoGroupsOfFourIsCheaperThanGroupOfFivePlusGroupOfThree() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 5));
@@ -76,7 +76,7 @@ public class BookstoreTest {
     assertEquals(51.20, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void groupOfFourPlusGroupOfTwoIsCheaperThanTwoGroupsOfThree() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 4));
@@ -84,7 +84,7 @@ public class BookstoreTest {
     assertEquals(40.8, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void twoEachOfFirst4BooksAnd1CopyEachOfRest() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5));
@@ -92,7 +92,7 @@ public class BookstoreTest {
     assertEquals(55.60, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void twoCopiesOfEachBook() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5));
@@ -100,7 +100,7 @@ public class BookstoreTest {
     assertEquals(60.00, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void threeCopiesOfFirstBookAnd2EachOfRemaining() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1));
@@ -108,7 +108,7 @@ public class BookstoreTest {
     assertEquals(68.00, bookstore.calculateTotalCost(), EQUALITY_TOLERANCE);
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void threeEachOFirst2BooksAnd2EachOfRemainingBooks() {
     List<Integer> books = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2));
