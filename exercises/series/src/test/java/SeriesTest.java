@@ -26,7 +26,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void hasDigitsLong() {
         Series sut = new Series("0123456789");
         List<Integer> expected = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -37,7 +37,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void keepsTheDigitOrderIfReversed() {
         Series sut = new Series("9876543210");
         List<Integer> expected = Arrays.asList(9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
@@ -48,7 +48,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void keepsArbitraryDigitOrder() {
         Series sut = new Series("936923468");
         List<Integer> expected = Arrays.asList(9, 3, 6, 9, 2, 3, 4, 6, 8);
@@ -59,7 +59,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void canSliceByOne() {
         Series sut = new Series("01234");
         List<List<Integer>> expected = Arrays.asList(
@@ -76,7 +76,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void canSliceByTwo() {
         Series sut = new Series("98273463");
         List<List<Integer>> expected = Arrays.asList(
@@ -95,7 +95,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void canSliceByThree() {
         Series sut = new Series("01234");
         List<List<Integer>> expected = Arrays.asList(
@@ -110,7 +110,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void canSliceByThreeWithDuplicateDigits() {
         Series sut = new Series("31001");
         List<List<Integer>> expected = Arrays.asList(
@@ -125,7 +125,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void canSliceByFour() {
         Series sut = new Series("91274");
         List<List<Integer>> expected = Arrays.asList(
@@ -139,7 +139,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void canSliceByFive() {
         Series sut = new Series("81228");
         List<List<Integer>> expected = Arrays.asList(
@@ -152,7 +152,7 @@ public class SeriesTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void throwsAnErrorIfNotEnoughDigitsToSlice() {
         thrown.expect(IllegalArgumentException.class);
         new Series("01032987583").slices(12);
