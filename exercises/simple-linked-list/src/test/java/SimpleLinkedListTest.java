@@ -19,7 +19,7 @@ public class SimpleLinkedListTest {
         assertThat(list.size(), is(0));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canCreateFromArray() {
         Integer[] values = new Integer[]{1, 2, 3};
@@ -27,7 +27,7 @@ public class SimpleLinkedListTest {
         assertThat(list.size(), is(3));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void popOnEmptyListWillThrow() {
         thrown.expect(NoSuchElementException.class);
@@ -35,7 +35,7 @@ public class SimpleLinkedListTest {
         list.pop();
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void popReturnsLastAddedElement() {
         SimpleLinkedList list = new SimpleLinkedList();
@@ -47,7 +47,7 @@ public class SimpleLinkedListTest {
         assertThat(list.size(), is(0));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void reverseReversesList() {
         SimpleLinkedList list = new SimpleLinkedList();
@@ -64,7 +64,7 @@ public class SimpleLinkedListTest {
         assertThat(list.pop(), is(5));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canReturnListAsArray() {
         SimpleLinkedList list = new SimpleLinkedList();
@@ -77,7 +77,7 @@ public class SimpleLinkedListTest {
         assertEquals(list.asArray(Integer.class), expected);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList list = new SimpleLinkedList();
