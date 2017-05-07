@@ -105,7 +105,7 @@ public class BSTTest {
     public void sortsSingleElement() {
         BST<Integer> sut = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
-                Arrays.asList(4)
+                Collections.singletonList(4)
         );
 
         sut.insert(4);
