@@ -25,7 +25,7 @@ public class RunLengthEncoding {
 
     public String decode(String encodedData) {
     	String decodedData = "";
-        Pattern pattern = Pattern.compile("[0-9]+|[a-zA-Z\s]");
+        Pattern pattern = Pattern.compile("[0-9]+|[a-zA-Z\\s]");
         Matcher matcher = pattern.matcher(encodedData);
 
         while (matcher.find()) {
