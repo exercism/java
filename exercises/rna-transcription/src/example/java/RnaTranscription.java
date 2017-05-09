@@ -1,8 +1,8 @@
 public class RnaTranscription {
 
-    public String transcribe(String strand) {
+    public String transcribe(String dnaStrand) {
         StringBuilder sb = new StringBuilder();
-        for (char c : strand.toCharArray()) {
+        for (char c : dnaStrand.toCharArray()) {
             switch (c) {
                 case 'A':
                     sb.append('U');
