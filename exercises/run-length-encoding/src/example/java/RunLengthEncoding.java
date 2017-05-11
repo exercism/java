@@ -4,41 +4,43 @@ import java.util.regex.Pattern;
 public class RunLengthEncoding {
     public String encode(String data) {
 
-        StringBuilder encodedData = new StringBuilder();
+        StringBuilder encodedDataBuilder = new StringBuilder();
 
         if (data.length() == 0) {
             return data;
         }
 
-        int charCount = 0;
-        char beforeChar = data.charAt(0);
+        int previousCharCount = 1;
+        char previousChar = data.charAt(0);
 
-        for (int i = 0; i < data.length(); i++) {
+        for (int i = 1; i < data.length(); i++) {
             char currentChar = data.charAt(i);
 
-            if (beforeChar == currentChar) {
-                charCount++;
+            if (previousChar == currentChar) {
+                previousCharCount++;
+            }
 
-                if (i != data.length() - 1) {
-                    continue;
+            if (previousChar != currentChar || i == data.length() - 1) {
+                addChars(encodedDataBuilder, previousChar, previousCharCount);
+
+                if (previousChar != currentChar && i == data.length() - 1) {
+                    addChars(encodedDataBuilder, currentChar, 1);
                 }
+
+                previousChar = currentChar;
+                previousCharCount = 1;
             }
-
-            if (charCount != 1) {
-                encodedData.append(charCount);
-            }
-
-            encodedData.append(beforeChar);
-
-            if (beforeChar != currentChar && i == data.length() - 1) {
-                encodedData.append(currentChar);
-            }
-
-            beforeChar = currentChar;
-            charCount = 1;
         }
 
-        return encodedData.toString();
+        return encodedDataBuilder.toString();
+    }
+
+    public void addChars(StringBuilder toAddTo, char toAdd, int countOfChar) {
+        if(countOfChar != 1) {
+            toAddTo.append(countOfChar);
+        }
+
+        countOfChar.append(toAdd);
     }
 
     public String decode(String encodedData) {
@@ -52,7 +54,7 @@ public class RunLengthEncoding {
 
                 matcher.find();
 
-                for (; number != 0; --number) {
+                for (int i = 0; i<number; i++) {
                     decodedData.append(matcher.group());
                 }
             } catch (NumberFormatException e) {
