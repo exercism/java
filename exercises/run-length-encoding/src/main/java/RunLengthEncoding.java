@@ -1,6 +1,3 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class RunLengthEncoding {
     public String encode(String data) {
         throw new UnsupportedOperationException("Method has not been implemented yet.");
