@@ -40,7 +40,7 @@ public class RunLengthEncoding {
             toAddTo.append(countOfChar);
         }
 
-        countOfChar.append(toAdd);
+        toAddTo.append(toAdd);
     }
 
     public String decode(String encodedData) {
