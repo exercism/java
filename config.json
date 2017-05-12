@@ -334,6 +334,11 @@
       "slug": "run-length-encoding",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "kindergarten-garden",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
