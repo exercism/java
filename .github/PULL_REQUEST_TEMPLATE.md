@@ -7,4 +7,4 @@
 
 Reviewer Resources:
 
-[Track Policies](POLICIES.md#event-checklist)
+[Track Policies](POLICIES#event-checklist)
