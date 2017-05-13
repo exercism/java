@@ -7,4 +7,4 @@
 
 Reviewer Resources:
 
-[Track Policies](POLICIES#event-checklist)
+[Track Policies](https://github.com/exercism/xjava/blob/master/POLICIES.md#event-checklist)
