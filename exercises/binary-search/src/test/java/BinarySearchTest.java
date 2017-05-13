@@ -43,7 +43,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findsAValueInTheMiddleOfAnArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
@@ -53,7 +53,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findsAValueAtTheBeginningOfAnArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
@@ -63,7 +63,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findsAValueAtTheEndOfAnArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
@@ -73,7 +73,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findsAValueInAnArrayOfOddLength() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST_OF_ODD_LENGTH);
@@ -83,7 +83,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void findsAValueInAnArrayOfEvenLength() {
         BinarySearch<Integer> sut
@@ -94,7 +94,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void identifiesThatAValueIsNotIncludedInTheArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
@@ -104,7 +104,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void aValueSmallerThanTheArraysSmallestValueIsNotIncluded() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
@@ -114,7 +114,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void aValueLargerThanTheArraysSmallestValueIsNotIncluded() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
@@ -124,7 +124,7 @@ public class BinarySearchTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void nothingIsIncludedInAnEmptyArray() {
         BinarySearch<Integer> sut = new BinarySearch<>(EMPTY_LIST);
