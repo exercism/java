@@ -1,5 +1,0 @@
-final class ChangeCalculator {
-
-
-
-}
