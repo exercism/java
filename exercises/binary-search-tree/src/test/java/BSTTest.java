@@ -21,7 +21,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void insertsLess() {
         BST<Integer> sut = new BST();
         final int expectedRoot = 4;
@@ -42,7 +42,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void insertsSame() {
         BST<Integer> sut = new BST();
         final int expectedRoot = 4;
@@ -63,7 +63,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void insertsRight() {
         BST<Integer> sut = new BST();
         final int expectedRoot = 4;
@@ -84,7 +84,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void createsComplexTree() {
         BST<Integer> sut = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -101,7 +101,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void sortsSingleElement() {
         BST<Integer> sut = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -115,7 +115,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void sortsCollectionOfTwoIfSecondInsertedIsSmallerThanFirst() {
         BST<Integer> sut = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -130,7 +130,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void sortsCollectionOfTwoIfSecondInsertedIsBiggerThanFirst() {
         BST<Integer> sut = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -145,7 +145,7 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void iteratesOverComplexTree() {
         BST<Integer> sut = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
