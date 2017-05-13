@@ -65,4 +65,16 @@ public class RotationalCipherTest {
         Assert.assertEquals("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", rotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13));        
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void rotateNumbers(){
+        Assert.assertEquals("Xiwxmrk 1 2 3 xiwxmrk", rotationalCipher.rotate("Testing 1 2 3 testing", 4));            
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void rotatePunctuation(){
+        Assert.assertEquals("Gzo'n zvo, Bmviyhv!", rotationalCipher.rotate("Let's eat, Grandma!", 21));                
+    }
+
 }
