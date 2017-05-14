@@ -56,7 +56,7 @@ References: [[1](https://github.com/exercism/xjava/issues/365#issuecomment-29253
 
 ### Good first patches
 
-> Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label.
+> Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label. You can view the current list of these issues [here](https://github.com/exercism/xjava/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+patch%22).
 
 References: [[1](https://github.com/exercism/xjava/issues/220#issue-196447088)]
 
