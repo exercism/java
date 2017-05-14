@@ -176,11 +176,6 @@
       "topics": []
     },
     {
-      "slug": "strain",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
       "slug": "roman-numerals",
       "difficulty": 6,
       "topics": []
@@ -336,6 +331,7 @@
     "binary",
     "hexadecimal",
     "octal",
+    "strain",
     "trinary"
   ],
   "ignored": [
