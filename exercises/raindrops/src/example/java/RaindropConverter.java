@@ -1,6 +1,6 @@
-public class RaindropConverter {
+class RaindropConverter {
 
-    public String convert(int number) {
+    String convert(int number) {
         String result = "";
 
         if (number % 3 == 0) {
@@ -15,10 +15,11 @@ public class RaindropConverter {
             result += "Plong";
         }
 
-        if (result == null || result.isEmpty()) {
+        if (result.isEmpty()) {
             result = Integer.toString(number);
         }
 
         return result;
     }
+
 }
