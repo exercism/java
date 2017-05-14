@@ -35,7 +35,7 @@ References: [[1](https://github.com/exercism/xjava/issues/177#issuecomment-26129
 ### Starter implementations
 
 > - Exercises 1-10: provide stubs for all required methods. Stubs should include the following body:
-    `throw new UnsupportedOperationException("Delete this statement and provide your own implementation.");`
+    `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
 > - Exercises 11-20: provide stubs for all methods required by the first test; comment-out the bodies of any tests that require non-stubbed methods. Stubs should include the following body:
     `throw new UnsupportedOperationException("Delete this statement and provide your own implementation.");`
 > - Exercises 21+: provide no stubs, but mention any "interesting" interface aspects in the HINT.md file (which gets merged into the README.md for the exercise).
