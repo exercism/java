@@ -19,7 +19,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 |:------------|:-----------------|
 | Exercise added | [Prefer instance methods](#prefer-instance-methods); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests) |
 | Exercise updated | [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions) |
-| Track order updated | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
+| Track order changed | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first patches](#good-first-patches) |
 | "Good first patch" issue completed | [Good first patches](#good-first-patches) |
 | Installing Java instructions updated | [Simple onboarding](#simple-onboarding) |
@@ -42,7 +42,7 @@ References: [[1](https://github.com/exercism/xjava/issues/178)]
 
 ### Ignore noninitial tests
 
-> All but the first test in an exercise test suite should be annotated `@Ignore`.
+> All but the first test in an exercise test suite should be annotated `@Ignore("Remove to run test)` (single test) or `@Ignore("Remove to run tests)` (parametrized test).
 
 References: [[1](https://github.com/exercism/xjava/issues/101#issuecomment-249349204)]
 
