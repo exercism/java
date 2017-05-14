@@ -126,11 +126,6 @@
       "topics": []
     },
     {
-      "slug": "accumulate",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
       "slug": "nucleotide-count",
       "difficulty": 5,
       "topics": []
@@ -337,6 +332,7 @@
     }
   ],
   "deprecated": [
+    "accumulate",
     "binary",
     "hexadecimal",
     "octal",
