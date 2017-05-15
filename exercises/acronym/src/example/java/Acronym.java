@@ -1,14 +1,15 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Acronym {
+final class Acronym {
+
     private final String acronym;
 
-    public Acronym(String phrase) {
+    Acronym(String phrase) {
         acronym = generateAcronym(phrase);
     }
 
-    public String get() {
+    String get() {
         return acronym;
     }
 
@@ -21,4 +22,5 @@ public class Acronym {
         }
         return b.toString().toUpperCase();
     }
+
 }
