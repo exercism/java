@@ -126,11 +126,6 @@
       "topics": []
     },
     {
-      "slug": "accumulate",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
       "slug": "nucleotide-count",
       "difficulty": 5,
       "topics": []
@@ -177,11 +172,6 @@
     },
     {
       "slug": "atbash-cipher",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
-      "slug": "strain",
       "difficulty": 5,
       "topics": []
     },
@@ -337,9 +327,11 @@
     }
   ],
   "deprecated": [
+    "accumulate",
     "binary",
     "hexadecimal",
     "octal",
+    "strain",
     "trinary"
   ],
   "ignored": [
