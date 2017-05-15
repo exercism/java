@@ -34,11 +34,10 @@ public class ScrabbleScoreTest {
         this.scrabbleScore = scrabbleScore;
     }
 
-
     @Test
     public void test() {
         Scrabble scrabble = new Scrabble(scrabbleInput);
-
         assertEquals(scrabbleScore, scrabble.getScore());
     }
+
 }
