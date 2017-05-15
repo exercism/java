@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class SpaceAge {
+class SpaceAge {
 
     private enum Planet {
         EARTH(1.0),
@@ -18,7 +18,7 @@ public class SpaceAge {
             this.relativeOrbitalPeriod = relativeOrbitalPeriod;
         }
 
-        public double getRelativeOrbitalPeriod() {
+        private double getRelativeOrbitalPeriod() {
             return relativeOrbitalPeriod;
         }
     }
@@ -28,43 +28,43 @@ public class SpaceAge {
 
     private double seconds;
 
-    public SpaceAge(double seconds) {
+    SpaceAge(double seconds) {
         this.seconds = seconds;
     }
 
-    public double getSeconds() {
+    double getSeconds() {
         return seconds;
     }
 
-    public double onEarth() {
+    double onEarth() {
         return calculateAge(Planet.EARTH);
     }
 
-    public double onMercury() {
+    double onMercury() {
         return calculateAge(Planet.MERCURY);
     }
 
-    public double onVenus() {
+    double onVenus() {
         return calculateAge(Planet.VENUS);
     }
 
-    public double onMars() {
+    double onMars() {
         return calculateAge(Planet.MARS);
     }
 
-    public double onJupiter() {
+    double onJupiter() {
         return calculateAge(Planet.JUPITER);
     }
 
-    public double onSaturn() {
+    double onSaturn() {
         return calculateAge(Planet.SATURN);
     }
 
-    public double onUranus() {
+    double onUranus() {
         return calculateAge(Planet.URANUS);
     }
 
-    public double onNeptune() {
+    double onNeptune() {
         return calculateAge(Planet.NEPTUNE);
     }
 
@@ -73,4 +73,5 @@ public class SpaceAge {
 
         return new BigDecimal(age).setScale(PRECISION, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
+
 }
