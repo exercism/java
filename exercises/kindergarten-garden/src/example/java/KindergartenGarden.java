@@ -1,10 +1,15 @@
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class KindergartenGarden {
     private String[] students;
     private String garden;
-    final int PARTITION_SIZE_WIDTH = 2;
-    final static String[] DEFAULT_STUDENTS = {
+    private final int PLANTS_PER_STUDENT_PER_ROW = 2;
+    private int NEW_ROW_LOCATION;
+
+    private final static String[] DEFAULT_STUDENTS = {
             "Alice", "Bob", "Charlie", "David",
             "Eve", "Fred", "Ginny", "Harriet",
             "Ileana", "Joseph", "Kincaid", "Larry"
@@ -14,41 +19,26 @@ public class KindergartenGarden {
         this.garden = garden;
         Arrays.sort(students);
         this.students = students;
+        NEW_ROW_LOCATION = garden.indexOf('\n') + 1;
     }
 
     public KindergartenGarden(String garden) {
         this(garden, DEFAULT_STUDENTS);
     }
 
-    public String[] getPlantsOfStudent(String student) {
-        String[] plants = new String[PARTITION_SIZE_WIDTH * 2];
-        int studentPlantsIndex = Arrays.binarySearch(students, student) * PARTITION_SIZE_WIDTH;
+    public Plant[] getPlantsOfStudent(String student) {
+        List<Plant> plants = new ArrayList<Plant>();
+        int studentPlantsIndex = Arrays.binarySearch(students, student) * PLANTS_PER_STUDENT_PER_ROW;
 
-        for (int i = 0; i < PARTITION_SIZE_WIDTH; i++) {
-            plants[i] = getPlantName(garden.charAt(studentPlantsIndex + i));
+        for (int i = studentPlantsIndex; i < studentPlantsIndex + PLANTS_PER_STUDENT_PER_ROW; i++) {
+            plants.add(Plant.getPlant(garden.charAt(i)));
         }
 
-        int newRowLocation = garden.indexOf('\n');
-
-        for (int i = PARTITION_SIZE_WIDTH; i < PARTITION_SIZE_WIDTH * 2; i++) {
-            plants[i] = getPlantName(garden.charAt(newRowLocation - 1 + studentPlantsIndex + i));
+        for (int i = NEW_ROW_LOCATION + studentPlantsIndex;
+             i < NEW_ROW_LOCATION + studentPlantsIndex + PLANTS_PER_STUDENT_PER_ROW; i++) {
+            plants.add(Plant.getPlant(garden.charAt(i)));
         }
 
-        return plants;
-    }
-
-    public String getPlantName(char plantCode) {
-        switch (plantCode) {
-            case 'G':
-                return "grass";
-            case 'C':
-                return "clover";
-            case 'R':
-                return "radishes";
-            case 'V':
-                return "violets";
-        }
-
-        return null;
+        return plants.toArray(new Plant[0]);
     }
 }

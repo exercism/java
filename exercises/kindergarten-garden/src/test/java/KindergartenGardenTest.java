@@ -4,14 +4,15 @@ import org.junit.Ignore;
 import static org.junit.Assert.assertEquals;
 
 public class KindergartenGardenTest {
+
     @Test
     public void singleStudent() {
         String student = "Alice";
         String plants = "RC\nGG";
-        String[] expected = {"radishes", "clover", "grass", "grass"};
+        Plant[] expected = {Plant.RADISHES, Plant.CLOVER, Plant.GRASS, Plant.GRASS};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -19,10 +20,10 @@ public class KindergartenGardenTest {
     public void singleStudent2() {
         String student = "Alice";
         String plants = "VC\nRC";
-        String[] expected = {"violets", "clover", "radishes", "clover"};
+        Plant[] expected = {Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.CLOVER};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -30,10 +31,10 @@ public class KindergartenGardenTest {
     public void twoStudents() {
         String student = "Bob";
         String plants = "VVCG\nVVRC";
-        String[] expected = {"clover", "grass", "radishes", "clover"};
+        Plant[] expected = {Plant.CLOVER, Plant.GRASS, Plant.RADISHES, Plant.CLOVER};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -41,10 +42,10 @@ public class KindergartenGardenTest {
     public void oneGardenSecondStudent() {
         String student = "Bob";
         String plants = "VVCCGG\nVVCCGG";
-        String[] expected = {"clover", "clover", "clover", "clover"};
+        Plant[] expected = {Plant.CLOVER, Plant.CLOVER, Plant.CLOVER, Plant.CLOVER};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -52,10 +53,10 @@ public class KindergartenGardenTest {
     public void oneGardenThirdStudent() {
         String student = "Charlie";
         String plants = "VVCCGG\nVVCCGG";
-        String[] expected = {"grass", "grass", "grass", "grass"};
+        Plant[] expected = {Plant.GRASS, Plant.GRASS, Plant.GRASS, Plant.GRASS};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -63,10 +64,10 @@ public class KindergartenGardenTest {
     public void fullGardenFirstStudent() {
         String student = "Alice";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        String[] expected = {"violets", "radishes", "violets", "radishes"};
+        Plant[] expected = {Plant.VIOLETS, Plant.RADISHES, Plant.VIOLETS, Plant.RADISHES};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -74,10 +75,10 @@ public class KindergartenGardenTest {
     public void fullGardenSecondStudent() {
         String student = "Bob";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        String[] expected = {"clover", "grass", "clover", "clover"};
+        Plant[] expected = {Plant.CLOVER, Plant.GRASS, Plant.CLOVER, Plant.CLOVER};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -85,10 +86,10 @@ public class KindergartenGardenTest {
     public void fullGardenSecondToLastStudent() {
         String student = "Kincaid";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        String[] expected = {"grass", "clover", "clover", "grass"};
+        Plant[] expected = {Plant.GRASS, Plant.CLOVER, Plant.CLOVER, Plant.GRASS};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -96,10 +97,10 @@ public class KindergartenGardenTest {
     public void fullGardenLastStudent() {
         String student = "Larry";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        String[] expected = {"grass", "violets", "clover", "violets"};
+        Plant[] expected = {Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.VIOLETS};
 
-        assertEquals(expected, new KindergartenGarden(plants)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -108,10 +109,10 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Patricia";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        String[] expected = {"violets", "clover", "radishes", "violets"};
+        Plant[] expected = {Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.VIOLETS};
 
-        assertEquals(expected, new KindergartenGarden(plants, studentArray)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -120,10 +121,10 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Roger";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        String[] expected = {"radishes", "radishes", "grass", "clover"};
+        Plant[] expected = {Plant.RADISHES, Plant.RADISHES, Plant.GRASS, Plant.CLOVER};
 
-        assertEquals(expected, new KindergartenGarden(plants, studentArray)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -132,10 +133,10 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Samantha";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        String[] expected = {"grass", "violets", "clover", "grass"};
+        Plant[] expected = {Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.GRASS};
 
-        assertEquals(expected, new KindergartenGarden(plants, studentArray)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -144,9 +145,9 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Xander";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        String[] expected = {"radishes", "grass", "clover", "violets"};
+        Plant[] expected = {Plant.RADISHES, Plant.GRASS, Plant.CLOVER, Plant.VIOLETS};
 
-        assertEquals(expected, new KindergartenGarden(plants, studentArray)
-                .getPlantsOfStudent(student));
+        assertEquals(expected,
+                new KindergartenGarden(plants).getPlantsOfStudent(student));
     }
 }
