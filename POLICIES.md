@@ -19,7 +19,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 |:------------|:-----------------|
 | Exercise added | [Prefer instance methods](#prefer-instance-methods); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests) |
 | Exercise updated | [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions) |
-| Track order updated | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
+| Track order changed | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first patches](#good-first-patches) |
 | "Good first patch" issue completed | [Good first patches](#good-first-patches) |
 | Installing Java instructions updated | [Simple onboarding](#simple-onboarding) |
@@ -34,15 +34,17 @@ References: [[1](https://github.com/exercism/xjava/issues/177#issuecomment-26129
 
 ### Starter implementations
 
-> - Exercises 1-10: provide stubs for all required methods.
-> - Exercises 11-20: provide stubs for all methods required by the first test; comment-out the bodies of any tests that require non-stubbed methods.
+> - Exercises 1-10: provide stubs for all required constructors and methods. Stubs should include the following body:
+    `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
+> - Exercises 11-20: provide stubs for all constructors and methods required by the first test; comment-out the bodies of any tests that require non-stubbed constructors or methods. Stubs should include the following body:
+    `throw new UnsupportedOperationException("Delete this statement and provide your own implementation.");`
 > - Exercises 21+: provide no stubs, but mention any "interesting" interface aspects in the HINT.md file (which gets merged into the README.md for the exercise).
 
 References: [[1](https://github.com/exercism/xjava/issues/178)]
 
 ### Ignore noninitial tests
 
-> All but the first test in an exercise test suite should be annotated `@Ignore`.
+> All but the first test in an exercise test suite should be annotated `@Ignore("Remove to run test")` (single test) or `@Ignore("Remove to run tests")` (parametrized test).
 
 References: [[1](https://github.com/exercism/xjava/issues/101#issuecomment-249349204)]
 
@@ -54,7 +56,7 @@ References: [[1](https://github.com/exercism/xjava/issues/365#issuecomment-29253
 
 ### Good first patches
 
-> Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label.
+> Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label. You can view the current list of these issues [here](https://github.com/exercism/xjava/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+patch%22).
 
 References: [[1](https://github.com/exercism/xjava/issues/220#issue-196447088)]
 
