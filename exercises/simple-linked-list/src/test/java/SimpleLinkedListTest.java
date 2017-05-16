@@ -1,6 +1,6 @@
 import org.junit.Ignore;
-import org.junit.Test;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.NoSuchElementException;
@@ -12,7 +12,7 @@ public class SimpleLinkedListTest {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-    
+
     @Test
     public void aNewListIsEmpty() {
         SimpleLinkedList list = new SimpleLinkedList();
@@ -74,7 +74,7 @@ public class SimpleLinkedListTest {
         list.push(6);
         list.push(5);
         Integer[] expected = {5, 6, 7, 8, 9};
-        assertEquals(list.asArray(Integer.class), expected);
+        assertArrayEquals(expected, list.asArray(Integer.class));
     }
 
     @Ignore("Remove to run test")
@@ -82,7 +82,7 @@ public class SimpleLinkedListTest {
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList list = new SimpleLinkedList();
         Object[] expected = {};
-        assertEquals(list.asArray(Object.class), expected);
+        assertArrayEquals(expected, list.asArray(Object.class));
     }
 
 }
