@@ -7,7 +7,7 @@ public class KindergartenGarden {
     private String[] students;
     private String garden;
     private final int PLANTS_PER_STUDENT_PER_ROW = 2;
-    private int NEW_ROW_LOCATION;
+    private final nt NEW_ROW_LOCATION;
 
     private final static String[] DEFAULT_STUDENTS = {
             "Alice", "Bob", "Charlie", "David",

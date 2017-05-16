@@ -112,7 +112,7 @@ public class KindergartenGardenTest {
         Plant[] expected = {Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.VIOLETS};
 
         assertEquals(expected,
-                new KindergartenGarden(plants).getPlantsOfStudent(student));
+                new KindergartenGarden(plants, studentArray).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -124,7 +124,7 @@ public class KindergartenGardenTest {
         Plant[] expected = {Plant.RADISHES, Plant.RADISHES, Plant.GRASS, Plant.CLOVER};
 
         assertEquals(expected,
-                new KindergartenGarden(plants).getPlantsOfStudent(student));
+                new KindergartenGarden(plants, studentArray).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -136,7 +136,7 @@ public class KindergartenGardenTest {
         Plant[] expected = {Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.GRASS};
 
         assertEquals(expected,
-                new KindergartenGarden(plants).getPlantsOfStudent(student));
+                new KindergartenGarden(plants, studentArray).getPlantsOfStudent(student));
     }
 
     @Ignore("Remove to run test")
@@ -148,6 +148,6 @@ public class KindergartenGardenTest {
         Plant[] expected = {Plant.RADISHES, Plant.GRASS, Plant.CLOVER, Plant.VIOLETS};
 
         assertEquals(expected,
-                new KindergartenGarden(plants).getPlantsOfStudent(student));
+                new KindergartenGarden(plants, studentArray).getPlantsOfStudent(student));
     }
 }
