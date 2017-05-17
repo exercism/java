@@ -4,7 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/*
+ * version: 1.1.0
+ */
 public final class DifferenceOfSquaresCalculatorTest {
+
     private DifferenceOfSquaresCalculator calculator;
 
     @Before
@@ -13,17 +17,17 @@ public final class DifferenceOfSquaresCalculatorTest {
     }
 
     @Test
-    public void testSquareOfSum5() {
-        final int expected = 225;
-        final int actual = calculator.computeSquareOfSumTo(5);
+    public void testSquareOfSum1() {
+        final int expected = 1;
+        final int actual = calculator.computeSquareOfSumTo(1);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testSquareOfSum10() {
-        final int expected = 3025;
-        final int actual = calculator.computeSquareOfSumTo(10);
+    public void testSquareOfSum5() {
+        final int expected = 225;
+        final int actual = calculator.computeSquareOfSumTo(5);
         assertEquals(expected, actual);
     }
 
@@ -37,17 +41,17 @@ public final class DifferenceOfSquaresCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfSquares5() {
-        final int expected = 55;
-        final int actual = calculator.computeSumOfSquaresTo(5);
+    public void testSumOfSquares1() {
+        final int expected = 1;
+        final int actual = calculator.computeSumOfSquaresTo(1);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfSquares10() {
-        final int expected = 385;
-        final int actual = calculator.computeSumOfSquaresTo(10);
+    public void testSumOfSquares5() {
+        final int expected = 55;
+        final int actual = calculator.computeSumOfSquaresTo(5);
         assertEquals(expected, actual);
     }
 
@@ -61,9 +65,9 @@ public final class DifferenceOfSquaresCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testDifferenceOfSquares0() {
+    public void testDifferenceOfSquares1() {
         final int expected = 0;
-        final int actual = calculator.computeDifferenceOfSquares(0);
+        final int actual = calculator.computeDifferenceOfSquares(1);
         assertEquals(expected, actual);
     }
 
@@ -72,14 +76,6 @@ public final class DifferenceOfSquaresCalculatorTest {
     public void testDifferenceOfSquares5() {
         final int expected = 170;
         final int actual = calculator.computeDifferenceOfSquares(5);
-        assertEquals(expected, actual);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testDifferenceOfSquares10() {
-        final int expected = 2640;
-        final int actual = calculator.computeDifferenceOfSquares(10);
         assertEquals(expected, actual);
     }
 
