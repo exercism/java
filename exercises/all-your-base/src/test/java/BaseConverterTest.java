@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 
-class BaseConverterTest {
+public class BaseConverterTest {
 
     /*
      * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
