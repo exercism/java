@@ -3,11 +3,11 @@ import java.time.LocalDateTime;
 
 class Gigasecond {
 
-    Gigasecond(LocalDate initialDate) {
+    Gigasecond(LocalDate birthDate) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    Gigasecond(LocalDateTime initialDateTime) {
+    Gigasecond(LocalDateTime birthDateTime) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
