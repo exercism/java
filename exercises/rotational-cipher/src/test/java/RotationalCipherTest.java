@@ -1,10 +1,12 @@
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 public class RotationalCipherTest {
-    private  RotationalCipher rotationalCipher;
+
+    private RotationalCipher rotationalCipher;
 
     @Before
     public void setUp() {
@@ -12,69 +14,63 @@ public class RotationalCipherTest {
     }
 
     @Test
-    public void rotateEmpty() {
-        Assert.assertEquals("", rotationalCipher.rotate("", 13));
-    }
-
-
-    @Ignore("Remove to run test")
-    @Test
-    public void rotateLowerCaseWithoutSpaces() {
-        Assert.assertEquals("nopqrstuvwxyzabcdefghijklm", rotationalCipher.rotate("abcdefghijklmnopqrstuvwxyz", 13));
+    public void rotateSingleCharacterBy1() {
+        Assert.assertEquals("b", rotationalCipher.rotate("a", 1));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateBy5() {
-        Assert.assertEquals("trl", rotationalCipher.rotate("omg", 5));
+    public void rotateSingleCharacterBy26() {
+        Assert.assertEquals("a", rotationalCipher.rotate("a", 26));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateLowerCaseWithSpaces(){
-        Assert.assertEquals("nopqr stuvw xyzab cdefg hijkl m", rotationalCipher.rotate("abcde fghij klmno pqrst uvwxy z", 13));
+    public void rotateSingleCharacterBy0() {
+        Assert.assertEquals("a", rotationalCipher.rotate("a", 0));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateUpperCaseWithoutSpaces(){
-        Assert.assertEquals("NOP", rotationalCipher.rotate("ABC", 13));    
+    public void rotateSingleCharacterBy13() {
+        Assert.assertEquals("z", rotationalCipher.rotate("m", 13));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateUpperCaseWithSpaces(){
-        Assert.assertEquals("NOP QRST", rotationalCipher.rotate("ABC DEFG", 13));    
-    }   
-
-    @Ignore("Remove to run test")
-    @Test
-    public void rotateSpecialCharacter(){
-        Assert.assertEquals("$$", rotationalCipher.rotate("$$", 13));    
+    public void rotateSingleCharacterWithWrapAround() {
+        Assert.assertEquals("a", rotationalCipher.rotate("n", 13));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateMixedCase1(){
-        Assert.assertEquals("The quick brown fox jumps over the lazy dog.", rotationalCipher.rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", 13));        
+    public void rotateCapitalLetters() {
+        Assert.assertEquals("TRL", rotationalCipher.rotate("OMG", 5));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateMixedCase2(){
-        Assert.assertEquals("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", rotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13));        
+    public void rotateSpaces() {
+        Assert.assertEquals("T R L", rotationalCipher.rotate("O M G", 5));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotateNumbers(){
-        Assert.assertEquals("Xiwxmrk 1 2 3 xiwxmrk", rotationalCipher.rotate("Testing 1 2 3 testing", 4));            
+    public void rotateNumbers() {
+        Assert.assertEquals("Xiwxmrk 1 2 3 xiwxmrk", rotationalCipher.rotate("Testing 1 2 3 testing", 4));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void rotatePunctuation(){
-        Assert.assertEquals("Gzo'n zvo, Bmviyhv!", rotationalCipher.rotate("Let's eat, Grandma!", 21));                
+    public void rotatePunctuation() {
+        Assert.assertEquals("Gzo'n zvo, Bmviyhv!", rotationalCipher.rotate("Let's eat, Grandma!", 21));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void rotateAllLetters() {
+        Assert.assertEquals("The quick brown fox jumps over the lazy dog.",
+         rotationalCipher.rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", 13));
     }
 
 }

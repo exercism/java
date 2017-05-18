@@ -1,29 +1,38 @@
+
 public class RotationalCipher {
-    public String rotate(String data, int  shiftKey){
-        String cipherText = "";
-        for(int i = 0;i < data.length(); i++){
-            //for uppercase characters
-            if(data.charAt(i) >= 'A' && data.charAt(i) <= 'Z'){
-                char replacementCharacter = (char) (data.charAt(i) + shiftKey);
-                if(replacementCharacter > 'Z'){
-                    replacementCharacter = (char)(64 + (replacementCharacter % 90));
-                }
-                cipherText += replacementCharacter;
+
+    public String rotate(String data, int shiftKey) {
+        StringBuilder dataStringBuilder = new StringBuilder();
+        for (char c : data.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                dataStringBuilder.append(replacementCharacter(c, 'A', 'Z', shiftKey));
+            } else if (Character.isLowerCase(c)) {
+                dataStringBuilder.append(replacementCharacter(c, 'a', 'z', shiftKey));
+            } else {
+                dataStringBuilder.append(c);
             }
-            //for lowercase characters
-            else if(data.charAt(i) >= 'a' && data.charAt(i) <= 'z'){
-                char replacementCharacter = (char) (data.charAt(i) + shiftKey);
-                if(replacementCharacter > 'z'){
-                    replacementCharacter = (char)(96 + (replacementCharacter % 122));
-                }
-                cipherText += replacementCharacter;
-            }
-            //for other symbols
-            else 
-                cipherText += data.charAt(i);
-            }
-        return cipherText;
+        }
+        return dataStringBuilder.toString();
+    }
+
+    /**
+     * 
+     * @param characterToReplace
+     * @param alphabetCaseStart
+     * @param alphabetCaseEnd
+     * @param shiftKey
+     * @return ReplacementCharacter
+     * 
+     * For Uppercase CaseStart = 'A' and CaseEnd = 'Z'
+     * For Lowercase CaseStart = 'a' and CaseEnd = 'z'
+     */
+    public char replacementCharacter(char characterToReplace,
+            char alphabetCaseStart, char alphabetCaseEnd, int shiftKey) {
+        char replacementCharacter = (char) (characterToReplace + shiftKey);
+        if (replacementCharacter > alphabetCaseEnd) {
+            replacementCharacter = (char) ((alphabetCaseStart - 1) +
+             (replacementCharacter % alphabetCaseEnd));
+        }
+        return replacementCharacter;
     }
 }
-
-
