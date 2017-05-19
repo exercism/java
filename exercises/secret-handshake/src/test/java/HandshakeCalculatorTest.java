@@ -7,7 +7,7 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
-public final class HandshakeCalculatorTest {
+public class HandshakeCalculatorTest {
     private HandshakeCalculator handshakeCalculator;
 
 
