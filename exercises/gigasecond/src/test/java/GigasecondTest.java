@@ -9,7 +9,6 @@ import static org.junit.Assert.assertEquals;
 
 public class GigasecondTest {
 
-
     @Test
     public void modernTime() {
         Gigasecond gigaSecond = new Gigasecond(LocalDate.of(2011, Month.APRIL, 25));
