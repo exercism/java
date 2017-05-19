@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public final class RobotTest {
+public class RobotTest {
 
     @Test
     public void testRobotIsCreatedWithCorrectInitialPosition() {
