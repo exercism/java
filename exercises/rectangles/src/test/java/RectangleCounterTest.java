@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public final class RectangleCounterTest {
+public class RectangleCounterTest {
 
     private RectangleCounter rectangleCounter;
 
