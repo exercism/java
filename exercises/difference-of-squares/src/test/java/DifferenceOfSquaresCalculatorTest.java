@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public final class DifferenceOfSquaresCalculatorTest {
+public class DifferenceOfSquaresCalculatorTest {
     private DifferenceOfSquaresCalculator calculator;
 
     @Before
