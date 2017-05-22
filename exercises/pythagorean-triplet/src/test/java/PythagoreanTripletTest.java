@@ -21,7 +21,7 @@ public class PythagoreanTripletTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldCalculateProduct() {
         PythagoreanTriplet sut = new PythagoreanTriplet(3, 4, 5);
         final long expected = 60l;
@@ -30,21 +30,21 @@ public class PythagoreanTripletTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void testIsPythagoreanOK() {
         PythagoreanTriplet sut = new PythagoreanTriplet(3, 4, 5);
         assertTrue(sut.isPythagorean());
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void testIsPythagoreanFail() {
         PythagoreanTriplet sut = new PythagoreanTriplet(5, 6, 7);
         assertFalse(sut.isPythagorean());
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMakeTripletsUpToTen() {
         final List<Long> actual
                 = PythagoreanTriplet
@@ -60,7 +60,7 @@ public class PythagoreanTripletTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMakeTripletsElevenToTwenty() {
         final List<Long> actual
                 = PythagoreanTriplet
@@ -77,7 +77,7 @@ public class PythagoreanTripletTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMakeTripletsAndFilterOnSum() {
         final List<Long> actual
                 = PythagoreanTriplet

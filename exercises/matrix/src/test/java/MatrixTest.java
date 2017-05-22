@@ -44,7 +44,7 @@ public class MatrixTest {
         }
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class CountColumnsTest {
         private Matrix matrix;
@@ -76,7 +76,7 @@ public class MatrixTest {
         }
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class GetFirstRowTest {
         private Matrix matrix;
@@ -108,7 +108,7 @@ public class MatrixTest {
         }
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class GetLastRowTest {
         private Matrix matrix;
@@ -140,7 +140,7 @@ public class MatrixTest {
         }
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class GetFirstColumnTest {
         private Matrix matrix;
@@ -173,7 +173,7 @@ public class MatrixTest {
     }
 
 
-    @Ignore
+    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class GetLastColumnTest {
         private Matrix matrix;

@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public final class MinesweeperBoardTest {
+public class MinesweeperBoardTest {
 
     /*
      * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
@@ -28,7 +28,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithOneRowAndNoColumns() {
         final List<String> inputBoard = Collections.singletonList("");
@@ -39,7 +39,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithNoMines() {
         final List<String> inputBoard = Arrays.asList(
@@ -60,7 +60,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithOnlyMines() {
         final List<String> inputBoard = Arrays.asList(
@@ -81,7 +81,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithSingleMineAtCenter() {
         final List<String> inputBoard = Arrays.asList(
@@ -102,7 +102,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithMinesAroundPerimeter() {
         final List<String> inputBoard = Arrays.asList(
@@ -123,7 +123,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithSingleRowAndTwoMines() {
         final List<String> inputBoard = Collections.singletonList(
@@ -140,7 +140,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithSingleRowAndTwoMinesAtEdges() {
         final List<String> inputBoard = Collections.singletonList(
@@ -157,7 +157,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithSingleColumnAndTwoMines() {
         final List<String> inputBoard = Arrays.asList(
@@ -182,7 +182,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithSingleColumnAndTwoMinesAtEdges() {
         final List<String> inputBoard = Arrays.asList(
@@ -207,7 +207,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithMinesInCross() {
         final List<String> inputBoard = Arrays.asList(
@@ -232,7 +232,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testLargeInputBoard() {
         final List<String> inputBoard = Arrays.asList(
@@ -259,7 +259,7 @@ public final class MinesweeperBoardTest {
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testNullInputBoardIsRejected() {
         expectedException.expect(IllegalArgumentException.class);
@@ -268,7 +268,7 @@ public final class MinesweeperBoardTest {
         new MinesweeperBoard(null);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithInvalidSymbolsIsRejected() {
         expectedException.expect(IllegalArgumentException.class);
@@ -277,7 +277,7 @@ public final class MinesweeperBoardTest {
         new MinesweeperBoard(Collections.singletonList(" * & "));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithInconsistentRowLengthsIsRejected() {
         expectedException.expect(IllegalArgumentException.class);

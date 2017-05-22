@@ -22,7 +22,7 @@ public class DoublyLinkedListTest {
         assertThat(subject.pop(), is(10));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testPushShift() {
         subject.push(10);
@@ -31,7 +31,7 @@ public class DoublyLinkedListTest {
         assertThat(subject.shift(), is(20));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testUnshiftShift() {
         subject.unshift(10);
@@ -40,7 +40,7 @@ public class DoublyLinkedListTest {
         assertThat(subject.shift(), is(10));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testUnshiftPop() {
         subject.unshift(10);
@@ -49,7 +49,7 @@ public class DoublyLinkedListTest {
         assertThat(subject.pop(), is(20));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testExample() {
         subject.push(10);

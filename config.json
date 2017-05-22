@@ -126,11 +126,6 @@
       "topics": []
     },
     {
-      "slug": "accumulate",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
       "slug": "nucleotide-count",
       "difficulty": 5,
       "topics": []
@@ -177,11 +172,6 @@
     },
     {
       "slug": "atbash-cipher",
-      "difficulty": 5,
-      "topics": []
-    },
-    {
-      "slug": "strain",
       "difficulty": 5,
       "topics": []
     },
@@ -329,12 +319,24 @@
       "slug": "saddle-points",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "run-length-encoding",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "kindergarten-garden",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
+    "accumulate",
     "binary",
     "hexadecimal",
     "octal",
+    "strain",
     "trinary"
   ],
   "ignored": [
