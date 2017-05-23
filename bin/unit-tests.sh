@@ -10,6 +10,6 @@ bin/configlet .
 pushd exercises
 echo ""
 echo ">>> Running tests..."
-TERM=dumb ../gradlew check compileStarterSourceJava --continue
+TERM=dumb ../gradlew check compileStarterSourceJava --parallel --continue
 popd
 
