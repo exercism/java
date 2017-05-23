@@ -3,6 +3,9 @@ import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
+/*
+ * version: 1.1.0
+ */
 public class AcronymTest {
 
     @Test
@@ -17,14 +20,6 @@ public class AcronymTest {
     public void fromOtherTitleCasedPhrases() {
         final String phrase = "Ruby on Rails";
         final String expected = "ROR";
-        assertEquals(expected, new Acronym(phrase).get());
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void fromInconsistentlyCasedPhrases() {
-        final String phrase = "HyperText Markup Language";
-        final String expected = "HTML";
         assertEquals(expected, new Acronym(phrase).get());
     }
 
@@ -57,14 +52,6 @@ public class AcronymTest {
     public void fromPhrasesWithPunctuationAndSentenceCasing() {
         final String phrase = "Complementary metal-oxide semiconductor";
         final String expected = "CMOS";
-        assertEquals(expected, new Acronym(phrase).get());
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void fromPhraseWithSingleLetterWord() {
-        final String phrase = "Cat in a Hat";
-        final String expected = "CIAH";
         assertEquals(expected, new Acronym(phrase).get());
     }
 
