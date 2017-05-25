@@ -13,7 +13,7 @@ public class BinarySearchTest {
 
     @Test
     public void findsAValueInAnArrayWithOneElement() {
-        List<Integer> listOfUnitLength = Collections.unmodifiableList(Arrays.asList(6));
+        List<Integer> listOfUnitLength = Collections.singletonList(6);
 
         BinarySearch<Integer> sut = new BinarySearch<>(listOfUnitLength);
 
@@ -119,7 +119,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void nothingIsIncludedInAnEmptyArray() {
-        List<Integer> emptyList = Collections.unmodifiableList(new ArrayList<Integer>(0));
+        List<Integer> emptyList = Collections.emptyList();
 
         BinarySearch<Integer> sut = new BinarySearch<>(emptyList);
 
