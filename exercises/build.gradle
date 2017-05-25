@@ -9,14 +9,14 @@ subprojects { project ->
       java.srcDirs = ["src/example/java"]
     }
     project["compileJava"].doFirst { compileTask ->
-      println "  (source = " + compileTask.source.asPath + ")"
+      println "  (source = ${compileTask.source.asPath})"
     }
 
     starterSource {
       java.srcDirs = ["src/main/java"]
     }
     project["compileStarterSourceJava"].doFirst { compileTask ->
-      println "  (source = " + compileTask.source.asPath + ")"
+      println "  (source = ${compileTask.source.asPath})"
     }
 
     // In lieu of being able to disable @Ignore in JUnit tests, we filter
@@ -25,7 +25,7 @@ subprojects { project ->
       java.srcDirs = ["build/gen/test/java"]
     }
     project["compileTestJava"].doFirst { compileTask ->
-      println "  (source = " + compileTask.source.asPath + ")"
+      println "  (source = ${compileTask.source.asPath})"
     }
   }
 
