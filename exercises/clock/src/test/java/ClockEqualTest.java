@@ -4,6 +4,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+/*
+ * version: 1.0.1
+ */
 public class ClockEqualTest {
 
     @Ignore("Remove to run test")
