@@ -1,6 +1,6 @@
 import java.util.List;
 
-final class RelationshipComputer<T extends Comparable> {
+final class RelationshipComputer<T> {
 
     Relationship computeRelationship(final List<T> firstList, final List<T> secondList) {
         if (firstList.equals(secondList))          return Relationship.EQUAL;
