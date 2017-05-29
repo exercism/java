@@ -117,10 +117,3 @@ gradle clean
 cd ~/workspace/exercism/exercises
 exercism fetch java bob
 ```
-
-
-# License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Katrina Owen, _@kytrinyx.com
