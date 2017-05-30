@@ -241,6 +241,11 @@
       "topics": []
     },
     {
+      "slug": "word-search",
+      "difficulty": 7,
+      "topics": []
+    },
+    {
       "slug": "simple-linked-list",
       "difficulty": 7,
       "topics": []
