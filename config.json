@@ -96,6 +96,11 @@
       "topics": []
     },
     {
+      "slug": "collatz-conjecture",
+      "difficulty": 4,
+      "topics": []
+    },
+    {
       "slug": "nth-prime",
       "difficulty": 4,
       "topics": []
