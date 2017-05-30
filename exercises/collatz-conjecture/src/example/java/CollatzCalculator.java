@@ -9,7 +9,7 @@ class CollatzCalculator {
 
         if (start % 2 == 0) {
             next = start / 2;
-        } else{
+        } else {
             next = 3 * start + 1;
         }
 
