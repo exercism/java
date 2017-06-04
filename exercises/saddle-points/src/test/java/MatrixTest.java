@@ -1,10 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,7 +15,7 @@ public class MatrixTest {
             Arrays.asList(6, 6, 7)
         ));
 
-        List<MatrixCoordinate> expectedSaddlePoints = Collections.singletonList(new MatrixCoordinate(1, 0));
+        Set<MatrixCoordinate> expectedSaddlePoints = Collections.singleton(new MatrixCoordinate(1, 0));
 
         assertEquals(expectedSaddlePoints, matrix.getSaddlePoints());
     }
@@ -28,7 +25,7 @@ public class MatrixTest {
     public void testCanIdentifyThatEmptyMatrixHasNoSaddlePoints() {
         Matrix matrix = new Matrix(new ArrayList<>());
 
-        List<MatrixCoordinate> expectedSaddlePoints = new ArrayList<>();
+        Set<MatrixCoordinate> expectedSaddlePoints = Collections.emptySet();
 
         assertEquals(expectedSaddlePoints, matrix.getSaddlePoints());
     }
@@ -42,7 +39,7 @@ public class MatrixTest {
             Arrays.asList(2, 3, 1)
         ));
 
-        List<MatrixCoordinate> expectedSaddlePoints = new ArrayList<>();
+        Set<MatrixCoordinate> expectedSaddlePoints = Collections.emptySet();
 
         assertEquals(expectedSaddlePoints, matrix.getSaddlePoints());
     }
@@ -56,11 +53,11 @@ public class MatrixTest {
             Arrays.asList(1, 5, 4)
         ));
 
-        List<MatrixCoordinate> expectedSaddlePoints = Arrays.asList(
+        Set<MatrixCoordinate> expectedSaddlePoints = new HashSet<>(Arrays.asList(
             new MatrixCoordinate(0, 1),
             new MatrixCoordinate(1, 1),
             new MatrixCoordinate(2, 1)
-        );
+        ));
 
         assertEquals(expectedSaddlePoints, matrix.getSaddlePoints());
     }
@@ -74,7 +71,7 @@ public class MatrixTest {
             Arrays.asList(3, 2, 5)
         ));
 
-        List<MatrixCoordinate> expectedSaddlePoints = Collections.singletonList(new MatrixCoordinate(2, 2));
+        Set<MatrixCoordinate> expectedSaddlePoints = Collections.singleton(new MatrixCoordinate(2, 2));
 
         assertEquals(expectedSaddlePoints, matrix.getSaddlePoints());
     }
