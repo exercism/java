@@ -2,23 +2,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Bookstore {
+class BookStore {
 
   private static final int BOOK_PRICE = 8, MAX_GROUP_SIZE = 5;
 
   private static double[] DISCOUNT_TIERS = {0, 5, 10, 20, 25};
 
-  private List<Integer> books;
-
-  Bookstore(List<Integer> books) {
-    this.books = books;
+  double calculateBasketCost(final List<Integer> books) {
+    return calculateBasketCost(books, 0);
   }
 
-  double calculateTotalCost() {
-    return calculateTotalCost(this.books, 0);
-  }
-
-  private double calculateTotalCost(List<Integer> books, double priceSoFar) {
+  private double calculateBasketCost(final List<Integer> books, final double priceSoFar) {
     if (books.size() == 0) {
       return priceSoFar;
     }
@@ -38,8 +32,7 @@ class Bookstore {
         remainingBooks.remove(newGroupBook);
       }
 
-      double price = calculateTotalCost(remainingBooks, priceSoFar + costOfGroupSize(newGroupBooks.size()));
-
+      double price = calculateBasketCost(remainingBooks, priceSoFar + costOfGroupSize(newGroupBooks.size()));
       minPrice = Math.min(minPrice, price);
     }
 
