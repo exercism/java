@@ -2,11 +2,11 @@ final class MatrixCoordinate {
 
   private final int row;
 
-  private final int column;
+  private final int col;
 
-  MatrixCoordinate(final int row, final int column) {
+  MatrixCoordinate(final int row, final int col) {
     this.row = row;
-    this.column = column;
+    this.col = col;
   }
 
   // Generated equals and hashcode.
@@ -18,13 +18,13 @@ final class MatrixCoordinate {
 
     final MatrixCoordinate that = (MatrixCoordinate) o;
 
-    return row == that.row && column == that.column;
+    return row == that.row && col == that.col;
   }
 
   @Override
   public int hashCode() {
     int result = row;
-    result = 31 * result + column;
+    result = 31 * result + col;
     return result;
   }
 
