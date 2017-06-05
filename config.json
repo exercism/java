@@ -281,6 +281,11 @@
       "topics": []
     },
     {
+      "slug": "change",
+      "difficulty": 8,
+      "topics": []
+    },
+    {
       "slug": "palindrome-products",
       "difficulty": 8,
       "topics": []
@@ -297,11 +302,6 @@
     },
     {
       "slug": "clock",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "change",
       "difficulty": 1,
       "topics": []
     },
