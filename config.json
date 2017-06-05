@@ -276,6 +276,11 @@
       "topics": []
     },
     {
+      "slug": "book-store",
+      "difficulty": 8,
+      "topics": []
+    },
+    {
       "slug": "simple-cipher",
       "difficulty": 8,
       "topics": []
@@ -312,11 +317,6 @@
     },
     {
       "slug": "ocr-numbers",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "book-store",
       "difficulty": 1,
       "topics": []
     },
