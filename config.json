@@ -61,6 +61,11 @@
       "topics": []
     },
     {
+      "slug": "perfect-numbers",
+      "difficulty": 3,
+      "topics": []
+    },
+    {
       "slug": "sum-of-multiples",
       "difficulty": 4,
       "topics": []
@@ -276,7 +281,17 @@
       "topics": []
     },
     {
+      "slug": "book-store",
+      "difficulty": 8,
+      "topics": []
+    },
+    {
       "slug": "simple-cipher",
+      "difficulty": 8,
+      "topics": []
+    },
+    {
+      "slug": "change",
       "difficulty": 8,
       "topics": []
     },
@@ -296,27 +311,12 @@
       "topics": []
     },
     {
-      "slug": "perfect-numbers",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "change",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
       "slug": "list-ops",
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "ocr-numbers",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "book-store",
       "difficulty": 1,
       "topics": []
     },
