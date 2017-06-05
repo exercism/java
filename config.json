@@ -276,6 +276,11 @@
       "topics": []
     },
     {
+      "slug": "clock",
+      "difficulty": 7,
+      "topics": []
+    },
+    {
       "slug": "book-store",
       "difficulty": 8,
       "topics": []
@@ -303,11 +308,6 @@
     {
       "slug": "custom-set",
       "difficulty": 10,
-      "topics": []
-    },
-    {
-      "slug": "clock",
-      "difficulty": 1,
       "topics": []
     },
     {
