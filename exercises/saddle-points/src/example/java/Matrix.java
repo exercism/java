@@ -1,6 +1,7 @@
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 final class Matrix {
 
@@ -10,8 +11,8 @@ final class Matrix {
     this.values = values;
   }
 
-  List<MatrixCoordinate> getSaddlePoints() {
-    final List<MatrixCoordinate> result = new ArrayList<>();
+  Set<MatrixCoordinate> getSaddlePoints() {
+    final Set<MatrixCoordinate> result = new HashSet<>();
 
     if (values.isEmpty()) {
       return result;
@@ -38,7 +39,7 @@ final class Matrix {
     return values.stream()
         .map(row -> row.get(column))
         .min(Integer::compareTo)
-        .get();
+        .orElseThrow(() -> new IllegalArgumentException("Column cannot be empty"));
   }
 
 }

@@ -111,6 +111,11 @@
       "topics": []
     },
     {
+      "slug": "saddle-points",
+      "difficulty": 4,
+      "topics": []
+    },
+    {
       "slug": "diamond",
       "difficulty": 4,
       "topics": []
@@ -317,11 +322,6 @@
     },
     {
       "slug": "ocr-numbers",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "saddle-points",
       "difficulty": 1,
       "topics": []
     },
