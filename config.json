@@ -271,11 +271,6 @@
       "topics": []
     },
     {
-      "slug": "rectangles",
-      "difficulty": 7,
-      "topics": []
-    },
-    {
       "slug": "meetup",
       "difficulty": 7,
       "topics": []
@@ -288,6 +283,16 @@
     {
       "slug": "clock",
       "difficulty": 7,
+      "topics": []
+    },
+    {
+      "slug": "ocr-numbers",
+      "difficulty": 8,
+      "topics": []
+    },
+    {
+      "slug": "rectangles",
+      "difficulty": 8,
       "topics": []
     },
     {
@@ -322,11 +327,6 @@
     },
     {
       "slug": "list-ops",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "ocr-numbers",
       "difficulty": 1,
       "topics": []
     },
