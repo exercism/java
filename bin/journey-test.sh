@@ -59,7 +59,7 @@ clean() {
     rm -rf "${build_path}"
   fi
   cd exercises
-  gradle clean
+  "$EXECPATH"/gradlew clean
   cd ..
   echo "<<< clean()"
 }
@@ -227,12 +227,12 @@ solve_all_exercises() {
 
     pushd ${exercism_exercises_dir}/java/${exercise}
     # Check that tests compile before we strip @Ignore annotations
-    gradle compileTestJava
+    "$EXECPATH"/gradlew compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
     for testfile in `find . -name "*Test.java"`; do
       sed 's/@Ignore\(.*\)//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
     done
-    gradle test
+    "$EXECPATH"/gradlew test
     popd
 
     current_exercise_number=$((current_exercise_number + 1))
@@ -256,7 +256,6 @@ main() {
   local xapi_port=9292
 
   # fail fast if required binaries are not installed.
-  assert_installed "gradle"
   assert_installed "jq"
 
   clean "${build_dir}"

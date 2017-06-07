@@ -8,5 +8,4 @@ build/
 *.iml
 bin/configlet
 bin/configlet.exe
-gradle/
 /exercises/.nb-gradle/
