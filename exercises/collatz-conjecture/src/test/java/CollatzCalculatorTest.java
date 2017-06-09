@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 
 /*
- * version: 1.0.0
+ * version: 1.1.0
  */
 public class CollatzCalculatorTest {
 
@@ -36,6 +36,12 @@ public class CollatzCalculatorTest {
     @Test
     public void testCorrectNumberOfStepsWhenBothStepTypesAreNeeded() {
         assertEquals(9, collatzCalculator.computeStepCount(12));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAVeryLargeInput() {
+        assertEquals(152, collatzCalculator.computeStepCount(1000000));
     }
 
     @Ignore("Remove to run test")
