@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# This script is shared between the Java and Kotlin tracks.  If you make an update to this script on
+# on track, please create a companion PR to merge it in to the other.  Thank you!
+TRACK=java
+TRACK_REPO="x${TRACK}"
+TRACK_SRC_EXT="java"
+
 on_exit() {
   echo ">>> on_exit()"
   if [[ "$xapi_pid" != "" ]] ; then
@@ -16,7 +22,7 @@ assert_installed() {
 
   if [[ "`which $binary`" == "" ]]; then
     echo "${binary} not found; it is required to perform this test."
-    echo -e "Have you completed the setup instructions at https://github.com/exercism/xjava ?\n"
+    echo -e "Have you completed the setup instructions at https://github.com/exercism/${TRACK_REPO} ?\n"
     echo "PATH=${PATH}"
     echo "aborting."
     exit 1
@@ -35,7 +41,7 @@ assert_ruby_installed() {
   if [[ "${expected_ruby_ver}" != "" && "${current_ruby_ver}" != "${expected_ruby_ver}" ]]; then
     echo "${ruby_app_home} requires Ruby ${expected_ruby_ver}; current Ruby version is ${current_ruby_ver}."
     echo -e "Ruby used: `which ruby`.\n"
-    echo -e "Have you completed the setup instructions at https://github.com/exercism/xjava ?\n"
+    echo -e "Have you completed the setup instructions at https://github.com/exercism/${TRACK_REPO} ?\n"
     echo "PATH=${PATH}"
     echo "aborting."
     exit 1
@@ -141,7 +147,7 @@ make_local_trackler() {
   local xapi_home="$2"
   echo ">>> make_local_trackler(trackler=\"${trackler}\", xapi_home=\"${xapi_home}\")"
 
-  local xjava=$( pwd )
+  local track_root=$( pwd )
   pushd ${trackler}
 
   # Get the version of Trackler x-api is currently using
@@ -151,11 +157,11 @@ make_local_trackler() {
   git submodule init -- common
   git submodule update
 
-  # Bake in local copy of xjava; this is what we are testing.
-  rmdir tracks/java
-  mkdir -p tracks/java/exercises
-  cp ${xjava}/config.json tracks/java
-  cp -r ${xjava}/exercises tracks/java
+  # Bake in local copy of this track; this is what we are testing.
+  rmdir tracks/${TRACK}
+  mkdir -p tracks/${TRACK}/exercises
+  cp ${track_root}/config.json tracks/${TRACK}
+  cp -r ${track_root}/exercises tracks/${TRACK}
 
   gem install bundler
   bundle install
@@ -208,7 +214,7 @@ solve_all_exercises() {
   local exercism_configfile="$2"
   echo ">>> solve_all_exercises(exercism_exercises_dir=\"${exercism_exercises_dir}\", exercism_configfile=\"${exercism_configfile}\")"
 
-  local xjava=$( pwd )
+  local track_root=$( pwd )
   local exercism_cli="./exercism --config ${exercism_configfile}"
   local exercises=`cat config.json | jq '.exercises[].slug + " "' --join-output`
   local total_exercises=`cat config.json | jq '.exercises | length'`
@@ -222,15 +228,15 @@ solve_all_exercises() {
     echo "${current_exercise_number} of ${total_exercises} -- ${exercise}"
     echo "=================================================="
 
-    ${exercism_cli} fetch java $exercise
-    cp -R -H ${xjava}/exercises/${exercise}/src/example/java/* ${exercism_exercises_dir}/java/${exercise}/src/main/java/
+    ${exercism_cli} fetch ${TRACK} $exercise
+    cp -R -H ${track_root}/exercises/${exercise}/src/example/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise}/src/main/${TRACK}/
 
-    pushd ${exercism_exercises_dir}/java/${exercise}
+    pushd ${exercism_exercises_dir}/${TRACK}/${exercise}
     # Check that tests compile before we strip @Ignore annotations
     "$EXECPATH"/gradlew compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
-    for testfile in `find . -name "*Test.java"`; do
-      sed 's/@Ignore\(.*\)//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
+    for testfile in `find . -name "*Test.${TRACK_SRC_EXT}"`; do
+      sed 's/@Ignore(\(.*\))\{0,1\}//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
     done
     "$EXECPATH"/gradlew test
     popd
@@ -244,9 +250,9 @@ main() {
   # all functions assume current working directory is repository root.
   cd "${SCRIPTPATH}/.."
 
-  local xjava=$( pwd )
+  local track_root=$( pwd )
   local build_dir="build"
-  local build_path="${xjava}/${build_dir}"
+  local build_path="${track_root}/${build_dir}"
 
   local xapi_home="${build_path}/x-api"
   local trackler_home="${build_path}/trackler"
@@ -260,7 +266,7 @@ main() {
 
   clean "${build_dir}"
 
-  # Make a version of trackler that includes the source from this repo.
+  # Make a local version of trackler that includes the source from this repo.
   git_clone "x-api" "${xapi_home}"
   git_clone "trackler" "${trackler_home}"
   assert_ruby_installed "${trackler_home}"
