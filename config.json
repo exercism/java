@@ -482,14 +482,6 @@
     "strain",
     "trinary"
   ],
-  "ignored": [
-    "_template",
-    ".gradle",
-    "build",
-    "docs",
-    "gradle",
-    "scripts"
-  ],
   "foregone": [
     "leap",
     "grains",
