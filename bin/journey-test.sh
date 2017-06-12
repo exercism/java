@@ -236,7 +236,7 @@ solve_all_exercises() {
     "$EXECPATH"/gradlew compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
     for testfile in `find . -name "*Test.${TRACK_SRC_EXT}"`; do
-      sed 's/@Ignore(\(.*\))\{0,1\}//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
+      sed 's/@Ignore\(\(.*\)\)\{0,1\}//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
     done
     "$EXECPATH"/gradlew test
     popd
