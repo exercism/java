@@ -45,7 +45,7 @@ final class Scrabble {
     }
 
     private static int getScore(String input) {
-        if (input == null || input.trim().isEmpty()) {
+        if (input.trim().isEmpty()) {
             return 0;
         }
 
