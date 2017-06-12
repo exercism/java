@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 LATEST=https://github.com/exercism/configlet/releases/latest
 
