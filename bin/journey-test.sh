@@ -236,6 +236,9 @@ solve_all_exercises() {
     "$EXECPATH"/gradlew compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
     for testfile in `find . -name "*Test.${TRACK_SRC_EXT}"`; do
+      # Strip @Ignore annotations to ensure we run the tests (as delivered, all but the first is @Ignore'd).
+      # Note that unit-test.sh also strips @Ignore annotations via the Gradle task copyTestsFilteringIgnores.
+      # The stripping implementations here and in copyTestsFilteringIgnores should be kept consistent.
       sed 's/@Ignore\(\(.*\)\)\{0,1\}//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
     done
     "$EXECPATH"/gradlew test
