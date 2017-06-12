@@ -15,9 +15,9 @@ public class BinarySearchTest {
     public void findsAValueInAnArrayWithOneElement() {
         List<Integer> listOfUnitLength = Collections.singletonList(6);
 
-        BinarySearch<Integer> sut = new BinarySearch<>(listOfUnitLength);
+        BinarySearch<Integer> search = new BinarySearch<>(listOfUnitLength);
 
-        assertEquals(0, sut.indexOf(6));
+        assertEquals(0, search.indexOf(6));
     }
 
     @Ignore("Remove to run test")
@@ -27,9 +27,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedList);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
 
-        assertEquals(3, sut.indexOf(6));
+        assertEquals(3, search.indexOf(6));
     }
 
     @Ignore("Remove to run test")
@@ -39,9 +39,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedList);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
 
-        assertEquals(0, sut.indexOf(1));
+        assertEquals(0, search.indexOf(1));
     }
 
     @Ignore("Remove to run test")
@@ -51,9 +51,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedList);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
 
-        assertEquals(6, sut.indexOf(11));
+        assertEquals(6, search.indexOf(11));
     }
 
     @Ignore("Remove to run test")
@@ -63,9 +63,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedListOfOddLength);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedListOfOddLength);
 
-        assertEquals(9, sut.indexOf(144));
+        assertEquals(9, search.indexOf(144));
     }
 
     @Ignore("Remove to run test")
@@ -75,9 +75,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedListOfEvenLength);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedListOfEvenLength);
 
-        assertEquals(5, sut.indexOf(21));
+        assertEquals(5, search.indexOf(21));
     }
 
     @Ignore("Remove to run test")
@@ -87,9 +87,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedList);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
 
-        assertEquals(-1, sut.indexOf(7));
+        assertEquals(-1, search.indexOf(7));
     }
 
     @Ignore("Remove to run test")
@@ -99,9 +99,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedList);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
 
-        assertEquals(-1, sut.indexOf(0));
+        assertEquals(-1, search.indexOf(0));
     }
 
     @Ignore("Remove to run test")
@@ -111,9 +111,9 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> sut = new BinarySearch<>(sortedList);
+        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
 
-        assertEquals(-1, sut.indexOf(13));
+        assertEquals(-1, search.indexOf(13));
     }
 
     @Ignore("Remove to run test")
@@ -121,8 +121,8 @@ public class BinarySearchTest {
     public void nothingIsIncludedInAnEmptyArray() {
         List<Integer> emptyList = Collections.emptyList();
 
-        BinarySearch<Integer> sut = new BinarySearch<>(emptyList);
+        BinarySearch<Integer> search = new BinarySearch<>(emptyList);
 
-        assertEquals(-1, sut.indexOf(1));
+        assertEquals(-1, search.indexOf(1));
     }
 }
