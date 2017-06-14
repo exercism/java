@@ -215,6 +215,13 @@
       ]
     },
     {
+      "slug": "run-length-encoding",
+      "difficulty": 5,
+      "topics": [
+
+      ]
+    },
+    {
       "slug": "robot-name",
       "difficulty": 5,
       "topics": [
@@ -461,13 +468,6 @@
     },
     {
       "slug": "list-ops",
-      "difficulty": 1,
-      "topics": [
-
-      ]
-    },
-    {
-      "slug": "run-length-encoding",
       "difficulty": 1,
       "topics": [
 
