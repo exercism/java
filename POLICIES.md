@@ -42,6 +42,10 @@ References: [[1](https://github.com/exercism/xjava/issues/177#issuecomment-26129
 
 References: [[1](https://github.com/exercism/xjava/issues/178)]
 
+### Do not make user-facing classes `final`
+
+> Starter implementations and test classes should not include the `final` keyword in class declarations as it isn't strictly necessary and could be confusing to people unfamiliar with Java.
+
 ### Ignore noninitial tests
 
 > All but the first test in an exercise test suite should be annotated `@Ignore("Remove to run test")` (single test) or `@Ignore("Remove to run tests")` (parametrized test).
