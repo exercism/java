@@ -1,4 +1,4 @@
-final class Scrabble {
+class Scrabble {
 
     Scrabble(String word) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");

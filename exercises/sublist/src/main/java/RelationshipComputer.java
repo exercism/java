@@ -1,4 +1,4 @@
-final class RelationshipComputer<T> {
+class RelationshipComputer<T> {
 
 
 

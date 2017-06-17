@@ -1,4 +1,4 @@
-final class GridPosition {
+class GridPosition {
 
     final int x;
 

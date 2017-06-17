@@ -1,4 +1,4 @@
-public final class QueenAttackCalculator {
+public class QueenAttackCalculator {
 
 
 
