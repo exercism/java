@@ -1,4 +1,4 @@
-final class MatrixCoordinate {
+class MatrixCoordinate {
 
   private final int row;
 
