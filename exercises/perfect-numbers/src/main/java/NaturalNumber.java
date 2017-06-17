@@ -1,4 +1,4 @@
-final class NaturalNumber {
+class NaturalNumber {
 
 
 
