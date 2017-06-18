@@ -9,7 +9,7 @@ This is a guide/reference for maintainers of the Java track.
 
 ## Your Permissions 
 
-As a maintainer, you have write access to four repositories.  "write access" means you can: review, reject, accept and merge PRs; and push changes to these repos.  Despite having permissions to push directly, we tend to seek review of even our own PRs.
+As a maintainer, you have write access to three repositories.  "write access" means you can: review, reject, accept and merge PRs; and push changes to these repos.  Despite having permissions to push directly, we tend to seek review of even our own PRs.
 
 ### Track-specific
 
@@ -20,7 +20,6 @@ As a maintainer, you have write access to four repositories.  "write access" mea
 - [x-common](https://github.com/exercism/x-common) — the library of canonical exercises.
 - [discussions](https://github.com/exercism/discussions) — the place where project-wide conversations happen. 
   [issues sorted by most recently updated.](https://github.com/exercism/discussions/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
-- [todo](https://github.com/exercism/todo) — not really used... might just go away completely in the future.
 
 ## Maintainer Guides
 
