@@ -13,7 +13,7 @@ As a maintainer, you have write access to four repositories.  "write access" mea
 
 ### Track-specific
 
-- [xjava](https://github.com/exercism/xjava) — yeah... you know what this one is. :)
+- [java](https://github.com/exercism/java) — yeah... you know what this one is. :)
 
 ### Exercism-wide
 
@@ -31,7 +31,7 @@ As a maintainer, you have write access to four repositories.  "write access" mea
 ## The Project Board
 
 GitHub issues are great, but there's no way to easily set priorities.
-To do this, we're using a GitHub Project: https://github.com/exercism/xjava/projects/2.
+To do this, we're using a GitHub Project: https://github.com/exercism/java/projects/2.
 
 - **Epics** — issues that really represent bigger ideas.  These inspire creating a set of smaller issues to be elaborated...
 - **Icebox** — issues that just needs a little more detail to be "ready to play"...

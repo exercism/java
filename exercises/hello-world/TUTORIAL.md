@@ -1,5 +1,5 @@
 NOTE: You can also view the HTML version of this file here:
-https://github.com/exercism/xjava/blob/master/exercises/hello-world/TUTORIAL.md
+https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md
 
 * [Solving "Hello, World!"](#solving-hello-world)
  * [Reading Gradle output](#reading-gradle-output)
@@ -93,7 +93,7 @@ FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':test'.
-> There were failing tests. See the report at: file:///Users/jtigger/projects/exercism/xjava/build/exercism/java/hello-world/build/reports/tests/index.html
+> There were failing tests. See the report at: file:///Users/jtigger/projects/exercism/java/build/exercism/java/hello-world/build/reports/tests/index.html
 
 * Try:
 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
