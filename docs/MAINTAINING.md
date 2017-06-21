@@ -16,7 +16,7 @@ As a maintainer, you have write access to several repositories.  "write access" 
 
 ### Exercism-wide
 
-- [x-common](https://github.com/exercism/x-common) — the library of canonical exercises.
+- [problem-specifications](https://github.com/exercism/problem-specifications) — the library of canonical exercises.
 - [discussions](https://github.com/exercism/discussions) — the place where project-wide conversations happen. 
   [issues sorted by most recently updated.](https://github.com/exercism/discussions/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 - [docs](https://github.com/exercism/docs) - the place to find project-wide documentation.
