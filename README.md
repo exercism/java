@@ -34,7 +34,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    (see [exercism.io: Installing Java](http://exercism.io/languages/java/installing))
 -  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
-   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git basics doc](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/git-basics.md)) to:
+   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/git-basics.md)) to:
    * "fork" a repository on GitHub;
    - install `git`;
    - "clone" a copy of your fork;
@@ -59,7 +59,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 
 There are two objectives to the design of this build:
 
-1. when a problem is built from within the `exercism/java` repo, the tests run against the "example" code (i.e. when you, the contributor, are developing the exercise);
+1. when a problem is built from within the `exercism/java` repo (i.e. when you, the contributor, are developing the exercise), the tests run against the "example" code;
 2. when a problem is built outside the `exercism/java` repo (when a participant is solving the exercise), the tests run against the "main" code.
 
 This repo is a multi-project gradle build.
@@ -68,15 +68,15 @@ This repo is a multi-project gradle build.
 
 This is the top-level module, contained in the `exercises` directory.  It is a container for the problem sub-modules.
 
-  * it's `build.gradle` points the "main" sourceset to the example code.
-  * it's `settings.gradle` names each of the subprojects, one for each problem in the set.
+  * its `build.gradle` points the "main" sourceset to the example code.
+  * its `settings.gradle` names each of the subprojects, one for each problem in the set.
 
 ### The Problem Submodules
 
 The `exercises` subdirectory contains all of the problem submodules.
 Each problem/submodule is a subdirectory of the same name as its slug.
 
-  * it's `build.gradle` names dependencies required to work that problem.
+  * its `build.gradle` names dependencies required to work that problem.
 
 Each problem/submodule has three source sets:
 
