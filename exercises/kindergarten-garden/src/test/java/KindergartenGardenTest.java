@@ -126,7 +126,7 @@ public class KindergartenGardenTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void customStudentGardenFirstStudent() {
+    public void customStudentGardenFirstStudentInAlphabeticalOrder() {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Patricia";
         String plants = "VCRRGVRG\nRVGCCGCV";
@@ -140,7 +140,7 @@ public class KindergartenGardenTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void customStudentGardenSecondStudent() {
+    public void customStudentGardenSecondStudentInAlphabeticalOrder() {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Roger";
         String plants = "VCRRGVRG\nRVGCCGCV";
@@ -154,7 +154,7 @@ public class KindergartenGardenTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void customStudentGardenThirdStudent() {
+    public void customStudentGardenThirdStudentInAlphabeticalOrder() {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Samantha";
         String plants = "VCRRGVRG\nRVGCCGCV";
@@ -168,7 +168,7 @@ public class KindergartenGardenTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void customStudentGardenFourthStudent() {
+    public void customStudentGardenFourthStudentInAlphabeticalOrder() {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Xander";
         String plants = "VCRRGVRG\nRVGCCGCV";
