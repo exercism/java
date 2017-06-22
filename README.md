@@ -4,7 +4,7 @@ Source for Exercism Exercises in Java.
 
 ## Contributing Guide
 
-For general information about how to contribute to Exercism, please refer to the [Contributing Guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).
+For general information about how to contribute to Exercism, please refer to the [Contributing Guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks).
 
 ## Table of Contents
 
