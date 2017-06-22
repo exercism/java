@@ -9,6 +9,7 @@ repositories {
 dependencies {
     testCompile "junit:junit:4.12"
 }
+
 test {
     testLogging {
         exceptionFormat = 'full'

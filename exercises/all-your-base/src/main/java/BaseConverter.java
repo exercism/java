@@ -1,4 +1,4 @@
-final class BaseConverter {
+class BaseConverter {
 
 
 

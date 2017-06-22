@@ -1,4 +1,4 @@
-final class BracketChecker {
+class BracketChecker {
 
 
 

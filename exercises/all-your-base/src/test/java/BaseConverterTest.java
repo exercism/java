@@ -7,6 +7,9 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 
+/*
+ * version: 1.1.0
+ */
 public class BaseConverterTest {
 
     /*
@@ -197,6 +200,33 @@ public class BaseConverterTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testFirstBaseIsOne() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Bases must be at least 2.");
+
+        new BaseConverter(1, new int[]{});
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testFirstBaseIsZero() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Bases must be at least 2.");
+
+        new BaseConverter(0, new int[]{});
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testFirstBaseIsNegative() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Bases must be at least 2.");
+
+        new BaseConverter(-2, new int[]{});
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testNegativeDigit() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Digits may not be negative.");
@@ -215,15 +245,6 @@ public class BaseConverterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFirstBaseIsOne() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Bases must be at least 2.");
-
-        new BaseConverter(1, new int[]{});
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testSecondBaseIsOne() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
 
@@ -235,15 +256,6 @@ public class BaseConverterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFirstBaseIsZero() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Bases must be at least 2.");
-
-        new BaseConverter(0, new int[]{});
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testSecondBaseIsZero() {
         final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
 
@@ -251,15 +263,6 @@ public class BaseConverterTest {
         expectedException.expectMessage("Bases must be at least 2.");
 
         baseConverter.convertToBase(0);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testFirstBaseIsNegative() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Bases must be at least 2.");
-
-        new BaseConverter(-2, new int[]{});
     }
 
     @Ignore("Remove to run test")
