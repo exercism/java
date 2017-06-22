@@ -1,4 +1,4 @@
-public final class BoardCoordinate {
+public class BoardCoordinate {
 
 
 

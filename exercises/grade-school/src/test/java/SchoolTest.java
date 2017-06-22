@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -15,21 +16,26 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class SchoolTest {
-  private final School school = new School();
+  private School school;
+
+  @Before
+  public void setUp() {
+    school = new School();
+  }
 
   @Test
   public void startsWithNoStudents() {
     assertThat(school.numberOfStudents(), is(0));
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void addsStudents() {
     school.add("Aimee", 2);
     assertThat(school.grade(2), hasItem("Aimee"));
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
@@ -41,7 +47,7 @@ public class SchoolTest {
     assertThat(school.grade(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
@@ -54,13 +60,13 @@ public class SchoolTest {
     assertThat(school.grade(7), hasItem("Logan"));
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void getsStudentsInEmptyGrade() {
     assertTrue(school.grade(1).isEmpty());
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void sortsSchool() {
     school.add("Kyle", 4);
@@ -85,7 +91,7 @@ public class SchoolTest {
     }
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void modifyingFetchedGradeShouldNotModifyInternalDatabase() {
     String shouldNotBeAdded = "Should not be added to school";
@@ -103,7 +109,7 @@ public class SchoolTest {
     assertThat(school.grade(grade), not(hasItem(shouldNotBeAdded)));
   }
 
-  @Ignore
+  @Ignore("Remove to run test")
   @Test
   public void modifyingSortedStudentsShouldNotModifyInternalDatabase() {
     int grade = 2;
@@ -120,7 +126,7 @@ public class SchoolTest {
       // Such as UnsupportedOperationException when an unmodifiableMap is used
     }
 
-    assertThat(school.studentsByGradeAlphabetical().get(grade), 
+    assertThat(school.studentsByGradeAlphabetical().get(grade),
       not(hasItem(studentWhichShouldNotBeAdded)));
   }
 }

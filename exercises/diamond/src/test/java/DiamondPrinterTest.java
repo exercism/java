@@ -1,4 +1,5 @@
 import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -8,27 +9,37 @@ import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public final class DiamondPrinterTest {
+/*
+ * version: 1.0.0
+ */
+public class DiamondPrinterTest {
+
+    private DiamondPrinter diamondPrinter;
+
+    @Before
+    public void setUp() {
+        diamondPrinter = new DiamondPrinter();
+    }
 
     @Test
     public void testOneByOneDiamond() {
-        List<String> output = new DiamondPrinter().printToList('A');
+        List<String> output = diamondPrinter.printToList('A');
         assertThat(output, is(singletonList("A")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testTwoByTwoDiamond() {
-        List<String> output = new DiamondPrinter().printToList('B');
+        List<String> output = diamondPrinter.printToList('B');
         assertThat(output, is(asList(" A ",
                                      "B B",
                                      " A ")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThreeByThreeDiamond() {
-        List<String> output = new DiamondPrinter().printToList('C');
+        List<String> output = diamondPrinter.printToList('C');
         assertThat(output, is(asList("  A  ",
                                      " B B ",
                                      "C   C",
@@ -36,10 +47,10 @@ public final class DiamondPrinterTest {
                                      "  A  ")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testFiveByFiveDiamond() {
-        List<String> output = new DiamondPrinter().printToList('E');
+        List<String> output = diamondPrinter.printToList('E');
         assertThat(output, is(asList("    A    ",
                                      "   B B   ",
                                      "  C   C  ",
@@ -51,10 +62,10 @@ public final class DiamondPrinterTest {
                                      "    A    ")));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testFullDiamond() {
-        List<String> output = new DiamondPrinter().printToList('Z');
+        List<String> output = diamondPrinter.printToList('Z');
         assertThat(output, is(asList("                         A                         ",
                                      "                        B B                        ",
                                      "                       C   C                       ",

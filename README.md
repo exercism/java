@@ -1,10 +1,10 @@
-# xJava [![Build Status](https://travis-ci.org/exercism/xjava.svg?branch=master)](https://travis-ci.org/exercism/xjava) [![Join the chat at https://gitter.im/exercism/xjava](https://badges.gitter.im/exercism/xjava.svg)](https://gitter.im/exercism/xjava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# java [![Build Status](https://travis-ci.org/exercism/java.svg?branch=master)](https://travis-ci.org/exercism/java) [![Join the chat at https://gitter.im/exercism/xjava](https://badges.gitter.im/exercism/java.svg)](https://gitter.im/exercism/xjava?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Source for Exercism Exercises in Java.
 
 ## Contributing Guide
 
-For general information about how to contribute to Exercism, please refer to the [Contributing Guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).
+For general information about how to contribute to Exercism, please refer to the [Contributing Guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks).
 
 ## Table of Contents
 
@@ -32,13 +32,13 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 1. **Ensure you have the basic Java tooling installed:**  JDK 1.8+, an editor and Gradle 2.x.
 
    (see [exercism.io: Installing Java](http://exercism.io/languages/java/installing))
--  **Setup a branch on a fork of [exercism/xjava](https://github.com/exercism/xjava) on your computer.**
+-  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
-   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with [Exercism Contributing Guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#git-basics)) to:
+   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/git-basics.md)) to:
    * "fork" a repository on GitHub;
    - install `git`;
    - "clone" a copy of your fork;
-   - configure an "upstream remote" (in this case, `exercism/xjava`);
+   - configure an "upstream remote" (in this case, `exercism/java`);
    - create a branch to house your work
 -  **Write the codes.**  Do your work on that branch you just created.
 
@@ -52,15 +52,15 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    $ git push
    ```
 
-   [Exercism Contributing Guide :: Commit Messages](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#commit-messages) provides practical advice on crafting meaningful commit messages.
+   The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
 -  **Verify that your work passes all tests.**  When you create a pull request (PR), GitHub triggers a build on Travis CI.  Your PR will not be merged unless those tests pass.
 
 ## Getting Familiar With the Codebase
 
 There are two objectives to the design of this build:
 
-1. when a problem is built from within the xjava repo, the tests run against the "example" code (i.e. when you, the contributor, are developing the exercise);
-2. when a problem is built outside the xjava repo (when a participant is solving the exercise), the tests run against the "main" code.
+1. when a problem is built from within the `exercism/java` repo (i.e. when you, the contributor, are developing the exercise), the tests run against the "example" code;
+2. when a problem is built outside the `exercism/java` repo (when a participant is solving the exercise), the tests run against the "main" code.
 
 This repo is a multi-project gradle build.
 
@@ -68,15 +68,15 @@ This repo is a multi-project gradle build.
 
 This is the top-level module, contained in the `exercises` directory.  It is a container for the problem sub-modules.
 
-  * it's `build.gradle` points the "main" sourceset to the example code.
-  * it's `settings.gradle` names each of the subprojects, one for each problem in the set.
+  * its `build.gradle` points the "main" sourceset to the example code.
+  * its `settings.gradle` names each of the subprojects, one for each problem in the set.
 
 ### The Problem Submodules
 
 The `exercises` subdirectory contains all of the problem submodules.
 Each problem/submodule is a subdirectory of the same name as its slug.
 
-  * it's `build.gradle` names dependencies required to work that problem.
+  * its `build.gradle` names dependencies required to work that problem.
 
 Each problem/submodule has three source sets:
 
@@ -109,18 +109,11 @@ and if you review the logs of your x-api, you'll find:
 2015-09-06 15:21:01 - JSON::GeneratorError - source sequence is illegal/malformed utf-8:
 ```
 
-This is because some files generated by the build can't be served from the x-api.  This is by design: the CLI does not serve binaries.  To fix this, simply make sure you do a clean in your `xjava` repo before you fetch:
+This is because some files generated by the build can't be served from the x-api.  This is by design: the CLI does not serve binaries.  To fix this, simply make sure you do a clean in your `exercism/java` repo before you fetch:
 
 ```
-cd ~/workspace/exercism/xjava/exercises
+cd ~/workspace/exercism/java/exercises
 gradle clean
 cd ~/workspace/exercism/exercises
 exercism fetch java bob
 ```
-
-
-# License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Katrina Owen, _@kytrinyx.com

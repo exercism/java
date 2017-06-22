@@ -3,70 +3,56 @@ import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
+/*
+ * version: 1.1.0
+ */
 public class AcronymTest {
-
 
     @Test
     public void fromTitleCasedPhrases() {
         final String phrase = "Portable Network Graphics";
         final String expected = "PNG";
-        assertEquals(expected, Acronym.generate(phrase));
+        assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void fromOtherTitleCasedPhrases() {
         final String phrase = "Ruby on Rails";
         final String expected = "ROR";
-        assertEquals(expected, Acronym.generate(phrase));
+        assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore
-    @Test
-    public void fromInconsistentlyCasedPhrases() {
-        final String phrase = "HyperText Markup Language";
-        final String expected = "HTML";
-        assertEquals(expected, Acronym.generate(phrase));
-    }
-
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void fromPhrasesWithPunctuation() {
         final String phrase = "First In, First Out";
         final String expected = "FIFO";
-        assertEquals(expected, Acronym.generate(phrase));
+        assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void fromOtherPhrasesWithPunctuation() {
         final String phrase = "PHP: Hypertext Preprocessor";
         final String expected = "PHP";
-        assertEquals(expected, Acronym.generate(phrase));
+        assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void fromPhrasesWithNonAcronymAllCapsWord() {
         final String phrase = "GNU Image Manipulation Program";
         final String expected = "GIMP";
-        assertEquals(expected, Acronym.generate(phrase));
+        assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void fromPhrasesWithPunctuationAndSentenceCasing() {
         final String phrase = "Complementary metal-oxide semiconductor";
         final String expected = "CMOS";
-        assertEquals(expected, Acronym.generate(phrase));
-    }
-
-    @Ignore
-    @Test
-    public void fromPhraseWithSingleLetterWord() {
-        final String phrase = "Cat in a Hat";
-        final String expected = "CIAH";
-        assertEquals(expected, Acronym.generate(phrase));
+        assertEquals(expected, new Acronym(phrase).get());
     }
 
 }

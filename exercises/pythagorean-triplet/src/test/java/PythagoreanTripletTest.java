@@ -14,37 +14,37 @@ public class PythagoreanTripletTest {
 
     @Test
     public void shouldCalculateSum() {
-        PythagoreanTriplet sut = new PythagoreanTriplet(3, 4, 5);
+        PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
         final int expected = 12;
-        final int actual = sut.calculateSum();
+        final int actual = triplet.calculateSum();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldCalculateProduct() {
-        PythagoreanTriplet sut = new PythagoreanTriplet(3, 4, 5);
+        PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
         final long expected = 60l;
-        final long actual = sut.calculateProduct();
+        final long actual = triplet.calculateProduct();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void testIsPythagoreanOK() {
-        PythagoreanTriplet sut = new PythagoreanTriplet(3, 4, 5);
-        assertTrue(sut.isPythagorean());
+        PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
+        assertTrue(triplet.isPythagorean());
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void testIsPythagoreanFail() {
-        PythagoreanTriplet sut = new PythagoreanTriplet(5, 6, 7);
-        assertFalse(sut.isPythagorean());
+        PythagoreanTriplet triplet = new PythagoreanTriplet(5, 6, 7);
+        assertFalse(triplet.isPythagorean());
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMakeTripletsUpToTen() {
         final List<Long> actual
                 = PythagoreanTriplet
@@ -60,7 +60,7 @@ public class PythagoreanTripletTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMakeTripletsElevenToTwenty() {
         final List<Long> actual
                 = PythagoreanTriplet
@@ -77,7 +77,7 @@ public class PythagoreanTripletTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void shouldMakeTripletsAndFilterOnSum() {
         final List<Long> actual
                 = PythagoreanTriplet

@@ -7,7 +7,7 @@ public class Atbash {
     private static final String PLAIN = "abcdefghijklmnopqrstuvwxyz";
     private static final String CIPHER = "zyxwvutsrqponmlkjihgfedcba";
 
-    public static String encode(String input) {
+    public String encode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
         String cyphered = "";
 
@@ -18,7 +18,7 @@ public class Atbash {
         return splitIntoFiveLetterWords(cyphered);
     }
 
-    public static String decode(String input) {
+    public String decode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
         String deciphered = "";
 
@@ -29,7 +29,7 @@ public class Atbash {
         return deciphered;
     }
 
-    private static String stripInvalidCharacters(String input) {
+    private String stripInvalidCharacters(String input) {
         String filteredValue = "";
 
         for (char c : input.toCharArray()) {
@@ -41,13 +41,13 @@ public class Atbash {
         return filteredValue;
     }
 
-    private static char applyCipher(char input) {
+    private char applyCipher(char input) {
         int idx = PLAIN.indexOf(input);
 
         return idx >= 0 ? CIPHER.toCharArray()[idx] : input;
     }
 
-    private static String splitIntoFiveLetterWords(String value) {
+    private String splitIntoFiveLetterWords(String value) {
         List<String> words = new ArrayList<>();
 
         for (int i = 0; i < value.length(); i += GROUP_SIZE) {

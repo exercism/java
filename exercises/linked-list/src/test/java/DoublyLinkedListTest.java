@@ -1,68 +1,78 @@
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class DoublyLinkedListTest {
-    private DoublyLinkedList<Integer> subject;
-
-    @Before
-    public void setUp() {
-        subject = new DoublyLinkedList<>();
-    }
-
 
     @Test
     public void testPushPop() {
-        subject.push(10);
-        subject.push(20);
-        assertThat(subject.pop(), is(20));
-        assertThat(subject.pop(), is(10));
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        list.push(10);
+        list.push(20);
+
+        assertThat(list.pop(), is(20));
+        assertThat(list.pop(), is(10));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testPushShift() {
-        subject.push(10);
-        subject.push(20);
-        assertThat(subject.shift(), is(10));
-        assertThat(subject.shift(), is(20));
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+
+        list.push("10");
+        list.push("20");
+
+        assertThat(list.shift(), is("10"));
+        assertThat(list.shift(), is("20"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testUnshiftShift() {
-        subject.unshift(10);
-        subject.unshift(20);
-        assertThat(subject.shift(), is(20));
-        assertThat(subject.shift(), is(10));
+        DoublyLinkedList<Character> list = new DoublyLinkedList<>();
+
+        list.unshift('1');
+        list.unshift('2');
+
+        assertThat(list.shift(), is('2'));
+        assertThat(list.shift(), is('1'));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testUnshiftPop() {
-        subject.unshift(10);
-        subject.unshift(20);
-        assertThat(subject.pop(), is(10));
-        assertThat(subject.pop(), is(20));
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        list.unshift(10);
+        list.unshift(20);
+
+        assertThat(list.pop(), is(10));
+        assertThat(list.pop(), is(20));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testExample() {
-        subject.push(10);
-        subject.push(20);
-        assertThat(subject.pop(), is(20));
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
-        subject.push(30);
-        assertThat(subject.shift(), is(10));
+        list.push("ten");
+        list.push("twenty");
 
-        subject.unshift(40);
-        subject.push(50);
-        assertThat(subject.shift(), is(40));
-        assertThat(subject.pop(), is(50));
-        assertThat(subject.shift(), is(30));
+        assertThat(list.pop(), is("twenty"));
+
+        list.push("thirty");
+
+        assertThat(list.shift(), is("ten"));
+
+        list.unshift("forty");
+        list.push("fifty");
+
+        assertThat(list.shift(), is("forty"));
+        assertThat(list.pop(), is("fifty"));
+        assertThat(list.shift(), is("thirty"));
     }
+
 }

@@ -6,7 +6,7 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public final class QueenAttackCalculatorTest {
+public class QueenAttackCalculatorTest {
 
     /*
      * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
@@ -23,7 +23,7 @@ public final class QueenAttackCalculatorTest {
         assertFalse(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnTheSameRank() {
         final QueenAttackCalculator calculator
@@ -32,7 +32,7 @@ public final class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnTheSameFile() {
         final QueenAttackCalculator calculator
@@ -41,7 +41,7 @@ public final class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnFirstDiagonal() {
         final QueenAttackCalculator calculator
@@ -50,7 +50,7 @@ public final class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnSecondDiagonal() {
         final QueenAttackCalculator calculator
@@ -59,7 +59,7 @@ public final class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnThirdDiagonal() {
         final QueenAttackCalculator calculator
@@ -68,7 +68,7 @@ public final class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnFourthDiagonal() {
         final QueenAttackCalculator calculator
@@ -77,7 +77,7 @@ public final class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCoordinateWithNegativeRankNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
@@ -86,7 +86,7 @@ public final class QueenAttackCalculatorTest {
         new BoardCoordinate(-2, 2);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCoordinateWithRankGreaterThan7NotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
@@ -95,7 +95,7 @@ public final class QueenAttackCalculatorTest {
         new BoardCoordinate(8, 4);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCoordinateWithNegativeFileNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
@@ -104,7 +104,7 @@ public final class QueenAttackCalculatorTest {
         new BoardCoordinate(2, -2);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCoordinateWithFileGreaterThan7NotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
@@ -113,7 +113,7 @@ public final class QueenAttackCalculatorTest {
         new BoardCoordinate(4, 8);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testNullCoordinateNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
@@ -122,7 +122,7 @@ public final class QueenAttackCalculatorTest {
         new QueenAttackCalculator(null, new BoardCoordinate(0, 7));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testQueensMustNotOccupyTheSameSquare() {
         expectedException.expect(IllegalArgumentException.class);

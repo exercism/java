@@ -1,5 +1,5 @@
 public class RnaTranscription {
-    public String ofDna(String dnaString) {
-        throw new UnsupportedOperationException("Method has not been implemented yet.");
+    public String transcribe(String dnaStrand) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }

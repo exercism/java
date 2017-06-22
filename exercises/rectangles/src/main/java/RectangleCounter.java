@@ -1,4 +1,4 @@
-final class RectangleCounter {
+class RectangleCounter {
 
 
 

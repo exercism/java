@@ -17,7 +17,7 @@ public class AccumulateTest {
         assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x * x));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void accumulateSquares() {
         List<Integer> input = Arrays.asList(1, 2, 3);
@@ -25,7 +25,7 @@ public class AccumulateTest {
         assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x * x));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void accumulateUpperCases() {
         List<String> input = Arrays.asList("hello", "world");
@@ -33,7 +33,7 @@ public class AccumulateTest {
         assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x.toUpperCase()));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void accumulateReversedStrings() {
         List<String> input = Arrays.asList("the quick brown fox etc".split(" "));
@@ -45,7 +45,7 @@ public class AccumulateTest {
         return new StringBuilder(input).reverse().toString();
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void accumulateWithinAccumulate() {
         List<String> input1 = Arrays.asList("a", "b", "c");

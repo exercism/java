@@ -12,7 +12,7 @@ Choose your operating system:
 * [Linux](#linux)
 
 ... or ...
-* if you prefer to not use a package maanger, you can [install manually](#install-manually).
+* if you prefer to not use a package manager, you can [install manually](#install-manually).
 
 Optionally, you can also use a [Java IDE](#java-ides).
 
@@ -42,7 +42,7 @@ Open an administrative command prompt.  (If you need assistance opening an admin
    ...
    ```
 
-We recommend closing the administrative command prompt and opening a new command prompt -- you do not require administrator priviledges to practice Exercism exercises.
+We recommend closing the administrative command prompt and opening a new command prompt -- you do not require administrator privileges to practice Exercism exercises.
 
 You now are ready to get started with the Java track of Exercism!
 

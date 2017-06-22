@@ -19,7 +19,7 @@ public class NucleotideTest {
         assertThat(dna.count('A'), is(0));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
         DNA dna = new DNA("");
@@ -33,14 +33,14 @@ public class NucleotideTest {
         ));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRepetitiveCytosineGetsCounted() {
         DNA dna = new DNA("CCCCC");
         assertThat(dna.count('C'), is(5));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testRepetitiveSequenceWithOnlyGuanine() {
         DNA dna = new DNA("GGGGGGGG");
@@ -54,14 +54,14 @@ public class NucleotideTest {
         ));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCountsOnlyThymine() {
         DNA dna = new DNA("GGGGGTAACCCGG");
         assertThat(dna.count('T'), is(1));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCountsANucleotideOnlyOnce() {
         DNA dna = new DNA("CGATTGGG");
@@ -69,7 +69,7 @@ public class NucleotideTest {
         assertThat(dna.count('T'), is(2));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDnaCountsDoNotChangeAfterCountingAdenine() {
         DNA dna = new DNA("GATTACA");
@@ -84,7 +84,7 @@ public class NucleotideTest {
         ));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testValidatesNucleotides() {
         thrown.expect(IllegalArgumentException.class);
@@ -92,7 +92,7 @@ public class NucleotideTest {
         dna.count('X');
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testCountsAllNucleotides() {
         String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";

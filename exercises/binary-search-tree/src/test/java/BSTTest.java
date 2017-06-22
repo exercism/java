@@ -11,26 +11,26 @@ public class BSTTest {
 
     @Test
     public void dataIsRetained() {
-        BST<Integer> sut = new BST();
+        BST<Integer> bst = new BST();
         final int actual = 4;
-        sut.insert(actual);
-        final BST.Node<Integer> root = sut.getRoot();
+        bst.insert(actual);
+        final BST.Node<Integer> root = bst.getRoot();
         assertNotNull(root);
         final int expected = root.getData();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void insertsLess() {
-        BST<Integer> sut = new BST();
+        BST<Integer> bst = new BST();
         final int expectedRoot = 4;
         final int expectedLeft = 2;
 
-        sut.insert(expectedRoot);
-        sut.insert(expectedLeft);
+        bst.insert(expectedRoot);
+        bst.insert(expectedLeft);
 
-        final BST.Node<Integer> root = sut.getRoot();
+        final BST.Node<Integer> root = bst.getRoot();
         assertNotNull(root);
         final BST.Node<Integer> left = root.getLeft();
         assertNotNull(left);
@@ -42,16 +42,16 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void insertsSame() {
-        BST<Integer> sut = new BST();
+        BST<Integer> bst = new BST();
         final int expectedRoot = 4;
         final int expectedLeft = 4;
 
-        sut.insert(expectedRoot);
-        sut.insert(expectedLeft);
+        bst.insert(expectedRoot);
+        bst.insert(expectedLeft);
 
-        final BST.Node<Integer> root = sut.getRoot();
+        final BST.Node<Integer> root = bst.getRoot();
         assertNotNull(root);
         final BST.Node<Integer> left = root.getLeft();
         assertNotNull(left);
@@ -63,16 +63,16 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void insertsRight() {
-        BST<Integer> sut = new BST();
+        BST<Integer> bst = new BST();
         final int expectedRoot = 4;
         final int expectedRight = 5;
 
-        sut.insert(expectedRoot);
-        sut.insert(expectedRight);
+        bst.insert(expectedRoot);
+        bst.insert(expectedRight);
 
-        final BST.Node<Integer> root = sut.getRoot();
+        final BST.Node<Integer> root = bst.getRoot();
         assertNotNull(root);
         final BST.Node<Integer> right = root.getRight();
         assertNotNull(right);
@@ -84,9 +84,9 @@ public class BSTTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void createsComplexTree() {
-        BST<Integer> sut = new BST<>();
+        BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
                 Arrays.asList(4, 2, 6, 1, 3, 5, 7)
         );
@@ -94,60 +94,60 @@ public class BSTTest {
         List<Integer> treeData = Collections.unmodifiableList(
                 Arrays.asList(4, 2, 6, 1, 3, 7, 5)
         );
-        treeData.forEach(value -> sut.insert(value));
+        treeData.forEach(bst::insert);
 
-        List<Integer> actual = sut.getAsLevelOrderList();
+        List<Integer> actual = bst.getAsLevelOrderList();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void sortsSingleElement() {
-        BST<Integer> sut = new BST<>();
+        BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
-                Arrays.asList(4)
+                Collections.singletonList(4)
         );
 
-        sut.insert(4);
+        bst.insert(4);
 
-        List<Integer> actual = sut.getAsSortedList();
+        List<Integer> actual = bst.getAsSortedList();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void sortsCollectionOfTwoIfSecondInsertedIsSmallerThanFirst() {
-        BST<Integer> sut = new BST<>();
+        BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
                 Arrays.asList(2, 4)
         );
 
-        sut.insert(4);
-        sut.insert(2);
+        bst.insert(4);
+        bst.insert(2);
 
-        List<Integer> actual = sut.getAsSortedList();
+        List<Integer> actual = bst.getAsSortedList();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void sortsCollectionOfTwoIfSecondInsertedIsBiggerThanFirst() {
-        BST<Integer> sut = new BST<>();
+        BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
                 Arrays.asList(4, 5)
         );
 
-        sut.insert(4);
-        sut.insert(5);
+        bst.insert(4);
+        bst.insert(5);
 
-        List<Integer> actual = sut.getAsSortedList();
+        List<Integer> actual = bst.getAsSortedList();
         assertEquals(expected, actual);
     }
 
     @Test
-    @Ignore
+    @Ignore("Remove to run test")
     public void iteratesOverComplexTree() {
-        BST<Integer> sut = new BST<>();
+        BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
                 Arrays.asList(1, 2, 3, 4, 5, 6, 7)
         );
@@ -155,9 +155,9 @@ public class BSTTest {
         List<Integer> treeData = Collections.unmodifiableList(
                 Arrays.asList(4, 2, 1, 3, 6, 7, 5)
         );
-        treeData.forEach(value -> sut.insert(value));
+        treeData.forEach(bst::insert);
 
-        List<Integer> actual = sut.getAsSortedList();
+        List<Integer> actual = bst.getAsSortedList();
         assertEquals(expected, actual);
     }
 }

@@ -1,5 +1,5 @@
 public class HelloWorld {
     public static String hello(String name) {
-        return null;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }

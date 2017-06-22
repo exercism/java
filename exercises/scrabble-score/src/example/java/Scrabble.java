@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class Scrabble {
+final class Scrabble {
 
     private String word;
 
@@ -36,18 +36,16 @@ public class Scrabble {
         letterScores.put('z', 10);
     }
 
-    private Object score;
-
-    public Scrabble(String word) {
+    Scrabble(String word) {
         this.word = word;
     }
 
-    public int getScore() {
+    int getScore() {
         return getScore(word);
     }
 
-    public static int getScore(String input) {
-        if (input == null || input.trim().isEmpty()) {
+    private static int getScore(String input) {
+        if (input.trim().isEmpty()) {
             return 0;
         }
 
@@ -59,4 +57,5 @@ public class Scrabble {
 
         return score;
     }
+
 }

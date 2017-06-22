@@ -1,4 +1,4 @@
-final class DiamondPrinter {
+class DiamondPrinter {
 
 
 

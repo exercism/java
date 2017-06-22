@@ -1,86 +1,93 @@
 import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LuhnValidatorTest {
+    private LuhnValidator luhnValidator;
+
+    @Before
+    public void setUp() {
+      luhnValidator = new LuhnValidator();
+    }
 
     @Test
     public void testThatSingleDigitStringIsNotValid() {
-        assertFalse(new LuhnValidator().isValid("1"));
+        assertFalse(luhnValidator.isValid("1"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatTheStringConsistingOfASingleZeroIsInvalid() {
-        assertFalse(new LuhnValidator().isValid("0"));
+        assertFalse(luhnValidator.isValid("0"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatASimpleValidNumberIsIdentifiedAsValid() {
-        assertTrue(new LuhnValidator().isValid(" 5 9 "));
+        assertTrue(luhnValidator.isValid(" 5 9 "));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatAValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV1() {
-        assertTrue(new LuhnValidator().isValid("046 454 286"));
+        assertTrue(luhnValidator.isValid("046 454 286"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatAValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV2() {
-        assertTrue(new LuhnValidator().isValid("055 444 285"));
+        assertTrue(luhnValidator.isValid("055 444 285"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatAnInvalidCanadianSocialInsuranceNumberIsIdentifiedAsInvalid() {
-        assertFalse(new LuhnValidator().isValid("046 454 287"));
+        assertFalse(luhnValidator.isValid("046 454 287"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatAnInvalidCreditCardIsIdentifiedAsInvalid() {
-        assertFalse(new LuhnValidator().isValid("8273 1232 7352 0569"));
+        assertFalse(luhnValidator.isValid("8273 1232 7352 0569"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatAddingANonDigitCharacterToAValidStringInvalidatesTheString() {
-        assertFalse(new LuhnValidator().isValid("046a 454 286"));
+        assertFalse(luhnValidator.isValid("046a 454 286"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatStringContainingPunctuationIsInvalid() {
-        assertFalse(new LuhnValidator().isValid("055-444-285"));
+        assertFalse(luhnValidator.isValid("055-444-285"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatStringContainingSymbolsIsInvalid() {
-        assertFalse(new LuhnValidator().isValid("055£ 444$ 285"));
+        assertFalse(luhnValidator.isValid("055£ 444$ 285"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatTheStringConsistingOfASpaceAndASingleZeroIsInvalid() {
-        assertFalse(new LuhnValidator().isValid(" 0"));
+        assertFalse(luhnValidator.isValid(" 0"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatStringContainingMultipleZerosIsValid() {
-        assertTrue(new LuhnValidator().isValid(" 00000"));
+        assertTrue(luhnValidator.isValid(" 00000"));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatDoublingNineIsHandledCorrectly() {
-        assertTrue(new LuhnValidator().isValid("091"));
+        assertTrue(luhnValidator.isValid("091"));
     }
 
 }

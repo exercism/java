@@ -1,5 +1,5 @@
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -20,14 +20,14 @@ public class AtbashTest {
 
         @Parameters(name = "{index}: expected plaintext \"{0}\" to encode to ciphertext \"{1}\".")
         public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][] {
-                    { "no", "ml" },
-                    { "yes", "bvh" },
-                    { "OMG", "lnt" },
-                    { "mindblowingly", "nrmwy oldrm tob" },
-                    { "Testing, 1 2 3, testing.", "gvhgr mt123 gvhgr mt" },
-                    { "Truth is fiction.", "gifgs rhurx grlm" },
-                    { "The quick brown fox jumps over the lazy dog.", "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt" }
+            return Arrays.asList(new Object[][]{
+                    {"no", "ml"},
+                    {"yes", "bvh"},
+                    {"OMG", "lnt"},
+                    {"mindblowingly", "nrmwy oldrm tob"},
+                    {"Testing, 1 2 3, testing.", "gvhgr mt123 gvhgr mt"},
+                    {"Truth is fiction.", "gifgs rhurx grlm"},
+                    {"The quick brown fox jumps over the lazy dog.", "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"}
             });
         }
 
@@ -37,9 +37,9 @@ public class AtbashTest {
         }
 
 
-    @Test
+        @Test
         public void test() {
-            assertEquals(ciphertext, Atbash.encode(plaintext));
+            assertEquals(ciphertext, new Atbash().encode(plaintext));
         }
     }
 
@@ -50,11 +50,11 @@ public class AtbashTest {
 
         @Parameters(name = "{index}: expected ciphertext \"{0}\" to decode to plaintext \"{1}\".")
         public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][] {
-                    { "vcvix rhn", "exercism" },
-                    { "zmlyh gzxov rhlug vmzhg vkkrm thglm v", "anobstacleisoftenasteppingstone" },
-                    { "gvhgr mt123 gvhgr mt", "testing123testing" },
-                    { "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt", "thequickbrownfoxjumpsoverthelazydog" }
+            return Arrays.asList(new Object[][]{
+                    {"vcvix rhn", "exercism"},
+                    {"zmlyh gzxov rhlug vmzhg vkkrm thglm v", "anobstacleisoftenasteppingstone"},
+                    {"gvhgr mt123 gvhgr mt", "testing123testing"},
+                    {"gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt", "thequickbrownfoxjumpsoverthelazydog"}
             });
         }
 
@@ -63,10 +63,10 @@ public class AtbashTest {
             this.plaintext = plaintext;
         }
 
-        @Ignore
-    @Test
+        @Ignore("Remove to run tests")
+        @Test
         public void test() {
-            assertEquals(plaintext, Atbash.decode(ciphertext));
+            assertEquals(plaintext, new Atbash().decode(ciphertext));
         }
     }
 }

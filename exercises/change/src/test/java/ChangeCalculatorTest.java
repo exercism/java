@@ -8,7 +8,7 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
-public final class ChangeCalculatorTest {
+public class ChangeCalculatorTest {
 
     /*
      * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
@@ -26,7 +26,7 @@ public final class ChangeCalculatorTest {
                 changeCalculator.computeMostEfficientChange(25));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testChangeThatMustBeGivenInMultipleCoins() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 25, 100));
@@ -36,7 +36,7 @@ public final class ChangeCalculatorTest {
                 changeCalculator.computeMostEfficientChange(15));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
     public void testLilliputianCurrencyForWhichGreedyAlgorithmFails() {
@@ -47,7 +47,7 @@ public final class ChangeCalculatorTest {
                 changeCalculator.computeMostEfficientChange(23));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
     public void testLowerElbonianCurrencyForWhichGreedyAlgorithmFails() {
@@ -58,7 +58,7 @@ public final class ChangeCalculatorTest {
                 changeCalculator.computeMostEfficientChange(63));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testLargeAmountOfChange() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 2, 5, 10, 20, 50, 100));
@@ -68,7 +68,7 @@ public final class ChangeCalculatorTest {
                 changeCalculator.computeMostEfficientChange(999));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testZeroChange() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 21, 25));
@@ -78,7 +78,7 @@ public final class ChangeCalculatorTest {
                 changeCalculator.computeMostEfficientChange(0));
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testChangeLessThanSmallestCoinInCurrencyCannotBeRepresented() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
@@ -89,7 +89,7 @@ public final class ChangeCalculatorTest {
         changeCalculator.computeMostEfficientChange(3);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testChangeLargerThanAllCoinsInCurrencyThatCannotBeRepresented() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
@@ -100,7 +100,7 @@ public final class ChangeCalculatorTest {
         changeCalculator.computeMostEfficientChange(94);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testNegativeChangeIsRejected() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 2, 5));

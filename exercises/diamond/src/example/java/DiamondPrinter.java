@@ -17,7 +17,7 @@ final class DiamondPrinter {
     List<String> printToList(final char chr) {
         final int nRows = 2 * ((int) chr - A_INT) + 1;
 
-        final List<String> topRows = new ArrayList<>();
+        final List<String> result = new ArrayList<>();
 
         // Populate the top rows.
         for (int nRow = 0; nRow < (nRows + 1) / 2; nRow++) {
@@ -27,15 +27,15 @@ final class DiamondPrinter {
             final String rightHalfOfRow = reverse(leftHalfOfRow.substring(0, leftHalfOfRow.length() - 1));
             final String fullRow        = leftHalfOfRow + rightHalfOfRow;
 
-            topRows.add(fullRow);
+            result.add(fullRow);
         }
 
         // Populate the bottom rows by 'reflecting' the top rows.
         for (int nRow = (nRows - 1) / 2 - 1; nRow >= 0; nRow--) {
-            topRows.add(topRows.get(nRow));
+            result.add(result.get(nRow));
         }
 
-        return topRows;
+        return result;
     }
 
 }

@@ -18,7 +18,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.EQUAL, computedRelationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testEmptyListIsSublistOfNonEmptyList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -28,7 +28,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testNonEmptyListIsSuperlistOfEmptyList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -38,7 +38,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testListIsEqualToItself() {
         List<String> anyList = asList("1", "2", "3");
@@ -50,7 +50,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.EQUAL, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testDifferentListsOfTheSameLengthAreUnequal() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -60,7 +60,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.UNEQUAL, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSublistCheckDoesNotAbortAfterFalseStart() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -70,7 +70,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSublistCheckHandlesExtraneousRepeatsOfFirstEntry() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -80,7 +80,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSublistAtStart() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -90,7 +90,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSublistInMiddle() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -100,7 +100,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSublistAtEnd() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -110,7 +110,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testAtStartOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -120,7 +120,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testInMiddleOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -130,7 +130,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testAtEndOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -140,7 +140,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testFirstListMissingElementFromSecondList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -150,7 +150,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.UNEQUAL, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testSecondListMissingElementFromFirstList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -160,7 +160,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.UNEQUAL, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatListOrderingIsAccountedFor() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -170,7 +170,7 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.UNEQUAL, relationship);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void testThatListsWithSameDigitsButDifferentNumbersAreUnequal() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
