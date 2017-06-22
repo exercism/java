@@ -1,8 +1,12 @@
 import java.util.List;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Poker {
-	public static List<String> bestHands(List<String> hands) {
-			throw new NotImplementedException();
+
+	Poker(List<String> hands) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+	List<String> bestHands() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 	}
 }

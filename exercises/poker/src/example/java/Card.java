@@ -15,11 +15,11 @@ public class Card {
 		return suit;
 	}
 
-	private static int parseRank(String card) {
+	private int parseRank(String card) {
 		return "..23456789TJQKA".indexOf(card.charAt(0));
 	}
 
-	private static int parseSuit(String card) {
+	private int parseSuit(String card) {
 		return ".HSDC".indexOf(card.charAt(1));
 	}
 }
