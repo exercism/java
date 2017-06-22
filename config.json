@@ -329,6 +329,11 @@
       "slug": "kindergarten-garden",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "transpose",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
