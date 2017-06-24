@@ -25,7 +25,7 @@ public class FoodChain {
         return verseBeginning(verse) + verseMiddle(verse) + verseEnding(verse);
     }
 
-    public String verse(int startVerse, int endVerse) {
+    public String verses(int startVerse, int endVerse) {
 
         String[] verses = new String[endVerse - startVerse + 1];
 

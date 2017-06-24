@@ -139,7 +139,7 @@ public class FoodChainTest {
                           "She swallowed the spider to catch the fly.\n" +
                           "I don't know why she swallowed the fly. Perhaps she'll die.";
 
-        assertEquals(expected, foodChain.verse(startVerse, endVerse));
+        assertEquals(expected, foodChain.verses(startVerse, endVerse));
     }
 
 
@@ -199,6 +199,6 @@ public class FoodChainTest {
                           "I know an old lady who swallowed a horse.\n" +
                           "She's dead, of course!";
 
-        assertEquals(expected, foodChain.verse(startVerse, endVerse));
+        assertEquals(expected, foodChain.verses(startVerse, endVerse));
     }
 }
