@@ -3,12 +3,12 @@ import java.lang.reflect.Array;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class SimpleLinkedList<T> {
+class SimpleLinkedList<T> {
 
     private static class Element<T> {
 
         final T value;
-        Element next;
+        Element<T> next;
 
         Element(T value) {
             this.value = value;
@@ -18,16 +18,16 @@ public class SimpleLinkedList<T> {
     private Element<T> head;
     private int size;
 
-    public SimpleLinkedList() {
+    SimpleLinkedList() {
     }
 
-    public SimpleLinkedList(T[] values) {
-        for (int ii = values.length - 1; ii >= 0; ii--) {
-            push(values[ii]);
+    SimpleLinkedList(T[] values) {
+        for (int i = values.length - 1; i >= 0; i--) {
+            push(values[i]);
         }
     }
 
-    public final void push(T value) {
+    final void push(T value) {
         Element<T> newElement = new Element<>(value);
         this.size++;
         if (Objects.isNull(head)) {
@@ -38,7 +38,7 @@ public class SimpleLinkedList<T> {
         }
     }
 
-    public T pop() {
+    T pop() {
         if (Objects.isNull(head)) {
             throw new NoSuchElementException();
         }
@@ -48,7 +48,7 @@ public class SimpleLinkedList<T> {
         return value;
     }
 
-    public void reverse() {
+    void reverse() {
         Element<T> current = head;
         Element<T> next;
         Element<T> previous = null;
@@ -61,8 +61,8 @@ public class SimpleLinkedList<T> {
         head = previous;
     }
 
-    public T[] asArray(Class<T> clazz) {
-        T[] result = newArray(clazz, this.size);
+    T[] asArray(Class<T> clazz) {
+        T[] result = newArray(clazz, size);
         int index = 0;
         Element<T> current = head;
         while (Objects.nonNull(current)) {
@@ -72,14 +72,14 @@ public class SimpleLinkedList<T> {
         return result;
     }
 
-    private <T> T[] newArray(Class<T> clazz, int size) {
+    private T[] newArray(Class<T> clazz, int size) {
         @SuppressWarnings("unchecked")
         T[] arr = (T[]) Array.newInstance(clazz, size);
 
         return arr;
     }
 
-    public int size() {
+    int size() {
         return this.size;
     }
 }

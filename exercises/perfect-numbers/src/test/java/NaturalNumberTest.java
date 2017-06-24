@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 /*
  * version: 1.0.0
- * https://github.com/exercism/x-common/blob/19d0c7714ce664a1ad762af624c17f8e269fa8b2/exercises/perfect-numbers/canonical-data.json
  */
 public class NaturalNumberTest {
 

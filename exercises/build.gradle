@@ -1,41 +1,67 @@
-subprojects { project ->
-  apply plugin: "java"
+// This root Gradle project is used for:
+//
+// - Checking that every test suite compiles against its corresponding example implementation;
+// - Checking that every example implementation passes its corresponding test suite;
+// - Checking that every provided starter implementation compiles.
+//
+// This file is never delivered to Exercism users.
 
-  sourceSets {
-    // Verify that the tests are working by running them against the example code.
-    // By replacing the "main" sourceSet with the example code we avoid any collisions
-    //   with solution code that may have been included as a "starter" (e.g. etl).
-    main {
-      java.srcDirs = ["src/example/java"]
-    }
-    project["compileJava"].doFirst { compileTask ->
-      println "  (source = " + compileTask.source.asPath + ")"
-    }
+def generatedTestSourceDir = "build/gen/test/java"
 
-    starterSource {
-      java.srcDirs = ["src/main/java"]
-    }
-    project["compileStarterSourceJava"].doFirst { compileTask ->
-      println "  (source = " + compileTask.source.asPath + ")"
-    }
+subprojects {
 
-    // In lieu of being able to disable @Ignore in JUnit tests, we filter
-    // those annotations, placing the edited tests in the path named here.
-    test {
-      java.srcDirs = ["build/gen/test/java"]
-    }
-    project["compileTestJava"].doFirst { compileTask ->
-      println "  (source = " + compileTask.source.asPath + ")"
-    }
-  }
-
+  // Add a task that copies test source files into a build directory. All @Ignore annotations
+  // are removed during this copying, so that when we run the copied tests, none are skipped and
+  // all should execute.
+  //
+  // Note that journey-test.sh also strips @Ignore annotations using sed. The
+  // stripping implementations here and in journey-test.sh should be kept
+  // consistent.
   task copyTestsFilteringIgnores(type: Copy) {
     from "src/test/java"
-    into "build/gen/test/java"
+    into generatedTestSourceDir
     filter { line ->
-      line.contains("@Ignore") ? "" : line
+      line.contains("@Ignore") ? null : line
     }
   }
 
-  test.dependsOn(copyTestsFilteringIgnores)
+  afterEvaluate { project ->
+
+    sourceSets {
+      // Set the directory containing the example implementation as the default source set. Default
+      // compile tasks will now run against this source set.
+      main {
+        java.srcDirs = ["src/example/java"]
+      }
+
+      // Define a custom source set named "starterSource" that points to the starter implementations
+      // delivered to users. We can then use the generated "compileStarterSourceJava" task to verify
+      // that the starter source compiles as-is.
+      starterSource {
+        java.srcDirs = ["src/main/java"]
+      }
+
+      // Set the directory containing the @Ignore-stripped tests as the default test source set.
+      // Default test tasks will now run against this source set.
+      test {
+        java.srcDirs = [generatedTestSourceDir]
+      }
+
+      // Log the source paths associated with each source set to verify they are what we expect.
+      logCompileTaskSourcePath(project, "compileJava") // Corresponds to the "main" source set.
+      logCompileTaskSourcePath(project, "compileStarterSourceJava")
+      logCompileTaskSourcePath(project, "compileTestJava")
+    }
+
+    // When running the standard test task, make sure we prepopulate the test source set with the
+    // @Ignore-stripped tests.
+    test.dependsOn(copyTestsFilteringIgnores)
+  }
+
+}
+
+def logCompileTaskSourcePath(Project project, String taskName) {
+  project[taskName].doFirst { compileTask ->
+    println "  (source = ${compileTask.source.asPath})"
+  }
 }

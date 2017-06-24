@@ -1,4 +1,4 @@
-public final class MinesweeperBoard {
+public class MinesweeperBoard {
 
 
 

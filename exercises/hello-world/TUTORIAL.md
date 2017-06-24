@@ -1,5 +1,5 @@
 NOTE: You can also view the HTML version of this file here:
-https://github.com/exercism/xjava/blob/master/exercises/hello-world/TUTORIAL.md
+https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md
 
 * [Solving "Hello, World!"](#solving-hello-world)
  * [Reading Gradle output](#reading-gradle-output)
@@ -527,7 +527,7 @@ The entire of Exercism is Open Source and is the labor of love for over
 
 A starting point to jumping in can be found here:
 
-https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md
+https://github.com/exercism/problem-specifications/blob/master/CONTRIBUTING.md
 
 
 ----

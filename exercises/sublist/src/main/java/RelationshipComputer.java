@@ -1,4 +1,4 @@
-final class RelationshipComputer<T extends Comparable> {
+class RelationshipComputer<T> {
 
 
 

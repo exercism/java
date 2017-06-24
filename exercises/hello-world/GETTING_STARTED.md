@@ -5,7 +5,7 @@ This guide picks-up where [Running the Tests (in Java)](http://exercism.io/langu
 left off.  If you haven't reviewed those instructions, do so now.
 
 Need more information?  A **step-by-step tutorial** is available in this directory at TUTORIAL.md or you can read 
-the [HTML version](https://github.com/exercism/xjava/blob/master/exercises/hello-world/TUTORIAL.md).
+the [HTML version](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md).
 
 The following instructions work equally well on Windows, Mac OS X and Linux.
 
@@ -17,6 +17,10 @@ Try writing a solution that passes one test at a time, running Gradle each time:
 ```
 $ gradle test
 ```
+
+To help you focus on one test at a time, [@Ignore](http://junit.sourceforge.net/javadoc/org/junit/Ignore.html)
+annotations have been added to every test but the first one. Any test with an `@Ignore` annotation will be skipped
+when you run the tests.
 
 ## Iterate through the tests
 

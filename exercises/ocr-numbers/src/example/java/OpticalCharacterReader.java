@@ -8,7 +8,7 @@ import java.util.List;
  */
 final class OpticalCharacterReader {
 
-    private static final int ROWS_PER_LINE  = 4;
+    private static final int ROWS_PER_LINE = 4;
 
     private static final int COLS_PER_SSD = 3;
 
@@ -56,9 +56,9 @@ final class OpticalCharacterReader {
                     "Number of input rows must be a positive multiple of " + ROWS_PER_LINE);
         }
 
-        final int inputColumnCount = input.get(0).length();
+        final int inputColCount = input.get(0).length();
 
-        if (inputColumnCount == 0 || inputColumnCount % 3 != 0) {
+        if (inputColCount == 0 || inputColCount % 3 != 0) {
             throw new IllegalArgumentException(
                     "Number of input columns must be a positive multiple of " + COLS_PER_SSD);
         }
