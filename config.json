@@ -285,6 +285,13 @@
       ]
     },
     {
+      "slug": "transpose",
+      "difficulty": 6,
+      "topics": [
+
+      ]
+    },
+    {
       "slug": "beer-song",
       "difficulty": 6,
       "topics": [
@@ -470,7 +477,7 @@
       "slug": "list-ops",
       "difficulty": 1,
       "topics": [
-
+      
       ]
     }
   ],
