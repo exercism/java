@@ -14,7 +14,9 @@
     {
       "slug": "two-fer",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "rna-transcription",
