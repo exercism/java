@@ -20,8 +20,7 @@ $ gradle test
 
 ## Iterate through the tests
 
-After your first test passes, remove the `@Ignore` from the next test, and iterate on your solution,
-testing after each change.
+After your first test passes, iterate on your solution, testing after each change.
 
 ## All the tests pass?  Submit your solution!
 
