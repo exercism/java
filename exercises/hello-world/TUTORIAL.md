@@ -74,72 +74,104 @@ running the task you asked it to: executing the tests against the solution.
 ```
 :test
 
+HelloWorldTest > helloSampleName FAILED
+    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
+        at HelloWorld.hello(HelloWorld.java:3)
+        at HelloWorldTest.helloSampleName(HelloWorldTest.java:22)
+
 HelloWorldTest > helloNoName FAILED
-    java.lang.AssertionError: expected:<Hello, World!> but was:<null>
-        at org.junit.Assert.fail(Assert.java:93)
-        at org.junit.Assert.failNotEquals(Assert.java:647)
-        at org.junit.Assert.assertEquals(Assert.java:128)
-        at org.junit.Assert.assertEquals(Assert.java:147)
-        at HelloWorldTest.helloNoName(HelloWorldTest.java:10)
+    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
+        at HelloWorld.hello(HelloWorld.java:3)
+        at HelloWorldTest.helloNoName(HelloWorldTest.java:11)
 
-HelloWorldTest > helloSampleName SKIPPED
+HelloWorldTest > emptyStringIsComparedByValue FAILED
+    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
+        at HelloWorld.hello(HelloWorld.java:3)
+        at HelloWorldTest.emptyStringIsComparedByValue(HelloWorldTest.java:17)
 
-HelloWorldTest > helloAnotherSampleName SKIPPED
+HelloWorldTest > helloAnotherSampleName FAILED
+    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
+        at HelloWorld.hello(HelloWorld.java:3)
+        at HelloWorldTest.helloAnotherSampleName(HelloWorldTest.java:27)
 
-3 tests completed, 1 failed, 2 skipped
+4 tests completed, 4 failed
 :test FAILED
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':test'.
-> There were failing tests. See the report at: file:///Users/jtigger/projects/exercism/java/build/exercism/java/hello-world/build/reports/tests/index.html
+> There were failing tests. See the report at: file:///home/logan/hello-world/build/reports/tests/index.html
 
 * Try:
 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
 
 BUILD FAILED
 
-Total time: 6.716 secs
+Total time: 12.361 secs
 ```
 
 Seeing the word "fail" TEN TIMES might give you the impression you've done
 something horribly wrong.  You haven't.  It's a whole lot of noise over
-a single test not passing.
+a few tests not passing.
 
 Let's focus in on the important bits:
+
+```
+HelloWorldTest > helloSampleName FAILED
+    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
+```
+
+...is read: "Within the test class named `HelloWorldTest`, the test method
+`helloSampleName` did not pass because an `UnsupportedOperationException` was thrown with the message
+`Delete this statement and write your own implementation.`."
+
+The next line of the stack trace tells us where the exception was thrown:
+
+```
+        at HelloWorld.hello(HelloWorld.java:3)
+```
+
+Looks like it was on line 3 in the HelloWorld file.
+
+We should remove this line from our `HelloWorld.java` file.
+
+In your favorite text editor, open `src/main/java/HelloWorld.java`.
+
+Delete the contents of that line and replace it with the following:
+```java
+return null;
+```
+Now you can run `gradle test` again.
+
+You should see a new error this time, don't worry though, you're making progress.
 
 ```
 HelloWorldTest > helloNoName FAILED
     java.lang.AssertionError: expected:<Hello, World!> but was:<null>
 ```
+...is read: "Within the test class named HelloWorldTest, 
+the test method helloNoName did not pass because the solution did not satisfy an assertion. 
+Apparently, we expected to see the string 'Hello, World!' but the value null was returned instead.
 
-...is read: "Within the test class named `HelloWorldTest`, the test method
-`helloNoName` did not pass because the solution did not satisfy an
-assertion.  Apparently, we expected to see the string 'Hello, World!' but
-the value `null` was returned instead.
-
-The last line of the stack trace tells us exactly where this unsatisfied
-assertion lives:
+The last line of the stack trace tells us exactly where this unsatisfied assertion lives:
 
 ```
         at HelloWorldTest.helloNoName(HelloWorldTest.java:10)
 ```
-
 Looks like the crime was discovered on line 10 in the test file.
 
 Knowing these two facts,
 
-1. the return value was not what was expected, and
-2. the failure was on line 10 of the test,
- 
-we can turn this failure into success.
+1. The return value was not what was expected, and
+2. The failure was on line 10 of the test,
+
+We can turn this failure into success.
 
 
+## Fixing the first test
 
-## Fixing the first failing test
-
-In your favorite text editor, open `src/test/java/HelloWorldTest.java`
+Open `src/test/java/HelloWorldTest.java`
 and go to line 10.
 
 ```java
@@ -182,88 +214,50 @@ $ gradle test
 :testClasses
 :test
 
-HelloWorldTest > helloAnotherSampleName SKIPPED
+HelloWorldTest > helloSampleName FAILED
+    org.junit.ComparisonFailure: expected:<Hello, [Alice]!> but was:<Hello, [World]!>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at HelloWorldTest.helloSampleName(HelloWorldTest.java:22)
 
 HelloWorldTest > helloNoName PASSED
 
-HelloWorldTest > helloSampleName SKIPPED
+HelloWorldTest > emptyStringIsComparedByValue PASSED
 
-BUILD SUCCESSFUL
+HelloWorldTest > helloAnotherSampleName FAILED
+    org.junit.ComparisonFailure: expected:<Hello, [Bob]!> but was:<Hello, [World]!>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at HelloWorldTest.helloAnotherSampleName(HelloWorldTest.java:27)
 
-Total time: 4.523 secs
+4 tests completed, 2 failed
+:test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/logan/hello-world/build/reports/tests/index.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 20.855 secs
 ```
 
-"BUILD SUCCESSFUL"!  Woohoo! :)  You can see that `helloNoName()` test is
+Woohoo! :)  You can see that `helloNoName()` and `emptyStringIsComparedByValue()` are
 now passing.
-
-With one win under our belt, we can turn our focus to some other messages
-that we've been ignoring: the lines ending in "`SKIPPED`".
-
-Each test suite contains a series of tests, all of which have been marked
-to be skipped/ignored except the first one.  We did this to help you focus
-on getting one test running at a time.
 
 Let's tackle the next test...
 
 
 
-## Enabling and fixing the second test
+## Fixing the second test
 
-Right now, that second test is being skipped/ignored.  Let's enable it.
-
-(Re)open `src/test/java/HelloWorldTest.java` and find the second test:
-
-```java
-...
-@Test
-@Ignore
-public void helloSampleName() {
-  assertEquals("Hello, Alice!", HelloWorld.hello("Alice"));
-}
-...
-```
-
-When the JUnit test runner sees that `@Ignore` annotation on the test
-method, it knows to skip over that test.  Remove that line:
-
-```java
-...
-@Test
-public void helloSampleName() {
-  assertEquals("Hello, Alice!", HelloWorld.hello("Alice"));
-}
-...
-```
-
-Now, when you run the tests, both tests run:
-
-```sh
-$ gradle test
-...
-:test
-
-HelloWorldTest > helloNoName PASSED
-
-HelloWorldTest > helloSampleName FAILED
-    org.junit.ComparisonFailure: expected:<Hello, [Alice]!> but was:<Hello, [World]!>
-        at org.junit.Assert.assertEquals(Assert.java:125)
-        at org.junit.Assert.assertEquals(Assert.java:147)
-        at HelloWorldTest.helloSampleName(HelloWorldTest.java:16)
-
-HelloWorldTest > helloAnotherSampleName SKIPPED
-
-3 tests completed, 1 failed, 1 skipped
-...
-```
-
-The first test, `helloNoName()` continues to pass.  We see that
-`helloSampleName` -- the test we just un-`@Ignore`'d -- is now running and
-failing.  Yay, failing test!  In fact, the "failure" message is just
-describing the difference between what the program does now and what it
-should do for us to call it "done."
-
-Right now, we've hardcoded the greeting.  Enabling this second test has
-unleashed a new expectation: that our program incorporate a name given
+Right now, we've hardcoded the greeting.  This second test has
+unleashed a new expectation: that our program must incorporate a name given
 into that greeting.  When given the name "`Alice`", that's who should be
 greeted instead of "`World`".
 
@@ -295,23 +289,43 @@ public class HelloWorld {
 $ gradle test
 :test
 
-HelloWorldTest > helloAnotherSampleName SKIPPED
+HelloWorldTest > helloSampleName PASSED
 
 HelloWorldTest > helloNoName FAILED
     org.junit.ComparisonFailure: expected:<Hello, [World]!> but was:<Hello, []!>
-        at org.junit.Assert.assertEquals(Assert.java:125)
-        at org.junit.Assert.assertEquals(Assert.java:147)
-        at HelloWorldTest.helloNoName(HelloWorldTest.java:10)
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at HelloWorldTest.helloNoName(HelloWorldTest.java:11)
 
-HelloWorldTest > helloSampleName PASSED
+HelloWorldTest > emptyStringIsComparedByValue FAILED
+    org.junit.ComparisonFailure: expected:<Hello, [World]!> but was:<Hello, []!>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at HelloWorldTest.emptyStringIsComparedByValue(HelloWorldTest.java:17)
 
-3 tests completed, 1 failed, 1 skipped
+HelloWorldTest > helloAnotherSampleName PASSED
+
+4 tests completed, 2 failed
+:test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/logan/hello-world/build/reports/tests/index.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 12.466 secs
 ```
 
 Wait... didn't we just fix the test?  Why is it failing?  Take a closer look...
 
 In fact, `helloSampleName()` *is* passing.  It's just that at the same time,
-we just inadvertently broke that first test: `helloNoName()`.
+we just inadvertently broke the first tests: `helloNoName()` and `emptyStringIsComparedByValue()`.
 
 This is one tiny example of the benefit of maintaining a test suite: if we
 use them to drive out our code, the second we break the program the tests
@@ -319,7 +333,7 @@ say so.  Since we saw them passing just *before* our latest change,
 whatever we *just* did most likely cause that regression.
 
 Our latest change was making the greeting dependent on the name given. Our
-first test expects that if either a blank string or null are given as the
+first two tests expects that if either a blank string or null are given as the
 name, then "`World`" should be substituted in.  Let's implement that.
 
 `src/main/java/HelloWorld.java`:
@@ -341,68 +355,17 @@ $ gradle test
 ...
 :test
 
-HelloWorldTest > helloNoName PASSED
-
 HelloWorldTest > helloSampleName PASSED
-
-HelloWorldTest > helloAnotherSampleName SKIPPED
-
-BUILD SUCCESSFUL
-
-Total time: 4.804 secs
-```
-
-Excellent!  We're now (at least) two-thirds the way done.  Just one more
-test to go...
-
-
-
-## Enabling the last test
-
-(Re)open `src/test/java/HelloWorldTest.java` and find the last test:
-
-```java
-...
-@Test
-@Ignore
-public void helloAnotherSampleName() {
-    assertEquals("Hello, Bob!", HelloWorld.hello("Bob"));
-}
-...
-```
-
-... and remove it's `@Ignore` to enable it ...
-
-```java
-...
-@Test
-public void helloAnotherSampleName() {
-    assertEquals("Hello, Bob!", HelloWorld.hello("Bob"));
-}
-...
-```
-
-... and re-run the tests ...
-
-```
-$ gradle test
-:compileJava UP-TO-DATE
-:processResources UP-TO-DATE
-:classes UP-TO-DATE
-:compileTestJava
-:processTestResources UP-TO-DATE
-:testClasses
-:test
 
 HelloWorldTest > helloNoName PASSED
 
-HelloWorldTest > helloSampleName PASSED
+HelloWorldTest > emptyStringIsComparedByValue PASSED
 
 HelloWorldTest > helloAnotherSampleName PASSED
 
 BUILD SUCCESSFUL
 
-Total time: 6.953 secs
+Total time: 11.717 secs
 ```
 
 Oh, hello!  Turns out, the solution we put into place didn't just apply for
@@ -476,9 +439,11 @@ We made a bunch of changes, let's make sure we didn't break the program!
 ```
 $ gradle test
 ...
+HelloWorldTest > helloSampleName PASSED
+
 HelloWorldTest > helloNoName PASSED
 
-HelloWorldTest > helloSampleName PASSED
+HelloWorldTest > emptyStringIsComparedByValue PASSED
 
 HelloWorldTest > helloAnotherSampleName PASSED
 ...
