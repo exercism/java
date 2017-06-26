@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 final class MinesweeperBoard {
 
@@ -16,33 +14,32 @@ final class MinesweeperBoard {
     private final int numberOfColumns;
 
     MinesweeperBoard(final List<String> rawRepresentation) {
-        validateInputBoard(rawRepresentation);
         this.rawRepresentation = rawRepresentation;
         this.numberOfRows = rawRepresentation.size();
         this.numberOfColumns = rawRepresentation.isEmpty() ? 0 : rawRepresentation.get(0).length();
     }
 
-    List<String> getAnnotatedRepresentation() throws IllegalArgumentException {
+    List<String> withNumbers() {
         final List<String> result = new ArrayList<>();
 
         for (int rowNumber = 0; rowNumber < numberOfRows; rowNumber++) {
-            result.add(getAnnotatedRow(rowNumber));
+            result.add(getRowWithNumbers(rowNumber));
         }
 
         return result;
     }
 
-    private String getAnnotatedRow(final int rowNumber) {
+    private String getRowWithNumbers(final int rowNumber) {
         String result = "";
 
         for (int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++) {
-            result += getCellAnnotation(rowNumber, columnNumber);
+            result += getCellNumber(rowNumber, columnNumber);
         }
 
         return result;
     }
 
-    private char getCellAnnotation(final int rowNumber, final int columnNumber) {
+    private char getCellNumber(final int rowNumber, final int columnNumber) {
         // If (rowNumber, columnNumber) is a mine, we're done.
         if (rawRepresentation.get(rowNumber).charAt(columnNumber) == MINE_CHAR) {
             return MINE_CHAR;
@@ -73,39 +70,6 @@ final class MinesweeperBoard {
         }
 
         return result;
-    }
-
-    private void validateInputBoard(final List<String> inputBoard) throws IllegalArgumentException {
-        validateInputBoardIsNotNull(inputBoard);
-
-        if (inputBoard.isEmpty()) {
-            return;
-        }
-
-        validateInputBoardCharacters(inputBoard);
-        validateInputBoardColumnCounts(inputBoard);
-    }
-
-    private void validateInputBoardIsNotNull(final List<String> inputBoard) throws IllegalArgumentException {
-        if (inputBoard == null) {
-            throw new IllegalArgumentException("Input board may not be null.");
-        }
-    }
-
-    private void validateInputBoardCharacters(final List<String> inputBoard) throws IllegalArgumentException {
-        final String allBoardCharacters = String.join("", inputBoard);
-
-        if (!allBoardCharacters.matches("^[ *]*$")) {
-            throw new IllegalArgumentException("Input board can only contain the characters ' ' and '*'.");
-        }
-    }
-
-    private void validateInputBoardColumnCounts(final List<String> inputBoard) throws IllegalArgumentException {
-        final Set<Integer> setOfColumnCounts = inputBoard.stream().map(String::length).collect(Collectors.toSet());
-
-        if (setOfColumnCounts.size() > 1) {
-            throw new IllegalArgumentException("Input board rows must all have the same number of columns.");
-        }
     }
 
 }

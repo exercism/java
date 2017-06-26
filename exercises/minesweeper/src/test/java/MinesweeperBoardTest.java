@@ -1,7 +1,5 @@
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,34 +7,28 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/*
+ * version: 1.0.0
+ */
 public class MinesweeperBoardTest {
-
-    /*
-     * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
-     * ExpectedExceptions in particular.
-     */
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testInputBoardWithNoRowsAndNoColumns() {
         final List<String> inputBoard = Collections.emptyList();
-        final List<String> expectedAnnotatedRepresentation = Collections.emptyList();
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> expectedNumberedBoard = Collections.emptyList();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInputBoardWithOneRowAndNoColumns() {
         final List<String> inputBoard = Collections.singletonList("");
-        final List<String> expectedAnnotatedRepresentation = Collections.singletonList("");
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> expectedNumberedBoard = Collections.singletonList("");
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -48,16 +40,15 @@ public class MinesweeperBoardTest {
                 "   "
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "   ",
                 "   ",
                 "   "
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -69,16 +60,15 @@ public class MinesweeperBoardTest {
                 "***"
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "***",
                 "***",
                 "***"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -90,16 +80,15 @@ public class MinesweeperBoardTest {
                 "   "
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "111",
                 "1*1",
                 "111"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -111,16 +100,15 @@ public class MinesweeperBoardTest {
                 "***"
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "***",
                 "*8*",
                 "***"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -130,14 +118,13 @@ public class MinesweeperBoardTest {
                 " * * "
         );
 
-        final List<String> expectedAnnotatedRepresentation = Collections.singletonList(
+        final List<String> expectedNumberedBoard = Collections.singletonList(
                 "1*2*1"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -147,14 +134,13 @@ public class MinesweeperBoardTest {
                 "*   *"
         );
 
-        final List<String> expectedAnnotatedRepresentation = Collections.singletonList(
+        final List<String> expectedNumberedBoard = Collections.singletonList(
                 "*1 1*"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -168,7 +154,7 @@ public class MinesweeperBoardTest {
                 " "
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "1",
                 "*",
                 "2",
@@ -176,10 +162,9 @@ public class MinesweeperBoardTest {
                 "1"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -193,7 +178,7 @@ public class MinesweeperBoardTest {
                 "*"
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "*",
                 "1",
                 " ",
@@ -201,10 +186,9 @@ public class MinesweeperBoardTest {
                 "*"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -218,7 +202,7 @@ public class MinesweeperBoardTest {
                 "  *  "
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 " 2*2 ",
                 "25*52",
                 "*****",
@@ -226,10 +210,9 @@ public class MinesweeperBoardTest {
                 " 2*2 "
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -244,7 +227,7 @@ public class MinesweeperBoardTest {
                 "      "
         );
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedNumberedBoard = Arrays.asList(
                 "1*22*1",
                 "12*322",
                 " 123*2",
@@ -253,43 +236,9 @@ public class MinesweeperBoardTest {
                 "111111"
         );
 
-        final List<String> actualAnnotatedRepresentation
-                = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        final List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testNullInputBoardIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Input board may not be null.");
-
-        new MinesweeperBoard(null);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testInputBoardWithInvalidSymbolsIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Input board can only contain the characters ' ' and '*'.");
-
-        new MinesweeperBoard(Collections.singletonList(" * & "));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testInputBoardWithInconsistentRowLengthsIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Input board rows must all have the same number of columns.");
-
-        new MinesweeperBoard(Arrays.asList(
-                "*",
-                "**",
-                "* *",
-                "*  *",
-                "*   *"
-        ));
+        assertEquals(expectedNumberedBoard, actualNumberedBoard);
     }
 
 }
