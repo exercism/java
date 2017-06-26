@@ -1,5 +1,7 @@
-public class HelloWorld {
-    public static String hello(String name) {
+class Greeter {
+
+    String getGreeting() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
+
 }
