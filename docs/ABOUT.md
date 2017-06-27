@@ -16,7 +16,7 @@ The primary goals kept in mind during the making of the language were:
 
 The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.
 
-## Why Learn JAVA?
+## Why Learn Java?
 
 - JAVA IS EVERYWHERE. It is one of the most sought after programming languages. It is a standard for enterprise software, web-based content, games and mobile apps, as well as the [Android operating system](https://developer.android.com/index.html). 
 
