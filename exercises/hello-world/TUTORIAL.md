@@ -289,4 +289,4 @@ The entire of Exercism is Open Source and is a labor of love for over
 
 A starting point to jumping in can be found here:
 
-https://github.com/exercism/problem-specifications/blob/master/CONTRIBUTING.md
+https://github.com/exercism/docs/tree/master/contributing-to-language-tracks
