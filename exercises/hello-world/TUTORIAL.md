@@ -1,39 +1,42 @@
-NOTE: You can also view the HTML version of this file here:
-https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md
+# Table of Contents
 
+* [Introduction](#introduction)
+* [Exercise Structure](#exercise-structure)
 * [Solving "Hello, World!"](#solving-hello-world)
- * [Reading Gradle output](#reading-gradle-output)
- * [Fixing the first failing test](#fixing-the-first-failing-test)
- * [Enabling and fixing the second test](#enabling-and-fixing-the-second-test)
- * [Enabling the last test](#enabling-the-last-test)
- * [Refactoring](#refactoring)
 * [Submitting your first iteration](#submitting-your-first-iteration)
 * [Next Steps](#next-steps)
- * [Review (and comment on) others' submissions to this exercise](#review-and-comment-on-others-submissions-to-this-exercise)
- * [Extend an exercise](#extend-an-exercise)
 
-----
-
-# Solving "Hello, World!"
+# Introduction
 
 Welcome to the first exercise on the Java track!
 
-This is a step-by-step guide to solving this exercise.
+This document is a step-by-step guide to solving this exercise. The
+instructions should work equally well on Windows, Mac OS X and Linux.
 
-Each exercise comes with a set of tests.  The first pass through the
-exercise is about getting all of the tests to pass, one at a time.
+Even if you are already familiar with Java basics, stepping through this guide
+may be helpful as it will help you understand the output from the tool, Gradle,
+that we use to compile and test our code, as well as introduce some of the
+patterns common to all exercises in this track.
 
-If you have not installed the Java Development Kit and Gradle, you must do
-so now.  For help with this, see: http://exercism.io/languages/java/installing
+# Exercise Structure
 
-----
+When you fetch a new Java exercise, you will receive:
 
-This guide picks-up where [Running the Tests (in Java)](http://exercism.io/languages/java/tests)
-left off.  If you haven't reviewed those instructions, do so now.
+* __one or more test files__ (always). These live in the `src/test/java`
+directory and define a set of tests that our solution must satisfy before we
+can safely declare that it is working.
+* __one or more starter files__ (initially). If provided, these live in the
+`src/main/java` directory and define shells of the classes you will need
+in order to solve the current problem.
 
-The following instructions work equally well on Windows, Mac OS X and Linux.
+# Solving "Hello, World!"
 
-## Reading Gradle output
+Before proceeding any further, make sure you have completed the required setup
+steps described by the links below:
+* [Installing Java](http://exercism.io/languages/java/installing);
+* [Running the Tests (in Java)](http://exercism.io/languages/java/tests).
+
+## Step 1: Run the tests against the starter solution
 
 Use Gradle to run the tests:
 
@@ -51,8 +54,8 @@ This command does a lot and displays a bunch of stuff.  Let's break it down...
 
 Each line that begins with a colon (like `:compileJava`) is Gradle telling
 us that it's starting that task.  The first three tasks are about compiling
-the source code of our *solution*. We've done you a favor and included just
-enough code for the solution that it compiles.
+the source code of our _solution_. This exercise contains starter files with
+just enough code for the solution to compile without requiring modification.
 
 When a task is successful, it generally does not output anything.  This is
 why `:compileJava` and `:classes` do not produce any additional output.
@@ -60,7 +63,7 @@ why `:compileJava` and `:classes` do not produce any additional output.
 
 So far, so good...
 
-The next three tasks are about compiling source code of the *tests*.
+The next three tasks are about compiling source code of the _tests_.
 
 ```
 :compileTestJava
@@ -74,34 +77,19 @@ running the task you asked it to: executing the tests against the solution.
 ```
 :test
 
-HelloWorldTest > helloSampleName FAILED
+GreeterTest > testThatGreeterReturnsTheCorrectGreeting FAILED
     java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
-        at HelloWorld.hello(HelloWorld.java:3)
-        at HelloWorldTest.helloSampleName(HelloWorldTest.java:22)
+        at getGreeting(Greeter.java:4)
+        at GreeterTest.testThatGreeterReturnsTheCorrectGreeting(GreeterTest.java:9)
 
-HelloWorldTest > helloNoName FAILED
-    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
-        at HelloWorld.hello(HelloWorld.java:3)
-        at HelloWorldTest.helloNoName(HelloWorldTest.java:11)
-
-HelloWorldTest > emptyStringIsComparedByValue FAILED
-    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
-        at HelloWorld.hello(HelloWorld.java:3)
-        at HelloWorldTest.emptyStringIsComparedByValue(HelloWorldTest.java:17)
-
-HelloWorldTest > helloAnotherSampleName FAILED
-    java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
-        at HelloWorld.hello(HelloWorld.java:3)
-        at HelloWorldTest.helloAnotherSampleName(HelloWorldTest.java:27)
-
-4 tests completed, 4 failed
+1 tests completed, 1 failed
 :test FAILED
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':test'.
-> There were failing tests. See the report at: file:///home/logan/hello-world/build/reports/tests/index.html
+> There were failing tests. See the report at: file:///home/<username>/hello-world/build/reports/tests/index.html
 
 * Try:
 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
@@ -111,95 +99,118 @@ BUILD FAILED
 Total time: 12.361 secs
 ```
 
-Seeing the word "fail" TEN TIMES might give you the impression you've done
-something horribly wrong.  You haven't.  It's a whole lot of noise over
-a few tests not passing.
+Seeing the word "FAILED" might give you the impression you've done
+something wrong.  You haven't.  This output is just a very verbose way of
+telling us that the included test did not pass. This is expected - we haven't
+written any code to help it pass yet!
 
 Let's focus in on the important bits:
 
 ```
-HelloWorldTest > helloSampleName FAILED
+GreeterTest > testThatGreeterReturnsTheCorrectGreeting FAILED
     java.lang.UnsupportedOperationException: Delete this statement and write your own implementation.
 ```
 
-...is read: "Within the test class named `HelloWorldTest`, the test method
-`helloSampleName` did not pass because an `UnsupportedOperationException` was thrown with the message
-`Delete this statement and write your own implementation.`."
+...is read: "Within the test class named `GreeterTest`, the test method
+`testThatGreeterReturnsTheCorrectGreeting` did not pass because an
+`UnsupportedOperationException` was thrown with the message `Delete this
+statement and write your own implementation.`."
 
-The next line of the stack trace tells us where the exception was thrown:
+The next line of the [stack trace](https://stackoverflow.com/questions/3988788/what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors)
+tells us where this `UnsupportedOperationException` was thrown:
 
 ```
-        at HelloWorld.hello(HelloWorld.java:3)
+        at getGreeting(Greeter.java:4)
 ```
 
-Looks like it was on line 3 in the HelloWorld file.
+Looks like it was on line 4 in the `Greeter.java` file. Let's update that line
+as instructed, and try running the tests again.
 
-We should remove this line from our `HelloWorld.java` file.
+## Step 2: Replace the `UnsupportedOperationException` 
 
-In your favorite text editor, open `src/main/java/HelloWorld.java`.
+In your favorite text editor, open `src/main/java/Greeter.java`. You should
+find the source of the exception encountered above on line 4:
 
-Delete the contents of that line and replace it with the following:
+```java
+throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+```
+
+[`Exception`s](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
+are often used in Java to draw the attention of a developer when something goes
+wrong. In our case, nothing is wrong per se; we just haven't written our
+solution yet! The use of an
+[`UnsupportedOperationException`](http://docs.oracle.com/javase/8/docs/api/?java/lang/UnsupportedOperationException.html)
+in this situation is designed to remind us of exactly this fact. It effectively
+says: "Your Code Goes Here!".
+
+Delete the contents of line 4 and replace it with the following:
+
 ```java
 return null;
 ```
-Now you can run `gradle test` again.
 
-You should see a new error this time, don't worry though, you're making progress.
+Now run `gradle test` again.
+
+You should see a new error this time. Don't worry though, that still
+represents forward progress!
 
 ```
-HelloWorldTest > helloNoName FAILED
+GreeterTest > testThatGreeterReturnsTheCorrectGreeting FAILED
     java.lang.AssertionError: expected:<Hello, World!> but was:<null>
 ```
-...is read: "Within the test class named HelloWorldTest, 
-the test method helloNoName did not pass because the solution did not satisfy an assertion. 
-Apparently, we expected to see the string 'Hello, World!' but the value null was returned instead.
 
-The last line of the stack trace tells us exactly where this unsatisfied assertion lives:
+...is read: "Within the test class named `GreeterTest`, 
+the test method `testThatGreeterReturnsTheCorrectGreeting` did not pass because
+the solution did not satisfy an assertion." 
+
+Apparently, our test was expecting to see the string "Hello, World!", but it
+received the value `null` instead.
+
+The last line of the stack trace tells us exactly where this "unsatisfied
+assertion" lives:
 
 ```
-        at HelloWorldTest.helloNoName(HelloWorldTest.java:10)
+        at testThatGreeterReturnsTheCorrectGreeting(GreeterTest.java:9)
 ```
-Looks like the crime was discovered on line 10 in the test file.
+Looks like the mismatch was discovered on line 9 in the test file.
 
-Knowing these two facts,
+Knowing these two facts:
 
-1. The return value was not what was expected, and
-2. The failure was on line 10 of the test,
+1. that the return value was not what was expected, and
+2. that the failure was on line 9 of the test file,
 
-We can turn this failure into success.
+we can turn this failure into success.
 
+## Step 3: Fix the test!
 
-## Fixing the first test
-
-Open `src/test/java/HelloWorldTest.java`
-and go to line 10.
+Open `src/test/java/GreeterTest.java` and go to line 9. It reads:
 
 ```java
-assertEquals("Hello, World!", HelloWorld.hello(""));
+assertEquals("Hello, World!", new Greeter().getGreeting());
 ```
 
-The test is expecting that `hello()`, when given an empty string (`""`),
-returns "Hello, World!".  Instead, `hello()` is returning `null`.
-Let's fix that.
+The test is expecting that the method `getGreeting()` returns "Hello, World!".
+Instead, `getGreeting()` is returning `null`. Let's fix that.
 
-Open `src/main/java/HelloWorld.java`.
+Open `src/main/java/Greeter.java`. It should look like this:
 
 ```java
-public class HelloWorld {
-  public static String hello(String name) {
-    return null;
-  }
+class Greeter {
+
+    String getGreeting() {
+        return null;
+    }
+
 }
 ```
 
-Let's change that to return the expected string:
+Remove the `return null` that we previously added, and instead return the
+string our test was expecting:
 
 ```java
-public class HelloWorld {
-  public static String hello(String name) {
-    return "Hello, World!";
-  }
-}
+    String getGreeting() {
+        return "Hello, World!";
+    }
 ```
 
 Save the file and run the tests again:
@@ -214,250 +225,14 @@ $ gradle test
 :testClasses
 :test
 
-HelloWorldTest > helloSampleName FAILED
-    org.junit.ComparisonFailure: expected:<Hello, [Alice]!> but was:<Hello, [World]!>
-        at org.junit.Assert.assertEquals(Assert.java:115)
-        at org.junit.Assert.assertEquals(Assert.java:144)
-        at HelloWorldTest.helloSampleName(HelloWorldTest.java:22)
-
-HelloWorldTest > helloNoName PASSED
-
-HelloWorldTest > emptyStringIsComparedByValue PASSED
-
-HelloWorldTest > helloAnotherSampleName FAILED
-    org.junit.ComparisonFailure: expected:<Hello, [Bob]!> but was:<Hello, [World]!>
-        at org.junit.Assert.assertEquals(Assert.java:115)
-        at org.junit.Assert.assertEquals(Assert.java:144)
-        at HelloWorldTest.helloAnotherSampleName(HelloWorldTest.java:27)
-
-4 tests completed, 2 failed
-:test FAILED
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':test'.
-> There were failing tests. See the report at: file:///home/logan/hello-world/build/reports/tests/index.html
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
-
-BUILD FAILED
-
-Total time: 20.855 secs
-```
-
-Woohoo! :)  You can see that `helloNoName()` and `emptyStringIsComparedByValue()` are
-now passing.
-
-Let's tackle the next test...
-
-
-
-## Fixing the second test
-
-Right now, we've hardcoded the greeting.  This second test has
-unleashed a new expectation: that our program must incorporate a name given
-into that greeting.  When given the name "`Alice`", that's who should be
-greeted instead of "`World`".
-
-(Re)open `src/main/java/HelloWorld.java`.
-
-```java
-public class HelloWorld {
-  public static String hello(String name) {
-    return "Hello, World!";
-  }
-}
-```
-
-While `hello()` does accept a reference to a string named `name`, it is not
-using it in the output.  Let's change that:
-
-
-```java
-public class HelloWorld {
-  public static String hello(String name) {
-    return "Hello, " + name + "!";
-  }
-}
-```
-
-... and rerun the tests ...
-
-```
-$ gradle test
-:test
-
-HelloWorldTest > helloSampleName PASSED
-
-HelloWorldTest > helloNoName FAILED
-    org.junit.ComparisonFailure: expected:<Hello, [World]!> but was:<Hello, []!>
-        at org.junit.Assert.assertEquals(Assert.java:115)
-        at org.junit.Assert.assertEquals(Assert.java:144)
-        at HelloWorldTest.helloNoName(HelloWorldTest.java:11)
-
-HelloWorldTest > emptyStringIsComparedByValue FAILED
-    org.junit.ComparisonFailure: expected:<Hello, [World]!> but was:<Hello, []!>
-        at org.junit.Assert.assertEquals(Assert.java:115)
-        at org.junit.Assert.assertEquals(Assert.java:144)
-        at HelloWorldTest.emptyStringIsComparedByValue(HelloWorldTest.java:17)
-
-HelloWorldTest > helloAnotherSampleName PASSED
-
-4 tests completed, 2 failed
-:test FAILED
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':test'.
-> There were failing tests. See the report at: file:///home/logan/hello-world/build/reports/tests/index.html
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
-
-BUILD FAILED
-
-Total time: 12.466 secs
-```
-
-Wait... didn't we just fix the test?  Why is it failing?  Take a closer look...
-
-In fact, `helloSampleName()` *is* passing.  It's just that at the same time,
-we just inadvertently broke the first tests: `helloNoName()` and `emptyStringIsComparedByValue()`.
-
-This is one tiny example of the benefit of maintaining a test suite: if we
-use them to drive out our code, the second we break the program the tests
-say so.  Since we saw them passing just *before* our latest change,
-whatever we *just* did most likely cause that regression.
-
-Our latest change was making the greeting dependent on the name given. Our
-first two tests expects that if either a blank string or null are given as the
-name, then "`World`" should be substituted in.  Let's implement that.
-
-`src/main/java/HelloWorld.java`:
-```java
-public class HelloWorld {
-  public static String hello(String name) {
-    if(name == null || "".equals(name)) {
-      name = "World";
-    }
-    return "Hello, " + name + "!";
-  }
-}
-```
-
-... and re-run the tests ...
-
-```
-$ gradle test
-...
-:test
-
-HelloWorldTest > helloSampleName PASSED
-
-HelloWorldTest > helloNoName PASSED
-
-HelloWorldTest > emptyStringIsComparedByValue PASSED
-
-HelloWorldTest > helloAnotherSampleName PASSED
+GreeterTest > testThatGreeterReturnsTheCorrectGreeting PASSED
 
 BUILD SUCCESSFUL
 
 Total time: 11.717 secs
 ```
 
-Oh, hello!  Turns out, the solution we put into place didn't just apply for
-"`Alice`" but "`Bob`" equally well.  In this case, the test succeeded with
-no additional code on our part.
-
-
-
-## Refactoring
-
-Now that you've got all the tests passing, you might consider whether
-the code is in the most readable/maintainable/efficient shape.  What makes
-for "good" design of software is a big topic.  The pursuit of it underlies
-much of what makes up the more valuable conversations on Exercism.
-
-For now, let's just take a quick review of our solution and see if there's
-any part of it we'd like to refactor.  Refactoring is changing the way
-a bit of code reads without changing what it does.
-
-Right now, the details of detecting whether the caller of `hello()` has
-given a name or not (i.e. `name` is either `null` or an empty string) is
-sitting right next to the core responsibility of the method: to produce a
-personalized greeting.
-
-```java
-public class HelloWorld {
-  public static String hello(String name) {
-    if(name == null || "".equals(name)) {
-      name = "World";
-    }
-    return "Hello, " + name + "!";
-  }
-}
-```
-
-How would things read if we extracted those details into a separate method
-and at the same time, replaced the `if` with a ternary expression?
-
-```java
-public class HelloWorld {
-
-  public static String hello(String name) {
-    String whom = isBlank(name) ? "World" : name;
-    return "Hello, " + whom + "!";
-  }
-
-  private static boolean isBlank(String string) {
-    return string == null || "".equals(string);
-  }
-}
-```
-
-By extracting that logic into the `isBlank()` method, we've added a little
-abstraction to our program -- it's not as literal as it was before.  Yet,
-it allows us to defer *needing* to understand *how* "blankness" is
-detected.  If we can assume that `isBlank()` just works, we don't have to
-downshift in our head to those details.  Instead, we can remain at the same
-level of thinking: to whom are we greeting?
-
-The ternary operator allowed us to express that choice in a more compact
-form.  Less to read without losing the intent.
-
-Finally, we introduced another variable: `whom`.  Doing so gives a name to
-the output of the ternary expression.  We certainly could have continued
-to reuse `name`, but by introducing a second `String` to hold the
-calculated value this keeps crisp the two ideas: `name` is what's given
-and `whom` is what's been determined.
-
-We made a bunch of changes, let's make sure we didn't break the program!
-
-```
-$ gradle test
-...
-HelloWorldTest > helloSampleName PASSED
-
-HelloWorldTest > helloNoName PASSED
-
-HelloWorldTest > emptyStringIsComparedByValue PASSED
-
-HelloWorldTest > helloAnotherSampleName PASSED
-...
-```
-
-This illustrates another benefit of writing tests: you can make significant
-changes to the structure of the program and very quickly restore your
-confidence that the program still works.  These tests are a far cry from a
-"proof" of correctness, but well-written tests do a much better job of
-(very quickly) giving us evidence that it is.  Without them, we manually
-run the program with different inputs and/or inspecting the code
-line-by-line -- time-consuming and error prone.
-
-
+Success! Our solution passes the only test case supplied. We're good to go!
 
 # Submitting your first iteration
 
@@ -465,15 +240,20 @@ With a working solution that we've reviewed, we're ready to submit it to
 exercism.io.
 
 ```
-$ exercism submit src/main/java/HelloWorld.java
+$ exercism submit src/main/java/Greeter.java
 ```
-
-
 
 # Next Steps
 
 From here, there are a number of paths you can take.
 
+Regardless of what you decide to do next, we sincerely hope you learn
+and enjoy being part of this community.  If at any time you need assistance
+do not hesitate to ask for help:
+
+http://exercism.io/languages/java/help
+
+Cheers!
 
 ## Move on to the next exercise
 
@@ -482,7 +262,6 @@ There are many more exercises you can practice with.  Grab the next one!
 ```
 $ exercism fetch java
 ```
-
 
 ## Review (and comment on) others' submissions to this exercise
 
@@ -503,39 +282,11 @@ Here's an up-to-date list of submissions on the Java track:
 
 http://exercism.io/tracks/java/exercises
 
-
-
-## Submit another iteration
-
-You are also encouraged to consider additional "requirements" on a given
-exercise.
-
-For example, you could add a test or two that requires that the greeting
-use the capitalized form on the person's name, regardless of the case they
-used.
-
-In that situation, you'd write a test to set-up that new expectation and
-then implement that in the code (the same process we just went through
-together, above).
-
-
-
 ## Contribute to Exercism
 
-The entire of Exercism is Open Source and is the labor of love for over
+The entire of Exercism is Open Source and is a labor of love for over
 100 maintainers and many more contributors.
 
 A starting point to jumping in can be found here:
 
-https://github.com/exercism/problem-specifications/blob/master/CONTRIBUTING.md
-
-
-----
-
-Regardless of what you decide to do next, we sincerely hope you learn
-and enjoy being part of this community.  If at any time you need assistance
-do not hesitate to ask for help:
-
-http://exercism.io/languages/java/help
-
-Cheers!
+https://github.com/exercism/docs/tree/master/contributing-to-language-tracks
