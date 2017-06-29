@@ -26,7 +26,7 @@ public class BankAccountTest {
         assertEquals(0, bankAccount.getBalance());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canDepositMoney() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -36,7 +36,7 @@ public class BankAccountTest {
         assertEquals(10, bankAccount.getBalance());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canDepositMoneySequentially() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -47,7 +47,7 @@ public class BankAccountTest {
         assertEquals(28, bankAccount.getBalance());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canWithdrawMoney() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -58,7 +58,7 @@ public class BankAccountTest {
         assertEquals(5, bankAccount.getBalance());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canWithdrawMoneySequentially() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -70,7 +70,7 @@ public class BankAccountTest {
         assertEquals(0, bankAccount.getBalance());
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotWithdrawMoneyFromEmptyAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -81,7 +81,7 @@ public class BankAccountTest {
         bankAccount.withdraw(5);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotWithdrawMoreMoneyThanYouHave() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -93,7 +93,7 @@ public class BankAccountTest {
         bankAccount.withdraw(7);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotDepositNegativeAmount() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -104,7 +104,7 @@ public class BankAccountTest {
         bankAccount.deposit(-1);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotWithdrawNegativeAmount() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -116,7 +116,7 @@ public class BankAccountTest {
         bankAccount.withdraw(-5);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotGetBalanceOfClosedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -129,7 +129,7 @@ public class BankAccountTest {
         bankAccount.getBalance();
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotDepositMoneyIntoClosedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -141,7 +141,7 @@ public class BankAccountTest {
         bankAccount.deposit(5);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void cannotWithdrawMoneyFromClosedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
@@ -154,7 +154,7 @@ public class BankAccountTest {
         bankAccount.withdraw(5);
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void bankAccountIsClosedBeforeItIsOpened() throws BankAccountActionInvalidException {
         expectedException.expect(BankAccountActionInvalidException.class);
@@ -163,7 +163,7 @@ public class BankAccountTest {
         bankAccount.getBalance();
     }
 
-    @Ignore
+    @Ignore("Remove to run test")
     @Test
     public void canAdjustBalanceConcurrently() throws BankAccountActionInvalidException, InterruptedException {
         bankAccount.open();
