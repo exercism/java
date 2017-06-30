@@ -495,17 +495,17 @@
       ]
     },
     {
+      "slug": "list-ops",
+      "difficulty": 9,
+      "topics": [
+      
+      ]
+    },
+    {
       "slug": "custom-set",
       "difficulty": 10,
       "topics": [
 
-      ]
-    },
-    {
-      "slug": "list-ops",
-      "difficulty": 1,
-      "topics": [
-      
       ]
     }
   ],
