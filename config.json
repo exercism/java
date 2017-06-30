@@ -374,6 +374,13 @@
       ]
     },
     {
+    	"slug": "bank-account",
+    	"difficulty": 6,
+    	"topics": [
+
+    	]
+    },
+    {
       "slug": "anagram",
       "difficulty": 7,
       "topics": [
