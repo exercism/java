@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
 public class NucleotideTest {
 
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
-    
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void testEmptyDnaStringHasNoAdenine() {
         DNA dna = new DNA("");
@@ -87,7 +87,7 @@ public class NucleotideTest {
     @Ignore("Remove to run test")
     @Test
     public void testValidatesNucleotides() {
-        thrown.expect(IllegalArgumentException.class);
+        expectedException.expect(IllegalArgumentException.class);
         DNA dna = new DNA("GACT");
         dna.count('X');
     }

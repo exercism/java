@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class SimpleLinkedListTest {
 
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void aNewListIsEmpty() {
@@ -30,7 +30,7 @@ public class SimpleLinkedListTest {
     @Ignore("Remove to run test")
     @Test
     public void popOnEmptyListWillThrow() {
-        thrown.expect(NoSuchElementException.class);
+        expectedException.expect(NoSuchElementException.class);
         SimpleLinkedList list = new SimpleLinkedList();
         list.pop();
     }

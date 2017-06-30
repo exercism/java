@@ -7,10 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 public class LargestSeriesProductCalculatorTest {
 
-    /*
-     * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
-     * ExpectedExceptions in particular.
-     */
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 

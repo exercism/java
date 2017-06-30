@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class TriangleTest {
 
     @Rule
-    public final ExpectedException thrown = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void equilateralTrianglesHaveEqualSides() throws TriangleException {
@@ -92,35 +92,35 @@ public class TriangleTest {
     @Ignore("Remove to run test")
     @Test
     public void trianglesWithNoSizeAreIllegal() throws TriangleException {
-        thrown.expect(TriangleException.class);
+        expectedException.expect(TriangleException.class);
         new Triangle(0, 0, 0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void trianglesWithNegativeSidesAreIllegal() throws TriangleException {
-        thrown.expect(TriangleException.class);
+        expectedException.expect(TriangleException.class);
         new Triangle(3, 4, -5);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void trianglesViolatingTriangleInequalityAreIllegal() throws TriangleException {
-        thrown.expect(TriangleException.class);
+        expectedException.expect(TriangleException.class);
         new Triangle(1, 1, 3);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void trianglesViolatingTriangleInequalityAreIllegal2() throws TriangleException {
-        thrown.expect(TriangleException.class);
+        expectedException.expect(TriangleException.class);
         new Triangle(2, 4, 2);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void trianglesViolatingTriangleInequalityAreIllegal3() throws TriangleException {
-        thrown.expect(TriangleException.class);
+        expectedException.expect(TriangleException.class);
         new Triangle(7, 3, 2);
     }
 }
