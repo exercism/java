@@ -430,6 +430,15 @@
       ]
     },
     {
+      "slug": "poker",
+      "difficulty": 7,
+      "topics": [
+        "Parsing",
+        "Sorting",
+        "Games"
+      ]
+    },
+    {
       "slug": "clock",
       "difficulty": 7,
       "topics": [
