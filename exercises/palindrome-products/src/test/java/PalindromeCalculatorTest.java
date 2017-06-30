@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.stream.Collectors;
 
-import static junit.framework.TestCase.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
 public class PalindromeCalculatorTest {
     private PalindromeCalculator palindromeCalculator;
