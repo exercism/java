@@ -1,316 +1,186 @@
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertNotNull;
-import static junit.framework.TestCase.assertTrue;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
+/*
+ * version: 1.0.0
+ */
 public class ListOpsTest {
 
-    private static final List<Integer> EMPTY_LIST
-            = Collections.emptyList();
-
     @Test
-    public void lengthOfAnEmptyListShouldBeZero() {
-        final int expected = 0;
-        final int actual = ListOps.length(EMPTY_LIST);
-
-        assertEquals(expected, actual);
+    public void testAppendingEmptyLists() {
+        assertEquals(
+                Collections.emptyList(),
+                ListOps.append(Collections.emptyList(), Collections.emptyList()));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldReturnTheCorrectLengthOfAnNonEmptyList() {
-        final List<Integer> list = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3, 4)
-        );
-        final int actual = ListOps.length(list);
-        final int expected = list.size();
-
-        assertEquals(expected, actual);
+    @Test
+    public void testAppendingNonEmptyListOnEmptyList() {
+        assertEquals(
+                Arrays.asList('1', '2', '3', '4'),
+                ListOps.append(Collections.emptyList(), Arrays.asList('1', '2', '3', '4')));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldReverseAnEmptyList() {
-        final List<Integer> actual = ListOps.reverse(EMPTY_LIST);
-
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+    @Test
+    public void testAppendingNonEmptyListOnNonEmptyList() {
+        assertEquals(
+                Arrays.asList("1", "2", "2", "3", "4", "5"),
+                ListOps.append(Arrays.asList("1", "2"), Arrays.asList("2", "3", "4", "5")));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldReverseANonEmptyList() {
-        final List<Integer> list = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8)
-        );
-        final List<Integer> actual
-                = ListOps.reverse(list);
-        final List<Integer> expected
-                = Arrays.asList(8, 7, 6, 5, 4, 3, 2, 1, 0);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testConcatOnEmptyListOfLists() {
+        assertEquals(
+                Collections.emptyList(),
+                ListOps.concat(Collections.emptyList()));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldMapAnEmptyListAndReturnAnEmptyList() {
-        final List<Integer> actual = ListOps.map(EMPTY_LIST, x -> x + 1);
+    @Test
+    public void testConcatOnNonEmptyListOfLists() {
+        List<List<Character>> listOfLists = Arrays.asList(
+                Arrays.asList('1', '2'),
+                Collections.singletonList('3'),
+                Collections.emptyList(),
+                Arrays.asList('4', '5', '6'));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertEquals(
+                Arrays.asList('1', '2', '3', '4', '5', '6'),
+                ListOps.concat(listOfLists));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldMapNonEmptyList() {
-        final List<Integer> list
-                = Collections.unmodifiableList(Arrays.asList(1, 3, 5, 7));
-        final List<Integer> actual = ListOps.map(list, x -> x + 1);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(Arrays.asList(2, 4, 6, 8), actual);
+    @Test
+    public void testFilteringEmptyList() {
+        assertEquals(
+                Collections.emptyList(),
+                ListOps.filter(Collections.<Integer>emptyList(), integer -> integer % 2 == 1));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldFilterAnEmptyListanddReturnAnEmptyList() {
-        final List<Integer> actual = ListOps.filter(EMPTY_LIST, x -> x > 0);
-
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+    @Test
+    public void testFilteringNonEmptyList() {
+        assertEquals(
+                Arrays.asList(1, 3, 5),
+                ListOps.filter(Arrays.asList(1, 2, 3, 5), integer -> integer % 2 == 1));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldFilterNonEmptyList() {
-        Predicate<Integer> predicate = x -> x % 2 > 0;
-        final List<Integer> list = Collections.unmodifiableList(
-                IntStream.range(0, 100).boxed().collect(Collectors.toList())
-        );
-        final List<Integer> actual = ListOps.filter(list, predicate);
-        final List<Integer> expected = list.stream()
-                .filter(predicate)
-                .collect(Collectors.toList());
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testSizeOfEmptyList() {
+        assertEquals(0, ListOps.size(Collections.emptyList()));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateZeroLists() {
-        List<Integer> actual = ListOps.concat();
-
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+    @Test
+    public void testSizeOfNonEmptyList() {
+        assertEquals(4, ListOps.size(Arrays.asList("one", "two", "three", "four")));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateOneNonEmptyList() {
-        final List<Integer> list
-                = Collections.unmodifiableList(
-                        Arrays.asList(0, 1, 2, 3, 4)
-                );
-        final List<Integer> actual = ListOps.concat(list);
-        final List<Integer> expected = Arrays.asList(0, 1, 2, 3, 4);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testTransformingEmptyList() {
+        assertEquals(
+                Collections.emptyList(),
+                ListOps.map(Collections.<Integer>emptyList(), integer -> integer + 1 ));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateOneEmptyList() {
-        final List<Integer> actual = ListOps.concat(EMPTY_LIST);
-
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+    @Test
+    public void testTransformingNonEmptyList() {
+        assertEquals(
+                Arrays.asList(2, 4, 6, 8),
+                ListOps.map(Arrays.asList(1, 3, 5, 7), integer -> integer + 1 ));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateTwoEmptyLists() {
-        final List<Integer> actual = ListOps.concat(EMPTY_LIST, EMPTY_LIST);
-
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+    @Test
+    public void testFoldLeftOnEmptyList() {
+        assertEquals(
+                new Double(2.0), // Boxing required for method overload disambiguation.
+                ListOps.foldLeft(
+                        Collections.<Double>emptyList(),
+                        2.0,
+                        (x, y) -> x * y));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateOneEmptyAndOneNonEmptyLists() {
-        final List<Integer> list
-                = Collections.unmodifiableList(
-                        Arrays.asList(0, 1, 2, 3, 4)
-                );
-        final List<Integer> actual = ListOps.concat(list, EMPTY_LIST);
-        final List<Integer> expected
-                = Arrays.asList(0, 1, 2, 3, 4);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testFoldLeftWithDirectionIndependentOperationOnNonEmptyList() {
+        assertEquals(
+                new Integer(15), // Boxing required for method overload disambiguation.
+                ListOps.foldLeft(
+                        Arrays.asList(1, 2, 3, 4),
+                        5,
+                        (x, y) -> x + y));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateOneNonEmptyAndOneEmptyLists() {
-        final List<Integer> list
-                = Collections.unmodifiableList(
-                        Arrays.asList(0, 1, 2, 3, 4)
-                );
-        final List<Integer> actual = ListOps.concat(EMPTY_LIST, list);
-        final List<Integer> expected
-                = Arrays.asList(0, 1, 2, 3, 4);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testFoldLeftWithDirectionDependentOperationOnNonEmptyList() {
+        assertEquals(
+                new Integer(0), // Boxing required for method overload disambiguation.
+                ListOps.foldLeft(
+                        Arrays.asList(2, 5),
+                        5,
+                        (x, y) -> x / y));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateTwoListsWithSameElements() {
-        final List<Integer> list1 = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3, 4)
-        );
-        final List<Integer> list2 = Collections.unmodifiableList(
-                Arrays.asList(1, 2, 3, 4, 5, 6)
-        );
-        final List<Integer> expected
-                = Arrays.asList(0, 1, 2, 3, 4, 1, 2, 3, 4, 5, 6);
-        final List<Integer> actual = ListOps.concat(list1, list2);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testFoldRightOnEmptyList() {
+        assertEquals(
+                new Double(2.0), // Boxing required for method overload disambiguation.
+                ListOps.foldRight(
+                        Collections.<Double>emptyList(),
+                        2.0,
+                        (x, y) -> x * y));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldConcatenateSeveralLists() {
-        final List<Integer> list1 = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3)
-        );
-        final List<Integer> list2 = Collections.unmodifiableList(
-                Arrays.asList(4, 5, 6, 7)
-        );
-        final List<Integer> list3 = Collections.unmodifiableList(
-                Arrays.asList(8, 9, 10, 11)
-        );
-        final List<Integer> list4 = Collections.unmodifiableList(
-                Arrays.asList(12, 13, 14, 15)
-        );
-        final List<Integer> expected
-                = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
-                        14, 15);
-
-        final List<Integer> actual
-                = ListOps.concat(list1, list2, EMPTY_LIST, list3, list4);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    @Test
+    public void testFoldRightWithDirectionIndependentOperationOnNonEmptyList() {
+        assertEquals(
+                new Integer(15), // Boxing required for method overload disambiguation.
+                ListOps.foldRight(
+                        Arrays.asList(1, 2, 3, 4),
+                        5,
+                        (x, y) -> x + y));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldReturnIdentityWhenAnEmptyListIsReduced() {
-        final int expected = 0;
-        final int actual
-                = ListOps.reduce(EMPTY_LIST, 0, (x, y) -> x + y, Integer::sum);
-
-        assertEquals(expected, actual);
+    @Test
+    public void testFoldRightWithDirectionDependentOperationOnNonEmptyList() {
+        assertEquals(
+                new Integer(2), // Boxing required for method overload disambiguation.
+                ListOps.foldRight(
+                        Arrays.asList(2, 5),
+                        5,
+                        (x, y) -> x / y));
     }
 
-    @Test
     @Ignore("Remove to run test")
-    public void shouldCalculateTheSumOfANonEmptyIntegerList() {
-        final List<Integer> list = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3, 4)
-        );
-        final int actual = ListOps.reduce(list, 0,
-                (x, y) -> x + y,
-                Integer::sum);
-
-        assertEquals(10, actual);
+    @Test
+    public void testReversingEmptyList() {
+        assertEquals(
+                Collections.emptyList(),
+                ListOps.reverse(Collections.emptyList()));
     }
 
-    /*
-    https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
-    https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-U-java.util.function.BiFunction-java.util.function.BinaryOperator-
-     */
-    private BiFunction<List<Integer>, Integer, List<Integer>> accumulator
-            = (List<Integer> partial, Integer elem) -> {
-                List<Integer> result = new ArrayList<>(partial);
-                result.add(elem);
-                return result;
-            };
-
-    private BinaryOperator<List<Integer>> combiner
-            = (list1, list2) -> {
-                List<Integer> result = new ArrayList<>(list1);
-                result.addAll(list2);
-                return result;
-            };
-
-    @Test
     @Ignore("Remove to run test")
-    public void shouldReduceAnEmptyListAndANonEmptyListAndReturnConcatenation() {
-        final List<Integer> list = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3, 4, 5)
-        );
-        final List<Integer> actual
-                = ListOps.reduce(list,
-                        new ArrayList<Integer>(),
-                        accumulator,
-                        combiner);
-        final List<Integer> expected
-                = Arrays.asList(0, 1, 2, 3, 4, 5);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
     @Test
-    @Ignore("Remove to run test")
-    public void shouldReduceTwoNonEmptyListsAndReturnConcatenation() {
-        final List<Integer> listOne = Collections.unmodifiableList(
-                Arrays.asList(0, 1, 2, 3, 4)
-        );
-        final List<Integer> listTwo = Collections.unmodifiableList(
-                Arrays.asList(5, 6, 7, 8, 9)
-        );
-        final List<Integer> actual
-                = ListOps.reduce(listTwo,
-                        listOne,
-                        accumulator,
-                        combiner);
-        final List<Integer> expected
-                = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+    public void testReversingNonEmptyList() {
+        assertEquals(
+                Arrays.asList('7', '5', '3', '1'),
+                ListOps.reverse(Arrays.asList('1', '3', '5', '7')));
     }
 
 }

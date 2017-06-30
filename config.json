@@ -481,6 +481,13 @@
       ]
     },
     {
+      "slug": "list-ops",
+      "difficulty": 8,
+      "topics": [
+      
+      ]
+    },
+    {
       "slug": "change",
       "difficulty": 8,
       "topics": [
@@ -499,13 +506,6 @@
       "difficulty": 9,
       "topics": [
 
-      ]
-    },
-    {
-      "slug": "list-ops",
-      "difficulty": 9,
-      "topics": [
-      
       ]
     },
     {
