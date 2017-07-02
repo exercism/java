@@ -21,7 +21,7 @@ public class PascalsTriangleGeneratorTest {
     }
 
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testTriangleWithZeroRows() {
@@ -79,7 +79,7 @@ public class PascalsTriangleGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     public void testValidatesNotNegativeRows() {
-        thrown.expect(IllegalArgumentException.class);
+        expectedException.expect(IllegalArgumentException.class);
         pascalsTriangleGenerator.generateTriangle(-1);
     }
 

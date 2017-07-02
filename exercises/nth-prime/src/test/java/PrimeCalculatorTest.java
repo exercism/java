@@ -10,13 +10,13 @@ import static org.junit.Assert.*;
 public class PrimeCalculatorTest {
     private PrimeCalculator primeCalculator;
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Before
     public void setup() {
         primeCalculator = new PrimeCalculator();
     }
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void testFirstPrime() {
@@ -44,7 +44,7 @@ public class PrimeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testUndefinedPrime() {
-        thrown.expect(IllegalArgumentException.class);
+        expectedException.expect(IllegalArgumentException.class);
         primeCalculator.nth(0);
     }
 

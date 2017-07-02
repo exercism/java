@@ -11,10 +11,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 public class SeriesTest {
-    
+
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
-    
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void hasDigitsShort() {
         Series series = new Series("01234");
@@ -154,7 +154,7 @@ public class SeriesTest {
     @Test
     @Ignore("Remove to run test")
     public void throwsAnErrorIfNotEnoughDigitsToSlice() {
-        thrown.expect(IllegalArgumentException.class);
+        expectedException.expect(IllegalArgumentException.class);
         new Series("01032987583").slices(12);
     }
 }
