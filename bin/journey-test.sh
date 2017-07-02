@@ -154,7 +154,7 @@ make_local_trackler() {
   local version=$( grep -m 1 'trackler' ${xapi_home}/Gemfile.lock | sed 's/.*(//' | sed 's/)//' )
 
   git checkout v${version}
-  git submodule init -- common
+  git submodule init -- problem-specifications
   git submodule update
 
   # Bake in local copy of this track; this is what we are testing.
