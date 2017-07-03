@@ -6,4 +6,4 @@ Source for Exercism Exercises in Java.
 
 For general information about how to contribute to Exercism, please refer to the [Contributing Guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks).
 
-For information on contributing to this track, refer to the [CONTRIBUTING.md](https://github.com/exercism/java/blob/main/CONTRIBUTING.md) file.
+For information on contributing to this track, refer to the [CONTRIBUTING.md](https://github.com/exercism/java/blob/master/CONTRIBUTING.md) file.
