@@ -48,7 +48,7 @@ References: [[1](https://github.com/exercism/java/issues/178)]
 
 ### Ignore noninitial tests
 
-> All but the first test in an exercise test suite should be annotated `@Ignore("Remove to run test")` (single test) or `@Ignore("Remove to run tests")` (parametrized test).
+> All but the first test in an exercise test suite should add `@Ignore("Remove to run test")` (single test) or `@Ignore("Remove to run tests")` (parametrized test) on the line before the corresponding `@Test` annotation.
 
 References: [[1](https://github.com/exercism/java/issues/101#issuecomment-249349204)]
 
