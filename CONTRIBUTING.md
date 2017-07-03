@@ -27,6 +27,8 @@ Before opening your pull request, please review the track policies linked below 
 - [Ignore noninitial tests](https://github.com/exercism/java/blob/master/POLICIES.md#ignore-noninitial-tests)
 - [Multiple file submissions](https://github.com/exercism/java/blob/master/POLICIES.md#multiple-file-submissions)
 
+One last thing to note before you get started. When you fork the repository and you want to sync your fork, you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
+
 ## Contributing With Minimal Setup
 
 First things first: by contributing to Exercism, you are making this learning tool that much better and improving our industry as a whole... thank you!!!
