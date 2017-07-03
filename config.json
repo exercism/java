@@ -388,6 +388,13 @@
     	]
     },
     {
+    	"slug": "bowling",
+    	"difficulty": 6,
+    	"topics": [
+
+    	]
+    },
+    {
       "slug": "anagram",
       "difficulty": 7,
       "topics": [
