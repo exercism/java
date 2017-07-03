@@ -20,8 +20,8 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void shouldCalculateProduct() {
         PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
         final long expected = 60l;
@@ -29,22 +29,22 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void testIsPythagoreanOK() {
         PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
         assertTrue(triplet.isPythagorean());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void testIsPythagoreanFail() {
         PythagoreanTriplet triplet = new PythagoreanTriplet(5, 6, 7);
         assertFalse(triplet.isPythagorean());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void shouldMakeTripletsUpToTen() {
         final List<Long> actual
                 = PythagoreanTriplet
@@ -59,8 +59,8 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void shouldMakeTripletsElevenToTwenty() {
         final List<Long> actual
                 = PythagoreanTriplet
@@ -76,8 +76,8 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void shouldMakeTripletsAndFilterOnSum() {
         final List<Long> actual
                 = PythagoreanTriplet

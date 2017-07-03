@@ -35,8 +35,8 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void largestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -50,8 +50,8 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void smallestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -65,8 +65,8 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void largestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -80,8 +80,8 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void smallestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(

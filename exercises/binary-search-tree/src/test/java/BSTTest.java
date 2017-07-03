@@ -20,8 +20,8 @@ public class BSTTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void insertsLess() {
         BST<Integer> bst = new BST();
         final int expectedRoot = 4;
@@ -41,8 +41,8 @@ public class BSTTest {
         assertEquals(expectedRoot, actualRoot);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void insertsSame() {
         BST<Integer> bst = new BST();
         final int expectedRoot = 4;
@@ -62,8 +62,8 @@ public class BSTTest {
         assertEquals(expectedRoot, actualRoot);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void insertsRight() {
         BST<Integer> bst = new BST();
         final int expectedRoot = 4;
@@ -83,8 +83,8 @@ public class BSTTest {
         assertEquals(expectedRoot, actualRoot);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void createsComplexTree() {
         BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -100,8 +100,8 @@ public class BSTTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void sortsSingleElement() {
         BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -114,8 +114,8 @@ public class BSTTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void sortsCollectionOfTwoIfSecondInsertedIsSmallerThanFirst() {
         BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -129,8 +129,8 @@ public class BSTTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void sortsCollectionOfTwoIfSecondInsertedIsBiggerThanFirst() {
         BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
@@ -144,8 +144,8 @@ public class BSTTest {
         assertEquals(expected, actual);
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void iteratesOverComplexTree() {
         BST<Integer> bst = new BST<>();
         List<Integer> expected = Collections.unmodifiableList(
