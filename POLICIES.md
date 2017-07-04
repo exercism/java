@@ -34,13 +34,11 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 
 ### Starter implementations
 
-> - Exercises 1-10: provide stubs for all required constructors and methods. Stubs should include the following body:
+> - Exercises 1-20: provide stubs for all required constructors and methods. Stubs should include the following body:
     `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
-> - Exercises 11-20: provide stubs for all constructors and methods required by the first test; comment-out the bodies of any tests that require non-stubbed constructors or methods. Stubs should include the following body:
-    `throw new UnsupportedOperationException("Delete this statement and provide your own implementation.");`
-> - Exercises 21+: provide no stubs, but mention any "interesting" interface aspects in the HINTS.md file (which gets merged into the README.md for the exercise).
+> - Exercises 21+: provide no stubs by default, but either (1) add hints to the HINTS.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as in exercises 1-20 for exercises that demand complicated method signatures.
 
-References: [[1](https://github.com/exercism/java/issues/178)]
+References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930))
 
 ### Do not make user-facing classes `final`
 
