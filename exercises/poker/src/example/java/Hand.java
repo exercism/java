@@ -103,8 +103,7 @@ class Hand {
         if (rankCounts.equals(Arrays.asList(2, 1, 1, 1))) {
             return 100 + highestFrequency;
         }
-        ranks.sort(Comparator.reverseOrder());
-        Collections.reverse(ranks);
+        ranks.sort(Comparator.naturalOrder());
         return ranks.get(0);
     }
 }
