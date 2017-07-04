@@ -1,27 +1,34 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class Poker {
-	private final List<String> bestHands;
+class Poker {
+    private final List<String> bestHands;
 
-	public Poker(final List<String> hands) {
-		bestHands = bestHands(hands);
-	}
+    Poker(final List<String> hands) {
+        bestHands = bestHands(hands);
+    }
 
-	public List<String> getBestHands() {
-		return bestHands;
-	}
+    List<String> getBestHands() {
+        return bestHands;
+    }
 
-	public List<String> bestHands(final List<String> hands) {
-		ArrayList<Hand> scoredHands = new ArrayList<Hand>();
+    private List<String> bestHands(final List<String> hands) {
+        ArrayList<Hand> scoredHands = new ArrayList<>();
 
-		for (String s : hands) {
-			scoredHands.add(new Hand(s));
-		}
-		int maxscore = scoredHands.stream().map(h -> h.getScore()).max(Comparator.naturalOrder()).get();
-		return scoredHands.stream().filter(h -> h.getScore() == maxscore).map(h -> h.getInput())
-				.collect(Collectors.toList());
-	}
+        for (String s : hands) {
+            scoredHands.add(new Hand(s));
+        }
+        Optional<Integer> maxScoreIfAny = scoredHands
+                .stream()
+                .map(Hand::getScore)
+                .max(Comparator.naturalOrder());
+        return maxScoreIfAny
+                .map(maxScore -> scoredHands
+                        .stream()
+                        .filter(h -> h.getScore() == maxScore)
+                        .map(Hand::getInput)
+                        .collect(Collectors.toList()))
+                .orElseGet(Collections::emptyList);
+
+    }
 }
