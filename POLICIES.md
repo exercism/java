@@ -40,9 +40,11 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 
 References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)]
 
-### Do not make user-facing classes `final`
+### Minimize initial complexity in user-facing code
 
-> Starter implementations and test classes should not include the `final` keyword in class declarations as it isn't strictly necessary and could be confusing to people unfamiliar with Java.
+> Minimize (within reason) the number of Java language constructs a user is exposed to simultaneously at the beginning of the track. Instead, introduce those constructs with examples and hints in an appropriate later exercise. Specific applications of this policy include:
+> - avoiding use of the `public` keyword in user-facing class declarations, method signatures, and parameter signatures;
+> - avoiding use of the `final` keyword in user-facing class declarations, method signatures, and parameter signatures.
 
 ### Ignore noninitial tests
 
