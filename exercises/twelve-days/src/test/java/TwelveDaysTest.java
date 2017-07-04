@@ -120,7 +120,6 @@ public class TwelveDaysTest {
     @Ignore("Remove to run test")
     @Test
     public void testMultipleVerses() {
-/*
         String expectedVerseOneToThree = "On the first day of Christmas my true love gave to me, " +
                 "a Partridge in a Pear Tree.\n\n" +
                 "On the second day of Christmas my true love gave to me, two Turtle Doves, " +
@@ -128,13 +127,11 @@ public class TwelveDaysTest {
                 "On the third day of Christmas my true love gave to me, three French Hens, two Turtle Doves, " +
                 "and a Partridge in a Pear Tree.\n";
         assertEquals(expectedVerseOneToThree, twelveDays.verses(1, 3));
-*/
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSingWholeSong() {
-/*
         String expectedSong = "On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n" +
                 "\n" +
                 "On the second day of Christmas my true love gave to me, two Turtle Doves, " +
@@ -178,6 +175,5 @@ public class TwelveDaysTest {
                 "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
                 "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
         assertEquals(expectedSong, twelveDays.sing());
-*/
     }
 }
