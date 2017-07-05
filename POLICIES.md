@@ -17,9 +17,8 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added | [Prefer instance methods](#prefer-instance-methods); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests) |
-| Exercise updated | [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions) |
-| Track order changed | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
+| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions) |
+| Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first patches](#good-first-patches) |
 | "Good first patch" issue completed | [Good first patches](#good-first-patches) |
 | Installing Java instructions updated | [Simple onboarding](#simple-onboarding) |
@@ -40,11 +39,14 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 
 References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)]
 
-### Minimize initial complexity in user-facing code
+### Avoid using final
 
-> Minimize (within reason) the number of Java language constructs a user is exposed to simultaneously at the beginning of the track. Instead, introduce those constructs with examples and hints in an appropriate later exercise. Specific applications of this policy include:
-> - avoiding use of the `public` keyword in user-facing class declarations, method signatures, and parameter signatures;
-> - avoiding use of the `final` keyword in user-facing class declarations, method signatures, and parameter signatures.
+> Avoid using `final` in user-facing code. Liberal use of the `final` keyword remains controversial. It adds little value to test suites, and if included in starter implementations, places implicit restrictions on user solutions.
+
+### Adhere to best practices
+
+> Ensure that all Java code adheres to the best practices listed below:
+> - minimize the accessibility of classes and members ([Effective Java, item 13](http://jtechies.blogspot.com/2012/07/item-13-minimize-accessibility-of.html))
 
 ### Ignore noninitial tests
 
