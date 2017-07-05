@@ -469,6 +469,15 @@
       ]
     },
     {
+      "slug": "circular-buffer",
+      "difficulty": 8,
+      "topics": [
+        "Queues",
+        "Classes",
+        "Exception handling"
+      ]
+    },
+    {
       "slug": "rectangles",
       "difficulty": 8,
       "topics": [
