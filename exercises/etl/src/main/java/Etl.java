@@ -3,6 +3,6 @@ import java.util.Map;
 
 public class Etl {
     public Map<String, Integer> transform(Map<Integer, List<String>> old) {
-        return null;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }
