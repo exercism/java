@@ -308,7 +308,9 @@
     {
       "slug": "food-chain",
       "difficulty": 6,
-      "topics": []
+      "topics": [
+
+      ]
     },
     {
       "slug": "beer-song",
