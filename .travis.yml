@@ -2,6 +2,9 @@
 language: java
 jdk:
   - oraclejdk8
+env:
+  - SCRIPT=bin/unit-tests.sh
+  - SCRIPT=bin/journey-test.sh
 
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
@@ -23,8 +26,7 @@ before_script:
   - export PATH=$TRAVIS_BUILD_DIR/bin:$PATH  # ensure our tools are prefered over included ones.
 
 script:
-  - bin/unit-tests.sh
-  - bin/journey-test.sh
+  - $SCRIPT
 
 # configure caching (https://docs.travis-ci.com/user/languages/java/#Caching)
 before_cache:

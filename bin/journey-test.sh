@@ -164,7 +164,7 @@ make_local_trackler() {
   cp -r ${track_root}/exercises tracks/${TRACK}
 
   gem install bundler
-  bundle install
+  bundle install -j4
   gem build trackler.gemspec
 
   # Make *this* the gem that x-api uses when we build x-api.
@@ -181,7 +181,7 @@ start_x_api() {
   pushd $xapi_home
 
   gem install bundler
-  bundle install
+  bundle install -j4
   RACK_ENV=development rackup &
   xapi_pid=$!
   sleep 5
@@ -233,7 +233,7 @@ solve_all_exercises() {
 
     pushd ${exercism_exercises_dir}/${TRACK}/${exercise}
     # Check that tests compile before we strip @Ignore annotations
-    "$EXECPATH"/gradlew compileTestJava
+    "$EXECPATH"/gradlew compileTestJava --configure-on-demand --parallel
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
     for testfile in `find . -name "*Test.${TRACK_SRC_EXT}"`; do
       # Strip @Ignore annotations to ensure we run the tests (as delivered, all but the first is @Ignore'd).
@@ -241,7 +241,7 @@ solve_all_exercises() {
       # The stripping implementations here and in copyTestsFilteringIgnores should be kept consistent.
       sed 's/@Ignore\(\(.*\)\)\{0,1\}//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
     done
-    "$EXECPATH"/gradlew test
+    "$EXECPATH"/gradlew test --configure-on-demand --parallel
     popd
 
     current_exercise_number=$((current_exercise_number + 1))
