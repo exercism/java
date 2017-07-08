@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class SumOfMultiplesTest {
 
     @Test
-    public void testSumOfMultiplesOf3and4UpToOne() {
+    public void testSumOfMultiplesOf3and5UpToOne() {
 
         int[] set = {
                 3,
