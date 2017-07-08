@@ -5,6 +5,7 @@
 TRACK=java
 TRACK_REPO="$TRACK"
 TRACK_SRC_EXT="java"
+CPU_CORES=`getconf NPROCESSORS_ONLN 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1`
 
 on_exit() {
   echo ">>> on_exit()"
@@ -98,6 +99,14 @@ get_cpu_architecture() {
   esac
 }
 
+get_optimal_amount_of_jobs() {
+  if [ "$CPU_CORES" -gt "1" ]; then 
+    echo $((CPU_CORES-1))
+  else 
+    echo 1 
+  fi
+}
+
 download_exercism_cli() {
   local os="$1"
   local arch="$2"
@@ -164,7 +173,7 @@ make_local_trackler() {
   cp -r ${track_root}/exercises tracks/${TRACK}
 
   gem install bundler
-  bundle install --jobs $((`nproc --all`-1))
+  bundle install --jobs $(get_optimal_amount_of_jobs)
   gem build trackler.gemspec
 
   # Make *this* the gem that x-api uses when we build x-api.
@@ -181,7 +190,7 @@ start_x_api() {
   pushd $xapi_home
 
   gem install bundler
-  bundle install --jobs $((`nproc --all`-1))
+  bundle install --jobs $(get_optimal_amount_of_jobs) 
   RACK_ENV=development rackup &
   xapi_pid=$!
   sleep 5
