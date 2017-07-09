@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# This script is shared between the Java and Kotlin tracks.  If you make an update to this script on
-# one track, please create a companion PR to merge it in to the other.  Thank you!
 TRACK=java
 TRACK_REPO="$TRACK"
 TRACK_SRC_EXT="java"
