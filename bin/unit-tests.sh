@@ -5,7 +5,7 @@ set -e
 echo ""
 echo ">>> Running configlet..."
 bin/fetch-configlet
-bin/configlet .
+bin/configlet lint .
 
 pushd exercises
 echo ""
