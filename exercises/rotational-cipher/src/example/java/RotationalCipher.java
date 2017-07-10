@@ -32,7 +32,7 @@ public class RotationalCipher {
      * For Uppercase CaseStart = 'A' and CaseEnd = 'Z'
      * For Lowercase CaseStart = 'a' and CaseEnd = 'z'
      */
-    public char getReplacementCharacter(char characterToReplace,
+    private char getReplacementCharacter(char characterToReplace,
             char alphabetCaseStart, char alphabetCaseEnd) {
         char replacementCharacter = (char) (characterToReplace + shiftKey);
         if (replacementCharacter > alphabetCaseEnd) {
