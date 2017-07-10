@@ -3,6 +3,7 @@
 TRACK=java
 TRACK_REPO="$TRACK"
 TRACK_SRC_EXT="java"
+CPU_CORES=`getconf NPROCESSORS_ONLN 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1`
 
 on_exit() {
   echo ">>> on_exit()"
@@ -96,6 +97,14 @@ get_cpu_architecture() {
   esac
 }
 
+get_optimal_amount_of_jobs() {
+  if [ "$CPU_CORES" -gt "1" ]; then 
+    echo $((CPU_CORES-1))
+  else 
+    echo 1 
+  fi
+}
+
 download_exercism_cli() {
   local os="$1"
   local arch="$2"
@@ -162,7 +171,7 @@ make_local_trackler() {
   cp -r ${track_root}/exercises tracks/${TRACK}
 
   gem install bundler
-  bundle install
+  bundle install --jobs $(get_optimal_amount_of_jobs)
   gem build trackler.gemspec
 
   # Make *this* the gem that x-api uses when we build x-api.
@@ -179,7 +188,7 @@ start_x_api() {
   pushd $xapi_home
 
   gem install bundler
-  bundle install
+  bundle install --jobs $(get_optimal_amount_of_jobs) 
   RACK_ENV=development rackup &
   xapi_pid=$!
   sleep 5
@@ -267,18 +276,24 @@ main() {
 
   clean "${build_dir}"
 
-  # Make a local version of trackler that includes the source from this repo.
-  git_clone "x-api" "${xapi_home}"
-  git_clone "trackler" "${trackler_home}"
-  assert_ruby_installed "${trackler_home}"
+  # Download everything we need in parallel
+  git_clone "x-api" "${xapi_home}" &
+  git_clone "trackler" "${trackler_home}" &
+  download_exercism_cli $(get_operating_system) $(get_cpu_architecture) "${exercism_home}" &
+  wait
+
+  # Check and install the ruby stuff we need in parallel
+  assert_ruby_installed "${trackler_home}" &
+  assert_ruby_installed "${xapi_home}" &
+  wait
+
+  # Make a local version of trackler
   make_local_trackler "${trackler_home}" "${xapi_home}"
 
-  # Stand-up a local instance of x-api so we can fetch the exercises through it.
-  assert_ruby_installed "${xapi_home}"
+  # Start-up a local instance of x-api so we can fetch the exercises through it.
   start_x_api "${xapi_home}"
 
   # Create a CLI install and config just for this build; this script does not use your CLI install.
-  download_exercism_cli $(get_operating_system) $(get_cpu_architecture) "${exercism_home}"
   configure_exercism_cli "${exercism_home}" "${exercism_configfile}" "${xapi_port}"
 
   solve_all_exercises "${exercism_home}" "${exercism_configfile}"

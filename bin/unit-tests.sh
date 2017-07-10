@@ -12,4 +12,3 @@ echo ""
 echo ">>> Running tests..."
 TERM=dumb ../gradlew check compileStarterSourceJava --parallel --continue
 popd
-
