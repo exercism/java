@@ -26,13 +26,6 @@
       ]
     },
     {
-      "slug": "rotational-cipher",
-      "difficulty": 2,
-      "topics": [
-
-      ]
-    },
-    {
       "slug": "pangram",
       "difficulty": 3,
       "topics": [
@@ -546,7 +539,14 @@
       "topics": [
 
       ]
-    }
+    },
+    {
+      "slug": "rotational-cipher",
+      "difficulty": ,
+      "topics": [
+
+      ]
+    },
   ],
   "deprecated": [
     "accumulate",
