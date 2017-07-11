@@ -8,11 +8,6 @@ public class RotationalCipherTest {
 
     private RotationalCipher rotationalCipher;
 
-    /*@Before
-    public void setUp() {
-        rotationalCipher = new RotationalCipher();
-    }
-    */
     @Test
     public void rotateSingleCharacterBy1() {
         rotationalCipher = new RotationalCipher(1);
