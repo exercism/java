@@ -71,3 +71,11 @@ References: [[1](https://github.com/exercism/java/issues/220#issue-196447088)]
 > The Installing Java instructions should seek to minimize the number of steps and the number of concepts a new-to-the-track practitioner needs to learn to get to coding.
 
 References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
+
+### Name test class after class under test
+
+> If you're testing a class called `SomeClassName` then your test class should be called `SomeClassNameTest`. 
+
+> The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/master/exercises/clock) as an example.
+
+References: [[1](https://github.com/exercism/java/issues/697)]
