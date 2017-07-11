@@ -22,13 +22,6 @@ public class RotationalCipher {
     }
 
     /**
-     * 
-     * @param characterToReplace
-     * @param alphabetCaseStart
-     * @param alphabetCaseEnd
-     * @param shiftKey
-     * @return ReplacementCharacter
-     * 
      * For Uppercase CaseStart = 'A' and CaseEnd = 'Z'
      * For Lowercase CaseStart = 'a' and CaseEnd = 'z'
      */
