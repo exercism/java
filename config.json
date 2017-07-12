@@ -769,6 +769,16 @@
       ]
     },
     {
+      "uuid": "f0c0316d-3fb5-455e-952a-91161e7fb298",
+      "slug": "forth",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 9,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "377fe38b-08ad-4f3a-8118-a43c10f7b9b2",
       "slug": "custom-set",
       "core": false,
