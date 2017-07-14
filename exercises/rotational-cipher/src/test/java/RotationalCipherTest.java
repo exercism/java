@@ -1,6 +1,4 @@
-
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ public class RotationalCipherTest {
         rotationalCipher = new RotationalCipher(1);
         Assert.assertEquals("b", rotationalCipher.rotate("a"));
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void rotateSingleCharacterBy26() {
@@ -75,7 +73,6 @@ public class RotationalCipherTest {
     public void rotateAllLetters() {
         rotationalCipher = new RotationalCipher(13);
         Assert.assertEquals("The quick brown fox jumps over the lazy dog.",
-         rotationalCipher.rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt."));
-    } 
-
+                rotationalCipher.rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt."));
+    }
 }
