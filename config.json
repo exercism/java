@@ -19,13 +19,6 @@
       ]
     },
     {
-      "slug": "rotational-cipher",
-      "difficulty": 1,
-      "topics": [
-
-      ]
-    },
-    {
       "slug": "rna-transcription",
       "difficulty": 2,
       "topics": [
@@ -543,6 +536,13 @@
     {
       "slug": "custom-set",
       "difficulty": 10,
+      "topics": [
+
+      ]
+    },
+    {
+      "slug": "rotational-cipher",
+      "difficulty": 1,
       "topics": [
 
       ]
