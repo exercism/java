@@ -40,7 +40,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    (see [exercism.io: Installing Java](http://exercism.io/languages/java/installing))
 -  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
-   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/git-basics.md)) to:
+   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing/git-basics.md)) to:
    * "fork" a repository on GitHub;
    - install `git`;
    - "clone" a copy of your fork;
@@ -58,7 +58,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    $ git push
    ```
 
-   The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
+   The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
 -  **Verify that your work passes all tests.**  When you create a pull request (PR), GitHub triggers a build on Travis CI.  Your PR will not be merged unless those tests pass.
 
 ## Getting Familiar With the Codebase
