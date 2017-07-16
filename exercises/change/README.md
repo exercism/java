@@ -32,4 +32,3 @@ Software Craftsmanship - Kata-logue [http://craftsmanship.sv.cmu.edu/exercises/c
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

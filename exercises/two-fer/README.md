@@ -97,4 +97,3 @@ This is an exercise to introduce users to basic programming constructs, just aft
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

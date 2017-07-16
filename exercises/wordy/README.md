@@ -72,4 +72,3 @@ Inspired by one of the generated questions in the Extreme Startup game. [https:/
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

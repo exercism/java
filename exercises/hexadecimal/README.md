@@ -23,4 +23,3 @@ All of Computer Science [http://www.wolframalpha.com/examples/NumberBases.html](
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

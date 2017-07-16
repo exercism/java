@@ -44,4 +44,3 @@ Wikipedia [http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)](htt
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
