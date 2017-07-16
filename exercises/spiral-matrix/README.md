@@ -39,4 +39,3 @@ Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension. [https://www.re
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

@@ -33,4 +33,3 @@ A variation on a famous interview question intended to weed out potential candid
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

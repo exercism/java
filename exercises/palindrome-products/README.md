@@ -49,4 +49,3 @@ Problem 4 at Project Euler [http://projecteuler.net/problem=4](http://projecteul
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

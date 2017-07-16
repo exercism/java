@@ -27,4 +27,3 @@ A variation on Problem 1 at Project Euler [http://projecteuler.net/problem=1](ht
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
