@@ -1,13 +1,12 @@
+class RotationalCipher {
 
-public class RotationalCipher {
-
-    int shiftKey;
+    private int shiftKey;
 
     RotationalCipher(int shiftKey) {
         this.shiftKey = shiftKey;
     }
 
-    public String rotate(String data) {
+    String rotate(String data) {
         StringBuilder dataStringBuilder = new StringBuilder();
         for (char c : data.toCharArray()) {
             if (Character.isUpperCase(c)) {
@@ -25,12 +24,10 @@ public class RotationalCipher {
      * For Uppercase CaseStart = 'A' and CaseEnd = 'Z'
      * For Lowercase CaseStart = 'a' and CaseEnd = 'z'
      */
-    private char getReplacementCharacter(char characterToReplace,
-            char alphabetCaseStart, char alphabetCaseEnd) {
+    private char getReplacementCharacter(char characterToReplace, char alphabetCaseStart, char alphabetCaseEnd) {
         char replacementCharacter = (char) (characterToReplace + shiftKey);
         if (replacementCharacter > alphabetCaseEnd) {
-            replacementCharacter = (char) ((alphabetCaseStart - 1) +
-             (replacementCharacter % alphabetCaseEnd));
+            replacementCharacter = (char) ((alphabetCaseStart - 1) + (replacementCharacter % alphabetCaseEnd));
         }
         return replacementCharacter;
     }

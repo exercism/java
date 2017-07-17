@@ -205,6 +205,16 @@
       ]
     },
     {
+      "uuid": "9eb41883-55ef-4681-b5ac-5c2259302772",
+      "slug": "rotational-cipher",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "0b92ffee-c092-4ab1-ad78-76c8cf80e1b5",
       "slug": "kindergarten-garden",
       "core": false,
@@ -764,16 +774,6 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 10,
-      "topics": [
-
-      ]
-    },
-    {
-      "uuid": "9eb41883-55ef-4681-b5ac-5c2259302772",
-      "slug": "rotational-cipher",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
       "topics": [
 
       ]
