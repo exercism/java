@@ -37,4 +37,3 @@ Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

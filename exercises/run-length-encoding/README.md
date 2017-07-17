@@ -39,4 +39,3 @@ Wikipedia [https://en.wikipedia.org/wiki/Run-length_encoding](https://en.wikiped
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

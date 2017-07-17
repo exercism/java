@@ -51,4 +51,3 @@ A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

@@ -83,4 +83,3 @@ Inspired by the harry potter kata from Cyber-Dojo. [http://cyber-dojo.org](http:
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
