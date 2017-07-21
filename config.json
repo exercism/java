@@ -1,7 +1,5 @@
 {
-  "slug": "java",
   "language": "Java",
-  "repository": "https://github.com/exercism/java",
   "active": true,
   "exercises": [
     {
