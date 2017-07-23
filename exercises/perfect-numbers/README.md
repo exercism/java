@@ -33,4 +33,3 @@ Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.c
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

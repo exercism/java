@@ -37,4 +37,3 @@ All of Computer Science [http://www.wolframalpha.com/input/?i=binary&a=*C.binary
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

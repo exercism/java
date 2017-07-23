@@ -29,4 +29,3 @@ A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](ht
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

@@ -20,4 +20,3 @@ For more detailed info about the Java track see the [help page](http://exercism.
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

@@ -75,4 +75,3 @@ Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartl
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
