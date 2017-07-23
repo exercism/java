@@ -17,7 +17,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions) |
+| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test)
 | Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first patches](#good-first-patches) |
 | "Good first patch" issue completed | [Good first patches](#good-first-patches) |
@@ -71,3 +71,11 @@ References: [[1](https://github.com/exercism/java/issues/220#issue-196447088)]
 > The Installing Java instructions should seek to minimize the number of steps and the number of concepts a new-to-the-track practitioner needs to learn to get to coding.
 
 References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
+
+### Name test class after class under test
+
+> If you're testing a class called `SomeClassName` then your test class should be called `SomeClassNameTest`. 
+
+> The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/master/exercises/clock) as an example.
+
+References: [[1](https://github.com/exercism/java/issues/697)]

@@ -1,14 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public final class DNA {
+final class NucleotideCounter {
   private final String sequence;
 
-  public DNA(String sequence) {
+  NucleotideCounter(String sequence) {
     this.sequence = sequence;
   }
 
-  public int count(char base) {
+  int count(char base) {
     if (isCountable(base))
       throw new IllegalArgumentException(base + " is not a nucleotide");
 
@@ -24,7 +24,7 @@ public final class DNA {
     return COUNTABLE_NUCLEOTIDES.indexOf(base) == -1;
   }
 
-  public Map<Character, Integer> nucleotideCounts() {
+  Map<Character, Integer> nucleotideCounts() {
     Map<Character, Integer> counts = emptyCounts();
     for (char c : sequence.toCharArray()) {
       counts.put(c, counts.get(c) + 1);

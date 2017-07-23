@@ -8,22 +8,22 @@ import java.util.Map;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
-public class NucleotideTest {
+public class NucleotideCounterTest {
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testEmptyDnaStringHasNoAdenine() {
-        DNA dna = new DNA("");
-        assertThat(dna.count('A'), is(0));
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("");
+        assertThat(nucleotideCounter.count('A'), is(0));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
-        DNA dna = new DNA("");
-        Map<Character, Integer> counts = dna.nucleotideCounts();
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("");
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
         assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 0),
@@ -36,15 +36,15 @@ public class NucleotideTest {
     @Ignore("Remove to run test")
     @Test
     public void testRepetitiveCytosineGetsCounted() {
-        DNA dna = new DNA("CCCCC");
-        assertThat(dna.count('C'), is(5));
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("CCCCC");
+        assertThat(nucleotideCounter.count('C'), is(5));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRepetitiveSequenceWithOnlyGuanine() {
-        DNA dna = new DNA("GGGGGGGG");
-        Map<Character, Integer> counts = dna.nucleotideCounts();
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGGGG");
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
         assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 0),
@@ -57,24 +57,24 @@ public class NucleotideTest {
     @Ignore("Remove to run test")
     @Test
     public void testCountsOnlyThymine() {
-        DNA dna = new DNA("GGGGGTAACCCGG");
-        assertThat(dna.count('T'), is(1));
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGTAACCCGG");
+        assertThat(nucleotideCounter.count('T'), is(1));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCountsANucleotideOnlyOnce() {
-        DNA dna = new DNA("CGATTGGG");
-        dna.count('T');
-        assertThat(dna.count('T'), is(2));
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("CGATTGGG");
+        nucleotideCounter.count('T');
+        assertThat(nucleotideCounter.count('T'), is(2));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDnaCountsDoNotChangeAfterCountingAdenine() {
-        DNA dna = new DNA("GATTACA");
-        dna.count('A');
-        Map<Character, Integer> counts = dna.nucleotideCounts();
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("GATTACA");
+        nucleotideCounter.count('A');
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
         assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 3),
@@ -88,16 +88,16 @@ public class NucleotideTest {
     @Test
     public void testValidatesNucleotides() {
         expectedException.expect(IllegalArgumentException.class);
-        DNA dna = new DNA("GACT");
-        dna.count('X');
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("GACT");
+        nucleotideCounter.count('X');
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCountsAllNucleotides() {
         String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
-        DNA dna = new DNA(s);
-        Map<Character, Integer> counts = dna.nucleotideCounts();
+        NucleotideCounter nucleotideCounter = new NucleotideCounter(s);
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
         assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 20),
