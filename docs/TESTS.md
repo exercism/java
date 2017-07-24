@@ -37,7 +37,7 @@ Choose your operating system:
    C:\Users\JohnDoe>gradle test
    ```
    *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
-5. Solve the exercise.  Find and work through the `GETTING_STARTED.md` guide ([view on GitHub](https://github.com/exercism/java/blob/master/exercises/hello-world/GETTING_STARTED.md)).
+5. Solve the exercise.  Find and work through the `TUTORIAL.md` guide ([view on GitHub](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md)).
 
 
 Good luck!  Have fun!
