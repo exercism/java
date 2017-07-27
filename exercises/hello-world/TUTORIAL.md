@@ -40,6 +40,15 @@ steps described by the links below:
 
 Use Gradle to run the tests:
 
+Make sure you have gradle installed on your device. Write this code in your termianl:
+```
+$ gradle -- version
+```
+if you got somthing like [Gradle 2.X.X] or higher then you are fine otherwise install it by writing this code in the termianl:
+```
+$ brew install gradle 
+```
+Now you can run the tests by writing this code below:
 ```
 $ gradle test
 ```
