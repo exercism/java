@@ -33,22 +33,13 @@ in order to solve the current problem.
 
 Before proceeding any further, make sure you have completed the required setup
 steps described by the links below:
-* [Installing Java](http://exercism.io/languages/java/installing);
+* [Installing Java](http://exercism.io/languages/java/installation);
 * [Running the Tests (in Java)](http://exercism.io/languages/java/tests).
 
 ## Step 1: Run the tests against the starter solution
 
 Use Gradle to run the tests:
 
-Make sure you have gradle installed on your device. Write this code in your termianl:
-```
-$ gradle -- version
-```
-if you got somthing like [Gradle 2.X.X] or higher then you are fine otherwise install it by writing this code in the termianl:
-```
-$ brew install gradle 
-```
-Now you can run the tests by writing this code below:
 ```
 $ gradle test
 ```
