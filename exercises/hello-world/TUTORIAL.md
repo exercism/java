@@ -33,7 +33,7 @@ in order to solve the current problem.
 
 Before proceeding any further, make sure you have completed the required setup
 steps described by the links below:
-* [Installing Java](http://exercism.io/languages/java/installation);
+* [Installing Java and Gradle](http://exercism.io/languages/java/installation);
 * [Running the Tests (in Java)](http://exercism.io/languages/java/tests).
 
 ## Step 1: Run the tests against the starter solution
