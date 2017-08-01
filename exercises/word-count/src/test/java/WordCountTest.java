@@ -47,7 +47,7 @@ public class WordCountTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void countMultipleOccurences() {
+    public void countMultipleOccurrences() {
         expectedWordCount.put("one", 1);
         expectedWordCount.put("fish", 4);
         expectedWordCount.put("two", 1);
