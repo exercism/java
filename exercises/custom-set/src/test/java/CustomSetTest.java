@@ -71,7 +71,7 @@ public class CustomSetTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void emptySetIsASubsetOfNonEemptySet() {
+    public void emptySetIsASubsetOfNonEmptySet() {
         final boolean actual
                 = new CustomSet<>(Arrays.asList(1))
                         .isSubset(
