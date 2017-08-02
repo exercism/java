@@ -21,7 +21,7 @@ public class CustomSetTest {
     @Test
     public void setsWithElementsAreNotEmpty() {
         final boolean actual
-                = new CustomSet<>(Arrays.asList(1))
+                = new CustomSet<>(Collections.singletonList(1))
                         .isEmpty();
 
         assertFalse(actual);
@@ -73,7 +73,7 @@ public class CustomSetTest {
     @Test
     public void emptySetIsASubsetOfNonEmptySet() {
         final boolean actual
-                = new CustomSet<>(Arrays.asList(1))
+                = new CustomSet<>(Collections.singletonList(1))
                         .isSubset(
                                 new CustomSet<>(Collections.EMPTY_LIST)
                         );
@@ -87,7 +87,7 @@ public class CustomSetTest {
         final boolean actual
                 = new CustomSet<>(Collections.EMPTY_LIST)
                         .isSubset(
-                                new CustomSet<>(Arrays.asList(1))
+                                new CustomSet<>(Collections.singletonList(1))
                         );
 
         assertFalse(actual);
@@ -147,7 +147,7 @@ public class CustomSetTest {
         final boolean actual
                 = new CustomSet<>(Collections.EMPTY_LIST)
                         .isDisjoint(
-                                new CustomSet<>(Arrays.asList(1))
+                                new CustomSet<>(Collections.singletonList(1))
                         );
 
         assertTrue(actual);
@@ -157,7 +157,7 @@ public class CustomSetTest {
     @Test
     public void nonEmptySetIsDisjointWithEmptySet() {
         final boolean actual
-                = new CustomSet<>(Arrays.asList(1))
+                = new CustomSet<>(Collections.singletonList(1))
                         .isDisjoint(
                                 new CustomSet<>(Collections.EMPTY_LIST)
                         );
@@ -255,7 +255,7 @@ public class CustomSetTest {
         final int element = 3;
         final CustomSet<Integer> expected
                 = new CustomSet<>(
-                        Collections.unmodifiableList(Arrays.asList(element))
+                        Collections.unmodifiableList(Collections.singletonList(element))
                 );
         final CustomSet<Integer> actual
                 = new CustomSet<>(Collections.EMPTY_LIST);
@@ -453,12 +453,12 @@ public class CustomSetTest {
     public void unionOfAnEmptySetAndNonEmptySetIsTheNonEmptySet() {
         final CustomSet<Integer> expected
                 = new CustomSet<>(
-                        Collections.unmodifiableList(Arrays.asList(2))
+                        Collections.unmodifiableList(Collections.singletonList(2))
                 );
         final CustomSet<Integer> actual
                 = new CustomSet<>(Collections.EMPTY_LIST)
                         .getUnion(
-                                new CustomSet<>(Arrays.asList(2))
+                                new CustomSet<>(Collections.singletonList(2))
                         );
 
         assertNotNull(actual);
