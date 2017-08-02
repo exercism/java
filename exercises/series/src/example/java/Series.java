@@ -10,11 +10,10 @@ public class Series {
     private List<Integer> digits;
 
     public Series(String string) {
-        this.digits = Arrays
-                .asList(string.split(("")))
-                .stream()
-                .map(digit -> Integer.parseInt(digit))
-                .collect(Collectors.toList());
+        this.digits =
+                Arrays.stream(string.split(("")))
+                        .map(Integer::parseInt)
+                        .collect(Collectors.toList());
         this.digitsSize = this.digits.size();
     }
 
