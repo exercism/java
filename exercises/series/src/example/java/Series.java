@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Series {
+class Series {
 
     private final int digitsSize;
     private List<Integer> digits;
 
-    public Series(String string) {
+    Series(String string) {
         this.digits =
                 Arrays.stream(string.split(("")))
                         .map(Integer::parseInt)
@@ -17,7 +17,7 @@ public class Series {
         this.digitsSize = this.digits.size();
     }
 
-    public List<List<Integer>> slices(int num) {
+    List<List<Integer>> slices(int num) {
         if (num > this.digitsSize) {
             throw new IllegalArgumentException("Slice size is too big.");
         }
@@ -31,7 +31,7 @@ public class Series {
         return result;
     }
 
-    public List<Integer> getDigits() {
+    List<Integer> getDigits() {
         return digits;
     }
 
