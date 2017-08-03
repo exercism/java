@@ -10,8 +10,7 @@ class Series {
     private List<Integer> digits;
 
     Series(String string) {
-        this.digits =
-                Arrays.stream(string.split(("")))
+        this.digits = Arrays.stream(string.split(""))
                         .map(Integer::parseInt)
                         .collect(Collectors.toList());
         this.digitsSize = this.digits.size();
