@@ -37,7 +37,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 
 1. **Ensure you have the basic Java tooling installed:**  JDK 1.8+, an editor and Gradle 2.x.
 
-   (see [exercism.io: Installing Java](http://exercism.io/languages/java/installing))
+   (see [exercism.io: Installing Java](http://exercism.io/languages/java/installation))
 -  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
    See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing/git-basics.md)) to:
