@@ -446,7 +446,7 @@
       "uuid": "6b51aca3-3451-4a64-ad7b-00b151d7548a",
       "slug": "house",
       "core": false, 
-      "unlocked_by": null,
+      "unlocked_by": "bob",
       "difficulty": 6,
       "topics": [
 
@@ -456,7 +456,7 @@
       "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d",
       "slug": "food-chain",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "house",
       "difficulty": 6,
       "topics": [
 
