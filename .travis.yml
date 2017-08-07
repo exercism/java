@@ -4,7 +4,15 @@ jdk:
   - oraclejdk8
 env:
   - SCRIPT=bin/unit-tests.sh
-  - SCRIPT=bin/journey-test.sh
+ 
+  # https://stackoverflow.com/questions/3790454/in-yaml-how-do-i-break-a-string-over-multiple-lines
+  - SCRIPT="bin/build-jq.sh;
+      for file in \`curl -s https://api.github.com/repos/exercism/java/pulls/$TRAVIS_PULL_REQUEST/files | bin/jq -r '.[].filename'\`;
+      do if [[ \$file == exercises* ]] || [[ \$file == config.json ]];
+        then bin/journey-tests.sh;
+        break;
+      fi;
+    done"
 
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
@@ -14,9 +22,9 @@ addons:
     packages:
       - tree
 
-before_install:
-  - rvm install 2.2.5
-  - rvm use 2.2.5
+before_install:		
+  - rvm install 2.2.5		
+  - rvm use 2.2.5		
   - bin/build-jq.sh  # we want jq 1.5 features; not avail through pkg repo.
 
 # https://docs.travis-ci.com/user/customizing-the-build#Skipping-the-Installation-Step
@@ -26,7 +34,7 @@ before_script:
   - export PATH=$TRAVIS_BUILD_DIR/bin:$PATH  # ensure our tools are prefered over included ones.
 
 script:
-  - $SCRIPT
+  - eval $SCRIPT
 
 # configure caching (https://docs.travis-ci.com/user/languages/java/#Caching)
 before_cache:
