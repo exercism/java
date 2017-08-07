@@ -16,6 +16,9 @@ public class RnaTranscription {
                 case 'T':
                     sb.append('A');
                     break;
+                default:
+                    throw new IllegalArgumentException("Invalid input");
+
             }
         }
         return sb.toString();
