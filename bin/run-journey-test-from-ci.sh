@@ -3,7 +3,11 @@
 bin/build-jq.sh
 
 pr_files_json=`curl -s https://api.github.com/repos/exercism/java/pulls/${TRAVIS_PULL_REQUEST}/files`
-modded_files=`echo $pr_files_json | bin/jq -r '.[].filename'`
+
+# if jq fails to get the required data, then that means TRAVIS_PULL_REQUEST was not set (not run in travis-ci),
+# or was false (not a pull request). In that case, we should fall back with testing every exercise
+
+modded_files=`echo $pr_files_json | bin/jq -r '.[].filename'` || bin/journey-test.sh
 
 for file in $modded_files
   do if [[ $file == exercises* ]] || [[ $file == config.json ]]
