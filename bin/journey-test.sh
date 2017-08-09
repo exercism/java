@@ -265,6 +265,7 @@ solve_single_exercise() {
 
   local track_root=$( pwd )
   local exercism_cli="./exercism --config ${exercism_configfile}"
+  local tempfile="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
 
   pushd ${exercism_exercises_dir}
 
