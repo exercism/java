@@ -5,22 +5,7 @@ jdk:
 env:
   - SCRIPT=bin/unit-tests.sh
 
-  - SCRIPT="bin/build-jq.sh;
-      modded_files=\`curl -s https://api.github.com/repos/exercism/java/pulls/${TRAVIS_PULL_REQUEST}/files | bin/jq -r '.[].filename'\`;
-      for file in \$modded_files;
-        do if [[ \$file == exercises* ]] || [[ \$file == config.json ]];
-          then rvm install 2.2.5;
-          rvm use 2.2.5;
-          for file2 in \$modded_files;
-            do if [[ \$file2 == exercises* ]];
-              then modded_exercise=\${file2#exercises/};
-              modded_exercise=\${modded_exercise%%/*};
-            fi;
-          done;
-          bin/journey-test.sh \$modded_exercise;
-          break;
-        fi;
-      done"
+  - SCRIPT=bin/run-journey-test-from-ci.sh
 
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
@@ -37,7 +22,7 @@ before_script:
   - export PATH=$TRAVIS_BUILD_DIR/bin:$PATH  # ensure our tools are prefered over included ones.
 
 script:
-  - eval $SCRIPT
+  - $SCRIPT
 
 # configure caching (https://docs.travis-ci.com/user/languages/java/#Caching)
 before_cache:
