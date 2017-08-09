@@ -1,7 +1,7 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-final class WordProblemSolver {
+final class WordProblemSolver { 
 
     private static final String INTEGER_REGEX_STRING = "(-?\\d+)";
 
