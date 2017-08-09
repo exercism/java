@@ -9,7 +9,9 @@ env:
   - SCRIPT="bin/build-jq.sh;
       for file in \`curl -s https://api.github.com/repos/exercism/java/pulls/$TRAVIS_PULL_REQUEST/files | bin/jq -r '.[].filename'\`;
       do if [[ \$file == exercises* ]] || [[ \$file == config.json ]];
-        then bin/journey-tests.sh;
+        then rvm install 2.2.5;
+        rvm use 2.2.5;
+        bin/journey-tests.sh;
         break;
       fi;
     done"
@@ -21,11 +23,6 @@ addons:
   apt:
     packages:
       - tree
-
-before_install:		
-  - rvm install 2.2.5		
-  - rvm use 2.2.5		
-  - bin/build-jq.sh  # we want jq 1.5 features; not avail through pkg repo.
 
 # https://docs.travis-ci.com/user/customizing-the-build#Skipping-the-Installation-Step
 install: true  # if we don't skip install, ./gradlew assemble is invoked, but this task is not available.
