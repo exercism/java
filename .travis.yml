@@ -15,6 +15,10 @@ addons:
     packages:
       - tree
 
+before_install:
+  - rvm install 2.2.5
+  - rvm use 2.2.5
+
 # https://docs.travis-ci.com/user/customizing-the-build#Skipping-the-Installation-Step
 install: true  # if we don't skip install, ./gradlew assemble is invoked, but this task is not available.
 
