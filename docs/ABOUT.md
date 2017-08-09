@@ -4,7 +4,6 @@
  2. [Class-Based](https://en.wikipedia.org/wiki/Class-based_programming)
  3. [Object-Oriented](https://en.wikipedia.org/wiki/Object-oriented_programming)
 
-It has been specifically designed to have as few [implementation dependencies](http://www.java-tips.org/other-api-tips-100035/60-netbeans/1025-what-is-an-implementation-dependency-and-whathowwhen-should-i-use-one.html) as possible.
 Java applications are typically compiled to [bytecode](https://en.wikipedia.org/wiki/Bytecode) that can run on any [Java virtual machine](https://en.wikipedia.org/wiki/Java_virtual_machine) (JVM) regardless of computer architecture.
 
 The primary goals kept in mind during the making of the language were:
