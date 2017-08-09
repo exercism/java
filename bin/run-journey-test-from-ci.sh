@@ -12,9 +12,13 @@ for file in $modded_files
       do if [[ $file2 == exercises* ]]
         then modded_exercise=${file2#exercises/}
         modded_exercise=${modded_exercise%%/*}
+        if [[ $last_modded_exercise != $modded_exercise ]]
+          then modded_exercises=$modded_exercises$modded_exercise$'\n'
+        fi
+        last_modded_exercise=$modded_exercise
       fi
     done
-    bin/journey-test.sh $modded_exercise
+    bin/journey-test.sh $modded_exercises
     break
   fi
 done

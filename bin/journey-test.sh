@@ -4,7 +4,7 @@ TRACK=java
 TRACK_REPO="$TRACK"
 TRACK_SRC_EXT="java"
 CPU_CORES=`getconf NPROCESSORS_ONLN 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1`
-EXERCISE_TO_SOLVE=$1
+EXERCISES_TO_SOLVE=$@
 
 on_exit() {
   echo ">>> on_exit()"
@@ -333,10 +333,12 @@ main() {
   # Create a CLI install and config just for this build; this script does not use your CLI install.
   configure_exercism_cli "${exercism_home}" "${exercism_configfile}" "${xapi_port}"
 
-  if [[ ${EXERCISE_TO_SOLVE} == "" ]]; then
+  if [[ $EXERCISES_TO_SOLVE == "" ]]; then
     solve_all_exercises "${exercism_home}" "${exercism_configfile}"
   else
-    solve_single_exercise "${exercism_home}" "${exercism_configfile}" "${EXERCISE_TO_SOLVE}"
+    for exercise in $EXERCISES_TO_SOLVE
+      do solve_single_exercise "${exercism_home}" "${exercism_configfile}" "${exercise}"
+    done
   fi
 }
 
