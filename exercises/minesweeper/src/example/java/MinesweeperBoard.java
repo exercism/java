@@ -30,13 +30,13 @@ final class MinesweeperBoard {
     }
 
     private String getRowWithNumbers(final int rowNumber) {
-        String result = "";
+        StringBuilder result = new StringBuilder(numberOfColumns);
 
         for (int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++) {
-            result += getCellNumber(rowNumber, columnNumber);
+            result.append(getCellNumber(rowNumber, columnNumber));
         }
 
-        return result;
+        return result.toString();
     }
 
     private char getCellNumber(final int rowNumber, final int columnNumber) {
