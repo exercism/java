@@ -18,7 +18,7 @@ public class WordCountTest {
     @Before
     public void setup() {
         wordCount = new WordCount();
-        expectedWordCount = new HashMap<String, Integer>();
+        expectedWordCount = new HashMap<>();
     }
 
 
