@@ -2,23 +2,22 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PigLatinTranslator {
+class PigLatinTranslator {
 
-    public static final String AY = "ay";
-    public static final String THR = "thr";
-    public static final String SCH = "sch";
-    public static final String CH = "ch";
-    public static final String QU = "qu";
-    public static final String TH = "th";
-    public static final String QUAY = "quay";
-    public static final String XR = "xr";
-    public static final String YT = "yt";
-    public static final String VOWELS_REGEX = "[aeiou]";
+    private static final String AY = "ay";
+    private static final String THR = "thr";
+    private static final String SCH = "sch";
+    private static final String CH = "ch";
+    private static final String QU = "qu";
+    private static final String TH = "th";
+    private static final String QUAY = "quay";
+    private static final String XR = "xr";
+    private static final String YT = "yt";
+    private static final String VOWELS_REGEX = "[aeiou]";
 
-    public String translate(String sentence) {
-        List<String> translatedWords = Arrays.asList(sentence.split(" "))
-                .stream()
-                .map(x -> translateWord(x))
+    String translate(String sentence) {
+        List<String> translatedWords = Arrays.stream(sentence.split(" "))
+                .map(this::translateWord)
                 .collect(Collectors.toList());
 
         return String.join(" ", translatedWords);
