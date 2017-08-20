@@ -16,11 +16,9 @@ class PigLatinTranslator {
     private static final String VOWELS_REGEX = "[aeiou]";
 
     String translate(String sentence) {
-        List<String> translatedWords = Arrays.stream(sentence.split(" "))
+        return Arrays.stream(sentence.split(" "))
                 .map(this::translateWord)
-                .collect(Collectors.toList());
-
-        return String.join(" ", translatedWords);
+                .collect(Collectors.joining(" "));
     }
 
     private String translateWord(String word) {
