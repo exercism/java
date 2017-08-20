@@ -8,6 +8,9 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
+/*
+ * version: 1.1.0
+ */
 public class ChangeCalculatorTest {
 
     @Rule
@@ -35,7 +38,7 @@ public class ChangeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
-    public void testLilliputianCurrencyForWhichGreedyAlgorithmFails() {
+    public void testLilliputianCurrency() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 4, 15, 20, 50));
 
         assertEquals(
@@ -46,7 +49,7 @@ public class ChangeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
-    public void testLowerElbonianCurrencyForWhichGreedyAlgorithmFails() {
+    public void testLowerElbonianCurrency() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 21, 25));
 
         assertEquals(
@@ -62,6 +65,28 @@ public class ChangeCalculatorTest {
         assertEquals(
                 asList(2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100),
                 changeCalculator.computeMostEfficientChange(999));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
+    public void testPossibleChangeWithoutUnitCoinAvailable() {
+        ChangeCalculator changeCalculator = new ChangeCalculator(asList(2, 5, 10, 20, 50));
+
+        assertEquals(
+                asList(2, 2, 2, 5, 10),
+                changeCalculator.computeMostEfficientChange(21));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
+    public void testAnotherPossibleChangeWithoutUnitCoinAvailable() {
+        ChangeCalculator changeCalculator = new ChangeCalculator(asList(4, 5));
+
+        assertEquals(
+                asList(4, 4, 4, 5, 5, 5),
+                changeCalculator.computeMostEfficientChange(27));
     }
 
     @Ignore("Remove to run test")
