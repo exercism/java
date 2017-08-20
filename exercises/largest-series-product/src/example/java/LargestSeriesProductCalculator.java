@@ -36,7 +36,7 @@ public final class LargestSeriesProductCalculator {
         if (stringToSearch == null) {
             throw new IllegalArgumentException("String to search must be non-null.");
         } else if (!stringToSearch.chars().allMatch(Character::isDigit)) {
-            throw new IllegalArgumentException("String to search may only contains digits.");
+            throw new IllegalArgumentException("String to search may only contain digits.");
         }
     }
 
