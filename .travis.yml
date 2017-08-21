@@ -4,7 +4,8 @@ jdk:
   - oraclejdk8
 env:
   - SCRIPT=bin/unit-tests.sh
-  - SCRIPT=bin/journey-test.sh
+
+  - SCRIPT=bin/run-journey-test-from-ci.sh
 
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
@@ -17,7 +18,6 @@ addons:
 before_install:
   - rvm install 2.2.5
   - rvm use 2.2.5
-  - bin/build-jq.sh  # we want jq 1.5 features; not avail through pkg repo.
 
 # https://docs.travis-ci.com/user/customizing-the-build#Skipping-the-Installation-Step
 install: true  # if we don't skip install, ./gradlew assemble is invoked, but this task is not available.
