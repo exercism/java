@@ -9,21 +9,26 @@ final class GridPosition {
         this.y = y;
     }
 
-    /*
-     * This equals method is of deliberately narrow scope (only allows comparison with another GridPosition) to increase
-     * readability. In general, one should provide a full implementation of Object.equals(Object obj) and a
-     * corresponding implementation of Object.hashCode(). See
-     *
-     * https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals(java.lang.Object)
-     *
-     * and
-     *
-     * https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode()
-     *
-     * for more information.
-     */
-    boolean equals(final GridPosition gridPosition) {
-        return this.x == gridPosition.x && this.y == gridPosition.y;
-    }
+    @Override
+   public int hashCode() {
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + x;
+      result = prime * result + y;
+      return result;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
+      } else if (obj == null || getClass() != obj.getClass()) {
+         return false;
+      } else if (x != ((GridPosition) obj).x || y != ((GridPosition)obj).y) {
+         return false;
+      } else {
+         return true;
+      }
+   }
 
 }
