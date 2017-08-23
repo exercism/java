@@ -10,7 +10,7 @@ public class RobotTest {
         final GridPosition initialGridPosition = new GridPosition(0, 0);
         final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
 
-		assertEquals(robot.getGridPosition(), initialGridPosition);
+        assertEquals(robot.getGridPosition(), initialGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -19,7 +19,7 @@ public class RobotTest {
         final Orientation initialOrientation = Orientation.NORTH;
         final Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
 
-		assertEquals(robot.getOrientation(), initialOrientation);
+        assertEquals(robot.getOrientation(), initialOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -30,7 +30,7 @@ public class RobotTest {
 
         robot.turnRight();
 
-		assertEquals(robot.getGridPosition(), initialGridPosition);
+        assertEquals(robot.getGridPosition(), initialGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -42,7 +42,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.EAST;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -54,7 +54,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.SOUTH;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -66,7 +66,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.WEST;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -78,7 +78,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.NORTH;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -89,7 +89,7 @@ public class RobotTest {
 
         robot.turnLeft();
 
-		assertEquals(robot.getGridPosition(), initialGridPosition);
+        assertEquals(robot.getGridPosition(), initialGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -101,7 +101,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.WEST;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -113,7 +113,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.SOUTH;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -125,7 +125,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.EAST;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -137,7 +137,7 @@ public class RobotTest {
 
         final Orientation expectedOrientation = Orientation.NORTH;
 
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -148,7 +148,7 @@ public class RobotTest {
 
         robot.advance();
 
-		assertEquals(robot.getOrientation(), initialOrientation);
+        assertEquals(robot.getOrientation(), initialOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -160,7 +160,7 @@ public class RobotTest {
 
         final GridPosition expectedGridPosition = new GridPosition(0, 1);
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -172,7 +172,7 @@ public class RobotTest {
 
         final GridPosition expectedGridPosition = new GridPosition(0, -1);
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -184,7 +184,7 @@ public class RobotTest {
 
         final GridPosition expectedGridPosition = new GridPosition(1, 0);
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -196,7 +196,7 @@ public class RobotTest {
 
         final GridPosition expectedGridPosition = new GridPosition(-1, 0);
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -209,8 +209,8 @@ public class RobotTest {
         final GridPosition expectedGridPosition = new GridPosition(-4, 1);
         final Orientation expectedOrientation = Orientation.WEST;
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -223,8 +223,8 @@ public class RobotTest {
         final GridPosition expectedGridPosition = new GridPosition(-3, -8);
         final Orientation expectedOrientation = Orientation.SOUTH;
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
     @Ignore("Remove to run test")
@@ -237,8 +237,8 @@ public class RobotTest {
         final GridPosition expectedGridPosition = new GridPosition(11, 5);
         final Orientation expectedOrientation = Orientation.NORTH;
 
-		assertEquals(robot.getGridPosition(), expectedGridPosition);
-		assertEquals(robot.getOrientation(), expectedOrientation);
+        assertEquals(robot.getGridPosition(), expectedGridPosition);
+        assertEquals(robot.getOrientation(), expectedOrientation);
     }
 
 }
