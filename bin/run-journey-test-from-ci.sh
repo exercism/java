@@ -1,5 +1,6 @@
 #!/bin/bash
 
+trap 'exit 1' ERR
 bin/build-jq.sh
 
 pr_files_json=`curl -s https://api.github.com/repos/exercism/java/pulls/${TRAVIS_PULL_REQUEST}/files`
