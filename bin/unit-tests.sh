@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -e
+trap 'exit 1' ERR
+
 ./gradlew --version
 
 echo ""
