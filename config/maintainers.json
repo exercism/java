@@ -42,13 +42,9 @@
     },
     {
       "github_username": "Smarticles101",
-      "show_on_website": false,
+      "show_on_website": true,
       "alumnus": false,
-      "name": null,
-      "bio": null,
-      "link_text": null,
-      "link_url": null,
-      "avatar_url": null
+      "bio": "I'm a 16 year old high school student. I like programming and java a lot. Contributing to exercism helps me to keep learning and get valuable experience. One day near, I hope to have a job or internship programming"
     },
     {
       "github_username": "FridaTveit",
