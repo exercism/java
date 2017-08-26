@@ -5,6 +5,9 @@ bin/build-jq.sh
 
 pr_files_json=`curl -s https://api.github.com/repos/exercism/java/pulls/${TRAVIS_PULL_REQUEST}/files`
 
+echo "Pull request number: ${TRAVIS_PULL_REQUEST}"
+echo "Changes in pr json: ${pr_files_json}"
+
 # if jq fails to get the required data, then that means TRAVIS_PULL_REQUEST was not set (not run in travis-ci),
 # or was false (not a pull request). In that case, we should fall back with testing every exercise
 
