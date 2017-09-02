@@ -13,6 +13,15 @@
 
       ]
     },
+{
+      "slug": "rail-fence-cipher",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
     {
       "uuid": "74515d45-565b-4be2-96c4-77e58efa9257",
       "slug": "two-fer",
@@ -353,15 +362,6 @@
 
       ]
     },
-{
-      "slug": "rail-fence-cipher",
-      "core": false,
-      "difficulty": 5,
-      "topics": [
-
-      ]
-    },
-
     {
       "uuid": "6a617ddb-04e3-451c-bb30-27ccd0be9125",
       "slug": "allergies",
