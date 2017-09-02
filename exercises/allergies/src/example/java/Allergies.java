@@ -12,7 +12,7 @@ public class Allergies {
 
     public List<Allergen> getList() {
         return EnumSet.allOf(Allergen.class).stream()
-                .filter(x -> isAllergicTo(x))
+                .filter(this::isAllergicTo)
                 .collect(Collectors.toList());
     }
 

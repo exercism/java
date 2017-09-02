@@ -11,7 +11,7 @@ public class CustomSet<T> {
     private Set<T> set;
 
     public CustomSet() {
-        this(Collections.EMPTY_LIST);
+        this(Collections.emptyList());
     }
 
     public CustomSet(Collection<T> data) {

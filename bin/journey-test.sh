@@ -4,6 +4,7 @@ TRACK=java
 TRACK_REPO="$TRACK"
 TRACK_SRC_EXT="java"
 CPU_CORES=`getconf NPROCESSORS_ONLN 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1`
+EXERCISES_TO_SOLVE=$@
 
 on_exit() {
   echo ">>> on_exit()"
@@ -256,6 +257,42 @@ solve_all_exercises() {
   popd
 }
 
+solve_single_exercise() {
+  local exercism_exercises_dir="$1"
+  local exercism_configfile="$2"
+  local exercise_to_solve="$3"
+  echo ">>> solve_all_exercises(exercism_exercises_dir=\"${exercism_exercises_dir}\", exercism_configfile=\"${exercism_configfile}\", exercise_to_solve=\"$exercise_to_solve\")"
+
+  local track_root=$( pwd )
+  local exercism_cli="./exercism --config ${exercism_configfile}"
+  local tempfile="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
+
+  pushd ${exercism_exercises_dir}
+
+  echo -e "\n\n"
+  echo "=================================================="
+  echo "Solving ${exercise_to_solve}"
+  echo "=================================================="
+
+  ${exercism_cli} fetch ${TRACK} $exercise_to_solve
+  cp -R -H ${track_root}/exercises/${exercise_to_solve}/src/example/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}/src/main/${TRACK}/
+
+  pushd ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}
+  # Check that tests compile before we strip @Ignore annotations
+  "$EXECPATH"/gradlew compileTestJava
+  # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
+  for testfile in `find . -name "*Test.${TRACK_SRC_EXT}"`; do
+    # Strip @Ignore annotations to ensure we run the tests (as delivered, all but the first is @Ignore'd).
+    # Note that unit-test.sh also strips @Ignore annotations via the Gradle task copyTestsFilteringIgnores.
+    # The stripping implementations here and in copyTestsFilteringIgnores should be kept consistent.
+    sed 's/@Ignore\(\(.*\)\)\{0,1\}//' ${testfile} > "${tempfile}" && mv "${tempfile}" "${testfile}"
+  done
+  "$EXECPATH"/gradlew test
+  popd
+
+  popd
+}
+
 main() {
   # all functions assume current working directory is repository root.
   cd "${SCRIPTPATH}/.."
@@ -296,7 +333,13 @@ main() {
   # Create a CLI install and config just for this build; this script does not use your CLI install.
   configure_exercism_cli "${exercism_home}" "${exercism_configfile}" "${xapi_port}"
 
-  solve_all_exercises "${exercism_home}" "${exercism_configfile}"
+  if [[ $EXERCISES_TO_SOLVE == "" ]]; then
+    solve_all_exercises "${exercism_home}" "${exercism_configfile}"
+  else
+    for exercise in $EXERCISES_TO_SOLVE
+      do solve_single_exercise "${exercism_home}" "${exercism_configfile}" "${exercise}"
+    done
+  fi
 }
 
 ##########################################################################

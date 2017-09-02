@@ -186,7 +186,7 @@ public class LargestSeriesProductCalculatorTest {
     @Test
     public void testStringToSearchContainingNonDigitCharacterIsRejected() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("String to search may only contains digits.");
+        expectedException.expectMessage("String to search may only contain digits.");
 
         new LargestSeriesProductCalculator("1234a5");
     }
