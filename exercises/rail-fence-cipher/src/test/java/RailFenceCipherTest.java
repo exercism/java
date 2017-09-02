@@ -12,30 +12,35 @@ public class RailFenceCipherTest {
 		Assert.assertEquals("XXXXXXXXXOOOOOOOOO", railFenceCipher.getEncryptedData("XOXOXOXOXOXOXOXOXO"));
 	}
 
+	@Ignore("Remove to run test")
 	@Test
 	public void encodeWithThreeRails() {
 		railFenceCipher = new RailFenceCipher(3);
 		Assert.assertEquals("WECRLTEERDSOEEFEAOCAIVDEN", railFenceCipher.getEncryptedData("WEAREDISCOVEREDFLEEATONCE"));
 	}
 
+	@Ignore("Remove to run test")
 	@Test
 	public void encodeWithEndingInTheMiddle() {
 		railFenceCipher = new RailFenceCipher(4);
 		Assert.assertEquals("ESXIEECSR", railFenceCipher.getEncryptedData("EXERCISES"));
 	}
 
+	@Ignore("Remove to run test")
 	@Test
 	public void decodeWithThreeRails() {
 		railFenceCipher = new RailFenceCipher(3);
 		Assert.assertEquals("THEDEVILISINTHEDETAILS", railFenceCipher.getDecryptedData("TEITELHDVLSNHDTISEIIEA"));
 	}
 
+	@Ignore("Remove to run test")
 	@Test
 	public void decodeWithFiveRails() {
 		railFenceCipher = new RailFenceCipher(5);
 		Assert.assertEquals("EXERCISMISAWESOME", railFenceCipher.getDecryptedData("EIEXMSMESAORIWSCE"));
 	}
 
+	@Ignore("Remove to run test")
 	@Test
 	public void decodeWithSixRails() {
 		railFenceCipher = new RailFenceCipher(6);
