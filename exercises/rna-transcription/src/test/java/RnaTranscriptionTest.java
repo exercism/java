@@ -1,18 +1,18 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.Rule;
 
+import static org.junit.Assert.assertEquals;
+
+/*
+ * version: 1.0.1
+ */
 public class RnaTranscriptionTest {
 
-    /*
-    version: 2.0.0
-     */
-
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none();
 
     private RnaTranscription rnaTranscription;
 
@@ -22,61 +22,56 @@ public class RnaTranscriptionTest {
     }
 
     @Test
-    public void testRnaTranscriptionOfEmptyDnaIsEmptyRna() {
-        Assert.assertEquals("", rnaTranscription.transcribe(""));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testRnaTranscriptionOfCytosineIsGuanine() {
-        Assert.assertEquals("G", rnaTranscription.transcribe("C"));
+        assertEquals("G", rnaTranscription.transcribe("C"));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfGuanineIsCytosine() {
-        Assert.assertEquals("C", rnaTranscription.transcribe("G"));
+        assertEquals("C", rnaTranscription.transcribe("G"));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfThymineIsAdenine() {
-        Assert.assertEquals("A", rnaTranscription.transcribe("T"));
+        assertEquals("A", rnaTranscription.transcribe("T"));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfAdenineIsUracil() {
-        Assert.assertEquals("U", rnaTranscription.transcribe("A"));
+        assertEquals("U", rnaTranscription.transcribe("A"));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscription() {
-        Assert.assertEquals("UGCACCAGAAUU", rnaTranscription.transcribe("ACGTGGTCTTAA"));
+        assertEquals("UGCACCAGAAUU", rnaTranscription.transcribe("ACGTGGTCTTAA"));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfRnaThrowsAnError() {
-        thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("Invalid input");
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Invalid input");
         rnaTranscription.transcribe("U");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfInvalidInputThrowsAnError() {
-        thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("Invalid input");
-        rnaTranscription.transcribe("BFV");
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Invalid input");
+        rnaTranscription.transcribe("XXX");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfPartiallyInvalidInput() {
-        thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("Invalid input");
-        rnaTranscription.transcribe("GCVV");
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Invalid input");
+        rnaTranscription.transcribe("ACGTXXXCTTAA");
     }
+
 }
