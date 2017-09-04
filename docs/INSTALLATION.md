@@ -24,23 +24,24 @@ Open an administrative command prompt.  (If you need assistance opening an admin
 
 1. If you have not installed Chocolatey, do so now:
 
-   ```batchfile
-   C:\Windows\system32> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
-   ```
+     ```batchfile
+     C:\Windows\system32> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+     ```
+
 2.  Install the JDK:
 
-   ```batchfile
-   C:\Windows\system32> choco install jdk8
-   ...
-   C:\Windows\system32> refreshenv
-   ...
-   ```
+     ```batchfile
+     C:\Windows\system32> choco install jdk8
+     ...
+     C:\Windows\system32> refreshenv
+     ...
+     ```
 3.  Install Gradle:
 
-   ```batchfile
-   C:\Windows\system32>choco install gradle
-   ...
-   ```
+     ```batchfile
+     C:\Windows\system32>choco install gradle
+     ...
+     ```
 
 We recommend closing the administrative command prompt and opening a new command prompt -- you do not require administrator privileges to practice Exercism exercises.
 
@@ -58,24 +59,27 @@ Below are instructions for install using the most common method - using Homebrew
 
 1. If you haven't installed [Homebrew](http://brew.sh), yet, do so now:
 
-   ```sh
-   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   ```
+     ```sh
+     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+     ```
+
 2. Tap the [Homebrew Cask](https://caskroom.github.io/) — this allows us to install pre-built binaries like the JDK.
 
-   ```
-   $ brew tap caskroom/cask
-   ```
+     ```
+     $ brew tap caskroom/cask
+     ```
+
 3.  Install the JDK:
 
-   ```
-   $ brew cask install java
-   ```
+     ```
+     $ brew cask install java
+     ```
+
 4.  Install Gradle:
 
-   ```
-   $ brew install gradle
-   ```
+     ```
+     $ brew install gradle
+     ```
 
 You now are ready to get started with the Java track of Exercism!
 
@@ -98,21 +102,22 @@ If you are using Debian or its derivatives (like Ubuntu or Linux Mint), use APT:
 
 1. Install the JDK:
 
-   ```sh
-   $ sudo apt-get update
-   $ sudo apt-get install python-software-properties
-   $ sudo add-apt-repository ppa:webupd8team/java
-   $ sudo apt-get update
-   $ sudo apt-get install oracle-java8-installer
-   $ sudo apt install oracle-java8-set-default
-   ```
+     ```sh
+     $ sudo apt-get update
+     $ sudo apt-get install python-software-properties
+     $ sudo add-apt-repository ppa:webupd8team/java
+     $ sudo apt-get update
+     $ sudo apt-get install oracle-java8-installer
+     $ sudo apt install oracle-java8-set-default
+     ```
+
 2. Install Gradle:
 
-   ```sh
-   $ sudo add-apt-repository ppa:cwchien/gradle
-   $ sudo apt-get update
-   $ sudo apt-get install gradle
-   ```
+     ```sh
+     $ sudo add-apt-repository ppa:cwchien/gradle
+     $ sudo apt-get update
+     $ sudo apt-get install gradle
+     ```
 
 You now are ready to get started with the Java track of Exercism!
 
@@ -128,14 +133,15 @@ If you are using Fedora or its derivatives, use DNF:
 
 1. Install the JDK:
 
-   ```sh
-   $ sudo dnf install java-1.8.0-openjdk-devel
-   ```
+     ```sh
+     $ sudo dnf install java-1.8.0-openjdk-devel
+     ```
+
 2. Install Gradle:
 
-   ```sh
-   $ sudo dnf install gradle
-   ```
+     ```sh
+     $ sudo dnf install gradle
+     ```
 
 
 You now are ready to get started with the Java track of Exercism!
@@ -183,20 +189,21 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
    1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
    2. Unpack Gradle:
 
-      ```sh
-      $ mkdir ~/tools
-      $ cd ~/tools
-      $ unzip ~/Downloads/gradle-*-bin.zip
-      $ cd gradle*
-      ```
+     ```sh
+     $ mkdir ~/tools
+     $ cd ~/tools
+     $ unzip ~/Downloads/gradle-*-bin.zip
+     $ cd gradle*
+     ```
+
    3. Configure Gradle and add it to the path:
 
-      ```sh
-      $ cat << DONE >> ~/.bashrc
-      export GRADLE_HOME=`pwd`
-      export PATH=\$PATH:\$GRADLE_HOME/bin
-     DONE
-     ```
+     ```sh
+     $ cat << DONE >> ~/.bashrc
+     export GRADLE_HOME=`pwd`
+     export PATH=\$PATH:\$GRADLE_HOME/bin
+    DONE
+    ```
 
 
 You now are ready to get started with the Java track of Exercism!
@@ -216,20 +223,21 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
    1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
    2. Unpack Gradle:
 
-      ```sh
-      $ mkdir ~/tools
-      $ cd ~/tools
-      $ unzip ~/Downloads/gradle-*-bin.zip
-      $ cd gradle*
-      ```
+     ```sh
+     $ mkdir ~/tools
+     $ cd ~/tools
+     $ unzip ~/Downloads/gradle-*-bin.zip
+     $ cd gradle*
+     ```
+
    3. Configure Gradle and add it to the path:
 
-      ```sh
-      $ cat << DONE >> ~/.bashrc
-      export GRADLE_HOME=`pwd`
-      export PATH=\$PATH:\$GRADLE_HOME/bin
-     DONE
-     ```
+     ```sh
+     $ cat << DONE >> ~/.bashrc
+     export GRADLE_HOME=`pwd`
+     export PATH=\$PATH:\$GRADLE_HOME/bin
+    DONE
+    ```
 
 You now are ready to get started with the Java track of Exercism!
 
