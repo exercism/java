@@ -1,7 +1,7 @@
 // This root Gradle project is used for:
 //
-// - Checking that every test suite compiles against its corresponding example implementation;
-// - Checking that every example implementation passes its corresponding test suite;
+// - Checking that every test suite compiles against its corresponding reference implementation;
+// - Checking that every reference implementation passes its corresponding test suite;
 // - Checking that every provided starter implementation compiles.
 //
 // This file is never delivered to Exercism users.
@@ -28,10 +28,10 @@ subprojects {
   afterEvaluate { project ->
 
     sourceSets {
-      // Set the directory containing the example implementation as the default source set. Default
+      // Set the directory containing the reference solution as the default source set. Default
       // compile tasks will now run against this source set.
       main {
-        java.srcDirs = ["src/example/java"]
+        java.srcDirs = [".meta/src/reference/java"]
       }
 
       // Define a custom source set named "starterSource" that points to the starter implementations

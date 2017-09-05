@@ -65,7 +65,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 
 There are two objectives to the design of this build:
 
-1. when a problem is built from within the `exercism/java` repo (i.e. when you, the contributor, are developing the exercise), the tests run against the "example" code;
+1. when a problem is built from within the `exercism/java` repo (i.e. when you, the contributor, are developing the exercise), the tests run against the reference solution;
 2. when a problem is built outside the `exercism/java` repo (when a participant is solving the exercise), the tests run against the "main" code.
 
 This repo is a multi-project gradle build.
@@ -74,7 +74,7 @@ This repo is a multi-project gradle build.
 
 This is the top-level module, contained in the `exercises` directory.  It is a container for the problem sub-modules.
 
-  * its `build.gradle` points the "main" sourceset to the example code.
+  * its `build.gradle` points the "main" sourceset to the reference solution.
   * its `settings.gradle` names each of the subprojects, one for each problem in the set.
 
 ### The Problem Submodules
@@ -87,7 +87,7 @@ Each problem/submodule is a subdirectory of the same name as its slug.
 Each problem/submodule has three source sets:
 
 * `src/test/java/` — a test suite defining the edges of the problem
-* `src/example/java/` — an example solution that passes all the tests
+* `./meta/src/reference/java/` — a reference solution that passes all the tests
 * `src/main/java/` — starter source files, if required/desired *(this directory usually only has a `.keep` file in it)*.
 
 ----

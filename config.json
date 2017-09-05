@@ -678,5 +678,6 @@
     "grains",
     "say"
   ],
-  "language": "Java"
+  "language": "Java",
+  "solution_pattern": "reference"
 }
