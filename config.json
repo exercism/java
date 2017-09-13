@@ -6,7 +6,9 @@
       "core": true,
       "difficulty": 1,
       "slug": "hello-world",
-      "topics": null,
+      "topics": [
+        "strings"
+      ],
       "unlocked_by": null,
       "uuid": "f77dc7e3-35a8-4300-a7c8-2c1765e9644d"
     },
