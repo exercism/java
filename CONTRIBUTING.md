@@ -87,7 +87,7 @@ Each problem/submodule is a subdirectory of the same name as its slug.
 Each problem/submodule has three source sets:
 
 * `src/test/java/` — a test suite defining the edges of the problem
-* `./meta/src/reference/java/` — a reference solution that passes all the tests
+* `.meta/src/reference/java/` — a reference solution that passes all the tests
 * `src/main/java/` — starter source files, if required/desired *(this directory usually only has a `.keep` file in it)*.
 
 ----
