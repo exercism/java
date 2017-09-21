@@ -17,7 +17,8 @@
       "difficulty": 1,
       "slug": "two-fer",
       "topics": [
-        "strings"
+        "strings",
+        "conditionals"
       ],
       "unlocked_by": null,
       "uuid": "74515d45-565b-4be2-96c4-77e58efa9257"
