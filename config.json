@@ -43,7 +43,11 @@
       "core": true,
       "difficulty": 3,
       "slug": "hamming",
-      "topics": null,
+      "topics": [
+        "strings",
+        "loops",
+        "integers"
+      ],
       "unlocked_by": null,
       "uuid": "ce899ca6-9cc7-47ba-b76f-1bbcf2630b76"
     },
