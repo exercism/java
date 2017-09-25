@@ -55,7 +55,11 @@
       "core": true,
       "difficulty": 3,
       "slug": "gigasecond",
-      "topics": null,
+      "topics": [
+        "dates",
+        "time",
+        "integers"
+      ],
       "unlocked_by": null,
       "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553"
     },
