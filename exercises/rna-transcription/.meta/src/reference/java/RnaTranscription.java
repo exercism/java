@@ -1,6 +1,6 @@
-public class RnaTranscription {
+class RnaTranscription {
 
-    public String transcribe(String dnaStrand) {
+    String transcribe(String dnaStrand) {
         StringBuilder sb = new StringBuilder();
         for (char c : dnaStrand.toCharArray()) {
             switch (c) {
@@ -21,6 +21,8 @@ public class RnaTranscription {
 
             }
         }
+
         return sb.toString();
     }
+
 }

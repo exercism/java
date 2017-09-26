@@ -1,61 +1,61 @@
 {
+  "docs_url": "https://github.com/exercism/docs/blob/master/maintaining-a-track/maintainer-configuration.md",
   "maintainers": [
     {
+      "alumnus": true,
+      "avatar_url": null,
+      "bio": null,
       "github_username": "jtigger",
-      "show_on_website": false,
-      "alumnus": true,
-      "name": null,
-      "bio": null,
       "link_text": null,
       "link_url": null,
-      "avatar_url": null
+      "name": null,
+      "show_on_website": false
     },
     {
+      "alumnus": true,
+      "avatar_url": null,
+      "bio": null,
       "github_username": "matthewmorgan",
-      "show_on_website": false,
-      "alumnus": true,
-      "name": null,
-      "bio": null,
       "link_text": null,
       "link_url": null,
-      "avatar_url": null
+      "name": null,
+      "show_on_website": false
     },
     {
+      "alumnus": false,
+      "avatar_url": null,
+      "bio": null,
       "github_username": "sit",
-      "show_on_website": false,
-      "alumnus": false,
-      "name": null,
-      "bio": null,
       "link_text": null,
       "link_url": null,
-      "avatar_url": null
+      "name": null,
+      "show_on_website": false
     },
     {
+      "alumnus": false,
+      "avatar_url": null,
+      "bio": null,
       "github_username": "stkent",
-      "show_on_website": false,
-      "alumnus": false,
-      "name": null,
-      "bio": null,
       "link_text": null,
       "link_url": null,
-      "avatar_url": null
+      "name": null,
+      "show_on_website": false
     },
     {
+      "alumnus": false,
+      "bio": "I'm a 16 year old high school student. I like programming and java a lot. Contributing to exercism helps me to keep learning and get valuable experience. One day near, I hope to have a job or internship programming",
       "github_username": "Smarticles101",
-      "show_on_website": true,
-      "alumnus": false,
-      "bio": "I'm a 16 year old high school student. I like programming and java a lot. Contributing to exercism helps me to keep learning and get valuable experience. One day near, I hope to have a job or internship programming"
+      "show_on_website": true
     },
     {
-      "github_username": "FridaTveit",
-      "show_on_website": false,
       "alumnus": false,
-      "name": null,
+      "avatar_url": null,
       "bio": null,
+      "github_username": "FridaTveit",
       "link_text": null,
       "link_url": null,
-      "avatar_url": null
+      "name": null,
+      "show_on_website": false
     }
-  ],
-  "docs_url": "https://github.com/exercism/docs/blob/master/maintaining-a-track/maintainer-configuration.md"
+  ]
 }

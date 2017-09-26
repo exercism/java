@@ -1,11 +1,17 @@
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Before;
 
 import static org.junit.Assert.*;
 
 public class BobTest {
-    private final Bob bob = new Bob();
+    private Bob bob;
 
+
+    @Before
+    public void setUp() {
+        bob = new Bob();
+    }
 
     @Test
     public void saySomething() {
