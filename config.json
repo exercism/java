@@ -13,12 +13,14 @@
             "uuid":"f77dc7e3-35a8-4300-a7c8-2c1765e9644d"
         },
         {  
-            "slug":"rail-fence-cipher",
             "core":false,
-            "unlocked_by":null,
             "difficulty":6,
+            "slug":"rail-fence-cipher",
+            "unlocked_by":null,
             "topics":[  
-
+                "strings",
+                "loops",
+                "conditionals"  
             ],
             "unlocked_by":null,
             "uuid":"8382f1c7-4ba4-4d6e-abe1-2d5a2519a11a"
