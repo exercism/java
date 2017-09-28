@@ -307,7 +307,11 @@
       "core": false,
       "difficulty": 5,
       "slug": "bob",
-      "topics": null,
+      "topics":  [
+        "strings",
+        "booleans",
+        "conditionals"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "34cd328c-cd96-492b-abd4-2b8716cdcd9a"
     },
