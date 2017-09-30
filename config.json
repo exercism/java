@@ -231,7 +231,6 @@
         "conditionals",
         "loops",
         "strings",
-        "algorithms",
         "parsing"
       ],
       "unlocked_by": "hello-world",
