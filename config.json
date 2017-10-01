@@ -75,7 +75,12 @@
       "core": false,
       "difficulty": 3,
       "slug": "acronym",
-      "topics": null,
+      "topics": [
+        "loops",
+        "strings",
+        "searching",
+        "parsing"
+      ],
       "unlocked_by": null,
       "uuid": "c31bbc6d-bdcf-44f7-bf35-5f98752e38d0"
     },
