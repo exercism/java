@@ -406,7 +406,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "beer-song",
-      "topics": null,
+      "topics": [
+        "strings",
+        "loops",
+        "variables",
+        "text_formatting",
+        "conditionals"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "56943095-de76-40bf-b42b-fa3e70f8df5e"
     },
