@@ -67,7 +67,11 @@
       "core": false,
       "difficulty": 3,
       "slug": "space-age",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "floating_point_numbers",
+        "mathematics"
+      ],
       "unlocked_by": null,
       "uuid": "e5b524cd-3a1c-468a-8981-13e8eeccb29d"
     },
