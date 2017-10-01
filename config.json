@@ -256,7 +256,12 @@
       "core": false,
       "difficulty": 5,
       "slug": "phone-number",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "pattern_matching",
+        "strings",
+        "regular_expressions"
+      ],
       "unlocked_by": "hamming",
       "uuid": "5f9139e7-9fbb-496a-a0d7-a946283033de"
     },
