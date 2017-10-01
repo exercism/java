@@ -91,7 +91,12 @@
       "core": false,
       "difficulty": 3,
       "slug": "raindrops",
-      "topics": null,
+      "topics": [
+        "strings",
+        "integers",
+        "conditionals",
+        "mathematics"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "d916e4f8-fda1-41c0-ab24-79e8fc3f1272"
     },
