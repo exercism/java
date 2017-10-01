@@ -248,7 +248,12 @@
       "core": false,
       "difficulty": 5,
       "slug": "pig-latin",
-      "topics": null,
+      "topics": [
+      	"arrays",
+      	"lists",
+      	"strings",
+      	"transforming"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "38bc80ae-d842-4c04-a797-48edf322504d"
     },
