@@ -492,7 +492,14 @@
       "core": false,
       "difficulty": 7,
       "slug": "anagram",
-      "topics": null,
+      "topics": [
+      	"arrays",
+      	"conditionals",
+      	"equality",
+      	"lists",
+      	"loops",
+      	"strings"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283"
     },
