@@ -35,7 +35,11 @@
       "core": false,
       "difficulty": 3,
       "slug": "pangram",
-      "topics": null,
+      "topics": [
+        "strings",
+        "pattern_matching",
+        "regular_expressions"
+      ],
       "unlocked_by": null,
       "uuid": "133b0f84-bdc7-4508-a0a1-5732a7db81ef"
     },
