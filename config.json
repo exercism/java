@@ -176,7 +176,12 @@
       "core": false,
       "difficulty": 4,
       "slug": "twelve-days",
-      "topics": null,
+      "topics": [
+        "strings",
+        "arrays",
+        "conditionals",
+        "loops"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "581afdbb-dfb6-4dc5-9554-a025b5469a3c"
     },
