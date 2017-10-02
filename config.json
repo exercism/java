@@ -17,8 +17,8 @@
       "difficulty": 1,
       "slug": "two-fer",
       "topics": [
-        "strings",
-        "conditionals"
+        "conditionals",
+        "strings"
       ],
       "unlocked_by": null,
       "uuid": "74515d45-565b-4be2-96c4-77e58efa9257"
@@ -44,9 +44,9 @@
       "difficulty": 3,
       "slug": "hamming",
       "topics": [
-        "strings",
+        "integers",
         "loops",
-        "integers"
+        "strings"
       ],
       "unlocked_by": null,
       "uuid": "ce899ca6-9cc7-47ba-b76f-1bbcf2630b76"
@@ -57,8 +57,8 @@
       "slug": "gigasecond",
       "topics": [
         "dates",
-        "time",
-        "integers"
+        "integers",
+        "time"
       ],
       "unlocked_by": null,
       "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553"
@@ -92,10 +92,10 @@
       "difficulty": 3,
       "slug": "raindrops",
       "topics": [
-        "strings",
-        "integers",
         "conditionals",
-        "mathematics"
+        "integers",
+        "mathematics",
+        "strings"
       ],
       "unlocked_by": "hello-world",
       "uuid": "d916e4f8-fda1-41c0-ab24-79e8fc3f1272"
@@ -235,8 +235,8 @@
       "topics": [
         "conditionals",
         "loops",
-        "strings",
-        "parsing"
+        "parsing",
+        "strings"
       ],
       "unlocked_by": "hello-world",
       "uuid": "c3e89c7c-3a8a-4ddc-b653-9b0ff9e1d7d8"
@@ -254,10 +254,10 @@
       "difficulty": 5,
       "slug": "pig-latin",
       "topics": [
-      	"arrays",
-      	"lists",
-      	"strings",
-      	"transforming"
+        "arrays",
+        "lists",
+        "strings",
+        "transforming"
       ],
       "unlocked_by": "hello-world",
       "uuid": "38bc80ae-d842-4c04-a797-48edf322504d"
@@ -322,10 +322,10 @@
       "core": false,
       "difficulty": 5,
       "slug": "bob",
-      "topics":  [
-        "strings",
+      "topics": [
         "booleans",
-        "conditionals"
+        "conditionals",
+        "strings"
       ],
       "unlocked_by": "two-fer",
       "uuid": "34cd328c-cd96-492b-abd4-2b8716cdcd9a"
@@ -503,12 +503,12 @@
       "difficulty": 7,
       "slug": "anagram",
       "topics": [
-      	"arrays",
-      	"conditionals",
-      	"equality",
-      	"lists",
-      	"loops",
-      	"strings"
+        "arrays",
+        "conditionals",
+        "equality",
+        "lists",
+        "loops",
+        "strings"
       ],
       "unlocked_by": "hello-world",
       "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283"
@@ -595,7 +595,7 @@
       "slug": "circular-buffer",
       "topics": [
         "classes",
-        "exception-handling",
+        "exception_handling",
         "queues"
       ],
       "unlocked_by": "linked-list",
