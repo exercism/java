@@ -13,7 +13,6 @@ public class NucleotideCounter {
         for (final char c : s.toUpperCase().toCharArray()) {
             this.table[c - 'A']++;
         }
-        // System.out.println(Arrays.toString(this.table));
     }
 
     public int count(final char c) {
