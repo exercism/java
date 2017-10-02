@@ -297,7 +297,12 @@
       "core": false,
       "difficulty": 5,
       "slug": "nucleotide-count",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "exception_handling",
+        "parsing",
+        "searching"
+      ],
       "unlocked_by": "hamming",
       "uuid": "2d80fdfc-5bd7-4b67-9fbe-8ab820d89051"
     },
