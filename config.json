@@ -155,7 +155,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "largest-series-product",
-      "topics": null,
+      "topics": [
+        "loops",
+        "type_conversion",
+        "integers",
+        "strings",
+        "mathematics"
+      ],
       "unlocked_by": "hamming",
       "uuid": "b7310b6e-435c-4d5f-b2bd-31e586d0f238"
     },
