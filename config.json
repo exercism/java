@@ -421,7 +421,11 @@
       "core": false,
       "difficulty": 6,
       "slug": "food-chain",
-      "topics": null,
+      "topics": [
+       	"arrays",
+       	"lists",
+       	"strings"
+       ],
       "unlocked_by": "two-fer",
       "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d"
     },
