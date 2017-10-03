@@ -153,7 +153,14 @@
       "core": false,
       "difficulty": 4,
       "slug": "luhn",
-      "topics": null,
+      "topics": [
+        "algorithms",
+        "booleans",
+        "loops",
+        "mathematics",
+        "strings",
+        "type_conversion"
+      ],
       "unlocked_by": "hamming",
       "uuid": "5227a76c-8ecb-4e5f-b023-6af65a057c41"
     },
