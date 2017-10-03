@@ -114,7 +114,7 @@ public class TriangleTest {
     @Test
     public void trianglesViolatingTriangleInequalityAreIllegal2() throws TriangleException {
         expectedException.expect(TriangleException.class);
-        new Triangle(2, 4, 2);
+        new Triangle(2, 5, 2);
     }
 
     @Ignore("Remove to run test")
