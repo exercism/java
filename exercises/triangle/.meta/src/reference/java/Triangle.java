@@ -20,15 +20,15 @@ class Triangle {
         this.uniqueSides = getNumberOfUniqueSides();
     }
 
-    private boolean isEquilateral() {
+    public boolean isEquilateral() {
         return uniqueSides == 1;
     }
 
-    private boolean isIsosceles() {
+    public boolean isIsosceles() {
         return uniqueSides == 2;
     }
 
-    private boolean isScalene() {
+    public boolean isScalene() {
         return uniqueSides == 3;
     }
 
