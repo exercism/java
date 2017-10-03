@@ -587,7 +587,14 @@
       "core": false,
       "difficulty": 7,
       "slug": "word-search",
-      "topics": null,
+      "topics": [
+        "strings",
+        "games",
+        "logic",
+        "matrices",
+        "searching",
+        "pattern_matching"
+      ],
       "unlocked_by": "scrabble-score",
       "uuid": "b53bde52-cb5f-4d43-86ec-18aa509d62f9"
     },
