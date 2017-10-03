@@ -577,6 +577,7 @@
         "games",
         "logic",
         "matrices",
+        "searching",
         "pattern_matching"
       ],
       "unlocked_by": "scrabble-score",
