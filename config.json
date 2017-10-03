@@ -509,7 +509,12 @@
       "core": false,
       "difficulty": 6,
       "slug": "minesweeper",
-      "topics": null,
+      "topics": [
+        "integers",
+        "matrices",
+        "games",
+        "conditionals"
+      ],
       "unlocked_by": "scrabble-score",
       "uuid": "416a1489-12af-4593-8540-0f55285c96b4"
     },
