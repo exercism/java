@@ -117,7 +117,11 @@
       "core": true,
       "difficulty": 3,
       "slug": "difference-of-squares",
-      "topics": null,
+      "topics": [
+        "loops",
+        "integers",
+        "mathematics"
+      ],
       "unlocked_by": null,
       "uuid": "b0da59c6-1b55-405c-b163-007ebf09f5e8"
     },
@@ -387,7 +391,11 @@
       "core": false,
       "difficulty": 5,
       "slug": "series",
-      "topics": null,
+      "topics": [
+        "loops",
+		    "strings",
+		    "conditionals"
+      ],
       "unlocked_by": "hamming",
       "uuid": "af80d7f4-c7d0-4d0b-9c30-09da120f6bb9"
     },
