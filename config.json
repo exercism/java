@@ -137,7 +137,7 @@
       "difficulty": 4,
       "slug": "luhn",
       "topics": [
-      	"algorithms",
+        "algorithms",
         "booleans",
         "loops",
         "mathematics",
