@@ -17,8 +17,8 @@
       "difficulty": 1,
       "slug": "two-fer",
       "topics": [
-        "strings",
-        "conditionals"
+        "conditionals",
+        "strings"
       ],
       "unlocked_by": null,
       "uuid": "74515d45-565b-4be2-96c4-77e58efa9257"
@@ -35,7 +35,11 @@
       "core": false,
       "difficulty": 3,
       "slug": "pangram",
-      "topics": null,
+      "topics": [
+        "strings",
+        "pattern_matching",
+        "regular_expressions"
+      ],
       "unlocked_by": null,
       "uuid": "133b0f84-bdc7-4508-a0a1-5732a7db81ef"
     },
@@ -44,9 +48,9 @@
       "difficulty": 3,
       "slug": "hamming",
       "topics": [
-        "strings",
+        "integers",
         "loops",
-        "integers"
+        "strings"
       ],
       "unlocked_by": null,
       "uuid": "ce899ca6-9cc7-47ba-b76f-1bbcf2630b76"
@@ -57,8 +61,8 @@
       "slug": "gigasecond",
       "topics": [
         "dates",
-        "time",
-        "integers"
+        "integers",
+        "time"
       ],
       "unlocked_by": null,
       "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553"
@@ -67,7 +71,11 @@
       "core": false,
       "difficulty": 3,
       "slug": "space-age",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "floating_point_numbers",
+        "mathematics"
+      ],
       "unlocked_by": null,
       "uuid": "e5b524cd-3a1c-468a-8981-13e8eeccb29d"
     },
@@ -75,7 +83,12 @@
       "core": false,
       "difficulty": 3,
       "slug": "acronym",
-      "topics": null,
+      "topics": [
+        "loops",
+        "strings",
+        "searching",
+        "parsing"
+      ],
       "unlocked_by": null,
       "uuid": "c31bbc6d-bdcf-44f7-bf35-5f98752e38d0"
     },
@@ -91,7 +104,12 @@
       "core": false,
       "difficulty": 3,
       "slug": "raindrops",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "integers",
+        "mathematics",
+        "strings"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "d916e4f8-fda1-41c0-ab24-79e8fc3f1272"
     },
@@ -155,7 +173,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "largest-series-product",
-      "topics": null,
+      "topics": [
+        "loops",
+        "type_conversion",
+        "integers",
+        "strings",
+        "mathematics"
+      ],
       "unlocked_by": "hamming",
       "uuid": "b7310b6e-435c-4d5f-b2bd-31e586d0f238"
     },
@@ -171,7 +195,12 @@
       "core": false,
       "difficulty": 4,
       "slug": "twelve-days",
-      "topics": null,
+      "topics": [
+        "strings",
+        "arrays",
+        "conditionals",
+        "loops"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "581afdbb-dfb6-4dc5-9554-a025b5469a3c"
     },
@@ -233,7 +262,12 @@
       "core": false,
       "difficulty": 4,
       "slug": "isogram",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "loops",
+        "parsing",
+        "strings"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "c3e89c7c-3a8a-4ddc-b653-9b0ff9e1d7d8"
     },
@@ -249,7 +283,12 @@
       "core": false,
       "difficulty": 5,
       "slug": "pig-latin",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "lists",
+        "strings",
+        "transforming"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "38bc80ae-d842-4c04-a797-48edf322504d"
     },
@@ -257,7 +296,12 @@
       "core": false,
       "difficulty": 5,
       "slug": "phone-number",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "pattern_matching",
+        "strings",
+        "regular_expressions"
+      ],
       "unlocked_by": "hamming",
       "uuid": "5f9139e7-9fbb-496a-a0d7-a946283033de"
     },
@@ -313,10 +357,10 @@
       "core": false,
       "difficulty": 5,
       "slug": "bob",
-      "topics":  [
-        "strings",
+      "topics": [
         "booleans",
-        "conditionals"
+        "conditionals",
+        "strings"
       ],
       "unlocked_by": "two-fer",
       "uuid": "34cd328c-cd96-492b-abd4-2b8716cdcd9a"
@@ -389,7 +433,16 @@
       "core": false,
       "difficulty": 6,
       "slug": "food-chain",
-      "topics": ["conditionals","variables","variables", "integers", "strings", "algorithms"],
+      "topics": [
+        "conditionals",
+        "variables",
+        "variables",
+        "integers",
+        "strings",
+        "algorithms",
+       	"arrays",
+       	"lists"
+       ],
       "unlocked_by": "two-fer",
       "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d"
     },
@@ -397,7 +450,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "beer-song",
-      "topics": null,
+      "topics": [
+        "strings",
+        "loops",
+        "variables",
+        "text_formatting",
+        "conditionals"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "56943095-de76-40bf-b42b-fa3e70f8df5e"
     },
@@ -493,7 +552,14 @@
       "core": false,
       "difficulty": 7,
       "slug": "anagram",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "conditionals",
+        "equality",
+        "lists",
+        "loops",
+        "strings"
+      ],
       "unlocked_by": "hello-world",
       "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283"
     },
@@ -579,7 +645,7 @@
       "slug": "circular-buffer",
       "topics": [
         "classes",
-        "exception-handling",
+        "exception_handling",
         "queues"
       ],
       "unlocked_by": "linked-list",
