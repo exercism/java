@@ -355,7 +355,14 @@
       "core": false,
       "difficulty": 5,
       "slug": "allergies",
-      "topics": null,
+      "topics": [
+        "booleans",
+        "conditionals",
+        "enumerations",
+        "integers",
+        "lists",
+        "loops"
+      ],
       "unlocked_by": "gigasecond",
       "uuid": "6a617ddb-04e3-451c-bb30-27ccd0be9125"
     },
