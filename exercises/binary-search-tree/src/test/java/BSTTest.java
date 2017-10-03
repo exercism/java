@@ -11,7 +11,7 @@ public class BSTTest {
 
     @Test
     public void dataIsRetained() {
-        BST<Integer> bst = new BST();
+        BST<Integer> bst = new BST<>();
         final int actual = 4;
         bst.insert(actual);
         final BST.Node<Integer> root = bst.getRoot();
@@ -23,7 +23,7 @@ public class BSTTest {
     @Ignore("Remove to run test")
     @Test
     public void insertsLess() {
-        BST<Integer> bst = new BST();
+        BST<Integer> bst = new BST<>();
         final int expectedRoot = 4;
         final int expectedLeft = 2;
 
@@ -44,7 +44,7 @@ public class BSTTest {
     @Ignore("Remove to run test")
     @Test
     public void insertsSame() {
-        BST<Integer> bst = new BST();
+        BST<Integer> bst = new BST<>();
         final int expectedRoot = 4;
         final int expectedLeft = 4;
 
@@ -65,7 +65,7 @@ public class BSTTest {
     @Ignore("Remove to run test")
     @Test
     public void insertsRight() {
-        BST<Integer> bst = new BST();
+        BST<Integer> bst = new BST<>();
         final int expectedRoot = 4;
         final int expectedRight = 5;
 
