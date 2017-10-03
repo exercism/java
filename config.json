@@ -391,7 +391,11 @@
       "core": false,
       "difficulty": 5,
       "slug": "series",
-      "topics": null,
+      "topics": [
+        "loops",
+		    "strings",
+		    "conditionals"
+      ],
       "unlocked_by": "hamming",
       "uuid": "af80d7f4-c7d0-4d0b-9c30-09da120f6bb9"
     },
