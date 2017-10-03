@@ -435,7 +435,14 @@
       "core": false,
       "difficulty": 6,
       "slug": "roman-numerals",
-      "topics": null,
+      "topics": [
+        "logic",
+        "mathematics",
+        "loops",
+        "integers",
+        "strings",
+        "maps",
+      ],
       "unlocked_by": "hamming",
       "uuid": "3e728cd4-5e5f-4c69-8a53-bc36d020fcdb"
     },
