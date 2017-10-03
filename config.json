@@ -478,7 +478,14 @@
       "core": false,
       "difficulty": 6,
       "slug": "queen-attack",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "matrices",
+        "conditionals",
+        "classes",
+        "games",
+        "mathematics"
+      ],
       "unlocked_by": "scrabble-score",
       "uuid": "5404109e-3ed9-4691-8eaf-af8b36024a44"
     },
