@@ -573,11 +573,11 @@
       "difficulty": 7,
       "slug": "word-search",
       "topics": [
-        "string",
-        "words",
-        "loops",
+        "strings",
+        "games",
+        "logic",
         "matrices",
-        "matching"
+        "pattern_matching"
       ],
       "unlocked_by": "scrabble-score",
       "uuid": "b53bde52-cb5f-4d43-86ec-18aa509d62f9"
