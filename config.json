@@ -456,7 +456,14 @@
       "core": false,
       "difficulty": 6,
       "slug": "transpose",
-      "topics": null,
+      "topics": [
+        "loops",
+        "arrays",
+        "lists",
+        "matrices",
+        "strings",
+        "text_formatting"
+      ],
       "unlocked_by": "matrix",
       "uuid": "57b76837-4610-466f-9373-d5c2697625f1"
     },
