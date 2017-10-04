@@ -473,9 +473,14 @@
       "difficulty": 6,
       "slug": "food-chain",
       "topics": [
+        "conditionals",
+        "variables",
+        "variables",
+        "integers",
+        "strings",
+        "algorithms",
        	"arrays",
-       	"lists",
-       	"strings"
+       	"lists"
        ],
       "unlocked_by": "two-fer",
       "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d"
