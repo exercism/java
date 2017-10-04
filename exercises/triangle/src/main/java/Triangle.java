@@ -4,7 +4,15 @@ class Triangle {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    TriangleKind getKind() {
+    boolean isEquilateral() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    boolean isIsosceles() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    boolean isScalene() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

@@ -6,6 +6,7 @@ class Triangle {
     private double side1;
     private double side2;
     private double side3;
+    private int uniqueSides;
 
     Triangle(double side1, double side2, double side3) throws TriangleException {
         this.side1 = side1;
@@ -15,20 +16,20 @@ class Triangle {
         if (allSidesAreZero() || hasImpossibleSides() || violatesTriangleInequality()) {
             throw new TriangleException();
         }
+
+        this.uniqueSides = getNumberOfUniqueSides();
     }
 
-    TriangleKind getKind() {
-        int uniqueSides = getNumberOfUniqueSides();
+    boolean isEquilateral() {
+        return uniqueSides == 1;
+    }
 
-        if (uniqueSides == 1) {
-            return TriangleKind.EQUILATERAL;
-        }
+    boolean isIsosceles() {
+        return uniqueSides == 2;
+    }
 
-        if (uniqueSides == 2) {
-            return TriangleKind.ISOSCELES;
-        }
-
-        return TriangleKind.SCALENE;
+    boolean isScalene() {
+        return uniqueSides == 3;
     }
 
     private boolean allSidesAreZero() {
