@@ -27,7 +27,11 @@
       "core": false,
       "difficulty": 2,
       "slug": "rna-transcription",
-      "topics": null,
+      "topics": [
+        "strings",
+        "loops",
+        "maps"
+      ],
       "unlocked_by": null,
       "uuid": "8e983ed2-62f7-439a-a144-fb8fdbdf4d30"
     },
