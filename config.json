@@ -84,6 +84,7 @@
       "difficulty": 3,
       "slug": "scrabble-score",
       "topics": [
+        "games",
         "loops",
         "pattern_matching",
         "strings",
