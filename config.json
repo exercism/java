@@ -396,11 +396,12 @@
       "difficulty": 5,
       "slug": "pascals-triangle",
       "topics": [
-	 "recursion",
-	 "arrays",
-	 "matrices",
-	 "algorithms",
-	 "mathematics"
+        "arrays",
+        "matrices",
+        "algorithms",
+        "mathematics",
+        "exception_handling",
+        "integers"
       ],
       "unlocked_by": "matrix",
       "uuid": "d2a76905-1c8c-4b03-b4f7-4fbff19329f3"
