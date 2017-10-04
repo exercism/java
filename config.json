@@ -97,7 +97,8 @@
       "difficulty": 3,
       "slug": "scrabble-score",
       "topics": [
-        "loops",
+        "games",
+	"loops",
         "strings",
         "conditionals"
       ],
