@@ -135,9 +135,13 @@
       "slug": "secret-handshake",
       "topics": [
         "loops",
-	"transforming",
         "conditionals",
-	"cryptography"
+        "integers",
+        "mathematics",
+        "transforming",
+        "cryptography",
+        "enumerations",
+        "bitwise_operations"
       ],
       "unlocked_by": null,
       "uuid": "71c7c174-7e2c-43c2-bdd6-7515fcb12a91"
