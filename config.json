@@ -395,7 +395,13 @@
       "core": false,
       "difficulty": 5,
       "slug": "pascals-triangle",
-      "topics": null,
+      "topics": [
+	 "recursion",
+	 "arrays",
+	 "matrices",
+	 "algorithms",
+	 "mathematics"
+      ],
       "unlocked_by": "matrix",
       "uuid": "d2a76905-1c8c-4b03-b4f7-4fbff19329f3"
     },
