@@ -29,9 +29,8 @@
       "slug": "rna-transcription",
       "topics": [
         "strings",
-        "maps",
-        "algorithms",
-        "loops"
+        "loops",
+        "maps"
       ],
       "unlocked_by": null,
       "uuid": "8e983ed2-62f7-439a-a144-fb8fdbdf4d30"
