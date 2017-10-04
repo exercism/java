@@ -4,15 +4,15 @@ class Triangle {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public boolean isEquilateral() {
+    boolean isEquilateral() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public boolean isIsosceles() {
+    boolean isIsosceles() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public boolean isScalene() {
+    boolean isScalene() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
