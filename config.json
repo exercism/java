@@ -259,7 +259,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "diamond",
-      "topics": null,
+      "topics": [
+		"strings",
+		"loops",
+		"arrays",
+		"lists",
+		"text_formatting"
+		],
       "unlocked_by": "two-fer",
       "uuid": "ecbd997b-86f4-4e11-9ff0-706ac2899415"
     },
