@@ -142,9 +142,11 @@
       "difficulty": 3,
       "slug": "perfect-numbers",
       "topics": [
-	"integers",
-	"sequences",
-	"mathematics"
+		  "integers",
+		  "mathematics",
+		  "exception_handling",
+		  "enumerations",
+		  "filtering"
       ],
       "unlocked_by": "difference-of-squares",
       "uuid": "d0dcc898-ec38-4822-9e3c-1a1829c9b2d9"
