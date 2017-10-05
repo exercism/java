@@ -164,7 +164,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "sum-of-multiples",
-      "topics": null,
+      "topics": [
+        "loops",
+        "integers",
+        "arrays",
+        "conditionals",
+        "mathematics"
+      ],
       "unlocked_by": "difference-of-squares",
       "uuid": "2f244afc-3e7b-4f89-92af-e2b427f4ef35"
     },
