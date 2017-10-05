@@ -100,7 +100,13 @@
       "core": true,
       "difficulty": 3,
       "slug": "scrabble-score",
-      "topics": null,
+      "topics": [
+        "games",
+        "loops",
+        "pattern_matching",
+        "strings",
+        "transforming"
+      ],
       "unlocked_by": null,
       "uuid": "afae9f2d-8baf-4bd7-8d7c-d486337f7c97"
     },
