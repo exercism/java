@@ -151,6 +151,8 @@
       "slug": "sum-of-multiples",
       "topics": [
         "loops",
+        "integers",
+        "arrays",
         "conditionals",
         "mathematics"
       ],
