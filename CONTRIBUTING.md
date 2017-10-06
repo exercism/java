@@ -8,6 +8,7 @@
   * [The Problem Submodules](#the-problem-submodules)
 * [Advanced: Complete Local Setup](#advanced-complete-local-setup)
   * [Tip: `gradle clean` before `exercism fetch`](#tip-gradle-clean-before-exercism-fetch)
+* [Adding a New Exercise](#adding-a-new-exercise)
 
 ## Overview
 
@@ -15,6 +16,7 @@ This guide covers contributing to the Java track.  If you are new, this guide is
 
 If, at any point, you're having any trouble, pop in the [Gitter exercism/java room](https://gitter.im/exercism/java) or the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
 
+For general guidelines about contributing to Exercism see the [Exercism contributing guide](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks).
 
 ## Before Making Your Pull Request
 
@@ -132,3 +134,35 @@ gradle clean
 cd ~/workspace/exercism/exercises
 exercism fetch java bob
 ```
+
+## Adding a New Exercise
+
+The easiest way to add a new exercise to the Java track is to port an exercise from another track.
+That means that you take an exercise that has already been implemented in another language and you implement it in this track.
+
+To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/master/exercises).
+Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
+
+There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
+Please review this before porting an exercise to the Java track.
+ 
+See [here](http://exercism.io/languages/java/todo) for a list of exercises that have yet to be implemented on the Java track and can therefore be ported to this track.
+Please make sure no one else has a pull request open to implement your chosen exercise before you start.
+Also please make a [dibs pull request](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md#avoiding-duplicate-work) to make it clear to others that you are working on this exercise.
+
+The Java specific details you need to know about adding an exercise are:
+
+1. Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
+You can also look at other entries in `config.json` as examples and try to mimic them.
+
+2. Please add an entry for your exercise to `settings.gradle`.
+This should just be `include 'exercise-name'`.
+This list is in alphabetical order so please add your exercise so that it maintains this order.
+
+3. Please add an exercise submodule for your exercise.
+See [The Problem Submodules](#the-problem-submodules) section for what needs to be in this.
+The `build.gradle` file can just be copied from any other exercise submodule.
+See the [POLICIES doc](https://github.com/exercism/java/blob/master/POLICIES.md#starter-implementations) for an explanation of when you need to add a starter implementation.
+
+Hopefully that should be enough information to help you port an exercise to the Java track.
+Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
