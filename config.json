@@ -613,7 +613,16 @@
       "core": false,
       "difficulty": 6,
       "slug": "wordy",
-      "topics": null,
+      "topics": [
+        "strings",
+        "integers",
+        "logic",
+        "parsing",
+        "pattern_matching",
+        "regular_expressions",
+        "transforming",
+        "exception_handling"
+      ],
       "unlocked_by": "secret-handshake",
       "uuid": "3310a3cd-c0cb-45fa-8c51-600178be904a"
     },
