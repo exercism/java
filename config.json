@@ -193,7 +193,13 @@
       "core": true,
       "difficulty": 4,
       "slug": "matrix",
-      "topics": null,
+      "topics": [
+      	"pattern_recognition",
+      	"arrays",
+      	"loops",
+      	"regular_expressions",
+      	"strings"
+      ],
       "unlocked_by": null,
       "uuid": "c1d4e0b4-6a0f-4be9-8222-345966621f53"
     },
