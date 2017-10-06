@@ -253,13 +253,13 @@
       "difficulty": 4,
       "slug": "kindergarten-garden",
       "topics": [
-          "loops",
-          "arrays",
-          "strings",
-          "logic",
-          "pattern_recognition",
-          "enumerations",
-          "lists"
+        "loops",
+        "arrays",
+        "strings",
+        "logic",
+        "pattern_recognition",
+        "enumerations",
+        "lists"
       ],
       "unlocked_by": "matrix",
       "uuid": "0b92ffee-c092-4ab1-ad78-76c8cf80e1b5"
