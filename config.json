@@ -274,7 +274,14 @@
       "core": false,
       "difficulty": 4,
       "slug": "collatz-conjecture",
-      "topics": null,
+      "topics": [
+        "exception_handling",
+        "recursion",
+        "conditionals",
+        "equality",
+        "integers",
+        "mathematics"
+      ],
       "unlocked_by": "triangle",
       "uuid": "1500d39a-c9d9-4d3a-9e77-fdc1837fc6ad"
     },
