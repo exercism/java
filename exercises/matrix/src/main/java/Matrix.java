@@ -1,24 +1,23 @@
-import java.util.regex.Pattern;
 
-public class Matrix {
+class Matrix {
 
-    public Matrix(String matrixAsString) {
+    Matrix(String matrixAsString) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public int[] getRow(int rowNumber) {
+    int[] getRow(int rowNumber) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public int[] getColumn(int columnNumber) {
+    int[] getColumn(int columnNumber) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public int getRowsCount() {
+    int getRowsCount() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public int getColumnsCount() {
+    int getColumnsCount() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }
