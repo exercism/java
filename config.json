@@ -796,7 +796,11 @@
       "core": false,
       "difficulty": 8,
       "slug": "complex-numbers",
-      "topics": null,
+      "topics": [
+        "mathematics",
+        "floating_point_numbers",
+        "classes"
+      ],
       "unlocked_by": "triangle",
       "uuid": "52d11278-0d65-4b5b-b387-1374fced3243"
     },
