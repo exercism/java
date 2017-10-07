@@ -233,7 +233,8 @@
         "loops",
         "arrays",
         "integers",
-        "mathematics",
+        "algorithms",
+        "mathematics"
       ],
       "unlocked_by": "difference-of-squares",
       "uuid": "6791d01f-bae4-4b63-ae76-86529ac49e36"
