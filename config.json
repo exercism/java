@@ -679,6 +679,14 @@
     },
     {
       "core": false,
+      "difficulty": 6,
+      "slug": "tournament",
+      "topics": null,
+      "unlocked_by": "kindergarten-garden",
+      "uuid": "99191d53-0fed-f680-de7a-55cfb872de17bc58629"
+    },
+    {
+      "core": false,
       "difficulty": 7,
       "slug": "anagram",
       "topics": [

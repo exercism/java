@@ -1,109 +1,111 @@
-import org.junit.Rule;
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class TournamentTest {
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    private Tournament tournament;
+
+    @Before
+    public void setUp() throws Exception {
+        tournament = new Tournament();
+    }
 
     @Test
     public void justTheHeaderIfNoInput() {
-        Tournament tournament = new Tournament();
-        assertEquals("Team                           | MP |  W |  D |  L |  P", tournament.printTable());
+        assertEquals("Team                           | MP |  W |  D |  L |  P\n", tournament.printTable());
     }
 
     @Test
-    public void aWinIsThreePointsALossIsZeroPoints() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void aWinIsThreePointsALossIsZeroPoints() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;win");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3",
-                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0"
-                }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n" +
+                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n"
+                , tournament.printTable());
     }
 
     @Test
-    public void aWinCanAlsoBeExpressedAsALoss() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void aWinCanAlsoBeExpressedAsALoss() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;loss");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3",
-                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n" +
+                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void aDifferentTeamCanWin() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void aDifferentTeamCanWin() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;win");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Blithering Badgers             |  1 |  1 |  0 |  0 |  3",
-                "Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Blithering Badgers             |  1 |  1 |  0 |  0 |  3\n" +
+                "Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void aDrawIsOnePointEach() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void aDrawIsOnePointEach() {
         tournament.applyResults( "Allegoric Alaskans;Blithering Badgers;draw");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1",
-                "Blithering Badgers             |  1 |  0 |  1 |  0 |  1"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1\n" +
+                "Blithering Badgers             |  1 |  0 |  1 |  0 |  1\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void thereCanBeMoreThanOneMatch() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void thereCanBeMoreThanOneMatch() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
                         "Allegoric Alaskans;Blithering Badgers;win");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6",
-                "Blithering Badgers             |  2 |  0 |  0 |  2 |  0"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n" +
+                "Blithering Badgers             |  2 |  0 |  0 |  2 |  0\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void thereCanBeMoreThanOneWinner() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void thereCanBeMoreThanOneWinner() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
                 "Allegoric Alaskans;Blithering Badgers;win");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3",
-                "Blithering Badgers             |  2 |  1 |  0 |  1 |  3"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3\n" +
+                "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void thereCanBeMoreThanTwoTeams() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void thereCanBeMoreThanTwoTeams() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
                         "Blithering Badgers;Courageous Californians;win\n" +
                         "Courageous Californians;Allegoric Alaskans;loss");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6",
-                "Blithering Badgers             |  2 |  1 |  0 |  1 |  3",
-                "Courageous Californians        |  2 |  0 |  0 |  2 |  0"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n" +
+                "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n" +
+                "Courageous Californians        |  2 |  0 |  0 |  2 |  0\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void typicalInput() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void typicalInput() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
                 "Devastating Donkeys;Courageous Californians;draw\n" +
@@ -111,35 +113,35 @@ public class TournamentTest {
                 "Courageous Californians;Blithering Badgers;loss\n" +
                 "Blithering Badgers;Devastating Donkeys;loss\n" +
                 "Allegoric Alaskans;Courageous Californians;win");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Devastating Donkeys            |  3 |  2 |  1 |  0 |  7",
-                "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6",
-                "Blithering Badgers             |  3 |  1 |  0 |  2 |  3",
-                "Courageous Californians        |  3 |  0 |  1 |  2 |  1"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Devastating Donkeys            |  3 |  2 |  1 |  0 |  7\n" +
+                "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n" +
+                "Blithering Badgers             |  3 |  1 |  0 |  2 |  3\n" +
+                "Courageous Californians        |  3 |  0 |  1 |  2 |  1\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void incompleteCompetition() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void incompleteCompetition() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
                 "Devastating Donkeys;Allegoric Alaskans;loss\n" +
                 "Courageous Californians;Blithering Badgers;draw\n" +
                 "Allegoric Alaskans;Courageous Californians;win");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6",
-                "Blithering Badgers             |  2 |  1 |  1 |  0 |  4",
-                "Courageous Californians        |  2 |  0 |  1 |  1 |  1",
-                "Devastating Donkeys            |  1 |  0 |  0 |  1 |  0"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n" +
+                "Blithering Badgers             |  2 |  1 |  1 |  0 |  4\n" +
+                "Courageous Californians        |  2 |  0 |  1 |  1 |  1\n" +
+                "Devastating Donkeys            |  1 |  0 |  0 |  1 |  0\n"
+        , tournament.printTable());
     }
 
     @Test
-    public void tiesBrokenAlphabetically() throws Exception {
-        Tournament tournament = new Tournament();
+    @Ignore
+    public void tiesBrokenAlphabetically() {
         tournament.applyResults(
                 "Courageous Californians;Devastating Donkeys;win\n" +
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -147,12 +149,12 @@ public class TournamentTest {
                 "Courageous Californians;Blithering Badgers;win\n" +
                 "Blithering Badgers;Devastating Donkeys;draw\n" +
                 "Allegoric Alaskans;Courageous Californians;draw");
-        assertArrayEquals(new String[]{
-                "Team                           | MP |  W |  D |  L |  P",
-                "Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7",
-                "Courageous Californians        |  3 |  2 |  1 |  0 |  7",
-                "Blithering Badgers             |  3 |  0 |  1 |  2 |  1",
-                "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1"
-        }, tournament.printTable().split("\n"));
+        assertEquals(
+                "Team                           | MP |  W |  D |  L |  P\n" +
+                "Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7\n" +
+                "Courageous Californians        |  3 |  2 |  1 |  0 |  7\n" +
+                "Blithering Badgers             |  3 |  0 |  1 |  2 |  1\n" +
+                "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1\n"
+        , tournament.printTable());
     }
 }
