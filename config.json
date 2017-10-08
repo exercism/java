@@ -199,7 +199,14 @@
       "core": true,
       "difficulty": 4,
       "slug": "matrix",
-      "topics": null,
+      "topics": [
+        "loops",
+        "arrays",
+        "pattern_matching",
+        "integers",
+        "strings",
+        "type_conversion"
+      ],
       "unlocked_by": null,
       "uuid": "c1d4e0b4-6a0f-4be9-8222-345966621f53"
     },
@@ -288,7 +295,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "nth-prime",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "exception_handling",
+        "lists",
+        "loops",
+        "integers"
+       ],
       "unlocked_by": "triangle",
       "uuid": "2c69db99-648d-4bd7-8012-1fbdeff6ca0a"
     },
