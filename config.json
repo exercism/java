@@ -295,7 +295,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "nth-prime",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "exception_handling",
+        "lists",
+        "loops",
+        "integers"
+       ],
       "unlocked_by": "triangle",
       "uuid": "2c69db99-648d-4bd7-8012-1fbdeff6ca0a"
     },
