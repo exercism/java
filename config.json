@@ -236,7 +236,13 @@
       "core": false,
       "difficulty": 4,
       "slug": "sieve",
-      "topics": null,
+      "topics": [
+        "loops",
+        "lists",
+        "integers",
+        "algorithms",
+        "mathematics"
+      ],
       "unlocked_by": "difference-of-squares",
       "uuid": "6791d01f-bae4-4b63-ae76-86529ac49e36"
     },
@@ -418,7 +424,14 @@
       "core": false,
       "difficulty": 5,
       "slug": "prime-factors",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "conditionals",
+        "integers",
+        "lists",
+        "loops",
+        "mathematics"
+      ],
       "unlocked_by": "triangle",
       "uuid": "599c08ec-7338-46ed-99f8-a76f78f724e6"
     },
