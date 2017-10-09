@@ -350,7 +350,12 @@
       "core": true,
       "difficulty": 5,
       "slug": "flatten-array",
-      "topics": null,
+      "topics": [
+      	"arrays",
+	"lists",
+	"loops",
+	"recursion"
+      ],
       "unlocked_by": null,
       "uuid": "a732a838-8170-458a-a85e-d6b4c46f97a1"
     },
