@@ -18,8 +18,8 @@ public class TournamentTest {
         assertEquals("Team                           | MP |  W |  D |  L |  P\n", tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void aWinIsThreePointsALossIsZeroPoints() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;win");
         assertEquals(
@@ -29,8 +29,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void aWinCanAlsoBeExpressedAsALoss() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;loss");
         assertEquals(
@@ -40,8 +40,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void aDifferentTeamCanWin() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;win");
         assertEquals(
@@ -51,8 +51,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void aDrawIsOnePointEach() {
         tournament.applyResults( "Allegoric Alaskans;Blithering Badgers;draw");
         assertEquals(
@@ -62,8 +62,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void thereCanBeMoreThanOneMatch() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -75,8 +75,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void thereCanBeMoreThanOneWinner() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
@@ -88,8 +88,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void thereCanBeMoreThanTwoTeams() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -103,8 +103,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void typicalInput() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -122,8 +122,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void incompleteCompetition() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
@@ -139,8 +139,8 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Test
     @Ignore("Remove to run test")
+    @Test
     public void tiesBrokenAlphabetically() {
         tournament.applyResults(
                 "Courageous Californians;Devastating Donkeys;win\n" +
