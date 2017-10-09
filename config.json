@@ -681,7 +681,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "tournament",
-      "topics": null,
+      "topics": [
+        "loops",
+        "maps",
+        "sorting",
+        "parsing",
+        "text_formatting"
+      ],
       "unlocked_by": "kindergarten-garden",
       "uuid": "99191d53-0fed-f680-de7a-55cfb872de17bc58629"
     },
