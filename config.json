@@ -717,6 +717,7 @@
       "slug": "palindrome-products",
       "topics": [
         "conditionals",
+        "integers",
         "lists",
         "loops",
         "maps",
