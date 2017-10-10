@@ -715,7 +715,13 @@
       "core": false,
       "difficulty": 8,
       "slug": "palindrome-products",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "lists",
+        "loops",
+        "maps",
+        "mathematics"
+      ],
       "unlocked_by": "saddle-points",
       "uuid": "873c05de-b5f5-4c5b-97f0-d1ede8a82832"
     },
