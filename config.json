@@ -307,7 +307,7 @@
         "lists",
         "loops",
         "integers"
-       ],
+      ],
       "unlocked_by": "triangle",
       "uuid": "2c69db99-648d-4bd7-8012-1fbdeff6ca0a"
     },
@@ -324,12 +324,12 @@
       "difficulty": 4,
       "slug": "diamond",
       "topics": [
-		"strings",
-		"loops",
-		"arrays",
-		"lists",
-		"text_formatting"
-		],
+        "strings",
+        "loops",
+        "arrays",
+        "lists",
+        "text_formatting"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "ecbd997b-86f4-4e11-9ff0-706ac2899415"
     },
@@ -350,7 +350,12 @@
       "core": true,
       "difficulty": 5,
       "slug": "flatten-array",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "lists",
+        "loops",
+        "recursion"
+      ],
       "unlocked_by": null,
       "uuid": "a732a838-8170-458a-a85e-d6b4c46f97a1"
     },
@@ -558,10 +563,10 @@
       "difficulty": 6,
       "slug": "food-chain",
       "topics": [
-       	"arrays",
-       	"lists",
-       	"strings"
-       ],
+        "arrays",
+        "lists",
+        "strings"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d"
     },
