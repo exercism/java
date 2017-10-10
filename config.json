@@ -481,7 +481,11 @@
       "core": false,
       "difficulty": 5,
       "slug": "bracket-push",
-      "topics": null,
+      "topics": [
+      	"stacks",
+	"loops",
+	"strings"
+      ],
       "unlocked_by": "flatten-array",
       "uuid": "85aa50ac-0141-49eb-bc6f-62f3f7a97647"
     },
