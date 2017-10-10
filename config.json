@@ -627,7 +627,12 @@
       "core": false,
       "difficulty": 6,
       "slug": "robot-simulator",
-      "topics": null,
+      "topics": [
+        "classes",
+        "logic",
+        "loops",
+        "enumerations"
+      ],
       "unlocked_by": "secret-handshake",
       "uuid": "993bde9d-7774-4e7a-a381-9eee75f28ecb"
     },
