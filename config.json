@@ -823,7 +823,14 @@
       "core": false,
       "difficulty": 7,
       "slug": "clock",
-      "topics": null,
+      "topics": [
+        "equality",
+        "integers",
+        "logic",
+        "object_oriented_programming",
+        "strings",
+        "time"
+      ],
       "unlocked_by": "saddle-points",
       "uuid": "97c8fcd4-85b6-41cb-9de2-b4e1b4951222"
     },
