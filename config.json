@@ -760,7 +760,14 @@
       "core": false,
       "difficulty": 7,
       "slug": "sublist",
-      "topics": null,
+      "topics": [
+        "lists",
+        "sequences",
+        "logic",
+        "equality",
+        "searching",
+        "loops"
+      ],
       "unlocked_by": "linked-list",
       "uuid": "d2aedbd7-092a-43d0-8a5e-ae3ebd5b9c7f"
     },
