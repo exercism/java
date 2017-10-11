@@ -434,7 +434,11 @@
       "core": true,
       "difficulty": 5,
       "slug": "robot-name",
-      "topics": null,
+      "topics": [
+        "regular_expressions",
+        "strings",
+        "randomness"
+      ],
       "unlocked_by": null,
       "uuid": "d7c2eed9-64c7-4c4a-b45d-c787d460337f"
     },
