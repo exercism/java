@@ -918,7 +918,12 @@
       "core": false,
       "difficulty": 8,
       "slug": "change",
-      "topics": null,
+      "topics": [
+        "algorithms",
+        "integers",
+        "exception_handling",
+        "lists"
+      ],
       "unlocked_by": "flatten-array",
       "uuid": "bac1f4bc-eea9-43c1-8e95-097347f5925e"
     },
