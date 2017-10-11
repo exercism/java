@@ -263,7 +263,11 @@
       "core": true,
       "difficulty": 4,
       "slug": "rotational-cipher",
-      "topics": null,
+      "topics": [
+        "integers",
+        "strings",
+        "cryptography"
+      ],
       "unlocked_by": null,
       "uuid": "9eb41883-55ef-4681-b5ac-5c2259302772"
     },
