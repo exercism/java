@@ -700,7 +700,14 @@
       "core": false,
       "difficulty": 6,
       "slug": "all-your-base",
-      "topics": null,
+      "topics": [
+        "loops",
+        "mathematics",
+        "integers",
+        "arrays",
+        "conditionals",
+        "exception_handling"
+      ],
       "unlocked_by": "saddle-points",
       "uuid": "f7c2e4b5-1995-4dfe-b827-c9aff8ac5332"
     },
