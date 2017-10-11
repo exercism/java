@@ -319,7 +319,16 @@
       "core": true,
       "difficulty": 4,
       "slug": "saddle-points",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "conditionals",
+        "integers",
+        "lists",
+        "loops",
+        "mathematics",
+        "matrices",
+        "sets"
+      ],
       "unlocked_by": null,
       "uuid": "8dfc2f0d-1141-46e9-95e2-6f35ccf6f160"
     },
