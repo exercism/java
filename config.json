@@ -762,11 +762,10 @@
       "slug": "sublist",
       "topics": [
         "lists",
-        "sequences",
-        "logic",
-        "equality",
         "searching",
-        "loops"
+        "loops",
+	"generics",
+	"enumeration"
       ],
       "unlocked_by": "linked-list",
       "uuid": "d2aedbd7-092a-43d0-8a5e-ae3ebd5b9c7f"
