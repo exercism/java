@@ -418,7 +418,13 @@
       "core": true,
       "difficulty": 5,
       "slug": "word-count",
-      "topics": null,
+      "topics": [
+        "strings",
+        "maps",
+        "loops",
+        "conditionals",
+        "integers"
+      ],
       "unlocked_by": null,
       "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1"
     },
