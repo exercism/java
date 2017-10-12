@@ -645,7 +645,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "grade-school",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "strings",
+        "lists",
+        "maps",
+        "sorting"
+      ],
       "unlocked_by": "word-count",
       "uuid": "b4af5da1-601f-4b0f-bfb8-4a381851090c"
     },
