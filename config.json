@@ -910,7 +910,13 @@
       "core": false,
       "difficulty": 8,
       "slug": "book-store",
-      "topics": null,
+      "topics": [
+        "integers",
+        "lists",
+        "algorithms",
+        "mathematics",
+        "floating_point_numbers"
+      ],
       "unlocked_by": "flatten-array",
       "uuid": "e5f05d00-fe5b-4d78-b2fa-934c1c9afb32"
     },
