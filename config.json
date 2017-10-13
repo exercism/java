@@ -643,7 +643,11 @@
       "core": true,
       "difficulty": 6,
       "slug": "linked-list",
-      "topics": null,
+      "topics": [
+        "algorithms",
+        "lists",
+        "generics"
+      ],
       "unlocked_by": null,
       "uuid": "7ba5084d-3b75-4406-a0d7-87c26387f9c0"
     },
