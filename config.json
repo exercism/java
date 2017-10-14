@@ -811,7 +811,11 @@
       "core": false,
       "difficulty": 7,
       "slug": "simple-linked-list",
-      "topics": null,
+      "topics": [
+        "algorithms",
+        "generics",
+        "lists"
+      ],
       "unlocked_by": "linked-list",
       "uuid": "e3e5ffe5-cfc1-467e-a28a-da0302130144"
     },
