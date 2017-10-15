@@ -1,4 +1,4 @@
-class MatrixCoordinate {
+class MatrixCoordinate implements Comparable<MatrixCoordinate> {
     private final int row;
     private final int col;
 
@@ -29,5 +29,11 @@ class MatrixCoordinate {
         int result = row;
         result = 31 * result + col;
         return result;
+    }
+
+    @Override
+    public int compareTo(MatrixCoordinate o) {
+        int rowComparison = Integer.compare(row, o.row);
+        return (rowComparison == 0) ? Integer.compare(col, o.col) : rowComparison;
     }
 }

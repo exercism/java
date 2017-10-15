@@ -1,19 +1,23 @@
-class Triangle {
 
-    Triangle(double side1, double side2, double side3) throws TriangleException {
+class Matrix {
+
+    Matrix(String matrixAsString) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    boolean isEquilateral() {
+    int[] getRow(int rowNumber) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    boolean isIsosceles() {
+    int[] getColumn(int columnNumber) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    boolean isScalene() {
+    int getRowsCount() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
+    int getColumnsCount() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 }

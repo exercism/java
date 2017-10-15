@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BST<T extends Comparable<T>> {
+public class BinarySearchTree<T extends Comparable<T>> {
 
     public static class Node<T> {
 
