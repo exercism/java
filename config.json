@@ -382,17 +382,10 @@
       "difficulty": 5,
       "slug": "pig-latin",
       "topics": [
-<<<<<<< HEAD
-      	"arrays",
-      	"lists",
-      	"strings",
-      	"transforming"
-=======
         "arrays",
         "lists",
         "strings",
         "transforming"
->>>>>>> 4802bc35eb3c99ccae6cd683ebd1d4bf55d69cb1
       ],
       "unlocked_by": "hello-world",
       "uuid": "38bc80ae-d842-4c04-a797-48edf322504d"
