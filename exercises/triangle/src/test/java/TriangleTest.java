@@ -4,6 +4,7 @@ import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class TriangleTest {
 
@@ -19,8 +20,24 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void largerEquilateralTrianglesAlsoHaveEqualSides() throws TriangleException {
-        Triangle triangle = new Triangle(10, 10, 10);
+    public void trianglesWithOneUnequalSideAreNotEquilateral() throws TriangleException {
+        Triangle triangle = new Triangle(2, 3, 2);
+
+        assertFalse(triangle.isEquilateral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void trianglesWithNoEqualSidesAreNotEquilateral() throws TriangleException {
+        Triangle triangle = new Triangle(5, 4, 6);
+
+        assertFalse(triangle.isEquilateral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void verySmallTrianglesCanBeEquilateral() throws TriangleException {
+        Triangle triangle = new Triangle(0.5, 0.5, 0.5);
 
         assertTrue(triangle.isEquilateral());
     }
@@ -51,8 +68,24 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void isoscelesTrianglesHaveInFactExactlyTwoSidesEqual() throws TriangleException {
-        Triangle triangle = new Triangle(10, 10, 2);
+    public void isoscelesTrianglesCanHaveAllSidesEqual() throws TriangleException {
+        Triangle triangle = new Triangle(4, 4, 4);
+
+        assertTrue(triangle.isIsosceles());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void isoscelesTrianglesMustHaveAtLeastTwoEqualSides() throws TriangleException {
+        Triangle triangle = new Triangle(2, 3, 4);
+
+        assertFalse(triangle.isIsosceles());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void verySmallTrianglesCanBeIsosceles() throws TriangleException {
+        Triangle triangle = new Triangle(0.5, 0.4, 0.5);
 
         assertTrue(triangle.isIsosceles());
     }
@@ -60,31 +93,31 @@ public class TriangleTest {
     @Ignore("Remove to run test")
     @Test
     public void scaleneTrianglesHaveNoEqualSides() throws TriangleException {
-        Triangle triangle = new Triangle(3, 4, 5);
+        Triangle triangle = new Triangle(5, 4, 6);
 
         assertTrue(triangle.isScalene());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void scaleneTrianglesHaveNoEqualSidesAtLargerScaleEither() throws TriangleException {
-        Triangle triangle = new Triangle(10, 11, 12);
+    public void trianglesWithAllSidesEqualAreNotScalene() throws TriangleException {
+        Triangle triangle = new Triangle(4, 4, 4);
 
-        assertTrue(triangle.isScalene());
+        assertFalse(triangle.isScalene());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void scaleneTrianglesHaveNoEqualSidesInDescendingOrderEither() throws TriangleException {
-        Triangle triangle = new Triangle(5, 4, 2);
+    public void trianglesWithOneUnequalSideAreNotScalene() throws TriangleException {
+        Triangle triangle = new Triangle(4, 4, 3);
 
-        assertTrue(triangle.isScalene());
+        assertFalse(triangle.isScalene());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void verySmallTrianglesAreLegal() throws TriangleException {
-        Triangle triangle = new Triangle(0.4, 0.6, 0.3);
+    public void verySmallTrianglesCanBeScalene() throws TriangleException {
+        Triangle triangle = new Triangle(0.5, 0.4, 0.6);
 
         assertTrue(triangle.isScalene());
     }
@@ -108,13 +141,6 @@ public class TriangleTest {
     public void trianglesViolatingTriangleInequalityAreIllegal() throws TriangleException {
         expectedException.expect(TriangleException.class);
         new Triangle(1, 1, 3);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void trianglesViolatingTriangleInequalityAreIllegal2() throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(2, 5, 2);
     }
 
     @Ignore("Remove to run test")
