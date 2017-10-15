@@ -3,9 +3,6 @@ import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.1.0
- */
 public class AcronymTest {
 
     @Test

@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/*
- * version: 1.0.0
- */
 public class SpiralMatrixBuilderTest {
 
     private SpiralMatrixBuilder spiralMatrixBuilder;
