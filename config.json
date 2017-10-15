@@ -951,7 +951,13 @@
       "core": false,
       "difficulty": 8,
       "slug": "list-ops",
-      "topics": null,
+      "topics": [
+        "filtering",
+        "functional_programming",
+        "generics",
+        "lists",
+        "loops"
+      ],
       "unlocked_by": "linked-list",
       "uuid": "a9836565-5c39-4285-b83a-53408be36ccc"
     },
