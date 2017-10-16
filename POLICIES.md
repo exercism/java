@@ -35,7 +35,7 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 
 > - Exercises 1-20: provide stubs for all required constructors and methods. Stubs should include the following body:
     `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
-> - Exercises 21+: provide no stubs by default, but either (1) add hints to the HINTS.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as in exercises 1-20 for exercises that demand complicated method signatures.
+> - Exercises 21+: provide no stubs by default, but either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as in exercises 1-20 for exercises that demand complicated method signatures.
 
 References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)]
 
@@ -56,7 +56,7 @@ References: [[1](https://github.com/exercism/java/issues/101#issuecomment-249349
 
 ### Multiple file submissions
 
-> The first exercise in the track whose test suite mandates multiple solution files should be accompanied by a HINTS.md file reminding the practitioner that the CLI supports multiple file submissions.
+> The first exercise in the track whose test suite mandates multiple solution files should be accompanied by a hints.md file reminding the practitioner that the CLI supports multiple file submissions.
 
 References: [[1](https://github.com/exercism/java/issues/365#issuecomment-292533120)]
 
