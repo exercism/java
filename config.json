@@ -1018,7 +1018,11 @@
       "core": false,
       "difficulty": 10,
       "slug": "custom-set",
-      "topics": null,
+      "topics": [
+        "sets",
+        "equality",
+        "generics"
+      ],
       "unlocked_by": "linked-list",
       "uuid": "377fe38b-08ad-4f3a-8118-a43c10f7b9b2"
     },
