@@ -635,7 +635,11 @@
       "core": false,
       "difficulty": 6,
       "slug": "etl",
-      "topics": null,
+      "topics": [
+        "transforming",
+        "maps",
+        "lists"
+      ],
       "unlocked_by": "word-count",
       "uuid": "76d28d97-75d3-47eb-bb77-3d347b76f1b6"
     },
