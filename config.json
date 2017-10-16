@@ -828,7 +828,13 @@
       "core": false,
       "difficulty": 7,
       "slug": "binary-search-tree",
-      "topics": null,
+      "topics": [
+        "trees",
+        "sorting",
+        "searching",
+        "generics",
+        "graphs"
+      ],
       "unlocked_by": "binary-search",
       "uuid": "0a2d18aa-7b5e-4401-a952-b93d2060694f"
     },
