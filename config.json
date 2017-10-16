@@ -997,7 +997,11 @@
       "slug": "forth",
       "topics": [
         "parsing",
-        "stacks"
+        "stacks",
+        "exception_handling",
+        "strings",
+        "lists",
+        "logic"
       ],
       "unlocked_by": "secret-handshake",
       "uuid": "f0c0316d-3fb5-455e-952a-91161e7fb298"
