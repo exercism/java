@@ -131,13 +131,6 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void trianglesWithNegativeSidesAreIllegal() throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(3, 4, -5);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void trianglesViolatingTriangleInequalityAreIllegal() throws TriangleException {
         expectedException.expect(TriangleException.class);
         new Triangle(1, 1, 3);
