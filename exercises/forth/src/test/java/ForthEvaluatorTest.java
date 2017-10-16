@@ -9,9 +9,6 @@ import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.2.0
- */
 public class ForthEvaluatorTest {
 
     @Rule

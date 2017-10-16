@@ -9,9 +9,6 @@ import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/*
- * version: 1.0.0
- */
 public class DiamondPrinterTest {
 
     private DiamondPrinter diamondPrinter;

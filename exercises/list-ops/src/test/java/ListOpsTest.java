@@ -7,9 +7,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.0.0
- */
 public class ListOpsTest {
 
     @Test

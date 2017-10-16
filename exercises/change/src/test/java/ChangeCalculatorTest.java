@@ -8,9 +8,6 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.1.0
- */
 public class ChangeCalculatorTest {
 
     @Rule

@@ -8,9 +8,6 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.0.0
- */
 public class PascalsTriangleGeneratorTest {
 
     private PascalsTriangleGenerator pascalsTriangleGenerator;

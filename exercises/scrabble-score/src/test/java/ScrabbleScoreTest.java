@@ -7,9 +7,6 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.0.0
- */
 @RunWith(Parameterized.class)
 public class ScrabbleScoreTest {
 
