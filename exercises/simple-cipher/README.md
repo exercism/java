@@ -47,7 +47,7 @@ Given the key "aaaaaaaaaaaaaaaaaa", encoding the string "iamapandabear"
 would return the original "iamapandabear".
 
 Given the key "ddddddddddddddddd", encoding our string "iamapandabear"
-would return the obscured "lpdsdqgdehdu"
+would return the obscured "ldpdsdqgdehdu"
 
 In the example above, we've set a = 0 for the key value. So when the
 plaintext is added to the key, we end up with the same message coming

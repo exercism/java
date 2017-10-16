@@ -10,6 +10,7 @@ always reach 1 eventually.
 Given a number n, return the number of steps required to reach 1.
 
 ## Examples
+
 Starting with n = 12, the steps would be as follows:
 
 0. 12
@@ -24,7 +25,6 @@ Starting with n = 12, the steps would be as follows:
 9. 1
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
-
 
 
 To run the tests:

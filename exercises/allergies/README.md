@@ -30,7 +30,6 @@ ignore those components of the score.  For example, if the allergy
 score is 257, your program should only report the eggs (1) allergy.
 
 
-
 To run the tests:
 
 ```sh
