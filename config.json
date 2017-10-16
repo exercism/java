@@ -995,7 +995,10 @@
       "core": false,
       "difficulty": 9,
       "slug": "forth",
-      "topics": null,
+      "topics": [
+        "parsing",
+        "stacks"
+      ],
       "unlocked_by": "secret-handshake",
       "uuid": "f0c0316d-3fb5-455e-952a-91161e7fb298"
     },
