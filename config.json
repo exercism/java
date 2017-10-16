@@ -823,7 +823,7 @@
         "trees",
         "sorting",
         "searching",
-        "recursion",
+        "generics",
         "graphs"
       ],
       "unlocked_by": "binary-search",
