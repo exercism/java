@@ -4,9 +4,13 @@ Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
 
+<<<<<<< HEAD
 An _isosceles_ triangle has at least two sides the same length. (It is sometimes
 specified as having exactly two sides the same length, but for the purposes of
 this exercise we'll say at least two.)
+=======
+An _isosceles_ triangle has at least two sides the same length.
+>>>>>>> Matched new README formatting
 
 A _scalene_ triangle has all sides of different lengths.
 
