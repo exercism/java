@@ -1,49 +1,11 @@
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
-public class BinarySearchTree<T extends Comparable<T>> {
-
-    public static class Node<T> {
-
-        private T data;
-        private Node<T> left = null;
-        private Node<T> right = null;
-
-        public Node(T data) {
-            this.data = data;
-        }
-
-        public Node<T> getLeft() {
-            return left;
-        }
-
-        public void setLeft(Node<T> left) {
-            this.left = left;
-        }
-
-        public Node<T> getRight() {
-            return right;
-        }
-
-        public void setRight(Node<T> right) {
-            this.right = right;
-        }
-
-        public T getData() {
-            return data;
-        }
-
-    }
+class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root;
-
     private int nodeCount = 0;
 
-    public void insert(T value) {
+    void insert(T value) {
         if (root == null) {
             root = new Node<>(value);
         } else {
@@ -52,19 +14,19 @@ public class BinarySearchTree<T extends Comparable<T>> {
         this.nodeCount++;
     }
 
-    public List<T> getAsSortedList() {
+    List<T> getAsSortedList() {
         List<T> result = new ArrayList<>(this.nodeCount);
         this.putInSortedOrderToList(this.root, result);
         return Collections.unmodifiableList(result);
     }
 
-    public List<T> getAsLevelOrderList() {
+    List<T> getAsLevelOrderList() {
         List<T> result = new ArrayList<>(this.nodeCount);
         this.putInLevelOrderToList(this.root, result);
         return Collections.unmodifiableList(result);
     }
 
-    public Node<T> getRoot() {
+    Node<T> getRoot() {
         return root;
     }
 
@@ -118,5 +80,37 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 queue.add(right);
             }
         }
+    }
+
+    static class Node<T> {
+
+        private T data;
+        private Node<T> left = null;
+        private Node<T> right = null;
+
+        Node(T data) {
+            this.data = data;
+        }
+
+        Node<T> getLeft() {
+            return left;
+        }
+
+        void setLeft(Node<T> left) {
+            this.left = left;
+        }
+
+        Node<T> getRight() {
+            return right;
+        }
+
+        void setRight(Node<T> right) {
+            this.right = right;
+        }
+
+        T getData() {
+            return data;
+        }
+
     }
 }
