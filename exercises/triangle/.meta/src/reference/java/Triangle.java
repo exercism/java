@@ -25,7 +25,7 @@ class Triangle {
     }
 
     boolean isIsosceles() {
-        return uniqueSides == 2;
+        return (uniqueSides == 2 || isEquilateral());
     }
 
     boolean isScalene() {
