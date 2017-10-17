@@ -922,7 +922,12 @@
       "core": false,
       "difficulty": 8,
       "slug": "rectangles",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "logic",
+        "pattern_recognition",
+        "strings"
+      ],
       "unlocked_by": "robot-name",
       "uuid": "64cda115-919a-4eef-9a45-9ec5d1af98cc"
     },
