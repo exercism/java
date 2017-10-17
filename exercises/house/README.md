@@ -11,10 +11,9 @@ Output the nursery rhyme 'This is the House that Jack Built'.
 
 - [papyr.com](http://papyr.com/hypertextbooks/grammar/ph_noun.htm)
 
-
 The nursery rhyme reads as follows:
 
-```plain
+```text
 This is the house that Jack built.
 
 This is the malt

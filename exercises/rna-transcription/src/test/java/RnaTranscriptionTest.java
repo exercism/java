@@ -6,9 +6,6 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
-/*
- * version: 1.0.1
- */
 public class RnaTranscriptionTest {
 
     @Rule

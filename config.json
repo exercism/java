@@ -424,11 +424,11 @@
       "difficulty": 5,
       "slug": "word-count",
       "topics": [
-        "integers",
-        "searching",
         "strings",
-        "pattern_matching",
-        "regular_expressions"
+        "maps",
+        "loops",
+        "conditionals",
+        "integers"
       ],
       "unlocked_by": null,
       "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1"
@@ -445,7 +445,13 @@
       "core": true,
       "difficulty": 5,
       "slug": "robot-name",
-      "topics": null,
+      "topics": [
+        "regular_expressions",
+        "strings",
+        "randomness",
+        "text_formatting",
+        "pattern_matching"
+      ],
       "unlocked_by": null,
       "uuid": "d7c2eed9-64c7-4c4a-b45d-c787d460337f"
     },
@@ -638,7 +644,11 @@
       "core": false,
       "difficulty": 6,
       "slug": "etl",
-      "topics": null,
+      "topics": [
+        "transforming",
+        "maps",
+        "lists"
+      ],
       "unlocked_by": "word-count",
       "uuid": "76d28d97-75d3-47eb-bb77-3d347b76f1b6"
     },
@@ -646,7 +656,11 @@
       "core": true,
       "difficulty": 6,
       "slug": "linked-list",
-      "topics": null,
+      "topics": [
+        "algorithms",
+        "lists",
+        "generics"
+      ],
       "unlocked_by": null,
       "uuid": "7ba5084d-3b75-4406-a0d7-87c26387f9c0"
     },
@@ -654,7 +668,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "grade-school",
-      "topics": null,
+      "topics": [
+        "conditionals",
+        "strings",
+        "lists",
+        "maps",
+        "sorting"
+      ],
       "unlocked_by": "word-count",
       "uuid": "b4af5da1-601f-4b0f-bfb8-4a381851090c"
     },
@@ -775,7 +795,13 @@
       "core": false,
       "difficulty": 7,
       "slug": "sublist",
-      "topics": null,
+      "topics": [
+        "lists",
+        "searching",
+        "loops",
+        "generics",
+        "enumeration"
+      ],
       "unlocked_by": "linked-list",
       "uuid": "d2aedbd7-092a-43d0-8a5e-ae3ebd5b9c7f"
     },
@@ -799,11 +825,15 @@
       "difficulty": 7,
       "slug": "simple-linked-list",
       "topics": [
-        "list",
+
+        "lists",
         "loops",
         "traversing",
         "data_structure",
-        "node"
+        "algorithms",
+        "generics",
+        "lists",
+        "exception_handling"
       ],
       "unlocked_by": "linked-list",
       "uuid": "e3e5ffe5-cfc1-467e-a28a-da0302130144"
@@ -812,7 +842,13 @@
       "core": false,
       "difficulty": 7,
       "slug": "binary-search-tree",
-      "topics": null,
+      "topics": [
+        "trees",
+        "sorting",
+        "searching",
+        "generics",
+        "graphs"
+      ],
       "unlocked_by": "binary-search",
       "uuid": "0a2d18aa-7b5e-4401-a952-b93d2060694f"
     },
@@ -903,7 +939,13 @@
       "core": false,
       "difficulty": 8,
       "slug": "book-store",
-      "topics": null,
+      "topics": [
+        "integers",
+        "lists",
+        "algorithms",
+        "mathematics",
+        "floating_point_numbers"
+      ],
       "unlocked_by": "flatten-array",
       "uuid": "e5f05d00-fe5b-4d78-b2fa-934c1c9afb32"
     },
@@ -982,7 +1024,14 @@
       "core": false,
       "difficulty": 9,
       "slug": "forth",
-      "topics": null,
+      "topics": [
+        "parsing",
+        "stacks",
+        "exception_handling",
+        "strings",
+        "lists",
+        "logic"
+      ],
       "unlocked_by": "secret-handshake",
       "uuid": "f0c0316d-3fb5-455e-952a-91161e7fb298"
     },
@@ -990,7 +1039,11 @@
       "core": false,
       "difficulty": 10,
       "slug": "custom-set",
-      "topics": null,
+      "topics": [
+        "sets",
+        "equality",
+        "generics"
+      ],
       "unlocked_by": "linked-list",
       "uuid": "377fe38b-08ad-4f3a-8118-a43c10f7b9b2"
     },

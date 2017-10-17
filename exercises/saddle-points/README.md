@@ -4,7 +4,7 @@ Detect saddle points in a matrix.
 
 So say you have a matrix like so:
 
-```plain
+```text
     0  1  2
   |---------
 0 | 9  8  7

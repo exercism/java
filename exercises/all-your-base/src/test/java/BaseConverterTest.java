@@ -7,9 +7,6 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/*
- * version: 1.1.0
- */
 public class BaseConverterTest {
 
     @Rule
