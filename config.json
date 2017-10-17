@@ -214,12 +214,7 @@
       "core": true,
       "difficulty": 4,
       "slug": "triangle",
-      "topics": [
-        "integers",
-        "algorithms",
-        "mathematics",
-        "floating_point_numbers"
-      ],
+      "topics": null,
       "unlocked_by": null,
       "uuid": "ec268d8e-997b-4553-8c67-8bdfa1ecb888"
     },
@@ -423,13 +418,7 @@
       "core": true,
       "difficulty": 5,
       "slug": "word-count",
-      "topics": [
-        "integers",
-        "searching",
-        "strings",
-        "pattern_matching",
-        "regular_expressions"
-      ],
+      "topics": null,
       "unlocked_by": null,
       "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1"
     },
@@ -546,11 +535,13 @@
     {
       "core": false,
       "difficulty": 6,
-      "slug": "spiral-matrix",
+      "slug": "spiral-matrix",git
       "topics": [
+        "loops",
         "arrays",
-        "vectors",
-        "numbers"
+        "numbers",
+        "mathematics",
+        "logic"
       ],
       "unlocked_by": "matrix",
       "uuid": "163fcc6b-c054-4232-a88b-0aded846a6eb"
@@ -798,13 +789,7 @@
       "core": false,
       "difficulty": 7,
       "slug": "simple-linked-list",
-      "topics": [
-        "list",
-        "loops",
-        "traversing",
-        "data_structure",
-        "node"
-      ],
+      "topics": null,
       "unlocked_by": "linked-list",
       "uuid": "e3e5ffe5-cfc1-467e-a28a-da0302130144"
     },
