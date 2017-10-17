@@ -432,7 +432,12 @@
       "core": false,
       "difficulty": 5,
       "slug": "run-length-encoding",
-      "topics": null,
+      "topics": [
+        "strings",
+        "integers",
+        "pattern_matching",
+        "transforming"
+      ],
       "unlocked_by": "rotational-cipher",
       "uuid": "4499a3f9-73a7-48bf-8753-d5b6abf588c9"
     },
