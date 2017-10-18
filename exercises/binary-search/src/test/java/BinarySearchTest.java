@@ -13,23 +13,23 @@ public class BinarySearchTest {
 
     @Test
     public void findsAValueInAnArrayWithOneElement() {
-        List<Integer> listOfUnitLength = Collections.singletonList(6);
+        List<Character> listOfUnitLength = Collections.singletonList('6');
 
-        BinarySearch<Integer> search = new BinarySearch<>(listOfUnitLength);
+        BinarySearch<Character> search = new BinarySearch<>(listOfUnitLength);
 
-        assertEquals(0, search.indexOf(6));
+        assertEquals(0, search.indexOf('6'));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void findsAValueInTheMiddleOfAnArray() {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
+        List<String> sortedList = Collections.unmodifiableList(
+                Arrays.asList("1", "3", "4", "6", "8", "9", "11")
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
+        BinarySearch<String> search = new BinarySearch<>(sortedList);
 
-        assertEquals(3, search.indexOf(6));
+        assertEquals(3, search.indexOf("6"));
     }
 
     @Ignore("Remove to run test")
@@ -83,13 +83,13 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void identifiesThatAValueIsNotIncludedInTheArray() {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
+        List<String> sortedList = Collections.unmodifiableList(
+                Arrays.asList("1", "3", "4", "6", "8", "9", "11")
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
+        BinarySearch<String> search = new BinarySearch<>(sortedList);
 
-        assertEquals(-1, search.indexOf(7));
+        assertEquals(-1, search.indexOf("7"));
     }
 
     @Ignore("Remove to run test")

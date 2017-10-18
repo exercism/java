@@ -655,18 +655,6 @@
       "uuid": "76d28d97-75d3-47eb-bb77-3d347b76f1b6"
     },
     {
-      "core": true,
-      "difficulty": 6,
-      "slug": "linked-list",
-      "topics": [
-        "algorithms",
-        "lists",
-        "generics"
-      ],
-      "unlocked_by": null,
-      "uuid": "7ba5084d-3b75-4406-a0d7-87c26387f9c0"
-    },
-    {
       "core": false,
       "difficulty": 6,
       "slug": "grade-school",
@@ -763,6 +751,18 @@
       "topics": null,
       "unlocked_by": "scrabble-score",
       "uuid": "4b3f7771-c642-4278-a3d9-2fb958f26361"
+    },
+    {
+      "core": true,
+      "difficulty": 6,
+      "slug": "linked-list",
+      "topics": [
+        "algorithms",
+        "lists",
+        "generics"
+      ],
+      "unlocked_by": null,
+      "uuid": "7ba5084d-3b75-4406-a0d7-87c26387f9c0"
     },
     {
       "core": false,

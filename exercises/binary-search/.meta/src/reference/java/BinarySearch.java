@@ -1,22 +1,18 @@
 
 import java.util.List;
 
-public class BinarySearch<T extends Comparable<T>> {
+class BinarySearch<T extends Comparable<T>> {
 
     private List<T> array;
     private int arraySize;
 
-    public BinarySearch(List<T> array) {
+    BinarySearch(List<T> array) {
         this.array = array;
         this.arraySize = array.size();
     }
 
-    public int indexOf(T value) {
+    int indexOf(T value) {
         return search(value);
-    }
-
-    public List<T> getArray() {
-        return array;
     }
 
     private int search(T value) {
