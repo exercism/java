@@ -215,10 +215,10 @@
       "difficulty": 4,
       "slug": "triangle",
       "topics": [
-      	"booleans",
-      	"equality",
-      	"logic",
-      	"mathematics"
+        "booleans",
+        "classes",
+        "exception_handling",
+        "mathematics"
       ],
       "unlocked_by": null,
       "uuid": "ec268d8e-997b-4553-8c67-8bdfa1ecb888"
