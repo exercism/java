@@ -539,9 +539,9 @@
       "topics": [
         "loops",
         "arrays",
-        "numbers",
+        "integers",
         "mathematics",
-        "logic"
+        "matrices"
       ],
       "unlocked_by": "matrix",
       "uuid": "163fcc6b-c054-4232-a88b-0aded846a6eb"
