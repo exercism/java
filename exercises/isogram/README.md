@@ -13,6 +13,8 @@ Examples of isograms:
 
 The word *isograms*, however, is not an isogram, because the s repeats.
 
+# Java Tips
+
 If you find that `testWorksWithGermanLetters` fails even though you think you've implemented it correctly,
 this could be because of the [JVM encoding](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_61/rzaha/international.htm). 
 Try setting the `JAVA_TOOL_OPTIONS` environment variable to `-Dfile.encoding=UTF8` to fix this.
@@ -24,19 +26,20 @@ Try setting the `JAVA_TOOL_OPTIONS` environment variable to `-Dfile.encoding=UTF
 
 - [To set an environment variable on linux](https://unix.stackexchange.com/questions/151733/where-can-i-set-global-java-options)
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

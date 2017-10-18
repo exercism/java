@@ -25,15 +25,15 @@ enough.)
 
 Words are case-insensitive.
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 
 ## Submitting Incomplete Solutions
