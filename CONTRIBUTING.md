@@ -168,7 +168,7 @@ See the [POLICIES doc](https://github.com/exercism/java/blob/master/POLICIES.md#
 This can be found at `https://github.com/exercism/problem-specifications/tree/master/exercises/EXERCISE-SLUG/canonical-data.json`.
 If there is canonical data for your exercise then you should follow this when making the tests.
 We aim to follow the canonical data as closely as possible in our tests to ensure thorough test coverage.
-If there is canonical data available you also need to create a file at `exercises/exercise-slug/.meta/version` specifying the canonical data version (e.g. `1.0.0`).
+If there is canonical data available you also need to create a file at `exercises/exercise-slug/.meta/version` specifying the canonical data version you have implemented (e.g. `1.0.0`).
 The canonical data version can be found at the top of the canonical data file for that exercise.
 See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/master/exercises/acronym/.meta), for an example `version` file.
 
