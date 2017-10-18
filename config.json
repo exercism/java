@@ -553,7 +553,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "spiral-matrix",
-      "topics": null,
+      "topics": [
+        "loops",
+        "arrays",
+        "integers",
+        "mathematics",
+        "matrices"
+      ],
       "unlocked_by": "matrix",
       "uuid": "163fcc6b-c054-4232-a88b-0aded846a6eb"
     },
