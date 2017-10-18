@@ -11,14 +11,15 @@ You have to specify which type you want to put into the class when you construct
 
 For example you could construct a list of `Integers`:
 
-`List<Integer> someList = new LinkedList();`
+`List<Integer> someList = new LinkedList<>();`
 
 Now `someList` can only contain `Integers`. You could also do:
 
-`List<String> someOtherList = new LinkedList()`
+`List<String> someOtherList = new LinkedList<>()`
 
 Now `someOtherList` can only contain `Strings`.
 
 Another constraint is that any type used with generics cannot be a [primitive type](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html), such as `int` or `long`.
+However, every primitive type has a corresponding reference type, so instead of `int` you can use [`Integer`](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html) and instead of `long` you can use [`Long`](https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html).
 
 It can help to look at an [example use case of generics](https://docs.oracle.com/javase/tutorial/java/generics/types.html) to get you started.
