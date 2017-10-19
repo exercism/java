@@ -745,7 +745,11 @@
       "core": true,
       "difficulty": 6,
       "slug": "bank-account",
-      "topics": null,
+      "topics": [
+        "concurrency",
+        "exception_handling",
+        "integers"
+      ],
       "unlocked_by": null,
       "uuid": "a242efc5-159d-492b-861d-12a1459fb334"
     },
