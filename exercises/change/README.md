@@ -16,19 +16,20 @@ that the sum of the coins' value would equal the correct amount of change.
 - Can you ask for negative change?
 - Can you ask for a change value smaller than the smallest coin value?
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Software Craftsmanship - Coin Change Kata [https://web.archive.org/web/20130115115225/http://craftsmanship.sv.cmu.edu:80/exercises/coin-change-kata](https://web.archive.org/web/20130115115225/http://craftsmanship.sv.cmu.edu:80/exercises/coin-change-kata)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

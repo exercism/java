@@ -26,6 +26,8 @@ it.
 
 Have fun!
 
+# Java Tips
+
 This exercise introduces [concurrency](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html). 
 To pass the last test you might find the 
 [`synchronized` keyword or locks](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html) useful.
@@ -38,16 +40,17 @@ no concurrent modification attempt. It is unlikely that this will occur several 
 in a row since the order the code is executed should vary every time you run the test. So if you run the last test a 
 couple of times and it passes every time then you can be reasonably sure that your implementation is correct.
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

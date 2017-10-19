@@ -13,19 +13,20 @@ in the input; the digits need not be *numerically consecutive*.
 For the input `'73167176531330624919225119674426574742355349194934'`,
 the largest product for a series of 6 digits is 23520.
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

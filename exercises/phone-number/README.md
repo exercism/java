@@ -28,19 +28,20 @@ should all produce the output
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

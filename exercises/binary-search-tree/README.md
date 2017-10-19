@@ -53,19 +53,20 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Josh Cheek [https://twitter.com/josh_cheek](https://twitter.com/josh_cheek)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -12,19 +12,20 @@ Hence the difference between the square of the sum of the first
 ten natural numbers and the sum of the squares of the first ten
 natural numbers is 3025 - 385 = 2640.
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

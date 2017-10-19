@@ -27,19 +27,20 @@ empty list.
 
 If you want to know more about linked lists, check [Wikipedia](https://en.wikipedia.org/wiki/Linked_list).
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Classic computer science topic
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

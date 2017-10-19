@@ -22,19 +22,20 @@ Given examples of a meetup dates, each containing a month, day, year, and descri
 (first, second, teenth, etc), calculate the date of the actual meetup.
 For example, if given "First Monday of January 2017", the correct meetup date is 2017/1/2
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month [https://twitter.com/copiousfreetime](https://twitter.com/copiousfreetime)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -35,6 +35,8 @@ The Hamming distance is only defined for sequences of equal length. This means
 that based on the definition, each language could deal with getting sequences
 of equal length differently.
 
+# Java Tips
+
 ## Hints
 
 This is the first exercise with tests that require you to throw an
@@ -49,19 +51,20 @@ are:
 2. (optionally) initialized with a specified message.
 
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

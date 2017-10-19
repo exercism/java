@@ -15,19 +15,20 @@ The names must be random: they should not follow a predictable sequence.
 Random names means a risk of collisions. Your solution must ensure that
 every existing robot has a unique name.
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

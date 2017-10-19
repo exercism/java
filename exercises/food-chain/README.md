@@ -63,19 +63,20 @@ I know an old lady who swallowed a horse.
 She's dead, of course!
 ```
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Wikipedia [http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly](http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

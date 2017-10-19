@@ -6,6 +6,8 @@ In functional languages list operations like `length`, `map`, and
 `reduce` are very common. Implement a series of basic list operations,
 without using existing functions.
 
+# Java Tips
+
 ## Hints
 
 In Java it's considered best practice to use instance methods over class methods. However, there are conditions in which it is absolutely appropriate for a function to be `static`. Since classes in Java are closed for modification (i.e. you cannot add members to a class outside its definition like you can in other languages like Ruby or JavaScript), you cannot add new behavior to the class directly. What to do if you still want to define behavior for a given type? The idiomatic solution in this case is to write a utility method. 
@@ -15,16 +17,17 @@ In this exercise we want a List to have `map()`, `reduce()`, `filter()`, etc. me
 The `foldLeft` and `foldRight` methods are "fold" functions, which is a concept well-known in the functional programming world, but less so in the object-oriented one. See the Wikipedia page on folding for [general background](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) and [signature/implementation hints](https://en.wikipedia.org/wiki/Fold_(higher-order_function)#Linear_folds).
 
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

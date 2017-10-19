@@ -34,6 +34,8 @@ A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
 
+# Java Tips
+
 This exercise introduces [generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html).
 To make the tests pass you need to construct your class such that it accepts any type of input, e.g. `Integer` or `String`.
 
@@ -61,19 +63,20 @@ However, every primitive type has a corresponding reference type, so instead of 
 It can help to look at an [example use case of generics](https://docs.oracle.com/javase/tutorial/java/generics/types.html) to get you started.
 
 
+# Running the tests
 
-To run the tests:
+You can run all the tests for an exercise by entering
 
 ```sh
 $ gradle test
 ```
 
-For more detailed info about the Java track see the [help page](http://exercism.io/languages/java).
-
+in your terminal.
 
 ## Source
 
 Wikipedia [http://en.wikipedia.org/wiki/Binary_search_algorithm](http://en.wikipedia.org/wiki/Binary_search_algorithm)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
