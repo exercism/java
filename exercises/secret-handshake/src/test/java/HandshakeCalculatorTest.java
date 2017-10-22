@@ -8,8 +8,8 @@ import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
 public class HandshakeCalculatorTest {
-    private HandshakeCalculator handshakeCalculator;
 
+    private HandshakeCalculator handshakeCalculator;
 
     @Before
     public void setUp() {
@@ -101,14 +101,6 @@ public class HandshakeCalculatorTest {
         assertEquals(
                 emptyList(),
                 handshakeCalculator.calculateHandshake(0));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testThatInputWithLower5BitsNotSetYieldsNoActions() {
-        assertEquals(
-                emptyList(),
-                handshakeCalculator.calculateHandshake(32));
     }
 
 }
