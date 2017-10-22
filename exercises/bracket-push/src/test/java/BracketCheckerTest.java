@@ -1,7 +1,6 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -31,6 +30,13 @@ public class BracketCheckerTest {
     @Test
     public void testIncorrectlyOrderedBrackets() {
         final BracketChecker bracketChecker = new BracketChecker("}{");
+        assertFalse(bracketChecker.areBracketsMatchedAndNestedCorrectly());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testSingleOpenBracketWithIncorrectClosingBracket() {
+        final BracketChecker bracketChecker = new BracketChecker("{]");
         assertFalse(bracketChecker.areBracketsMatchedAndNestedCorrectly());
     }
 
