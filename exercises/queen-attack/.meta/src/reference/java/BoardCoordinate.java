@@ -1,27 +1,27 @@
-public final class BoardCoordinate {
+final class BoardCoordinate {
 
-    private final int rank;
+    private final int row;
 
-    private final int file;
+    private final int column;
 
-    public BoardCoordinate(final int rank, final int file) throws IllegalArgumentException {
-        this.rank = rank;
-        this.file = file;
+    BoardCoordinate(final int row, final int column) throws IllegalArgumentException {
+        this.row = row;
+        this.column = column;
 
         validateInputs();
     }
 
-    public int getRank() {
-        return rank;
+    int getRow() {
+        return row;
     }
 
-    public int getFile() {
-        return file;
+    int getColumn() {
+        return column;
     }
 
     private void validateInputs() throws IllegalArgumentException {
-        validateCoordinateComponent(rank, "rank");
-        validateCoordinateComponent(file, "file");
+        validateCoordinateComponent(row, "row");
+        validateCoordinateComponent(column, "column");
     }
 
     private void validateCoordinateComponent(final int value, final String componentName)
