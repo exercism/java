@@ -1,35 +1,17 @@
+[Java](https://go.java/index.html) is among the most popular available programming languages, thanks to its versatility and compatibility. 
+It is widely used for software development, mobile applications and developing larger systems.
 
-[Java](https://en.wikipedia.org/wiki/Java_(programming_language)) is a general-purpose computer programming language that is: 
- 1. [Concurrent](https://en.wikipedia.org/wiki/Concurrent_computing) 
- 2. [Class-Based](https://en.wikipedia.org/wiki/Class-based_programming)
- 3. [Object-Oriented](https://en.wikipedia.org/wiki/Object-oriented_programming)
+Java was born in 1995 and is maintained by [Oracle](https://www.oracle.com/index.html). 
+Despite the fact that it isn't as young as some of the fresh languages out there, Java is still really popular. 
+It was designed to be fast, secure, reliable, beginner-friendly and highly portable. 
+This portability perk exists because Java is executed on a cross-platform compatible [Java Virtual Machine - JVM](https://en.wikipedia.org/wiki/Java_virtual_machine). 
+Android apps are also developed using Java, since the [Android Operating System](https://en.wikipedia.org/wiki/Android_(operating_system)) runs on a Java language environment.
 
-Java applications are typically compiled to [bytecode](https://en.wikipedia.org/wiki/Bytecode) that can run on any [Java virtual machine](https://en.wikipedia.org/wiki/Java_virtual_machine) (JVM) regardless of computer architecture.
+The Java community is huge!
+GitHub for example has over 1.5 million Java projects. 
+It's also worth mentioning that Java has the second largest community in [StackOverflow](https://stackoverflow.com/questions/tagged/java)! 
+This is important because the larger a programming language community is, the more support you'd be likely to get.
 
-The primary goals kept in mind during the making of the language were:
+Java also has a powerful and well-designed set of built-in [APIs - Application Programming Interfaces](https://docs.oracle.com/javase/8/docs/api/), which can be used for various activities like Database connection, networking, I/O, XML parsing, utilities, and much more.
 
- - It must be simple, object-oriented, and familiar.
- - It must be robust and secure.
- - It must be architecture-neutral and portable.
- - It must execute with high performance.
- - It must be interpreted, threaded, and dynamic.
-
-The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.
-
-## Why Learn Java?
-
-- JAVA IS EVERYWHERE. 
-It is one of the most sought after programming languages.
-It is a standard for enterprise software, web-based content, games and mobile apps, as well as the [Android operating system](https://developer.android.com/index.html). 
-
-- [Write once, run anywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere) policy: Programs written in Java are compiled into machine-independent bytecodes, so it can run on any Java platform.
-Basically, Java is [Platform Independent](https://en.wikipedia.org/wiki/Cross-platform#Platform-independent_software)
-
-- Java has rich APIs:
-Java has built-in [application programming interfaces](https://en.wikipedia.org/wiki/Application_programming_interface) (APIs) for I/O, networking, data structures, concurrency, and many other functions.
-Standard libraries can be supplemented by open source libraries like Apache Commons, Google Guava, Netty and others.
-
-- Standardization:
-If you need to write a web/enterprise app, or you need data persistence or you need to do cryptography, no problem!
-Java is all you require.
-There are many standard tools/practices that extend the Java ecosystem, thanks to the [Java Community Process](https://www.jcp.org/en/introduction/overview) (JCP)!
+From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, [Java is everywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere)!
