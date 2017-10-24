@@ -917,7 +917,13 @@
       "core": false,
       "difficulty": 8,
       "slug": "ocr-numbers",
-      "topics": null,
+      "topics": [
+        "exception_handling",
+        "loops",
+        "lists",
+        "strings",
+        "parsing"
+      ],
       "unlocked_by": "robot-name",
       "uuid": "5cbc6a67-3a53-4aad-ae68-ff469525437f"
     },
