@@ -1,10 +1,10 @@
-public final class QueenAttackCalculator {
+final class QueenAttackCalculator {
 
     private final BoardCoordinate whiteQueenCoordinate;
 
     private final BoardCoordinate blackQueenCoordinate;
 
-    public QueenAttackCalculator(final BoardCoordinate whiteQueenCoordinate, final BoardCoordinate blackQueenCoordinate)
+    QueenAttackCalculator(final BoardCoordinate whiteQueenCoordinate, final BoardCoordinate blackQueenCoordinate)
             throws IllegalArgumentException {
 
         this.whiteQueenCoordinate = whiteQueenCoordinate;
@@ -13,8 +13,8 @@ public final class QueenAttackCalculator {
         validateInputs();
     }
 
-    public boolean canQueensAttackOneAnother() {
-        return queensShareFile() || queensShareRank() || queensShareDiagonal();
+    boolean canQueensAttackOneAnother() {
+        return queensShareColumn() || queensShareRow() || queensShareDiagonal();
     }
 
     private void validateInputs() throws IllegalArgumentException {
@@ -27,28 +27,28 @@ public final class QueenAttackCalculator {
         }
     }
 
-    private boolean queensShareRank() {
-        return differenceBetweenRanks() == 0;
+    private boolean queensShareRow() {
+        return differenceBetweenRows() == 0;
     }
 
-    private boolean queensShareFile() {
-        return differenceBetweenFiles() == 0;
+    private boolean queensShareColumn() {
+        return differenceBetweenColumns() == 0;
     }
 
     private boolean queensShareBoardCoordinate() {
-        return queensShareRank() && queensShareFile();
+        return queensShareRow() && queensShareColumn();
     }
 
     private boolean queensShareDiagonal() {
-        return differenceBetweenRanks() == differenceBetweenFiles();
+        return differenceBetweenRows() == differenceBetweenColumns();
     }
 
-    private int differenceBetweenRanks() {
-        return Math.abs(whiteQueenCoordinate.getRank() - blackQueenCoordinate.getRank());
+    private int differenceBetweenRows() {
+        return Math.abs(whiteQueenCoordinate.getRow() - blackQueenCoordinate.getRow());
     }
 
-    private int differenceBetweenFiles() {
-        return Math.abs(whiteQueenCoordinate.getFile() - blackQueenCoordinate.getFile());
+    private int differenceBetweenColumns() {
+        return Math.abs(whiteQueenCoordinate.getColumn() - blackQueenCoordinate.getColumn());
     }
 
 }

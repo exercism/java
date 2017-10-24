@@ -12,7 +12,7 @@ public class QueenAttackCalculatorTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void testQueensThatDoNotShareRankFileOrDiagonalCannotAttack() {
+    public void testQueensThatDoNotShareRowColumnOrDiagonalCannotAttack() {
         final QueenAttackCalculator calculator
                 = new QueenAttackCalculator(new BoardCoordinate(2, 4), new BoardCoordinate(6, 6));
 
@@ -21,7 +21,7 @@ public class QueenAttackCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testQueensCanAttackOnTheSameRank() {
+    public void testQueensCanAttackOnTheSameRow() {
         final QueenAttackCalculator calculator
                 = new QueenAttackCalculator(new BoardCoordinate(2, 4), new BoardCoordinate(2, 6));
 
@@ -30,7 +30,7 @@ public class QueenAttackCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testQueensCanAttackOnTheSameFile() {
+    public void testQueensCanAttackOnTheSameColumn() {
         final QueenAttackCalculator calculator
                 = new QueenAttackCalculator(new BoardCoordinate(4, 5), new BoardCoordinate(2, 5));
 
@@ -75,36 +75,36 @@ public class QueenAttackCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testCoordinateWithNegativeRankNotAllowed() {
+    public void testCoordinateWithNegativeRowNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Coordinate must have positive rank.");
+        expectedException.expectMessage("Coordinate must have positive row.");
 
         new BoardCoordinate(-2, 2);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testCoordinateWithRankGreaterThan7NotAllowed() {
+    public void testCoordinateWithRowGreaterThan7NotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Coordinate must have rank <= 7.");
+        expectedException.expectMessage("Coordinate must have row <= 7.");
 
         new BoardCoordinate(8, 4);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testCoordinateWithNegativeFileNotAllowed() {
+    public void testCoordinateWithNegativeColumnNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Coordinate must have positive file.");
+        expectedException.expectMessage("Coordinate must have positive column.");
 
         new BoardCoordinate(2, -2);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testCoordinateWithFileGreaterThan7NotAllowed() {
+    public void testCoordinateWithColumnGreaterThan7NotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Coordinate must have file <= 7.");
+        expectedException.expectMessage("Coordinate must have column <= 7.");
 
         new BoardCoordinate(4, 8);
     }
