@@ -62,6 +62,7 @@ then
 fi
 
 track_exercise_slugs=$(jq '.exercises[] | select(has("deprecated") | not) | .slug' $config_file_path | tr -d "\"")
+update_needed_count=0
 
 for slug in $track_exercise_slugs
 do
@@ -88,6 +89,7 @@ do
     if ! [ -f "$track_exercise_version_file_path" ]
     then
         echo "$slug: needs update or version file (v$canonical_data_version)."
+        update_needed_count=$((update_needed_count + 1))
         continue
     fi
 
@@ -98,7 +100,13 @@ do
         # echo "$slug: up-to-date."
         continue
     else
+        update_needed_count=$((update_needed_count + 1))
         echo "$slug: needs update (v$track_data_version -> v$canonical_data_version)."
     fi
 
 done
+
+if [ $update_needed_count -eq 1 ]
+then
+    echo "All exercises are up to date!"
+fi
