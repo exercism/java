@@ -106,7 +106,7 @@ do
 
 done
 
-if [ $update_needed_count -eq 1 ]
+if [ $update_needed_count -eq 0 ]
 then
     echo "All exercises are up to date!"
 fi
