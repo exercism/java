@@ -1034,8 +1034,10 @@
       "difficulty": 9,
       "slug": "pythagorean-triplet",
       "topics": [
-		"mathematics",
-		"logic"
+		"integer",
+		"lists",
+		"logic",
+		"mathematics"
 	  ],
       "unlocked_by": "triangle",
       "uuid": "88505f95-89e5-4a08-8ed2-208eb818cdf1"
