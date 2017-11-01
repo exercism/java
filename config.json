@@ -1034,7 +1034,7 @@
       "difficulty": 9,
       "slug": "pythagorean-triplet",
       "topics": [
-        "integer",
+       "integer",
 	"lists",
 	"logic",
 	"mathematics"
