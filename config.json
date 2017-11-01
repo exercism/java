@@ -919,10 +919,10 @@
       "slug": "ocr-numbers",
       "topics": [
         "exception_handling",
-        "loops",
         "lists",
-        "strings",
-        "parsing"
+        "loops",
+        "parsing",
+        "strings"
       ],
       "unlocked_by": "robot-name",
       "uuid": "5cbc6a67-3a53-4aad-ae68-ff469525437f"
@@ -1040,10 +1040,10 @@
       "difficulty": 9,
       "slug": "pythagorean-triplet",
       "topics": [
-       "integer",
-	"lists",
-	"logic",
-	"mathematics"
+        "integer",
+        "lists",
+        "logic",
+        "mathematics"
       ],
       "unlocked_by": "triangle",
       "uuid": "88505f95-89e5-4a08-8ed2-208eb818cdf1"
