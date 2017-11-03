@@ -68,9 +68,13 @@ public class LuhnValidatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testThatStringContainingSymbolsIsInvalid() {
+    public void testThatStringContainingSymbolsIsInvalidV1() {
         assertFalse(luhnValidator.isValid("055£ 444$ 285"));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testThatStringContainingSymbolsIsInvalidV2() { assertFalse(luhnValidator.isValid("34&")); }
 
     @Ignore("Remove to run test")
     @Test
