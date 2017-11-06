@@ -604,8 +604,11 @@
       "slug": "house",
       "topics": [
         "arrays",
+        "conditionals",
         "loops",
-        "strings"
+        "strings",
+        "text_formatting",
+        "variables"
       ],
       "unlocked_by": "two-fer",
       "uuid": "6b51aca3-3451-4a64-ad7b-00b151d7548a"
@@ -616,11 +619,8 @@
       "slug": "food-chain",
       "topics": [
         "arrays",
-        "conditionals",
         "lists",
-        "strings",
-        "text_formatting",
-        "variables"
+        "strings"
       ],
       "unlocked_by": "two-fer",
       "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d"
