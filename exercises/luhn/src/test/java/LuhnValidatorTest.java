@@ -73,7 +73,9 @@ public class LuhnValidatorTest {
     */
     @Ignore("Remove to run test")
     @Test
-    public void testThatStringContainingSymbolsIsInvalid() { assertFalse(luhnValidator.isValid("34&")); }
+    public void testThatStringContainingSymbolsIsInvalid() {
+        assertFalse(luhnValidator.isValid("34&"));
+    }
 
     @Ignore("Remove to run test")
     @Test
