@@ -602,7 +602,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "house",
-      "topics": null,
+      "topics": [
+        "arrays",
+        "conditionals",
+        "loops",
+        "strings",
+        "text_formatting"
+      ],
       "unlocked_by": "two-fer",
       "uuid": "6b51aca3-3451-4a64-ad7b-00b151d7548a"
     },
