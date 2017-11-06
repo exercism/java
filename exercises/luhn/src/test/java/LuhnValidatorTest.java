@@ -66,10 +66,15 @@ public class LuhnValidatorTest {
         assertFalse(luhnValidator.isValid("055-444-285"));
     }
 
+    /* The following test diverges from the canonical test data. This is because the corresponding canonical test does
+     * not account for Java specific functions (such as Character.getNumericValue()), which can be part of incorrect yet
+     * passing implementations. For more detail, check out issue #972 here:
+     * (https://github.com/exercism/java/issues/972).
+    */
     @Ignore("Remove to run test")
     @Test
     public void testThatStringContainingSymbolsIsInvalid() {
-        assertFalse(luhnValidator.isValid("055£ 444$ 285"));
+        assertFalse(luhnValidator.isValid("34&"));
     }
 
     @Ignore("Remove to run test")
