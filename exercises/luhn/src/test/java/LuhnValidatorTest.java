@@ -69,7 +69,7 @@ public class LuhnValidatorTest {
     /* The following test diverges from the canonical test data. This is because the corresponding canonical test does
      * not account for Java specific functions (such as Character.getNumericValue()), which can be part of incorrect yet
      * passing implementations. For more detail, check out issue #972 here:
-     * (http://exercism.io/submissions/05a450216e9d4fc5965831a58760efe8).
+     * (https://github.com/exercism/java/issues/972).
     */
     @Ignore("Remove to run test")
     @Test
