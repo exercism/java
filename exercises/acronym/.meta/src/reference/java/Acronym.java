@@ -16,11 +16,11 @@ final class Acronym {
     private String generateAcronym(String phrase){
         final Pattern BREAK_WORDS = Pattern.compile("[A-Z]+[a-z]*|[a-z]+");
         final Matcher matcher = BREAK_WORDS.matcher(phrase);
-        final StringBuilder b = new StringBuilder();
+        final StringBuilder stringBuilder = new StringBuilder();
         while (matcher.find()){
-            b.append(matcher.group().charAt(0));
+            stringBuilder.append(matcher.group().charAt(0));
         }
-        return b.toString().toUpperCase();
+        return stringBuilder.toString().toUpperCase();
     }
 
 }
