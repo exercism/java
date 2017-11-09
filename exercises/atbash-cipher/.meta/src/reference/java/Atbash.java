@@ -9,36 +9,36 @@ class Atbash {
 
     String encode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
-        String cyphered = "";
+        StringBuilder cyphered = new StringBuilder(input.length());
 
         for (char c : encoded.toCharArray()) {
-            cyphered += applyCipher(c);
+            cyphered.append(applyCipher(c));
         }
 
-        return splitIntoFiveLetterWords(cyphered);
+        return splitIntoFiveLetterWords(cyphered.toString());
     }
 
     String decode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
-        String deciphered = "";
+        StringBuilder deciphered = new StringBuilder(input.length());
 
         for (char c : encoded.toCharArray()) {
-            deciphered += applyCipher(c);
+            deciphered.append(applyCipher(c));
         }
 
-        return deciphered;
+        return deciphered.toString();
     }
 
     String stripInvalidCharacters(String input) {
-        String filteredValue = "";
+        StringBuilder filteredValue = new StringBuilder(input.length());
 
         for (char c : input.toCharArray()) {
             if (Character.isLetterOrDigit(c)) {
-                filteredValue += c;
+                filteredValue.append(c);
             }
         }
 
-        return filteredValue;
+        return filteredValue.toString();
     }
 
     private char applyCipher(char input) {
