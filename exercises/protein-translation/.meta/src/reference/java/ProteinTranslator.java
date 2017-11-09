@@ -13,9 +13,9 @@ class ProteinTranslator {
     private static final String[] TRYPTOPHAN = {"UGG"};
     private static final String[] STOP = {"UAA", "UAG", "UGA"};
 
-    List<String> translate (String rnaSequence) {
+    List<String> translate(String rnaSequence) {
 
-        List proteinList = new ArrayList();
+        List<String> proteinList = new ArrayList<String>();
 
         for (int i = 0; i < rnaSequence.length(); i += 3) {
             String codon = rnaSequence.substring(i, i+3);
