@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Atbash {
+class Atbash {
 
     private static final int GROUP_SIZE = 5;
     private static final String PLAIN = "abcdefghijklmnopqrstuvwxyz";
     private static final String CIPHER = "zyxwvutsrqponmlkjihgfedcba";
 
-    public String encode(String input) {
+    String encode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
         String cyphered = "";
 
@@ -18,7 +18,7 @@ public class Atbash {
         return splitIntoFiveLetterWords(cyphered);
     }
 
-    public String decode(String input) {
+    String decode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
         String deciphered = "";
 
@@ -29,7 +29,7 @@ public class Atbash {
         return deciphered;
     }
 
-    private String stripInvalidCharacters(String input) {
+    String stripInvalidCharacters(String input) {
         String filteredValue = "";
 
         for (char c : input.toCharArray()) {
