@@ -168,6 +168,19 @@
     },
     {
       "core": false,
+      "difficulty": 3,
+      "slug": "protein-translation",
+      "topics": [
+        "arrays",
+        "conditionals",
+        "loops",
+        "strings"
+      ],
+      "unlocked_by": "rna-transcription",
+      "uuid": "1bea45f6-021e-0a80-1e53-afcd9f9a8df08c01126"
+    },
+    {
+      "core": false,
       "difficulty": 4,
       "slug": "sum-of-multiples",
       "topics": [
