@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ProteinTranslator {
+class ProteinTranslator {
 
     private static final String[] METHIONINE = {"AUG"};
     private static final String[] PHENYLALANINE = {"UUU", "UUC"};
