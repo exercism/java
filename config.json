@@ -776,7 +776,13 @@
       "core": false,
       "difficulty": 6,
       "slug": "bowling",
-      "topics": null,
+      "topics":  [
+        "functions",
+        "mathematics",
+        "games",
+        "conditionals",
+        "integers"
+      ],
       "unlocked_by": "scrabble-score",
       "uuid": "4b3f7771-c642-4278-a3d9-2fb958f26361"
     },
