@@ -29,7 +29,7 @@ class Atbash {
         return deciphered.toString();
     }
 
-    String stripInvalidCharacters(String input) {
+    private String stripInvalidCharacters(String input) {
         StringBuilder filteredValue = new StringBuilder(input.length());
 
         for (char c : input.toCharArray()) {
