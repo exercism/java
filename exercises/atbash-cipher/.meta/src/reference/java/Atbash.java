@@ -1,44 +1,44 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Atbash {
+class Atbash {
 
     private static final int GROUP_SIZE = 5;
     private static final String PLAIN = "abcdefghijklmnopqrstuvwxyz";
     private static final String CIPHER = "zyxwvutsrqponmlkjihgfedcba";
 
-    public String encode(String input) {
+    String encode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
-        String cyphered = "";
+        StringBuilder cyphered = new StringBuilder(input.length());
 
         for (char c : encoded.toCharArray()) {
-            cyphered += applyCipher(c);
+            cyphered.append(applyCipher(c));
         }
 
-        return splitIntoFiveLetterWords(cyphered);
+        return splitIntoFiveLetterWords(cyphered.toString());
     }
 
-    public String decode(String input) {
+    String decode(String input) {
         String encoded = stripInvalidCharacters(input).toLowerCase();
-        String deciphered = "";
+        StringBuilder deciphered = new StringBuilder(input.length());
 
         for (char c : encoded.toCharArray()) {
-            deciphered += applyCipher(c);
+            deciphered.append(applyCipher(c));
         }
 
-        return deciphered;
+        return deciphered.toString();
     }
 
     private String stripInvalidCharacters(String input) {
-        String filteredValue = "";
+        StringBuilder filteredValue = new StringBuilder(input.length());
 
         for (char c : input.toCharArray()) {
             if (Character.isLetterOrDigit(c)) {
-                filteredValue += c;
+                filteredValue.append(c);
             }
         }
 
-        return filteredValue;
+        return filteredValue.toString();
     }
 
     private char applyCipher(char input) {
