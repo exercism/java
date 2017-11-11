@@ -177,7 +177,7 @@
         "strings"
       ],
       "unlocked_by": "rna-transcription",
-      "uuid": "1bea45f6-021e-0a80-1e53-afcd9f9a8df08c01126"
+      "uuid": "331073b3-bd1a-4868-b767-a64ce9fd9d97"
     },
     {
       "core": false,
@@ -810,7 +810,7 @@
         "text_formatting"
       ],
       "unlocked_by": "matrix",
-      "uuid": "99191d53-0fed-f680-de7a-55cfb872de17bc58629"
+      "uuid": "486d342e-c834-40fc-b691-a4dab3f790da"
     },
     {
       "core": false,
