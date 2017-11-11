@@ -776,12 +776,12 @@
       "core": false,
       "difficulty": 6,
       "slug": "bowling",
-      "topics":  [
-        "functions",
+      "topics": [
         "mathematics",
         "games",
         "conditionals",
-        "integers"
+        "integers",
+        "exception_handling"
       ],
       "unlocked_by": "scrabble-score",
       "uuid": "4b3f7771-c642-4278-a3d9-2fb958f26361"
