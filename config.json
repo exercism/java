@@ -777,11 +777,11 @@
       "difficulty": 6,
       "slug": "bowling",
       "topics": [
-        "mathematics",
-        "games",
         "conditionals",
+        "exception_handling",
+        "games",
         "integers",
-        "exception_handling"
+        "mathematics"
       ],
       "unlocked_by": "scrabble-score",
       "uuid": "4b3f7771-c642-4278-a3d9-2fb958f26361"
