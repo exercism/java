@@ -709,7 +709,10 @@
       "core": true,
       "difficulty": 6,
       "slug": "binary-search",
-      "topics": null,
+      "topics": [
+        "recursion",
+        "arrays"
+      ],
       "unlocked_by": null,
       "uuid": "50136dc3-caf7-4fa1-b7bd-0cba1bea9176"
     },
