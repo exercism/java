@@ -3,7 +3,7 @@ import java.util.Set;
 
 class Matrix {
 
-    Matrix(List<List<Integer>> lists) {
+    Matrix(List<List<Integer>> values) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
