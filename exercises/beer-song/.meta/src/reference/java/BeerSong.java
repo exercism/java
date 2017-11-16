@@ -1,5 +1,5 @@
-public class BeerSong {
-    public String verse(int number) {
+class BeerSong {
+    String verse(int number) {
         switch (number) {
             case 0:
                 return "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n\n";
@@ -12,7 +12,7 @@ public class BeerSong {
         }
     }
 
-    public String sing(int start, int stop) {
+    String sing(int start, int stop) {
         StringBuilder songOutput = new StringBuilder();
 
         for (int i=start; i>=stop; i--) {
@@ -22,7 +22,7 @@ public class BeerSong {
         return songOutput.toString();
     }
 
-    public String singSong() {
+    String singSong() {
         return sing(99,0);
     }
 }
