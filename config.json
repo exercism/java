@@ -182,6 +182,18 @@
     {
       "core": false,
       "difficulty": 4,
+      "slug": "isbn-verifier",
+      "topics": [
+        "integers",
+        "loops",
+        "strings"
+      ],
+      "unlocked_by": "hamming",
+      "uuid": "838bc1d7-b2de-482a-9bfc-c881b4ccb04c"
+    },
+    {
+      "core": false,
+      "difficulty": 4,
       "slug": "sum-of-multiples",
       "topics": [
         "arrays",
