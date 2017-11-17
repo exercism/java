@@ -2,6 +2,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
@@ -53,7 +54,7 @@ public class AnagramTest {
     @Test
     public void testDoesNotConfuseDifferentDuplicates() {
         Anagram detector = new Anagram("galea");
-        assertTrue(detector.match(Arrays.asList("eagle")).isEmpty());
+        assertTrue(detector.match(Collections.singletonList("eagle")).isEmpty());
     }
 
     @Ignore("Remove to run test")
@@ -69,21 +70,21 @@ public class AnagramTest {
     @Test
     public void testIdenticalWordRepeatedIsNotAnagram() {
         Anagram detector = new Anagram("go");
-        assertTrue(detector.match(Arrays.asList("go Go GO")).isEmpty());
+        assertTrue(detector.match(Collections.singletonList("go Go GO")).isEmpty());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCapitalWordIsNotOwnAnagram() {
         Anagram detector = new Anagram("BANANA");
-        assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
+        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
-        assertTrue(detector.match(Arrays.asList("last")).isEmpty());
+        assertTrue(detector.match(Collections.singletonList("last")).isEmpty());
     }
 
     @Ignore("Remove to run test")
@@ -121,13 +122,13 @@ public class AnagramTest {
     @Test
     public void testWordIsNotItsOwnAnagram() {
         Anagram detector = new Anagram("banana");
-        assertTrue(detector.match(Arrays.asList("Banana")).isEmpty());
+        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAnagramMustUseAllLettersExactlyOnce() {
         Anagram detector = new Anagram("tapper");
-        assertTrue(detector.match(Arrays.asList("patter")).isEmpty());
+        assertTrue(detector.match(Collections.singletonList("patter")).isEmpty());
     }
 }
