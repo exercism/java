@@ -17,7 +17,7 @@ If everything goes well, you will be ready to fetch your first real exercise.
 # Bonus/Challenge
 
 Once you get the string "Hello, World!" to work, try to add in more challenging code. 
-1. Adding an if/else/else if statement 
+1. Adding an if/else/else if statements 
     a. Have the user enter in a number between 0 to 10. If the value is between 0 and 5, return "Hello, Again!" (if statement)
     b. If the value is between 6 and 10, return "Bye!" (else statement)
     c.If the value is not within the range, return "Value out of bounds! Please enter a value between 0 to 10!"
