@@ -1,14 +1,14 @@
 import java.util.*;
 
-public class Anagram {
+class Anagram {
 
     private final AnagramSubject anagramSubject;
 
-    public Anagram(String word) {
+    Anagram(String word) {
         anagramSubject = new AnagramSubject(word);
     }
 
-    public List<String> match(List<String> candidates) {
+    List<String> match(List<String> candidates) {
         List<String> anagrams = new ArrayList<String>();
 
         for (String candidate : candidates) {
@@ -25,12 +25,12 @@ public class Anagram {
         private final String word;
         private final char[] fingerprint;
 
-        public AnagramSubject(String other) {
+        AnagramSubject(String other) {
             this.word = other;
             this.fingerprint = canonicalize(other);
         }
 
-        public boolean anagramOf(String other) {
+        boolean anagramOf(String other) {
             return !duplicate(other) && Arrays.equals(fingerprint,canonicalize(other));
         }
 
