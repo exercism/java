@@ -1,4 +1,4 @@
-public enum Allergen {
+enum Allergen {
     EGGS(1),
     PEANUTS(2),
     SHELLFISH(4),
@@ -14,7 +14,7 @@ public enum Allergen {
         this.score = score;
     }
 
-    public int getScore() {
+    int getScore() {
         return score;
     }
 }
