@@ -1,15 +1,18 @@
 /**
  * Bob is a lackadasical teenager.
  */
-public class Bob {
-    public String hey(String input) {
+class Bob {
+    String hey(String input) {
         input = normalize(input);
-        if (isSilence(input))
+        if (isSilence(input)) {
             return "Fine. Be that way!";
-        if (isShout(input))
+        }
+        if (isShout(input)) {
             return "Whoa, chill out!";
-        if (isQuestion(input))
+        }
+        if (isQuestion(input)) {
             return "Sure.";
+        }
         return "Whatever.";
     }
 
