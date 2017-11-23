@@ -150,7 +150,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void rollsCanNotScoreNegativePoints() throws IllegalStateException {
+    public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         playGame(rolls);
@@ -163,7 +163,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void aRollCanNotScoreMoreThan10Points() throws IllegalStateException {
+    public void aRollCanNotScoreMoreThan10Points() {
         int[] rolls = {11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         playGame(rolls);
@@ -176,7 +176,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void twoRollsInAFrameCanNotScoreMoreThan10Points() throws IllegalStateException {
+    public void twoRollsInAFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         playGame(rolls);
@@ -189,7 +189,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() throws IllegalStateException {
+    public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6};
 
         playGame(rolls);
@@ -202,7 +202,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void twoBonusRollsAfterAStrikeInTheLastFrameCanScoreMoreThan10PointsIfOneIsAStrike() throws IllegalStateException {
+    public void twoBonusRollsAfterAStrikeInTheLastFrameCanScoreMoreThan10PointsIfOneIsAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 6};
 
         playGame(rolls);
@@ -212,7 +212,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void anUnstartedGameCanNotBeScored() throws IllegalStateException {
+    public void anUnstartedGameCanNotBeScored() {
         int[] rolls = new int[0];
 
         playGame(rolls);
@@ -225,7 +225,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void anIncompleteGameCanNotBeScored() throws IllegalStateException {
+    public void anIncompleteGameCanNotBeScored() {
         int[] rolls = {0, 0};
 
         playGame(rolls);
@@ -238,7 +238,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void aGameWithMoreThanTenFramesCanNotBeScored() throws IllegalStateException {
+    public void aGameWithMoreThanTenFramesCanNotBeScored() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         playGame(rolls);
@@ -251,7 +251,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void bonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() throws IllegalStateException {
+    public void bonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10};
 
         playGame(rolls);
@@ -264,7 +264,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void bothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() throws IllegalStateException {
+    public void bothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10};
 
         playGame(rolls);
@@ -277,7 +277,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void bonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() throws IllegalStateException {
+    public void bonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3};
 
         playGame(rolls);
