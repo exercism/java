@@ -9,20 +9,20 @@ class BinarySearchTree<T extends Comparable<T>> {
         if (root == null) {
             root = new Node<>(value);
         } else {
-            this.insert(this.root, value);
+            insert(root, value);
         }
-        this.nodeCount++;
+        nodeCount++;
     }
 
     List<T> getAsSortedList() {
-        List<T> result = new ArrayList<>(this.nodeCount);
-        this.putInSortedOrderToList(this.root, result);
+        List<T> result = new ArrayList<>(nodeCount);
+        putInSortedOrderToList(root, result);
         return Collections.unmodifiableList(result);
     }
 
     List<T> getAsLevelOrderList() {
-        List<T> result = new ArrayList<>(this.nodeCount);
-        this.putInLevelOrderToList(this.root, result);
+        List<T> result = new ArrayList<>(nodeCount);
+        putInLevelOrderToList(root, result);
         return Collections.unmodifiableList(result);
     }
 
@@ -33,13 +33,13 @@ class BinarySearchTree<T extends Comparable<T>> {
     private void insert(Node<T> node, T value) {
         if (value.compareTo(node.getData()) <= 0) {
             if (node.getLeft() == null) {
-                node.setLeft(new Node<T>(value));
+                node.setLeft(new Node<>(value));
             } else {
                 insert(node.getLeft(), value);
             }
         } else {
             if (node.getRight() == null) {
-                node.setRight(new Node<T>(value));
+                node.setRight(new Node<>(value));
             } else {
                 insert(node.getRight(), value);
             }
