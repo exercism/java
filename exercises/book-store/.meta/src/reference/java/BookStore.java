@@ -28,8 +28,8 @@ class BookStore {
             List<Integer> remainingBooks = new ArrayList<>(books);
 
             for (final Integer newGroupBook : newGroupBooks) {
-            //noinspection UseBulkOperation - we want to remove _one_ of each book number, not _all_ of each book number.
-            remainingBooks.remove(newGroupBook);
+                //noinspection UseBulkOperation - we want to remove _one_ of each book number, not _all_ of each book number.
+                remainingBooks.remove(newGroupBook);
             }
 
             double price = calculateBasketCost(remainingBooks, priceSoFar + costOfGroupSize(newGroupBooks.size()));
