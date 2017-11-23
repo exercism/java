@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BowlingGame {
+class BowlingGame {
     private static final int NUMBER_OF_FRAMES = 10;
     private static final int MAXIMUM_FRAME_SCORE = 10;
-    private List<Integer> rolls = new ArrayList<Integer>();
+    private List<Integer> rolls = new ArrayList<>();
 
-    public void roll(int pins) {
+    void roll(int pins) {
         rolls.add(pins);
     }
 
-    public int score() {
+    int score() {
         int score = 0;
         int frameIndex = 0;
 
