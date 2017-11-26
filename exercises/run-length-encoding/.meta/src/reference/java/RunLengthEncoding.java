@@ -1,8 +1,8 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RunLengthEncoding {
-    public String encode(String data) {
+class RunLengthEncoding {
+    String encode(String data) {
 
         StringBuilder encodedDataBuilder = new StringBuilder();
 
@@ -35,7 +35,7 @@ public class RunLengthEncoding {
         return encodedDataBuilder.toString();
     }
 
-    public void addChars(StringBuilder toAddTo, char toAdd, int countOfChar) {
+    void addChars(StringBuilder toAddTo, char toAdd, int countOfChar) {
         if(countOfChar != 1) {
             toAddTo.append(countOfChar);
         }
@@ -43,7 +43,7 @@ public class RunLengthEncoding {
         toAddTo.append(toAdd);
     }
 
-    public String decode(String encodedData) {
+    String decode(String encodedData) {
         StringBuilder decodedData = new StringBuilder();
         Pattern pattern = Pattern.compile("[0-9]+|[a-zA-Z\\s]");
         Matcher matcher = pattern.matcher(encodedData);
