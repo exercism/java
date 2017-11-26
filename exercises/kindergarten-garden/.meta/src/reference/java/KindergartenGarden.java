@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class KindergartenGarden {
+class KindergartenGarden {
     private String[] students;
     private String garden;
     private static final int PLANTS_PER_STUDENT_PER_ROW = 2;
@@ -15,18 +15,18 @@ public class KindergartenGarden {
             "Ileana", "Joseph", "Kincaid", "Larry"
     };
 
-    public KindergartenGarden(String garden, String[] students) {
+    KindergartenGarden(String garden, String[] students) {
         this.garden = garden;
         Arrays.sort(students);
         this.students = students;
         newRowLocation = garden.indexOf('\n') + 1;
     }
 
-    public KindergartenGarden(String garden) {
+    KindergartenGarden(String garden) {
         this(garden, DEFAULT_STUDENTS);
     }
 
-    public List<Plant> getPlantsOfStudent(String student) {
+    List<Plant> getPlantsOfStudent(String student) {
         List<Plant> plants = new ArrayList<Plant>();
         int studentPlantsIndex = Arrays.binarySearch(students, student) * PLANTS_PER_STUDENT_PER_ROW;
 

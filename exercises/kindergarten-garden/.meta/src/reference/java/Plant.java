@@ -1,10 +1,10 @@
-public enum Plant {
+enum Plant {
     VIOLETS,
     RADISHES,
     CLOVER,
     GRASS;
 
-    public static Plant getPlant(char plantCode) {
+    static Plant getPlant(char plantCode) {
         switch (plantCode) {
             case 'G':
                 return GRASS;
