@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Crypto {
+class Crypto {
 
     private String normalizedPlaintext;
     private int squareSize;
 
-    public Crypto(String text) {
+    Crypto(String text) {
         this.normalizedPlaintext = normalizeText(text);
         this.squareSize = calculateSquareSize(normalizedPlaintext);
     }
 
-    public String getNormalizedPlaintext() {
+    String getNormalizedPlaintext() {
         return normalizedPlaintext;
     }
 
-    public int getSquareSize() {
+    int getSquareSize() {
         return squareSize;
     }
 
@@ -30,7 +30,7 @@ public class Crypto {
         return (int) Math.ceil(Math.sqrt(text.length()));
     }
 
-    public List<String> getPlaintextSegments() {
+    List<String> getPlaintextSegments() {
         return getSegmentText(normalizedPlaintext, squareSize);
     }
 
@@ -50,11 +50,11 @@ public class Crypto {
         return segments;
     }
 
-    public String getCipherText() {
+    String getCipherText() {
         return getNormalizedCipherText().replaceAll("\\s", "");
     }
 
-    public String getNormalizedCipherText() {
+    String getNormalizedCipherText() {
         StringBuilder cipherText = new StringBuilder(normalizedPlaintext.length());
 
         for (int index = 0; index < squareSize; index++) {
