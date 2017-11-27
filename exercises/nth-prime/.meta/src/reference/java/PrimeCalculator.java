@@ -1,7 +1,7 @@
 import java.util.stream.IntStream;
 
-public final class PrimeCalculator {
-    public int nth(int nth) {
+final class PrimeCalculator {
+    int nth(int nth) {
         if (nth < 1) {
             throw new IllegalArgumentException();
         }
