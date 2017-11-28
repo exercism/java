@@ -13,16 +13,6 @@
       "uuid": "f77dc7e3-35a8-4300-a7c8-2c1765e9644d"
     },
     {
-      "core": false,
-      "difficulty": 1,
-      "slug": "reverse-string",
-      "topics": [
-        "strings"
-      ],
-      "unlocked_by": null,
-      "uuid": "2c8afeed-480e-41f3-ad58-590fa8f88029"
-    },
-    {
       "core": true,
       "difficulty": 1,
       "slug": "two-fer",
@@ -32,6 +22,16 @@
       ],
       "unlocked_by": null,
       "uuid": "74515d45-565b-4be2-96c4-77e58efa9257"
+    },
+    {
+      "core": false,
+      "difficulty": 1,
+      "slug": "reverse-string",
+      "topics": [
+        "strings"
+      ],
+      "unlocked_by": null,
+      "uuid": "2c8afeed-480e-41f3-ad58-590fa8f88029"
     },
     {
       "core": false,
