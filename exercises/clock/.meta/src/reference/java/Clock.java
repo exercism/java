@@ -1,17 +1,17 @@
-public class Clock {
+class Clock {
     private static final int MINUTES_IN_AN_HOUR = 60;
     private static final int HOURS_IN_A_DAY = 24;
 
     private int hours;
     private int minutes;
 
-    public Clock(int hours, int minutes) {
+    Clock(int hours, int minutes) {
         this.hours = hours;
         this.minutes = minutes;
         sanitiseTime();
     }
 
-    public void add(int minutes) {
+    void add(int minutes) {
         this.minutes += minutes;
         sanitiseTime();
     }
