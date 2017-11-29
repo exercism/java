@@ -1,14 +1,14 @@
-public class Binary {
+class Binary {
 
     private String binary;
     private int decimal;
 
-    public Binary(String binary) {
+    Binary(String binary) {
         this.binary = binary;
         this.decimal = getDecimalFromBinary(binary);
     }
 
-    public int getDecimal() {
+    int getDecimal() {
         return decimal;
     }
 
