@@ -941,6 +941,18 @@
     {
       "core": false,
       "difficulty": 7,
+      "slug": "markdown",
+      "topics": [
+        "strings",
+        "conditionals",
+        "pattern_matching"
+      ],
+      "unlocked_by": "word-search",
+      "uuid": "377fe38b-08ad-4f3a-8118-a43c10f7b9b2"
+    },
+    {
+      "core": false,
+      "difficulty": 7,
       "slug": "poker",
       "topics": [
         "games",
