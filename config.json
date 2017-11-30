@@ -945,9 +945,10 @@
       "topics": [
         "strings",
         "conditionals",
-        "pattern_matching"
+        "pattern_matching",
+        "refactoring"
       ],
-      "unlocked_by": "word-search",
+      "unlocked_by": "scrabble-score",
       "uuid": "cc18f2e5-4e36-47d6-aa60-8ca5ff54019a"
     },
     {
