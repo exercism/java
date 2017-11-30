@@ -237,7 +237,7 @@ solve_all_exercises() {
     echo "=================================================="
 
     ${exercism_cli} fetch ${TRACK} $exercise
-    cp -R -H ${track_root}/exercises/${exercise}/.meta/src/reference/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise}/src/main/${TRACK}/
+    cp -R -H "${track_root}/exercises/${exercise}/.meta/src/reference/${TRACK}/"* ${exercism_exercises_dir}/${TRACK}/${exercise}/src/main/${TRACK}/
 
     pushd ${exercism_exercises_dir}/${TRACK}/${exercise}
     # Check that tests compile before we strip @Ignore annotations
@@ -275,7 +275,7 @@ solve_single_exercise() {
   echo "=================================================="
 
   ${exercism_cli} fetch ${TRACK} $exercise_to_solve
-  cp -R -H ${track_root}/exercises/${exercise_to_solve}/.meta/src/reference/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}/src/main/${TRACK}/
+  cp -R -H "${track_root}/exercises/${exercise_to_solve}/.meta/src/reference/${TRACK}/"* ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}/src/main/${TRACK}/
 
   pushd ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}
   # Check that tests compile before we strip @Ignore annotations
