@@ -748,7 +748,7 @@
     {
       "core": false,
       "difficulty": 6,
-      "slug": "wordy",
+      "slug": "wordy-rename",
       "topics": [
         "exception_handling",
         "integers",
