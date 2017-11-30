@@ -14,7 +14,7 @@ echo "Changes in pr json: ${pr_files_json}"
 modded_files=`echo $pr_files_json | bin/jq -r '.[].filename'` || bin/journey-test.sh
 
 for file in $modded_files
-  do if [[ ! $file == exercises/build.gradle ]] && ([[ $file == exercises* ]] || [[ $file == config.json ]])
+  do if [[ $file == exercises* ]] || [[ $file == config.json ]]
     then
     for file2 in $modded_files
       do if [[ $file2 == exercises* ]] && [[ $file2 != exercises/settings.gradle ]]
