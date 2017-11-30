@@ -53,6 +53,13 @@
       "github_username": "FridaTveit",
       "name": "Frida Johanne Tveit",
       "show_on_website": true
+    },
+    {
+      "alumnus": false,
+      "bio": "I am a software developer and consultant working for Black Pepper Software, a software company based in Leamington Spa, England. I'm a recent Computer Science graduate from the University of Warwick, and love all things to do with computers!",
+      "github_username": "sjwarner-bp",
+      "name": "Sam Warner",
+      "show_on_website": true
     }
   ]
 }
