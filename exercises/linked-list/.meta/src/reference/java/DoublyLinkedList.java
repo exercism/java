@@ -48,7 +48,7 @@ final class DoublyLinkedList<T> {
         private Element<T> prev;
         private Element<T> next;
 
-        Element(T value, Element<T> prev, Element<T> next) {
+        public Element(T value, Element<T> prev, Element<T> next) {
             this.value = value;
             this.prev = prev;
             this.next = next;
