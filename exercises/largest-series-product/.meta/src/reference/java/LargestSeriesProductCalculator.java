@@ -1,13 +1,13 @@
-public final class LargestSeriesProductCalculator {
+final class LargestSeriesProductCalculator {
 
     private final String stringToSearch;
 
-    public LargestSeriesProductCalculator(final String stringToSearch) throws IllegalArgumentException {
+    LargestSeriesProductCalculator(final String stringToSearch) throws IllegalArgumentException {
         this.stringToSearch = stringToSearch;
         validateStringToSearch();
     }
 
-    public long calculateLargestProductForSeriesLength(final int seriesLength) throws IllegalArgumentException {
+    long calculateLargestProductForSeriesLength(final int seriesLength) throws IllegalArgumentException {
         if (seriesLength < 0) {
             throw new IllegalArgumentException("Series length must be non-negative.");
         } else if (seriesLength == 0) {
@@ -32,7 +32,7 @@ public final class LargestSeriesProductCalculator {
         }
     }
 
-    private void validateStringToSearch() throws IllegalArgumentException {
+    void validateStringToSearch() throws IllegalArgumentException {
         if (stringToSearch == null) {
             throw new IllegalArgumentException("String to search must be non-null.");
         } else if (!stringToSearch.chars().allMatch(Character::isDigit)) {
@@ -40,7 +40,7 @@ public final class LargestSeriesProductCalculator {
         }
     }
 
-    private long computeProductOfSeries(final int startIndex, final int seriesLength) {
+    long computeProductOfSeries(final int startIndex, final int seriesLength) {
         // The multiplicative identity is 1.
         long result = 1;
 
