@@ -1,7 +1,7 @@
-public final class DoublyLinkedList<T> {
+final class DoublyLinkedList<T> {
     private Element<T> head;
 
-    public void push(T value) {
+    void push(T value) {
         if (head == null) {
             head = new Element<>(value, null, null);
             head.next = head;
@@ -15,17 +15,17 @@ public final class DoublyLinkedList<T> {
         head.prev = tail;
     }
 
-    public T pop() {
+    T pop() {
         head = head.prev;
         return shift();
     }
 
-    public void unshift(T value) {
+    void unshift(T value) {
         push(value);
         head = head.prev;
     }
 
-    public T shift() {
+    T shift() {
         T value = head.value;
 
         Element<T> newHead = head.next;
@@ -43,12 +43,12 @@ public final class DoublyLinkedList<T> {
         return value;
     }
 
-    private static final class Element<T> {
+    static final class Element<T> {
         private final T value;
         private Element<T> prev;
         private Element<T> next;
 
-        public Element(T value, Element<T> prev, Element<T> next) {
+        Element(T value, Element<T> prev, Element<T> next) {
             this.value = value;
             this.prev = prev;
             this.next = next;
