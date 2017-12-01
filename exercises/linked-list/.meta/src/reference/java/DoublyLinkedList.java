@@ -43,12 +43,12 @@ final class DoublyLinkedList<T> {
         return value;
     }
 
-    static final class Element<T> {
+    private static final class Element<T> {
         private final T value;
         private Element<T> prev;
         private Element<T> next;
 
-        public Element(T value, Element<T> prev, Element<T> next) {
+        Element(T value, Element<T> prev, Element<T> next) {
             this.value = value;
             this.prev = prev;
             this.next = next;
