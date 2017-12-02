@@ -17,7 +17,7 @@ for file in $modded_files
   do if [[ $file == exercises* ]] || [[ $file == config.json ]]
     then
     for file2 in $modded_files
-      do if [[ $file2 == exercises* ]] && [[ $file2 != exercises/settings.gradle ]]
+      do if [[ $file2 == exercises* ]] && [[ $file2 != exercises/settings.gradle ]] && [[ $file2 != exercises/build.gradle ]]
         then modded_exercise=${file2#exercises/}
         modded_exercise=${modded_exercise%%/*}
         if [[ $last_modded_exercise != $modded_exercise ]]
