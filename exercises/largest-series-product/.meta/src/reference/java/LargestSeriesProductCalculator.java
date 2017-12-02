@@ -32,7 +32,7 @@ final class LargestSeriesProductCalculator {
         }
     }
 
-    void validateStringToSearch() throws IllegalArgumentException {
+    private void validateStringToSearch() throws IllegalArgumentException {
         if (stringToSearch == null) {
             throw new IllegalArgumentException("String to search must be non-null.");
         } else if (!stringToSearch.chars().allMatch(Character::isDigit)) {
@@ -40,7 +40,7 @@ final class LargestSeriesProductCalculator {
         }
     }
 
-    long computeProductOfSeries(final int startIndex, final int seriesLength) {
+    private long computeProductOfSeries(final int startIndex, final int seriesLength) {
         // The multiplicative identity is 1.
         long result = 1;
 
