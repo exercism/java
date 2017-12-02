@@ -1,6 +1,6 @@
 class ReverseString {
   
-    String reverse() {
+    String reverse(String input) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
   
