@@ -6,32 +6,32 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class CustomSet<T> {
+class CustomSet<T> {
 
     private Set<T> set;
 
-    public CustomSet() {
+    CustomSet() {
         this(Collections.emptyList());
     }
 
-    public CustomSet(Collection<T> data) {
+    CustomSet(Collection<T> data) {
         set = new HashSet<>(data.size());
         this.set.addAll(data);
     }
 
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return set.isEmpty();
     }
 
-    public boolean contains(T element) {
+    boolean contains(T element) {
         return set.contains(element);
     }
 
-    public boolean isSubset(CustomSet<T> anotherSet) {
+    boolean isSubset(CustomSet<T> anotherSet) {
         return set.containsAll(anotherSet.set);
     }
 
-    public boolean isDisjoint(CustomSet<T> anotherSet) {
+    boolean isDisjoint(CustomSet<T> anotherSet) {
         if (set.isEmpty() || anotherSet.set.isEmpty()) {
             return true;
         }
@@ -40,15 +40,15 @@ public class CustomSet<T> {
                 .count() == 0;
     }
 
-    public boolean equals(CustomSet<T> anotherSet) {
+    boolean equals(CustomSet<T> anotherSet) {
         return set.equals(anotherSet.set);
     }
 
-    public boolean add(T element) {
+    boolean add(T element) {
         return set.add(element);
     }
 
-    public CustomSet<T> getIntersection(CustomSet<T> anotherSet) {
+    CustomSet<T> getIntersection(CustomSet<T> anotherSet) {
         return new CustomSet<>(
                 set.stream()
                         .filter(anotherSet.set::contains)
@@ -56,13 +56,13 @@ public class CustomSet<T> {
         );
     }
 
-    public CustomSet<T> getUnion(CustomSet<T> anotherSet) {
+    CustomSet<T> getUnion(CustomSet<T> anotherSet) {
         final Set<T> union = new HashSet<>(set);
         union.addAll(anotherSet.set);
         return new CustomSet<>(union);
     }
 
-    public CustomSet<T> getDifference(CustomSet<T> anotherSet) {
+    CustomSet<T> getDifference(CustomSet<T> anotherSet) {
         final Predicate<T> predicate = anotherSet::contains;
         return new CustomSet<>(
                 set.stream()
