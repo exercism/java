@@ -1,11 +1,11 @@
-public class Hamming {
+class Hamming {
     private final int hammingDistance;
 
-    public Hamming(String leftStrand, String rightStrand) {
+    Hamming(String leftStrand, String rightStrand) {
         hammingDistance = computeHammingDistance(leftStrand, rightStrand);
     }
 
-    public int getHammingDistance() {
+    int getHammingDistance() {
         return hammingDistance;
     }
 
