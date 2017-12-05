@@ -24,7 +24,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void noTwoDigitArmstrongNumbers() {
-        int input = "10";
+        int input = 10;
         boolean expected = false;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
@@ -33,7 +33,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void threeDigitNumberIsArmstrongNumber() {
-        int input = "153";
+        int input = 153;
         boolean expected = true;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
@@ -42,7 +42,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void threeDigitNumberIsNotArmstrongNumber() {
-        int input = "100";
+        int input = 100;
         boolean expected = false;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
@@ -51,7 +51,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void fourDigitNumberIsArmstrongNumber() {
-        int input = "9474";
+        int input = 9474;
         boolean expected = true;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
@@ -60,7 +60,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void fourDigitNumberIsNotArmstrongNumber() {
-        int input = "9475";
+        int input = 9475;
         boolean expected = false;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
@@ -69,7 +69,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void sevenDigitNumberIsArmstrongNumber() {
-        int input = "9926315";
+        int input = 9926315;
         boolean expected = true;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
@@ -78,7 +78,7 @@ public class ArmstrongNumbersTest {
     @Ignore("Remove to run test")
     @Test
     public void sevenDigitNumberIsNotArmstrongNumber() {
-        int input = "9926314";
+        int input = 9926314;
         boolean expected = false;
 
         assertEquals(expected, armstrongNumbers.isArmstrongNumber(input));
