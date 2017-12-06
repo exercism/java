@@ -22,6 +22,16 @@ public class DoublyLinkedListTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testInitializeWithValues() {
+      DoublyLinkedList<Character> list = new DoublyLinkedList<>('a', 'b', 'c');
+
+      assertThat(list.getValueAtIndex(0), is('a'));
+      assertThat(list.getValueAtIndex(1), is('b'));
+      assertThat(list.getValueAtIndex(2), is('c'));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testPushShift() {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
