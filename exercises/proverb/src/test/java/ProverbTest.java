@@ -17,6 +17,12 @@ public class ProverbTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void ignoredTest() {
+    public void testShortChainOfConsequences() {
+        String proverb  = new Proverb("nail", "shoe", "horse").getProverb(),
+               expected = "For want of a nail the shoe was lost.\n" +
+                          "For want of a shoe the horse was lost.\n" +
+                          "And all for the want of a nail.";
+
+        assertThat(proverb, is(expected));
     }
 }
