@@ -90,6 +90,17 @@ public class DoublyLinkedListTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testFind() {
+      DoublyLinkedList<Character> list = new DoublyLinkedList<>('h', 'e', 'l', 'l', 'o');
+
+      assertThat(list.find('e'), is(1));
+      assertThat(list.find('o'), is(4));
+      assertThat(list.find('l'), is(2)); // Returns first index if multiple elements exist
+      assertNull(list.find('r'));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testExample() {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
