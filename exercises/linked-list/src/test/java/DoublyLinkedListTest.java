@@ -13,8 +13,11 @@ public class DoublyLinkedListTest {
         list.push(10);
         list.push(20);
 
+        assertThat(list.count(), is(2));
         assertThat(list.pop(), is(20));
+        assertThat(list.count(), is(1));
         assertThat(list.pop(), is(10));
+        assertThat(list.count(), is(0));
     }
 
     @Ignore("Remove to run test")
