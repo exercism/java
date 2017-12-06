@@ -38,4 +38,14 @@ public class ProverbTest {
         assertThat(proverb, is(expected));
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testConsequencesAreNotHardCoded() {
+        String proverb  = new Proverb("foo", "bar").getProverb(),
+               expected = "For want of a foo the bar was lost.\n" +
+                          "And all for the want of a foo.";
+
+        assertThat(proverb, is(expected));
+    }
+
 }
