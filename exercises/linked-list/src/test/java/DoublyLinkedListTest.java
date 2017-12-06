@@ -101,6 +101,18 @@ public class DoublyLinkedListTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testReplace() {
+      DoublyLinkedList<String> list = new DoublyLinkedList<>();
+
+      list.push("Goodbye");
+      list.push("World");
+      list.replace(0, "Hello");
+
+      assertThat(list.getValueAtIndex(0), is("Hello"));
+      assertThat(list.getValueAtIndex(1), is("World"));
+    }
+
+    @Test
     public void testExample() {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
@@ -108,17 +120,28 @@ public class DoublyLinkedListTest {
         list.push("twenty");
 
         assertThat(list.pop(), is("twenty"));
+        assertThat(list.count(), is(1));
 
+        list.insert("zero", 0);
         list.push("thirty");
 
-        assertThat(list.shift(), is("ten"));
+        assertThat(list.shift(), is("zero"));
+        assertThat(list.getValueAtIndex(0), is("ten"));
+        assertThat(list.count(), is(2));
 
         list.unshift("forty");
         list.push("fifty");
+        list.insert("seventy", 5);
+
+        assertNull(list.getValueAtIndex(4));
+        assertThat(list.find("thirty"), is(2));
+
+        list.replace(4, "sixty");
 
         assertThat(list.shift(), is("forty"));
-        assertThat(list.pop(), is("fifty"));
-        assertThat(list.shift(), is("thirty"));
+        assertThat(list.pop(), is("seventy"));
+        assertThat(list.pop(), is("sixty"));
+        assertThat(list.shift(), is("ten"));
     }
 
 }
