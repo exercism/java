@@ -8,7 +8,11 @@ public class ProverbTest {
 
     @Test
     public void testSingleConsequence() {
+        String proverb  = new Proverb("nail", "shoe").getProverb(),
+               expected = "For want of a nail the shoe was lost.\n" +
+                          "And all for the want of a nail.";
 
+        assertThat(proverb, is(expected));
     }
 
     @Ignore("Remove to run test")
