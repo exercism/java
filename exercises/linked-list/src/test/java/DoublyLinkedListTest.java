@@ -40,6 +40,7 @@ public class DoublyLinkedListTest {
 
         assertThat(list.shift(), is("10"));
         assertThat(list.shift(), is("20"));
+        assertThat(list.count(), is(0));
     }
 
     @Ignore("Remove to run test")
@@ -51,6 +52,7 @@ public class DoublyLinkedListTest {
         list.unshift('2');
 
         assertThat(list.shift(), is('2'));
+        assertThat(list.count(), is(1));
         assertThat(list.shift(), is('1'));
     }
 
@@ -64,6 +66,26 @@ public class DoublyLinkedListTest {
 
         assertThat(list.pop(), is(10));
         assertThat(list.pop(), is(20));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testInsert() {
+      DoublyLinkedList<String> list = new DoublyLinkedList<>("Foo", "Bar");
+
+      list.insert("Hello", 1);
+      list.insert("World", 3);
+      list.insert("FooBar", 5);
+      list.insert("BarFoo", 0);
+
+      assertThat(list.getValueAtIndex(0), is("BarFoo"));
+      assertThat(list.getValueAtIndex(1), is("Foo"));
+      assertThat(list.getValueAtIndex(2), is("Hello"));
+      assertThat(list.getValueAtIndex(3), is("Bar"));
+      assertThat(list.getValueAtIndex(4), is("World"));
+      assertNull(list.getValueAtIndex(5));
+      assertThat(list.getValueAtIndex(6), is("FooBar"));
+      assertThat(list.count(), is(7));
     }
 
     @Ignore("Remove to run test")
