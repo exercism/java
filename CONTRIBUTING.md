@@ -85,6 +85,7 @@ The `exercises` subdirectory contains all of the problem submodules.
 Each problem/submodule is a subdirectory of the same name as its slug.
 
   * its `build.gradle` names dependencies required to work that problem.
+  * its `README.md` describes the exercise.
 
 Each problem/submodule has three source sets:
 
@@ -152,19 +153,27 @@ Also please make a [dibs pull request](https://github.com/exercism/docs/blob/mas
 
 The Java specific details you need to know about adding an exercise are:
 
-1. Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
+* Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
 You can also look at other entries in `config.json` as examples and try to mimic them.
 
-2. Please add an entry for your exercise to `settings.gradle`.
+* Please add an entry for your exercise to `settings.gradle`.
 This should just be `include 'exercise-name'`.
 This list is in alphabetical order so please add your exercise so that it maintains this order.
 
-3. Please add an exercise submodule for your exercise.
+* Please add an exercise submodule for your exercise.
 See [The Problem Submodules](#the-problem-submodules) section for what needs to be in this.
-The `build.gradle` file can just be copied from any other exercise submodule.
 See the [POLICIES doc](https://github.com/exercism/java/blob/master/POLICIES.md#starter-implementations) for an explanation of when you need to add a starter implementation.
+The `build.gradle` file can just be copied from any other exercise submodule.
+The `README.md` file can be generated using [configlet](https://github.com/exercism/configlet/releases).
+You can do this by:
 
-4. Check if there is canonical data for the exercise you're adding.
+  1. Download configlet and put it somewhere in your PATH
+
+  2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+
+  3. Run `configlet generate . --only name_of_new_exercise` from the root of this repository.
+
+* Check if there is canonical data for the exercise you're adding.
 This can be found at `https://github.com/exercism/problem-specifications/tree/master/exercises/EXERCISE-SLUG/canonical-data.json`.
 If there is canonical data for your exercise then you should follow this when making the tests.
 We aim to follow the canonical data as closely as possible in our tests to ensure thorough test coverage.

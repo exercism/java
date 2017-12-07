@@ -4,9 +4,9 @@ import java.util.Set;
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.joining;
 
-public class IsogramChecker {
+class IsogramChecker {
 
-    public boolean isIsogram(String word) {
+    boolean isIsogram(String word) {
 
         Set<Character> charSet = new HashSet<>();
 

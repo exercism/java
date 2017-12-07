@@ -1,6 +1,6 @@
 import java.util.stream.IntStream;
 
-public class FoodChain {
+class FoodChain {
 
     private static final String[] ANIMALS = {
         "fly",
@@ -21,11 +21,11 @@ public class FoodChain {
         "I don't know how she swallowed a cow!"
     };
 
-    public String verse(int verse) {
+    String verse(int verse) {
         return verseBeginning(verse) + verseMiddle(verse) + verseEnding(verse);
     }
 
-    public String verses(int startVerse, int endVerse) {
+    String verses(int startVerse, int endVerse) {
 
         String[] verses = new String[endVerse - startVerse + 1];
 
