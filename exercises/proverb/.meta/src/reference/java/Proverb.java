@@ -2,16 +2,15 @@ final class Proverb {
     private String[] words;
     private String initWord, qualifier, result = "";
 
-
-    public Proverb(String... words) {
+    Proverb(String... words) {
         this.words = words;
     }
 
-    public void setQualifier(String qualifier) {
+    void setQualifier(String qualifier) {
         this.qualifier = qualifier;
     }
 
-    public String getProverb() {
+    String getProverb() {
         for(int i = 0; i < words.length; i++) {
             String word = words[i];
             if (initWord == null) {
