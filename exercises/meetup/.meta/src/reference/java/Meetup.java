@@ -5,7 +5,7 @@ import java.time.DayOfWeek;
 class Meetup {
     private final LocalDate startOfMonth;
 
-    public Meetup(int monthOfYear, int year) {
+    package-private Meetup(int monthOfYear, int year) {
         startOfMonth = LocalDate.of(year, monthOfYear, 1);
     }
 
