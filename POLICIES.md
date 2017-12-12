@@ -17,7 +17,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test)
+| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation)
 | Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first patches](#good-first-patches) |
 | "Good first patch" issue completed | [Good first patches](#good-first-patches) |
@@ -79,3 +79,15 @@ References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
 > The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/master/exercises/clock) as an example.
 
 References: [[1](https://github.com/exercism/java/issues/697)]
+
+### Add hint for the first exercises without starter implementation
+
+> According to the starter implementation policy, any exercise with difficulty 4 or lower should have starter implementation.
+> Any exercise with difficulty 5 or above will have no starter implementation (unless its signature is very complicated).
+> This could be confusing to users when tackling their first exercise with difficulty 5 when they are used to starter implementation being provided.
+
+> Therefore a hints.md file should be added to the .meta directory for every exercise with difficulty 5.
+> This file should explain what they need to do when there is no starter implementation.
+> The files should all be the same so you can copy it from any other exercise with difficulty 5, e.g. [flatten-array](https://github.com/exercism/java/tree/master/exercises/flatten-array/.meta/hints.md).
+
+> We add the file to every exercise with difficulty 5 because the structure of the track means that we don't know which exercise will be the first one without starter implementation that a user will be faced with.
