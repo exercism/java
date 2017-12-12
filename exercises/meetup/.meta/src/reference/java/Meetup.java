@@ -37,14 +37,14 @@ class Meetup {
         return current;
     }
 
-    LocalDate cycleToPrev(DayOfWeek dayOfWeek, LocalDate current) {
+    private LocalDate cycleToPrev(DayOfWeek dayOfWeek, LocalDate current) {
         while (current.getDayOfWeek() != dayOfWeek) {
             current = current.minusDays(1);
         }
         return current;
     }
 
-    LocalDate cycleToNext(DayOfWeek dayOfWeek, LocalDate current) {
+    private LocalDate cycleToNext(DayOfWeek dayOfWeek, LocalDate current) {
         while (current.getDayOfWeek() != dayOfWeek) {
             current = current.plusDays(1);
         }
