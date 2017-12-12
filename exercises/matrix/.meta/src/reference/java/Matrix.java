@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
     private static Pattern spacePattern = Pattern.compile(" ");
     private static Pattern newlinePattern = Pattern.compile("\\n");
 
-     Matrix(String matrixAsString) {
+     public Matrix(String matrixAsString) {
         String[] rows = newlinePattern.split(matrixAsString);
         matrix = new int[rows.length][];
         for (int i = 0; i < rows.length; i++) {
