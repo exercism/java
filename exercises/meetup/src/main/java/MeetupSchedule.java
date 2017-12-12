@@ -1,4 +1,4 @@
-public enum MeetupSchedule {
+enum MeetupSchedule {
     FIRST,
     SECOND,
     THIRD,
