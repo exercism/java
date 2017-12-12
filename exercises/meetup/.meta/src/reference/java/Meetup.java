@@ -5,7 +5,7 @@ import java.time.DayOfWeek;
 class Meetup {
     private final LocalDate startOfMonth;
 
-    package-private Meetup(int monthOfYear, int year) {
+    Meetup(int monthOfYear, int year) {
         startOfMonth = LocalDate.of(year, monthOfYear, 1);
     }
 
@@ -37,14 +37,14 @@ class Meetup {
         return current;
     }
 
-    private LocalDate cycleToPrev(DayOfWeek dayOfWeek, LocalDate current) {
+    LocalDate cycleToPrev(DayOfWeek dayOfWeek, LocalDate current) {
         while (current.getDayOfWeek() != dayOfWeek) {
             current = current.minusDays(1);
         }
         return current;
     }
 
-    private LocalDate cycleToNext(DayOfWeek dayOfWeek, LocalDate current) {
+    LocalDate cycleToNext(DayOfWeek dayOfWeek, LocalDate current) {
         while (current.getDayOfWeek() != dayOfWeek) {
             current = current.plusDays(1);
         }
