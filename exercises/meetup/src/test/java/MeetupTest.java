@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
 
-public class MeetupTest {
+class MeetupTest {
 
     @Test
     public void testMonteenthOfMay2013() {
