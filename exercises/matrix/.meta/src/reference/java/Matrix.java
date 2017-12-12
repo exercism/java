@@ -1,11 +1,11 @@
 import java.util.regex.Pattern;
 
- class Matrix {
+class Matrix {
     private int[][] matrix;
     private static Pattern spacePattern = Pattern.compile(" ");
     private static Pattern newlinePattern = Pattern.compile("\\n");
 
-     public Matrix(String matrixAsString) {
+     Matrix(String matrixAsString) {
         String[] rows = newlinePattern.split(matrixAsString);
         matrix = new int[rows.length][];
         for (int i = 0; i < rows.length; i++) {
@@ -17,11 +17,11 @@ import java.util.regex.Pattern;
         }
     }
 
-     int[] getRow(int rowNumber) {
+    int[] getRow(int rowNumber) {
         return matrix[rowNumber];
     }
 
-     int[] getColumn(int columnNumber) {
+    int[] getColumn(int columnNumber) {
         int[] column = new int[matrix.length];
         for(int i = 0; i < matrix.length; i++) {
             column[i] = matrix[i][columnNumber];
@@ -29,11 +29,11 @@ import java.util.regex.Pattern;
         return column;
     }
 
-     int getRowsCount() {
+    int getRowsCount() {
         return matrix.length;
     }
 
-     int getColumnsCount() {
+    int getColumnsCount() {
         return matrix[0].length;
     }
 }
