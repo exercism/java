@@ -2,10 +2,10 @@ import java.time.LocalDate;
 import java.time.DayOfWeek;
 
 
-public class Meetup {
+class Meetup {
     private final LocalDate startOfMonth;
 
-    public Meetup(int monthOfYear, int year) {
+    Meetup(int monthOfYear, int year) {
         startOfMonth = LocalDate.of(year, monthOfYear, 1);
     }
 
