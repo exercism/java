@@ -1,15 +1,15 @@
-public class Hamming {
+class Hamming {
     private final int hammingDistance;
 
-    public Hamming(String leftStrand, String rightStrand) {
+    Hamming(String leftStrand, String rightStrand) {
         hammingDistance = computeHammingDistance(leftStrand, rightStrand);
     }
 
-    public int getHammingDistance() {
+    int getHammingDistance() {
         return hammingDistance;
     }
 
-    private int computeHammingDistance(String leftStrand, String rightStrand) {
+    int computeHammingDistance(String leftStrand, String rightStrand) {
         if(leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
         }
@@ -22,7 +22,7 @@ public class Hamming {
         return distance;
     }
 
-    private int hammingContributionAt(int index, String leftStrand, String rightStrand) {
+    int hammingContributionAt(int index, String leftStrand, String rightStrand) {
       return leftStrand.charAt(index) != rightStrand.charAt(index) ? 1 : 0;
     }
 
