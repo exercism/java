@@ -9,7 +9,7 @@ class Hamming {
         return hammingDistance;
     }
 
-    int computeHammingDistance(String leftStrand, String rightStrand) {
+    private int computeHammingDistance(String leftStrand, String rightStrand) {
         if(leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
         }
@@ -22,7 +22,7 @@ class Hamming {
         return distance;
     }
 
-    int hammingContributionAt(int index, String leftStrand, String rightStrand) {
+    private int hammingContributionAt(int index, String leftStrand, String rightStrand) {
       return leftStrand.charAt(index) != rightStrand.charAt(index) ? 1 : 0;
     }
 
