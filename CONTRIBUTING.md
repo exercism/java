@@ -171,7 +171,7 @@ You can do this by:
 
   2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
-  3. Run `configlet generate . --only name_of_new_exercise` from the root of this repository.
+  3. Run `configlet generate . --only name_of_new_exercise --spec-path path_to_problem_specifications` from the root of this repository.
 
 * Check if there is canonical data for the exercise you're adding.
 This can be found at `https://github.com/exercism/problem-specifications/tree/master/exercises/EXERCISE-SLUG/canonical-data.json`.
