@@ -91,3 +91,5 @@ References: [[1](https://github.com/exercism/java/issues/697)]
 > The files should all be the same so you can copy it from any other exercise with difficulty 5, e.g. [flatten-array](https://github.com/exercism/java/tree/master/exercises/flatten-array/.meta/hints.md).
 
 > We add the file to every exercise with difficulty 5 because the structure of the track means that we don't know which exercise will be the first one without starter implementation that a user will be faced with.
+
+References: [[1](https://github.com/exercism/java/issues/1075)]
