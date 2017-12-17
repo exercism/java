@@ -1,4 +1,4 @@
-public class Hamming {
+class Hamming {
 
     Hamming(String leftStrand, String rightStrand) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
