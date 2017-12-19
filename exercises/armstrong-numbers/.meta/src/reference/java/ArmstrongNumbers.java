@@ -2,9 +2,9 @@ import static java.lang.Math.pow;
 
 class ArmstrongNumbers {
 
-	boolean isArmstrongNumber(int i) {
+	boolean isArmstrongNumber(int numberToCheck) {
 		
-		int number = i;
+		int number = numberToCheck;
 		int calculation = 0;
 		int length = String.valueOf(number).length();
 
@@ -13,7 +13,7 @@ class ArmstrongNumbers {
     		number = number / 10;
 		}
 
-		return i == calculation;
+		return numberToCheck == calculation;
 
 	}
 
