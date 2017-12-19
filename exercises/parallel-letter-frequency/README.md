@@ -13,6 +13,7 @@ Single-threaded (non-concurrent) solutions can pass all tests [but the last.](ht
 
 Java documentation on [parallel streams](https://docs.oracle.com/javase/tutorial/collections/streams/parallelism.html) may provide some help.
 
+
 # Running the tests
 
 You can run all the tests for an exercise by entering
@@ -22,6 +23,7 @@ $ gradle test
 ```
 
 in your terminal.
+
 
 ## Submitting Incomplete Solutions
 

@@ -1,6 +1,6 @@
 # House
 
-Output the nursery rhyme 'This is the House that Jack Built'.
+Recite the nursery rhyme 'This is the House that Jack Built'.
 
 > [The] process of placing a phrase of clause within another phrase of
 > clause is called embedding. It is through the processes of recursion
