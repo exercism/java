@@ -9,7 +9,7 @@ Given a range of numbers, find the largest and smallest palindromes which
 are products of numbers within that range.
 
 Your solution should return the largest and smallest palindromes, along with the
-factors of each within the range. If the largest or smallest palindrome has more 
+factors of each within the range. If the largest or smallest palindrome has more
 than one pair of factors within the range, then return all the pairs.
 
 ## Example 1

@@ -9,8 +9,8 @@ actual dirt, and grow actual plants.
 
 They've chosen to grow grass, clover, radishes, and violets.
 
-To this end, the children have put little cups along the window sills, and 
-planted one type of plant in each cup, choosing randomly from the available 
+To this end, the children have put little cups along the window sills, and
+planted one type of plant in each cup, choosing randomly from the available
 types of seeds.
 
 ```text
@@ -25,7 +25,7 @@ There are 12 children in the class:
 - Eve, Fred, Ginny, Harriet,
 - Ileana, Joseph, Kincaid, and Larry.
 
-Each child gets 4 cups, two on each row. Their teacher assigns cups to 
+Each child gets 4 cups, two on each row. Their teacher assigns cups to
 the children alphabetically by their names.
 
 The following diagram represents Alice's plants:
