@@ -7,17 +7,14 @@ final class Proverb {
 
     String recite() {
         if (words.length < 1) return "";
-        String initWord = "",
-               result   = "";
-        for(int i = 0; i < words.length; i++) {
-            String word = words[i];
-            if (initWord.isEmpty()) {
-                initWord = word;
-            } else {
-                result += "the " + word + " was lost.\n";
+        final StringBuilder result = new StringBuilder();
+        for(int i = 1; i < words.length; i++) {
+            if (i != words.length) {
+                result.append("For want of a " + words[i - 1] + " ");
             }
-            if (i + 1 != words.length) result += "For want of a " + word + " ";
+            result.append("the " + words[i] + " was lost.\n");
         }
-        return result += "And all for the want of a " + initWord + ".";
+        result.append("And all for the want of a " + words[0] + ".");
+        return result.toString();
     }
 }
