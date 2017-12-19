@@ -6,24 +6,24 @@ import static org.junit.Assert.assertThat;
 
 public class ProverbTest {
 
-  @Test
-  public void zeroWordsAreGiven() {
-      String[] words  = new String[0];
-      String proverb  = new Proverb(words).recite(),
-             expected = "";
+    @Test
+    public void zeroWordsAreGiven() {
+        String[] words  = new String[0];
+        String proverb  = new Proverb(words).recite(),
+               expected = "";
 
-      assertThat(proverb, is(expected));
-  }
+        assertThat(proverb, is(expected));
+    }
 
-  @Ignore("Remove to run test")
-  @Test
-  public void singlePieceOfProverb() {
-      String[] words  = new String[]{"nail"};
-      String proverb  = new Proverb(words).recite(),
-             expected = "And all for the want of a nail.";
+    @Ignore("Remove to run test")
+    @Test
+    public void singlePieceOfProverb() {
+        String[] words  = new String[]{"nail"};
+        String proverb  = new Proverb(words).recite(),
+               expected = "And all for the want of a nail.";
 
-      assertThat(proverb, is(expected));
-  }
+        assertThat(proverb, is(expected));
+    }
 
     @Ignore("Remove to run test")
     @Test
