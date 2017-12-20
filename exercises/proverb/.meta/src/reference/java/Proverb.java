@@ -6,7 +6,9 @@ final class Proverb {
     }
 
     String recite() {
-        if (words.length < 1) return "";
+        if (words.length < 1) {
+            return "";
+        }
         final StringBuilder result = new StringBuilder();
         for(int i = 1; i < words.length; i++) {
             result.append("For want of a " + words[i - 1] + " the " + words[i] + " was lost.\n");
