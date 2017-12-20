@@ -48,6 +48,17 @@
     {
       "core": false,
       "difficulty": 2,
+      "slug": "armstrong-numbers",
+      "topics": [
+        "integers",
+        "mathematics"
+      ],
+      "unlocked_by": null,
+      "uuid": "8e1dd48c-e05e-4a72-bf0f-5aed8dd123f5"
+    },
+    {
+      "core": false,
+      "difficulty": 2,
       "slug": "rna-transcription",
       "topics": [
         "loops",
