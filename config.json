@@ -25,18 +25,6 @@
     },
     {
       "core": false,
-      "difficulty": 6,
-      "slug": "parallel-letter-frequency",
-      "topics": [
-        "concurrency",
-        "maps",
-        "strings"
-      ],
-      "unlocked_by": "hamming",
-      "uuid": "38a405e8-619d-400f-b53c-2f06461fdf9d"
-    },
-    {
-      "core": false,
       "difficulty": 1,
       "slug": "reverse-string",
       "topics": [
@@ -861,6 +849,18 @@
       ],
       "unlocked_by": "matrix",
       "uuid": "486d342e-c834-40fc-b691-a4dab3f790da"
+    },
+    {
+      "core": false,
+      "difficulty": 6,
+      "slug": "parallel-letter-frequency",
+      "topics": [
+        "concurrency",
+        "maps",
+        "strings"
+      ],
+      "unlocked_by": "hamming",
+      "uuid": "38a405e8-619d-400f-b53c-2f06461fdf9d"
     },
     {
       "core": false,
