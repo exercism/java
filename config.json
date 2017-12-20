@@ -203,6 +203,18 @@
     {
       "core": false,
       "difficulty": 4,
+      "slug": "proverb",
+      "topics": [
+        "arrays",
+        "loops",
+        "strings"
+      ],
+      "unlocked_by": "two-fer",
+      "uuid": "9906491b-a638-408d-86a4-4ad320a92658"
+    },
+    {
+      "core": false,
+      "difficulty": 4,
       "slug": "isbn-verifier",
       "topics": [
         "integers",
