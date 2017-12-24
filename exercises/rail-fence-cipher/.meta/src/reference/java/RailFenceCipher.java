@@ -1,74 +1,64 @@
-import java.util.ArrayList;
-import java.util.List;
+public class RailFenceCipher {
 
-class RailFenceCipher {
+    private static int key;
 
-    private int noOfRails;
-
-    RailFenceCipher(int noOfRails) {
-        this.noOfRails = noOfRails;
+    public RailFenceCipher(int key) {
+        RailFenceCipher.key = key;
     }
 
-    String getEncryptedData(String plainText) {
-        List<String> railFence = new ArrayList<>();
-        for (int i = 0; i < noOfRails; i++) {
-            railFence.add("");
+    public static String getEncryptedData(String message) {
+        String[] lines = splitIntoLines(message, false);
+        String result = "";
+        for (String line : lines) {
+            result += line;
         }
-
-        int number = 0, increment = 1;
-        for (char c : plainText.toCharArray()) {
-            if (number + increment == noOfRails) {
-                increment = -1;
-            } else if (number + increment == -1) {
-                increment = 1;
-            }
-            String temp = railFence.get(number);
-            railFence.remove(number);
-            railFence.add(number, temp + c);
-            number += increment;
-        }
-        String buffer = "";
-        for (String s : railFence) {
-            buffer = buffer.concat(s);
-        }
-        return buffer;
+        return result;
     }
 
-    String getDecryptedData(String cipherText) {
-        String decrypted;
-        ArrayList<ArrayList<Integer>> railFence = new ArrayList<>(noOfRails);
+    public static String getDecryptedData(String message) {
+        String[] lines = splitIntoLines(message, true);
 
-        for (int i = 0; i < noOfRails; ++i) {
-            railFence.add(new ArrayList<>(cipherText.length()));
-        }
-
-        int rowIncrementFactor = 0, step = 1;
-
-        for (int i = 0; i < cipherText.length(); ++i) {
-            if (rowIncrementFactor + step == noOfRails) {
-                step = -1;
-            } else if (rowIncrementFactor + step == -1) {
-                step = 1;
-            }
-
-            railFence.get(rowIncrementFactor).add(i);
-            rowIncrementFactor += step;
-        }
-
-        int counter = 0;
-        ArrayList<Character> buffer = new ArrayList<>(cipherText.length());
-        for (int i = 0; i < cipherText.length(); ++i) {
-            buffer.add('a');
-        }
-
-        for (int i = 0; i < noOfRails; ++i) {
-            for (int j = 0; j < railFence.get(i).size(); ++j) {
-                buffer.set(railFence.get(i).get(j), cipherText.charAt(counter));
-                counter++;
+        int charCount = 0;
+        for (int i = 0; i < key; ++i) {
+            while (lines[i].contains("?")) {
+                String letter = String.valueOf(message.charAt(charCount));
+                lines[i] = lines[i].replaceFirst("\\?", letter);
+                charCount++;
             }
         }
 
-        decrypted = buffer.toString().replaceAll(",", "").replaceAll("\\s+", "").replace("[", "").replace("]", "");
-        return decrypted;
+        String result = "";
+        int lineCount = 0;
+        int direction = -1;
+        for (int i = 0; i < message.length(); ++i) {
+            String letter = String.valueOf(lines[lineCount].charAt(0));
+            lines[lineCount] = lines[lineCount].substring(1);
+            result += letter;
+            direction *= lineCount == 0 || lineCount == key - 1 ? -1 : 1;
+            lineCount += direction;
+        }
+        return result;
     }
+
+    private static String[] splitIntoLines(String message, boolean encrypted) {
+        String[] result = generateEmptyStrings(key);
+        int lineCount = 0;
+        int direction = -1;
+        for (char c : message.toCharArray()) {
+            String letter = String.valueOf(c);
+            result[lineCount] += encrypted ? "?" : letter;
+            direction *= lineCount == 0 || lineCount == key - 1 ? -1 : 1;
+            lineCount += direction;
+        }
+        return result;
+    }
+
+    private static String[] generateEmptyStrings(int num) {
+        String[] strings = new String[num];
+        for (int i = 0; i < num; ++i) {
+            strings[i] = "";
+        }
+        return strings;
+    }
+
 }
