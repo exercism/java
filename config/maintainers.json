@@ -32,7 +32,7 @@
       "show_on_website": false
     },
     {
-      "alumnus": false,
+      "alumnus": true,
       "avatar_url": null,
       "bio": null,
       "github_username": "stkent",
