@@ -8,28 +8,6 @@ import java.util.*;
 
 public class ParallelLetterFrequencyTest {
 
-    // Poem by Friedrich Schiller. The corresponding music is the European Anthem.
-    private String OdeAnDieFreude =
-            "Freude schöner Götterfunken\n" +
-                    "Tochter aus Elysium,\n" +
-                    "Wir betreten feuertrunken,\n" +
-                    "Himmlische, dein Heiligtum!\n" +
-                    "Deine Zauber binden wieder\n" +
-                    "Was die Mode streng geteilt;\n" +
-                    "Alle Menschen werden Brüder,\n" +
-                    "Wo dein sanfter Flügel weilt.";
-
-    // Dutch national anthem
-    private String Wilhelmus =
-            "Wilhelmus van Nassouwe\n" +
-                    "ben ik, van Duitsen bloed,\n" +
-                    "den vaderland getrouwe\n" +
-                    "blijf ik tot in den dood.\n" +
-                    "Een Prinse van Oranje\n" +
-                    "ben ik, vrij, onverveerd,\n" +
-                    "den Koning van Hispanje\n" +
-                    "heb ik altijd geëerd.";
-
     // American national anthem
     private String StarSpangledBanner =
             "O say can you see by the dawn's early light,\n" +
@@ -118,7 +96,7 @@ public class ParallelLetterFrequencyTest {
     @Ignore("Remove to run test")
     @Test
     public void punctuationDoesntCount() {
-        ParallelLetterFrequency p = new ParallelLetterFrequency(OdeAnDieFreude);
+        ParallelLetterFrequency p = new ParallelLetterFrequency(StarSpangledBanner);
 
         assertFalse(p.letterCounts().containsKey((int) ','));
     }
@@ -129,21 +107,6 @@ public class ParallelLetterFrequencyTest {
         ParallelLetterFrequency p = new ParallelLetterFrequency("Testing, 1, 2, 3");
 
         assertFalse(p.letterCounts().containsKey((int) '1'));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allThreeAnthemsTogetherProduceCorrectCounts() {
-        StringBuilder b = new StringBuilder();
-        b.append(OdeAnDieFreude);
-        b.append(Wilhelmus);
-        b.append(StarSpangledBanner);
-
-        ParallelLetterFrequency p = new ParallelLetterFrequency(b.toString());
-
-        assertEquals(new Integer(49), p.letterCounts().get((int) 'a'));
-        assertEquals(new Integer(56), p.letterCounts().get((int) 't'));
-        assertEquals(new Integer(2), p.letterCounts().get((int) 'ü'));
     }
 
     @Ignore("Remove to run test")
