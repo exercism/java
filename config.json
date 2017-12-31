@@ -876,6 +876,18 @@
     },
     {
       "core": false,
+      "difficulty": 6,
+      "slug": "rail-fence-cipher",
+      "topics": [
+        "strings",
+        "loops",
+        "conditionals"
+      ],
+      "unlocked_by": "rotational-cipher",
+      "uuid": "6e4ad4ed-cc02-4132-973d-b9163ba0ea3d"
+    },
+    {
+      "core": false,
       "difficulty": 7,
       "slug": "anagram",
       "topics": [
