@@ -60,13 +60,13 @@ public class HammingTest {
     @Ignore("Remove to run test")
     @Test
     public void testNonUniqueCharacterInFirstStrand() {
-        assertEquals(1, new Hamming("AGA", "AGG").getHammingDistance());
+        assertEquals(1, new Hamming("AAG", "AAA").getHammingDistance());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testNonUniqueCharacterInSecondStrand() {
-        assertEquals(1, new Hamming("AGG", "AGA").getHammingDistance());
+        assertEquals(1, new Hamming("AAA", "AAG").getHammingDistance());
     }
 
     @Ignore("Remove to run test")
