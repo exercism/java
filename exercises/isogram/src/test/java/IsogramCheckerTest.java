@@ -62,7 +62,7 @@ public class IsogramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testIsogramDuplicatedCharacterInTheMiddle() {
+    public void testDuplicatedCharacterInTheMiddleIsNotIsogram() {
         IsogramChecker iso = new IsogramChecker();
         assertFalse(iso.isIsogram("accentor"));
     }
