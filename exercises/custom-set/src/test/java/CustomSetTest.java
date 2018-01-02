@@ -172,6 +172,14 @@ public class CustomSetTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void setIsNotEqualToLargerSetWithSameElements() {
+        CustomSet<String> customSet = new CustomSet<>(Arrays.asList("1", "2", "3"));
+        CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "2", "3", "4"));
+        assertFalse(customSet.equals(secondCustomSet));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void addToEmptySet() {
         int element = 3;
         CustomSet<Integer> expected = new CustomSet<>(Collections.unmodifiableList(Collections.singletonList(element)));
