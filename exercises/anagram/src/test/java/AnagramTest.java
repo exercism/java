@@ -52,17 +52,8 @@ public class AnagramTest {
     @Ignore("Remove to run test")
     @Test
     public void testIdenticalWordIsNotAnagram() {
-        Anagram detector = new Anagram("corn");
-        List<String> anagrams = detector.match(Arrays.asList("corn", "dark", "Corn", "rank", "CORN", "cron", "park"));
-        assertThat(anagrams, hasItem("cron"));
-        assertThat(anagrams.size(), is(1));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testCapitalWordIsNotOwnAnagram() {
-        Anagram detector = new Anagram("BANANA");
-        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
+        Anagram detector = new Anagram("cOrN");
+        assertTrue(detector.match(Arrays.asList("corn", "Corn", "CORN")).isEmpty());
     }
 
     @Ignore("Remove to run test")
