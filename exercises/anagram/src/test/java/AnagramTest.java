@@ -110,11 +110,4 @@ public class AnagramTest {
         List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
         assertThat(anagrams, hasItem("Carthorse"));
     }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testAnagramMustUseAllLettersExactlyOnce() {
-        Anagram detector = new Anagram("tapper");
-        assertTrue(detector.match(Collections.singletonList("patter")).isEmpty());
-    }
 }
