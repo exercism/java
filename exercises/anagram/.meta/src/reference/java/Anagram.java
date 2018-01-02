@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class Anagram {
 
@@ -9,15 +10,9 @@ class Anagram {
     }
 
     List<String> match(List<String> candidates) {
-        List<String> anagrams = new ArrayList<String>();
-
-        for (String candidate : candidates) {
-            if (anagramSubject.anagramOf(candidate)) {
-                anagrams.add(candidate);
-            }
-        }
-
-        return anagrams;
+        return candidates.stream()
+                .filter(anagramSubject::anagramOf)
+                .collect(Collectors.toList());
     }
 
     static final class AnagramSubject {
