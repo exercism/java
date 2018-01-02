@@ -21,11 +21,12 @@ public class AtbashTest {
         @Parameters(name = "{index}: expected plaintext \"{0}\" to encode to ciphertext \"{1}\".")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][]{
-                    {"no", "ml"},
                     {"yes", "bvh"},
+                    {"no", "ml"},
                     {"OMG", "lnt"},
+                    {"O M G", "lnt"},
                     {"mindblowingly", "nrmwy oldrm tob"},
-                    {"Testing, 1 2 3, testing.", "gvhgr mt123 gvhgr mt"},
+                    {"Testing,1 2 3, testing.", "gvhgr mt123 gvhgr mt"},
                     {"Truth is fiction.", "gifgs rhurx grlm"},
                     {"The quick brown fox jumps over the lazy dog.", "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"}
             });
