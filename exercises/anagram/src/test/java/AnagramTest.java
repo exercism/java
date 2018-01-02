@@ -36,14 +36,6 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testDetectMultipleAnagrams() {
-        Anagram detector = new Anagram("master");
-        List<String> anagrams = detector.match(Arrays.asList("stream", "pigeon", "maters"));
-        assertThat(anagrams, allOf(hasItem("maters"), hasItem("stream")));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testDetectMultipleAnagramsForLongerWord() {
         Anagram detector = new Anagram("allergy");
         List<String> anagrams = detector.match(Arrays.asList("gallery", "ballerina", "regally", "clergy", "largely", "leading"));
