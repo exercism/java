@@ -1,5 +1,5 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 final class Acronym {
 
@@ -13,14 +13,12 @@ final class Acronym {
         return acronym;
     }
 
-    private String generateAcronym(String phrase){
-        final Pattern BREAK_WORDS = Pattern.compile("[A-Z]+[a-z]*|[a-z]+");
-        final Matcher matcher = BREAK_WORDS.matcher(phrase);
-        final StringBuilder stringBuilder = new StringBuilder();
-        while (matcher.find()){
-            stringBuilder.append(matcher.group().charAt(0));
-        }
-        return stringBuilder.toString().toUpperCase();
+    private String generateAcronym(String phrase) {
+        return Arrays.stream(phrase.split("[^a-zA-Z]"))
+                .filter(word -> !word.isEmpty()) // Remove empty strings from the result of phrase.split
+                .map(word -> word.substring(0, 1)) // Get the first character of each word
+                .collect(Collectors.joining()) // Concatenate the characters
+                .toUpperCase();
     }
 
 }

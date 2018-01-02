@@ -30,15 +30,7 @@ class Atbash {
     }
 
     private String stripInvalidCharacters(String input) {
-        StringBuilder filteredValue = new StringBuilder(input.length());
-
-        for (char c : input.toCharArray()) {
-            if (Character.isLetterOrDigit(c)) {
-                filteredValue.append(c);
-            }
-        }
-
-        return filteredValue.toString();
+        return input.replaceAll("\\W", "");
     }
 
     private char applyCipher(char input) {
@@ -51,7 +43,7 @@ class Atbash {
         List<String> words = new ArrayList<>();
 
         for (int i = 0; i < value.length(); i += GROUP_SIZE) {
-            words.add(i + GROUP_SIZE <= value.length() ? value.substring(i, i + GROUP_SIZE) : value.substring(i));
+            words.add(value.substring(i, Math.min(value.length(), i + GROUP_SIZE)));
         }
 
         return String.join(" ", words);
