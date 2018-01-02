@@ -68,13 +68,6 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testIdenticalWordRepeatedIsNotAnagram() {
-        Anagram detector = new Anagram("go");
-        assertTrue(detector.match(Collections.singletonList("go Go GO")).isEmpty());
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testCapitalWordIsNotOwnAnagram() {
         Anagram detector = new Anagram("BANANA");
         assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
@@ -116,13 +109,6 @@ public class AnagramTest {
         Anagram detector = new Anagram("Orchestra");
         List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
         assertThat(anagrams, hasItem("Carthorse"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testWordIsNotItsOwnAnagram() {
-        Anagram detector = new Anagram("banana");
-        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
     }
 
     @Ignore("Remove to run test")
