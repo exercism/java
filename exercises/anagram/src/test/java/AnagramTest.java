@@ -58,6 +58,14 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testCaseInsensitiveDetectAnagram() {
+        Anagram detector = new Anagram("OrChEsTra");
+        List<String> anagrams = detector.match(Arrays.asList("carthorse", "CarThorsE", "CARTHORSE"));
+        assertThat(anagrams, allOf(hasItem("carthorse"), hasItem("CarThorsE"), hasItem("CARTHORSE")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertTrue(detector.match(Collections.singletonList("last")).isEmpty());
@@ -68,29 +76,5 @@ public class AnagramTest {
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
         assertTrue(detector.match(Arrays.asList("dog", "goody")).isEmpty());
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testCaseInsensitiveWhenSubjectStartsWithUpperCaseLetter() {
-        Anagram detector = new Anagram("Orchestra");
-        List<String> anagrams = detector.match(Arrays.asList("cashregister", "carthorse", "radishes"));
-        assertThat(anagrams, hasItem("carthorse"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testCaseInsensitiveWhenAnagramStartsWithUpperCaseLetter() {
-        Anagram detector = new Anagram("orchestra");
-        List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
-        assertThat(anagrams, hasItem("Carthorse"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testCaseInsensitiveWhenBothAnagramAndSubjectStartWithUpperCaseLetter() {
-        Anagram detector = new Anagram("Orchestra");
-        List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
-        assertThat(anagrams, hasItem("Carthorse"));
     }
 }
