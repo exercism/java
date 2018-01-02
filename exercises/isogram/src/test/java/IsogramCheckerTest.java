@@ -6,9 +6,16 @@ import static org.junit.Assert.*;
 public class IsogramCheckerTest {
 
     @Test
-    public void testIsogram() {
+    public void testEmptyString() {
         IsogramChecker iso = new IsogramChecker();
-        assertTrue(iso.isIsogram("duplicates"));
+        assertTrue(iso.isIsogram(""));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testLowercaseIsogram() {
+        IsogramChecker iso = new IsogramChecker();
+        assertTrue(iso.isIsogram("isogram"));
     }
 
     @Ignore("Remove to run test")
@@ -41,37 +48,23 @@ public class IsogramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testIgnoresMultipleHyphens() {
+    public void testIsogramWithDuplicatedHyphen() {
         IsogramChecker iso = new IsogramChecker();
-        assertTrue(iso.isIsogram("Hjelmqvist-Gryb-Zock-Pfund-Wax"));
+        assertTrue(iso.isIsogram("six-year-old"));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testWorksWithGermanLetters() {
-        IsogramChecker iso = new IsogramChecker();
-        assertTrue(iso.isIsogram("Heizölrückstoßabdämpfung"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testIgnoresSpaces() {
-        IsogramChecker iso = new IsogramChecker();
-        assertFalse(iso.isIsogram("the quick brown fox"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testIgnoresSpaces2() {
+    public void testMadeUpNameThatIsAnIsogram() {
         IsogramChecker iso = new IsogramChecker();
         assertTrue(iso.isIsogram("Emily Jung Schwartzkopf"));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testDuplicateAccentedLetters() {
+    public void testDuplicatedCharacterInTheMiddleIsNotIsogram() {
         IsogramChecker iso = new IsogramChecker();
-        assertFalse(iso.isIsogram("éléphant"));
+        assertFalse(iso.isIsogram("accentor"));
     }
 
 }
