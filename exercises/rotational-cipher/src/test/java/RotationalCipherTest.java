@@ -7,6 +7,13 @@ public class RotationalCipherTest {
     private RotationalCipher rotationalCipher;
 
     @Test
+    public void rotateSingleCharacterBy0() {
+        rotationalCipher = new RotationalCipher(0);
+        Assert.assertEquals("a", rotationalCipher.rotate("a"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void rotateSingleCharacterBy1() {
         rotationalCipher = new RotationalCipher(1);
         Assert.assertEquals("b", rotationalCipher.rotate("a"));
@@ -16,13 +23,6 @@ public class RotationalCipherTest {
     @Test
     public void rotateSingleCharacterBy26() {
         rotationalCipher = new RotationalCipher(26);
-        Assert.assertEquals("a", rotationalCipher.rotate("a"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void rotateSingleCharacterBy0() {
-        rotationalCipher = new RotationalCipher(0);
         Assert.assertEquals("a", rotationalCipher.rotate("a"));
     }
 
