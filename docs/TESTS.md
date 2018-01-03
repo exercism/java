@@ -69,7 +69,7 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 3. Run the tests:
 
     ```
-    $ gradle test
+    $ ./gradlew test
     ```
    *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
 
@@ -104,7 +104,7 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 3. Run the tests:
 
     ```
-    $ gradle test
+    $ ./gradlew test
     ```
    *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
 
