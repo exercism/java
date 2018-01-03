@@ -18,7 +18,6 @@ public class RomanNumeralsTest {
     @Parameters(name = "{index}: expected arabic numeral {0} to be converted to roman numeral \"{1}\".")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {0, ""},
                 {1, "I"},
                 {2, "II"},
                 {3, "III"},
