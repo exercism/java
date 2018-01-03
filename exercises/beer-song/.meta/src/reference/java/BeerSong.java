@@ -12,7 +12,8 @@ class BeerSong {
         }
     }
 
-    String sing(int start, int stop) {
+    String sing(int start, int takeDown) {
+        int stop = start - takeDown + 1;
         StringBuilder songOutput = new StringBuilder();
 
         for (int i=start; i>=stop; i--) {
@@ -23,6 +24,6 @@ class BeerSong {
     }
 
     String singSong() {
-        return sing(99,0);
+        return sing(99, 100);
     }
 }
