@@ -125,14 +125,6 @@ public class BobTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void shoutingWithUmlauts() {
-        assertEquals(
-            "Whoa, chill out!", bob.hey("\u00dcML\u00c4\u00dcTS!")
-        );
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
             "Whoa, chill out!", bob.hey("I HATE YOU")
