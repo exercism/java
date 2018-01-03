@@ -14,10 +14,9 @@ public class AllergiesTest {
     public void noAllergiesMeansNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
 
-        assertEquals(false, allergies.isAllergicTo(Allergen.EGGS));
         assertEquals(false, allergies.isAllergicTo(Allergen.PEANUTS));
-        assertEquals(false, allergies.isAllergicTo(Allergen.STRAWBERRIES));
         assertEquals(false, allergies.isAllergicTo(Allergen.CATS));
+        assertEquals(false, allergies.isAllergicTo(Allergen.STRAWBERRIES));
     }
 
     @Ignore("Remove to run test")
@@ -30,63 +29,7 @@ public class AllergiesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void allergicToPeanuts() {
-        Allergies allergies = new Allergies(2);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.PEANUTS));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allergicToShellfish() {
-        Allergies allergies = new Allergies(4);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.SHELLFISH));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allergicToStrawberries() {
-        Allergies allergies = new Allergies(8);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.STRAWBERRIES));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allergicToTomatoes() {
-        Allergies allergies = new Allergies(16);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.TOMATOES));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allergicToChocolate() {
-        Allergies allergies = new Allergies(32);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.CHOCOLATE));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allergicToPollen() {
-        Allergies allergies = new Allergies(64);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.POLLEN));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void allergicToCats() {
-        Allergies allergies = new Allergies(128);
-
-        assertEquals(true, allergies.isAllergicTo(Allergen.CATS));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void isAllergicToEggsInAdditionToOtherStuff() {
+    public void allergicToEggsInAdditionToOtherStuff() {
         Allergies allergies = new Allergies(5);
 
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS));
