@@ -21,13 +21,9 @@ public class PrimeFactorsCalculatorTest {
         return Arrays.asList(new Object[][]{
                 {1L, Collections.emptyList()},
                 {2L, Collections.singletonList(2L)},
-                {3L, Collections.singletonList(3L)},
-                {4L, Arrays.asList(2L, 2L)},
-                {6L, Arrays.asList(2L, 3L)},
-                {8L, Arrays.asList(2L, 2L, 2L)},
                 {9L, Arrays.asList(3L, 3L)},
-                {27L, Arrays.asList(3L, 3L, 3L)},
-                {625L, Arrays.asList(5L, 5L, 5L, 5L)},
+                {8L, Arrays.asList(2L, 2L, 2L)},
+                {12L, Arrays.asList(2L, 2L, 3L)},
                 {901255L, Arrays.asList(5L, 17L, 23L, 461L)},
                 {93819012551L, Arrays.asList(11L, 9539L, 894119L)}
         });
