@@ -131,6 +131,35 @@ public class TransposeTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void mixedLineLength() {
+        String input = "The longest line.\n" +
+                       "A long line.\n" +
+                       "A longer line.\n" +
+                       "A line.";
+
+        String expected = "TAAA\n" +
+                          "h   \n" +
+                          "elll\n" +
+                          " ooi\n" +
+                          "lnnn\n" +
+                          "ogge\n" +
+                          "n e.\n" +
+                          "glr\n" +
+                          "ei \n" +
+                          "snl\n" +
+                          "tei\n" +
+                          " .n\n" +
+                          "l e\n" +
+                          "i .\n" +
+                          "n\n" +
+                          "e\n" +
+                          ".";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void square() {
         String input = "HEART\n" +
                        "EMBER\n" +
