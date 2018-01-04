@@ -13,12 +13,12 @@ public class Alphametics {
     private final String wordResult;
 
     Alphametics(String userInput) {
-        String[] array = userInput.split("==");
-        wordsToSum = Arrays.stream(array[0].split("\\+"))
+        String[] questionAndAnswer = userInput.split("==");
+        wordsToSum = Arrays.stream(questionAndAnswer[0].split("\\+"))
                 .map(String::new)
                 .map(String::trim)
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
-        wordResult = array[1].trim();
+        wordResult = questionAndAnswer[1].trim();
     }
 
     Map<Character, Integer> solve() {
@@ -32,21 +32,27 @@ public class Alphametics {
      */
     private List<Character> getDistinctCharacters() {
         Set<Character> distinctCharacters = new LinkedHashSet<>();
-        wordsToSum.forEach(word -> distinctCharacters.addAll(StringUtil.toChar(word)));
-        distinctCharacters.addAll(StringUtil.toChar(wordResult));
+        wordsToSum.forEach(word -> distinctCharacters.addAll(toChar(word)));
+        distinctCharacters.addAll(toChar(wordResult));
 
         return new ArrayList<>(distinctCharacters);
     }
 
-    class AlphameticsRecursion {
+    private List<Character> toChar(String toChar) {
+        return toChar.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toList());
+    }
+
+    private class AlphameticsRecursion {
         private final List<Character> characters;
         private LinkedHashMap<Character, Integer> validPermutation;
 
-        AlphameticsRecursion(List<Character> characters) {
+        private AlphameticsRecursion(List<Character> characters) {
             this.characters = characters;
         }
 
-        void generate() {
+        private void generate() {
             generate(new LinkedHashMap<>(), 0, new boolean[10]);
         }
 
@@ -71,7 +77,7 @@ public class Alphametics {
             }
         }
 
-        LinkedHashMap<Character, Integer> get() {
+        private LinkedHashMap<Character, Integer> get() {
             return validPermutation;
         }
 
@@ -82,7 +88,8 @@ public class Alphametics {
         private boolean isLeadingDigitZero(Map<Character, Integer> letterToDigit) {
             return letterToDigit.keySet().stream()
                     .filter(key -> letterToDigit.get(key) == 0) // Find the character that is mapped to digit 0
-                    .filter(charMappedToZero -> wordResult.charAt(0) == charMappedToZero // If the first character in wordResult is mapped to 0
+                    .filter(charMappedToZero -> wordResult.charAt(0) == charMappedToZero // If the first character in
+                                                                                         // wordResult is mapped to 0
                             || wordsToSum.stream() // If the first character in any of wordsToSum is mapped to 0
                             .map(word -> word.charAt(0))
                             .anyMatch(character -> character == charMappedToZero))
@@ -113,13 +120,5 @@ public class Alphametics {
 
             return Long.parseLong(builder.toString());
         }
-    }
-}
-
-class StringUtil {
-    static List<Character> toChar(String toChar) {
-        return toChar.chars()
-                .mapToObj(c -> (char) c)
-                .collect(Collectors.toList());
     }
 }

@@ -621,7 +621,7 @@
         "logic",
         "conditionals"
       ],
-      "unlocked_by": null,
+      "unlocked_by": "secret-handshake",
       "uuid": "0639a1f8-5af4-4877-95c1-5db8e97c30bf"
     },
     {
