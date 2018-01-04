@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class AllergiesTest {
 
@@ -14,9 +16,9 @@ public class AllergiesTest {
     public void noAllergiesMeansNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
 
-        assertEquals(false, allergies.isAllergicTo(Allergen.PEANUTS));
-        assertEquals(false, allergies.isAllergicTo(Allergen.CATS));
-        assertEquals(false, allergies.isAllergicTo(Allergen.STRAWBERRIES));
+        assertFalse(allergies.isAllergicTo(Allergen.PEANUTS));
+        assertFalse(allergies.isAllergicTo(Allergen.CATS));
+        assertFalse(allergies.isAllergicTo(Allergen.STRAWBERRIES));
     }
 
     @Ignore("Remove to run test")
@@ -24,7 +26,7 @@ public class AllergiesTest {
     public void allergicToEggs() {
         Allergies allergies = new Allergies(1);
 
-        assertEquals(true, allergies.isAllergicTo(Allergen.EGGS));
+        assertTrue(allergies.isAllergicTo(Allergen.EGGS));
     }
 
     @Ignore("Remove to run test")
@@ -32,9 +34,9 @@ public class AllergiesTest {
     public void allergicToEggsInAdditionToOtherStuff() {
         Allergies allergies = new Allergies(5);
 
-        assertEquals(true, allergies.isAllergicTo(Allergen.EGGS));
-        assertEquals(true, allergies.isAllergicTo(Allergen.SHELLFISH));
-        assertEquals(false, allergies.isAllergicTo(Allergen.STRAWBERRIES));
+        assertTrue(allergies.isAllergicTo(Allergen.EGGS));
+        assertTrue(allergies.isAllergicTo(Allergen.SHELLFISH));
+        assertFalse(allergies.isAllergicTo(Allergen.STRAWBERRIES));
     }
 
     @Ignore("Remove to run test")
