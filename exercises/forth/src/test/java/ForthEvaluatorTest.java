@@ -22,14 +22,6 @@ public class ForthEvaluatorTest {
     }
 
     @Test
-    public void testEmptyProgramResultsInEmptyStack() {
-        assertEquals(
-                Collections.emptyList(),
-                forthEvaluator.evaluateProgram(Collections.emptyList()));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testNumbersAreJustPushedOntoTheStack() {
         assertEquals(
                 Arrays.asList(1, 2, 3, 4, 5),
@@ -175,18 +167,18 @@ public class ForthEvaluatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testDupCopiesTheTopValueOnTheStack() {
+    public void testDupCopiesAValueOnTheStack() {
         assertEquals(
                 Arrays.asList(1, 1),
-                forthEvaluator.evaluateProgram(Collections.singletonList("1 DUP")));
+                forthEvaluator.evaluateProgram(Collections.singletonList("1 dup")));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testDupParsingIsCaseInsensitive() {
+    public void testDupCopiesTopValueOnTheStack() {
         assertEquals(
                 Arrays.asList(1, 2, 2),
-                forthEvaluator.evaluateProgram(Collections.singletonList("1 2 Dup")));
+                forthEvaluator.evaluateProgram(Collections.singletonList("1 2 dup")));
     }
 
     @Ignore("Remove to run test")
@@ -347,6 +339,54 @@ public class ForthEvaluatorTest {
         expectedException.expectMessage("No definition available for operator \"foo\"");
 
         forthEvaluator.evaluateProgram(Collections.singletonList("foo"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDupIsCaseInsensitive() {
+        assertEquals(
+                Arrays.asList(1, 1, 1, 1),
+                forthEvaluator.evaluateProgram(Collections.singletonList("1 DUP Dup dup")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDropIsCaseInsensitive() {
+        assertEquals(
+                Arrays.asList(1),
+                forthEvaluator.evaluateProgram(Collections.singletonList("1 2 3 4 DROP Drop drop")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testSwapIsCaseInsensitive() {
+        assertEquals(
+                Arrays.asList(2, 3, 4, 1),
+                forthEvaluator.evaluateProgram(Collections.singletonList("1 2 SWAP 3 Swap 4 swap")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testOverIsCaseInsensitive() {
+        assertEquals(
+                Arrays.asList(1, 2, 1, 2, 1),
+                forthEvaluator.evaluateProgram(Collections.singletonList("1 2 OVER Over over")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testUserDefinedWordsAreCaseInsensitive() {
+        assertEquals(
+                Arrays.asList(1, 1, 1, 1),
+                forthEvaluator.evaluateProgram(Arrays.asList(": foo dup ;", "1 FOO Foo foo")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDefinitionsAreCaseInsensitive() {
+        assertEquals(
+                Arrays.asList(1, 1, 1, 1),
+                forthEvaluator.evaluateProgram(Arrays.asList(": SWAP DUP Dup dup ;", "1 swap")));
     }
 
 }
