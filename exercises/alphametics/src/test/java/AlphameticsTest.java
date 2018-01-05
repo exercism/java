@@ -1,5 +1,7 @@
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,9 +13,11 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 public class AlphameticsTest {
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void testThreeLetters() {
+    public void testThreeLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('I', 1);
         expected.put('B', 9);
@@ -24,19 +28,21 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testUniqueValue() {
-        assertNull(new Alphametics("A == B").solve());
+    public void testUniqueValue() throws UnsolvablePuzzleException {
+        expectedException.expect(UnsolvablePuzzleException.class);
+        new Alphametics("A == B").solve();
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testLeadingZero() {
+    public void testLeadingZero() throws UnsolvablePuzzleException {
+        expectedException.expect(UnsolvablePuzzleException.class);
         assertNull(new Alphametics("ACA + DD == BD").solve());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testFourLetters() {
+    public void testFourLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('A', 9);
         expected.put('S', 2);
@@ -48,7 +54,7 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSixLetters() {
+    public void testSixLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('N', 7);
         expected.put('O', 4);
@@ -62,7 +68,7 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSevenLetters() {
+    public void testSevenLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('E', 4);
         expected.put('G', 2);
@@ -77,7 +83,7 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testEightLetters() {
+    public void testEightLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('S', 9);
         expected.put('E', 5);
@@ -93,7 +99,7 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testTenLetters() {
+    public void testTenLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('A', 5);
         expected.put('D', 3);
@@ -111,7 +117,7 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testTenLetters41Addends() {
+    public void testTenLetters41Addends() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('A', 1);
         expected.put('E', 0);

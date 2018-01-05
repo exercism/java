@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -21,10 +22,10 @@ public class Alphametics {
         wordResult = questionAndAnswer[1].trim();
     }
 
-    Map<Character, Integer> solve() {
+    Map<Character, Integer> solve() throws UnsolvablePuzzleException {
         AlphameticsRecursion solver = new AlphameticsRecursion(getDistinctCharacters());
         solver.generate();
-        return solver.get();
+        return solver.get().orElseThrow(UnsolvablePuzzleException::new);
     }
 
     /**
@@ -77,8 +78,8 @@ public class Alphametics {
             }
         }
 
-        private LinkedHashMap<Character, Integer> get() {
-            return validPermutation;
+        private Optional<LinkedHashMap<Character, Integer>> get() {
+            return Optional.ofNullable(validPermutation);
         }
 
         /**
