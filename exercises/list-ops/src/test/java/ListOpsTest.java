@@ -179,5 +179,5 @@ public class ListOpsTest {
                 Arrays.asList('7', '5', '3', '1'),
                 ListOps.reverse(Arrays.asList('1', '3', '5', '7')));
     }
-
+    
 }
