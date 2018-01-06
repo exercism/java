@@ -1,5 +1,5 @@
 class BeerSong {
-    String verse(int number) {
+    private String verse(int number) {
         switch (number) {
             case 0:
                 return "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n\n";
@@ -12,7 +12,8 @@ class BeerSong {
         }
     }
 
-    String sing(int start, int stop) {
+    String sing(int start, int takeDown) {
+        int stop = start - takeDown + 1;
         StringBuilder songOutput = new StringBuilder();
 
         for (int i=start; i>=stop; i--) {
@@ -23,6 +24,6 @@ class BeerSong {
     }
 
     String singSong() {
-        return sing(99,0);
+        return sing(99, 100);
     }
 }
