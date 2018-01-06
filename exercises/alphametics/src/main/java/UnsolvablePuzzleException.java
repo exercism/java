@@ -1,0 +1,2 @@
+class UnsolvablePuzzleException extends Exception {
+}

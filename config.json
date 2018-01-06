@@ -615,6 +615,18 @@
     {
       "core": false,
       "difficulty": 6,
+      "slug": "alphametics",
+      "topics": [
+        "mathematics",
+        "logic",
+        "conditionals"
+      ],
+      "unlocked_by": "secret-handshake",
+      "uuid": "0639a1f8-5af4-4877-95c1-5db8e97c30bf"
+    },
+    {
+      "core": false,
+      "difficulty": 6,
       "slug": "spiral-matrix",
       "topics": [
         "arrays",
