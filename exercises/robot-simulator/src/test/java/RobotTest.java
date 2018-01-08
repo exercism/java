@@ -15,11 +15,11 @@ public class RobotTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testRobotIsCreatedWithCorrectInitialOrientation() {
-        final Orientation initialOrientation = Orientation.NORTH;
-        final Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
+    public void testRobotIsCreatedWithCorrectInitialPosition() {
+        final GridPosition initialGridPosition = new GridPosition(-1, -1);
+        final Robot robot = new Robot(initialGridPosition, Orientation.SOUTH);
 
-        assertEquals(robot.getOrientation(), initialOrientation);
+        assertEquals(robot.getGridPosition(), initialGridPosition);
     }
 
     @Ignore("Remove to run test")
@@ -204,6 +204,7 @@ public class RobotTest {
     public void testInstructionsToMoveWestAndNorth() {
         final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
 
+        //should this be robot.instructions?
         robot.simulate("LAAARALA");
 
         final GridPosition expectedGridPosition = new GridPosition(-4, 1);
