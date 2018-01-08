@@ -39,11 +39,7 @@ final class BaseConverter {
         }
 
         if (originalDigits.length == 0) {
-            throw new IllegalArgumentException("You must supply at least one digit.");
-        }
-
-        if (originalDigits.length > 1 && originalDigits[0] == 0) {
-            throw new IllegalArgumentException("Digits may not contain leading zeros.");
+            return;
         }
 
         if (Arrays.stream(originalDigits).min().getAsInt() < 0) {
