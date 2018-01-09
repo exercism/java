@@ -150,10 +150,18 @@ public class BaseConverterTest {
     @Ignore("Remove to run test")
     @Test
     public void testEmptyDigits() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("You must supply at least one digit.");
+        final BaseConverter baseConverter = new BaseConverter(2, new int[]{});
 
-        new BaseConverter(2, new int[]{});
+        final int[] expectedDigits = new int[]{0};
+        final int[] actualDigits = baseConverter.convertToBase(10);
+
+        assertArrayEquals(
+            String.format(
+                "Expected digits: %s but found digits: %s",
+                Arrays.toString(expectedDigits),
+                Arrays.toString(actualDigits)),
+            expectedDigits,
+            actualDigits);
     }
 
     @Ignore("Remove to run test")
@@ -176,19 +184,35 @@ public class BaseConverterTest {
     @Ignore("Remove to run test")
     @Test
     public void testMultipleZeros() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Digits may not contain leading zeros.");
+        final BaseConverter baseConverter = new BaseConverter(10, new int[]{0, 0, 0});
 
-        new BaseConverter(10, new int[]{0, 0, 0});
+        final int[] expectedDigits = new int[]{0};
+        final int[] actualDigits = baseConverter.convertToBase(2);
+
+        assertArrayEquals(
+            String.format(
+                "Expected digits: %s but found digits: %s",
+                Arrays.toString(expectedDigits),
+                Arrays.toString(actualDigits)),
+            expectedDigits,
+            actualDigits);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLeadingZeros() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Digits may not contain leading zeros.");
+        final BaseConverter baseConverter = new BaseConverter(7, new int[]{0, 6, 0});
 
-        new BaseConverter(7, new int[]{0, 6, 0});
+        final int[] expectedDigits = new int[]{4, 2};
+        final int[] actualDigits = baseConverter.convertToBase(10);
+
+        assertArrayEquals(
+            String.format(
+                "Expected digits: %s but found digits: %s",
+                Arrays.toString(expectedDigits),
+                Arrays.toString(actualDigits)),
+            expectedDigits,
+            actualDigits);
     }
 
     @Ignore("Remove to run test")
@@ -250,7 +274,7 @@ public class BaseConverterTest {
     @Ignore("Remove to run test")
     @Test
     public void testSecondBaseIsZero() {
-        final BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
+        final BaseConverter baseConverter = new BaseConverter(10, new int[]{7});
 
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Bases must be at least 2.");
