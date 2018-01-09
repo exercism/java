@@ -734,4 +734,36 @@ public class MeetupTest {
         Meetup meetup = new Meetup(4, 2013);
         assertEquals(expected, meetup.day(DayOfWeek.SUNDAY, MeetupSchedule.LAST));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testLastWednesdayOfFebruary2012() {
+        LocalDate expected = LocalDate.of(2012, 2, 29);
+        Meetup meetup = new Meetup(2, 2012);
+        assertEquals(expected, meetup.day(DayOfWeek.WEDNESDAY, MeetupSchedule.LAST));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testLastWednesdayOfDecember2014() {
+        LocalDate expected = LocalDate.of(2014, 12, 31);
+        Meetup meetup = new Meetup(12, 2014);
+        assertEquals(expected, meetup.day(DayOfWeek.WEDNESDAY, MeetupSchedule.LAST));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testLastSundayOfFebruary2015() {
+        LocalDate expected = LocalDate.of(2015, 2, 22);
+        Meetup meetup = new Meetup(2, 2015);
+        assertEquals(expected, meetup.day(DayOfWeek.SUNDAY, MeetupSchedule.LAST));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testFirstFridayOfDecember2012() {
+        LocalDate expected = LocalDate.of(2012, 12, 7);
+        Meetup meetup = new Meetup(12, 2012);
+        assertEquals(expected, meetup.day(DayOfWeek.FRIDAY, MeetupSchedule.FIRST));
+    }
 }
