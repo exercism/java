@@ -1,19 +1,3 @@
-# Nucleotide Count
-
-Given a single stranded DNA string, compute how many times each nucleotide occurs in the string.
-
-The genetic language of every living thing on the planet is DNA.
-DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides.
-4 types exist in DNA and these differ only slightly and can be represented as the following symbols: 'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' thymine.
-
-Here is an analogy:
-- twigs are to birds nests as
-- nucleotides are to DNA as
-- legos are to lego houses as
-- words are to sentences as...
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -72,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/problems/dna/](http://rosalind.info/problems/dna/)
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
