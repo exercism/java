@@ -21,6 +21,12 @@ public class PangramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void recognizesPerfectLowerCasePangram() {
+        assertTrue(pangramChecker.isPangram("abcdefghijklmnopqrstuvwxyz"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void pangramWithOnlyLowerCaseLettersIsRecognizedAsPangram() {
         assertTrue(pangramChecker.isPangram("the quick brown fox jumps over the lazy dog"));
     }
@@ -33,8 +39,8 @@ public class PangramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void anotherPhraseMissingCharacterXIsNotPangram() {
-        assertFalse(pangramChecker.isPangram("the quick brown fish jumps over the lazy dog"));
+    public void phraseMissingAnotherCharacterIsNotPangram() {
+        assertFalse(pangramChecker.isPangram("five boxing wizards jump quickly at it"));
     }
 
     @Ignore("Remove to run test")
