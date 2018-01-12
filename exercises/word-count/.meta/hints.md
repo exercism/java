@@ -1,18 +1,3 @@
-# Word Count
-
-Given a phrase, count the occurrences of each word in that phrase.
-
-For example for the input `"olly olly in come free"`
-
-```text
-olly: 2
-in: 1
-come: 1
-free: 1
-```
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -71,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
