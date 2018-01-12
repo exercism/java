@@ -27,7 +27,7 @@ class BowlingGame {
                 int strikeBonus = strikeBonus(frameIndex);
                 if (strikeBonus > MAXIMUM_FRAME_SCORE && !isStrike(frameIndex + 1) || spareBonus(frameIndex) > 10) {
                     throw new IllegalStateException("Pin count exceeds pins on the lane");
-                }                    
+                }       
                 
                 score += 10 + strikeBonus;
                 frameIndex += i == NUMBER_OF_FRAMES ? 3 : 1;
