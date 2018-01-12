@@ -190,7 +190,7 @@ public class BowlingTest {
     @Ignore("Remove to run test")
     @Test
     public void bonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
-        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11};
+        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 0};
 
         playGame(rolls);
 
