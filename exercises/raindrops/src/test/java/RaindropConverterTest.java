@@ -20,18 +20,20 @@ public class RaindropConverterTest {
         return Arrays.asList(new Object[][]{
                 // Non-primes
                 {1, "1"},
+                {8, "8"},
                 {52, "52"},
-                {12121, "12121"},
 
                 // Numbers with 3 as a prime factor
                 {3, "Pling"},
                 {6, "Pling"},
                 {9, "Pling"},
+                {27, "Pling"},
 
                 // Numbers with 5 as a prime factor
                 {5, "Plang"},
                 {10, "Plang"},
                 {25, "Plang"},
+                {3125, "Plang"},
 
                 // Numbers with 7 as a prime factor
                 {7, "Plong"},
