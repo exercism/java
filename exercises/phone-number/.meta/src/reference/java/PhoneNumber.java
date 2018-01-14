@@ -9,7 +9,7 @@ public class PhoneNumber {
     private String extractDigits(String dirtyNumber) {
         StringBuilder stringBuilder = new StringBuilder();
         for (char c : dirtyNumber.toCharArray()) {
-            if (c == ' ' || c == '.' || c == '(' || c == ')' || c == '-') {
+            if (c == ' ' || c == '.' || c == '(' || c == ')' || c == '-' || c == '+') {
                 // Remove spaces, dots, parentheses and hyphens
                 continue;
             }
@@ -34,6 +34,14 @@ public class PhoneNumber {
                 throw new IllegalArgumentException("Can only have 11 digits if number starts with '1'");
             }
         }
+        
+        if (number.startsWith("0") || number.startsWith("1")){
+            throw new IllegalArgumentException("Illegal character in phone number. "
+                    + "Only digits, spaces, parentheses, hyphens or dots accepted.");
+        } else if (number.charAt(3) == '0' || number.charAt(3) == '1'){
+            throw new IllegalArgumentException("Illegal character in phone number. "
+                    + "Only digits, spaces, parentheses, hyphens or dots accepted.");
+        } 
 
         return number;
     }
