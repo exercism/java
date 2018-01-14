@@ -189,6 +189,19 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void bonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
+        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 0};
+
+        playGame(rolls);
+
+        expectedException.expect(IllegalStateException.class);
+        expectedException.expectMessage("Pin count exceeds pins on the lane");
+
+        game.score();
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6};
 
@@ -209,7 +222,33 @@ public class BowlingTest {
 
         assertEquals(26, game.score());
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
+        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 10};
 
+        playGame(rolls);
+
+        expectedException.expect(IllegalStateException.class);
+        expectedException.expectMessage("Pin count exceeds pins on the lane");
+
+        game.score();
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void secondBonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
+        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 11};
+
+        playGame(rolls);
+
+        expectedException.expect(IllegalStateException.class);
+        expectedException.expectMessage("Pin count exceeds pins on the lane");
+
+        game.score();
+    }
+    
     @Ignore("Remove to run test")
     @Test
     public void anUnstartedGameCanNotBeScored() {
@@ -238,7 +277,7 @@ public class BowlingTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void aGameWithMoreThanTenFramesCanNotBeScored() {
+    public void canNotRollIfGameAlreadyHasTenFrames() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         playGame(rolls);
