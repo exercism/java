@@ -23,7 +23,7 @@ public class TransposeTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void twoCharsInARow() {
+    public void twoCharactersInARow() {
         String input = "A1";
 
         String expected = "A" +
@@ -34,7 +34,7 @@ public class TransposeTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void twoCharsInAColumn() {
+    public void twoCharactersInAColumn() {
         String input = "A\n" +
                        "1";
 
@@ -45,7 +45,7 @@ public class TransposeTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void simpleMatrix() {
+    public void simple() {
         String input = "ABC\n" +
                        "123";
 
@@ -79,7 +79,7 @@ public class TransposeTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void firstLineLongerThanSecond() {
+    public void firstLineLongerThanSecondLine() {
         String input = "The fourth line.\n" +
                        "The fifth line.";
 
@@ -105,7 +105,7 @@ public class TransposeTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void secondLineLongerThanFirst() {
+    public void secondLineLongerThanFirstLine() {
         String input = "The first line.\n" +
                        "The second line.";
 
