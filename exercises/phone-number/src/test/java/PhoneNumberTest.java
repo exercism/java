@@ -11,6 +11,8 @@ public class PhoneNumberTest {
             "Can only have 11 digits if number starts with '1'";
     private final static String illegalCharacterExceptionMessage =
             "Illegal character in phone number. Only digits, spaces, parentheses, hyphens or dots accepted.";
+    private final static String illegalAreaOrExchangeCodeMessage =
+            "Illegal Area Or Exchange Code. Only 2-9 are valid digits";
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -113,7 +115,7 @@ public class PhoneNumberTest {
     @Test
     public void invalidIfAreaCodeStartsWith0() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(illegalCharacterExceptionMessage);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(023) 456-7890");
     }
     
@@ -121,7 +123,7 @@ public class PhoneNumberTest {
     @Test
     public void invalidIfAreaCodeStartsWith1() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(illegalCharacterExceptionMessage);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(123) 456-7890");
     }
     
@@ -129,7 +131,7 @@ public class PhoneNumberTest {
     @Test
     public void invalidIfExchangeCodeStartsWith0() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(illegalCharacterExceptionMessage);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(223) 056-7890");
     }
 
@@ -137,7 +139,7 @@ public class PhoneNumberTest {
     @Test
     public void invalidIfExchangeCodeStartsWith1() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(illegalCharacterExceptionMessage);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(223) 156-7890");
     }
 }
