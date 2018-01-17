@@ -207,7 +207,7 @@ public class RobotTest {
     @Test
     public void testInstructionsToMoveWestAndNorth() {
         final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
-        
+
         robot.simulate("LAAARALA");
 
         final GridPosition expectedGridPosition = new GridPosition(-4, 1);
