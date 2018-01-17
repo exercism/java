@@ -1,36 +1,3 @@
-# Prime Factors
-
-Compute the prime factors of a given natural number.
-
-A prime number is only evenly divisible by itself and 1.
-
-Note that 1 is not a prime number.
-
-## Example
-
-What are the prime factors of 60?
-
-- Our first divisor is 2. 2 goes into 60, leaving 30.
-- 2 goes into 30, leaving 15.
-  - 2 doesn't go cleanly into 15. So let's move on to our next divisor, 3.
-- 3 goes cleanly into 15, leaving 5.
-  - 3 does not go cleanly into 5. The next possible factor is 4.
-  - 4 does not go cleanly into 5. The next possible factor is 5.
-- 5 does go cleanly into 5.
-- We're left only with 1, so now, we're done.
-
-Our successful divisors in that computation represent the list of prime
-factors of 60: 2, 2, 3, and 5.
-
-You can check this yourself:
-
-- 2 * 2 * 3 * 5
-- = 4 * 15
-- = 60
-- Success!
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -89,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-The Prime Factors Kata by Uncle Bob [http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
