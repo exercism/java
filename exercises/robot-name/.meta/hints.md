@@ -1,22 +1,3 @@
-# Robot Name
-
-Manage robot factory settings.
-
-When robots come off the factory floor, they have no name.
-
-The first time you boot them up, a random name is generated in the format
-of two uppercase letters followed by three digits, such as RX837 or BC811.
-
-Every once in a while we need to reset a robot to its factory settings,
-which means that their name gets wiped. The next time you ask, it will
-respond with a new random name.
-
-The names must be random: they should not follow a predictable sequence.
-Random names means a risk of collisions. Your solution must ensure that
-every existing robot has a unique name.
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -75,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
