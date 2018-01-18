@@ -9,7 +9,7 @@ public class RobotTest {
     public void testRobotIsCreatedWithCorrectInitialPositionAndOrientation() {
         final Orientation initialOrientation = Orientation.NORTH;
         final GridPosition initialGridPosition = new GridPosition(0, 0);
-        final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
+        final Robot robot = new Robot(initialGridPosition, initialOrientation);
 
         assertEquals(robot.getOrientation(), initialOrientation);
         assertEquals(robot.getGridPosition(), initialGridPosition);
@@ -20,7 +20,7 @@ public class RobotTest {
     public void testNegativePositionsAreAllowed() {
         final GridPosition initialGridPosition = new GridPosition(-1, -1);
         final Orientation initialOrientation = Orientation.SOUTH;
-        final Robot robot = new Robot(initialGridPosition, Orientation.SOUTH);
+        final Robot robot = new Robot(initialGridPosition, initialOrientation);
 
         assertEquals(robot.getOrientation(), initialOrientation);
         assertEquals(robot.getGridPosition(), initialGridPosition);
