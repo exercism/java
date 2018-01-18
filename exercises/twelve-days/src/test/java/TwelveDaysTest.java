@@ -22,7 +22,7 @@ public class TwelveDaysTest {
     @Ignore("Remove to run test")
     @Test
     public void testVerseTwo() {
-        String expectedVerseTwo = "On the second day of Christmas my true love gave to me, two Turtle Doves, " +
+        String expectedVerseTwo = "On the second day of Christmas my true love gave to me, " + "two Turtle Doves, " +
                 "and a Partridge in a Pear Tree.\n";
         assertEquals(expectedVerseTwo, twelveDays.verse(2));
     }
@@ -30,11 +30,11 @@ public class TwelveDaysTest {
     @Ignore("Remove to run test")
     @Test
     public void testVerseThree() {
-        String expectedVerseThree = "On the third day of Christmas my true love gave to me, three French Hens, " +
-                "two Turtle Doves, and a Partridge in a Pear Tree.\n";
+        String expectedVerseThree = "On the third day of Christmas my true love gave to me, " + "three French Hens, " +
+                "two Turtle Doves, " + "and a Partridge in a Pear Tree.\n";
         assertEquals(expectedVerseThree, twelveDays.verse(3));
     }
-
+    //Checked up to here
     @Ignore("Remove to run test")
     @Test
     public void testVerseFour() {
