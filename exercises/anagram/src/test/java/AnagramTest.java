@@ -19,22 +19,6 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testDetectSimpleAnagram() {
-        Anagram detector = new Anagram("ant");
-        List<String> anagram = detector.match(Arrays.asList("tan", "stand", "at"));
-        assertThat(anagram, hasItem("tan"));
-        assertThat(anagram.size(), is(1));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testDoesNotConfuseDifferentDuplicates() {
-        Anagram detector = new Anagram("galea");
-        assertTrue(detector.match(Collections.singletonList("eagle")).isEmpty());
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testDetectMultipleAnagrams() {
         Anagram detector = new Anagram("master");
         List<String> anagrams = detector.match(Arrays.asList("stream", "pigeon", "maters"));
@@ -66,15 +50,6 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testIdenticalWordIsNotAnagram() {
-        Anagram detector = new Anagram("corn");
-        List<String> anagrams = detector.match(Arrays.asList("corn", "dark", "Corn", "rank", "CORN", "cron", "park"));
-        assertThat(anagrams, hasItem("cron"));
-        assertThat(anagrams.size(), is(1));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertTrue(detector.match(Collections.singletonList("last")).isEmpty());
@@ -102,13 +77,6 @@ public class AnagramTest {
         Anagram detector = new Anagram("orchestra");
         List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
         assertThat(anagrams, hasItem("Carthorse"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testWordIsNotItsOwnAnagram() {
-        Anagram detector = new Anagram("banana");
-        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
     }
 
     @Ignore("Remove to run test")
