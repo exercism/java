@@ -33,9 +33,7 @@ final class LargestSeriesProductCalculator {
     }
 
     private void validateStringToSearch() throws IllegalArgumentException {
-        if (stringToSearch == null) {
-            throw new IllegalArgumentException("String to search must be non-null.");
-        } else if (!stringToSearch.chars().allMatch(Character::isDigit)) {
+        if (!stringToSearch.chars().allMatch(Character::isDigit)) {
             throw new IllegalArgumentException("String to search may only contain digits.");
         }
     }
