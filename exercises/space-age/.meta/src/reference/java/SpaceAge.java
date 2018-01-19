@@ -32,10 +32,6 @@ class SpaceAge {
         this.seconds = seconds;
     }
 
-    double getSeconds() {
-        return seconds;
-    }
-
     double onEarth() {
         return calculateAge(Planet.EARTH);
     }
