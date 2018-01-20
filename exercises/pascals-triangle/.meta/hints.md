@@ -1,21 +1,3 @@
-# Pascal's Triangle
-
-Compute Pascal's triangle up to a given number of rows.
-
-In Pascal's Triangle each number is computed by adding the numbers to
-the right and left of the current position in the previous row.
-
-```text
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-# ... etc
-```
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -74,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-Pascal's Triangle at Wolfram Math World [http://mathworld.wolfram.com/PascalsTriangle.html](http://mathworld.wolfram.com/PascalsTriangle.html)
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
