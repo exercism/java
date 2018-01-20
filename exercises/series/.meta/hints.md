@@ -1,27 +1,3 @@
-# Series
-
-Given a string of digits, output all the contiguous substrings of length `n` in
-that string.
-
-For example, the string "49142" has the following 3-digit series:
-
-- 491
-- 914
-- 142
-
-And the following 4-digit series:
-
-- 4914
-- 9142
-
-And if you ask for a 6-digit series from a 5-digit string, you deserve
-whatever you get.
-
-Note that these series are only required to occupy *adjacent positions*
-in the input; the digits need not be *numerically consecutive*.
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -80,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
