@@ -1,35 +1,3 @@
-# Atbash Cipher
-
-Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.
-
-The Atbash cipher is a simple substitution cipher that relies on
-transposing all the letters in the alphabet such that the resulting
-alphabet is backwards. The first letter is replaced with the last
-letter, the second with the second-last, and so on.
-
-An Atbash cipher for the Latin alphabet would be as follows:
-
-```text
-Plain:  abcdefghijklmnopqrstuvwxyz
-Cipher: zyxwvutsrqponmlkjihgfedcba
-```
-
-It is a very weak cipher because it only has one possible key, and it is
-a simple monoalphabetic substitution cipher. However, this may not have
-been an issue in the cipher's time.
-
-Ciphertext is written out in groups of fixed length, the traditional group size
-being 5 letters, and punctuation is excluded. This is to make it harder to guess
-things based on word boundaries.
-
-## Examples
-
-- Encoding `test` gives `gvhg`
-- Decoding `gvhg` gives `test`
-- Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`
-
-# Java Tips
-
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
@@ -88,22 +56,3 @@ Or you could set your method to return some random type (e.g. `void`), and run t
 The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
-
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
-## Source
-
-Wikipedia [http://en.wikipedia.org/wiki/Atbash](http://en.wikipedia.org/wiki/Atbash)
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
