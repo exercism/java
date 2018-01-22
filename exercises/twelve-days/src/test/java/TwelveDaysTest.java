@@ -132,7 +132,7 @@ public class TwelveDaysTest {
     @Ignore("Remove to run test")
     @Test
     public void testFourthToSixthVerses() {
-        String expectedVersesFourToSix = "On the fourth day of Chrsitmas my true love gave to me, " + 
+        String expectedVersesFourToSix = "On the fourth day of Christmas my true love gave to me, " + 
                 "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
                 "On the fifth day of Christmas my true love gave to me, five Gold Rings, four Calling Birds, " + 
                 "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
