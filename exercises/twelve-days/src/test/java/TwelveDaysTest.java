@@ -119,14 +119,26 @@ public class TwelveDaysTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testMultipleVerses() {
-        String expectedVerseOneToThree = "On the first day of Christmas my true love gave to me, " +
+    public void testFirstThreeVerses() {
+        String expectedVersesOneToThree = "On the first day of Christmas my true love gave to me, " +
                 "a Partridge in a Pear Tree.\n\n" +
                 "On the second day of Christmas my true love gave to me, two Turtle Doves, " +
                 "and a Partridge in a Pear Tree.\n\n" +
                 "On the third day of Christmas my true love gave to me, three French Hens, two Turtle Doves, " +
                 "and a Partridge in a Pear Tree.\n";
-        assertEquals(expectedVerseOneToThree, twelveDays.verses(1, 3));
+        assertEquals(expectedVersesOneToThree, twelveDays.verses(1, 3));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testFourthToSixthVerses() {
+        String expectedVersesFourToSix = "On the fourth day of Christmas my true love gave to me, " + 
+                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
+                "On the fifth day of Christmas my true love gave to me, five Gold Rings, four Calling Birds, " + 
+                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
+                "On the sixth day of Christmas my true love gave to me, six Geese-a-Laying, five Gold Rings, " + 
+                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
+        assertEquals(expectedVersesFourToSix, twelveDays.verses(4, 6));
     }
 
     @Ignore("Remove to run test")
