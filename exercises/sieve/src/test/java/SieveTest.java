@@ -9,7 +9,15 @@ import static org.junit.Assert.assertEquals;
 
 public class SieveTest {
 
+    @Test
+    public void noPrimesUnder2(){
+        Sieve sieve = new Sieve(1);
+        List<Integer> expectedOutput = Collections.emptyList();
 
+        assertEquals(expectedOutput, sieve.getPrimes());
+    }
+
+    @Ignore("Remove to run test")
     @Test
     public void findFirstPrime() {
         Sieve sieve = new Sieve(2);
@@ -23,6 +31,15 @@ public class SieveTest {
     public void findPrimesUpTo10() {
         Sieve sieve = new Sieve(10);
         List<Integer> expectedOutput = Arrays.asList(2, 3, 5, 7);
+
+        assertEquals(expectedOutput, sieve.getPrimes());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void limitIsPrime(){
+        Sieve sieve = new Sieve(13);
+        List<Integer> expectedOutput = Arrays.asList(2, 3, 5, 7, 11, 13);
 
         assertEquals(expectedOutput, sieve.getPrimes());
     }
