@@ -13,24 +13,70 @@ public class NucleotideCounterTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    @Test
-    public void testEmptyDnaStringHasNoAdenine() {
-        NucleotideCounter nucleotideCounter = new NucleotideCounter("");
-        assertThat(nucleotideCounter.count('A'), is(0));
-    }
-
     @Ignore("Remove to run test")
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("");
         Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
-        assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 0),
                 hasEntry('C', 0),
                 hasEntry('G', 0),
                 hasEntry('T', 0)
         ));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDnaStringHasOneNucleotide() {
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("G");
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
+        assertThat(counts.size(), is(4));
+        assertThat(counts, allOf(
+                hasEntry('A', 0),
+                hasEntry('C', 0),
+                hasEntry('G', 1),
+                hasEntry('T', 0)
+        ));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testRepetitiveSequenceWithOnlyGuanine() {
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGGG");
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
+        assertThat(nucleotideCounter.count('G'), is(7));
+        assertThat(nucleotideCounter.count('T'), is(0));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDnaStringHasMultipleNucleotide() {
+        NucleotideCounter nucleotideCounter
+            = new NucleotideCounter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
+        assertThat(counts.size(), is(4));
+        assertThat(counts, allOf(
+                hasEntry('A', 20),
+                hasEntry('C', 12),
+                hasEntry('G', 17),
+                hasEntry('T', 21)
+        ));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDnaStringHasInvalidNucleotides() {
+        expectedException.expect(NullPointerException.class);
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("AGXXACT");
+    }
+
+    /** Pre existing tests below **/
+
+    @Test
+    public void testEmptyDnaStringHasNoAdenine() {
+        NucleotideCounter nucleotideCounter = new NucleotideCounter("");
+        assertThat(nucleotideCounter.count('A'), is(0));
     }
 
     @Ignore("Remove to run test")
@@ -92,18 +138,4 @@ public class NucleotideCounterTest {
         nucleotideCounter.count('X');
     }
 
-    @Ignore("Remove to run test")
-    @Test
-    public void testCountsAllNucleotides() {
-        String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
-        NucleotideCounter nucleotideCounter = new NucleotideCounter(s);
-        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
-        assertThat(counts.size(), is(4));
-        assertThat(counts, allOf(
-                hasEntry('A', 20),
-                hasEntry('C', 12),
-                hasEntry('G', 17),
-                hasEntry('T', 21)
-        ));
-    }
 }
