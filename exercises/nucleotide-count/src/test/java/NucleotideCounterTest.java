@@ -88,20 +88,6 @@ public class NucleotideCounterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testRepetitiveSequenceWithOnlyGuanine() {
-        NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGGGG");
-        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
-        assertThat(counts.size(), is(4));
-        assertThat(counts, allOf(
-                hasEntry('A', 0),
-                hasEntry('C', 0),
-                hasEntry('G', 8),
-                hasEntry('T', 0)
-        ));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testCountsOnlyThymine() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGTAACCCGG");
         assertThat(nucleotideCounter.count('T'), is(1));
@@ -137,5 +123,4 @@ public class NucleotideCounterTest {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("GACT");
         nucleotideCounter.count('X');
     }
-
 }
