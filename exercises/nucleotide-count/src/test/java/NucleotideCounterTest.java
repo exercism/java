@@ -69,6 +69,7 @@ public class NucleotideCounterTest {
     public void testDnaStringHasInvalidNucleotides() {
         expectedException.expect(NullPointerException.class);
         NucleotideCounter nucleotideCounter = new NucleotideCounter("AGXXACT");
+        Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
     }
 
     /** Pre existing tests below **/
