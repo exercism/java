@@ -10,11 +10,27 @@ public class Rational {
         this.numerator = numerator;
         this.denominator = denominator;
 
+        this.reduce();
+        this.ensureSignInNumerator();
+    }
+
+    private void reduce() {
         final int commonDivisor = gcd(this.numerator, this.denominator);
 
         this.numerator /= commonDivisor;
         this.denominator /= commonDivisor;
+    }
 
+    private int gcd(int a, int b) {
+        while (b != 0) {
+            final int t = b;
+            b = a % b;
+            a = t;
+        }
+        return a;
+    }
+
+    private void ensureSignInNumerator() {
         if (this.denominator < 0) {
             this.denominator = -this.denominator;
             this.numerator = -this.numerator;
@@ -72,15 +88,6 @@ public class Rational {
 
     public double exp(double base) {
         return Math.pow(Math.pow(base, this.numerator), 1.0 / this.denominator);
-    }
-
-    private int gcd(int a, int b) {
-        while (b != 0) {
-            final int t = b;
-            b = a % b;
-            a = t;
-        }
-        return a;
     }
 
     @Override
