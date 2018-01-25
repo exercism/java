@@ -45,8 +45,12 @@ public class NucleotideCounterTest {
     public void testRepetitiveSequenceWithOnlyGuanine() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGGG");
         Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
-        assertThat(nucleotideCounter.count('G'), is(7));
-        assertThat(nucleotideCounter.count('T'), is(0));
+        assertThat(counts, allOf(
+                hasEntry('A', 0),
+                hasEntry('C', 0),
+                hasEntry('G', 7),
+                hasEntry('T', 0)
+        ));
     }
 
     @Ignore("Remove to run test")
@@ -67,7 +71,7 @@ public class NucleotideCounterTest {
     @Ignore("Remove to run test")
     @Test
     public void testDnaStringHasInvalidNucleotides() {
-        expectedException.expect(NullPointerException.class);
+        expectedException.expect(IllegalArgumentException.class);
         NucleotideCounter nucleotideCounter = new NucleotideCounter("AGXXACT");
         Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
     }
