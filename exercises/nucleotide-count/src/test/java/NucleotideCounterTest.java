@@ -31,7 +31,6 @@ public class NucleotideCounterTest {
     public void testDnaStringHasOneNucleotide() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("G");
         Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
-        assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 0),
                 hasEntry('C', 0),
@@ -59,7 +58,6 @@ public class NucleotideCounterTest {
         NucleotideCounter nucleotideCounter
             = new NucleotideCounter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
         Map<Character, Integer> counts = nucleotideCounter.nucleotideCounts();
-        assertThat(counts.size(), is(4));
         assertThat(counts, allOf(
                 hasEntry('A', 20),
                 hasEntry('C', 12),
