@@ -6,6 +6,11 @@ final class NucleotideCounter {
 
   NucleotideCounter(String sequence) {
     this.sequence = sequence;
+    for (char c : sequence.toCharArray()) {
+      if (isCountable(c)) {
+        throw new IllegalArgumentException(c + " is not a nucleotide");
+      }
+    }
   }
 
   int count(char base) {
@@ -28,9 +33,6 @@ final class NucleotideCounter {
   Map<Character, Integer> nucleotideCounts() {
     Map<Character, Integer> counts = emptyCounts();
     for (char c : sequence.toCharArray()) {
-      if (isCountable(c)) {
-        throw new IllegalArgumentException(c + " is not a nucleotide");
-      }
       counts.put(c, counts.get(c) + 1);
     }
     return counts;
