@@ -13,7 +13,6 @@ public class NucleotideCounterTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    @Ignore("Remove to run test")
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("");
