@@ -105,14 +105,14 @@ public class RationalTest {
     }
 
     @Test
-    public void testMultiplyARationalNumberBy1() {
+    public void testMultiplyARationalNumberByOne() {
         Rational expected = new Rational(1, 2);
         Rational actual = new Rational(1, 2).multiply(new Rational(1, 1));
         assertRationalsEqual(expected, actual);
     }
 
     @Test
-    public void testMultiplyARationalNumberBy0() {
+    public void testMultiplyARationalNumberByZero() {
         Rational expected = new Rational(0, 1);
         Rational actual = new Rational(1, 2).multiply(new Rational(0, 1));
         assertRationalsEqual(expected, actual);
@@ -140,7 +140,7 @@ public class RationalTest {
     }
 
     @Test
-    public void testDivideARationalNumberBy1() {
+    public void testDivideARationalNumberByOne() {
         Rational expected = new Rational(1, 2);
         Rational actual = new Rational(1, 2).divide(new Rational(1, 1));
         assertRationalsEqual(expected, actual);
@@ -161,7 +161,7 @@ public class RationalTest {
     }
 
     @Test
-    public void testAbsoluteValueOf0() {
+    public void testAbsoluteValueOfZero() {
         Rational expected = new Rational(0, 1);
         Rational actual = new Rational(0, 1).abs();
         assertRationalsEqual(expected, actual);
