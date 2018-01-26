@@ -1,6 +1,6 @@
 public class Rational {
-    private final int numerator;
-    private final int denominator;
+    private int numerator;
+    private int denominator;
 
     public Rational(final int numerator, final int denominator) throws IllegalArgumentException {
         if (denominator == 0) {
@@ -79,30 +79,24 @@ public class Rational {
     }
 
     public Rational pow(int n) {
-        return new Rational(Math.pow(this.numerator, n), Math.pow(this.denominator, n));
+        return new Rational(pow(this.numerator, n), pow(this.denominator, n));
     }
 
     public double pow(double x) {
         return Math.pow(this.numerator, x) / Math.pow(this.denominator, x);
     }
 
-    public double exp(double base) {
-        return Math.pow(Math.pow(base, this.numerator), 1.0 / this.denominator);
+    private int pow(final int base, final int exponent) {
+        int product = 1;
+
+        for (int i = 0; i < exponent; i++) {
+            product *= base;
+        }
+
+        return product;
     }
 
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-
-        if (this.getClass() != that.getClass()) {
-            return false;
-        }
-        
-        Rational rational = (Rational) that;
-
-        return Objects.equals(this.numerator, rational.numerator)
-            && Objects.equals(this.denominator, rational.denominator);
+    public double exp(double base) {
+        return Math.pow(Math.pow(base, this.numerator), 1.0 / this.denominator);
     }
 }
