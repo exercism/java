@@ -23,11 +23,16 @@ public class PigLatinTranslatorTest {
                 {"object", "objectay"},
                 {"under", "underay"},
 
+                // Word beginning with vowel follwed by a 'qu'
+                {"equal", "equalay"},
+
                 // First letter and ay are moved to the end of words that start with consonants
                 {"pig", "igpay"},
                 {"koala", "oalakay"},
-                {"yellow", "ellowyay"},
                 {"xenon", "enonxay"},
+
+                // Word beginning with 'q' without a following 'u'
+                {"qat", "atqay"},
 
                 // Ch is treated like a single consonant
                 {"chair", "airchay"},
@@ -52,6 +57,15 @@ public class PigLatinTranslatorTest {
 
                 // Xr is treated like a single vowel
                 {"xray", "xrayay"},
+
+                // 'Y' is treated like a consonant at the beginning of a word
+                {"yellow", "ellowyay"},
+
+                // 'Y' is treated like a vowel at the end of a consonant cluster
+                {"rhythm", "ythmrhay"},
+
+                // 'Y' as second letter in a two letter word
+                {"my", "ymay"},
 
                 // Phrases are translated
                 {"quick fast run", "ickquay astfay unray"}
