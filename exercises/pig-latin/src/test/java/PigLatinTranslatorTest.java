@@ -62,7 +62,7 @@ public class PigLatinTranslatorTest {
                 {"yellow", "ellowyay"},
 
                 // 'Y' is treated like a vowel at the end of a consonant cluster
-                {"rhythm", "ythmrhay"},
+                {"rhythm", "hythmray"},
 
                 // 'Y' as second letter in a two letter word
                 {"my", "ymay"},
