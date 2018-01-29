@@ -30,7 +30,7 @@ in your terminal.
 
 ## Source
 
-Rosalind [http://rosalind.info/problems/rna](http://rosalind.info/problems/rna)
+Hyperphysics [http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)
 
 ## Submitting Incomplete Solutions
 
