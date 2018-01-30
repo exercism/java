@@ -32,6 +32,18 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testSumOfMultiplesOf3aUpToSeven() {
+
+        int[] set = {
+                3
+        };
+        int output = new SumOfMultiples(7, set).getSum();
+        assertEquals(9, output);
+
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testSumOfMultiplesOf3and5UpToTen() {
 
         int[] set = {
@@ -112,7 +124,7 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf5and25UpToTwoHundredSeventyFive() {
+    public void testSumOfMultiplesOf5and25UpToFiftyOne() {
 
         int[] set = {
                 5,
