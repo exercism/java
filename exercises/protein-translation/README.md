@@ -20,24 +20,24 @@ All subsequent codons after are ignored, like this:
 
 RNA: `"AUGUUUUCUUAAAUG"` =>
 
-Codons: `"AUG", "UUU", "UCU", "UAG", "AUG"` =>
+Codons: `"AUG", "UUU", "UCU", "UAA", "AUG"` =>
 
 Protein: `"Methionine", "Phenylalanine", "Serine"`
 
-Note the stop codon terminates the translation and the final methionine is not translated into the protein sequence.
+Note the stop codon `"UAA"` terminates the translation and the final methionine is not translated into the protein sequence.
 
 Below are the codons and resulting Amino Acids needed for the exercise.
 
-Codon                 | Protein
-:---                  | :---
-AUG                   | Methionine
-UUU, UUC              | Phenylalanine
-UUA, UUG              | Leucine
-UCU, UCC, UCA, UCG    | Serine
-UAU, UAC              | Tyrosine
-UGU, UGC              | Cysteine
-UGG                   | Tryptophan
-UAA, UAG, UGA         | STOP
+| Codon              | Protein       |
+| :----------------- | :------------ |
+| AUG                | Methionine    |
+| UUU, UUC           | Phenylalanine |
+| UUA, UUG           | Leucine       |
+| UCU, UCC, UCA, UCG | Serine        |
+| UAU, UAC           | Tyrosine      |
+| UGU, UGC           | Cysteine      |
+| UGG                | Tryptophan    |
+| UAA, UAG, UGA      | STOP          |
 
 Learn more about [protein translation on Wikipedia](http://en.wikipedia.org/wiki/Translation_(biology))
 
