@@ -27,7 +27,8 @@ class PigLatinTranslator {
         }
 
         if (getLocationOfYAfterConsonantCluster(word) != -1) {
-            return word.substring(yLocation) + word.substring(0, yLocation) + AY;
+            int yPos = getLocationOfYAfterConsonantCluster(word);
+            return word.substring(yPos) + word.substring(0, yPos) + AY;
         }
 
         if (wordStartsWithPrefixes(word, THR, SCH)) {
@@ -47,9 +48,9 @@ class PigLatinTranslator {
 
     private static int getLocationOfYAfterConsonantCluster(String word) {
         for (int i = 0; i < word.length() - 1; i++) {
-            if (word.substring(i, i + 1).matches(VOWELS_REGEX)) {
+            if (word.charAt(i).matches(VOWELS_REGEX)) {
                 return -1;
-            }else if ((i != 0) && word.substring(i, i + 1).equals("y")) {
+            } else if ((i != 0) && word.charAt(i) == 'y') {
                 return i;
             }
         }
