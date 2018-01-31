@@ -1120,6 +1120,16 @@
     {
       "core": false,
       "difficulty": 8,
+      "slug": "rational-numbers",
+      "topics": [
+        "floating_point_numbers",
+        "mathematics",
+        "classes"
+      ]
+    },
+    {
+      "core": false,
+      "difficulty": 8,
       "slug": "list-ops",
       "topics": [
         "filtering",
