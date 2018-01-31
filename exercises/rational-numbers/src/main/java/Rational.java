@@ -97,6 +97,6 @@ public class Rational {
     }
 
     public double exp(double base) {
-        return Math.pow(Math.pow(base, this.numerator), 1.0 / this.denominator);
+        return Math.pow(10.0, Math.log10(Math.pow(base, this.numerator)) / this.denominator);
     }
 }

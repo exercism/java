@@ -7,7 +7,7 @@ public class RationalTest {
 
     // Helper methods
 
-    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-12;
+    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-15;
 
     private void assertDoublesEqual(double x, double y) {
         assertEquals(x, y, DOUBLE_EQUALITY_TOLERANCE);
