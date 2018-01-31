@@ -48,7 +48,7 @@ class PigLatinTranslator {
 
     private static int getLocationOfYAfterConsonantCluster(String word) {
         for (int i = 0; i < word.length() - 1; i++) {
-            if (word.charAt(i).matches(VOWELS_REGEX)) {
+            if ((Character.toString(word.charAt(i)).matches(VOWELS_REGEX))) {
                 return -1;
             } else if ((i != 0) && word.charAt(i) == 'y') {
                 return i;
