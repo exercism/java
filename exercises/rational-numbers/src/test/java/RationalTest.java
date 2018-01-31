@@ -19,7 +19,7 @@ public class RationalTest {
     }
 
     // Tests
-    
+
     @Test
     public void testAddTwoPositiveRationalNumbers() {
         Rational expected = new Rational(7, 6);
