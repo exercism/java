@@ -1125,7 +1125,9 @@
         "floating_point_numbers",
         "mathematics",
         "classes"
-      ]
+      ],
+      "unlocked_by": "triangle",
+      "uuid": "50ed54ce-3047-4590-9fda-0a7e9aeeba30"
     },
     {
       "core": false,
