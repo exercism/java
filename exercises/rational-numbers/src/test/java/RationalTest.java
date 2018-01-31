@@ -169,92 +169,92 @@ public class RationalTest {
 
     @Test
     public void testRaiseAPositiveRationalNumberToAPositiveIntegerPower() {
-      Rational expected = new Rational(1, 8);
-      Rational actual = new Rational(1, 2).pow(3);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(1, 8);
+        Rational actual = new Rational(1, 2).pow(3);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testRaiseANegativeRationalNumberToAPositiveIntegerPower() {
-      Rational expected = new Rational(-1, 8);
-      Rational actual = new Rational(-1, 2).pow(3);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(-1, 8);
+        Rational actual = new Rational(-1, 2).pow(3);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testRaiseZeroToAnIntegerPower() {
-      Rational expected = new Rational(0, 1);
-      Rational actual = new Rational(0, 1).pow(5);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(0, 1);
+        Rational actual = new Rational(0, 1).pow(5);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testRaiseOneToAnIntegerPower() {
-      Rational expected = new Rational(1, 1);
-      Rational actual = new Rational(1, 1).pow(4);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(1, 1);
+        Rational actual = new Rational(1, 1).pow(4);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testRaiseAPositiveRationalNumberToThePowerOfZero() {
-      Rational expected = new Rational(1, 1);
-      Rational actual = new Rational(-1, 2).pow(0);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(1, 1);
+        Rational actual = new Rational(-1, 2).pow(0);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testRaiseARealNumberToAPositiveRationalNumber() {
-      double expected = 16.0;
-      double actual = new Rational(4, 3).exp(8.0);
-      assertDoublesEqual(expected, actual);
+        double expected = 16.0;
+        double actual = new Rational(4, 3).exp(8.0);
+        assertDoublesEqual(expected, actual);
     }
 
     @Test
     public void testRaiseARealNumberToANegativeRationalNumber() {
-      double expected = 1.0 / 3;
-      double actual = new Rational(-1, 2).exp(9);
-      assertDoublesEqual(expected, actual);
+        double expected = 1.0 / 3;
+        double actual = new Rational(-1, 2).exp(9);
+        assertDoublesEqual(expected, actual);
     }
 
     @Test
     public void testReduceAPositiveRationalNumberToLowestTerms() {
-      Rational expected = new Rational(1, 2);
-      Rational actual = new Rational(2, 4);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(1, 2);
+        Rational actual = new Rational(2, 4);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testReduceANegativeRationalNumberToLowestTerms() {
-      Rational expected = new Rational(-2, 3);
-      Rational actual = new Rational(-4, 6);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(-2, 3);
+        Rational actual = new Rational(-4, 6);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testReduceARationalNumberWithANegativeDenominatorToLowestTerms() {
-      Rational expected = new Rational(-1, 3);
-      Rational actual = new Rational(3, -9);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(-1, 3);
+        Rational actual = new Rational(3, -9);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testReduceZeroToLowestTerms() {
-      Rational expected = new Rational(0, 1);
-      Rational actual = new Rational(0, 6);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(0, 1);
+        Rational actual = new Rational(0, 6);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testReduceAnIntegerToLowestTerms() {
-      Rational expected = new Rational(-2, 1);
-      Rational actual = new Rational(-14, 7);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(-2, 1);
+        Rational actual = new Rational(-14, 7);
+        assertRationalsEqual(expected, actual);
     }
 
     @Test
     public void testReduceOneToLowestTerms() {
-      Rational expected = new Rational(1, 1);
-      Rational actual = new Rational(13, 13);
-      assertRationalsEqual(expected, actual);
+        Rational expected = new Rational(1, 1);
+        Rational actual = new Rational(13, 13);
+        assertRationalsEqual(expected, actual);
     }
 }
