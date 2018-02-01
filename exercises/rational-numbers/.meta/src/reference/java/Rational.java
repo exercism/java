@@ -2,7 +2,7 @@ public class Rational {
     private int numerator;
     private int denominator;
 
-    public Rational(final int numerator, final int denominator) throws IllegalArgumentException {
+    Rational(final int numerator, final int denominator) throws IllegalArgumentException {
         if (denominator == 0) {
             throw new IllegalArgumentException("Denominator must not be zero.");
         }
@@ -37,15 +37,15 @@ public class Rational {
         }
     }
 
-    public int getNumerator() {
+    int getNumerator() {
         return this.numerator;
     }
 
-    public int getDenominator() {
+    int getDenominator() {
         return this.denominator;
     }
 
-    public Rational abs() {
+    Rational abs() {
         return new Rational(abs(this.numerator), abs(this.denominator));
     }
 
@@ -54,7 +54,7 @@ public class Rational {
         return (mask ^ x) - mask;
     }
 
-    public Rational add(Rational that) {
+    Rational add(Rational that) {
         final int commonDenominator = this.denominator * that.denominator;
 
         return new Rational(
@@ -62,7 +62,7 @@ public class Rational {
                 commonDenominator);
     }
 
-    public Rational subtract(Rational that) {
+    Rational subtract(Rational that) {
         final int commonDenominator = this.denominator * that.denominator;
 
         return new Rational(
@@ -70,19 +70,19 @@ public class Rational {
                 commonDenominator);
     }
 
-    public Rational multiply(Rational that) {
+    Rational multiply(Rational that) {
         return new Rational(this.numerator * that.numerator, this.denominator * that.denominator);
     }
 
-    public Rational divide(Rational that) {
+    Rational divide(Rational that) {
         return new Rational(this.numerator * that.denominator, this.denominator * that.numerator);
     }
 
-    public Rational pow(int n) {
+    Rational pow(int n) {
         return new Rational(pow(this.numerator, n), pow(this.denominator, n));
     }
 
-    public double pow(double x) {
+    double pow(double x) {
         return Math.pow(this.numerator, x) / Math.pow(this.denominator, x);
     }
 
@@ -96,7 +96,7 @@ public class Rational {
         return product;
     }
 
-    public double exp(double base) {
+    double exp(double base) {
         return Math.pow(10.0, Math.log10(Math.pow(base, this.numerator)) / this.denominator);
     }
 }
