@@ -1,3 +1,5 @@
+# Rational Numbers
+
 A rational number is defined as the quotient of two integers `a` and `b`, called the numerator and denominator, respectively, where `b != 0`.
 
 The absolute value `|r|` of the rational number `r = a/b` is equal to `|a|/|b|`.
@@ -25,3 +27,21 @@ Implement the following operations:
 Your implementation of rational numbers should always be reduced to lowest terms. For example, `4/4` should reduce to `1/1`, `30/60` should reduce to `1/2`, `12/8` should reduce to `3/2`, etc. To reduce a rational number `r = a/b`, divide `a` and `b` by the greatest common divisor (gcd) of `a` and `b`. So, for example, `gcd(12, 8) = 4`, so `r = 12/8` can be reduced to `(12/4)/(8/4) = 3/2`.
 
 Assume that the programming language you are using does not have an implementation of rational numbers.
+
+# Running the tests
+
+You can run all the tests for an exercise by entering
+
+```sh
+$ gradle test
+```
+
+in your terminal.
+
+## Source
+
+Wikipedia [https://en.wikipedia.org/wiki/Rational_number](https://en.wikipedia.org/wiki/Rational_number)
+
+## Submitting Incomplete Solutions
+
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.
