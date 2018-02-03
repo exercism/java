@@ -2,7 +2,7 @@ public class Rational {
     private int numerator;
     private int denominator;
 
-    Rational(final int numerator, final int denominator) throws IllegalArgumentException {
+    Rational(final int numerator, final int denominator) {
         if (denominator == 0) {
             throw new IllegalArgumentException("Denominator must not be zero.");
         }
