@@ -3,6 +3,10 @@ import java.util.*;
 public class PalindromeCalculator {
 
     public SortedMap<Long, List<List<Integer>>> getPalindromeProductsWithFactors(int minFactor, int maxFactor) {
+    	if(minFactor > maxFactor) {
+    		throw new IllegalArgumentException("invalid input: min is " + minFactor + " and max is " + maxFactor);
+    	}
+    	
         SortedMap<Long, List<List<Integer>>> palindromeSortedList = new TreeMap<>();
         long num;
         List<List<Integer>> factors;
@@ -19,6 +23,11 @@ public class PalindromeCalculator {
                 }
             }
         }
+        
+        if(palindromeSortedList.size() == 0) {
+    		throw new NoSuchElementException("no palindrome with factors in the range " + minFactor + " to " + maxFactor);
+    	}
+        
         return Collections.unmodifiableSortedMap(palindromeSortedList);
     }
 
