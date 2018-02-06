@@ -1,7 +1,5 @@
 class Rational {
 
-    // TODO: Your code goes here
-
     Rational(int numerator, int denominator) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
