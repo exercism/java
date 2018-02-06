@@ -14,15 +14,16 @@ public class RationalTest {
     }
 
     private void assertRationalsEqual(Rational r1, Rational r2) {
-        assertEquals(r1.getNumerator(), r2.getNumerator());
-        assertEquals(r1.getDenominator(), r2.getDenominator());
+        // assertEquals(r1.getNumerator(), r2.getNumerator());
+        // assertEquals(r1.getDenominator(), r2.getDenominator());
+        assertEquals(r1, r2);
     }
 
     // Tests
 
     @Test
     public void testAddTwoPositiveRationalNumbers() {
-        Rational expected = new Rational(7, 6);
+        Rational expected = new Rational(7, 4);
         Rational actual = new Rational(1, 2).add(new Rational(2, 3));
         assertRationalsEqual(expected, actual);
     }
