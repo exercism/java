@@ -38,16 +38,18 @@ C···C
 ··A··
 ```
 
-Diamond for letter 'D':
+Diamond for letter 'E':
 
 ```text
-···A···
-··B·B··
-·C···C·
-D·····D
-·C···C·
-··B·B··
-···A···
+····A····
+···B·B···
+··C···C··
+·D·····D·
+E·······E
+·D·····D·
+··C···C··
+···B·B···
+····A····
 ```
 
 # Running the tests
