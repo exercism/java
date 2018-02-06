@@ -2,6 +2,18 @@ class Rational {
 
     // TODO: Your code goes here
 
+    Rational(int numerator, int denominator) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    int getNumerator() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    int getDenominator() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
     @Override
     public String toString() {
         return String.format("%d/%d", this.getNumerator(), this.getDenominator());
