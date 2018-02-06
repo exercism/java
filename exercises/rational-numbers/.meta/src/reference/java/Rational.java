@@ -1,4 +1,4 @@
-public class Rational {
+class Rational {
     private int numerator;
     private int denominator;
 
@@ -98,5 +98,21 @@ public class Rational {
 
     double exp(double base) {
         return Math.pow(10.0, Math.log10(Math.pow(base, this.numerator)) / this.denominator);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%d/%d", this.getNumerator(), this.getDenominator());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !this.getClass().isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+
+        Rational other = (Rational) obj;
+        return this.getNumerator() == other.getNumerator()
+            && this.getDenominator() == other.getDenominator();
     }
 }
