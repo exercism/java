@@ -48,13 +48,13 @@ public class DiamondPrinterTest {
     @Test
     public void testFourByFourDiamond() {
         List<String> output = diamondPrinter.printToList('D');
-        assertThat(output, is(asList("    A    ",
-                                     "   B B   ",
-                                     "  C   C  ",
-                                     " D     D ",
-                                     "  C   C  ",
-                                     "   B B   ",
-                                     "    A    ")));
+        assertThat(output, is(asList("   A   ",
+                                     "  B B  ",
+                                     " C   C ",
+                                     "D     D",
+                                     " C   C ",
+                                     "  B B  ",
+                                     "   A   ")));
     }
 
     @Ignore("Remove to run test")
