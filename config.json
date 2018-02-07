@@ -1119,6 +1119,18 @@
     {
       "core": false,
       "difficulty": 8,
+      "slug": "rational-numbers",
+      "topics": [
+        "floating_point_numbers",
+        "mathematics",
+        "algorithms"
+      ],
+      "unlocked_by": "triangle",
+      "uuid": "50ed54ce-3047-4590-9fda-0a7e9aeeba30"
+    },
+    {
+      "core": false,
+      "difficulty": 8,
       "slug": "list-ops",
       "topics": [
         "filtering",
