@@ -23,6 +23,7 @@ public class MatrixTest {
 		assertArrayEquals(row, matrix.getRow(rowIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractRowFromMatrixTest() {
 		String matrixAsString = "1 2\n3 4";
@@ -34,6 +35,7 @@ public class MatrixTest {
 		assertArrayEquals(row, matrix.getRow(rowIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractRowFromDiffWidthsMatrixTest() {
 		String matrixAsString = "1 2\n10 20";
@@ -45,6 +47,7 @@ public class MatrixTest {
 		assertArrayEquals(row, matrix.getRow(rowIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractRowFromNonSquareMatrixTest() {
 		String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
@@ -56,6 +59,7 @@ public class MatrixTest {
 		assertArrayEquals(row, matrix.getRow(rowIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractColumnFromOneNumberMatrixTest() {
 		String matrixAsString = "1";
@@ -67,6 +71,7 @@ public class MatrixTest {
 		assertArrayEquals(column, matrix.getColumn(columnIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractColumnMatrixTest() {
 		String matrixAsString = "1 2 3\n4 5 6\n7 8 9";
@@ -78,6 +83,7 @@ public class MatrixTest {
 		assertArrayEquals(column, matrix.getColumn(columnIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractColumnFromNonSquareMatrixTest() {
 		String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
@@ -89,6 +95,7 @@ public class MatrixTest {
 		assertArrayEquals(column, matrix.getColumn(columnIndex));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void ExtractColumnFromDiffWidthsMatrixTest() {
 		String matrixAsString = "89 1903 3\n18 3 1\n9 4 800";
