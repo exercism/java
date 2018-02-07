@@ -9,13 +9,15 @@ public class ComplexNumberTest {
 
     private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-15;
 
-    private void assertDoublesEqual(double d1, double d2) {
-        assertEquals(d1, d2, DOUBLE_EQUALITY_TOLERANCE);
+    private void assertDoublesEqual(double d1, double d2, String numberPart) {
+        String errorMessage = "While testing " + numberPart + " part of number,";
+
+        assertEquals(errorMessage, d1, d2, DOUBLE_EQUALITY_TOLERANCE);
     }
 
     private void assertComplexNumbersEqual(ComplexNumber c1, ComplexNumber c2) {
-        assertDoublesEqual(c1.getReal(), c2.getReal());
-        assertDoublesEqual(c1.getImag(), c2.getImag());
+        assertDoublesEqual(c1.getReal(), c2.getReal(), "real");
+        assertDoublesEqual(c1.getImag(), c2.getImag(), "imaginary");
     }
 
     // Tests
@@ -128,7 +130,7 @@ public class ComplexNumberTest {
     public void testAbsoluteValueOfPositivePurelyRealNumber() {
         double expected = 5.0;
         double actual = new ComplexNumber(5.0, 0).abs();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -136,7 +138,7 @@ public class ComplexNumberTest {
     public void testAbsoluteValueOfNegativePurelyRealNumber() {
         double expected = 5.0;
         double actual = new ComplexNumber(-5.0, 0).abs();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -144,7 +146,7 @@ public class ComplexNumberTest {
     public void testAbsoluteValueOfPurelyImaginaryNumberWithPositiveImaginaryPart() {
         double expected = 5.0;
         double actual = new ComplexNumber(0, 5.0).abs();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -152,7 +154,7 @@ public class ComplexNumberTest {
     public void testAbsoluteValueOfPurelyImaginaryNumberWithNegativeImaginaryPart() {
         double expected = 5.0;
         double actual = new ComplexNumber(0, -5.0).abs();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -160,7 +162,7 @@ public class ComplexNumberTest {
     public void testAbsoluteValueOfNumberWithRealAndImaginaryParts() {
         double expected = 5.0;
         double actual = new ComplexNumber(3.0, 4.0).abs();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -192,7 +194,7 @@ public class ComplexNumberTest {
     public void testRealPartOfPurelyRealNumber() {
         double expected = 1.0;
         double actual = new ComplexNumber(1.0, 0).getReal();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -200,7 +202,7 @@ public class ComplexNumberTest {
     public void testRealPartOfPurelyImaginaryNumber() {
         double expected = 0.0;
         double actual = new ComplexNumber(0, 1.0).getReal();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -208,7 +210,7 @@ public class ComplexNumberTest {
     public void testRealPartOfNumberWithRealAndImaginaryParts() {
         double expected = 1.0;
         double actual = new ComplexNumber(1.0, 2.0).getReal();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "real");
     }
 
     @Ignore("Remove to run test")
@@ -216,7 +218,7 @@ public class ComplexNumberTest {
     public void testImaginaryPartOfPurelyRealNumber() {
         double expected = 0.0;
         double actual = new ComplexNumber(1.0, 0).getImag();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "imaginary");
     }
 
     @Ignore("Remove to run test")
@@ -224,7 +226,7 @@ public class ComplexNumberTest {
     public void testImaginaryPartOfPurelyImaginaryNumber() {
         double expected = 1.0;
         double actual = new ComplexNumber(0, 1.0).getImag();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "imaginary");
     }
 
     @Ignore("Remove to run test")
@@ -232,7 +234,7 @@ public class ComplexNumberTest {
     public void testImaginaryPartOfNumberWithRealAndImaginaryParts() {
         double expected = 2.0;
         double actual = new ComplexNumber(1.0, 2.0).getImag();
-        assertDoublesEqual(expected, actual);
+        assertDoublesEqual(expected, actual, "imaginary");
     }
 
     @Ignore("Remove to run test")
