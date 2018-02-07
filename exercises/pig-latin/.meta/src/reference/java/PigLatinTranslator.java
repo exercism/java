@@ -26,6 +26,11 @@ class PigLatinTranslator {
             return word + AY;
         }
 
+        if (getLocationOfYAfterConsonantCluster(word) != -1) {
+            int yPos = getLocationOfYAfterConsonantCluster(word);
+            return word.substring(yPos) + word.substring(0, yPos) + AY;
+        }
+
         if (wordStartsWithPrefixes(word, THR, SCH)) {
             return word.substring(3) + word.substring(0, 3) + AY;
         }
@@ -39,6 +44,17 @@ class PigLatinTranslator {
         }
 
         return word.substring(1) + word.toCharArray()[0] + AY;
+    }
+
+    private static int getLocationOfYAfterConsonantCluster(String word) {
+        for (int i = 0; i < word.length() - 1; i++) {
+            if ((Character.toString(word.charAt(i)).matches(VOWELS_REGEX))) {
+                return -1;
+            } else if ((i != 0) && word.charAt(i) == 'y') {
+                return i;
+            }
+        }
+      return -1;
     }
 
     private boolean wordStartsWithVowelLike(String word) {
