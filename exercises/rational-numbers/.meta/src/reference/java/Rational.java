@@ -115,4 +115,14 @@ class Rational {
         return this.getNumerator() == other.getNumerator()
             && this.getDenominator() == other.getDenominator();
     }
+
+    @Override
+    public int hashCode() {
+        int prime = 31;
+        int result = 1;
+        result = prime * result + this.getNumerator();
+        result = prime * result + this.getDenominator();
+
+        return result;
+    }
 }
