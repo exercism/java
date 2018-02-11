@@ -61,8 +61,8 @@ public class RaindropConverterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor35IsPlangPong() {
-        assertEquals("PlangPong", raindropConverter.convert(35));
+    public void soundFor35IsPlangPlong() {
+        assertEquals("PlangPlong", raindropConverter.convert(35));
     }
 
     @Ignore("Remove to run test")
@@ -74,7 +74,7 @@ public class RaindropConverterTest {
     @Ignore("Remove to run test")
     @Test
     public void soundFor105IsPlingPlangPlong() {
-        assertEquals("PlingPlangPong", raindropConverter.convert(105));
+        assertEquals("PlingPlangPlong", raindropConverter.convert(105));
     }
 
 }
