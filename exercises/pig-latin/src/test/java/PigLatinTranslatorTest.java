@@ -1,85 +1,95 @@
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Parameterized.class)
 public class PigLatinTranslatorTest {
 
-    private String englishPhrase;
-    private String pigLatinTranslation;
+    private PigLatinTranslator pigLatinTranslator;
 
-    @Parameterized.Parameters(name = "{index}: expected \"{0}\" to translate to the pig latin phrase \"{1}\"")
-    public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][]{
-                // Ay is added to words that start with vowels
-                {"apple", "appleay"},
-                {"ear", "earay"},
-                {"igloo", "iglooay"},
-                {"object", "objectay"},
-                {"under", "underay"},
-
-                // Word beginning with vowel follwed by a 'qu'
-                {"equal", "equalay"},
-
-                // First letter and ay are moved to the end of words that start with consonants
-                {"pig", "igpay"},
-                {"koala", "oalakay"},
-                {"xenon", "enonxay"},
-
-                // Word beginning with 'q' without a following 'u'
-                {"qat", "atqay"},
-
-                // Ch is treated like a single consonant
-                {"chair", "airchay"},
-
-                // Qu is treated like a single consonant
-                {"queen", "eenquay"},
-
-                // Qu and a single preceding consonant are treated like a single consonant
-                {"square", "aresquay"},
-
-                // Th is treated like a single consonant
-                {"therapy", "erapythay"},
-
-                // Thr is treated like a single consonant
-                {"thrush", "ushthray"},
-
-                // Sch is treated like a single consonant
-                {"school", "oolschay"},
-
-                // Yt is treated like a single vowel
-                {"yttria", "yttriaay"},
-
-                // Xr is treated like a single vowel
-                {"xray", "xrayay"},
-
-                // 'Y' is treated like a consonant at the beginning of a word
-                {"yellow", "ellowyay"},
-
-                // 'Y' is treated like a vowel at the end of a consonant cluster
-                {"rhythm", "ythmrhay"},
-
-                // 'Y' as second letter in a two letter word
-                {"my", "ymay"},
-
-                // Phrases are translated
-                {"quick fast run", "ickquay astfay unray"}
-        });
+    public PigLatinTranslatorTest() {
     }
 
-    public PigLatinTranslatorTest(String englishPhrase, String pigLatinTranslation) {
-        this.englishPhrase = englishPhrase;
-        this.pigLatinTranslation = pigLatinTranslation;
+    @Before
+    public void setup() {
+        pigLatinTranslator = new PigLatinTranslator();
     }
 
     @Test
-    public void test() {
-        assertEquals(pigLatinTranslation, new PigLatinTranslator().translate(englishPhrase));
+    public void testWordsStartWithVowels() {
+        assertEquals("appleay", pigLatinTranslator.translate("apple"));
+        assertEquals("earay", pigLatinTranslator.translate("ear"));
+        assertEquals("iglooay", pigLatinTranslator.translate("igloo"));
+        assertEquals("objectay", pigLatinTranslator.translate("object"));
+        assertEquals("underay", pigLatinTranslator.translate("under"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testWordsBeginWithVowelFollowedByQu() {
+        assertEquals("equalay", pigLatinTranslator.translate("equal"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testGeneralWordsBeginWithConsonants() {
+        assertEquals("igpay", pigLatinTranslator.translate("pig"));
+        assertEquals("oalakay", pigLatinTranslator.translate("koala"));
+        assertEquals("enonxay", pigLatinTranslator.translate("xenon"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testWordsBeginWithQWithoutFollowingU() {
+        assertEquals("atqay", pigLatinTranslator.translate("qat"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testWordsWithPrefixTreatedAsSingleConsonant() {
+        // Ch is treated like a single consonant
+        assertEquals("airchay", pigLatinTranslator.translate("chair"));
+
+        // Qu is treated like a single consonant
+        assertEquals("eenquay", pigLatinTranslator.translate("queen"));
+
+        // Qu and a single preceding consonant are treated like a single consonant
+        assertEquals("aresquay", pigLatinTranslator.translate("square"));
+
+        // Th is treated like a single consonant
+        assertEquals("erapythay", pigLatinTranslator.translate("therapy"));
+
+        // Thr is treated like a single consonant
+        assertEquals("ushthray", pigLatinTranslator.translate("thrush"));
+
+        // Sch is treated like a single consonant
+        assertEquals("oolschay", pigLatinTranslator.translate("school"));
+
+        // Yt is treated like a single vowel
+        assertEquals("yttriaay", pigLatinTranslator.translate("yttria"));
+
+        // Xr is treated like a single vowel
+        assertEquals("xrayay", pigLatinTranslator.translate("xray"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testWordsStartWithY() {
+        // 'Y' is treated like a consonant at the beginning of a word
+        assertEquals("ellowyay", pigLatinTranslator.translate("yellow"));
+
+        // 'Y' is treated like a vowel at the end of a consonant cluster
+        assertEquals("ythmrhay", pigLatinTranslator.translate("rhythm"));
+
+        // 'Y' as second letter in a two letter word
+        assertEquals("ymay", pigLatinTranslator.translate("my"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testTranslationOfPhrases() {
+        assertEquals("ickquay astfay unray", pigLatinTranslator.translate("quick fast run"));
     }
 
 }
