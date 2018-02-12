@@ -29,11 +29,31 @@ public class PrimeFactorsCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testGeneral() {
+    public void testSquareNumberPrimeFactorResult() {
         assertEquals(Arrays.asList(3L, 3L), primeFactorsCalculator.calculatePrimeFactorsOf(9L));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test8LPrimeFactorResult() {
         assertEquals(Arrays.asList(2L, 2L, 2L), primeFactorsCalculator.calculatePrimeFactorsOf(8L));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test12LPrimeFactorResult() {
         assertEquals(Arrays.asList(2L, 2L, 3L), primeFactorsCalculator.calculatePrimeFactorsOf(12L));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testMedianLargeNumberPrimeFactorResult() {
         assertEquals(Arrays.asList(5L, 17L, 23L, 461L), primeFactorsCalculator.calculatePrimeFactorsOf(901255L));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testLargeNumberPrimeFactorResult() {
         assertEquals(Arrays.asList(11L, 9539L, 894119L), primeFactorsCalculator.calculatePrimeFactorsOf(93819012551L));
     }
 
