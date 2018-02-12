@@ -1,73 +1,89 @@
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Enclosed.class)
 public class AtbashTest {
 
-    @RunWith(Parameterized.class)
-    public static class EncodeTest {
-        private String plaintext;
-        private String ciphertext;
+    private Atbash atbash;
 
-        @Parameters(name = "{index}: expected plaintext \"{0}\" to encode to ciphertext \"{1}\".")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"yes", "bvh"},
-                    {"no", "ml"},
-                    {"OMG", "lnt"},
-                    {"O M G", "lnt"},
-                    {"mindblowingly", "nrmwy oldrm tob"},
-                    {"Testing,1 2 3, testing.", "gvhgr mt123 gvhgr mt"},
-                    {"Truth is fiction.", "gifgs rhurx grlm"},
-                    {"The quick brown fox jumps over the lazy dog.", "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"}
-            });
-        }
-
-        public EncodeTest(String plaintext, String ciphertext) {
-            this.plaintext = plaintext;
-            this.ciphertext = ciphertext;
-        }
-
-
-        @Test
-        public void test() {
-            assertEquals(ciphertext, new Atbash().encode(plaintext));
-        }
+    @Before
+    public void setup() {
+        atbash = new Atbash();
     }
 
-    @RunWith(Parameterized.class)
-    public static class DecodeTest {
-        private String ciphertext;
-        private String plaintext;
-
-        @Parameters(name = "{index}: expected ciphertext \"{0}\" to decode to plaintext \"{1}\".")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"vcvix rhn", "exercism"},
-                    {"zmlyh gzxov rhlug vmzhg vkkrm thglm v", "anobstacleisoftenasteppingstone"},
-                    {"gvhgr mt123 gvhgr mt", "testing123testing"},
-                    {"gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt", "thequickbrownfoxjumpsoverthelazydog"}
-            });
-        }
-
-        public DecodeTest(String ciphertext, String plaintext) {
-            this.ciphertext = ciphertext;
-            this.plaintext = plaintext;
-        }
-
-        @Ignore("Remove to run tests")
-        @Test
-        public void test() {
-            assertEquals(plaintext, new Atbash().decode(ciphertext));
-        }
+    @Test
+    public void testEncodeYes() {
+        assertEquals("bvh", atbash.encode("yes"));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeNo() {
+        assertEquals("ml", atbash.encode("no"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeOmgInCapital() {
+        assertEquals("lnt", atbash.encode("OMG"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeOmgWithSpaces() {
+        assertEquals("lnt", atbash.encode("O M G"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeMindBlowingly() {
+        assertEquals("nrmwy oldrm tob", atbash.encode("mindblowingly"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeNumbers() {
+        assertEquals("gvhgr mt123 gvhgr mt", atbash.encode("Testing,1 2 3, testing."));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeDeepThought() {
+        assertEquals("gifgs rhurx grlm", atbash.encode("Truth is fiction."));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodeAllTheLetters() {
+        assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
+                atbash.encode("The quick brown fox jumps over the lazy dog."));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDecodeExercism() {
+        assertEquals("exercism", atbash.decode("vcvix rhn"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDecodeASentence() {
+        assertEquals("anobstacleisoftenasteppingstone", atbash.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDecodeNumbers() {
+        assertEquals("testing123testing", atbash.decode("gvhgr mt123 gvhgr mt"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDecodeAllTheLetters() {
+        assertEquals("thequickbrownfoxjumpsoverthelazydog",
+                atbash.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
+    }
+
 }
