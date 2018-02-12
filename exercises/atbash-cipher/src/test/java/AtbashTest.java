@@ -17,8 +17,23 @@ public class AtbashTest {
     public void testEncodingSingleWord() {
         assertEquals("bvh", atbash.encode("yes"));
         assertEquals("ml", atbash.encode("no"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodingWordsWithCapitalCases() {
         assertEquals("lnt", atbash.encode("OMG"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodingWordsWithSpace() {
         assertEquals("lnt", atbash.encode("O M G"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEncodingWordsLeadingToCodeWithSpace() {
         assertEquals("nrmwy oldrm tob", atbash.encode("mindblowingly"));
     }
 
