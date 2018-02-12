@@ -10,198 +10,100 @@ import java.util.Collection;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Enclosed.class)
 public class MatrixTest {
-
-    @RunWith(Parameterized.class)
-    public static class CountRowsTest {
-        private Matrix matrix;
-        private int numberOfRows;
-
-        @Parameterized.Parameters(name = "{index}: expected matrix constructed with string \n\"{0}\" to have {1} row(s).")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", 1},
-                    {"0 1", 1},
-                    {  "0\n"
-                     + "1", 2},
-                    {  "0 1\n"
-                     + "2 3", 2},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", 3}
-            });
-        }
-
-        public CountRowsTest(String matrixAsString, int numberOfRows) {
-            this.matrix = new Matrix(matrixAsString);
-            this.numberOfRows = numberOfRows;
-        }
-
-        @Test
-        public void countRowsTest() {
-            assertEquals(numberOfRows, matrix.getRowsCount());
-        }
-    }
-
-    @Ignore("Remove to run test")
-    @RunWith(Parameterized.class)
-    public static class CountColumnsTest {
-        private Matrix matrix;
-        private int numberOfColumns;
-
-        @Parameterized.Parameters(name = "{index}: expected matrix constructed with string \n\"{0}\" to have {1} column(s).")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", 1},
-                    {"0 1", 2},
-                    {  "0\n"
-                     + "1", 1},
-                    {  "0 1\n"
-                     + "2 3", 2},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", 3}
-            });
-        }
-
-        public CountColumnsTest(String matrixAsString, int numberOfColumns) {
-            this.matrix = new Matrix(matrixAsString);
-            this.numberOfColumns = numberOfColumns;
-        }
-
-        @Test
-        public void countColumnsTest() {
-            assertEquals(numberOfColumns, matrix.getColumnsCount());
-        }
-    }
-
-    @Ignore("Remove to run test")
-    @RunWith(Parameterized.class)
-    public static class GetFirstRowTest {
-        private Matrix matrix;
-        private int[] firstRow;
-
-        @Parameterized.Parameters(name = "{index}: checking first row of matrix constructed with string \n\"{0}\".")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", new int[] {0}},
-                    {"0 1", new int[] {0, 1}},
-                    {  "0\n"
-                     + "1", new int[] {0}},
-                    {  "0 1\n"
-                     + "2 3", new int[] {0, 1}},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", new int[] {0, 1, 2}}
-            });
-        }
-
-        public GetFirstRowTest(String matrixAsString, int[] firstRow) {
-            this.matrix = new Matrix(matrixAsString);
-            this.firstRow = firstRow;
-        }
-
-        @Test
-        public void getFirstRowTest() {
-            assertArrayEquals(firstRow, matrix.getRow(0));
-        }
-    }
-
-    @Ignore("Remove to run test")
-    @RunWith(Parameterized.class)
-    public static class GetLastRowTest {
-        private Matrix matrix;
-        private int[] lastRow;
-
-        @Parameterized.Parameters(name = "{index}: checking last row of matrix constructed with string \n\"{0}\".")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", new int[] {0}},
-                    {"0 1", new int[] {0, 1}},
-                    {  "0\n"
-                     + "1", new int[] {1}},
-                    {  "0 1\n"
-                     + "2 3", new int[] {2, 3}},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", new int[] {6, 7, 8}}
-            });
-        }
-
-        public GetLastRowTest(String matrixAsString, int[] lastRow) {
-            this.matrix = new Matrix(matrixAsString);
-            this.lastRow = lastRow;
-        }
-
-        @Test
-        public void getLastRowTest() {
-            assertArrayEquals(lastRow, matrix.getRow(matrix.getRowsCount() - 1));
-        }
-    }
-
-    @Ignore("Remove to run test")
-    @RunWith(Parameterized.class)
-    public static class GetFirstColumnTest {
-        private Matrix matrix;
-        private int[] firstColumn;
-
-        @Parameterized.Parameters(name = "{index}: checking first column of matrix constructed with string \n\"{0}\".")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", new int[] {0}},
-                    {"0 1", new int[] {0}},
-                    {  "0\n"
-                     + "1", new int[] {0, 1}},
-                    {  "0 1\n"
-                     + "2 3", new int[] {0, 2}},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", new int[] {0, 3, 6}}
-            });
-        }
-
-        public GetFirstColumnTest(String matrixAsString, int[] firstColumn) {
-            this.matrix = new Matrix(matrixAsString);
-            this.firstColumn = firstColumn;
-        }
-
-        @Test
-        public void getFirstColumnTest() {
-            assertArrayEquals(firstColumn, matrix.getColumn(0));
-        }
-    }
-
-
-    @Ignore("Remove to run test")
-    @RunWith(Parameterized.class)
-    public static class GetLastColumnTest {
-        private Matrix matrix;
-        private int[] lastColumn;
-
-        @Parameterized.Parameters(name = "{index}: checking last column of matrix constructed with string \n\"{0}\".")
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"0", new int[] {0}},
-                    {"0 1", new int[] {1}},
-                    {  "0\n"
-                     + "1", new int[] {0, 1}},
-                    {  "0 1\n"
-                     + "2 3", new int[] {1, 3}},
-                    {  "0 1 2\n"
-                     + "3 4 5\n"
-                     + "6 7 8", new int[] {2, 5, 8}}
-            });
-        }
-
-        public GetLastColumnTest(String matrixAsString, int[] lastColumn) {
-            this.matrix = new Matrix(matrixAsString);
-            this.lastColumn = lastColumn;
-        }
-
-        @Test
-        public void getLastColumnTest() {
-            assertArrayEquals(lastColumn, matrix.getColumn(matrix.getColumnsCount() - 1));
-        }
-    }
+	
+	@Test
+	public void extractRowFromOneNumberMatrixTest() {
+		String matrixAsString = "1";
+		int rowIndex = 0;
+		int[] expectedRow = {1};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractRowFromMatrixTest() {
+		String matrixAsString = "1 2\n3 4";
+		int rowIndex = 1;
+		int[] expectedRow = {3, 4};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractRowFromDiffWidthsMatrixTest() {
+		String matrixAsString = "1 2\n10 20";
+		int rowIndex = 1;
+		int[] expectedRow = {10, 20};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractRowFromNonSquareMatrixTest() {
+		String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
+		int rowIndex = 2;
+		int[] expectedRow = {7, 8, 9};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractColumnFromOneNumberMatrixTest() {
+		String matrixAsString = "1";
+		int columnIndex = 0;
+		int[] expectedColumn = {1};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedColumn, matrix.getColumn(columnIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractColumnMatrixTest() {
+		String matrixAsString = "1 2 3\n4 5 6\n7 8 9";
+		int columnIndex = 2;
+		int[] expectedColumn = {3, 6, 9};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedColumn, matrix.getColumn(columnIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractColumnFromNonSquareMatrixTest() {
+		String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
+		int columnIndex = 2;
+		int[] expectedColumn = {3, 6, 9, 6};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedColumn, matrix.getColumn(columnIndex));
+	}
+	
+	@Ignore("Remove to run test")
+	@Test
+	public void extractColumnFromDiffWidthsMatrixTest() {
+		String matrixAsString = "89 1903 3\n18 3 1\n9 4 800";
+		int columnIndex = 1;
+		int[] expectedColumn = {1903, 3, 4};
+		
+		Matrix matrix = new Matrix(matrixAsString);
+		
+		assertArrayEquals(expectedColumn, matrix.getColumn(columnIndex));
+	}
 }

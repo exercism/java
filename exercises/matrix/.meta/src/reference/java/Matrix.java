@@ -28,12 +28,4 @@ class Matrix {
         }
         return column;
     }
-
-    int getRowsCount() {
-        return matrix.length;
-    }
-
-    int getColumnsCount() {
-        return matrix[0].length;
-    }
 }
