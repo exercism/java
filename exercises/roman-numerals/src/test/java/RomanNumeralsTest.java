@@ -1,54 +1,135 @@
 import org.junit.Test;
 import org.junit.Ignore;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Parameterized.class)
 public class RomanNumeralsTest {
 
-    private int arabicNumeral;
-    private String romanNumeral;
-
-    @Parameters(name = "{index}: expected arabic numeral {0} to be converted to roman numeral \"{1}\".")
-    public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][]{
-                {1, "I"},
-                {2, "II"},
-                {3, "III"},
-                {4, "IV"},
-                {5, "V"},
-                {6, "VI"},
-                {9, "IX"},
-                {27, "XXVII"},
-                {48, "XLVIII"},
-                {59, "LIX"},
-                {93, "XCIII"},
-                {141, "CXLI"},
-                {163, "CLXIII"},
-                {402, "CDII"},
-                {575, "DLXXV"},
-                {911, "CMXI"},
-                {1024, "MXXIV"},
-                {3000, "MMM"}
-        });
-    }
-
-    public RomanNumeralsTest(int arabicNumeral, String romanNumeral) {
-        this.arabicNumeral = arabicNumeral;
-        this.romanNumeral = romanNumeral;
-    }
-
+    private RomanNumeral romanNumeral;
 
     @Test
-    public void convertArabicNumberalToRomanNumeral() {
-        RomanNumeral romanNumeral = new RomanNumeral(arabicNumeral);
-
-        assertEquals(this.romanNumeral, romanNumeral.getRomanNumeral());
+    public void test1ToRomanNumberI() {
+        romanNumeral = new RomanNumeral(1);
+        assertEquals("I", romanNumeral.getRomanNumeral());
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test2ToRomanNumberII() {
+        romanNumeral = new RomanNumeral(2);
+        assertEquals("II", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test3ToRomanNumberIII() {
+        romanNumeral = new RomanNumeral(3);
+        assertEquals("III", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test4ToRomanNumberIV() {
+        romanNumeral = new RomanNumeral(4);
+        assertEquals("IV", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test5ToRomanNumberV() {
+        romanNumeral = new RomanNumeral(5);
+        assertEquals("V", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test6ToRomanNumberVI() {
+        romanNumeral = new RomanNumeral(6);
+        assertEquals("VI", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test9ToRomanNumberIX() {
+        romanNumeral = new RomanNumeral(9);
+        assertEquals("IX", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test27ToRomanNumberXXVII() {
+        romanNumeral = new RomanNumeral(27);
+        assertEquals("XXVII", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test48ToRomanNumberXLVIII() {
+        romanNumeral = new RomanNumeral(48);
+        assertEquals("XLVIII", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test59ToRomanNumberLIX() {
+        romanNumeral = new RomanNumeral(59);
+        assertEquals("LIX", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test93ToRomanNumberXCIII() {
+        romanNumeral = new RomanNumeral(93);
+        assertEquals("XCIII", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test141ToRomanNumberCXLI() {
+        romanNumeral = new RomanNumeral(141);
+        assertEquals("CXLI", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test163ToRomanNumberCLXIII() {
+        romanNumeral = new RomanNumeral(163);
+        assertEquals("CLXIII", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test402ToRomanNumberCDII() {
+        romanNumeral = new RomanNumeral(402);
+        assertEquals("CDII", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test575ToRomanNumberDLXXV() {
+        romanNumeral = new RomanNumeral(575);
+        assertEquals("DLXXV", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test911ToRomanNumberCMXI() {
+        romanNumeral = new RomanNumeral(911);
+        assertEquals("CMXI", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test1024ToRomanNumberMXXIV() {
+        romanNumeral = new RomanNumeral(1024);
+        assertEquals("MXXIV", romanNumeral.getRomanNumeral());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void test3000ToRomanNumberMMM() {
+        romanNumeral = new RomanNumeral(1024);
+        assertEquals("MXXIV", romanNumeral.getRomanNumeral());
+    }
+
 }
