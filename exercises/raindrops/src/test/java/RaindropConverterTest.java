@@ -1,61 +1,80 @@
 import org.junit.Test;
 import org.junit.Ignore;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Parameterized.class)
 public class RaindropConverterTest {
 
-    private int inputNumber;
-    private String outputFromRaindropConversion;
-
-    @Parameters(name = "{index}: expected input number {0} to be converted to \"{1}\"")
-    public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][]{
-                // Non-primes
-                {1, "1"},
-                {8, "8"},
-                {52, "52"},
-
-                // Numbers with 3 as a prime factor
-                {3, "Pling"},
-                {6, "Pling"},
-                {9, "Pling"},
-                {27, "Pling"},
-
-                // Numbers with 5 as a prime factor
-                {5, "Plang"},
-                {10, "Plang"},
-                {25, "Plang"},
-                {3125, "Plang"},
-
-                // Numbers with 7 as a prime factor
-                {7, "Plong"},
-                {14, "Plong"},
-                {49, "Plong"},
-
-                // Numbers with multiple activating prime factors
-                {15, "PlingPlang"},
-                {21, "PlingPlong"},
-                {35, "PlangPlong"},
-                {105, "PlingPlangPlong"},
-        });
-    }
-
-    public RaindropConverterTest(int inputNumber, String outputFromRaindropConversion) {
-        this.inputNumber = inputNumber;
-        this.outputFromRaindropConversion = outputFromRaindropConversion;
-    }
-
+    private RaindropConverter raindropConverter = new RaindropConverter();
 
     @Test
-    public void test() {
-        assertEquals(outputFromRaindropConversion, new RaindropConverter().convert(inputNumber));
+    public void soundFor1Is1() {
+        assertEquals("1", raindropConverter.convert(1));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor3OrNumberWithOnlyDistinctFactorOf3() {
+        assertEquals("Pling", raindropConverter.convert(3));
+        assertEquals("Pling", raindropConverter.convert(6));
+        assertEquals("Pling", raindropConverter.convert(9));
+        assertEquals("Pling", raindropConverter.convert(27));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor5OrNumberWithOnlyDistinctFactorOf5IsPlang() {
+        assertEquals("Plang", raindropConverter.convert(5));
+        assertEquals("Plang", raindropConverter.convert(10));
+        assertEquals("Plang", raindropConverter.convert(25));
+        assertEquals("Plang", raindropConverter.convert(3125));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor7OrNumberWithOnlyDistinctFactorOf7IsPlong() {
+        assertEquals("Plong", raindropConverter.convert(7));
+        assertEquals("Plong", raindropConverter.convert(14));
+        assertEquals("Plong", raindropConverter.convert(49));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void noSoundFor2Cubed() {
+        assertEquals("8", raindropConverter.convert(8));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor15IsPlingPlang() {
+        assertEquals("PlingPlang", raindropConverter.convert(15));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor21IsPlingPlong() {
+        assertEquals("PlingPlong", raindropConverter.convert(21));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor35IsPlangPlong() {
+        assertEquals("PlangPlong", raindropConverter.convert(35));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void noSoundFor52() {
+        assertEquals("52", raindropConverter.convert(52));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void soundFor105IsPlingPlangPlong() {
+        assertEquals("PlingPlangPlong", raindropConverter.convert(105));
+    }
+
 }
