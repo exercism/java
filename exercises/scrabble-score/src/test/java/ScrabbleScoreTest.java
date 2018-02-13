@@ -1,44 +1,86 @@
+import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Parameterized.class)
 public class ScrabbleScoreTest {
 
-    private String scrabbleInput;
-    private int scrabbleScore;
-
-    @Parameterized.Parameters(name = "{index}: expected scrabble score for \"{0}\" to be {1}")
-    public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][]{
-                {"a", 1},
-                {"A", 1},
-                {"f", 4},
-                {"at", 2},
-                {"zoo", 12},
-                {"street", 6},
-                {"quirky", 22},
-                {"OxyphenButazone", 41},
-                {"pinata", 8},
-                {"", 0},
-                {"abcdefghijklmnopqrstuvwxyz", 87},
-        });
-    }
-
-    public ScrabbleScoreTest(String scrabbleInput, int scrabbleScore) {
-        this.scrabbleInput = scrabbleInput;
-        this.scrabbleScore = scrabbleScore;
-    }
+    private Scrabble scrabble;
 
     @Test
-    public void test() {
-        Scrabble scrabble = new Scrabble(scrabbleInput);
-        assertEquals(scrabbleScore, scrabble.getScore());
+    public void testALowerCaseLetter() {
+        scrabble = new Scrabble("a");
+        assertEquals(1, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAUpperCaseLetter() {
+        scrabble = new Scrabble("A");
+        assertEquals(1, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAValuableLetter() {
+        scrabble = new Scrabble("f");
+        assertEquals(4, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAShortWord() {
+        scrabble = new Scrabble("at");
+        assertEquals(2, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAShortValuableWord() {
+        scrabble = new Scrabble("zoo");
+        assertEquals(12, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAMediumWord() {
+        scrabble = new Scrabble("street");
+        assertEquals(6, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAMediumValuableWord() {
+        scrabble = new Scrabble("quirky");
+        assertEquals(22, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testALongMixCaseWord() {
+        scrabble = new Scrabble("OxyphenButazone");
+        assertEquals(41, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAEnglishLikeWord() {
+        scrabble = new Scrabble("pinata");
+        assertEquals(8, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAnEmptyInput() {
+        scrabble = new Scrabble("");
+        assertEquals(0, scrabble.getScore());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEntireAlphabetAvailable() {
+        scrabble = new Scrabble("abcdefghijklmnopqrstuvwxyz");
+        assertEquals(87, scrabble.getScore());
     }
 
 }
