@@ -614,6 +614,18 @@
     },
     {
       "core": false,
+      "difficulty": 5,
+      "slug": "two-bucket",
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals"
+      ],
+      "unlocked_by": null,
+      "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e"
+    },
+    {
+      "core": false,
       "difficulty": 6,
       "slug": "alphametics",
       "topics": [
