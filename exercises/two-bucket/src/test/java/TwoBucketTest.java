@@ -1,13 +1,5 @@
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class TwoBucketTest {
@@ -17,9 +9,9 @@ public class TwoBucketTest {
 		
 		TwoBucket twoBucket = new TwoBucket(3, 5, 1, "one");
 		
-		assertEquals(twoBucket.getTotalMoves(), 4);
-		assertEquals(twoBucket.getFinalBucket(), "one");
-		assertEquals(twoBucket.getOtherBucket(), 5);
+		assertEquals(4, twoBucket.getTotalMoves());
+		assertEquals("one", twoBucket.getFinalBucket());
+		assertEquals(5, twoBucket.getOtherBucket());
 		
 	}
 	
@@ -29,9 +21,9 @@ public class TwoBucketTest {
 		
 		TwoBucket twoBucket = new TwoBucket(3, 5, 1, "two");
 		
-		assertEquals(twoBucket.getTotalMoves(), 8);
-		assertEquals(twoBucket.getFinalBucket(), "two");
-		assertEquals(twoBucket.getOtherBucket(), 3);
+		assertEquals(8, twoBucket.getTotalMoves());
+		assertEquals("two", twoBucket.getFinalBucket());
+		assertEquals(3, twoBucket.getOtherBucket());
 		
 	}
 	
@@ -41,9 +33,9 @@ public class TwoBucketTest {
 		
 		TwoBucket twoBucket = new TwoBucket(7, 11, 2, "one");
 		
-		assertEquals(twoBucket.getTotalMoves(), 14);
-		assertEquals(twoBucket.getFinalBucket(), "one");
-		assertEquals(twoBucket.getOtherBucket(), 11);
+		assertEquals(14, twoBucket.getTotalMoves());
+		assertEquals("one", twoBucket.getFinalBucket());
+		assertEquals(11, twoBucket.getOtherBucket());
 		
 	}
 	
@@ -53,9 +45,9 @@ public class TwoBucketTest {
 		
 		TwoBucket twoBucket = new TwoBucket(7, 11, 2, "two");
 		
-		assertEquals(twoBucket.getTotalMoves(), 18);
-		assertEquals(twoBucket.getFinalBucket(), "two");
-		assertEquals(twoBucket.getOtherBucket(), 7);
+		assertEquals(18, twoBucket.getTotalMoves());
+		assertEquals("two", twoBucket.getFinalBucket());
+		assertEquals(7, twoBucket.getOtherBucket());
 		
 	}
 	
@@ -65,9 +57,9 @@ public class TwoBucketTest {
 		
 		TwoBucket twoBucket = new TwoBucket(1, 3, 3, "two");
 		
-		assertEquals(twoBucket.getTotalMoves(), 1);
-		assertEquals(twoBucket.getFinalBucket(), "two");
-		assertEquals(twoBucket.getOtherBucket(), 0);
+		assertEquals(1, twoBucket.getTotalMoves());
+		assertEquals("two", twoBucket.getFinalBucket());
+		assertEquals(0, twoBucket.getOtherBucket());
 		
 	}
 	
@@ -77,9 +69,9 @@ public class TwoBucketTest {
 		
 		TwoBucket twoBucket = new TwoBucket(2, 3, 3, "one");
 		
-		assertEquals(twoBucket.getTotalMoves(), 2);
-		assertEquals(twoBucket.getFinalBucket(), "two");
-		assertEquals(twoBucket.getOtherBucket(), 2);
+		assertEquals(2, twoBucket.getTotalMoves());
+		assertEquals("two", twoBucket.getFinalBucket());
+		assertEquals(2, twoBucket.getOtherBucket());
 		
 	}
 }
