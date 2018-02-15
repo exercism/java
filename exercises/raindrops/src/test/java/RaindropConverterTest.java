@@ -1,9 +1,6 @@
 import org.junit.Test;
 import org.junit.Ignore;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import static org.junit.Assert.assertEquals;
 
 public class RaindropConverterTest {
@@ -35,7 +32,7 @@ public class RaindropConverterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void soundForNumber6WithOnlyDistinctFactorOf3IsPling() {
+    public void soundFor6IsPlingAsItHasFactor3() {
         assertEquals("Pling", raindropConverter.convert(6));
     }
 
@@ -47,55 +44,55 @@ public class RaindropConverterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void soundForNumber9WithOnlyDistinctFactorOf3IsPling() {
+    public void soundFor9IsPlingAsItHasFactor3() {
         assertEquals("Pling", raindropConverter.convert(9));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundForNumber10WithOnlyDistinctFactorOf5IsPlang() {
+    public void soundFor10IsPlangAsItHasFactor5() {
         assertEquals("Plang", raindropConverter.convert(10));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundForNumber14WithOnlyDistinctFactorOf7IsPling() {
+    public void soundFor14IsPlongAsItHasFactor7() {
         assertEquals("Plong", raindropConverter.convert(14));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor15IsPlingPlang() {
+    public void soundFor15IsPlingPlangAsItHasFactors3And5() {
         assertEquals("PlingPlang", raindropConverter.convert(15));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor21IsPlingPlong() {
+    public void soundFor21IsPlingPlongAsItHasFactors3And7() {
         assertEquals("PlingPlong", raindropConverter.convert(21));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor25IsPlang() {
+    public void soundFor25IsPlangAsItHasFactor5() {
         assertEquals("Plang", raindropConverter.convert(25));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor27IsPling() {
+    public void soundFor27IsPlingAsItHasFactor3() {
         assertEquals("Pling", raindropConverter.convert(27));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor35IsPlangPlong() {
+    public void soundFor35IsPlangPlongAsItHasFactors5And7() {
         assertEquals("PlangPlong", raindropConverter.convert(35));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundForNumber49WithOnlyDistinctFactorOf7IsPling() {
+    public void soundFor49IsPlongAsItHasFactor7() {
         assertEquals("Plong", raindropConverter.convert(49));
     }
 
@@ -107,13 +104,13 @@ public class RaindropConverterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor105IsPlingPlangPlong() {
+    public void soundFor105IsPlingPlangPlongAsItHasFactors3And5And7() {
         assertEquals("PlingPlangPlong", raindropConverter.convert(105));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void soundFor3125IsPlang() {
+    public void soundFor3125IsPlangAsItHasFactor5() {
         assertEquals("Plang", raindropConverter.convert(3125));
     }
 
