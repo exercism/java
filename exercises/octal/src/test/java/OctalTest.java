@@ -7,91 +7,91 @@ public class OctalTest {
     private Octal octal;
 
     @Test
-    public void testOne() {
+    public void testCovertDecimalOneToOctal() {
         octal = new Octal("1");
         assertEquals(1, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testTen() {
+    public void testCovertDecimalTenToOctal() {
         octal = new Octal("10");
         assertEquals(8, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testSevenTeen() {
+    public void testCovertDecimalSeventeenToOctal() {
         octal = new Octal("17");
         assertEquals(15, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testEleven() {
+    public void testCovertElevenToOctal() {
         octal = new Octal("11");
         assertEquals(9, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testElevenWithZero() {
+    public void testCovertDecimalElevenWithZeroToOctal() {
         octal = new Octal("011");
         assertEquals(9, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testThreeDigitOne() {
+    public void testThreeDigitDecimalToOctal() {
         octal = new Octal("130");
         assertEquals(88, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testFourDigitOne() {
+    public void testSmallFourDigitDecimalToOctal() {
         octal = new Octal("2047");
         assertEquals(1063, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testFourDigitTwo() {
+    public void testLargeFourDigitDecimalToOctal() {
         octal = new Octal("7777");
         assertEquals(4095, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testSevenDigitOne() {
+    public void testSevenDigitDecimalToOctal() {
         octal = new Octal("1234567");
         assertEquals(342391, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testInvalidStringOne() {
+    public void testInvalidStringFirst() {
         octal = new Octal("carrot");
         assertEquals(0, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testInvalidStringTwo() {
+    public void testInvalidStringSecond() {
         octal = new Octal("abc1z");
         assertEquals(0, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testInvalidNumberOne() {
+    public void testInvalidDecimalEight() {
         octal = new Octal("8");
         assertEquals(0, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testInvalidNumberTwo() {
+    public void testInvalidNumberNine() {
         octal = new Octal("9");
         assertEquals(0, octal.getDecimal());
     }
