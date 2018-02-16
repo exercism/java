@@ -79,7 +79,7 @@ class TwoBucket {
     private boolean isValid(State state) {
     	if (state.bucketOne == bucketOneCap && state.bucketTwo == 0 && startBucket.equals("two")) {
     		return false;
-    	} else if(state.bucketOne == 0 && state.bucketTwo == bucketTwoCap && startBucket.equals("two")) {
+    	} else if (state.bucketOne == 0 && state.bucketTwo == bucketTwoCap && startBucket.equals("two")) {
     		return false;
     	} else {
     		return true;
