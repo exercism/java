@@ -37,20 +37,22 @@ public class Zipper {
         return value;
     }
 
-    public void setLeft(Zipper leftChild) {
+    public Zipper setLeft(Zipper leftChild) {
         left = leftChild;
         if (leftChild != null) {
             leftChild.up = this;
             leftChild.tree = null;
         }
+        return this;
     }
 
-    public void setRight(Zipper rightChild) {
+    public Zipper setRight(Zipper rightChild) {
         right = rightChild;
         if (rightChild != null) {
             rightChild.up = this;
             rightChild.tree = null;
         }
+        return this;
     }
 
     /**
