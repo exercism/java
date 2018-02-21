@@ -1039,6 +1039,19 @@
     },
     {
       "core": false,
+      "difficulty": 7,
+      "slug": "zipper",
+      "topics": [
+        "integer",
+        "nodes",
+        "tree",
+        "links"
+      ],
+      "unlocked_by": "linked-list",
+      "uuid": "25d2c7a5-1ec8-464a-b3de-ad1b27464ef1"
+    },
+    {
+      "core": false,
       "difficulty": 8,
       "slug": "ocr-numbers",
       "topics": [
@@ -1169,19 +1182,6 @@
       ],
       "unlocked_by": "saddle-points",
       "uuid": "873c05de-b5f5-4c5b-97f0-d1ede8a82832"
-    },
-    {
-      "core": false,
-      "difficulty": 8,
-      "slug": "zipper",
-      "topics": [
-        "integer",
-        "nodes",
-        "tree",
-        "links"
-      ],
-      "unlocked_by": "linked-list",
-      "uuid": "25d2c7a5-1ec8-464a-b3de-ad1b27464ef1"
     },
     {
       "core": false,

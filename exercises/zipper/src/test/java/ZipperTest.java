@@ -79,7 +79,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().toString());
+        assertEquals(expected, zipper.toTree().printTree());
     }
 
     @Ignore("Remove to run test")
@@ -101,7 +101,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().toString());
+        assertEquals(expected, zipper.toTree().printTree());
     }
 
     @Ignore("Remove to run test")
@@ -126,7 +126,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().toString());
+        assertEquals(expected, zipper.toTree().printTree());
     }
 
     @Ignore("Remove to run test")
@@ -139,7 +139,7 @@ public class ZipperTest {
                 "value: 1, " +
                 "left: { value: 2, left: null, right: null }, " +
                 "right: { value: 4, left: null, right: null }";
-        assertEquals(expected, zipper.toTree().toString());
+        assertEquals(expected, zipper.toTree().printTree());
     }
 
     @Ignore("Remove to run test")
@@ -169,7 +169,7 @@ public class ZipperTest {
                         "value: 8, " +
                         "left: null, " +
                         "right: null } }";
-        assertEquals(expected, zipper.toTree().toString());
+        assertEquals(expected, zipper.toTree().printTree());
     }
 
     @Ignore("Remove to run test")
@@ -191,7 +191,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().toString());
+        assertEquals(expected, zipper.toTree().printTree());
     }
 
     @Ignore("Remove to run test")

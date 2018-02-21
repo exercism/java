@@ -1,4 +1,4 @@
-public class Zipper {
+class Zipper {
 
     private int value;
     BinaryTree tree; // Only the root node will bind to the BinaryTree
@@ -6,7 +6,7 @@ public class Zipper {
     Zipper left;
     Zipper right;
 
-    public Zipper(int val) {
+    Zipper(int val) {
         value = val;
         tree = null;
         up = null;
@@ -17,7 +17,7 @@ public class Zipper {
     /**
      * Get a zipper out of a rose tree, the focus is on the root node
      */
-    public Zipper fromTree() {
+    Zipper fromTree() {
         Zipper current = this;
         while (current.up != null) {
             current = current.up;
@@ -25,7 +25,7 @@ public class Zipper {
         return current;
     }
 
-    public BinaryTree toTree() {
+    BinaryTree toTree() {
         Zipper current = this;
         while (current.up != null) {
             current = current.up;
@@ -33,11 +33,11 @@ public class Zipper {
         return current.tree;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
-    public Zipper setLeft(Zipper leftChild) {
+    Zipper setLeft(Zipper leftChild) {
         left = leftChild;
         if (leftChild != null) {
             leftChild.up = this;
@@ -46,7 +46,7 @@ public class Zipper {
         return this;
     }
 
-    public Zipper setRight(Zipper rightChild) {
+    Zipper setRight(Zipper rightChild) {
         right = rightChild;
         if (rightChild != null) {
             rightChild.up = this;
@@ -61,7 +61,7 @@ public class Zipper {
      * Conditions: 1. The current Zipper must have a parent, i.e. it is not the root node.
      * 2. The current Zipper must be the right child of its parent
      */
-    public Zipper getPrev() {
+    Zipper getPrev() {
         Zipper current = this;
         try {
             current = this.up;
@@ -79,7 +79,7 @@ public class Zipper {
      * Conditions: 1. The current Zipper must have a parent, i.e. it is not the root node.
      * 2. The current Zipper must be the left child of its parent
      */
-    public Zipper getNext() {
+    Zipper getNext() {
         Zipper current = this;
         try {
             current = this.up;
@@ -95,7 +95,7 @@ public class Zipper {
      * Move the focus to the parent
      * @return a new Zipper
      */
-    public Zipper getUp() {
+    Zipper getUp() {
         return up;
     }
 
@@ -103,7 +103,7 @@ public class Zipper {
      * Set the value of the focus node, returns a new zipper
      * @param val
      */
-    public void setValue(int val) {
+    void setValue(int val) {
         this.value = val;
     }
 
@@ -111,7 +111,7 @@ public class Zipper {
      * Insert a new subtree before the focus node, it becomes the prev of the focus node
      * @return a new Zipper
      */
-    public Zipper insertBefore(Zipper toTheLeft) {
+    Zipper insertBefore(Zipper toTheLeft) {
         this.left = toTheLeft;
         return this.left;
     }
@@ -120,7 +120,7 @@ public class Zipper {
      * Insert a new subtree after the focus node, it becomes the next of the focus node
      * @return a new Zipper
      */
-    public Zipper insertAfter(Zipper toTheRight) {
+    Zipper insertAfter(Zipper toTheRight) {
         this.right = toTheRight;
         return this.right;
     }
@@ -130,7 +130,7 @@ public class Zipper {
      * Focus moves to the next node if possible otherwise to the prev node if possible, otherwise to the parent node
      * @return a new zipper
      */
-    public Zipper delete() {
+    Zipper delete() {
         Zipper current = this;
         if (current.up == null) {
             current = null;
@@ -158,42 +158,42 @@ class BinaryTree {
 
     private Zipper root;
 
-    public BinaryTree(int value) {
+    BinaryTree(int value) {
         root = new Zipper(value);
         root.tree = this;
     }
 
-    public BinaryTree(Zipper root) {
+    BinaryTree(Zipper root) {
         this.root = root;
         this.root.tree = this;
     }
 
-    public Zipper getRoot() {
+    Zipper getRoot() {
         return root;
     }
 
-    public void setRoot(Zipper zipper) {
+    void setRoot(Zipper zipper) {
         root = zipper;
         root.tree = this;
     }
 
-    public String toString(Zipper zipper) {
+    String printTree(Zipper zipper) {
         String str = "";
         if (zipper.left == null && zipper.right == null) {
             str += "value: " + zipper.getValue() + ", left: " + null + ", right: " + null;
         } else if (zipper.left == null) {
-            str += "value: " + zipper.getValue() + ", left: " + null + ", right: { " + toString(zipper.right) + " }";
+            str += "value: " + zipper.getValue() + ", left: " + null + ", right: { " + printTree(zipper.right) + " }";
         } else if (zipper.right == null) {
-            str += "value: " + zipper.getValue() + ", left: { " + toString(zipper.left) + " }, right: " + null;
+            str += "value: " + zipper.getValue() + ", left: { " + printTree(zipper.left) + " }, right: " + null;
         } else {
             str += "value: " + zipper.getValue() +
-                    ", left: { " + toString(zipper.left) + " }, right: { " + toString(zipper.right) + " }";
+                    ", left: { " + printTree(zipper.left) + " }, right: { " + printTree(zipper.right) + " }";
         }
         return str;
     }
 
-    public String toString() {
-        return toString(root);
+    String printTree() {
+        return printTree(root);
     }
 
 }
