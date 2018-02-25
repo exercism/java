@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.Random;
 
-public class DiffieHellman {
+class DiffieHellman {
 
     private Random random = new Random();
 
