@@ -1119,6 +1119,18 @@
     {
       "core": false,
       "difficulty": 8,
+      "slug": "diffie-hellman",
+      "topics": [
+        "algorithms",
+        "integers",
+        "transforming"
+      ],
+      "unlocked_by": "linked-list",
+      "uuid": "9b191b2f-b1a4-4c0e-b911-36666bff614d"
+    },
+    {
+      "core": false,
+      "difficulty": 8,
       "slug": "simple-cipher",
       "topics": [
         "cryptography",
