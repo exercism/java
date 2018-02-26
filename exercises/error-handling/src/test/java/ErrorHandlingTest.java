@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
 
-class ErrorHandlingTest {
+public class ErrorHandlingTest {
 
     private ErrorHandling errorHandling;
 
