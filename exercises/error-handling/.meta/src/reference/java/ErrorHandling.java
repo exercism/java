@@ -2,23 +2,23 @@ import java.util.Optional;
 
 class ErrorHandling {
 
-    public void handleErrorByThrowingException() throws Exception {
+    void handleErrorByThrowingException() throws Exception {
         throw new Exception();
     }
 
-    public void handleErrorByThrowingExceptionWithDetailMessage(String message) throws Exception {
+    void handleErrorByThrowingExceptionWithDetailMessage(String message) throws Exception {
         throw new Exception(message);
     }
 
-    public void handleErrorByThrowingIllegalArgumentException() {
+    void handleErrorByThrowingIllegalArgumentException() {
         throw new IllegalArgumentException();
     }
 
-    public void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
+    void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
         throw new IllegalArgumentException(message);
     }
 
-    public Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
+    Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
         if (tryParseInt(integer)) {
             return Optional.of(Integer.parseInt(integer));
         } else {

@@ -2,23 +2,23 @@ import java.util.Optional;
 
 class ErrorHandling {
 
-    public void handleErrorByThrowingException() throws Exception {
+    void handleErrorByThrowingException() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public void handleErrorByThrowingExceptionWithDetailMessage(String message) throws Exception {
+    void handleErrorByThrowingExceptionWithDetailMessage(String message) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public void handleErrorByThrowingIllegalArgumentException() {
+    void handleErrorByThrowingIllegalArgumentException() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
+    void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
+    Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
