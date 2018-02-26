@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
@@ -22,12 +23,12 @@ public class DiffieHellmanTest {
         BigInteger prime = BigInteger.valueOf(23);
         List<BigInteger> privateKeys = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-		privateKeys.add(diffieHellman.privateKey(prime));
-	}
+            privateKeys.add(diffieHellman.privateKey(prime));
+        }
 
         for (BigInteger privateKey : privateKeys) {
             assertTrue(privateKey.compareTo(BigInteger.ONE) >= 0);
-	    assertTrue(privateKey.compareTo(prime) < 0);
+            assertTrue(privateKey.compareTo(prime) < 0);
         }
     }
 
@@ -37,12 +38,10 @@ public class DiffieHellmanTest {
     @Test
     public void testPrivateKeyRandomlyGenerated() {
         BigInteger prime = BigInteger.valueOf(7919);
-        Set<BigInteger> privateKeys = new HashSet<>();
-        for (int i = 0; i < 2; i++) {
-		privateKeys.add(diffieHellman.privateKey(prime));
-	}
+        BigInteger privateKeyA = diffieHellman.privateKey(prime);
+        BigInteger privateKeyB = diffieHellman.privateKey(prime);
 
-        assertEquals(2, privateKeys.size());
+        assertNotEquals(privateKeyA, privateKeyB);
     }
 
     @Ignore("Remove to run test")
@@ -74,7 +73,6 @@ public class DiffieHellmanTest {
         BigInteger publicKey = new BigInteger("75205441154357919442925546169208711235485855904969178206313309299205868312399046149367516336607966149689640419216591714331722664409474612463910928128055994157922930443733535659848264364106037925315974095321112757711756912144137705613776063541350548911512715512539186192176020596861210448363099541947258202188");
         BigInteger privateKey = new BigInteger("2483479393625932939911081304356888505153797135447327501792696199190469015215177630758617902200417377685436170904594686456961202706692908603181062371925882");
         BigInteger expected = new BigInteger("70900735223964890815905879227737819348808518698920446491346508980461201746567735331455825644429877946556431095820785835497384849778344216981228226252639932672153547963980483673419756271345828771971984887453014488572245819864454136618980914729839523581263886740821363010486083940557620831348661126601106717071");
-
 
         assertEquals(expected, diffieHellman.secret(prime, publicKey, privateKey));
     }
