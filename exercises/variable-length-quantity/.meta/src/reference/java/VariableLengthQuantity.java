@@ -8,7 +8,7 @@ class VariableLengthQuantity {
     private long eightBitsMask = 0x80;
 
     List<String> encodeSingleNumber(long number) {
-        List<String> bytes = new ArrayList();
+        List<String> bytes = new ArrayList<String>();
         bytes.add("0x" + Long.toHexString(number & sevenBitsMask));
         number >>= 7;
 
@@ -22,7 +22,7 @@ class VariableLengthQuantity {
     }
 
     List<String> encode(List<Long> numbers) {
-        List<String> bytes = new ArrayList();
+        List<String> bytes = new ArrayList<String>();
         for (long number : numbers) {
             bytes.addAll(encodeSingleNumber(number));
         }
@@ -31,7 +31,7 @@ class VariableLengthQuantity {
     }
 
     List<String> decode(List<Long> bytes) {
-        List<String> numbers = new ArrayList();
+        List<String> numbers = new ArrayList<String>();
         int i = 0;
         long number = 0;
 
