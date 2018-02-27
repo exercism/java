@@ -18,6 +18,22 @@ class ErrorHandling {
         throw new IllegalArgumentException(message);
     }
 
+    void handleErrorByThrowingCustomCheckedException() throws CustomCheckedException {
+        throw new CustomCheckedException();
+    }
+
+    void handleErrorByThrowingCustomCheckedExceptionWithDetailMessage(String message) throws CustomCheckedException {
+        throw new CustomCheckedException(message);
+    }
+
+    void handleErrorByThrowingCustomUncheckedException() {
+        throw new CustomUncheckedException();
+    }
+
+    void handleErrorByThrowingCustomUncheckedExceptionWithDetailMessage(String message) {
+        throw new CustomUncheckedException(message);
+    }
+
     Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
         if (tryParseInt(integer)) {
             return Optional.of(Integer.parseInt(integer));
