@@ -79,6 +79,7 @@ public class ErrorHandlingTest {
         } catch (Exception e) {
             assertFalse(e instanceof RuntimeException);
             assertFalse(checkedExceptions.contains(e.getClass()));
+            assertEquals("This is the detail message.", e.getMessage());
         }
     }
 
@@ -103,6 +104,7 @@ public class ErrorHandlingTest {
         } catch (Exception e) {
             assertTrue(e instanceof RuntimeException);
             assertFalse(uncheckedExceptions.contains(e.getClass()));
+            assertEquals("This is the detail message.", e.getMessage());
         }
     }
 
