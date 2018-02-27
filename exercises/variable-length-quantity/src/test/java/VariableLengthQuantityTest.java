@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class VariableLengthQuantityTest {
     private VariableLengthQuantity variableLengthQuantity;
@@ -71,7 +72,7 @@ public class VariableLengthQuantityTest {
     @Test
     public void testSmallestTripleByte() {
         List<String> expected = Arrays.asList("0x81", "0x80", "0x0");
-        List<Long> numbers = Arrays.asList(0x4000L)
+        List<Long> numbers = Arrays.asList(0x4000L);
 
         assertEquals(expected, variableLengthQuantity.encode(numbers));
     }
