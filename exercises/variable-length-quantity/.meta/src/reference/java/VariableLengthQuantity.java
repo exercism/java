@@ -43,8 +43,8 @@ class VariableLengthQuantity {
                 numbers.add("0x" + Long.toHexString(number));
                 number = 0;
                 i++;
-            } else if (i++ == bytes.size() - 1) {
-                return null;
+            } else if (i == bytes.size() - 1) {
+                throw new IllegalArgumentException("Invalid variable-length quantity encoding");
             }
         }
 

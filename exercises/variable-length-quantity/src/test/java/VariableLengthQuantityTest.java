@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class VariableLengthQuantityTest {
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     private VariableLengthQuantity variableLengthQuantity;
 
     @Before
@@ -228,16 +233,20 @@ public class VariableLengthQuantityTest {
     @Test
     public void testCannotDecodeIncompleteSequence() {
         List<Long> bytes = Arrays.asList(0xffL);
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Invalid variable-length quantity encoding");
 
-        assertEquals(null, variableLengthQuantity.decode(bytes));
+        variableLengthQuantity.decode(bytes);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCannotDecodeIncompleteSequenceEvenIfValueIsZero() {
-      List<Long> bytes = Arrays.asList(0x80L);
+        List<Long> bytes = Arrays.asList(0x80L);
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Invalid variable-length quantity encoding");
 
-      assertEquals(null, variableLengthQuantity.decode(bytes));
+        variableLengthQuantity.decode(bytes);
     }
 
     @Ignore("Remove to run test")
