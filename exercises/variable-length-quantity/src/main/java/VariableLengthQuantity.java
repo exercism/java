@@ -1,3 +1,5 @@
+import java.util.List;
+
 class VariableLengthQuantity {
 
     List<String> encode(List<Long> numbers) {
