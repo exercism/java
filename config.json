@@ -427,8 +427,11 @@
       "difficulty": 4,
       "slug": "variable-length-quantity",
       "topics": [
-        "lists",
         "bitwise_operations",
+        "conditionals",
+        "exception_handling",
+        "lists",
+        "loops",
         "transforming"
       ],
       "unlocked_by": "secret-handshake",
