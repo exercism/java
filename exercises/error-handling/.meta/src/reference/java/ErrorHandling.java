@@ -1,14 +1,7 @@
+import java.io.IOException;
 import java.util.Optional;
 
 class ErrorHandling {
-
-    void handleErrorByThrowingException() throws Exception {
-        throw new Exception();
-    }
-
-    void handleErrorByThrowingExceptionWithDetailMessage(String message) throws Exception {
-        throw new Exception(message);
-    }
 
     void handleErrorByThrowingIllegalArgumentException() {
         throw new IllegalArgumentException();
@@ -16,6 +9,22 @@ class ErrorHandling {
 
     void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
         throw new IllegalArgumentException(message);
+    }
+
+    void handleErrorByThrowingAnyCheckedException() throws IOException {
+        throw new IOException();
+    }
+
+    void handleErrorByThrowingAnyCheckedExceptionWithDetailMessage(String message) throws IOException {
+        throw new IOException(message);
+    }
+
+    void handleErrorByThrowingAnyUncheckedException() {
+        throw new NullPointerException();
+    }
+
+    void handleErrorByThrowingAnyUncheckedExceptionWithDetailMessage(String message) {
+        throw new NullPointerException(message);
     }
 
     void handleErrorByThrowingCustomCheckedException() throws CustomCheckedException {

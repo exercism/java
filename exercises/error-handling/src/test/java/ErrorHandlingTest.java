@@ -1,4 +1,3 @@
-import junit.framework.AssertionFailedError;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -24,21 +23,6 @@ public class ErrorHandlingTest {
     }
 
     @Test
-    public void testThrowException() throws Exception {
-        thrown.expect(Exception.class);
-        errorHandling.handleErrorByThrowingException();
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testThrowExceptionWithDetailMessage() throws Exception {
-        thrown.expect(Exception.class);
-        thrown.expectMessage("This is the detail message.");
-        errorHandling.handleErrorByThrowingExceptionWithDetailMessage("This is the detail message.");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testThrowIllegalArgumentException() {
         thrown.expect(IllegalArgumentException.class);
         errorHandling.handleErrorByThrowingIllegalArgumentException();
@@ -50,6 +34,42 @@ public class ErrorHandlingTest {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("This is the detail message.");
         errorHandling.handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage("This is the detail message.");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testThrowAnyCheckedException() {
+        try {
+            errorHandling.handleErrorByThrowingAnyCheckedException();
+        } catch (Exception e) {
+            assertFalse(e instanceof RuntimeException);
+        }
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testThrowAnyCheckedExceptionWithDetailMessage() {
+        try {
+            errorHandling.handleErrorByThrowingAnyCheckedExceptionWithDetailMessage("This is the detail message.");
+        } catch (Exception e) {
+            assertFalse(e instanceof RuntimeException);
+            assertEquals("This is the detail message.", e.getMessage());
+        }
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testThrowAnyUncheckedException() {
+        thrown.expect(RuntimeException.class);
+        errorHandling.handleErrorByThrowingAnyUncheckedException();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testThrowAnyUncheckedExceptionWithDetailMessage() {
+        thrown.expect(RuntimeException.class);
+        thrown.expectMessage("This is the detail message.");
+        errorHandling.handleErrorByThrowingAnyUncheckedExceptionWithDetailMessage("This is the detail message.");
     }
 
     @Ignore("Remove to run test")
