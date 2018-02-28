@@ -398,6 +398,17 @@
     {
       "core": false,
       "difficulty": 4,
+      "slug": "error-handling",
+      "topics": [
+        "exception_handling",
+        "optional_values"
+      ],
+      "unlocked_by": "triangle",
+      "uuid": "846ae792-7ca7-43e1-b523-bb1ec9fa08eb"
+    },
+    {
+      "core": false,
+      "difficulty": 4,
       "slug": "diamond",
       "topics": [
         "arrays",
