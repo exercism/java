@@ -425,7 +425,7 @@
     {
       "core": false,
       "difficulty": 4,
-      "slug": "varible-length-quantity",
+      "slug": "variable-length-quantity",
       "topics": [
         "lists",
         "bitwise_operations",
