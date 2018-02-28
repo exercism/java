@@ -12,9 +12,9 @@ Checked exceptions are the exceptions that are checked at [compile time](https:/
 
 ### Practical implications
 
-You have to declare them in the [method signature](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html) of any method that can [throw](https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) a checked exception and handle or rethrow them when calling any method that can call a checked exception.
+You have to declare them in the [method signature](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html) of any method that can [throw](https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) a checked exception and handle or rethrow them when calling any method that can throw a checked exception.
 
-This is because checked exceptions are meant to be handled at runtime, ie., they are errors you can recover from.
+This is because checked exceptions are meant to be handled at runtime, i.e. they are errors you can recover from.
 
 ### Examples of where they are used
 
@@ -28,8 +28,8 @@ Unchecked exceptions are the exceptions that are not checked at [compile time](h
 
 ### Practical implications
 
-You don't have to declare them in the [method signature](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html) of methods that can [throw](https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) an unchecked exception and handle or rethrow them when calling any method that can call an unchecked exception.
+You don't have to declare them in the [method signature](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html) of methods that can [throw](https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) an unchecked exception and handle or rethrow them when calling any method that can throw an unchecked exception.
 
 ### Examples of where they are used
 
-Unchecked exceptions are mean to be used for any error than can't be handled at runtime, e.g., running out of memory.
+Unchecked exceptions are mean to be used for any error than can't be handled at runtime, e.g. running out of memory.
