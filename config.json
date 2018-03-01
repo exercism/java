@@ -434,6 +434,21 @@
       "uuid": "c3e89c7c-3a8a-4ddc-b653-9b0ff9e1d7d8"
     },
     {
+      "core": false,
+      "difficulty": 4,
+      "slug": "variable-length-quantity",
+      "topics": [
+        "bitwise_operations",
+        "conditionals",
+        "exception_handling",
+        "lists",
+        "loops",
+        "transforming"
+      ],
+      "unlocked_by": "secret-handshake",
+      "uuid": "d8a2c7ba-2040-4cfe-ab15-f90b3b61dd89"
+    },
+    {
       "core": true,
       "difficulty": 5,
       "slug": "flatten-array",
