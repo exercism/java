@@ -653,21 +653,6 @@
     },
     {
       "core": false,
-<<<<<<< HEAD
-=======
-      "difficulty": 5,
-      "slug": "two-bucket",
-      "topics": [
-        "algorithms",
-        "loops",
-        "conditionals",
-        "mathematics"
-      ],
-      "unlocked_by": "triangle",
-      "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e"
-    },
-    {
-      "core": false,
       "difficulty": 5,
       "slug": "go-counting",
       "topics": [
@@ -680,7 +665,6 @@
     },
     {
       "core": false,
->>>>>>> 18e8f90... Go-Counting: Add new exercise
       "difficulty": 6,
       "slug": "alphametics",
       "topics": [
