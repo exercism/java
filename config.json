@@ -658,9 +658,10 @@
       "topics": [
         "algorithms",
         "loops",
-        "conditionals"
+        "conditionals",
+        "games"
       ],
-      "unlocked_by": "triangle",
+      "unlocked_by": "scrabble-score",
       "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9"
     },
     {

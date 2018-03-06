@@ -1,22 +1,15 @@
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 import java.awt.Point;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
-
-import java.util.HashSet;
 
 public class GoCountingTest {
 	
@@ -42,6 +35,7 @@ public class GoCountingTest {
 		assertEquals(territory, gocounting.getTerritory(0, 1));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void whiteCenter5x5BoardTest() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -53,6 +47,7 @@ public class GoCountingTest {
 		assertEquals(territory, gocounting.getTerritory(2, 3));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void openCorner5x5BoardTest() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -66,6 +61,7 @@ public class GoCountingTest {
 		assertEquals(territory, gocounting.getTerritory(1, 4));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void stoneNotTerritory5x5Board() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -76,6 +72,7 @@ public class GoCountingTest {
 		assertEquals(territory, gocounting.getTerritory(1, 1));
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void invalidXTooLow5x5Board() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -86,6 +83,7 @@ public class GoCountingTest {
 		gocounting.getTerritory(-1, 1);
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void invalidXTooHigh5x5Board() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -96,6 +94,7 @@ public class GoCountingTest {
 		gocounting.getTerritory(5, 1);
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void invalidYTooLow5x5Board() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -106,6 +105,7 @@ public class GoCountingTest {
 		gocounting.getTerritory(1, -1);
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void invalidYTooHigh5x5Board() {
 		GoCounting gocounting = new GoCounting(board5x5);
@@ -116,6 +116,7 @@ public class GoCountingTest {
 		gocounting.getTerritory(1, 5);
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void oneTerritoryIsWholeBoardTest() {
 		GoCounting gocounting = new GoCounting(" ");
@@ -133,6 +134,7 @@ public class GoCountingTest {
 		assertEquals(territories, gocounting.getTerritories());
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void twoTerritoryRectangularBoardTest() {
 		GoCounting gocounting = new GoCounting(" BW \n BW ");
@@ -155,6 +157,7 @@ public class GoCountingTest {
 		assertEquals(territories, gocounting.getTerritories());
 	}
 	
+	@Ignore("Remove to run test")
 	@Test
 	public void twoRegionRectangularBoardTest() {
 		GoCounting gocounting = new GoCounting(" B ");

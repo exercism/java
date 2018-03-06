@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-
-public class GoCounting {
+class GoCounting {
 	int NONE = 0;
 	int WHITE = 1;
 	int BLACK = 2;
