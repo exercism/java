@@ -653,19 +653,6 @@
     },
     {
       "core": false,
-      "difficulty": 5,
-      "slug": "go-counting",
-      "topics": [
-        "algorithms",
-        "loops",
-        "conditionals",
-        "games"
-      ],
-      "unlocked_by": "scrabble-score",
-      "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9"
-    },
-    {
-      "core": false,
       "difficulty": 6,
       "slug": "alphametics",
       "topics": [
@@ -1101,6 +1088,19 @@
       ],
       "unlocked_by": "linked-list",
       "uuid": "25d2c7a5-1ec8-464a-b3de-ad1b27464ef1"
+    },
+    {
+      "core": false,
+      "difficulty": 7,
+      "slug": "go-counting",
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals",
+        "games"
+      ],
+      "unlocked_by": "scrabble-score",
+      "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9"
     },
     {
       "core": false,
