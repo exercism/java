@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class RobotTest {
 
     @Test
-    public void testRobotIsCreatedWithCorrectInitialPositionAndOrientation() {
+    public void robotIsCreatedWithInitialPositionAndOrientation() {
         final Orientation initialOrientation = Orientation.NORTH;
         final GridPosition initialGridPosition = new GridPosition(0, 0);
         final Robot robot = new Robot(initialGridPosition, initialOrientation);
@@ -36,7 +36,7 @@ public class RobotTest {
 
         assertEquals(robot.getGridPosition(), initialGridPosition);
     }
-
+//Checked up to here so far
     @Ignore("Remove to run test")
     @Test
     public void testTurningRightCorrectlyChangesOrientationFromNorthToEast() {
