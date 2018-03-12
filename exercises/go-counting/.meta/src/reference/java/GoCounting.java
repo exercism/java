@@ -5,10 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 class GoCounting {
-	//private int NONE = 0;
-	//private int WHITE = 1;
-	//private int BLACK = 2;
-	
 	private Player[][] board;
 	
 	GoCounting (String boardString) {
