@@ -1091,6 +1091,19 @@
     },
     {
       "core": false,
+      "difficulty": 7,
+      "slug": "go-counting",
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals",
+        "games"
+      ],
+      "unlocked_by": "scrabble-score",
+      "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9"
+    },
+    {
+      "core": false,
       "difficulty": 8,
       "slug": "ocr-numbers",
       "topics": [
