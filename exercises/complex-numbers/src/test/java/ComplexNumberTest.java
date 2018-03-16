@@ -23,6 +23,54 @@ public class ComplexNumberTest {
     // Tests
 
     @Test
+    public void testRealPartOfPurelyRealNumber() {
+        double expected = 1.0;
+        double actual = new ComplexNumber(1.0, 0).getReal();
+        assertDoublesEqual(expected, actual, "real");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testRealPartOfPurelyImaginaryNumber() {
+        double expected = 0.0;
+        double actual = new ComplexNumber(0, 1.0).getReal();
+        assertDoublesEqual(expected, actual, "real");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testRealPartOfNumberWithRealAndImaginaryParts() {
+        double expected = 1.0;
+        double actual = new ComplexNumber(1.0, 2.0).getReal();
+        assertDoublesEqual(expected, actual, "real");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testImaginaryPartOfPurelyRealNumber() {
+        double expected = 0.0;
+        double actual = new ComplexNumber(1.0, 0).getImag();
+        assertDoublesEqual(expected, actual, "imaginary");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testImaginaryPartOfPurelyImaginaryNumber() {
+        double expected = 1.0;
+        double actual = new ComplexNumber(0, 1.0).getImag();
+        assertDoublesEqual(expected, actual, "imaginary");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testImaginaryPartOfNumberWithRealAndImaginaryParts() {
+        double expected = 2.0;
+        double actual = new ComplexNumber(1.0, 2.0).getImag();
+        assertDoublesEqual(expected, actual, "imaginary");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testImaginaryUnitExhibitsDefiningProperty() {
         ComplexNumber expected = new ComplexNumber(-1.0, 0);
         ComplexNumber actual = new ComplexNumber(0, 1.0).times(new ComplexNumber(0, 1.0));
@@ -191,54 +239,6 @@ public class ComplexNumberTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testRealPartOfPurelyRealNumber() {
-        double expected = 1.0;
-        double actual = new ComplexNumber(1.0, 0).getReal();
-        assertDoublesEqual(expected, actual, "real");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testRealPartOfPurelyImaginaryNumber() {
-        double expected = 0.0;
-        double actual = new ComplexNumber(0, 1.0).getReal();
-        assertDoublesEqual(expected, actual, "real");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testRealPartOfNumberWithRealAndImaginaryParts() {
-        double expected = 1.0;
-        double actual = new ComplexNumber(1.0, 2.0).getReal();
-        assertDoublesEqual(expected, actual, "real");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testImaginaryPartOfPurelyRealNumber() {
-        double expected = 0.0;
-        double actual = new ComplexNumber(1.0, 0).getImag();
-        assertDoublesEqual(expected, actual, "imaginary");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testImaginaryPartOfPurelyImaginaryNumber() {
-        double expected = 1.0;
-        double actual = new ComplexNumber(0, 1.0).getImag();
-        assertDoublesEqual(expected, actual, "imaginary");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testImaginaryPartOfNumberWithRealAndImaginaryParts() {
-        double expected = 2.0;
-        double actual = new ComplexNumber(1.0, 2.0).getImag();
-        assertDoublesEqual(expected, actual, "imaginary");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testExponentialOfPurelyImaginaryNumber() {
         ComplexNumber expected = new ComplexNumber(-1.0, 0);
         ComplexNumber actual = new ComplexNumber(0, Math.PI).exponentialOf();
@@ -258,6 +258,14 @@ public class ComplexNumberTest {
     public void testExponentialOfPurelyRealNumber() {
         ComplexNumber expected = new ComplexNumber(Math.E, 0);
         ComplexNumber actual = new ComplexNumber(1.0, 0).exponentialOf();
+        assertComplexNumbersEqual(expected, actual);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testExponentialOfNumberWithRealAndImaginaryParts() {
+        ComplexNumber expected = new ComplexNumber(-2.0, 0);
+        ComplexNumber actual = new ComplexNumber(Math.log(2.0), Math.PI).exponentialOf();
         assertComplexNumbersEqual(expected, actual);
     }
 
