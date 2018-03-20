@@ -199,7 +199,7 @@ public class BowlingTest {
 
         game.score();
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
@@ -222,7 +222,7 @@ public class BowlingTest {
 
         assertEquals(26, game.score());
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
@@ -235,7 +235,7 @@ public class BowlingTest {
 
         game.score();
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void secondBonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
@@ -248,7 +248,7 @@ public class BowlingTest {
 
         game.score();
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void anUnstartedGameCanNotBeScored() {
@@ -327,4 +327,29 @@ public class BowlingTest {
         game.score();
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void canNotRollAfterBonusRollForSpare() {
+        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2, 2};
+
+        playGame(rolls);
+
+        expectedException.expect(IllegalStateException.class);
+        expectedException.expectMessage("Cannot roll after game is over");
+
+        game.score();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void canNotRollAfterBonusRollForStrike() {
+        int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2, 2};
+
+        playGame(rolls);
+
+        expectedException.expect(IllegalStateException.class);
+        expectedException.expectMessage("Cannot roll after game is over");
+
+        game.score();
+    }
 }
