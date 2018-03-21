@@ -8,7 +8,13 @@ import java.util.Collections;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
+
 public class DominoesTest {
+	
+	@Rule
+	public ExpectedException expectedException = ExpectedException.none(); 
 	
 	@Test
 	public void emtpyInputEmptyOutputTest() {
@@ -16,9 +22,10 @@ public class DominoesTest {
 		
 		ArrayList<Domino> dominoesArray = new ArrayList<>();
 		
-		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
+		expectedException.expect(IllegalArgumentException.class);
+		expectedException.expectMessage("Empty input domino list.");
 		
-		assertNull(chain);
+		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
 	}
 	
 	@Ignore("Remove to run test")
@@ -42,9 +49,10 @@ public class DominoesTest {
 		Domino[] dominoesList = {new Domino(1, 2)};
 		ArrayList<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
 		
-		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
+		expectedException.expect(IllegalArgumentException.class);
+		expectedException.expectMessage("No domino chain found.");
 		
-		assertNull(chain);
+		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
 	}
 	
 	@Ignore("Remove to run test")
@@ -81,9 +89,10 @@ public class DominoesTest {
 		Domino[] dominoesList = {new Domino(1, 2), new Domino(4, 1), new Domino(2, 3)};
 		ArrayList<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
 		
-		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
+		expectedException.expect(IllegalArgumentException.class);
+		expectedException.expectMessage("No domino chain found.");
 		
-		assertNull(chain);
+		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
 	}
 	
 	@Ignore("Remove to run test")
@@ -94,9 +103,10 @@ public class DominoesTest {
 		Domino[] dominoesList = {new Domino(1, 1), new Domino(2, 2)};
 		ArrayList<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
 		
-		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
+		expectedException.expect(IllegalArgumentException.class);
+		expectedException.expectMessage("No domino chain found.");
 		
-		assertNull(chain);
+		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
 	}
 	
 	@Ignore("Remove to run test")
@@ -107,9 +117,10 @@ public class DominoesTest {
 		Domino[] dominoesList = {new Domino(1, 2), new Domino(2, 1), new Domino(3, 4), new Domino(4, 3)};
 		ArrayList<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
 		
-		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
+		expectedException.expect(IllegalArgumentException.class);
+		expectedException.expectMessage("No domino chain found.");
 		
-		assertNull(chain);
+		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
 	}
 	
 	@Ignore("Remove to run test")
@@ -120,9 +131,10 @@ public class DominoesTest {
 		Domino[] dominoesList = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1), new Domino(4, 4)};
 		ArrayList<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
 		
-		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
+		expectedException.expect(IllegalArgumentException.class);
+		expectedException.expectMessage("No domino chain found.");
 		
-		assertNull(chain);
+		ArrayList<Domino> chain = dominoes.formChain(dominoesArray);
 	}
 	
 	@Ignore("Remove to run test")
@@ -170,20 +182,20 @@ public class DominoesTest {
 	}
 	
 	private void assertEndDominoesMatch(ArrayList<Domino> outputDominoes) {
-		assertEquals(outputDominoes.get(0).a, outputDominoes.get(outputDominoes.size() - 1).b);
+		assertEquals("The end dominoes are not the same.", outputDominoes.get(0).getLeft(), outputDominoes.get(outputDominoes.size() - 1).getRight());
 	}
 	
 	private void assertSameDominoes(ArrayList<Domino> inputDominoes, ArrayList<Domino> outputDominoes) {
-		assertEquals(inputDominoes.size(), outputDominoes.size());
+		assertEquals("The number of dominoes in the output chain doesn't match the number in the input.", inputDominoes.size(), outputDominoes.size());
 		
-		for(Domino domino : inputDominoes) {
-			assertEquals(Collections.frequency(inputDominoes, domino), Collections.frequency(outputDominoes, domino));
+		for (Domino domino : inputDominoes) {
+			assertEquals("There are different frequencies of dominoes in the output than the input.", Collections.frequency(inputDominoes, domino), Collections.frequency(outputDominoes, domino));
 		}
 	}
 	
 	private void assertConsecutiveDominoes(ArrayList<Domino> dominoes) {
-		for(int i = 0; i < dominoes.size() - 1; i++) {
-			assertEquals(dominoes.get(i).b, dominoes.get(i+1).a);
+		for (int i = 0; i < dominoes.size() - 1; i++) {
+			assertEquals("The dominoes are not consecutive.", dominoes.get(i).getRight(), dominoes.get(i+1).getLeft());
 		}
 	}
 }

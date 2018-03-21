@@ -3,32 +3,26 @@ import java.util.Arrays;
 
 class Dominoes {
 	
-	public static void main(String[] args) {
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(3, 1), new Domino(2, 3)};
-		ArrayList<Domino> dominoes = new ArrayList<>(Arrays.asList(dominoesList));
-		
-		ArrayList<Domino> chain = formPartialChain(new ArrayList<Domino>(), dominoes);
-		
-		for(int i = 0; i < chain.size(); i++) {
-			System.out.print("(" + chain.get(i).a + ", " + chain.get(i).b + "), ");
-		}
-	}
-	
-	static ArrayList<Domino> formChain(ArrayList<Domino> inputDominoes) {
-		if(inputDominoes.size() == 0) {
-			return null;
+	ArrayList<Domino> formChain(ArrayList<Domino> inputDominoes) {
+		if (inputDominoes.size() == 0) {
+			throw new IllegalArgumentException("Empty input domino list.");
 		} else {
-			return formPartialChain(new ArrayList<Domino>(), inputDominoes);
+			ArrayList<Domino> dominoChain = formPartialChain(new ArrayList<Domino>(), inputDominoes);
+			if(dominoChain == null) {
+				throw new IllegalArgumentException("No domino chain found.");
+			} else {
+				return dominoChain;
+			}
 		}
 	}
 	
-	static private boolean isValidChain(ArrayList<Domino> chain) {
-		return isValidPartialChain(chain) && (chain.get(0).a == chain.get(chain.size() - 1).b);
+	private boolean isValidChain(ArrayList<Domino> chain) {
+		return isValidPartialChain(chain) && (chain.get(0).getLeft() == chain.get(chain.size() - 1).getRight());
 	}
 	
-	static private boolean isValidPartialChain(ArrayList<Domino> chain) {
-		for(int i = 0; i < chain.size() - 1; i++) {
-			if(chain.get(i).b != chain.get(i+1).a) {
+	private boolean isValidPartialChain(ArrayList<Domino> chain) {
+		for (int i = 0; i < chain.size() - 1; i++) {
+			if (chain.get(i).getRight() != chain.get(i+1).getLeft()) {
 				return false;
 			}
 		}
@@ -36,16 +30,16 @@ class Dominoes {
 		return true;
 	}
 	
-	static ArrayList<Domino> formPartialChain(ArrayList<Domino> current, ArrayList<Domino> remaining) {
-		if(remaining.size() == 0) {
-			if(isValidChain(current)) {
+	ArrayList<Domino> formPartialChain(ArrayList<Domino> current, ArrayList<Domino> remaining) {
+		if (remaining.size() == 0) {
+			if (isValidChain(current)) {
 				return current;
 			} else {
 				return null;
 			}
 		}
 		
-		for(int i = 0; i < remaining.size(); i++) {
+		for (int i = 0; i < remaining.size(); i++) {
 			ArrayList<Domino> newRemaining = new ArrayList<Domino>(remaining);
 			newRemaining.remove(i);
 			
@@ -53,18 +47,18 @@ class Dominoes {
 			newChainA.add(remaining.get(i));
 			
 			ArrayList<Domino> newChainB = new ArrayList<Domino>(current);
-			newChainB.add(new Domino(remaining.get(i).b, remaining.get(i).a));
+			newChainB.add(new Domino(remaining.get(i).getRight(), remaining.get(i).getLeft()));
 			
-			if(isValidPartialChain(newChainA)) {
+			if (isValidPartialChain(newChainA)) {
 				ArrayList<Domino> searchA = formPartialChain(newChainA, newRemaining);
-				if(searchA != null) {
+				if (searchA != null) {
 					return searchA;
 				}
 			}
 			
-			if(isValidPartialChain(newChainB)) {
+			if (isValidPartialChain(newChainB)) {
 				ArrayList<Domino> searchB = formPartialChain(newChainB, newRemaining);
-				if(searchB != null) {
+				if (searchB != null) {
 					return searchB;
 				}
 			}
