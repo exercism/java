@@ -8,11 +8,11 @@ class Domino {
         this.b = b;
     }
     
-    void getLeft() {
+    int getLeft() {
     	return this.a;
     }
     
-    void getRight() {
+    int getRight() {
     	return this.b;
     }
     
