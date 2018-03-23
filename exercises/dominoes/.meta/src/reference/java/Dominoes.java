@@ -1,18 +1,14 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 class Dominoes {
 	
-	ArrayList<Domino> formChain(ArrayList<Domino> inputDominoes) {
+	List<Domino> formChain(List<Domino> inputDominoes) {
 		if (inputDominoes.size() == 0) {
-			throw new IllegalArgumentException("Empty input domino list.");
+			return inputDominoes;
 		} else {
-			ArrayList<Domino> dominoChain = formPartialChain(new ArrayList<Domino>(), inputDominoes);
-			if(dominoChain == null) {
-				throw new IllegalArgumentException("No domino chain found.");
-			} else {
-				return dominoChain;
-			}
+			return formPartialChain(new ArrayList<Domino>(), inputDominoes);
 		}
 	}
 	
@@ -30,12 +26,12 @@ class Dominoes {
 		return true;
 	}
 	
-	ArrayList<Domino> formPartialChain(ArrayList<Domino> current, ArrayList<Domino> remaining) {
+	ArrayList<Domino> formPartialChain(ArrayList<Domino> current, List<Domino> remaining) {
 		if (remaining.size() == 0) {
 			if (isValidChain(current)) {
 				return current;
 			} else {
-				return null;
+				throw new ChainNotFoundException("No chain found.");
 			}
 		}
 		
@@ -50,20 +46,22 @@ class Dominoes {
 			newChainB.add(new Domino(remaining.get(i).getRight(), remaining.get(i).getLeft()));
 			
 			if (isValidPartialChain(newChainA)) {
-				ArrayList<Domino> searchA = formPartialChain(newChainA, newRemaining);
-				if (searchA != null) {
-					return searchA;
+				try {
+					return formPartialChain(newChainA, newRemaining);
+				} catch (ChainNotFoundException e) {
+					
 				}
 			}
 			
 			if (isValidPartialChain(newChainB)) {
-				ArrayList<Domino> searchB = formPartialChain(newChainB, newRemaining);
-				if (searchB != null) {
-					return searchB;
+				try {
+					return formPartialChain(newChainB, newRemaining);
+				} catch (ChainNotFoundException e) {
+					
 				}
 			}
 		}
 		
-		return null;
+		throw new ChainNotFoundException("No domino chain found.");
 	}
 }

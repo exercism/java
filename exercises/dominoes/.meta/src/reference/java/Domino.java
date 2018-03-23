@@ -1,19 +1,19 @@
 import java.util.Objects;
 
 class Domino {
-    private int a;
-    private int b;
-    Domino(int a, int b) {
-        this.a = a;
-        this.b = b;
+    private int left;
+    private int right;
+    Domino(int left, int right) {
+        this.left = left;
+        this.right = right;
     }
     
     int getLeft() {
-    	return this.a;
+    	return this.left;
     }
     
     int getRight() {
-    	return this.b;
+    	return this.right;
     }
     
     @Override
@@ -25,6 +25,6 @@ class Domino {
     
     @Override
     public int hashCode() {
-    	return Objects.hash(a, b);
+    	return Objects.hash(left, right);
     }
 }
