@@ -36,7 +36,7 @@ public class RobotTest {
 
         assertEquals(robot.getGridPosition(), initialGridPosition);
     }
-//Checked up to here so far
+
     @Ignore("Remove to run test")
     @Test
     public void testTurningRightCorrectlyChangesOrientationFromNorthToEast() {
