@@ -4,7 +4,7 @@ final class Queen {
 
     private final int column;
 
-    Queen(final int row, final int column) throws IllegalArgumentException {
+    Queen(final int row, final int column) {
         this.row = row;
         this.column = column;
 
@@ -19,13 +19,12 @@ final class Queen {
         return column;
     }
 
-    private void validatePosition() throws IllegalArgumentException {
+    private void validatePosition() {
         validatePositionComponent(row, "row");
         validatePositionComponent(column, "column");
     }
 
-    private void validatePositionComponent(final int value, final String componentName)
-            throws IllegalArgumentException {
+    private void validatePositionComponent(final int value, final String componentName) {
 
         if (value < 0) {
             throw new IllegalArgumentException("Queen position must have positive " + componentName + ".");

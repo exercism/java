@@ -4,8 +4,7 @@ final class QueenAttackCalculator {
 
     private final Queen blackQueen;
 
-    QueenAttackCalculator(final Queen whiteQueen, final Queen blackQueen)
-            throws IllegalArgumentException {
+    QueenAttackCalculator(final Queen whiteQueen, final Queen blackQueen) {
 
         this.whiteQueen = whiteQueen;
         this.blackQueen = blackQueen;
@@ -17,7 +16,7 @@ final class QueenAttackCalculator {
         return queensShareColumn() || queensShareRow() || queensShareDiagonal();
     }
 
-    private void validateInputs() throws IllegalArgumentException {
+    private void validateInputs() {
         if (whiteQueen == null || blackQueen == null) {
             throw new IllegalArgumentException("You must supply valid positions for both Queens.");
         }
