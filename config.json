@@ -1104,6 +1104,19 @@
     },
     {
       "core": false,
+      "difficulty": 7,
+      "slug": "dominoes",
+      "topics": [
+        "games",
+        "algorithms",
+        "lists",
+        "exception_handling"
+      ],
+      "unlocked_by": "scrabble-score",
+      "uuid": "8e3cb20e-623b-4b4d-8a91-d1a51c0911b5"
+    },
+    {
+      "core": false,
       "difficulty": 8,
       "slug": "ocr-numbers",
       "topics": [
