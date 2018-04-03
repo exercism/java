@@ -4,7 +4,7 @@ import java.util.List;
 
 class Dominoes {
 	
-	List<Domino> formChain(List<Domino> inputDominoes) {
+	List<Domino> formChain(List<Domino> inputDominoes) throws ChainNotFoundException {
 		if (inputDominoes.size() == 0) {
 			return inputDominoes;
 		} else {
@@ -26,12 +26,12 @@ class Dominoes {
 		return true;
 	}
 	
-	ArrayList<Domino> formPartialChain(ArrayList<Domino> current, List<Domino> remaining) {
+	ArrayList<Domino> formPartialChain(ArrayList<Domino> current, List<Domino> remaining) throws ChainNotFoundException {
 		if (remaining.size() == 0) {
 			if (isValidChain(current)) {
 				return current;
 			} else {
-				throw new ChainNotFoundException("No chain found.");
+				throw new ChainNotFoundException("No domino chain found.");
 			}
 		}
 		
@@ -49,7 +49,7 @@ class Dominoes {
 				try {
 					return formPartialChain(newChainA, newRemaining);
 				} catch (ChainNotFoundException e) {
-					
+					//This path does not have a valid chain
 				}
 			}
 			
@@ -57,7 +57,7 @@ class Dominoes {
 				try {
 					return formPartialChain(newChainB, newRemaining);
 				} catch (ChainNotFoundException e) {
-					
+					//This path doesn't have a valid chain
 				}
 			}
 		}
