@@ -21,9 +21,9 @@ public class DominoesTest {
 	public void emtpyInputEmptyOutputTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		List<Domino> dominoesArray = new ArrayList<>();
+		List<Domino> dominoesList = new ArrayList<>();
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
 		assertEquals("The output list should be empty.", 0, chain.size());
 	}
@@ -33,12 +33,12 @@ public class DominoesTest {
 	public void singletonInputSingletonOutput() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 1)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 1)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
-		assertValidChain(dominoesArray, chain);
+		assertValidChain(dominoesList, chain);
 	}
 	
 	@Ignore("Remove to run test")
@@ -46,13 +46,13 @@ public class DominoesTest {
 	public void singletonCantBeChainedTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
 		expectedException.expect(ChainNotFoundException.class);
 		expectedException.expectMessage("No domino chain found.");
 		
-		dominoes.formChain(dominoesArray);
+		dominoes.formChain(dominoesList);
 	}
 	
 	@Ignore("Remove to run test")
@@ -60,12 +60,12 @@ public class DominoesTest {
 	public void threeElementsTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(3, 1), new Domino(2, 3)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(3, 1), new Domino(2, 3)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
-		assertValidChain(dominoesArray, chain);
+		assertValidChain(dominoesList, chain);
 	}
 	
 	@Ignore("Remove to run test")
@@ -73,12 +73,12 @@ public class DominoesTest {
 	public void canReverseDominoesTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(1, 3), new Domino(2, 3)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(1, 3), new Domino(2, 3)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
-		assertValidChain(dominoesArray, chain);
+		assertValidChain(dominoesList, chain);
 	}
 	
 	@Ignore("Remove to run test")
@@ -86,13 +86,13 @@ public class DominoesTest {
 	public void cantBeChainedTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(4, 1), new Domino(2, 3)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(4, 1), new Domino(2, 3)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
 		expectedException.expect(ChainNotFoundException.class);
 		expectedException.expectMessage("No domino chain found.");
 		
-		dominoes.formChain(dominoesArray);
+		dominoes.formChain(dominoesList);
 	}
 	
 	@Ignore("Remove to run test")
@@ -100,13 +100,13 @@ public class DominoesTest {
 	public void disconnectedSimpleTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 1), new Domino(2, 2)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 1), new Domino(2, 2)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
 		expectedException.expect(ChainNotFoundException.class);
 		expectedException.expectMessage("No domino chain found.");
 		
-		dominoes.formChain(dominoesArray);
+		dominoes.formChain(dominoesList);
 	}
 	
 	@Ignore("Remove to run test")
@@ -114,13 +114,13 @@ public class DominoesTest {
 	public void disconnectedDoubleLoopTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(2, 1), new Domino(3, 4), new Domino(4, 3)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(2, 1), new Domino(3, 4), new Domino(4, 3)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
 		expectedException.expect(ChainNotFoundException.class);
 		expectedException.expectMessage("No domino chain found.");
 		
-		dominoes.formChain(dominoesArray);
+		dominoes.formChain(dominoesList);
 	}
 	
 	@Ignore("Remove to run test")
@@ -128,13 +128,13 @@ public class DominoesTest {
 	public void disconnectedSingleIsolatedTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1), new Domino(4, 4)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1), new Domino(4, 4)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
 		expectedException.expect(ChainNotFoundException.class);
 		expectedException.expectMessage("No domino chain found.");
 		
-		dominoes.formChain(dominoesArray);
+		dominoes.formChain(dominoesList);
 	}
 	
 	@Ignore("Remove to run test")
@@ -142,12 +142,12 @@ public class DominoesTest {
 	public void needBacktrackTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1), new Domino(2, 4), new Domino(4, 2)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1), new Domino(2, 4), new Domino(4, 2)};
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
-		assertValidChain(dominoesArray, chain);
+		assertValidChain(dominoesList, chain);
 	}
 	
 	@Ignore("Remove to run test")
@@ -155,27 +155,27 @@ public class DominoesTest {
 	public void separateLoopsTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
 		
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1),
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1),
 				new Domino(1, 1), new Domino(2, 2), new Domino(3, 3)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
-		assertValidChain(dominoesArray, chain);
+		assertValidChain(dominoesList, chain);
 	}
 	
 	@Ignore("Remove to run test")
 	@Test
 	public void nineElementsTest() throws ChainNotFoundException {
 		Dominoes dominoes = new Dominoes();
-		Domino[] dominoesList = {new Domino(1, 2), new Domino(5, 3), new Domino(3, 1),
+		Domino[] dominoesArray = {new Domino(1, 2), new Domino(5, 3), new Domino(3, 1),
 				new Domino(1, 2), new Domino(2, 4), new Domino(1, 6),
 				new Domino(2, 3), new Domino(3, 4), new Domino(5, 6)};
-		List<Domino> dominoesArray = new ArrayList<>(Arrays.asList(dominoesList));
+		List<Domino> dominoesList = Arrays.asList(dominoesArray);
 		
-		List<Domino> chain = dominoes.formChain(dominoesArray);
+		List<Domino> chain = dominoes.formChain(dominoesList);
 		
-		assertValidChain(dominoesArray, chain);
+		assertValidChain(dominoesList, chain);
 	}
 	
 	private void assertValidChain(List<Domino> inputDominoes, List<Domino> outputDominoes) {
