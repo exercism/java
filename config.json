@@ -640,7 +640,7 @@
     },
     {
       "core": false,
-      "difficulty": 5,
+      "difficulty": 7,
       "slug": "two-bucket",
       "topics": [
         "algorithms",
