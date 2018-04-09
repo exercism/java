@@ -640,19 +640,6 @@
     },
     {
       "core": false,
-      "difficulty": 5,
-      "slug": "two-bucket",
-      "topics": [
-        "algorithms",
-        "loops",
-        "conditionals",
-        "mathematics"
-      ],
-      "unlocked_by": "triangle",
-      "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e"
-    },
-    {
-      "core": false,
       "difficulty": 6,
       "slug": "alphametics",
       "topics": [
@@ -936,6 +923,19 @@
       ],
       "unlocked_by": "rotational-cipher",
       "uuid": "6e4ad4ed-cc02-4132-973d-b9163ba0ea3d"
+    },
+    {
+      "core": false,
+      "difficulty": 7,
+      "slug": "two-bucket",
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals",
+        "mathematics"
+      ],
+      "unlocked_by": "triangle",
+      "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e"
     },
     {
       "core": false,
