@@ -25,7 +25,7 @@ public class HouseTest {
     @Test
     public void verseTwo() {
         String expected =
-                "This is the malt\n" +
+                "This is the malt " +
                 "that lay in the house that Jack built.";
         int verse = 2;
 
@@ -36,8 +36,8 @@ public class HouseTest {
     @Test
     public void verseThree() {
         String expected =
-                "This is the rat\n" +
-                "that ate the malt\n" +
+                "This is the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 3;
 
@@ -48,9 +48,9 @@ public class HouseTest {
     @Test
     public void verseFour() {
         String expected =
-                "This is the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 4;
 
@@ -61,10 +61,10 @@ public class HouseTest {
     @Test
     public void verseFive() {
         String expected =
-                "This is the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 5;
 
@@ -75,11 +75,11 @@ public class HouseTest {
     @Test
     public void verseSix() {
         String expected =
-                "This is the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 6;
 
@@ -90,12 +90,12 @@ public class HouseTest {
     @Test
     public void verseSeven() {
         String expected =
-                "This is the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 7;
 
@@ -106,13 +106,13 @@ public class HouseTest {
     @Test
     public void verseEight() {
         String expected =
-                "This is the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 8;
 
@@ -123,14 +123,14 @@ public class HouseTest {
     @Test
     public void verseNine() {
         String expected =
-                "This is the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 9;
 
@@ -141,15 +141,15 @@ public class HouseTest {
     @Test
     public void verse10() {
         String expected =
-                "This is the rooster that crowed in the morn\n" +
-                "that woke the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the rooster that crowed in the morn " +
+                "that woke the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 10;
 
@@ -160,16 +160,16 @@ public class HouseTest {
     @Test
     public void verse11() {
         String expected =
-                "This is the farmer sowing his corn\n" +
-                "that kept the rooster that crowed in the morn\n" +
-                "that woke the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the farmer sowing his corn " +
+                "that kept the rooster that crowed in the morn " +
+                "that woke the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 11;
 
@@ -180,17 +180,17 @@ public class HouseTest {
     @Test
     public void verse12() {
         String expected =
-                "This is the horse and the hound and the horn\n" +
-                "that belonged to the farmer sowing his corn\n" +
-                "that kept the rooster that crowed in the morn\n" +
-                "that woke the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the horse and the hound and the horn " +
+                "that belonged to the farmer sowing his corn " +
+                "that kept the rooster that crowed in the morn " +
+                "that woke the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
         int verse = 12;
 
@@ -201,39 +201,35 @@ public class HouseTest {
     @Test
     public void multipleVerses() {
         String expected =
-                "This is the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
 
         int startVerse = 4;
@@ -247,93 +243,82 @@ public class HouseTest {
     public void wholeRhyme() {
         String expected =
                 "This is the house that Jack built.\n" +
-                "\n" +
-                "This is the malt\n" +
+                "This is the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the rat\n" +
-                "that ate the malt\n" +
+                "This is the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the rooster that crowed in the morn\n" +
-                "that woke the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the rooster that crowed in the morn " +
+                "that woke the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the farmer sowing his corn\n" +
-                "that kept the rooster that crowed in the morn\n" +
-                "that woke the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the farmer sowing his corn " +
+                "that kept the rooster that crowed in the morn " +
+                "that woke the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
-                "\n" +
-                "This is the horse and the hound and the horn\n" +
-                "that belonged to the farmer sowing his corn\n" +
-                "that kept the rooster that crowed in the morn\n" +
-                "that woke the priest all shaven and shorn\n" +
-                "that married the man all tattered and torn\n" +
-                "that kissed the maiden all forlorn\n" +
-                "that milked the cow with the crumpled horn\n" +
-                "that tossed the dog\n" +
-                "that worried the cat\n" +
-                "that killed the rat\n" +
-                "that ate the malt\n" +
+                "This is the horse and the hound and the horn " +
+                "that belonged to the farmer sowing his corn " +
+                "that kept the rooster that crowed in the morn " +
+                "that woke the priest all shaven and shorn " +
+                "that married the man all tattered and torn " +
+                "that kissed the maiden all forlorn " +
+                "that milked the cow with the crumpled horn " +
+                "that tossed the dog " +
+                "that worried the cat " +
+                "that killed the rat " +
+                "that ate the malt " +
                 "that lay in the house that Jack built.";
 
         assertEquals(expected, house.sing());

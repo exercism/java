@@ -33,7 +33,7 @@ class House {
         verse.append("This is the " + CHARACTERS[verseNumber - 1]);
 
         for (int i = verseNumber - 2; i >= 0; i--) {
-            verse.append("\nthat " + ACTIONS[i] + " the " + CHARACTERS[i]);
+            verse.append(" that " + ACTIONS[i] + " the " + CHARACTERS[i]);
         }
 
         return verse.toString();
@@ -46,7 +46,7 @@ class House {
             verses[i - startVerse] = verse(i);
         }
 
-        return String.join("\n\n", verses);
+        return String.join("\n", verses);
     }
 
     String sing() {
