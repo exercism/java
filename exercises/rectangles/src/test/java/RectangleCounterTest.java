@@ -14,7 +14,7 @@ public class RectangleCounterTest {
     }
 
     @Test
-    public void testInputWithNoColumnsContainsNoRectangles() {
+    public void testInputWithNoRowsContainsNoRectangles() {
         String[] inputGrid = new String[]{};
 
         assertEquals(0, rectangleCounter.countRectangles(inputGrid));
@@ -22,7 +22,7 @@ public class RectangleCounterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testInputWithNoRowsContainsNoRectangles() {
+    public void testInputWithNoColumnsContainsNoRectangles() {
     	String[] inputGrid = new String[]{""};
     	
     	assertEquals(0, rectangleCounter.countRectangles(inputGrid));
