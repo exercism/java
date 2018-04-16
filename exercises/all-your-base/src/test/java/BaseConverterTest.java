@@ -221,7 +221,7 @@ public class BaseConverterTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Bases must be at least 2.");
 
-        new BaseConverter(1, new int[]{});
+        new BaseConverter(1, new int[]{1});
     }
 
     @Ignore("Remove to run test")
