@@ -22,14 +22,13 @@ For general guidelines about contributing to Exercism see the [Exercism contribu
 
 Hi! Thanks for contributing to the Exercism Java track!
 
-Before opening your pull request, please review the track policies linked below and make sure your changes comply with them all. This helps us focus our review time on the more important aspects of your changes.
+Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all. This helps us focus our review time on the more important aspects of your changes.
 
-- [Prefer instance methods](https://github.com/exercism/java/blob/master/POLICIES.md#prefer-instance-methods)
-- [Starter implementations](https://github.com/exercism/java/blob/master/POLICIES.md#starter-implementations)
-- [Ignore noninitial tests](https://github.com/exercism/java/blob/master/POLICIES.md#ignore-noninitial-tests)
-- [Multiple file submissions](https://github.com/exercism/java/blob/master/POLICIES.md#multiple-file-submissions)
+Also please only address one issue per pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
 
-One last thing to note before you get started. When you fork the repository and you want to sync your fork, you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
+It's perfectly fine to have more than one pull request open at a time. In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
+
+One last thing to note before you get started. When you fork the repository and you want to [sync your fork](https://help.github.com/articles/syncing-a-fork/), you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
 
 ## Contributing With Minimal Setup
 
