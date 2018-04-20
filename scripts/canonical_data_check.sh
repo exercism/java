@@ -93,7 +93,7 @@ do
         continue
     fi
 
-    track_data_version=$(cat $track_exercise_version_file_path)
+    track_data_version=$(cat $track_exercise_version_file_path | sed 's/\r$//')
 
     if [ "$track_data_version" = "$canonical_data_version" ]
     then
