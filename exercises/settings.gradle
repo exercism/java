@@ -101,3 +101,5 @@ include 'word-count'
 include 'word-search'
 include 'wordy'
 include 'zipper'
+include 'grep'
+
