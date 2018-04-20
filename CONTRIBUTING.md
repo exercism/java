@@ -150,7 +150,9 @@ Please review this before porting an exercise to the Java track.
 
 See [here](http://exercism.io/languages/java/todo) for a list of exercises that have yet to be implemented on the Java track and can therefore be ported to this track.
 Please make sure no one else has a pull request open to implement your chosen exercise before you start.
-Also please make a [dibs pull request](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md#avoiding-duplicate-work) to make it clear to others that you are working on this exercise.
+
+It might also be a good idea to open a WIP pull request to make it clear to others that you are working on this exercise.
+This can just be a pull request with an empty commit that states which new exercise you're working on, with WIP (work in progress) in the title so that the maintainers know that it's not ready for review yet.
 
 The Java specific details you need to know about adding an exercise are:
 
