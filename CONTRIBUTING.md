@@ -168,7 +168,7 @@ The `build.gradle` file can just be copied from any other exercise submodule.
 The `README.md` file can be generated using [configlet](https://github.com/exercism/configlet/releases).
 You can do this by:
 
-  1. Download configlet and put it somewhere in your PATH
+  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
 
   2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
@@ -190,10 +190,10 @@ Feel free to open an issue or post in the [Gitter exercism/java room](https://gi
 ## Updating the READMEs
 
 The `README.md` files are generated from the exercise descriptions in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises).
-They need to be regenerated regularly so that any changes to the descriptions in problem specifications propagate to our REAMEs.
+They need to be regenerated regularly so that any changes to the descriptions in problem specifications propagate to our READMEs.
 This can be done using [configlet](https://github.com/exercism/configlet/releases):
 
-  1. Download configlet and put it somewhere in your PATH
+  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
 
   2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
