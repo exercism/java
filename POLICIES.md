@@ -17,7 +17,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation)
+| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises)
 | Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first patches](#good-first-patches) |
 | "Good first patch" issue completed | [Good first patches](#good-first-patches) |
@@ -74,7 +74,7 @@ References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
 
 ### Name test class after class under test
 
-> If you're testing a class called `SomeClassName` then your test class should be called `SomeClassNameTest`. 
+> If you're testing a class called `SomeClassName` then your test class should be called `SomeClassNameTest`.
 
 > The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/master/exercises/clock) as an example.
 
@@ -93,3 +93,11 @@ References: [[1](https://github.com/exercism/java/issues/697)]
 > We add the file to every exercise with difficulty 5 because the structure of the track means that we don't know which exercise will be the first one without starter implementation that a user will be faced with.
 
 References: [[1](https://github.com/exercism/java/issues/1075)]
+
+### Reference tutorial in the first exercises
+
+> The hello world exercise has an extensive tutorial on how to solve exercism exercises.
+> This tutorial would probably be useful to have as a reference when solving some of the other earlier exercises as well.
+> Therefore any exercise with difficulty less than 3 should have a hints.md file which references [the hello world tutorial](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md).
+
+References: [[1](https://github.com/exercism/java/issues/1389)]
