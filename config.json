@@ -640,6 +640,20 @@
     },
     {
       "core": false,
+      "difficulty": 5,
+      "slug": "grep",
+      "topics": [
+        "pattern_matching",
+        "strings",
+        "files",
+        "filtering",
+        "searching"
+      ],
+      "unlocked_by": "robot-name",
+      "uuid": "d36ce010-210f-4e9a-9d6c-cb933e0a59af"
+    },
+    {
+      "core": false,
       "difficulty": 6,
       "slug": "alphametics",
       "topics": [
