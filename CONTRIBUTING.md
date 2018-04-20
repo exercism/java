@@ -9,6 +9,8 @@
 * [Advanced: Complete Local Setup](#advanced-complete-local-setup)
   * [Tip: `gradle clean` before `exercism fetch`](#tip-gradle-clean-before-exercism-fetch)
 * [Adding a New Exercise](#adding-a-new-exercise)
+* [Updating the READMEs](#updating-the-readmes)
+* [Checking tests are up to date](#checking-tests-are-up-to-date)
 
 ## Overview
 
@@ -166,7 +168,7 @@ The `build.gradle` file can just be copied from any other exercise submodule.
 The `README.md` file can be generated using [configlet](https://github.com/exercism/configlet/releases).
 You can do this by:
 
-  1. Download configlet and put it somewhere in your PATH
+  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
 
   2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
@@ -184,3 +186,33 @@ See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/master
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
 Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
+
+## Updating the READMEs
+
+The `README.md` files are generated from the exercise descriptions in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises).
+They need to be regenerated regularly so that any changes to the descriptions in problem specifications propagate to our READMEs.
+This can be done using [configlet](https://github.com/exercism/configlet/releases):
+
+  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
+
+  2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+
+  3. Run `configlet generate . --spec-path path_to_problem_specifications` from the root of this repository.
+
+## Checking tests are up to date
+
+The tests for each exercise should follow the canonical data in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises) as closely as possible.
+The canonical data can change quite regularly, in which case the [canonical data version](https://github.com/exercism/problem-specifications#test-data-versioning) for that exercise will be updated.
+
+We keep track of which version of the canonical data each exercise implements in a version file, for example: https://github.com/exercism/java/blob/master/exercises/two-fer/.meta/version.
+Not all exercises have canonical data in problem specifications.
+For those that don't we don't add a version file.
+
+We have [a script](https://github.com/exercism/java/blob/master/scripts/canonical_data_check.sh) which can check if these version are up to date with the ones in problem specification.
+This script can be used to check if any version files, tests and reference implementations need updating.
+
+To run this script:
+
+  1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+
+  2. Run `./scripts/canonical_data_check.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository.
