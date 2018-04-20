@@ -145,7 +145,7 @@ Any completely new exercise needs to be added and accepted there before it can b
 
 There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
 Please review this before porting an exercise to the Java track.
- 
+
 See [here](http://exercism.io/languages/java/todo) for a list of exercises that have yet to be implemented on the Java track and can therefore be ported to this track.
 Please make sure no one else has a pull request open to implement your chosen exercise before you start.
 Also please make a [dibs pull request](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md#avoiding-duplicate-work) to make it clear to others that you are working on this exercise.
@@ -179,6 +179,8 @@ We aim to follow the canonical data as closely as possible in our tests to ensur
 If there is canonical data available you also need to create a file at `exercises/exercise-slug/.meta/version` specifying the canonical data version you have implemented (e.g. `1.0.0`).
 The canonical data version can be found at the top of the canonical data file for that exercise.
 See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/master/exercises/acronym/.meta), for an example `version` file.
+
+* Make sure you've followed the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md), especially the ones for exercise added/updated.
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
 Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
