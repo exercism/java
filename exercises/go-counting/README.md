@@ -9,7 +9,8 @@ territory.
 
 Write a function that determines the territory of each player. You may
 assume that any stones that have been stranded in enemy territory have
-already been taken off the board.
+already been taken off the board. The edges of the board count towards completing
+a territory.
 
 Write a function that determines the territory which includes a specified coordinate.
 
@@ -22,8 +23,8 @@ marked "I" (ignored).  Empty spaces represent empty intersections.
 +----+
 |IOOI|
 |O  O|
-|O OI|
-|IOI |
+|O O |
+|IO  |
 +----+
 ```
 
