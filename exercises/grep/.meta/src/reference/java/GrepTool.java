@@ -10,24 +10,27 @@ import java.util.stream.IntStream;
 class GrepTool {
 
     String grep(String pattern, List<String> flags, List<String> files) {
-        boolean shouldAddFilename = files.size() > 1;
+        boolean shouldAddFilenameToEachLine = files.size() > 1;
         return files
             .stream()
-            .map(file -> grepFile(pattern, flags, file, shouldAddFilename))
+            .map(file -> grepFile(pattern, flags, file, shouldAddFilenameToEachLine))
             .filter(line -> !line.isEmpty())
             .collect(Collectors.joining("\n"));
     }
 
-    private String grepFile(String pattern, List<String> flags, String filename, boolean shouldAddFilename) {
+    private String grepFile(String pattern, List<String> flags, String filename, boolean shouldAddFilenameToEachLine) {
         List<String> lines = readFile(filename);
+
         String matchingLines = IntStream.range(0, lines.size())
             .filter(lineIndex -> lineMatchesPattern(lines.get(lineIndex), pattern, flags))
-            .mapToObj(lineIndex -> applyFlagsToLine(lines.get(lineIndex), flags, lineIndex + 1))
-            .map(line -> shouldAddFilename ? filename + ":" + line : line)
+            .mapToObj(lineIndex -> {
+                String lineWithFlagsApplied = applyFlagsToLine(lines.get(lineIndex), flags, lineIndex + 1);
+                return shouldAddFilenameToEachLine ? filename + ":" + lineWithFlagsApplied : lineWithFlagsApplied;
+            })
             .collect(Collectors.joining("\n"));
 
-        boolean shouldPrintFilenames = flags.contains("-l");
-        return shouldPrintFilenames && !matchingLines.isEmpty() ? filename : matchingLines;
+        boolean shouldPrintFilenameInsteadOfMatchingLines = flags.contains("-l");
+        return shouldPrintFilenameInsteadOfMatchingLines && !matchingLines.isEmpty() ? filename : matchingLines;
     }
 
     private boolean lineMatchesPattern(String line, String pattern, List<String> flags) {
