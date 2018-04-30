@@ -18,6 +18,12 @@ each nucleotide with its complement:
 * `T` -> `A`
 * `A` -> `U`
 
+# Java Tips
+
+For more help on how to solve this exercise, please refer to the tutorial provided as part of the hello world exercise:
+[TUTORIAL.md](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md)
+
+
 # Running the tests
 
 You can run all the tests for an exercise by entering
