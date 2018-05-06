@@ -24,6 +24,6 @@ class Card {
     }
 
     private int parseSuit(String card) {
-        return ".HSDC".indexOf(card.charAt(1));
+        return ".HSDC".indexOf(card.charAt(card.length()-1));
     }
 }
