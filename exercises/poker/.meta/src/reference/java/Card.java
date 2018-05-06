@@ -16,7 +16,11 @@ class Card {
     }
 
     private int parseRank(String card) {
-        return "..23456789TJQKA".indexOf(card.charAt(0));
+    	if (card.substring(0, 2).equals("10")) {
+			return 10;
+		}
+		String s = "..23456789TJQKA";
+		return s.indexOf(card.charAt(0));
     }
 
     private int parseSuit(String card) {
