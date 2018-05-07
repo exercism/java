@@ -236,5 +236,4 @@ public class PokerTest {
 		assertEquals(Arrays.asList(straightFlushTo9),
 				new Poker(Arrays.asList(straightFlushTo8, straightFlushTo9)).getBestHands());
 	}
-
 }

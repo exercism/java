@@ -15,8 +15,8 @@ public class PythagoreanTripletTest {
     @Test
     public void shouldCalculateSum() {
         PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
-        final int expected = 12;
-        final int actual = triplet.calculateSum();
+        int expected = 12;
+        int actual = triplet.calculateSum();
         assertEquals(expected, actual);
     }
 
@@ -24,8 +24,8 @@ public class PythagoreanTripletTest {
     @Test
     public void shouldCalculateProduct() {
         PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
-        final long expected = 60l;
-        final long actual = triplet.calculateProduct();
+        long expected = 60l;
+        long actual = triplet.calculateProduct();
         assertEquals(expected, actual);
     }
 
@@ -46,7 +46,7 @@ public class PythagoreanTripletTest {
     @Ignore("Remove to run test")
     @Test
     public void shouldMakeTripletsUpToTen() {
-        final List<Long> actual
+        List<Long> actual
                 = PythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(10)
@@ -55,14 +55,14 @@ public class PythagoreanTripletTest {
                         .map(t -> t.calculateProduct())
                         .sorted()
                         .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(60l, 480l);
+        List<Long> expected = Arrays.asList(60l, 480l);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void shouldMakeTripletsElevenToTwenty() {
-        final List<Long> actual
+        List<Long> actual
                 = PythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsGreaterThanOrEqualTo(11)
@@ -72,14 +72,14 @@ public class PythagoreanTripletTest {
                         .map(t -> t.calculateProduct())
                         .sorted((p1, p2) -> Double.compare(p1, p2))
                         .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(3840l);
+        List<Long> expected = Arrays.asList(3840l);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void shouldMakeTripletsAndFilterOnSum() {
-        final List<Long> actual
+        List<Long> actual
                 = PythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(100)
@@ -89,7 +89,7 @@ public class PythagoreanTripletTest {
                         .map(t -> t.calculateProduct())
                         .sorted((p1, p2) -> Double.compare(p1, p2))
                         .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(118080l, 168480l, 202500l);
+        List<Long> expected = Arrays.asList(118080l, 168480l, 202500l);
         assertEquals(expected, actual);
     }
 }
