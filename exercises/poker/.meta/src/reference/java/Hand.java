@@ -33,7 +33,7 @@ class Hand {
             if (frequencyMap.containsKey(c.getRank())) {
                 frequencyMap.put(c.getRank(), frequencyMap.get(c.getRank()) + 1);
             } else {
-                    frequencyMap.put(c.getRank(), 1);
+                frequencyMap.put(c.getRank(), 1);
             }
         }
         return frequencyMap;
@@ -80,18 +80,12 @@ class Hand {
                 .stream()
                 .distinct()
                 .count() == 1;
-        boolean straight = ranks
-                .stream()
-                .distinct()
-                .count() == 5 && ranks
-                .get(0) - ranks
-                .get(4) == 4;
+        boolean straight = ranks.stream().distinct().count() == 5 
+            && ranks.get(0) - ranks.get(4) == 4;
         
         Iterator<Integer> iteratorOverFrequencies = frequencyMap.keySet().iterator();
         
         int highestFrequency = iteratorOverFrequencies.next();
-
-        int maxValue = Collections.max(ranks);
 
         if (straight && flush) {
             return 800 + highestFrequency;
@@ -116,20 +110,21 @@ class Hand {
             return 500 + highestFrequency;
         }
         if (straight) {
+            int maxValue = Collections.max(ranks);
             return 400 + maxValue;
         }
         if (rankCounts.equals(Arrays.asList(3, 1, 1))) {
-            List<Integer> unique_cards = new ArrayList<Integer>();
+            List<Integer> uniqueCards = new ArrayList<Integer>();
             int triplet = 0;
             for (Integer key : frequencyMap.keySet()) {
                 if (frequencyMap.get(key) == 1) {
-                    unique_cards.add((int) key);
+                    uniqueCards.add((int) key);
                 }
                 if (frequencyMap.get(key) == 3) {
                     triplet = 3 * (int) key;
                 }
             }
-            return 300 + triplet + Collections.max(unique_cards);
+            return 300 + triplet + Collections.max(uniqueCards);
         }
         if (rankCounts.equals(Arrays.asList(2, 2, 1))) {
             int products_of_frequency_and_value = 0;
