@@ -127,13 +127,13 @@ class Hand {
             return 300 + triplet + Collections.max(uniqueCards);
         }
         if (rankCounts.equals(Arrays.asList(2, 2, 1))) {
-            int products_of_frequency_and_value = 0;
+            int ProductsOfFrequencyAndValue = 0;
             for (Integer key : frequencyMap.keySet()) {
                 int frequencyKey = (int) key;
                 int frequencyValue = frequencyMap.get(key);
-                products_of_frequency_and_value += frequencyKey * frequencyValue;
+                ProductsOfFrequencyAndValue += frequencyKey * frequencyValue;
             }
-            return 200 + products_of_frequency_and_value + 2 * Math.max(highestFrequency, iteratorOverFrequencies.next());
+            return 200 + ProductsOfFrequencyAndValue + 2 * Math.max(highestFrequency, iteratorOverFrequencies.next());
         }
         if (rankCounts.equals(Arrays.asList(2, 1, 1, 1))) {
             return 100 + highestFrequency;
