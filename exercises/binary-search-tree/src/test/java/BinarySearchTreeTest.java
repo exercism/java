@@ -13,13 +13,13 @@ public class BinarySearchTreeTest {
     public void dataIsRetained() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
 
-        final int expected = 4;
+        int expected = 4;
         binarySearchTree.insert(expected);
 
-        final BinarySearchTree.Node<Integer> root = binarySearchTree.getRoot();
+        BinarySearchTree.Node<Integer> root = binarySearchTree.getRoot();
         assertNotNull(root);
 
-        final int actual = root.getData();
+        int actual = root.getData();
         assertEquals(expected, actual);
     }
 
@@ -27,19 +27,19 @@ public class BinarySearchTreeTest {
     @Test
     public void insertsLess() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
-        final char expectedRoot = '4';
-        final char expectedLeft = '2';
+        char expectedRoot = '4';
+        char expectedLeft = '2';
 
         binarySearchTree.insert(expectedRoot);
         binarySearchTree.insert(expectedLeft);
 
-        final BinarySearchTree.Node<Character> root = binarySearchTree.getRoot();
+        BinarySearchTree.Node<Character> root = binarySearchTree.getRoot();
         assertNotNull(root);
-        final BinarySearchTree.Node<Character> left = root.getLeft();
+        BinarySearchTree.Node<Character> left = root.getLeft();
         assertNotNull(left);
 
-        final char actualRoot = root.getData();
-        final char actualLeft = left.getData();
+        char actualRoot = root.getData();
+        char actualLeft = left.getData();
         assertEquals(expectedLeft, actualLeft);
         assertEquals(expectedRoot, actualRoot);
     }
@@ -48,19 +48,19 @@ public class BinarySearchTreeTest {
     @Test
     public void insertsSame() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
-        final String expectedRoot = "4";
-        final String expectedLeft = "4";
+        String expectedRoot = "4";
+        String expectedLeft = "4";
 
         binarySearchTree.insert(expectedRoot);
         binarySearchTree.insert(expectedLeft);
 
-        final BinarySearchTree.Node<String> root = binarySearchTree.getRoot();
+        BinarySearchTree.Node<String> root = binarySearchTree.getRoot();
         assertNotNull(root);
-        final BinarySearchTree.Node<String> left = root.getLeft();
+        BinarySearchTree.Node<String> left = root.getLeft();
         assertNotNull(left);
 
-        final String actualRoot = root.getData();
-        final String actualLeft = left.getData();
+        String actualRoot = root.getData();
+        String actualLeft = left.getData();
         assertEquals(expectedLeft, actualLeft);
         assertEquals(expectedRoot, actualRoot);
     }
@@ -69,19 +69,19 @@ public class BinarySearchTreeTest {
     @Test
     public void insertsRight() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-        final int expectedRoot = 4;
-        final int expectedRight = 5;
+        int expectedRoot = 4;
+        int expectedRight = 5;
 
         binarySearchTree.insert(expectedRoot);
         binarySearchTree.insert(expectedRight);
 
-        final BinarySearchTree.Node<Integer> root = binarySearchTree.getRoot();
+        BinarySearchTree.Node<Integer> root = binarySearchTree.getRoot();
         assertNotNull(root);
-        final BinarySearchTree.Node<Integer> right = root.getRight();
+        BinarySearchTree.Node<Integer> right = root.getRight();
         assertNotNull(right);
 
-        final int actualRoot = root.getData();
-        final int actualRight = right.getData();
+        int actualRoot = root.getData();
+        int actualRight = right.getData();
         assertEquals(expectedRight, actualRight);
         assertEquals(expectedRoot, actualRoot);
     }
@@ -131,7 +131,7 @@ public class BinarySearchTreeTest {
         List<Integer> actual = binarySearchTree.getAsSortedList();
         assertEquals(expected, actual);
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void sortsCollectionOfTwoIfSecondNumberisSameAsFirst() {
