@@ -16,10 +16,13 @@ class Card {
     }
 
     private int parseRank(String card) {
-        return "..23456789TJQKA".indexOf(card.charAt(0));
+    	if (card.substring(0, 2).equals("10")) {
+    		return 10;
+    	}
+    	return "..23456789TJQKA".indexOf(card.charAt(0));
     }
 
     private int parseSuit(String card) {
-        return ".HSDC".indexOf(card.charAt(1));
+        return ".HSDC".indexOf(card.charAt(card.length() - 1));
     }
 }

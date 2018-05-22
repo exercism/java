@@ -1,14 +1,13 @@
 final class QueenAttackCalculator {
 
-    private final BoardCoordinate whiteQueenCoordinate;
+    private final Queen whiteQueen;
 
-    private final BoardCoordinate blackQueenCoordinate;
+    private final Queen blackQueen;
 
-    QueenAttackCalculator(final BoardCoordinate whiteQueenCoordinate, final BoardCoordinate blackQueenCoordinate)
-            throws IllegalArgumentException {
+    QueenAttackCalculator(final Queen whiteQueen, final Queen blackQueen) {
 
-        this.whiteQueenCoordinate = whiteQueenCoordinate;
-        this.blackQueenCoordinate = blackQueenCoordinate;
+        this.whiteQueen = whiteQueen;
+        this.blackQueen = blackQueen;
 
         validateInputs();
     }
@@ -17,13 +16,13 @@ final class QueenAttackCalculator {
         return queensShareColumn() || queensShareRow() || queensShareDiagonal();
     }
 
-    private void validateInputs() throws IllegalArgumentException {
-        if (whiteQueenCoordinate == null || blackQueenCoordinate == null) {
-            throw new IllegalArgumentException("You must supply valid board coordinates for both Queens.");
+    private void validateInputs() {
+        if (whiteQueen == null || blackQueen == null) {
+            throw new IllegalArgumentException("You must supply valid positions for both Queens.");
         }
 
         if (queensShareBoardCoordinate()) {
-            throw new IllegalArgumentException("Queens may not occupy the same board coordinate.");
+            throw new IllegalArgumentException("Queens cannot occupy the same position.");
         }
     }
 
@@ -44,11 +43,11 @@ final class QueenAttackCalculator {
     }
 
     private int differenceBetweenRows() {
-        return Math.abs(whiteQueenCoordinate.getRow() - blackQueenCoordinate.getRow());
+        return Math.abs(whiteQueen.getRow() - blackQueen.getRow());
     }
 
     private int differenceBetweenColumns() {
-        return Math.abs(whiteQueenCoordinate.getColumn() - blackQueenCoordinate.getColumn());
+        return Math.abs(whiteQueen.getColumn() - blackQueen.getColumn());
     }
 
 }

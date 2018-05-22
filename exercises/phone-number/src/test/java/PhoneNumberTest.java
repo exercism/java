@@ -6,12 +6,12 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 
 public class PhoneNumberTest {
-    private final static String wrongLengthExceptionMessage = "Number must be 10 or 11 digits";
-    private final static String numberIs11DigitsButDoesNotStartWith1ExceptionMessage =
+    private static String wrongLengthExceptionMessage = "Number must be 10 or 11 digits";
+    private static String numberIs11DigitsButDoesNotStartWith1ExceptionMessage =
             "Can only have 11 digits if number starts with '1'";
-    private final static String illegalCharacterExceptionMessage =
+    private static String illegalCharacterExceptionMessage =
             "Illegal character in phone number. Only digits, spaces, parentheses, hyphens or dots accepted.";
-    private final static String illegalAreaOrExchangeCodeMessage =
+    private static String illegalAreaOrExchangeCodeMessage =
             "Illegal Area Or Exchange Code. Only 2-9 are valid digits";
 
     @Rule
@@ -19,8 +19,8 @@ public class PhoneNumberTest {
 
     @Test
     public void cleansTheNumber() {
-        final String expectedNumber = "2234567890";
-        final String actualNumber = new PhoneNumber("(223) 456-7890").getNumber();
+        String expectedNumber = "2234567890";
+        String actualNumber = new PhoneNumber("(223) 456-7890").getNumber();
 
         assertEquals(
                 expectedNumber, actualNumber
@@ -30,8 +30,8 @@ public class PhoneNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void cleansNumbersWithDots() {
-        final String expectedNumber = "2234567890";
-        final String actualNumber = new PhoneNumber("223.456.7890").getNumber();
+        String expectedNumber = "2234567890";
+        String actualNumber = new PhoneNumber("223.456.7890").getNumber();
 
         assertEquals(
                 expectedNumber, actualNumber
@@ -41,8 +41,8 @@ public class PhoneNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void cleansNumbersWithMultipleSpaces() {
-        final String expectedNumber = "2234567890";
-        final String actualNumber = new PhoneNumber("223 456   7890   ").getNumber();
+        String expectedNumber = "2234567890";
+        String actualNumber = new PhoneNumber("223 456   7890   ").getNumber();
 
         assertEquals(
                 expectedNumber, actualNumber
@@ -68,8 +68,8 @@ public class PhoneNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void validWhen11DigitsAndStartingWith1() {
-        final String expectedNumber = "2234567890";
-        final String actualNumber = new PhoneNumber("12234567890").getNumber();
+        String expectedNumber = "2234567890";
+        String actualNumber = new PhoneNumber("12234567890").getNumber();
 
         assertEquals(
                 expectedNumber, actualNumber
@@ -79,8 +79,8 @@ public class PhoneNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void validWhen11DigitsAndStartingWith1EvenWithPunctuation() {
-        final String expectedNumber = "2234567890";
-        final String actualNumber = new PhoneNumber("+1 (223) 456-7890").getNumber();
+        String expectedNumber = "2234567890";
+        String actualNumber = new PhoneNumber("+1 (223) 456-7890").getNumber();
 
         assertEquals(
                 expectedNumber, actualNumber

@@ -9,6 +9,8 @@
 * [Advanced: Complete Local Setup](#advanced-complete-local-setup)
   * [Tip: `gradle clean` before `exercism fetch`](#tip-gradle-clean-before-exercism-fetch)
 * [Adding a New Exercise](#adding-a-new-exercise)
+* [Updating the READMEs](#updating-the-readmes)
+* [Checking tests are up to date](#checking-tests-are-up-to-date)
 
 ## Overview
 
@@ -22,14 +24,13 @@ For general guidelines about contributing to Exercism see the [Exercism contribu
 
 Hi! Thanks for contributing to the Exercism Java track!
 
-Before opening your pull request, please review the track policies linked below and make sure your changes comply with them all. This helps us focus our review time on the more important aspects of your changes.
+Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all. This helps us focus our review time on the more important aspects of your changes.
 
-- [Prefer instance methods](https://github.com/exercism/java/blob/master/POLICIES.md#prefer-instance-methods)
-- [Starter implementations](https://github.com/exercism/java/blob/master/POLICIES.md#starter-implementations)
-- [Ignore noninitial tests](https://github.com/exercism/java/blob/master/POLICIES.md#ignore-noninitial-tests)
-- [Multiple file submissions](https://github.com/exercism/java/blob/master/POLICIES.md#multiple-file-submissions)
+Also please only address one issue per pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
 
-One last thing to note before you get started. When you fork the repository and you want to sync your fork, you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
+It's perfectly fine to have more than one pull request open at a time. In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
+
+One last thing to note before you get started. When you fork the repository and you want to [sync your fork](https://help.github.com/articles/syncing-a-fork/), you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
 
 ## Contributing With Minimal Setup
 
@@ -146,10 +147,12 @@ Any completely new exercise needs to be added and accepted there before it can b
 
 There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
 Please review this before porting an exercise to the Java track.
- 
+
 See [here](http://exercism.io/languages/java/todo) for a list of exercises that have yet to be implemented on the Java track and can therefore be ported to this track.
 Please make sure no one else has a pull request open to implement your chosen exercise before you start.
-Also please make a [dibs pull request](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md#avoiding-duplicate-work) to make it clear to others that you are working on this exercise.
+
+It might also be a good idea to open a WIP pull request to make it clear to others that you are working on this exercise.
+This can just be a pull request with an empty commit that states which new exercise you're working on, with WIP (work in progress) in the title so that the maintainers know that it's not ready for review yet.
 
 The Java specific details you need to know about adding an exercise are:
 
@@ -167,7 +170,7 @@ The `build.gradle` file can just be copied from any other exercise submodule.
 The `README.md` file can be generated using [configlet](https://github.com/exercism/configlet/releases).
 You can do this by:
 
-  1. Download configlet and put it somewhere in your PATH
+  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
 
   2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
@@ -181,5 +184,37 @@ If there is canonical data available you also need to create a file at `exercise
 The canonical data version can be found at the top of the canonical data file for that exercise.
 See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/master/exercises/acronym/.meta), for an example `version` file.
 
+* Make sure you've followed the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md), especially the ones for exercise added/updated.
+
 Hopefully that should be enough information to help you port an exercise to the Java track.
 Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
+
+## Updating the READMEs
+
+The `README.md` files are generated from the exercise descriptions in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises).
+They need to be regenerated regularly so that any changes to the descriptions in problem specifications propagate to our READMEs.
+This can be done using [configlet](https://github.com/exercism/configlet/releases):
+
+  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
+
+  2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+
+  3. Run `configlet generate . --spec-path path_to_problem_specifications` from the root of this repository.
+
+## Checking tests are up to date
+
+The tests for each exercise should follow the canonical data in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises) as closely as possible.
+The canonical data can change quite regularly, in which case the [canonical data version](https://github.com/exercism/problem-specifications#test-data-versioning) for that exercise will be updated.
+
+We keep track of which version of the canonical data each exercise implements in a version file, for example: https://github.com/exercism/java/blob/master/exercises/two-fer/.meta/version.
+Not all exercises have canonical data in problem specifications.
+For those that don't we don't add a version file.
+
+We have [a script](https://github.com/exercism/java/blob/master/scripts/canonical_data_check.sh) which can check if these version are up to date with the ones in problem specification.
+This script can be used to check if any version files, tests and reference implementations need updating.
+
+To run this script:
+
+  1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+
+  2. Run `./scripts/canonical_data_check.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository.
