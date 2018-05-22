@@ -38,7 +38,7 @@ public class SchoolTest {
   @Ignore("Remove to run test")
   @Test
   public void addsMoreStudentsInSameGrade() {
-    final int grade = 2;
+    int grade = 2;
     school.add("James", grade);
     school.add("Blair", grade);
     school.add("Paul", grade);
