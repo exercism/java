@@ -126,7 +126,7 @@ class GoCounting {
 		return territory;
 	}
 	
-	HashMap<String, Set<Point>> getTerritories() {
+	HashMap<Player, Set<Point>> getTerritories() {
 		HashMap<Player, Set<Point>> territories = new HashMap<Player, Set<Point>>();
 		
 		territories.put(Player.WHITE, new HashSet<Point>());
