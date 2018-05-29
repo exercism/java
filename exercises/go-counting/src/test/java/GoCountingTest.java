@@ -121,15 +121,15 @@ public class GoCountingTest {
 	public void oneTerritoryIsWholeBoardTest() {
 		GoCounting gocounting = new GoCounting(" ");
 		
-		HashMap<String, Set<Point>> territories = new HashMap<>();
+		HashMap<Player, Set<Point>> territories = new HashMap<>();
 		Set<Point> blackTerritory = new HashSet<>();
 		Set<Point> whiteTerritory = new HashSet<>();
 		Set<Point> noneTerritory = new HashSet<>();
 		noneTerritory.add(new Point(0, 0));
 		
-		territories.put("BLACK", blackTerritory);
-		territories.put("WHITE", whiteTerritory);
-		territories.put("NONE", noneTerritory);
+		territories.put(Player.BLACK, blackTerritory);
+		territories.put(Player.WHITE, whiteTerritory);
+		territories.put(Player.NONE, noneTerritory);
 		
 		assertEquals(territories, gocounting.getTerritories());
 	}
@@ -149,10 +149,10 @@ public class GoCountingTest {
 		
 		Set<Point> noneTerritory = new HashSet<>();
 		
-		HashMap<String, Set<Point>> territories = new HashMap<>();
-		territories.put("BLACK", blackTerritory);
-		territories.put("WHITE", whiteTerritory);
-		territories.put("NONE", noneTerritory);
+		HashMap<Player, Set<Point>> territories = new HashMap<>();
+		territories.put(Player.BLACK, blackTerritory);
+		territories.put(Player.WHITE, whiteTerritory);
+		territories.put(Player.NONE, noneTerritory);
 		
 		assertEquals(territories, gocounting.getTerritories());
 	}
@@ -162,16 +162,16 @@ public class GoCountingTest {
 	public void twoRegionRectangularBoardTest() {
 		GoCounting gocounting = new GoCounting(" B ");
 		
-		HashMap<String, Set<Point>> territories = new HashMap<>();
+		HashMap<Player, Set<Point>> territories = new HashMap<>();
 		Set<Point> blackTerritory = new HashSet<>();
 		blackTerritory.add(new Point(0, 0));
 		blackTerritory.add(new Point(2, 0));
 		Set<Point> whiteTerritory = new HashSet<>();
 		Set<Point> noneTerritory = new HashSet<>();
 		
-		territories.put("BLACK", blackTerritory);
-		territories.put("WHITE", whiteTerritory);
-		territories.put("NONE", noneTerritory);
+		territories.put(Player.BLACK, blackTerritory);
+		territories.put(Player.WHITE, whiteTerritory);
+		territories.put(Player.NONE, noneTerritory);
 		
 		assertEquals(territories, gocounting.getTerritories());
 	}
