@@ -126,23 +126,17 @@ class GoCounting {
 		return territory;
 	}
 	
-	HashMap<String, Set<Point>> getTerritories() {
-		HashMap<String, Set<Point>> territories = new HashMap<String, Set<Point>>();
+	HashMap<Player, Set<Point>> getTerritories() {
+		HashMap<Player, Set<Point>> territories = new HashMap<Player, Set<Point>>();
 		
-		territories.put("WHITE", new HashSet<Point>());
-		territories.put("BLACK", new HashSet<Point>());
-		territories.put("NONE", new HashSet<Point>());
+		territories.put(Player.WHITE, new HashSet<Point>());
+		territories.put(Player.BLACK, new HashSet<Point>());
+		territories.put(Player.NONE, new HashSet<Point>());
 		
 		for (int i = 0; i < board[0].length; i++) {
 			for (int j = 0; j < board.length; j++) {
 				if (board[j][i] == Player.NONE) {
-					if (getTerritoryOwner(j, i) == Player.NONE) {
-						territories.get("NONE").add(new Point(j, i));
-					} else if (getTerritoryOwner(j, i) == Player.BLACK) {
-						territories.get("BLACK").add(new Point(j, i));
-					} else {
-						territories.get("WHITE").add(new Point(j, i));
-					}
+					territories.get(getTerritoryOwner(j, i)).add(new Point(j, i));
 				}
 			}
 		}
