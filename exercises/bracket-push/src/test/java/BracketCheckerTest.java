@@ -49,6 +49,13 @@ public class BracketCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testPartiallyPairedBrackets() {
+        BracketChecker bracketChecker = new BracketChecker("{[])");
+        assertFalse(bracketChecker.areBracketsMatchedAndNestedCorrectly());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testSimpleNestedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{[]}");
         assertTrue(bracketChecker.areBracketsMatchedAndNestedCorrectly());
