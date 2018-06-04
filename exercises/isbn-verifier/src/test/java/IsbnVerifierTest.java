@@ -40,7 +40,7 @@ public class IsbnVerifierTest {
     @Ignore("Remove to run test")
     @Test
     public void invalidCharacterInIsbn() {
-        assertFalse(isbnVerifier.isValid("3-598-2K507-0"));
+        assertFalse(isbnVerifier.isValid("3-598-P1581-X"));
     }
 
     @Ignore("Remove to run test")
@@ -97,4 +97,15 @@ public class IsbnVerifierTest {
         assertFalse(isbnVerifier.isValid(""));
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void inputIsNineCharacters() {
+        assertFalse(isbnVerifier.isValid("134456729"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void invalidCharactersAreNotIgnored() {
+        assertFalse(isbnVerifier.isValid("3132P34035"));
+    }
 }
