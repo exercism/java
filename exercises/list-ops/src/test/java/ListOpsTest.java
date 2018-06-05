@@ -62,11 +62,13 @@ public class ListOpsTest {
                         Collections.singletonList('1'),
                         Collections.singletonList('2')
                 ),
-                Arrays.asList(
+                Collections.singletonList(
                         Collections.singletonList('3'),
+                        ),
+                Collections.singletonList(
                         Collections.emptyList()
                 ),
-                Arrays.asList(
+                Collections.singletonList(
                         Arrays.asList('4', '5', '6')
                 )
         );
