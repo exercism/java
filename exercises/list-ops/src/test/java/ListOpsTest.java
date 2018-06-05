@@ -58,17 +58,29 @@ public class ListOpsTest {
     @Test
     public void testConcatOnNonEmptyListOfNestedLists() {
         List<List<List<Character>>> listOfNestedLists = Arrays.asList(
-                Arrays.asList(Collections.singletonList('1'),
-                Collections.singletonList('2')),
-                Arrays.asList(Collections.singletonList('3'),
-                Collections.emptyList()),
-                Arrays.asList(Arrays.asList('4', '5', '6'));
+                Arrays.asList(
+                        Collections.singletonList('1'),
+                        Collections.singletonList('2')
+                ),
+                Arrays.asList(
+                        Collections.singletonList('3'),
+                        Collections.emptyList()
+                ),
+                Arrays.asList(
+                        Arrays.asList('4', '5', '6')
+                )
+        );
 
         assertEquals(
-                Arrays.asList(Collections.singletonList('1'),
-                Collections.singletonList('2'), Collections.singletonList('3'),
-                Collections.emptyList(), Arrays.asList(4, 5, 6)),
-                ListOps.concat(listOfNestedLists));
+                Arrays.asList(
+                        Collections.singletonList('1'),
+                        Collections.singletonList('2'),
+                        Collections.singletonList('3'),
+                        Collections.emptyList(),
+                        Arrays.asList('4', '5', '6')
+                ),
+                ListOps.concat(listOfNestedLists)
+        );
     }
 
     @Ignore("Remove to run test")
