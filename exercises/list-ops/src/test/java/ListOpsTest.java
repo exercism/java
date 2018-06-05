@@ -64,7 +64,7 @@ public class ListOpsTest {
                 ),
                 Collections.singletonList(
                         Collections.singletonList('3'),
-                        ),
+                ),
                 Collections.singletonList(
                         Collections.emptyList()
                 ),
