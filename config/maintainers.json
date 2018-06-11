@@ -2,64 +2,74 @@
   "docs_url": "https://github.com/exercism/docs/blob/master/maintaining-a-track/maintainer-configuration.md",
   "maintainers": [
     {
-      "alumnus": true,
-      "avatar_url": null,
-      "bio": null,
       "github_username": "jtigger",
+      "alumnus": true,
+      "show_on_website": false,
+      "name": null,
       "link_text": null,
       "link_url": null,
-      "name": null,
-      "show_on_website": false
+      "avatar_url": null,
+      "bio": null
     },
     {
-      "alumnus": true,
-      "avatar_url": null,
-      "bio": null,
       "github_username": "matthewmorgan",
-      "link_text": null,
-      "link_url": null,
-      "name": null,
-      "show_on_website": false
-    },
-    {
-      "alumnus": false,
-      "avatar_url": null,
-      "bio": null,
-      "github_username": "sit",
-      "link_text": null,
-      "link_url": null,
-      "name": null,
-      "show_on_website": false
-    },
-    {
       "alumnus": true,
-      "avatar_url": null,
-      "bio": null,
-      "github_username": "stkent",
+      "show_on_website": false,
+      "name": null,
       "link_text": null,
       "link_url": null,
+      "avatar_url": null,
+      "bio": null
+    },
+    {
+      "github_username": "sit",
+      "alumnus": false,
+      "show_on_website": false,
       "name": null,
-      "show_on_website": false
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": null
     },
     {
-      "alumnus": false,
-      "bio": "I'm a 16 year old high school student. I like programming and java a lot. Contributing to exercism helps me to keep learning and get valuable experience. One day near, I hope to have a job or internship programming",
+      "github_username": "stkent",
+      "alumnus": true,
+      "show_on_website": false,
+      "name": null,
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": null
+    },
+    {
       "github_username": "Smarticles101",
-      "show_on_website": true
+      "alumnus": false,
+      "show_on_website": true,
+      "name": null,
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I'm a 16 year old high school student. I like programming and java a lot. Contributing to exercism helps me to keep learning and get valuable experience. One day near, I hope to have a job or internship programming"
     },
     {
-      "alumnus": false,
-      "bio": "I'm a software developer working for Softwire, a UK based software company. I love programming in pretty much any language (possibly with the exception of C++) but Java is probably the language I have the most experience with.",
       "github_username": "FridaTveit",
+      "alumnus": false,
+      "show_on_website": true,
       "name": "Frida Johanne Tveit",
-      "show_on_website": true
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I'm a software developer working for Softwire, a UK based software company. I love programming in pretty much any language (possibly with the exception of C++) but Java is probably the language I have the most experience with."
     },
     {
-      "alumnus": false,
-      "bio": "I am a software developer and consultant working for Black Pepper Software, a software company based in Leamington Spa, England. I'm a recent Computer Science graduate from the University of Warwick, and love all things to do with computers!",
       "github_username": "sjwarner-bp",
+      "alumnus": false,
+      "show_on_website": true,
       "name": "Sam Warner",
-      "show_on_website": true
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I am a software developer and consultant working for Black Pepper Software, a software company based in Leamington Spa, England. I'm a recent Computer Science graduate from the University of Warwick, and love all things to do with computers!"
     }
   ]
 }
