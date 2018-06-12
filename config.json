@@ -17,7 +17,8 @@
       "difficulty": 1,
       "topics": [
         "strings"
-      ]
+      ],
+      "auto-approve": true
     },
     {
       "slug": "two-fer",
