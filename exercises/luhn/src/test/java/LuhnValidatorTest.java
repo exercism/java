@@ -33,7 +33,7 @@ public class LuhnValidatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testSimpleValidSINReversedBecomesInvalid() {
-	assertTrue(luhnValidator.isValid("59"));
+        assertTrue(luhnValidator.isValid("59"));
     }
 
     @Ignore("Remove to run test")
@@ -66,21 +66,10 @@ public class LuhnValidatorTest {
         assertFalse(luhnValidator.isValid("055-444-285"));
     }
 
-    /* The following test diverges from the canonical test data. This is because the corresponding canonical test does
-     * not account for Java specific functions (such as Character.getNumericValue()), which can be part of incorrect yet
-     * passing implementations. For more detail, check out issue #972 here:
-     * (https://github.com/exercism/java/issues/972).
-    */
-    @Ignore("Remove to run test")
-    @Test
-    public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
-        assertFalse(luhnValidator.isValid("85&"));
-    }
-
     @Ignore("Remove to run test")
     @Test
     public void testStringContainingSymbolsInvalid() {
-	assertFalse(luhnValidator.isValid("055£ 444$ 285"));
+        assertFalse(luhnValidator.isValid("055£ 444$ 285"));
     }
 
     @Ignore("Remove to run test")
@@ -104,7 +93,17 @@ public class LuhnValidatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testStringsWithNonDigitsInvalid() {
-	assertFalse(luhnValidator.isValid(":9"));
+        assertFalse(luhnValidator.isValid(":9"));
     }
 
+    /* The following test diverges from the canonical test data. This is because the corresponding canonical test does
+     * not account for Java specific functions (such as Character.getNumericValue()), which can be part of incorrect yet
+     * passing implementations. For more detail, check out issue #972 here:
+     * (https://github.com/exercism/java/issues/972).
+    */
+    @Ignore("Remove to run test")
+    @Test
+    public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
+        assertFalse(luhnValidator.isValid("85&"));
+    }
 }
