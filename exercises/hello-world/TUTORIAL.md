@@ -257,10 +257,10 @@ Cheers!
 
 ## Move on to the next exercise
 
-There are many more exercises you can practice with.  Grab the next one!
+There are many more exercises you can practice with.  Grab the next one! (example for `two-fer`)
 
 ```
-$ exercism fetch java
+$ exercism download --exercise=two-fer --track=java
 ```
 
 ## Review (and comment on) others' submissions to this exercise
