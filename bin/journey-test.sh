@@ -202,16 +202,13 @@ start_x_api() {
 
 configure_exercism_cli() {
   local exercism_home="$1"
-  local exercism_configfile="$2"
-  local xapi_port=$3
-  echo ">>> configure_exercism_cli(exercism_home=\"${exercism_home}\", exercism_configfile=\"${exercism_configfile}\", xapi_port=${xapi_port})"
-  local exercism="./exercism --config ${exercism_configfile}"
+  local xapi_port=$2
+  local exercism_cli="./exercism"
+  echo ">>> configure_exercism_cli(exercism_home=\"${exercism_home}\", xapi_port=${xapi_port})"
 
   mkdir -p "${exercism_home}"
   pushd "${exercism_home}"
-  $exercism configure --dir="${exercism_home}"
-  $exercism configure --api http://localhost:${xapi_port}
-  $exercism debug
+  ${exercism_cli} configure --token="49b1ceef-a89d-4a13-a5d7-e90a4b694769" --workspace="${exercism_home}" --api http://localhost:${xapi_port}
   popd
 
   echo "<<< configure_exercism_cli()"
@@ -219,27 +216,28 @@ configure_exercism_cli() {
 
 solve_all_exercises() {
   local exercism_exercises_dir="$1"
-  local exercism_configfile="$2"
-  echo ">>> solve_all_exercises(exercism_exercises_dir=\"${exercism_exercises_dir}\", exercism_configfile=\"${exercism_configfile}\")"
+  echo ">>> solve_all_exercises(exercism_exercises_dir=\"${exercism_exercises_dir}\")"
 
   local track_root=$( pwd )
-  local exercism_cli="./exercism --config ${exercism_configfile}"
-  local exercises=`cat config.json | jq '.exercises[].slug + " "' --join-output`
+  local exercism_cli="./exercism"
+  local exercises=`cat config.json | jq -c '.exercises[]'`
   local total_exercises=`cat config.json | jq '.exercises | length'`
   local current_exercise_number=1
   local tempfile="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
 
   pushd ${exercism_exercises_dir}
   for exercise in $exercises; do
+    local exercise_uuid=$exercise | jq '.uuid'
+    local exercise_name=$exercise | jq '.slug'
     echo -e "\n\n"
     echo "=================================================="
-    echo "${current_exercise_number} of ${total_exercises} -- ${exercise}"
+    echo "${current_exercise_number} of ${total_exercises} -- ${exercise_name}"
     echo "=================================================="
 
-    ${exercism_cli} fetch ${TRACK} $exercise
-    cp -R -H ${track_root}/exercises/${exercise}/.meta/src/reference/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise}/src/main/${TRACK}/
+    ${exercism_cli} download -t ${TRACK} -u ${exercise_uuid}
+    cp -R -H ${track_root}/exercises/${exercise_name}/.meta/src/reference/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise_name}/src/main/${TRACK}/
 
-    pushd ${exercism_exercises_dir}/${TRACK}/${exercise}
+    pushd ${exercism_exercises_dir}/${TRACK}/${exercise_name}
     # Check that tests compile before we strip @Ignore annotations
     "$EXECPATH"/gradlew compileTestJava
     # Ensure we run all the tests (as delivered, all but the first is @Ignore'd)
@@ -259,12 +257,11 @@ solve_all_exercises() {
 
 solve_single_exercise() {
   local exercism_exercises_dir="$1"
-  local exercism_configfile="$2"
-  local exercise_to_solve="$3"
-  echo ">>> solve_all_exercises(exercism_exercises_dir=\"${exercism_exercises_dir}\", exercism_configfile=\"${exercism_configfile}\", exercise_to_solve=\"$exercise_to_solve\")"
+  local exercise_to_solve="$2"
+  echo ">>> solve_single_exercises(exercism_exercises_dir=\"${exercism_exercises_dir}\", exercise_to_solve=\"$exercise_to_solve\")"
 
   local track_root=$( pwd )
-  local exercism_cli="./exercism --config ${exercism_configfile}"
+  local exercism_cli="./exercism"
   local tempfile="${TMPDIR:-/tmp}/journey-test.sh-unignore_all_tests.txt"
 
   pushd ${exercism_exercises_dir}
@@ -274,7 +271,9 @@ solve_single_exercise() {
   echo "Solving ${exercise_to_solve}"
   echo "=================================================="
 
-  ${exercism_cli} fetch ${TRACK} $exercise_to_solve
+  local exercise_config_object=`cat config.json | jq -c '.exercises[] | select(.slug | contains("hello-world"))'`
+  local exercise_uuid = ${exercise_config_object} | jq '.uuid'
+  ${exercism_cli} download -t ${TRACK} -u ${exercise_uuid}
   cp -R -H ${track_root}/exercises/${exercise_to_solve}/.meta/src/reference/${TRACK}/* ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}/src/main/${TRACK}/
 
   pushd ${exercism_exercises_dir}/${TRACK}/${exercise_to_solve}
@@ -305,7 +304,6 @@ main() {
   local trackler_home="${build_path}/trackler"
   local exercism_home="${build_path}/exercism"
 
-  local exercism_configfile=".journey-test.exercism.json"
   local xapi_port=9292
 
   # fail fast if required binaries are not installed.
@@ -331,13 +329,13 @@ main() {
   start_x_api "${xapi_home}"
 
   # Create a CLI install and config just for this build; this script does not use your CLI install.
-  configure_exercism_cli "${exercism_home}" "${exercism_configfile}" "${xapi_port}"
+  configure_exercism_cli "${exercism_home}" "${xapi_port}"
 
   if [[ $EXERCISES_TO_SOLVE == "" ]]; then
-    solve_all_exercises "${exercism_home}" "${exercism_configfile}"
+    solve_all_exercises "${exercism_home}"
   else
     for exercise in $EXERCISES_TO_SOLVE
-      do solve_single_exercise "${exercism_home}" "${exercism_configfile}" "${exercise}"
+      do solve_single_exercise "${exercism_home}" "${exercise}"
     done
   fi
 }
