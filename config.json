@@ -13,12 +13,12 @@
       "slug": "hello-world",
       "uuid": "f77dc7e3-35a8-4300-a7c8-2c1765e9644d",
       "core": true,
+      "auto_approve": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "strings"
-      ],
-      "auto_approve": true
+      ]
     },
     {
       "slug": "two-fer",
@@ -49,7 +49,7 @@
       "difficulty": 2,
       "topics": [
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -108,8 +108,7 @@
       "difficulty": 3,
       "topics": [
         "conditionals",
-        "floating_point_numbers",
-        "mathematics"
+        "floating_point_numbers"
       ]
     },
     {
@@ -148,7 +147,6 @@
       "topics": [
         "conditionals",
         "integers",
-        "mathematics",
         "strings"
       ]
     },
@@ -161,7 +159,7 @@
       "topics": [
         "integers",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -177,7 +175,6 @@
         "enumerations",
         "integers",
         "loops",
-        "mathematics",
         "transforming"
       ]
     },
@@ -192,7 +189,7 @@
         "exception_handling",
         "filtering",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -243,7 +240,7 @@
         "conditionals",
         "integers",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -256,7 +253,6 @@
         "algorithms",
         "booleans",
         "loops",
-        "mathematics",
         "strings",
         "type_conversion"
       ]
@@ -285,8 +281,7 @@
       "topics": [
         "booleans",
         "classes",
-        "exception_handling",
-        "mathematics"
+        "exception_handling"
       ]
     },
     {
@@ -298,7 +293,7 @@
       "topics": [
         "integers",
         "loops",
-        "mathematics",
+        "math",
         "strings",
         "type_conversion"
       ]
@@ -314,7 +309,7 @@
         "integers",
         "lists",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -368,7 +363,7 @@
         "conditionals",
         "exception_handling",
         "integers",
-        "mathematics",
+        "math",
         "recursion"
       ]
     },
@@ -383,7 +378,8 @@
         "exception_handling",
         "integers",
         "lists",
-        "loops"
+        "loops",
+        "math"
       ]
     },
     {
@@ -398,7 +394,6 @@
         "integers",
         "lists",
         "loops",
-        "mathematics",
         "matrices",
         "sets"
       ]
@@ -564,7 +559,7 @@
         "integers",
         "lists",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -605,7 +600,7 @@
         "arrays",
         "exception_handling",
         "integers",
-        "mathematics",
+        "math",
         "matrices"
       ]
     },
@@ -668,8 +663,7 @@
       "difficulty": 6,
       "topics": [
         "conditionals",
-        "logic",
-        "mathematics"
+        "logic"
       ]
     },
     {
@@ -682,7 +676,6 @@
         "arrays",
         "integers",
         "loops",
-        "mathematics",
         "matrices"
       ]
     },
@@ -697,7 +690,6 @@
         "logic",
         "loops",
         "maps",
-        "mathematics",
         "strings"
       ]
     },
@@ -767,7 +759,6 @@
         "classes",
         "conditionals",
         "games",
-        "mathematics",
         "matrices"
       ]
     },
@@ -867,7 +858,7 @@
         "exception_handling",
         "integers",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -892,8 +883,7 @@
         "conditionals",
         "exception_handling",
         "games",
-        "integers",
-        "mathematics"
+        "integers"
       ]
     },
     {
@@ -955,8 +945,7 @@
       "topics": [
         "algorithms",
         "conditionals",
-        "loops",
-        "mathematics"
+        "loops"
       ]
     },
     {
@@ -1052,7 +1041,6 @@
       "topics": [
         "cryptography",
         "lists",
-        "mathematics",
         "security",
         "strings",
         "text_formatting"
@@ -1186,8 +1174,7 @@
         "algorithms",
         "floating_point_numbers",
         "integers",
-        "lists",
-        "mathematics"
+        "lists"
       ]
     },
     {
@@ -1199,6 +1186,7 @@
       "topics": [
         "algorithms",
         "integers",
+        "math",
         "transforming"
       ]
     },
@@ -1211,7 +1199,6 @@
       "topics": [
         "cryptography",
         "exception_handling",
-        "mathematics",
         "randomness",
         "security",
         "strings"
@@ -1225,7 +1212,7 @@
       "difficulty": 8,
       "topics": [
         "floating_point_numbers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -1237,7 +1224,7 @@
       "topics": [
         "algorithms",
         "floating_point_numbers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -1279,7 +1266,7 @@
         "lists",
         "loops",
         "maps",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -1292,7 +1279,7 @@
         "integer",
         "lists",
         "logic",
-        "mathematics"
+        "math"
       ]
     },
     {
