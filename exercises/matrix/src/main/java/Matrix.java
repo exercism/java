@@ -12,12 +12,4 @@ class Matrix {
     int[] getColumn(int columnNumber) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
-
-    int getRowsCount() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
-
-    int getColumnsCount() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
 }
