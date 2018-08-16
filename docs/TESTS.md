@@ -14,7 +14,7 @@ Choose your operating system:
 2. Get the first exercise:
 
      ```batchfile
-     C:\Users\JohnDoe>exercism fetch java
+     C:\Users\JohnDoe>exercism download --exercise hello-world --track java
 
      Not Submitted:     1 problem
      java (Hello World) C:\Users\JohnDoe\exercism\java\hello-world
@@ -52,7 +52,7 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 1. In the terminal window, get the first exercise:
 
      ```
-     $ exercism fetch java
+     $ exercism download --exercise hello-world --track java
 
      New:                 1 problem
      Java (Etl) /Users/johndoe/exercism/java/hello-world
@@ -86,7 +86,7 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 1. In the terminal window, get the first exercise:
 
      ```
-     $ exercism fetch java
+     $ exercism download --exercise hello-world --track java
 
      New:                 1 problem
      Java (Etl) /home/johndoe/exercism/java/hello-world
