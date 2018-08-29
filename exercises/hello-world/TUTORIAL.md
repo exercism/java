@@ -263,24 +263,20 @@ There are many more exercises you can practice with.  Grab the next one! (exampl
 $ exercism download --exercise=two-fer --track=java
 ```
 
-## Review (and comment on) others' submissions to this exercise
+## Become a mentor
 
 The heart of Exercism are the conversations about coding
-practices.  It's definitely fun to practice, but engaging with others
-both in their attempts and your own is how you get feedback.  That feedback
+practices. It's definitely fun to practice, but engaging with others
+both in their attempts and your own is how you get feedback. That feedback
 can help point out what you're doing well and where you might need to
 improve.
 
 Some submissions will be nearly identical to yours; others will be
-completely different.  Seeing both kinds can be instructive and interesting.
+completely different. Seeing both kinds can be instructive and interesting.
 
-Note that you can only view submissions of others for exercises you have
-completed yourself.  This enriches the experience of reading others' code
-because you'll have your own experience of trying to solve the problem.
-
-Here's an up-to-date list of submissions on the Java track:
-
-http://exercism.io/tracks/java/exercises
+Mentors review submitted solutions for the track they've chosen to mentor
+to help users learn as much as possible. To read more about mentoring and
+to sign up see: http://mentoring.exercism.io/.
 
 ## Contribute to Exercism
 
