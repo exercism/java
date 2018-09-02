@@ -3,7 +3,7 @@
 Choose your operating system:
 
 * [Windows](#windows)
-* [Mac OS X](#mac-os-x)
+* [macOS](#macos)
 * [Linux](#linux)
 
 ----
@@ -47,7 +47,7 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 
 ----
 
-# Mac OS X
+# macOS
 
 1. In the terminal window, get the first exercise:
 

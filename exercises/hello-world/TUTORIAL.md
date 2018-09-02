@@ -11,7 +11,7 @@
 Welcome to the first exercise on the Java track!
 
 This document is a step-by-step guide to solving this exercise. The
-instructions should work equally well on Windows, Mac OS X and Linux.
+instructions should work equally well on Windows, macOS and Linux.
 
 Even if you are already familiar with Java basics, stepping through this guide
 may be helpful as it will help you understand the output from the tool, Gradle,
