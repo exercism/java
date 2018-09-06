@@ -14,6 +14,9 @@ If no name is given, the result should be "One for you, one for me."
 
 # Java Tips
 
+Before you start, make sure you understand how to write code that can pass the test cases.
+For more context, check out this [tutorial](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md).
+
 Most Java exercises include multiple test cases. These cases are structured to
 support a useful process known as
 [test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development).
