@@ -13,23 +13,23 @@ public class BinarySearchTest {
 
     @Test
     public void findsAValueInAnArrayWithOneElement() {
-        List<Character> listOfUnitLength = Collections.singletonList('6');
+        List<Integer> listOfUnitLength = Collections.singletonList(6);
 
-        BinarySearch<Character> search = new BinarySearch<>(listOfUnitLength);
+        BinarySearch search = new BinarySearch(listOfUnitLength);
 
-        assertEquals(0, search.indexOf('6'));
+        assertEquals(0, search.indexOf(6));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void findsAValueInTheMiddleOfAnArray() {
-        List<String> sortedList = Collections.unmodifiableList(
-                Arrays.asList("1", "3", "4", "6", "8", "9", "11")
+        List<Integer> sortedList = Collections.unmodifiableList(
+                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<String> search = new BinarySearch<>(sortedList);
+        BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(3, search.indexOf("6"));
+        assertEquals(3, search.indexOf(6));
     }
 
     @Ignore("Remove to run test")
@@ -39,7 +39,7 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
+        BinarySearch search = new BinarySearch(sortedList);
 
         assertEquals(0, search.indexOf(1));
     }
@@ -51,7 +51,7 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
+        BinarySearch search = new BinarySearch(sortedList);
 
         assertEquals(6, search.indexOf(11));
     }
@@ -63,7 +63,7 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634)
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedListOfOddLength);
+        BinarySearch search = new BinarySearch(sortedListOfOddLength);
 
         assertEquals(9, search.indexOf(144));
     }
@@ -75,7 +75,7 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377)
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedListOfEvenLength);
+        BinarySearch search = new BinarySearch(sortedListOfEvenLength);
 
         assertEquals(5, search.indexOf(21));
     }
@@ -83,13 +83,13 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void identifiesThatAValueIsNotIncludedInTheArray() {
-        List<String> sortedList = Collections.unmodifiableList(
-                Arrays.asList("1", "3", "4", "6", "8", "9", "11")
+        List<Integer> sortedList = Collections.unmodifiableList(
+                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<String> search = new BinarySearch<>(sortedList);
+        BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf("7"));
+        assertEquals(-1, search.indexOf(7));
     }
 
     @Ignore("Remove to run test")
@@ -99,7 +99,7 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
+        BinarySearch search = new BinarySearch(sortedList);
 
         assertEquals(-1, search.indexOf(0));
     }
@@ -111,7 +111,7 @@ public class BinarySearchTest {
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
-        BinarySearch<Integer> search = new BinarySearch<>(sortedList);
+        BinarySearch search = new BinarySearch(sortedList);
 
         assertEquals(-1, search.indexOf(13));
     }
@@ -121,7 +121,7 @@ public class BinarySearchTest {
     public void nothingIsIncludedInAnEmptyArray() {
         List<Integer> emptyList = Collections.emptyList();
 
-        BinarySearch<Integer> search = new BinarySearch<>(emptyList);
+        BinarySearch search = new BinarySearch(emptyList);
 
         assertEquals(-1, search.indexOf(1));
     }

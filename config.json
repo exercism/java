@@ -809,7 +809,6 @@
       "difficulty": 6,
       "topics": [
         "arrays",
-        "generics",
         "recursion",
         "searching"
       ]
