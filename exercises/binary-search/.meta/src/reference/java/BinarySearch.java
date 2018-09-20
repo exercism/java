@@ -1,25 +1,25 @@
 
 import java.util.List;
 
-class BinarySearch<T extends Comparable<T>> {
+class BinarySearch {
 
-    private List<T> array;
+    private List<Integer> array;
     private int arraySize;
 
-    BinarySearch(List<T> array) {
+    BinarySearch(List<Integer> array) {
         this.array = array;
         this.arraySize = array.size();
     }
 
-    int indexOf(T value) {
+    int indexOf(Integer value) {
         return search(value);
     }
 
-    private int search(T value) {
+    private int search(Integer value) {
         int left = 0;
         int right = this.arraySize - 1;
         int middle;
-        T element;
+        Integer element;
         while (left <= right) {
             middle = (int) Math.floor(0.5 * (left + right));
             element = this.array.get(middle);
