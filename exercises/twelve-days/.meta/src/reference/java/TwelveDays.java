@@ -18,7 +18,7 @@ public class TwelveDays {
 
     public String verse(int verseNumber) {
         StringBuilder stringBuilder = new StringBuilder("On the " + days[verseNumber - 1]
-                + " day of Christmas my true love gave to me, ");
+                + " day of Christmas my true love gave to me: ");
         for (int i = verseNumber; i > 0; i--) {
             if (verseNumber != 1 && i == 1) stringBuilder.append("and ");
             stringBuilder.append(gifts[i - 1]);
