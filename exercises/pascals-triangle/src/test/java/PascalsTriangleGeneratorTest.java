@@ -120,12 +120,4 @@ public class PascalsTriangleGeneratorTest {
 
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(10));
     }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testValidatesNotNegativeRows() {
-        expectedException.expect(IllegalArgumentException.class);
-        pascalsTriangleGenerator.generateTriangle(-1);
-    }
-
 }
