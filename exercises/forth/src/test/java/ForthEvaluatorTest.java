@@ -325,6 +325,22 @@ public class ForthEvaluatorTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testCanUseDifferentWordsWithTheSameName() {
+        assertEquals(
+                Arrays.asList(5, 6),
+                forthEvaluator.evaluateProgram(Arrays.asList(": foo 5 ;", ": bar foo ;", ": foo 6 ;", "bar foo")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testCanDefineWordThatUsesWordWithTheSameName() {
+        assertEquals(
+                Collections.singletonList(11),
+                forthEvaluator.evaluateProgram(Arrays.asList(": foo 10 ;", ": foo foo 1 + ;", "foo")));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testCannotRedefineNumbers() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Cannot redefine numbers");

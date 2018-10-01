@@ -1,5 +1,8 @@
 import java.util.*;
+import java.util.function.Function;
 import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class ForthEvaluator {
 
@@ -128,13 +131,30 @@ class ForthEvaluator {
 
             if (token instanceof Token.OpDefToken) {
                 final Token.OpDefToken opDefToken = (Token.OpDefToken) token;
-                userOps.put(opDefToken.getNewOp().toLowerCase(), opDefToken.getNewOpDefTokens());
+                final List<Token> newOpDefTokens = applyUserOps(opDefToken.getNewOpDefTokens());
+                userOps.put(opDefToken.getNewOp().toLowerCase(), newOpDefTokens);
             } else if (token instanceof Token.OpToken) {
                 evaluateOpToken((Token.OpToken) token);
             } else if (token instanceof Token.IntToken) {
                 values.push(((Token.IntToken) token).getRawValue());
             }
         }
+    }
+
+    private List<Token> applyUserOps(final List<Token> tokens) {
+        return tokens.stream()
+                .flatMap((Function<Token, Stream<Token>>) token -> {
+                    if (token instanceof Token.OpToken) {
+                        final String op = ((Token.OpToken) token).getOp();
+
+                        if (userOps.containsKey(op)) {
+                            return userOps.get(op).stream();
+                        }
+                    }
+
+                    return Stream.of(token);
+                })
+                .collect(Collectors.toList());
     }
 
     private void evaluateOpToken(final Token.OpToken opToken) {
