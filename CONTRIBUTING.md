@@ -104,7 +104,7 @@ Before you proceed, please ensure that you have `jq` (library that parses JSON) 
 ##### Debian Linux
 `sudo apt-get install jq ruby-full`
 
-##### Mac OSX
+##### macOS
 `brew install jq ruby`
 
 If you are going to make significant contribution(s) to the track, you might find it handy to have a complete local install of exercism on your computer.  This way, you can run the full suite of tests without having to create/update a PR.
