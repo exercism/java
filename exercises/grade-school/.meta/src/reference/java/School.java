@@ -17,6 +17,14 @@ class School {
     students.add(student);
   }
 
+  List<String> roster() {
+    List<String> result = new ArrayList<String>();
+    for (List<String> studentsInGrade : studentsByGradeAlphabetical().values()) {
+      result.addAll(studentsInGrade);
+    }
+    return result;
+  }
+
   List<String> grade(int grade) {
     return new ArrayList<>(fetchGradeFromDatabase(grade));
   }
@@ -25,14 +33,14 @@ class School {
     if (!database.containsKey(grade)) {
       database.put(grade, new LinkedList<>());
     }
+    Collections.sort(database.get(grade));
     return database.get(grade);
   }
 
   Map<Integer, List<String>> studentsByGradeAlphabetical() {
     Map<Integer, List<String>> sortedStudents = new HashMap<>();
     for (Integer grade : database.keySet()) {
-      List<String> studentsInGrade = database.get(grade);
-      Collections.sort(studentsInGrade);
+      List<String> studentsInGrade = fetchGradeFromDatabase(grade);
       sortedStudents.put(grade, studentsInGrade);
     }
     return sortedStudents;
