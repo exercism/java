@@ -25,7 +25,6 @@ public class PhoneNumberTest {
         assertEquals(
                 expectedNumber, actualNumber
         );
-        
     }
 
     @Ignore("Remove to run test")
