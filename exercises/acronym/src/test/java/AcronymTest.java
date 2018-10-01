@@ -44,4 +44,12 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).get());
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void consecutiveDelimiters() {
+        String phrase = "Something - I made up from thin air";
+        String expected = "SIMUFTA";
+        assertEquals(expected, new Acronym(phrase).get());
+    }
+    
 }
