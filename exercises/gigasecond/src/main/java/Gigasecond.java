@@ -11,7 +11,7 @@ class Gigasecond {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    LocalDateTime getDate() {
+    LocalDateTime getDateTime() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
