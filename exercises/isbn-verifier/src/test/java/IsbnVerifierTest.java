@@ -72,18 +72,18 @@ public class IsbnVerifierTest {
     public void tooLongIsbnAndNoDashes() {
         assertFalse(isbnVerifier.isValid("3598215078X"));
     }
-
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void tooShortIsbn() {
+        assertFalse(isbnVerifier.isValid("00"));
+    }
+    
     @Ignore("Remove to run test")
     @Test
     public void isbnWithoutCheckDigit() {
         assertFalse(isbnVerifier.isValid("3-598-21507"));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void tooLongIsbn() {
-        assertFalse(isbnVerifier.isValid("3-598-21507-XX"));
-    }
+    }  
 
     @Ignore("Remove to run test")
     @Test
@@ -107,5 +107,11 @@ public class IsbnVerifierTest {
     @Test
     public void invalidCharactersAreNotIgnored() {
         assertFalse(isbnVerifier.isValid("3132P34035"));
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void inputIsTooLongButContainsAValidIsbn() {
+        assertFalse(isbnVerifier.isValid("98245726788"));   
     }
 }
