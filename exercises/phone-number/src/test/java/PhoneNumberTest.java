@@ -25,6 +25,7 @@ public class PhoneNumberTest {
         assertEquals(
                 expectedNumber, actualNumber
         );
+        
     }
 
     @Ignore("Remove to run test")
@@ -141,5 +142,37 @@ public class PhoneNumberTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(223) 156-7890");
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void invalidIfAreaCodeStartsWith0OnValid11DigitNumber() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
+        new PhoneNumber("1 (023) 456-7890");
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void invalidIfAreaCodeStartsWith1OnValid11DigitNumber() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
+        new PhoneNumber("1 (123) 456-7890");
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void invalidIfExchangeCodeStartsWith0OnValid11DigitNumber() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
+        new PhoneNumber("1 (223) 056-7890");
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void invalidIfExchangeCodeStartsWith1OnValid11DigitNumber() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
+        new PhoneNumber("1 (223) 156-7890");
     }
 }
