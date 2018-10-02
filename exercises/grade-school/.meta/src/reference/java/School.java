@@ -4,14 +4,6 @@ class School {
 
   private final Map<Integer, List<String>> database = new HashMap<>();
 
-  int numberOfStudents() {
-    int result = 0;
-    for (List<String> studentsInGrade : database.values()) {
-      result += studentsInGrade.size();
-    }
-    return result;
-  }
-
   void add(String student, int grade) {
     List<String> students = fetchGradeFromDatabase(grade);
     students.add(student);
@@ -29,7 +21,7 @@ class School {
     return new ArrayList<>(fetchGradeFromDatabase(grade));
   }
 
-  List<String> fetchGradeFromDatabase(int grade) {
+  private List<String> fetchGradeFromDatabase(int grade) {
     if (!database.containsKey(grade)) {
       database.put(grade, new LinkedList<>());
     }
@@ -37,7 +29,7 @@ class School {
     return database.get(grade);
   }
 
-  Map<Integer, List<String>> studentsByGradeAlphabetical() {
+  private Map<Integer, List<String>> studentsByGradeAlphabetical() {
     Map<Integer, List<String>> sortedStudents = new HashMap<>();
     for (Integer grade : database.keySet()) {
       List<String> studentsInGrade = fetchGradeFromDatabase(grade);
