@@ -1,5 +1,6 @@
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 class BinarySearch {
 
@@ -11,11 +12,11 @@ class BinarySearch {
         this.arraySize = array.size();
     }
 
-    int indexOf(Integer value) throws ValueNotInArrayException {
+    int indexOf(Integer value) throws NoSuchElementException {
         return search(value);
     }
 
-    private int search(Integer value) throws ValueNotInArrayException {
+    private int search(Integer value) throws NoSuchElementException {
         int left = 0;
         int right = this.arraySize - 1;
         int middle;
@@ -31,6 +32,6 @@ class BinarySearch {
                 return middle;
             }
         }
-        throw new ValueNotInArrayException();
+        throw new NoSuchElementException("value not in array");
     }
 }

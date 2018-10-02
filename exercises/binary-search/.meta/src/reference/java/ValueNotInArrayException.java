@@ -1,2 +1,0 @@
-class ValueNotInArrayException extends Exception {
-}
