@@ -8,11 +8,12 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class BinarySearchTest {
 
     @Test
-    public void findsAValueInAnArrayWithOneElement() {
+    public void findsAValueInAnArrayWithOneElement() throws Exception {
         List<Integer> listOfUnitLength = Collections.singletonList(6);
 
         BinarySearch search = new BinarySearch(listOfUnitLength);
@@ -22,7 +23,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueInTheMiddleOfAnArray() {
+    public void findsAValueInTheMiddleOfAnArray() throws Exception {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -34,7 +35,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueAtTheBeginningOfAnArray() {
+    public void findsAValueAtTheBeginningOfAnArray() throws Exception {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -46,7 +47,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueAtTheEndOfAnArray() {
+    public void findsAValueAtTheEndOfAnArray() throws Exception {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -58,7 +59,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueInAnArrayOfOddLength() {
+    public void findsAValueInAnArrayOfOddLength() throws Exception {
         List<Integer> sortedListOfOddLength = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634)
         );
@@ -70,7 +71,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueInAnArrayOfEvenLength() {
+    public void findsAValueInAnArrayOfEvenLength() throws Exception {
         List<Integer> sortedListOfEvenLength = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377)
         );
@@ -89,7 +90,12 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(7));
+        try {
+          search.indexOf(7);
+          fail("exception must thrown");
+        } catch (Exception e) {
+          assertEquals("value not in array", e.getMessage());
+        }
     }
 
     @Ignore("Remove to run test")
@@ -101,7 +107,12 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(0));
+        try {
+          search.indexOf(0);
+          fail("exception must thrown");
+        } catch (Exception e) {
+          assertEquals("value not in array", e.getMessage());
+        }
     }
 
     @Ignore("Remove to run test")
@@ -113,7 +124,12 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(13));
+        try {
+          search.indexOf(13);
+          fail("exception must thrown");
+        } catch (Exception e) {
+          assertEquals("value not in array", e.getMessage());
+        }
     }
 
     @Ignore("Remove to run test")
@@ -123,6 +139,11 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(emptyList);
 
-        assertEquals(-1, search.indexOf(1));
+        try {
+          search.indexOf(1);
+          fail("expect exception thrown");
+        } catch (Exception e) {
+          assertEquals("value not in array", e.getMessage());
+        }
     }
 }
