@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/*
- * Based on problem-specifications/exercises/rna-transcription/canonical-data.json 1.3.0
- */
 public class RnaTranscriptionTest {
 
     private RnaTranscription rnaTranscription;
