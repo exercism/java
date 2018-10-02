@@ -1,6 +1,8 @@
 
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,9 +12,11 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class BinarySearchTest {
-
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+    
     @Test
-    public void findsAValueInAnArrayWithOneElement() {
+    public void findsAValueInAnArrayWithOneElement() throws ValueNotInArrayException {
         List<Integer> listOfUnitLength = Collections.singletonList(6);
 
         BinarySearch search = new BinarySearch(listOfUnitLength);
@@ -22,7 +26,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueInTheMiddleOfAnArray() {
+    public void findsAValueInTheMiddleOfAnArray() throws ValueNotInArrayException {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -34,7 +38,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueAtTheBeginningOfAnArray() {
+    public void findsAValueAtTheBeginningOfAnArray() throws ValueNotInArrayException {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -46,7 +50,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueAtTheEndOfAnArray() {
+    public void findsAValueAtTheEndOfAnArray() throws ValueNotInArrayException {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -58,7 +62,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueInAnArrayOfOddLength() {
+    public void findsAValueInAnArrayOfOddLength() throws ValueNotInArrayException {
         List<Integer> sortedListOfOddLength = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634)
         );
@@ -70,7 +74,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void findsAValueInAnArrayOfEvenLength() {
+    public void findsAValueInAnArrayOfEvenLength() throws ValueNotInArrayException {
         List<Integer> sortedListOfEvenLength = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377)
         );
@@ -82,47 +86,51 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void identifiesThatAValueIsNotIncludedInTheArray() {
+    public void identifiesThatAValueIsNotIncludedInTheArray() throws ValueNotInArrayException {
+        expectedException.expect(ValueNotInArrayException.class);
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(7));
+        search.indexOf(7);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void aValueSmallerThanTheArraysSmallestValueIsNotIncluded() {
+    public void aValueSmallerThanTheArraysSmallestValueIsNotIncluded() throws ValueNotInArrayException {
+        expectedException.expect(ValueNotInArrayException.class);
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(0));
+        search.indexOf(0);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void aValueLargerThanTheArraysSmallestValueIsNotIncluded() {
+    public void aValueLargerThanTheArraysSmallestValueIsNotIncluded() throws ValueNotInArrayException {
+        expectedException.expect(ValueNotInArrayException.class);
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(13));
+        search.indexOf(13);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void nothingIsIncludedInAnEmptyArray() {
+    public void nothingIsIncludedInAnEmptyArray() throws ValueNotInArrayException {
+        expectedException.expect(ValueNotInArrayException.class);
         List<Integer> emptyList = Collections.emptyList();
 
         BinarySearch search = new BinarySearch(emptyList);
 
-        assertEquals(-1, search.indexOf(1));
+        search.indexOf(1);
     }
 }
