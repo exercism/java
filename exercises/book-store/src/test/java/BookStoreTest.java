@@ -77,6 +77,13 @@ public class BookStoreTest {
 
   @Ignore("Remove to run test")
   @Test
+  public void twoGroupsOfFourIsCheaperThanGroupsOfFiveAndThree() {
+    List<Integer> books = Arrays.asList(1, 1, 2, 3, 4, 4, 5, 5);
+    assertEquals(51.20, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+  }
+
+  @Ignore("Remove to run test")
+  @Test
   public void groupOfFourPlusGroupOfTwoIsCheaperThanTwoGroupsOfThree() {
     List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 4);
     assertEquals(40.80, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
