@@ -17,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class SchoolTest {
-  School school;
+  private School school;
 
   @Before
   public void setUp() {
