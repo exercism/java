@@ -21,6 +21,18 @@
       ]
     },
     {
+      "slug": "leap",
+      "uuid": "85d9ebf4-98a6-4343-990a-42d594706f24",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "booleans",
+        "conditionals",
+        "logic"
+      ]
+    },
+    {
       "slug": "two-fer",
       "uuid": "74515d45-565b-4be2-96c4-77e58efa9257",
       "core": true,
