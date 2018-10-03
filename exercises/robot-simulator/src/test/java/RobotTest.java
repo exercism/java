@@ -184,6 +184,21 @@ public class RobotTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void instructionsStartingNorthAndMoveEastAndNorth() {
+        Robot robot = new Robot(new GridPosition(7, 3), Orientation.NORTH);
+
+        robot.simulate("RAALAL");
+
+        GridPosition expectedGridPosition = new GridPosition(9, 4);
+        Orientation expectedOrientation = Orientation.WEST;
+
+        assertEquals(expectedGridPosition, robot.getGridPosition());
+        assertEquals(expectedOrientation, robot.getOrientation());
+    }
+
+
+    @Ignore("Remove to run test")
+    @Test
     public void instructionsToMoveWestAndNorth() {
         Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
 
@@ -212,7 +227,7 @@ public class RobotTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void instructionsToMoveEastAndNorth() {
+    public void instructionsStartingSouthAndMoveEastAndNorth() {
         Robot robot = new Robot(new GridPosition(8, 4), Orientation.SOUTH);
 
         robot.simulate("LAAARRRALLLL");
