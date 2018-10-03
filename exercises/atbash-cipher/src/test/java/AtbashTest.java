@@ -89,8 +89,7 @@ public class AtbashTest {
     @Ignore("Remove to run test")
     @Test
     public void testDecodeWithTooManySpaces() {
-        assertEquals("exercism",
-                atbash.decode("vc vix    r hn"));
+        assertEquals("exercism", atbash.decode("vc vix    r hn"));
     }
     
     @Ignore("Remove to run test")
