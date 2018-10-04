@@ -26,7 +26,7 @@ public class CircularBufferTest {
         CircularBuffer<Integer> buffer = new CircularBuffer<>(1);
 
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertEquals(buffer.read(), 1);
     }
 
     @Ignore("Remove to run test")
@@ -35,7 +35,7 @@ public class CircularBufferTest {
         CircularBuffer<Integer> buffer = new CircularBuffer<>(1);
 
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertEquals(buffer.read(), 1);
 
         expectedException.expect(BufferIOException.class);
         expectedException.expectMessage("Tried to read from empty buffer");
@@ -49,8 +49,8 @@ public class CircularBufferTest {
 
         buffer.write(1);
         buffer.write(2);
-        assertThat(buffer.read(), is(1));
-        assertThat(buffer.read(), is(2));
+        assertEquals(buffer.read(), 1);
+        assertEquals(buffer.read(), 2);
     }
 
     @Ignore("Remove to run test")
@@ -70,9 +70,9 @@ public class CircularBufferTest {
         CircularBuffer<Integer> buffer = new CircularBuffer<>(1);
 
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertEquals(buffer.read(), 1);
         buffer.write(2);
-        assertThat(buffer.read(), is(2));
+        assertEquals(buffer.read(), 2);
     }
 
     @Ignore("Remove to run test")
@@ -82,10 +82,10 @@ public class CircularBufferTest {
 
         buffer.write(1);
         buffer.write(2);
-        assertThat(buffer.read(), is(1));
+        assertEquals(buffer.read(), 1);
         buffer.write(3);
-        assertThat(buffer.read(), is(2));
-        assertThat(buffer.read(), is(3));
+        assertEquals(buffer.read(), 2);
+        assertEquals(buffer.read(), 3);
     }
 
     @Ignore("Remove to run test")
@@ -108,7 +108,7 @@ public class CircularBufferTest {
         buffer.write(1);
         buffer.clear();
         buffer.write(2);
-        assertThat(buffer.read(), is(2));
+        assertEquals(buffer.read(), 2);
     }
 
     @Ignore("Remove to run test")
@@ -118,7 +118,7 @@ public class CircularBufferTest {
 
         buffer.clear();
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertEquals(buffer.read(), 1);
     }
 
     @Ignore("Remove to run test")
@@ -128,8 +128,8 @@ public class CircularBufferTest {
 
         buffer.write(1);
         buffer.overwrite(2);
-        assertThat(buffer.read(), is(1));
-        assertThat(buffer.read(), is(2));
+        assertEquals(buffer.read(), 1);
+        assertEquals(buffer.read(), 2);
     }
 
     @Ignore("Remove to run test")
@@ -140,8 +140,8 @@ public class CircularBufferTest {
         buffer.write(1);
         buffer.write(2);
         buffer.overwrite(3);
-        assertThat(buffer.read(), is(2));
-        assertThat(buffer.read(), is(3));
+        assertEquals(buffer.read(), 2);
+        assertEquals(buffer.read(), 3);
     }
 
     @Ignore("Remove to run test")
@@ -152,12 +152,12 @@ public class CircularBufferTest {
         buffer.write(1);
         buffer.write(2);
         buffer.write(3);
-        assertThat(buffer.read(), is(1));
+        assertEquals(buffer.read(), 1);
         buffer.write(4);
         buffer.overwrite(5);
-        assertThat(buffer.read(), is(3));
-        assertThat(buffer.read(), is(4));
-        assertThat(buffer.read(), is(5));
+        assertEquals(buffer.read(), 3);
+        assertEquals(buffer.read(), 4);
+        assertEquals(buffer.read(), 5);
     }
 }
 

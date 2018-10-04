@@ -16,7 +16,7 @@ public class SimpleLinkedListTest {
     @Test
     public void aNewListIsEmpty() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
-        assertThat(list.size(), is(0));
+        assertEquals(list.size(), 0);
     }
 
     @Ignore("Remove to run test")
@@ -24,7 +24,7 @@ public class SimpleLinkedListTest {
     public void canCreateFromArray() {
         Character[] values = new Character[]{'1', '2', '3'};
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>(values);
-        assertThat(list.size(), is(3));
+        assertEquals(list.size(), 3);
     }
 
     @Ignore("Remove to run test")
@@ -41,10 +41,10 @@ public class SimpleLinkedListTest {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<Integer>();
         list.push(9);
         list.push(8);
-        assertThat(list.size(), is(2));
-        assertThat(list.pop(), is(8));
-        assertThat(list.pop(), is(9));
-        assertThat(list.size(), is(0));
+        assertEquals(list.size(), 2);
+        assertEquals(list.pop(), 8);
+        assertEquals(list.pop(), 9);
+        assertEquals(list.size(), 0);
     }
 
     @Ignore("Remove to run test")
@@ -57,11 +57,11 @@ public class SimpleLinkedListTest {
         list.push("6");
         list.push("5");
         list.reverse();
-        assertThat(list.pop(), is("9"));
-        assertThat(list.pop(), is("8"));
-        assertThat(list.pop(), is("7"));
-        assertThat(list.pop(), is("6"));
-        assertThat(list.pop(), is("5"));
+        assertEquals(list.pop(), "9");
+        assertEquals(list.pop(), "8");
+        assertEquals(list.pop(), "7");
+        assertEquals(list.pop(), "6");
+        assertEquals(list.pop(), "5");
     }
 
     @Ignore("Remove to run test")

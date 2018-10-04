@@ -12,7 +12,7 @@ public class ProverbTest {
         String proverb  = new Proverb(words).recite(),
                expected = "";
 
-        assertThat(proverb, is(expected));
+        assertEquals(proverb, expected);
     }
 
     @Ignore("Remove to run test")
@@ -22,7 +22,7 @@ public class ProverbTest {
         String proverb  = new Proverb(words).recite(),
                expected = "And all for the want of a nail.";
 
-        assertThat(proverb, is(expected));
+        assertEquals(proverb, expected);
     }
 
     @Ignore("Remove to run test")
@@ -33,7 +33,7 @@ public class ProverbTest {
                expected = "For want of a nail the shoe was lost.\n" +
                           "And all for the want of a nail.";
 
-        assertThat(proverb, is(expected));
+        assertEquals(proverb, expected);
     }
 
     @Ignore("Remove to run test")
@@ -45,7 +45,7 @@ public class ProverbTest {
                           "For want of a shoe the horse was lost.\n" +
                           "And all for the want of a nail.";
 
-        assertThat(proverb, is(expected));
+        assertEquals(proverb, expected);
     }
 
     @Ignore("Remove to run test")
@@ -61,7 +61,7 @@ public class ProverbTest {
                           "For want of a battle the kingdom was lost.\n" +
                           "And all for the want of a nail.";
 
-        assertThat(proverb, is(expected));
+        assertEquals(proverb, expected);
     }
 
     @Ignore("Remove to run test")
@@ -74,7 +74,7 @@ public class ProverbTest {
                           "For want of a soldier the battle was lost.\n" +
                           "And all for the want of a pin.";
 
-        assertThat(proverb, is(expected));
+        assertEquals(proverb, expected);
     }
 
 }

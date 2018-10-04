@@ -29,7 +29,7 @@ public class SchoolTest {
     school = new School();
     school.add("Aimee", 2);
     List<String> expected = Arrays.asList("Aimee");
-    assertThat(school.roster(), is(expected));
+    assertEquals(school.roster(), expected);
   }
 
   @Ignore("Remove to run test")
@@ -41,7 +41,7 @@ public class SchoolTest {
     school.add("James", grade);
     school.add("Paul", grade);
     List<String> expected = Arrays.asList("Blair", "James", "Paul");
-    assertThat(school.roster(), is(expected));
+    assertEquals(school.roster(), expected);
   }
 
   @Ignore("Remove to run test")
@@ -51,7 +51,7 @@ public class SchoolTest {
     school.add("Chelsea", 3);
     school.add("Logan", 7);
     List<String> expected = Arrays.asList("Chelsea", "Logan");
-    assertThat(school.roster(), is(expected));
+    assertEquals(school.roster(), expected);
   }
 
   @Ignore("Remove to run test")
@@ -59,7 +59,7 @@ public class SchoolTest {
   public void rosterReturnsAnEmptyListIfThereAreNoStudentsEnrolled() {
     school = new School();
     List<String> expected = Arrays.asList();
-    assertThat(school.roster(), is(expected));
+    assertEquals(school.roster(), expected);
   }
 
   @Ignore("Remove to run test")
@@ -74,7 +74,7 @@ public class SchoolTest {
     school.add("Jim", 3);
     school.add("Charlie", 1);
     List<String> expected = Arrays.asList("Anna", "Barb", "Charlie", "Alex", "Peter", "Zoe", "Jim");
-    assertThat(school.roster(), is(expected));
+    assertEquals(school.roster(), expected);
   }
 
   @Ignore("Remove to run test")
@@ -85,7 +85,7 @@ public class SchoolTest {
     school.add("Bradley", 5);
     school.add("Jeff", 1);
     List<String> expected = Arrays.asList("Bradley", "Franklin");
-    assertThat(school.grade(5), is(expected));
+    assertEquals(school.grade(5), expected);
   }
 
   @Ignore("Remove to run test")
@@ -93,6 +93,6 @@ public class SchoolTest {
   public void gradeReturnsAnEmptyListIfThereAreNoStudentsInThatGrade() {
     school = new School();
     List<String> expected = Arrays.asList();
-    assertThat(school.grade(1), is(expected));
+    assertEquals(school.grade(1), expected);
   }
 }

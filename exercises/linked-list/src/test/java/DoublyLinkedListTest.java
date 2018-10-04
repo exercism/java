@@ -13,8 +13,8 @@ public class DoublyLinkedListTest {
         list.push(10);
         list.push(20);
 
-        assertThat(list.pop(), is(20));
-        assertThat(list.pop(), is(10));
+        assertEquals(list.pop(), 20);
+        assertEquals(list.pop(), 10);
     }
 
     @Ignore("Remove to run test")
@@ -25,8 +25,8 @@ public class DoublyLinkedListTest {
         list.push("10");
         list.push("20");
 
-        assertThat(list.shift(), is("10"));
-        assertThat(list.shift(), is("20"));
+        assertEquals(list.shift(), "10");
+        assertEquals(list.shift(), "20");
     }
 
     @Ignore("Remove to run test")
@@ -37,8 +37,8 @@ public class DoublyLinkedListTest {
         list.unshift('1');
         list.unshift('2');
 
-        assertThat(list.shift(), is('2'));
-        assertThat(list.shift(), is('1'));
+        assertEquals(list.shift(), '2');
+        assertEquals(list.shift(), '1');
     }
 
     @Ignore("Remove to run test")
@@ -49,8 +49,8 @@ public class DoublyLinkedListTest {
         list.unshift(10);
         list.unshift(20);
 
-        assertThat(list.pop(), is(10));
-        assertThat(list.pop(), is(20));
+        assertEquals(list.pop(), 10);
+        assertEquals(list.pop(), 20);
     }
 
     @Ignore("Remove to run test")
@@ -61,18 +61,18 @@ public class DoublyLinkedListTest {
         list.push("ten");
         list.push("twenty");
 
-        assertThat(list.pop(), is("twenty"));
+        assertEquals(list.pop(), "twenty");
 
         list.push("thirty");
 
-        assertThat(list.shift(), is("ten"));
+        assertEquals(list.shift(), "ten");
 
         list.unshift("forty");
         list.push("fifty");
 
-        assertThat(list.shift(), is("forty"));
-        assertThat(list.pop(), is("fifty"));
-        assertThat(list.shift(), is("thirty"));
+        assertEquals(list.shift(), "forty");
+        assertEquals(list.pop(), "fifty");
+        assertEquals(list.shift(), "thirty");
     }
 
 }
