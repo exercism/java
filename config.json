@@ -1366,11 +1366,12 @@
       "slug": "yacht",
       "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "scrabble-score",
       "difficulty": 5,
       "topics": [
         "games",
-        "parsing",
+        "filtering",
+        "pattern_matching",
         "sorting"
       ]
     }
