@@ -17,145 +17,114 @@ public class SeriesTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void hasDigitsShort() {
-        Series series = new Series("01234");
-        List<Integer> expected = Arrays.asList(0, 1, 2, 3, 4);
-        List<Integer> actual = series.getDigits();
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
+    public void slicesOfOneFromOne() {
+        Series series = new Series("1");
+        List<List<String>> expected = Arrays.asList(Arrays.asList("1"));
+        List<List<String>> actual = series.slices(1);
         assertEquals(expected, actual);
     }
-
+    
     @Ignore("Remove to run test")
     @Test
-    public void hasDigitsLong() {
-        Series series = new Series("0123456789");
-        List<Integer> expected = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-        List<Integer> actual = series.getDigits();
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void keepsTheDigitOrderIfReversed() {
-        Series series = new Series("9876543210");
-        List<Integer> expected = Arrays.asList(9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
-        List<Integer> actual = series.getDigits();
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void keepsArbitraryDigitOrder() {
-        Series series = new Series("936923468");
-        List<Integer> expected = Arrays.asList(9, 3, 6, 9, 2, 3, 4, 6, 8);
-        List<Integer> actual = series.getDigits();
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void canSliceByOne() {
-        Series series = new Series("01234");
-        List<List<Integer>> expected = Arrays.asList(
-		 Collections.singletonList(0),
-                Collections.singletonList(1),
-                Collections.singletonList(2),
-                Collections.singletonList(3),
-                Collections.singletonList(4)
+    public void slicesOfOneFromTwo() {
+        Series series = new Series("12");
+        List<List<String>> expected = Arrays.asList(
+                Arrays.asList("1"), 
+                Arrays.asList("2")
         );
-        List<List<Integer>> actual = series.slices(1);
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
+        List<List<String>> actual = series.slices(1);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void canSliceByTwo() {
-        Series series = new Series("98273463");
-        List<List<Integer>> expected = Arrays.asList(
-                Arrays.asList(9, 8),
-                Arrays.asList(8, 2),
-                Arrays.asList(2, 7),
-                Arrays.asList(7, 3),
-                Arrays.asList(3, 4),
-                Arrays.asList(4, 6),
-                Arrays.asList(6, 3)
+    public void slicesOfTwo() {
+        Series series = new Series("35");
+        List<List<String>> expected = Arrays.asList(Arrays.asList("3", "5"));
+        List<List<String>> actual = series.slices(2);
+        assertEquals(expected, actual);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void slicesOfTwoOverlap() {
+        Series series = new Series("9142");
+        List<List<String>> expected = Arrays.asList(
+                Arrays.asList("9", "1"), 
+                Arrays.asList("1", "4"), 
+                Arrays.asList("4", "2")
         );
-        List<List<Integer>> actual = series.slices(2);
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
+        List<List<String>> actual = series.slices(2);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void canSliceByThree() {
-        Series series = new Series("01234");
-        List<List<Integer>> expected = Arrays.asList(
-                Arrays.asList(0, 1, 2),
-                Arrays.asList(1, 2, 3),
-                Arrays.asList(2, 3, 4)
+    public void slicesIncludeDuplicates() {
+        Series series = new Series("777777");
+        List<List<String>> expected = Arrays.asList(
+                Arrays.asList("7", "7", "7"), 
+                Arrays.asList("7", "7", "7"),
+                Arrays.asList("7", "7", "7"), 
+                Arrays.asList("7", "7", "7")
         );
-        List<List<Integer>> actual = series.slices(3);
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
+		List<List<String>> actual = series.slices(3);
+		assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void canSliceByThreeWithDuplicateDigits() {
-        Series series = new Series("31001");
-        List<List<Integer>> expected = Arrays.asList(
-                Arrays.asList(3, 1, 0),
-                Arrays.asList(1, 0, 0),
-                Arrays.asList(0, 0, 1)
+    public void slicesOfLongSeries() {
+        Series series = new Series("918493904243");
+        List<List<String>> expected = Arrays.asList(
+                Arrays.asList("9", "1", "8", "4", "9"),
+                Arrays.asList("1", "8", "4", "9", "3"),
+                Arrays.asList("8", "4", "9", "3", "9"),
+                Arrays.asList("4", "9", "3", "9", "0"),
+                Arrays.asList("9", "3", "9", "0", "4"),
+                Arrays.asList("3", "9", "0", "4", "2"),
+                Arrays.asList("9", "0", "4", "2", "4"),
+                Arrays.asList("0", "4", "2", "4", "3")
         );
-        List<List<Integer>> actual = series.slices(3);
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
+        List<List<String>> actual = series.slices(5);
         assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void canSliceByFour() {
-        Series series = new Series("91274");
-        List<List<Integer>> expected = Arrays.asList(
-                Arrays.asList(9, 1, 2, 7),
-                Arrays.asList(1, 2, 7, 4)
-        );
-        List<List<Integer>> actual = series.slices(4);
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void canSliceByFive() {
-        Series series = new Series("81228");
-        List<List<Integer>> expected = Arrays.asList(
-                Arrays.asList(8, 1, 2, 2, 8)
-        );
-        List<List<Integer>> actual = series.slices(5);
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertEquals(expected, actual);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void throwsAnErrorIfNotEnoughDigitsToSlice() {
+    public void sliceLengthIsToolarge() {
         expectedException.expect(IllegalArgumentException.class);
-        new Series("01032987583").slices(12);
+        expectedException.expectMessage("Slice size is too big.");
+        
+        Series series = new Series("12345");
+        series.slices(6);
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void sliceLengthZero() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Slice size is too small.");
+        Series series = new Series("12345");
+        series.slices(0);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void sliceLengthNegative() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Slice size is too small.");
+        Series series = new Series("123");
+        series.slices(-1);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void emptySeries() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("Slice size is too big.");
+        Series series = new Series("");
+        List<List<String>> slices = series.slices(1);
+    }
+
 }

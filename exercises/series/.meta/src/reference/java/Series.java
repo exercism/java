@@ -7,22 +7,23 @@ import java.util.stream.Collectors;
 class Series {
 
     private final int digitsSize;
-    private List<Integer> digits;
+    private List<String> digits;
 
     Series(String string) {
-        this.digits = Arrays.stream(string.split(""))
-                        .map(Integer::parseInt)
-                        .collect(Collectors.toList());
-        this.digitsSize = this.digits.size();
+        this.digits = Arrays.stream(string.split("")).collect(Collectors.toList());
+        this.digitsSize = string.isEmpty()?0:this.digits.size();
     }
 
-    List<List<Integer>> slices(int num) {
+    List<List<String>> slices(int num) {
+        if (num <= 0) {
+            throw new IllegalArgumentException("Slice size is too small.");
+        }
         if (num > this.digitsSize) {
             throw new IllegalArgumentException("Slice size is too big.");
         }
         final int limit = this.digitsSize - num + 1;
-        List<List<Integer>> result = new ArrayList<>(limit);
-        List<Integer> tmp;
+        List<List<String>> result = new ArrayList<>(limit);
+        List<String> tmp;
         for (int i = 0; i < limit; i++) {
             tmp = this.digits.subList(i, i + num);
             result.add(tmp);
@@ -30,7 +31,7 @@ class Series {
         return result;
     }
 
-    List<Integer> getDigits() {
+    List<String> getDigits() {
         return digits;
     }
 
