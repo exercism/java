@@ -1,6 +1,7 @@
 apply plugin: "java"
 apply plugin: "eclipse"
 apply plugin: "idea"
+apply plugin: "findbugs"
 
 repositories {
   mavenCentral()
@@ -16,3 +17,18 @@ test {
     events = ["passed", "failed", "skipped"]
   }
 }
+
+findbugs {
+    ignoreFailures = false
+    toolVersion = "3.0.1"
+    effort = "max"
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+
