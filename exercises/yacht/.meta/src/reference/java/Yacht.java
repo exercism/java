@@ -13,8 +13,7 @@ class Yacht {
         this.yachtCategory = yachtCategory;
     }
 
-    public int score() {
-
+    int score() {
         switch(this.yachtCategory) {
             case ONES:
                 return Arrays.stream(dice)

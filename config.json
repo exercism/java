@@ -206,6 +206,19 @@
       ]
     },
     {
+      "slug": "yacht",
+      "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
+      "core": false,
+      "unlocked_by": "scrabble-score",
+      "difficulty": 3,
+      "topics": [
+        "games",
+        "filtering",
+        "pattern_matching",
+        "sorting"
+      ]
+    },
+    {
       "slug": "proverb",
       "uuid": "9906491b-a638-408d-86a4-4ad320a92658",
       "core": false,
@@ -1361,19 +1374,6 @@
       "difficulty": 0,
       "topics": null,
       "deprecated": true
-    },
-    {
-      "slug": "yacht",
-      "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
-      "core": false,
-      "unlocked_by": "scrabble-score",
-      "difficulty": 3,
-      "topics": [
-        "games",
-        "filtering",
-        "pattern_matching",
-        "sorting"
-      ]
     }
   ]
 }
