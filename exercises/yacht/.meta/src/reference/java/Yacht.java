@@ -17,27 +17,27 @@ class Yacht {
         switch(this.yachtCategory) {
             case ONES:
                 return Arrays.stream(dice)
-                        .filter(n -> n==1)
+                        .filter(n -> n == 1)
                         .sum();
             case TWOS:
                 return Arrays.stream(dice)
-                        .filter(n -> n==2)
+                        .filter(n -> n == 2)
                         .sum();
             case THREES:
                 return Arrays.stream(dice)
-                        .filter(n -> n==3)
+                        .filter(n -> n == 3)
                         .sum();
             case FOURS:
                 return Arrays.stream(dice)
-                        .filter(n -> n==4)
+                        .filter(n -> n == 4)
                         .sum();
             case FIVES:
                 return Arrays.stream(dice)
-                        .filter(n -> n==5)
+                        .filter(n -> n == 5)
                         .sum();
             case SIXES:
                 return Arrays.stream(dice)
-                        .filter(n -> n==6)
+                        .filter(n -> n == 6)
                         .sum();
             case FULL_HOUSE:
                 Collection<Long> occurrences = Arrays.stream(dice)

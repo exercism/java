@@ -210,10 +210,11 @@
       "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
       "core": false,
       "unlocked_by": "scrabble-score",
-      "difficulty": 3,
+      "difficulty": 4,
       "topics": [
-        "games",
+        "enumerations",
         "filtering",
+        "games",
         "pattern_matching",
         "sorting"
       ]
