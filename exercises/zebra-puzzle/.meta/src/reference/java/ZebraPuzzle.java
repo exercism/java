@@ -89,7 +89,7 @@ class ZebraPuzzle {
     }
 
     private static Stream.Builder<int[]> perms(int[] a, Stream.Builder<int[]> builder, int l) {
-        if (l == r) {
+        if (l == a.length - 1) {
             builder.accept(Arrays.copyOf(a, a.length));
         } else {
             for (int i=l; i < a.length; i++) {
