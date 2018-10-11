@@ -19,8 +19,8 @@ public class SeriesTest {
     @Test
     public void slicesOfOneFromOne() {
         Series series = new Series("1");
-        List<List<String>> expected = Arrays.asList(Arrays.asList("1"));
-        List<List<String>> actual = series.slices(1);
+        List<String> expected = Collections.singletonList("1");
+        List<String> actual = series.slices(1);
         assertEquals(expected, actual);
     }
     
@@ -28,11 +28,8 @@ public class SeriesTest {
     @Test
     public void slicesOfOneFromTwo() {
         Series series = new Series("12");
-        List<List<String>> expected = Arrays.asList(
-                Arrays.asList("1"), 
-                Arrays.asList("2")
-        );
-        List<List<String>> actual = series.slices(1);
+        List<String> expected = Arrays.asList("1", "2");
+        List<String> actual = series.slices(1);
         assertEquals(expected, actual);
     }
 
@@ -40,8 +37,8 @@ public class SeriesTest {
     @Test
     public void slicesOfTwo() {
         Series series = new Series("35");
-        List<List<String>> expected = Arrays.asList(Arrays.asList("3", "5"));
-        List<List<String>> actual = series.slices(2);
+        List<String> expected = Collections.singletonList("35");
+        List<String> actual = series.slices(2);
         assertEquals(expected, actual);
     }
 
@@ -49,12 +46,8 @@ public class SeriesTest {
     @Test
     public void slicesOfTwoOverlap() {
         Series series = new Series("9142");
-        List<List<String>> expected = Arrays.asList(
-                Arrays.asList("9", "1"), 
-                Arrays.asList("1", "4"), 
-                Arrays.asList("4", "2")
-        );
-        List<List<String>> actual = series.slices(2);
+        List<String> expected = Arrays.asList("91","14","42");
+        List<String> actual = series.slices(2);
         assertEquals(expected, actual);
     }
 
@@ -62,31 +55,31 @@ public class SeriesTest {
     @Test
     public void slicesIncludeDuplicates() {
         Series series = new Series("777777");
-        List<List<String>> expected = Arrays.asList(
-                Arrays.asList("7", "7", "7"), 
-                Arrays.asList("7", "7", "7"),
-                Arrays.asList("7", "7", "7"), 
-                Arrays.asList("7", "7", "7")
+        List<String> expected = Arrays.asList(
+                "777",
+                "777",
+                "777",
+                "777"
         );
-		List<List<String>> actual = series.slices(3);
-		assertEquals(expected, actual);
+        List<String> actual = series.slices(3);
+        assertEquals(expected, actual);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void slicesOfLongSeries() {
         Series series = new Series("918493904243");
-        List<List<String>> expected = Arrays.asList(
-                Arrays.asList("9", "1", "8", "4", "9"),
-                Arrays.asList("1", "8", "4", "9", "3"),
-                Arrays.asList("8", "4", "9", "3", "9"),
-                Arrays.asList("4", "9", "3", "9", "0"),
-                Arrays.asList("9", "3", "9", "0", "4"),
-                Arrays.asList("3", "9", "0", "4", "2"),
-                Arrays.asList("9", "0", "4", "2", "4"),
-                Arrays.asList("0", "4", "2", "4", "3")
+        List<String> expected = Arrays.asList(
+                "91849", 
+                "18493", 
+                "84939", 
+                "49390", 
+                "93904", 
+                "39042", 
+                "90424", 
+                "04243"
         );
-        List<List<String>> actual = series.slices(5);
+        List<String> actual = series.slices(5);
         assertEquals(expected, actual);
     }
 
@@ -124,7 +117,7 @@ public class SeriesTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Slice size is too big.");
         Series series = new Series("");
-        List<List<String>> slices = series.slices(1);
+        series.slices(1);
     }
 
 }
