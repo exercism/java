@@ -20,43 +20,91 @@ class ZebraPuzzle {
     }
 
     private void solve() {
-        int[] houses = new int[]{1,2,3,4,5};
+        int[] houses = new int[]{1, 2, 3, 4, 5};
         int first = 1;
         int middle = 3;
 
         perms(houses).forEach(colors -> {
-            int red = colors[0], green = colors[1], ivory = colors[2], yellow = colors[3], blue = colors[4];
+            int red = colors[0];
+            int green = colors[1];
+            int ivory = colors[2];
+            int yellow = colors[3];
+            int blue = colors[4];
 
-            if (!isJustRightOf(green, ivory)) return;
+            if (!isJustRightOf(green, ivory)) {
+                return;
+            }
 
             perms(houses).forEach(nationalities -> {
-                int english = nationalities[0], spaniard = nationalities[1], ukrainian = nationalities[2], japanese = nationalities[3], norwegian = nationalities[4];
+                int english = nationalities[0];
+                int spaniard = nationalities[1];
+                int ukrainian = nationalities[2];
+                int japanese = nationalities[3];
+                int norwegian = nationalities[4];
 
-                if (red != english) return;
-                if (norwegian != first) return;
-                if (!nextTo(norwegian, blue)) return;
+                if (red != english) {
+                    return;
+                }
+                if (norwegian != first) {
+                    return;
+                }
+                if (!nextTo(norwegian, blue)) {
+                    return;
+                }
 
                 perms(houses).forEach(beverages -> {
-                    int coffee = beverages[0], tea = beverages[1], milk = beverages[2], orangejuice = beverages[3], water = beverages[4];
+                    int coffee = beverages[0];
+                    int tea = beverages[1];
+                    int milk = beverages[2];
+                    int orangejuice = beverages[3];
+                    int water = beverages[4];
 
-                    if (coffee != green) return;
-                    if (ukrainian != tea) return;
-                    if (milk != middle) return;
+                    if (coffee != green) {
+                        return;
+                    }
+                    if (ukrainian != tea) {
+                        return;
+                    }
+                    if (milk != middle) {
+                        return;
+                    }
 
                     perms(houses).forEach(cigars -> {
-                        int oldgold = cigars[0], kools = cigars[1], chesterfields = cigars[2], luckystrike = cigars[3], parliaments = cigars[4];
+                        int oldgold = cigars[0];
+                        int kools = cigars[1];
+                        int chesterfields = cigars[2];
+                        int luckystrike = cigars[3];
+                        int parliaments = cigars[4];
 
-                        if (kools != yellow) return;
-                        if (luckystrike != orangejuice) return;
-                        if (japanese != parliaments) return;
+                        if (kools != yellow) {
+                            return;
+                        }
+                        if (luckystrike != orangejuice) {
+                            return;
+                        }
+                        if (japanese != parliaments) {
+                            return;
+                        }
 
                         perms(houses).forEach(pets -> {
-                            int dog = pets[0], snails = pets[1], fox = pets[2], horse = pets[3], zebra = pets[4];
+                            int dog = pets[0];
+                            int snails = pets[1];
+                            int fox = pets[2];
+                            int horse = pets[3];
+                            int zebra = pets[4];
 
-                            if (spaniard != dog) return;
-                            if (oldgold != snails) return;
-                            if (!nextTo(chesterfields, fox)) return;
-                            if (!nextTo(kools, horse)) return;
+                            if (spaniard != dog) {
+                                return;
+                            }
+                            if (oldgold != snails) {
+                                return;
+                            }
+                            if (!nextTo(chesterfields, fox)) {
+                                return;
+                            }
+                            if (!nextTo(kools, horse)) {
+                                return;
+                            }
 
                             Map<Integer, String> resultMap = new HashMap<>();
                             resultMap.put(english, "Englishman");
@@ -92,9 +140,9 @@ class ZebraPuzzle {
         if (l == a.length - 1) {
             builder.accept(Arrays.copyOf(a, a.length));
         } else {
-            for (int i=l; i < a.length; i++) {
+            for (int i = l; i < a.length; i++) {
                 swap(a, l, i);
-                perms(a, builder, l+1);
+                perms(a, builder, l + 1);
                 swap(a, l, i);
             }
         }
