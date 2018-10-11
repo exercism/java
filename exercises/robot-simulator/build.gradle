@@ -1,7 +1,6 @@
 apply plugin: "java"
 apply plugin: "eclipse"
 apply plugin: "idea"
-apply plugin: "checkstyle"
 
 repositories {
   mavenCentral()
@@ -16,14 +15,4 @@ test {
     exceptionFormat = 'full'
     events = ["passed", "failed", "skipped"]
   }
-}
-
-checkstyle {
-    toolVersion '7.8.1'
-    configFile file("config/checkstyle/checkstyle.xml")
-    sourceSets = [project.sourceSets.main, project.sourceSets.test]
-}
-
-checkstyleTest {
-    source = "src/test/java"
 }
