@@ -46,12 +46,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
         <property name="message" value='All TODOs should be named.  e.g. "TODO: (ENG-123) - Refactor when v2 is released."' />
     </module>
 
-    <!--<module name="JavadocPackage">-->
-        <!--&lt;!&ndash; Checks that each Java package has a Javadoc file used for commenting.-->
-          <!--Only allows a package-info.java, not package.html. &ndash;&gt;-->
-        <!--<property name="severity" value="warning"/>-->
-    <!--</module>-->
-
     <!-- All Java AST specific tests live under TreeWalker module. -->
     <module name="TreeWalker">
 
@@ -355,10 +349,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
             <property name="illegalPattern" value="true" />
         </module>
     </module>
-
-    <!--module name="SuppressionFilter">
-        <property name="file" value="suppressions.xml"/>
-    </module-->
 
     <module name="SuppressionCommentFilter">
         <property name="offCommentFormat" value="CHECKSTYLE OFF: (.+)" />
