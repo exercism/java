@@ -3,11 +3,11 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-/**
- * Step 1: Make a simple shift cipher
- */
-public class SimpleCipherStepOneTest {
+import java.util.regex.Pattern;
+
+public class Step1RandomKeyCipherTest {
     private Cipher cipherWithDefaultKey;
 
     @Before
@@ -16,15 +16,18 @@ public class SimpleCipherStepOneTest {
     }
 
     /**
-     * Here we take advantage of the fact that plaintext of "aaa..." doesn't output the key. This is a critical problem
-     * with shift ciphers, some characters will always output the key verbatim.
+     * Can encode
      */
     @Test
     public void cipherCanEncode() {
+        String plainText = "aaaaaaaaaa";
         String cipherText = cipherWithDefaultKey.getKey().substring(0, 10);
-        assertEquals(cipherText, cipherWithDefaultKey.encode("aaaaaaaaaa"));
+        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));
     }
 
+    /**
+     * Can decode
+     */
     @Ignore("Remove to run test")
     @Test
     public void cipherCanDecode() {
@@ -32,10 +35,24 @@ public class SimpleCipherStepOneTest {
         assertEquals(cipherText, cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10)));
     }
 
+    /**
+     * Is reversible. I.e., if you apply decode in a encoded result, you must see
+     * the same plaintext encode parameter as a result of the decode method
+     */
     @Ignore("Remove to run test")
     @Test
     public void cipherIsReversible() {
         String plainText = "abcdefghij";
         assertEquals(plainText, cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText)));
+    }
+    
+    /**
+     * Key is made only of lowercase letters 
+     */
+    @Ignore("Remove to run test")
+    @Test
+    public void keyIsLowercaseLetters() {
+        String key = cipherWithDefaultKey.getKey();
+        assertTrue(Pattern.matches("^[a-z]+$", key));
     }
 }

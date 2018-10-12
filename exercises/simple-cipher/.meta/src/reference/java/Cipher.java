@@ -32,10 +32,14 @@ public class Cipher {
     }
 
     public String encode(String plainText) {
+        String plainTextTmp = plainText;
         StringBuilder ciphertext = new StringBuilder(plainText.length());
 
-        for (int index = 0; index < Math.min(plainText.length(), key.length()); index++) {
-            ciphertext.append(encodeCharacter(plainText, index));
+        while (plainTextTmp.length() > 0) {
+            for (int index = 0; index < Math.min(plainTextTmp.length(), key.length()); index++) {
+                ciphertext.append(encodeCharacter(plainTextTmp, index));
+            }
+            plainTextTmp = plainText.substring(ciphertext.length(), plainText.length());
         }
 
         return ciphertext.toString();
