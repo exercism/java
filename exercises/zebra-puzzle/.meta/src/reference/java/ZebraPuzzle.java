@@ -4,6 +4,41 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 class ZebraPuzzle {
+    private static final int FIRST = 1;
+    private static final int MIDDLE = 3;
+
+    private int red;
+    private int green;
+    private int ivory;
+    private int yellow;
+    private int blue;
+
+    private int english;
+    private int spaniard;
+    private int ukrainian;
+    private int japanese;
+    private int norwegian;
+
+    private int coffee;
+    private int tea;
+    private int milk;
+    private int orangejuice;
+    private int water;
+
+    private int oldgold;
+    private int kools;
+    private int chesterfields;
+    private int luckystrike;
+    private int parliaments;
+
+    private int dog;
+    private int snails;
+    private int fox;
+    private int horse;
+    private int zebra;
+
+    private Map<Integer, String> nationalityNames = new HashMap<>();
+
     private String waterDrinker = "";
     private String zebraOwner = "";
 
@@ -11,115 +46,96 @@ class ZebraPuzzle {
         this.solve();
     }
 
-    private static boolean isJustRightOf(int a, int b) {
-        return a - 1 == b;
+    private static boolean isJustRightOf(int neighbourA, int neighbourB) {
+        return neighbourA - 1 == neighbourB;
     }
 
-    private static boolean nextTo(int a, int b) {
-        return isJustRightOf(a, b) || isJustRightOf(b, a);
+    private static boolean nextTo(int neighbourA, int neighbourB) {
+        return isJustRightOf(neighbourA, neighbourB) || isJustRightOf(neighbourB, neighbourA);
     }
 
     private void solve() {
-        int[] houses = new int[]{1, 2, 3, 4, 5};
-        int first = 1;
-        int middle = 3;
+        allHouseAssignmentPermutations().forEach(this::solveHouseColors);
+    }
 
-        perms(houses).forEach(colors -> {
-            int red = colors[0];
-            int green = colors[1];
-            int ivory = colors[2];
-            int yellow = colors[3];
-            int blue = colors[4];
+    private void solveHouseColors(int[] colors) {
+        red = colors[0];
+        green = colors[1];
+        ivory = colors[2];
+        yellow = colors[3];
+        blue = colors[4];
 
-            if (!isJustRightOf(green, ivory)) {
-                return;
-            }
+        if (isJustRightOf(green, ivory)) {
+            allHouseAssignmentPermutations().forEach(this::solveNationalities);
+        }
+    }
 
-            perms(houses).forEach(nationalities -> {
-                int english = nationalities[0];
-                int spaniard = nationalities[1];
-                int ukrainian = nationalities[2];
-                int japanese = nationalities[3];
-                int norwegian = nationalities[4];
+    private void solveNationalities(int[] nationalities) {
+        english = nationalities[0];
+        spaniard = nationalities[1];
+        ukrainian = nationalities[2];
+        japanese = nationalities[3];
+        norwegian = nationalities[4];
 
-                if (red != english) {
-                    return;
-                }
-                if (norwegian != first) {
-                    return;
-                }
-                if (!nextTo(norwegian, blue)) {
-                    return;
-                }
+        if (red == english
+                && norwegian == FIRST
+                && nextTo(norwegian, blue)) {
 
-                perms(houses).forEach(beverages -> {
-                    int coffee = beverages[0];
-                    int tea = beverages[1];
-                    int milk = beverages[2];
-                    int orangejuice = beverages[3];
-                    int water = beverages[4];
+            // record names for later use
+            nationalityNames.put(english, "Englishman");
+            nationalityNames.put(spaniard, "Spaniard");
+            nationalityNames.put(ukrainian, "Ukrainian");
+            nationalityNames.put(japanese, "Japanese");
+            nationalityNames.put(norwegian, "Norwegian");
 
-                    if (coffee != green) {
-                        return;
-                    }
-                    if (ukrainian != tea) {
-                        return;
-                    }
-                    if (milk != middle) {
-                        return;
-                    }
+            allHouseAssignmentPermutations().forEach(this::solveBeverages);
+        }
+    }
 
-                    perms(houses).forEach(cigars -> {
-                        int oldgold = cigars[0];
-                        int kools = cigars[1];
-                        int chesterfields = cigars[2];
-                        int luckystrike = cigars[3];
-                        int parliaments = cigars[4];
+    private void solveBeverages(int[] beverages) {
+        coffee = beverages[0];
+        tea = beverages[1];
+        milk = beverages[2];
+        orangejuice = beverages[3];
+        water = beverages[4];
 
-                        if (kools != yellow) {
-                            return;
-                        }
-                        if (luckystrike != orangejuice) {
-                            return;
-                        }
-                        if (japanese != parliaments) {
-                            return;
-                        }
+        if (coffee == green
+                && ukrainian == tea
+                && milk == MIDDLE) {
+            allHouseAssignmentPermutations().forEach(this::solveCigars);
+        }
 
-                        perms(houses).forEach(pets -> {
-                            int dog = pets[0];
-                            int snails = pets[1];
-                            int fox = pets[2];
-                            int horse = pets[3];
-                            int zebra = pets[4];
+    }
 
-                            if (spaniard != dog) {
-                                return;
-                            }
-                            if (oldgold != snails) {
-                                return;
-                            }
-                            if (!nextTo(chesterfields, fox)) {
-                                return;
-                            }
-                            if (!nextTo(kools, horse)) {
-                                return;
-                            }
+    private void solveCigars(int[] cigars) {
+        oldgold = cigars[0];
+        kools = cigars[1];
+        chesterfields = cigars[2];
+        luckystrike = cigars[3];
+        parliaments = cigars[4];
 
-                            Map<Integer, String> resultMap = new HashMap<>();
-                            resultMap.put(english, "Englishman");
-                            resultMap.put(spaniard, "Spaniard");
-                            resultMap.put(ukrainian, "Ukrainian");
-                            resultMap.put(japanese, "Japanese");
-                            resultMap.put(norwegian, "Norwegian");
+        if (kools == yellow
+                && luckystrike == orangejuice
+                && japanese == parliaments) {
+            allHouseAssignmentPermutations().forEach(this::solvePets);
+        }
+    }
 
-                            this.waterDrinker = resultMap.get(water);
-                            this.zebraOwner = resultMap.get(zebra);
-                        });
-                    });
-                });
-            });
-        });
+    private void solvePets(int[] pets) {
+        dog = pets[0];
+        snails = pets[1];
+        fox = pets[2];
+        horse = pets[3];
+        zebra = pets[4];
+
+        if (spaniard == dog
+                && oldgold == snails
+                && nextTo(chesterfields, fox)
+                && nextTo(kools, horse)) {
+            this.waterDrinker = nationalityNames.get(water);
+            this.zebraOwner = nationalityNames.get(zebra);
+        }
+
     }
 
     String getWaterDrinker() {
@@ -130,27 +146,32 @@ class ZebraPuzzle {
         return this.zebraOwner;
     }
 
-    private static void swap(int[] arr, int a, int b) {
-        int tmp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = tmp;
+    private static void swap(int[] arr, int indexA, int indexB) {
+        int tmp = arr[indexA];
+        arr[indexA] = arr[indexB];
+        arr[indexB] = tmp;
     }
 
-    private static Stream.Builder<int[]> perms(int[] a, Stream.Builder<int[]> builder, int l) {
-        if (l == a.length - 1) {
-            builder.accept(Arrays.copyOf(a, a.length));
+    private static Stream.Builder<int[]> perms(
+            int[] source, Stream.Builder<int[]> builder, int offsetLeft) {
+        if (offsetLeft == source.length - 1) {
+            builder.accept(Arrays.copyOf(source, source.length));
         } else {
-            for (int i = l; i < a.length; i++) {
-                swap(a, l, i);
-                perms(a, builder, l + 1);
-                swap(a, l, i);
+            for (int i = offsetLeft; i < source.length; i++) {
+                swap(source, offsetLeft, i);
+                perms(source, builder, offsetLeft + 1);
+                swap(source, offsetLeft, i);
             }
         }
         return builder;
     }
 
-    static Stream<int[]> perms(int[] a) {
-        return perms(a, Stream.builder(), 0).build();
+    private static Stream<int[]> perms(int[] source) {
+        return perms(source, Stream.builder(), 0).build();
+    }
+
+    private static Stream<int[]> allHouseAssignmentPermutations() {
+        return perms(new int[]{1, 2, 3, 4, 5});
     }
 
 }
