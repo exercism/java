@@ -52,6 +52,9 @@ page at http://checkstyle.sourceforge.net/config.html -->
         <!-- required for SupressionCommentFilter and SuppressWithNearbyCommentFilter -->
         <module name="FileContentsHolder" />
 
+        <!-- check for indentation with 4 spaces -->
+        <module name="Indentation" />
+
         <!--
 
         IMPORT CHECKS
