@@ -1,5 +1,6 @@
 include 'accumulate'
 include 'acronym'
+include 'affine-cipher'
 include 'all-your-base'
 include 'allergies'
 include 'alphametics'
