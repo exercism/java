@@ -323,12 +323,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
             <property name="illegalPattern" value="true" />
         </module>
 
-        <!-- No printStackTrace -->
-        <module name="Regexp">
-            <!-- . matches any character, so we need to escape it and use \. to match dots. -->
-            <property name="format" value="e\.printStackTrace\(\)" />
-            <property name="illegalPattern" value="true" />
-        </module>
     </module>
 
     <module name="SuppressionCommentFilter">
