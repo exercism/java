@@ -73,7 +73,7 @@ public class AffineCipherTest {
 
     @Ignore("Remove to run test.")
     @Test
-    public void testEncodeRaisesMeaningfulException() throws IllegalArgumentException {
+    public void testEncodeThrowsMeaningfulException() throws IllegalArgumentException {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Error: keyA and alphabet size must be coprime.");
 
@@ -126,7 +126,7 @@ public class AffineCipherTest {
 
     @Ignore("Remove to run test.")
     @Test
-    public void testDecodeRaisesMeaningfulException() throws IllegalArgumentException {
+    public void testDecodeThrowsMeaningfulException() throws IllegalArgumentException {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Error: keyA and alphabet size must be coprime.");
 
