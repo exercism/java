@@ -118,7 +118,7 @@ public class YachtTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void yachtCantBeScoredAsFourOfAKind() {
+    public void yachtCanBeScoredAsFourOfAKind() {
         Yacht yacht = new Yacht(new int[]{ 3, 3, 3, 3, 3 }, YachtCategory.FOUR_OF_A_KIND);
         assertEquals(12, yacht.score());
     }
