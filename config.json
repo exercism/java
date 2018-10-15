@@ -962,6 +962,16 @@
       ]
     },
     {
+      "slug": "zebra-puzzle",
+      "uuid": "b1e2bd39-3f4b-44c1-b7e2-258d4ee241f8",
+      "core": false,
+      "unlocked_by": "saddle-points",
+      "difficulty": 7,
+      "topics": [
+        "logic"
+      ]
+    },
+    {
       "slug": "anagram",
       "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283",
       "core": false,
