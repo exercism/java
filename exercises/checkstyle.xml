@@ -310,19 +310,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
             <property name="severity" value="error" />
         </module>
 
-        <!-- No System.out -->
-        <module name="Regexp">
-            <property name="format" value="System\.out\.println" />
-            <property name="illegalPattern" value="true" />
-        </module>
-
-        <!-- No System.err -->
-        <module name="Regexp">
-            <!-- . matches any character, so we need to escape it and use \. to match dots. -->
-            <property name="format" value="System\.err\.println" />
-            <property name="illegalPattern" value="true" />
-        </module>
-
     </module>
 
     <module name="SuppressionCommentFilter">
