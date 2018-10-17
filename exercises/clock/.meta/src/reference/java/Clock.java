@@ -35,14 +35,17 @@ class Clock {
     }
 
     private String toTimeString(int number) {
-        if (number < 10) return "0" + number;
+        if (number < 10) {
+            return "0" + number;
+        }
         return String.valueOf(number);
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Clock)) return false;
-
+        if (!(obj instanceof Clock)) {
+            return false;
+        }
         Clock clock = (Clock) obj;
         return hours == clock.hours && minutes == clock.minutes;
     }
