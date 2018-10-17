@@ -950,6 +950,19 @@
       ]
     },
     {
+      "slug": "affine-cipher",
+      "uuid": "e6e3faaf-54c2-4782-93af-bb8d95403f2a",
+      "core": false,
+      "unlocked_by": "rotational-cipher",
+      "difficulty": 6,
+      "topics": [
+        "cryptography",
+        "security",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "two-bucket",
       "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e",
       "core": false,
