@@ -1,9 +1,6 @@
 import org.junit.Test;
 import org.junit.Ignore;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class CryptoSquareTest {
@@ -64,7 +61,8 @@ public class CryptoSquareTest {
     @Ignore("Remove to run test")
     @Test
     public void fiftyFourCharacterPlaintextResultsInSevenChunksWithTrailingSpaces() {
-        CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have given us roots.");
+        CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have " +
+                                                     "given us roots.");
         String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ";
 
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
