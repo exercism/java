@@ -11,7 +11,7 @@ public class AffineCipherTest {
     private AffineCipher affineCipher;
 
     @Before
-    public void genAffineCipfer() {
+    public void genAffineCipher() {
         affineCipher = new AffineCipher();
     }
 
@@ -20,8 +20,7 @@ public class AffineCipherTest {
 
     @Test
     public void testEncodeYes() {
-        assertEquals("xbt", affineCipher.encode("yes", 5, 7)
-        );
+        assertEquals("xbt", affineCipher.encode("yes", 5, 7));
     }
 
     @Ignore("Remove to run test")
