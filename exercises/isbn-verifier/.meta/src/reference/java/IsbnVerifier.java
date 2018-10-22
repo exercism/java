@@ -11,7 +11,7 @@ class IsbnVerifier {
 
         for (int i = 0; i < isbn.length() - 1; i++) {
             char currentChar = isbn.charAt(i);
-            if(Character.isDigit(currentChar)) {
+            if (Character.isDigit(currentChar)) {
                 int currentCharVal = Character.getNumericValue(currentChar);
                 total += currentCharVal * (10 - i);
             } else {
