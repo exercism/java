@@ -14,7 +14,7 @@ public class RobotTest {
 
     @Before
     public void setUp() {
-      robot = new Robot();
+        robot = new Robot();
     }
 
     @Test
