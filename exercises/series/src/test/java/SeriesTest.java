@@ -64,11 +64,11 @@ public class SeriesTest {
     public void canSliceByOne() {
         Series series = new Series("01234");
         List<List<Integer>> expected = Arrays.asList(
-		 Collections.singletonList(0),
-                Collections.singletonList(1),
-                Collections.singletonList(2),
-                Collections.singletonList(3),
-                Collections.singletonList(4)
+            Collections.singletonList(0),
+            Collections.singletonList(1),
+            Collections.singletonList(2),
+            Collections.singletonList(3),
+            Collections.singletonList(4)
         );
         List<List<Integer>> actual = series.slices(1);
         assertNotNull(actual);
