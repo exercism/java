@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class SieveTest {
 
     @Test
-    public void noPrimesUnder2(){
+    public void noPrimesUnder2() {
         Sieve sieve = new Sieve(1);
         List<Integer> expectedOutput = Collections.emptyList();
 
@@ -37,7 +37,7 @@ public class SieveTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void limitIsPrime(){
+    public void limitIsPrime() {
         Sieve sieve = new Sieve(13);
         List<Integer> expectedOutput = Arrays.asList(2, 3, 5, 7, 11, 13);
 
