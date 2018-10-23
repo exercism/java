@@ -62,7 +62,8 @@ public class Cipher {
     }
 
     private char decodeCharacter(String cipherText, int index) {
-        int alphabetIdx = ALPHABET.indexOf(cipherText.toCharArray()[index]) - ALPHABET.indexOf(key.toCharArray()[index]);
+        int alphabetIdx = ALPHABET.indexOf(cipherText.toCharArray()[index]) -
+            ALPHABET.indexOf(key.toCharArray()[index]);
 
         if (alphabetIdx < 0) {
             alphabetIdx += ALPHABET.length();
