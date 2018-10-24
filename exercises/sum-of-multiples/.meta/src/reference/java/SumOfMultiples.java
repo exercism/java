@@ -14,7 +14,7 @@ public class SumOfMultiples {
 
     private int calculateSum(int number, int[] set) {
 
-        int sum = IntStream.range(1,number)
+        int sum = IntStream.range(1, number)
                 .filter(i -> Arrays.stream(set).filter(j -> i % j == 0).count() > 0)
                 .sum();
 
