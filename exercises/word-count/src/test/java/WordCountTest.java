@@ -2,8 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
 
-import java.lang.Integer;
-import java.lang.String;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,7 +57,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void handlesCrampedLists() {
@@ -72,7 +70,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void handlesExpandedLists() {
@@ -126,7 +124,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void withApostrophes() {
@@ -141,7 +139,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void withQuotations() {
@@ -157,7 +155,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void multipleSpacesNotDetectedAsAWord() {
