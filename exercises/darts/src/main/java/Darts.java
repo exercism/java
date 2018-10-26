@@ -8,7 +8,4 @@ class Darts {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    double distanceDartToOrigin() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
 }
