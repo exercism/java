@@ -9,7 +9,7 @@ import java.util.*;
 public class ParallelLetterFrequencyTest {
 
     // American national anthem
-    private String StarSpangledBanner =
+    private String starSpangledBanner =
             "O say can you see by the dawn's early light,\n" +
                     "What so proudly we hailed at the twilight's last gleaming,\n" +
                     "Whose broad stripes and bright stars through the perilous fight,\n" +
@@ -96,7 +96,7 @@ public class ParallelLetterFrequencyTest {
     @Ignore("Remove to run test")
     @Test
     public void punctuationDoesntCount() {
-        ParallelLetterFrequency p = new ParallelLetterFrequency(StarSpangledBanner);
+        ParallelLetterFrequency p = new ParallelLetterFrequency(starSpangledBanner);
 
         assertFalse(p.letterCounts().containsKey((int) ','));
     }
@@ -146,7 +146,10 @@ public class ParallelLetterFrequencyTest {
         }
 
         MyForkJoinThreadFactory factory = new MyForkJoinThreadFactory();
-        ForkJoinPool multiThreadPool = new ForkJoinPool(4, (ForkJoinPool.ForkJoinWorkerThreadFactory) factory, null, false);
+        ForkJoinPool multiThreadPool = new ForkJoinPool(4,
+                                                        (ForkJoinPool.ForkJoinWorkerThreadFactory) factory,
+                                                        null,
+                                                        false);
 
         String input = "abcdefghijklmnopqrstuvwxyz";
         StringBuilder b = new StringBuilder();
@@ -186,7 +189,7 @@ public class ParallelLetterFrequencyTest {
         };
 
         Map<Integer, Integer> multiCounts = multiThreadPool.submit(
-                () -> (new ParallelLetterFrequency(b.toString()).letterCounts())
+            () -> (new ParallelLetterFrequency(b.toString()).letterCounts())
         ).get();
 
         boolean startedThreadCountEqualsPoolSize = allThreads.stream()
