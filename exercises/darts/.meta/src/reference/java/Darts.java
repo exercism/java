@@ -1,8 +1,8 @@
 class Darts {
 
-    private static final int R_CIRCLE_OUTER = 10;
-    private static final int R_CIRCLE_MIDDLE = 5;
-    private static final int R_CIRCLE_INNER = 1;
+    private static final int RADIUS_CIRCLE_OUTER = 10;
+    private static final int RADIUS_CIRCLE_MIDDLE = 5;
+    private static final int RADIUS_CIRCLE_INNER = 1;
 
     private double x;
     private double y;
@@ -13,13 +13,13 @@ class Darts {
     }
 
     int score() {
-        if (R_CIRCLE_MIDDLE < distanceDartToOrigin()
-                && distanceDartToOrigin() <= R_CIRCLE_OUTER) {
+        if (RADIUS_CIRCLE_MIDDLE < distanceDartToOrigin()
+                && distanceDartToOrigin() <= RADIUS_CIRCLE_OUTER) {
             return 1;
-        } else if (R_CIRCLE_INNER < distanceDartToOrigin()
-                && distanceDartToOrigin() <= R_CIRCLE_MIDDLE) {
+        } else if (RADIUS_CIRCLE_INNER < distanceDartToOrigin()
+                && distanceDartToOrigin() <= RADIUS_CIRCLE_MIDDLE) {
             return 5;
-        } else if (distanceDartToOrigin() <= R_CIRCLE_INNER) {
+        } else if (distanceDartToOrigin() <= RADIUS_CIRCLE_INNER) {
             return 10;
         }
         return 0;
