@@ -196,7 +196,8 @@ public class CustomSetTest {
     @Test
     public void addToNonEmptySet() {
         char element = '3';
-        CustomSet<Character> expected = new CustomSet<>(Collections.unmodifiableList(Arrays.asList('1', '2', '3', '4')));
+        CustomSet<Character> expected = new CustomSet<>(Collections.unmodifiableList(
+            Arrays.asList('1', '2', '3', '4')));
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '4'));
 
         actual.add(element);
@@ -295,7 +296,8 @@ public class CustomSetTest {
     @Ignore("Remove to run test")
     @Test
     public void differenceOfANonEmptySetAndAnEmptySetIsTheNonEmptySet() {
-        CustomSet<Character> expected = new CustomSet<>(Collections.unmodifiableList(Arrays.asList('1', '2', '3', '4')));
+        CustomSet<Character> expected = new CustomSet<>(Collections.unmodifiableList(
+                Arrays.asList('1', '2', '3', '4')));
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '3', '4'))
                 .getDifference(new CustomSet<>(Collections.emptyList()));
 

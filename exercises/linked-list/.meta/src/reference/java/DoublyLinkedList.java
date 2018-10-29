@@ -33,8 +33,7 @@ final class DoublyLinkedList<T> {
 
         if (newHead == head) {
             head = null;
-        }
-        else {
+        } else {
             newHead.prev = newTail;
             newTail.next = newHead;
             head = newHead;

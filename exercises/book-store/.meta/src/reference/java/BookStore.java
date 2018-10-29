@@ -7,7 +7,7 @@ class BookStore {
 
     private static final int BOOK_PRICE = 8, MAX_GROUP_SIZE = 5;
 
-    private static double[] DISCOUNT_TIERS = {0, 5, 10, 20, 25};
+    private static final double[] DISCOUNT_TIERS = {0, 5, 10, 20, 25};
 
     double calculateBasketCost(final List<Integer> books) {
         List<Integer> reorderedBooks = reorderBooks(books);
@@ -54,7 +54,8 @@ class BookStore {
             List<Integer> remainingBooks = new ArrayList<>(books);
 
             for (final Integer newGroupBook : newGroupBooks) {
-                //noinspection UseBulkOperation - we want to remove _one_ of each book number, not _all_ of each book number.
+                //noinspection UseBulkOperation - we want to remove _one_ of each book number,
+                //not _all_ of each book number.
                 remainingBooks.remove(newGroupBook);
             }
 

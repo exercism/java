@@ -302,8 +302,8 @@ public class WordSearcherTest {
     @Test
     public void testLocatesWordsWrittenTopToBottom() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
 
         Set<String> searchWords = expectedLocations.keySet();
@@ -331,10 +331,10 @@ public class WordSearcherTest {
     @Test
     public void testLocatesWordsWrittenBottomToTop() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
-        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair( 9,  5), new Pair( 9,  2))));
+        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -359,11 +359,11 @@ public class WordSearcherTest {
     @Test
     public void testLocatesWordsWrittenTopLeftToBottomRight() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
-        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair( 9,  5), new Pair( 9,  2))));
-        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair( 1,  1), new Pair( 4,  4))));
+        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
+        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair(1,  1), new Pair(4,  4))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -388,12 +388,12 @@ public class WordSearcherTest {
     @Test
     public void testLocatesWordsWrittenBottomRightToTopLeft() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
-        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair( 9,  5), new Pair( 9,  2))));
-        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair( 1,  1), new Pair( 4,  4))));
-        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair( 8,  9), new Pair( 6,  7))));
+        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
+        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair(1,  1), new Pair(4,  4))));
+        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair(8,  9), new Pair(6,  7))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -418,13 +418,13 @@ public class WordSearcherTest {
     @Test
     public void testLocatesWordsWrittenBottomLeftToTopRight() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
-        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair( 9,  5), new Pair( 9,  2))));
-        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair( 1,  1), new Pair( 4,  4))));
-        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair( 8,  9), new Pair( 6,  7))));
-        expectedLocations.put("lisp",        Optional.of(new WordLocation(new Pair( 3,  6), new Pair( 6,  3))));
+        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
+        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair(1,  1), new Pair(4,  4))));
+        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair(8,  9), new Pair(6,  7))));
+        expectedLocations.put("lisp",        Optional.of(new WordLocation(new Pair(3,  6), new Pair(6,  3))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -449,14 +449,14 @@ public class WordSearcherTest {
     @Test
     public void testLocatesWordsWrittenTopRightToBottomLeft() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
-        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair( 9,  5), new Pair( 9,  2))));
-        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair( 1,  1), new Pair( 4,  4))));
-        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair( 8,  9), new Pair( 6,  7))));
-        expectedLocations.put("lisp",        Optional.of(new WordLocation(new Pair( 3,  6), new Pair( 6,  3))));
-        expectedLocations.put("ruby",        Optional.of(new WordLocation(new Pair( 8,  6), new Pair( 5,  9))));
+        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
+        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair(1,  1), new Pair(4,  4))));
+        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair(8,  9), new Pair(6,  7))));
+        expectedLocations.put("lisp",        Optional.of(new WordLocation(new Pair(3,  6), new Pair(6,  3))));
+        expectedLocations.put("ruby",        Optional.of(new WordLocation(new Pair(8,  6), new Pair(5,  9))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -481,14 +481,14 @@ public class WordSearcherTest {
     @Test
     public void testFailsToLocateAWordsThatIsNotInThePuzzle() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair( 1, 10), new Pair( 7, 10))));
-        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair( 6,  5), new Pair( 1,  5))));
+        expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
+        expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
-        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair( 9,  5), new Pair( 9,  2))));
-        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair( 1,  1), new Pair( 4,  4))));
-        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair( 8,  9), new Pair( 6,  7))));
-        expectedLocations.put("lisp",        Optional.of(new WordLocation(new Pair( 3,  6), new Pair( 6,  3))));
-        expectedLocations.put("ruby",        Optional.of(new WordLocation(new Pair( 8,  6), new Pair( 5,  9))));
+        expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
+        expectedLocations.put("java",        Optional.of(new WordLocation(new Pair(1,  1), new Pair(4,  4))));
+        expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair(8,  9), new Pair(6,  7))));
+        expectedLocations.put("lisp",        Optional.of(new WordLocation(new Pair(3,  6), new Pair(6,  3))));
+        expectedLocations.put("ruby",        Optional.of(new WordLocation(new Pair(8,  6), new Pair(5,  9))));
         expectedLocations.put("haskell",     Optional.empty());
 
         Set<String> searchWords = expectedLocations.keySet();

@@ -26,7 +26,7 @@ class Anagram {
         }
 
         boolean anagramOf(String other) {
-            return !duplicate(other) && Arrays.equals(fingerprint,canonicalize(other));
+            return !duplicate(other) && Arrays.equals(fingerprint, canonicalize(other));
         }
 
         private boolean duplicate(String other) {

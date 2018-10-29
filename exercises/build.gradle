@@ -10,6 +10,8 @@ def generatedTestSourceDir = "build/gen/test/java"
 
 subprojects {
 
+  apply plugin: "checkstyle"
+
   // Add a task that copies test source files into a build directory. All @Ignore annotations
   // are removed during this copying, so that when we run the copied tests, none are skipped and
   // all should execute.
@@ -51,12 +53,26 @@ subprojects {
       logCompileTaskSourcePath(project, "compileJava") // Corresponds to the "main" source set.
       logCompileTaskSourcePath(project, "compileStarterSourceJava")
       logCompileTaskSourcePath(project, "compileTestJava")
+
+    }
+
+    // configuration of the linter
+    checkstyle {
+      toolVersion '7.8.1'
+      configFile file("checkstyle.xml")
+      sourceSets = [project.sourceSets.main, project.sourceSets.test]
+    }
+
+    checkstyleTest {
+      source = "src/test/java"
     }
 
     // When running the standard test task, make sure we prepopulate the test source set with the
     // @Ignore-stripped tests.
     test.dependsOn(copyTestsFilteringIgnores)
   }
+
+
 
 }
 

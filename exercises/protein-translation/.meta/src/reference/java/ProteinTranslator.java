@@ -18,7 +18,7 @@ class ProteinTranslator {
         List<String> proteinList = new ArrayList<String>();
 
         for (int i = 0; i < rnaSequence.length(); i += 3) {
-            String codon = rnaSequence.substring(i, i+3);
+            String codon = rnaSequence.substring(i, i + 3);
 
             if (Arrays.asList(METHIONINE).contains(codon)) {
                 proteinList.add("Methionine");

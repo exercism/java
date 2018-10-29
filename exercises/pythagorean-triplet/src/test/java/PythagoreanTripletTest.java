@@ -1,8 +1,6 @@
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -24,7 +22,7 @@ public class PythagoreanTripletTest {
     @Test
     public void shouldCalculateProduct() {
         PythagoreanTriplet triplet = new PythagoreanTriplet(3, 4, 5);
-        long expected = 60l;
+        long expected = 60L;
         long actual = triplet.calculateProduct();
         assertEquals(expected, actual);
     }
@@ -55,7 +53,7 @@ public class PythagoreanTripletTest {
                         .map(t -> t.calculateProduct())
                         .sorted()
                         .collect(Collectors.toList());
-        List<Long> expected = Arrays.asList(60l, 480l);
+        List<Long> expected = Arrays.asList(60L, 480L);
         assertEquals(expected, actual);
     }
 
@@ -72,7 +70,7 @@ public class PythagoreanTripletTest {
                         .map(t -> t.calculateProduct())
                         .sorted((p1, p2) -> Double.compare(p1, p2))
                         .collect(Collectors.toList());
-        List<Long> expected = Arrays.asList(3840l);
+        List<Long> expected = Arrays.asList(3840L);
         assertEquals(expected, actual);
     }
 
@@ -89,7 +87,7 @@ public class PythagoreanTripletTest {
                         .map(t -> t.calculateProduct())
                         .sorted((p1, p2) -> Double.compare(p1, p2))
                         .collect(Collectors.toList());
-        List<Long> expected = Arrays.asList(118080l, 168480l, 202500l);
+        List<Long> expected = Arrays.asList(118080L, 168480L, 202500L);
         assertEquals(expected, actual);
     }
 }

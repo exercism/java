@@ -8,7 +8,7 @@ class Bob {
             return "Fine. Be that way!";
         }
         if (isShout(input) && isQuestion(input)) {
-          return "Calm down, I know what I'm doing!";
+            return "Calm down, I know what I'm doing!";
         }
         if (isShout(input)) {
             return "Whoa, chill out!";

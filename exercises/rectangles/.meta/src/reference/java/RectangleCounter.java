@@ -5,11 +5,13 @@ final class RectangleCounter {
 
     int countRectangles(final String[] rawGrid) {
         final int nRows = rawGrid.length;
-        if (nRows == 0) return 0;
-
+        if (nRows == 0) {
+            return 0;
+        }
         final int nCols = rawGrid[0].length();
-        if (nCols == 0) return 0;
-
+        if (nCols == 0) {
+            return 0;
+        }
         return new Grid(nRows, nCols, rawGrid).countRectangles();
     }
 

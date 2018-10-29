@@ -6,7 +6,7 @@ import java.util.Map;
 class ParallelLetterFrequency {
 
     private static Map<Integer, Integer> letterFrequencyMap;
-    private final String NOT_A_LETTER = "\\P{L}+";
+    private static final String NOT_A_LETTER = "\\P{L}+";
 
 
     ParallelLetterFrequency(String letters) {

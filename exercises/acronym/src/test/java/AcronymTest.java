@@ -30,7 +30,7 @@ public class AcronymTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void NonAcronymAllCapsWord() {
+    public void nonAcronymAllCapsWord() {
         String phrase = "GNU Image Manipulation Program";
         String expected = "GIMP";
         assertEquals(expected, new Acronym(phrase).get());
@@ -59,5 +59,5 @@ public class AcronymTest {
         String expected = "SIMUFTA";
         assertEquals(expected, new Acronym(phrase).get());
     }
-    
+
 }
