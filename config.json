@@ -42,6 +42,16 @@
       ]
     },
     {
+      "slug": "darts",
+      "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "games"
+      ]
+    },
+    {
       "slug": "armstrong-numbers",
       "uuid": "8e1dd48c-e05e-4a72-bf0f-5aed8dd123f5",
       "core": false,
