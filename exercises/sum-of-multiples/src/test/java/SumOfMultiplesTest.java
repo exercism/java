@@ -175,7 +175,7 @@ public class SumOfMultiplesTest {
     public void testSumOfMultiplesOfZeroIsZero() {
 
         int[] set = {
-                0
+            0
         };
         int output = new SumOfMultiples(1, set).getSum();
         assertEquals(0, output);
@@ -187,11 +187,11 @@ public class SumOfMultiplesTest {
     public void testSolutionsUsingIncludeExcludeMustExtendToCardinalityGreater3() {
 
         int[] set = {
-                2,
-                3,
-                5,
-                7,
-                11
+            2,
+            3,
+            5,
+            7,
+            11
         };
         int output = new SumOfMultiples(10000, set).getSum();
         assertEquals(39614537, output);
