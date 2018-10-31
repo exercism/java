@@ -1,0 +1,15 @@
+public class Javareverse {
+
+    public static void main(String[] args) {
+        String a = "Welcome to Beginnersbook";
+        String reversed = reverseString(a);
+        System.out.println("The reversed string is: " + reversed);
+    }
+
+    public static String reverseString(String a)
+    {
+        if (a.isEmpty())
+            return a;
+        return reverseString(a.substring(1)) + a.charAt(0);
+    }
+}
