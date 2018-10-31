@@ -191,7 +191,8 @@ public class SumOfMultiplesTest {
                 3,
                 5,
                 7,
-                11};
+                11
+        };
         int output = new SumOfMultiples(10000, set).getSum();
         assertEquals(39614537, output);
 
