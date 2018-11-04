@@ -184,6 +184,19 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testFactorZeroDoesNotAffectTheSumOfMultiplesOfOtherFactors() {
+
+        int[] set = {
+            3,
+            0
+        };
+        int output = new SumOfMultiples(4, set).getSum();
+        assertEquals(3, output);
+
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testSolutionsUsingIncludeExcludeMustExtendToCardinalityGreater3() {
 
         int[] set = {
