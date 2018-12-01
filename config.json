@@ -1408,6 +1408,16 @@
       "difficulty": 0,
       "topics": null,
       "deprecated": true
+    },
+    {
+      "slug": "finding-fibonacci-number",
+      "uuid": "74525d35-566b-4be7-96d4-79e58efa9357",
+      "core": false,
+      "unlocked_by": "recursion method",
+      "difficulty": 2,
+      "topics": [
+        "math"
+      ]
     }
   ]
 }
