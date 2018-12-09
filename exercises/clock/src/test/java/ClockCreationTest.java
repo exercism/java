@@ -108,6 +108,12 @@ public class ClockCreationTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void negativeSixtyMinutesIsPreviousHour() {
+        assertEquals("01:00", new Clock(2, -60).toString());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void negativeHourAndMinutesBothRollOver() {
         assertEquals("20:20", new Clock(-25, -160).toString());
     }
