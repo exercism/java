@@ -13,7 +13,6 @@ import org.junit.Ignore;
 
 public class PythagoreanTripletTest {
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs12() {
         List<PythagoreanTriplet> actual
