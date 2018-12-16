@@ -10,7 +10,7 @@ public class LuhnValidatorTest {
 
     @Before
     public void setUp() {
-      luhnValidator = new LuhnValidator();
+        luhnValidator = new LuhnValidator();
     }
 
     @Test

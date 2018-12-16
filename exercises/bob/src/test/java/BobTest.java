@@ -127,7 +127,7 @@ public class BobTest {
     @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
-            "Whoa, chill out!", bob.hey("I HATE YOU")
+            "Whoa, chill out!", bob.hey("I HATE THE DMV")
         );
     }
 
@@ -167,7 +167,7 @@ public class BobTest {
     @Test
     public void prolongedSilence() {
         assertEquals(
-            "Fine. Be that way!", bob.hey("    ")
+            "Fine. Be that way!", bob.hey("          ")
         );
     }
 
@@ -184,7 +184,7 @@ public class BobTest {
     public void multipleLineQuestion() {
         assertEquals(
             "Whatever.",
-            bob.hey("\nDoes this cryogenic chamber make me look fat?\nno")
+            bob.hey("\nDoes this cryogenic chamber make me look fat?\nNo.")
         );
     }
 

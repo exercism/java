@@ -54,7 +54,7 @@ public class TournamentTest {
     @Ignore("Remove to run test")
     @Test
     public void aDrawIsOnePointEach() {
-        tournament.applyResults( "Allegoric Alaskans;Blithering Badgers;draw");
+        tournament.applyResults("Allegoric Alaskans;Blithering Badgers;draw");
         assertEquals(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1\n" +

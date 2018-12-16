@@ -96,4 +96,10 @@ public class ClockEqualTest {
         assertEquals(new Clock(18, 7), new Clock(-54, -11513));
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void clocksWithFullClockAndZeroedClockAreEqual() {
+        assertEquals(new Clock(24, 0), new Clock(0, 0));
+    }
+
 }

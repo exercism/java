@@ -42,6 +42,16 @@
       ]
     },
     {
+      "slug": "darts",
+      "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "games"
+      ]
+    },
+    {
       "slug": "armstrong-numbers",
       "uuid": "8e1dd48c-e05e-4a72-bf0f-5aed8dd123f5",
       "core": false,
@@ -203,6 +213,20 @@
         "conditionals",
         "loops",
         "strings"
+      ]
+    },
+    {
+      "slug": "yacht",
+      "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
+      "core": false,
+      "unlocked_by": "scrabble-score",
+      "difficulty": 4,
+      "topics": [
+        "enumerations",
+        "filtering",
+        "games",
+        "pattern_matching",
+        "sorting"
       ]
     },
     {
@@ -936,6 +960,19 @@
       ]
     },
     {
+      "slug": "affine-cipher",
+      "uuid": "e6e3faaf-54c2-4782-93af-bb8d95403f2a",
+      "core": false,
+      "unlocked_by": "rotational-cipher",
+      "difficulty": 6,
+      "topics": [
+        "cryptography",
+        "security",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "two-bucket",
       "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e",
       "core": false,
@@ -945,6 +982,16 @@
         "algorithms",
         "conditionals",
         "loops"
+      ]
+    },
+    {
+      "slug": "zebra-puzzle",
+      "uuid": "b1e2bd39-3f4b-44c1-b7e2-258d4ee241f8",
+      "core": false,
+      "unlocked_by": "saddle-points",
+      "difficulty": 7,
+      "topics": [
+        "logic"
       ]
     },
     {

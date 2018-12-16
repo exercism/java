@@ -10,7 +10,7 @@ final class Proverb {
             return "";
         }
         final StringBuilder result = new StringBuilder();
-        for(int i = 1; i < words.length; i++) {
+        for (int i = 1; i < words.length; i++) {
             result.append("For want of a " + words[i - 1] + " the " + words[i] + " was lost.\n");
         }
         result.append("And all for the want of a " + words[0] + ".");

@@ -1,13 +1,8 @@
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.Collections;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -103,7 +98,7 @@ public class PythagoreanTripletTest {
                         new PythagoreanTriplet(210, 280, 350),
                         new PythagoreanTriplet(240, 252, 348));
         assertEquals(expected, actual);
-	}
+    }
 
     @Ignore("Remove to run test")
     @Test

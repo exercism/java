@@ -27,6 +27,13 @@ public class IsogramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testDuplicateEndAlphabet() {
+        IsogramChecker iso = new IsogramChecker();
+        assertFalse(iso.isIsogram("zzyzx"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testMediumLongIsogram() {
         IsogramChecker iso = new IsogramChecker();
         assertTrue(iso.isIsogram("subdermatoglyphic"));
@@ -37,6 +44,13 @@ public class IsogramCheckerTest {
     public void testCaseInsensitive() {
         IsogramChecker iso = new IsogramChecker();
         assertFalse(iso.isIsogram("Alphabet"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDuplicatMixedCase() {
+        IsogramChecker iso = new IsogramChecker();
+        assertFalse(iso.isIsogram("alphAbet"));
     }
 
     @Ignore("Remove to run test")
@@ -65,6 +79,13 @@ public class IsogramCheckerTest {
     public void testDuplicatedCharacterInTheMiddleIsNotIsogram() {
         IsogramChecker iso = new IsogramChecker();
         assertFalse(iso.isIsogram("accentor"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testSameFirstAndLast() {
+        IsogramChecker iso = new IsogramChecker();
+        assertFalse(iso.isIsogram("angola"));
     }
 
 }

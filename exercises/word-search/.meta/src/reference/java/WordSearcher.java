@@ -5,14 +5,14 @@ import java.util.stream.Collectors;
 class WordSearcher {
 
     private static final List<Pair> DIRECTIONS = Arrays.asList(
-            new Pair( 1,  0),  // N
-            new Pair( 1,  1),  // NE
-            new Pair( 0,  1),  // E
+            new Pair(1,  0),  // N
+            new Pair(1,  1),  // NE
+            new Pair(0,  1),  // E
             new Pair(-1,  1),  // SE
             new Pair(-1,  0),  // S
             new Pair(-1, -1),  // SW
-            new Pair( 0, -1),  // W
-            new Pair( 1, -1)); // NW
+            new Pair(0, -1),  // W
+            new Pair(1, -1)); // NW
 
     /*
      * Search for multiple words in the given grid.
@@ -34,7 +34,9 @@ class WordSearcher {
         for (int c = 1; c <= nCols; c++) {
             for (int r = 1; r <= nRows; r++) {
                 final Optional<WordLocation> wordLocation = search(word, grid, new Pair(c, r));
-                if (wordLocation.isPresent()) return wordLocation;
+                if (wordLocation.isPresent()) {
+                    return wordLocation;
+                }
             }
         }
 
@@ -45,11 +47,14 @@ class WordSearcher {
      * Search for a single word starting at a given coordinate within the given grid.
      */
     private Optional<WordLocation> search(final CharSequence word, final char[][] grid, final Pair startCoord) {
-        if (grid[startCoord.getY() - 1][startCoord.getX() - 1] != word.charAt(0)) return Optional.empty();
-
+        if (grid[startCoord.getY() - 1][startCoord.getX() - 1] != word.charAt(0)) {
+            return Optional.empty();
+        }
         for (final Pair direction : DIRECTIONS) {
             final Optional<WordLocation> wordLocation = check(word, grid, startCoord, direction);
-            if (wordLocation.isPresent()) return wordLocation;
+            if (wordLocation.isPresent()) {
+                return wordLocation;
+            }
         }
 
         return Optional.empty();

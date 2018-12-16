@@ -94,10 +94,10 @@ public class VariableLengthQuantityTest {
     @Ignore("Remove to run test")
     @Test
     public void testLargestTripleByte() {
-       List<String> expected = Arrays.asList("0xff", "0xff", "0x7f");
-       List<Long> numbers = Arrays.asList(0x1fffffL);
+        List<String> expected = Arrays.asList("0xff", "0xff", "0x7f");
+        List<Long> numbers = Arrays.asList(0x1fffffL);
 
-       assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertEquals(expected, variableLengthQuantity.encode(numbers));
     }
 
     @Ignore("Remove to run test")

@@ -2,11 +2,9 @@ import java.util.*;
 
 final class BracketChecker {
 
-    private static final Map<Character, Character> BRACKET_PAIR_MAP = new HashMap<Character, Character>() {{
-        put('[', ']');
-        put('{', '}');
-        put('(', ')');
-    }};
+    private static final Map<Character, Character> BRACKET_PAIR_MAP = new HashMap<Character, Character>() {
+        { put('[', ']'); put('{', '}'); put('(', ')'); }
+    };
 
     private static boolean isOpeningBracket(final char character) {
         return BRACKET_PAIR_MAP.keySet().contains(character);

@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -75,14 +74,14 @@ public class IsbnVerifierTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void isbnWithoutCheckDigit() {
-        assertFalse(isbnVerifier.isValid("3-598-21507"));
+    public void tooShortIsbn() {
+        assertFalse(isbnVerifier.isValid("00"));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void tooLongIsbn() {
-        assertFalse(isbnVerifier.isValid("3-598-21507-XX"));
+    public void isbnWithoutCheckDigit() {
+        assertFalse(isbnVerifier.isValid("3-598-21507"));
     }
 
     @Ignore("Remove to run test")
@@ -107,5 +106,11 @@ public class IsbnVerifierTest {
     @Test
     public void invalidCharactersAreNotIgnored() {
         assertFalse(isbnVerifier.isValid("3132P34035"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void inputIsTooLongButContainsAValidIsbn() {
+        assertFalse(isbnVerifier.isValid("98245726788"));
     }
 }

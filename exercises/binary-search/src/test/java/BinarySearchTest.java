@@ -2,7 +2,6 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -82,7 +81,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void identifiesThatAValueIsNotIncludedInTheArray() {
+    public void identifiesThatAValueIsNotFoundInTheArray() {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -94,7 +93,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void aValueSmallerThanTheArraysSmallestValueIsNotIncluded() {
+    public void aValueSmallerThanTheArraysSmallestValueIsNotFound() {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -106,7 +105,7 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void aValueLargerThanTheArraysSmallestValueIsNotIncluded() {
+    public void aValueLargerThanTheArraysSmallestValueIsNotFound() {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
@@ -118,11 +117,24 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void nothingIsIncludedInAnEmptyArray() {
+    public void nothingIsFoundInAnEmptyArray() {
         List<Integer> emptyList = Collections.emptyList();
 
         BinarySearch search = new BinarySearch(emptyList);
 
         assertEquals(-1, search.indexOf(1));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void nothingIsFoundWhenTheLeftAndRightBoundCross() {
+        List<Integer> sortedList = Collections.unmodifiableList(
+                Arrays.asList(1, 2)
+        );
+
+        BinarySearch search = new BinarySearch(sortedList);
+
+        assertEquals(-1, search.indexOf(0));
+    }
+
 }
