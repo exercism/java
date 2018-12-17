@@ -102,7 +102,7 @@ public class PythagoreanTriplet {
                     sqrt = Math.sqrt(n * n + m * m);
                     floor = (int) Math.floor(sqrt);
                     if (sqrt == floor) {
-                        triplets.add(new PythagoreanTriplet(m, n, floor));
+                        triplets.add(new PythagoreanTriplet(n, m, floor));
                     }
                 }
             }
