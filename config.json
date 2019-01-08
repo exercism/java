@@ -75,6 +75,18 @@
       ]
     },
     {
+      "slug": "dnd-character",
+      "uuid": "09bb515c-0270-4d34-8d56-89ee04588494",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "game",
+        "integers",
+        "randomness"
+      ]
+    },
+    {
       "slug": "pangram",
       "uuid": "133b0f84-bdc7-4508-a0a1-5732a7db81ef",
       "core": false,
