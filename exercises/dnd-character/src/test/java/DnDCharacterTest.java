@@ -131,4 +131,42 @@ public class DnDCharacterTest {
         assertEquals(dndCharacter.getStrength(), dndCharacter.getStrength());
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testRandomAbilityIsRandom() {
+        int ability = dndCharacter.ability();
+        for (int i = 0; i < 100; i++) {
+            if (ability != dndCharacter.ability()) {
+                return;
+            }
+        }
+        fail("Either you are the luckiest person on earth, " +
+             "or you're not using random numbers for your abilities.");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDistributionMatchesReference() {
+        int referenceCount = 6 * 6 * 6 * 6;
+        int[] referenceDistribution = new int[] {1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21};
+        int cycles = 10000;
+        int[] actualDistribution = new int[16];
+
+        for (int i = 0; i < cycles; i++) {
+            actualDistribution[dndCharacter.ability() - 3]++;
+        }
+
+        for (int i = 0; i < actualDistribution.length; i++) {
+            double pRef = (double) referenceDistribution[i] / referenceCount;
+            double pAct = (double) actualDistribution[i] / cycles;
+            double diff = Math.abs(pRef - pAct);
+            // System.out.format("pRef: %f pAct: %f -> diff: %f %n", pRef, pAct, diff);
+            assertFalse(diff > 0.02);
+            if (diff > 0.02) {
+                fail("Although very unlikely, this test can fail with a correct solution. " +
+                     "If it fails consistently during all reruns check your implementation.");
+            }
+        }
+    }
+
 }
