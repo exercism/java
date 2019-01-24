@@ -161,7 +161,6 @@ public class DnDCharacterTest {
             double pAct = (double) actualDistribution[i] / cycles;
             double diff = Math.abs(pRef - pAct);
             // System.out.format("pRef: %f pAct: %f -> diff: %f %n", pRef, pAct, diff);
-            assertFalse(diff > 0.02);
             if (diff > 0.02) {
                 fail("Although very unlikely, this test can fail with a correct solution. " +
                      "If it fails consistently during all reruns check your implementation.");
