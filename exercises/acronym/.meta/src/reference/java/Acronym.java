@@ -15,8 +15,8 @@ class Acronym {
     }
 
     private String generateAcronym(String phrase) {
-        String newPhrase = phrase.replace("_", "");
-        return Arrays.stream(newPhrase.split("(?!')\\W"))
+        String phraseWithoutUnderscores = phrase.replace("_", "");
+        return Arrays.stream(phraseWithoutUnderscores.split("(?!')\\W"))
             .filter(word -> !word.isEmpty()) // Remove empty strings from the result of phrase.split
             .map(word -> word.substring(0, 1)) // Get the first character of each word
             .collect(Collectors.joining()) // Concatenate the characters
