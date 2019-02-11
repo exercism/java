@@ -68,4 +68,13 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).getAcronym());
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void underscoreEmphasis() {
+        String phrase = "The Road _Not_ Taken";
+        String expected = "TRNT";
+        assertEquals(expected, new Acronym(phrase).getAcronym());
+    }
+
+
 }
