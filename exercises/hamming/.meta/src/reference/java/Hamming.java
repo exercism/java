@@ -1,5 +1,5 @@
 class Hamming {
-    private int hammingDistance;
+    private final int hammingDistance;
 
     Hamming(String leftStrand, String rightStrand) {
         hammingDistance = computeHammingDistance(leftStrand, rightStrand);
