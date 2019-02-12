@@ -168,4 +168,17 @@ public class WordCountTest {
         );
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void alternatingWordSeperatorsNotDetectedAsAWord() {
+        expectedWordCount.put("one", 1);
+        expectedWordCount.put("two", 1);
+        expectedWordCount.put("three", 1);
+
+        actualWordCount = wordCount.phrase(",\n,one,\n ,two \n 'three'");
+        assertEquals(
+                expectedWordCount, actualWordCount
+        );
+    }
+
 }
