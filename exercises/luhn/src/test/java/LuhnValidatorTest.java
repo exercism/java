@@ -56,8 +56,20 @@ public class LuhnValidatorTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testValidNumberWithAnEvenNumberOfDigits() {
+        assertTrue(luhnValidator.isValid("095 245 88"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testStringsContainingNonDigitInvalid() {
         assertFalse(luhnValidator.isValid("055a 444 285"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testValidStringsWithANonDigitAtEndInvalid() {
+        assertFalse(luhnValidator.isValid("059a"));
     }
 
     @Ignore("Remove to run test")
