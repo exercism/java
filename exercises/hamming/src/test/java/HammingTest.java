@@ -62,7 +62,7 @@ public class HammingTest {
     @Test
     public void testDisallowLeftEmptyStrand() {
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("left strand must not be empty");
+        expectedException.expectMessage("left strand must not be empty.");
 
         new Hamming("", "G");
     }
