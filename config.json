@@ -42,6 +42,17 @@
       ]
     },
     {
+      "slug": "resistor-color",
+      "uuid": "e5e821ed-fc1f-4419-9c90-ad4a0b564bea",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "darts",
       "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
       "core": false,
