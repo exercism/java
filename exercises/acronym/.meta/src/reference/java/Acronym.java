@@ -10,7 +10,7 @@ class Acronym {
     }
 
 
-    String getAcronym() {
+    String get() {
         return acronym;
     }
 
