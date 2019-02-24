@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AnagramTest {
 
@@ -14,7 +14,8 @@ public class AnagramTest {
     @Test
     public void testNoMatches() {
         Anagram detector = new Anagram("diaper");
-        assertTrue(detector.match(Arrays.asList("hello", "world", "zombies", "pants")).isEmpty());
+        List<String> anagrams = detector.match(Arrays.asList("hello", "world", "zombies", "pants"));
+        assertThat(anagrams, empty());
     }
 
     @Ignore("Remove to run test")
@@ -29,7 +30,8 @@ public class AnagramTest {
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
-        assertTrue(detector.match(Arrays.asList("dog", "goody")).isEmpty());
+        List<String> anagrams = detector.match(Arrays.asList("dog", "goody"));
+        assertThat(anagrams, empty());
     }
 
     @Ignore("Remove to run test")
@@ -54,7 +56,8 @@ public class AnagramTest {
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
-        assertTrue(detector.match(Collections.singletonList("last")).isEmpty());
+        List<String> anagrams = detector.match(Collections.singletonList("last"));
+        assertThat(anagrams, empty());
     }
 
     @Ignore("Remove to run test")
@@ -85,21 +88,24 @@ public class AnagramTest {
     @Test
     public void testIdenticalWordRepeatedIsNotAnagram() {
         Anagram detector = new Anagram("go");
-        assertTrue(detector.match(Collections.singletonList("go Go GO")).isEmpty());
+        List<String> anagrams = detector.match(Collections.singletonList("go Go GO"));
+        assertThat(anagrams, empty());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAnagramMustUseAllLettersExactlyOnce() {
         Anagram detector = new Anagram("tapper");
-        assertTrue(detector.match(Collections.singletonList("patter")).isEmpty());
+        List<String> anagrams = detector.match(Collections.singletonList("patter"));
+        assertThat(anagrams, empty());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCapitalWordIsNotOwnAnagram() {
         Anagram detector = new Anagram("BANANA");
-        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
+        List<String> anagrams = detector.match(Collections.singletonList("Banana"));
+        assertThat(anagrams, empty());
     }
 
 }
