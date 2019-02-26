@@ -16,7 +16,7 @@ final class GridPosition {
         result = prime * result + x;
         result = prime * result + y;
         return result;
-   }
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -24,11 +24,11 @@ final class GridPosition {
             return true;
         } else if (obj == null || getClass() != obj.getClass()) {
             return false;
-        } else if (x != ((GridPosition) obj).x || y != ((GridPosition)obj).y) {
+        } else if (x != ((GridPosition) obj).x || y != ((GridPosition) obj).y) {
             return false;
         } else {
             return true;
         }
-   }
+    }
 
 }

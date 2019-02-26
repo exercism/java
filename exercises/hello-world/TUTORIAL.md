@@ -11,7 +11,7 @@
 Welcome to the first exercise on the Java track!
 
 This document is a step-by-step guide to solving this exercise. The
-instructions should work equally well on Windows, Mac OS X and Linux.
+instructions should work equally well on Windows, macOS and Linux.
 
 Even if you are already familiar with Java basics, stepping through this guide
 may be helpful as it will help you understand the output from the tool, Gradle,
@@ -257,30 +257,26 @@ Cheers!
 
 ## Move on to the next exercise
 
-There are many more exercises you can practice with.  Grab the next one!
+There are many more exercises you can practice with.  Grab the next one! (example for `two-fer`)
 
 ```
-$ exercism fetch java
+$ exercism download --exercise=two-fer --track=java
 ```
 
-## Review (and comment on) others' submissions to this exercise
+## Become a mentor
 
 The heart of Exercism are the conversations about coding
-practices.  It's definitely fun to practice, but engaging with others
-both in their attempts and your own is how you get feedback.  That feedback
+practices. It's definitely fun to practice, but engaging with others
+both in their attempts and your own is how you get feedback. That feedback
 can help point out what you're doing well and where you might need to
 improve.
 
 Some submissions will be nearly identical to yours; others will be
-completely different.  Seeing both kinds can be instructive and interesting.
+completely different. Seeing both kinds can be instructive and interesting.
 
-Note that you can only view submissions of others for exercises you have
-completed yourself.  This enriches the experience of reading others' code
-because you'll have your own experience of trying to solve the problem.
-
-Here's an up-to-date list of submissions on the Java track:
-
-http://exercism.io/tracks/java/exercises
+Mentors review submitted solutions for the track they've chosen to mentor
+to help users learn as much as possible. To read more about mentoring and
+to sign up see: http://mentoring.exercism.io/.
 
 ## Contribute to Exercism
 

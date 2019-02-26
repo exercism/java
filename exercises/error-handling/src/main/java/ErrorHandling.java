@@ -19,11 +19,11 @@ class ErrorHandling {
     }
 
     void handleErrorByThrowingAnyUncheckedException() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        // Delete this statement and write your own implementation.
     }
 
     void handleErrorByThrowingAnyUncheckedExceptionWithDetailMessage(String message) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        // Delete this statement and write your own implementation.
     }
 
     void handleErrorByThrowingCustomCheckedException() {

@@ -85,5 +85,17 @@ public class AtbashTest {
         assertEquals("thequickbrownfoxjumpsoverthelazydog",
                 atbash.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
     }
-
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testDecodeWithTooManySpaces() {
+        assertEquals("exercism", atbash.decode("vc vix    r hn"));
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testDecodeWithNoSpaces() {
+        assertEquals("anobstacleisoftenasteppingstone",
+                atbash.decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"));
+    }
 }

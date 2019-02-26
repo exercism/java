@@ -36,7 +36,7 @@ class RunLengthEncoding {
     }
 
     void addChars(StringBuilder toAddTo, char toAdd, int countOfChar) {
-        if(countOfChar != 1) {
+        if (countOfChar != 1) {
             toAddTo.append(countOfChar);
         }
 
@@ -54,7 +54,7 @@ class RunLengthEncoding {
 
                 matcher.find();
 
-                for (int i = 0; i<number; i++) {
+                for (int i = 0; i < number; i++) {
                     decodedData.append(matcher.group());
                 }
             } catch (NumberFormatException e) {

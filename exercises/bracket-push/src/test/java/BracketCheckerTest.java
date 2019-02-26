@@ -98,6 +98,13 @@ public class BracketCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testPairedAndIncompleteOpeningBrackets() {
+        BracketChecker bracketChecker = new BracketChecker("{}[");
+        assertFalse(bracketChecker.areBracketsMatchedAndNestedCorrectly());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testValidMathExpression() {
         BracketChecker bracketChecker = new BracketChecker("(((185 + 223.85) * 15) - 543)/2");
         assertTrue(bracketChecker.areBracketsMatchedAndNestedCorrectly());

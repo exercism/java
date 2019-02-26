@@ -1,11 +1,9 @@
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class ListOps {
 
@@ -41,7 +39,9 @@ class ListOps {
     }
 
     static <T, U> U foldLeft(final List<T> list, final U initial, final BiFunction<U, T, U> f) {
-        if (list.isEmpty()) return initial;
+        if (list.isEmpty()) {
+            return initial;
+        }
 
         return foldLeft(
                 new ArrayList<>(list.subList(1, list.size())),
@@ -52,7 +52,9 @@ class ListOps {
     }
 
     static <T, U> U foldRight(final List<T> list, final U initial, final BiFunction<T, U, U> f) {
-        if (list.isEmpty()) return initial;
+        if (list.isEmpty()) {
+            return initial;
+        }
 
         return f.apply(
                 list.get(0),

@@ -41,6 +41,17 @@ public class AllergiesTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void allergicToStrawberriesButNotPeanuts() {
+        Allergies allergies = new Allergies(9);
+
+        assertTrue(allergies.isAllergicTo(Allergen.EGGS));
+        assertFalse(allergies.isAllergicTo(Allergen.PEANUTS));
+        assertFalse(allergies.isAllergicTo(Allergen.SHELLFISH));
+        assertTrue(allergies.isAllergicTo(Allergen.STRAWBERRIES));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void noAllergies() {
         Allergies allergies = new Allergies(0);
 
