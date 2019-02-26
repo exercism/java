@@ -3,16 +3,16 @@ apply plugin: "eclipse"
 apply plugin: "idea"
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  testCompile "junit:junit:4.12"
+    testCompile "junit:junit:4.12"
 }
 
 test {
-  testLogging {
-    exceptionFormat = 'full'
-    events = ["passed", "failed", "skipped"]
-  }
+    testLogging {
+        exceptionFormat = 'full'
+        events = ["passed", "failed", "skipped"]
+    }
 }
