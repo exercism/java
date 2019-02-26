@@ -10,6 +10,9 @@ import static org.junit.Assert.assertEquals;
 
 public class BinarySearchTest {
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void findsAValueInAnArrayWithOneElement() {
         List<Integer> listOfUnitLength = Collections.singletonList(6);
@@ -81,14 +84,17 @@ public class BinarySearchTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void identifiesThatAValueIsNotFoundInTheArray() {
+    public void identifiesThatAValueIsNotFoundInTheArray() throws ValueNotFoundException {
         List<Integer> sortedList = Collections.unmodifiableList(
                 Arrays.asList(1, 3, 4, 6, 8, 9, 11)
         );
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(7));
+        expectedException.expect(ValueNotFoundException.class);
+        expectedException.expectedMessage("Value not in array");
+
+        search.indexOf(7);
     }
 
     @Ignore("Remove to run test")
@@ -100,7 +106,10 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(0));
+        expectedException.expect(ValueNotFoundException.class);
+        expectedException.expectedMessage("Value not in array");
+
+        search.indexOf(0);
     }
 
     @Ignore("Remove to run test")
@@ -112,7 +121,10 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(13));
+        expectedException.expect(ValueNotFoundException.class);
+        expectedException.expectedMessage("Value not in array");
+
+        search.indexOf(13);
     }
 
     @Ignore("Remove to run test")
@@ -122,7 +134,10 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(emptyList);
 
-        assertEquals(-1, search.indexOf(1));
+        expectedException.expect(ValueNotFoundException.class);
+        expectedException.expectedMessage("Value not in array");
+
+        search.indexOf(1);
     }
 
     @Ignore("Remove to run test")
@@ -134,7 +149,10 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(-1, search.indexOf(0));
+        expectedException.expect(ValueNotFoundException.class);
+        expectedException.expectedMessage("Value not in array");
+
+        search.indexOf(0);
     }
 
 }
