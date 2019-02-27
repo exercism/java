@@ -11,11 +11,11 @@ class BinarySearch {
         this.arraySize = array.size();
     }
 
-    int indexOf(Integer value) {
+    int indexOf(Integer value) throws ValueNotFoundException {
         return search(value);
     }
 
-    private int search(Integer value) {
+    private int search(Integer value) throws ValueNotFoundException {
         int left = 0;
         int right = this.arraySize - 1;
         int middle;
@@ -31,6 +31,6 @@ class BinarySearch {
                 return middle;
             }
         }
-        return -1;
+        throw new ValueNotFoundException("Value not in array");
     }
 }
