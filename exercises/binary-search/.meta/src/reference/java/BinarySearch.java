@@ -11,7 +11,7 @@ class BinarySearch {
         this.arraySize = array.size();
     }
 
-    int indexOf(Integer value) {
+    int indexOf(Integer value) throws ValueNotFoundException {
         return search(value);
     }
 

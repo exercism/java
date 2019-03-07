@@ -95,6 +95,20 @@ public class TriangleTest {
         expectedException.expect(TriangleException.class);
         new Triangle(1, 1, 3);
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testSidesThatViolateTriangleInequalityAreNotIsoscelesEvenIfTwoAreEqual_2() throws TriangleException {
+        expectedException.expect(TriangleException.class);
+        new Triangle(1, 3, 1);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testSidesThatViolateTriangleInequalityAreNotIsoscelesEvenIfTwoAreEqual_3() throws TriangleException {
+        expectedException.expect(TriangleException.class);
+        new Triangle(3, 1, 1);
+    }
 
     @Ignore("Remove to run test")
     @Test
