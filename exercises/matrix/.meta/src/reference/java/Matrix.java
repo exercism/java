@@ -18,13 +18,15 @@ class Matrix {
     }
 
     int[] getRow(int rowNumber) {
-        return matrix[rowNumber];
+        int indexRowNumber = rowNumber - 1;
+        return matrix[indexRowNumber];
     }
 
     int[] getColumn(int columnNumber) {
+        int indexColumnNumber = columnNumber - 1;
         int[] column = new int[matrix.length];
         for (int i = 0; i < matrix.length; i++) {
-            column[i] = matrix[i][columnNumber];
+            column[i] = matrix[i][indexColumnNumber];
         }
         return column;
     }
