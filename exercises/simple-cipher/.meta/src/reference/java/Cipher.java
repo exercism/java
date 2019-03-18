@@ -33,15 +33,28 @@ public class Cipher {
 
     public String encode(String plainText) {
         StringBuilder ciphertext = new StringBuilder(plainText.length());
+        String sameLengthKey = getSufficientlyLongKeyForPlaintext(plainText, key);
 
-        for (int index = 0; index < Math.min(plainText.length(), key.length()); index++) {
-            ciphertext.append(encodeCharacter(plainText, index));
+        for (int index = 0; index < plainText.length(); index++) {
+            ciphertext.append(encodeCharacter(plainText, index, sameLengthKey));
         }
 
         return ciphertext.toString();
     }
 
-    private char encodeCharacter(String plainText, int index) {
+    private String getSufficientlyLongKeyForPlaintext(String plainText, String key) {
+        StringBuilder longKeyBuilder = new StringBuilder(key.length());
+        longKeyBuilder.append(key);
+        if (plainText.length() > key.length()) {
+            int difference = plainText.length() - key.length();
+            for (int i = 0; i < difference; i = i + key.length()) {
+                longKeyBuilder.append(key);
+            }
+        }
+        return longKeyBuilder.toString();
+    }
+
+    private char encodeCharacter(String plainText, int index, String key) {
         int alphabetIdx = ALPHABET.indexOf(plainText.toCharArray()[index]) + ALPHABET.indexOf(key.toCharArray()[index]);
 
         if (alphabetIdx >= ALPHABET.length()) {
@@ -62,8 +75,8 @@ public class Cipher {
     }
 
     private char decodeCharacter(String cipherText, int index) {
-        int alphabetIdx = ALPHABET.indexOf(cipherText.toCharArray()[index]) -
-            ALPHABET.indexOf(key.toCharArray()[index]);
+        int alphabetIdx = ALPHABET
+                .indexOf(cipherText.toCharArray()[index]) - ALPHABET.indexOf(key.toCharArray()[index]);
 
         if (alphabetIdx < 0) {
             alphabetIdx += ALPHABET.length();
