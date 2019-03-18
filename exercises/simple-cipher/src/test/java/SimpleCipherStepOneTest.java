@@ -26,7 +26,6 @@ public class SimpleCipherStepOneTest {
     public void cipherCanEncode() {
         String plainText = "aaaaaaaaaa";
         String cipherText = cipherWithDefaultKey.getKey().substring(0, 10);
-        assertEquals(cipherText, cipherWithDefaultKey.encode("aaaaaaaaaa"));
         assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));
     }
 

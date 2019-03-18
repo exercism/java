@@ -39,7 +39,10 @@ public class Cipher {
             for (int i = 0; i < Math.min(copy.length(), key.length()); i++) {
                 ciphertext.append(encodeCharacter(copy, i));
             }
-            copy = plainText.substring(ciphertext.length(), plainText.length());
+            copy = "";
+            for (int i = ciphertext.length(); i < plainText.length(); i++) {
+                copy = copy + plainText.charAt(i);
+            }
         }
 
         return ciphertext.toString();
