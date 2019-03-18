@@ -33,7 +33,7 @@ public class Cipher {
 
     public String encode(String plainText) {
         StringBuilder ciphertext = new StringBuilder(plainText.length());
-        String sameLengthKey = getKeySameLengthAsPlaintext(plainText, key);
+        String sameLengthKey = getSufficientlyLongKeyForPlaintext(plainText, key);
 
         for (int index = 0; index < plainText.length(); index++) {
             ciphertext.append(encodeCharacter(plainText, index, sameLengthKey));
@@ -42,16 +42,16 @@ public class Cipher {
         return ciphertext.toString();
     }
 
-    private String getKeySameLengthAsPlaintext(String plainText, String key) {
-
-        String copy = key;
+    private String getSufficientlyLongKeyForPlaintext(String plainText, String key) {
+        StringBuilder longKeyBuilder = new StringBuilder(key.length());
+        longKeyBuilder.append(key);
         if (plainText.length() > key.length()) {
             int difference = plainText.length() - key.length();
             for (int i = 0; i < difference; i = i + key.length()) {
-                copy = copy + key;
+                longKeyBuilder.append(key);
             }
         }
-        return copy;
+        return longKeyBuilder.toString();
     }
 
     private char encodeCharacter(String plainText, int index, String key) {
