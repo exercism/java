@@ -32,23 +32,29 @@ public class Cipher {
     }
 
     public String encode(String plainText) {
-        String copy = plainText;
         StringBuilder ciphertext = new StringBuilder(plainText.length());
+        String sameLengthKey = getKeySameLengthAsPlaintext(plainText, key);
 
-        while (copy.length() > 0) {
-            for (int i = 0; i < Math.min(copy.length(), key.length()); i++) {
-                ciphertext.append(encodeCharacter(copy, i));
-            }
-            copy = "";
-            for (int i = ciphertext.length(); i < plainText.length(); i++) {
-                copy = copy + plainText.charAt(i);
-            }
+        for (int index = 0; index < plainText.length(); index++) {
+            ciphertext.append(encodeCharacter(plainText, index, sameLengthKey));
         }
 
         return ciphertext.toString();
     }
 
-    private char encodeCharacter(String plainText, int index) {
+    private String getKeySameLengthAsPlaintext(String plainText, String key) {
+
+        String copy = key;
+        if (plainText.length() > key.length()) {
+            int difference = plainText.length() - key.length();
+            for (int i = 0; i < difference; i = i + key.length()) {
+                copy = copy + key;
+            }
+        }
+        return copy;
+    }
+
+    private char encodeCharacter(String plainText, int index, String key) {
         int alphabetIdx = ALPHABET.indexOf(plainText.toCharArray()[index]) + ALPHABET.indexOf(key.toCharArray()[index]);
 
         if (alphabetIdx >= ALPHABET.length()) {
