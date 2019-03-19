@@ -373,6 +373,20 @@
       ]
     },
     {
+      "slug": "tree-building",
+      "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "maps",
+        "records",
+        "refactoring",
+        "sorting",
+        "trees"
+      ]
+    },
+    {
       "slug": "rotational-cipher",
       "uuid": "9eb41883-55ef-4681-b5ac-5c2259302772",
       "core": true,
