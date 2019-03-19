@@ -108,37 +108,40 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root.children.get(1).children.get(0), 6);
     }
 
-    @Test
-    public void test_rootNodeHasParent() {
+    @Test(expected = InvalidRecordsException.class)
+    public void test_rootNodeHasParent() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 1));
         records.add(new Record(1, 0));
 
-        assertThrows(InvalidRecordsException.class, () -> new BuildTree().buildTree(records));
+        BuildTree test = new BuildTree();
+        test.buildTree(records);
     }
 
-    @Test
-    public void test_noRootNode() {
+    @Test(expected = InvalidRecordsException.class)
+    public void test_noRootNode() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(1, 0));
         records.add(new Record(2, 0));
 
-        assertThrows(InvalidRecordsException.class, () -> new BuildTree().buildTree(records));
+        BuildTree test = new BuildTree();
+        test.buildTree(records);
     }
 
-    @Test
-    public void test_nonContinuousRecords() {
+    @Test(expected = InvalidRecordsException.class)
+    public void test_nonContinuousRecords() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(2, 0));
         records.add(new Record(4, 2));
         records.add(new Record(1, 0));
         records.add(new Record(0, 0));
 
-        assertThrows(InvalidRecordsException.class, () -> new BuildTree().buildTree(records));
+        BuildTree test = new BuildTree();
+        test.buildTree(records);
     }
 
-    @Test
-    public void test_cycleInDirectly() {
+    @Test(expected = InvalidRecordsException.class)
+    public void test_cycleInDirectly() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(5, 2));
         records.add(new Record(3, 2));
@@ -148,7 +151,8 @@ public class BuildTreeTest {
         records.add(new Record(0, 0));
         records.add(new Record(6, 3));
 
-        assertThrows(InvalidRecordsException.class, () -> new BuildTree().buildTree(records));
+        BuildTree test = new BuildTree();
+        test.buildTree(records);
     }
 
     private void assertNodeIsLeaf(TreeNode node, int nodeId) {
