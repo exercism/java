@@ -34,4 +34,11 @@ public class ReverseStringTest {
         assertEquals("racecar", new ReverseString().reverse("racecar"));
     }
 
+    // Bonus: This is not required to complete the exercise
+    // This requires splitting on unicode code points instead of char code points
+    @Ignore("Remove to run test")
+    @Test
+    public void testEmoji() {
+        assertEquals("👍☕", new ReverseString().reverse("☕👍"));
+    }
 }
