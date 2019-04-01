@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 public class BuildTree {
 
-    public TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
+    protected TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
         records.sort(Comparator.comparing(Record::getRecordId));
         ArrayList<Integer> orderedRecordIds = new ArrayList<>();
 
@@ -13,10 +13,10 @@ public class BuildTree {
 
         if (records.size() > 0) {
             if (orderedRecordIds.get(orderedRecordIds.size() - 1) != orderedRecordIds.size() - 1) {
-                throw new InvalidRecordsException("Tree must be continuous");
+                throw new InvalidRecordsException("Invalid Records");
             }
             if (orderedRecordIds.get(0) != 0) {
-                throw new InvalidRecordsException("Tree must start with id 0");
+                throw new InvalidRecordsException("Invalid Records");
             }
         }
 
@@ -26,13 +26,13 @@ public class BuildTree {
             for (Record record : records) {
                 if (orderedRecordIds.get(i) == record.getRecordId()) {
                     if (record.getRecordId() == 0 && record.getParentId() != 0) {
-                        throw new InvalidRecordsException("Root node cannot have a parent");
+                        throw new InvalidRecordsException("Invalid Records");
                     }
                     if (record.getRecordId() < record.getParentId()) {
-                        throw new InvalidRecordsException("Parent id must be lower than child id");
+                        throw new InvalidRecordsException("Invalid Records");
                     }
                     if (record.getRecordId() == record.getParentId() && record.getRecordId() != 0) {
-                        throw new InvalidRecordsException("Tree is a cycle");
+                        throw new InvalidRecordsException("Invalid Records");
                     }
                     treeNodes.add(new TreeNode(record.getRecordId()));
                 }

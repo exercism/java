@@ -1,20 +1,29 @@
+import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
 public class BuildTreeTest {
+
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
-    public void test_emptyList_shouldReturnNull() throws InvalidRecordsException {
+    public void testEmptyList() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
 
         TreeNode root = new BuildTree().buildTree(records);
         assertNull(root);
     }
 
+    @Ignore("Remove to run test")
     @Test
-    public void test_oneRecord() throws InvalidRecordsException {
+    public void testOneRecord() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         Record record = new Record(0, 0);
         records.add(record);
@@ -23,8 +32,9 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root, 0);
     }
 
+    @Ignore("Remove to run test")
     @Test
-    public void test_threeRecordsInOrder() throws InvalidRecordsException {
+    public void testThreeRecordsInOrder() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 0));
         records.add(new Record(1, 0));
@@ -36,8 +46,9 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root.children.get(1), 2);
     }
 
+    @Ignore("Remove to run test")
     @Test
-    public void test_threeRecordsInReverseOrder() throws InvalidRecordsException {
+    public void testThreeRecordsInReverseOrder() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(2, 0));
         records.add(new Record(1, 0));
@@ -49,8 +60,9 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root.children.get(1), 2);
     }
 
+    @Ignore("Remove to run test")
     @Test
-    public void test_recordsWithMoreThanTwoChildren() throws InvalidRecordsException {
+    public void testRecordsWithMoreThanTwoChildren() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 0));
         records.add(new Record(1, 0));
@@ -65,8 +77,9 @@ public class BuildTreeTest {
 
     }
 
+    @Ignore("Remove to run test")
     @Test
-    public void test_binaryTree() throws InvalidRecordsException {
+    public void testBinaryTree() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(6, 2));
         records.add(new Record(0, 0));
@@ -87,8 +100,9 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root.children.get(1).children.get(1), 6);
     }
 
+    @Ignore("Remove to run test")
     @Test
-    public void test_unbalancedTree() throws InvalidRecordsException {
+    public void testUnbalancedTree() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 0));
         records.add(new Record(1, 0));
@@ -108,8 +122,12 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root.children.get(1).children.get(0), 6);
     }
 
-    @Test(expected = InvalidRecordsException.class)
-    public void test_rootNodeHasParent() throws InvalidRecordsException {
+    @Ignore("Remove to run test")
+    @Test
+    public void testRootNodeHasParent() throws InvalidRecordsException {
+        expectedException.expect(InvalidRecordsException.class);
+        expectedException.expectMessage("Invalid Records");
+
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 1));
         records.add(new Record(1, 0));
@@ -118,8 +136,12 @@ public class BuildTreeTest {
         test.buildTree(records);
     }
 
-    @Test(expected = InvalidRecordsException.class)
-    public void test_noRootNode() throws InvalidRecordsException {
+    @Ignore("Remove to run test")
+    @Test
+    public void testNoRootNode() throws InvalidRecordsException {
+        expectedException.expect(InvalidRecordsException.class);
+        expectedException.expectMessage("Invalid Records");
+
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(1, 0));
         records.add(new Record(2, 0));
@@ -128,8 +150,12 @@ public class BuildTreeTest {
         test.buildTree(records);
     }
 
-    @Test(expected = InvalidRecordsException.class)
-    public void test_nonContinuousRecords() throws InvalidRecordsException {
+    @Ignore("Remove to run test")
+    @Test
+    public void testNonContinuousRecords() throws InvalidRecordsException {
+        expectedException.expect(InvalidRecordsException.class);
+        expectedException.expectMessage("Invalid Records");
+
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(2, 0));
         records.add(new Record(4, 2));
@@ -140,8 +166,12 @@ public class BuildTreeTest {
         test.buildTree(records);
     }
 
-    @Test(expected = InvalidRecordsException.class)
-    public void test_cycleInDirectly() throws InvalidRecordsException {
+    @Ignore("Remove to run test")
+    @Test
+    public void testCycleInDirectly() throws InvalidRecordsException {
+        expectedException.expect(InvalidRecordsException.class);
+        expectedException.expectMessage("Invalid Records");
+
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(5, 2));
         records.add(new Record(3, 2));
