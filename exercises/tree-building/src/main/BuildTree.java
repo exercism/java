@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class BuildTree {
+class BuildTree {
 
-    protected TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
+    TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
         records.sort(Comparator.comparing(Record::getRecordId));
         ArrayList<Integer> orderedRecordIds = new ArrayList<>();
 
@@ -51,7 +51,7 @@ public class BuildTree {
                                     continue;
                                 }
                                 if (record.getRecordId() == node.getNodeId()) {
-                                    parent.children.add(node);
+                                    parent.getChildren().add(node);
                                 }
                             }
                         }

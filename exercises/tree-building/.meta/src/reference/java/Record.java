@@ -1,4 +1,4 @@
-public class Record {
+class Record {
     private int recordId;
     private int parentId;
 
@@ -7,11 +7,11 @@ public class Record {
         this.parentId = parentId;
     }
 
-    public int getParentId() {
+    int getParentId() {
         return parentId;
     }
 
-    public int getRecordId() {
+    int getRecordId() {
         return recordId;
     }
 }

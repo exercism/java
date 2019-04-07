@@ -1,6 +1,6 @@
-public class InvalidRecordsException extends Exception {
+class InvalidRecordsException extends Exception {
 
-    public InvalidRecordsException(String message) {
+    InvalidRecordsException(String message) {
         super(message);
     }
 }

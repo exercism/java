@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 
-public class BuildTree {
+class BuildTree {
 
-    protected TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
+    TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
         HashMap<Integer, Integer> parentMap = new HashMap<>();
         HashMap<Integer, TreeNode> nodesMap = new HashMap<>();
         records.sort(Comparator.comparing(Record::getRecordId));
@@ -29,7 +29,7 @@ public class BuildTree {
             }
             if (orderedRecordIds.get(i) != rootId) {
                 int parentId = parentMap.get(i);
-                nodesMap.get(parentId).children.add(nodesMap.get(i));
+                nodesMap.get(parentId).getChildren().add(nodesMap.get(i));
             }
         }
 
