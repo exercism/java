@@ -14,16 +14,30 @@ For stones `[1|2]`, `[4|1]` and `[2|3]` the resulting chain is not valid: `[4|1]
 
 Some test cases may use duplicate stones in a chain solution, assume that multiple Domino sets are being used.
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
 # Running the tests
 
-You can run all the tests for an exercise by entering
+You can run all the tests for an exercise by entering the following in your
+terminal:
 
 ```sh
 $ gradle test
 ```
 
-in your terminal.
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
+
 
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

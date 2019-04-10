@@ -21,20 +21,33 @@ and provide functions to reverse a linked list and convert to and from arrays.
 When implementing this in a language with built-in linked lists,
 implement your own abstract data type.
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
 # Running the tests
 
-You can run all the tests for an exercise by entering
+You can run all the tests for an exercise by entering the following in your
+terminal:
 
 ```sh
 $ gradle test
 ```
 
-in your terminal.
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
 
 ## Source
 
 Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists. [http://www.brpreiss.com/books/opus8/html/page96.html#SECTION004300000000000000000](http://www.brpreiss.com/books/opus8/html/page96.html#SECTION004300000000000000000)
 
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

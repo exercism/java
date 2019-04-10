@@ -9,7 +9,7 @@ This exercise requires you to handle various errors. Because error handling
 is rather programming language specific you'll have to refer to the tests
 for your track to see what's exactly required.
 
-# Java Tips
+# Tips
 
 This exercise requires you to handle exceptions. An [exception](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html) is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
 
@@ -47,16 +47,30 @@ You don't have to declare them in the [method signature](https://docs.oracle.com
 
 Unchecked exceptions are mean to be used for any error than can't be handled at runtime, e.g. running out of memory.
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
 # Running the tests
 
-You can run all the tests for an exercise by entering
+You can run all the tests for an exercise by entering the following in your
+terminal:
 
 ```sh
 $ gradle test
 ```
 
-in your terminal.
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
+
 
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

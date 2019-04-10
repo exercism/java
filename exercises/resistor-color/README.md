@@ -19,20 +19,33 @@ Mnemonics map the colors to the numbers, that, when stored as an array, happen t
 
 More information on the color encoding of resistors can be found in the [Electronic color code Wikipedia article](https://en.wikipedia.org/wiki/Electronic_color_code)
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
 # Running the tests
 
-You can run all the tests for an exercise by entering
+You can run all the tests for an exercise by entering the following in your
+terminal:
 
 ```sh
 $ gradle test
 ```
 
-in your terminal.
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
 
 ## Source
 
 Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1458](https://github.com/exercism/problem-specifications/issues/1458)
 
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

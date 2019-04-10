@@ -7,7 +7,7 @@ sequentially. A common example is counting the frequency of letters.
 Create a function that returns the total frequency of each letter in a
 list of texts and that employs parallelism.
 
-# Java Tips
+# Tips
 
 Single-threaded (non-concurrent) solutions can pass all tests [but the last.](https://www.youtube.com/watch?v=mJZZNHekEQw)  Your solution will be tested for concurrency by submitting it as a [Runnable](https://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html) to an [ExecutorService.](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html) Your solution must leverage multiple [Threads](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html) to pass the final test.
 
@@ -16,16 +16,30 @@ Java documentation on [parallel streams](https://docs.oracle.com/javase/tutorial
 As a stretch goal, consider if your implementation will work for characters with [diacritics or accents](https://en.wikipedia.org/wiki/Diacritic). For example, such solutions should not consider e and ë the same character. An example text for this case is [Wilhelmus](https://en.wikipedia.org/wiki/Wilhelmus), the Dutch national anthem.
 
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
 # Running the tests
 
-You can run all the tests for an exercise by entering
+You can run all the tests for an exercise by entering the following in your
+terminal:
 
 ```sh
 $ gradle test
 ```
 
-in your terminal.
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
+
 
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

@@ -22,20 +22,33 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
 # Running the tests
 
-You can run all the tests for an exercise by entering
+You can run all the tests for an exercise by entering the following in your
+terminal:
 
 ```sh
 $ gradle test
 ```
 
-in your terminal.
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
 
 ## Source
 
 The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
 
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.
