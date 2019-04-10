@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 LATEST=https://github.com/exercism/configlet/releases/latest
 
@@ -10,8 +10,18 @@ case $(uname) in
         echo "linux";;
     (Windows*)
         echo "windows";;
+    (MINGW*)
+        echo "windows";;
     (*)
         echo "linux";;
+esac)
+
+EXT=$(
+case $OS in
+    (windows*)
+        echo "zip";;
+    (*)
+        echo "tgz";;
 esac)
 
 ARCH=$(
@@ -26,7 +36,15 @@ case $(uname -m) in
         echo 64bit;;
 esac)
 
-VERSION="$(curl --head --silent $LATEST | awk -v FS=/ '/Location:/{print $NF}' | tr -d '\r')"
-URL=https://github.com/exercism/configlet/releases/download/$VERSION/configlet-$OS-${ARCH}.tgz
 
-curl -s --location $URL | tar xz -C bin/
+VERSION="$(curl --silent --head $LATEST | awk -v FS=/ '/Location:/{print $NF}' | tr -d '\r')"
+URL=https://github.com/exercism/configlet/releases/download/$VERSION/configlet-$OS-${ARCH}.$EXT
+
+case $EXT in
+    (*zip)
+        curl -s --location $URL -o bin/latest-configlet.zip
+        unzip bin/latest-configlet.zip -d bin/
+        rm bin/latest-configlet.zip;;
+    (*)
+        curl -s --location $URL | tar xz -C bin/;;
+esac
