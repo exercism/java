@@ -53,4 +53,25 @@ public class DartsTest {
         assertEquals(10, darts.score());
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testCoordinatesSumLargerOneWithRadiusToOriginSmallerOrEqualOneScoredInnerCircle() {
+        Darts darts = new Darts(0.4, 0.8);
+        assertEquals(10, darts.score());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testCoordinatesSumLargerFiveWithRadiusToOriginSmallerOrEqualFiveScoredMiddleCircle() {
+        Darts darts = new Darts(2, 4);
+        assertEquals(5, darts.score());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testCoordinatesSumLargerTenWithRadiusToOriginSmallerOrEqualTenScoredOuterCircle() {
+        Darts darts = new Darts(4, 8);
+        assertEquals(1, darts.score());
+    }
+
 }

@@ -27,7 +27,7 @@ in your terminal.
 
 ## Source
 
-Inspired by an excersie created by a professor Della Paolera in Argentina
+Inspired by an exercise created by a professor Della Paolera in Argentina
 
 ## Submitting Incomplete Solutions
 
