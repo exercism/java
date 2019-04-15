@@ -1,4 +1,4 @@
-# Bracket Push
+# Matching Brackets
 
 Given a string containing brackets `[]`, braces `{}`, parentheses `()`,
 or any combination thereof, verify that any and all pairs are matched
@@ -40,7 +40,7 @@ In the example above you could add:
 ExerciseClassName(String input) {
 
 }
-``` 
+```
 That should make the error go away, though you might need to add some more code to your constructor to make the test pass!
 
 You might also get an error similar to:
