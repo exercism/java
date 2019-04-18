@@ -119,4 +119,14 @@ public class MarkdownTest {
 
         assertEquals(expected, markdown.parse(input));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void markdownUnorderedListsCloseProperlyWithPrecedingAndFollowingLines() {
+        String input = "# Start a list\n* Item 1\n* Item 2\nEnd a list";
+        String expected = "<h1>Start a list</h1><ul><li>Item 1</li><li>Item 2</li></ul><p>End a list</p>";
+
+        assertEquals(expected, markdown.parse(input));
+    }
+
 }
