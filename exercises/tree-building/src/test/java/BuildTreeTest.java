@@ -197,7 +197,7 @@ public class BuildTreeTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testCycleInDirectly() throws InvalidRecordsException {
+    public void testCycleIndirectly() throws InvalidRecordsException {
         expectedException.expect(InvalidRecordsException.class);
         expectedException.expectMessage("Invalid Records");
 

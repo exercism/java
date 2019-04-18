@@ -1159,7 +1159,7 @@
       "slug": "tree-building",
       "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
       "core": false,
-      "unlocked_by": null,
+      "unlocked_by": "linked-list",
       "difficulty": 7,
       "topics": [
         "maps",
