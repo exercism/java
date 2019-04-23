@@ -1156,6 +1156,20 @@
       ]
     },
     {
+      "slug": "tree-building",
+      "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
+      "core": false,
+      "unlocked_by": "linked-list",
+      "difficulty": 7,
+      "topics": [
+        "maps",
+        "records",
+        "refactoring",
+        "sorting",
+        "trees"
+      ]
+    },
+    {
       "slug": "zipper",
       "uuid": "25d2c7a5-1ec8-464a-b3de-ad1b27464ef1",
       "core": false,
