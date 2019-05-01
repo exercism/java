@@ -70,6 +70,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "I am a software developer and consultant working for Black Pepper Software, a software company based in Leamington Spa, England. I'm a recent Computer Science graduate from the University of Warwick, and love all things to do with computers!"
+    },
+    {
+      "github_username": "lemoncurry",
+      "alumnus": false,
+      "show_on_website": true,
+      "name": "Anna Weber",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I used to be a health economist, and am now on my way to becoming a software engineer. Exercism's Java track got me started with open source."
     }
   ]
 }
