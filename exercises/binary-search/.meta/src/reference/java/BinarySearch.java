@@ -21,7 +21,7 @@ class BinarySearch {
         int middle;
         Integer element;
         while (left <= right) {
-            middle = (int) Math.floor(0.5 * (left + right));
+            middle = (int) Math.floor(left + (right - left) / 2);
             element = this.array.get(middle);
             if (value.compareTo(element) > 0) {
                 left = middle + 1;
