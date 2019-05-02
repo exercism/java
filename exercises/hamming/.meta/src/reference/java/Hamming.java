@@ -1,36 +1,26 @@
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
+
 class Hamming {
     private final int hammingDistance;
 
     Hamming(String leftStrand, String rightStrand) {
-        hammingDistance = computeHammingDistance(leftStrand, rightStrand);
+        String exceptionMessage = "leftStrand and rightStrand must be of equal length.";
+        if (leftStrand.length() != rightStrand.length()) {
+            if (leftStrand.isEmpty()) {
+                exceptionMessage = "left strand must not be empty.";
+            }
+            if (rightStrand.isEmpty()) {
+                exceptionMessage = "right strand must not be empty.";
+            }
+            throw new IllegalArgumentException(exceptionMessage);
+        }
+
+        IntPredicate areNotEqual = index -> leftStrand.charAt(index) != rightStrand.charAt(index);
+        hammingDistance = (int) IntStream.range(0, leftStrand.length()).filter(areNotEqual).count();
     }
 
     int getHammingDistance() {
         return hammingDistance;
     }
-
-    private int computeHammingDistance(String leftStrand, String rightStrand) {
-        if (leftStrand.length() == 0 && rightStrand.length() == 0) {
-            return 0;
-        } else if (leftStrand.length() == 0) {
-            throw new IllegalArgumentException("left strand must not be empty.");
-        } else if (rightStrand.length() == 0) {
-            throw new IllegalArgumentException("right strand must not be empty.");
-        } else if (leftStrand.length() != rightStrand.length()) {
-            throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
-        }
-
-        int length = leftStrand.length();
-        int distance = 0;
-        for (int i = 0; i < length; i++) {
-            distance += hammingContributionAt(i, leftStrand, rightStrand);
-        }
-
-        return distance;
-    }
-
-    private int hammingContributionAt(int index, String leftStrand, String rightStrand) {
-        return leftStrand.charAt(index) != rightStrand.charAt(index) ? 1 : 0;
-    }
-
 }
