@@ -2,7 +2,7 @@ import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 class Hamming {
-    private final String leftStrand, rightStrand;
+    private final int hammingDistance;
 
     Hamming(String leftStrand, String rightStrand) {
         String exceptionMessage = "leftStrand and rightStrand must be of equal length.";
@@ -15,12 +15,12 @@ class Hamming {
             }
             throw new IllegalArgumentException(exceptionMessage);
         }
-        this.leftStrand = leftStrand;
-        this.rightStrand = rightStrand;
+
+        IntPredicate areNotEqual = index -> leftStrand.charAt(index) != rightStrand.charAt(index);
+        hammingDistance = (int) IntStream.range(0, leftStrand.length()).filter(areNotEqual).count();
     }
 
-    long getHammingDistance() {
-        IntPredicate areNotEqual = index -> leftStrand.charAt(index) != rightStrand.charAt(index);
-        return IntStream.range(0, leftStrand.length()).filter(areNotEqual).count();
+    int getHammingDistance() {
+        return hammingDistance;
     }
 }
