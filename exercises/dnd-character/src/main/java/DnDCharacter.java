@@ -1,5 +1,9 @@
 class DnDCharacter {
 
+    DnDCharacter() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+    
     int ability() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
