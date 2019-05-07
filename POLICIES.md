@@ -19,8 +19,8 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 |:------------|:-----------------|
 | Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises); [Avoid returning null](#avoid-returning-null); [Use ExpectedException](#use-expectedexception)
 | Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
-| New issue observed in track | [Good first patches](#good-first-patches) |
-| "Good first patch" issue completed | [Good first patches](#good-first-patches) |
+| New issue observed in track | [Good first issues](#good-first-issues) |
+| "Good first issue" issue completed | [Good first issues](#good-first-issues) |
 | Installing Java instructions updated | [Simple onboarding](#simple-onboarding) |
 
 ## Policy Descriptions
@@ -33,7 +33,8 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 
 ### Starter implementations
 
-> - Exercises of difficulty 4 or lower: provide stubs for all required constructors and methods. Stubs should include the following body:
+> - Exercises of difficulty 4 or lower: provide stubs for all required constructors and methods. This means that you need to provide stubs for those constructors or methods that are necessary to pass all tests. E.g. stubs for private methods may be skipped.
+Stubs should include the following body:
     `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
 > - Exercises of difficulty 5 or higher: provide no stubs by default, but either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
 
@@ -47,7 +48,7 @@ References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://git
 
 > Ensure that all Java code adheres to the best practices listed below:
 > - Minimize the accessibility of classes and members ([Effective Java, item 13](http://jtechies.blogspot.com/2012/07/item-13-minimize-accessibility-of.html))
-> - Always use curly brackest in if statements. This makes your code easier to maintain and easier to read ([Oracle style guide, item 7.4](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html#431))
+> - Always use curly brackets in `if statements`. This makes your code easier to maintain and easier to read ([Oracle style guide, item 7.4](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html#431))
 ```java
 // Please do this
 if (condition) {
@@ -86,11 +87,11 @@ References: [[1](https://github.com/exercism/java/issues/101#issuecomment-249349
 
 References: [[1](https://github.com/exercism/java/issues/365#issuecomment-292533120)]
 
-### Good first patches
+### Good first issues
 
-> Aim to keep 10-20 small and straightforward issues open at eny given time. Identify any such issues by applying the "Good first patch" label. You can view the current list of these issues [here](https://github.com/exercism/java/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+patch%22).
+> Aim to keep 10-20 small and straightforward issues open at any given time. Identify any such issues by applying the "good first issue" label. You can view the current list of these issues [here](https://github.com/exercism/java/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
-References: [[1](https://github.com/exercism/java/issues/220#issue-196447088)]
+References: [[1](https://github.com/exercism/java/issues/220#issue-196447088)], [[2](https://github.com/exercism/java/issues/1669)]
 
 ### Simple onboarding
 
