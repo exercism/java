@@ -1,7 +1,7 @@
 #!/bin/bash
 
 print_usage() {
-    echo ">>>>> Usage: ./canonical_data_check_open_issue.sh -t path/to/track -s path/to/problem/specifications"
+    echo ">>>>> Usage: ./create_issues_versionchange_canonical.sh -t path/to/track -s path/to/problem/specifications"
 }
 
 # Execution begins
@@ -67,7 +67,27 @@ update_needed_count=0
 # OWNER="your_username"
 # REPO="repo_name"
 
+if ! [[ -f "$HOME/.exercism-version-update-issue-script-settings.sh" ]]; then
+    echo "Create a file named \".exercism-version-update-issue-script-settings.sh\""
+    echo "with the following variables and put in in your home directory"
+    echo "TOKEN=\"your_token\""
+    echo "OWNER=\"repo_owner\""
+    echo "REPO=\"repo_name\""
+fi
+
 . "$HOME/.exercism-version-update-issue-script-settings.sh"
+
+if [[ -z "$TOKEN" ]]; then
+    echo "Please insert your personal token into \".exercism-version-update-issue-script-settings.sh\"."
+    exit 1
+elif [[ -z "$OWNER" ]]; then
+    echo "Please insert the repo owner into \".exercism-version-update-issue-script-settings.sh\"."
+    exit 1
+elif [[ -z "$REPO" ]]; then
+    echo "Please insert the name of the repo into \".exercism-version-update-issue-script-settings.sh\"."
+    exit 1
+fi
+
 
 # Fetch issues opened by us to avoid duplicate issues
 OPEN_ISSUES=$(curl --silent -HAuthorization:token\ ${TOKEN} https://api.github.com/repos/${OWNER}/${REPO}/issues\?state=open\&labels=exercise+version+update | jq -r '.[] |(.title | split(":")[0]) + " Issue Title: " + .title + " (" + (.comments|tostring) +" comments)" + ", URL: " + .html_url')
@@ -116,7 +136,7 @@ for slug in $track_exercise_slugs; do
         update_needed_count=$((update_needed_count + 1))
         printf ">>>>> Exercise ${slug} needs an update from v${track_data_version} -> v${canonical_data_version}\n"
         title="${slug}: update tests and version file (v${track_data_version} -> v${canonical_data_version})"
-        body="The tests for the [${slug} exercise](https://github.com/exercism/java/tree/master/exercises/${slug}/src/test/) are not up-to-date with the [canonical data](https://github.com/exercism/problem-specifications/tree/master/exercises/${slug}/canonical-data.json).\nTo check what has changed and if new tests have been added to the canonical data, please have a look at the [commit history](https://github.com/exercism/problem-specifications/commits/master/exercises/${slug}/canonical-data.json) of the canonical data file for the exercise ${slug}.\nPlease update version and/or test file, and, if the new test(s) fail, fix the reference implementation.\nFeel free to leave a comment if you have any questions. \n\nBackground info: each exercise which has canonical data should have a version file. This file states which version of the canonical data the exercise implements. The version can be found at the top of the [canonical data file](https://github.com/exercism/problem-specifications/tree/master/exercises/${slug}/canonical-data.json) for that exercise."
+        body="The tests for the [${slug} exercise](https://github.com/exercism/java/tree/master/exercises/${slug}/src/test/java) are not up-to-date with the [canonical data](https://github.com/exercism/problem-specifications/tree/master/exercises/${slug}/canonical-data.json).\nTo check what has changed and if new tests have been added to the canonical data, please have a look at the [commit history](https://github.com/exercism/problem-specifications/commits/master/exercises/${slug}/canonical-data.json) of the canonical data file for the exercise ${slug}.\nPlease update version and/or test file, and, if the new test(s) fail, fix the reference implementation.\nFeel free to leave a comment if you have any questions. \n\nBackground info: each exercise which has canonical data should have a version file. This file states which version of the canonical data the exercise implements. The version can be found at the top of the [canonical data file](https://github.com/exercism/problem-specifications/tree/master/exercises/${slug}/canonical-data.json) for that exercise."
         labels='"good first issue", "help wanted", "exercise version update"'
 
         response=""
