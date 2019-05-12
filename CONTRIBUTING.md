@@ -196,9 +196,7 @@ To run this script:
   
 ## Checking tests are up to date and submit new issues
 
->>> This script may only be used by maintainers or members of exercism.
-
-There is [another script which allows you to submit new issues](https://github.com/exercism/java/blob/master/scripts/create_issues_versionchange_canonical.sh) to this Repo with generic title, description and labels if a change in version was detected.
+There is [a script which allows you to submit new issues](https://github.com/exercism/java/blob/master/scripts/create_issues_versionchange_canonical.sh) to this repo with generic title, description and labels if a change in version was detected.
 
 Example generic new isse:
 <img width="1005" alt="image" src="https://user-images.githubusercontent.com/6614867/57221803-bf1a6600-7000-11e9-93cf-b930ef24ce97.png">
