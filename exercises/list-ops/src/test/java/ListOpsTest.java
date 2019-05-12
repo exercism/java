@@ -118,7 +118,7 @@ public class ListOpsTest {
     public void testTransformingEmptyList() {
         assertEquals(
                 Collections.emptyList(),
-                ListOps.map(Collections.<Integer>emptyList(), integer -> integer + 1 ));
+                ListOps.map(Collections.<Integer>emptyList(), integer -> integer + 1));
     }
 
     @Ignore("Remove to run test")
@@ -126,7 +126,7 @@ public class ListOpsTest {
     public void testTransformingNonEmptyList() {
         assertEquals(
                 Arrays.asList(2, 4, 6, 8),
-                ListOps.map(Arrays.asList(1, 3, 5, 7), integer -> integer + 1 ));
+                ListOps.map(Arrays.asList(1, 3, 5, 7), integer -> integer + 1));
     }
 
     @Ignore("Remove to run test")
@@ -135,9 +135,9 @@ public class ListOpsTest {
         assertEquals(
                 new Double(2.0), // Boxing required for method overload disambiguation.
                 ListOps.foldLeft(
-                        Collections.<Double>emptyList(),
-                        2.0,
-                        (x, y) -> x * y));
+                    Collections.<Double>emptyList(),
+                    2.0,
+                    (x, y) -> x * y));
     }
 
     @Ignore("Remove to run test")
@@ -146,9 +146,9 @@ public class ListOpsTest {
         assertEquals(
                 new Integer(15), // Boxing required for method overload disambiguation.
                 ListOps.foldLeft(
-                        Arrays.asList(1, 2, 3, 4),
-                        5,
-                        (x, y) -> x + y));
+                    Arrays.asList(1, 2, 3, 4),
+                    5,
+                    (x, y) -> x + y));
     }
 
     @Ignore("Remove to run test")
@@ -157,9 +157,9 @@ public class ListOpsTest {
         assertEquals(
                 new Integer(0), // Boxing required for method overload disambiguation.
                 ListOps.foldLeft(
-                        Arrays.asList(2, 5),
-                        5,
-                        (x, y) -> x / y));
+                    Arrays.asList(2, 5),
+                    5,
+                    (x, y) -> x / y));
     }
 
     @Ignore("Remove to run test")
@@ -168,9 +168,9 @@ public class ListOpsTest {
         assertEquals(
                 new Double(2.0), // Boxing required for method overload disambiguation.
                 ListOps.foldRight(
-                        Collections.<Double>emptyList(),
-                        2.0,
-                        (x, y) -> x * y));
+                    Collections.<Double>emptyList(),
+                    2.0,
+                    (x, y) -> x * y));
     }
 
     @Ignore("Remove to run test")
@@ -179,9 +179,9 @@ public class ListOpsTest {
         assertEquals(
                 new Integer(15), // Boxing required for method overload disambiguation.
                 ListOps.foldRight(
-                        Arrays.asList(1, 2, 3, 4),
-                        5,
-                        (x, y) -> x + y));
+                    Arrays.asList(1, 2, 3, 4),
+                    5,
+                    (x, y) -> x + y));
     }
 
     @Ignore("Remove to run test")
@@ -190,9 +190,9 @@ public class ListOpsTest {
         assertEquals(
                 new Integer(2), // Boxing required for method overload disambiguation.
                 ListOps.foldRight(
-                        Arrays.asList(2, 5),
-                        5,
-                        (x, y) -> x / y));
+                    Arrays.asList(2, 5),
+                    5,
+                    (x, y) -> x / y));
     }
 
     @Ignore("Remove to run test")

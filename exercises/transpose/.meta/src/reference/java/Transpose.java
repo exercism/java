@@ -32,7 +32,7 @@ public class Transpose {
     private void padRows(String[] rows) {
         for (int i = 0; i < rows.length; i++) {
             for (int j = i; j < rows.length; j++) {
-                if(rows[j].length() > rows[i].length()) {
+                if (rows[j].length() > rows[i].length()) {
                     rows[i] = String.format("%-" + rows[j].length() + "s", rows[i]);
                 }
             }

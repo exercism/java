@@ -15,6 +15,14 @@ public class ArmstrongNumbersTest {
     }
 
     @Test
+    public void zeroIsArmstrongNumber() {
+        int input = 0;
+
+        assertTrue(armstrongNumbers.isArmstrongNumber(input));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void singleDigitsAreArmstrongNumbers() {
         int input = 5;
 

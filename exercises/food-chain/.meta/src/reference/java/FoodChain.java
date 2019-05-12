@@ -1,5 +1,3 @@
-import java.util.stream.IntStream;
-
 class FoodChain {
 
     private static final String[] ANIMALS = {

@@ -5,7 +5,7 @@ class Matrix {
     private static Pattern spacePattern = Pattern.compile(" ");
     private static Pattern newlinePattern = Pattern.compile("\\n");
 
-     Matrix(String matrixAsString) {
+    Matrix(String matrixAsString) {
         String[] rows = newlinePattern.split(matrixAsString);
         matrix = new int[rows.length][];
         for (int i = 0; i < rows.length; i++) {
@@ -18,13 +18,15 @@ class Matrix {
     }
 
     int[] getRow(int rowNumber) {
-        return matrix[rowNumber];
+        int indexRowNumber = rowNumber - 1;
+        return matrix[indexRowNumber];
     }
 
     int[] getColumn(int columnNumber) {
+        int indexColumnNumber = columnNumber - 1;
         int[] column = new int[matrix.length];
-        for(int i = 0; i < matrix.length; i++) {
-            column[i] = matrix[i][columnNumber];
+        for (int i = 0; i < matrix.length; i++) {
+            column[i] = matrix[i][indexColumnNumber];
         }
         return column;
     }

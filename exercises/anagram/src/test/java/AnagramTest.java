@@ -44,7 +44,9 @@ public class AnagramTest {
     @Test
     public void testDetectMultipleAnagramsForLongerWord() {
         Anagram detector = new Anagram("allergy");
-        List<String> anagrams = detector.match(Arrays.asList("gallery", "ballerina", "regally", "clergy", "largely", "leading"));
+        List<String> anagrams = detector.match(Arrays.asList("gallery", "ballerina",
+                                                             "regally", "clergy",
+                                                             "largely", "leading"));
         assertThat(anagrams, allOf(hasItem("gallery"), hasItem("regally"), hasItem("largely")));
     }
 

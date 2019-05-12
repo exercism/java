@@ -63,7 +63,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 
    The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
 -  **Verify that your work passes all tests.**  When you create a pull request (PR), GitHub triggers a build on Travis CI.  Your PR will not be merged unless those tests pass.
-
+-  **Check the style of your code**. Running `gradle check` from the root folder of the exercise, the checkstyle plugin will show you every style violation of your code
 ## Getting Familiar With the Codebase
 
 There are two objectives to the design of this build:

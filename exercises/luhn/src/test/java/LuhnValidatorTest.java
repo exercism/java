@@ -10,7 +10,7 @@ public class LuhnValidatorTest {
 
     @Before
     public void setUp() {
-      luhnValidator = new LuhnValidator();
+        luhnValidator = new LuhnValidator();
     }
 
     @Test
@@ -56,8 +56,14 @@ public class LuhnValidatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testStringsContainingNonDigitInvalid() {
-        assertFalse(luhnValidator.isValid("055a 444 285"));
+    public void testValidNumberWithAnEvenNumberOfDigits() {
+        assertTrue(luhnValidator.isValid("095 245 88"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testValidStringsWithANonDigitAtEndInvalid() {
+        assertFalse(luhnValidator.isValid("059a"));
     }
 
     @Ignore("Remove to run test")
@@ -90,9 +96,16 @@ public class LuhnValidatorTest {
         assertTrue(luhnValidator.isValid("091"));
     }
 
+
     @Ignore("Remove to run test")
     @Test
-    public void testStringsWithNonDigitsInvalid() {
+    public void testUsingASCIIValueForNonDoubledNonDigitNotAllowed() {
+        assertFalse(luhnValidator.isValid("055b 444 285"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testUsingASCIIValueForDoubledNonDigitNotAllowed() {
         assertFalse(luhnValidator.isValid(":9"));
     }
 

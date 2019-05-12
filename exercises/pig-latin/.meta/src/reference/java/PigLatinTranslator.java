@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 class PigLatinTranslator {
@@ -54,7 +53,7 @@ class PigLatinTranslator {
                 return i;
             }
         }
-      return -1;
+        return -1;
     }
 
     private boolean wordStartsWithVowelLike(String word) {

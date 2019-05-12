@@ -42,6 +42,27 @@
       ]
     },
     {
+      "slug": "resistor-color",
+      "uuid": "e5e821ed-fc1f-4419-9c90-ad4a0b564bea",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings"
+      ]
+    },
+    {
+      "slug": "darts",
+      "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "games"
+      ]
+    },
+    {
       "slug": "armstrong-numbers",
       "uuid": "8e1dd48c-e05e-4a72-bf0f-5aed8dd123f5",
       "core": false,
@@ -62,6 +83,18 @@
         "loops",
         "maps",
         "strings"
+      ]
+    },
+    {
+      "slug": "dnd-character",
+      "uuid": "09bb515c-0270-4d34-8d56-89ee04588494",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "game",
+        "integers",
+        "randomness"
       ]
     },
     {
@@ -619,7 +652,7 @@
       ]
     },
     {
-      "slug": "bracket-push",
+      "slug": "matching-brackets",
       "uuid": "85aa50ac-0141-49eb-bc6f-62f3f7a97647",
       "core": false,
       "unlocked_by": "flatten-array",
@@ -1120,6 +1153,20 @@
         "object_oriented_programming",
         "strings",
         "time"
+      ]
+    },
+    {
+      "slug": "tree-building",
+      "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
+      "core": false,
+      "unlocked_by": "linked-list",
+      "difficulty": 7,
+      "topics": [
+        "maps",
+        "records",
+        "refactoring",
+        "sorting",
+        "trees"
       ]
     },
     {

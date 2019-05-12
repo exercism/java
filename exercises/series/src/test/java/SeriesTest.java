@@ -8,8 +8,6 @@ import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 
 public class SeriesTest {
 
@@ -23,7 +21,7 @@ public class SeriesTest {
         List<String> actual = series.slices(1);
         assertEquals(expected, actual);
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void slicesOfOneFromTwo() {
@@ -46,7 +44,7 @@ public class SeriesTest {
     @Test
     public void slicesOfTwoOverlap() {
         Series series = new Series("9142");
-        List<String> expected = Arrays.asList("91","14","42");
+        List<String> expected = Arrays.asList("91", "14", "42");
         List<String> actual = series.slices(2);
         assertEquals(expected, actual);
     }
@@ -70,13 +68,13 @@ public class SeriesTest {
     public void slicesOfLongSeries() {
         Series series = new Series("918493904243");
         List<String> expected = Arrays.asList(
-                "91849", 
-                "18493", 
-                "84939", 
-                "49390", 
-                "93904", 
-                "39042", 
-                "90424", 
+                "91849",
+                "18493",
+                "84939",
+                "49390",
+                "93904",
+                "39042",
+                "90424",
                 "04243"
         );
         List<String> actual = series.slices(5);
@@ -88,7 +86,7 @@ public class SeriesTest {
     public void sliceLengthIsToolarge() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Slice size is too big.");
-        
+
         Series series = new Series("12345");
         series.slices(6);
     }

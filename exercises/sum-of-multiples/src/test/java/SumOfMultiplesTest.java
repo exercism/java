@@ -6,11 +6,11 @@ import static org.junit.Assert.*;
 public class SumOfMultiplesTest {
 
     @Test
-    public void testSumOfMultiplesOf3and5UpToOne() {
+    public void testNoMultiplesWithinLimit() {
 
         int[] set = {
-                3,
-                5
+            3,
+            5
         };
         int output = new SumOfMultiples(1, set).getSum();
         assertEquals(0, output);
@@ -19,11 +19,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf3and5UpToFour() {
+    public void testOneFactorHasMultiplesWithinLimit() {
 
         int[] set = {
-                3,
-                5
+            3,
+            5
         };
         int output = new SumOfMultiples(4, set).getSum();
         assertEquals(3, output);
@@ -32,10 +32,10 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf3aUpToSeven() {
+    public void testMoreThanOneMultipleWithinLimit() {
 
         int[] set = {
-                3
+            3
         };
         int output = new SumOfMultiples(7, set).getSum();
         assertEquals(9, output);
@@ -44,11 +44,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf3and5UpToTen() {
+    public void testMoreThanOneFactorWithMultiplesWithinLimit() {
 
         int[] set = {
-                3,
-                5
+            3,
+            5
         };
         int output = new SumOfMultiples(10, set).getSum();
         assertEquals(23, output);
@@ -57,11 +57,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf3and5UpToOneHundred() {
+    public void testEachMultipleIsOnlyCountedOnce() {
 
         int[] set = {
-                3,
-                5
+            3,
+            5
         };
         int output = new SumOfMultiples(100, set).getSum();
         assertEquals(2318, output);
@@ -70,11 +70,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf3and5UpToOneThousand() {
+    public void testAMuchLargerLimit() {
 
         int[] set = {
-                3,
-                5
+            3,
+            5
         };
         int output = new SumOfMultiples(1000, set).getSum();
         assertEquals(233168, output);
@@ -83,12 +83,12 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf7and13and17UpToTwenty() {
+    public void testThreeFactors() {
 
         int[] set = {
-                7,
-                13,
-                17
+            7,
+            13,
+            17
         };
         int output = new SumOfMultiples(20, set).getSum();
         assertEquals(51, output);
@@ -97,11 +97,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf4and6UpToFifteen() {
+    public void testFactorsNotRelativelyPrime() {
 
         int[] set = {
-                4,
-                6
+            4,
+            6
         };
         int output = new SumOfMultiples(15, set).getSum();
         assertEquals(30, output);
@@ -110,12 +110,12 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf5and6and8UpToOneHundredFifty() {
+    public void testSomePairsOfFactorsRelativelyPrimeAndSomeNot() {
 
         int[] set = {
-                5,
-                6,
-                8
+            5,
+            6,
+            8
         };
         int output = new SumOfMultiples(150, set).getSum();
         assertEquals(4419, output);
@@ -124,11 +124,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf5and25UpToFiftyOne() {
+    public void testOneFactorIsAMultipleOfAnother() {
 
         int[] set = {
-                5,
-                25
+            5,
+            25
         };
         int output = new SumOfMultiples(51, set).getSum();
         assertEquals(275, output);
@@ -137,11 +137,11 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOf43and47UpToTenThousand() {
+    public void testMuchLargerFactors() {
 
         int[] set = {
-                43,
-                47
+            43,
+            47
         };
         int output = new SumOfMultiples(10000, set).getSum();
         assertEquals(2203160, output);
@@ -150,10 +150,10 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOfOneUpToOneHundred() {
+    public void testAllNumbersAreMultiplesOf1() {
 
         int[] set = {
-                1
+            1
         };
         int output = new SumOfMultiples(100, set).getSum();
         assertEquals(4950, output);
@@ -162,11 +162,53 @@ public class SumOfMultiplesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testSumOfMultiplesOfNoneUpToTenThousand() {
+    public void testNoFactorsMeanAnEmptySum() {
 
         int[] set = {};
         int output = new SumOfMultiples(10000, set).getSum();
         assertEquals(0, output);
 
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testSumOfMultiplesOfZeroIsZero() {
+
+        int[] set = {
+            0
+        };
+        int output = new SumOfMultiples(1, set).getSum();
+        assertEquals(0, output);
+
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testFactorZeroDoesNotAffectTheSumOfMultiplesOfOtherFactors() {
+
+        int[] set = {
+            3,
+            0
+        };
+        int output = new SumOfMultiples(4, set).getSum();
+        assertEquals(3, output);
+
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testSolutionsUsingIncludeExcludeMustExtendToCardinalityGreater3() {
+
+        int[] set = {
+            2,
+            3,
+            5,
+            7,
+            11
+        };
+        int output = new SumOfMultiples(10000, set).getSum();
+        assertEquals(39614537, output);
+
+    }
+
 }

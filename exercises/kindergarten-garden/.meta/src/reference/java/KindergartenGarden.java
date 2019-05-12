@@ -10,9 +10,9 @@ class KindergartenGarden {
     private final int newRowLocation;
 
     private static final String[] DEFAULT_STUDENTS = {
-            "Alice", "Bob", "Charlie", "David",
-            "Eve", "Fred", "Ginny", "Harriet",
-            "Ileana", "Joseph", "Kincaid", "Larry"
+        "Alice", "Bob", "Charlie", "David",
+        "Eve", "Fred", "Ginny", "Harriet",
+        "Ileana", "Joseph", "Kincaid", "Larry"
     };
 
     KindergartenGarden(String garden, String[] students) {

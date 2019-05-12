@@ -2,24 +2,18 @@
 
 {{ .Spec.Description -}}
 {{- with .Hints }}
-# Java Tips
+# Tips
 
 {{ . }}
 {{ end }}
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-{{ with .Spec.Credits }}
+{{- with .TrackInsert }}
+{{ . }}
+{{ end }}
+{{- with .Spec.Credits -}}
 ## Source
 
 {{ . }}
 {{ end }}
 ## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

@@ -7,104 +7,104 @@ import java.util.stream.Stream;
 class ForthEvaluator {
 
     private static final Map<String, UnaryOperator<Deque<Integer>>> BUILT_IN_OPS
-            = new HashMap<String, UnaryOperator<Deque<Integer>>>() {{
+            = new HashMap<String, UnaryOperator<Deque<Integer>>>() {
+                {
+                    put("+", values -> {
+                        if (values.size() < 2) {
+                            throw new IllegalArgumentException(
+                                    "Addition requires that the stack contain at least 2 values");
+                        }
 
-                put("+", values -> {
-                    if (values.size() < 2) {
-                        throw new IllegalArgumentException(
-                                "Addition requires that the stack contain at least 2 values");
-                    }
+                        values.push(values.pop() + values.pop());
+                        return values;
+                    });
 
-                    values.push(values.pop() + values.pop());
-                    return values;
-                });
+                    put("-", values -> {
+                        if (values.size() < 2) {
+                            throw new IllegalArgumentException(
+                                    "Subtraction requires that the stack contain at least 2 values");
+                        }
 
-                put("-", values -> {
-                    if (values.size() < 2) {
-                        throw new IllegalArgumentException(
-                                "Subtraction requires that the stack contain at least 2 values");
-                    }
+                        int topValue = values.pop();
+                        int secondValue = values.pop();
 
-                    int topValue = values.pop();
-                    int secondValue = values.pop();
+                        values.push(secondValue - topValue);
+                        return values;
+                    });
 
-                    values.push(secondValue - topValue);
-                    return values;
-                });
+                    put("*", values -> {
+                        if (values.size() < 2) {
+                            throw new IllegalArgumentException(
+                                    "Multiplication requires that the stack contain at least 2 values");
+                        }
 
-                put("*", values -> {
-                    if (values.size() < 2) {
-                        throw new IllegalArgumentException(
-                                "Multiplication requires that the stack contain at least 2 values");
-                    }
+                        values.push(values.pop() * values.pop());
+                        return values;
+                    });
 
-                    values.push(values.pop() * values.pop());
-                    return values;
-                });
+                    put("/", values -> {
+                        if (values.size() < 2) {
+                            throw new IllegalArgumentException(
+                                    "Division requires that the stack contain at least 2 values");
+                        }
 
-                put("/", values -> {
-                    if (values.size() < 2) {
-                        throw new IllegalArgumentException(
-                                "Division requires that the stack contain at least 2 values");
-                    }
+                        int topValue = values.pop();
+                        int secondValue = values.pop();
 
-                    int topValue = values.pop();
-                    int secondValue = values.pop();
+                        if (topValue == 0) {
+                            throw new IllegalArgumentException("Division by 0 is not allowed");
+                        }
 
-                    if (topValue == 0) {
-                        throw new IllegalArgumentException("Division by 0 is not allowed");
-                    }
+                        values.push(secondValue / topValue);
+                        return values;
+                    });
 
-                    values.push(secondValue / topValue);
-                    return values;
-                });
+                    put("dup", values -> {
+                        if (values.isEmpty()) {
+                            throw new IllegalArgumentException(
+                                    "Duplicating requires that the stack contain at least 1 value");
+                        }
 
-                put("dup", values -> {
-                    if (values.isEmpty()) {
-                        throw new IllegalArgumentException(
-                                "Duplicating requires that the stack contain at least 1 value");
-                    }
+                        values.push(values.peek());
+                        return values;
+                    });
 
-                    values.push(values.peek());
-                    return values;
-                });
+                    put("drop", values -> {
+                        if (values.isEmpty()) {
+                            throw new IllegalArgumentException(
+                                    "Dropping requires that the stack contain at least 1 value");
+                        }
 
-                put("drop", values -> {
-                    if (values.isEmpty()) {
-                        throw new IllegalArgumentException(
-                                "Dropping requires that the stack contain at least 1 value");
-                    }
+                        values.pop();
+                        return values;
+                    });
 
-                    values.pop();
-                    return values;
-                });
+                    put("swap", values -> {
+                        if (values.size() < 2) {
+                            throw new IllegalArgumentException(
+                                    "Swapping requires that the stack contain at least 2 values");
+                        }
 
-                put("swap", values -> {
-                    if (values.size() < 2) {
-                        throw new IllegalArgumentException(
-                                "Swapping requires that the stack contain at least 2 values");
-                    }
+                        int topValue = values.pop();
+                        int secondValue = values.pop();
+                        values.push(topValue);
+                        values.push(secondValue);
+                        return values;
+                    });
 
-                    int topValue = values.pop();
-                    int secondValue = values.pop();
-                    values.push(topValue);
-                    values.push(secondValue);
-                    return values;
-                });
+                    put("over", values -> {
+                        if (values.size() < 2) {
+                            throw new IllegalArgumentException(
+                                    "Overing requires that the stack contain at least 2 values");
+                        }
 
-                put("over", values -> {
-                    if (values.size() < 2) {
-                        throw new IllegalArgumentException(
-                                "Overing requires that the stack contain at least 2 values");
-                    }
-
-                    int topValue = values.pop();
-                    int secondValue = values.peek();
-                    values.push(topValue);
-                    values.push(secondValue);
-                    return values;
-                });
-    }};
+                        int topValue = values.pop();
+                        int secondValue = values.peek();
+                        values.push(topValue);
+                        values.push(secondValue);
+                        return values;
+                    });
+                }};
 
     private Deque<Integer> values = new ArrayDeque<>();
 

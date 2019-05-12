@@ -33,7 +33,7 @@ public class TriangleTest {
 
         assertFalse(triangle.isEquilateral());
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void trianglesWithNoSizeAreIllegal() throws TriangleException {
@@ -64,7 +64,7 @@ public class TriangleTest {
 
         assertTrue(triangle.isIsosceles());
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void isoscelesTrianglesHaveFirstAndLastSidesEqual() throws TriangleException {
@@ -88,12 +88,26 @@ public class TriangleTest {
 
         assertFalse(triangle.isIsosceles());
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void testSidesThatViolateTriangleInequalityAreNotIsoscelesEvenIfTwoAreEqual() throws TriangleException {
         expectedException.expect(TriangleException.class);
         new Triangle(1, 1, 3);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testSidesThatViolateTriangleInequalityAreNotIsoscelesEvenIfTwoAreEqual_2() throws TriangleException {
+        expectedException.expect(TriangleException.class);
+        new Triangle(1, 3, 1);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testSidesThatViolateTriangleInequalityAreNotIsoscelesEvenIfTwoAreEqual_3() throws TriangleException {
+        expectedException.expect(TriangleException.class);
+        new Triangle(3, 1, 1);
     }
 
     @Ignore("Remove to run test")
@@ -127,10 +141,11 @@ public class TriangleTest {
 
         assertFalse(triangle.isScalene());
     }
-    
+
     @Ignore("Remove to run test")
     @Test
-    public void testSidesThatViolateTriangleInequalityAreNotScaleneEvenIfTheyAreAllDifferent() throws TriangleException {
+    public void testSidesThatViolateTriangleInequalityAreNotScaleneEvenIfTheyAreAllDifferent()
+            throws TriangleException {
         expectedException.expect(TriangleException.class);
         new Triangle(7, 3, 2);
     }

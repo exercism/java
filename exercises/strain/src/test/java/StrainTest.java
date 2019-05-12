@@ -42,7 +42,7 @@ public class StrainTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void KeepStrings() {
+    public void keepStrings() {
         List<String> words = Arrays
                 .asList("apple zebra banana zombies cherimoya zelot".split(" "));
         List<String> expectedOutput = Arrays.asList("zebra", "zombies", "zelot");
@@ -52,7 +52,7 @@ public class StrainTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void KeepArrays() {
+    public void keepArrays() {
         List<List<Integer>> actual = Arrays.asList(
                 Arrays.asList(1, 2, 3),
                 Arrays.asList(5, 5, 5),

@@ -11,7 +11,7 @@ class Series {
 
     Series(String string) {
         this.digits = Arrays.stream(string.split("")).collect(Collectors.toList());
-        this.digitsSize = string.isEmpty()?0:this.digits.size();
+        this.digitsSize = string.isEmpty() ? 0 : this.digits.size();
     }
 
     List<String> slices(int num) {

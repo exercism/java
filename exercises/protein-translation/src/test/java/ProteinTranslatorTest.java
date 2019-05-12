@@ -137,7 +137,7 @@ public class ProteinTranslatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testTranslationOfRnaToProteinList() {
-        List<String> expected = Arrays.asList("Methionine","Phenylalanine","Tryptophan");
+        List<String> expected = Arrays.asList("Methionine", "Phenylalanine", "Tryptophan");
         assertEquals(expected, proteinTranslator.translate("AUGUUUUGG"));
     }
 
@@ -172,7 +172,7 @@ public class ProteinTranslatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testTranslationStopsIfStopCodonInMiddle2() {
-        List<String> expected = Arrays.asList("Tryptophan","Cysteine","Tyrosine");
+        List<String> expected = Arrays.asList("Tryptophan", "Cysteine", "Tyrosine");
         assertEquals(expected, proteinTranslator.translate("UGGUGUUAUUAAUGGUUU"));
     }
 
