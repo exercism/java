@@ -203,7 +203,7 @@ Example generic new isse:
 
 Before you may submit a new issue, the script
   1. Checks for differences between version numbers of each exercise (in comparison with the version number of the canonical data)
-  2. Checks whether an open issue for this exercise; if there is an open issue, you will have to check by yourself if the title of the open issue might be changed to include the new version number. Here, it is important to check whether someone is already working on the issue. 
+  2. Checks whether an open issue exists for this exercise; if there is an open issue, you will have to check by yourself if the title of the open issue might be changed to include the new version number. Here, it is important to check whether someone is already working on the issue. 
   3. If a new issue may be opened for an exercise, the script will ask you if you want to submit the issue. Entering `y` will create the new issue.
 
 To run this script:
