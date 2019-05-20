@@ -61,7 +61,7 @@ then
     exit 1
 fi
 
-track_exercise_slugs=$(jq '.exercises[] | select(has("deprecated") | not) | .slug' $config_file_path | tr -d "\"")
+track_exercise_slugs=$(jq '.exercises[] | select(has("deprecated") | not) | .slug' $config_file_path | tr -d "\"" | sort)
 update_needed_count=0
 
 for slug in $track_exercise_slugs
@@ -78,7 +78,6 @@ do
 
     if ! [ -f "$canonical_data_file_path" ]
     then
-        # echo "$slug: no canonical data found."
         continue
     fi
 
