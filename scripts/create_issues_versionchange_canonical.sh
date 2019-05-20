@@ -122,7 +122,6 @@ for slug in $track_exercise_slugs; do
     track_data_version=$(cat "$track_exercise_version_file_path" | sed 's/\r$//')
 
     if [[ "$track_data_version" = "$canonical_data_version" ]]; then
-        # echo "$slug: up-to-date."
         continue
     elif echo "$OPEN_ISSUES" | grep --quiet "^$slug "; then
         echo ">>>>> ${slug}: update tests and version file (v${track_data_version} -> v${canonical_data_version})"
