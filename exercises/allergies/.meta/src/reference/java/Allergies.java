@@ -17,6 +17,6 @@ class Allergies {
     }
 
     boolean isAllergicTo(Allergen allergen) {
-        return (score & allergen.getScore()) == allergen.getScore();
+        return (score & allergen.getScore()) != 0;
     }
 }
