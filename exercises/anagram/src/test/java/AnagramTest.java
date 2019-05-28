@@ -97,9 +97,9 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testCapitalWordIsNotOwnAnagram() {
+    public void testWordsAreNotAnagramsOfThemselvesCaseInsensitive() {
         Anagram detector = new Anagram("BANANA");
-        assertTrue(detector.match(Collections.singletonList("Banana")).isEmpty());
+        assertTrue(detector.match(Arrays.asList("BANANA", "Banana", "banana")).isEmpty());
     }
 
 }
