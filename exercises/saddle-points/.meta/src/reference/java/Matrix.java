@@ -23,7 +23,7 @@ final class Matrix {
                 final int coordinateValue = values.get(row).get(column);
 
                 if (coordinateValue == getRowMax(row) && coordinateValue == getColumnMin(column)) {
-                    result.add(new MatrixCoordinate(row, column));
+                    result.add(new MatrixCoordinate(row + 1, column + 1));
                 }
             }
         }
