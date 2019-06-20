@@ -14,6 +14,7 @@ import java.util.NoSuchElementException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class PalindromeCalculatorTest {
     private PalindromeCalculator palindromeCalculator;
@@ -156,30 +157,26 @@ public class PalindromeCalculatorTest {
     @Test
     public void emtpyResultSmallestNoPalindromeInRange() {
 
-        expectedException.expect(NoSuchElementException.class);
-        expectedException.expectMessage("no palindrome with factors in the range 1002 to 1003");
-
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(1002,
                                                                                                                  1003);
+        assertTrue(palindromes.isEmpty());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void emtpyResultLargestNoPalindromeInRange() {
 
-        expectedException.expect(NoSuchElementException.class);
-        expectedException.expectMessage("no palindrome with factors in the range 15 to 15");
-
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(15,
                                                                                                                  15);
-    }
+        assertTrue(palindromes.isEmpty());
+   }
 
     @Ignore("Remove to run test")
     @Test
     public void errorSmallestMinIsMoreThanMax() {
 
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("invalid input: min is 10000 and max is 1");
+        expectedException.expectMessage("invalid input: min must be <= max");
 
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(10000,
                                                                                                                  1);
@@ -190,7 +187,7 @@ public class PalindromeCalculatorTest {
     public void errorLargestMinIsMoreThanMax() {
 
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("invalid input: min is 2 and max is 1");
+        expectedException.expectMessage("invalid input: min must be <= max");
 
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(2, 1);
     }
