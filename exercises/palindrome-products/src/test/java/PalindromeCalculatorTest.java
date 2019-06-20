@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.SortedMap;
 import java.util.stream.Collectors;
-import java.util.NoSuchElementException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -164,12 +163,12 @@ public class PalindromeCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void emtpyResultLargestNoPalindromeInRange() {
+    public void emptyResultLargestNoPalindromeInRange() {
 
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(15,
                                                                                                                  15);
         assertTrue(palindromes.isEmpty());
-   }
+    }
 
     @Ignore("Remove to run test")
     @Test
