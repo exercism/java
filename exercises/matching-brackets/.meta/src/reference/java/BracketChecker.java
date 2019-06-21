@@ -7,7 +7,7 @@ final class BracketChecker {
     };
 
     private static boolean isOpeningBracket(final char character) {
-        return BRACKET_PAIR_MAP.keySet().contains(character);
+        return BRACKET_PAIR_MAP.containsKey(character);
     }
 
     private static boolean isClosingBracket(final char character) {
