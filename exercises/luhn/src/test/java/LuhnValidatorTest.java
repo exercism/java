@@ -62,6 +62,12 @@ public class LuhnValidatorTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testValidNumberWithAnOddNumberOfSpaces() {
+        assertTrue(luhnValidator.isValid("234 567 891 234"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testValidStringsWithANonDigitAtEndInvalid() {
         assertFalse(luhnValidator.isValid("059a"));
     }
@@ -75,7 +81,7 @@ public class LuhnValidatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testStringContainingSymbolsInvalid() {
-        assertFalse(luhnValidator.isValid("055£ 444$ 285"));
+        assertFalse(luhnValidator.isValid("055# 444$ 285"));
     }
 
     @Ignore("Remove to run test")
