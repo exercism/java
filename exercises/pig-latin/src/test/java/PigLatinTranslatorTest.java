@@ -59,6 +59,7 @@ public class PigLatinTranslatorTest {
     public void testWordBeginningWithK() {
         assertEquals("oalakay", pigLatinTranslator.translate("koala"));
     }
+
     @Ignore("Remove to run test")
     @Test
     public void testWordBeginningWithX() {
@@ -109,13 +110,13 @@ public class PigLatinTranslatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testYtTreatedLikeAConsonantAtTheBeginningOfAWord() {
+    public void testYtTreatedLikeAVowelAtTheBeginningOfAWord() {
         assertEquals("yttriaay", pigLatinTranslator.translate("yttria"));
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testXrTreatedLikeAConsonantAtTheBeginningOfAWord() {
+    public void testXrTreatedLikeAVowelAtTheBeginningOfAWord() {
         assertEquals("xrayay", pigLatinTranslator.translate("xray"));
     }
 
@@ -142,5 +143,4 @@ public class PigLatinTranslatorTest {
     public void testAWholePhrase() {
         assertEquals("ickquay astfay unray", pigLatinTranslator.translate("quick fast run"));
     }
-
 }
