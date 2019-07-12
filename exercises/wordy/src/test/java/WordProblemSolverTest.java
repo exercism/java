@@ -19,6 +19,12 @@ public class WordProblemSolverTest {
     }
 
     @Test
+    public void testJustANumber() {
+        assertEquals(5, solver.solve("What is 5?"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testSingleAddition1() {
         assertEquals(2, solver.solve("What is 1 plus 1?"));
     }
@@ -112,7 +118,7 @@ public class WordProblemSolverTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testInvalidQuestionFormat() {
+    public void testNonMathQuestion() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("I'm sorry, I don't understand the question!");
 
@@ -120,4 +126,57 @@ public class WordProblemSolverTest {
         solver.solve("Who is the President of the United States?");
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testMissingAnOperand() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("I'm sorry, I don't understand the question!");
+
+        solver.solve("What is 1 plus?");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testNoOperandsOrOperators() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("I'm sorry, I don't understand the question!");
+
+        solver.solve("What is?");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testTwoOperationsInARow() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("I'm sorry, I don't understand the question!");
+
+        solver.solve("What is 1 plus plus 2?");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testTwoNumbersAfterOperation() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("I'm sorry, I don't understand the question!");
+
+        solver.solve("What is 1 plus 2 1?");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testPostfixNotation() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("I'm sorry, I don't understand the question!");
+
+        solver.solve("What is 1 2 plus?");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testPrefixNotation() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("I'm sorry, I don't understand the question!");
+
+        solver.solve("What is plus 1 2?");
+    }
 }
