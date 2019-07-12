@@ -118,7 +118,7 @@ public class WordProblemSolverTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testNomMathQuestion() {
+    public void testNonMathQuestion() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("I'm sorry, I don't understand the question!");
 
@@ -146,7 +146,7 @@ public class WordProblemSolverTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testTwoOperandsInARow() {
+    public void testTwoOperationsInARow() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("I'm sorry, I don't understand the question!");
 
