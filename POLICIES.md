@@ -36,9 +36,9 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 > - Exercises of difficulty 4 or lower: provide stubs for all required constructors and methods. This means that you need to provide stubs for those constructors or methods that are necessary to pass all tests. E.g. stubs for private methods may be skipped.
 Stubs should include the following body:
     `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
-> - Exercises of difficulty 5 or higher: provide no stubs by default, but either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
+> - Exercises of difficulty 5 or higher: provide a starter file only (StubTemplate.java) and rename it, but either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
 
-References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)], [[3](https://github.com/exercism/java/issues/977)]
+References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)], [[3](https://github.com/exercism/java/issues/977)], [[4](https://github.com/exercism/java/issues/1721)]
 
 ### Avoid using final
 
