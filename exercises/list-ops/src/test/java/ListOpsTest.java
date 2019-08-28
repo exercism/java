@@ -211,4 +211,23 @@ public class ListOpsTest {
                 ListOps.reverse(Arrays.asList('1', '3', '5', '7')));
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testListOfListIsNotFlattened() {
+        List<List<Character>> listOfLists = Arrays.asList(
+                Arrays.asList('1', '2'),
+                Collections.singletonList('3'),
+                Collections.emptyList(),
+                Arrays.asList('4', '5', '6'));
+
+        assertEquals(
+                Arrays.asList(
+                        Arrays.asList('4', '5', '6'),
+                        Collections.emptyList(),
+                        Collections.singletonList('3'),
+                        Arrays.asList('1', '2')
+                ),
+                ListOps.reverse(listOfLists));
+    }
+
 }
