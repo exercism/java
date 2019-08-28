@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertFalse;
 import static org.hamcrest.CoreMatchers.is;
 
 import org.junit.Ignore;
@@ -158,6 +159,23 @@ public class CircularBufferTest {
         assertThat(buffer.read(), is(3));
         assertThat(buffer.read(), is(4));
         assertThat(buffer.read(), is(5));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void initialClearDoesNotAffectWrappingAround() throws BufferIOException {
+        CircularBuffer<Integer> buffer = new CircularBuffer<>(2);
+
+        buffer.clear();
+        buffer.write(1);
+        buffer.write(2);
+        buffer.overwrite(3);
+        buffer.overwrite(4);
+        assertThat(buffer.read(), is(3));
+        assertThat(buffer.read(), is(4));
+        expectedException.expect(BufferIOException.class);
+        expectedException.expectMessage("Tried to read from empty buffer");
+        buffer.read();
     }
 }
 
