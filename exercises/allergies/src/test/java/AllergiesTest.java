@@ -348,7 +348,7 @@ public class AllergiesTest {
     }
 
 
-    // list when:
+    // Testing listing allergies
 
     @Ignore("Remove to run test")
     @Test
@@ -411,7 +411,7 @@ public class AllergiesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void listLotsOfStuff() {
+    public void listManyAllergies() {
         Allergies allergies = new Allergies(248);
         List<Allergen> expectedAllergens = Arrays.asList(
                 Allergen.STRAWBERRIES,
