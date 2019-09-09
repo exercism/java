@@ -15,7 +15,7 @@
 
 ## Overview
 
-This guide covers contributing to the Java track.  If you are new, this guide is for you.
+This guide covers contributing to the Java track.  If you are new to the exercism Java track, this guide is for you.
 
 If, at any point, you're having any trouble, pop in the [Gitter exercism/java room](https://gitter.im/exercism/java) or the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
 
@@ -25,11 +25,13 @@ For general guidelines about contributing to Exercism see the [Exercism contribu
 
 Hi! Thanks for contributing to the Exercism Java track!
 
-Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all. This helps us focus our review time on the more important aspects of your changes.
+Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all.
+This helps us focus our review time on the more important aspects of your contributions.
 
-Also please only address one issue per pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
+Also please only address one issue per pull request and reference the issue in your pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
 
-It's perfectly fine to have more than one pull request open at a time. In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
+It's perfectly fine to have more than one pull request open at a time.
+In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
 
 One last thing to note before you get started. When you fork the repository and you want to [sync your fork](https://help.github.com/articles/syncing-a-fork/), you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
 
@@ -93,7 +95,7 @@ Each problem/submodule has three source sets:
 
 * `src/test/java/` — a test suite defining the edges of the problem
 * `.meta/src/reference/java/` — a reference solution that passes all the tests
-* `src/main/java/` — starter source files, if required/desired *(this directory usually only has a `.keep` file in it)*.
+* `src/main/java/` — starter source file(s).
 
 ----
 
