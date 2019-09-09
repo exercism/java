@@ -147,7 +147,8 @@ public class ListOpsTest {
                 ListOps.foldLeft(
                     Collections.<Double>emptyList(),
                     2.0,
-                    (x, y) -> x * y)
+                    (x, y) -> x * y
+                )
         );
     }
 
@@ -159,7 +160,8 @@ public class ListOpsTest {
                 ListOps.foldLeft(
                     Arrays.asList(1, 2, 3, 4),
                     5,
-                    (x, y) -> x + y)
+                    (x, y) -> x + y
+                )
         );
     }
 
@@ -171,7 +173,8 @@ public class ListOpsTest {
                 ListOps.foldLeft(
                     Arrays.asList(2, 5),
                     5,
-                    (x, y) -> x / y)
+                    (x, y) -> x / y
+                )
         );
     }
 
@@ -183,7 +186,8 @@ public class ListOpsTest {
                 ListOps.foldRight(
                     Collections.<Double>emptyList(),
                     2.0,
-                    (x, y) -> x * y)
+                    (x, y) -> x * y
+                )
         );
     }
 
@@ -195,7 +199,8 @@ public class ListOpsTest {
                 ListOps.foldRight(
                     Arrays.asList(1, 2, 3, 4),
                     5,
-                    (x, y) -> x + y)
+                    (x, y) -> x + y
+                )
         );
     }
 
@@ -207,7 +212,8 @@ public class ListOpsTest {
                 ListOps.foldRight(
                     Arrays.asList(2, 5),
                     5,
-                    (x, y) -> x / y)
+                    (x, y) -> x / y
+                )
         );
     }
 
