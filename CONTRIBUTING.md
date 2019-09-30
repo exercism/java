@@ -222,3 +222,29 @@ To run this script:
   4. Run `./scripts/create_issues_versionchange_canonical.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository and follow the directions.
   
   5. If you submitted new issues, please check these submissions on the [issues page](https://github.com/exercism/java/issues).
+
+## Checking exercises are implemented and submit new issues
+
+There is [a script which allows you to submit new issues](https://github.com/exercism/java/blob/master/scripts/create_issues_new_exercise.sh) to this repo with generic title, description and labels if am unimplemented exercise is detected.
+
+Before you may submit a new issue, the script
+  1. Checks whether the exercise exists in the Java track (compared to exercism/problem-specifications)
+  2. Checks whether an open issue exists for this exercise concerning the implementation of the exercise;
+  3. If a new issue may be opened for an exercise, the script will ask you if you want to submit the issue. Entering `y` will create the new issue.
+
+To run this script:
+
+  1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+  
+  2. Create a file `.exercism-version-update-issue-script-settings.sh` in your home directory.
+  
+  3. In this file, you have to put the following variables:
+        - `TOKEN="your_token"`
+        - `OWNER="repo_owner"` # -> `"exercism"`
+        - `REPO="repo_name"` # -> `"java"`
+        
+     For authentication, you need to create a personal token, see [this GitHub page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) for more information.
+
+  4. Run `./scripts/create_issues_new_exercise.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository and follow the directions.
+  
+  5. If you submitted new issues, please check these submissions on the [issues page](https://github.com/exercism/java/issues).
