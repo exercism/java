@@ -49,6 +49,10 @@ In the test suites all tests but the first have been skipped.
 Once you get a test passing, you can enable the next one by removing the
 `@Ignore("Remove to run test")` annotation.
 
+## Source
+
+JavaRanch Cattle Drive, exercise 6 [http://www.javaranch.com/grains.jsp](http://www.javaranch.com/grains.jsp)
+
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have
 completed the exercise.
