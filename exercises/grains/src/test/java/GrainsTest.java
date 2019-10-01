@@ -10,43 +10,43 @@ public class GrainsTest {
     @Test
     public void countAtCell1() {
         final BigInteger result = Grains.compute(1);
-        assertEquals(result, new BigInteger("1"));
+        assertEquals(new BigInteger("1"), result);
     }
 
     @Test
     public void countAtCell2() {
         final BigInteger result = Grains.compute(2);
-        assertEquals(result, new BigInteger("2"));
+        assertEquals(new BigInteger("2"), result);
     }
 
     @Test
     public void countAtCell3() {
         final BigInteger result = Grains.compute(3);
-        assertEquals(result, new BigInteger("4"));
+        assertEquals(new BigInteger("4"), result);
     }
 
     @Test
     public void countAtCell4() {
         final BigInteger result = Grains.compute(4);
-        assertEquals(result, new BigInteger("8"));
+        assertEquals(new BigInteger("8"), result);
     }
 
     @Test
     public void countAtCell16() {
         final BigInteger result = Grains.compute(16);
-        assertEquals(result, new BigInteger("32768"));
+        assertEquals(new BigInteger("32768"), result);
     }
 
     @Test
     public void countAtCell32() {
         final BigInteger result = Grains.compute(32);
-        assertEquals(result, new BigInteger("2147483648"));
+        assertEquals(new BigInteger("2147483648"), result);
     }
 
     @Test
     public void countAtCell64() {
         final BigInteger result = Grains.compute(64);
-        assertEquals(result, new BigInteger("9223372036854775808"));
+        assertEquals(new BigInteger("9223372036854775808"), result);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class GrainsTest {
             Grains.compute(0);
             fail("Grains#compute should have thrown");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "square must be between 1 and 64");
+            assertEquals("square must be between 1 and 64", e.getMessage());
         }
     }
 
@@ -65,7 +65,7 @@ public class GrainsTest {
             Grains.compute(-1);
             fail("Grains#compute should have thrown");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "square must be between 1 and 64");
+            assertEquals("square must be between 1 and 64", e.getMessage());
         }
     }
 
@@ -75,14 +75,14 @@ public class GrainsTest {
             Grains.compute(65);
             fail("Grains#compute should have thrown");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "square must be between 1 and 64");
+            assertEquals("square must be between 1 and 64", e.getMessage());
         }
     }
 
     @Test
     public void totalNumberOfGrainsOnABoard() {
         final BigInteger total = Grains.computeTotal();
-        assertEquals(total, new BigInteger("18446744073709551615"));
+        assertEquals(new BigInteger("18446744073709551615"), total);
     }
 
 }

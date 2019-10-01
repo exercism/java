@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.stream.IntStream;
 
 class Grains {
 
@@ -9,7 +10,11 @@ class Grains {
      * @return the number of grains on this cell
      */
     static BigInteger compute(final int cell) {
-        return BigInteger.valueOf(2).pow(cell - 1);
+        if (1 <= cell  && cell <= 64) {
+            return BigInteger.valueOf(2).pow(cell - 1);
+        } else {
+            throw new IllegalArgumentException("square must be between 1 and 64");
+        }
     }
 
     /**
@@ -18,9 +23,11 @@ class Grains {
      * @return the total number of grains
      */
     static BigInteger computeTotal() {
-        return BigInteger.valueOf(2)
-                .pow(65)
-                .min(BigInteger.valueOf(1));
+        return IntStream.rangeClosed(1, 64)
+                .mapToObj(Grains::compute)
+                .reduce(
+                        BigInteger.valueOf(0),
+                        BigInteger::add);
     }
 
 }
