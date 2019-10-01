@@ -2,7 +2,7 @@
 
 Source for Exercism Exercises in Java.
 
-## Contributing Guide
+## Contribution Guidelines
 
 For general information about how to contribute to Exercism, please refer to the [Contributing Guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks).
 
