@@ -20,7 +20,7 @@ class Grains {
     static BigInteger computeTotal() {
         return BigInteger.valueOf(2)
                 .pow(65)
-                .min(BigInteger.valueOf(1);
+                .min(BigInteger.valueOf(1));
     }
 
 }
