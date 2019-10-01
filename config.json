@@ -1443,8 +1443,8 @@
       "deprecated": true
     },
     {
-      "slug": "grain",
-      "uuid": "<invalid>",
+      "slug": "grains",
+      "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
       "core": false,
       "unlocked_by": null,
       "difficulty": 0,
