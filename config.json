@@ -1434,6 +1434,15 @@
       "deprecated": true
     },
     {
+      "slug": "hangman",
+      "uuid": "<invalid>",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": null,
+      "deprecated": false
+    },
+    {
       "slug": "trinary",
       "uuid": "ee3a8abe-6b19-4b47-9cf6-4d39ae915fb7",
       "core": false,
