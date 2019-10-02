@@ -11,13 +11,15 @@ import static java.util.stream.Collectors.joining;
 
 class Hangman {
 
-    static Observable<Output> play(final Observable<String> words, final Observable<String> letters) {
+    static Observable<Output> play(final Observable<String> words,
+            final Observable<String> letters) {
         return words
                 .flatMap(word -> {
                     return letters.scan(
                             new Output(
                                     word,
-                                    IntStream.range(0, word.length()).mapToObj(i -> "_").collect(joining()),
+                                    IntStream.range(0, word.length()).mapToObj(i -> "_")
+                                            .collect(joining()),
                                     new HashSet<>(),
                                     new HashSet<>(),
                                     new ArrayList<>(),
@@ -26,23 +28,25 @@ class Hangman {
                 });
     }
 
-    private static Hangman.Output processNewLetter(final Hangman.Output state, final String letter) {
+    private static Hangman.Output processNewLetter(final Hangman.Output state,
+            final String letter) {
         if (state.guess.contains(letter) || state.misses.contains(letter)) {
             throw new IllegalArgumentException("Letter " + letter + " was already played");
         }
         if (state.secret.contains(letter)) {
-            final String discovered = state.discovered.replaceAll(letter, "_");
             final Set<String> newGuess = new HashSet<>(state.guess);
             newGuess.add(letter);
+            final String discovered = state.secret.chars()
+                    .mapToObj(i -> String.valueOf((char) i))
+                    .map(c -> newGuess.contains(c) ? c : "_")
+                    .collect(joining());
             return new Output(
                     state.secret,
                     discovered,
                     newGuess,
                     state.misses,
                     state.parts,
-                    Pattern.compile(".*[a-z].*").matcher(discovered).matches()
-                            ? Status.WIN
-                            : Status.PLAYING);
+                    discovered.contains("_") ? Status.PLAYING : Status.WIN);
         } else {
             final Set<String> newMisses = new HashSet<>(state.misses);
             newMisses.add(letter);
@@ -51,7 +55,7 @@ class Hangman {
             if (newMisses.size() >= ORDER.length) {
                 newStatus = Status.LOSS;
             } else {
-                newParts.add(ORDER[newMisses.size()]);
+                newParts.add(ORDER[newParts.size()]);
                 newStatus = Status.PLAYING;
             }
 
@@ -66,6 +70,7 @@ class Hangman {
     }
 
     static class Output {
+
         public final String secret;
         public final String discovered;
         public final Set<String> guess;
