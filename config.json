@@ -1435,7 +1435,7 @@
     },
     {
       "slug": "hangman",
-      "uuid": "<invalid>",
+      "uuid": "ab3f8bf4-cfae-4f7a-b134-bb0fa4fafa63",
       "core": false,
       "unlocked_by": null,
       "difficulty": 3,

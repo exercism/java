@@ -1,0 +1,21 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+
+  compile 'io.reactivex.rxjava2:rxjava:2.2.0'
+
+  testCompile "junit:junit:4.12"
+}
+
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}
