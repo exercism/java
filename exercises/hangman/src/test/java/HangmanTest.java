@@ -2,12 +2,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 import org.junit.Test;
+import org.junit.Ignore;
 
 public class HangmanTest {
 
@@ -101,12 +104,32 @@ public class HangmanTest {
     }
 
     @Test
+    @Ignore
     public void consecutiveGames() {
-        final Observable<Hangman.Output> outputs = Hangman.play(
-                Observable.fromArray("secret", "abba"),
-                Observable.fromArray(
-                        "a", "e", "o", "s", "c", "r", "g", "t",
-                        "a", "e", "s", "b"));
+        final ObservableEmitter<String>[] emitters = new ObservableEmitter[2];
+        final Runnable emit = () -> {
+            emitters[0].onNext("secret");
+            Stream.of( "a", "e", "o", "s", "c", "r", "g", "t").forEach(emitters[1]::onNext);
+            emitters[0].onNext("abba");
+            Stream.of("a", "e", "s", "b").forEach(emitters[1]::onNext);
+            emitters[0].onComplete();
+        };
+        final Observable<String> words = Observable.create(
+                emitter -> {
+                    emitters[0] = emitter;
+                    if (emitters[1] != null) {
+                        emit.run();
+                    }
+                });
+        final Observable<String> letters = Observable.create(
+                emitter -> {
+                    emitters[1] = emitter;
+                    if (emitters[0] != null) {
+                        emit.run();
+                    }
+                });
+        final Observable<Hangman.Output> outputs = Hangman.play(words, letters);
+
         final List<Hangman.Output> results = outputs
                 .filter(output -> output.status != Hangman.Status.PLAYING)
                 .toList()
