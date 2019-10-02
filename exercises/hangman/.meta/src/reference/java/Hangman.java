@@ -89,13 +89,13 @@ class Hangman {
         }
     }
 
-    static enum Status {
+    enum Status {
         PLAYING,
         WIN,
         LOSS
     }
 
-    static enum Part {
+    enum Part {
         HEAD,
         BODY,
         LEFT_ARM,
