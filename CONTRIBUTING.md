@@ -63,10 +63,35 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    $ git commit -m "(An intention-revealing commit message)"
    $ git push
    ```
-
    The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
 -  **Verify that your work passes all tests.**  When you create a pull request (PR), GitHub triggers a build on Travis CI.  Your PR will not be merged unless those tests pass.
 -  **Check the style of your code**. Running `gradle check` from the root folder of the exercise, the checkstyle plugin will show you every style violation of your code
+
+## Contributing using Intellij IDEA
+
+   Intellij IDEA is one of the more popular IDEs when working with Java, and it includes several tools to help simplify the process. The following steps outline how to import the git repository, make changes, and push
+   them back to your fork (this is assuming you have already forked the repo...if you haven't, see the link about [forking](https://help.github.com/articles/fork-a-repo/)).
+   
+- **Open the IDE and import the project**  From the startup menu, select "Check out from Version Control". This will open a dialog where you can enter in the URL of the git repository and specify the directory that you would
+like to clone the repo into.
+
+![import](assets/clone-repo.png)
+
+- Accept all of the default settings and create the new project
+- **Create a feature branch**  The git tools in IDEA are located in the VCS menu. To createa a new branch, select VCS > Git > Branches and then click "New Branch". Give the branch a meaningful name and create.
+
+![branch](assets/branch-menu.png)
+![create](assets/branch-name.png)
+
+- Make all of your changes, following the instructions in this guide.
+
+ - **Commit/Merge changes**  Once all of the changes have been made, you can look at the diffs and commit from the "Commit File" window, which can be reached by selecting VCS > Git > Commit File from the top menu.
+ If all of the changes are acceptable, checkmark all of the files that are to be committed, enter a meaningful commit message, and then click "Commit and Push".    
+ 
+ ![diff](assets/commit-files.png)
+ 
+ - Follow the instructions regarding creating a pull request into the upstream repo.
+ 
 ## Getting Familiar With the Codebase
 
 There are two objectives to the design of this build:
