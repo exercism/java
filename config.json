@@ -1441,6 +1441,19 @@
       "difficulty": 0,
       "topics": null,
       "deprecated": true
+    },
+    {
+      "slug": "shape",
+      "uuid": "3a895106-832d-42c9-96c7-5a4ffb7cc597",
+      "core": false,
+      "unlocked_by": "clock",
+      "difficulty": 7,
+      "topics": [
+        "classes",
+        "optional_values",
+        "object_oriented_programming"
+      ],
+      "deprecated": true
     }
   ]
 }
