@@ -1441,6 +1441,21 @@
       "difficulty": 0,
       "topics": null,
       "deprecated": true
+    },
+    {
+      "slug": "connect",
+      "uuid": "1a714bd0-ed15-4b19-8f54-19c6e269763b",
+      "core": false,
+      "unlocked_by": "grade-school",
+      "difficulty": 7,
+      "topics": [
+        "arrays",
+        "conditionals",
+        "loops",
+        "games",
+        "maps",
+        "parsing"
+      ]
     }
   ]
 }
