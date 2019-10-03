@@ -5,7 +5,7 @@ class Leap {
      *
      * @return true if `year` is leap year else false
      */
-    static boolean checkIfLeapYear(int year) {
+    static boolean leapYear(int year) {
         boolean isLeapYear = false;
         if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0)
         {
