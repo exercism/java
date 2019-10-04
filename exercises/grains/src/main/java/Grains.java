@@ -2,22 +2,11 @@ import java.math.BigInteger;
 
 class Grains {
 
-    /**
-     * Computes the number of grains on a given cell.
-     *
-     * @param cell cell to consider
-     * @return the number of grains on this cell
-     */
-    static BigInteger compute(final int cell) {
+    static BigInteger computeNumberOfGrainsOnSquare(final int square) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    /**
-     * Computes the total number of grains on the whole chessboard
-     *
-     * @return the total number of grains
-     */
-    static BigInteger computeTotal() {
+    static BigInteger computeTotalNumberOfGrainsOnBoard() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

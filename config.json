@@ -1,4 +1,4 @@
-{
+/{
   "language": "Java",
   "active": true,
   "blurb": "Java is a very widely used Object Oriented programming language. It's safe, simple to use and portable so that you can \"write once, run anywhere\".",
@@ -1446,9 +1446,12 @@
       "slug": "grains",
       "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
       "core": false,
-      "unlocked_by": null,
-      "difficulty": 0,
-      "topics": null,
+      "unlocked_by": "hello-world",
+      "difficulty": 1,
+      "topics": [
+        "loops",
+        "math"
+      ],
       "deprecated": false
     }
   ]

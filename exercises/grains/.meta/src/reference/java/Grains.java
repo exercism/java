@@ -3,31 +3,23 @@ import java.util.stream.IntStream;
 
 class Grains {
 
-    /**
-     * Computes the number of grains on a given cell.
-     *
-     * @param cell cell to consider
-     * @return the number of grains on this cell
-     */
-    static BigInteger compute(final int cell) {
-        if (1 <= cell  && cell <= 64) {
-            return BigInteger.valueOf(2).pow(cell - 1);
+    static BigInteger computeNumberOfGrainsOnSquare(final int square) {
+        if (1 <= square  && square <= 64) {
+            return BigInteger.valueOf(2).pow(square - 1);
         } else {
             throw new IllegalArgumentException("square must be between 1 and 64");
         }
     }
 
-    /**
-     * Computes the total number of grains on the whole chessboard
-     *
-     * @return the total number of grains
-     */
-    static BigInteger computeTotal() {
+    static BigInteger computeTotalNumberOfGrainsOnBoard() {
         return IntStream.rangeClosed(1, 64)
-                .mapToObj(Grains::compute)
+                .mapToObj(Grains::computeNumberOfGrainsOnSquare)
                 .reduce(
                         BigInteger.valueOf(0),
                         BigInteger::add);
+        // Note that the following is also correct, using the sum of the elements of a geometric series
+        // https://en.wikipedia.org/wiki/Geometric_progression#Geometric_series
+        // return BigInteger.valueOf(2).pow(64).subtract(BigInteger.valueOf(1));
     }
 
 }
