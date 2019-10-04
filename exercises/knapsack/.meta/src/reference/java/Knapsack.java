@@ -36,9 +36,9 @@ class Knapsack {
     private static int maximumValueHelper(
         int maximumWeight, ArrayList<Item> items, 
         int currentWeight, int currentIndex) {
-        if (currentIndex > items.size() - 1) {
+        if (currentIndex >= items.size()) {
             return 0;
-        } else if (currentWeight >= maximumWeight) {
+        } else if (currentWeight == maximumWeight) {
             return 0;
         } else {
             int maxValue1 = 0;

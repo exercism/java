@@ -83,7 +83,7 @@ public class KnapsackTest {
         items.add(new Item(87, 163));
         items.add(new Item(90, 173));
         items.add(new Item(94, 184));
-        items.add(new Item(98, 190));
+        items.add(new Item(98, 192));
         items.add(new Item(106, 201));
         items.add(new Item(110, 210));
         items.add(new Item(113, 214));
