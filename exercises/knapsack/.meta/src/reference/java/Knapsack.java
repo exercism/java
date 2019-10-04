@@ -27,7 +27,7 @@ class Knapsack {
     static int maximumValue(int maximumWeight, ArrayList<Item> items) {
         // 1. Basic version of the algorithm
         // Comment below line to see how recursive implementation works
-        /* return maximumValueHelperRecursive(maximumWeight, items, 0, 0); */
+        return maximumValueHelperRecursive(maximumWeight, items, 0, 0);
         // 2. Top down version of the algorithm
         /* 
         int[][] knapsack = new int[items.size() + 1][maximumWeight + 1]; 
@@ -39,7 +39,7 @@ class Knapsack {
         return maximumValueHelperTopDown(maximumWeight, items, 0, 0, knapsack);
         */
         // 3. Bottom up version of the algorithm
-        return maximumValueHelperBottomUp(maximumWeight, items);
+        /* return maximumValueHelperBottomUp(maximumWeight, items); */
     }
 
     /**
