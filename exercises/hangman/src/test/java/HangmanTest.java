@@ -1,16 +1,14 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Stream;
-import org.junit.Test;
+import io.reactivex.disposables.Disposable;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class HangmanTest {
 
@@ -104,7 +102,6 @@ public class HangmanTest {
     }
 
     @Test
-    @Ignore
     public void consecutiveGames() {
         final ObservableEmitter<String>[] emitters = new ObservableEmitter[2];
         final Runnable emit = () -> {
@@ -130,23 +127,26 @@ public class HangmanTest {
                 });
         final Observable<Hangman.Output> outputs = Hangman.play(words, letters);
 
-        final List<Hangman.Output> results = outputs
-                .filter(output -> output.status != Hangman.Status.PLAYING)
-                .toList()
-                .blockingGet();
-        assertEquals(2, results.size());
+        final List<Hangman.Output> results = new ArrayList<>();
+        final Disposable subscription = outputs.filter(output -> output.status != Hangman.Status.PLAYING)
+            .subscribe(results::add);
+        try {
+            assertEquals(2, results.size());
 
-        final Hangman.Output first = results.get(0);
-        assertEquals("secret", first.discovered);
-        assertEquals(setOf("s", "e", "c", "r", "t"), first.guess);
-        assertEquals(setOf("a", "o", "g"), first.misses);
-        assertEquals(Hangman.Status.WIN, first.status);
+            final Hangman.Output first = results.get(0);
+            assertEquals("secret", first.discovered);
+            assertEquals(setOf("s", "e", "c", "r", "t"), first.guess);
+            assertEquals(setOf("a", "o", "g"), first.misses);
+            assertEquals(Hangman.Status.WIN, first.status);
 
-        final Hangman.Output second = results.get(1);
-        assertEquals("abba", second.discovered);
-        assertEquals(setOf("a", "b"), second.guess);
-        assertEquals(setOf("e", "s"), second.misses);
-        assertEquals(Hangman.Status.WIN, first.status);
+            final Hangman.Output second = results.get(1);
+            assertEquals("abba", second.discovered);
+            assertEquals(setOf("a", "b"), second.guess);
+            assertEquals(setOf("e", "s"), second.misses);
+            assertEquals(Hangman.Status.WIN, first.status);
+        } finally {
+            subscription.dispose();
+        }
     }
 
     private static <T> Set<T> setOf(final T... values) {
