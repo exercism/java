@@ -17,9 +17,6 @@ class Grains {
                 .reduce(
                         BigInteger.valueOf(0),
                         BigInteger::add);
-        // Note that the following is also correct, using the sum of the elements of a geometric series
-        // https://en.wikipedia.org/wiki/Geometric_progression#Geometric_series
-        // return BigInteger.valueOf(2).pow(64).subtract(BigInteger.valueOf(1));
     }
 
 }
