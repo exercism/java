@@ -25,7 +25,17 @@ class Knapsack {
      * @return maximum value the thief can steal
      */
     static int maximumValue(int maximumWeight, ArrayList<Item> items) {
-        return maximumValueHelper(maximumWeight, items, 0, 0);
+        // 1. Basic version of the algorithm
+        // Comment below line to see how recursive implementation works
+        // return maximumValueHelperRecursive(maximumWeight, items, 0, 0);
+        // 2. Top down version of the algorithm
+        int[][] knapsack = new int[items.size()+1][maximumWeight+1]; 
+        for (int itemIndex = 0; item < knapsack.length; item++) {
+            for (int weight = 0; weight < knapsack[i].length; weight++) {
+                knapsack[i][j] = -1; // Value not calculated
+            }
+        }
+        return maximumValueHelperTopDown(maximumWeight, items, 0, 0, knapsack);
     }
 
     /**
@@ -33,7 +43,7 @@ class Knapsack {
      * 
      * @return maximum value the thief can steal
      */
-    private static int maximumValueHelper(
+    private static int maximumValueHelperRecursive(
         int maximumWeight, ArrayList<Item> items, 
         int currentWeight, int currentIndex) {
         if (currentIndex >= items.size()) {
@@ -47,15 +57,50 @@ class Knapsack {
             int itemValue = items.get(currentIndex).value;
             if (itemWeight + currentWeight <= maximumWeight) {
                 maxValue1 = itemValue + 
-                        maximumValueHelper(
+                        maximumValueHelperRecursive(
                             maximumWeight, items, 
                             itemWeight + currentWeight, 
                             currentIndex + 1);
             }
-            maxValue2 = maximumValueHelper(
+            maxValue2 = maximumValueHelperRecursive(
                     maximumWeight, items, currentWeight, currentIndex + 1);
             return Math.max(maxValue1, maxValue2);
         }
+    }
+
+    /**
+     * Top Down recursive implementation
+     * 
+     * @return maximum value the thief can steal
+     */
+    private static int maximumValueHelperTopDown(
+        int maximumWeight, ArrayList<Item> items, 
+        int currentWeight, int currentIndex, int[][] knapsack) {
+        if (knapsack[currentIndex][currentWeight] != -1) {
+            return knapsack[currentIndex][currentWeight];
+        } 
+        if (currentIndex >= items.size()) {
+            knapsack[currentIndex][currentWeight] = 0;
+        } else if (currentWeight == maximumWeight) {
+            knapsack[currentIndex][currentWeight] = 0;
+        } else {
+            int maxValue1 = 0;
+            int maxValue2 = 0;
+            int itemWeight = items.get(currentIndex).weight;
+            int itemValue = items.get(currentIndex).value;
+            if (itemWeight + currentWeight <= maximumWeight) {
+                maxValue1 = itemValue + 
+                        maximumValueHelperRecursive(
+                            maximumWeight, items, 
+                            itemWeight + currentWeight, 
+                            currentIndex + 1);
+            }
+            maxValue2 = maximumValueHelperRecursive(
+                    maximumWeight, items, currentWeight, currentIndex + 1);
+            knapsack[currentIndex][currentWeight] = 
+                Math.max(maxValue1, maxValue2);
+        }
+        return knapsack[currentIndex][currentWeight]
     }
 
 }
