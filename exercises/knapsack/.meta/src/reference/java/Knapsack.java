@@ -29,7 +29,7 @@ class Knapsack {
         // Comment below line to see how recursive implementation works
         // return maximumValueHelperRecursive(maximumWeight, items, 0, 0);
         // 2. Top down version of the algorithm
-        int[][] knapsack = new int[items.size()+1][maximumWeight+1]; 
+        int[][] knapsack = new int[items.size() + 1][maximumWeight + 1]; 
         for (int item = 0; item < knapsack.length; item++) {
             for (int weight = 0; weight < knapsack[item].length; weight++) {
                 knapsack[item][weight] = -1; // Value not calculated
