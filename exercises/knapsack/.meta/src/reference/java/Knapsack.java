@@ -30,9 +30,9 @@ class Knapsack {
         // return maximumValueHelperRecursive(maximumWeight, items, 0, 0);
         // 2. Top down version of the algorithm
         int[][] knapsack = new int[items.size()+1][maximumWeight+1]; 
-        for (int itemIndex = 0; item < knapsack.length; item++) {
-            for (int weight = 0; weight < knapsack[i].length; weight++) {
-                knapsack[i][j] = -1; // Value not calculated
+        for (int item = 0; item < knapsack.length; item++) {
+            for (int weight = 0; weight < knapsack[item].length; weight++) {
+                knapsack[item][weight] = -1; // Value not calculated
             }
         }
         return maximumValueHelperTopDown(maximumWeight, items, 0, 0, knapsack);
@@ -100,7 +100,7 @@ class Knapsack {
             knapsack[currentIndex][currentWeight] = 
                 Math.max(maxValue1, maxValue2);
         }
-        return knapsack[currentIndex][currentWeight]
+        return knapsack[currentIndex][currentWeight];
     }
 
 }
