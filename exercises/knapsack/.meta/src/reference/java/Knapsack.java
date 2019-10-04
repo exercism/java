@@ -28,22 +28,34 @@ class Knapsack {
         return maximumValueHelper(maximumWeight, items, 0, 0);
     }
 
+    /**
+     * Basic recursive implementation
+     * 
+     * @return maximum value the thief can steal
+     */
     private static int maximumValueHelper(
         int maximumWeight, ArrayList<Item> items, 
         int currentWeight, int currentIndex) {
-        if (currentWeight > maximumWeight) {
+        if (currentIndex > items.size() - 1) {
             return 0;
-        } else if (currentWeight == maximumWeight) {
-            return currentWeight;
+        } else if (currentWeight >= maximumWeight) {
+            return 0;
         } else {
-            return Math.max(
-                maximumValueHelper(
-                    maximumWeight, items, items.get(currentIndex).weight + currentWeight, currentIndex + 1),
-                maximumValueHelper(
-                    maximumWeight, items, currentWeight, currentIndex + 1)
-            );
+            int maxValue1 = 0;
+            int maxValue2 = 0;
+            int itemWeight = items.get(currentIndex).weight;
+            int itemValue = items.get(currentIndex).value;
+            if (itemWeight + currentWeight <= maximumWeight) {
+                maxValue1 = itemValue + 
+                        maximumValueHelper(
+                            maximumWeight, items, 
+                            itemWeight + currentWeight, 
+                            currentIndex + 1);
+            }
+            maxValue2 = maximumValueHelper(
+                    maximumWeight, items, currentWeight, currentIndex + 1);
+            return Math.max(maxValue1, maxValue2);
         }
-
     }
 
 }
