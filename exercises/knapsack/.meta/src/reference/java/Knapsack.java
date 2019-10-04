@@ -27,8 +27,9 @@ class Knapsack {
     static int maximumValue(int maximumWeight, ArrayList<Item> items) {
         // 1. Basic version of the algorithm
         // Comment below line to see how recursive implementation works
-        // return maximumValueHelperRecursive(maximumWeight, items, 0, 0);
+        /* return maximumValueHelperRecursive(maximumWeight, items, 0, 0); */
         // 2. Top down version of the algorithm
+        /* 
         int[][] knapsack = new int[items.size() + 1][maximumWeight + 1]; 
         for (int item = 0; item < knapsack.length; item++) {
             for (int weight = 0; weight < knapsack[item].length; weight++) {
@@ -36,6 +37,9 @@ class Knapsack {
             }
         }
         return maximumValueHelperTopDown(maximumWeight, items, 0, 0, knapsack);
+        */
+        // 3. Bottom up version of the algorithm
+        return maximumValueHelperBottomUp(maximumWeight, items);
     }
 
     /**
@@ -101,6 +105,39 @@ class Knapsack {
                 Math.max(maxValue1, maxValue2);
         }
         return knapsack[currentIndex][currentWeight];
+    }
+
+    /**
+     * Bottom Up iterative implementation
+     * 
+     * @return maximum value the thief can steal
+     */
+    private static int maximumValueHelperBottomUp(
+        int maximumWeight, ArrayList<Item> items) {
+        int[][] knapsack = new int[items.size() + 1][maximumWeight + 1]; 
+        for (int item = 0; item <= items.size(); item++) {
+            for (int weight = 0; weight <= maximumWeight; weight++) {
+                knapsack[item][weight] = 0; // Return 0 if not filled
+            }
+        }
+        for (int item = 0; item <= items.size(); item++) {
+            for (int weight = 0; weight <= maximumWeight; weight++) {
+                if (item == 0 || weight == 0) {
+                    knapsack[item][weight] = 0;    
+                } else if (items.get(item - 1).weight > weight) {
+                    knapsack[item][weight] = knapsack[item - 1][weight];
+                } else {
+                    int itemValue  = items.get(item - 1).value;
+                    int itemWeight  = items.get(item - 1).weight;
+                    knapsack[item][weight] = 
+                        Math.max(
+                            itemValue + knapsack[item - 1][weight - itemWeight],
+                            knapsack[item - 1][weight]
+                        );
+                }
+            }
+        }
+        return knapsack[items.size()][maximumWeight];
     }
 
 }
