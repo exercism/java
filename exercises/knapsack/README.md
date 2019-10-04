@@ -10,6 +10,8 @@ Given a knapsack with a specific carrying capacity (W), help Bob determine the m
 
 All values given will be strictly positive. Items will be represented as a list of pairs, wi and vi, where the first element wi is the weight of the ith item and vi is the value for that item.
 
+## Notes
+
 For example:
 
 Items: [ { "weight": 5, "value": 10 }, { "weight": 4, "value": 40 }, { "weight": 6, "value": 30 }, { "weight": 4, "value": 50 } ]
@@ -19,8 +21,6 @@ Knapsack Limit: 10
 For the above, the first item has weight 5 and value 10, the second item has weight 4 and value 40, and so on.
 
 In this example, Bob should take the second and fourth item to maximize his value, which, in this case, is 90. He cannot get more than 90 as his knapsack has a weight limit of 10.
-
-## Notes
 
 ## Setup
 
@@ -47,7 +47,7 @@ Once you get a test passing, you can enable the next one by removing the
 
 ## Source
 
-
+Wikipedia [Knapsack_problem](https://en.wikipedia.org/wiki/Knapsack_problem)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have
