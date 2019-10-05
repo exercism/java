@@ -1446,7 +1446,7 @@
       "slug": "shape",
       "uuid": "3a895106-832d-42c9-96c7-5a4ffb7cc597",
       "core": false,
-      "unlocked_by": "clock",
+      "unlocked_by": null,
       "difficulty": 8,
       "topics": [
         "classes",
