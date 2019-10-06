@@ -2,7 +2,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class LeapTest {
 
@@ -15,55 +16,55 @@ public class LeapTest {
 
     @Test
     public void testYearNotDivBy4InCommonYear() {
-        assertEquals(false, leap.isLeapYear(2015));
+        assertFalse(leap.isLeapYear(2015));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy2NotDivBy4InCommonYear() {
-        assertEquals(false, leap.isLeapYear(1970));
+        assertFalse(leap.isLeapYear(1970));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy4NotDivBy100InLeapYear() {
-        assertEquals(true, leap.isLeapYear(1996));
+        assertTrue(leap.isLeapYear(1996));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy4And5InLeapYear() {
-        assertEquals(true, leap.isLeapYear(1960));
+        assertTrue(leap.isLeapYear(1960));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy100NotDivBy400InCommonYear() {
-        assertEquals(false, leap.isLeapYear(2100));
+        assertFalse(leap.isLeapYear(2100));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy100NotDivBy3IsNotLeapYear() {
-        assertEquals(false, leap.isLeapYear(1900));
+        assertFalse(leap.isLeapYear(1900));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy400InLeapYear() {
-        assertEquals(true, leap.isLeapYear(2000));
+        assertTrue(leap.isLeapYear(2000));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy400NotDivBy125IsLeapYear() {
-        assertEquals(true, leap.isLeapYear(2400));
+        assertTrue(leap.isLeapYear(2400));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testYearDivBy200NotDivBy400InCommonYear() {
-        assertEquals(false, leap.isLeapYear(1800));
+        assertFalse(leap.isLeapYear(1800));
     }
 
 }
