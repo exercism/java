@@ -62,6 +62,13 @@ public class IsogramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testIsogramWithDuplicatedCharAfterHyphen() {
+        IsogramChecker iso = new IsogramChecker();
+        assertFalse(iso.isIsogram("thumbscrew-jappingly"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testIsogramWithDuplicatedHyphen() {
         IsogramChecker iso = new IsogramChecker();
         assertTrue(iso.isIsogram("six-year-old"));

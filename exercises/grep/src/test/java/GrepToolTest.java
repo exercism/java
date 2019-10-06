@@ -243,6 +243,41 @@ public class GrepToolTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void oneFileOneMatchFileFlagTakesPrecedenceOverLineFlag() {
+        String expected = "iliad.txt";
+
+        String actual = grepTool.grep(
+            "ten",
+            Arrays.asList("-n", "-l"),
+            Collections.singletonList("iliad.txt")
+        );
+
+        assertEquals(expected, actual);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void oneFileSeveralMatchesInvertedAndMatchEntireLinesFlags() {
+        String expected = "Achilles sing, O Goddess! Peleus' son;\n"
+            + "His wrath pernicious, who ten thousand woes\n"
+            + "Caused to Achaia's host, sent many a soul\n"
+            + "And Heroes gave (so stood the will of Jove)\n"
+            + "To dogs and to all ravening fowls a prey,\n"
+            + "When fierce dispute had separated once\n"
+            + "The noble Chief Achilles from the son\n"
+            + "Of Atreus, Agamemnon, King of men.";
+
+        String actual = grepTool.grep(
+            "Illustrious into Ades premature,",
+            Arrays.asList("-x", "-v"),
+            Collections.singletonList("iliad.txt")
+        );
+
+        assertEquals(expected, actual);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void multipleFilesOneMatchNoFlags() {
         String expected = "iliad.txt:Of Atreus, Agamemnon, King of men.";
 
@@ -377,7 +412,58 @@ public class GrepToolTest {
 
         String actual = grepTool.grep(
             "Frodo",
-            Arrays.asList("-n", "-l", "-i", "-x"),
+            Arrays.asList("-n", "-l", "-x", "-i"),
+            Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
+        );
+
+        assertEquals(expected, actual);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void multipleFilesSeveralMatchesFileFlagTakesPrecedenceOverLineNumberFlag() {
+        String expected = "iliad.txt\n"
+            + "paradise-lost.txt";
+
+        String actual = grepTool.grep(
+            "who",
+            Arrays.asList("-n", "-l"),
+            Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
+        );
+
+        assertEquals(expected, actual);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void multipleFilesSeveralMatchesInvertedAndMatchEntireLinesFlags() {
+        String expected = "iliad.txt:Achilles sing, O Goddess! Peleus' son;\n"
+            + "iliad.txt:His wrath pernicious, who ten thousand woes\n"
+            + "iliad.txt:Caused to Achaia's host, sent many a soul\n"
+            + "iliad.txt:And Heroes gave (so stood the will of Jove)\n"
+            + "iliad.txt:To dogs and to all ravening fowls a prey,\n"
+            + "iliad.txt:When fierce dispute had separated once\n"
+            + "iliad.txt:The noble Chief Achilles from the son\n"
+            + "iliad.txt:Of Atreus, Agamemnon, King of men.\n"
+            + "midsummer-night.txt:I do entreat your grace to pardon me.\n"
+            + "midsummer-night.txt:I know not by what power I am made bold,\n"
+            + "midsummer-night.txt:Nor how it may concern my modesty,\n"
+            + "midsummer-night.txt:In such a presence here to plead my thoughts;\n"
+            + "midsummer-night.txt:But I beseech your grace that I may know\n"
+            + "midsummer-night.txt:The worst that may befall me in this case,\n"
+            + "midsummer-night.txt:If I refuse to wed Demetrius.\n"
+            + "paradise-lost.txt:Of Mans First Disobedience, and the Fruit\n"
+            + "paradise-lost.txt:Of that Forbidden Tree, whose mortal tast\n"
+            + "paradise-lost.txt:Brought Death into the World, and all our woe,\n"
+            + "paradise-lost.txt:With loss of Eden, till one greater Man\n"
+            + "paradise-lost.txt:Restore us, and regain the blissful Seat,\n"
+            + "paradise-lost.txt:Sing Heav'nly Muse, that on the secret top\n"
+            + "paradise-lost.txt:Of Oreb, or of Sinai, didst inspire\n"
+            + "paradise-lost.txt:That Shepherd, who first taught the chosen Seed";
+
+        String actual = grepTool.grep(
+            "Illustrious into Ades premature,",
+            Arrays.asList("-x", "-v"),
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 

@@ -13,7 +13,8 @@ public class ListOpsTest {
     public void testAppendingEmptyLists() {
         assertEquals(
                 Collections.emptyList(),
-                ListOps.append(Collections.emptyList(), Collections.emptyList()));
+                ListOps.append(Collections.emptyList(), Collections.emptyList())
+        );
     }
 
     @Ignore("Remove to run test")
@@ -21,7 +22,8 @@ public class ListOpsTest {
     public void testAppendingNonEmptyListOnEmptyList() {
         assertEquals(
                 Arrays.asList('1', '2', '3', '4'),
-                ListOps.append(Collections.emptyList(), Arrays.asList('1', '2', '3', '4')));
+                ListOps.append(Collections.emptyList(), Arrays.asList('1', '2', '3', '4'))
+        );
     }
 
     @Ignore("Remove to run test")
@@ -29,7 +31,8 @@ public class ListOpsTest {
     public void testAppendingNonEmptyListOnNonEmptyList() {
         assertEquals(
                 Arrays.asList("1", "2", "2", "3", "4", "5"),
-                ListOps.append(Arrays.asList("1", "2"), Arrays.asList("2", "3", "4", "5")));
+                ListOps.append(Arrays.asList("1", "2"), Arrays.asList("2", "3", "4", "5"))
+        );
     }
 
     @Ignore("Remove to run test")
@@ -37,7 +40,8 @@ public class ListOpsTest {
     public void testConcatOnEmptyListOfLists() {
         assertEquals(
                 Collections.emptyList(),
-                ListOps.concat(Collections.emptyList()));
+                ListOps.concat(Collections.emptyList())
+        );
     }
 
     @Ignore("Remove to run test")
@@ -47,11 +51,13 @@ public class ListOpsTest {
                 Arrays.asList('1', '2'),
                 Collections.singletonList('3'),
                 Collections.emptyList(),
-                Arrays.asList('4', '5', '6'));
+                Arrays.asList('4', '5', '6')
+        );
 
         assertEquals(
                 Arrays.asList('1', '2', '3', '4', '5', '6'),
-                ListOps.concat(listOfLists));
+                ListOps.concat(listOfLists)
+        );
     }
 
     @Ignore("Remove to run test")
@@ -90,7 +96,8 @@ public class ListOpsTest {
     public void testFilteringEmptyList() {
         assertEquals(
                 Collections.emptyList(),
-                ListOps.filter(Collections.<Integer>emptyList(), integer -> integer % 2 == 1));
+                ListOps.filter(Collections.<Integer>emptyList(), integer -> integer % 2 == 1)
+        );
     }
 
     @Ignore("Remove to run test")
@@ -98,7 +105,8 @@ public class ListOpsTest {
     public void testFilteringNonEmptyList() {
         assertEquals(
                 Arrays.asList(1, 3, 5),
-                ListOps.filter(Arrays.asList(1, 2, 3, 5), integer -> integer % 2 == 1));
+                ListOps.filter(Arrays.asList(1, 2, 3, 5), integer -> integer % 2 == 1)
+        );
     }
 
     @Ignore("Remove to run test")
@@ -118,7 +126,8 @@ public class ListOpsTest {
     public void testTransformingEmptyList() {
         assertEquals(
                 Collections.emptyList(),
-                ListOps.map(Collections.<Integer>emptyList(), integer -> integer + 1));
+                ListOps.map(Collections.<Integer>emptyList(), integer -> integer + 1)
+        );
     }
 
     @Ignore("Remove to run test")
@@ -126,7 +135,8 @@ public class ListOpsTest {
     public void testTransformingNonEmptyList() {
         assertEquals(
                 Arrays.asList(2, 4, 6, 8),
-                ListOps.map(Arrays.asList(1, 3, 5, 7), integer -> integer + 1));
+                ListOps.map(Arrays.asList(1, 3, 5, 7), integer -> integer + 1)
+        );
     }
 
     @Ignore("Remove to run test")
@@ -137,7 +147,9 @@ public class ListOpsTest {
                 ListOps.foldLeft(
                     Collections.<Double>emptyList(),
                     2.0,
-                    (x, y) -> x * y));
+                    (x, y) -> x * y
+                )
+        );
     }
 
     @Ignore("Remove to run test")
@@ -148,7 +160,9 @@ public class ListOpsTest {
                 ListOps.foldLeft(
                     Arrays.asList(1, 2, 3, 4),
                     5,
-                    (x, y) -> x + y));
+                    (x, y) -> x + y
+                )
+        );
     }
 
     @Ignore("Remove to run test")
@@ -159,7 +173,9 @@ public class ListOpsTest {
                 ListOps.foldLeft(
                     Arrays.asList(2, 5),
                     5,
-                    (x, y) -> x / y));
+                    (x, y) -> x / y
+                )
+        );
     }
 
     @Ignore("Remove to run test")
@@ -170,7 +186,9 @@ public class ListOpsTest {
                 ListOps.foldRight(
                     Collections.<Double>emptyList(),
                     2.0,
-                    (x, y) -> x * y));
+                    (x, y) -> x * y
+                )
+        );
     }
 
     @Ignore("Remove to run test")
@@ -181,7 +199,9 @@ public class ListOpsTest {
                 ListOps.foldRight(
                     Arrays.asList(1, 2, 3, 4),
                     5,
-                    (x, y) -> x + y));
+                    (x, y) -> x + y
+                )
+        );
     }
 
     @Ignore("Remove to run test")
@@ -192,7 +212,9 @@ public class ListOpsTest {
                 ListOps.foldRight(
                     Arrays.asList(2, 5),
                     5,
-                    (x, y) -> x / y));
+                    (x, y) -> x / y
+                )
+        );
     }
 
     @Ignore("Remove to run test")
@@ -200,7 +222,8 @@ public class ListOpsTest {
     public void testReversingEmptyList() {
         assertEquals(
                 Collections.emptyList(),
-                ListOps.reverse(Collections.emptyList()));
+                ListOps.reverse(Collections.emptyList())
+        );
     }
 
     @Ignore("Remove to run test")
@@ -208,7 +231,29 @@ public class ListOpsTest {
     public void testReversingNonEmptyList() {
         assertEquals(
                 Arrays.asList('7', '5', '3', '1'),
-                ListOps.reverse(Arrays.asList('1', '3', '5', '7')));
+                ListOps.reverse(Arrays.asList('1', '3', '5', '7'))
+        );
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testListOfListIsNotFlattened() {
+        List<List<Character>> listOfLists = Arrays.asList(
+                Arrays.asList('1', '2'),
+                Collections.singletonList('3'),
+                Collections.emptyList(),
+                Arrays.asList('4', '5', '6')
+        );
+
+        assertEquals(
+                Arrays.asList(
+                        Arrays.asList('4', '5', '6'),
+                        Collections.emptyList(),
+                        Collections.singletonList('3'),
+                        Arrays.asList('1', '2')
+                ),
+                ListOps.reverse(listOfLists)
+        );
     }
 
 }

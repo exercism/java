@@ -110,7 +110,7 @@ public class QueenAttackCalculatorTest {
     @Test
     public void testQueensCanAttackOnFourthDiagonal() {
         QueenAttackCalculator calculator
-                = new QueenAttackCalculator(new Queen(2, 2), new Queen(5, 5));
+                = new QueenAttackCalculator(new Queen(1, 7), new Queen(0, 6));
 
         assertTrue(calculator.canQueensAttackOneAnother());
     }

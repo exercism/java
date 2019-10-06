@@ -9,7 +9,7 @@ final class WordProblemSolver {
 
     private static final String VALID_QUESTION_REGEX_STRING =
             "^What is " + INTEGER_REGEX_STRING +
-            "( " + BINARY_OPERATION_REGEX_STRING + " " + INTEGER_REGEX_STRING + ")+" +
+            "( " + BINARY_OPERATION_REGEX_STRING + " " + INTEGER_REGEX_STRING + ")*" +
             "\\?$";
 
     int solve(final String wordProblem) {

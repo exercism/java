@@ -9,7 +9,8 @@ list of texts and that employs parallelism.
 
 # Tips
 
-Single-threaded (non-concurrent) solutions can pass all tests [but the last.](https://www.youtube.com/watch?v=mJZZNHekEQw)  Your solution will be tested for concurrency by submitting it as a [Runnable](https://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html) to an [ExecutorService.](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html) Your solution must leverage multiple [Threads](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html) to pass the final test.
+Single-threaded (non-concurrent) solutions can pass all tests but you should try to implement the solution using parallelism.
+You can do this by using multiple [Threads](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html).
 
 Java documentation on [parallel streams](https://docs.oracle.com/javase/tutorial/collections/streams/parallelism.html) may provide some help.
 

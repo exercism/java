@@ -38,6 +38,17 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testTwoDigitsFinalCarry() throws UnsolvablePuzzleException {
+        LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
+        expected.put('A', 9);
+        expected.put('B', 1);
+        expected.put('C', 0);
+
+        assertEquals(expected, new Alphametics("A + A + A + A + A + A + A + A + A + A + A + B == BCC").solve());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testFourLetters() throws UnsolvablePuzzleException {
         LinkedHashMap<Character, Integer> expected = new LinkedHashMap<>();
         expected.put('A', 9);

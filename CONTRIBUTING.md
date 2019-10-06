@@ -11,10 +11,11 @@
 * [Adding a New Exercise](#adding-a-new-exercise)
 * [Updating the READMEs](#updating-the-readmes)
 * [Checking tests are up to date](#checking-tests-are-up-to-date)
+* [Checking tests are up to date and submit new issues](#checking-tests-are-up-to-date-and-submit-new-issues)
 
 ## Overview
 
-This guide covers contributing to the Java track.  If you are new, this guide is for you.
+This guide covers contributing to the Java track.  If you are new to the exercism Java track, this guide is for you.
 
 If, at any point, you're having any trouble, pop in the [Gitter exercism/java room](https://gitter.im/exercism/java) or the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
 
@@ -24,11 +25,13 @@ For general guidelines about contributing to Exercism see the [Exercism contribu
 
 Hi! Thanks for contributing to the Exercism Java track!
 
-Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all. This helps us focus our review time on the more important aspects of your changes.
+Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all.
+This helps us focus our review time on the more important aspects of your contributions.
 
-Also please only address one issue per pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
+Also please only address one issue per pull request and reference the issue in your pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
 
-It's perfectly fine to have more than one pull request open at a time. In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
+It's perfectly fine to have more than one pull request open at a time.
+In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
 
 One last thing to note before you get started. When you fork the repository and you want to [sync your fork](https://help.github.com/articles/syncing-a-fork/), you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
 
@@ -92,7 +95,7 @@ Each problem/submodule has three source sets:
 
 * `src/test/java/` — a test suite defining the edges of the problem
 * `.meta/src/reference/java/` — a reference solution that passes all the tests
-* `src/main/java/` — starter source files, if required/desired *(this directory usually only has a `.keep` file in it)*.
+* `src/main/java/` — starter source file(s).
 
 ----
 
@@ -192,3 +195,58 @@ To run this script:
   1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
   2. Run `./scripts/canonical_data_check.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository.
+  
+## Checking tests are up to date and submit new issues
+
+There is [a script which allows you to submit new issues](https://github.com/exercism/java/blob/master/scripts/create_issues_versionchange_canonical.sh) to this repo with generic title, description and labels if a change in version was detected.
+
+Example generic new issue:
+<img width="1005" alt="image" src="https://user-images.githubusercontent.com/6614867/57221803-bf1a6600-7000-11e9-93cf-b930ef24ce97.png">
+
+Before you may submit a new issue, the script
+  1. Checks for differences between version numbers of each exercise (in comparison with the version number of the canonical data)
+  2. Checks whether an open issue exists for this exercise; if there is an open issue, you will have to check by yourself if the title of the open issue might be changed to include the new version number. Here, it is important to check whether someone is already working on the issue. 
+  3. If a new issue may be opened for an exercise, the script will ask you if you want to submit the issue. Entering `y` will create the new issue.
+
+To run this script:
+
+  1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+  
+  2. Create a file `.exercism-version-update-issue-script-settings.sh` in your home directory.
+  
+  3. In this file, you have to put the following variables:
+        - `TOKEN="your_token"`
+        - `OWNER="exercism"`
+        - `REPO="java"`
+        
+     For authentication, you need to create a personal token, see [this GitHub page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) for more information.
+
+  4. Run `./scripts/create_issues_versionchange_canonical.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository and follow the directions.
+  
+  5. If you submitted new issues, please check these submissions on the [issues page](https://github.com/exercism/java/issues).
+
+## Checking exercises are implemented and submit new issues
+
+There is [a script](https://github.com/exercism/java/blob/master/scripts/create_issues_new_exercise.sh) which allows you to easily check if there are any exercism exercises which haven't been implemented in the Java track, and create issues for those exercises if there are any.
+
+Before you may submit a new issue, the script
+  1. Checks whether the exercise exists in the Java track (compared to exercism/problem-specifications)
+  2. Checks whether an open issue exists for this exercise concerning the implementation of the exercise;
+  3. If a new issue may be opened for an exercise, the script will ask you if you want to submit the issue. Entering `y` will create the new issue.
+
+To run this script:
+
+  1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+  
+  2. Create a file `.exercism-version-update-issue-script-settings.sh` in your home directory.
+  
+  3. In this file, you have to put the following variables:
+        - `TOKEN="your_token"`
+        - `OWNER="exercism"`
+        - `REPO="java"`
+        
+    For authentication, you need to create a personal token, see [this GitHub page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) for more information.
+
+  4. Run `./scripts/create_issues_new_exercise.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository and follow the directions.
+  
+  5. If you decide to submit a new issue you can find the opened issue on the [issues page](https://github.com/exercism/java/issues).

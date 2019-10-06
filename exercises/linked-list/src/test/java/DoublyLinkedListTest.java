@@ -12,7 +12,9 @@ public class DoublyLinkedListTest {
 
         list.push(10);
         list.push(20);
+        list.push(30);
 
+        assertThat(list.pop(), is(30));
         assertThat(list.pop(), is(20));
         assertThat(list.pop(), is(10));
     }
@@ -24,9 +26,11 @@ public class DoublyLinkedListTest {
 
         list.push("10");
         list.push("20");
+        list.push("30");
 
         assertThat(list.shift(), is("10"));
         assertThat(list.shift(), is("20"));
+        assertThat(list.shift(), is("30"));
     }
 
     @Ignore("Remove to run test")
@@ -36,7 +40,9 @@ public class DoublyLinkedListTest {
 
         list.unshift('1');
         list.unshift('2');
+        list.unshift('3');
 
+        assertThat(list.shift(), is('3'));
         assertThat(list.shift(), is('2'));
         assertThat(list.shift(), is('1'));
     }
@@ -48,9 +54,11 @@ public class DoublyLinkedListTest {
 
         list.unshift(10);
         list.unshift(20);
+        list.unshift(30);
 
         assertThat(list.pop(), is(10));
         assertThat(list.pop(), is(20));
+        assertThat(list.pop(), is(30));
     }
 
     @Ignore("Remove to run test")

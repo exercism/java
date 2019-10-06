@@ -4,9 +4,6 @@
   "blurb": "Java is a very widely used Object Oriented programming language. It's safe, simple to use and portable so that you can \"write once, run anywhere\".",
   "solution_pattern": "reference",
   "foregone": [
-    "leap",
-    "grains",
-    "say"
   ],
   "exercises": [
     {
@@ -92,7 +89,7 @@
       "unlocked_by": "two-fer",
       "difficulty": 2,
       "topics": [
-        "game",
+        "games",
         "integers",
         "randomness"
       ]
@@ -1039,7 +1036,7 @@
       "unlocked_by": "linked-list",
       "difficulty": 7,
       "topics": [
-        "enumeration",
+        "enumerations",
         "generics",
         "lists",
         "loops",
@@ -1176,10 +1173,9 @@
       "unlocked_by": "linked-list",
       "difficulty": 7,
       "topics": [
-        "integer",
-        "links",
-        "nodes",
-        "tree"
+        "integers",
+        "graphs",
+        "trees"
       ]
     },
     {
@@ -1359,7 +1355,7 @@
       "unlocked_by": "triangle",
       "difficulty": 9,
       "topics": [
-        "integer",
+        "integers",
         "lists",
         "logic",
         "math"

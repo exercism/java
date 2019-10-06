@@ -34,4 +34,9 @@ public class ReverseStringTest {
         assertEquals("racecar", new ReverseString().reverse("racecar"));
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testAnEvenSizedWord() {
+        assertEquals("reward", new ReverseString().reverse("drawer"));
+    }
 }
