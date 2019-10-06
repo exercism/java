@@ -1,4 +1,5 @@
 import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -7,10 +8,17 @@ import static org.junit.Assert.assertEquals;
 
 public class KnapsackTest {
 
+    private Knapsack knapsack;
+
+    @Before
+    public void setup() {
+        knapsack = new Knapsack();
+    }
+
     @Test
     public void testNoItems() {
         ArrayList<Item> items = new ArrayList<>();
-        assertEquals(0, Knapsack.maximumValue(100, items));
+        assertEquals(0, knapsack.maximumValue(100, items));
     }
 
     @Ignore("Remove to run test")
@@ -18,7 +26,7 @@ public class KnapsackTest {
     public void testOneItemTooHeavy() {
         ArrayList<Item> items = new ArrayList<>();
         items.add(new Item(100, 1));
-        assertEquals(0, Knapsack.maximumValue(10, items));
+        assertEquals(0, knapsack.maximumValue(10, items));
     }
 
     @Ignore("Remove to run test")
@@ -30,7 +38,7 @@ public class KnapsackTest {
         items.add(new Item(2, 5));
         items.add(new Item(2, 5));
         items.add(new Item(10, 21));
-        assertEquals(21, Knapsack.maximumValue(10, items));
+        assertEquals(21, knapsack.maximumValue(10, items));
     }
 
     @Ignore("Remove to run test")
@@ -42,7 +50,7 @@ public class KnapsackTest {
         items.add(new Item(2, 20));
         items.add(new Item(2, 20));
         items.add(new Item(10, 50));
-        assertEquals(80, Knapsack.maximumValue(10, items));
+        assertEquals(80, knapsack.maximumValue(10, items));
     }
 
     @Ignore("Remove to run test")
@@ -53,7 +61,7 @@ public class KnapsackTest {
         items.add(new Item(4, 40));
         items.add(new Item(6, 30));
         items.add(new Item(4, 50));
-        assertEquals(90, Knapsack.maximumValue(10, items));
+        assertEquals(90, knapsack.maximumValue(10, items));
     }
 
     @Ignore("Remove to run test")
@@ -68,7 +76,7 @@ public class KnapsackTest {
         items.add(new Item(3, 8));
         items.add(new Item(2, 5));
         items.add(new Item(2, 5));
-        assertEquals(900, Knapsack.maximumValue(104, items));
+        assertEquals(900, knapsack.maximumValue(104, items));
     }
 
     @Ignore("Remove to run test")
@@ -90,7 +98,7 @@ public class KnapsackTest {
         items.add(new Item(115, 221));
         items.add(new Item(118, 229));
         items.add(new Item(120, 240));
-        assertEquals(1458, Knapsack.maximumValue(750, items));
+        assertEquals(1458, knapsack.maximumValue(750, items));
     }
 
 }

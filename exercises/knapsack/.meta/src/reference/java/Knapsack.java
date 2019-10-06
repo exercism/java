@@ -29,7 +29,7 @@ class Knapsack {
      *                  (Each item has an associated value and weight)
      * @return maximum value of items the thief can steal
      */
-    static int maximumValue(int maximumWeight, ArrayList<Item> items) {
+    int maximumValue(int maximumWeight, ArrayList<Item> items) {
         // 1. Basic version of the algorithm
         // Comment below line to see how recursive implementation works
         /* return maximumValueHelperRecursive(maximumWeight, items, 0, 0); */
@@ -58,7 +58,7 @@ class Knapsack {
      *                      picked by thief
      * @return maximum value of items the thief can steal
      */
-    private static int maximumValueHelperRecursive(
+    private int maximumValueHelperRecursive(
         int maximumWeight, ArrayList<Item> items, 
         int currentWeight, int currentIndex) {
         if (currentIndex >= items.size()) {
@@ -106,7 +106,7 @@ class Knapsack {
      * @param knapsack Cache for storing calculated values
      * @return maximum value of items the thief can steal
      */
-    private static int maximumValueHelperTopDown(
+    private int maximumValueHelperTopDown(
         int maximumWeight, ArrayList<Item> items, 
         int currentWeight, int currentIndex, int[][] knapsack) {
         if (knapsack[currentIndex][currentWeight] != -1) {
@@ -157,7 +157,7 @@ class Knapsack {
      *                  (Each item has an associated value and weight)
      * @return maximum value of items the thief can steal
      */
-    private static int maximumValueHelperBottomUp(
+    private int maximumValueHelperBottomUp(
         int maximumWeight, ArrayList<Item> items) {
         // Create a cache to store computed values
         int[][] knapsack = new int[items.size() + 1][maximumWeight + 1]; 
