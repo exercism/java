@@ -1,10 +1,11 @@
 class HighScores {
+    private final int[] highScores;
     public HighScores(int[] highScores) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        this.highScores = highScores;
     }
 
     int[] scores() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return highScores;
     }
 
     int latest() {
