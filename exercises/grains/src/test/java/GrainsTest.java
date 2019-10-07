@@ -1,13 +1,19 @@
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.math.BigInteger;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class GrainsTest {
+
+    private static String wrongSquareMessage = "square must be between 1 and 64";
+
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     private Grains grains;
 
@@ -68,34 +74,25 @@ public class GrainsTest {
     @Ignore("Remove to run test")
     @Test
     public void errorOnNullBoardSize() {
-        try {
-            grains.computeNumberOfGrainsOnSquare(0);
-            fail("Grains#compute should have thrown");
-        } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "square must be between 1 and 64");
-        }
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(wrongSquareMessage);
+        grains.computeNumberOfGrainsOnSquare(0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void errorOnNegativeBoardSize() {
-        try {
-            grains.computeNumberOfGrainsOnSquare(-1);
-            fail("Grains#compute should have thrown");
-        } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "square must be between 1 and 64");
-        }
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(wrongSquareMessage);
+        grains.computeNumberOfGrainsOnSquare(-1);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void errorOnExcessiveBoardSize() {
-        try {
-            grains.computeNumberOfGrainsOnSquare(65);
-            fail("Grains#compute should have thrown");
-        } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "square must be between 1 and 64");
-        }
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage(wrongSquareMessage);
+        grains.computeNumberOfGrainsOnSquare(65);
     }
 
     @Ignore("Remove to run test")
