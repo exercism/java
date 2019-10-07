@@ -6,7 +6,7 @@ Your task is to build a high-score component of the classic Frogger game, one of
 In this exercise, you're going to use and manipulate lists. Java lists are very versatile, and you'll find yourself using them again and again in problems both simple and complex.
 
 ## Running the tests
-To run the tests, run the appropriate command below (why they are different):
+To run the tests, run the appropriate command below:
 
 ```sh
 gradle test
