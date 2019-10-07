@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class HighScores {
     private final int[] highScores;
     public HighScores(int[] highScores) {
@@ -9,7 +11,7 @@ class HighScores {
     }
 
     int latest() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return highScores[highScores.length - 1];
     }
 
     int personalBest() {

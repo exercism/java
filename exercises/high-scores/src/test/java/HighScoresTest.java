@@ -13,7 +13,7 @@ public class HighScoresTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldDisplayLatestAddedScore() {
         HighScores highScores = new HighScores(new int[]{ 100, 0, 90, 30 });
         assertEquals(30, highScores.latest());
