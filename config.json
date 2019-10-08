@@ -236,6 +236,16 @@
       ]
     },
     {
+      "slug": "say",
+      "uuid": "3c76a983-e689-4d82-8f1b-6d52f3c5434c",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "integers"
+      ]
+    },
+    {
       "slug": "yacht",
       "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
       "core": false,
