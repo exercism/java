@@ -27,10 +27,10 @@ public class HighScoresTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldReturnTopThreePersonalBestFromListOfScores() {
         HighScores highScores = new HighScores(new int[] { 10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70 });
-        assertEquals(new int[] { 100, 90, 70 }, highScores.personalTopThree());
+        assertArrayEquals(new Integer[] { 100, 90, 70 }, highScores.personalTopThree());
     }
 
     @Test
