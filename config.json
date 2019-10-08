@@ -95,6 +95,18 @@
       ]
     },
     {
+      "slug": "grains",
+      "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "loops",
+        "math"
+      ],
+      "deprecated": false
+    },
+    {
       "slug": "pangram",
       "uuid": "133b0f84-bdc7-4508-a0a1-5732a7db81ef",
       "core": false,
