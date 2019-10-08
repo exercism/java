@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -34,30 +33,30 @@ public class HighScoresTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldReturnTopThreeSortedHighestToLowest() {
         HighScores highScores = new HighScores(new int[] { 20, 10, 30 });
-        assertEquals(new int[] { 30, 20, 10 }, highScores.personalTopThree());
+        assertArrayEquals(new Integer[] { 30, 20, 10 }, highScores.personalTopThree());
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldReturnPersonalTopWhenThereIsATie() {
         HighScores highScores = new HighScores(new int[] { 40, 20, 40, 30 });
-        assertEquals(new int[] { 40, 40, 30 }, highScores.personalTopThree());
+        assertArrayEquals(new Integer[] { 40, 40, 30 }, highScores.personalTopThree());
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldReturnPersonalTopWhenThereIsLessThanThreeScores() {
         HighScores highScores = new HighScores(new int[] { 30, 70 });
-        assertEquals(new int[] { 70, 30 }, highScores.personalTopThree());
+        assertArrayEquals(new Integer[] { 70, 30 }, highScores.personalTopThree());
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldReturnPersonalTopWhenThereIsOnlyOneScore() {
         HighScores highScores = new HighScores(new int[] {40});
-        assertEquals(new int[] {40}, highScores.personalTopThree());
+        assertArrayEquals(new Integer[] {40}, highScores.personalTopThree());
     }
 }

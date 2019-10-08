@@ -27,6 +27,6 @@ class HighScores {
     Integer[] personalTopThree() {
         Integer[] highestScores = Arrays.stream(highScores).boxed().toArray(Integer[]::new);
         sort(highestScores, Collections.reverseOrder());
-        return copyOf(highestScores, 3);
+        return copyOf(highestScores, (Math.min(highScores.length, 3)));
     }
 }
