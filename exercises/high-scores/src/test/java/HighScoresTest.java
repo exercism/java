@@ -20,7 +20,7 @@ public class HighScoresTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
+//    @Ignore("Remove to run test")
     public void shouldDisplayPersonalBest() {
         HighScores highScores = new HighScores(new int[] { 40, 100, 70 });
         assertEquals(100, highScores.personalBest());

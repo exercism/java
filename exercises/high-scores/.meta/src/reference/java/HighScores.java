@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.OptionalInt;
 
 class HighScores {
     private final int[] highScores;
@@ -15,7 +16,8 @@ class HighScores {
     }
 
     int personalBest() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        OptionalInt personalBest = Arrays.stream(highScores).max();
+        return personalBest.orElse(0);
     }
 
     int[] personalTopThree() {
