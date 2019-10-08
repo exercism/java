@@ -108,7 +108,7 @@ open the Tasks > Verification folder and double click `test`
  
  - Follow the instructions regarding creating a pull request into the upstream repo.
  
- **NOTE:** Git and gradle commands can still be ran in the command line when using and IDE. The steps outlining how to perform using IDE tools are for convenience only.
+ **NOTE:** Git and gradle commands can still be run in the command line when using and IDE. The steps outlining how to perform using IDE tools are for convenience only.
  
 ## Getting Familiar With the Codebase
 
