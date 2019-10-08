@@ -77,7 +77,18 @@ like to clone the repo into.
 
 ![import](assets/clone-repo.png)
 
-- Accept all of the default settings and create the new project
+- Select "Import Project from External Model" and click the "Gradle" radio
+
+![gradle](assets/gradle-import.png)
+
+- Set the Gradle properties per the screenshot below. Ensure that the "exercises" folder is selected as the root of the project
+
+![gradle](assets/gradle-setup.png)
+
+- **Add the `java` folder as a module** Open the project settings and view the modules. Click the `+` button, select "Import Module". Select the `java` directory and accept the default values.
+
+![java-module](assets/java-module.png)
+
 - **Create a feature branch**  The git tools in IDEA are located in the VCS menu. To createa a new branch, select VCS > Git > Branches and then click "New Branch". Give the branch a meaningful name and create.
 
 ![branch](assets/branch-menu.png)
@@ -85,12 +96,19 @@ like to clone the repo into.
 
 - Make all of your changes, following the instructions in this guide.
 
+- **Testing your changes** Each exercise will have gradle tasks that can be executed from the IDE. To test changes within an exercise, find the gradle task for that folder in the "Gradle" toolbar on the right,
+open the Tasks > Verification folder and double click `test`
+
+ ![diff](assets/run-test.png)
+
  - **Commit/Merge changes**  Once all of the changes have been made, you can look at the diffs and commit from the "Commit File" window, which can be reached by selecting VCS > Git > Commit File from the top menu.
  If all of the changes are acceptable, checkmark all of the files that are to be committed, enter a meaningful commit message, and then click "Commit and Push".    
  
  ![diff](assets/commit-files.png)
  
  - Follow the instructions regarding creating a pull request into the upstream repo.
+ 
+ **NOTE:** Git and gradle commands can still be ran in the command line when using and IDE. The steps outlining how to perform using IDE tools are for convenience only.
  
 ## Getting Familiar With the Codebase
 
