@@ -80,7 +80,8 @@ public class SayTest {
     @Ignore("Remove to run test")
     @Test
     public void nineHundredEightySevenBillionSixHundredFiftyFourThreeHundredTwentyOneThousandOneHundredTwentyThree() {
-        assertEquals("nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three", say.say(987_654_321_123L));
+        assertEquals("nine hundred eighty-seven billion six hundred fifty-four million" +
+                     " three hundred twenty-one thousand one hundred twenty-three", say.say(987_654_321_123L));
     }
     
     @Ignore("Remove to run test")
