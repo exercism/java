@@ -1,6 +1,3 @@
-/**
- * Example Class
- */
 class ResistorColorDuo {
     private enum Color {
         black, brown, red, orange, yellow, green, blue, violet, grey, white;
