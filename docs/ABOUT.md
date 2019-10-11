@@ -12,6 +12,6 @@ GitHub for example has over 1.5 million Java projects.
 It's also worth mentioning that Java has the second largest community in [StackOverflow](https://stackoverflow.com/questions/tagged/java)! 
 This is important because the larger a programming language community is, the more support you'd be likely to get.
 
-Java also has a powerful and well-designed set of built-in [APIs - Application Programming Interfaces](https://docs.oracle.com/javase/8/docs/api/), which can be used for various activities like Database connection, networking, I/O, XML parsing, utilities, and much more.
+Java also has a powerful and well-designed set of built-in [APIs - Application Programming Interfaces](https://docs.oracle.com/en/java/javase/11/docs/api/index.html), which can be used for various activities like Database connection, networking, I/O, XML parsing, utilities, and much more.
 
 From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, [Java is everywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere)!
