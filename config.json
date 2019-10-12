@@ -50,8 +50,20 @@
       ]
     },
     {
-      "slug":"resistor-color-duo",
+      "slug": "resistor-color-duo",
       "uuid": "0ae1989d-df46-414d-ad1f-4bd0f0f78421",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 3,
+      "topics": [
+        "arrays",
+        "strings",
+        "enumerations"
+      ]
+    },
+    {
+      "slug": "resistor-color-trio",
+      "uuid": "080f18d8-fb29-44f5-882f-65e772cb5324",
       "core": false,
       "unlocked_by": "two-fer",
       "difficulty": 3,
