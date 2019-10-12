@@ -170,7 +170,7 @@ public class WordCountTest {
 
         actualWordCount = wordCount.phrase("Joe can't tell between 'large' and large.");
         assertEquals(
-                expectedWordCount, actualWordCount
+            expectedWordCount, actualWordCount
         );
     }
 
