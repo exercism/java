@@ -7,8 +7,9 @@ import static java.util.stream.Collectors.joining;
 
 class Hangman {
 
-    static Observable<Output> play(final Observable<String> words,
-                                   final Observable<String> letters) {
+    Observable<Output> play(
+            Observable<String> words,
+            Observable<String> letters) {
         return Observable
             .combineLatest(
                 words,
@@ -45,15 +46,15 @@ class Hangman {
     }
 
     private static Output processNewLetter(
-        final Output state,
-        final String letter) {
+            Output state,
+            String letter) {
         if (state.guess.contains(letter) || state.misses.contains(letter)) {
             throw new IllegalArgumentException("Letter " + letter + " was already played");
         }
         if (state.secret.contains(letter)) {
-            final Set<String> newGuess = new HashSet<>(state.guess);
+            Set<String> newGuess = new HashSet<>(state.guess);
             newGuess.add(letter);
-            final String discovered = state.secret.chars()
+            String discovered = state.secret.chars()
                 .mapToObj(i -> String.valueOf((char) i))
                 .map(c -> newGuess.contains(c) ? c : "_")
                 .collect(joining());
@@ -65,11 +66,11 @@ class Hangman {
                 state.parts,
                 discovered.contains("_") ? Status.PLAYING : Status.WIN);
         } else {
-            final Set<String> newMisses = new HashSet<>(state.misses);
+            Set<String> newMisses = new HashSet<>(state.misses);
             newMisses.add(letter);
-            final List<Part> newParts = new ArrayList<>(state.parts);
-            newParts.add(ORDER[newParts.size()]);
-            final Status newStatus = newMisses.size() >= ORDER.length
+            List<Part> newParts = new ArrayList<>(state.parts);
+            newParts.add(order[newParts.size()]);
+            Status newStatus = newMisses.size() >= order.length
                 ? Status.LOSS
                 : Status.PLAYING;
 
@@ -83,6 +84,6 @@ class Hangman {
         }
     }
 
-    static final Part[] ORDER = Part.values();
+    static Part[] order = Part.values();
 
 }
