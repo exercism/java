@@ -39,6 +39,18 @@
       ]
     },
     {
+      "slug": "leap",
+      "uuid": "7c8294ee-5924-4bf8-a72f-31d0e2d7d9a0",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "booleans",
+        "integers",
+        "logic"
+      ]
+    },
+    {
       "slug": "resistor-color",
       "uuid": "e5e821ed-fc1f-4419-9c90-ad4a0b564bea",
       "core": false,
