@@ -39,6 +39,18 @@
       ]
     },
     {
+      "slug": "leap",
+      "uuid": "7c8294ee-5924-4bf8-a72f-31d0e2d7d9a0",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "booleans",
+        "integers",
+        "logic"
+      ]
+    },
+    {
       "slug": "resistor-color",
       "uuid": "e5e821ed-fc1f-4419-9c90-ad4a0b564bea",
       "core": false,
@@ -119,6 +131,18 @@
         "integers",
         "randomness"
       ]
+    },
+    {
+      "slug": "grains",
+      "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "loops",
+        "math"
+      ],
+      "deprecated": false
     },
     {
       "slug": "pangram",
