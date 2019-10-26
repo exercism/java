@@ -17,6 +17,19 @@ be described in the language/track specific files of the exercise.
 [Hangman]: https://en.wikipedia.org/wiki/Hangman_%28game%29
 [frp]: https://en.wikipedia.org/wiki/Functional_reactive_programming
 
+# Tips
+
+## Hints
+
+The simulated context of this exercise is an application receiving two inputs:
+
+ - the new words to guess from some game engine,
+ - the letters inputed by the player.
+
+The class `Output` is the expected result of the exercise processing, allowing a front-end to
+display the complete state of the game without requiring from it any form of storage - thus making
+it functional as well.
+
 ## Setup
 
 Go through the setup instructions for Java to install the necessary
