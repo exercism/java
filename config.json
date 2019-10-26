@@ -993,18 +993,6 @@
       ]
     },
     {
-      "slug": "hangman",
-      "uuid": "ab3f8bf4-cfae-4f7a-b134-bb0fa4fafa63",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 6,
-      "topics": [
-        "strings",
-	"FRP"
-      ],
-      "deprecated": false
-    },
-    {
       "slug": "two-bucket",
       "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e",
       "core": false,
@@ -1359,6 +1347,19 @@
         "maps",
         "math"
       ]
+    },
+    {
+      "slug": "hangman",
+      "uuid": "ab3f8bf4-cfae-4f7a-b134-bb0fa4fafa63",
+      "core": false,
+      "unlocked_by": "linked-list",
+      "difficulty": 8,
+      "topics": [
+        "strings",
+	"reactive_programming",
+	"functional_programming"
+      ],
+      "deprecated": false
     },
     {
       "slug": "pythagorean-triplet",
