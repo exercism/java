@@ -1,22 +1,14 @@
 import java.math.BigInteger;
-import java.util.stream.IntStream;
 
 class Grains {
-
-    BigInteger computeNumberOfGrainsOnSquare(final int square) {
-        if (1 <= square  && square <= 64) {
-            return BigInteger.valueOf(2).pow(square - 1);
-        } else {
+    BigInteger onSquare(final int square) {
+        if (square < 1 || square > 64) {
             throw new IllegalArgumentException("square must be between 1 and 64");
         }
+        return BigInteger.ONE.shiftLeft(square - 1);
     }
-
-    BigInteger computeTotalNumberOfGrainsOnBoard() {
-        return IntStream.rangeClosed(1, 64)
-                .mapToObj(this::computeNumberOfGrainsOnSquare)
-                .reduce(
-                        BigInteger.valueOf(0),
-                        BigInteger::add);
+    
+    BigInteger onBoard() {
+        return new BigInteger("18446744073709551615");
     }
-
 }
