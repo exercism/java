@@ -19,7 +19,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testAppendingNonEmptyListOnEmptyList() {
+    public void testAppendingListToEmptyList() {
         assertEquals(
                 Arrays.asList('1', '2', '3', '4'),
                 ListOps.append(Collections.emptyList(), Arrays.asList('1', '2', '3', '4'))
@@ -28,7 +28,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testAppendingNonEmptyListOnNonEmptyList() {
+    public void testAppendingNonEmptyLists() {
         assertEquals(
                 Arrays.asList("1", "2", "2", "3", "4", "5"),
                 ListOps.append(Arrays.asList("1", "2"), Arrays.asList("2", "3", "4", "5"))
@@ -37,7 +37,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testConcatOnEmptyListOfLists() {
+    public void testConcatEmptyList() {
         assertEquals(
                 Collections.emptyList(),
                 ListOps.concat(Collections.emptyList())
@@ -46,7 +46,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testConcatOnNonEmptyListOfLists() {
+    public void testConcatListOfLists() {
         List<List<Character>> listOfLists = Arrays.asList(
                 Arrays.asList('1', '2'),
                 Collections.singletonList('3'),
@@ -62,7 +62,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testConcatOnNonEmptyListOfNestedLists() {
+    public void testConcatListOfNestedLists() {
         List<List<List<Character>>> listOfNestedLists = Arrays.asList(
                 Arrays.asList(
                         Collections.singletonList('1'),
@@ -141,7 +141,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFoldLeftOnEmptyList() {
+    public void testFoldLeftEmptyList() {
         assertEquals(
                 new Double(2.0), // Boxing required for method overload disambiguation.
                 ListOps.foldLeft(
@@ -154,7 +154,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFoldLeftWithDirectionIndependentOperationOnNonEmptyList() {
+    public void testFoldLeftDirectionIndependentFunctionAppliedToNonEmptyList() {
         assertEquals(
                 new Integer(15), // Boxing required for method overload disambiguation.
                 ListOps.foldLeft(
@@ -167,7 +167,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFoldLeftWithDirectionDependentOperationOnNonEmptyList() {
+    public void testFoldLeftDirectionDependentFunctionAppliedToNonEmptyList() {
         assertEquals(
                 new Integer(0), // Boxing required for method overload disambiguation.
                 ListOps.foldLeft(
@@ -180,7 +180,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFoldRightOnEmptyList() {
+    public void testFoldRightEmptyList() {
         assertEquals(
                 new Double(2.0), // Boxing required for method overload disambiguation.
                 ListOps.foldRight(
@@ -193,7 +193,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFoldRightWithDirectionIndependentOperationOnNonEmptyList() {
+    public void testFoldRightDirectionIndependentFunctionAppliedToNonEmptyList() {
         assertEquals(
                 new Integer(15), // Boxing required for method overload disambiguation.
                 ListOps.foldRight(
@@ -206,7 +206,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testFoldRightWithDirectionDependentOperationOnNonEmptyList() {
+    public void testFoldRightDirectionDependentFunctionAppliedToNonEmptyList() {
         assertEquals(
                 new Integer(2), // Boxing required for method overload disambiguation.
                 ListOps.foldRight(
@@ -237,7 +237,7 @@ public class ListOpsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testListOfListIsNotFlattened() {
+    public void testReversingListOfListIsNotFlattened() {
         List<List<Character>> listOfLists = Arrays.asList(
                 Arrays.asList('1', '2'),
                 Collections.singletonList('3'),
