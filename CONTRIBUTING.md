@@ -237,7 +237,7 @@ To run this script:
 
   1. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
-  2. Run `./scripts/canonical_data_check.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository.
+  2. Run `./scripts/canonical_data_check.sh -t . -s path_to_problem_specifications` from the root of this repository.
   
 ## Checking tests are up to date and submit new issues
 
