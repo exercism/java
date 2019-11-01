@@ -2,11 +2,11 @@ import java.math.BigInteger;
 
 class Grains {
 
-    BigInteger computeNumberOfGrainsOnSquare(final int square) {
+    BigInteger grainsOnSquare(final int square) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    BigInteger computeTotalNumberOfGrainsOnBoard() {
+    BigInteger grainsOnBoard() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
