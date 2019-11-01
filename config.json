@@ -1385,6 +1385,18 @@
       ]
     },
     {
+      "slug": "knapsack",
+      "uuid": "ac179b77-98a5-4daf-9773-3d68b6cd8548",
+      "core": false,
+      "unlocked_by": "saddle-points",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "arrays",
+        "conditionals"
+      ]
+    },
+    {
       "slug": "pythagorean-triplet",
       "uuid": "88505f95-89e5-4a08-8ed2-208eb818cdf1",
       "core": false,
