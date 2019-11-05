@@ -735,6 +735,7 @@
         "strings"
       ]
     },
+    {
       "slug": "knapsack",
       "uuid": "ac179b77-98a5-4daf-9773-3d68b6cd8548",
       "core": false,
