@@ -736,6 +736,18 @@
       ]
     },
     {
+      "slug": "knapsack",
+      "uuid": "ac179b77-98a5-4daf-9773-3d68b6cd8548",
+      "core": false,
+      "unlocked_by": "hamming",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "arrays",
+        "conditionals"
+      ]
+    },
+    {
       "slug": "alphametics",
       "uuid": "0639a1f8-5af4-4877-95c1-5db8e97c30bf",
       "core": false,
@@ -1382,18 +1394,6 @@
         "loops",
         "maps",
         "math"
-      ]
-    },
-    {
-      "slug": "knapsack",
-      "uuid": "ac179b77-98a5-4daf-9773-3d68b6cd8548",
-      "core": false,
-      "unlocked_by": "saddle-points",
-      "difficulty": 5,
-      "topics": [
-        "algorithms",
-        "arrays",
-        "conditionals"
       ]
     },
     {
