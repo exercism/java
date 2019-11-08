@@ -23,6 +23,15 @@ public class TwoferTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void emptyNameGiven() {
+        String input = "";
+        String expected = "One for you, one for me.";
+
+        assertEquals(expected, twofer.twofer(input));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void aNameGiven() {
         String input = "Alice";
         String expected = "One for Alice, one for me.";

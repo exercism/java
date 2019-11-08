@@ -1,5 +1,6 @@
 class Twofer {
     String twofer(String name) {
-        return "One for " + (name != null ? name : "you") + ", one for me.";
+        final String nameToDisplay = name == null || name.isEmpty() ? "you" : name;
+        return "One for " + nameToDisplay + ", one for me.";
     }
 }
