@@ -53,13 +53,13 @@
     },
     {
       "github_username": "FridaTveit",
-      "alumnus": false,
-      "show_on_website": true,
-      "name": "Frida Johanne Tveit",
+      "alumnus": true,
+      "show_on_website": false,
+      "name": null,
       "link_text": null,
       "link_url": null,
       "avatar_url": null,
-      "bio": "I'm a software developer working for Softwire, a UK based software company. I'm a full stack developer working with many different languages including Java. I love programming and helping other people learn more about it!"
+      "bio": null
     },
     {
       "github_username": "sjwarner-bp",
