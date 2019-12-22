@@ -3,7 +3,7 @@ import java.util.stream.IntStream;
 
 class Grains {
 
-    BigInteger computeNumberOfGrainsOnSquare(final int square) {
+    BigInteger grainsOnSquare(final int square) {
         if (1 <= square  && square <= 64) {
             return BigInteger.valueOf(2).pow(square - 1);
         } else {
@@ -11,9 +11,9 @@ class Grains {
         }
     }
 
-    BigInteger computeTotalNumberOfGrainsOnBoard() {
+    BigInteger grainsOnBoard() {
         return IntStream.rangeClosed(1, 64)
-                .mapToObj(this::computeNumberOfGrainsOnSquare)
+                .mapToObj(this::grainsOnSquare)
                 .reduce(
                         BigInteger.valueOf(0),
                         BigInteger::add);
