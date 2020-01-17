@@ -73,7 +73,7 @@
     },
     {
       "github_username": "lemoncurry",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": true,
       "name": "Anna Weber",
       "link_text": null,
