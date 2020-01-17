@@ -90,6 +90,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "I have been writing Java code professionally for the past 3 years and I have had a wonderful experience with it. The functional style of Java 8 took some getting used to, but it really improved my team's codebase and productivity."
+    },
+    {
+      "github_username": "msomji",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Maisam Somji",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I'm a full stack developer with a love for all things related to functional programming. I spend the bulk of my time solving complex problems using simple but not necessarily easy solutions."
     }
   ]
 }
