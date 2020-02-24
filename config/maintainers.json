@@ -120,6 +120,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "Professional Java developer since more than 10 years. Free/Libre and Open Source Software enthusiast."
+    },
+    {
+      "github_username": "pdmoore",
+      "alumnus": true,
+      "show_on_website": false,
+      "name": "Paul Moore",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "Agile coach and trainer focused on improving delivery through technical practices."
     }
   ]
 }
