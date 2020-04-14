@@ -1,11 +1,9 @@
-class Hamming {
-
-    Hamming(String leftStrand, String rightStrand) {
+public class Hamming {
+    public Hamming(String leftStrand, String rightStrand) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    int getHammingDistance() {
+    public int getHammingDistance() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
-
 }
