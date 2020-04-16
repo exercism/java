@@ -6,7 +6,7 @@
 
 - Class: define a class to resolve the problem
 - Constructors: initializing values when object is created
-- Methods: define methods to expose functionalities 
+- Methods: define methods to expose functionalities
 - Argument: constructor and methods takes values as arguments
 - Strings: input of problem is a `String`
 - Integer: work with integer values

@@ -1,7 +1,6 @@
 #Leap
 
-[Example implementation]
-(https://github.com/exercism/java/blob/master/exercises/leap/.meta/src/reference/java/Leap.java)
+[Example implementation](https://github.com/exercism/java/blob/master/exercises/leap/.meta/src/reference/java/Leap.java)
 
 ## General
 
@@ -28,4 +27,5 @@
 - Logical-Or `||`: Performs a check of two Boolean expressions and returns `true` when either (or both) expression is true, `false` when both expressions are not true
 
 ## Approach: Modulo operator and Boolean Expressions
+
 - Pass the year in as a parameter. Use the Modulo operator to determine whether the year is evenly divisible by a certain number, resulting in a boolean. Combine two or more boolean results in a Boolean Expression. Return a boolean value that indicates the year is a leap year, or not.
