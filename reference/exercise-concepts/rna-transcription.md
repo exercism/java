@@ -5,7 +5,7 @@
 ## General
 
 - Class: define a class to resolve the problem
-- Methods: define a method to contain the logic 
+- Methods: define a method to contain the logic
 - Argument: the method should take the input as argument
 - Strings: input and output of the class method are strings
 - Assignment: assign some objects to local variables
@@ -17,7 +17,9 @@
 - Error handling: manage the scenario when an invalid value is found
 
 ## Approach: Use conditional
+
 - use conditional instead of pattern matching to choose the right operation to execute for the input value
 
 ## Approach: functional style
+
 - use stream instead of loops to iterate on input values and map operation with a method reference to transform the data
