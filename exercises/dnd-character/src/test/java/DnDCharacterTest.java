@@ -186,7 +186,7 @@ public class DnDCharacterTest {
         // combinations for throwing four dice, computing the ability for that
         // combination, and incrementing the array at that index.
         int[] referenceDistribution = new int[] {
-                0, 0, 0, 1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21
+            0, 0, 0, 1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21
         };
         int[] actualDistribution = new int[19];
 
