@@ -1356,8 +1356,8 @@
       "difficulty": 8,
       "topics": [
         "strings",
-	"reactive_programming",
-	"functional_programming"
+        "reactive_programming",
+        "functional_programming"
       ],
       "deprecated": false
     },
