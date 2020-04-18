@@ -1,5 +1,5 @@
 class MicroBlog {
-    public static String truncate(String input) {
+    public String truncate(String input) {
         throw new UnsupportedOperationException();
     }
 }
