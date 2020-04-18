@@ -4,7 +4,7 @@ class MicroBlog {
             .limit(5)
             .collect(
                 StringBuilder::new,
-                StringBuilder::append,
+                StringBuilder::appendCodePoint,
                 StringBuilder::append)
             .toString();
     }
