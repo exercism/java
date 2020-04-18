@@ -272,6 +272,16 @@
       ]
     },
     {
+      "slug": "micro-blog",
+      "uuid": "8295ae71-5c0e-49d0-bbe9-9b43a85bf2dd",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 3,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "slug": "yacht",
       "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
       "core": false,
