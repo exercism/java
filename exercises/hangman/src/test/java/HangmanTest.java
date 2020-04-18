@@ -122,30 +122,28 @@ public class HangmanTest {
     @Ignore("Remove to run test")
     @Test
     public void consecutiveGames() {
+        // This test setup is more complex because we have to order the emission of values in the
+        // different observers.
+        // 1. Word observable receives the work to guess
+        // 2. Letter observable receives the various letters tried
+        // 3. Word observable receives the new word to guess
+        // 4. Letter observable receiveds the letters for the second word
+
+        // Emitters respectively for the word and letter observables
         ObservableEmitter<String>[] emitters = new ObservableEmitter[2];
         Runnable emit = () -> {
+            // Process sending the inputs in the right order
             emitters[0].onNext("secret");
             Stream.of("a", "e", "o", "s", "c", "r", "g", "t").forEach(emitters[1]::onNext);
             emitters[0].onNext("abba");
             Stream.of("a", "e", "s", "b").forEach(emitters[1]::onNext);
             emitters[0].onComplete();
         };
-        Observable<String> words = Observable.create(
-            emitter -> {
-                emitters[0] = emitter;
-                if (emitters[1] != null) {
-                    emit.run();
-                }
-            });
-        Observable<String> letters = Observable.create(
-            emitter -> {
-                emitters[1] = emitter;
-                if (emitters[0] != null) {
-                    emit.run();
-                }
-            });
+        Observable<String> words = createWordObservable(emitters);
+        Observable<String> letters = createLetterObservable(emitters);
         Observable<Output> outputs = hangman.play(words, letters);
 
+        // We collect the results of the game
         List<Output> results = new ArrayList<>();
         Disposable subscription = outputs.filter(output -> output.status != Status.PLAYING)
             .subscribe(results::add);
@@ -166,6 +164,30 @@ public class HangmanTest {
         } finally {
             subscription.dispose();
         }
+    }
+
+    Observable createWordObservable(ObservableEmitter[] emitters, Runnable emit) {
+        retrn Observable.create(
+            emitter -> {
+                // A new subscription was created for words, record it.
+                emitters[0] = emitter;
+                if (emitters[1] != null) {
+                    // Start emitting only when both word and letter observable have subscriptions
+                    emit.run();
+                }
+            });
+    }
+
+    Observable createLetterObservable(ObservableEmitter[] emitters, Runnable emit) {
+        return Observable.create(
+            emitter -> {
+                // A new subscription was created for letters, record it.
+                emitters[1] = emitter;
+                if (emitters[0] != null) {
+                    // Start emitting only when both word and letter observable have subscriptions
+                    emit.run();
+                }
+            });
     }
 
     @Ignore("Remove to run test")
