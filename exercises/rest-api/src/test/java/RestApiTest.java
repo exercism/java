@@ -15,7 +15,7 @@ public class RestApiTest {
                 new JSONObject().put("users", new JSONArray()).toString();
             String url = "/users";
 
-            assertEquals(expected, RestApi().get(url));
+            assertEquals(expected, new RestApi().get(url));
         }
 
         @Ignore("Remove to run test")
@@ -30,7 +30,7 @@ public class RestApiTest {
             String url = "/add";
             JSONObject payload = new JSONObject().put("user", "Adam");
 
-            assertEquals(expected, RestApi().post(url, payload));
+            assertEquals(expected, new RestApi().post(url, payload));
         }
 
         @Ignore("Remove to run test")
@@ -53,7 +53,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").build())
                     .get(url, payload));
@@ -94,7 +94,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").build())
                     .post(url, payload));
@@ -136,7 +136,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").owes("Chuck", 3.0).build(),
                     User.builder().setName("Chuck").owedBy("Bob", 3.0).build())
@@ -181,7 +181,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").owes("Chuck", 3.0).build(),
                     User.builder().setName("Chuck").owedBy("Bob", 3.0).build())
@@ -222,7 +222,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").owes("Bob", 3.0).build(),
                     User.builder().setName("Bob").owedBy("Adam", 3.0).build())
                     .post(url, payload));
@@ -262,7 +262,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").owes("Bob", 3.0).build(),
                     User.builder().setName("Bob").owedBy("Adam", 3.0).build())
                     .post(url, payload));
@@ -298,7 +298,7 @@ public class RestApiTest {
 
             assertEquals(
                 expected,
-                RestApi(
+                new RestApi(
                     User.builder().setName("Adam").owes("Bob", 3.0).build(),
                     User.builder().setName("Bob").owedBy("Adam", 3.0).build())
                     .post(url, payload));
