@@ -1,9 +1,8 @@
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import java.util.List;
-import org.junit.experimental.runners.Enclosed;
 
 import static org.junit.Assert.assertEquals;
 @RunWith(Enclosed.class)
