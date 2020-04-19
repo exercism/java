@@ -2,15 +2,18 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.List;
+import org.junit.experimental.runners.Enclosed;
 
 import static org.junit.Assert.assertEquals;
 @RunWith(Enclosed.class)
 public class RestApiTest {
 
-    public static class UserManagement {
+    public static class UserManagementTest {
         @Test
         public void noUsers() {
-            String expected = new JSONObject().put("users", new JSONArray()).toString();
+            String expected =
+                new JSONObject().put("users", new JSONArray()).toString();
             String url = "/users";
 
             assertEquals(expected, RestApi().get(url));
@@ -20,8 +23,10 @@ public class RestApiTest {
         @Test
         public void addUser() {
             String expected = new JSONObject()
-                .put("name", "Adama")
+                .put("name", "Adam")
                 .put("owes", new JSONObject())
+                .put("owedBy", new JSONObject())
+                .put("balance", 0.0)
                 .toString();
             String url = "/add";
             JSONObject payload = new JSONObject().put("user", "Adam");
@@ -29,406 +34,275 @@ public class RestApiTest {
             assertEquals(expected, RestApi().post(url, payload));
         }
 
-        /*
-                {
-                    "description": "add user",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": []
-                        },
-                        "url": "/add",
-                        "payload": {
-                            "user": "Adam"
-                        }
-                    },
-                    "expected": {
-                        "name": "Adam",
-                        "owes": {},
-                        "owed_by": {},
-                        "balance": 0.0
-                    }
-                },
-                {
-                    "description": "get single user",
-                    "property": "get",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {},
-                                    "owed_by": {},
-                                    "balance": 0.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {},
-                                    "owed_by": {},
-                                    "balance": 0.0
-                                }
-                            ]
-                        },
-                        "url": "/users",
-                        "payload": {
-                            "users": ["Bob"]
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Bob",
-                                "owes": {},
-                                "owed_by": {},
-                                "balance": 0.0
-                            }
-                        ]
-                    }
-                }
+        @Ignore("Remove to run test")
+        @Test
+        public void getSingleUser() {
+            String expected = new JSONObject()
+                .put(
+                    "users",
+                    new JSONArray()
+                        .put(
+                            new JSONObject()
+                            .put("name", "Bob")
+                            .put("owes", new JSONObject())
+                            .put("owedBy", new JSONObject())
+                            .put("balance", 0.0)))
+                .toString();
+            String url = "/users";
+            JSONObject payload =
+                new JSONObject().put("users", new JSONArray().put("Bob"));
 
-            ]
-        */
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").build(),
+                    User.builder().setName("Bob").build())
+                    .get(url, payload));
+        }
+    }
+
+    public static class IouTest {
+        @Test
+        public void bothUsersHave0Balance() {
+            String expected =
+                new JSONObject()
+                    .put(
+                        "users",
+                        new JSONArray()
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Adam")
+                                    .put("owes", new JSONObject())
+                                    .put(
+                                        "owedBy",
+                                        new JSONObject().put("Bob", 3.0))
+                                    .put("balance", 3.0))
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Bob")
+                                    .put(
+                                        "owes",
+                                        new JSONObject().put("Adam", 3.0))
+                                    .put("owedBy", new JSONObject())
+                                    .put("balance", -3.0)))
+                    .toString();
+            String url = "/iou";
+            JSONObject payload =
+                new JSONObject()
+                    .put("lender", "Adam")
+                    .put("borrower", "Bob")
+                    .put("amount", 3.0);
+
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").build(),
+                    User.builder().setName("Bob").build())
+                    .post(url, payload));
+        }
+
+        @Ignore("Remove to run test")
+        @Test
+        public void borrowerHasNegativeBalance() {
+            String expected =
+                new JSONObject()
+                    .put(
+                        "users",
+                        new JSONArray()
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Adam")
+                                    .put("owes", new JSONObject())
+                                    .put(
+                                        "owedBy",
+                                        new JSONObject().put("Bob", 3.0))
+                                    .put("balance", 3.0))
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Bob")
+                                    .put(
+                                        "owes",
+                                        new JSONObject()
+                                            .put("Adam", 3.0)
+                                            .put("Chuck", 3.0))
+                                    .put("owedBy", new JSONObject())
+                                    .put("balance", -6.0)))
+                    .toString();
+            String url = "/iou";
+            JSONObject payload =
+                new JSONObject()
+                    .put("lender", "Adam")
+                    .put("borrower", "Bob")
+                    .put("amount", 3.0);
+
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").build(),
+                    User.builder().setName("Bob").owes("Chuck", 3.0).build(),
+                    User.builder().setName("Chuck").owedBy("Bob", 3.0).build())
+                    .post(url, payload));
+        }
+
+        @Ignore("Remove to run test")
+        @Test
+        public void lenderHasNegativeBalance() {
+            String expected =
+                new JSONObject()
+                    .put(
+                        "users",
+                        new JSONArray()
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Adam")
+                                    .put(
+                                        "owes",
+                                        new JSONObject().put("Bob", 3.0))
+                                    .put(
+                                        "owedBy", new JSONObject())
+                                    .put("balance", -3.0))
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Bob")
+                                    .put(
+                                        "owes",
+                                        new JSONObject()
+                                            .put("Chuck", 3.0))
+                                    .put(
+                                        "owedBy",
+                                        new JSONObject().put("Adam", 3.0))
+                                    .put("balance", 0.0)))
+                    .toString();
+            String url = "/iou";
+            JSONObject payload =
+                new JSONObject()
+                    .put("lender", "Bob")
+                    .put("borrower", "Adam")
+                    .put("amount", 3.0);
+
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").build(),
+                    User.builder().setName("Bob").owes("Chuck", 3.0).build(),
+                    User.builder().setName("Chuck").owedBy("Bob", 3.0).build())
+                    .post(url, payload));
+        }
+
+        @Ignore("Remove to run test")
+        @Test
+        public void lenderOwesBorrower() {
+            String expected =
+                new JSONObject()
+                    .put(
+                        "users",
+                        new JSONArray()
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Adam")
+                                    .put(
+                                        "owes",
+                                        new JSONObject().put("Bob", 1.0))
+                                    .put("owedBy", new JSONObject())
+                                    .put("balance", -1.0))
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Bob")
+                                    .put("owes", new JSONObject())
+                                    .put(
+                                        "owedBy",
+                                        new JSONObject().put("Adam", 1.0))
+                                    .put("balance", 1.0)))
+                    .toString();
+            String url = "/iou";
+            JSONObject payload =
+                new JSONObject()
+                    .put("lender", "Adam")
+                    .put("borrower", "Bob")
+                    .put("amount", 2.0);
+
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").owes("Bob", 3.0).build(),
+                    User.builder().setName("Bob").owedBy("Adam", 3.0).build())
+                    .post(url, payload));
+        }
+
+        @Ignore("Remove to run test")
+        @Test
+        public void lenderOwesBorrowerLessThanNewLoan() {
+            String expected =
+                new JSONObject()
+                    .put(
+                        "users",
+                        new JSONArray()
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Adam")
+                                    .put("owes", new JSONObject())
+                                    .put(
+                                        "owedBy",
+                                        new JSONObject().put("Bob", 1.0))
+                                    .put("balance", 1.0))
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Bob")
+                                    .put(
+                                        "owes",
+                                        new JSONObject().put("Adam", 1.0))
+                                    .put("owedBy", new JSONObject())
+                                    .put("balance", -1.0)))
+                    .toString();
+            String url = "/iou";
+            JSONObject payload =
+                new JSONObject()
+                    .put("lender", "Adam")
+                    .put("borrower", "Bob")
+                    .put("amount", 4.0);
+
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").owes("Bob", 3.0).build(),
+                    User.builder().setName("Bob").owedBy("Adam", 3.0).build())
+                    .post(url, payload));
+        }
+
+        @Ignore("Remove to run test")
+        @Test
+        public void lenderOwesBorrowerSameAsNewLoan() {
+            String expected =
+                new JSONObject()
+                    .put(
+                        "users",
+                        new JSONArray()
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Adam")
+                                    .put("owes", new JSONObject())
+                                    .put("owedBy", new JSONObject())
+                                    .put("balance", 1.0))
+                            .put(
+                                new JSONObject()
+                                    .put("name", "Bob")
+                                    .put("owes", new JSONObject())
+                                    .put("owedBy", new JSONObject())
+                                    .put("balance", 0.0)))
+                    .toString();
+            String url = "/iou";
+            JSONObject payload =
+                new JSONObject()
+                    .put("lender", "Adam")
+                    .put("borrower", "Bob")
+                    .put("amount", 3.0);
+
+            assertEquals(
+                expected,
+                RestApi(
+                    User.builder().setName("Adam").owes("Bob", 3.0).build(),
+                    User.builder().setName("Bob").owedBy("Adam", 3.0).build())
+                    .post(url, payload));
+        }
     }
 }
-
-/*
-{
-    "exercise": "rest-api",
-    "version": "1.1.1",
-    "comments": [
-      "The state of the API database before the request is represented",
-      "by the input->database object. Your track may determine how this",
-      "initial state is set.",
-      "The input->payload and expected objects should be marshalled as",
-      "strings in track implementation, as parsing and validating text",
-      "payloads is an integral part of implementing a REST API.",
-      "All arrays are ordered."
-    ],
-    "cases": [
-        {
-            "description": "iou",
-            "cases": [
-                {
-                    "description": "both users have 0 balance",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {},
-                                    "owed_by": {},
-                                    "balance": 0.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {},
-                                    "owed_by": {},
-                                    "balance": 0.0
-                                }
-                            ]
-                        },
-                        "url": "/iou",
-                        "payload": {
-                            "lender": "Adam",
-                            "borrower": "Bob",
-                            "amount": 3.0
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Adam",
-                                "owes": {},
-                                "owed_by": {
-                                    "Bob": 3.0
-                                },
-                                "balance": 3.0
-                            },
-                            {
-                                "name": "Bob",
-                                "owes": {
-                                    "Adam": 3.0
-                                },
-                                "owed_by": {},
-                                "balance": -3.0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "description": "borrower has negative balance",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {},
-                                    "owed_by": {},
-                                    "balance": 0.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {
-                                        "Chuck": 3.0
-                                    },
-                                    "owed_by": {},
-                                    "balance": -3.0
-                                },
-                                {
-                                    "name": "Chuck",
-                                    "owes": {},
-                                    "owed_by": {
-                                        "Bob": 3.0
-                                    },
-                                    "balance": 3.0
-                                }
-                            ]
-                        },
-                        "url": "/iou",
-                        "payload": {
-                            "lender": "Adam",
-                            "borrower": "Bob",
-                            "amount": 3.0
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Adam",
-                                "owes": {},
-                                "owed_by": {
-                                    "Bob": 3.0
-                                },
-                                "balance": 3.0
-                            },
-                            {
-                                "name": "Bob",
-                                "owes": {
-                                    "Adam": 3.0,
-                                    "Chuck": 3.0
-                                },
-                                "owed_by": {},
-                                "balance": -6.0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "description": "lender has negative balance",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {},
-                                    "owed_by": {},
-                                    "balance": 0.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {
-                                        "Chuck": 3.0
-                                    },
-                                    "owed_by": {},
-                                    "balance": -3.0
-                                },
-                                {
-                                    "name": "Chuck",
-                                    "owes": {},
-                                    "owed_by": {
-                                        "Bob": 3.0
-                                    },
-                                    "balance": 3.0
-                                }
-                            ]
-                        },
-                        "url": "/iou",
-                        "payload": {
-                            "lender": "Bob",
-                            "borrower": "Adam",
-                            "amount": 3.0
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Adam",
-                                "owes": {
-                                    "Bob": 3.0
-                                },
-                                "owed_by": {},
-                                "balance": -3.0
-                            },
-                            {
-                                "name": "Bob",
-                                "owes": {
-                                    "Chuck": 3.0
-                                },
-                                "owed_by": {
-                                    "Adam": 3.0
-                                },
-                                "balance": 0.0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "description": "lender owes borrower",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {
-                                        "Bob": 3.0
-                                    },
-                                    "owed_by": {},
-                                    "balance": -3.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {},
-                                    "owed_by": {
-                                        "Adam": 3.0
-                                    },
-                                    "balance": 3.0
-                                }
-                            ]
-                        },
-                        "url": "/iou",
-                        "payload": {
-                            "lender": "Adam",
-                            "borrower": "Bob",
-                            "amount": 2.0
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Adam",
-                                "owes": {
-                                    "Bob": 1.0
-                                },
-                                "owed_by": {},
-                                "balance": -1.0
-                            },
-                            {
-                                "name": "Bob",
-                                "owes": {},
-                                "owed_by": {
-                                    "Adam": 1.0
-                                },
-                                "balance": 1.0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "description": "lender owes borrower less than new loan",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {
-                                        "Bob": 3.0
-                                    },
-                                    "owed_by": {},
-                                    "balance": -3.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {},
-                                    "owed_by": {
-                                        "Adam": 3.0
-                                    },
-                                    "balance": 3.0
-                                }
-                            ]
-                        },
-                        "url": "/iou",
-                        "payload": {
-                            "lender": "Adam",
-                            "borrower": "Bob",
-                            "amount": 4.0
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Adam",
-                                "owes": {},
-                                "owed_by": {
-                                    "Bob": 1.0
-                                },
-                                "balance": 1.0
-                            },
-                            {
-                                "name": "Bob",
-                                "owes": {
-                                    "Adam": 1.0
-                                },
-                                "owed_by": {},
-                                "balance": -1.0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "description": "lender owes borrower same as new loan",
-                    "property": "post",
-                    "input": {
-                        "database": {
-                            "users": [
-                                {
-                                    "name": "Adam",
-                                    "owes": {
-                                        "Bob": 3.0
-                                    },
-                                    "owed_by": {},
-                                    "balance": -3.0
-                                },
-                                {
-                                    "name": "Bob",
-                                    "owes": {},
-                                    "owed_by": {
-                                        "Adam": 3.0
-                                    },
-                                    "balance": 3.0
-                                }
-                            ]
-                        },
-                        "url": "/iou",
-                        "payload": {
-                            "lender": "Adam",
-                            "borrower": "Bob",
-                            "amount": 3.0
-                        }
-                    },
-                    "expected": {
-                        "users": [
-                            {
-                                "name": "Adam",
-                                "owes": {},
-                                "owed_by": {},
-                                "balance": 0.0
-                            },
-                            {
-                                "name": "Bob",
-                                "owes": {},
-                                "owed_by": {},
-                                "balance": 0.0
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    ]
-}
-*/
