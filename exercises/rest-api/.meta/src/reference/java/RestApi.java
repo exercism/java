@@ -51,7 +51,7 @@ public class RestApi {
         userNames.stream()
             .sorted()
             .filter(usersByName::containsKey)
-            .map(usersByName::get)
+            .map(userName -> usersByName.get(userName).toJson())
             .forEach(users::put);
         result.put("users", users);
         return result.toString();

@@ -1,6 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -281,7 +282,7 @@ public class RestApiTest {
                                     .put("name", "Adam")
                                     .put("owes", new JSONObject())
                                     .put("owedBy", new JSONObject())
-                                    .put("balance", 1.0))
+                                    .put("balance", 0.0))
                             .put(
                                 new JSONObject()
                                     .put("name", "Bob")
