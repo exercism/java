@@ -1,16 +1,19 @@
-import com.oracle.json.JsonObject;
-import com.oracle.json.JsonReader;
+import org.json.JSONObject;
 
 public class RestApi {
     public RestApi(User... users) {
-        throw new NotImplementedException("You need to implement this function.");
+        // TODO
     }
 
-    public JsonObject Get(string url, string payload = null) {
-        throw new NotImplementedException("You need to implement this function.");
+    public String get(String url) {
+        // TODO
     }
 
-    public string Post(string url, string payload) {
-        throw new NotImplementedException("You need to implement this function.");
+    public String get(String url, JSONObject payload) {
+        // TODO
+    }
+
+    public String post(String url, JSONObject payload) {
+        // TODO
     }
 }
