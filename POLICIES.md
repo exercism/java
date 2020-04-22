@@ -17,7 +17,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises); [Avoid returning null](#avoid-returning-null); [Use ExpectedException](#use-expectedexception)
+| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises); [Avoid returning null](#avoid-returning-null); [Use ExpectedException](#use-expectedexception); [Using other assertion libraries](#using-other-assertion-libraries)
 | Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first issues](#good-first-issues) |
 | "Good first issue" issue completed | [Good first issues](#good-first-issues) |
@@ -149,7 +149,7 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 
 References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 
-### Use ExceptedException
+### Use ExpectedException
 
 > Some exercises expect exceptions to be thrown in the tests.
 > The exercises on this track are all using JUnit's [`ExpectedException`](http://junit.org/junit4/javadoc/4.12/org/junit/rules/ExpectedException.html) `@Rule` feature to support that instead of `@Test(expected = SomeException.class)`.
@@ -159,3 +159,11 @@ References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 > See [the triangle tests](https://github.com/exercism/java/blob/master/exercises/triangle/src/test/java/TriangleTest.java) for an example of where `ExpectedException` is used.
 
 References: [[1](https://github.com/junit-team/junit4/wiki/Exception-testing)]
+
+### Using other assertion libraries
+
+> Some exercises have expected results that may be better handled by another assertion library.
+> While the default will continue to be using JUnit's assertions (eg. `org.junit.Assert.assertEquals`), we do allow [AssertJ](https://assertj.github.io/doc/) as well.
+> All other assertion libraries (eg. [Hamcrest](http://hamcrest.org/JavaHamcrest/) and [Truth](https://truth.dev/)) are banned.
+
+References: [[1](https://github.com/exercism/java/issues/1803)]
