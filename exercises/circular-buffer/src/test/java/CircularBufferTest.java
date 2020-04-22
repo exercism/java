@@ -1,5 +1,4 @@
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.CoreMatchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -26,7 +25,7 @@ public class CircularBufferTest {
         CircularBuffer<Integer> buffer = new CircularBuffer<>(1);
 
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertThat(buffer.read()).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -35,7 +34,7 @@ public class CircularBufferTest {
         CircularBuffer<Integer> buffer = new CircularBuffer<>(1);
 
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertThat(buffer.read()).isEqualTo(1);
 
         expectedException.expect(BufferIOException.class);
         expectedException.expectMessage("Tried to read from empty buffer");
@@ -49,8 +48,8 @@ public class CircularBufferTest {
 
         buffer.write(1);
         buffer.write(2);
-        assertThat(buffer.read(), is(1));
-        assertThat(buffer.read(), is(2));
+        assertThat(buffer.read()).isEqualTo(1);
+        assertThat(buffer.read()).isEqualTo(2);
     }
 
     @Ignore("Remove to run test")
@@ -70,9 +69,9 @@ public class CircularBufferTest {
         CircularBuffer<Integer> buffer = new CircularBuffer<>(1);
 
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertThat(buffer.read()).isEqualTo(1);
         buffer.write(2);
-        assertThat(buffer.read(), is(2));
+        assertThat(buffer.read()).isEqualTo(2);
     }
 
     @Ignore("Remove to run test")
@@ -82,10 +81,10 @@ public class CircularBufferTest {
 
         buffer.write(1);
         buffer.write(2);
-        assertThat(buffer.read(), is(1));
+        assertThat(buffer.read()).isEqualTo(1);
         buffer.write(3);
-        assertThat(buffer.read(), is(2));
-        assertThat(buffer.read(), is(3));
+        assertThat(buffer.read()).isEqualTo(2);
+        assertThat(buffer.read()).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
@@ -108,7 +107,7 @@ public class CircularBufferTest {
         buffer.write(1);
         buffer.clear();
         buffer.write(2);
-        assertThat(buffer.read(), is(2));
+        assertThat(buffer.read()).isEqualTo(2);
     }
 
     @Ignore("Remove to run test")
@@ -118,7 +117,7 @@ public class CircularBufferTest {
 
         buffer.clear();
         buffer.write(1);
-        assertThat(buffer.read(), is(1));
+        assertThat(buffer.read()).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -128,8 +127,8 @@ public class CircularBufferTest {
 
         buffer.write(1);
         buffer.overwrite(2);
-        assertThat(buffer.read(), is(1));
-        assertThat(buffer.read(), is(2));
+        assertThat(buffer.read()).isEqualTo(1);
+        assertThat(buffer.read()).isEqualTo(2);
     }
 
     @Ignore("Remove to run test")
@@ -140,8 +139,8 @@ public class CircularBufferTest {
         buffer.write(1);
         buffer.write(2);
         buffer.overwrite(3);
-        assertThat(buffer.read(), is(2));
-        assertThat(buffer.read(), is(3));
+        assertThat(buffer.read()).isEqualTo(2);
+        assertThat(buffer.read()).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
@@ -152,12 +151,12 @@ public class CircularBufferTest {
         buffer.write(1);
         buffer.write(2);
         buffer.write(3);
-        assertThat(buffer.read(), is(1));
+        assertThat(buffer.read()).isEqualTo(1);
         buffer.write(4);
         buffer.overwrite(5);
-        assertThat(buffer.read(), is(3));
-        assertThat(buffer.read(), is(4));
-        assertThat(buffer.read(), is(5));
+        assertThat(buffer.read()).isEqualTo(3);
+        assertThat(buffer.read()).isEqualTo(4);
+        assertThat(buffer.read()).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
@@ -170,8 +169,8 @@ public class CircularBufferTest {
         buffer.write(2);
         buffer.overwrite(3);
         buffer.overwrite(4);
-        assertThat(buffer.read(), is(3));
-        assertThat(buffer.read(), is(4));
+        assertThat(buffer.read()).isEqualTo(3);
+        assertThat(buffer.read()).isEqualTo(4);
         expectedException.expect(BufferIOException.class);
         expectedException.expectMessage("Tried to read from empty buffer");
         buffer.read();

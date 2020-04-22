@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
@@ -5,8 +7,6 @@ import org.junit.rules.ExpectedException;
 
 import java.util.LinkedHashMap;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
 
 public class AlphameticsTest {
     @Rule
@@ -33,7 +33,7 @@ public class AlphameticsTest {
     @Test
     public void testLeadingZero() throws UnsolvablePuzzleException {
         expectedException.expect(UnsolvablePuzzleException.class);
-        assertNull(new Alphametics("ACA + DD == BD").solve());
+        new Alphametics("ACA + DD == BD").solve();
     }
 
     @Ignore("Remove to run test")
