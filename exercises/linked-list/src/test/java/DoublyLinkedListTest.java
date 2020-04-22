@@ -1,8 +1,7 @@
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Ignore;
 import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 public class DoublyLinkedListTest {
 
@@ -14,9 +13,9 @@ public class DoublyLinkedListTest {
         list.push(20);
         list.push(30);
 
-        assertThat(list.pop(), is(30));
-        assertThat(list.pop(), is(20));
-        assertThat(list.pop(), is(10));
+        assertThat(list.pop()).isEqualTo(30);
+        assertThat(list.pop()).isEqualTo(20);
+        assertThat(list.pop()).isEqualTo(10);
     }
 
     @Ignore("Remove to run test")
@@ -28,9 +27,9 @@ public class DoublyLinkedListTest {
         list.push("20");
         list.push("30");
 
-        assertThat(list.shift(), is("10"));
-        assertThat(list.shift(), is("20"));
-        assertThat(list.shift(), is("30"));
+        assertThat(list.shift()).isEqualTo("10");
+        assertThat(list.shift()).isEqualTo("20");
+        assertThat(list.shift()).isEqualTo("30");
     }
 
     @Ignore("Remove to run test")
@@ -42,9 +41,9 @@ public class DoublyLinkedListTest {
         list.unshift('2');
         list.unshift('3');
 
-        assertThat(list.shift(), is('3'));
-        assertThat(list.shift(), is('2'));
-        assertThat(list.shift(), is('1'));
+        assertThat(list.shift()).isEqualTo('3');
+        assertThat(list.shift()).isEqualTo('2');
+        assertThat(list.shift()).isEqualTo('1');
     }
 
     @Ignore("Remove to run test")
@@ -56,9 +55,9 @@ public class DoublyLinkedListTest {
         list.unshift(20);
         list.unshift(30);
 
-        assertThat(list.pop(), is(10));
-        assertThat(list.pop(), is(20));
-        assertThat(list.pop(), is(30));
+        assertThat(list.pop()).isEqualTo(10);
+        assertThat(list.pop()).isEqualTo(20);
+        assertThat(list.pop()).isEqualTo(30);
     }
 
     @Ignore("Remove to run test")
@@ -69,18 +68,18 @@ public class DoublyLinkedListTest {
         list.push("ten");
         list.push("twenty");
 
-        assertThat(list.pop(), is("twenty"));
+        assertThat(list.pop()).isEqualTo("twenty");
 
         list.push("thirty");
 
-        assertThat(list.shift(), is("ten"));
+        assertThat(list.shift()).isEqualTo("ten");
 
         list.unshift("forty");
         list.push("fifty");
 
-        assertThat(list.shift(), is("forty"));
-        assertThat(list.pop(), is("fifty"));
-        assertThat(list.shift(), is("thirty"));
+        assertThat(list.shift()).isEqualTo("forty");
+        assertThat(list.pop()).isEqualTo("fifty");
+        assertThat(list.shift()).isEqualTo("thirty");
     }
 
 }
