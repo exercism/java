@@ -149,7 +149,7 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 
 References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 
-### Use ExceptedException
+### Use ExpectedException
 
 > Some exercises expect exceptions to be thrown in the tests.
 > The exercises on this track are all using JUnit's [`ExpectedException`](http://junit.org/junit4/javadoc/4.12/org/junit/rules/ExpectedException.html) `@Rule` feature to support that instead of `@Test(expected = SomeException.class)`.
