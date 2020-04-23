@@ -3,7 +3,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
 
 public class NaturalNumberTest {

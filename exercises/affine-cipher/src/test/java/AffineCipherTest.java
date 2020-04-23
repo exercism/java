@@ -64,8 +64,9 @@ public class AffineCipherTest {
     @Test
     public void testEncodeThrowsMeaningfulException() {
         IllegalArgumentException expected =
-            assertThrows(IllegalArgumentException.class,
-            () -> affineCipher.encode("This is a test", 6, 17));
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> affineCipher.encode("This is a test", 6, 17));
 
         assertThat(expected)
             .hasMessage("Error: keyA and alphabet size must be coprime.");
@@ -114,8 +115,9 @@ public class AffineCipherTest {
     @Test
     public void testDecodeThrowsMeaningfulException() {
         IllegalArgumentException expected =
-            assertThrows(IllegalArgumentException.class,
-            () -> affineCipher.decode("Test", 13, 5));
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> affineCipher.decode("Test", 13, 5));
 
         assertThat(expected)
             .hasMessage("Error: keyA and alphabet size must be coprime.");
