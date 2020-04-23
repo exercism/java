@@ -9,22 +9,22 @@ class Domino {
     }
     
     int getLeft() {
-    	return this.left;
+        return this.left;
     }
     
     int getRight() {
-    	return this.right;
+        return this.right;
     }
     
     @Override
     public boolean equals(Object o) {
-    	Domino otherDomino = (Domino) o;
-    	return (this.getLeft() == otherDomino.getLeft() && this.getRight() == otherDomino.getRight()) ||
-    			(this.getLeft() == otherDomino.getRight() && this.getRight() == otherDomino.getLeft());
+        Domino otherDomino = (Domino) o;
+        return (this.getLeft() == otherDomino.getLeft() && this.getRight() == otherDomino.getRight()) ||
+            (this.getLeft() == otherDomino.getRight() && this.getRight() == otherDomino.getLeft());
     }
     
     @Override
     public int hashCode() {
-    	return Objects.hash(left, right);
+        return Objects.hash(left, right);
     }
 }
