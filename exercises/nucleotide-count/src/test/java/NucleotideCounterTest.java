@@ -1,16 +1,12 @@
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
 
 import java.util.Map;
 
 public class NucleotideCounterTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
@@ -55,7 +51,8 @@ public class NucleotideCounterTest {
     @Ignore("Remove to run test")
     @Test
     public void testDnaStringHasInvalidNucleotides() {
-        expectedException.expect(IllegalArgumentException.class);
-        NucleotideCounter nucleotideCounter = new NucleotideCounter("AGXXACT");
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new NucleotideCounter("AGXXACT"));
     }
 }
