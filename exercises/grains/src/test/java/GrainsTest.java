@@ -1,26 +1,15 @@
-import org.junit.Before;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.math.BigInteger;
 
-import static org.junit.Assert.assertEquals;
-
 public class GrainsTest {
 
-    private static final String wrongSquareMessage = "square must be between 1 and 64";
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-    
-    private Grains grains;
-    
-    @Before
-    public void setup() {
-        grains = new Grains();
-    }
+    private Grains grains = new Grains();
     
     @Test
     public void countAtSquare1() {
@@ -73,25 +62,37 @@ public class GrainsTest {
     @Ignore("Remove to run test")
     @Test
     public void errorOnNullBoardSize() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(wrongSquareMessage);
-        grains.grainsOnSquare(0);
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> grains.grainsOnSquare(0));
+
+        assertThat(expected)
+            .hasMessage("square must be between 1 and 64");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void errorOnNegativeBoardSize() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(wrongSquareMessage);
-        grains.grainsOnSquare(-1);
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> grains.grainsOnSquare(-1));
+
+        assertThat(expected)
+            .hasMessage("square must be between 1 and 64");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void errorOnExcessiveBoardSize() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(wrongSquareMessage);
-        grains.grainsOnSquare(65);
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> grains.grainsOnSquare(65));
+
+        assertThat(expected)
+            .hasMessage("square must be between 1 and 64");
     }
 
     @Ignore("Remove to run test")

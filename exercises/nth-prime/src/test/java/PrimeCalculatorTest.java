@@ -1,21 +1,12 @@
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThrows;
 
-import org.junit.Before;
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class PrimeCalculatorTest {
-    private PrimeCalculator primeCalculator;
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-
-    @Before
-    public void setup() {
-        primeCalculator = new PrimeCalculator();
-    }
+    private PrimeCalculator primeCalculator = new PrimeCalculator();
 
     @Test
     public void testFirstPrime() {
@@ -43,8 +34,9 @@ public class PrimeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testUndefinedPrime() {
-        expectedException.expect(IllegalArgumentException.class);
-        primeCalculator.nth(0);
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> primeCalculator.nth(0));
     }
 
 }

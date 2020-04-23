@@ -1,17 +1,13 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.NoSuchElementException;
 
 public class SimpleLinkedListTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void aNewListIsEmpty() {
@@ -30,9 +26,11 @@ public class SimpleLinkedListTest {
     @Ignore("Remove to run test")
     @Test
     public void popOnEmptyListWillThrow() {
-        expectedException.expect(NoSuchElementException.class);
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
-        list.pop();
+
+        assertThrows(
+            NoSuchElementException.class,
+            list::pop);
     }
 
     @Ignore("Remove to run test")

@@ -1,15 +1,11 @@
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 
 public class TriangleTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void equilateralTrianglesHaveEqualSides() throws TriangleException {
@@ -36,9 +32,10 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void trianglesWithNoSizeAreIllegal() throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(0, 0, 0);
+    public void trianglesWithNoSizeAreIllegal() {
+        assertThrows(
+            TriangleException.class,
+            () -> new Triangle(0, 0, 0));
     }
 
     @Ignore("Remove to run test")
@@ -91,23 +88,26 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void firstTriangleInequalityViolation() throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(1, 1, 3);
+    public void firstTriangleInequalityViolation() {
+        assertThrows(
+            TriangleException.class,
+            () -> new Triangle(1, 1, 3));
     }
     
     @Ignore("Remove to run test")
     @Test
-    public void secondTriangleInequalityViolation() throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(1, 3, 1);
+    public void secondTriangleInequalityViolation() {
+        assertThrows(
+            TriangleException.class,
+            () -> new Triangle(1, 3, 1));
     }
     
     @Ignore("Remove to run test")
     @Test
-    public void thirdTriangleInequalityViolation() throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(3, 1, 1);
+    public void thirdTriangleInequalityViolation() {
+        assertThrows(
+            TriangleException.class,
+            () -> new Triangle(3, 1, 1));
     }
 
     @Ignore("Remove to run test")
@@ -144,10 +144,10 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void mayNotViolateTriangleInequality()
-            throws TriangleException {
-        expectedException.expect(TriangleException.class);
-        new Triangle(7, 3, 2);
+    public void mayNotViolateTriangleInequality() {
+        assertThrows(
+            TriangleException.class,
+            () -> new Triangle(7, 3, 2));
     }
 
     @Ignore("Remove to run test")
