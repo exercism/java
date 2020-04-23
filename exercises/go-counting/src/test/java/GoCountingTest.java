@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThrows;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.awt.Point;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
