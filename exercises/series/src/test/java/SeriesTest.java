@@ -1,18 +1,15 @@
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
 import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-
-import static org.junit.Assert.assertEquals;
 
 public class SeriesTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void slicesOfOneFromOne() {
@@ -84,38 +81,57 @@ public class SeriesTest {
     @Ignore("Remove to run test")
     @Test
     public void sliceLengthIsToolarge() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Slice size is too big.");
-
         Series series = new Series("12345");
-        series.slices(6);
+
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> series.slices(6));
+
+        assertThat(expected)
+            .hasMessage("Slice size is too big.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void sliceLengthZero() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Slice size is too small.");
         Series series = new Series("12345");
-        series.slices(0);
+
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> series.slices(0));
+
+        assertThat(expected)
+            .hasMessage("Slice size is too small.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void sliceLengthNegative() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Slice size is too small.");
         Series series = new Series("123");
-        series.slices(-1);
+
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> series.slices(-1));
+
+        assertThat(expected)
+            .hasMessage("Slice size is too small.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void emptySeries() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Slice size is too big.");
         Series series = new Series("");
-        series.slices(1);
+
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> series.slices(1));
+
+        assertThat(expected)
+            .hasMessage("Slice size is too big.");
     }
 
 }
