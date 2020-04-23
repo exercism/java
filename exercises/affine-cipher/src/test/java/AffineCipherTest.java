@@ -1,22 +1,13 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class AffineCipherTest {
 
-    private AffineCipher affineCipher;
-
-    @Before
-    public void genAffineCipher() {
-        affineCipher = new AffineCipher();
-    }
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    private AffineCipher affineCipher = new AffineCipher();
 
     @Test
     public void testEncodeYes() {
@@ -71,11 +62,14 @@ public class AffineCipherTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testEncodeThrowsMeaningfulException() throws IllegalArgumentException {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Error: keyA and alphabet size must be coprime.");
+    public void testEncodeThrowsMeaningfulException() {
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> affineCipher.encode("This is a test", 6, 17));
 
-        affineCipher.encode("This is a test", 6, 17);
+        assertThat(expected)
+            .hasMessage("Error: keyA and alphabet size must be coprime.");
     }
 
     @Ignore("Remove to run test")
@@ -120,10 +114,13 @@ public class AffineCipherTest {
     @Ignore("Remove to run test")
     @Test
     public void testDecodeThrowsMeaningfulException() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Error: keyA and alphabet size must be coprime.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> affineCipher.decode("Test", 13, 5));
 
-        affineCipher.decode("Test", 13, 5);
+        assertThat(expected)
+            .hasMessage("Error: keyA and alphabet size must be coprime.");
     }
 
 }
