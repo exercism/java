@@ -1,23 +1,11 @@
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
-import static org.junit.Assert.*;
-
-import org.junit.Before;
 
 public class SimpleCipherStepTwoSubsitutionTest {
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
-    private Cipher cipherWithDefaultKey;
-    private static final String key = "abcdefghij";
-
-    @Before
-    public void setup() {
-        cipherWithDefaultKey = new Cipher(key);
-    }
+    private Cipher cipherWithDefaultKey = new Cipher("abcdefghij");
 
     @Ignore("Remove to run test")
     @Test
