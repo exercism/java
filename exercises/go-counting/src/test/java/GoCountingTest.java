@@ -1,20 +1,15 @@
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.awt.Point;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-
 public class GoCountingTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     String board5x5 = "  B  \n" +
                       " B B \n" +
@@ -77,10 +72,12 @@ public class GoCountingTest {
     public void invalidXTooLow5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Invalid coordinate");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> gocounting.getTerritory(-1, 1));
 
-        gocounting.getTerritory(-1, 1);
+        assertThat(expected).hasMessage("Invalid coordinate");
     }
 
     @Ignore("Remove to run test")
@@ -88,10 +85,12 @@ public class GoCountingTest {
     public void invalidXTooHigh5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Invalid coordinate");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> gocounting.getTerritory(5, 1));
 
-        gocounting.getTerritory(5, 1);
+        assertThat(expected).hasMessage("Invalid coordinate");
     }
 
     @Ignore("Remove to run test")
@@ -99,10 +98,12 @@ public class GoCountingTest {
     public void invalidYTooLow5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Invalid coordinate");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> gocounting.getTerritory(1, -1));
 
-        gocounting.getTerritory(1, -1);
+        assertThat(expected).hasMessage("Invalid coordinate");
     }
 
     @Ignore("Remove to run test")
@@ -110,10 +111,12 @@ public class GoCountingTest {
     public void invalidYTooHigh5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Invalid coordinate");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> gocounting.getTerritory(1, 5));
 
-        gocounting.getTerritory(1, 5);
+        assertThat(expected).hasMessage("Invalid coordinate");
     }
 
     @Ignore("Remove to run test")
