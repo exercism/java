@@ -158,7 +158,7 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        IllegalArgumentException expected =
+        InvalidRecordsException expected =
             assertThrows(
                 InvalidRecordsException.class,
                 () -> test.buildTree(records));
@@ -175,7 +175,7 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        IllegalArgumentException expected =
+        InvalidRecordsException expected =
             assertThrows(
                 InvalidRecordsException.class,
                 () -> test.buildTree(records));
@@ -194,7 +194,7 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        IllegalArgumentException expected =
+        InvalidRecordsException expected =
             assertThrows(
                 InvalidRecordsException.class,
                 () -> test.buildTree(records));
@@ -216,7 +216,7 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        IllegalArgumentException expected =
+        InvalidRecordsException expected =
             assertThrows(
                 InvalidRecordsException.class,
                 () -> test.buildTree(records));
