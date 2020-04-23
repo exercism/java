@@ -144,10 +144,8 @@ public class BowlingTest {
     public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Negative roll is invalid");
     }
@@ -157,10 +155,8 @@ public class BowlingTest {
     public void aRollCanNotScoreMoreThan10Points() {
         int[] rolls = {11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
@@ -170,10 +166,8 @@ public class BowlingTest {
     public void twoRollsInAFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
@@ -183,10 +177,8 @@ public class BowlingTest {
     public void bonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 0};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
@@ -196,10 +188,8 @@ public class BowlingTest {
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
@@ -219,10 +209,8 @@ public class BowlingTest {
     public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 10};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
@@ -232,10 +220,8 @@ public class BowlingTest {
     public void secondBonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 11};
 
-        playGame(rolls);
-
         IllegalStateException expected =
-            assertThrows(IllegalStateException.class, game::score);
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
