@@ -1,24 +1,17 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class VariableLengthQuantityTest {
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
-    private VariableLengthQuantity variableLengthQuantity;
-
-    @Before
-    public void setup() {
-        variableLengthQuantity = new VariableLengthQuantity();
-    }
+    private VariableLengthQuantity variableLengthQuantity =
+        new VariableLengthQuantity();
 
     @Test
     public void testZero() {
@@ -234,20 +227,28 @@ public class VariableLengthQuantityTest {
     @Test
     public void testCannotDecodeIncompleteSequence() {
         List<Long> bytes = Arrays.asList(0xffL);
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Invalid variable-length quantity encoding");
 
-        variableLengthQuantity.decode(bytes);
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> variableLengthQuantity.decode(bytes));
+
+        assertThat(expected)
+            .hasMessage("Invalid variable-length quantity encoding");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCannotDecodeIncompleteSequenceEvenIfValueIsZero() {
         List<Long> bytes = Arrays.asList(0x80L);
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Invalid variable-length quantity encoding");
 
-        variableLengthQuantity.decode(bytes);
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> variableLengthQuantity.decode(bytes));
+
+        assertThat(expected)
+            .hasMessage("Invalid variable-length quantity encoding");
     }
 
     @Ignore("Remove to run test")
