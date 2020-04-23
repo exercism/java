@@ -24,7 +24,7 @@ class GridPosition {
             return true;
         } else if (obj == null || getClass() != obj.getClass()) {
             return false;
-        } else if (x != ((GridPosition) obj).x || y != ((GridPosition)obj).y) {
+        } else if (x != ((GridPosition) obj).x || y != ((GridPosition) obj).y) {
             return false;
         } else {
             return true;
