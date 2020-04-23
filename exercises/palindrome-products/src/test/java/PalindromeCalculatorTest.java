@@ -1,8 +1,12 @@
-import org.junit.Before;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,21 +14,9 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 public class PalindromeCalculatorTest {
-    private PalindromeCalculator palindromeCalculator;
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-
-    @Before
-    public void setup() {
-        palindromeCalculator = new PalindromeCalculator();
-    }
+    private PalindromeCalculator palindromeCalculator = new PalindromeCalculator();
 
     @Test
     public void smallestPalindromeFromSingleDigitFactors() {
@@ -173,22 +165,27 @@ public class PalindromeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void errorSmallestMinIsMoreThanMax() {
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> palindromeCalculator
+                    .getPalindromeProductsWithFactors(10000, 1));
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("invalid input: min must be <= max");
-
-        SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(10000,
-                                                                                                                 1);
+        assertThat(expected)
+            .hasMessage("invalid input: min must be <= max");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void errorLargestMinIsMoreThanMax() {
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> palindromeCalculator
+                    .getPalindromeProductsWithFactors(2, 1));
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("invalid input: min must be <= max");
-
-        SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(2, 1);
+        assertThat(expected)
+            .hasMessage("invalid input: min must be <= max");
     }
 
 
