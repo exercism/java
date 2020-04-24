@@ -26,7 +26,5 @@ jobs:
       run: bin/configlet lint .
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Change directory to exercises
-      run: cd exercises
     - name: Compile and checkstyle with Gradle
-      run: ../gradlew check compileStarterSourceJava --parallel --continue
+      run: cd exercises && ../gradlew check compileStarterSourceJava --parallel --continue
