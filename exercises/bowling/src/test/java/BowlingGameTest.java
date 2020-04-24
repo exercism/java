@@ -5,7 +5,7 @@ import static org.junit.Assert.assertThrows;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class BowlingTest {
+public class BowlingGameTest {
     private BowlingGame game = new BowlingGame();
 
     private void playGame(int[] rolls) {
