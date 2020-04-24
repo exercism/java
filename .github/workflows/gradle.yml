@@ -23,7 +23,7 @@ jobs:
     - name: Fetch configlet
       run: bin/fetch-configlet
     - name: Lint
-      run: bin/configlet lint
+      run: bin/configlet lint .
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Change directory to exercises
