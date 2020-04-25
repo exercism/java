@@ -1,0 +1,20 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.json:json:20190722'
+  testCompile "junit:junit:4.12"
+}
+
+test {
+  testLogging {
+    exceptionFormat = 'short'
+    showStandardStreams = true
+    events = ["passed", "failed", "skipped"]
+  }
+}

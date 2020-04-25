@@ -782,6 +782,17 @@
       ]
     },
     {
+      "slug": "rest-api",
+      "uuid": "809c0e3d-3494-4a85-843d-2bafa8752ce8",
+      "core": false,
+      "unlocked_by": "robot-name",
+      "difficulty": 6,
+      "topics": [
+        "strings",
+        "parsing"
+      ]
+    },
+    {
       "slug": "roman-numerals",
       "uuid": "3e728cd4-5e5f-4c69-8a53-bc36d020fcdb",
       "core": false,
