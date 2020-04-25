@@ -45,7 +45,7 @@ public class Satellite {
         }
 
         Tree build() {
-            return new Tree(makeNode(0, inorder.size()-1));
+            return new Tree(makeNode(0, inorder.size() - 1));
         }
 
         Node makeNode(int inorderStart, int inorderEnd) {
