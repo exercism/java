@@ -1458,6 +1458,17 @@
       ]
     },
     {
+      "slug": "satellite",
+      "uuid": "a5f8aef3-9661-49c7-9eb3-786ef9fe0e85",
+      "core": false,
+      "unlocked_by": "linked-list",
+      "difficulty": 10,
+      "topics": [
+        "trees",
+        "graphs"
+      ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e58c29d2-80a7-40ef-bed0-4a184ae35f34",
       "core": false,
