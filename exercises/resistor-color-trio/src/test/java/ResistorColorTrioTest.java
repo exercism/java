@@ -5,12 +5,7 @@ import org.junit.Ignore;
 import static org.junit.Assert.assertEquals;
 
 public class ResistorColorTrioTest {
-    private ResistorColorTrio resistorColorTrio;
-
-    @Before
-    public void setup() {
-        resistorColorTrio = new ResistorColorTrio();
-    }
+    private ResistorColorTrio resistorColorTrio = new ResistorColorTrio();
 
     @Test
     public void testOrangeOrangeBlack() {
@@ -23,7 +18,7 @@ public class ResistorColorTrioTest {
 
     @Test
     @Ignore("Remove to run test")
-    public void testBluegreyBrown() {
+    public void testBlueGreyBrown() {
         String[] input = { "blue", "grey", "brown" };
         String expected = "680 ohms";
         String actual = resistorColorTrio.value(input);
