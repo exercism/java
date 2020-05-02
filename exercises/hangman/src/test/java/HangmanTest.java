@@ -167,7 +167,7 @@ public class HangmanTest {
     }
 
     Observable createWordObservable(ObservableEmitter[] emitters, Runnable emit) {
-        retrn Observable.create(
+        return Observable.create(
             emitter -> {
                 // A new subscription was created for words, record it.
                 emitters[0] = emitter;
