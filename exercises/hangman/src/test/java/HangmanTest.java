@@ -139,8 +139,8 @@ public class HangmanTest {
             Stream.of("a", "e", "s", "b").forEach(emitters[1]::onNext);
             emitters[0].onComplete();
         };
-        Observable<String> words = createWordObservable(emitters);
-        Observable<String> letters = createLetterObservable(emitters);
+        Observable<String> words = createWordObservable(emitters, emit);
+        Observable<String> letters = createLetterObservable(emitters, emit);
         Observable<Output> outputs = hangman.play(words, letters);
 
         // We collect the results of the game
