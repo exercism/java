@@ -17,7 +17,7 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 | Track Event | Policies to review |
 |:------------|:-----------------|
-| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises); [Avoid returning null](#avoid-returning-null); [Use ExpectedException](#use-expectedexception)
+| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises); [Avoid returning null](#avoid-returning-null); [Use assertThrows](#use-assertthrows); [Using other assertion libraries](#using-other-assertion-libraries)
 | Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
 | New issue observed in track | [Good first issues](#good-first-issues) |
 | "Good first issue" issue completed | [Good first issues](#good-first-issues) |
@@ -149,13 +149,24 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 
 References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 
-### Use ExceptedException
+### Use assertThrows
 
 > Some exercises expect exceptions to be thrown in the tests.
-> The exercises on this track are all using JUnit's [`ExpectedException`](http://junit.org/junit4/javadoc/4.12/org/junit/rules/ExpectedException.html) `@Rule` feature to support that instead of `@Test(expected = SomeException.class)`.
-> `ExpectedException` is more powerful than using the `@Test` annotation, since with `ExpectedException` you can also inspect the exception's error message and other properties.
-> To be consistent, please use `ExpectedException` whenever you expect an exception to be thrown.
+> The exercises on this track are all using [`org.junit.Assert.assertThrows`](https://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertThrows(java.lang.Class,%20org.junit.function.ThrowingRunnable)) instead of `@Test(expected = SomeException.class)`.
+> `assertThrows` is more powerful than using the `@Test` annotation.
+> With this method you can assert that a given function call (specified, for instance, as a lambda expression or method reference) results in a particular type of exception being thrown.
+> In addition it returns the exception that was thrown, so that further assertions can be made (e.g. to verify that the message and cause are correct).
+> Furthermore, you can make assertions on the state of a domain object after the exception has been thrown.
+> To be consistent, please use `assertThrows` whenever you expect an exception to be thrown.
 
-> See [the triangle tests](https://github.com/exercism/java/blob/master/exercises/triangle/src/test/java/TriangleTest.java) for an example of where `ExpectedException` is used.
+> See [the triangle tests](https://github.com/exercism/java/blob/master/exercises/triangle/src/test/java/TriangleTest.java) for an example of where `assertThrows` is used.
 
 References: [[1](https://github.com/junit-team/junit4/wiki/Exception-testing)]
+
+### Using other assertion libraries
+
+> Some exercises have expected results that may be better handled by another assertion library.
+> While the default will continue to be using JUnit's assertions (eg. `org.junit.Assert.assertEquals`), we do allow [AssertJ](https://assertj.github.io/doc/) as well.
+> All other assertion libraries (eg. [Hamcrest](http://hamcrest.org/JavaHamcrest/) and [Truth](https://truth.dev/)) are banned.
+
+References: [[1](https://github.com/exercism/java/issues/1803)]

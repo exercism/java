@@ -71,7 +71,7 @@ public class BobTest {
     public void talkingForcefully() {
         assertEquals(
             "Whatever.",
-            bob.hey("Let's go make out behind the gym!")
+            bob.hey("Hi there!")
         );
     }
 
@@ -79,7 +79,7 @@ public class BobTest {
     @Test
     public void usingAcronymsInRegularSpeech() {
         assertEquals(
-            "Whatever.", bob.hey("It's OK if you don't want to go to the DMV.")
+            "Whatever.", bob.hey("It's OK if you don't want to go work for NASA.")
         );
     }
 
@@ -87,7 +87,7 @@ public class BobTest {
     @Test
     public void forcefulQuestions() {
         assertEquals(
-            "Calm down, I know what I'm doing!", bob.hey("WHAT THE HELL WERE YOU THINKING?")
+            "Calm down, I know what I'm doing!", bob.hey("WHAT'S GOING ON?")
         );
     }
 
@@ -127,7 +127,7 @@ public class BobTest {
     @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
-            "Whoa, chill out!", bob.hey("I HATE THE DMV")
+            "Whoa, chill out!", bob.hey("I HATE THE DENTIST")
         );
     }
 

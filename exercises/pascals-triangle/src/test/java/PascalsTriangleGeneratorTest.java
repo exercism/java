@@ -1,23 +1,12 @@
-import org.junit.Before;
+import static org.junit.Assert.assertArrayEquals;
+
 import org.junit.Test;
 import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-
-
-import static org.junit.Assert.assertArrayEquals;
 
 public class PascalsTriangleGeneratorTest {
 
-    private PascalsTriangleGenerator pascalsTriangleGenerator;
-
-    @Before
-    public void setUp() {
-        pascalsTriangleGenerator = new PascalsTriangleGenerator();
-    }
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    private PascalsTriangleGenerator pascalsTriangleGenerator =
+        new PascalsTriangleGenerator();
 
     @Test
     public void testTriangleWithZeroRows() {

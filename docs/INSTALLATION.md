@@ -31,7 +31,7 @@ Open an administrative command prompt.  (If you need assistance opening an admin
 2.  Install the JDK:
 
      ```batchfile
-     C:\Windows\system32> choco install jdk8
+     C:\Windows\system32> choco install openjdk11
      ...
      C:\Windows\system32> refreshenv
      ...
@@ -66,13 +66,13 @@ Below are instructions for install using the most common method - using Homebrew
 2. Tap the [Homebrew Cask](https://caskroom.github.io/) — this allows us to install pre-built binaries like the JDK.
 
      ```
-     $ brew tap caskroom/cask
+     $ brew tap adoptopenjdk/openjdk
      ```
 
 3.  Install the JDK:
 
      ```
-     $ brew cask install java
+     $ brew cask install homebrew/cask-versions/java11
      ```
 
 4.  Install Gradle:
@@ -96,19 +96,18 @@ Below are instructions for install using the package manager of your distro.  If
 
 ## Debian
 
-If you are using Debian or its derivatives (like Ubuntu or Linux Mint), use APT:
+If you are using Debian or its derivatives (like Ubuntu), use APT:
 
-*(verified on: Linux Mint 18, Ubuntu 14)*
+*(verified on: Ubuntu 14, 16 and 18)*
 
 1. Install the JDK:
 
      ```sh
      $ sudo apt-get update
-     $ sudo apt-get install python-software-properties
-     $ sudo add-apt-repository ppa:webupd8team/java
+     $ sudo apt-get install software-properties-common
+     $ sudo add-apt-repository ppa:openjdk-r/ppa
      $ sudo apt-get update
-     $ sudo apt-get install oracle-java8-installer
-     $ sudo apt install oracle-java8-set-default
+     $ sudo apt-get install openjdk-11-jdk
      ```
 
 2. Install Gradle:
@@ -125,24 +124,24 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 
 ----
 
-## Fedora
+## Other Linux distributions
 
-If you are using Fedora or its derivatives, use DNF:
+There are a lot of ways to install Jdk 11, but one of the easiest ways is to use SDKMAN, which lets you install
+both OpenJdk11 and the latest Gradle with ease. Use the following steps:
 
-*(verified on: Fedora 24)*
-
-1. Install the JDK:
-
-     ```sh
-     $ sudo dnf install java-1.8.0-openjdk-devel
-     ```
-
-2. Install Gradle:
-
-     ```sh
-     $ sudo dnf install gradle
-     ```
-
+1. Install SDKMAN:
+    ```sh
+    $ curl -s "https://get.sdkman.io" | bash
+    ``` 
+    (if that doesn't work, take a look at the instructions found here: https://sdkman.io/install )
+1. Install openjdk11:
+    ```
+    $ sdk install java 11.0.2-open
+    ``` 
+1. Install Gradle:
+    ```sh
+   $ sdk install gradle
+    ```
 
 You now are ready to get started with the Java track of Exercism!
 
@@ -163,7 +162,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 *NOTE: these instructions are intended for experienced Windows users.  If you don't already know how to set environment variables or feel comfortable managing the directory structure, we highly recommend you use the Chocolatey-based install, [above](#windows).*
 
 1. Install the JDK:
-   1. Download "**Java Platform (JDK)**" from [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+   1. Download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11#x64_win) (choose **"Install JDK"**).
    -  Run the installer, using all the defaults.
 2. Install Gradle:
    - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
@@ -183,7 +182,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 *NOTE: these instructions are intended for experienced macOS users.  Unless you specifically do not want to use a package manager, we highly recommend using the Homebrew-based installation instructions, [above](#macos).*
 
 1. Install the JDK:
-   1. Download "**Java Platform (JDK)**" from [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+   1. Download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11#x64_mac) (choose **"Install JDK"**).
    2. Run the installer, using all the defaults.
 2. Install Gradle:
    1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
@@ -217,7 +216,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 *NOTE: these instructions are intended for experienced Linux users.  Unless you specifically do not want to use a package manager, we highly recommend using the the installation instructions, [above](#linux).*
 
 1. Install the JDK:
-   1. Download "**Java Platform (JDK)**" from [Oracle OTN](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+   1. Choose your distribution and download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11) (choose **"Install JDK"**).
    2. Run the installer, using all the defaults.
 2. Install Gradle:
    1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).

@@ -39,6 +39,18 @@
       ]
     },
     {
+      "slug": "leap",
+      "uuid": "7c8294ee-5924-4bf8-a72f-31d0e2d7d9a0",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "booleans",
+        "integers",
+        "logic"
+      ]
+    },
+    {
       "slug": "resistor-color",
       "uuid": "e5e821ed-fc1f-4419-9c90-ad4a0b564bea",
       "core": false,
@@ -47,6 +59,18 @@
       "topics": [
         "arrays",
         "strings"
+      ]
+    },
+    {
+      "slug": "resistor-color-duo",
+      "uuid": "0ae1989d-df46-414d-ad1f-4bd0f0f78421",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings",
+        "enumerations"
       ]
     },
     {
@@ -93,6 +117,18 @@
         "integers",
         "randomness"
       ]
+    },
+    {
+      "slug": "grains",
+      "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 2,
+      "topics": [
+        "loops",
+        "math"
+      ],
+      "deprecated": false
     },
     {
       "slug": "pangram",
@@ -232,6 +268,16 @@
         "arrays",
         "conditionals",
         "loops",
+        "strings"
+      ]
+    },
+    {
+      "slug": "micro-blog",
+      "uuid": "8295ae71-5c0e-49d0-bbe9-9b43a85bf2dd",
+      "core": false,
+      "unlocked_by": "two-fer",
+      "difficulty": 3,
+      "topics": [
         "strings"
       ]
     },
@@ -700,6 +746,18 @@
       ]
     },
     {
+      "slug": "knapsack",
+      "uuid": "ac179b77-98a5-4daf-9773-3d68b6cd8548",
+      "core": false,
+      "unlocked_by": "hamming",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "arrays",
+        "conditionals"
+      ]
+    },
+    {
       "slug": "alphametics",
       "uuid": "0639a1f8-5af4-4877-95c1-5db8e97c30bf",
       "core": false,
@@ -721,6 +779,17 @@
         "integers",
         "loops",
         "matrices"
+      ]
+    },
+    {
+      "slug": "rest-api",
+      "uuid": "809c0e3d-3494-4a85-843d-2bafa8752ce8",
+      "core": false,
+      "unlocked_by": "robot-name",
+      "difficulty": 6,
+      "topics": [
+        "strings",
+        "parsing"
       ]
     },
     {
@@ -1386,6 +1455,17 @@
         "equality",
         "generics",
         "sets"
+      ]
+    },
+    {
+      "slug": "satellite",
+      "uuid": "a5f8aef3-9661-49c7-9eb3-786ef9fe0e85",
+      "core": false,
+      "unlocked_by": "linked-list",
+      "difficulty": 10,
+      "topics": [
+        "trees",
+        "graphs"
       ]
     },
     {

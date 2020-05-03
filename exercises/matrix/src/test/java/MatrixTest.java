@@ -44,8 +44,8 @@ public class MatrixTest {
     @Test
     public void extractRowFromNonSquareMatrixTest() {
         String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
-        int rowIndex = 3;
-        int[] expectedRow = {7, 8, 9};
+        int rowIndex = 4;
+        int[] expectedRow = {8, 7, 6};
 
         Matrix matrix = new Matrix(matrixAsString);
 
@@ -79,9 +79,9 @@ public class MatrixTest {
     @Ignore("Remove to run test")
     @Test
     public void extractColumnFromNonSquareMatrixTest() {
-        String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
-        int columnIndex = 3;
-        int[] expectedColumn = {3, 6, 9, 6};
+        String matrixAsString = "1 2 3 4\n5 6 7 8\n9 8 7 6";
+        int columnIndex = 4;
+        int[] expectedColumn = {4, 8, 6};
 
         Matrix matrix = new Matrix(matrixAsString);
 

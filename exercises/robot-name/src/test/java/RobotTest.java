@@ -1,11 +1,8 @@
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.Before;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNot.not;
-import static org.junit.Assert.assertThat;
 
 public class RobotTest {
 
@@ -25,7 +22,7 @@ public class RobotTest {
     @Ignore("Remove to run test")
     @Test
     public void differentRobotsHaveDifferentNames() {
-        assertThat(robot.getName(), not(equalTo(new Robot().getName())));
+        assertThat(robot.getName()).isNotEqualTo(new Robot().getName());
     }
 
     @Ignore("Remove to run test")
@@ -34,11 +31,11 @@ public class RobotTest {
         final String name = robot.getName();
         robot.reset();
         final String name2 = robot.getName();
-        assertThat(name, not(equalTo(name2)));
+        assertThat(name).isNotEqualTo(name2);
         assertIsValidName(name2);
     }
 
     private static void assertIsValidName(String name) {
-        assertThat(name.matches(EXPECTED_ROBOT_NAME_PATTERN), is(true));
+        assertThat(name).matches(EXPECTED_ROBOT_NAME_PATTERN);
     }
 }

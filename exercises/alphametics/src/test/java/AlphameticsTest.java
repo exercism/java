@@ -1,16 +1,12 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.LinkedHashMap;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
 public class AlphameticsTest {
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testThreeLetters() throws UnsolvablePuzzleException {
@@ -24,16 +20,18 @@ public class AlphameticsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testUniqueValue() throws UnsolvablePuzzleException {
-        expectedException.expect(UnsolvablePuzzleException.class);
-        new Alphametics("A == B").solve();
+    public void testUniqueValue() {
+        Alphametics alphametics = new Alphametics("A == B");
+
+        assertThrows(UnsolvablePuzzleException.class, alphametics::solve);
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testLeadingZero() throws UnsolvablePuzzleException {
-        expectedException.expect(UnsolvablePuzzleException.class);
-        assertNull(new Alphametics("ACA + DD == BD").solve());
+    public void testLeadingZero() {
+        Alphametics alphametics = new Alphametics("ACA + DD == BD");
+
+        assertThrows(UnsolvablePuzzleException.class, alphametics::solve);
     }
 
     @Ignore("Remove to run test")

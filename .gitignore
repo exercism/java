@@ -10,3 +10,13 @@ bin/configlet
 bin/configlet.exe
 /exercises/.nb-gradle/
 **/out
+exercises/.project
+exercises/.settings/
+exercises/*/bin
+exercises/*/.classpath
+exercises/*/.project
+exercises/*/.settings/
+_template/bin
+_template/.classpath
+_template/.project
+_template/.settings/

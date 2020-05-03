@@ -2,6 +2,11 @@
 
 LATEST=https://github.com/exercism/configlet/releases/latest
 
+echo ">>> Fetching configlet..."
+echo
+echo "$ uname"
+uname
+
 OS=$(
 case $(uname) in
     (Darwin*)
@@ -24,6 +29,9 @@ case $OS in
         echo "tgz";;
 esac)
 
+echo "$ uname -m"
+uname -m
+
 ARCH=$(
 case $(uname -m) in
     (*64*)
@@ -37,8 +45,11 @@ case $(uname -m) in
 esac)
 
 
-VERSION="$(curl --silent --head $LATEST | awk -v FS=/ '/Location:/{print $NF}' | tr -d '\r')"
+VERSION="$(curl --silent --head $LATEST | awk -v FS=/ 'BEGIN {IGNORECASE = 1} /Location:/{print $NF}' | tr -d '\r')"
 URL=https://github.com/exercism/configlet/releases/download/$VERSION/configlet-$OS-${ARCH}.$EXT
+
+echo
+echo ">>> Downloading from ${URL}"
 
 case $EXT in
     (*zip)
