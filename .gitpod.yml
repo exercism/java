@@ -3,7 +3,6 @@ image:
 
 tasks:
   - init: cd exercises && ../gradlew # start the daemon
-    command: cd exercises && ../gradlew compileJava # compile existing code
   - init: git --git-dir=/home/gitpod/specs/.git pull origin master # Update master of specs
 
 github:
