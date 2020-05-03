@@ -18,6 +18,25 @@
             }
         },
         {
+            "label": "Check style",
+            "type": "shell",
+            "command": "${workspaceFolder}/gradlew",
+            "args": [
+                "check",
+                "--parallel",
+                "--continue"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/exercises"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Run unit tests",
             "type": "shell",
             "command": "${workspaceFolder}/gradlew",
@@ -30,7 +49,7 @@
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "dedicated"
             },
             "options": {
                 "cwd": "${workspaceFolder}/exercises"
@@ -44,7 +63,7 @@
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "dedicated"
             },
             "problemMatcher": []
         }
