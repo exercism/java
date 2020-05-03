@@ -14,8 +14,28 @@
             "group": "build",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
-            }
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Add new exercise",
+            "type": "shell",
+            "command": "configlet",
+            "args": [
+                "generate",
+                "${workspaceFolder}", 
+                "--only",
+                "${input:exercise-name}",
+                "--spec-path",
+                "/home/gitpod/specs"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
         },
         {
             "label": "Check style",
@@ -66,6 +86,13 @@
                 "panel": "dedicated"
             },
             "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "exercise-name",
+            "description": "Name of a specific exercise"
         }
     ]
 }
