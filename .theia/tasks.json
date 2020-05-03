@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate Readmes",
+            "type": "shell",
+            "command": "configlet",
+            "args": [
+                "generate",
+                "${workspaceFolder}", 
+                "--spec-path",
+                "/home/gitpod/specs"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Run unit tests",
+            "type": "shell",
+            "command": "${workspaceFolder}/gradlew",
+            "args": [
+                "check",
+                "compileStarterSourceJava", 
+                "--parallel",
+                "--continue"
+            ],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/exercises"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run journey",
+            "type": "shell",
+            "command": "${workspaceFolder}/bin/journey-test.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
