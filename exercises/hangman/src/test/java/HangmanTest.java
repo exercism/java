@@ -12,6 +12,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThatThrowBy;
 
 public class HangmanTest {
 
@@ -76,8 +77,8 @@ public class HangmanTest {
             Observable.fromArray("a", "e", "o", "s"));
         Output last = result.blockingLast();
         assertEquals("se__e_", last.discovered);
-        assertEquals(setOf("e", "s"), last.guess);
-        assertEquals(setOf("a", "o"), last.misses);
+        assertEquals(Set.of("e", "s"), last.guess);
+        assertEquals(Set.of("a", "o"), last.misses);
         assertEquals(
             Arrays.asList(
                 Part.HEAD,
@@ -94,7 +95,7 @@ public class HangmanTest {
             Observable.fromArray("a", "e", "o", "s", "c", "r", "g", "t"));
         Output last = result.blockingLast();
         assertEquals("secret", last.discovered);
-        assertEquals(setOf("c", "e", "r", "s", "t"), last.guess);
+        assertEquals(Set.of("c", "e", "r", "s", "t"), last.guess);
         assertEquals(Status.WIN, last.status);
     }
 
@@ -106,7 +107,7 @@ public class HangmanTest {
             Observable.fromArray("a", "b", "c", "d", "e", "f", "g", "h"));
         Output last = result.blockingLast();
         assertEquals("_ec_e_", last.discovered);
-        assertEquals(setOf("a", "b", "d", "f", "g", "h"), last.misses);
+        assertEquals(Set.of("a", "b", "d", "f", "g", "h"), last.misses);
         assertEquals(Status.LOSS, last.status);
         assertEquals(
             Arrays.asList(
@@ -152,14 +153,14 @@ public class HangmanTest {
 
             Output first = results.get(0);
             assertEquals("secret", first.discovered);
-            assertEquals(setOf("s", "e", "c", "r", "t"), first.guess);
-            assertEquals(setOf("a", "o", "g"), first.misses);
+            assertEquals(Set.of("s", "e", "c", "r", "t"), first.guess);
+            assertEquals(Set.of("a", "o", "g"), first.misses);
             assertEquals(Status.WIN, first.status);
 
             Output second = results.get(1);
             assertEquals("abba", second.discovered);
-            assertEquals(setOf("a", "b"), second.guess);
-            assertEquals(setOf("e", "s"), second.misses);
+            assertEquals(Set.of("a", "b"), second.guess);
+            assertEquals(Set.of("e", "s"), second.misses);
             assertEquals(Status.WIN, first.status);
         } finally {
             subscription.dispose();
@@ -197,9 +198,9 @@ public class HangmanTest {
             Observable.fromArray("secret"),
             Observable.fromArray("e", "c", "s", "c"));
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Letter c was already played");
-        result.blockingLast();
+        assertThatThrowBy(() -> result.blockingLast())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining("Letter c was already played");
     }
 
     @Ignore("Remove to run test")
@@ -209,14 +210,8 @@ public class HangmanTest {
             Observable.fromArray("secret"),
             Observable.fromArray("e", "a", "s", "a"));
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Letter a was already played");
-        result.blockingLast();
-    }
-
-    private static <T> Set<T> setOf(T... values) {
-        Set<T> set = new HashSet<>();
-        Collections.addAll(set, values);
-        return set;
+        assertThatThrowBy(() -> result.blockingLast())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining("Letter a was already played");
     }
 }

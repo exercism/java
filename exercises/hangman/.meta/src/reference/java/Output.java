@@ -24,9 +24,9 @@ class Output {
         final Status status) {
         this.secret = secret;
         this.discovered = discovered;
-        this.guess = guess;
-        this.misses = misses;
-        this.parts = parts;
+        this.guess = Set.copyOf(guess);
+        this.misses = Set.copyOf(misses);
+        this.parts = List.copyOf(parts);
         this.status = status;
     }
 
