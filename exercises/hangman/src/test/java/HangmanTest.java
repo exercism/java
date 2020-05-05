@@ -12,7 +12,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.assertj.core.api.Assertions.assertThatThrowBy;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class HangmanTest {
 
@@ -198,7 +198,7 @@ public class HangmanTest {
             Observable.fromArray("secret"),
             Observable.fromArray("e", "c", "s", "c"));
 
-        assertThatThrowBy(() -> result.blockingLast())
+        assertThatThrownBy(() -> result.blockingLast())
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessageContaining("Letter c was already played");
     }
@@ -210,7 +210,7 @@ public class HangmanTest {
             Observable.fromArray("secret"),
             Observable.fromArray("e", "a", "s", "a"));
 
-        assertThatThrowBy(() -> result.blockingLast())
+        assertThatThrownBy(() -> result.blockingLast())
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessageContaining("Letter a was already played");
     }
