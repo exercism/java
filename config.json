@@ -1418,6 +1418,19 @@
       ]
     },
     {
+      "slug": "hangman",
+      "uuid": "ab3f8bf4-cfae-4f7a-b134-bb0fa4fafa63",
+      "core": false,
+      "unlocked_by": "linked-list",
+      "difficulty": 8,
+      "topics": [
+        "strings",
+        "reactive_programming",
+        "functional_programming"
+      ],
+      "deprecated": false
+    },
+    {
       "slug": "pythagorean-triplet",
       "uuid": "88505f95-89e5-4a08-8ed2-208eb818cdf1",
       "core": false,

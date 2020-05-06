@@ -1,0 +1,21 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'io.reactivex.rxjava2:rxjava:2.2.12'
+
+  testCompile "junit:junit:4.13"
+  testImplementation "org.assertj:assertj-core:3.15.0"
+}
+
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}
