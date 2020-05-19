@@ -87,3 +87,12 @@ fn test_years_1600_to_1699() {
         panic!("incorrect result for years: {:?}", incorrect_years);
     }
 }
+
+#[test]
+fn test_two_alternatives_equivalent() {
+    let eq = (0..1000000).all(|n| leap::is_leap_year_canonical(n) == leap::is_leap_year_short(n));
+
+    if !eq {
+        panic!("is_leap_year_canonical and are not equlvalent to is_leap_year_short");
+    }
+}
