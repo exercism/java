@@ -1,0 +1,8 @@
+bin/*
+dist/*
+docs/*
+node_modules/*
+production_node_modules/*
+test/fixtures/*
+tmp/*
+jest.config.js

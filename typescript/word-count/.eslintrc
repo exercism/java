@@ -1,0 +1,64 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/array-type": "off", // Styling not forced upon the student
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn", {
+        "allowExpressions": false,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true
+      }
+    ], // Prevent bugs
+    "@typescript-eslint/explicit-member-accessibility": "off", // Styling not forced upon the student
+    "@typescript-eslint/indent": "off", // Styling not forced upon the student
+    "@typescript-eslint/no-inferrable-types": [
+      "error", {
+        "ignoreParameters": true
+      }
+    ],
+    "@typescript-eslint/member-delimiter-style": "off", // Styling not forced upon the student
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-parameter-properties": [
+      "warn", {
+        "allows": [
+          "private", "protected", "public",
+          "private readonly", "protected readonly", "public readonly"
+        ]
+      }
+    ], // only disallow readonly without an access modifier
+    "@typescript-eslint/no-unused-vars": "off", // Covered by the tsc compiler (noUnusedLocals)
+    "@typescript-eslint/no-use-before-define": [
+      "error", {
+        "functions": false,
+        "typedefs": false
+      }
+    ], // Prevent bugs, not styling
+    "semi": "off", // Always disable base-rule
+    "@typescript-eslint/semi": "off" // Styling not forced upon student
+  }
+}
