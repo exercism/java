@@ -7,7 +7,7 @@ impl HighScores {
     pub fn new(scores: &[u32]) -> Self {
         let mut s: Vec<u32> = Vec::new();
         for score in scores {
-            s.push(*score)
+            s.push(*score);
         }
         HighScores { scores: s }
     }
@@ -44,7 +44,7 @@ impl HighScores {
         let size = new_vec.len();
         let mut take = 3;
         if size < 3 {
-            take = size
+            take = size;
         }
         new_vec.sort_by(|a, b| b.cmp(a));
         return new_vec.split_at(take).0.into();
