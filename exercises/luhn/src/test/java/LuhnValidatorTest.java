@@ -56,6 +56,12 @@ public class LuhnValidatorTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testInvalidLongNumberWithAnEvenRemainder() {
+        assertFalse(luhnValidator.isValid("1 2345 6789 1234 5678 9012"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testValidNumberWithAnEvenNumberOfDigits() {
         assertTrue(luhnValidator.isValid("095 245 88"));
     }
