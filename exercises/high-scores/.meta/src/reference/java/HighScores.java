@@ -12,7 +12,7 @@ class HighScores {
     }
 
     int[] scores() {
-        return highScores;
+        return highScores.clone();
     }
 
     int latest() {
