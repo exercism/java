@@ -8,7 +8,7 @@ import static java.util.Arrays.sort;
 class HighScores {
     private int[] highScores;
     public HighScores(int[] highScores) {
-        this.highScores = highScores;
+        this.highScores = highScores.clone();
     }
 
     int[] scores() {
