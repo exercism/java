@@ -758,6 +758,23 @@
       ]
     },
     {
+      "slug": "dot-dsl",
+      "uuid": "791ffcfa-7ead-4552-a002-4b1c6b2c33ce",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "equality",
+        "classes",
+        "lists",
+        "domain_specific_languages",
+        "graphs",
+        "object_oriented_programming",
+        "test_driven_development",
+        "transforming"
+      ]
+    },
+    {
       "slug": "alphametics",
       "uuid": "0639a1f8-5af4-4877-95c1-5db8e97c30bf",
       "core": false,
