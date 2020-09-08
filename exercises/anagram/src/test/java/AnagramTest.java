@@ -8,7 +8,6 @@ import java.util.Collections;
 
 public class AnagramTest {
 
-
     @Test
     public void testNoMatches() {
         Anagram detector = new Anagram("diaper");
