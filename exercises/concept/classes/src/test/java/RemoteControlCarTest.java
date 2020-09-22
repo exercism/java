@@ -2,11 +2,13 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class RemoteControlCarTest {
     @Test
     public void buy_new_car_returns_instance() {
         RemoteControlCar car = RemoteControlCar.buy();
-        Assert.assertNotNull(car);
+        assertThat(car).isNotNull();
     }
 
     @Ignore("Remove to run test")
@@ -14,21 +16,21 @@ public class RemoteControlCarTest {
     public void buy_new_car_returns_new_car_each_time() {
         RemoteControlCar car1 = RemoteControlCar.buy();
         RemoteControlCar car2 = RemoteControlCar.buy();
-        Assert.assertNotSame(car2, car1);
+        assertThat(car1).isNotEqualTo(car2);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void new_car_distance_display() {
         RemoteControlCar car = new RemoteControlCar();
-        Assert.assertEquals("Driven 0 meters", car.distanceDisplay());
+        assertThat(car.distanceDisplay()).isEqualTo("Driven 0 meters");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void new_car_battery_display() {
         RemoteControlCar car = new RemoteControlCar();
-        Assert.assertEquals("Battery at 100%", car.batteryDisplay());
+        assertThat(car.batteryDisplay()).isEqualTo("Battery at 100%");
     }
 
     @Ignore("Remove to run test")
@@ -36,7 +38,7 @@ public class RemoteControlCarTest {
     public void distance_display_after_driving_once() {
         RemoteControlCar car = new RemoteControlCar();
         car.drive();
-        Assert.assertEquals("Driven 20 meters", car.distanceDisplay());
+        assertThat(car.distanceDisplay()).isEqualTo("Driven 20 meters");
     }
 
     @Ignore("Remove to run test")
@@ -48,7 +50,7 @@ public class RemoteControlCarTest {
             car.drive();
         }
 
-        Assert.assertEquals("Driven 340 meters", car.distanceDisplay());
+        assertThat(car.distanceDisplay()).isEqualTo("Driven 340 meters");
     }
 
     @Ignore("Remove to run test")
@@ -56,7 +58,8 @@ public class RemoteControlCarTest {
     public void battery_display_after_driving_once() {
         RemoteControlCar car = new RemoteControlCar();
         car.drive();
-        Assert.assertEquals("Battery at 99%", car.batteryDisplay());
+        
+        assertThat(car.batteryDisplay()).isEqualTo("Battery at 99%");
     }
 
     @Ignore("Remove to run test")
@@ -68,7 +71,7 @@ public class RemoteControlCarTest {
             car.drive();
         }
 
-        Assert.assertEquals("Battery at 77%", car.batteryDisplay());
+        assertThat(car.batteryDisplay()).isEqualTo("Battery at 77%");
     }
 
     @Ignore("Remove to run test")
@@ -84,7 +87,7 @@ public class RemoteControlCarTest {
         // Attempt to drive one more time (should not work)
         car.drive();
 
-        Assert.assertEquals("Battery empty", car.batteryDisplay());
+        assertThat(car.batteryDisplay()).isEqualTo("Battery empty");
     }
 
     @Ignore("Remove to run test")
@@ -100,6 +103,6 @@ public class RemoteControlCarTest {
         // Attempt to drive one more time (should not work)
         car.drive();
 
-        Assert.assertEquals("Driven 2000 meters", car.distanceDisplay());
+        assertThat(car.distanceDisplay()).isEqualTo("Driven 2000 meters");
     }
 }
