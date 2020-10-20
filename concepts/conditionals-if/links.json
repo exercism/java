@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html",
+    "description": "logical-operators"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html",
+    "description": "if-statement"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html",
+    "description": "switch-statement"
+  },
+  {
+    "url": "https://www.programiz.com/java-programming/ternary-operator",
+    "description": "example-ternary"
+  },
+  {
+    "url": "https://www.javatpoint.com/java-if-else",
+    "description": "example-ifelse-flowcharts"
+  },
+  {
+    "url": "https://www.geeksforgeeks.org/switch-statement-in-java/",
+    "description": "example-switch"
+  }
+]
