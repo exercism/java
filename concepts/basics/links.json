@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op1.html",
+    "description": "assignment"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html",
+    "description": "classes"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html",
+    "description": "methods"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html",
+    "description": "return"
+  },
+  {
+    "url": "https://www.javatpoint.com/java-comments",
+    "description": "comments"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html",
+    "description": "operators"
+  }
+]
