@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html",
+    "description": "fields"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html",
+    "description": "methods"
+  },
+  {
+    "url": "https://en.wikibooks.org/wiki/Java_Programming/Keywords/public",
+    "description": "public"
+  },
+  {
+    "url": "https://en.wikibooks.org/wiki/Java_Programming/Keywords/private",
+    "description": "private"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)",
+    "description": "encapsulation"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/objectcreation.html",
+    "description": "creating-objects"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/objectcreation.html",
+    "description": "new"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html",
+    "description": "fields"
+  },
+  {
+    "url": "https://techterms.com/definition/camelcase",
+    "description": "camel-case"
+  },
+  {
+    "url": "https://techterms.com/definition/pascalcase",
+    "description": "pascal-case"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html",
+    "description": "default-values"
+  },
+  {
+    "url": "https://en.wikibooks.org/wiki/Java_Programming/Keywords/void",
+    "description": "void"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/2036970/how-do-getters-and-setters-work",
+    "description": "so-getters-setters"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html",
+    "description": "this"
+  }
+]
