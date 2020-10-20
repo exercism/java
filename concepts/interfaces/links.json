@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/concepts/interface.html",
+    "description": "interfaces"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Loose_coupling",
+    "description": "wiki-loose-coupling"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html",
+    "description": "input-stream"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html",
+    "description": "comparable"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Test_double",
+    "description": "wiki-test-double"
+  },
+  {
+    "url": "https://stackoverflow.com/a/9226437/96167",
+    "description": "so-mocking-interfaces"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Namespace",
+    "description": "wiki-namespaces"
+  },
+  {
+    "url": "https://www.cs.utexas.edu/~mitra/csSummer2013/cs312/lectures/interfaces.html",
+    "description": "interface-polymorphism"
+  }
+]
