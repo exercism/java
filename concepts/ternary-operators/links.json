@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "url": "https://www.programiz.com/java-programming/ternary-operator",
+    "description": "ternary-operator-first"
+  },
+  {
+    "url": "https://www.baeldung.com/java-ternary-operator",
+    "description": "ternary-operator-second"
+  }
+]
