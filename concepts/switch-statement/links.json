@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.codejava.net/java-core/the-java-language/yield-keyword-in-java",
+    "description": "yield-keyword"
+  },
+  {
+    "url": "https://www.vojtechruzicka.com/java-enhanced-switch/",
+    "description": "switch1"
+  },
+  {
+    "url": "https://howtodoinjava.com/java14/switch-expressions/",
+    "description": "switch2"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java/javase/13/language/switch-expressions.html",
+    "description": "oracle-doc"
+  }
+]
