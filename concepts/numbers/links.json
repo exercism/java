@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html",
+    "description": "numeric-datatypes"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op1.html",
+    "description": "arithmetic-operators"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html",
+    "description": "comparison-operators"
+  },
+  {
+    "url": "https://www.programiz.com/java-programming/typecasting",
+    "description": "type-casting"
+  }
+]
