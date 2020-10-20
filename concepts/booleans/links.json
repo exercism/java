@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html",
+    "description": "operators"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html",
+    "description": "precedence"
+  }
+]
