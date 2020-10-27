@@ -15,7 +15,7 @@
 
 - `strings`: know of the existence of the `String` type; know of some basic functions (like looking up a character at a position, or slicing the string); know how to do basic string formatting.
 
-## Prequisites
+## Prerequisites
 
 This exercise's prerequisites Concepts are:
 

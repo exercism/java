@@ -27,7 +27,7 @@ Of the many available Java collection types, we chose to use the `array` collect
 - `for-loops`: know how to use a `for` loop to do iteration.
 - `foreach-loops`: know how to iterate over a collection.
 
-## Prequisites
+## Prerequisites
 
 This exercise's prerequisites Concepts are:
 
