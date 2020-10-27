@@ -13,7 +13,7 @@
 
 - `interfaces`: know what interfaces are; know how to use interfaces; know how to define an interface; know how to implement an interface.
 
-## Prequisites
+## Prerequisites
 
 - `classes`: know how to work with classes.
 - `strings`: know how to use strings
