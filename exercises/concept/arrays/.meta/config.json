@@ -5,5 +5,9 @@
       "exercism_username": "samuelteixeiras"
     }
   ],
+  "editor": {
+    "solution_files": ["src/main/java/BirdCount.java"],
+    "test_files": ["src/test/java/BirdCountTest.java"]
+  },
   "forked_from": ["csharp/arrays"]
 }
