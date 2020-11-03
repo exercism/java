@@ -5,5 +5,9 @@
       "exercism_username": "TalesDias"
     }
   ],
+  "editor": {
+    "solution_files": ["src/main/java/AssemblyLine.java"],
+    "test_files": ["src/test/java/AssemblyLineTest.java"]
+  },
   "forked_from": ["csharp/numbers"]
 }

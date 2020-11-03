@@ -4,5 +4,9 @@
       "github_username": "TalesDias",
       "exercism_username": "TalesDias"
     }
-  ]
+  ],
+  "editor": {
+    "solution_files": ["src/main/java/SalaryCalculator.java"],
+    "test_files": ["src/test/java/SalaryCalculatorTest.java"]
+  }
 }
