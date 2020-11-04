@@ -1,21 +1,12 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
-public class BowlingTest {
-    private BowlingGame game;
+import org.junit.Ignore;
+import org.junit.Test;
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-
-    @Before
-    public void setup() {
-        game = new BowlingGame();
-    }
+public class BowlingGameTest {
+    private BowlingGame game = new BowlingGame();
 
     private void playGame(int[] rolls) {
         for (int pins : rolls) {
@@ -153,12 +144,10 @@ public class BowlingTest {
     public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Negative roll is invalid");
-
-        game.score();
+        assertThat(expected).hasMessage("Negative roll is invalid");
     }
 
     @Ignore("Remove to run test")
@@ -166,12 +155,10 @@ public class BowlingTest {
     public void aRollCanNotScoreMoreThan10Points() {
         int[] rolls = {11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Pin count exceeds pins on the lane");
-
-        game.score();
+        assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
     @Ignore("Remove to run test")
@@ -179,12 +166,10 @@ public class BowlingTest {
     public void twoRollsInAFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Pin count exceeds pins on the lane");
-
-        game.score();
+        assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
     @Ignore("Remove to run test")
@@ -192,12 +177,10 @@ public class BowlingTest {
     public void bonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 0};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Pin count exceeds pins on the lane");
-
-        game.score();
+        assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
     @Ignore("Remove to run test")
@@ -205,12 +188,10 @@ public class BowlingTest {
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Pin count exceeds pins on the lane");
-
-        game.score();
+        assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
     @Ignore("Remove to run test")
@@ -228,12 +209,10 @@ public class BowlingTest {
     public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 10};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Pin count exceeds pins on the lane");
-
-        game.score();
+        assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
     @Ignore("Remove to run test")
@@ -241,12 +220,10 @@ public class BowlingTest {
     public void secondBonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 11};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Pin count exceeds pins on the lane");
-
-        game.score();
+        assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
     @Ignore("Remove to run test")
@@ -256,10 +233,11 @@ public class BowlingTest {
 
         playGame(rolls);
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Score cannot be taken until the end of the game");
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, game::score);
 
-        game.score();
+        assertThat(expected)
+            .hasMessage("Score cannot be taken until the end of the game");
     }
 
     @Ignore("Remove to run test")
@@ -269,10 +247,11 @@ public class BowlingTest {
 
         playGame(rolls);
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Score cannot be taken until the end of the game");
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, game::score);
 
-        game.score();
+        assertThat(expected)
+            .hasMessage("Score cannot be taken until the end of the game");
     }
 
     @Ignore("Remove to run test")
@@ -280,12 +259,10 @@ public class BowlingTest {
     public void canNotRollIfGameAlreadyHasTenFrames() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Cannot roll after game is over");
-
-        game.score();
+        assertThat(expected).hasMessage("Cannot roll after game is over");
     }
 
     @Ignore("Remove to run test")
@@ -295,10 +272,11 @@ public class BowlingTest {
 
         playGame(rolls);
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Score cannot be taken until the end of the game");
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, game::score);
 
-        game.score();
+        assertThat(expected)
+            .hasMessage("Score cannot be taken until the end of the game");
     }
 
     @Ignore("Remove to run test")
@@ -308,10 +286,11 @@ public class BowlingTest {
 
         playGame(rolls);
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Score cannot be taken until the end of the game");
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, game::score);
 
-        game.score();
+        assertThat(expected)
+            .hasMessage("Score cannot be taken until the end of the game");
     }
 
     @Ignore("Remove to run test")
@@ -321,10 +300,11 @@ public class BowlingTest {
 
         playGame(rolls);
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Score cannot be taken until the end of the game");
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, game::score);
 
-        game.score();
+        assertThat(expected)
+            .hasMessage("Score cannot be taken until the end of the game");
     }
 
     @Ignore("Remove to run test")
@@ -332,12 +312,10 @@ public class BowlingTest {
     public void canNotRollAfterBonusRollForSpare() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2, 2};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Cannot roll after game is over");
-
-        game.score();
+        assertThat(expected).hasMessage("Cannot roll after game is over");
     }
 
     @Ignore("Remove to run test")
@@ -345,11 +323,9 @@ public class BowlingTest {
     public void canNotRollAfterBonusRollForStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2, 2};
 
-        playGame(rolls);
+        IllegalStateException expected =
+            assertThrows(IllegalStateException.class, () -> playGame(rolls));
 
-        expectedException.expect(IllegalStateException.class);
-        expectedException.expectMessage("Cannot roll after game is over");
-
-        game.score();
+        assertThat(expected).hasMessage("Cannot roll after game is over");
     }
 }

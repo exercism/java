@@ -1,22 +1,18 @@
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThrows;
+
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.NoSuchElementException;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
 public class SimpleLinkedListTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void aNewListIsEmpty() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
-        assertThat(list.size(), is(0));
+        assertThat(list.size()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -24,15 +20,17 @@ public class SimpleLinkedListTest {
     public void canCreateFromArray() {
         Character[] values = new Character[]{'1', '2', '3'};
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>(values);
-        assertThat(list.size(), is(3));
+        assertThat(list.size()).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void popOnEmptyListWillThrow() {
-        expectedException.expect(NoSuchElementException.class);
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
-        list.pop();
+
+        assertThrows(
+            NoSuchElementException.class,
+            list::pop);
     }
 
     @Ignore("Remove to run test")
@@ -41,10 +39,10 @@ public class SimpleLinkedListTest {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<Integer>();
         list.push(9);
         list.push(8);
-        assertThat(list.size(), is(2));
-        assertThat(list.pop(), is(8));
-        assertThat(list.pop(), is(9));
-        assertThat(list.size(), is(0));
+        assertThat(list.size()).isEqualTo(2);
+        assertThat(list.pop()).isEqualTo(8);
+        assertThat(list.pop()).isEqualTo(9);
+        assertThat(list.size()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -57,11 +55,11 @@ public class SimpleLinkedListTest {
         list.push("6");
         list.push("5");
         list.reverse();
-        assertThat(list.pop(), is("9"));
-        assertThat(list.pop(), is("8"));
-        assertThat(list.pop(), is("7"));
-        assertThat(list.pop(), is("6"));
-        assertThat(list.pop(), is("5"));
+        assertThat(list.pop()).isEqualTo("9");
+        assertThat(list.pop()).isEqualTo("8");
+        assertThat(list.pop()).isEqualTo("7");
+        assertThat(list.pop()).isEqualTo("6");
+        assertThat(list.pop()).isEqualTo("5");
     }
 
     @Ignore("Remove to run test")

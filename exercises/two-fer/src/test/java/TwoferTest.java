@@ -38,4 +38,16 @@ public class TwoferTest {
 
         assertEquals(expected, twofer.twofer(input));
     }
+
+    /* Track specific */
+
+    @Ignore("Remove to run test")
+    @Test
+    public void emptyStringIsNotTheSameAsNull() {
+        String input = "";
+        String expected = "One for , one for me.";
+
+        assertEquals(expected, twofer.twofer(input));
+    }
+    
 }

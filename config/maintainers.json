@@ -43,23 +43,23 @@
     },
     {
       "github_username": "Smarticles101",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": true,
       "name": "Logan Stucki",
-      "link_text": "Sometimes I blog on my site",
+      "link_text": "My site",
       "link_url": "https://loganstucki.me/",
       "avatar_url": null,
-      "bio": "I'm a 17 year old student and code artisian. I love writing code and making things. Currently, I enjoy answering stackoverflow questions and making webapps when not contributing to exercism."
+      "bio": null
     },
     {
       "github_username": "FridaTveit",
-      "alumnus": false,
-      "show_on_website": true,
-      "name": "Frida Johanne Tveit",
+      "alumnus": true,
+      "show_on_website": false,
+      "name": null,
       "link_text": null,
       "link_url": null,
       "avatar_url": null,
-      "bio": "I'm a software developer working for Softwire, a UK based software company. I'm a full stack developer working with many different languages including Java. I love programming and helping other people learn more about it!"
+      "bio": null
     },
     {
       "github_username": "sjwarner-bp",
@@ -73,7 +73,7 @@
     },
     {
       "github_username": "lemoncurry",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": true,
       "name": "Anna Weber",
       "link_text": null,
@@ -90,6 +90,46 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "I have been writing Java code professionally for the past 3 years and I have had a wonderful experience with it. The functional style of Java 8 took some getting used to, but it really improved my team's codebase and productivity."
+    },
+    {
+      "github_username": "sshine",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Simon Shine",
+      "link_text": "https://simonshine.dk/",
+      "link_url": "https://simonshine.dk/",
+      "avatar_url": null,
+      "bio": null
+    },
+    {
+      "github_username": "msomji",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Maisam Somji",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I'm a full stack developer with a love for all things related to functional programming. I spend the bulk of my time solving complex problems using simple but not necessarily easy solutions."
+    },
+    {
+      "github_username": "mirkoperillo",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Mirko Perillo",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "Professional Java developer since more than 10 years. Free/Libre and Open Source Software enthusiast."
+    },
+    {
+      "github_username": "pdmoore",
+      "alumnus": true,
+      "show_on_website": false,
+      "name": "Paul Moore",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "Agile coach and trainer focused on improving delivery through technical practices."
     }
   ]
 }
