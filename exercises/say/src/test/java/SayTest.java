@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class SayTest {
 
     private Say say = new Say();
+    
     @Test
     public void zero() {
         assertEquals("zero", say.say(0));
