@@ -1,3 +1,5 @@
+## arrays
+
 In Java, data structures that can hold zero or more elements are known as _collections_. An **array** is a collection that has a fixed size/length and whose elements must all be of the same type. Elements can be assigned to an array or retrieved from it using an index. Java arrays are zero-based, meaning that the first element's index is always zero:
 
 ```java

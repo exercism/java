@@ -1,3 +1,5 @@
+## numbers
+
 There are two different types of numbers in Java:
 
 - Integers: numbers with no digits behind the decimal separator (whole numbers). Examples are `-6`, `0`, `1`, `25`, `976` and `-500000`.
