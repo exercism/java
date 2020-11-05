@@ -1,3 +1,5 @@
+## inheritance
+
 Inheritance is a core concept in OOP (Object Oriented Programming). It donates IS-A relationship.
 It literally means in programming as it means in english, inheriting features from parent(in programming features is normally functions
 and variables).

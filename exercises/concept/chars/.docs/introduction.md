@@ -1,3 +1,5 @@
+## chars
+
 The Java `char` type represents the smallest addressable components of text.
 Multiple `char`s can comprise a string such as `"word"` or `char`s can be
 processed independently. Their literals have single quotes e.g. `'A'`.
