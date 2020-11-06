@@ -272,6 +272,16 @@
       ]
     },
     {
+      "slug": "say",
+      "uuid": "3c76a983-e689-4d82-8f1b-6d52f3c5434c",
+      "core": false,
+      "unlocked_by": "difference-of-squares",
+      "difficulty": 3,
+      "topics": [
+        "integers"
+      ]
+    },
+    {
       "slug": "micro-blog",
       "uuid": "8295ae71-5c0e-49d0-bbe9-9b43a85bf2dd",
       "core": false,
