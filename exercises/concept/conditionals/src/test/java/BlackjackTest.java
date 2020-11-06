@@ -5,7 +5,7 @@ import org.junit.Ignore;
 import static org.assertj.core.api.Assertions.*;
 
 
-public class BlackjackTests {
+public class BlackjackTest {
 
     private Blackjack blackjack;
 
