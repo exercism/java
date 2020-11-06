@@ -5,7 +5,7 @@ import org.junit.Ignore;
 import static org.assertj.core.api.Assertions.*;
 
 
-public class SalaryCalculatorTests {
+public class SalaryCalculatorTest {
     
     public SalaryCalculator calculator;
 
