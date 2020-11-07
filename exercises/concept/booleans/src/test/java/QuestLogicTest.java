@@ -1,21 +1,19 @@
-import org.junit.Test;
 import org.junit.Ignore;
-
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class QuestLogicTest {
     @Test
     public void cannot_execute_fast_attack_if_knight_is_awake() {
         boolean knightIsAwake = true;
-        assertFalse(QuestLogic.canFastAttack(knightIsAwake));
+        assertThat(QuestLogic.canFastAttack(knightIsAwake)).isFalse();
     }
 
     @Test
     @Ignore
     public void can_execute_fast_attack_if_knight_is_sleeping() {
         boolean knightIsAwake = false;
-        assertTrue(QuestLogic.canFastAttack(knightIsAwake));
+        assertThat(QuestLogic.canFastAttack(knightIsAwake)).isTrue();
     }
 
     @Test
@@ -24,7 +22,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = false;
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
-        assertFalse(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isFalse();
     }
 
     @Test
@@ -33,7 +31,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = true;
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -42,7 +40,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = false;
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -50,10 +48,8 @@ public class QuestLogicTest {
     public void can_spy_if_everyone_but_prisoner_is_sleeping() {
         boolean knightIsAwake = false;
         boolean archerIsAwake = false;
-
-
         boolean prisonerIsAwake = true;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -62,7 +58,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = false;
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -71,7 +67,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = true;
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -80,7 +76,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = true;
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -89,7 +85,7 @@ public class QuestLogicTest {
         boolean knightIsAwake = true;
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
-        assertTrue(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -97,7 +93,7 @@ public class QuestLogicTest {
     public void can_signal_prisoner_ifarcher_is_sleeping_and_prisoner_is_awake() {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
-        assertTrue(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isTrue();
     }
 
     @Test
@@ -105,7 +101,7 @@ public class QuestLogicTest {
     public void cannot_signal_prisoner_ifarcher_is_awake_and_prisoner_is_sleeping() {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
-        assertFalse(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isFalse();
     }
 
     @Test
@@ -113,7 +109,7 @@ public class QuestLogicTest {
     public void cannot_signal_prisoner_ifarcher_and_prisoner_are_both_sleeping() {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
-        assertFalse(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isFalse();
     }
 
     @Test
@@ -121,7 +117,7 @@ public class QuestLogicTest {
     public void cannot_signal_prisoner_ifarcher_and_prisoner_are_both_awake() {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
-        assertFalse(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake));
+        assertThat(QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isFalse();
     }
 
     @Test
@@ -131,7 +127,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = true;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -141,7 +138,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -151,7 +149,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = true;
-        assertTrue(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isTrue();
     }
 
     @Test
@@ -161,7 +160,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -171,7 +171,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = true;
-        assertTrue(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isTrue();
     }
 
     @Test
@@ -181,7 +182,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = false;
-        assertTrue(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isTrue();
     }
 
     @Test
@@ -191,7 +193,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = true;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -201,7 +204,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -211,7 +215,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = true;
-        assertTrue(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isTrue();
     }
 
     @Test
@@ -221,7 +226,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -231,7 +237,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = true;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -241,7 +248,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -251,7 +259,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = true;
-        assertTrue(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isTrue();
     }
 
     @Test
@@ -261,7 +270,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -271,7 +281,8 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = true;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -281,6 +292,7 @@ public class QuestLogicTest {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = false;
-        assertFalse(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent));
+        assertThat(QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake,
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 }
