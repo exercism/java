@@ -1,31 +1,30 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FighterTest {
 
     @Test
     public void testToString() {
         Fighter warrior = new Warrior();
-        assertEquals("Fighter is a Warrior", warrior.toString());
+        assertThat(warrior.toString()).isEqualTo("Fighter is a Warrior");
     }
 
     @Ignore("Remove to run the test")
     @Test
     public void testFighterVulnerableByDefault() {
         Fighter warrior = new Warrior();
-        assertFalse("The fighter shouldn't be vulnerable by default", warrior.isVulnerable());
+        assertThat(warrior.isVulnerable()).isFalse();
     }
 
     @Ignore("Remove to run the test")
     @Test
     public void testWizardVulnerable() {
         Wizard wizard = new Wizard();
-        assertTrue("", wizard.isVulnerable());
-
+        assertThat(wizard.isVulnerable()).isTrue();
         wizard.prepareSpell();
-        assertFalse("The wizard shouldn't be vulnerable after preparing the spell", wizard.isVulnerable());
+        assertThat(wizard.isVulnerable()).isFalse();
     }
 
     @Ignore("Remove to run the test")
@@ -33,11 +32,9 @@ public class FighterTest {
     public void testWizardsDamagePoints() {
         Wizard wizard = new Wizard();
         Warrior warrior = new Warrior();
-
-        assertEquals(3, wizard.damagePoints(warrior));
-
+        assertThat(wizard.damagePoints(warrior)).isEqualTo(3);
         wizard.prepareSpell();
-        assertEquals(12, wizard.damagePoints(warrior));
+        assertThat(wizard.damagePoints(warrior)).isEqualTo(12);
     }
 
     @Ignore("Remove to run the test")
@@ -45,10 +42,8 @@ public class FighterTest {
     public void testWarriorsDamagePoints() {
         Warrior warrior = new Warrior();
         Wizard wizard = new Wizard();
-
-        assertEquals(10, warrior.damagePoints(wizard));
-
+        assertThat(warrior.damagePoints(wizard)).isEqualTo(10);
         wizard.prepareSpell();
-        assertEquals(6, warrior.damagePoints(wizard));
+        assertThat(warrior.damagePoints(wizard)).isEqualTo(6);
     }
 }
