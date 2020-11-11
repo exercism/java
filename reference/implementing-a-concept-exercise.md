@@ -14,7 +14,7 @@ Please also watch the following video:
 
 As this document is generic, the following placeholders are used:
 
-- `<slug>`: the name of the exercise in snake_case (e.g. `anonymous-methods`).
+- `<slug>`: the name of the exercise in snake_case (e.g. `calculator-conundrum`).
 - `<concepts>`: the Concepts the exercise is about (e.g. `loops`),
 - `<concept-1>`: a single Concept slug,
 - `<prerequisite-n>`: a single Concept slug,
@@ -29,6 +29,10 @@ To implement a Concept Exercise, the following files must be added:
 <pre>
 languages
 └── java
+    ├── concepts
+    |   └── &lt;concept-1&gt;
+    |       ├── about.md
+    |       └── links.json
     └── exercises
         └── concept
             └── &lt;slug&gt;
@@ -36,7 +40,6 @@ languages
                 |   |── instructions.md
                 |   |── introduction.md
                 |   |── hints.md
-                |   ├── after.md
                 |   └── source.md (required if there are third-party sources)
                 |── .gitignore
                 |── .meta
