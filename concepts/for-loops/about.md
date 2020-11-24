@@ -1,21 +1,20 @@
 The [for loop][for-loop] provides a mechanism to execute a group of statements repeatedly.
 The loop consists of four parts:
 
-````java
+```java
 for (initialization; test; update)
 {
      // body
 }
-````
-
+```
 
 The initialization sets an initial state for the loop.
 Typically it declares and sets a variable used in the test expression and update statement.
 For example:
 
-````java
+```java
 int i=1
-````
+```
 
 The test expression tests if the loop should execute the body
 and execute the update statement.
@@ -25,17 +24,19 @@ If the test evaluates to true the body and the update expression will be execute
 If the expression evaluates to false neither the body nor the update statement will be executed and execution continues after the loop.
 An example of a test can be:
 
-````java
+```java
 i <= 10
-````
+```
 
 After executing the loop body, the update expression increments/decrements the loop variable by some value.
 Example:
-````java
+
+```java
 i++
-````
+```
 
 A for loop executing over each element in an array can look like this:
+
 ```java
 char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
