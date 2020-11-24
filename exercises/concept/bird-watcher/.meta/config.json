@@ -1,0 +1,17 @@
+{
+  "authors": [
+    {
+      "github_username": "samuelteixeiras",
+      "exercism_username": "samuelteixeiras"
+    },
+    {
+      "github_username": "ystromm",
+      "exercism_username": "ystromm"
+    }
+  ],
+  "editor": {
+    "solution_files": ["src/main/java/BirdWatcher.java"],
+    "test_files": ["src/test/java/BirdWatcherTest.java"]
+  },
+  "forked_from": ["csharp/arrays"]
+}

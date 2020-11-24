@@ -1,8 +1,8 @@
 
-class BirdCount {
+class BirdWatcher {
     private int[] birdsPerDay;
 
-    public BirdCount(int[] birdsPerDay) {
+    public BirdWatcher(int[] birdsPerDay) {
         this.birdsPerDay = birdsPerDay;
     }
     public int[] getLastWeek() {
