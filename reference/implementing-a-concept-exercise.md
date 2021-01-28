@@ -45,7 +45,7 @@ languages
                 |── .meta
                 |   |── design.md
                 |   |── config.json
-                |   └── example
+                |   └── exemplar
                 |       |── build.gradle
                 |       └── src
                 |           └── main
@@ -71,7 +71,7 @@ Now create the following three files:
 
 - `src/main/java/<slug>.java`. the stub implementation file, which is the starting point for students to work on the exercise.
 - `src/test/java/<slug>Test.java`: the test suite, please use `assertj` to describe assertions instead of those offered by JUnit.
-- `.meta/example/src/main/java/<slug>.java`: an example implementation that passes all the tests.
+- `.meta/exemplar/src/main/java/<slug>.java`: an exemplar implementation that passes all the tests.
 
 Append to `languages/java/exercises/settings.gradle` the following line: `concept:<slug>`
 
