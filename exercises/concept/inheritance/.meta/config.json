@@ -5,9 +5,10 @@
       "exercism_username": "himanshugoyal1065"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/Fighter.java"],
-    "test_files": ["src/test/java/FighterTest.java"]
+  "files": {
+    "solution": ["src/main/java/Fighter.java"],
+    "test": ["src/test/java/FighterTest.java"],
+    "exemplar": []
   },
   "forked_from": ["csharp/inheritance"]
 }

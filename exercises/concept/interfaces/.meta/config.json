@@ -5,13 +5,14 @@
       "exercism_username": "mikedamay"
     }
   ],
-  "editor": {
-    "solution_files": [
+  "files": {
+    "solution": [
       "src/main/java/ExperimentalRemoteControlCar.java",
       "src/main/java/ProductionRemoteControlCar.java",
       "src/main/java/RemoteControlCar.java",
       "src/main/java/TestTrack.java"
     ],
-    "test_files": ["src/test/java/RemoteControlCarTest.java"]
+    "test": ["src/test/java/RemoteControlCarTest.java"],
+    "exemplar": []
   }
 }

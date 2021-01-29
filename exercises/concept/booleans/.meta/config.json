@@ -5,9 +5,10 @@
       "exercism_username": "mikedamay"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/QuestLogic.java"],
-    "test_files": ["src/test/java/QuestLogicTest.java"]
+  "files": {
+    "solution": ["src/main/java/QuestLogic.java"],
+    "test": ["src/test/java/QuestLogicTest.java"],
+    "exemplar": []
   },
   "forked_from": ["csharp/booleans"]
 }

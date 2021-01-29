@@ -5,8 +5,9 @@
       "exercism_username": "Azumix"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/PlayAnalyzer.java"],
-    "test_files": ["src/test/java/PlayAnalyzerTest.java"]
+  "files": {
+    "solution": ["src/main/java/PlayAnalyzer.java"],
+    "test": ["src/test/java/PlayAnalyzerTest.java"],
+    "exemplar": []
   }
 }

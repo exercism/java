@@ -5,9 +5,10 @@
       "exercism_username": "ystromm"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/Identifier.java"],
-    "test_files": ["src/test/java/IdentifierTest.java"]
+  "files": {
+    "solution": ["src/main/java/Identifier.java"],
+    "test": ["src/test/java/IdentifierTest.java"],
+    "exemplar": []
   },
   "forked_from": ["csharp/chars"]
 }

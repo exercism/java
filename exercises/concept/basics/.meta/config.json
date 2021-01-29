@@ -5,9 +5,10 @@
       "exercism_username": "mirkoperillo"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/Lasagna.java"],
-    "test_files": ["src/test/java/LasagnaTest.java"]
+  "files": {
+    "solution": ["src/main/java/Lasagna.java"],
+    "test": ["src/test/java/LasagnaTest.java"],
+    "exemplar": []
   },
   "forked_from": ["csharp/basics"]
 }
