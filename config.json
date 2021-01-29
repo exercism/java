@@ -16,6 +16,149 @@
   },
   "solution_pattern": "reference",
   "exercises": {
+    "concept": [
+      {
+        "slug": "basics",
+        "uuid": "01924e92-ecc7-4ba6-83f9-f142c0756b9f",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": []
+      },
+      {
+        "slug": "booleans",
+        "uuid": "aaf69953-eac8-4016-984e-13b0917fcf01",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      },
+      {
+        "slug": "bird-watcher",
+        "uuid": "60600885-8684-45c3-b8a9-a2f9e3ce2d97",
+        "concepts": [
+          "arrays",
+          "for-loops",
+          "foreach-loops"
+        ],
+        "prerequisites": [
+          "booleans"
+        ]
+      },
+      {
+        "slug": "chars",
+        "uuid": "b18ad603-e50e-4358-bb3e-0942fefb9dba",
+        "concepts": [
+          "chars"
+        ],
+        "prerequisites": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "classes",
+        "uuid": "2ae791e9-eb7a-4344-841d-0c4797e5106c",
+        "concepts": [
+          "classes"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "numbers",
+          "strings"
+        ]
+      },
+      {
+        "slug": "conditionals",
+        "uuid": "43b8f2e3-99e9-49cc-a897-d66f0f26670d",
+        "concepts": [
+          "conditionals-if"
+        ],
+        "prerequisites": [
+          "booleans"
+        ]
+      },
+      {
+        "slug": "constructors",
+        "uuid": "a85b6394-3ca5-4913-b554-b460dd49c0ea",
+        "concepts": [
+          "constructors"
+        ],
+        "prerequisites": [
+          "classes"
+        ]
+      },
+      {
+        "slug": "interfaces",
+        "uuid": "0fa73b4c-75e8-4d38-a7cf-8c1329a1f183",
+        "concepts": [
+          "interfaces"
+        ],
+        "prerequisites": [
+          "classes",
+          "lists",
+          "strings"
+        ]
+      },
+      {
+        "slug": "numbers",
+        "uuid": "3f451c6b-04e2-4b08-8bb0-7dcd2ec5b8f4",
+        "concepts": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      },
+      {
+        "slug": "strings",
+        "uuid": "2165c331-6b0c-49b8-9555-bad577ec4fc6",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      },
+      {
+        "slug": "ternary-operators",
+        "uuid": "5521e413-a382-4c33-ae9c-159a4d7632ca",
+        "concepts": [
+          "ternary-operators"
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "numbers"
+        ]
+      },
+      {
+        "slug": "switch-statement",
+        "uuid": "5eb11198-807c-469f-903e-57b4f931c02c",
+        "concepts": [
+          "switch-statement"
+        ],
+        "prerequisites": [
+          "classes",
+          "methods",
+          "variables"
+        ]
+      },
+      {
+        "slug": "inheritance",
+        "uuid": "e7192707-7b48-4095-9816-591111910c0b",
+        "concepts": [
+          "inheritance"
+        ],
+        "prerequisites": [
+          "classes",
+          "strings",
+          "boolean",
+          "functions",
+          "abstract"
+        ]
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
