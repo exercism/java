@@ -1509,7 +1509,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "binary",
@@ -1518,7 +1519,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "hexadecimal",
@@ -1527,7 +1529,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "octal",
@@ -1536,7 +1539,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "strain",
@@ -1545,7 +1549,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "trinary",
@@ -1554,7 +1559,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     }
   ]
 }
