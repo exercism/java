@@ -1,6 +1,12 @@
 {
   "language": "Java",
   "active": true,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "Java is a very widely used Object Oriented programming language. It's safe, simple to use and portable so that you can \"write once, run anywhere\".",
   "version": 3,
   "solution_pattern": "reference",
