@@ -15,7 +15,6 @@
     "indent_size": 4
   },
   "solution_pattern": "reference",
-  "foregone": [],
   "exercises": {
     "practice": [
       {
@@ -1554,6 +1553,7 @@
           "floating_point_numbers"
         ]
       }
-    ]
+    ],
+    "foregone": []
   }
 }
