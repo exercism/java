@@ -1,5 +1,6 @@
 {
   "language": "Java",
+  "slug": "java",
   "active": true,
   "status": {
     "concept_exercises": false,
