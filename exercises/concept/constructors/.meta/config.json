@@ -5,9 +5,10 @@
       "exercism_username": "mirkoperillo"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/RemoteControlCar.java"],
-    "test_files": ["src/test/java/RemoteControlCarTest.java"]
+  "files": {
+    "solution": ["src/main/java/RemoteControlCar.java"],
+    "test": ["src/test/java/RemoteControlCarTest.java"],
+    "exemplar": []
   },
   "authors": [
     {

@@ -9,9 +9,10 @@
       "exercism_username": "ystromm"
     }
   ],
-  "editor": {
-    "solution_files": ["src/main/java/BirdWatcher.java"],
-    "test_files": ["src/test/java/BirdWatcherTest.java"]
+  "files": {
+    "solution": ["src/main/java/BirdWatcher.java"],
+    "test": ["src/test/java/BirdWatcherTest.java"],
+    "exemplar": []
   },
   "forked_from": ["csharp/arrays"]
 }
