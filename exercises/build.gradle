@@ -31,7 +31,7 @@ subprojects {
     println "${project}"    
     // skip project named 'concept' or 'practise'
     // they are only folders containing exercises
-    if(project.name == 'concept' || project.name == 'practise')
+    if(project.name == 'concept' || project.name == 'practice')
       return;
 
     // set default encoding to UTF-8
