@@ -16,7 +16,7 @@ include 'concept:interfaces'
 include 'concept:switch-statement'
 include 'concept:inheritance'
 
-// practise exercises
+// practice exercises
 include 'practice:accumulate'
 include 'practice:acronym'
 include 'practice:affine-cipher'
