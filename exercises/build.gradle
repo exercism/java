@@ -28,9 +28,10 @@ subprojects {
   }
 
   afterEvaluate { project ->
-   // set default encoding to UTF-8
-   compileJava.options.encoding = "UTF-8"
-   compileTestJava.options.encoding = "UTF-8"
+    // skip project named 'concept' or 'practice'
+    // they are only folders containing exercises
+    if(project.name == 'concept' || project.name == 'practice')
+      return;
 
     sourceSets {
       // Set the directory containing the reference solution as the default source set. Default
