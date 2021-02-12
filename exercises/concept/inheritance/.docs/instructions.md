@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise you're playing a role-playing game named "Wizard and Warriors," which allows you to play as either a Wizard or a Warrior.
 
 There are different rules for Warriors and Wizards to determine how much damage points they deal.

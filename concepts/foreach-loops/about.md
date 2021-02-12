@@ -1,3 +1,5 @@
+# About
+
 The [foreach loop][foreach-loop] provides a mechanism for executing a statement group for each element in a collection or array.
 
 Syntax:

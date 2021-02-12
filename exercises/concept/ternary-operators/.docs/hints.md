@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - Check the [this][ternary-operator-first] and [this][ternary-operator-second] examples on how to use _ternary operators_.

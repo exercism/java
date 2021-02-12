@@ -1,4 +1,4 @@
-## Hints
+# Hints
 
 One main aspect of Functional Programming is to have side-effect free functions, not to have to wonder that hidden objects a function has changed.  
 

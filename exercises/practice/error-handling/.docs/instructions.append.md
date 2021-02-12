@@ -1,3 +1,5 @@
+# Instructions append
+
 This exercise requires you to handle exceptions. An [exception](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html) is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
 
 In Java, there are two types of exceptions: checked and unchecked exceptions.

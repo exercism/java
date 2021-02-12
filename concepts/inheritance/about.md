@@ -1,3 +1,5 @@
+# About
+
 ## Inheritance
 
 Java supports inheritance as it's core functionality and then to achieve a lot of OOPs principles like abstraction using

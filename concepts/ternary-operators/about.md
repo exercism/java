@@ -1,4 +1,4 @@
-## Ternary Operator
+# Ternary Operator
 
 The _ternary operators_ can be thought of as being a compact version of _if-else_. It's usually used in (but not restricted to) return statements, it needs just one single line to make the decision, returning the left value if the expression is `true` and the right value if `false`.
 

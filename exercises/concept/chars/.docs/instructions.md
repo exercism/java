@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise you will implement a partial set of utility routines to help a developer
 clean up identifier names.
 

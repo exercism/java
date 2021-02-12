@@ -1,4 +1,4 @@
-## Setup
+# Setup
 
 Go through the setup instructions for Java to install the necessary
 dependencies:

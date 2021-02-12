@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise, you'll be implementing rules for calculating the total salary of a empyoyee in a month. The International Siderurgy Company (ISC) needs help to calculate the salary for the employees, given that different factors can alter the final wage value for each employee.
 
 You have three tasks and you should use the ternary operator instead of if/else statements to implement them.

@@ -1,3 +1,5 @@
+# About
+
 Booleans in Java are represented by the `boolean` type, which values can be either `true` or `false`.
 
 Java supports three [boolean operators][operators]: `!` (NOT), `&&` (AND), and `||` (OR). The `&&` and `||` operators use _short-circuit evaluation_, which means that the right-hand side of the operator is only evaluated when needed.

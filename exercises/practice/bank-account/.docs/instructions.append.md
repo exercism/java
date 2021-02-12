@@ -1,3 +1,5 @@
+# Instructions append
+
 This exercise introduces [concurrency](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html). 
 To pass the last test you might find the 
 [`synchronized` keyword or locks](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html) useful.

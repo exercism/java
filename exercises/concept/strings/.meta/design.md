@@ -1,3 +1,5 @@
+# Design
+
 ## Learning objectives
 
 - Know of the existence of the `String` type.

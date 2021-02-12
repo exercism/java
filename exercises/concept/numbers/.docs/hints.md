@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - [Numbers tutorial][numbers].
