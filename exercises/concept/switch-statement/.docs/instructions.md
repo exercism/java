@@ -2,7 +2,7 @@
 
 You are developing a system to help the staff of a football/soccer club's web site report on matches. Data is received from a variety of sources and piped into a single stream after being cleaned up.
 
-### 1. Output descriptions of the players based on their shirt number
+## 1. Output descriptions of the players based on their shirt number
 
 The team only ever plays a 4-3-3 formation and has never agreed with the 1965 change to the rules allowing for substitutions, never mind enlarged squads.
 
@@ -26,7 +26,7 @@ PlayAnalyzer.onField(10);
 // => "striker"
 ```
 
-### 2. Raise an alert if an unknown shirt number is encountered
+## 2. Raise an alert if an unknown shirt number is encountered
 
 Modify the `PlayAnalyzer.onField()` method to throw an `IllegalArgumentException` when a shirt number outside the range 1-11 is processed.
 
