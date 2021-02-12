@@ -1,6 +1,6 @@
 # Hints
 
-### 1. Replace any spaces encountered with underscores
+## 1. Replace any spaces encountered with underscores
 
 - [This tutorial][chars-tutorial] is useful.
 - [Reference documentation][chars-docs] for `char`s is here.
@@ -9,15 +9,15 @@
 - See [this method][iswhitespace] for detecting spaces. Remember it is a static method.
 - `char` literals are enclosed in single quotes.
 
-### 2. Replace control characters with the upper case string "CTRL"
+## 2. Replace control characters with the upper case string "CTRL"
 
 - See [this method][iscontrol] to check if a character is a control character.
 
-### 3. Convert kebab-case to camel-case
+## 3. Convert kebab-case to camel-case
 
 - See [this method][toupper] to convert a character to upper case.
 
-### 4. Omit Greek lower case letters
+## 4. Omit Greek lower case letters
 
 - `char`s support the default equality and comparison operators.
 
