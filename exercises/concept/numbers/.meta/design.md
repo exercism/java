@@ -1,3 +1,5 @@
+# Design
+
 ## Learning objectives
 
 - Know of the existence of the two most commonly used number types, `int` and `double`.

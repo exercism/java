@@ -1,3 +1,5 @@
+# Design
+
 Of the many available Java collection types, we chose to use the `array` collection type as the first collection type students will be taught for the following reasons:
 
 - Arrays don't require the student to know about generics.

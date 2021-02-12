@@ -1,3 +1,5 @@
+# Design
+
 ## Learning objectives
 
 - Know how to use ternary exepressions - using the `?:` operator.

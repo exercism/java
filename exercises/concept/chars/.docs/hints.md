@@ -1,3 +1,5 @@
+# Hints
+
 ### 1. Replace any spaces encountered with underscores
 
 - [This tutorial][chars-tutorial] is useful.

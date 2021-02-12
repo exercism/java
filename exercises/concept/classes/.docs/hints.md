@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 ## 1. Buy a brand-new remote controlled car

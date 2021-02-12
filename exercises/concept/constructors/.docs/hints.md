@@ -1,3 +1,5 @@
+# Hints
+
 ## 1. Creating a remote controlled car
 
 - [Define a constructor][constructor-syntax] that has two `int` parameters.

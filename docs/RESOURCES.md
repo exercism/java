@@ -1,4 +1,4 @@
-## Useful Resources
+# Useful Resources
 
 * [Stack Overflow](http://stackoverflow.com/questions/tagged/java).
 * [The Java subreddit](https://www.reddit.com/r/java)

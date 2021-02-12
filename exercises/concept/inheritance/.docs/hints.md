@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 Detailed explanation of inheritance can be found at [Inheritance][inheritance-main].

@@ -1,3 +1,5 @@
+# About
+
 The key thing to remember about Java strings is that they are immutable objects representing text as a sequence of Unicode characters (letters, digits, punctuation, etc.). Double quotes are used to define a `String` instance:
 
 ```java

@@ -1,4 +1,4 @@
-## General
+# General
 
 - The [`switch` statement documentation][switch-statement] provides an introduction to `switch` statements.
 

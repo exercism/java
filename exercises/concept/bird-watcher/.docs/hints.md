@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - The bird count per day is stored in a field named `birdsPerDay`.

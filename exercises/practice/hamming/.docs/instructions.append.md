@@ -1,4 +1,4 @@
-## Hints
+# Hints
 
 This is the first exercise with tests that require you to throw an
 [`Exception`](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html). `Exception`s are typically thrown to

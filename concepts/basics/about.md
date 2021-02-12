@@ -1,3 +1,5 @@
+# About
+
 Java is a statically-typed language, which means that everything has a type at compile-time. Assigning a value to a name is referred to as defining a variable.
 
 ```java

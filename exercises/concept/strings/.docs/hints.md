@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - The `String` class has many useful [built-in methods][string-class].

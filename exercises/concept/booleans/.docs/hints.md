@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - There are three [boolean operators][operators] to work with boolean values.

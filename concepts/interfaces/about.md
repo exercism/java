@@ -1,3 +1,5 @@
+# About
+
 [`interfaces`][interfaces] are the primary means of [decoupling][wiki-loose-coupling] the uses of a class from its implementation. This decoupling provides flexibility for maintenance of the implementation and helps support type safe generic behavior.
 
 The syntax of an interface is similar to that of a class except that methods appear as the signature only and no body is provided.
