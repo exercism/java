@@ -3,9 +3,9 @@
   "slug": "java",
   "active": true,
   "status": {
-    "concept_exercises": false,
-    "test_runner": false,
-    "representer": false,
+    "concept_exercises": true,
+    "test_runner": true,
+    "representer": true,
     "analyzer": false
   },
   "blurb": "Java is a very widely used Object Oriented programming language. It's safe, simple to use and portable so that you can \"write once, run anywhere\".",
