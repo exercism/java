@@ -15,6 +15,20 @@
     "indent_size": 4
   },
   "solution_pattern": "reference",
+  "files": {
+    "solution": [
+      "path/to/%{kebab_slug}.ext"
+    ],
+    "test": [
+      "path/to/%{kebab_slug}.ext"
+    ],
+    "example": [
+      "path/to/%{kebab_slug}.ext"
+    ],
+    "exemplar": [
+      "path/to/%{kebab_slug}.ext"
+    ]
+  },
   "exercises": {
     "concept": [
       {
