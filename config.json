@@ -18,7 +18,8 @@
   "exercises": {
     "concept": [
       {
-        "slug": "basics",
+        "slug": "lasagna-cooking",
+        "name": "Cook your lasagna",
         "uuid": "01924e92-ecc7-4ba6-83f9-f142c0756b9f",
         "concepts": [
           "basics"
