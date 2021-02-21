@@ -17,16 +17,15 @@
   "solution_pattern": "reference",
   "files": {
     "solution": [
-      "path/to/%{kebab_slug}.ext"
+      "src/main/java/%{pascal_slug}.java"
     ],
     "test": [
-      "path/to/%{kebab_slug}.ext"
+      "src/test/java/%{pascal_slug}Test.java"
     ],
     "example": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/src/reference/java/%{pascal_slug}.java"
     ],
     "exemplar": [
-      "path/to/%{kebab_slug}.ext"
     ]
   },
   "exercises": {
