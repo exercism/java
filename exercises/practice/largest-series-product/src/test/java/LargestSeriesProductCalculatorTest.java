@@ -184,5 +184,16 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(expected)
             .hasMessage("Series length must be non-negative.");
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testForIntegerOverflow() {
+        LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("9999999999");
+        long expectedProduct = 3486784401L;
+
+        long actualProduct = calculator.calculateLargestProductForSeriesLength(10);
+
+        assertEquals(expectedProduct, actualProduct);
+    }
 
 }
