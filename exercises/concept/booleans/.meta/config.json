@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/QuestLogic.java"],
     "test": ["src/test/java/QuestLogicTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/QuestLogic.java"
     ]
   },

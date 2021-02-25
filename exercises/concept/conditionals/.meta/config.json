@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/Blackjack.java"],
     "test": ["src/test/java/BlackjackTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/Blackjack.java"
     ]
   },

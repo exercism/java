@@ -13,7 +13,7 @@
       "src/main/java/TestTrack.java"
     ],
     "test": ["src/test/java/RemoteControlCarTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/ExperimentalRemoteControlCar.java",
       ".meta/src/reference/java/ProductionRemoteControlCar.java",
       ".meta/src/reference/java/RemoteControlCar.java",

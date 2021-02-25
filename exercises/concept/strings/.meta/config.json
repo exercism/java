@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/LogLine.java"],
     "test": ["src/test/java/LogLineTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/LogLine.java"
     ]
   },

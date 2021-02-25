@@ -12,7 +12,7 @@
   "files": {
     "solution": ["src/main/java/BirdWatcher.java"],
     "test": ["src/test/java/BirdWatcherTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/BirdWatcher.java"
     ]
   },

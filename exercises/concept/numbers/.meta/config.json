@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/AssemblyLine.java"],
     "test": ["src/test/java/AssemblyLineTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/AssemblyLine.java"
     ]
   },

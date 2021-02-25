@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/RemoteControlCar.java"],
     "test": ["src/test/java/RemoteControlCarTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/RemoteControlCar.java"
     ]
   },

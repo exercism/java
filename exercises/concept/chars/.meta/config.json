@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/Identifier.java"],
     "test": ["src/test/java/IdentifierTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/Identifier.java"
     ]
   },

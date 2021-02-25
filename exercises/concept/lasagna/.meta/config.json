@@ -8,7 +8,7 @@
   "files": {
     "solution": ["src/main/java/Lasagna.java"],
     "test": ["src/test/java/LasagnaTest.java"],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/Lasagna.java"
     ]
   },
