@@ -13,6 +13,11 @@
       "src/main/java/TestTrack.java"
     ],
     "test": ["src/test/java/RemoteControlCarTest.java"],
-    "exemplar": []
+    "exemplar": [
+      ".meta/src/reference/java/ExperimentalRemoteControlCar.java",
+      ".meta/src/reference/java/ProductionRemoteControlCar.java",
+      ".meta/src/reference/java/RemoteControlCar.java",
+      ".meta/src/reference/java/TestTrack.java"
+    ]
   }
 }

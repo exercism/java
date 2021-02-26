@@ -12,7 +12,9 @@
   "files": {
     "solution": ["src/main/java/BirdWatcher.java"],
     "test": ["src/test/java/BirdWatcherTest.java"],
-    "exemplar": []
+    "exemplar": [
+      ".meta/src/reference/java/BirdWatcher.java"
+    ]
   },
   "forked_from": ["csharp/arrays"]
 }

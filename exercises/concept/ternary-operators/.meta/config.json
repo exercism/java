@@ -8,6 +8,8 @@
   "files": {
     "solution": ["src/main/java/SalaryCalculator.java"],
     "test": ["src/test/java/SalaryCalculatorTest.java"],
-    "exemplar": []
+    "exemplar": [
+      ".meta/src/reference/java/SalaryCalculator.java"
+    ]
   }
 }

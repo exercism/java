@@ -8,7 +8,9 @@
   "files": {
     "solution": ["src/main/java/Identifier.java"],
     "test": ["src/test/java/IdentifierTest.java"],
-    "exemplar": []
+    "exemplar": [
+      ".meta/src/reference/java/Identifier.java"
+    ]
   },
   "forked_from": ["csharp/chars"]
 }

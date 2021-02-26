@@ -8,7 +8,9 @@
   "files": {
     "solution": ["src/main/java/LogLine.java"],
     "test": ["src/test/java/LogLineTest.java"],
-    "exemplar": []
+    "exemplar": [
+      ".meta/src/reference/java/LogLine.java"
+    ]
   },
   "forked_from": ["csharp/strings"]
 }

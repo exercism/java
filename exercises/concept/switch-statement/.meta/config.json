@@ -8,6 +8,8 @@
   "files": {
     "solution": ["src/main/java/PlayAnalyzer.java"],
     "test": ["src/test/java/PlayAnalyzerTest.java"],
-    "exemplar": []
+    "exemplar": [
+      ".meta/src/reference/java/PlayAnalyzer.java"
+    ]
   }
 }
