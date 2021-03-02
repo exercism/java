@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for interfaces exercise",
   "authors": [
     {
       "github_username": "mikedamay",
@@ -12,7 +13,9 @@
       "src/main/java/RemoteControlCar.java",
       "src/main/java/TestTrack.java"
     ],
-    "test": ["src/test/java/RemoteControlCarTest.java"],
+    "test": [
+      "src/test/java/RemoteControlCarTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/ExperimentalRemoteControlCar.java",
       ".meta/src/reference/java/ProductionRemoteControlCar.java",

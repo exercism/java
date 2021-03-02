@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for lasagna exercise",
   "authors": [
     {
       "github_username": "mirkoperillo",
@@ -6,11 +7,17 @@
     }
   ],
   "files": {
-    "solution": ["src/main/java/Lasagna.java"],
-    "test": ["src/test/java/LasagnaTest.java"],
+    "solution": [
+      "src/main/java/Lasagna.java"
+    ],
+    "test": [
+      "src/test/java/LasagnaTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/Lasagna.java"
     ]
   },
-  "forked_from": ["csharp/basics"]
+  "forked_from": [
+    "csharp/basics"
+  ]
 }

@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for inheritance exercise",
   "authors": [
     {
       "github_username": "himanshugoyal1065",
@@ -6,11 +7,17 @@
     }
   ],
   "files": {
-    "solution": ["src/main/java/Fighter.java"],
-    "test": ["src/test/java/FighterTest.java"],
+    "solution": [
+      "src/main/java/Fighter.java"
+    ],
+    "test": [
+      "src/test/java/FighterTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/Fighter.java"
     ]
   },
-  "forked_from": ["csharp/inheritance"]
+  "forked_from": [
+    "csharp/inheritance"
+  ]
 }

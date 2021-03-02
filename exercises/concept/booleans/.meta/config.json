@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for booleans exercise",
   "authors": [
     {
       "github_username": "mikedamay",
@@ -6,11 +7,17 @@
     }
   ],
   "files": {
-    "solution": ["src/main/java/QuestLogic.java"],
-    "test": ["src/test/java/QuestLogicTest.java"],
+    "solution": [
+      "src/main/java/QuestLogic.java"
+    ],
+    "test": [
+      "src/test/java/QuestLogicTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/QuestLogic.java"
     ]
   },
-  "forked_from": ["csharp/booleans"]
+  "forked_from": [
+    "csharp/booleans"
+  ]
 }
