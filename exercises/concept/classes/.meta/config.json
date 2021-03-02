@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for classes exercise",
   "contributors": [
     {
       "github_username": "mirkoperillo",
@@ -6,8 +7,12 @@
     }
   ],
   "files": {
-    "solution": ["src/main/java/RemoteControlCar.java"],
-    "test": ["src/test/java/RemoteControlCarTest.java"],
+    "solution": [
+      "src/main/java/RemoteControlCar.java"
+    ],
+    "test": [
+      "src/test/java/RemoteControlCarTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/RemoteControlCar.java"
     ]

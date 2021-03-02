@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for bird-watcher exercise",
   "authors": [
     {
       "github_username": "samuelteixeiras",
@@ -10,11 +11,17 @@
     }
   ],
   "files": {
-    "solution": ["src/main/java/BirdWatcher.java"],
-    "test": ["src/test/java/BirdWatcherTest.java"],
+    "solution": [
+      "src/main/java/BirdWatcher.java"
+    ],
+    "test": [
+      "src/test/java/BirdWatcherTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/BirdWatcher.java"
     ]
   },
-  "forked_from": ["csharp/arrays"]
+  "forked_from": [
+    "csharp/arrays"
+  ]
 }

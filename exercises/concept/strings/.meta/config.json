@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for strings exercise",
   "authors": [
     {
       "github_username": "mirkoperillo",
@@ -6,11 +7,17 @@
     }
   ],
   "files": {
-    "solution": ["src/main/java/LogLine.java"],
-    "test": ["src/test/java/LogLineTest.java"],
+    "solution": [
+      "src/main/java/LogLine.java"
+    ],
+    "test": [
+      "src/test/java/LogLineTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/LogLine.java"
     ]
   },
-  "forked_from": ["csharp/strings"]
+  "forked_from": [
+    "csharp/strings"
+  ]
 }
