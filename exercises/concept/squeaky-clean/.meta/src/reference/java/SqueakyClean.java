@@ -1,4 +1,4 @@
-class Identifier {
+class SqueakyClean {
     static String clean(String identifier) {
         final StringBuilder cleanIdentifier = new StringBuilder();
         for (int i = 0; i < identifier.length(); i++) {

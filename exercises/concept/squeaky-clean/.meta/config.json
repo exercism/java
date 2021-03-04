@@ -8,13 +8,13 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/Identifier.java"
+      "src/main/java/SqueakyClean.java"
     ],
     "test": [
-      "src/test/java/IdentifierTest.java"
+      "src/test/java/SqueakyCleanTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/Identifier.java"
+      ".meta/src/reference/java/SqueakyClean.java"
     ]
   },
   "forked_from": [
