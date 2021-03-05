@@ -8,16 +8,16 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/LogLine.java"
+      "src/main/java/LogLevels.java"
     ],
     "test": [
-      "src/test/java/LogLineTest.java"
+      "src/test/java/LogLevelsTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/LogLine.java"
+      ".meta/src/reference/java/LogLevels.java"
     ]
   },
   "forked_from": [
-    "csharp/strings"
+    "csharp/log-levels"
   ]
 }

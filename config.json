@@ -136,7 +136,8 @@
         "status": "wip"
       },
       {
-        "slug": "strings",
+        "slug": "log-levels",
+        "name": "Log Levels",
         "uuid": "2165c331-6b0c-49b8-9555-bad577ec4fc6",
         "concepts": [
           "strings"

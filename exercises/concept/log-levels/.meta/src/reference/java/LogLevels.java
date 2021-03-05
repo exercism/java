@@ -1,4 +1,4 @@
-public class LogLine {
+public class LogLevels {
     public static String message(String logLine) {
         return logLine.substring(logLine.indexOf(":") + 1).trim();
     }
