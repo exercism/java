@@ -1,4 +1,4 @@
-class QuestLogic {
+class AnnalynsInfiltration {
     public static boolean canFastAttack(boolean knightIsAwake) {
         throw new UnsupportedOperationException("Please implement the (static) QuestLogic.canFastAttack() method");
     }

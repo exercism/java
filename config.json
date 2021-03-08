@@ -42,7 +42,8 @@
         "status": "wip"
       },
       {
-        "slug": "booleans",
+        "slug": "annalyns-infiltration",
+        "name": "Annalyn's Infiltration",
         "uuid": "aaf69953-eac8-4016-984e-13b0917fcf01",
         "concepts": [
           "booleans"

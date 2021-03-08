@@ -17,46 +17,46 @@ You have four tasks: to implement the logic for determining if the above actions
 
 ## 1. Check if a fast attack can be made
 
-Implement the (_static_) `QuestLogic.canFastAttack()` method that takes a boolean value that indicates if the knight is awake. This method returns `true` if a fast attack can be made based on the state of the knight. Otherwise, returns `false`:
+Implement the (_static_) `AnnalynsInfiltration.canFastAttack()` method that takes a boolean value that indicates if the knight is awake. This method returns `true` if a fast attack can be made based on the state of the knight. Otherwise, returns `false`:
 
 ```java
 boolean knightIsAwake = true;
-QuestLogic.canFastAttack(knightIsAwake);
+AnnalynsInfiltration.canFastAttack(knightIsAwake);
 // => false
 ```
 
 ## 2. Check if the group can be spied upon
 
-Implement the (_static_) `QuestLogic.canSpy()` method that takes three boolean values, indicating if the knight, archer and the prisoner, respectively, are awake. The method returns `true` if the group can be spied upon, based on the state of the three characters. Otherwise, returns `false`:
+Implement the (_static_) `AnnalynsInfiltration.canSpy()` method that takes three boolean values, indicating if the knight, archer and the prisoner, respectively, are awake. The method returns `true` if the group can be spied upon, based on the state of the three characters. Otherwise, returns `false`:
 
 ```java
 boolean knightIsAwake = false;
 boolean archerIsAwake = true;
 boolean prisonerIsAwake = false;
-QuestLogic.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
+AnnalynsInfiltration.canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
 // => true
 ```
 
 ## 3. Check if the prisoner can be signalled
 
-Implement the (_static_) `QuestLogic.canSignalPrisoner()` method that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake. The method returns `true` if the prisoner can be signalled, based on the state of the two characters. Otherwise, returns `false`:
+Implement the (_static_) `AnnalynsInfiltration.canSignalPrisoner()` method that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake. The method returns `true` if the prisoner can be signalled, based on the state of the two characters. Otherwise, returns `false`:
 
 ```java
 boolean archerIsAwake = false;
 boolean prisonerIsAwake = true;
-QuestLogic.canSignalPrisoner(archerIsAwake, prisonerIsAwake);
+AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake);
 // => true
 ```
 
 ## 4. Check if the prisoner can be freed
 
-Implement the (_static_) `QuestLogic.canFreePrisoner()` method that takes four boolean values. The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. The method returns `true` if the prisoner can be freed based on the state of the three characters and Annalyn's pet dog presence. Otherwise, it returns `false`:
+Implement the (_static_) `AnnalynsInfiltration.canFreePrisoner()` method that takes four boolean values. The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. The method returns `true` if the prisoner can be freed based on the state of the three characters and Annalyn's pet dog presence. Otherwise, it returns `false`:
 
 ```java
 boolean knightIsAwake = false;
 boolean archerIsAwake = true;
 boolean prisonerIsAwake = false;
 boolean petDogIsPresent = false;
-QuestLogic.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent);
+AnnalynsInfiltration.canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent);
 // => false
 ```

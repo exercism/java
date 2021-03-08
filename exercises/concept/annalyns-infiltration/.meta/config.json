@@ -8,13 +8,13 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/QuestLogic.java"
+      "src/main/java/AnnalynsInfiltration.java"
     ],
     "test": [
-      "src/test/java/QuestLogicTest.java"
+      "src/test/java/AnnalynsInfiltrationTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/QuestLogic.java"
+      ".meta/src/reference/java/AnnalynsInfiltration.java"
     ]
   },
   "forked_from": [
