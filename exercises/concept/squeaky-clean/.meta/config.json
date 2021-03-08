@@ -1,0 +1,23 @@
+{
+  "blurb": "TODO: add blurb for chars exercise",
+  "authors": [
+    {
+      "github_username": "ystromm",
+      "exercism_username": "ystromm"
+    }
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SqueakyClean.java"
+    ],
+    "test": [
+      "src/test/java/SqueakyCleanTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/SqueakyClean.java"
+    ]
+  },
+  "forked_from": [
+    "csharp/chars"
+  ]
+}

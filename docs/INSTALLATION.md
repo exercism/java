@@ -72,7 +72,7 @@ Below are instructions for install using the most common method - using Homebrew
 3.  Install the JDK:
 
      ```
-     $ brew cask install homebrew/cask-versions/java11
+     $ brew install --cask adoptopenjdk11
      ```
 
 4.  Install Gradle:
@@ -132,12 +132,12 @@ both OpenJdk11 and the latest Gradle with ease. Use the following steps:
 1. Install SDKMAN:
     ```sh
     $ curl -s "https://get.sdkman.io" | bash
-    ``` 
+    ```
     (if that doesn't work, take a look at the instructions found here: https://sdkman.io/install )
 1. Install openjdk11:
     ```
     $ sdk install java 11.0.2-open
-    ``` 
+    ```
 1. Install Gradle:
     ```sh
    $ sdk install gradle
