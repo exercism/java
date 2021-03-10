@@ -1964,7 +1964,7 @@
       "platform/windows",
       "platform/mac",
       "platform/linux",
-      "platform/andriod",
+      "platform/android",
       "runtime/jvm",
       "used_for/backends",
       "used_for/cross_platform_development",
