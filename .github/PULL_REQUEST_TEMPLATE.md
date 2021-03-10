@@ -1,4 +1,4 @@
-# pull request template
+# pull request
 
 <!-- Your content goes here: -->
 
