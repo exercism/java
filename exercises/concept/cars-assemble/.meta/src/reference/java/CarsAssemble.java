@@ -1,5 +1,5 @@
 
-public class AssemblyLine {
+public class CarsAssemble {
 
     private final int defaultProductionRate = 221;
 
