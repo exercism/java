@@ -1955,5 +1955,21 @@
     }
   ],
   "key_features": [],
-  "tags": []
+  "tags": [
+      "paradigm/functional",
+      "paradigm/imperative",
+      "paradigm/object_oriented",
+      "typing/static",
+      "execution_mode/compiled",
+      "platform/windows",
+      "platform/mac",
+      "platform/linux",
+      "platform/android",
+      "runtime/jvm",
+      "used_for/backends",
+      "used_for/cross_platform_development",
+      "used_for/mobile",
+      "used_for/artificial_intelligence",
+      "used_for/games"
+  ]
 }
