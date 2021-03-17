@@ -8,16 +8,16 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/AssemblyLine.java"
+      "src/main/java/CarsAssemble.java"
     ],
     "test": [
-      "src/test/java/AssemblyLineTest.java"
+      "src/test/java/CarsAssembleTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/AssemblyLine.java"
+      ".meta/src/reference/java/CarsAssemble.java"
     ]
   },
   "forked_from": [
-    "csharp/numbers"
+    "csharp/cars-assemble"
   ]
 }
