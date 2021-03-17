@@ -18,6 +18,7 @@ public class CarsAssembleTest {
     public void productionRatePerHourForSpeedZero() {
         assertThat(carsAssemble.productionRatePerHour(0)).isEqualTo(0.0);
     }
+    
     @Test
     @Ignore("Remove to run test")
     public void productionRatePerHourForSpeedOne() {
