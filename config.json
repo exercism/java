@@ -164,7 +164,8 @@
         "status": "wip"
       },
       {
-        "slug": "switch-statement",
+        "slug": "football-match-reports",
+        "name": "Football Match Reports",
         "uuid": "5eb11198-807c-469f-903e-57b4f931c02c",
         "concepts": [
           "switch-statement"

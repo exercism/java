@@ -1,0 +1,23 @@
+{
+  "blurb": "TODO: add blurb for football-match-reports exercise",
+  "authors": [
+    {
+      "github_username": "Azumix",
+      "exercism_username": "Azumix"
+    }
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/FootballMatchReports.java"
+    ],
+    "test": [
+      "src/test/java/FootballMatchReportsTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/FootballMatchReports.java"
+    ]
+  },
+  "forked_from": [
+    "csharp/football-match-reports"
+  ]
+}
