@@ -1956,7 +1956,38 @@
       "blurb": "TODO: add blurb for ternary-operators concept"
     }
   ],
-  "key_features": [],
+  "key_features": [
+    {
+      "icon": "",
+      "title": "Modern",
+      "content": "Java is a modern, fast-evolving language with releases every 6 months."
+    },
+    {
+      "icon": "features-typed",
+      "title": "Statically-typed",
+      "content": "Every expression has a type known at compile time."
+    },
+    {
+      "icon": "features-functional",
+      "title": "Multi-paradigm",
+      "content": "Java is primarily an object-oriented language, but has many functional features introduced in v1.8."
+    },
+    {
+      "icon": "",
+      "title": "General purpose",
+      "content": "Java is used for a variety of workloads like web, cloud, mobile and game applications."
+    },
+    {
+      "icon": "features-portable",
+      "title": "Portable",
+      "content": "Java was designed to be cross-platform with the slogan \"Write once, run anywhere\"."
+    },
+    {
+      "icon": "",
+      "title": "Garbage Collection",
+      "content": "Java programs perform automatic memory management for their lifecycles."
+    }
+  ],
   "tags": [
       "paradigm/functional",
       "paradigm/imperative",
