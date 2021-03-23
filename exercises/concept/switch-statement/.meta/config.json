@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for switch-statement exercise",
   "authors": [
-    {
-      "github_username": "Azumix",
-      "exercism_username": "Azumix"
-    }
+    "Azumix"
   ],
   "files": {
     "solution": [

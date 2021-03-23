@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for booleans exercise",
   "authors": [
-    {
-      "github_username": "mikedamay",
-      "exercism_username": "mikedamay"
-    }
+    "mikedamay"
   ],
   "files": {
     "solution": [

@@ -1,14 +1,8 @@
 {
   "blurb": "TODO: add blurb for bird-watcher exercise",
   "authors": [
-    {
-      "github_username": "samuelteixeiras",
-      "exercism_username": "samuelteixeiras"
-    },
-    {
-      "github_username": "ystromm",
-      "exercism_username": "ystromm"
-    }
+    "samuelteixeiras",
+    "ystromm"
   ],
   "files": {
     "solution": [

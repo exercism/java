@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for constructors exercise",
   "contributors": [
-    {
-      "github_username": "mirkoperillo",
-      "exercism_username": "mirkoperillo"
-    }
+    "mirkoperillo"
   ],
   "files": {
     "solution": [
@@ -18,9 +15,6 @@
     ]
   },
   "authors": [
-    {
-      "github_username": "ystromm",
-      "exercism_username": "ystromm"
-    }
+    "ystromm"
   ]
 }
