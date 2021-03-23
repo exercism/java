@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for conditionals exercise",
   "authors": [
-    {
-      "github_username": "TalesDias",
-      "exercism_username": "TalesDias"
-    }
+    "TalesDias"
   ],
   "files": {
     "solution": [

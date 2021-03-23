@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for strings exercise",
   "authors": [
-    {
-      "github_username": "mirkoperillo",
-      "exercism_username": "mirkoperillo"
-    }
+    "mirkoperillo"
   ],
   "files": {
     "solution": [
