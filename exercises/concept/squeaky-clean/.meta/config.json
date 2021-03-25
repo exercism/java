@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for chars exercise",
   "authors": [
-    {
-      "github_username": "ystromm",
-      "exercism_username": "ystromm"
-    }
+    "ystromm"
   ],
   "files": {
     "solution": [
