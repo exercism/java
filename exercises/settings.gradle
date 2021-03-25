@@ -13,7 +13,7 @@ include 'concept:blackjack'
 include 'concept:ternary-operators'
 include 'concept:classes'
 include 'concept:interfaces'
-include 'concept:switch-statement'
+include 'concept:football-match-reports'
 include 'concept:inheritance'
 
 // practice exercises

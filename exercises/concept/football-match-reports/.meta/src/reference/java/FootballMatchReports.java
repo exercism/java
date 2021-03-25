@@ -1,4 +1,4 @@
-public class PlayAnalyzer {
+public class FootballMatchReports {
     public static String onField(int shirtNum) {
         String playerDescription = "";
         switch (shirtNum) {
