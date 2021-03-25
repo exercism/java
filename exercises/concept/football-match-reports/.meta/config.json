@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for football-match-reports exercise",
   "authors": [
-    {
-      "github_username": "Azumix",
-      "exercism_username": "Azumix"
-    }
+      "Azumix"
   ],
   "files": {
     "solution": [
