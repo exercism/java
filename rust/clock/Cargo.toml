@@ -4,4 +4,3 @@ name = "clock"
 version = "2.4.0"
 
 [dependencies]
-chrono = "0.4"

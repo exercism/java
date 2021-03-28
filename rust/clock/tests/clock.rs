@@ -95,6 +95,11 @@ fn test_negative_sixty_minutes_is_prev_hour() {
 }
 
 #[test]
+fn test_negative_one_twenty_minutes_is_two_prev_hours() {
+    assert_eq!(Clock::new(1, -120).to_string(), "23:00");
+}
+
+#[test]
 fn test_negative_hour_and_minutes_both_roll_over() {
     assert_eq!(Clock::new(-25, -160).to_string(), "20:20");
 }
@@ -102,6 +107,11 @@ fn test_negative_hour_and_minutes_both_roll_over() {
 #[test]
 fn test_negative_hour_and_minutes_both_roll_over_continuously() {
     assert_eq!(Clock::new(-121, -5810).to_string(), "22:10");
+}
+
+#[test]
+fn test_zero_hour_and_negative_minutes() {
+    assert_eq!(Clock::new(0, -22).to_string(), "23:38");
 }
 
 //
@@ -199,7 +209,7 @@ fn test_subtract_more_than_one_day() {
 }
 
 #[test]
-fn test_subtract_mores_than_two_days() {
+fn test_subtract_more_than_two_days() {
     let clock = Clock::new(2, 20).add_minutes(-3000);
     assert_eq!(clock.to_string(), "00:20");
 }
