@@ -1857,104 +1857,87 @@
     {
       "uuid": "e16a7735-0b61-46bf-b453-8fb088ae6590",
       "slug": "abstract",
-      "name": "Abstract",
-      "blurb": "TODO: add blurb for abstract concept"
+      "name": "Abstract"
     },
     {
       "uuid": "b36a466d-4154-44ce-a88c-d40c53de933a",
       "slug": "arrays",
-      "name": "Arrays",
-      "blurb": "TODO: add blurb for arrays concept"
+      "name": "Arrays"
     },
     {
       "uuid": "18bd44ca-9af7-4116-81d8-791b5eac8183",
       "slug": "basics",
-      "name": "Basics",
-      "blurb": "TODO: add blurb for basics concept"
+      "name": "Basics"
     },
     {
       "uuid": "36887046-6df3-411a-ae79-8c478b67709b",
       "slug": "boolean",
-      "name": "Boolean",
-      "blurb": "TODO: add blurb for boolean concept"
+      "name": "Boolean"
     },
     {
       "uuid": "ea12527d-7a9d-461e-93b1-bf639652430e",
       "slug": "booleans",
-      "name": "Booleans",
-      "blurb": "TODO: add blurb for booleans concept"
+      "name": "Booleans"
     },
     {
       "uuid": "9a9a6ece-fa18-44c9-aba3-3ecaf4a71796",
       "slug": "chars",
-      "name": "Chars",
-      "blurb": "TODO: add blurb for chars concept"
+      "name": "Chars"
     },
     {
       "uuid": "d8bf400a-951b-418a-90d6-2fe7d0fa1dcd",
       "slug": "classes",
-      "name": "Classes",
-      "blurb": "TODO: add blurb for classes concept"
+      "name": "Classes"
     },
     {
       "uuid": "5be4c3d7-fc14-45c9-9677-a0ebddbcf570",
       "slug": "conditionals",
-      "name": "Conditionals",
-      "blurb": "TODO: add blurb for conditionals concept"
+      "name": "Conditionals"
     },
     {
       "uuid": "4ce7cdbb-4ff3-4988-89db-8fbcef380500",
       "slug": "conditionals-if",
-      "name": "Conditionals If",
-      "blurb": "TODO: add blurb for conditionals-if concept"
+      "name": "Conditionals If"
     },
     {
       "uuid": "e552c05c-6360-4b2f-a438-7ec7e855c0f5",
       "slug": "constructors",
-      "name": "Constructors",
-      "blurb": "TODO: add blurb for constructors concept"
+      "name": "Constructors"
     },
     {
       "uuid": "6c6c8973-d4c5-483b-b529-7dda14a98c6d",
       "slug": "functions",
-      "name": "Functions",
-      "blurb": "TODO: add blurb for functions concept"
+      "name": "Functions"
     },
     {
       "uuid": "90776fcc-c6a7-4665-b5fe-5a8a0618358b",
       "slug": "inheritance",
-      "name": "Inheritance",
-      "blurb": "TODO: add blurb for inheritance concept"
+      "name": "Inheritance"
     },
     {
       "uuid": "27255c34-f9c3-4bca-a0b3-cb72714a6f19",
       "slug": "interfaces",
-      "name": "Interfaces",
-      "blurb": "TODO: add blurb for interfaces concept"
+      "name": "Interfaces"
     },
     {
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
-      "name": "Lists",
-      "blurb": "TODO: add blurb for lists concept"
+      "name": "Lists"
     },
     {
       "uuid": "58529dab-0ef2-4943-ac12-a98ca79b922b",
       "slug": "numbers",
-      "name": "Numbers",
-      "blurb": "TODO: add blurb for numbers concept"
+      "name": "Numbers"
     },
     {
       "uuid": "8a468b14-724a-4036-8edb-d19a02809840",
       "slug": "strings",
-      "name": "Strings",
-      "blurb": "TODO: add blurb for strings concept"
+      "name": "Strings"
     },
     {
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
       "slug": "ternary-operators",
-      "name": "Ternary Operators",
-      "blurb": "TODO: add blurb for ternary-operators concept"
+      "name": "Ternary Operators"
     }
   ],
   "key_features": [
@@ -1990,20 +1973,20 @@
     }
   ],
   "tags": [
-      "paradigm/functional",
-      "paradigm/imperative",
-      "paradigm/object_oriented",
-      "typing/static",
-      "execution_mode/compiled",
-      "platform/windows",
-      "platform/mac",
-      "platform/linux",
-      "platform/android",
-      "runtime/jvm",
-      "used_for/backends",
-      "used_for/cross_platform_development",
-      "used_for/mobile",
-      "used_for/artificial_intelligence",
-      "used_for/games"
+    "paradigm/functional",
+    "paradigm/imperative",
+    "paradigm/object_oriented",
+    "typing/static",
+    "execution_mode/compiled",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "platform/android",
+    "runtime/jvm",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/mobile",
+    "used_for/artificial_intelligence",
+    "used_for/games"
   ]
 }
