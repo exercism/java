@@ -3,7 +3,7 @@ package darts
 import "math"
 
 func insideCircle(x, y, radius float64) bool {
-	return (math.Pow(x, 2) + math.Pow(y, 2)) <= math.Pow(radius, 2)
+	return (x*x + y*y) <= radius*radius
 }
 
 type RadiusPoints struct {

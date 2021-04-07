@@ -13,22 +13,16 @@ type DNA string
 // Counts generates a histogram of valid nucleotides in the given DNA.
 // Returns an error if d contains an invalid nucleotide.
 func (d DNA) Counts() (Histogram, error) {
-	validNuc := map[rune]bool{
-		'G': true,
-		'C': true,
-		'T': true,
-		'A': true,
-	}
-
-	h := make(Histogram)
-
-	for n := range validNuc {
-		h[n] = 0
+	h := Histogram{
+		'G': 0,
+		'C': 0,
+		'T': 0,
+		'A': 0,
 	}
 
 	for i, n := range d {
-		if _, ok := validNuc[n]; !ok {
-			return h, fmt.Errorf("found '%v' at pos %v, which is not a valid nucleotide", n, i)
+		if _, ok := h[n]; !ok {
+			return nil, fmt.Errorf("found '%v' at pos %v, which is not a valid nucleotide", n, i)
 		}
 		h[n]++
 	}

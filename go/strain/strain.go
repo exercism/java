@@ -3,19 +3,9 @@ package strain
 type Lists []Ints
 
 func (ls Lists) Keep(predicate func([]int) bool) Lists {
-	res := Lists{}
+	var res Lists
 	for _, list := range ls {
 		if predicate(list) {
-			res = append(res, list)
-		}
-	}
-	return res
-}
-
-func (ls Lists) Discard(predicate func([]int) bool) Lists {
-	res := Lists{}
-	for _, list := range ls {
-		if !predicate(list) {
 			res = append(res, list)
 		}
 	}
@@ -47,19 +37,9 @@ func (l Ints) Discard(predicate func(int) bool) Ints {
 type Strings []string
 
 func (l Strings) Keep(predicate func(string) bool) Strings {
-	res := Strings{}
+	var res Strings
 	for _, elem := range l {
 		if predicate(elem) {
-			res = append(res, elem)
-		}
-	}
-	return res
-}
-
-func (l Strings) Discard(predicate func(string) bool) Strings {
-	res := Strings{}
-	for _, elem := range l {
-		if !predicate(elem) {
 			res = append(res, elem)
 		}
 	}

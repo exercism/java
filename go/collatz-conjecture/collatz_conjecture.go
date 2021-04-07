@@ -1,11 +1,13 @@
 package collatzconjecture
 
-import "fmt"
+import (
+	"errors"
+)
 
 func CollatzConjecture(n int) (int, error) {
 	times := 0
 	if n <= 0 {
-		return 0, fmt.Errorf("zero or negative value given")
+		return 0, errors.New("zero or negative value given")
 	}
 
 	for n != 1 {

@@ -1,7 +1,7 @@
 package romannumerals
 
 import (
-	"fmt"
+	"errors"
 	"strings"
 )
 
@@ -28,11 +28,11 @@ var conversions = []ConversionEntry{
 
 func ToRomanNumeral(number int) (string, error) {
 	if number > 3000 {
-		return "", fmt.Errorf("arabic number is bigger than 3000")
+		return "", errors.New("arabic number is bigger than 3000")
 	}
 
 	if number <= 0 {
-		return "", fmt.Errorf("arabic number is zero or negative")
+		return "", errors.New("arabic number is zero or negative")
 	}
 
 	var roman strings.Builder
