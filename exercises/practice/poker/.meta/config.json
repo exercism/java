@@ -2,9 +2,15 @@
   "blurb": "Pick the best hand(s) from a list of poker hands.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Poker.java"
+    ],
+    "test": [
+      "src/test/java/PokerTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Poker.java"
+    ]
   },
   "source": "Inspired by the training course from Udacity.",
   "source_url": "https://www.udacity.com/course/viewer#!/c-cs212/"

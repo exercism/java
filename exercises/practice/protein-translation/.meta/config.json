@@ -2,9 +2,15 @@
   "blurb": "Translate RNA sequences into proteins.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/ProteinTranslation.java"
+    ],
+    "test": [
+      "src/test/java/ProteinTranslationTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ProteinTranslation.java"
+    ]
   },
   "source": "Tyler Long"
 }

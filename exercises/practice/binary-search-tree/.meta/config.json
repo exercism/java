@@ -2,9 +2,15 @@
   "blurb": "Insert and search for numbers in a binary tree.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/BinarySearchTree.java"
+    ],
+    "test": [
+      "src/test/java/BinarySearchTreeTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/BinarySearchTree.java"
+    ]
   },
   "source": "Josh Cheek",
   "source_url": "https://twitter.com/josh_cheek"

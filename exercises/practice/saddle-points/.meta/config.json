@@ -2,9 +2,15 @@
   "blurb": "Detect saddle points in a matrix.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/SaddlePoints.java"
+    ],
+    "test": [
+      "src/test/java/SaddlePointsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SaddlePoints.java"
+    ]
   },
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"

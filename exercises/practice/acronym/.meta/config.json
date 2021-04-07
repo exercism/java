@@ -2,9 +2,15 @@
   "blurb": "Convert a long phrase to its acronym",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Acronym.java"
+    ],
+    "test": [
+      "src/test/java/AcronymTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Acronym.java"
+    ]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"

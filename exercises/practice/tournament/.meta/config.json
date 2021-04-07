@@ -2,8 +2,14 @@
   "blurb": "Tally the results of a small football competition.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Tournament.java"
+    ],
+    "test": [
+      "src/test/java/TournamentTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Tournament.java"
+    ]
   }
 }

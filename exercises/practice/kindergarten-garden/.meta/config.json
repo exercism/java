@@ -2,9 +2,15 @@
   "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/KindergartenGarden.java"
+    ],
+    "test": [
+      "src/test/java/KindergartenGardenTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/KindergartenGarden.java"
+    ]
   },
   "source": "Random musings during airplane trip.",
   "source_url": "http://jumpstartlab.com"

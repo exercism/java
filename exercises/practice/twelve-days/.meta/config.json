@@ -2,9 +2,15 @@
   "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/TwelveDays.java"
+    ],
+    "test": [
+      "src/test/java/TwelveDaysTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/TwelveDays.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"

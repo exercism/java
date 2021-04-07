@@ -2,9 +2,15 @@
   "blurb": "Score a bowling game",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Bowling.java"
+    ],
+    "test": [
+      "src/test/java/BowlingTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Bowling.java"
+    ]
   },
   "source": "The Bowling Game Kata at but UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"

@@ -2,8 +2,14 @@
   "blurb": "Implement basic list operations",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/ListOps.java"
+    ],
+    "test": [
+      "src/test/java/ListOpsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ListOps.java"
+    ]
   }
 }

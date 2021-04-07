@@ -2,8 +2,14 @@
   "blurb": "Refactor a Markdown parser",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Markdown.java"
+    ],
+    "test": [
+      "src/test/java/MarkdownTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Markdown.java"
+    ]
   }
 }

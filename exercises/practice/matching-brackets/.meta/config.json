@@ -2,9 +2,15 @@
   "blurb": "Make sure the brackets and braces all match.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/MatchingBrackets.java"
+    ],
+    "test": [
+      "src/test/java/MatchingBracketsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/MatchingBrackets.java"
+    ]
   },
   "source": "Ginna Baker"
 }

@@ -2,8 +2,14 @@
   "blurb": "Given an input string, truncate it to 5 characters.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/MicroBlog.java"
+    ],
+    "test": [
+      "src/test/java/MicroBlogTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/MicroBlog.java"
+    ]
   }
 }

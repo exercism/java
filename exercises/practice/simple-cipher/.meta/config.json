@@ -2,9 +2,15 @@
   "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/SimpleCipher.java"
+    ],
+    "test": [
+      "src/test/java/SimpleCipherTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SimpleCipher.java"
+    ]
   },
   "source": "Substitution Cipher at Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Substitution_cipher"

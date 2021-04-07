@@ -2,8 +2,14 @@
   "blurb": "Make a chain of dominoes.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Dominoes.java"
+    ],
+    "test": [
+      "src/test/java/DominoesTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Dominoes.java"
+    ]
   }
 }

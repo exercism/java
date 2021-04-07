@@ -2,9 +2,15 @@
   "blurb": "Implement run-length encoding and decoding.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/RunLengthEncoding.java"
+    ],
+    "test": [
+      "src/test/java/RunLengthEncodingTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RunLengthEncoding.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"

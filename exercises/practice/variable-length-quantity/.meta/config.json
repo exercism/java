@@ -2,9 +2,15 @@
   "blurb": "Implement variable length quantity encoding and decoding.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/VariableLengthQuantity.java"
+    ],
+    "test": [
+      "src/test/java/VariableLengthQuantityTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/VariableLengthQuantity.java"
+    ]
   },
   "source": "A poor Splice developer having to implement MIDI encoding/decoding.",
   "source_url": "https://splice.com"

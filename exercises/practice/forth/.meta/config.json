@@ -2,8 +2,14 @@
   "blurb": "Implement an evaluator for a very simple subset of Forth",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Forth.java"
+    ],
+    "test": [
+      "src/test/java/ForthTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Forth.java"
+    ]
   }
 }

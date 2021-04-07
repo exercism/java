@@ -2,8 +2,14 @@
   "blurb": "Rebuild binary trees from pre-order and in-order traversals.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Satellite.java"
+    ],
+    "test": [
+      "src/test/java/SatelliteTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Satellite.java"
+    ]
   }
 }

@@ -2,9 +2,15 @@
   "blurb": "Convert a resistor band's color to its numeric representation",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/ResistorColor.java"
+    ],
+    "test": [
+      "src/test/java/ResistorColorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ResistorColor.java"
+    ]
   },
   "source": "Maud de Vries, Erik Schierboom",
   "source_url": "https://github.com/exercism/problem-specifications/issues/1458"

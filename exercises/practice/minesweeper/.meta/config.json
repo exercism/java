@@ -2,8 +2,14 @@
   "blurb": "Add the numbers to a minesweeper board",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Minesweeper.java"
+    ],
+    "test": [
+      "src/test/java/MinesweeperTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Minesweeper.java"
+    ]
   }
 }

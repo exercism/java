@@ -2,9 +2,15 @@
   "blurb": "Implement rational numbers.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/RationalNumbers.java"
+    ],
+    "test": [
+      "src/test/java/RationalNumbersTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RationalNumbers.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Rational_number"

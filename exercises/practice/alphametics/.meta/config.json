@@ -2,8 +2,14 @@
   "blurb": "Write a function to solve alphametics puzzles.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Alphametics.java"
+    ],
+    "test": [
+      "src/test/java/AlphameticsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Alphametics.java"
+    ]
   }
 }

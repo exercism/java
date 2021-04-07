@@ -2,9 +2,15 @@
   "blurb": "Manage robot factory settings.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/RobotName.java"
+    ],
+    "test": [
+      "src/test/java/RobotNameTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RobotName.java"
+    ]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

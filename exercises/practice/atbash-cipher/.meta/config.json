@@ -2,9 +2,15 @@
   "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/AtbashCipher.java"
+    ],
+    "test": [
+      "src/test/java/AtbashCipherTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/AtbashCipher.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Atbash"

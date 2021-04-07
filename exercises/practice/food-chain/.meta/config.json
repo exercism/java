@@ -2,9 +2,15 @@
   "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/FoodChain.java"
+    ],
+    "test": [
+      "src/test/java/FoodChainTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/FoodChain.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly"
