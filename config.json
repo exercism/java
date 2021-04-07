@@ -26,6 +26,7 @@
       ".meta/src/reference/java/%{pascal_slug}.java"
     ],
     "exemplar": [
+      ".meta/src/reference/java/%{pascal_slug}.java"
     ]
   },
   "exercises": {
