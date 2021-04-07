@@ -2,8 +2,14 @@
   "blurb": "Create a program to solve a word search puzzle.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/WordSearch.java"
+    ],
+    "test": [
+      "src/test/java/WordSearchTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/WordSearch.java"
+    ]
   }
 }

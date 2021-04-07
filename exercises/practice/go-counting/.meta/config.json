@@ -2,8 +2,14 @@
   "blurb": "Count the scored points on a Go board.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/GoCounting.java"
+    ],
+    "test": [
+      "src/test/java/GoCountingTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/GoCounting.java"
+    ]
   }
 }

@@ -2,9 +2,15 @@
   "blurb": "Write a function that returns the earned points in a single toss of a Darts game",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Darts.java"
+    ],
+    "test": [
+      "src/test/java/DartsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Darts.java"
+    ]
   },
   "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
 }

@@ -2,9 +2,15 @@
   "blurb": "Diffie-Hellman key exchange.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/DiffieHellman.java"
+    ],
+    "test": [
+      "src/test/java/DiffieHellmanTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/DiffieHellman.java"
+    ]
   },
   "source": "Wikipedia, 1024 bit key from www.cryptopp.com/wiki.",
   "source_url": "http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange"

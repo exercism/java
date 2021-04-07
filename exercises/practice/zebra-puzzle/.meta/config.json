@@ -2,9 +2,15 @@
   "blurb": "Solve the zebra puzzle.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/ZebraPuzzle.java"
+    ],
+    "test": [
+      "src/test/java/ZebraPuzzleTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ZebraPuzzle.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"

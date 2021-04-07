@@ -2,9 +2,15 @@
   "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/RomanNumerals.java"
+    ],
+    "test": [
+      "src/test/java/RomanNumeralsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RomanNumerals.java"
+    ]
   },
   "source": "The Roman Numeral Kata",
   "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"

@@ -2,8 +2,14 @@
   "blurb": "Create a custom set type.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/CustomSet.java"
+    ],
+    "test": [
+      "src/test/java/CustomSetTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/CustomSet.java"
+    ]
   }
 }

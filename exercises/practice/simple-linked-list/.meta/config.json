@@ -2,9 +2,15 @@
   "blurb": "Write a simple linked list implementation that uses Elements and a List",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/SimpleLinkedList.java"
+    ],
+    "test": [
+      "src/test/java/SimpleLinkedListTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SimpleLinkedList.java"
+    ]
   },
   "source": "Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists.",
   "source_url": "https://web.archive.org/web/20160731005714/http://brpreiss.com/books/opus8/html/page96.html"

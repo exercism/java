@@ -2,9 +2,15 @@
   "blurb": "Given a letter, print a diamond starting with 'A' with the supplied letter at the widest point.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Diamond.java"
+    ],
+    "test": [
+      "src/test/java/DiamondTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Diamond.java"
+    ]
   },
   "source": "Seb Rose",
   "source_url": "http://claysnow.co.uk/recycling-tests-in-tdd/"

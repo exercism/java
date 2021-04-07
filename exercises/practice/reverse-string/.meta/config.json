@@ -2,9 +2,15 @@
   "blurb": "Reverse a string",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/ReverseString.java"
+    ],
+    "test": [
+      "src/test/java/ReverseStringTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ReverseString.java"
+    ]
   },
   "source": "Introductory challenge to reverse an input string",
   "source_url": "https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"

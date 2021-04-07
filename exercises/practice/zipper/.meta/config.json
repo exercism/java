@@ -2,8 +2,14 @@
   "blurb": "Creating a zipper for a binary tree.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Zipper.java"
+    ],
+    "test": [
+      "src/test/java/ZipperTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Zipper.java"
+    ]
   }
 }

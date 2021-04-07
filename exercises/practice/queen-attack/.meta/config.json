@@ -2,9 +2,15 @@
   "blurb": "Given the position of two queens on a chess board, indicate whether or not they are positioned so that they can attack each other.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/QueenAttack.java"
+    ],
+    "test": [
+      "src/test/java/QueenAttackTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/QueenAttack.java"
+    ]
   },
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"

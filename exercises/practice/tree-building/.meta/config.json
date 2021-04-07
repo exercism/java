@@ -2,8 +2,14 @@
   "blurb": "Refactor a tree building algorithm.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/TreeBuilding.java"
+    ],
+    "test": [
+      "src/test/java/TreeBuildingTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/TreeBuilding.java"
+    ]
   }
 }

@@ -2,8 +2,14 @@
   "blurb": "Write a function to determine if a list is a sublist of another list.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/Sublist.java"
+    ],
+    "test": [
+      "src/test/java/SublistTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Sublist.java"
+    ]
   }
 }

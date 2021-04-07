@@ -2,8 +2,14 @@
   "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/BankAccount.java"
+    ],
+    "test": [
+      "src/test/java/BankAccountTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/BankAccount.java"
+    ]
   }
 }

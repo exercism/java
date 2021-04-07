@@ -2,9 +2,15 @@
   "blurb": "Write a robot simulator.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/RobotSimulator.java"
+    ],
+    "test": [
+      "src/test/java/RobotSimulatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RobotSimulator.java"
+    ]
   },
   "source": "Inspired by an interview question at a famous company.",
   "source_url": ""

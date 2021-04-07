@@ -2,9 +2,15 @@
   "blurb": "Given students' names along with the grade that they are in, create a roster for the school",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/GradeSchool.java"
+    ],
+    "test": [
+      "src/test/java/GradeSchoolTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/GradeSchool.java"
+    ]
   },
   "source": "A pairing session with Phil Battos at gSchool",
   "source_url": "http://gschool.it"

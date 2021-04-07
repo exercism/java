@@ -2,9 +2,15 @@
   "blurb": "Implement complex numbers.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "src/main/java/ComplexNumbers.java"
+    ],
+    "test": [
+      "src/test/java/ComplexNumbersTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ComplexNumbers.java"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Complex_number"
