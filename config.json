@@ -152,7 +152,8 @@
         "status": "wip"
       },
       {
-        "slug": "ternary-operators",
+        "slug": "salary-calculator",
+        "name": "Salary Calculator",
         "uuid": "5521e413-a382-4c33-ae9c-159a4d7632ca",
         "concepts": [
           "ternary-operators"
