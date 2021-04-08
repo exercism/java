@@ -14,7 +14,7 @@ include 'concept:salary-calculator'
 include 'concept:classes'
 include 'concept:interfaces'
 include 'concept:football-match-reports'
-include 'concept:inheritance'
+include 'concept:wizards-and-warriors'
 
 // practice exercises
 include 'practice:accumulate'
