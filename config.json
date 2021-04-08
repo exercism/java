@@ -115,7 +115,8 @@
         "status": "wip"
       },
       {
-        "slug": "interfaces",
+        "slug": "remote-control-competition",
+        "name": "Remote Control Competition",
         "uuid": "0fa73b4c-75e8-4d38-a7cf-8c1329a1f183",
         "concepts": [
           "interfaces"
