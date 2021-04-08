@@ -179,7 +179,8 @@
         "status": "wip"
       },
       {
-        "slug": "inheritance",
+        "slug": "wizards-and-warriors",
+        "name": "Wizards and Warriors",
         "uuid": "e7192707-7b48-4095-9816-591111910c0b",
         "concepts": [
           "inheritance"
