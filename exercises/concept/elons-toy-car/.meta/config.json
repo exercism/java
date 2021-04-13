@@ -5,13 +5,13 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/RemoteControlCar.java"
+      "src/main/java/ElonsToyCar.java"
     ],
     "test": [
-      "src/test/java/RemoteControlCarTest.java"
+      "src/test/java/ElonsToyCarTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/RemoteControlCar.java"
+      ".meta/src/reference/java/ElonsToyCar.java"
     ]
   },
   "authors": [
