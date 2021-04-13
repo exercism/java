@@ -12,12 +12,12 @@ You have six tasks, each of which will work with remote controller car instances
 
 ## 1. Creating a remote controlled car
 
-Allow creating a remote controller car by defining a constructor for the `RemoteControlCar` class that takes the speed of the car in meters and the battery drain percentage as its two parameters (both of type `int`):
+Allow creating a remote controller car by defining a constructor for the `NeedForSpeed` class that takes the speed of the car in meters and the battery drain percentage as its two parameters (both of type `int`):
 
 ```java
 int speed = 5;
 int batteryDrain = 2;
-var car = new RemoteControlCar(speed, batteryDrain);
+var car = new NeedForSpeed(speed, batteryDrain);
 ```
 
 ## 2. Creating a race track
@@ -31,12 +31,12 @@ var raceTrack = new RaceTrack(distance);
 
 ## 3. Drive the car
 
-Implement the `RemoteControlCar.drive()` method that updates the number of meters driven based on the car's speed. Also implement the `RemoteControlCar.distanceDriven()` method to return the number of meters driven by the car:
+Implement the `NeedForSpeed.drive()` method that updates the number of meters driven based on the car's speed. Also implement the `NeedForSpeed.distanceDriven()` method to return the number of meters driven by the car:
 
 ```java
 int speed = 5;
 int batteryDrain = 2;
-var car = new RemoteControlCar(speed, batteryDrain);
+var car = new NeedForSpeed(speed, batteryDrain);
 car.drive();
 
 car.distanceDriven();
@@ -45,12 +45,12 @@ car.distanceDriven();
 
 ## 4. Check for a drained battery
 
-Update the `RemoteControlCar.drive()` method to drain the battery based on the car's battery drain. Also implement the `RemoteControlCar.batteryDrained()` method that indicates if the battery is drained:
+Update the `NeedForSpeed.drive()` method to drain the battery based on the car's battery drain. Also implement the `NeedForSpeed.batteryDrained()` method that indicates if the battery is drained:
 
 ```java
 int speed = 5;
 int batteryDrain = 2;
-var car = new RemoteControlCar(speed, batteryDrain);
+var car = new NeedForSpeed(speed, batteryDrain);
 car.drive();
 
 car.batteryDrained();
@@ -59,10 +59,10 @@ car.batteryDrained();
 
 ## 5. Create the Nitro remote control car
 
-The best-selling remote control car is the Nitro, which has a stunning top speed of 50 meters with a battery drain of 4%. Implement the (static) `RemoteControlCar.nitro()` method to return this type of car:
+The best-selling remote control car is the Nitro, which has a stunning top speed of 50 meters with a battery drain of 4%. Implement the (static) `NeedForSpeed.nitro()` method to return this type of car:
 
 ```java
-var car = RemoteControlCar.nitro();
+var car = NeedForSpeed.nitro();
 car.drive();
 car.distanceDriven();
 // => 50
@@ -70,12 +70,12 @@ car.distanceDriven();
 
 ## 6. Check if a remote control car can finish a race
 
-To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `Race.carCanFinish()` method that takes a `RemoteControlCar` instance as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
+To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `Race.carCanFinish()` method that takes a `NeedForSpeed` instance as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
 
 ```java
 int speed = 5;
 int batteryDrain = 2;
-var car = new RemoteControlCar(speed, batteryDrain);
+var car = new NeedForSpeed(speed, batteryDrain);
 
 int distance = 100;
 var race = new Race(distance);

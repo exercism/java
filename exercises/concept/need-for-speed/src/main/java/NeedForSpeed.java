@@ -1,4 +1,4 @@
-class RemoteControlCar {
+class NeedForSpeed {
     // TODO: define the constructor for the 'RemoteControlCar' class
 
     public boolean batteryDrained() {
@@ -21,7 +21,7 @@ class RemoteControlCar {
 class RaceTrack {
     // TODO: define the constructor for the 'RaceTrack' class
 
-    public boolean carCanFinish(RemoteControlCar car) {
+    public boolean carCanFinish(NeedForSpeed car) {
         throw new UnsupportedOperationException("Please implement the RaceTrack.carCanFinish() method");
     }
 }
