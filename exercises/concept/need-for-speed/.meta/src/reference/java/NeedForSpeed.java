@@ -1,16 +1,16 @@
-class RemoteControlCar {
+class NeedForSpeed {
     private int speed;
     private int batteryDrain;
     private int distance = 0;
     private int battery = 100;
 
-    public RemoteControlCar(int speed, int batteryDrain) {
+    public NeedForSpeed(int speed, int batteryDrain) {
         this.speed = speed;
         this.batteryDrain = batteryDrain;
     }
 
-    public static RemoteControlCar nitro() {
-        return new RemoteControlCar(50, 4);
+    public static NeedForSpeed nitro() {
+        return new NeedForSpeed(50, 4);
     }
 
     public boolean batteryDrained() {
@@ -36,7 +36,7 @@ class RaceTrack {
         this.distance = distance;
     }
 
-    public boolean carCanFinish(RemoteControlCar car) {
+    public boolean carCanFinish(NeedForSpeed car) {
         while (!car.batteryDrained()) {
             car.drive();
         }

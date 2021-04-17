@@ -105,7 +105,8 @@
         "status": "wip"
       },
       {
-        "slug": "constructors",
+        "slug": "need-for-speed",
+        "name": "Need for Speed",
         "uuid": "a85b6394-3ca5-4913-b554-b460dd49c0ea",
         "concepts": [
           "constructors"

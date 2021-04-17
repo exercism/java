@@ -5,13 +5,13 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/RemoteControlCar.java"
+      "src/main/java/NeedForSpeed.java"
     ],
     "test": [
-      "src/test/java/RemoteControlCarTest.java"
+      "src/test/java/NeedForSpeedTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/RemoteControlCar.java"
+      ".meta/src/reference/java/NeedForSpeed.java"
     ]
   },
   "authors": [
