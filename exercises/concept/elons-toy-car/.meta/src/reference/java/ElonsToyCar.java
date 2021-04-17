@@ -1,4 +1,4 @@
-class RemoteControlCar {
+class ElonsToyCar {
     private int batteryPercentage = 100;
     private int distanceDrivenInMeters = 0;
 
@@ -21,7 +21,7 @@ class RemoteControlCar {
         return "Battery at " + batteryPercentage + "%";
     }
 
-    public static RemoteControlCar buy() {
-        return new RemoteControlCar();
+    public static ElonsToyCar buy() {
+        return new ElonsToyCar();
     }
 }
