@@ -3,39 +3,39 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class RemoteControlCarTest {
+public class ElonsToyCarTest {
     @Test
     public void buy_new_car_returns_instance() {
-        RemoteControlCar car = RemoteControlCar.buy();
+        ElonsToyCar car = ElonsToyCar.buy();
         assertThat(car).isNotNull();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void buy_new_car_returns_new_car_each_time() {
-        RemoteControlCar car1 = RemoteControlCar.buy();
-        RemoteControlCar car2 = RemoteControlCar.buy();
+        ElonsToyCar car1 = ElonsToyCar.buy();
+        ElonsToyCar car2 = ElonsToyCar.buy();
         assertThat(car1).isNotEqualTo(car2);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void new_car_distance_display() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 0 meters");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void new_car_battery_display() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 100%");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void distance_display_after_driving_once() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
         car.drive();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 20 meters");
     }
@@ -43,7 +43,7 @@ public class RemoteControlCarTest {
     @Ignore("Remove to run test")
     @Test
     public void distance_display_after_driving_multiple_times() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
 
         for (int i = 0; i < 17; i++) {
             car.drive();
@@ -55,7 +55,7 @@ public class RemoteControlCarTest {
     @Ignore("Remove to run test")
     @Test
     public void battery_display_after_driving_once() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
         car.drive();
         
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 99%");
@@ -64,7 +64,7 @@ public class RemoteControlCarTest {
     @Ignore("Remove to run test")
     @Test
     public void battery_display_after_driving_multiple_times() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
 
         for (int i = 0; i < 23; i++) {
             car.drive();
@@ -76,7 +76,7 @@ public class RemoteControlCarTest {
     @Ignore("Remove to run test")
     @Test
     public void battery_display_when_battery_empty() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
 
         // Drain the battery
         for (int i = 0; i < 100; i++) {
@@ -92,7 +92,7 @@ public class RemoteControlCarTest {
     @Ignore("Remove to run test")
     @Test
     public void distance_display_when_battery_empty() {
-        RemoteControlCar car = new RemoteControlCar();
+        ElonsToyCar car = new ElonsToyCar();
 
         // Drain the battery
         for (int i = 0; i < 100; i++) {

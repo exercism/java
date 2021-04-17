@@ -1,5 +1,5 @@
-public class RemoteControlCar {
-    public static RemoteControlCar buy() {
+public class ElonsToyCar {
+    public static ElonsToyCar buy() {
         throw new UnsupportedOperationException("Please implement the (static) RemoteControlCar.buy()  method");
     }
 
