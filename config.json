@@ -39,7 +39,7 @@
           "basics"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "annalyns-infiltration",
@@ -51,10 +51,11 @@
         "prerequisites": [
           "basics"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "bird-watcher",
+        "name": "Bird Watcher",
         "uuid": "60600885-8684-45c3-b8a9-a2f9e3ce2d97",
         "concepts": [
           "arrays",
@@ -64,7 +65,7 @@
         "prerequisites": [
           "booleans"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "squeaky-clean",
@@ -76,7 +77,7 @@
         "prerequisites": [
           "strings"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "elons-toy-car",
@@ -90,7 +91,7 @@
           "numbers",
           "strings"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "blackjack",
@@ -102,7 +103,7 @@
         "prerequisites": [
           "booleans"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "need-for-speed",
@@ -114,7 +115,7 @@
         "prerequisites": [
           "classes"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "remote-control-competition",
@@ -128,7 +129,7 @@
           "lists",
           "strings"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "cars-assemble",
@@ -140,7 +141,7 @@
         "prerequisites": [
           "basics"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "log-levels",
@@ -152,7 +153,7 @@
         "prerequisites": [
           "basics"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "salary-calculator",
@@ -165,7 +166,7 @@
           "conditionals-if",
           "numbers"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "football-match-reports",
@@ -179,7 +180,7 @@
           "methods",
           "variables"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "wizards-and-warriors",
@@ -195,7 +196,7 @@
           "functions",
           "abstract"
         ],
-        "status": "wip"
+        "status": "active"
       }
     ],
     "practice": [
