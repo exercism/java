@@ -1,18 +1,25 @@
+// Package isogram contains functions related to isograms
 package isogram
 
-import "strings"
+import (
+	"strings"
+	"unicode"
+)
 
+// IsIsogram determines if a string is an isogram
 func IsIsogram(input string) bool {
-	str := strings.ToLower(input)
-	m := make(map[byte]int)
-	for i:=0; i<len(str); i++ {
-		if str[i] == ' ' || str[i] == '-' {
-			continue
-		}
-		m[str[i] - 'a']++
-		if m[str[i] - 'a'] > 1 {
+
+	rs := []rune(strings.ToLower(input))
+	runeSet := make(map[rune]bool)
+
+	// regular loop just to shut up staticcheck S1029
+	for i := 0; i < len(rs); i++ {
+		r := rs[i]
+		if runeSet[r] && unicode.IsLetter(r) {
 			return false
 		}
+		runeSet[r] = true
 	}
+
 	return true
 }

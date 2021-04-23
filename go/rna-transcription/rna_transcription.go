@@ -1,19 +1,23 @@
 // Package strand contains functionality to work with a DNA strands
 package strand
 
-var transTable = map[rune]rune{
-	'G': 'C',
-	'C': 'G',
-	'T': 'A',
-	'A': 'U',
-}
+import "strings"
 
 // ToRNA converts a DNA string into a RNA string
 func ToRNA(dna string) string {
 
-	translation := ""
+	var translation strings.Builder
 	for _, n := range dna {
-		translation += string(transTable[n])
+		switch n {
+		case 'G':
+			translation.WriteRune('C')
+		case 'C':
+			translation.WriteRune('G')
+		case 'T':
+			translation.WriteRune('A')
+		case 'A':
+			translation.WriteRune('U')
+		}
 	}
-	return translation
+	return translation.String()
 }
