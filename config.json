@@ -734,7 +734,7 @@
       {
         "slug": "knapsack",
         "name": "Knapsack",
-        "uuid": "ac179b77-98a5-4daf-9773-3d68b6cd8548",
+        "uuid": "89a6bf1e-66d5-4e39-9bc0-294b8b76cb2a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5,
@@ -1101,7 +1101,7 @@
       {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
-        "uuid": "0b92ffee-c092-4ab1-ad78-76c8cf80e1b5",
+        "uuid": "df41c70c-daa1-4380-9729-638c17b4105d",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
@@ -1614,7 +1614,7 @@
       {
         "slug": "tree-building",
         "name": "Tree Building",
-        "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
+        "uuid": "cb9540e2-a980-4275-924e-bdb504f04363",
         "practices": [],
         "prerequisites": [],
         "difficulty": 7,
@@ -1655,7 +1655,7 @@
       {
         "slug": "diffie-hellman",
         "name": "Diffie Hellman",
-        "uuid": "9b191b2f-b1a4-4c0e-b911-36666bff614d",
+        "uuid": "bb49e929-77dc-4a61-93a1-ca55e92a55f8",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8,
@@ -1782,7 +1782,7 @@
       {
         "slug": "leap",
         "name": "Leap",
-        "uuid": "7c8294ee-5924-4bf8-a72f-31d0e2d7d9a0",
+        "uuid": "61fe1fa6-246d-4e38-92d6-b74af64c88af",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
