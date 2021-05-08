@@ -1,4 +1,4 @@
-
+class Markdown {
     String parse(String markdown) {
         String[] lines = markdown.split("\n");
         String result = "";
