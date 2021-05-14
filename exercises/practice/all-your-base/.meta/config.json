@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/AllYourBase.java"
+      "src/main/java/BaseConverter.java"
     ],
     "test": [
-      "src/test/java/AllYourBaseTest.java"
+      "src/test/java/BaseConverterTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/AllYourBase.java"
+      ".meta/src/reference/java/BaseConverter.java"
     ]
   }
 }

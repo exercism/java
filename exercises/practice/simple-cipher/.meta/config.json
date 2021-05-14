@@ -3,13 +3,14 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/SimpleCipher.java"
+      "src/main/java/Cipher.java"
     ],
     "test": [
-      "src/test/java/SimpleCipherTest.java"
+      "src/test/java/SimpleCipherStepTwoSubsitutionTest.java",
+      "src/test/java/SimpleCipherStepOneTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/SimpleCipher.java"
+      ".meta/src/reference/java/Cipher.java"
     ]
   },
   "source": "Substitution Cipher at Wikipedia",

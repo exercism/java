@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/PrimeFactors.java"
+      "src/main/java/PrimeFactorsCalculator.java"
     ],
     "test": [
-      "src/test/java/PrimeFactorsTest.java"
+      "src/test/java/PrimeFactorsCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/PrimeFactors.java"
+      ".meta/src/reference/java/PrimeFactorsCalculator.java"
     ]
   },
   "source": "The Prime Factors Kata by Uncle Bob",

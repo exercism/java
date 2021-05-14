@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/RobotSimulator.java"
+      "src/main/java/Robot.java"
     ],
     "test": [
-      "src/test/java/RobotSimulatorTest.java"
+      "src/test/java/RobotTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/RobotSimulator.java"
+      ".meta/src/reference/java/Robot.java"
     ]
   },
   "source": "Inspired by an interview question at a famous company.",

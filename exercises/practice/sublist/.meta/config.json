@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Sublist.java"
+      "src/main/java/RelationshipComputer.java"
     ],
     "test": [
-      "src/test/java/SublistTest.java"
+      "src/test/java/RelationshipComputerTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Sublist.java"
+      ".meta/src/reference/java/RelationshipComputer.java"
     ]
   }
 }

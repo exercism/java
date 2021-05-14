@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/PascalsTriangle.java"
+      "src/main/java/PascalsTriangleGenerator.java"
     ],
     "test": [
-      "src/test/java/PascalsTriangleTest.java"
+      "src/test/java/PascalsTriangleGeneratorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/PascalsTriangle.java"
+      ".meta/src/reference/java/PascalsTriangleGenerator.java"
     ]
   },
   "source": "Pascal's Triangle at Wolfram Math World",

@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Bowling.java"
+      "src/main/java/BowlingGame.java"
     ],
     "test": [
-      "src/test/java/BowlingTest.java"
+      "src/test/java/BowlingGameTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Bowling.java"
+      ".meta/src/reference/java/BowlingGame.java"
     ]
   },
   "source": "The Bowling Game Kata at but UncleBob",

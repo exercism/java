@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/PerfectNumbers.java"
+      "src/main/java/NaturalNumber.java"
     ],
     "test": [
-      "src/test/java/PerfectNumbersTest.java"
+      "src/test/java/NaturalNumberTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/PerfectNumbers.java"
+      ".meta/src/reference/java/NaturalNumber.java"
     ]
   },
   "source": "Taken from Chapter 2 of Functional Thinking by Neal Ford.",

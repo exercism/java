@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/HelloWorld.java"
+      "src/main/java/Greeter.java"
     ],
     "test": [
-      "src/test/java/HelloWorldTest.java"
+      "src/test/java/GreeterTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/HelloWorld.java"
+      ".meta/src/reference/java/Greeter.java"
     ]
   },
   "source": "This is an exercise to introduce users to using Exercism",

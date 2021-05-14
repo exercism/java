@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/LinkedList.java"
+      "src/main/java/DoublyLinkedList.java"
     ],
     "test": [
-      "src/test/java/LinkedListTest.java"
+      "src/test/java/DoublyLinkedListTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/LinkedList.java"
+      ".meta/src/reference/java/DoublyLinkedList.java"
     ]
   },
   "source": "Classic computer science topic"

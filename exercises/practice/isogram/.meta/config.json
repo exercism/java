@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Isogram.java"
+      "src/main/java/IsogramChecker.java"
     ],
     "test": [
-      "src/test/java/IsogramTest.java"
+      "src/test/java/IsogramCheckerTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Isogram.java"
+      ".meta/src/reference/java/IsogramChecker.java"
     ]
   },
   "source": "Wikipedia",

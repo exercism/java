@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/RobotName.java"
+      "src/main/java/Robot.java"
     ],
     "test": [
-      "src/test/java/RobotNameTest.java"
+      "src/test/java/RobotTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/RobotName.java"
+      ".meta/src/reference/java/Robot.java"
     ]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."

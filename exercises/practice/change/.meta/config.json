@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Change.java"
+      "src/main/java/ChangeCalculator.java"
     ],
     "test": [
-      "src/test/java/ChangeTest.java"
+      "src/test/java/ChangeCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Change.java"
+      ".meta/src/reference/java/ChangeCalculator.java"
     ]
   },
   "source": "Software Craftsmanship - Coin Change Kata",

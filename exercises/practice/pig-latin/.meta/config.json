@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/PigLatin.java"
+      "src/main/java/PigLatinTranslator.java"
     ],
     "test": [
-      "src/test/java/PigLatinTest.java"
+      "src/test/java/PigLatinTranslatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/PigLatin.java"
+      ".meta/src/reference/java/PigLatinTranslator.java"
     ]
   },
   "source": "The Pig Latin exercise at Test First Teaching by Ultrasaurus",

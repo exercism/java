@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/OcrNumbers.java"
+      "src/main/java/OpticalCharacterReader.java"
     ],
     "test": [
-      "src/test/java/OcrNumbersTest.java"
+      "src/test/java/OpticalCharacterReaderTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/OcrNumbers.java"
+      ".meta/src/reference/java/OpticalCharacterReader.java"
     ]
   },
   "source": "Inspired by the Bank OCR kata",

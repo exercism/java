@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/RationalNumbers.java"
+      "src/main/java/Rational.java"
     ],
     "test": [
-      "src/test/java/RationalNumbersTest.java"
+      "src/test/java/RationalTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/RationalNumbers.java"
+      ".meta/src/reference/java/Rational.java"
     ]
   },
   "source": "Wikipedia",

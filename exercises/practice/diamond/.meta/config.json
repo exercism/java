@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Diamond.java"
+      "src/main/java/DiamondPrinter.java"
     ],
     "test": [
-      "src/test/java/DiamondTest.java"
+      "src/test/java/DiamondPrinterTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Diamond.java"
+      ".meta/src/reference/java/DiamondPrinter.java"
     ]
   },
   "source": "Seb Rose",

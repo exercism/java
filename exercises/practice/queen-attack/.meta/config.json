@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/QueenAttack.java"
+      "src/main/java/QueenAttackCalculator.java"
     ],
     "test": [
-      "src/test/java/QueenAttackTest.java"
+      "src/test/java/QueenAttackCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/QueenAttack.java"
+      ".meta/src/reference/java/QueenAttackCalculator.java"
     ]
   },
   "source": "J Dalbey's Programming Practice problems",

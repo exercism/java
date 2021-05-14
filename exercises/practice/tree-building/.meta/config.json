@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/TreeBuilding.java"
+      "src/main/java/BuildTree.java"
     ],
     "test": [
-      "src/test/java/TreeBuildingTest.java"
+      "src/test/java/BuildTreeTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/TreeBuilding.java"
+      ".meta/src/reference/java/BuildTree.java"
     ]
   }
 }

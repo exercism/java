@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/MatchingBrackets.java"
+      "src/main/java/BracketChecker.java"
     ],
     "test": [
-      "src/test/java/MatchingBracketsTest.java"
+      "src/test/java/BracketCheckerTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/MatchingBrackets.java"
+      ".meta/src/reference/java/BracketChecker.java"
     ]
   },
   "source": "Ginna Baker"

@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/DifferenceOfSquares.java"
+      "src/main/java/DifferenceOfSquaresCalculator.java"
     ],
     "test": [
-      "src/test/java/DifferenceOfSquaresTest.java"
+      "src/test/java/DifferenceOfSquaresCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/DifferenceOfSquares.java"
+      ".meta/src/reference/java/DifferenceOfSquaresCalculator.java"
     ]
   },
   "source": "Problem 6 at Project Euler",

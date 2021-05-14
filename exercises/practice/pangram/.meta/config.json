@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Pangram.java"
+      "src/main/java/PangramChecker.java"
     ],
     "test": [
-      "src/test/java/PangramTest.java"
+      "src/test/java/PangramCheckerTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Pangram.java"
+      ".meta/src/reference/java/PangramChecker.java"
     ]
   },
   "source": "Wikipedia",

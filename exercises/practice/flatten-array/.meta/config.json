@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/FlattenArray.java"
+      "src/main/java/Flattener.java"
     ],
     "test": [
-      "src/test/java/FlattenArrayTest.java"
+      "src/test/java/FlattenerTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/FlattenArray.java"
+      ".meta/src/reference/java/Flattener.java"
     ]
   },
   "source": "Interview Question",

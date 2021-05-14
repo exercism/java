@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/AtbashCipher.java"
+      "src/main/java/Atbash.java"
     ],
     "test": [
-      "src/test/java/AtbashCipherTest.java"
+      "src/test/java/AtbashTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/AtbashCipher.java"
+      ".meta/src/reference/java/Atbash.java"
     ]
   },
   "source": "Wikipedia",

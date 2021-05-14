@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/NucleotideCount.java"
+      "src/main/java/NucleotideCounter.java"
     ],
     "test": [
-      "src/test/java/NucleotideCountTest.java"
+      "src/test/java/NucleotideCounterTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/NucleotideCount.java"
+      ".meta/src/reference/java/NucleotideCounter.java"
     ]
   },
   "source": "The Calculating DNA Nucleotides_problem at Rosalind",

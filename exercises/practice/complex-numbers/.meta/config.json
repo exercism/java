@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/ComplexNumbers.java"
+      "src/main/java/ComplexNumber.java"
     ],
     "test": [
-      "src/test/java/ComplexNumbersTest.java"
+      "src/test/java/ComplexNumberTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/ComplexNumbers.java"
+      ".meta/src/reference/java/ComplexNumber.java"
     ]
   },
   "source": "Wikipedia",

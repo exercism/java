@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/SaddlePoints.java"
+      "src/main/java/Matrix.java"
     ],
     "test": [
-      "src/test/java/SaddlePointsTest.java"
+      "src/test/java/MatrixTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/SaddlePoints.java"
+      ".meta/src/reference/java/Matrix.java"
     ]
   },
   "source": "J Dalbey's Programming Practice problems",
