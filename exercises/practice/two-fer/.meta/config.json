@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/TwoFer.java"
+      "src/main/java/Twofer.java"
     ],
     "test": [
-      "src/test/java/TwoFerTest.java"
+      "src/test/java/TwoferTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/TwoFer.java"
+      ".meta/src/reference/java/Twofer.java"
     ]
   },
   "source_url": "https://github.com/exercism/problem-specifications/issues/757"

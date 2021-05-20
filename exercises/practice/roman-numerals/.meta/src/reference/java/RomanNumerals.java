@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.LinkedHashMap;
 
-public class RomanNumeral {
+public class RomanNumerals {
 
     private int arabicNumeral;
 

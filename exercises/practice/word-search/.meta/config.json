@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/WordSearch.java"
+      "src/main/java/WordSearcher.java"
     ],
     "test": [
-      "src/test/java/WordSearchTest.java"
+      "src/test/java/WordSearcherTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/WordSearch.java"
+      ".meta/src/reference/java/WordSearcher.java"
     ]
   }
 }

@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/NthPrime.java"
+      "src/main/java/PrimeCalculator.java"
     ],
     "test": [
-      "src/test/java/NthPrimeTest.java"
+      "src/test/java/PrimeCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/NthPrime.java"
+      ".meta/src/reference/java/PrimeCalculator.java"
     ]
   },
   "source": "A variation on Problem 7 at Project Euler",

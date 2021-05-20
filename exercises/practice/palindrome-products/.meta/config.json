@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/PalindromeProducts.java"
+      "src/main/java/PalindromeCalculator.java"
     ],
     "test": [
-      "src/test/java/PalindromeProductsTest.java"
+      "src/test/java/PalindromeCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/PalindromeProducts.java"
+      ".meta/src/reference/java/PalindromeCalculator.java"
     ]
   },
   "source": "Problem 4 at Project Euler",

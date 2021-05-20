@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/SpiralMatrix.java"
+      "src/main/java/SpiralMatrixBuilder.java"
     ],
     "test": [
-      "src/test/java/SpiralMatrixTest.java"
+      "src/test/java/SpiralMatrixBuilderTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/SpiralMatrix.java"
+      ".meta/src/reference/java/SpiralMatrixBuilder.java"
     ]
   },
   "source": "Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension.",

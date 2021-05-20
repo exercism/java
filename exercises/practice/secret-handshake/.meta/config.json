@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/SecretHandshake.java"
+      "src/main/java/HandshakeCalculator.java"
     ],
     "test": [
-      "src/test/java/SecretHandshakeTest.java"
+      "src/test/java/HandshakeCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/SecretHandshake.java"
+      ".meta/src/reference/java/HandshakeCalculator.java"
     ]
   },
   "source": "Bert, in Mary Poppins",

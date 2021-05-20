@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Grep.java"
+      "src/main/java/GrepTool.java"
     ],
     "test": [
-      "src/test/java/GrepTest.java"
+      "src/test/java/GrepToolTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Grep.java"
+      ".meta/src/reference/java/GrepTool.java"
     ]
   },
   "source": "Conversation with Nate Foster.",

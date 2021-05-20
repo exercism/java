@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Rectangles.java"
+      "src/main/java/RectangleCounter.java"
     ],
     "test": [
-      "src/test/java/RectanglesTest.java"
+      "src/test/java/RectangleCounterTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Rectangles.java"
+      ".meta/src/reference/java/RectangleCounter.java"
     ]
   }
 }

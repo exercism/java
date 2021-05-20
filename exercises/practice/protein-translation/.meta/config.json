@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/ProteinTranslation.java"
+      "src/main/java/ProteinTranslator.java"
     ],
     "test": [
-      "src/test/java/ProteinTranslationTest.java"
+      "src/test/java/ProteinTranslatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/ProteinTranslation.java"
+      ".meta/src/reference/java/ProteinTranslator.java"
     ]
   },
   "source": "Tyler Long"

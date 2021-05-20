@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/LargestSeriesProduct.java"
+      "src/main/java/LargestSeriesProductCalculator.java"
     ],
     "test": [
-      "src/test/java/LargestSeriesProductTest.java"
+      "src/test/java/LargestSeriesProductCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/LargestSeriesProduct.java"
+      ".meta/src/reference/java/LargestSeriesProductCalculator.java"
     ]
   },
   "source": "A variation on Problem 8 at Project Euler",

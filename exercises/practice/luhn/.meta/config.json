@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Luhn.java"
+      "src/main/java/LuhnValidator.java"
     ],
     "test": [
-      "src/test/java/LuhnTest.java"
+      "src/test/java/LuhnValidatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Luhn.java"
+      ".meta/src/reference/java/LuhnValidator.java"
     ]
   },
   "source": "The Luhn Algorithm on Wikipedia",

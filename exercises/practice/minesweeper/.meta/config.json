@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Minesweeper.java"
+      "src/main/java/MinesweeperBoard.java"
     ],
     "test": [
-      "src/test/java/MinesweeperTest.java"
+      "src/test/java/MinesweeperBoardTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Minesweeper.java"
+      ".meta/src/reference/java/MinesweeperBoard.java"
     ]
   }
 }

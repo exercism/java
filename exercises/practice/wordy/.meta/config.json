@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Wordy.java"
+      "src/main/java/WordProblemSolver.java"
     ],
     "test": [
-      "src/test/java/WordyTest.java"
+      "src/test/java/WordProblemSolverTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Wordy.java"
+      ".meta/src/reference/java/WordProblemSolver.java"
     ]
   },
   "source": "Inspired by one of the generated questions in the Extreme Startup game.",

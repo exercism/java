@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/DndCharacter.java"
+      "src/main/java/DnDCharacter.java"
     ],
     "test": [
-      "src/test/java/DndCharacterTest.java"
+      "src/test/java/DnDCharacterTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/DndCharacter.java"
+      ".meta/src/reference/java/DnDCharacter.java"
     ]
   },
   "source": "Simon Shine, Erik Schierboom",

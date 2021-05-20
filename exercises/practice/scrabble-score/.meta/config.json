@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/ScrabbleScore.java"
+      "src/main/java/Scrabble.java"
     ],
     "test": [
       "src/test/java/ScrabbleScoreTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/ScrabbleScore.java"
+      ".meta/src/reference/java/Scrabble.java"
     ]
   },
   "source": "Inspired by the Extreme Startup game",

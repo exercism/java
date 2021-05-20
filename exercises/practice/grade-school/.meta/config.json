@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/GradeSchool.java"
+      "src/main/java/School.java"
     ],
     "test": [
-      "src/test/java/GradeSchoolTest.java"
+      "src/test/java/SchoolTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/GradeSchool.java"
+      ".meta/src/reference/java/School.java"
     ]
   },
   "source": "A pairing session with Phil Battos at gSchool",

@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/Forth.java"
+      "src/main/java/ForthEvaluator.java"
     ],
     "test": [
-      "src/test/java/ForthTest.java"
+      "src/test/java/ForthEvaluatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Forth.java"
+      ".meta/src/reference/java/ForthEvaluator.java"
     ]
   }
 }

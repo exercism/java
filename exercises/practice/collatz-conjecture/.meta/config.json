@@ -3,13 +3,13 @@
   "authors": [],
   "files": {
     "solution": [
-      "src/main/java/CollatzConjecture.java"
+      "src/main/java/CollatzCalculator.java"
     ],
     "test": [
-      "src/test/java/CollatzConjectureTest.java"
+      "src/test/java/CollatzCalculatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/CollatzConjecture.java"
+      ".meta/src/reference/java/CollatzCalculator.java"
     ]
   },
   "source": "An unsolved problem in mathematics named after mathematician Lothar Collatz",

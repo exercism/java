@@ -6,7 +6,9 @@
       "src/main/java/Clock.java"
     ],
     "test": [
-      "src/test/java/ClockTest.java"
+      "src/test/java/ClockAddTest.java",
+      "src/test/java/ClockCreationTest.java",
+      "src/test/java/ClockEqualTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Clock.java"
