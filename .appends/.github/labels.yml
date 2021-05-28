@@ -1,0 +1,88 @@
+- name: "announcement"
+  description: ""
+  color: "d461d8"
+
+- name: "bug"
+  description: ""
+  color: "fc2929"
+
+- name: "ci"
+  description: ""
+  color: "006b75"
+
+- name: "code"
+  description: ""
+  color: "5E9BDB"
+
+- name: "dependencies"
+  description: "Pull requests that update a dependency file"
+  color: "0366d6"
+
+- name: "discussion"
+  description: ""
+  color: "f43fee"
+
+- name: "documentation"
+  description: ""
+  color: "E6F2FE"
+
+- name: "enhancement"
+  description: ""
+  color: "84b6eb"
+
+- name: "exercise version update"
+  description: "Update version and/or test file according to changes in the canonical data"
+  color: "fcd95d"
+
+- name: "good first issue"
+  description: "Good for newcomers"
+  color: "7057ff"
+
+- name: "hacktoberfest"
+  description: ""
+  color: "FFA500"
+
+- name: "help wanted"
+  description: "Extra attention is needed"
+  color: "008672"
+
+- name: "implement exercise"
+  description: "create exercise described in problem-spec repo"
+  color: "b53264"
+
+- name: "invalid"
+  description: ""
+  color: "f28aa9"
+
+- name: "on-hold"
+  description: ""
+  color: "CCCCCC"
+
+- name: "policy"
+  description: ""
+  color: "5319e7"
+
+- name: "question"
+  description: ""
+  color: "cc317c"
+
+- name: "stale"
+  description: ""
+  color: "fbca04"
+
+- name: "support"
+  description: ""
+  color: "555555"
+
+- name: "test cases"
+  description: ""
+  color: "96e2e8"
+
+- name: "v3-launch"
+  description: "stuff releted to the launch of new version of exercism platform v3"
+  color: "06E8A3"
+
+- name: "v3-migration 🤖"
+  description: "Preparing for Exercism v3"
+  color: "E99695"
+
