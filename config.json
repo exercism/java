@@ -196,9 +196,7 @@
         "prerequisites": [
           "classes",
           "strings",
-          "boolean",
-          "functions",
-          "abstract"
+          "booleans"
         ],
         "status": "active"
       }
@@ -1865,11 +1863,6 @@
   },
   "concepts": [
     {
-      "uuid": "e16a7735-0b61-46bf-b453-8fb088ae6590",
-      "slug": "abstract",
-      "name": "Abstract"
-    },
-    {
       "uuid": "b36a466d-4154-44ce-a88c-d40c53de933a",
       "slug": "arrays",
       "name": "Arrays"
@@ -1878,11 +1871,6 @@
       "uuid": "18bd44ca-9af7-4116-81d8-791b5eac8183",
       "slug": "basics",
       "name": "Basics"
-    },
-    {
-      "uuid": "36887046-6df3-411a-ae79-8c478b67709b",
-      "slug": "boolean",
-      "name": "Boolean"
     },
     {
       "uuid": "ea12527d-7a9d-461e-93b1-bf639652430e",
@@ -1913,11 +1901,6 @@
       "uuid": "e552c05c-6360-4b2f-a438-7ec7e855c0f5",
       "slug": "constructors",
       "name": "Constructors"
-    },
-    {
-      "uuid": "6c6c8973-d4c5-483b-b529-7dda14a98c6d",
-      "slug": "functions",
-      "name": "Functions"
     },
     {
       "uuid": "90776fcc-c6a7-4665-b5fe-5a8a0618358b",
