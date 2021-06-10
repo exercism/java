@@ -24,7 +24,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("master");
 
         assertThat(detector.match(Arrays.asList("stream", "pigeon", "maters")))
-            .containsExactlyInAnyOrder​("maters", "stream");
+            .containsExactlyInAnyOrder("maters", "stream");
     }
 
     @Ignore("Remove to run test")
@@ -43,7 +43,7 @@ public class AnagramTest {
         assertThat(
             detector.match(
                 Arrays.asList("enlists", "google", "inlets", "banana")))
-            .containsExactlyInAnyOrder​("inlets");
+            .containsExactlyInAnyOrder("inlets");
     }
 
     @Ignore("Remove to run test")
@@ -59,7 +59,7 @@ public class AnagramTest {
                     "clergy",
                     "largely",
                     "leading")))
-            .containsExactlyInAnyOrder​("gallery", "regally", "largely");
+            .containsExactlyInAnyOrder("gallery", "regally", "largely");
     }
 
     @Ignore("Remove to run test")
@@ -68,7 +68,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("nose");
 
         assertThat(detector.match(Arrays.asList("Eons", "ONES")))
-            .containsExactlyInAnyOrder​("Eons", "ONES");
+            .containsExactlyInAnyOrder("Eons", "ONES");
     }
 
     @Ignore("Remove to run test")
@@ -88,7 +88,7 @@ public class AnagramTest {
         assertThat(
             detector.match(
                 Arrays.asList("cashregister", "Carthorse", "radishes")))
-            .containsExactlyInAnyOrder​("Carthorse");
+            .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Ignore("Remove to run test")
@@ -99,7 +99,7 @@ public class AnagramTest {
         assertThat(
             detector.match(
                 Arrays.asList("cashregister", "carthorse", "radishes")))
-            .containsExactlyInAnyOrder​("carthorse");
+            .containsExactlyInAnyOrder("carthorse");
     }
 
     @Ignore("Remove to run test")
@@ -110,7 +110,7 @@ public class AnagramTest {
         assertThat(
             detector.match(
                 Arrays.asList("cashregister", "Carthorse", "radishes")))
-            .containsExactlyInAnyOrder​("Carthorse");
+            .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Ignore("Remove to run test")
@@ -146,7 +146,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("LISTEN");
 
         assertThat(detector.match(Arrays.asList("Listen", "Silent", "LISTEN")))
-            .containsExactlyInAnyOrder​("Silent");
+            .containsExactlyInAnyOrder("Silent");
     }
 
 }
