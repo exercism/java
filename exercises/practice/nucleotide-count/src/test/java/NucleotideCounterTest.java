@@ -13,7 +13,7 @@ public class NucleotideCounterTest {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("");
 
         assertThat(nucleotideCounter.nucleotideCounts())
-            .containsExactlyInAnyOrderEntriesOf​(
+            .containsExactlyInAnyOrderEntriesOf(
                 Map.of('A', 0, 'C', 0, 'G', 0, 'T', 0));
     }
 
@@ -23,7 +23,7 @@ public class NucleotideCounterTest {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("G");
 
         assertThat(nucleotideCounter.nucleotideCounts())
-            .containsExactlyInAnyOrderEntriesOf​(
+            .containsExactlyInAnyOrderEntriesOf(
                 Map.of('A', 0, 'C', 0, 'G', 1, 'T', 0));
     }
 
@@ -33,7 +33,7 @@ public class NucleotideCounterTest {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGGG");
 
         assertThat(nucleotideCounter.nucleotideCounts())
-            .containsExactlyInAnyOrderEntriesOf​(
+            .containsExactlyInAnyOrderEntriesOf(
                 Map.of('A', 0, 'C', 0, 'G', 7, 'T', 0));
     }
 
@@ -44,7 +44,7 @@ public class NucleotideCounterTest {
             = new NucleotideCounter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
 
         assertThat(nucleotideCounter.nucleotideCounts())
-            .containsExactlyInAnyOrderEntriesOf​(
+            .containsExactlyInAnyOrderEntriesOf(
                 Map.of('A', 20, 'C', 12, 'G', 17, 'T', 21));
     }
 
