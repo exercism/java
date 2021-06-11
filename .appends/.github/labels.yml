@@ -1,3 +1,8 @@
+# ----------------------------------------------------------------------------------------- #
+# These are the repository-specific labels that augment the Exercise-wide labels defined in #
+# https://github.com/exercism/org-wide-files/blob/main/global-files/.github/labels.yml.     #
+# ----------------------------------------------------------------------------------------- #
+
 - name: "announcement"
   description: ""
   color: "d461d8"
@@ -81,8 +86,3 @@
 - name: "v3-launch"
   description: "stuff releted to the launch of new version of exercism platform v3"
   color: "06E8A3"
-
-- name: "v3-migration 🤖"
-  description: "Preparing for Exercism v3"
-  color: "E99695"
-
