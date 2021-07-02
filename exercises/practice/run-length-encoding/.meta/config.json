@@ -1,6 +1,25 @@
 {
   "blurb": "Implement run-length encoding and decoding.",
-  "authors": [],
+  "authors": [
+    "Smarticles101"
+  ],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/RunLengthEncoding.java"

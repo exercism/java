@@ -1,6 +1,18 @@
 {
   "blurb": "Diffie-Hellman key exchange.",
-  "authors": [],
+  "authors": [
+    "CRivasGomez"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/DiffieHellman.java"

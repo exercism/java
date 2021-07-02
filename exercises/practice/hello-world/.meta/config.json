@@ -1,6 +1,33 @@
 {
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
-  "authors": [],
+  "authors": [
+    "counterleft"
+  ],
+  "contributors": [
+    "c-thornton",
+    "di72nn",
+    "FridaTveit",
+    "imwithsam",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "katrinleinweber",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mohamedFalah",
+    "msomji",
+    "muzimuzhi",
+    "otraczyk",
+    "PTrottier",
+    "rcraggs",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Greeter.java"

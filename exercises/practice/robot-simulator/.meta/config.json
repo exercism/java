@@ -1,6 +1,30 @@
 {
   "blurb": "Write a robot simulator.",
-  "authors": [],
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewstyler",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "vivshaw",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Robot.java"

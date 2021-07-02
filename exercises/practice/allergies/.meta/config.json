@@ -1,6 +1,32 @@
 {
   "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
   "authors": [],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "jmluy",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "matthewstyler",
+    "michael-berger-FR",
+    "msomji",
+    "muzimuzhi",
+    "odzeno",
+    "rohit1104",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sonapraneeth-a",
+    "sshine",
+    "stkent",
+    "superklamer",
+    "vasouv",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Allergies.java"

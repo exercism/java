@@ -1,6 +1,26 @@
 {
   "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
-  "authors": [],
+  "authors": [
+    "FridaTveit"
+  ],
+  "contributors": [
+    "c-thornton",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "PatrickMcSweeny",
+    "rootulp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/TwelveDays.java"

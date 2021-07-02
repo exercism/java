@@ -1,6 +1,16 @@
 {
   "blurb": "Convert a resistor band's color to its numeric representation",
-  "authors": [],
+  "authors": [
+    "Smarticles101"
+  ],
+  "contributors": [
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/ResistorColor.java"

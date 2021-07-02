@@ -1,6 +1,27 @@
 {
   "blurb": "Compute the prime factors of a given natural number.",
   "authors": [],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "Haozhe321",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "LuLechuan",
+    "matthewmorgan",
+    "msomji",
+    "muzimuzhi",
+    "sit",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/PrimeFactorsCalculator.java"

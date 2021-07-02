@@ -1,6 +1,30 @@
 {
   "blurb": "Implement a binary search algorithm.",
-  "authors": [],
+  "authors": [
+    "javaeeeee"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "hugueschabot",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "michaelspets",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "RonakLakhotia",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "superklamer",
+    "vasouv",
+    "wolf99",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/BinarySearch.java"

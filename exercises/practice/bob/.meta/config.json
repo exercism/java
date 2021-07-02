@@ -1,6 +1,31 @@
 {
   "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
-  "authors": [],
+  "authors": [
+    "sit"
+  ],
+  "contributors": [
+    "anurag-rai",
+    "austinlyons",
+    "c-thornton",
+    "FridaTveit",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "matthewstyler",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "yoseftanaka",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Bob.java"

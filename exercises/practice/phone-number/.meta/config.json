@@ -1,6 +1,33 @@
 {
   "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
-  "authors": [],
+  "authors": [
+    "sagarsane"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "c-thornton",
+    "colin-mullikin",
+    "FridaTveit",
+    "jmrunkle",
+    "jsertel",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mau0727",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "sit",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "TimoleonLatinopoulos",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/PhoneNumber.java"

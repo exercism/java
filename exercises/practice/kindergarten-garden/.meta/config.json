@@ -1,6 +1,26 @@
 {
   "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
-  "authors": [],
+  "authors": [
+    "Smarticles101"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "c-thornton",
+    "FridaTveit",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "RonakLakhotia",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/KindergartenGarden.java"

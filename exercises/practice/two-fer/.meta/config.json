@@ -1,6 +1,26 @@
 {
   "blurb": "Create a sentence of the form \"One for X, one for me.\"",
-  "authors": [],
+  "authors": [
+    "Smarticles101"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "ikhadykin",
+    "jmrunkle",
+    "jssander",
+    "kytrinyx",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "rdavid1099",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "sshine",
+    "stkent",
+    "uzilan",
+    "Valkryst",
+    "ymoskovits"
+  ],
   "files": {
     "solution": [
       "src/main/java/Twofer.java"

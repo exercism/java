@@ -1,6 +1,35 @@
 {
   "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
-  "authors": [],
+  "authors": [
+    "sit"
+  ],
+  "contributors": [
+    "c-thornton",
+    "di72nn",
+    "ErikSchierboom",
+    "FridaTveit",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "odzeno",
+    "redshirt4",
+    "sjakobi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "tshradheya",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/NucleotideCounter.java"

@@ -1,6 +1,31 @@
 {
   "blurb": "Insert and search for numbers in a binary tree.",
-  "authors": [],
+  "authors": [
+    "javaeeeee"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "delbertlegg",
+    "FridaTveit",
+    "hgvanpariya",
+    "jackattack24",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "michaelspets",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "superklamer",
+    "szielinski",
+    "vasouv",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/BinarySearchTree.java"

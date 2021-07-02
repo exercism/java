@@ -1,6 +1,18 @@
 {
   "blurb": "Write a function that returns the earned points in a single toss of a Darts game",
-  "authors": [],
+  "authors": [
+    "lemoncurry"
+  ],
+  "contributors": [
+    "ccouzens",
+    "FridaTveit",
+    "jmrunkle",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/Darts.java"

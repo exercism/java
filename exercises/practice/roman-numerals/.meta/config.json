@@ -1,6 +1,27 @@
 {
   "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
   "authors": [],
+  "contributors": [
+    "aadityakulkarni",
+    "elrolfe",
+    "FridaTveit",
+    "jmrunkle",
+    "jtigger",
+    "katmpatz",
+    "kytrinyx",
+    "lemoncurry",
+    "LuLechuan",
+    "matthewmorgan",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/RomanNumerals.java"

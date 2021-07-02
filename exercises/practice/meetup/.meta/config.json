@@ -1,6 +1,29 @@
 {
   "blurb": "Calculate the date of meetups.",
-  "authors": [],
+  "authors": [
+    "sit"
+  ],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "jackattack24",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "odzeno",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Meetup.java"

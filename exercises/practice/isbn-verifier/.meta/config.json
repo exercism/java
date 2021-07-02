@@ -1,6 +1,23 @@
 {
   "blurb": "Check if a given string is a valid ISBN-10 number.",
-  "authors": [],
+  "authors": [
+    "sjwarner-bp"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "lemoncurry",
+    "LuLechuan",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "PritamSangani",
+    "sjwarner",
+    "SleeplessByte",
+    "sshine",
+    "stkent"
+  ],
   "files": {
     "solution": [
       "src/main/java/IsbnVerifier.java"

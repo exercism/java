@@ -1,6 +1,29 @@
 {
   "blurb": "Implement the classic method for composing secret messages called a square code.",
   "authors": [],
+  "contributors": [
+    "aadityakulkarni",
+    "bmkiefer",
+    "FridaTveit",
+    "jmluy",
+    "jmrunkle",
+    "jtigger",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "PaulNoth",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/CryptoSquare.java"

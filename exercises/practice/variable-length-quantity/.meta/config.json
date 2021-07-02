@@ -1,6 +1,20 @@
 {
   "blurb": "Implement variable length quantity encoding and decoding.",
-  "authors": [],
+  "authors": [
+    "jackattack24"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine",
+    "vpondala"
+  ],
   "files": {
     "solution": [
       "src/main/java/VariableLengthQuantity.java"

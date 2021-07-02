@@ -1,6 +1,26 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [],
+  "contributors": [
+    "FridaTveit",
+    "jmrunkle",
+    "jonnynabors",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "LuLechuan",
+    "matthewmorgan",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "vivshaw",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Scrabble.java"

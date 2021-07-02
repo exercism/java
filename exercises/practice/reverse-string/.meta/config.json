@@ -1,6 +1,25 @@
 {
   "blurb": "Reverse a string",
-  "authors": [],
+  "authors": [
+    "bmkiefer"
+  ],
+  "contributors": [
+    "barisozcanli",
+    "FridaTveit",
+    "ikhadykin",
+    "jmrunkle",
+    "Kyle-Pu",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "ppiliar",
+    "sjwarner",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/ReverseString.java"

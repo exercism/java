@@ -1,6 +1,15 @@
 {
   "blurb": "Given a year, report if it is a leap year.",
-  "authors": [],
+  "authors": [
+    "sonapraneeth-a"
+  ],
+  "contributors": [
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/Leap.java"

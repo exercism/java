@@ -1,6 +1,15 @@
 {
   "blurb": "Convert color codes, as used on resistors, to a numeric value.",
-  "authors": [],
+  "authors": [
+    "HuskyNator"
+  ],
+  "contributors": [
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/ResistorColorDuo.java"

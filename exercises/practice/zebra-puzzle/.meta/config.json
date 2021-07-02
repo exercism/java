@@ -1,6 +1,16 @@
 {
   "blurb": "Solve the zebra puzzle.",
-  "authors": [],
+  "authors": [
+    "lemoncurry"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "jmrunkle",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/ZebraPuzzle.java"

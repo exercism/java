@@ -1,6 +1,27 @@
 {
   "blurb": "Convert a number to a string, the content of which depends on the number's factors.",
   "authors": [],
+  "contributors": [
+    "FridaTveit",
+    "jmrunkle",
+    "jtigger",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "TimoleonLatinopoulos",
+    "tshradheya",
+    "vasouv",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/RaindropConverter.java"

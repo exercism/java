@@ -1,6 +1,35 @@
 {
   "blurb": "Calculate the Hamming difference between two DNA strands.",
-  "authors": [],
+  "authors": [
+    "wdjunaidi"
+  ],
+  "contributors": [
+    "c-thornton",
+    "ChristianWilkie",
+    "FridaTveit",
+    "javaeeeee",
+    "jmrunkle",
+    "jonnynabors",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "michael-berger-FR",
+    "michaelspets",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "odzeno",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "t0dd",
+    "Valkryst",
+    "vasouv",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/Hamming.java"

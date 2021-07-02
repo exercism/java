@@ -1,6 +1,30 @@
 {
   "blurb": "Determine if a word or phrase is an isogram.",
-  "authors": [],
+  "authors": [
+    "Kai-Shiro"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "LukBukkit",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "t0dd",
+    "ThiagoSousaSantana",
+    "vasouv",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/IsogramChecker.java"

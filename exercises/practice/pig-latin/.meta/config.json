@@ -1,6 +1,30 @@
 {
   "blurb": "Implement a program that translates from English to Pig Latin",
   "authors": [],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "jtigger",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "LuLechuan",
+    "matthewmorgan",
+    "matthewstyler",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "robkeim",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/PigLatinTranslator.java"

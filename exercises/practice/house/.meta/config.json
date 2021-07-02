@@ -1,6 +1,23 @@
 {
   "blurb": "Output the nursery rhyme 'This is the House that Jack Built'.",
-  "authors": [],
+  "authors": [
+    "Smarticles101"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "sshine",
+    "stkent",
+    "tendaitt",
+    "TimoleonLatinopoulos"
+  ],
   "files": {
     "solution": [
       "src/main/java/House.java"

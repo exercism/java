@@ -1,6 +1,24 @@
 {
   "blurb": "Score a bowling game",
   "authors": [],
+  "contributors": [
+    "aadityakulkarni",
+    "antonmry",
+    "FridaTveit",
+    "Haozhe321",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "TimoleonLatinopoulos"
+  ],
   "files": {
     "solution": [
       "src/main/java/BowlingGame.java"

@@ -1,6 +1,29 @@
 {
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",
-  "authors": [],
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "ThiagoSousaSantana",
+    "vasouv",
+    "vivshaw",
+    "vpondala",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/WordProblemSolver.java"

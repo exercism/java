@@ -1,6 +1,19 @@
 {
   "blurb": "Determine if a number is an Armstrong number",
-  "authors": [],
+  "authors": [
+    "sjwarner-bp"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/ArmstrongNumbers.java"

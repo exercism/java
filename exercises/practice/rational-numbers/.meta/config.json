@@ -1,6 +1,16 @@
 {
   "blurb": "Implement rational numbers.",
   "authors": [],
+  "contributors": [
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine"
+  ],
   "files": {
     "solution": [
       "src/main/java/Rational.java"

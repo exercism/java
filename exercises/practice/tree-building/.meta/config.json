@@ -1,6 +1,15 @@
 {
   "blurb": "Refactor a tree building algorithm.",
-  "authors": [],
+  "authors": [
+    "junming403"
+  ],
+  "contributors": [
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "uzilan"
+  ],
   "files": {
     "solution": [
       "src/main/java/BuildTree.java"

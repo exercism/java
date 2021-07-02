@@ -1,6 +1,36 @@
 {
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
-  "authors": [],
+  "authors": [
+    "sagarsane"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "c-thornton",
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "matthewstyler",
+    "mirkoperillo",
+    "monil",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "sit",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "TimoleonLatinopoulos",
+    "vdemeester",
+    "Zaldrick",
+    "zwaltman"
+  ],
   "files": {
     "solution": [
       "src/main/java/WordCount.java"

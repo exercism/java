@@ -1,6 +1,30 @@
 {
   "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
-  "authors": [],
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "balachandarsv",
+    "FridaTveit",
+    "hgvanpariya",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "rootulp",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "vasouv",
+    "weibeld",
+    "Zaldrick"
+  ],
   "files": {
     "solution": [
       "src/main/java/DifferenceOfSquaresCalculator.java"
