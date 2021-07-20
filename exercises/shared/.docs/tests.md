@@ -108,9 +108,8 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
     ```
    *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
 
-4. Solve the exercise.  Find and work through the `TUTORIAL.md` guide ([view on GitHub](https://github.com/exercism/java/blob/master/exercises/practice/hello-world/TUTORIAL.md)).
+4. Solve the exercise.  Find and work through the `TUTORIAL.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/TUTORIAL.md)).
 
 Good luck!  Have fun!
 
 If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
-
