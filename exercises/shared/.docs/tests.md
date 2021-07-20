@@ -38,7 +38,7 @@ Choose your operating system:
      ```
    *(Don't worry about the tests failing, at first, this is how you begin each exercise.)*
 
-5. Solve the exercise.  Find and work through the `TUTORIAL.md` guide ([view on GitHub](https://github.com/exercism/java/blob/master/exercises/practice/hello-world/TUTORIAL.md)).
+5. Solve the exercise.  Find and work through the `TUTORIAL.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/TUTORIAL.md)).
 
 
 Good luck!  Have fun!
