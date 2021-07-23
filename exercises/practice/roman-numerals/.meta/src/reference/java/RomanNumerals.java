@@ -23,7 +23,7 @@ public class RomanNumerals {
         arabicToRomanConversions.put(1, "I");
     }
 
-    public RomanNumeral(int arabicNumeral) {
+    public RomanNumerals(int arabicNumeral) {
         this.arabicNumeral = arabicNumeral;
     }
 
