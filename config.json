@@ -1939,12 +1939,12 @@
       "content": "Java is a modern, fast-evolving language with releases every 6 months."
     },
     {
-      "icon": "features-typed",
+      "icon": "statically-typed",
       "title": "Statically-typed",
       "content": "Every expression has a type known at compile time."
     },
     {
-      "icon": "features-functional",
+      "icon": "multi-paradigm",
       "title": "Multi-paradigm",
       "content": "Java is primarily an object-oriented language, but has many functional features introduced in v1.8."
     },
@@ -1954,7 +1954,7 @@
       "content": "Java is used for a variety of workloads like web, cloud, mobile and game applications."
     },
     {
-      "icon": "features-portable",
+      "icon": "portable",
       "title": "Portable",
       "content": "Java was designed to be cross-platform with the slogan \"Write once, run anywhere\"."
     },
