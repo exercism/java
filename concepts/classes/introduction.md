@@ -55,7 +55,7 @@ Private fields are usually updated as a side effect of calling a method. Such me
 class CarImporter {
     private int carsImported;
 
-    public void ImportCars(int numberOfCars)
+    public void importCars(int numberOfCars)
     {
         // Update private field from public method
         carsImported = carsImported + numberOfCars;
