@@ -5,7 +5,7 @@ Multiple `char`s can comprise a string such as `"word"` or `char`s can be
 processed independently. Their literals have single quotes e.g. `'A'`.
 
 Java `char`s support Unicode encoding, so in addition to the Latin character set
-most modern writing systems in use world can be represented,
+most modern writing systems  can be represented,
 e.g.  Greek `'β'`. 
 
 There are many builtin library methods to inspect and manipulate `char`s. These
