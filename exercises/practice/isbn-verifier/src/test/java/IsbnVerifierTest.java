@@ -32,6 +32,12 @@ public class IsbnVerifierTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void validIsbnNumberWithCheckDigitPaddedWithLettersIsInvalid() {
+        assertFalse(isbnVerifier.isValid("ABCDEFG3-598-21507-XQWERTYUI"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void checkDigitIsACharacterOtherThanX() {
         assertFalse(isbnVerifier.isValid("3-598-21507-A"));
     }
