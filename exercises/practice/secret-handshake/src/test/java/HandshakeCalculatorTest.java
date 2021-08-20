@@ -103,4 +103,28 @@ public class HandshakeCalculatorTest {
                 handshakeCalculator.calculateHandshake(0));
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testThatHandlesMoreThanFiveBinaryPlacesWithReversal() {
+        assertEquals(
+                asList(Signal.DOUBLE_BLINK, Signal.WINK),
+                handshakeCalculator.calculateHandshake(51));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testThatHandlesMoreThanFiveBinaryPlacesWithoutReversal() {
+        assertEquals(
+                asList(Signal.WINK, Signal.DOUBLE_BLINK),
+                handshakeCalculator.calculateHandshake(35));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testInputThatYieldsAllActionsFromMoreThanFiveBinaryPlaces() {
+        assertEquals(
+                asList(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP),
+                handshakeCalculator.calculateHandshake(111));
+    }
+
 }
