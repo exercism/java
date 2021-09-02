@@ -2,22 +2,22 @@
 
 ## Inheritance
 
-Java supports inheritance as it's core functionality and then to achieve a lot of OOPs principles like abstraction using
+Java supports inheritance as its core functionality and then to achieve a lot of OOPs principles like abstraction using
 inheritance.
 
 A class can extend another class using `extends` keyword and can inherit from an interface using `implements` keywords.
 
 ## Access Modifiers
 
-The access modifiers define rules for the member variables of a class about their access from another classes(or anywhere in
+The access modifiers define rules for the member variables and methods of a class about their access from other classes (or anywhere in
 the code).
 
-There are mainly three access modifiers:
+There are four  access modifiers:
 
 - private
 - public
 - protected
-- Default (No keyword required)
+- default (No keyword required)
 
 You can read more about them [here][access-modifiers]
 

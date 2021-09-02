@@ -59,7 +59,7 @@ Private fields are usually updated as a side effect of calling a method. Such me
 class CarImporter {
     private int carsImported;
 
-    public void ImportCars(int numberOfCars)
+    public void importCars(int numberOfCars)
     {
         // Update private field
         carsImported = carsImported + numberOfCars;
@@ -75,7 +75,7 @@ Within a class, the [`this` keyword][this] will refer to the current class. This
 class CarImporter {
     private int carsImported;
 
-    public void SetImportedCars(int carsImported)
+    public void setImportedCars(int carsImported)
     {
         // Update private field from public method
         this.carsImported = carsImported;

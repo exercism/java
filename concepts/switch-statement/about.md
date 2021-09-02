@@ -1,13 +1,13 @@
 # About
 
-Like an _if/else_ statement, a `switch` statement allow you to change the flow of the program by conditionally executing code. The difference is that a `switch` statement can only compare the value of a primitive or string expression against pre-defined constant values.
+Like an _if/else_ statement, a `switch` statement allows you to change the flow of the program by conditionally executing code. The difference is that a `switch` statement can only compare the value of a primitive or string expression against pre-defined constant values.
 
-Some keywords are usefull when using a switch statement.
+Some keywords are useful when using a switch statement.
 
-- `switch` : this keyword allow you to declare the structure of the switch. It his follow by the expression or the variable that will make the result change.
+- `switch` : this keyword allows you to declare the structure of the switch. It is followed by the expression or the variable that will make the result change.
 - `case` : you will use this one to declare the differents possibilties for the result.
-- `break` : the `break` keyword is very usefull in order to stop the execution of the switch at the end of the wanted flow. If you forget it, the program will continue and may lead to unexpected results.
-- `default` : as it's name says use it as a default result when no other case matchs your expression's result.
+- `break` : the `break` keyword is very useful in order to stop the execution of the switch at the end of the wanted flow. If you forget it, the program will continue and may lead to unexpected results.
+- `default` : as it's name says, use it as a default result when no other case matchs your expression's result.
 
 At their simplest they test a primitive or string expression and make a decision based on its value. For example:
 
@@ -29,8 +29,8 @@ switch (direction) {
 
 Starting with Java 14 (available as a preview before in Java 12 and 13) it is possible to use the "enhanced" switch implementation.
 
-1. You have the possiblity to assign multiple value in a sigle case.
-   In the traditional switch-statement you can use fall-throught. In the following example `case 1` and `case 3` will execute the same stuff. This is done by `case 1` not using the `break` keyword.
+1. You have the possiblity to assign multiple value in a single case.
+   In the traditional switch-statement you can use fall-through. In the following example `case 1` and `case 3` will execute the same stuff. This is done by `case 1` not using the `break` keyword.
 
    ```java
    switch (number) {
@@ -46,7 +46,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
    ```
 
    In the enhanced `switch expression` you can directly assign multiple value to a `case`.
-   Look at the following exemple :
+   Look at the following example :
 
    ```java
    switch (number) {
@@ -88,7 +88,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
 
 3. Another difference between _switch statements_ and _switch expressions_: in _switch expressions_ you _**MUST**_ cover all cases. Either by having a `case` for all possible values or using a `default` case.
 
-4. You can use `->` instead of `:`. The `->` allow you to not include the `break` keyword. Both notation can be used but in a switch you have to stick with only one.
+4. You can use `->` instead of `:`. The `->` allow you to not include the `break` keyword. Both notations can be used but in a switch you have to stick with only one.
 
    ```java
        switch(expression) {
@@ -98,7 +98,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
        }
    ```
 
-5. The scope. Traditionnals `switch` can lead to some unexected behavior because of it's scope as there is only one scope for the whole `switch`.
+5. The scope. Traditionnals `switch` can lead to some unexected behavior because of its scope as there is only one scope for the whole `switch`.
 
    ```java
        switch(expression) {
@@ -112,7 +112,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
        }
    ```
 
-   This exemple is not working because message is declared twice in the `switch`.
+   This example is not working because message is declared twice in the `switch`.
    It could be solved using :
 
    ```java
