@@ -50,7 +50,6 @@ public class BirdWatcherTest {
 
     @Test
     @Ignore("Remove to run test")
-    @Ignore
     public void itShouldNotHaveDaysWithoutBirds() {
         birdWatcher = new BirdWatcher(new int[]{1, 2, 5, 3, 7, 8, 4});
         assertThat(birdWatcher.hasDayWithoutBirds()).isFalse();
@@ -65,7 +64,6 @@ public class BirdWatcherTest {
 
     @Test
     @Ignore("Remove to run test")
-    @Ignore
     public void itTestGetCountForMoreDaysThanTheArraySize() {
         assertThat(birdWatcher.getCountForFirstDays(10)).isEqualTo(29);
     }
@@ -78,7 +76,6 @@ public class BirdWatcherTest {
 
     @Test
     @Ignore("Remove to run test")
-    @Ignore
     public void itShouldNotHaveBusyDays() {
         birdWatcher = new BirdWatcher(new int[]{1, 2, 3, 3, 2, 1, 4});
         assertThat(birdWatcher.getBusyDays()).isEqualTo(0);
