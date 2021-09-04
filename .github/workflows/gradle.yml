@@ -3,24 +3,9 @@
 
 name: Java CI with Gradle
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  lint:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Fetch configlet
-      run: bin/fetch-configlet
-    - name: Lint
-      run: bin/configlet lint .
-
   build:
 
     runs-on: ubuntu-latest
