@@ -32,8 +32,6 @@ public class ResistorColorTest {
     @Ignore("Remove to run test")
     @Test
     public void testColors() {
-        assertThat(resistorColor.colors()).isEqualTo(
-                new String[]{"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"}
-        );
+        assertThat(resistorColor.colors()).containsExactly("black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white");
     }
 }
