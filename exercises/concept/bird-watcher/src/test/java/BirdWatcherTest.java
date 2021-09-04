@@ -26,7 +26,7 @@ public class BirdWatcherTest {
     @Test
     public void itTestGetLastWeek() {
         assertThat(birdWatcher.getLastWeek())
-          .containsExactly(DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY);
+            .containsExactly(DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class BirdWatcherTest {
     @Ignore("Remove to run test")
     public void itTestGetCountForMoreDaysThanTheArraySize() {
         assertThat(birdWatcher.getCountForFirstDays(10))
-        .isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6 + TODAY);
+            .isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6 + TODAY);
     }
 
     @Test
