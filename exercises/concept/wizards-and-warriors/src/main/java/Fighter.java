@@ -8,7 +8,7 @@ abstract class Fighter {
 
 }
 
-class Warrior extends WizardsAndWarriors {
+class Warrior extends Fighter {
 
     @Override
     public String toString() {
@@ -21,7 +21,7 @@ class Warrior extends WizardsAndWarriors {
     }
 }
 
-class Wizard extends WizardsAndWarriors {
+class Wizard extends Fighter {
 
     @Override
     boolean isVulnerable() {
