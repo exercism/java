@@ -118,7 +118,7 @@
         "prerequisites": [
           "classes"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "remote-control-competition",
@@ -197,7 +197,7 @@
           "strings",
           "booleans"
         ],
-        "status": "active"
+        "status": "wip"
       }
     ],
     "practice": [
