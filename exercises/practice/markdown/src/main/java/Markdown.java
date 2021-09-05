@@ -1,3 +1,4 @@
+class Markdown {
 
     String parse(String markdown) {
         String[] lines = markdown.split("\n");
@@ -76,4 +77,4 @@
         update = "<em>$1</em>";
         return workingOn.replaceAll(lookingFor, update);
     }
-} 
+}

@@ -1,20 +1,20 @@
 class NeedForSpeed {
-    // TODO: define the constructor for the 'RemoteControlCar' class
+    // TODO: define the constructor for the 'NeedForSpeed' class
 
     public boolean batteryDrained() {
-        throw new UnsupportedOperationException("Please implement the RemoteControlCar.batteryDrained() method");
+        throw new UnsupportedOperationException("Please implement the NeedForSpeed.batteryDrained() method");
     }
 
     public int distanceDriven() {
-        throw new UnsupportedOperationException("Please implement the RemoteControlCar.distanceDriven() method");
+        throw new UnsupportedOperationException("Please implement the NeedForSpeed.distanceDriven() method");
     }
 
     public void drive() {
-        throw new UnsupportedOperationException("Please implement the RemoteControlCar.drive() method");
+        throw new UnsupportedOperationException("Please implement the NeedForSpeed.drive() method");
     }
 
-    public static RemoteControlCar nitro() {
-        throw new UnsupportedOperationException("Please implement the (static) RemoteControlCar.ntiro() method");
+    public static NeedForSpeed nitro() {
+        throw new UnsupportedOperationException("Please implement the (static) NeedForSpeed.nitro() method");
     }
 }
 
