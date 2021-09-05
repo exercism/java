@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RnaTranscriptionTest {
 
@@ -15,37 +15,36 @@ public class RnaTranscriptionTest {
 
     @Test
     public void testEmptyRnaSequence() {
-        assertEquals("", rnaTranscription.transcribe(""));
+        assertThat(rnaTranscription.transcribe("")).isEmpty();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfCytosineIsGuanine() {
-        assertEquals("G", rnaTranscription.transcribe("C"));
+        assertThat(rnaTranscription.transcribe("C")).isEqualTo("G");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfGuanineIsCytosine() {
-        assertEquals("C", rnaTranscription.transcribe("G"));
+        assertThat(rnaTranscription.transcribe("G")).isEqualTo("C");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfThymineIsAdenine() {
-        assertEquals("A", rnaTranscription.transcribe("T"));
+        assertThat(rnaTranscription.transcribe("T")).isEqualTo("A");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscriptionOfAdenineIsUracil() {
-        assertEquals("U", rnaTranscription.transcribe("A"));
+        assertThat(rnaTranscription.transcribe("A")).isEqualTo("U");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testRnaTranscription() {
-        assertEquals("UGCACCAGAAUU", rnaTranscription.transcribe("ACGTGGTCTTAA"));
+        assertThat(rnaTranscription.transcribe("ACGTGGTCTTAA")).isEqualTo("UGCACCAGAAUU");
     }
-
 }
