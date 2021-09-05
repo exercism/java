@@ -94,7 +94,7 @@
           "numbers",
           "strings"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "blackjack",
@@ -118,7 +118,7 @@
         "prerequisites": [
           "classes"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "remote-control-competition",
@@ -132,7 +132,7 @@
           "lists",
           "strings"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "cars-assemble",
@@ -183,7 +183,7 @@
           "methods",
           "variables"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "wizards-and-warriors",
@@ -197,7 +197,7 @@
           "strings",
           "booleans"
         ],
-        "status": "active"
+        "status": "wip"
       }
     ],
     "practice": [
