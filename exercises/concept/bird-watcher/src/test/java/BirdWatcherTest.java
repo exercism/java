@@ -7,8 +7,16 @@ import static org.assertj.core.api.Assertions.*;
 
 public class BirdWatcherTest {
 
+    private static final int DAY1 = 0;
+    private static final int DAY2 = 2;
+    private static final int DAY3 = 5;
+    private static final int DAY4 = 3;
+    private static final int DAY5 = 7;
+    private static final int DAY6 = 8;
+    private static final int TODAY = 4;
+
     private BirdWatcher birdWatcher;
-    private int lastWeek[] = {0, 2, 5, 3, 7, 8, 4};
+    private int lastWeek[] = {DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY};
 
     @Before
     public void setUp() {
@@ -17,13 +25,14 @@ public class BirdWatcherTest {
 
     @Test
     public void itTestGetLastWeek() {
-        assertThat(birdWatcher.getLastWeek().equals(lastWeek)).isTrue();
+        assertThat(birdWatcher.getLastWeek())
+            .containsExactly(DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY);
     }
 
     @Test
     @Ignore("Remove to run test")
     public void itTestGetToday() {
-        assertThat(birdWatcher.getToday()).isEqualTo(lastWeek[lastWeek.length - 1]);
+        assertThat(birdWatcher.getToday()).isEqualTo(TODAY);
     }
 
     @Test
@@ -39,7 +48,7 @@ public class BirdWatcherTest {
     public void itIncrementTodaysCount() {
         int currentTodayCount = birdWatcher.getToday();
         birdWatcher.incrementTodaysCount();
-        assertThat(birdWatcher.getToday()).isEqualTo(currentTodayCount + 1);
+        assertThat(birdWatcher.getToday()).isEqualTo(TODAY + 1);
     }
 
     @Test
@@ -59,18 +68,20 @@ public class BirdWatcherTest {
     @Test
     @Ignore("Remove to run test")
     public void itTestGetCountForFirstDays() {
-        assertThat(birdWatcher.getCountForFirstDays(4)).isEqualTo(10);
+        assertThat(birdWatcher.getCountForFirstDays(4)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4);
     }
 
     @Test
     @Ignore("Remove to run test")
     public void itTestGetCountForMoreDaysThanTheArraySize() {
-        assertThat(birdWatcher.getCountForFirstDays(10)).isEqualTo(29);
+        assertThat(birdWatcher.getCountForFirstDays(10))
+            .isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6 + TODAY);
     }
 
     @Test
     @Ignore("Remove to run test")
     public void itTestGetCountForBusyDays() {
+        // DAY3, DAY5 and DAY6 are all >= 5 birds
         assertThat(birdWatcher.getBusyDays()).isEqualTo(3);
     }
 

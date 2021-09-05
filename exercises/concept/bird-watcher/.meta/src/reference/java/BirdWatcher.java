@@ -1,13 +1,13 @@
 
 class BirdWatcher {
-    private int[] birdsPerDay;
+    private final int[] birdsPerDay;
 
     public BirdWatcher(int[] birdsPerDay) {
-        this.birdsPerDay = birdsPerDay;
+        this.birdsPerDay = birdsPerDay.clone();
     }
 
     public int[] getLastWeek() {
-        return birdsPerDay;
+        return birdsPerDay.clone();
     }
 
     public int getToday() {
@@ -17,9 +17,8 @@ class BirdWatcher {
         return birdsPerDay[birdsPerDay.length - 1];
     }
 
-    public int incrementTodaysCount() {
+    public void incrementTodaysCount() {
         birdsPerDay[birdsPerDay.length - 1] = birdsPerDay[birdsPerDay.length - 1] + 1;
-        return birdsPerDay[birdsPerDay.length - 1];
     }
 
     public boolean hasDayWithoutBirds() {
