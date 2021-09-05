@@ -1902,6 +1902,16 @@
       "name": "Constructors"
     },
     {
+      "uuid": "3a1f7a96-b4a5-43d3-99e2-7c248e74e6c8",
+      "slug": "foreach-loops",
+      "name": "For-Each Loops"
+    },
+    {
+      "uuid": "b1bb63e6-4540-48fc-9d11-4ee72653484e",
+      "slug": "for-loops",
+      "name": "For Loops"
+    },
+    {
       "uuid": "90776fcc-c6a7-4665-b5fe-5a8a0618358b",
       "slug": "inheritance",
       "name": "Inheritance"
