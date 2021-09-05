@@ -30,7 +30,7 @@ public class SalaryCalculatorTest {
     @Test
     @Ignore("Remove to run test")
     public void skippedAboveThreshold() {
-        assertThat(calculator.finalSalary(5, 0)).isEqualTo(850.0);
+        assertThat(calculator.finalSalary(7, 0)).isEqualTo(850.0);
     }
     
     @Test
