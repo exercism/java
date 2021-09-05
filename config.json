@@ -94,7 +94,7 @@
           "numbers",
           "strings"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "blackjack",
@@ -132,7 +132,7 @@
           "lists",
           "strings"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "cars-assemble",
@@ -183,7 +183,7 @@
           "methods",
           "variables"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "wizards-and-warriors",
