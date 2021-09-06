@@ -1,54 +1,69 @@
-# Introduction
+# Introduction to For Loops
 
-TODO: the content below is copied from the exercise introduction and probably needs rewriting to a proper concept introduction
-
-## arrays
-
-In Java, data structures that can hold zero or more elements are known as _collections_. An **array** is a collection that has a fixed size/length and whose elements must all be of the same type. Elements can be assigned to an array or retrieved from it using an index. Java arrays are zero-based, meaning that the first element's index is always zero:
+The [for loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) provides a mechanism to execute a group of statements repeatedly until some condition is met.
+The loop consists of four parts:
 
 ```java
-// Declare array with explicit size (size is 2)
-int[] twoInts = new int[2];
-
-// Assign second element by index
-twoInts[1] = 8;
-
-// Retrieve the second element by index and assign to the int element
-int element = twoInts[1];
-```
-
-Arrays can also be defined using a shortcut notation that allows you to both create the array and set its value. As the compiler can now tell how many elements the array will have, the length can be omitted:
-
-```java
-// Two equivalent ways to declare and initialize an array (size is 3)
-int[] threeIntsV1 = new int[] { 4, 9, 7 };
-int[] threeIntsV2 = { 4, 9, 7 };
-```
-
-Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Array` class.
-
-The fact that an array is also a _collection_ means that, besides accessing values by index, you can iterate over _all_ its values using a `foreach` loop:
-
-```java
-char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-
-for(char vowel:vowels) {
-    // Output the vowel
-    System.out.print(vowel);
+for (initialization; test; update) {
+    body;
 }
-
-// => aeiou
 ```
 
-If you want more control over which values to iterate over, a `for` loop can be used:
+The `initialization` sets an initial state for the loop and is executed exactly once at the start of the loop.
+Typically it declares and assigns a variable used in the test expression and update statement.
+For example:
 
 ```java
-char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-
-for (int i = 0; i < 3; i++) {
-    // Output the vowel
-    System.out.print(vowels[i]);
-}
-
-// => aei
+int i = 1
 ```
+
+The `test` expression tests if the loop should end.
+If it evaluates to `true`, the body and then the update expression will be executed.
+If it evaluates to `false`, neither the body nor the update statement will be executed and execution resumes after the loop's closing bracket.
+Typically it checks the variable assigned in the initialization block.
+For example:
+
+```java
+i <= 10
+```
+
+After executing the loop body, the `update` expression is executed.
+Typically it increments or decrements the loop variable by some value.
+For example:
+
+```java
+i++
+```
+
+A `for` loop printing out the first four squares would look like this:
+
+```java
+for (int i = 1; i <= 4; i++) {
+    System.out.println("square of " + i + " is " + i * i);
+}
+```
+
+The output would be:
+
+```
+square of 1 is 1
+square of 2 is 4
+square of 3 is 9
+square of 4 is 16
+```
+
+If iterating through every element in a collection, a `for-each` loop is preferred, but it can be done with a `for` loop like this:
+
+```java
+for (int i = 0; i < array.length; i++) {
+    System.out.print(array[i]);
+}
+```
+
+A `for` loop does have some advantages over a `for-each` loop:
+
+- You can start or stop at the index you want.
+- You can use any (boolean) termination condition you want.
+- You can skip elements by customizing the incrementing of the loop variable.
+- You can process collections from back to front by counting down.
+- You can use `for` loops in scenarios that do not involve collections.

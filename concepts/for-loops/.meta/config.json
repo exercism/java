@@ -1,9 +1,8 @@
 {
-  "blurb": "TODO: add blurb for for-loops concept",
+  "blurb": "For loops allow for iteration over a specified range.",
   "authors": [
     "samuelteixeiras",
     "ystromm"
   ],
-  "contributors": [
-  ]
+  "contributors": []
 }

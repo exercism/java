@@ -1,54 +1,56 @@
-# Introduction
+# Introduction to For-Each Loops
 
-TODO: the content below is copied from the exercise introduction and probably needs rewriting to a proper concept introduction
+The [for-each loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) provides a mechanism for executing a block of code for each element in a collection.
+Some documentation (eg. Oracle's documentation) refers to these as enhanced for loops.
 
-## arrays
-
-In Java, data structures that can hold zero or more elements are known as _collections_. An **array** is a collection that has a fixed size/length and whose elements must all be of the same type. Elements can be assigned to an array or retrieved from it using an index. Java arrays are zero-based, meaning that the first element's index is always zero:
-
-```java
-// Declare array with explicit size (size is 2)
-int[] twoInts = new int[2];
-
-// Assign second element by index
-twoInts[1] = 8;
-
-// Retrieve the second element by index and assign to the int element
-int element = twoInts[1];
-```
-
-Arrays can also be defined using a shortcut notation that allows you to both create the array and set its value. As the compiler can now tell how many elements the array will have, the length can be omitted:
+Here is the general syntax:
 
 ```java
-// Two equivalent ways to declare and initialize an array (size is 3)
-int[] threeIntsV1 = new int[] { 4, 9, 7 };
-int[] threeIntsV2 = { 4, 9, 7 };
-```
-
-Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Array` class.
-
-The fact that an array is also a _collection_ means that, besides accessing values by index, you can iterate over _all_ its values using a `foreach` loop:
-
-```java
-char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-
-for(char vowel:vowels) {
-    // Output the vowel
-    System.out.print(vowel);
+for(declaration: collection) {
+    body;
 }
-
-// => aeiou
 ```
 
-If you want more control over which values to iterate over, a `for` loop can be used:
+The `declaration` declares the variable used to hold the values assigned from the collection.
+
+The `collection` is an array or collection holding the values that will be assigned to the loop variable.
+
+The `body` contains the statements that will be executed once for each value in the collection.
+
+For example:
 
 ```java
-char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
-for (int i = 0; i < 3; i++) {
-    // Output the vowel
-    System.out.print(vowels[i]);
+for(char vowel: vowels) {
+    System.out.println(vowel);
 }
+```
 
-// => aei
+which outputs:
+
+```
+a
+e
+i
+o
+u
+```
+
+Generally a `for-each` loop is preferrable over a `for` loop for the following reasons:
+
+- A `for-each` loop is guaranteed to iterate over _all_ values.
+- A `for-each` loop is more _declarative_ meaning the code is communicating _what_ it is doing, instead of _how_ it is doing it.
+- A `for-each` loop is foolproof, whereas with `for` loops it is easy to have an off-by-one error (think of using `<` versus `<=`).
+- A `for-each` loop works on all collection types, including those that do not support using an index to access elements (eg. a `Set`).
+
+To guarantee that a `for-each` loop will iterate over _all_ values, the compiler will not allow updating of a collection within a `for-each` loop.
+For example:
+
+```java
+char[] vowels = ['a', 'e', 'i', 'o', 'u'];
+
+for(char vowel: vowels) {
+    vowels = ['Y'];  // This would result in a compiler error
+}
 ```

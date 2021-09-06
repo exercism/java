@@ -1,49 +1,56 @@
-# About
+# About For-Each Loops
 
-The [foreach loop][foreach-loop] provides a mechanism for executing a statement group for each element in a collection or array.
+The [for-each loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) provides a mechanism for executing a block of code for each element in a collection.
+Some documentation (eg. Oracle's documentation) refers to these as enhanced for loops.
 
-Syntax:
+Here is the general syntax:
 
 ```java
 for(declaration: collection) {
-    // body
+    body;
 }
 ```
 
-The declaration part declares the variable used to hold the values assigned from the collection:
+The `declaration` declares the variable used to hold the values assigned from the collection.
 
-The collection is an array or a collection holding the values that will be assigned to the loop variable.
+The `collection` is an array or a collection holding the values that will be assigned to the loop variable.
 
-The body contains the statements that will be executed once for each value in the collection.
+The `body` contains the statements that will be executed once for each value in the collection.
 
-Example:
+For example:
 
 ```java
 char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
-for(char vowel:vowels) {
-    // Output the vowel
-    System.out.print(vowel);
+for(char vowel: vowels) {
+    System.out.println(vowel);
 }
-
-// => aeiou
 ```
 
-Generally a `foreach` loop is preferrable over a `for` loop for the following reasons:
+which outputs:
 
-- A `foreach` loop is guaranteed to iterate over _all_ values. With a `for` loop, it is easy to miss elements, for example due to an off-by-one error.
-- A `foreach` loop is more _declarative_, your code is communicating _what_ you want it to do, instead of a `for` loop that communicates _how_ you want to do it.
-- A `foreach` loop is foolproof, whereas with `for` loops it is easy to have an off-by-one error.
-- A `foreach` loop works on all collection types, including those that don't support using an indexer to access elements.
+```
+a
+e
+i
+o
+u
+```
 
-To guarantee that a `foreach` loop will iterate over _all_ values, the compiler will not allow updating of a collection within a `foreach` loop:
+Generally a `for-each` loop is preferrable over a `for` loop for the following reasons:
+
+- A `for-each` loop is guaranteed to iterate over _all_ values.
+- A `for-each` loop is more _declarative_ meaning the code is communicating _what_ it is doing, instead of _how_ it is doing it.
+- A `for-each` loop is foolproof, whereas with `for` loops it is easy to have an off-by-one error (think of using `<` versus `<=`).
+- A `for-each` loop works on all collection types, including those that do not support using an index to access elements (eg. a `Set`).
+
+To guarantee that a `for-each` loop will iterate over _all_ values, the compiler will not allow updating of a collection within a `for-each` loop.
+For example:
 
 ```java
 char[] vowels = ['a', 'e', 'i', 'o', 'u'];
 
-for(char vowel:vowels) {
+for(char vowel: vowels) {
     vowels = ['Y'];  // This would result in a compiler error
 }
 ```
-
-[foreach-loop]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html
