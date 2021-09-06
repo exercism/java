@@ -1,9 +1,8 @@
 {
-  "blurb": "TODO: add blurb for foreach-loops concept",
+  "blurb": "For-each loops allow for iteration over every element in a collection.",
   "authors": [
     "samuelteixeiras",
     "ystromm"
   ],
-  "contributors": [
-  ]
+  "contributors": []
 }
