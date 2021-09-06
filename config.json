@@ -90,11 +90,11 @@
           "classes"
         ],
         "prerequisites": [
-          "conditionals",
+          "conditionals-if",
           "numbers",
           "strings"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "blackjack",
@@ -118,7 +118,7 @@
         "prerequisites": [
           "classes"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "remote-control-competition",
@@ -197,7 +197,7 @@
           "strings",
           "booleans"
         ],
-        "status": "wip"
+        "status": "active"
       }
     ],
     "practice": [
@@ -220,7 +220,7 @@
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "strings"
         ]
       },
@@ -287,7 +287,7 @@
         "difficulty": 3,
         "topics": [
           "bitwise_operations",
-          "conditionals",
+          "conditionals-if",
           "cryptography",
           "enumerations",
           "integers",
@@ -346,7 +346,7 @@
         "difficulty": 4,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "integers",
           "lists",
           "loops",
@@ -376,7 +376,7 @@
         "prerequisites": [],
         "difficulty": 5,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "integers",
           "loops",
           "maps",
@@ -445,7 +445,7 @@
         "prerequisites": [],
         "difficulty": 3,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "integers",
           "strings"
         ]
@@ -458,7 +458,7 @@
         "prerequisites": [],
         "difficulty": 4,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "loops",
           "parsing",
           "strings"
@@ -487,7 +487,7 @@
         "difficulty": 7,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "equality",
           "lists",
           "loops",
@@ -586,7 +586,7 @@
         "difficulty": 3,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "loops",
           "strings"
         ]
@@ -628,7 +628,7 @@
         "difficulty": 4,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "loops",
           "strings"
         ]
@@ -642,7 +642,7 @@
         "difficulty": 5,
         "topics": [
           "booleans",
-          "conditionals",
+          "conditionals-if",
           "strings"
         ]
       },
@@ -654,7 +654,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "loops",
           "strings",
           "text_formatting",
@@ -683,7 +683,7 @@
         "difficulty": 6,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "loops",
           "strings",
           "text_formatting"
@@ -742,7 +742,7 @@
         "topics": [
           "algorithms",
           "arrays",
-          "conditionals"
+          "conditionals-if"
         ]
       },
       {
@@ -753,7 +753,7 @@
         "prerequisites": [],
         "difficulty": 5,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "exception_handling",
           "integers",
           "maps",
@@ -770,7 +770,7 @@
         "prerequisites": [],
         "difficulty": 5,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "pattern_matching",
           "regular_expressions",
           "strings"
@@ -784,7 +784,7 @@
         "prerequisites": [],
         "difficulty": 5,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "lists",
           "loops",
           "strings",
@@ -815,7 +815,7 @@
         "difficulty": 5,
         "topics": [
           "booleans",
-          "conditionals",
+          "conditionals-if",
           "enumerations",
           "integers",
           "lists",
@@ -830,7 +830,7 @@
         "prerequisites": [],
         "difficulty": 7,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "dates",
           "enumerations",
           "loops"
@@ -859,7 +859,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "exception_handling",
           "games",
           "integers"
@@ -873,7 +873,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "games",
           "integers",
           "lists",
@@ -891,7 +891,7 @@
         "topics": [
           "arrays",
           "classes",
-          "conditionals",
+          "conditionals-if",
           "games",
           "matrices"
         ]
@@ -919,7 +919,7 @@
         "difficulty": 7,
         "topics": [
           "algorithms",
-          "conditionals",
+          "conditionals-if",
           "games",
           "loops"
         ]
@@ -932,7 +932,7 @@
         "prerequisites": [],
         "difficulty": 7,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "pattern_matching",
           "refactoring",
           "strings"
@@ -1017,7 +1017,7 @@
         "difficulty": 4,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "integers",
           "loops",
           "math"
@@ -1032,7 +1032,7 @@
         "difficulty": 4,
         "topics": [
           "bitwise_operations",
-          "conditionals",
+          "conditionals-if",
           "exception_handling",
           "lists",
           "loops",
@@ -1047,7 +1047,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "logic"
         ]
       },
@@ -1185,7 +1185,7 @@
         "prerequisites": [],
         "difficulty": 4,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "exception_handling",
           "integers",
           "math",
@@ -1229,7 +1229,7 @@
         "difficulty": 5,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "integers",
           "lists",
           "loops",
@@ -1245,7 +1245,7 @@
         "difficulty": 7,
         "topics": [
           "algorithms",
-          "conditionals",
+          "conditionals-if",
           "loops"
         ]
       },
@@ -1337,7 +1337,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "loops",
           "strings"
         ]
@@ -1381,7 +1381,7 @@
         "difficulty": 6,
         "topics": [
           "arrays",
-          "conditionals",
+          "conditionals-if",
           "exception_handling",
           "integers",
           "loops",
@@ -1423,7 +1423,7 @@
         "prerequisites": [],
         "difficulty": 8,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "integers",
           "lists",
           "loops",
@@ -1492,7 +1492,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "lists",
           "maps",
           "sorting",
@@ -1853,7 +1853,7 @@
         "prerequisites": [],
         "difficulty": 3,
         "topics": [
-          "conditionals",
+          "conditionals-if",
           "floating_point_numbers"
         ]
       }
@@ -1885,11 +1885,6 @@
       "uuid": "d8bf400a-951b-418a-90d6-2fe7d0fa1dcd",
       "slug": "classes",
       "name": "Classes"
-    },
-    {
-      "uuid": "5be4c3d7-fc14-45c9-9677-a0ebddbcf570",
-      "slug": "conditionals",
-      "name": "Conditionals"
     },
     {
       "uuid": "4ce7cdbb-4ff3-4988-89db-8fbcef380500",
