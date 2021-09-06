@@ -50,7 +50,7 @@ for (int i = 1; i <= 4; i++) {
 */
 ```
 
-If iterating through every element in a collection, a for-each loop is preferred, but it can be done with a for loop like this:
+If iterating through every element in a collection, a `for-each` loop is preferred, but it can be done with a `for` loop like this:
 
 ```java
 for (int i = 0; i < array.length; i++) {

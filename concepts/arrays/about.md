@@ -50,7 +50,7 @@ The most commonly used property for arrays is its length which can be accessed l
 int arrayLength = someArray.length;
 ```
 
-Java also provides a helpful utility class [`java.util.Arrays`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html) that has lots of useful array-related methods (eg. `Arrays.equals`).
+Java also provides a helpful utility class [`java.util.Arrays`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html) that has a lot of useful array-related methods (eg. `Arrays.equals`).
 
 Java also supports [multi-dimensional arrays](https://www.programiz.com/java-programming/multidimensional-array) like `int[][] arr = new int[3][4];` which can be very useful.
 

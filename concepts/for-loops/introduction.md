@@ -18,8 +18,8 @@ int i = 1
 ```
 
 The `test` expression tests if the loop should end.
-If it evaluates to true, the body and then the update expression will be executed.
-If it evaluates to false, neither the body nor the update statement will be executed and execution resumes after the loop's closing bracket.
+If it evaluates to `true`, the body and then the update expression will be executed.
+If it evaluates to `false`, neither the body nor the update statement will be executed and execution resumes after the loop's closing bracket.
 Typically it checks the variable assigned in the initialization block.
 For example:
 
@@ -35,7 +35,7 @@ For example:
 i++
 ```
 
-A for loop printing out the first four squares would look like this:
+A `for` loop printing out the first four squares would look like this:
 
 ```java
 for (int i = 1; i <= 4; i++) {
@@ -52,7 +52,7 @@ square of 3 is 9
 square of 4 is 16
 ```
 
-If iterating through every element in a collection, a for-each loop is preferred, but it can be done with a for loop like this:
+If iterating through every element in a collection, a `for-each` loop is preferred, but it can be done with a `for` loop like this:
 
 ```java
 for (int i = 0; i < array.length; i++) {

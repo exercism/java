@@ -13,7 +13,7 @@ for(declaration: collection) {
 
 The `declaration` declares the variable used to hold the values assigned from the collection.
 
-The `collection` is an array or collection holding the values that will be assigned to the loop variable.
+The `collection` is an array or a collection holding the values that will be assigned to the loop variable.
 
 The `body` contains the statements that will be executed once for each value in the collection.
 

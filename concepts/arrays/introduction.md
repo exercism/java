@@ -11,7 +11,7 @@ Here is the standard syntax for initializing an array:
 type[] variableName = new type[size];
 ```
 
-The `type` is the type of elements in the array which can be a primitive type (eg. `int`) or a class (eg. `String`).
+The `type` is the type of elements in the array which may be a primitive type (e.g. `int`) or a class (e.g. `String`).
 
 The `size` is the number of elements this array will hold (which cannot be changed later).
 After array creation, the elements are initialized to their default values (typically `0`, `false` or `null`).
@@ -31,7 +31,7 @@ int[] threeIntsV2 = { 4, 9, 7 };
 
 As the compiler can now tell how many elements the array will have, the length can be omitted.
 
-Array elements can be assigned and accessed using a bracketed index notation:
+Array elements may be assigned and accessed using a bracketed index notation:
 
 ```java
 // Assign second element by index
