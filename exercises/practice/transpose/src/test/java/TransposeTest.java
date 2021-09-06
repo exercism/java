@@ -3,7 +3,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.Before;
-import java.util.stream.Collectors;
 
 public class TransposeTest {
     private Transpose transpose;
