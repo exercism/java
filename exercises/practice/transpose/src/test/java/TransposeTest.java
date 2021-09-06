@@ -47,7 +47,7 @@ public class TransposeTest {
                 "A1\n" +
                 "B2\n" +
                 "C3");
-        }
+    }
 
     @Ignore("Remove to run test")
     @Test
