@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for arrays concept",
+  "blurb": "Arrays are fixed-size collections of elements with the same type.",
   "authors": [
     "samuelteixeiras",
     "ystromm"

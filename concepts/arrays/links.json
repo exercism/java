@@ -1,5 +1,9 @@
 [
   {
+    "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html",
+    "description": "arrays"
+  },
+  {
     "url": "https://www.programiz.com/java-programming/multidimensional-array",
     "description": "multi-dimensional-arrays"
   }
