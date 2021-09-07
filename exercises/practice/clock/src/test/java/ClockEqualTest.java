@@ -1,105 +1,120 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClockEqualTest {
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithSameTimeAreEqual() {
-        assertEquals(new Clock(15, 37), new Clock(15, 37));
+        assertThat(new Clock(15, 37))
+                .isEqualTo(new Clock(15, 37));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksAMinuteApartAreNotEqual() {
-        assertNotEquals(new Clock(15, 36), new Clock(15, 37));
+        assertThat(new Clock(15, 36))
+                .isNotEqualTo(new Clock(15, 37));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksAnHourApartAreNotEqual() {
-        assertNotEquals(new Clock(14, 37), new Clock(15, 37));
+        assertThat(new Clock(14, 37))
+                .isNotEqualTo(new Clock(15, 37));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithHourOverflow() {
-        assertEquals(new Clock(10, 37), new Clock(34, 37));
+        assertThat(new Clock(34, 37))
+                .isEqualTo(new Clock(10, 37));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithHourOverflowBySeveralDays() {
-        assertEquals(new Clock(3, 11), new Clock(99, 11));
+        assertThat(new Clock(99, 11))
+                .isEqualTo(new Clock(3, 11));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegateHour() {
-        assertEquals(new Clock(22, 40), new Clock(-2, 40));
+        assertThat(new Clock(-2, 40))
+                .isEqualTo(new Clock(22, 40));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeHourThatWraps() {
-        assertEquals(new Clock(17, 3), new Clock(-31, 3));
+        assertThat(new Clock(-31, 3))
+                .isEqualTo(new Clock(17, 3));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeHourThatWrapsMultipleTimes() {
-        assertEquals(new Clock(13, 49), new Clock(-83, 49));
+        assertThat(new Clock(-83, 49))
+                .isEqualTo(new Clock(13, 49));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithMinuteOverflow() {
-        assertEquals(new Clock(0, 1), new Clock(0, 1441));
+        assertThat(new Clock(0, 1441))
+                .isEqualTo(new Clock(0, 1));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithMinuteOverflowBySeveralDays() {
-        assertEquals(new Clock(2, 2), new Clock(2, 4322));
+        assertThat(new Clock(2, 4322))
+                .isEqualTo(new Clock(2, 2));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeMinutes() {
-        assertEquals(new Clock(2, 40), new Clock(3, -20));
+        assertThat(new Clock(3, -20))
+                .isEqualTo(new Clock(2, 40));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeMinutesThatWraps() {
-        assertEquals(new Clock(4, 10), new Clock(5, -1490));
+        assertThat(new Clock(5, -1490))
+                .isEqualTo(new Clock(4, 10));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeMinutesThatWrapsMultipleTimes() {
-        assertEquals(new Clock(6, 15), new Clock(6, -4305));
+        assertThat(new Clock(6, -4305))
+                .isEqualTo(new Clock(6, 15));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeHoursAndMinutes() {
-        assertEquals(new Clock(7, 32), new Clock(-12, -268));
+        assertThat(new Clock(-12, -268))
+                .isEqualTo(new Clock(7, 32));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithNegativeHoursAndMinutesThatWrap() {
-        assertEquals(new Clock(18, 7), new Clock(-54, -11513));
+        assertThat(new Clock(-54, -11513))
+                .isEqualTo(new Clock(18, 7));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void clocksWithFullClockAndZeroedClockAreEqual() {
-        assertEquals(new Clock(24, 0), new Clock(0, 0));
+        assertThat(new Clock(24, 0))
+                .isEqualTo(new Clock(0, 0));
     }
 
 }
