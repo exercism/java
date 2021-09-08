@@ -84,8 +84,17 @@ public class LanguageListTest {
 
     @Test
     @Ignore("Remove to run test")
-    public void excitingLanguageList() {
+    public void excitingLanguageListWithJava() {
         languageList.addLanguage("Java");
+
+        assertThat(languageList.isExciting()).isTrue();
+    }
+
+    @Test
+    @Ignore("Remove to run test")
+    public void excitingLanguageListWithJava() {
+        languageList.addLanguage("Python");
+        languageList.addLanguage("Kotlin");
 
         assertThat(languageList.isExciting()).isTrue();
     }

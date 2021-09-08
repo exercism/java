@@ -29,6 +29,11 @@ public class LanguageList {
     }
 
     public boolean isExciting() {
-        return containsLanguage("Java");
+        for (String language : languages) {
+            if (language.equals("Java") || language.equals("Kotlin")) {
+                return true;
+            }
+        }
+        return false;
     }
 }

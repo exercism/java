@@ -72,14 +72,16 @@
       },
       {
         "slug": "language-list",
-        "name": "Language List",
+        "name": "Karl's Languages",
         "uuid": "1ad2ab97-df3e-4bc9-b0f6-e8dcc9eb10f1",
         "concepts": [
-          "lists"
+          "lists",
+          "generic-types"
         ],
         "prerequisites": [
           "arrays",
-          "for-loops"
+          "for-loops",
+          "strings"
         ],
         "status": "wip"
       },
@@ -1918,6 +1920,11 @@
       "uuid": "b1bb63e6-4540-48fc-9d11-4ee72653484e",
       "slug": "for-loops",
       "name": "For Loops"
+    },
+    {
+      "uuid": "7de03b7d-ed91-4699-b275-96a6ab2e441c",
+      "slug": "generic-types",
+      "name": "Generic Types"
     },
     {
       "uuid": "90776fcc-c6a7-4665-b5fe-5a8a0618358b",
