@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for generic-types concept",
+  "blurb": "Generics types allow the compiler to enforce type restraints within a class or interface.",
   "authors": [
     "jmrunkle"
   ],

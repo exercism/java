@@ -92,7 +92,7 @@ public class LanguageListTest {
 
     @Test
     @Ignore("Remove to run test")
-    public void excitingLanguageListWithJava() {
+    public void excitingLanguageListWithKotlin() {
         languageList.addLanguage("Python");
         languageList.addLanguage("Kotlin");
 

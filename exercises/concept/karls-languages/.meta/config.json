@@ -13,6 +13,7 @@
       "exemplar": [
         ".meta/src/reference/java/LanguageList.java"
       ]
-    }
+    },
+    "icon": "language-list"
   }
   

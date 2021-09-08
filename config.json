@@ -71,7 +71,7 @@
         "status": "active"
       },
       {
-        "slug": "language-list",
+        "slug": "karls-languages",
         "name": "Karl's Languages",
         "uuid": "1ad2ab97-df3e-4bc9-b0f6-e8dcc9eb10f1",
         "concepts": [
@@ -83,7 +83,7 @@
           "for-loops",
           "strings"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "squeaky-clean",
@@ -147,7 +147,7 @@
           "lists",
           "strings"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "cars-assemble",
