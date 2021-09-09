@@ -25,7 +25,7 @@ public class LanguageList {
     }
 
     public boolean containsLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the isExciting() method");
+        throw new UnsupportedOperationException("Please implement the containsLanguage() method");
     }
 
     public boolean isExciting() {
