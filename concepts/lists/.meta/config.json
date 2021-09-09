@@ -1,7 +1,7 @@
 {
-  "blurb": "TODO: add blurb for lists concept",
+  "blurb": "Lists are an ordered collection that allows duplicates.",
   "authors": [
-    "mirkoperillo"
+    "jmrunkle"
   ],
   "contributors": []
 }
