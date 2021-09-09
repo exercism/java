@@ -123,6 +123,7 @@ public class NeedForSpeedTest {
     }
 
     @Ignore("Remove to run test")
+    @Test
     public void car_can_finish_with_car_that_can_easily_finish() {
         int speed = 10;
         int batteryDrain = 2;
