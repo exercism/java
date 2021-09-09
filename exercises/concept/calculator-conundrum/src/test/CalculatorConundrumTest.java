@@ -1,6 +1,5 @@
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -8,38 +7,38 @@ import org.junit.Test;
 public class CalculatorConundrumTest {
 
     @Test
-    public void additionWithSmallOperands() {
-        assertEquals("22 + 25 = 47", new CalculatorConundrum(22, 25, "+").calculate());
+    public void additionWithSmallOperands() throws IllegalOperationException {
+        assertThat(new CalculatorConundrum(22, 25, "+").calculate()).isEqualTo("22 + 25 = 47");
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void additionWithLargeOperands() {
-        assertEquals("378961 + 399635 = 778596", new CalculatorConundrum(378_961, 399_635, "+").calculate());
+    public void additionWithLargeOperands() throws IllegalOperationException {
+        assertThat(new CalculatorConundrum(378_961, 399_635, "+").calculate()).isEqualTo("378961 + 399635 = 778596");
+    }
+
+    //    @Ignore("Remove to run test")
+    @Test
+    public void multiplicationWithSmallOperands() throws IllegalOperationException {
+        assertThat(new CalculatorConundrum(3, 21, "*").calculate()).isEqualTo("3 * 21 = 63");
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void multiplicationWithSmallOperands() {
-        assertEquals("3 * 21 = 63", new CalculatorConundrum(3, 21, "*").calculate());
+    public void multiplicationWithLargeOperands() throws IllegalOperationException {
+        assertThat(new CalculatorConundrum(72_441, 2_048, "*").calculate()).isEqualTo("72441 * 2048 = 148359168");
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void multiplicationWithLargeOperands() {
-        assertEquals("72441 * 2048 = 148359168", new CalculatorConundrum(72_441, 2_048, "*").calculate());
+    public void divisionWithSmallOperands() throws IllegalOperationException {
+        assertThat(new CalculatorConundrum(72, 9, "/").calculate()).isEqualTo("72 / 9 = 8");
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void divisionWithSmallOperands() {
-        assertEquals("72 / 9 = 8", new CalculatorConundrum(72, 9, "/").calculate());
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void divisionWithLargeOperands() {
-        assertEquals("1338800 / 83675 = 16", new CalculatorConundrum(1_338_800, 83_675, "/").calculate());
+    public void divisionWithLargeOperands() throws IllegalOperationException {
+        assertThat(new CalculatorConundrum(1_338_800, 83_675, "/").calculate()).isEqualTo("1338800 / 83675 = 16");
     }
 
     @Ignore("Remove to run test")
@@ -49,36 +48,37 @@ public class CalculatorConundrumTest {
                 ArithmeticException.class,
                 () -> new CalculatorConundrum(33, 0, "/")
         );
-        assertTrue(thrown.getMessage().contains("/ by zero"));
+        assertThat(thrown).hasMessage("Divide by zero operation illegal");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void throwExceptionForNonValidArguments() {
         String invalidOperation = "**";
-        IllegalArgumentException thrown = assertThrows(
-                IllegalArgumentException.class,
+        IllegalOperationException thrown = assertThrows(
+                IllegalOperationException.class,
                 () -> new CalculatorConundrum(3, 78, invalidOperation)
         );
-        assertTrue(thrown.getMessage().contains(String.format("%s operation does not exist", invalidOperation)));
+        assertThat(thrown).hasMessage(String.format("%s operation does not exist", invalidOperation));
     }
 
     @Ignore("Remove to run test")
     @Test
     public void throwExceptionForNullAsOperation() {
-        assertThrows(
-                NullPointerException.class,
+        IllegalOperationException thrown = assertThrows(
+                IllegalOperationException.class,
                 () -> new CalculatorConundrum(66, 65, null)
         );
+        assertThat(thrown).hasMessage("Operation cannot be null");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void throwExceptionForAnEmptyStringOperation() {
-        IllegalArgumentException thrown = assertThrows(
-                IllegalArgumentException.class,
+        IllegalOperationException thrown = assertThrows(
+                IllegalOperationException.class,
                 () -> new CalculatorConundrum(34, 324, "")
         );
-        assertTrue(thrown.getMessage().contains("Operation cannot be empty"));
+        assertThat(thrown).hasMessage("Operation cannot be empty");
     }
 }

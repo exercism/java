@@ -14,3 +14,4 @@ class SimpleOperation{
         return operand1 + operand2;
     }
 }
+
