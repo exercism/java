@@ -194,7 +194,7 @@
           "switch-statement"
         ],
         "prerequisites": [
-          "classes",
+          "classes"
         ],
         "status": "active"
       },
