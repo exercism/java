@@ -1,7 +1,6 @@
 public class CalculatorConundrum {
-    private final String answer;
 
-    public CalculatorConundrum(int operand1, int operand2, String operation) throws IllegalOperationException {
+    public String calculate(int operand1, int operand2, String operation) {
         int result;
         try {
             if (operation == null) {
@@ -28,12 +27,7 @@ public class CalculatorConundrum {
             }
             throw new IllegalOperationException(e.getMessage());
         }
-        this.answer = String.format("%d %s %d = %s", operand1, operation, operand2, result);
-    }
-
-    public String calculate() {
-        return answer;
+        return String.format("%d %s %d = %s", operand1, operation, operand2, result);
     }
 
 }
-
