@@ -194,9 +194,7 @@
           "switch-statement"
         ],
         "prerequisites": [
-          "classes",
-          "methods",
-          "variables"
+          "classes"
         ],
         "status": "wip"
       },
@@ -672,8 +670,7 @@
           "conditionals-if",
           "loops",
           "strings",
-          "text_formatting",
-          "variables"
+          "text_formatting"
         ]
       },
       {
