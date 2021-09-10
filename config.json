@@ -195,10 +195,8 @@
         ],
         "prerequisites": [
           "classes",
-          "methods",
-          "variables"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "wizards-and-warriors",
@@ -673,7 +671,6 @@
           "loops",
           "strings",
           "text_formatting",
-          "variables"
         ]
       },
       {
