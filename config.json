@@ -196,7 +196,7 @@
         "prerequisites": [
           "classes"
         ],
-        "status": "wip"
+        "status": "active"
       },
       {
         "slug": "wizards-and-warriors",
@@ -1947,6 +1947,11 @@
       "uuid": "8a468b14-724a-4036-8edb-d19a02809840",
       "slug": "strings",
       "name": "Strings"
+    },
+    {
+      "uuid": "eef5df3e-436d-4a1b-b856-0490027d1a1f",
+      "slug": "switch-statement",
+      "name": "Switch Statements"
     },
     {
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
