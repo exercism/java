@@ -196,7 +196,7 @@
         "prerequisites": [
           "classes"
         ],
-        "status": "active"
+        "status": "wip"
       },
       {
         "slug": "wizards-and-warriors",
