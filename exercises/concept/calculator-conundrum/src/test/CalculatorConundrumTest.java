@@ -44,10 +44,11 @@ public class CalculatorConundrumTest {
     @Ignore("Remove to run test")
     @Test
     public void throwExceptionForDivisionByZero() {
-        ArithmeticException thrown = assertThrows(
-                ArithmeticException.class,
+        IllegalOperationException thrown = assertThrows(
+                IllegalOperationException.class,
                 () -> new CalculatorConundrum().calculate(33, 0, "/")
         );
+        assertThat(thrown.getCause()).isInstanceOf(ArithmeticException.class);
         assertThat(thrown).hasMessage("Divide by zero operation illegal");
     }
 
@@ -59,6 +60,7 @@ public class CalculatorConundrumTest {
                 IllegalOperationException.class,
                 () -> new CalculatorConundrum().calculate(3, 78, invalidOperation)
         );
+        assertThat(thrown.getCause()).isInstanceOf(IllegalArgumentException.class);
         assertThat(thrown).hasMessage(String.format("%s operation does not exist", invalidOperation));
     }
 
@@ -69,6 +71,7 @@ public class CalculatorConundrumTest {
                 IllegalOperationException.class,
                 () -> new CalculatorConundrum().calculate(66, 65, null)
         );
+        assertThat(thrown.getCause()).isInstanceOf(IllegalArgumentException.class);
         assertThat(thrown).hasMessage("Operation cannot be null");
     }
 
@@ -79,6 +82,7 @@ public class CalculatorConundrumTest {
                 IllegalOperationException.class,
                 () -> new CalculatorConundrum().calculate(34, 324, "")
         );
+        assertThat(thrown.getCause()).isInstanceOf(IllegalArgumentException.class);
         assertThat(thrown).hasMessage("Operation cannot be empty");
     }
 }
