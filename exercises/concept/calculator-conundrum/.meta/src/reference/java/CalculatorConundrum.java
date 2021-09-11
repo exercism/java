@@ -3,7 +3,7 @@ public class CalculatorConundrum {
     public String calculate(int operand1, int operand2, String operation) {
         int result;
         if (operation == null) {
-            throw new IllegalOperationException("Operation cannot be null", new IllegalArgumentException());
+            throw new IllegalOperationException("Operation cannot be null");
         }
         switch (operation) {
             case "+":
@@ -20,9 +20,9 @@ public class CalculatorConundrum {
                 }
                 break;
             case "":
-                throw new IllegalOperationException("Operation cannot be empty", new IllegalArgumentException());
+                throw new IllegalOperationException("Operation cannot be empty");
             default:
-                throw new IllegalOperationException(String.format("%s operation does not exist", operation), new IllegalArgumentException());
+                throw new IllegalOperationException(String.format("%s operation does not exist", operation));
         }
         return String.format("%d %s %d = %s", operand1, operation, operand2, result);
     }
