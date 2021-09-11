@@ -2,7 +2,7 @@ import java.util.List;
 
 public class TestTrack {
 
-    public static double race(RemoteControlCar car) {
+    public static void race(RemoteControlCar car) {
         throw new UnsupportedOperationException("Please implement the (static) TestTrack.race() method");
     }
 
