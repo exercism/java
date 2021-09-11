@@ -8,7 +8,7 @@ The goal is to have a working calculator that returns a string with the followin
 ```java
 CalculatorConundrum obj = new CalculatorConundrum();
 
-CalculatorConundrum.calculate(16, 51, "+"); // => returns "16 + 51 = 67"
+obj.calculate(16, 51, "+"); // => returns "16 + 51 = 67"
 
 obj.calculate(32, 6, "*"); // => returns "32 * 6 = 192"
 
