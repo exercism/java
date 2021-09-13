@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for strings concept",
+  "blurb": "Strings are an immutable sequence of Unicode characters.",
   "authors": [
     "mirkoperillo"
   ],
