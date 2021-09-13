@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TwoferTest {
 
@@ -15,28 +15,22 @@ public class TwoferTest {
 
     @Test
     public void noNameGiven() {
-        String input = null;
-        String expected = "One for you, one for me.";
-
-        assertEquals(expected, twofer.twofer(input));
+        assertThat(twofer.twofer(null))
+                .isEqualTo("One for you, one for me.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void aNameGiven() {
-        String input = "Alice";
-        String expected = "One for Alice, one for me.";
-
-        assertEquals(expected, twofer.twofer(input));
+        assertThat(twofer.twofer("Alice"))
+                .isEqualTo("One for Alice, one for me.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void anotherNameGiven() {
-        String input = "Bob";
-        String expected = "One for Bob, one for me.";
-
-        assertEquals(expected, twofer.twofer(input));
+        assertThat(twofer.twofer("Bob"))
+                .isEqualTo("One for Bob, one for me.");
     }
 
     /* Track specific */
@@ -44,10 +38,8 @@ public class TwoferTest {
     @Ignore("Remove to run test")
     @Test
     public void emptyStringIsNotTheSameAsNull() {
-        String input = "";
-        String expected = "One for , one for me.";
-
-        assertEquals(expected, twofer.twofer(input));
+        assertThat(twofer.twofer(""))
+                .isEqualTo("One for , one for me.");
     }
-    
+
 }
