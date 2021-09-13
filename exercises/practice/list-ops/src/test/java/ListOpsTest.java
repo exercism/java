@@ -119,9 +119,9 @@ public class ListOpsTest {
     public void testFoldLeftEmptyList() {
         assertThat(
                 ListOps.foldLeft(
-                        Collections.<Double>emptyList(),
-                        2.0,
-                        (x, y) -> x * y))
+                    Collections.<Double>emptyList(),
+                    2.0,
+                    (x, y) -> x * y))
                 .isEqualTo(2.0);
     }
 
@@ -130,9 +130,9 @@ public class ListOpsTest {
     public void testFoldLeftDirectionIndependentFunctionAppliedToNonEmptyList() {
         assertThat(
                 ListOps.foldLeft(
-                        Arrays.asList(1, 2, 3, 4),
-                        5,
-                        (x, y) -> x + y))
+                    Arrays.asList(1, 2, 3, 4),
+                    5,
+                    (x, y) -> x + y))
                 .isEqualTo(15);
     }
 
@@ -152,9 +152,9 @@ public class ListOpsTest {
     public void testFoldRightEmptyList() {
         assertThat(
                 ListOps.foldRight(
-                        Collections.<Double>emptyList(),
-                        2.0,
-                        (x, y) -> x * y))
+                    Collections.<Double>emptyList(),
+                    2.0,
+                    (x, y) -> x * y))
                 .isEqualTo(2.0);
     }
 
@@ -163,9 +163,9 @@ public class ListOpsTest {
     public void testFoldRightDirectionIndependentFunctionAppliedToNonEmptyList() {
         assertThat(
                 ListOps.foldRight(
-                        Arrays.asList(1, 2, 3, 4),
-                        5,
-                        (x, y) -> x + y))
+                    Arrays.asList(1, 2, 3, 4),
+                    5,
+                    (x, y) -> x + y))
                 .isEqualTo(15);
     }
 
@@ -174,9 +174,9 @@ public class ListOpsTest {
     public void testFoldRightDirectionDependentFunctionAppliedToNonEmptyList() {
         assertThat(
                 ListOps.foldRight(
-                        Arrays.asList(2, 5),
-                        5,
-                        (x, y) -> x / y))
+                    Arrays.asList(2, 5),
+                    5,
+                    (x, y) -> x / y))
                 .isEqualTo(2);
     }
 
