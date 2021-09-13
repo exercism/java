@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AtbashTest {
 
@@ -15,87 +15,91 @@ public class AtbashTest {
 
     @Test
     public void testEncodeYes() {
-        assertEquals("bvh", atbash.encode("yes"));
+        assertThat(atbash.encode("yes")).isEqualTo("bvh");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeNo() {
-        assertEquals("ml", atbash.encode("no"));
+        assertThat(atbash.encode("no")).isEqualTo("ml");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeOmgInCapital() {
-        assertEquals("lnt", atbash.encode("OMG"));
+        assertThat(atbash.encode("OMG")).isEqualTo("lnt");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeOmgWithSpaces() {
-        assertEquals("lnt", atbash.encode("O M G"));
+        assertThat(atbash.encode("O M G")).isEqualTo("lnt");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeMindBlowingly() {
-        assertEquals("nrmwy oldrm tob", atbash.encode("mindblowingly"));
+        assertThat(atbash.encode("mindblowingly")).isEqualTo("nrmwy oldrm tob");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeNumbers() {
-        assertEquals("gvhgr mt123 gvhgr mt", atbash.encode("Testing,1 2 3, testing."));
+        assertThat(atbash.encode("Testing,1 2 3, testing."))
+                .isEqualTo("gvhgr mt123 gvhgr mt");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeDeepThought() {
-        assertEquals("gifgs rhurx grlm", atbash.encode("Truth is fiction."));
+        assertThat(atbash.encode("Truth is fiction."))
+                .isEqualTo("gifgs rhurx grlm");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testEncodeAllTheLetters() {
-        assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
-                atbash.encode("The quick brown fox jumps over the lazy dog."));
+        assertThat(atbash.encode("The quick brown fox jumps over the lazy dog."))
+                .isEqualTo("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDecodeExercism() {
-        assertEquals("exercism", atbash.decode("vcvix rhn"));
+        assertThat(atbash.decode("vcvix rhn")).isEqualTo("exercism");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDecodeASentence() {
-        assertEquals("anobstacleisoftenasteppingstone", atbash.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"));
+        assertThat(atbash.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"))
+                .isEqualTo("anobstacleisoftenasteppingstone");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDecodeNumbers() {
-        assertEquals("testing123testing", atbash.decode("gvhgr mt123 gvhgr mt"));
+        assertThat(atbash.decode("gvhgr mt123 gvhgr mt"))
+                .isEqualTo("testing123testing");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDecodeAllTheLetters() {
-        assertEquals("thequickbrownfoxjumpsoverthelazydog",
-                atbash.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
+        assertThat(atbash.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"))
+                .isEqualTo("thequickbrownfoxjumpsoverthelazydog");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void testDecodeWithTooManySpaces() {
-        assertEquals("exercism", atbash.decode("vc vix    r hn"));
+        assertThat(atbash.decode("vc vix    r hn")).isEqualTo("exercism");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void testDecodeWithNoSpaces() {
-        assertEquals("anobstacleisoftenasteppingstone",
-                atbash.decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"));
+        assertThat(atbash.decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"))
+                .isEqualTo("anobstacleisoftenasteppingstone");
     }
 }
