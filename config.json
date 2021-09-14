@@ -1882,6 +1882,20 @@
           "conditionals-if",
           "floating_point_numbers"
         ]
+      },
+      {
+        "slug": "connect",
+        "name": "Connect",
+        "uuid": "1532b9a8-7e0d-479f-ad55-636e01e9d19f",
+        "practices": ["enums", "switch-statements"],
+        "prerequisites": [
+          "strings",
+          "chars",
+          "enums",
+          "arrays",
+          "if-statements"
+        ],
+        "difficulty": 8
       }
     ],
     "foregone": []
