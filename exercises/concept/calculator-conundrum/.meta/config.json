@@ -1,7 +1,8 @@
 {
   "blurb": "Learn about exception-handling by making a simple calculator.",
   "authors": [
-    "rv02"
+    "rv02",
+    "jmrunkle"
   ],
   "files": {
     "solution": [
