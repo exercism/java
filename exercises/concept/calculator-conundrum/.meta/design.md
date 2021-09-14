@@ -20,4 +20,6 @@
 
 * `basics`: know how to define methods.
 * `conditionals`: know how to do conditional logic.
+* `switch-case`: know how to work with a switch-case conditionals.
+
 

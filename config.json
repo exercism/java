@@ -88,12 +88,13 @@
       {
         "slug": "calculator-conundrum",
         "name": "Calculator Conundrum",
-        "uuid": "",
+        "uuid": "9e62feec-c2c3-4fd6-94f5-0574cc65447d",
         "concepts": [
-          "exception handling"
+          "exception-handling"
         ],
         "prerequisites": [
           "conditionals",
+          "switch-case",
           "basics"
         ],
         "status": "wip"
