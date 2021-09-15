@@ -1,0 +1,25 @@
+{
+  "blurb": "Learn about exception-handling by making a simple calculator.",
+  "authors": [
+    "rv02",
+    "jmrunkle"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/CalculatorConundrum.java"
+    ],
+    "test": [
+      "src/test/java/CalculatorConundrumTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/CalculatorConundrum.java"
+    ],
+    "editor": [
+      "src/main/java/IllegalOperationException.java",
+      "src/main/java/SimpleOperation.java"
+    ]
+  },
+  "forked_from": [
+    "csharp/calculator-conundrum"
+  ]
+}

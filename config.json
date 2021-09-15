@@ -86,6 +86,20 @@
         "status": "active"
       },
       {
+        "slug": "calculator-conundrum",
+        "name": "Calculator Conundrum",
+        "uuid": "9e62feec-c2c3-4fd6-94f5-0574cc65447d",
+        "concepts": [
+          "exception-handling"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "switch-case",
+          "basics"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "squeaky-clean",
         "name": "Squeaky Clean",
         "uuid": "b18ad603-e50e-4358-bb3e-0942fefb9dba",
