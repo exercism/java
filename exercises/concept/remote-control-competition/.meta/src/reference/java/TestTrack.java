@@ -4,10 +4,8 @@ import java.util.List;
 
 public class TestTrack {
 
-    public static double race(RemoteControlCar car) {
+    public static void race(RemoteControlCar car) {
         car.drive();
-
-        return car.getDistanceTravelled();
     }
 
     public static List<ProductionRemoteControlCar> getRankedCars(ProductionRemoteControlCar prc1,
