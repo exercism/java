@@ -143,6 +143,10 @@
 # https://github.com/exercism/org-wide-files/blob/main/global-files/.github/labels.yml.     #
 # ----------------------------------------------------------------------------------------- #
 
+- name: "action/stale"
+  description: "Applied (and removed) automatically by the stale workflow to indicate an issue or pull request is stale"
+  color: "d93f0b"
+
 - name: "announcement"
   description: ""
   color: "d461d8"
