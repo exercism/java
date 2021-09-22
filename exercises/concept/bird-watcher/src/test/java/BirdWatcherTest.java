@@ -46,7 +46,6 @@ public class BirdWatcherTest {
     @Test
     @Ignore("Remove to run test")
     public void itIncrementTodaysCount() {
-        int currentTodayCount = birdWatcher.getToday();
         birdWatcher.incrementTodaysCount();
         assertThat(birdWatcher.getToday()).isEqualTo(TODAY + 1);
     }
