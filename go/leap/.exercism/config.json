@@ -1,0 +1,1 @@
+{"blurb":"Given a year, report if it is a leap year.","authors":["kytrinyx"],"files":{"solution":["leap.go"],"test":["leap_test.go"],"example":[".meta/example.go"]},"source":"JavaRanch Cattle Drive, exercise 3","source_url":"http://www.javaranch.com/leap.jsp"}

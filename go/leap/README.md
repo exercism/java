@@ -1,5 +1,10 @@
 # Leap
 
+Welcome to Leap on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a year, report if it is a leap year.
 
 The tricky thing here is that a leap year in the Gregorian calendar occurs:
@@ -38,32 +43,31 @@ file. The Go specific transformation of that data lives in the `cases_test.go` f
 [problem-specifications-leap-json]: https://github.com/exercism/problem-specifications/blob/master/exercises/leap/canonical-data.json
 [local-leap-gen]: https://github.com/exercism/go/blob/master/exercises/leap/.meta/gen.go
 
-
-## Coding the solution
-
-Look for a stub file having the name leap.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-JavaRanch Cattle Drive, exercise 3 [http://www.javaranch.com/leap.jsp](http://www.javaranch.com/leap.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @da-edra
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @ilmanzo
+- @k4rtik
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @soniakeys
+- @tleen
+- @tompao
+- @zabawaba99
+
+### Based on
+
+JavaRanch Cattle Drive, exercise 3 - http://www.javaranch.com/leap.jsp

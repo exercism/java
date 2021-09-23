@@ -1,5 +1,10 @@
 # Grains
 
+Welcome to Grains on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Calculate the number of grains of wheat on a chessboard given that the number
 on each square doubles.
 
@@ -26,31 +31,31 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Coding the solution
-
-Look for a stub file having the name grains.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-JavaRanch Cattle Drive, exercise 6 [http://www.javaranch.com/grains.jsp](http://www.javaranch.com/grains.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @nathany
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @da-edra
+- @dvrkps
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @ilmanzo
+- @johngb
+- @kytrinyx
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @strangeman
+- @tleen
+
+### Based on
+
+JavaRanch Cattle Drive, exercise 6 - http://www.javaranch.com/grains.jsp

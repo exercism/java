@@ -1,0 +1,1 @@
+{"blurb":"Create a sentence of the form \"One for X, one for me.\"","authors":["kytrinyx"],"files":{"solution":["two_fer.go"],"test":["two_fer_test.go"],"example":[".meta/example.go"]},"source":"","source_url":"https://github.com/exercism/problem-specifications/issues/757"}

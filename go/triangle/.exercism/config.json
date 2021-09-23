@@ -1,0 +1,1 @@
+{"blurb":"Determine if a triangle is equilateral, isosceles, or scalene.","authors":["soniakeys"],"files":{"solution":["triangle.go"],"test":["triangle_test.go"],"example":[".meta/example.go"]},"source":"The Ruby Koans triangle project, parts 1 \u0026 2","source_url":"http://rubykoans.com"}

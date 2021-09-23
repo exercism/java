@@ -1,5 +1,7 @@
 package elon
 
+import "fmt"
+
 // Car implements a remote controlled car.
 type Car struct {
 	speed        int
@@ -16,30 +18,41 @@ type Track struct {
 
 // CreateCar creates a new car with given specifications.
 func CreateCar(speed, batteryDrain int) *Car {
-	panic("Please implement CreateCar() method")
+	return &Car{
+		speed:        speed,
+		batteryDrain: batteryDrain,
+		battery:      100,
+	}
 }
 
 // CreateTrack creates a new track with given distance.
 func CreateTrack(distance int) Track {
-	panic("Please implement CreateTrack() method")
+	return Track{
+		distance: distance,
+	}
 }
 
-// Drive drives the car one time.
+// Drive drives the car one time. If there is not enough battry to drive on more time,
+// the car will not move but use the leftover battery.
 func (car *Car) Drive() {
-	panic("Please implement Drive() method")
+	if car.battery >= car.batteryDrain {
+		car.distance += car.speed
+		car.battery -= car.batteryDrain
+	}
+
 }
 
 // CanFinish checks if a car is able to finish a certain track.
 func (car *Car) CanFinish(track Track) bool {
-	panic("Please implement CanFinish() method")
+	return track.distance <= (car.battery / car.batteryDrain * car.speed)
 }
 
 // DisplayDistance displays the distance the car is driven.
 func (car *Car) DisplayDistance() string {
-	panic("Please implement DisplayDistance() method")
+	return fmt.Sprintf("Driven %d meters", car.distance)
 }
 
 // DisplayBattery displays the battery level.
 func (car *Car) DisplayBattery() string {
-	panic("Please implement DisplayBattery() method")
+	return fmt.Sprintf("Battery at %d%%", car.battery)
 }

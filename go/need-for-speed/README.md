@@ -6,28 +6,45 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
-In Go, a `struct` is a sequence of named elements called _fields_, each field having a name and type. The name of a field must be unique within the struct. `Structs` can be compared with the _class_ in the Object Oriented Programming paradigm.
+In Go, a `struct` is a sequence of named elements called _fields_, each field has a name and type. The name of a field must be unique within the struct.
+Structs can be compared with _classes_ in the Object-Oriented Programming paradigm.
 
-You create a new struct by using the `struct` keyword, a **_built-in type_**, and explicitly define the name and type of the fields as shown in the example below.
+You create a new struct by using the `type` keyword and the **_built-in type_** `struct`, and explicitly define the name and type of the fields.
+For example, to define a `Person` struct:
 
 ```go
-type StructName struct{
-    field1 fieldType1
-    field2 fieldType2
+type Person struct{
+    name string
+    age int
 }
 ```
 
-Struct fields are accessed using a `.` notation.
+Once you have defined the `struct`, you need to create a new instance defining the fields using their field name
+in any order:
 
 ```go
-someStruct.someField = "someValue"
+person := Person{
+	name: "John",
+	age: 22,
+}
+```
+
+To read or modify instance fields, use the `.` notation:
+
+```go
+// Update the age
+person.age = 23
+fmt.Printf("name: %s age: %d\n", person.name, person.age)
+// Output: name: John age: 23
 ```
 
 ## Instructions
 
-In this exercise you'll be organizing races between various types of remote controlled cars. Each car has its own speed and battery drain characteristics.
+In this exercise you'll be organizing races between various types of remote controlled cars.
+Each car has its own speed and battery drain characteristics.
 
-Cars start with full (100%) batteries. Each time you drive the car using the remote control, it covers the car's speed in meters and decreases the remaining battery percentage by its battery drain.
+Cars start with full (100%) batteries. Each time you drive the car using the remote control,
+it covers the car's speed in meters and decreases the remaining battery percentage by its battery drain.
 
 If a car's battery is below its battery drain percentage, you can't drive the car anymore.
 
@@ -35,13 +52,21 @@ Each race track has its own distance. Cars are tested by checking if they can fi
 
 ## 1. Creating a remote controlled car
 
-Allow creating a remote controller car by defining a function `NewCar` that takes the speed of the car in meters, and the battery drain percentage as its two parameters (both of type `int`) and returns a `Car` instance:
+Define a `Car` struct with the following `int` type fields:
+
+- battery
+- batteryDrain
+- speed
+- distance
+
+Allow creating a remote controller car by defining a function `NewCar` that takes the speed of the car in meters,
+and the battery drain percentage as its two parameters (both of type `int`) and returns a `Car` instance:
 
 ```go
 speed := 5
 batteryDrain := 2
 car := NewCar(speed, batteryDrain)
-// Output: Car{speed: 5, batteryDrain: 2, battery:100}
+// Output: Car{speed: 5, batteryDrain: 2, battery:100, distance: 0}
 ```
 
 ## 2. Creating a race track

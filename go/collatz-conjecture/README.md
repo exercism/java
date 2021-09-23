@@ -1,5 +1,10 @@
 # Collatz Conjecture
 
+Welcome to Collatz Conjecture on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The Collatz Conjecture or 3x+1 problem can be summarized as follows:
 
 Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is
@@ -26,31 +31,21 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-## Coding the solution
-
-Look for a stub file having the name collatz_conjecture.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-An unsolved problem in mathematics named after mathematician Lothar Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @magic003
+
+### Contributed to by
+
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @leenipper
+- @sebito91
+
+### Based on
+
+An unsolved problem in mathematics named after mathematician Lothar Collatz - https://en.wikipedia.org/wiki/3x_%2B_1_problem

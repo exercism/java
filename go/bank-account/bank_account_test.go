@@ -3,10 +3,10 @@
 // Open(initialDeposit int64) *Account
 // (*Account) Close() (payout int64, ok bool)
 // (*Account) Balance() (balance int64, ok bool)
-// (*Account) Deposit(balance int64) (newBalance int64, ok bool)
+// (*Account) Deposit(amount int64) (newBalance int64, ok bool)
 //
 // If Open is given a negative initial deposit, it must return nil.
-// Deposit must handle a negative balance as a withdrawal. Withdrawals must
+// Deposit must handle a negative amount as a withdrawal. Withdrawals must
 // not succeed if they result in a negative balance.
 // If any Account method is called on an closed account, it must not modify
 // the account and must return ok = false.
@@ -334,6 +334,9 @@ func TestConcDeposit(t *testing.T) {
 // and see how their implementation changes the results of the parallel
 // benchmark.
 func BenchmarkAccountOperations(b *testing.B) {
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode.")
+	}
 	a := Open(0)
 	defer a.Close()
 	for n := 0; n < b.N; n++ {
@@ -343,6 +346,9 @@ func BenchmarkAccountOperations(b *testing.B) {
 }
 
 func BenchmarkAccountOperationsParallel(b *testing.B) {
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode.")
+	}
 	a := Open(0)
 	defer a.Close()
 	b.RunParallel(func(pb *testing.PB) {

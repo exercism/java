@@ -1,5 +1,10 @@
 # Parallel Letter Frequency
 
+Welcome to Parallel Letter Frequency on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the frequency of letters in texts using parallel computation.
 
 Parallelism is about doing things in parallel that can also be done
@@ -41,28 +46,25 @@ you started. We recommend looking over these before starting this exercise:
 
 For a really deep dive you can try the book [Concurrency in Go](http://shop.oreilly.com/product/0636920046189.do) by [@kat-co](https://github.com/kat-co).
 
+## Source
 
-## Coding the solution
+### Created by
 
-Look for a stub file having the name parallel_letter_frequency.go
-and place your solution code in that file.
+- @soniakeys
 
-## Running the tests
+### Contributed to by
 
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @kytrinyx
+- @leenipper
+- @ooransoy
+- @petertseng
+- @robphoenix
+- @rootulp
+- @roundand
+- @sebito91
+- @tleen

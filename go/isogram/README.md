@@ -1,5 +1,10 @@
 # Isogram
 
+Welcome to Isogram on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a word or phrase is an isogram.
 
 An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter, however spaces and hyphens are allowed to appear multiple times.
@@ -13,31 +18,28 @@ Examples of isograms:
 
 The word *isograms*, however, is not an isogram, because the s repeats.
 
-## Coding the solution
-
-Look for a stub file having the name isogram.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @erizocosmico
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @da-edra
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @ilmanzo
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @strangeman
+- @tleen
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Isogram

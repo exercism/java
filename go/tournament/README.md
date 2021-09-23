@@ -1,5 +1,10 @@
 # Tournament
 
+Welcome to Tournament on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Tally the results of a small football competition.
 
 Based on an input file containing which team played against which and what the
@@ -25,9 +30,7 @@ A win earns a team 3 points. A draw earns 1. A loss earns 0.
 
 The outcome should be ordered by points, descending. In case of a tie, teams are ordered alphabetically.
 
-###
-
-Input
+## Input
 
 Your tallying program will receive input that looks like:
 
@@ -40,13 +43,13 @@ Blithering Badgers;Devastating Donkeys;loss
 Allegoric Alaskans;Courageous Californians;win
 ```
 
-The result of the match refers to the first team listed. So this line
+The result of the match refers to the first team listed. So this line:
 
 ```text
 Allegoric Alaskans;Blithering Badgers;win
 ```
 
-Means that the Allegoric Alaskans beat the Blithering Badgers.
+means that the Allegoric Alaskans beat the Blithering Badgers.
 
 This line:
 
@@ -54,7 +57,7 @@ This line:
 Courageous Californians;Blithering Badgers;loss
 ```
 
-Means that the Blithering Badgers beat the Courageous Californians.
+means that the Blithering Badgers beat the Courageous Californians.
 
 And this line:
 
@@ -62,29 +65,26 @@ And this line:
 Devastating Donkeys;Courageous Californians;draw
 ```
 
-Means that the Devastating Donkeys and Courageous Californians tied.
+means that the Devastating Donkeys and Courageous Californians tied.
 
-## Coding the solution
+## Source
 
-Look for a stub file having the name tournament.go
-and place your solution code in that file.
+### Created by
 
-## Running the tests
+- @pminten
 
-To run the tests run the command `go test` from within the exercise directory.
+### Contributed to by
 
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @kytrinyx
+- @leenipper
+- @manavo
+- @petertseng
+- @robphoenix
+- @sebito91
+- @soniakeys
+- @tleen

@@ -42,24 +42,6 @@ func CelsiusFreezingTemp() int {
 }
 ```
 
-## Golint
-
-`golint` is a great tool to check for missing comments and other common stylistic issues.
-
-You can install `golint` on your machine with the following command:
-
-```
-go get -u golang.org/x/lint/golint
-```
-
-It's a good idea to configure your editor to run `golint` for you. Otherwise, you can invoke it like this:
-
-```
-golint weather.go
-```
-
-To use the `golint` command globally, make sure that it is on your `$PATH`.
-
 ## Instructions
 
 In this exercise, your task is to help a weather station manage their weather forecasting program.
@@ -78,9 +60,9 @@ This should tell any user of the package what information the variable stores, a
 
 Just like the previous step, write a comment for `CurrentLocation`.
 
-## 4. Document the Log() function
+## 4. Document the Forecast() function
 
-Write a function comment for `Log()`.
+Write a function comment for `Forecast()`.
 
 ## Source
 

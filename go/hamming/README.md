@@ -1,5 +1,10 @@
 # Hamming
 
+Welcome to Hamming on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Calculate the Hamming Distance between two DNA strands.
 
 Your body is made up of cells that contain DNA. Those cells regularly wear out and need replacing, which they achieve by dividing into daughter cells. In fact, the average human body experiences about 10 quadrillion cell divisions in a lifetime!
@@ -16,7 +21,6 @@ They have 7 differences, and therefore the Hamming Distance is 7.
 
 The Hamming Distance is useful for lots of things in science, not just biology, so it's a nice phrase to be familiar with :)
 
-# Implementation notes
 
 The Hamming distance is only defined for sequences of equal length, so
 an attempt to calculate it between sequences of different lengths should
@@ -26,34 +30,35 @@ exception vs returning a special value) may differ between languages.
 You may be wondering about the `cases_test.go` file. We explain it in the
 [leap exercise][leap-exercise-readme].
 
-[leap-exercise-readme]: https://github.com/exercism/go/blob/master/exercises/leap/README.md 
-
-
-## Coding the solution
-
-Look for a stub file having the name hamming.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
+[leap-exercise-readme]: https://github.com/exercism/go/blob/main/exercises/practice/leap/.docs/instructions.md
 
 ## Source
 
-The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @levicook
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @da-edra
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @hpurmann
+- @ilmanzo
+- @kytrinyx
+- @leenipper
+- @mchoube
+- @paul-nelson-baker
+- @petertseng
+- @robphoenix
+- @sebito91
+- @soniakeys
+- @tleen
+- @tompao
+
+### Based on
+
+The Calculating Point Mutations problem at Rosalind - http://rosalind.info/problems/hamm/

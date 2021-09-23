@@ -1,15 +1,17 @@
 // For the Matrix exercise in Go you have to do a few things not mentioned
 // in the README.
 //
-// 1. You must implement a constructor and methods Rows() and Cols() as
-//    described in the README, but Rows() and Cols must return results that
-//    are independent from the original matrix.  That is, you should be able
-//    to do as you please with the results without affecting the matrix.
+// 1. Implement the type Matrix
 //
-// 2. You must implement a method Set(row, col, val) for setting a matrix
-//    element.
+// 2. Write a method with signature: New(s string) (Matrix, error)
 //
-// 3. As usual in Go, you must detect and return error conditions.
+// 3. Decorate the Matrix type, with three methods:
+//      - Cols() [][]int
+//      - Rows() [][]int
+//      - Set(row, column, value int) bool
+//    Cols and Rows must return the results without affecting the matrix.
+//
+// Detect and return error when it is expected.
 
 package matrix
 
@@ -266,7 +268,10 @@ func TestSet(t *testing.T) {
 }
 
 func BenchmarkNew(b *testing.B) {
-	var matrix Matrix
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode.")
+	}
+	var matrix *Matrix
 	for i := 0; i < b.N; i++ {
 		var err error
 		matrix, err = New("1 2 3 10 11\n4 5 6 11 12\n7 8 9 12 13\n 8 7 6 13 14")
@@ -280,6 +285,9 @@ func BenchmarkNew(b *testing.B) {
 }
 
 func BenchmarkRows(b *testing.B) {
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode.")
+	}
 	matrix, err := New("1 2 3\n4 5 6\n7 8 9\n 8 7 6")
 	if err != nil {
 		b.Fatalf("Failed to create the matrix: %v", err)
@@ -295,6 +303,9 @@ func BenchmarkRows(b *testing.B) {
 }
 
 func BenchmarkCols(b *testing.B) {
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode.")
+	}
 	matrix, err := New("1 2 3 10 11\n4 5 6 11 12\n7 8 9 12 13\n 8 7 6 13 14")
 	if err != nil {
 		b.Fatalf("Failed to create the matrix: %v", err)

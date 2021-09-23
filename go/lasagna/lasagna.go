@@ -1,13 +1,11 @@
 package lasagna
 
 // OvenTime tells the expected oven time for the lasagna
-func OvenTime() int {
-	return 40
-}
+const OvenTime = 40
 
 // RemainingOvenTime tells the remaining oven time for the lasagna
 func RemainingOvenTime(elapsed int) int {
-	return OvenTime() - elapsed
+	return OvenTime - elapsed
 }
 
 // PreparationTime tells the preparation time for a lasagna with a given
@@ -21,3 +19,4 @@ func PreparationTime(layers int) int {
 func ElapsedTime(layers int, elapsed int) int {
 	return PreparationTime(layers) + elapsed
 }
+

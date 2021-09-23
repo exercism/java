@@ -1,8 +1,13 @@
-# ETL
+# Etl
+
+Welcome to Etl on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
-### ETL
+## ETL
 
 Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so
 we're going to migrate this."
@@ -11,7 +16,7 @@ we're going to migrate this."
 once." That's then typically followed by much forehead slapping and
 moaning about how stupid we could possibly be.)
 
-### The goal
+## The goal
 
 We're going to extract some Scrabble scores from a legacy system.
 
@@ -39,38 +44,37 @@ input letters:
 Your mission, should you choose to accept it, is to transform the legacy data
 format to the shiny new format.
 
-### Notes
+## Notes
 
 A final note about scoring, Scrabble is played around the world in a
 variety of languages, each with its own unique scoring table. For
 example, an "E" is scored at 2 in the Māori-language version of the
 game while being scored at 4 in the Hawaiian-language version.
 
-## Coding the solution
-
-Look for a stub file having the name etl.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-The Jumpstart Lab team [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @mikegehard
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @kytrinyx
+- @leenipper
+- @nathany
+- @petertseng
+- @rmetzler
+- @robphoenix
+- @sebito91
+- @strangeman
+- @tleen
+- @tompao
+
+### Based on
+
+The Jumpstart Lab team - http://jumpstartlab.com

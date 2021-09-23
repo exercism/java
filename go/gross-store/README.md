@@ -14,11 +14,7 @@ Syntactically, `map` looks like this:
 map[KeyType]ElementType
 ```
 
-_`KeyType` must be any [comparable type][gospec-comparable], while `ElementType` can be any valid type in go, which means you can store anything from primitive variable to a slice._
-
 It is also important to know that each key is unique, meaning that assigning the same key twice will overwrite the value of the corresponding key.
-
-`map` is reference type, which means if you pass it around, go won't copy the whole map. Instead what go will do is go copy the pointer of the map, this makes passing map to a function or variable cheap. The value of an uninitialized map is `nil`.
 
 To create a map, you can do:
 
@@ -55,8 +51,6 @@ If you're trying to retrieve a non existed key, will return the zero value of yo
   // value: 0; exists: false
 ```
 
-[gospec-comparable]: https://golang.org/ref/spec#Comparison_operators
-
 ## Instructions
 
 A friend of you has an old wholesale store called **Gross Store**, the name came from the quantity of the item that the store sell, it's all in [gross unit][gross-unit]. Your friend asked you to implement a point of sale (POS) system for his store, **but first, you want to build a prototype for it, in your prototype, your system will only record the quantity**. Your friend gave you a list of measurements to help you:
@@ -77,12 +71,12 @@ In order to use the measurement, you need to store the measurement in your progr
 ```go
 units := Units()
 fmt.Println(units)
-// Output: map[...]
+// Output: map[...] with entries like ("dozen": 12)
 ```
 
 ## 2. Create a new customer bill
 
-You need to implement a function that create a new bill for the customer.
+You need to implement a function that create a new (empty) bill for the customer.
 
 ```go
 bill := NewBill()
@@ -94,14 +88,15 @@ fmt.Println(bill)
 
 To implement this, you'll need to:
 
-- Check whether the given unit of measurement is correct
-- Add the item to the customer bill, indexed by the item name. You probably also need a variable to represent the customer bill, you are expected to use `map`
+- Return `false` if the given `unit` is not in the `units` map.
+- Add the item to the customer `bill`, indexed by the item name and return `true`.
 
 ```go
 bill := NewBill()
-ok := AddItem(bill, "carrot", "dozen")
+units := Units()
+ok := AddItem(bill, units, "carrot", "dozen")
 fmt.Println(ok)
-// Output: true or false
+// Output: true (since dozen is a valid unit)
 ```
 
 > Note that the returned value is type of `bool`
@@ -110,17 +105,18 @@ fmt.Println(ok)
 
 To implement this, you'll need to:
 
-- Check whether the given item is in the bill
-- Check whether the given unit of measurement is correct
-- Check whether the new quantity is less than 0, is so return `false`
-- Check whether the new quantity is 0, is so return remove the item from the customer bill
-- Otherwise reduce the quantity of the item
+- Return `false` if the given item is **not** in the bill
+- Return `false` if the given `unit` is not in the `units` map.
+- Return `false` if the new quantity would be less than 0.
+- If the new quantity is 0, completely remove the item from the `bill` then return `true`.
+- Otherwise, reduce the quantity of the item and return `true`.
 
 ```go
 bill := NewBill()
-ok := RemoveItem(bill, "carrot", "dozen")
+units := Units()
+ok := RemoveItem(bill, units, "carrot", "dozen")
 fmt.Println(ok)
-// Output: true or false
+// Output: false (because there are no carrots in the bill)
 ```
 
 > Note that the returned value is type of `bool`
@@ -129,20 +125,19 @@ fmt.Println(ok)
 
 To implement this, you'll need to:
 
-- Check whether the given item is in the bill
-- Otherwise, return the quantity of the item
+- Return `0` and `false` if the `item` is not in the bill.
+- Otherwise, return the quantity of the item in the `bill` and `true`.
 
 ```go
-bill := NewBill()
+bill := map[string]int{"carrot", 12, "grapes", 3}
 qty, ok := GetItem(bill, "carrot")
 fmt.Println(qty)
 // Output: 12
 fmt.Println(ok)
-// Output: true or false
+// Output: true
 ```
 
 > Note that the returned value are types of `int` and `bool`
-> Note that there's no value returned by this function
 
 [gross-unit]: https://en.wikipedia.org/wiki/Gross_(unit)
 
@@ -151,3 +146,7 @@ fmt.Println(ok)
 ### Created by
 
 - @chocopowwwa
+
+### Contributed to by
+
+- @MiroslavGatsanoga

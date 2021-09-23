@@ -1,0 +1,1 @@
+{"blurb":"Implement various kinds of error handling and resource management","authors":["pminten"],"files":{"solution":["error_handling.go"],"test":["error_handling_test.go"],"example":[".meta/example.go"]},"source":"","source_url":""}

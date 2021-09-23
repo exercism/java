@@ -39,10 +39,10 @@ func RemoveItem(bill map[string]int, units map[string]int, item string, unit str
 		return false
 	}
 
-	newUnit := bill[item] - units[unit]
-	if newUnit < 0 {
+	newUnits := bill[item] - units[unit]
+	if newUnits < 0 {
 		return false
-	} else if newUnit == 0 {
+	} else if newUnits == 0 {
 		delete(bill, item)
 	} else {
 		bill[item] -= units[unit]

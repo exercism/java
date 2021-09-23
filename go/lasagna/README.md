@@ -74,6 +74,16 @@ count = 2  // Update to new value
 count = false // This throws a compiler error due to assigning a non `int` type
 ```
 
+## Constants
+
+Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.
+
+Constants are defined using the `const` keyword and can be numbers, characters, strings or booleans:
+
+```go
+const Age = 21 // Defines a numeric constant 'Age' with the value of 21
+```
+
 ## Instructions
 
 In this exercise you're going to write some code to help you cook a brilliant lasagna from your favorite cooking book.
@@ -82,10 +92,10 @@ You have four tasks, all related to the time spent cooking the lasagna.
 
 ## 1. Define the expected oven time in minutes
 
-Define the `OvenTime()` function that does not take any parameters and returns how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
+Define the `OvenTime` constant with how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
 
 ```go
-OvenTime()
+OvenTime
 // Output: 40
 ```
 
@@ -125,3 +135,4 @@ ElapsedTime(3, 20)
 ### Contributed to by
 
 - @ekingery
+- @andrerfcsantos

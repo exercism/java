@@ -1,5 +1,10 @@
 # Scale Generator
 
+Welcome to Scale Generator on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a tonic, or starting note, and a set of intervals, generate
 the musical scale starting with the tonic and following the
 specified interval pattern.
@@ -43,32 +48,23 @@ a "whole step" or "major second" (written as an upper-case "M"). The
 diatonic scales are built using only these two intervals between
 adjacent notes.
 
-Non-diatonic scales can contain other intervals.  An "augmented first"
-interval, written "A", has two interceding notes (e.g., from A to C or
-Db to E). There are also smaller and larger intervals, but they will not
-figure into this exercise.
+Non-diatonic scales can contain other intervals.  An "augmented second"
+interval, written "A", has two interceding notes (e.g., from A to C or Db to E)
+or a "whole step" plus a "half step". There are also smaller and larger
+intervals, but they will not figure into this exercise.
 
-## Coding the solution
+## Source
 
-Look for a stub file having the name scale_generator.go
-and place your solution code in that file.
+### Created by
 
-## Running the tests
+- @sunilgopinath
 
-To run the tests run the command `go test` from within the exercise directory.
+### Contributed to by
 
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bitfield
+- @da-edra
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @leenipper
+- @sebito91

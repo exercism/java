@@ -8,8 +8,8 @@ import (
 
 type Matrix [][]int
 
-func New(input string) (Matrix, error) {
-	var res [][]int
+func New(input string) (*Matrix, error) {
+	var res Matrix
 
 	var cols int
 
@@ -30,7 +30,7 @@ func New(input string) (Matrix, error) {
 		res = append(res, row)
 	}
 
-	return res, nil
+	return &res, nil
 }
 
 func (m Matrix) Rows() [][]int {
