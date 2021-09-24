@@ -6,13 +6,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ConnectTest {
 
-    private Connect cut;
-
-    @Before
-    public void initialize() {
-        cut = new Connect();
-    }
-
     @Test
     public void anEmptyBoardHasNoWinner() {
 
@@ -24,9 +17,10 @@ public class ConnectTest {
                 "   . . . . .",
                 "    . . . . ."
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.NONE, winner);
@@ -40,9 +34,10 @@ public class ConnectTest {
         var board = new String[]{
                 "X"
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.PLAYER_X, winner);
@@ -57,9 +52,10 @@ public class ConnectTest {
         var board = new String[]{
                 "O"
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.PLAYER_O, winner);
@@ -77,9 +73,10 @@ public class ConnectTest {
                 "  X . . X",
                 "   X O O O"
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.NONE, winner);
@@ -98,9 +95,10 @@ public class ConnectTest {
                 "   . O X .",
                 "    X X O O"
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.NONE, winner);
@@ -119,9 +117,10 @@ public class ConnectTest {
                 "   . O . X",
                 "    . . O ."
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.NONE, winner);
@@ -140,9 +139,10 @@ public class ConnectTest {
                 "   X X O X",
                 "    . O X ."
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.PLAYER_X, winner);
@@ -161,9 +161,10 @@ public class ConnectTest {
                 "   X X O X",
                 "    . O X ."
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.PLAYER_O, winner);
@@ -182,9 +183,10 @@ public class ConnectTest {
                 "   . X X . .",
                 "    O O O O O"
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.PLAYER_X, winner);
@@ -207,9 +209,10 @@ public class ConnectTest {
                 "       O O O O O O O X O",
                 "        X X X X X X X X O"
         };
+        Connect cut = new Connect(board);
 
         //WHEN
-        var winner = cut.computeWinner(board);
+        var winner = cut.computeWinner();
 
         //THEN
         assertEquals(Connect.Winner.PLAYER_X, winner);
