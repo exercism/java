@@ -1,0 +1,1 @@
+{"blurb":"Translate RNA sequences into proteins.","authors":["Akasurde"],"files":{"solution":["protein_translation.go"],"test":["protein_translation_test.go"],"example":[".meta/example.go"]},"source":"Tyler Long","source_url":""}
