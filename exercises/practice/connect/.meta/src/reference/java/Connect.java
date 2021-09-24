@@ -9,22 +9,28 @@
  */
 class Connect {
 
-    private int[] parentO;   //The disjoint-set of player O. Each element of this array represents a field
-                            //and each field is connected to itself at initialization.
-    private int[] sizeO;     //the number of elements in each subset of the disjoint-set of player O. All initialized to 1 at the start
+    //The disjoint-set of player O. Each element of this array represents a field and each field is connected to itself
+    // at initialization.
+    private int[] parentO;
+    //the number of elements in each subset of the disjoint-set of player O. All initialized to 1 at the start
+    private int[] sizeO;
 
-    private int[] parentX;   //The disjoint-set of player X. Each element of this array represents a field
-                            //and each field is connected to itself at initialization.
-    private int[] sizeX;     //the number of elements in each subset of the disjoint-set of player X. All initialized to 1 at the start
+    //The disjoint-set of player X. Each element of this array represents a field and each field is connected to itself
+    // at initialization.
+    private int[] parentX;
+    //the number of elements in each subset of the disjoint-set of player X. All initialized to 1 at the start
+    private int[] sizeX;
 
-    private boolean[] playedO; // This helps us keep track of whether player O hs placed a stone on a field.
-    private boolean[] playedX; // This helps us keep track of whether player X hs placed a stone on a field.
+    // This helps us keep track of whether player O hs placed a stone on a field.
+    private boolean[] playedO;
+    // This helps us keep track of whether player X hs placed a stone on a field.
+    private boolean[] playedX;
 
     private int boardHorizontalSize;
     private int boardVerticalSize;
 
     public Connect(String[] board) {
-        if(board.length == 0) {
+        if (board.length == 0) {
             return;
         }
 
@@ -34,38 +40,39 @@ class Connect {
         initializeBoard(boardHorizontalSize, board.length);
 
         //Place stones on the board
-        for(int i=0; i<board.length; i++) {
+        for (int i = 0; i < board.length; i++) {
             String row = board[i].replace(" ", "");
-            for(int j=0; j<row.length(); j++) {
-                if(row.charAt(j) == 'O') {
-                    playO(i+1, j+1);
+            for (int j = 0; j < row.length(); j++) {
+                if (row.charAt(j) == 'O') {
+                    playO(i + 1, j + 1);
                 }
-                if(row.charAt(j) == 'X') {
-                    playX(i+1, j+1);
+                if (row.charAt(j) == 'X') {
+                    playX(i + 1, j + 1);
                 }
             }
         }
     }
 
     public Winner computeWinner() {
-        if(parentO == null) {
+        if (parentO == null) {
             return Winner.NONE;
         }
 
         boolean playerOCanWin = boardHorizontalSize != 1 || isPlayed(1, 1, playedO);
         boolean playerXCanWin = boardVerticalSize != 1 || isPlayed(1, 1, playedX);
 
-        //If top-left field is connected to bottom-left field, then top side is connected to bottom side and player O wins
+        //If top-left field is connected to bottom-left field, then top side is connected to bottom side and player O
+        // wins
         //Remember we made the top-left field the representative of all fields at the top during initialization.
         //We also made the bottom-left field the representative of all fields at the bottom.
-        if(playerOCanWin && findO(0) == findO(boardHorizontalSize * (boardVerticalSize - 1))) {
+        if (playerOCanWin && findO(0) == findO(boardHorizontalSize * (boardVerticalSize - 1))) {
             return Winner.PLAYER_O;
         }
 
         //If top-left field is connected to top-right field, then left side is connected to right side and player X wins
         //Remember we made the top-left field the representative of all fields on the left during initialization.
         //We also made the top-right field the representative of all fields on the right.
-        if(playerXCanWin && findX(0) == findX(boardHorizontalSize - 1)) {
+        if (playerXCanWin && findX(0) == findX(boardHorizontalSize - 1)) {
             return Winner.PLAYER_X;
         }
         return Winner.NONE;
@@ -75,7 +82,7 @@ class Connect {
      * Create two disjoint sets or union-find data structures for player O and player X
      *
      * @param boardHorizontalSize the board horizontal size.
-     * @param boardVerticalSize the board vertical size.
+     * @param boardVerticalSize   the board vertical size.
      */
     private void initializeBoard(int boardHorizontalSize, int boardVerticalSize) {
         this.boardHorizontalSize = boardHorizontalSize;
@@ -87,13 +94,16 @@ class Connect {
         int indexOfBottomLeftField = boardHorizontalSize * (boardVerticalSize - 1);
 
         parentO = new int[numberOfElements];
-        for (int i = 0; i < numberOfElements; i++) { //Consider using Arrays.setAll(int[] array, IntUnaryOperator generator)
+
+        //Consider using Arrays.setAll(int[] array, IntUnaryOperator generator)
+        for (int i = 0; i < numberOfElements; i++) {
             parentO[i] = i;
         }
         parentX = parentO.clone();
 
         sizeO = new int[numberOfElements];
-        for (int i = 0; i < numberOfElements; i++) { //Consider using Arrays.fill(int[] a, int val)
+        //Consider using Arrays.fill(int[] a, int val)
+        for (int i = 0; i < numberOfElements; i++) {
             sizeO[i] = 1;
         }
         sizeX = sizeO.clone();
@@ -116,7 +126,8 @@ class Connect {
             unionX(indexOfTopRightField, indexOfTopRightField + (i * boardHorizontalSize));
         }
 
-        playedO = new boolean[numberOfElements]; //Java default boolean to false. So all the elements of the array are initialized to false by default.
+        //Java default boolean to false. So all the elements of the array are initialized to false by default.
+        playedO = new boolean[numberOfElements];
         playedX = new boolean[numberOfElements];
     }
 
@@ -155,7 +166,9 @@ class Connect {
     private void union(int elementA, int elementB, int[] parent, int[] size) {
         int parentA = find(elementA, parent);
         int parentB = find(elementB, parent);
-        if (parentA == parentB) return;
+        if (parentA == parentB) {
+            return;
+        }
 
         // make smaller root point to larger one
         if (size[parentA] < size[parentB]) {
@@ -177,6 +190,7 @@ class Connect {
 
     /**
      * Determine if a stone has been placed on any field of the board
+     *
      * @param row the row on which the field is found
      * @param col the column on which the field is found
      * @return true if a player has placed a stone on this field, otherwise false.
@@ -198,14 +212,15 @@ class Connect {
 
     /**
      * Play or place a stone on a field for a specific player
-     * @param row the row of the field
-     * @param col the column of the field
+     *
+     * @param row    the row of the field
+     * @param col    the column of the field
      * @param parent the disjoint-set of the player
-     * @param size the sizes of subsets of the disjoint-set
+     * @param size   the sizes of subsets of the disjoint-set
      * @param played this helps us keep track of the field on which the player has placed a stone
      */
     private void play(int row, int col, int[] parent, int[] size, boolean[] played) {
-        if(isPlayed(row, col)) {
+        if (isPlayed(row, col)) {
             return;
         }
         int index = ((row - 1) * boardHorizontalSize) + col - 1;

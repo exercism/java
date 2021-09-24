@@ -1,4 +1,3 @@
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,11 +10,11 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                ". . . . .",
-                " . . . . .",
-                "  . . . . .",
-                "   . . . . .",
-                "    . . . . ."
+            ". . . . .",
+            " . . . . .",
+            "  . . . . .",
+            "   . . . . .",
+            "    . . . . ."
         };
         Connect cut = new Connect(board);
 
@@ -32,7 +31,7 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                "X"
+            "X"
         };
         Connect cut = new Connect(board);
 
@@ -50,7 +49,7 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                "O"
+            "O"
         };
         Connect cut = new Connect(board);
 
@@ -68,10 +67,10 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                "O O O X",
-                " X . . X",
-                "  X . . X",
-                "   X O O O"
+            "O O O X",
+            " X . . X",
+            "  X . . X",
+            "   X O O O"
         };
         Connect cut = new Connect(board);
 
@@ -89,11 +88,11 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                "X O . .",
-                " O X X X",
-                "  O X O .",
-                "   . O X .",
-                "    X X O O"
+            "X O . .",
+            " O X X X",
+            "  O X O .",
+            "   . O X .",
+            "    X X O O"
         };
         Connect cut = new Connect(board);
 
@@ -111,11 +110,11 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                "X . . .",
-                " . X O .",
-                "  O . X O",
-                "   . O . X",
-                "    . . O ."
+            "X . . .",
+            " . X O .",
+            "  O . X O",
+            "   . O . X",
+            "    . . O ."
         };
         Connect cut = new Connect(board);
 
@@ -133,11 +132,11 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                ". O . .",
-                " O X X X",
-                "  O X O .",
-                "   X X O X",
-                "    . O X ."
+            ". O . .",
+            " O X X X",
+            "  O X O .",
+            "   X X O X",
+            "    . O X ."
         };
         Connect cut = new Connect(board);
 
@@ -155,11 +154,11 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                ". O . .",
-                " O X X X",
-                "  O O O .",
-                "   X X O X",
-                "    . O X ."
+            ". O . .",
+            " O X X X",
+            "  O O O .",
+            "   X X O X",
+            "    . O X ."
         };
         Connect cut = new Connect(board);
 
@@ -177,11 +176,11 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                ". X X . .",
-                " X . X . X",
-                "  . X . X .",
-                "   . X X . .",
-                "    O O O O O"
+            ". X X . .",
+            " X . X . X",
+            "  . X . X .",
+            "   . X X . .",
+            "    O O O O O"
         };
         Connect cut = new Connect(board);
 
@@ -199,15 +198,15 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                "O X X X X X X X X",
-                " O X O O O O O O O",
-                "  O X O X X X X X O",
-                "   O X O X O O O X O",
-                "    O X O X X X O X O",
-                "     O X O O O X O X O",
-                "      O X X X X X O X O",
-                "       O O O O O O O X O",
-                "        X X X X X X X X O"
+            "O X X X X X X X X",
+            " O X O O O O O O O",
+            "  O X O X X X X X O",
+            "   O X O X O O O X O",
+            "    O X O X X X O X O",
+            "     O X O O O X O X O",
+            "      O X X X X X O X O",
+            "       O O O O O O O X O",
+            "        X X X X X X X X O"
         };
         Connect cut = new Connect(board);
 
