@@ -36,7 +36,7 @@ var numberRunes = []rune("0123456789")
 func newUniqueName() string {
 	name := newName()
 
-	for !generatedNames[name] {
+	for generatedNames[name] {
 		name = newName()
 	}
 	generatedNames[name] = true
