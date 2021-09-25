@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise you're playing a role-playing game named "Wizard and Warriors," which allows you to play as either a Wizard or a Warrior.
+In this exercise you're playing a role-playing game named "Wizards and Warriors," which allows you to play as either a Wizard or a Warrior.
 
 There are different rules for Warriors and Wizards to determine how much damage points they deal.
 
@@ -11,7 +11,7 @@ For a Warrior, these are the rules:
 
 For a Wizard, these are the rules:
 
-- Deal 12 points of damage if the Wizard prepared a spell in advanced
+- Deal 12 points of damage if the Wizard prepared a spell in advance
 - Deal 3 points of damage if the Wizard did not prepare a spell in advance
 
 In general, fighters are never vulnerable. However, Wizards _are_ vulnerable if they haven't prepared a spell.
