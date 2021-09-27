@@ -7,3 +7,4 @@
 * [Intro to Java Programming](https://www.udacity.com/course/intro-to-java-programming--cs046)
 * [Java Tutorial for Complete Beginners](https://www.udemy.com/java-tutorial/)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/java)
+* [Dev.Java (Revamped Documentation for Java)](https://dev.java/learn/)
