@@ -90,7 +90,7 @@ public class AnnalynsInfiltrationTest {
 
     @Test
     @Ignore
-    public void can_signal_prisoner_ifarcher_is_sleeping_and_prisoner_is_awake() {
+    public void can_signal_prisoner_if_archer_is_sleeping_and_prisoner_is_awake() {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = true;
         assertThat(AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isTrue();
@@ -98,7 +98,7 @@ public class AnnalynsInfiltrationTest {
 
     @Test
     @Ignore
-    public void cannot_signal_prisoner_ifarcher_is_awake_and_prisoner_is_sleeping() {
+    public void cannot_signal_prisoner_if_archer_is_awake_and_prisoner_is_sleeping() {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = false;
         assertThat(AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isFalse();
@@ -106,7 +106,7 @@ public class AnnalynsInfiltrationTest {
 
     @Test
     @Ignore
-    public void cannot_signal_prisoner_ifarcher_and_prisoner_are_both_sleeping() {
+    public void cannot_signal_prisoner_if_archer_and_prisoner_are_both_sleeping() {
         boolean archerIsAwake = false;
         boolean prisonerIsAwake = false;
         assertThat(AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isFalse();
@@ -114,7 +114,7 @@ public class AnnalynsInfiltrationTest {
 
     @Test
     @Ignore
-    public void cannot_signal_prisoner_ifarcher_and_prisoner_are_both_awake() {
+    public void cannot_signal_prisoner_if_archer_and_prisoner_are_both_awake() {
         boolean archerIsAwake = true;
         boolean prisonerIsAwake = true;
         assertThat(AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake)).isFalse();
