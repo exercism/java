@@ -1,0 +1,24 @@
+{
+  "blurb": "Learn about the basics of C# by following a lasagna recipe.",
+  "icon": "lasagna",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "forked_from": [
+    "fsharp/lucians-luscious-lasagna"
+  ],
+  "files": {
+    "solution": [
+      "LuciansLusciousLasagna.cs"
+    ],
+    "test": [
+      "LuciansLusciousLasagnaTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
