@@ -16,7 +16,7 @@ func Distance(a, b string) (int, error) {
 
 	dist := 0
 	for i := 0; i < len(runesA); i++ {
-		if a[i] != b[i] {
+		if runesA[i] != runesB[i] {
 			dist++
 		}
 	}

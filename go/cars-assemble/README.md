@@ -36,18 +36,19 @@ For integer division, the remainder is dropped (eg. `5 / 2 == 2`).
 Go has shorthand assignment for the operators above (e.g. `a += 5` is short for `a = a + 5`).
 Go also supports the increment and decrement statements `++` and `--` (e.g. `a++`).
 
-## Type Conversion
+## Converting between int and float64
 
-In Go, assignment of a value between different types requires explicit conversion.
 Converting between types is done via a function with the name of the type to convert to.
-For example, to convert an `int` to a `float64` you would need to do the following:
+For example:
 
 ```go
 var x int = 42 // x has type int
 f := float64(x) // f has type float64 (ie. 42.0)
+var y float64 = 11.9 // y has type float64
+i := int(y) // i has type int (ie. 11)
 ```
 
-## Conditionals If
+## If Statements
 
 Conditionals in Go are similar to conditionals in other languages.
 The underlying type of any conditional operation is the `bool` type, which can have the value of `true` or `false`.
@@ -59,46 +60,71 @@ For checking a particular case an `if` statement can be used, which executes its
 var value string
 
 if value == "val" {
-    // conditional code
+    return "was val"
 }
 ```
 
 In scenarios involving more than one case many `if` statements can be chained together using the `else if` and `else` statements.
 
 ```go
-if value == "val" {
-    // conditional code
-} else if value == "val2" {
-    // conditional code
+var number int
+result := "This number is "
+
+if number > 0 {
+    result += "positive"
+} else if number < 0 {
+    result += "negative"
 } else {
-    // default code
+    result += "zero"
 }
 ```
 
+If statements can also include a short initialization statement that can be used to initialize one or more variables for the if statement.
+For example:
+
+```go
+num := 7
+if v := 2 * num; v > 10 {
+    fmt.Println(v)
+} else {
+    fmt.Println(num)
+}
+// Output: 7
+```
+
+> Note: any variables created in the initialization statement go out of scope after the end of the if statement.
+
 ## Instructions
 
-In this exercise you'll be writing code to analyse the production of an
-assembly line in a car factory. The assembly line's speed can range from `0`
-(off) to `10` (maximum).
+In this exercise you'll be writing code to analyze the production of an assembly line in a car factory.
+The assembly line's speed can range from `0` (off) to `10` (maximum).
 
-At its default speed (`1`), `221` cars are produced each hour. In principle,
-the production increases linearly. So with the speed set to `4`, it should
-produce `4 * 221 = 884` cars per hour. However, higher speeds increase the
-likelihood that faulty cars are produced, which then have to be discarded. The
-following table shows how speed influences the success rate:
+At its default speed (`1`), `221` cars are produced each hour.
+In principle, the production increases linearly.
+So with the speed set to `4`, it should produce `4 * 221 = 884` cars per hour.
+However, higher speeds increase the likelihood that faulty cars are produced, which then have to be discarded.
+
+Also, there are times when the assembly line has an artificially imposed limit on the throughput (meaning no more than the limit can be produced per hour).
+
+## 1. Calculate the success rate
+
+Implement a function (`SuccessRate`) to calculate the ratio of an item being created without error for a given speed.
+The following table shows how speed influences the success rate:
 
 - `0`: 0% success rate.
 - `1` - `4`: 100% success rate.
 - `5` - `8`: 90% success rate.
 - `9` - `10`: 77% success rate.
 
-> Note that the calculation of the success rate has been provided already.
+```go
+rate := SuccessRate(6)
+fmt.Println(rate)
+// Output: 0.9
+```
 
-You have two tasks:
+## 2. Calculate the production rate per hour
 
-## 1. Calculate the production rate per hour
-
-Implement a function to calculate the assembly line's production rate per hour.
+Implement a function to calculate the assembly line's production rate per hour:
 
 ```go
 rate := CalculateProductionRatePerHour(7)
@@ -106,9 +132,9 @@ fmt.Println(rate)
 // Output: 1392.3
 ```
 
-> Note that the value returned is of type `float64`
+> Note that the value returned is of type `float64`.
 
-## 2. Calculate the number of working items produced per minute
+## 3. Calculate the number of working items produced per minute
 
 Implement a function to calculate how many cars are produced each minute:
 
@@ -119,6 +145,22 @@ fmt.Println(rate)
 ```
 
 > Note that the value returned is of type `int`.
+
+## 4. Calculate the artificially-limited production rate
+
+Implement a function to calculate the assembly line's production rate per hour:
+
+```go
+rate := CalculateLimitedProductionRatePerHour(2, 1000.0)
+fmt.Println(rate)
+// Output: 442.0
+rate := CalculateLimitedProductionRatePerHour(7, 1000.0)
+fmt.Println(rate)
+// Output: 1000.0
+```
+
+> Note that the value returned is of type `float64`.
+  This should call the `CalculateProductionRatePerHour` function exactly once.
 
 ## Source
 

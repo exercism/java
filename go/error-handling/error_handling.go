@@ -28,3 +28,4 @@ func Use(o ResourceOpener, input string) (err error) {
 
 	return err
 }
+

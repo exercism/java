@@ -30,30 +30,37 @@ or
   foo := make(map[string]int)
 ```
 
-Here are some operations that you can use with map
+Here are some operations that you can do with a map
 
 ```go
-  // Add a value in a map, you can use the `=` operator:
+  // Add a value in a map with the `=` operator:
   foo["bar"] = 42
   // Here we update the element of `bar`
   foo["bar"] = 73
-  // To retrieve a value map, you can use
+  // To retrieve a map value, you can use
   baz := foo["bar"]
   // To delete an item from a map, you can use
   delete(foo, "bar")
 ```
 
-If you're trying to retrieve a non existed key, will return the zero value of your value type, it can confuse you, especially if your element is the same as the `ElementType` default value (for example, 0 for an int), to check whether the key exists in your map, you can use
+If you try to retrieve the value for a key which does not exist in the map, it will return the zero value of the value type.
+This can confuse you, especially if the default value of your `ElementType` (for example, 0 for an int), is a valid value.
+To check whether a key exists in your map, you can use
 
 ```go
   value, exists := foo["baz"]
-  // If the key "baz" doesn't exists,
+  // If the key "baz" does not exist,
   // value: 0; exists: false
 ```
 
 ## Instructions
 
-A friend of you has an old wholesale store called **Gross Store**, the name came from the quantity of the item that the store sell, it's all in [gross unit][gross-unit]. Your friend asked you to implement a point of sale (POS) system for his store, **but first, you want to build a prototype for it, in your prototype, your system will only record the quantity**. Your friend gave you a list of measurements to help you:
+A friend of yours has an old wholesale store called **Gross Store**.
+The name comes from the quantity of the item that the store sell: it's all in [gross unit][gross-unit].
+Your friend asked you to implement a point of sale (POS) system for his store.
+**First, you want to build a prototype for it.**
+**In your prototype, your system will only record the quantity.**
+Your friend gave you a list of measurements to help you:
 
 | Unit               | Score |
 | ------------------ | ----- |
@@ -84,12 +91,12 @@ fmt.Println(bill)
 // Output: map[]
 ```
 
-## 3. Add item to the customer bill
+## 3. Add an item to the customer bill
 
 To implement this, you'll need to:
 
 - Return `false` if the given `unit` is not in the `units` map.
-- Add the item to the customer `bill`, indexed by the item name and return `true`.
+- Otherwise add the item to the customer `bill`, indexed by the item name, then return `true`.
 
 ```go
 bill := NewBill()
@@ -99,9 +106,9 @@ fmt.Println(ok)
 // Output: true (since dozen is a valid unit)
 ```
 
-> Note that the returned value is type of `bool`
+> Note that the returned value is type `bool`.
 
-## 4. Remove item from the customer bill
+## 4. Remove an item from the customer bill
 
 To implement this, you'll need to:
 
@@ -119,9 +126,9 @@ fmt.Println(ok)
 // Output: false (because there are no carrots in the bill)
 ```
 
-> Note that the returned value is type of `bool`
+> Note that the returned value is type `bool`.
 
-## 5. Return the number of specific item that is in the customer bill
+## 5. Return the quantity of a specific item that is in the customer bill
 
 To implement this, you'll need to:
 
@@ -137,7 +144,7 @@ fmt.Println(ok)
 // Output: true
 ```
 
-> Note that the returned value are types of `int` and `bool`
+> Note that the returned value are types `int` and `bool`.
 
 [gross-unit]: https://en.wikipedia.org/wiki/Gross_(unit)
 

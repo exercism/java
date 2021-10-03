@@ -19,3 +19,4 @@ func HappyBirthday(name string, age int) string {
 func AssignTable(name string, table int, neighbour string, direction string, distance float64) string {
 	return fmt.Sprintf("Welcome to my party, %s!\nYou have been assigned to table %X. Your table is %s, exactly %.1f meters from here.\nYou will be sitting next to %s.", name, table, direction, distance, neighbour)
 }
+
