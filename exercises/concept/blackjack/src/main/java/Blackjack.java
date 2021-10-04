@@ -1,6 +1,6 @@
-public class Blackjack{
+public class Blackjack {
 
-    public int  parseCard(String card) {
+    public int parseCard(String card) {
         throw new UnsupportedOperationException("Please implement the Blackjack.parseCard method");
     }
 
@@ -23,10 +23,10 @@ public class Blackjack{
         int handScore = parseCard(card1) + parseCard(card2);
         int dealerScore = parseCard(dealerCard);
 
-        if (20 < handScore) 
+        if (20 < handScore) {
             return largeHand(isBlackjack(card1, card2), dealerScore);
-        
-        else
+        } else {
             return smallHand(handScore, dealerScore);
+        }
     }
 }
