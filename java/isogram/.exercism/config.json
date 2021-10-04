@@ -1,0 +1,1 @@
+{"blurb":"Determine if a word or phrase is an isogram.","authors":["Kai-Shiro"],"files":{"solution":["src/main/java/IsogramChecker.java"],"test":["src/test/java/IsogramCheckerTest.java"],"example":[".meta/src/reference/java/IsogramChecker.java"]},"source":"Wikipedia","source_url":"https://en.wikipedia.org/wiki/Isogram"}
