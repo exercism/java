@@ -22,7 +22,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.NONE, winner);
+        assertEquals(Winner.NONE, winner);
     }
 
     @Ignore("Remove to run test")
@@ -39,7 +39,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.PLAYER_X, winner);
+        assertEquals(Winner.PLAYER_X, winner);
 
     }
 
@@ -57,7 +57,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.PLAYER_O, winner);
+        assertEquals(Winner.PLAYER_O, winner);
 
     }
 
@@ -78,7 +78,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.NONE, winner);
+        assertEquals(Winner.NONE, winner);
 
     }
 
@@ -100,7 +100,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.NONE, winner);
+        assertEquals(Winner.NONE, winner);
 
     }
 
@@ -122,7 +122,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.NONE, winner);
+        assertEquals(Winner.NONE, winner);
 
     }
 
@@ -144,7 +144,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.PLAYER_X, winner);
+        assertEquals(Winner.PLAYER_X, winner);
 
     }
 
@@ -166,7 +166,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.PLAYER_O, winner);
+        assertEquals(Winner.PLAYER_O, winner);
 
     }
 
@@ -188,7 +188,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.PLAYER_X, winner);
+        assertEquals(Winner.PLAYER_X, winner);
 
     }
 
@@ -214,7 +214,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Connect.Winner.PLAYER_X, winner);
+        assertEquals(Winner.PLAYER_X, winner);
 
     }
 }
