@@ -11,10 +11,10 @@ Java supports three boolean operators:
 **Examples**
 
 ```java
-!true // false
-!false // true
-true && false // false
-true && true // true
-false || false // false
-false || true // true
+!true // => false
+!false // => true
+true && false // => false
+true && true // => true
+false || false // => false
+false || true // => true
 ```
