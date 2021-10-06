@@ -1,7 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertThat(winner).isEqualTo();
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ConnectTest {
 

@@ -16,6 +16,9 @@
       ".meta/src/reference/java/Board.java",
       ".meta/src/reference/java/UnionFind.java",
       ".meta/src/reference/java/Winner.java"
+    ],
+    "editor": [
+      "src/main/java/Winner.java"
     ]
   }
 }
