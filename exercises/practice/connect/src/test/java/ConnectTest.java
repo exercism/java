@@ -1,7 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat(winner).isEqualTo();
 
 public class ConnectTest {
 
@@ -22,7 +22,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.NONE, winner);
+        assertThat(winner).isEqualTo(Winner.NONE);
     }
 
     @Ignore("Remove to run test")
@@ -39,7 +39,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.PLAYER_X, winner);
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
 
     }
 
@@ -57,7 +57,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.PLAYER_O, winner);
+        assertThat(winner).isEqualTo(Winner.PLAYER_O);
 
     }
 
@@ -78,7 +78,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.NONE, winner);
+        assertThat(winner).isEqualTo(Winner.NONE);
 
     }
 
@@ -100,7 +100,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.NONE, winner);
+        assertThat(winner).isEqualTo(Winner.NONE);
 
     }
 
@@ -122,7 +122,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.NONE, winner);
+        assertThat(winner).isEqualTo(Winner.NONE);
 
     }
 
@@ -144,7 +144,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.PLAYER_X, winner);
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
 
     }
 
@@ -166,7 +166,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.PLAYER_O, winner);
+        assertThat(winner).isEqualTo(Winner.PLAYER_O);
 
     }
 
@@ -188,7 +188,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.PLAYER_X, winner);
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
 
     }
 
@@ -214,7 +214,7 @@ public class ConnectTest {
         var winner = cut.computeWinner();
 
         //THEN
-        assertEquals(Winner.PLAYER_X, winner);
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
 
     }
 }
