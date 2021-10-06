@@ -4,9 +4,9 @@ Booleans in Java are represented by the `boolean` type, which values can be eith
 
 Java supports three [boolean operators][operators]: 
 
-`!` (NOT): negates the boolean  
-`&&` (AND): takes two booleans and results in true if they're both true  
-`||` (OR): results in true if any of the two booleans is true  
+- `!` (NOT): negates the boolean  
+- `&&` (AND): takes two booleans and results in true if they're both true  
+- `||` (OR): results in true if any of the two booleans is true  
 
 The `&&` and `||` operators use _short-circuit evaluation_, which means that the right-hand side of the operator is only evaluated when needed.
 
