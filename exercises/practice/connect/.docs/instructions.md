@@ -7,8 +7,8 @@ Two players place stones on a parallelogram with hexagonal fields.
 The player to connect his/her stones to the opposite side first wins.
 The four sides of the parallelogram are divided between the two players (i.e. one player gets assigned a side and the side directly opposite it and the other player gets assigned the two other sides).
 
-Your goal is to build a program that given a simple representation of a board
-computes the winner (or lack thereof). Note that all games need not be "fair".
+Your goal is to build a program that given a simple representation of a board computes the winner (or lack thereof).
+Note that all games need not be "fair".
 (For example, players may have mismatched piece counts or the game's board might
 have a different width and height.)
 
