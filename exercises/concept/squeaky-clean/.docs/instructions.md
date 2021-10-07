@@ -31,7 +31,7 @@ SqueakyClean.clean("my\0Id");
 Modify the (_static_) `SqueakyClean.clean()` method to convert kebab-case to camelCase.
 
 ```java
-SqueakyClean.Clean("à-ḃç");
+SqueakyClean.clean("à-ḃç");
 // => "àḂç"
 ```
 
@@ -40,6 +40,6 @@ SqueakyClean.Clean("à-ḃç");
 Modify the (_static_) `SqueakyClean.clean()` method to omit any Greek letters in the range 'α' to 'ω'.
 
 ```java
-SqueakyClean.Clean("MyΟβιεγτFinder");
+SqueakyClean.clean("MyΟβιεγτFinder");
 // => "MyΟFinder"
 ```
