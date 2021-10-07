@@ -1,0 +1,24 @@
+{
+  "blurb": "Compute the result for a game of Hex / Polygon.",
+  "authors": [
+    "kkyb123"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "src/main/java/Connect.java"
+    ],
+    "test": [
+      "src/test/java/ConnectTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Connect.java",
+      ".meta/src/reference/java/Board.java",
+      ".meta/src/reference/java/UnionFind.java",
+      ".meta/src/reference/java/Winner.java"
+    ],
+    "editor": [
+      "src/main/java/Winner.java"
+    ]
+  }
+}
