@@ -19,7 +19,7 @@ The `parseCard` function should take the `card` string (e.g. `ace`) and turn it 
 - Should use the `parseCard` function to get the value for each card.
 - Should sum up the values of the 2 cards.
 - Should return `true` if the sum is equal to `21`.
-- No aditional statement is needed here. The result for the comparison can be returned.
+- No additional statement is needed here. The result for the comparison can be returned.
 
 ## 3. Implement the decision logic for hand scores larger than 20 points.
 

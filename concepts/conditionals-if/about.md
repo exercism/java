@@ -58,7 +58,7 @@ switch(val) {
 To learn more about this topic it is recommended to check these sources:
 
 - [A refresh of Ternary operators][example-ternary]
-- [If/Else datailed with flowcharts][example-ifelse-flowcharts]
+- [If/Else detailed with flowcharts][example-ifelse-flowcharts]
 - [Switch examples][example-switch]
 
 [logical-operators]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html
