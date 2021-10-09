@@ -25,9 +25,8 @@ func (r *Robot) Name() (string, error) {
 	return r.name, nil
 }
 
-func (r *Robot) Reset() string {
-	r.name = newUniqueName()
-	return r.name
+func (r *Robot) Reset() {
+	r.name = ""
 }
 
 var letterRunes = []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
