@@ -1,10 +1,10 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.LinkedHashMap;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThrows;
 
 public class AlphameticsTest {
 
@@ -15,7 +15,7 @@ public class AlphameticsTest {
         expected.put('B', 9);
         expected.put('L', 0);
 
-        assertEquals(expected, new Alphametics("I + BB == ILL").solve());
+        assertThat(new Alphametics("I + BB == ILL").solve()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -42,7 +42,8 @@ public class AlphameticsTest {
         expected.put('B', 1);
         expected.put('C', 0);
 
-        assertEquals(expected, new Alphametics("A + A + A + A + A + A + A + A + A + A + A + B == BCC").solve());
+        assertThat(new Alphametics("A + A + A + A + A + A + A + A + A + A + A + B == BCC").solve())
+                .isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -54,7 +55,7 @@ public class AlphameticsTest {
         expected.put('M', 1);
         expected.put('O', 0);
 
-        assertEquals(expected, new Alphametics("AS + A == MOM").solve());
+        assertThat(new Alphametics("AS + A == MOM").solve()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -68,7 +69,7 @@ public class AlphameticsTest {
         expected.put('A', 0);
         expected.put('E', 2);
 
-        assertEquals(expected, new Alphametics("NO + NO + TOO == LATE").solve());
+        assertThat(new Alphametics("NO + NO + TOO == LATE").solve()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -83,7 +84,7 @@ public class AlphameticsTest {
         expected.put('S', 9);
         expected.put('T', 7);
 
-        assertEquals(expected, new Alphametics("HE + SEES + THE == LIGHT").solve());
+        assertThat(new Alphametics("HE + SEES + THE == LIGHT").solve()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -99,7 +100,7 @@ public class AlphameticsTest {
         expected.put('R', 8);
         expected.put('Y', 2);
 
-        assertEquals(expected, new Alphametics("SEND + MORE == MONEY").solve());
+        assertThat(new Alphametics("SEND + MORE == MONEY").solve()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -117,7 +118,8 @@ public class AlphameticsTest {
         expected.put('S', 6);
         expected.put('T', 9);
 
-        assertEquals(expected, new Alphametics("AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE").solve());
+        assertThat(new Alphametics("AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE").solve())
+                .isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -135,7 +137,7 @@ public class AlphameticsTest {
         expected.put('S', 4);
         expected.put('T', 9);
 
-        assertEquals(expected, new Alphametics("THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL + A + " +
+        assertThat(new Alphametics("THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL + A + " +
                 "TALE + THAT + FALSIFIES + ITS + TITLE + TIS + A + LIE + THE + TALE + OF + THE + LAST + FIRE + " +
                 "HORSES + LATE + AFTER + THE + FIRST + FATHERS + FORESEE + THE + HORRORS + THE + LAST + FREE + " +
                 "TROLL + TERRIFIES + THE + HORSES + OF + FIRE + THE + TROLL + RESTS + AT + THE + HOLE + OF + " +
@@ -150,6 +152,6 @@ public class AlphameticsTest {
                 "HEART + FREE + AT + LAST + OF + THE + LAST + TROLL + ALL + OFFER + THEIR + FIRE + HEAT + TO + THE + " +
                 "ASSISTERS + FAR + OFF + THE + TROLL + FASTS + ITS + LIFE + SHORTER + AS + STARS + RISE + THE + " +
                 "HORSES + REST + SAFE + AFTER + ALL + SHARE + HOT + FISH + AS + THEIR + AFFILIATES + TAILOR + A + " +
-                "ROOFS + FOR + THEIR + SAFE == FORTRESSES").solve());
+                "ROOFS + FOR + THEIR + SAFE == FORTRESSES").solve()).isEqualTo(expected);
     }
 }

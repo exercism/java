@@ -1,11 +1,11 @@
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AccumulateTest {
 
@@ -14,7 +14,7 @@ public class AccumulateTest {
     public void emptyAccumulateProducesEmptyAccumulation() {
         List<Integer> input = new LinkedList<>();
         List<Integer> expectedOutput = new LinkedList<>();
-        assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x * x));
+        assertThat(Accumulate.accumulate(input, x -> x * x)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -22,7 +22,7 @@ public class AccumulateTest {
     public void accumulateSquares() {
         List<Integer> input = Arrays.asList(1, 2, 3);
         List<Integer> expectedOutput = Arrays.asList(1, 4, 9);
-        assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x * x));
+        assertThat(Accumulate.accumulate(input, x -> x * x)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -30,7 +30,7 @@ public class AccumulateTest {
     public void accumulateUpperCases() {
         List<String> input = Arrays.asList("hello", "world");
         List<String> expectedOutput = Arrays.asList("HELLO", "WORLD");
-        assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x.toUpperCase()));
+        assertThat(Accumulate.accumulate(input, x -> x.toUpperCase())).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -38,7 +38,7 @@ public class AccumulateTest {
     public void accumulateReversedStrings() {
         List<String> input = Arrays.asList("the quick brown fox etc".split(" "));
         List<String> expectedOutput = Arrays.asList("eht kciuq nworb xof cte".split(" "));
-        assertEquals(expectedOutput, Accumulate.accumulate(input, this::reverse));
+        assertThat(Accumulate.accumulate(input, this::reverse)).isEqualTo(expectedOutput);
     }
 
     private String reverse(String input) {
@@ -51,9 +51,9 @@ public class AccumulateTest {
         List<String> input1 = Arrays.asList("a", "b", "c");
         List<String> input2 = Arrays.asList("1", "2", "3");
         List<String> expectedOutput = Arrays.asList("a1 a2 a3", "b1 b2 b3", "c1 c2 c3");
-        assertEquals(expectedOutput, Accumulate.accumulate(
+        assertThat(Accumulate.accumulate(
                 input1, c ->
                         String.join(" ", Accumulate.accumulate(input2, d -> c + d))
-        ));
+        )).isEqualTo(expectedOutput);
     }
 }

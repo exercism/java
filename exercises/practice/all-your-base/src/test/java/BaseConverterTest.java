@@ -1,11 +1,8 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThrows;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Arrays;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThrows;
 
 public class BaseConverterTest {
 
@@ -16,13 +13,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{1};
         int[] actualDigits = baseConverter.convertToBase(10);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -33,13 +24,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{5};
         int[] actualDigits = baseConverter.convertToBase(10);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -50,13 +35,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{1, 0, 1};
         int[] actualDigits = baseConverter.convertToBase(2);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -67,13 +46,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{4, 2};
         int[] actualDigits = baseConverter.convertToBase(10);
 
-        assertArrayEquals(
-                String.format(
-                        "Expected digits: %s but found digits: %s",
-                        Arrays.toString(expectedDigits),
-                        Arrays.toString(actualDigits)),
-                expectedDigits,
-                actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -84,13 +57,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{1, 0, 1, 0, 1, 0};
         int[] actualDigits = baseConverter.convertToBase(2);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -101,13 +68,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{2, 10};
         int[] actualDigits = baseConverter.convertToBase(16);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -118,13 +79,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{1, 1, 2, 0};
         int[] actualDigits = baseConverter.convertToBase(3);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -135,13 +90,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{6, 10, 45};
         int[] actualDigits = baseConverter.convertToBase(73);
 
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -152,13 +101,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{0};
         int[] actualDigits = baseConverter.convertToBase(10);
 
-        assertArrayEquals(
-            String.format(
-               "Expected digits: %s but found digits: %s",
-               Arrays.toString(expectedDigits),
-               Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -169,13 +112,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{0};
         int[] actualDigits = baseConverter.convertToBase(2);
 
-        assertArrayEquals(
-            String.format(
-               "Expected digits: %s but found digits: %s",
-               Arrays.toString(expectedDigits),
-               Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -186,13 +123,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{0};
         int[] actualDigits = baseConverter.convertToBase(2);
 
-        assertArrayEquals(
-            String.format(
-                "Expected digits: %s but found digits: %s",
-                Arrays.toString(expectedDigits),
-                Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
@@ -203,13 +134,7 @@ public class BaseConverterTest {
         int[] expectedDigits = new int[]{4, 2};
         int[] actualDigits = baseConverter.convertToBase(10);
 
-        assertArrayEquals(
-            String.format(
-                "Expected digits: %s but found digits: %s",
-                Arrays.toString(expectedDigits),
-                Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(actualDigits).containsExactly(expectedDigits);
     }
 
     @Ignore("Remove to run test")
