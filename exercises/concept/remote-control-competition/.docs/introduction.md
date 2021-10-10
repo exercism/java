@@ -10,11 +10,11 @@ public interface Language {
     String speak();
 }
 
-public class ItalianTaveller implements Language, Cloneable {
+public class ItalianTraveller implements Language, Cloneable {
 
     // from Language interface
     public String getLanguageName() {
-        return  "Italiano";
+        return "Italiano";
     }
 
     // from Language interface
@@ -23,7 +23,7 @@ public class ItalianTaveller implements Language, Cloneable {
     }
 
     // from Cloneable interface
-    public Object Clone() {
+    public Object clone() {
         ItalianTaveller it = new ItalianTaveller();
         return it;
     }
@@ -34,4 +34,4 @@ All operations defined by the interface must be implemented by the implementing 
 
 Interfaces usually contain instance methods.
 
-An example of an interface found in the Java Class Library, apart from `Clonable` illustrated above, is `Comparable<T>`. The `Comparable<T>` interface can be implemented where a default generic sort order in collections is required.
+An example of an interface found in the Java Class Library, apart from `Cloneable` illustrated above, is `Comparable<T>`. The `Comparable<T>` interface can be implemented where a default generic sort order in collections is required.
