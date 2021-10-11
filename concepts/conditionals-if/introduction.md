@@ -1,9 +1,5 @@
 # Introduction
 
-TODO: the content below is copied from the exercise introduction and probably needs rewriting to a proper concept introduction
-
-## conditionals-if
-
 ## Logical Operators
 
 Java supports the three logical operators `&&` (AND), `||` (OR), and `!` (NOT).
