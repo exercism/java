@@ -35,7 +35,7 @@ exp.getDistanceTravelled();
 
 Please implement the `Comparable<T>` interface in the `ProductionRemoteControlCar` class. The default sort order for cars should be ascending order of victories.
 
-Implement the static `TestTrack.getRankedCars()` to return the cars passed is sorted in ascending order of number of victories.
+Implement the static `TestTrack.getRankedCars()` to return the cars passed in, sorted in ascending order of number of victories.
 
 ```java
 ProductionRemoteControlCar prc1 = new ProductionRemoteControlCar();
