@@ -15,73 +15,64 @@ public class ArmstrongNumbersTest {
 
     @Test
     public void zeroIsArmstrongNumber() {
-        int input = 0;
-
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isTrue();
+        assertThat(armstrongNumbers.isArmstrongNumber(0))
+                .isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void singleDigitsAreArmstrongNumbers() {
-        int input = 5;
-
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isTrue();
+        assertThat(armstrongNumbers.isArmstrongNumber(5))
+                .isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void noTwoDigitArmstrongNumbers() {
-        int input = 10;
-
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isFalse();
+        assertThat(armstrongNumbers.isArmstrongNumber(10))
+                .isFalse();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void threeDigitNumberIsArmstrongNumber() {
-        int input = 153;
-        
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isTrue();
+        assertThat(armstrongNumbers.isArmstrongNumber(153))
+                .isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void threeDigitNumberIsNotArmstrongNumber() {
-        int input = 100;
-        
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isFalse();
+        assertThat(armstrongNumbers.isArmstrongNumber(100))
+                .isFalse();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void fourDigitNumberIsArmstrongNumber() {
-        int input = 9474;
-        
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isTrue();
+        assertThat(armstrongNumbers.isArmstrongNumber(9474))
+                .isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void fourDigitNumberIsNotArmstrongNumber() {
-        int input = 9475;
-        
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isFalse();
+        assertThat(armstrongNumbers.isArmstrongNumber(9475))
+                .isFalse();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void sevenDigitNumberIsArmstrongNumber() {
-        int input = 9926315;
-        
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isTrue();
+        assertThat(armstrongNumbers.isArmstrongNumber(9926315))
+                .isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void sevenDigitNumberIsNotArmstrongNumber() {
-        int input = 9926314;
-        
-        assertThat(armstrongNumbers.isArmstrongNumber(input)).isFalse();
+        assertThat(armstrongNumbers.isArmstrongNumber(9926314))
+                .isFalse();
     }
 
 }

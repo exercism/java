@@ -7,73 +7,64 @@ public class AcronymTest {
 
     @Test
     public void basic() {
-        String phrase = "Portable Network Graphics";
-        String expected = "PNG";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("Portable Network Graphics").get())
+                .isEqualTo("PNG");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void lowercaseWords() {
-        String phrase = "Ruby on Rails";
-        String expected = "ROR";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("Ruby on Rails").get())
+                .isEqualTo("ROR");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void punctuation() {
-        String phrase = "First In, First Out";
-        String expected = "FIFO";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("First In, First Out").get())
+                .isEqualTo("FIFO");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void nonAcronymAllCapsWord() {
-        String phrase = "GNU Image Manipulation Program";
-        String expected = "GIMP";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("GNU Image Manipulation Program").get())
+                .isEqualTo("GIMP");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void punctuationWithoutWhitespace() {
-        String phrase = "Complementary metal-oxide semiconductor";
-        String expected = "CMOS";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("Complementary metal-oxide semiconductor").get())
+                .isEqualTo("CMOS");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void veryLongAbbreviation() {
-        String phrase = "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me";
-        String expected = "ROTFLSHTMDCOALM";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me").get())
+                .isEqualTo("ROTFLSHTMDCOALM");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void consecutiveDelimiters() {
-        String phrase = "Something - I made up from thin air";
-        String expected = "SIMUFTA";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("Something - I made up from thin air").get())
+                .isEqualTo("SIMUFTA");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void apostrophes() {
-        String phrase = "Halley's Comet";
-        String expected = "HC";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("Halley's Comet").get())
+                .isEqualTo("HC");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void underscoreEmphasis() {
-        String phrase = "The Road _Not_ Taken";
-        String expected = "TRNT";
-        assertThat(new Acronym(phrase).get()).isEqualTo(expected);
+        assertThat(new Acronym("The Road _Not_ Taken").get())
+                .isEqualTo("TRNT");
     }
 
 

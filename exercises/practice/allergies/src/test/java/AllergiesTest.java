@@ -1,10 +1,6 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AllergiesTest {
@@ -360,100 +356,95 @@ public class AllergiesTest {
     @Test
     public void listJustEggs() {
         Allergies allergies = new Allergies(1);
-        List<Allergen> expectedAllergens = Collections.singletonList(Allergen.EGGS);
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(Allergen.EGGS);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listJustPeanuts() {
         Allergies allergies = new Allergies(2);
-        List<Allergen> expectedAllergens = Collections.singletonList(Allergen.PEANUTS);
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(Allergen.PEANUTS);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listJustStrawberries() {
         Allergies allergies = new Allergies(8);
-        List<Allergen> expectedAllergens = Collections.singletonList(Allergen.STRAWBERRIES);
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(Allergen.STRAWBERRIES);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listEggsAndPeanuts() {
         Allergies allergies = new Allergies(3);
-        List<Allergen> expectedAllergens = Arrays.asList(
-                Allergen.EGGS,
-                Allergen.PEANUTS
-        );
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(
+                        Allergen.EGGS,
+                        Allergen.PEANUTS);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listoMoreThanEggsButNotPeanuts() {
         Allergies allergies = new Allergies(5);
-        List<Allergen> expectedAllergens = Arrays.asList(
-                Allergen.EGGS,
-                Allergen.SHELLFISH
-        );
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(
+                        Allergen.EGGS,
+                        Allergen.SHELLFISH);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listManyAllergies() {
         Allergies allergies = new Allergies(248);
-        List<Allergen> expectedAllergens = Arrays.asList(
-                Allergen.STRAWBERRIES,
-                Allergen.TOMATOES,
-                Allergen.CHOCOLATE,
-                Allergen.POLLEN,
-                Allergen.CATS
-        );
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(
+                        Allergen.STRAWBERRIES,
+                        Allergen.TOMATOES,
+                        Allergen.CHOCOLATE,
+                        Allergen.POLLEN,
+                        Allergen.CATS);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listEverything() {
         Allergies allergies = new Allergies(255);
-        List<Allergen> expectedAllergens = Arrays.asList(
-                Allergen.EGGS,
-                Allergen.PEANUTS,
-                Allergen.SHELLFISH,
-                Allergen.STRAWBERRIES,
-                Allergen.TOMATOES,
-                Allergen.CHOCOLATE,
-                Allergen.POLLEN,
-                Allergen.CATS
-        );
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(
+                        Allergen.EGGS,
+                        Allergen.PEANUTS,
+                        Allergen.SHELLFISH,
+                        Allergen.STRAWBERRIES,
+                        Allergen.TOMATOES,
+                        Allergen.CHOCOLATE,
+                        Allergen.POLLEN,
+                        Allergen.CATS);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void listNoAllergenScoreParts() {
         Allergies allergies = new Allergies(509);
-        List<Allergen> expectedAllergens = Arrays.asList(
-                Allergen.EGGS,
-                Allergen.SHELLFISH,
-                Allergen.STRAWBERRIES,
-                Allergen.TOMATOES,
-                Allergen.CHOCOLATE,
-                Allergen.POLLEN,
-                Allergen.CATS
-        );
 
-        assertThat(allergies.getList()).containsExactlyElementsOf(expectedAllergens);
+        assertThat(allergies.getList())
+                .containsExactly(
+                        Allergen.EGGS,
+                        Allergen.SHELLFISH,
+                        Allergen.STRAWBERRIES,
+                        Allergen.TOMATOES,
+                        Allergen.CHOCOLATE,
+                        Allergen.POLLEN,
+                        Allergen.CATS);
     }
 }
