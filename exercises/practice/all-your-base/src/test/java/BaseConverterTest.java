@@ -1,11 +1,8 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThrows;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Arrays;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThrows;
 
 public class BaseConverterTest {
 
@@ -13,16 +10,8 @@ public class BaseConverterTest {
     public void testSingleBitOneToDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1});
 
-        int[] expectedDigits = new int[]{1};
-        int[] actualDigits = baseConverter.convertToBase(10);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(10))
+                .containsExactly(1);
     }
 
     @Ignore("Remove to run test")
@@ -30,16 +19,8 @@ public class BaseConverterTest {
     public void testBinaryToSingleDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1});
 
-        int[] expectedDigits = new int[]{5};
-        int[] actualDigits = baseConverter.convertToBase(10);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(10))
+                .containsExactly(5);
     }
 
     @Ignore("Remove to run test")
@@ -47,16 +28,8 @@ public class BaseConverterTest {
     public void testSingleDecimalToBinary() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{5});
 
-        int[] expectedDigits = new int[]{1, 0, 1};
-        int[] actualDigits = baseConverter.convertToBase(2);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(2))
+                .containsExactly(1, 0, 1);
     }
 
     @Ignore("Remove to run test")
@@ -64,16 +37,8 @@ public class BaseConverterTest {
     public void testBinaryToMultipleDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
 
-        int[] expectedDigits = new int[]{4, 2};
-        int[] actualDigits = baseConverter.convertToBase(10);
-
-        assertArrayEquals(
-                String.format(
-                        "Expected digits: %s but found digits: %s",
-                        Arrays.toString(expectedDigits),
-                        Arrays.toString(actualDigits)),
-                expectedDigits,
-                actualDigits);
+        assertThat(baseConverter.convertToBase(10))
+                .containsExactly(4, 2);
     }
 
     @Ignore("Remove to run test")
@@ -81,16 +46,8 @@ public class BaseConverterTest {
     public void testDecimalToBinary() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{4, 2});
 
-        int[] expectedDigits = new int[]{1, 0, 1, 0, 1, 0};
-        int[] actualDigits = baseConverter.convertToBase(2);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(2))
+                .containsExactly(1, 0, 1, 0, 1, 0);
     }
 
     @Ignore("Remove to run test")
@@ -98,16 +55,8 @@ public class BaseConverterTest {
     public void testTrinaryToHexadecimal() {
         BaseConverter baseConverter = new BaseConverter(3, new int[]{1, 1, 2, 0});
 
-        int[] expectedDigits = new int[]{2, 10};
-        int[] actualDigits = baseConverter.convertToBase(16);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(16))
+                .containsExactly(2, 10);
     }
 
     @Ignore("Remove to run test")
@@ -115,16 +64,8 @@ public class BaseConverterTest {
     public void testHexadecimalToTrinary() {
         BaseConverter baseConverter = new BaseConverter(16, new int[]{2, 10});
 
-        int[] expectedDigits = new int[]{1, 1, 2, 0};
-        int[] actualDigits = baseConverter.convertToBase(3);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(3))
+                .containsExactly(1, 1, 2, 0);
     }
 
     @Ignore("Remove to run test")
@@ -132,16 +73,8 @@ public class BaseConverterTest {
     public void test15BitInteger() {
         BaseConverter baseConverter = new BaseConverter(97, new int[]{3, 46, 60});
 
-        int[] expectedDigits = new int[]{6, 10, 45};
-        int[] actualDigits = baseConverter.convertToBase(73);
-
-        assertArrayEquals(
-              String.format(
-                      "Expected digits: %s but found digits: %s",
-                      Arrays.toString(expectedDigits),
-                      Arrays.toString(actualDigits)),
-              expectedDigits,
-              actualDigits);
+        assertThat(baseConverter.convertToBase(73))
+                .containsExactly(6, 10, 45);
     }
 
     @Ignore("Remove to run test")
@@ -149,16 +82,8 @@ public class BaseConverterTest {
     public void testEmptyDigits() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{});
 
-        int[] expectedDigits = new int[]{0};
-        int[] actualDigits = baseConverter.convertToBase(10);
-
-        assertArrayEquals(
-            String.format(
-               "Expected digits: %s but found digits: %s",
-               Arrays.toString(expectedDigits),
-               Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(baseConverter.convertToBase(10))
+                .containsExactly(0);
     }
 
     @Ignore("Remove to run test")
@@ -166,16 +91,8 @@ public class BaseConverterTest {
     public void testSingleZero() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{0});
 
-        int[] expectedDigits = new int[]{0};
-        int[] actualDigits = baseConverter.convertToBase(2);
-
-        assertArrayEquals(
-            String.format(
-               "Expected digits: %s but found digits: %s",
-               Arrays.toString(expectedDigits),
-               Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(baseConverter.convertToBase(2))
+                .containsExactly(0);
     }
 
     @Ignore("Remove to run test")
@@ -183,16 +100,8 @@ public class BaseConverterTest {
     public void testMultipleZeros() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{0, 0, 0});
 
-        int[] expectedDigits = new int[]{0};
-        int[] actualDigits = baseConverter.convertToBase(2);
-
-        assertArrayEquals(
-            String.format(
-                "Expected digits: %s but found digits: %s",
-                Arrays.toString(expectedDigits),
-                Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(baseConverter.convertToBase(2))
+                .containsExactly(0);
     }
 
     @Ignore("Remove to run test")
@@ -200,16 +109,8 @@ public class BaseConverterTest {
     public void testLeadingZeros() {
         BaseConverter baseConverter = new BaseConverter(7, new int[]{0, 6, 0});
 
-        int[] expectedDigits = new int[]{4, 2};
-        int[] actualDigits = baseConverter.convertToBase(10);
-
-        assertArrayEquals(
-            String.format(
-                "Expected digits: %s but found digits: %s",
-                Arrays.toString(expectedDigits),
-                Arrays.toString(actualDigits)),
-            expectedDigits,
-            actualDigits);
+        assertThat(baseConverter.convertToBase(10))
+                .containsExactly(4, 2);
     }
 
     @Ignore("Remove to run test")
