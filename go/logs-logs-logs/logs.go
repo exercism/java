@@ -17,7 +17,7 @@ func Application(log string) string {
 	return "default"
 }
 
-// Replace replaces all occurances of old with new, returning the modified log
+// Replace replaces all occurrences of old with new, returning the modified log
 // to the caller.
 func Replace(log string, old, new rune) string {
 	return strings.ReplaceAll(log, string(old), string(new))

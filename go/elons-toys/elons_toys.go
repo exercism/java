@@ -59,3 +59,4 @@ func (car *Car) DisplayDistance() string {
 func (car *Car) DisplayBattery() string {
 	return fmt.Sprintf("Battery at %d%%", car.battery)
 }
+
