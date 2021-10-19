@@ -14,7 +14,7 @@ different specs, so the results from these benchmark tests may vary.
 
 ## Submitting your solution
 
-You can submit your solution using the `exercism submit savings_account.go` command.
+You can submit your solution using the `exercism submit interest_is_interesting.go` command.
 This command will upload your solution to the Exercism website and print the solution page's URL.
 
 It's possible to submit an incomplete solution which allows you to:

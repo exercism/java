@@ -21,7 +21,7 @@ type Person struct {
 }
 
 func (p Person) Greetings() string {
-	return fmt.Sprintf("Welcome %s !", s)
+	return fmt.Sprintf("Welcome %s !", p.Name)
 }
 
 p := Person{Name: "Bronson"}
@@ -103,14 +103,14 @@ speed := 5
 batteryDrain := 2
 car := NewCar(speed, batteryDrain)
 car.Drive()
-// Output: Car{speed: 5, batteryDrain: 2, battery: 98, distance: 5}
+// car is now Car{speed: 5, batteryDrain: 2, battery: 98, distance: 5}
 ```
 
 Note: If a car's battery is below its battery drain percentage, you can't drive the car anymore.
 
 ## 2. Display the distance driven
 
-Implement a `DisplayDistance` method on `Car` to return the distance as displayed on the LED display:
+Implement a `DisplayDistance` method on `Car` to return the distance as displayed on the LED display as a `string`:
 
 ```go
 speed := 5
@@ -123,7 +123,7 @@ car.DisplayDistance()
 
 ## 3. Display the battery percentage
 
-Implement the `DisplayBattery` method on `Car` to return the distance as displayed on the LED display:
+Implement the `DisplayBattery` method on `Car` to return the distance as displayed on the LED display as a `string`:
 
 ```go
 speed := 5
@@ -136,17 +136,16 @@ car.DisplayBattery()
 
 ## 4. Check if a remote control car can finish a race
 
-To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `CanFinish` function that takes a `Car` and a `Track` instance as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
+To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `CanFinish` method that takes a `trackDistance int` as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
 
 ```go
 speed := 5
 batteryDrain := 2
 car := NewCar(speed, batteryDrain)
 
-distance := 100
-raceTrack := NewTrack(distance)
+trackDistance := 100
 
-car.CanFinish(raceTrack)
+car.CanFinish(trackDistance)
 // Output: true
 ```
 
@@ -159,3 +158,4 @@ car.CanFinish(raceTrack)
 ### Contributed to by
 
 - @oanaOM
+- @mcastorina

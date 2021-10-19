@@ -49,7 +49,7 @@ i := int(y) // i has type int (ie. 11)
 ```
 ## Arithmetic operations on different types
 
-In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an arror.
+In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error.
 For example:
 
 ```go
@@ -103,7 +103,7 @@ if v := 2 * num; v > 10 {
 } else {
     fmt.Println(num)
 }
-// Output: 7
+// Output: 14
 ```
 
 > Note: any variables created in the initialization statement go out of scope after the end of the if statement.

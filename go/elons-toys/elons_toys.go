@@ -35,19 +35,16 @@ func CreateTrack(distance int) Track {
 // Drive drives the car one time. If there is not enough battry to drive on more time,
 // the car will not move but use the leftover battery.
 func (car *Car) Drive() {
-	if car.battery < car.batteryDrain {
-		return
+	if car.battery >= car.batteryDrain {
+		car.distance += car.speed
+		car.battery -= car.batteryDrain
 	}
-
-	car.distance += car.speed
-	car.battery -= car.batteryDrain
 
 }
 
 // CanFinish checks if a car is able to finish a certain track.
-func (car *Car) CanFinish(track Track) bool {
-	maxDistance := car.battery / car.batteryDrain * car.speed
-	return track.distance <= maxDistance
+func (car *Car) CanFinish(distance int) bool {
+	return distance <= (car.battery / car.batteryDrain * car.speed)
 }
 
 // DisplayDistance displays the distance the car is driven.
@@ -59,4 +56,3 @@ func (car *Car) DisplayDistance() string {
 func (car *Car) DisplayBattery() string {
 	return fmt.Sprintf("Battery at %d%%", car.battery)
 }
-
