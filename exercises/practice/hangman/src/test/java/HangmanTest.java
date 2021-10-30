@@ -51,7 +51,7 @@ public class HangmanTest {
 
         Output last = result.blockingLast();
         assertThat(last.discovered).isEqualTo("_e__e_");
-        assertThat(last.guess).isEqualTo(Collections.singleton("e"));
+        assertThat(last.guess).containsExactlyInAnyOrder("e");
         assertThat(last.misses).isEmpty();
         assertThat(last.parts).isEmpty();
         assertThat(last.status).isEqualTo(Status.PLAYING);
@@ -67,8 +67,8 @@ public class HangmanTest {
 
         assertThat(last.discovered).isEqualTo("______");
         assertThat(last.guess).isEmpty();
-        assertThat(last.misses).isEqualTo(Collections.singleton("a"));
-        assertThat(last.parts).isEqualTo(Collections.singletonList(Part.HEAD));
+        assertThat(last.misses).containsExactlyInAnyOrder("a");
+        assertThat(last.parts).containsExactlyInAnyOrder(Part.HEAD);
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
@@ -81,13 +81,9 @@ public class HangmanTest {
         Output last = result.blockingLast();
 
         assertThat(last.discovered).isEqualTo("se__e_");
-        assertThat(last.guess).isEqualTo(Set.of("e", "s"));
-        assertThat(last.misses).isEqualTo(Set.of("a", "o"));
-        assertThat(last.parts).isEqualTo(
-            Arrays.asList(
-                Part.HEAD,
-                Part.BODY)
-        );
+        assertThat(last.guess).containsExactlyInAnyOrder("e", "s");
+        assertThat(last.misses).containsExactlyInAnyOrder("a", "o");
+        assertThat(last.parts).containsExactlyInAnyOrder(Part.HEAD, Part.BODY);
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
@@ -100,7 +96,7 @@ public class HangmanTest {
         Output last = result.blockingLast();
 
         assertThat(last.discovered).isEqualTo("secret");
-        assertThat(last.guess).isEqualTo(Set.of("c", "e", "r", "s", "t"));
+        assertThat(last.guess).containsExactlyInAnyOrder("c", "e", "r", "s", "t");
         assertThat(last.status).isEqualTo(Status.WIN);
     }
 
@@ -113,16 +109,15 @@ public class HangmanTest {
         Output last = result.blockingLast();
 
         assertThat(last.discovered).isEqualTo("_ec_e_");
-        assertThat(last.misses).isEqualTo(Set.of("a", "b", "d", "f", "g", "h"));
+        assertThat(last.misses).containsExactlyInAnyOrder("a", "b", "d", "f", "g", "h");
         assertThat(last.status).isEqualTo(Status.LOSS);
-        assertThat(last.parts).isEqualTo(
-            Arrays.asList(
+        assertThat(last.parts).containsExactlyInAnyOrder(
                 Part.HEAD,
                 Part.BODY,
                 Part.LEFT_ARM,
                 Part.RIGHT_ARM,
                 Part.LEFT_LEG,
-                Part.RIGHT_LEG)
+                Part.RIGHT_LEG
         );
     }
 
@@ -159,14 +154,14 @@ public class HangmanTest {
 
             Output first = results.get(0);
             assertThat(first.discovered).isEqualTo("secret");
-            assertThat(first.guess).isEqualTo(Set.of("s", "e", "c", "r", "t"));
-            assertThat(first.misses).isEqualTo(Set.of("a", "o", "g"));
+            assertThat(first.guess).containsExactlyInAnyOrder("s", "e", "c", "r", "t");
+            assertThat(first.misses).containsExactlyInAnyOrder("a", "o", "g");
             assertThat(first.status).isEqualTo(Status.WIN);
 
             Output second = results.get(1);
             assertThat(second.discovered).isEqualTo("abba");
-            assertThat(second.guess).isEqualTo(Set.of("a", "b"));
-            assertThat(second.misses).isEqualTo(Set.of("e", "s"));
+            assertThat(second.guess).containsExactlyInAnyOrder("a", "b");
+            assertThat(second.misses).containsExactlyInAnyOrder("e", "s");
             assertThat(first.status).isEqualTo(Status.WIN);
         } finally {
             subscription.dispose();
