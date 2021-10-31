@@ -2,7 +2,7 @@ import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.Before;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HouseTest {
 
@@ -15,115 +15,92 @@ public class HouseTest {
 
     @Test
     public void verseOne() {
-        String expected = "This is the house that Jack built.";
-        int verse = 1;
-
-        assertEquals(expected, house.verse(verse));
+        assertThat(house.verse(1))
+            .isEqualTo("This is the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseTwo() {
-        String expected =
-                "This is the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 2;
-
-        assertEquals(expected, house.verse(verse));
+        assertThat(house.verse(2))
+            .isEqualTo("This is the malt " +
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseThree() {
-        String expected =
-                "This is the rat " +
+        assertThat(house.verse(3))
+            .isEqualTo("This is the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 3;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseFour() {
-        String expected =
-                "This is the cat " +
+        assertThat(house.verse(4))
+            .isEqualTo("This is the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 4;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseFive() {
-        String expected =
-                "This is the dog " +
+        assertThat(house.verse(5))
+            .isEqualTo("This is the dog " +
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 5;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseSix() {
-        String expected =
-                "This is the cow with the crumpled horn " +
+        assertThat(house.verse(6))
+            .isEqualTo("This is the cow with the crumpled horn " +
                 "that tossed the dog " +
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 6;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseSeven() {
-        String expected =
-                "This is the maiden all forlorn " +
+        assertThat(house.verse(7))
+            .isEqualTo("This is the maiden all forlorn " +
                 "that milked the cow with the crumpled horn " +
                 "that tossed the dog " +
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 7;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseEight() {
-        String expected =
-                "This is the man all tattered and torn " +
+        assertThat(house.verse(8))
+            .isEqualTo("This is the man all tattered and torn " +
                 "that kissed the maiden all forlorn " +
                 "that milked the cow with the crumpled horn " +
                 "that tossed the dog " +
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 8;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verseNine() {
-        String expected =
-                "This is the priest all shaven and shorn " +
+        assertThat(house.verse(9))
+            .isEqualTo("This is the priest all shaven and shorn " +
                 "that married the man all tattered and torn " +
                 "that kissed the maiden all forlorn " +
                 "that milked the cow with the crumpled horn " +
@@ -131,17 +108,14 @@ public class HouseTest {
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 9;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verse10() {
-        String expected =
-                "This is the rooster that crowed in the morn " +
+        assertThat(house.verse(10))
+            .isEqualTo("This is the rooster that crowed in the morn " +
                 "that woke the priest all shaven and shorn " +
                 "that married the man all tattered and torn " +
                 "that kissed the maiden all forlorn " +
@@ -150,17 +124,14 @@ public class HouseTest {
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 10;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verse11() {
-        String expected =
-                "This is the farmer sowing his corn " +
+        assertThat(house.verse(11))
+            .isEqualTo("This is the farmer sowing his corn " +
                 "that kept the rooster that crowed in the morn " +
                 "that woke the priest all shaven and shorn " +
                 "that married the man all tattered and torn " +
@@ -170,17 +141,14 @@ public class HouseTest {
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 11;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void verse12() {
-        String expected =
-                "This is the horse and the hound and the horn " +
+        assertThat(house.verse(12))
+            .isEqualTo("This is the horse and the hound and the horn " +
                 "that belonged to the farmer sowing his corn " +
                 "that kept the rooster that crowed in the morn " +
                 "that woke the priest all shaven and shorn " +
@@ -191,17 +159,17 @@ public class HouseTest {
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-        int verse = 12;
-
-        assertEquals(expected, house.verse(verse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void multipleVerses() {
-        String expected =
-                "This is the cat " +
+        int startVerse = 4;
+        int endVerse = 8;
+
+        assertThat(house.verses(startVerse, endVerse))
+            .isEqualTo("This is the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
                 "that lay in the house that Jack built.\n" +
@@ -230,97 +198,91 @@ public class HouseTest {
                 "that worried the cat " +
                 "that killed the rat " +
                 "that ate the malt " +
-                "that lay in the house that Jack built.";
-
-        int startVerse = 4;
-        int endVerse = 8;
-
-        assertEquals(expected, house.verses(startVerse, endVerse));
+                "that lay in the house that Jack built.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void wholeRhyme() {
-        String expected =
+        assertThat(house.sing())
+            .isEqualTo(
                 "This is the house that Jack built.\n" +
-                "This is the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the maiden all forlorn " +
-                "that milked the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the man all tattered and torn " +
-                "that kissed the maiden all forlorn " +
-                "that milked the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the priest all shaven and shorn " +
-                "that married the man all tattered and torn " +
-                "that kissed the maiden all forlorn " +
-                "that milked the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the rooster that crowed in the morn " +
-                "that woke the priest all shaven and shorn " +
-                "that married the man all tattered and torn " +
-                "that kissed the maiden all forlorn " +
-                "that milked the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the farmer sowing his corn " +
-                "that kept the rooster that crowed in the morn " +
-                "that woke the priest all shaven and shorn " +
-                "that married the man all tattered and torn " +
-                "that kissed the maiden all forlorn " +
-                "that milked the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.\n" +
-                "This is the horse and the hound and the horn " +
-                "that belonged to the farmer sowing his corn " +
-                "that kept the rooster that crowed in the morn " +
-                "that woke the priest all shaven and shorn " +
-                "that married the man all tattered and torn " +
-                "that kissed the maiden all forlorn " +
-                "that milked the cow with the crumpled horn " +
-                "that tossed the dog " +
-                "that worried the cat " +
-                "that killed the rat " +
-                "that ate the malt " +
-                "that lay in the house that Jack built.";
-
-        assertEquals(expected, house.sing());
+                    "This is the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the maiden all forlorn " +
+                    "that milked the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the man all tattered and torn " +
+                    "that kissed the maiden all forlorn " +
+                    "that milked the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the priest all shaven and shorn " +
+                    "that married the man all tattered and torn " +
+                    "that kissed the maiden all forlorn " +
+                    "that milked the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the rooster that crowed in the morn " +
+                    "that woke the priest all shaven and shorn " +
+                    "that married the man all tattered and torn " +
+                    "that kissed the maiden all forlorn " +
+                    "that milked the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the farmer sowing his corn " +
+                    "that kept the rooster that crowed in the morn " +
+                    "that woke the priest all shaven and shorn " +
+                    "that married the man all tattered and torn " +
+                    "that kissed the maiden all forlorn " +
+                    "that milked the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.\n" +
+                    "This is the horse and the hound and the horn " +
+                    "that belonged to the farmer sowing his corn " +
+                    "that kept the rooster that crowed in the morn " +
+                    "that woke the priest all shaven and shorn " +
+                    "that married the man all tattered and torn " +
+                    "that kissed the maiden all forlorn " +
+                    "that milked the cow with the crumpled horn " +
+                    "that tossed the dog " +
+                    "that worried the cat " +
+                    "that killed the rat " +
+                    "that ate the malt " +
+                    "that lay in the house that Jack built.");
     }
 }

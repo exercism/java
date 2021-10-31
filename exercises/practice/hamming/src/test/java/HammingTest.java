@@ -1,5 +1,4 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
@@ -9,31 +8,31 @@ public class HammingTest {
 
     @Test
     public void testNoDistanceBetweenEmptyStrands() {
-        assertEquals(0, new Hamming("", "").getHammingDistance());
+        assertThat(new Hamming("", "").getHammingDistance()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testNoDistanceBetweenShortIdenticalStrands() {
-        assertEquals(0, new Hamming("A", "A").getHammingDistance());
+        assertThat(new Hamming("A", "A").getHammingDistance()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCompleteDistanceInSingleLetterDifferentStrands() {
-        assertEquals(1, new Hamming("G", "T").getHammingDistance());
+        assertThat(new Hamming("G", "T").getHammingDistance()).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDistanceInLongIdenticalStrands() {
-        assertEquals(0, new Hamming("GGACTGAAATCTG", "GGACTGAAATCTG").getHammingDistance());
+        assertThat(new Hamming("GGACTGAAATCTG", "GGACTGAAATCTG").getHammingDistance()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDistanceInLongDifferentStrands() {
-        assertEquals(9, new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance());
+        assertThat(new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance()).isEqualTo(9);
     }
 
     @Ignore("Remove to run test")
