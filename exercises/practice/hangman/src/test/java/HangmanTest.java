@@ -51,7 +51,7 @@ public class HangmanTest {
 
         Output last = result.blockingLast();
         assertThat(last.discovered).isEqualTo("_e__e_");
-        assertThat(last.guess).containsExactlyInAnyOrder("e");
+        assertThat(last.guess).containsExactly("e");
         assertThat(last.misses).isEmpty();
         assertThat(last.parts).isEmpty();
         assertThat(last.status).isEqualTo(Status.PLAYING);
@@ -67,8 +67,8 @@ public class HangmanTest {
 
         assertThat(last.discovered).isEqualTo("______");
         assertThat(last.guess).isEmpty();
-        assertThat(last.misses).containsExactlyInAnyOrder("a");
-        assertThat(last.parts).containsExactlyInAnyOrder(Part.HEAD);
+        assertThat(last.misses).containsExactly("a");
+        assertThat(last.parts).containsExactly(Part.HEAD);
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
