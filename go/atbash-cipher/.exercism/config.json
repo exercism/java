@@ -1,0 +1,1 @@
+{"blurb":"Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.","authors":["zilkey"],"files":{"solution":["atbash_cipher.go"],"test":["atbash_cipher_test.go"],"example":[".meta/example.go"]},"source":"Wikipedia","source_url":"http://en.wikipedia.org/wiki/Atbash"}
