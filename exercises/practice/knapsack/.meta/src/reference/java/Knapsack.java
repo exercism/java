@@ -1,13 +1,13 @@
-import java.util.ArrayList;
+import java.util.List;
 
 class Knapsack {
 
-    int maximumValue(int maximumWeight, ArrayList<Item> items) {
+    int maximumValue(int maximumWeight, List<Item> items) {
         return maximumValueHelperBottomUp(maximumWeight, items);
     }
 
     private int maximumValueHelperBottomUp(
-        int maximumWeight, ArrayList<Item> items) {
+        int maximumWeight, List<Item> items) {
         int[][] knapsack = new int[items.size() + 1][maximumWeight + 1]; 
         for (int item = 0; item <= items.size(); item++) {
             for (int weight = 0; weight <= maximumWeight; weight++) {
