@@ -24,14 +24,6 @@ public abstract class ReflectionProxy {
     }
 
     /**
-     * The default constructor, for when you have already an instance of the target class
-     * @param target An instance of the target class
-     */
-    protected ReflectionProxy(Object target) {
-        this.target = target;
-    }
-
-    /**
      * Abstract method that defines the fully qualified name of the target class
      * @return The fully qualified name of the target class
      */
@@ -173,7 +165,15 @@ public abstract class ReflectionProxy {
     }
 
 
-    //region Unused - Left for future evaluation
+    //region Unused
+
+    /**
+     * The default constructor, for when you have already an instance of the target class
+     * @param target An instance of the target class
+     */
+    protected ReflectionProxy(Object target) {
+        this.target = target;
+    }
 
     /**
      * Checks if the target class exists
