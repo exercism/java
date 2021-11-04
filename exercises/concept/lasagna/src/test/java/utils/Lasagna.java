@@ -11,7 +11,7 @@ public class Lasagna extends ReflectionProxy {
         try {
             return invokeMethod("expectedMinutesInOven", new Class[]{});
         } catch (Exception e) {
-            return 0;
+            throw new UnsupportedOperationException("Please implement the expectedMinutesInOven() method");
         }
     }
 
@@ -19,7 +19,7 @@ public class Lasagna extends ReflectionProxy {
         try {
             return invokeMethod("remainingMinutesInOven", new Class[]{int.class}, actualMinutes);
         } catch (Exception e) {
-            return 0;
+            throw new UnsupportedOperationException("Please implement the remainingMinutesInOven(int) method");
         }
     }
 
@@ -27,7 +27,7 @@ public class Lasagna extends ReflectionProxy {
         try {
             return invokeMethod("preparationTimeInMinutes", new Class[]{int.class}, amountLayers);
         } catch (Exception e) {
-            return 0;
+            throw new UnsupportedOperationException("Please implement the preparationTimeInMinutes(int) method");
         }
     }
 
@@ -35,7 +35,7 @@ public class Lasagna extends ReflectionProxy {
         try {
             return invokeMethod("totalTimeInMinutes", new Class[]{int.class, int.class}, amountLayers, actualMinutes);
         } catch (Exception e) {
-            return 0;
+            throw new UnsupportedOperationException("Please implement the totalTimeInMinutes(int, int) method");
         }
     }
 }

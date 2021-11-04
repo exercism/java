@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import utils.Lasagna;
 
@@ -19,11 +20,13 @@ public class LasagnaTest {
                 .isTrue();
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void expected_minutes_in_oven() {
         assertThat(new Lasagna().expectedMinutesInOven()).isEqualTo(40);
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void implemented_remaining_minutes_in_oven() {
         assertThat(new Lasagna().hasMethod("remainingMinutesInOven", int.class))
@@ -37,11 +40,13 @@ public class LasagnaTest {
                 .isTrue();
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void remaining_minutes_in_oven() {
         assertThat(new Lasagna().remainingMinutesInOven(25)).isEqualTo(15);
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void implemented_preparation_time_in_minutes() {
         assertThat(new Lasagna().hasMethod("preparationTimeInMinutes", int.class))
@@ -55,16 +60,19 @@ public class LasagnaTest {
                 .isTrue();
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void preparation_time_in_minutes_for_one_layer() {
         assertThat(new Lasagna().preparationTimeInMinutes(1)).isEqualTo(2);
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void preparation_time_in_minutes_for_multiple_layers() {
         assertThat(new Lasagna().preparationTimeInMinutes(4)).isEqualTo(8);
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void implemented_total_time_in_minutes() {
         assertThat(new Lasagna().hasMethod("totalTimeInMinutes", int.class, int.class))
@@ -78,11 +86,13 @@ public class LasagnaTest {
                 .isTrue();
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void total_time_in_minutes_for_one_layer() {
         assertThat(new Lasagna().totalTimeInMinutes(1, 30)).isEqualTo(32);
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void total_time_in_minutes_for_multiple_layers() {
         assertThat(new Lasagna().totalTimeInMinutes(4, 8)).isEqualTo(16);

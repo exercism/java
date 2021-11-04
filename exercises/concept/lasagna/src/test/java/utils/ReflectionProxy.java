@@ -1,6 +1,10 @@
 package utils;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.ParameterizedType;
 
 import static java.lang.Class.forName;
 
@@ -9,7 +13,7 @@ public abstract class ReflectionProxy {
     /**
      * An instance of the target class (if found)
      */
-    private Object target;
+    private final Object target;
 
     /**
      * A constructor to instantiate the target class with parameters
@@ -23,7 +27,7 @@ public abstract class ReflectionProxy {
      * The default constructor, for when you have already an instance of the target class
      * @param target An instance of the target class
      */
-    public ReflectionProxy(Object target) {
+    protected ReflectionProxy(Object target) {
         this.target = target;
     }
 
@@ -230,7 +234,7 @@ public abstract class ReflectionProxy {
             return false;
         }
         try {
-            Constructor c = targetClass.getDeclaredConstructor(parameterTypes);
+            Constructor<?> c = targetClass.getDeclaredConstructor(parameterTypes);
             return c != null;
         } catch (NoSuchMethodException e) {
             return false;
@@ -248,7 +252,7 @@ public abstract class ReflectionProxy {
             return false;
         }
         try {
-            Constructor c = targetClass.getDeclaredConstructor(parameterTypes);
+            Constructor<?> c = targetClass.getDeclaredConstructor(parameterTypes);
             return Modifier.isPublic(c.getModifiers());
         } catch (NoSuchMethodException e) {
             return false;
@@ -367,7 +371,7 @@ public abstract class ReflectionProxy {
     private Constructor<?>[] getAllConstructors() {
         Class<?> targetClass = getTargetClass();
         if(targetClass == null) {
-            return new Constructor[]{};
+            return new Constructor<?>[]{};
         }
         return targetClass.getConstructors();
     }
@@ -382,7 +386,7 @@ public abstract class ReflectionProxy {
         if (targetClass == null) {
             return null;
         }
-        Constructor[] constructors = getAllConstructors();
+        Constructor<?>[] constructors = getAllConstructors();
         for (Constructor<?> c : constructors) {
             if (c.getParameterCount() == args.length) {
                 try {
