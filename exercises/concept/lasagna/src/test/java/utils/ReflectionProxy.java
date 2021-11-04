@@ -19,7 +19,7 @@ public abstract class ReflectionProxy {
      * A constructor to instantiate the target class with parameters
      * @param args An array of parameters matching the constructor from the target class
      */
-    public ReflectionProxy(Object... args) {
+    protected ReflectionProxy(Object... args) {
         this.target = instantiateTarget(args);
     }
 
