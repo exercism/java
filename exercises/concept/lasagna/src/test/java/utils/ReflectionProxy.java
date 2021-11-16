@@ -158,7 +158,7 @@ public abstract class ReflectionProxy {
      */
     private Constructor<?>[] getAllConstructors() {
         Class<?> targetClass = getTargetClass();
-        if(targetClass == null) {
+        if (targetClass == null) {
             return new Constructor<?>[]{};
         }
         return targetClass.getConstructors();
@@ -238,16 +238,16 @@ public abstract class ReflectionProxy {
         }
         try {
             Field f = targetClass.getDeclaredField(name);
-            if(!f.getType().equals(type)) {
+            if (!f.getType().equals(type)) {
                 return false;
             }
-            if(parameterizedType == null) {
+            if (parameterizedType == null) {
                 return true;
             }
-            if(! (f.getGenericType() instanceof ParameterizedType)) {
+            if (!(f.getGenericType() instanceof ParameterizedType)) {
                 return false;
             }
-            ParameterizedType pType = (ParameterizedType)f.getGenericType();
+            ParameterizedType pType = (ParameterizedType) f.getGenericType();
             return pType.getActualTypeArguments()[0].equals(parameterizedType);
 
         } catch (NoSuchFieldException e) {
@@ -281,23 +281,24 @@ public abstract class ReflectionProxy {
      * @param parameterTypes A list of method parameter types
      * @return True if the method returns the correct parameterized collection, false otherwise
      */
-    public boolean isMethodReturnType(Class<?> returnType, Class<?> parameterizedType, String name, Class<?>... parameterTypes) {
+    public boolean isMethodReturnType(Class<?> returnType, Class<?> parameterizedType,
+                                      String name, Class<?>... parameterTypes) {
         Class<?> targetClass = getTargetClass();
         if (targetClass == null || name == null) {
             return false;
         }
         try {
             Method m = targetClass.getDeclaredMethod(name, parameterTypes);
-            if(!m.getReturnType().equals(returnType)) {
+            if (!m.getReturnType().equals(returnType)) {
                 return false;
             }
-            if(parameterizedType == null) {
+            if (parameterizedType == null) {
                 return true;
             }
-            if(! (m.getGenericReturnType() instanceof ParameterizedType)) {
+            if (!(m.getGenericReturnType() instanceof ParameterizedType)) {
                 return false;
             }
-            ParameterizedType pType = (ParameterizedType)m.getGenericReturnType();
+            ParameterizedType pType = (ParameterizedType) m.getGenericReturnType();
             return pType.getActualTypeArguments()[0].equals(parameterizedType);
         } catch (NoSuchMethodException e) {
             return false;
@@ -352,7 +353,7 @@ public abstract class ReflectionProxy {
         try {
             Method method = target.getClass().getMethod("equals", Object.class);
             method.setAccessible(true);
-            return (boolean) method.invoke(target, ((ReflectionProxy)obj).getTarget());
+            return (boolean) method.invoke(target, ((ReflectionProxy) obj).getTarget());
         } catch (Exception e) {
             return false;
         }
