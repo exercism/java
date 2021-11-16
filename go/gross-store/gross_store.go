@@ -25,7 +25,7 @@ func AddItem(bill map[string]int, units map[string]int, item string, unit string
 		return false
 	}
 
-	bill[item] = units[unit]
+	bill[item] += units[unit]
 	return true
 }
 

@@ -4,15 +4,6 @@ import (
 	"testing"
 )
 
-// NewCar creates a new car with given specifications.
-func NewCar(speed, batteryDrain int) *Car {
-	return &Car{
-		speed:        speed,
-		batteryDrain: batteryDrain,
-		battery:      100,
-	}
-}
-
 func TestDrive(t *testing.T) {
 	tests := []struct {
 		name     string
@@ -32,6 +23,21 @@ func TestDrive(t *testing.T) {
 				batteryDrain: 2,
 				battery:      98,
 				distance:     5,
+			},
+		},
+		{
+			name: "Drive when battery percentage is below battery drain",
+			car: Car{
+				speed:        5,
+				batteryDrain: 7,
+				battery:      3,
+				distance:     0,
+			},
+			expected: Car{
+				speed:        5,
+				batteryDrain: 7,
+				battery:      3,
+				distance:     0,
 			},
 		},
 	}

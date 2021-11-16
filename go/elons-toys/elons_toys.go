@@ -2,15 +2,6 @@ package elon
 
 import "fmt"
 
-// Car implements a remote controlled car.
-type Car struct {
-	speed        int
-	batteryDrain int
-
-	battery  int
-	distance int
-}
-
 // Track implements a race track.
 type Track struct {
 	distance int

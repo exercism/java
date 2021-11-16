@@ -1,56 +1,44 @@
 package tree
 
-import (
-	"errors"
-	"sort"
-)
-
+// Record is a struct containing int fields ID and Parent
 type Record struct {
 	ID     int
 	Parent int
 }
+
+// Node is a struct containing int field ID and []*Node field Children.
 type Node struct {
 	ID       int
 	Children []*Node
 }
 
-func ValidateRecords(records []Record) error {
-	sort.Slice(records, func(i, j int) bool {
-		return records[i].ID < records[j].ID
-	})
-	if records[0].ID != 0 {
-		return errors.New("no root node")
-	}
-	prev := -1
-	for _, rec := range records {
-		if rec.ID-1 != prev {
-			return errors.New("non consecutive IDS")
-		}
-		if rec.ID < rec.Parent {
-			return errors.New("rec.ID < rec.Parent")
-		}
-		if rec.ID == rec.Parent && rec.ID != 0 {
-			return errors.New("direct cycle")
-		}
-		prev = rec.ID
-	}
-	return nil
-}
 func Build(records []Record) (*Node, error) {
-	if len(records) == 0 {
-		return nil, nil
-	}
-	if err := ValidateRecords(records); err != nil {
-		return nil, err
-	}
-	nodes := make(map[int]*Node)
-	for _, rec := range records {
-		nodes[rec.ID] = &Node{ID: rec.ID}
-		if rec.ID == rec.Parent {
-			continue
+	var root *Node
+	for _, v := range records {
+		if v.ID == v.Parent {
+			root = &Node{ID: v.ID}
+			break
 		}
-		pnode := nodes[rec.Parent]
-		pnode.Children = append(pnode.Children, nodes[rec.ID])
 	}
-	return nodes[0], nil
+	if root == nil {
+		return root, nil
+	}
+	for _, v := range records {
+		var n *Node
+		if v.ID == root.ID {
+			n = root
+		} else {
+			n = &Node{ID: v.ID}
+		}
+		for _, v1 := range records {
+			if v == v1 {
+				continue
+			}
+			child := &Node{ID: v1.ID}
+			if v1.Parent == v.ID {
+				n.Children = append(n.Children, child)
+			}
+		}
+	}
+	return root, nil
 }
