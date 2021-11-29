@@ -26,12 +26,12 @@ birdCount.getToday();
 
 ## 3. Increment today's count
 
-Implement the `BirdWatcher.incrementDayCount()` method to increment today's count:
+Implement the `BirdWatcher.incrementTodaysCount()` method to increment today's count:
 
 ```java
 int[] birdsPerDay = { 2, 5, 0, 7, 4, 1 };
 BirdWatcher birdCount = new BirdWatcher(birdsPerDay);
-birdCount.incrementDayCount();
+birdCount.incrementTodaysCount();
 birdCount.getToday();
 // => 2
 ```
