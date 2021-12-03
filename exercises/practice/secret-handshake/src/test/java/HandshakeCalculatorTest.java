@@ -1,130 +1,100 @@
 import org.junit.Ignore;
-import org.junit.Before;
 import org.junit.Test;
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
-import static java.util.Collections.singletonList;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HandshakeCalculatorTest {
 
-    private HandshakeCalculator handshakeCalculator;
-
-    @Before
-    public void setUp() {
-        handshakeCalculator = new HandshakeCalculator();
-    }
+    private final HandshakeCalculator handshakeCalculator = new HandshakeCalculator();
 
     @Test
     public void testThatInput1YieldsAWink() {
-        assertEquals(
-                singletonList(Signal.WINK),
-                handshakeCalculator.calculateHandshake(1));
+        assertThat(handshakeCalculator.calculateHandshake(1)).containsExactly(Signal.WINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatInput2YieldsADoubleBlink() {
-        assertEquals(
-                singletonList(Signal.DOUBLE_BLINK),
-                handshakeCalculator.calculateHandshake(2));
+        assertThat(handshakeCalculator.calculateHandshake(2)).containsExactly(Signal.DOUBLE_BLINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatInput4YieldsACloseYourEyes() {
-        assertEquals(
-                singletonList(Signal.CLOSE_YOUR_EYES),
-                handshakeCalculator.calculateHandshake(4));
+        assertThat(handshakeCalculator.calculateHandshake(4)).containsExactly(Signal.CLOSE_YOUR_EYES);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatInput8YieldsAJump() {
-        assertEquals(
-                singletonList(Signal.JUMP),
-               handshakeCalculator.calculateHandshake(8));
+        assertThat(handshakeCalculator.calculateHandshake(8)).containsExactly(Signal.JUMP);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAnInputThatYieldsTwoActions() {
-        assertEquals(
-                asList(Signal.WINK, Signal.DOUBLE_BLINK),
-                handshakeCalculator.calculateHandshake(3));
+        assertThat(handshakeCalculator.calculateHandshake(3))
+                .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAnInputThatYieldsTwoReversedActions() {
-        assertEquals(
-                asList(Signal.DOUBLE_BLINK, Signal.WINK),
-               handshakeCalculator.calculateHandshake(19));
+        assertThat(handshakeCalculator.calculateHandshake(19))
+                .containsExactly(Signal.DOUBLE_BLINK, Signal.WINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testReversingASingleActionYieldsTheSameAction() {
-        assertEquals(
-                singletonList(Signal.JUMP),
-                handshakeCalculator.calculateHandshake(24));
+        assertThat(handshakeCalculator.calculateHandshake(24)).containsExactly(Signal.JUMP);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testReversingNoActionsYieldsNoActions() {
-        assertEquals(
-                emptyList(),
-                handshakeCalculator.calculateHandshake(16));
+        assertThat(handshakeCalculator.calculateHandshake(16)).isEmpty();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInputThatYieldsAllActions() {
-        assertEquals(
-                asList(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP),
-                handshakeCalculator.calculateHandshake(15));
+        assertThat(handshakeCalculator.calculateHandshake(15))
+                .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInputThatYieldsAllActionsReversed() {
-        assertEquals(
-                asList(Signal.JUMP, Signal.CLOSE_YOUR_EYES, Signal.DOUBLE_BLINK, Signal.WINK),
-                handshakeCalculator.calculateHandshake(31));
+        assertThat(handshakeCalculator.calculateHandshake(31))
+                .containsExactly(Signal.JUMP, Signal.CLOSE_YOUR_EYES, Signal.DOUBLE_BLINK, Signal.WINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatInput0YieldsNoActions() {
-        assertEquals(
-                emptyList(),
-                handshakeCalculator.calculateHandshake(0));
+        assertThat(handshakeCalculator.calculateHandshake(0)).isEmpty();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatHandlesMoreThanFiveBinaryPlacesWithReversal() {
-        assertEquals(
-                asList(Signal.DOUBLE_BLINK, Signal.WINK),
-                handshakeCalculator.calculateHandshake(51));
+        assertThat(handshakeCalculator.calculateHandshake(51))
+                .containsExactly(Signal.DOUBLE_BLINK, Signal.WINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatHandlesMoreThanFiveBinaryPlacesWithoutReversal() {
-        assertEquals(
-                asList(Signal.WINK, Signal.DOUBLE_BLINK),
-                handshakeCalculator.calculateHandshake(35));
+        assertThat(handshakeCalculator.calculateHandshake(35))
+                .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInputThatYieldsAllActionsFromMoreThanFiveBinaryPlaces() {
-        assertEquals(
-                asList(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP),
-                handshakeCalculator.calculateHandshake(111));
+        assertThat(handshakeCalculator.calculateHandshake(111))
+                .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP);
     }
 
 }
