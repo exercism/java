@@ -42,7 +42,7 @@ public class RobotTest {
     @Test
     public void robotNamesAreUnique() {
         Set<String> robotNames = new HashSet<>();
-        Integer sampleSize = 5000;
+        int sampleSize = 5000;
         for (int i = 0; i < sampleSize; i++) {
             robotNames.add(new Robot().getName());
         }
