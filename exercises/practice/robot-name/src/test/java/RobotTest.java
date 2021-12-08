@@ -41,12 +41,12 @@ public class RobotTest {
     @Ignore("Remove to run test")
     @Test
     public void robotNamesAreUnique() {
-    	Set<String> robotNames = new HashSet<>();
-    	Integer sampleSize = 5000;
-    	for (int i = 0; i < sampleSize; i++) {
-    	    robotNames.add(new Robot().getName());
-    	}
-    	assertThat(robotNames.size()).isEqualTo(sampleSize);
+        Set<String> robotNames = new HashSet<>();
+        Integer sampleSize = 5000;
+        for (int i = 0; i < sampleSize; i++) {
+            robotNames.add(new Robot().getName());
+        }
+        assertThat(robotNames.size()).isEqualTo(sampleSize);
     }
 
     private static void assertIsValidName(String name) {
