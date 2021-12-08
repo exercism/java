@@ -16,7 +16,7 @@ public class Robot {
 
     private void assignNewName() {
         String newName = String.format("%s%d", prefix(), suffix());
-        if(nameLog.add(newName)) {
+        if (nameLog.add(newName)) {
         	this.name = newName;
         } else {
         	assignNewName();
