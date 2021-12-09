@@ -1,8 +1,11 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
-import org.junit.Ignore;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class RobotTest {
 
@@ -33,6 +36,17 @@ public class RobotTest {
         final String name2 = robot.getName();
         assertThat(name).isNotEqualTo(name2);
         assertIsValidName(name2);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void robotNamesAreUnique() {
+        Set<String> robotNames = new HashSet<>();
+        int sampleSize = 5000;
+        for (int i = 0; i < sampleSize; i++) {
+            robotNames.add(new Robot().getName());
+        }
+        assertThat(robotNames).hasSize(sampleSize);
     }
 
     private static void assertIsValidName(String name) {

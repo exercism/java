@@ -1,10 +1,13 @@
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class Robot {
 
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private String name;
     private final Random random;
+    private static Set<String> nameLog = new HashSet<>();
 
     public Robot() {
         random = new Random();
@@ -12,7 +15,11 @@ public class Robot {
     }
 
     private void assignNewName() {
-        name = String.format("%s%d", prefix(), suffix());
+        String newName = String.format("%s%d", prefix(), suffix());
+        while (!nameLog.add(newName)) {
+            newName = String.format("%s%d", prefix(), suffix());
+        }
+        this.name = newName;
     }
 
     public String getName() {
