@@ -46,7 +46,7 @@ public class RobotTest {
         for (int i = 0; i < sampleSize; i++) {
             robotNames.add(new Robot().getName());
         }
-        assertThat(robotNames.size()).isEqualTo(sampleSize);
+        assertThat(robotNames).hasSize(sampleSize);
     }
 
     private static void assertIsValidName(String name) {
