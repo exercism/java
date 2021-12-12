@@ -21,7 +21,7 @@ This guide covers contributing to the Java track.  If you are new to the exercis
 
 If, at any point, you're having any trouble, pop in the [Gitter exercism/java room](https://gitter.im/exercism/java) or the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
 
-For general guidelines about contributing to Exercism see the [Exercism contributing guide](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks).
+For general guidelines about contributing to Exercism see the [Exercism contributing guide](https://exercism.org/docs/building).
 
 ## Before Making Your Pull Request
 
