@@ -43,7 +43,7 @@ int secondElement = twoInts[1];
 
 Accessing an index that is outside of the valid indexes for the array results in an `IndexOutOfBoundsException`.
 
-Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Array` class (typically only used in generic code).
+Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Arrays` class (typically only used in generic code).
 The most commonly used property for arrays is its length which can be accessed like this:
 
 ```java
