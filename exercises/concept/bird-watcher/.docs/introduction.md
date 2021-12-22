@@ -21,7 +21,7 @@ int[] threeIntsV1 = new int[] { 4, 9, 7 };
 int[] threeIntsV2 = { 4, 9, 7 };
 ```
 
-Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Array` class.
+Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Arrays` class.
 
 The fact that an array is also a _collection_ means that, besides accessing values by index, you can iterate over _all_ its values using a `foreach` loop:
 
