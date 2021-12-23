@@ -13,7 +13,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void nonEmpty() {
         languageList.addLanguage("Java");
 
@@ -21,7 +20,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void addOneLanguage() {
         languageList.addLanguage("Java");
 
@@ -30,7 +28,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void addMultipleLanguages() {
         languageList.addLanguage("Java");
         languageList.addLanguage("Ruby");
@@ -43,7 +40,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void removeLanguage() {
         languageList.addLanguage("Java");
         languageList.addLanguage("Python");
@@ -57,7 +53,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void firstLanguage() {
         languageList.addLanguage("Java");
         languageList.addLanguage("Python");
@@ -67,7 +62,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void countThree() {
         languageList.addLanguage("Java");
         languageList.addLanguage("Python");
@@ -77,13 +71,11 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void countEmpty() {
         assertThat(languageList.count()).isEqualTo(0);
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void excitingLanguageListWithJava() {
         languageList.addLanguage("Java");
 
@@ -91,7 +83,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void excitingLanguageListWithKotlin() {
         languageList.addLanguage("Python");
         languageList.addLanguage("Kotlin");
@@ -100,7 +91,6 @@ public class LanguageListTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void boringLanguageList() {
         languageList.addLanguage("Python");
         languageList.addLanguage("Ruby");

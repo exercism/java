@@ -30,13 +30,11 @@ public class BirdWatcherTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itTestGetToday() {
         assertThat(birdWatcher.getToday()).isEqualTo(TODAY);
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itShouldReturnZeroIfBirdWatcherLastWeekIsEmpty() {
         int[] lastWeekEmpty = new int[0];
         birdWatcher = new BirdWatcher(lastWeekEmpty);
@@ -44,20 +42,17 @@ public class BirdWatcherTest {
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itIncrementTodaysCount() {
         birdWatcher.incrementTodaysCount();
         assertThat(birdWatcher.getToday()).isEqualTo(TODAY + 1);
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itHasDayWithoutBirds() {
         assertThat(birdWatcher.hasDayWithoutBirds()).isTrue();
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itShouldNotHaveDaysWithoutBirds() {
         birdWatcher = new BirdWatcher(new int[]{1, 2, 5, 3, 7, 8, 4});
         assertThat(birdWatcher.hasDayWithoutBirds()).isFalse();
@@ -65,27 +60,23 @@ public class BirdWatcherTest {
 
 
     @Test
-    @Ignore("Remove to run test")
     public void itTestGetCountForFirstDays() {
         assertThat(birdWatcher.getCountForFirstDays(4)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4);
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itTestGetCountForMoreDaysThanTheArraySize() {
         assertThat(birdWatcher.getCountForFirstDays(10))
             .isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6 + TODAY);
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itTestGetCountForBusyDays() {
         // DAY3, DAY5 and DAY6 are all >= 5 birds
         assertThat(birdWatcher.getBusyDays()).isEqualTo(3);
     }
 
     @Test
-    @Ignore("Remove to run test")
     public void itShouldNotHaveBusyDays() {
         birdWatcher = new BirdWatcher(new int[]{1, 2, 3, 3, 2, 1, 4});
         assertThat(birdWatcher.getBusyDays()).isEqualTo(0);
