@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,14 +10,12 @@ public class FighterTest {
         assertThat(warrior.toString()).isEqualTo("Fighter is a Warrior");
     }
 
-    @Ignore("Remove to run the test")
     @Test
     public void testFighterVulnerableByDefault() {
         Fighter warrior = new Warrior();
         assertThat(warrior.isVulnerable()).isFalse();
     }
 
-    @Ignore("Remove to run the test")
     @Test
     public void testWizardVulnerable() {
         Wizard wizard = new Wizard();
@@ -27,7 +24,6 @@ public class FighterTest {
         assertThat(wizard.isVulnerable()).isFalse();
     }
 
-    @Ignore("Remove to run the test")
     @Test
     public void testWizardsDamagePoints() {
         Wizard wizard = new Wizard();
@@ -37,7 +33,6 @@ public class FighterTest {
         assertThat(wizard.damagePoints(warrior)).isEqualTo(12);
     }
 
-    @Ignore("Remove to run the test")
     @Test
     public void testWarriorsDamagePoints() {
         Warrior warrior = new Warrior();

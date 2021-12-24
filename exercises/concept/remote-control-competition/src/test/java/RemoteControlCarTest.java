@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -17,7 +16,6 @@ public class RemoteControlCarTest {
         assertThat(experimentalCar.getDistanceTravelled() - productionCar.getDistanceTravelled()).isEqualTo(20);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rankCars() {
         ProductionRemoteControlCar prc1 = new ProductionRemoteControlCar();
@@ -28,7 +26,6 @@ public class RemoteControlCarTest {
         assertThat(rankings.get(1)).isEqualTo(prc1);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void ensureCarsAreComparables() {
         assertThat(RemoteControlCar.class).isAssignableFrom(ProductionRemoteControlCar.class);

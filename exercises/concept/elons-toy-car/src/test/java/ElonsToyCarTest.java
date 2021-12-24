@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -10,7 +9,6 @@ public class ElonsToyCarTest {
         assertThat(car).isNotNull();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void buy_new_car_returns_new_car_each_time() {
         ElonsToyCar car1 = ElonsToyCar.buy();
@@ -18,21 +16,18 @@ public class ElonsToyCarTest {
         assertThat(car1).isNotEqualTo(car2);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void new_car_distance_display() {
         ElonsToyCar car = new ElonsToyCar();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 0 meters");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void new_car_battery_display() {
         ElonsToyCar car = new ElonsToyCar();
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 100%");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void distance_display_after_driving_once() {
         ElonsToyCar car = new ElonsToyCar();
@@ -40,7 +35,6 @@ public class ElonsToyCarTest {
         assertThat(car.distanceDisplay()).isEqualTo("Driven 20 meters");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void distance_display_after_driving_multiple_times() {
         ElonsToyCar car = new ElonsToyCar();
@@ -52,7 +46,6 @@ public class ElonsToyCarTest {
         assertThat(car.distanceDisplay()).isEqualTo("Driven 340 meters");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void battery_display_after_driving_once() {
         ElonsToyCar car = new ElonsToyCar();
@@ -61,7 +54,6 @@ public class ElonsToyCarTest {
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 99%");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void battery_display_after_driving_multiple_times() {
         ElonsToyCar car = new ElonsToyCar();
@@ -73,7 +65,6 @@ public class ElonsToyCarTest {
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 77%");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void battery_display_when_battery_empty() {
         ElonsToyCar car = new ElonsToyCar();
@@ -89,7 +80,6 @@ public class ElonsToyCarTest {
         assertThat(car.batteryDisplay()).isEqualTo("Battery empty");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void distance_display_when_battery_empty() {
         ElonsToyCar car = new ElonsToyCar();
