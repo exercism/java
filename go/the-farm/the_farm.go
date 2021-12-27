@@ -10,6 +10,7 @@ type SillyNephewError struct {
 	cows int
 }
 
+
 // Error returns the string associated with the error.
 func (e SillyNephewError) Error() string {
 	return fmt.Sprintf("silly nephew, there cannot be %d cows", e.cows)
@@ -28,9 +29,9 @@ func DivideFood(weightFodder WeightFodder, cows int) (float64, error) {
 
 	switch {
 	case cows == 0:
-		return 0, errors.New("Division by zero")
+		return 0, errors.New("division by zero")
 	case f < 0:
-		return 0, errors.New("Negative fodder")
+		return 0, errors.New("negative fodder")
 	case cows < 0:
 		return 0, SillyNephewError{cows: cows}
 	}

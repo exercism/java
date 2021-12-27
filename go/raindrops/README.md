@@ -20,14 +20,6 @@ The rules of `raindrops` are that if a given number:
 - 30 has both 3 and 5 as factors, but not 7, so the result would be "PlingPlang".
 - 34 is not factored by 3, 5, or 7, so the result would be "34".
 
-The raindrops.go "stub file" contains only one line with the correct
-package name and nothing more.  This will be the usual pattern for future
-exercises.  You will need to figure out the function signature(s).
-
-One way to figure out the function signature(s) is to look
-at the corresponding \*\_test.go file. It will show the package level
-functions(s) that the test will use to verify the solution.
-
 ## Source
 
 ### Created by

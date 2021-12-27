@@ -44,11 +44,11 @@ func CelsiusFreezingTemp() int {
 
 ## Instructions
 
-In this exercise, your task is to help a weather station manage their weather forecasting program.
+Being hired by a big weather forecast company, your job is to maintain their code base. Scrolling through the code, you find it hard to follow what the code is actually doing. Good thing you know just the right thing to do!
 
 ## 1. Document package weather
 
-Write a package comment for `package weather` that describes its contents.
+Write a package comment for `package weather` that describes its contents. The package comment should introduce the package and provide information relevant to the package as a whole.
 
 ## 2. Document the CurrentCondition variable
 
@@ -62,7 +62,7 @@ Just like the previous step, write a comment for `CurrentLocation`.
 
 ## 4. Document the Forecast() function
 
-Write a function comment for `Forecast()`.
+Write a function comment for `Forecast()`. Your comments must describe what the function does, but not how it does it.
 
 ## Source
 

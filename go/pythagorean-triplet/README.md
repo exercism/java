@@ -28,6 +28,13 @@ Given an input integer N, find all Pythagorean triplets for which `a + b + c = N
 
 For example, with N = 1000, there is exactly one Pythagorean triplet for which `a + b + c = 1000`: `{200, 375, 425}`.
 
+## Implementation Notes
+
+`Range` should return a list of all Pythagorean triplets with sides in the range `min` to `max` inclusive.
+
+`Sum` should return a list of all Pythagorean triplets where the sum `a+b+c` (the perimeter) is equal to `p`.
+The three elements of each returned triplet must be in order, `t[0] <= t[1] <= t[2]`, and the list of triplets must be in lexicographic order.
+
 ## Source
 
 ### Created by
