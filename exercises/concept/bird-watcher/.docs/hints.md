@@ -20,8 +20,8 @@
 
 ## 4. Check if there was a day with no visiting birds
 
+- The `Arrays` class has a built-in method `[binarySearch](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html)` that returns the first index where the element is found, or a negative value if no matching element was found.
 - The array can be iterated over using a `for` loop.
-- The `Arrays` class has a built-in method that returns the first index where the element is found, or a negative value if no matching element was found.
 
 ## 5. Calculate the number of visiting birds for the first number of days
 
