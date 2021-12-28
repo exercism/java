@@ -244,8 +244,7 @@
           "conditionals-if"
         ],
         "prerequisites": [
-          "basics",
-          "conditionals-if"
+          "basics"
         ],
         "difficulty": 1
       },
@@ -254,14 +253,11 @@
         "name": "Hamming",
         "uuid": "ce899ca6-9cc7-47ba-b76f-1bbcf2630b76",
         "practices": [
-          "strings",
           "for-loops"
         ],
         "prerequisites": [
-          "basics",
           "strings",
-          "chars",
-          "for-loops"
+          "chars"
         ],
         "difficulty": 3
       },
@@ -273,8 +269,7 @@
           "numbers"
         ],
         "prerequisites": [
-          "basics",
-          "numbers"
+          "basics"
         ],
         "difficulty": 3
       },
@@ -284,14 +279,12 @@
         "uuid": "afae9f2d-8baf-4bd7-8d7c-d486337f7c97",
         "practices": [
           "arrays",
-          "switch-statements",
+          "switch-statement",
           "chars"
         ],
         "prerequisites": [
-          "basics",
           "strings",
-          "for-loops",
-          "arrays"
+          "for-loops"
         ],
         "difficulty": 3
       },
@@ -303,9 +296,7 @@
           "numbers"
         ],
         "prerequisites": [
-          "basics",
-          "numbers",
-          "for-loops"
+          "basics"
         ],
         "difficulty": 3
       },
@@ -314,13 +305,11 @@
         "name": "Secret Handshake",
         "uuid": "71c7c174-7e2c-43c2-bdd6-7515fcb12a91",
         "practices": [
-          "numbers"
+          "lists"
         ],
         "prerequisites": [
-          "basics",
           "numbers",
-          "for-loops",
-          "lists"
+          "for-loops"
         ],
         "difficulty": 3
       },
@@ -333,12 +322,9 @@
           "arrays"
         ],
         "prerequisites": [
-          "basics",
           "strings",
           "numbers",
-          "for-loops",
-          "constructors",
-          "arrays"
+          "for-loops"
         ],
         "difficulty": 4
       },
@@ -347,15 +333,11 @@
         "name": "Triangle",
         "uuid": "ec268d8e-997b-4553-8c67-8bdfa1ecb888",
         "practices": [
-          "booleans",
-          "conditionals-if"
+          "constructors"          
         ],
         "prerequisites": [
-          "basics",
           "numbers",
-          "conditionals-if",
-          "booleans",
-          "constructors"
+          "conditionals-if"          
         ],
         "difficulty": 4
       },
@@ -367,12 +349,9 @@
           "chars"
         ],
         "prerequisites": [
-          "basics",
           "strings",
           "conditionals-if",
-          "chars",
-          "for-loops",
-          "arrays"
+          "for-loops"
         ],
         "difficulty": 4
       },
