@@ -229,137 +229,131 @@
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "f77dc7e3-35a8-4300-a7c8-2c1765e9644d",
-        "practices": [],
+        "practices": [
+          "basics"
+        ],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings"
-        ]
+        "difficulty": 1
       },
       {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "74515d45-565b-4be2-96c4-77e58efa9257",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "conditionals-if",
-          "strings"
-        ]
+        "practices": [
+          "strings",
+          "conditionals-if"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "ce899ca6-9cc7-47ba-b76f-1bbcf2630b76",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "integers",
-          "loops",
-          "strings"
-        ]
+        "practices": [
+          "for-loops"
+        ],
+        "prerequisites": [
+          "strings",
+          "chars"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "dates",
-          "integers",
-          "time"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "afae9f2d-8baf-4bd7-8d7c-d486337f7c97",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "games",
-          "loops",
-          "pattern_matching",
+        "practices": [
+          "arrays",
+          "switch-statement",
+          "chars"
+        ],
+        "prerequisites": [
           "strings",
-          "transforming"
-        ]
+          "for-loops"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "difference-of-squares",
         "name": "Difference Of Squares",
         "uuid": "b0da59c6-1b55-405c-b163-007ebf09f5e8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "integers",
-          "loops",
-          "math"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "71c7c174-7e2c-43c2-bdd6-7515fcb12a91",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "bitwise_operations",
-          "conditionals-if",
-          "cryptography",
-          "enumerations",
-          "integers",
-          "loops",
-          "transforming"
-        ]
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "numbers",
+          "for-loops"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "c1d4e0b4-6a0f-4be9-8222-345966621f53",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "arrays",
-          "integers",
-          "loops",
-          "pattern_matching",
+        "practices": [
+          "constructors",
+          "arrays"
+        ],
+        "prerequisites": [
           "strings",
-          "type_conversion"
-        ]
+          "numbers",
+          "for-loops"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "ec268d8e-997b-4553-8c67-8bdfa1ecb888",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "booleans",
-          "classes",
-          "exception_handling"
-        ]
+        "practices": [
+          "constructors"          
+        ],
+        "prerequisites": [
+          "numbers",
+          "conditionals-if"          
+        ],
+        "difficulty": 4
       },
       {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "9eb41883-55ef-4681-b5ac-5c2259302772",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "cryptography",
-          "integers",
-          "strings"
-        ]
+        "practices": [
+          "chars"
+        ],
+        "prerequisites": [
+          "strings",
+          "conditionals-if",
+          "for-loops"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "saddle-points",
@@ -1884,13 +1878,13 @@
         "slug": "connect",
         "name": "Connect",
         "uuid": "1532b9a8-7e0d-479f-ad55-636e01e9d19f",
-        "practices": ["enums", "switch-statements"],
+        "practices": ["enums", "switch-statement"],
         "prerequisites": [
           "strings",
           "chars",
           "enums",
           "arrays",
-          "if-statements"
+          "conditionals-if"
         ],
         "difficulty": 8
       }
