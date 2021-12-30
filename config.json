@@ -359,75 +359,69 @@
         "slug": "saddle-points",
         "name": "Saddle Points",
         "uuid": "8dfc2f0d-1141-46e9-95e2-6f35ccf6f160",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "arrays",
-          "conditionals-if",
-          "integers",
-          "lists",
-          "loops",
-          "matrices",
-          "sets"
-        ]
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "numbers",
+          "for-loops",
+          "classes"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "a732a838-8170-458a-a85e-d6b4c46f97a1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "arrays",
-          "lists",
-          "loops",
-          "recursion"
-        ]
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "for-loops",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "conditionals-if",
-          "integers",
-          "loops",
-          "maps",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "for-loops",
+          "arrays",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "d7c2eed9-64c7-4c4a-b45d-c787d460337f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "pattern_matching",
-          "randomness",
-          "regular_expressions",
-          "strings",
-          "text_formatting"
-        ]
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "constructors",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "50136dc3-caf7-4fa1-b7bd-0cba1bea9176",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "arrays",
-          "recursion",
-          "searching"
-        ]
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "bank-account",
