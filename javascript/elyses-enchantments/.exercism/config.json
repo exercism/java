@@ -1,0 +1,11 @@
+{
+  "blurb": "Help Elyse with her Enchantments and learn about arrays in the process.",
+  "authors": ["ovidiu141", "SleeplessByte"],
+  "contributors": ["peterchu999", "pertrai1", "nasch"],
+  "files": {
+    "solution": ["enchantments.js"],
+    "test": ["enchantments.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": ["go/card-tricks"]
+}
