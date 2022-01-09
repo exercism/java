@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn about strings using poems to get into the poetry club.",
+  "authors": ["SleeplessByte"],
+  "contributors": ["hayashi-ay", "junedev", "mmmmmrob"],
+  "files": {
+    "solution": ["door-policy.js"],
+    "test": ["door-policy.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": []
+}

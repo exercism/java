@@ -1,0 +1,31 @@
+{
+  "name": "@exercism/javascript-poetry-club-door-policy",
+  "description": "Exercism concept exercise on strings",
+  "author": "Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exercism/javascript",
+    "directory": "exercises/concept/poetry-club-door-policy"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-syntax-bigint": "^7.8.3",
+    "@babel/preset-env": "^7.16.7",
+    "@exercism/eslint-config-javascript": "^0.5.0",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.11.18",
+    "babel-jest": "^27.4.6",
+    "core-js": "^3.20.2",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "jest --no-cache ./*",
+    "watch": "jest --no-cache --watch ./*",
+    "lint": "eslint ."
+  }
+}
