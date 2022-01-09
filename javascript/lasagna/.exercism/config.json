@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn the basics of JavaScript cooking a brilliant lasagna from your favorite cooking book.",
+  "authors": ["SleeplessByte"],
+  "contributors": ["junedev"],
+  "files": {
+    "solution": ["lasagna.js"],
+    "test": ["lasagna.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": ["csharp/lasagna"]
+}
