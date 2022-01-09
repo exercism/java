@@ -1,0 +1,11 @@
+{
+  "blurb": "Help your friend Li Mei run her juice bar with your knowledge of while loops and switch statements.",
+  "authors": ["junedev"],
+  "contributors": [],
+  "files": {
+    "solution": ["mixed-juices.js"],
+    "test": ["mixed-juices.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": ["swift/master-mixologist"]
+}
