@@ -8,7 +8,7 @@
 ## 2. Check if the 'Spy' action is possible
 
 - Logical expressions are evaluated from left to right and are tested for possible 'short-circuits'.
-- For a more complete understanding of the left-to-right mechanic, take a look at [this article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)!
+- For a comprehensive understanding of the left-to-right mechanic, take a look at [this article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)!
 
 ## 3. Check if the 'Signal Prisoner' action is possible
 

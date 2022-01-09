@@ -1,1 +1,11 @@
-null
+{
+  "blurb": "Help Annalyn free her best friend using boolean logic in JavaScript",
+  "authors": ["ovidiu141"],
+  "contributors": ["rishiosaur", "SleeplessByte"],
+  "files": {
+    "solution": ["annalyns-infiltration.js"],
+    "test": ["annalyns-infiltration.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": []
+}
