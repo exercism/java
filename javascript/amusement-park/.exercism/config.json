@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn about undefined and null by managing visitors and tickets at an amusement park.",
+  "authors": ["junedev"],
+  "contributors": [],
+  "files": {
+    "solution": ["amusement-park.js"],
+    "test": ["amusement-park.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": ["ruby/amusement-park"]
+}
