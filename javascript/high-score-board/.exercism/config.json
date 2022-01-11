@@ -1,0 +1,11 @@
+{
+  "blurb": "Practice JavaScript objects by tracking high scores of an arcade game.",
+  "authors": ["junedev"],
+  "contributors": [],
+  "files": {
+    "solution": ["high-score-board.js"],
+    "test": ["high-score-board.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": ["elixir/high-score", "swift/high-score-board"]
+}
