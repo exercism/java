@@ -1,0 +1,11 @@
+{
+  "blurb": "Practice type conversion while helping your friend Kojo with his website www.fun-with-numbers.com.",
+  "authors": ["shubhsk88", "junedev"],
+  "contributors": ["neenjaw", "SleeplessByte"],
+  "files": {
+    "solution": ["lucky-numbers.js"],
+    "test": ["lucky-numbers.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
+  },
+  "forked_from": []
+}
