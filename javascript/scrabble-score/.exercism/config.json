@@ -1,0 +1,20 @@
+{
+  "blurb": "Given a word, compute the Scrabble score for that word.",
+  "authors": ["matthewmorgan"],
+  "contributors": [
+    "amscotti",
+    "ankorGH",
+    "ntshcalleia",
+    "rchavarria",
+    "ryanplusplus",
+    "serixscorpio",
+    "SleeplessByte"
+  ],
+  "files": {
+    "solution": ["scrabble-score.js"],
+    "test": ["scrabble-score.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}
