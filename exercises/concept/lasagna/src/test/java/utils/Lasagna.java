@@ -31,11 +31,11 @@ public class Lasagna extends ReflectionProxy {
         }
     }
 
-    public int totalTimeInMinutes(int amountLayers, int actualMinutes) {
+    public int totalTimeInMinutes(int amountLayers) {
         try {
-            return invokeMethod("totalTimeInMinutes", new Class[]{int.class, int.class}, amountLayers, actualMinutes);
+            return invokeMethod("totalTimeInMinutes", new Class[]{int.class}, amountLayers);
         } catch (Exception e) {
-            throw new UnsupportedOperationException("Please implement the totalTimeInMinutes(int, int) method");
+            throw new UnsupportedOperationException("Please implement the totalTimeInMinutes(int) method");
         }
     }
 }

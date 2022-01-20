@@ -1,8 +1,9 @@
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import utils.Lasagna;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LasagnaTest {
 
@@ -67,29 +68,29 @@ public class LasagnaTest {
 
     @Test
     public void implemented_total_time_in_minutes() {
-        assertThat(new Lasagna().hasMethod("totalTimeInMinutes", int.class, int.class))
+        assertThat(new Lasagna().hasMethod("totalTimeInMinutes", int.class))
                 .withFailMessage("Method totalTimeInMinutes must be created")
                 .isTrue();
-        assertThat(new Lasagna().isMethodPublic("totalTimeInMinutes", int.class, int.class))
+        assertThat(new Lasagna().isMethodPublic("totalTimeInMinutes", int.class))
                 .withFailMessage("Method totalTimeInMinutes must be public")
                 .isTrue();
-        assertThat(new Lasagna().isMethodReturnType(int.class, "totalTimeInMinutes", int.class, int.class))
+        assertThat(new Lasagna().isMethodReturnType(int.class, "totalTimeInMinutes", int.class))
                 .withFailMessage("Method totalTimeInMinutes must return an int")
                 .isTrue();
     }
 
     @Test
     public void total_time_in_minutes_for_one_layer() {
-        assertThat(new Lasagna().totalTimeInMinutes(1, 30)).isEqualTo(12);
+        assertThat(new Lasagna().totalTimeInMinutes(1)).isEqualTo(42);
     }
 
     @Test
     public void total_time_in_minutes_for_three_layers() {
-        assertThat(new Lasagna().totalTimeInMinutes(3, 20)).isEqualTo(26);
+        assertThat(new Lasagna().totalTimeInMinutes(3)).isEqualTo(46);
     }
 
     @Test
     public void total_time_in_minutes_for_multiple_layers() {
-        assertThat(new Lasagna().totalTimeInMinutes(4, 8)).isEqualTo(40);
+        assertThat(new Lasagna().totalTimeInMinutes(4)).isEqualTo(48);
     }
 }

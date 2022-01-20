@@ -1,87 +1,25 @@
-// This root Gradle project is used for:
-//
-// - Checking that every test suite compiles against its corresponding reference implementation;
-// - Checking that every reference implementation passes its corresponding test suite;
-// - Checking that every provided starter implementation compiles.
-//
-// This file is never delivered to Exercism users.
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
 
-def generatedTestSourceDir = "build/gen/test/java"
+// set default encoding to UTF-8
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
-subprojects {
-
-  apply plugin: "checkstyle"
-
-  // Add a task that copies test source files into a build directory. All @Ignore annotations
-  // are removed during this copying, so that when we run the copied tests, none are skipped and
-  // all should execute.
-  //
-  // Note that journey-test.sh also strips @Ignore annotations using sed. The
-  // stripping implementations here and in journey-test.sh should be kept
-  // consistent.
-  task copyTestsFilteringIgnores(type: Copy) {
-    from "src/test/java"
-    into generatedTestSourceDir
-    filter { line ->
-      line.contains("@Ignore") ? null : line
-    }
-  }
-
-  afterEvaluate { project ->
-    // skip project named 'concept' or 'practice'
-    // they are only folders containing exercises
-    if(project.name == 'concept' || project.name == 'practice')
-      return;
-
-    sourceSets {
-      // Set the directory containing the reference solution as the default source set. Default
-      // compile tasks will now run against this source set.
-      main {
-        java.srcDirs = [".meta/src/reference/java"]
-      }
-
-      // Define a custom source set named "starterSource" that points to the starter implementations
-      // delivered to users. We can then use the generated "compileStarterSourceJava" task to verify
-      // that the starter source compiles as-is.
-      starterSource {
-        java.srcDirs = ["src/main/java"]
-      }
-
-      // Set the directory containing the @Ignore-stripped tests as the default test source set.
-      // Default test tasks will now run against this source set.
-      test {
-        java.srcDirs = [generatedTestSourceDir]
-      }
-
-      // Log the source paths associated with each source set to verify they are what we expect.
-      logCompileTaskSourcePath(project, "compileJava") // Corresponds to the "main" source set.
-      logCompileTaskSourcePath(project, "compileStarterSourceJava")
-      logCompileTaskSourcePath(project, "compileTestJava")
-
-    }
-
-    // configuration of the linter
-    checkstyle {
-      toolVersion '7.8.1'
-      configFile file("checkstyle.xml")
-      sourceSets = [project.sourceSets.main, project.sourceSets.test]
-    }
-
-    checkstyleTest {
-      source = "src/test/java"
-    }
-
-    // When running the standard test task, make sure we prepopulate the test source set with the
-    // @Ignore-stripped tests.
-    test.dependsOn(copyTestsFilteringIgnores)
-  }
-
-
-
+repositories {
+  mavenCentral()
 }
 
-def logCompileTaskSourcePath(Project project, String taskName) {
-  project[taskName].doFirst { compileTask ->
-    println "  (source = ${compileTask.source.asPath})"
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+  testImplementation "org.assertj:assertj-core:3.15.0"
+}
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    exceptionFormat = 'short'
+    showStandardStreams = true
+    events = ["passed", "failed", "skipped"]
   }
 }
