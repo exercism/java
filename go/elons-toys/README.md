@@ -53,7 +53,7 @@ func (c circle) area() float64 {
 }
 ```
 
-All the methods we have seen so far have a value receiver which means they on a copy of the value passed to the method, meaning that any modification done to the receiver inside the method is not visible to the caller.
+All the methods we have seen so far have a value receiver which means they will receive a copy of the value passed to the method, meaning that any modification done to the receiver inside the method is not visible to the caller.
 
 You can declare methods with pointer receivers in order to modify the value to which the receiver points.
 This is done by prefixing the type name with a `*`.
@@ -117,7 +117,7 @@ speed := 5
 batteryDrain := 2
 car := NewCar(speed, batteryDrain)
 
-car.DisplayDistance()
+fmt.Println(car.DisplayDistance())
 // Output: "Driven 0 meters"
 ```
 
@@ -130,7 +130,7 @@ speed := 5
 batteryDrain := 2
 car := NewCar(speed, batteryDrain)
 
-car.DisplayBattery()
+fmt.Println(car.DisplayBattery())
 // Output: "Battery at 100%"
 ```
 
