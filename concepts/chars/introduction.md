@@ -15,3 +15,5 @@ can be found as static methods of the `java.lang.Character` class.
 This object has methods that allow a string to be constructed
 character by character and manipulated. At the end of the process
 `toString()` can be called on it to output a complete string.
+
+In order to get chars from the String one could use `String.charAt(index)` method. 
