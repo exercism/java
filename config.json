@@ -433,84 +433,98 @@
         "slug": "bank-account",
         "name": "Bank Account",
         "uuid": "a242efc5-159d-492b-861d-12a1459fb334",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "concurrency",
-          "exception_handling",
-          "integers"
-        ]
+        "practices": [
+          "constructors",
+          "classes"
+        ],
+        "prerequisites": [
+          "numbers",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "linked-list",
         "name": "Linked List",
         "uuid": "7ba5084d-3b75-4406-a0d7-87c26387f9c0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "algorithms",
+        "practices": [
+          "lists",
+          "classes",
+          "generics"
+        ],
+        "prerequisites": [
+          "lists",
+          "classes",
           "generics",
-          "lists"
-        ]
+          "for-loops"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "d916e4f8-fda1-41c0-ab24-79e8fc3f1272",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
+        "practices": [
           "conditionals-if",
-          "integers",
+          "numbers",
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "numbers",
+          "strings"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "c3e89c7c-3a8a-4ddc-b653-9b0ff9e1d7d8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
+        "practices": [
           "conditionals-if",
-          "loops",
-          "parsing",
+          "for-loops",
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "for-loops",
+          "strings"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "38bc80ae-d842-4c04-a797-48edf322504d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
+        "practices": [
           "arrays",
           "lists",
-          "strings",
-          "transforming"
-        ]
+          "strings"
+        ],
+        "prerequisites": [
+          "arrays",
+          "lists",
+          "strings"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
+        "practices": [
           "arrays",
           "conditionals-if",
-          "equality",
           "lists",
-          "loops",
-          "strings"
-        ]
+          "for-loops"
+        ],
+        "prerequisites": [
+          "arrays",
+          "conditionals-if",
+          "lists",
+          "for-loops"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "reverse-string",
