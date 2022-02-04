@@ -16,4 +16,4 @@ This object has methods that allow a string to be constructed
 character by character and manipulated. At the end of the process
 `toString()` can be called on it to output a complete string.
 
-In order to get chars from the String one could use String.charAt(index) method. 
+In order to get chars from the String one could use `String.charAt(index)` method. 
