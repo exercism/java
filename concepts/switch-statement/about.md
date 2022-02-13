@@ -98,7 +98,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
        }
    ```
 
-5. The scope. Traditionnals `switch` can lead to some unexected behavior because of its scope as there is only one scope for the whole `switch`.
+5. The scope. Traditional `switch` can lead to some unexpected behavior because of its scope as there is only one scope for the whole `switch`.
 
    ```java
        switch(expression) {
@@ -130,7 +130,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
    ```
 
    As the `{}` is delimiting the scope of the `case`. However it's not intuitive because `{}` are not mandatory.
-   However if you use the new `->` notation it must be followed by either : a single statement/expression, a `throw` statement or a `{}` block. No more confussion!
+   However if you use the new `->` notation it must be followed by either : a single statement/expression, a `throw` statement or a `{}` block. No more confusion!
 
 You can find more information on enhanced switch [here][switch1], [here][switch2] and on the [oracle documentation][oracle-doc].
 
