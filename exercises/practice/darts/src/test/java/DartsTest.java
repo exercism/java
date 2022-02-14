@@ -8,7 +8,7 @@ public class DartsTest {
     @Test
     public void missedTarget() {
         Darts darts = new Darts(-9, 9);
-        assertEquals(0, darts.score());
+        assertEquals(1, darts.score());
     }
 
     @Ignore("Remove to run test")
@@ -57,7 +57,7 @@ public class DartsTest {
     @Test
     public void justOutsideTheInnerCircle() {
         Darts darts = new Darts(0.8, -0.8);
-        assertEquals(5, darts.score());
+        assertEquals(10, darts.score());
     }
 
     @Ignore("Remove to run test")
@@ -71,7 +71,7 @@ public class DartsTest {
     @Test
     public void justOutsideTheMiddleCircle() {
         Darts darts = new Darts(-3.6, -3.6);
-        assertEquals(1, darts.score());
+        assertEquals(5, darts.score());
     }
 
 
@@ -86,7 +86,7 @@ public class DartsTest {
     @Test
     public void justOutsideTheOuterCircle() {
         Darts darts = new Darts(7.1, -7.1);
-        assertEquals(0, darts.score());
+        assertEquals(1, darts.score());
     }
 
     @Ignore("Remove to run test")
