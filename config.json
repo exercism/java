@@ -444,12 +444,12 @@
         "practices": [
           "lists",
           "classes",
-          "generics"
+          "generic-types"
         ],
         "prerequisites": [
           "lists",
           "classes",
-          "generics",
+          "generic-types",
           "for-loops"
         ],
         "difficulty": 6
@@ -524,60 +524,66 @@
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "2c8afeed-480e-41f3-ad58-590fa8f88029",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings"
-        ]
+        "practices": [
+          "strings",
+          "chars"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "darts",
         "name": "Darts",
         "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "games"
-        ]
+        "practices": [
+          "conditionals-if",
+          "constructors"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "09bb515c-0270-4d34-8d56-89ee04588494",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "games",
-          "integers",
-          "randomness"
-        ]
+        "practices": [
+          "arrays",
+          "constructors"
+        ],
+        "prerequisites": [
+          "numbers",
+          "for-loops"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "grains",
         "name": "Grains",
         "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "loops",
-          "math"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "for-loops"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "e5e821ed-fc1f-4419-9c90-ad4a0b564bea",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "arrays",
-          "strings"
-        ]
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "resistor-color-duo",
