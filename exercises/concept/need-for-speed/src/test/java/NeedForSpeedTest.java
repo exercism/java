@@ -121,7 +121,7 @@ public class NeedForSpeedTest {
         int distance = 100;
         var race = new RaceTrack(distance);
 
-        assertThat(race.carCanFinish(car)).isTrue();
+        assertThat(race.tryFinishTrack(car)).isTrue();
     }
 
     @Test
@@ -133,7 +133,7 @@ public class NeedForSpeedTest {
         int distance = 20;
         var race = new RaceTrack(distance);
 
-        assertThat(race.carCanFinish(car)).isTrue();
+        assertThat(race.tryFinishTrack(car)).isTrue();
     }
 
     @Test
@@ -145,7 +145,7 @@ public class NeedForSpeedTest {
         int distance = 16;
         var race = new RaceTrack(distance);
 
-        assertThat(race.carCanFinish(car)).isFalse();
+        assertThat(race.tryFinishTrack(car)).isFalse();
     }
 
     @Test
@@ -157,7 +157,7 @@ public class NeedForSpeedTest {
         int distance = 678;
         var race = new RaceTrack(distance);
 
-        assertThat(race.carCanFinish(car)).isFalse();
+        assertThat(race.tryFinishTrack(car)).isFalse();
     }
 }
 
