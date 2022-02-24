@@ -589,164 +589,157 @@
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
         "uuid": "0ae1989d-df46-414d-ad1f-4bd0f0f78421",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "arrays",
-          "strings",
-          "enumerations"
-        ]
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "8295ae71-5c0e-49d0-bbe9-9b43a85bf2dd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "331073b3-bd1a-4868-b767-a64ce9fd9d97",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "arrays",
-          "conditionals-if",
-          "loops",
-          "strings"
-        ]
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "strings",
+          "for-loops"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "ecbd997b-86f4-4e11-9ff0-706ac2899415",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "arrays",
-          "lists",
-          "loops",
-          "strings",
-          "text_formatting"
-        ]
+        "practices": [
+          "for-loops",
+          "lists"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "9906491b-a638-408d-86a4-4ad320a92658",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "arrays",
-          "loops",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "for-loops",
+          "arrays"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "581afdbb-dfb6-4dc5-9554-a025b5469a3c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "arrays",
-          "conditionals-if",
-          "loops",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "for-loops",
+          "arrays"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "bob",
         "name": "Bob",
         "uuid": "34cd328c-cd96-492b-abd4-2b8716cdcd9a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "booleans",
-          "conditionals-if",
-          "strings"
-        ]
+        "practices": [
+          "conditionals-if"
+        ],
+        "prerequisites": [
+          "strings",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "56943095-de76-40bf-b42b-fa3e70f8df5e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "conditionals-if",
-          "loops",
-          "strings",
-          "text_formatting"
-        ]
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "for-loops",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "arrays",
-          "lists",
-          "strings"
-        ]
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "strings",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "house",
         "name": "House",
         "uuid": "6b51aca3-3451-4a64-ad7b-00b151d7548a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "arrays",
-          "conditionals-if",
-          "loops",
+        "practices": [
           "strings",
-          "text_formatting"
-        ]
+          "for-loops"
+        ],
+        "prerequisites": [
+          "arrays",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "isbn-verifier",
         "name": "Isbn Verifier",
         "uuid": "838bc1d7-b2de-482a-9bfc-c881b4ccb04c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "integers",
-          "loops",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "chars",
+          "for-loops"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "b7310b6e-435c-4d5f-b2bd-31e586d0f238",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "integers",
-          "loops",
-          "math",
-          "strings",
-          "type_conversion"
-        ]
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "chars",
+          "numbers",
+          "for-loops"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "luhn",
