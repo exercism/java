@@ -20,7 +20,8 @@
 
 ## 4. Check if there was a day with no visiting birds
 
-- The `Array` class has a built-in method that returns the first index where the element is found, or -1 if no matching element was found.
+- The array can be iterated over using a `for` loop.
+- Another solution is to use the Java Stream Api.
 
 ## 5. Calculate the number of visiting birds for the first number of days
 
