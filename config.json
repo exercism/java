@@ -745,165 +745,150 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "5227a76c-8ecb-4e5f-b023-6af65a057c41",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "algorithms",
-          "booleans",
-          "loops",
-          "strings",
-          "type_conversion"
-        ]
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "numbers",
+          "for-loops"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "knapsack",
         "name": "Knapsack",
         "uuid": "89a6bf1e-66d5-4e39-9bc0-294b8b76cb2a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "algorithms",
+        "practices": [
           "arrays",
-          "conditionals-if"
-        ]
+          "lists"
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "2d80fdfc-5bd7-4b67-9fbe-8ab820d89051",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "conditionals-if",
-          "exception_handling",
-          "integers",
-          "maps",
-          "parsing",
-          "searching",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "conditionals-if",
+          "for-loops",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "5f9139e7-9fbb-496a-a0d7-a946283033de",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "conditionals-if",
-          "pattern_matching",
-          "regular_expressions",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "chars",
+          "conditionals-if",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "series",
         "name": "Series",
         "uuid": "af80d7f4-c7d0-4d0b-9c30-09da120f6bb9",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "conditionals-if",
-          "lists",
-          "loops",
+        "practices": [
+          "for-loops",
+          "lists"
+        ],
+        "prerequisites": [
           "strings",
-          "type_conversion"
-        ]
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "3e728cd4-5e5f-4c69-8a53-bc36d020fcdb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "integers",
-          "logic",
-          "loops",
-          "maps",
-          "strings"
-        ]
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "strings",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "6a617ddb-04e3-451c-bb30-27ccd0be9125",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "booleans",
-          "conditionals-if",
-          "enumerations",
-          "integers",
-          "lists",
-          "loops"
-        ]
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "for-loops",
+          "classes"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "602511d5-7e89-4def-b072-4dd311816810",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
+        "practices": [
+          "for-loops"
+        ],
+        "prerequisites": [
           "conditionals-if",
-          "dates",
-          "enumerations",
-          "loops"
-        ]
+          "classes"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "enumerations",
-          "filtering",
-          "games",
-          "pattern_matching",
-          "sorting"
-        ]
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "switch-statement",
+          "classes"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "bowling",
         "name": "Bowling",
         "uuid": "4b3f7771-c642-4278-a3d9-2fb958f26361",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "conditionals-if",
-          "exception_handling",
-          "games",
-          "integers"
-        ]
+        "practices": [
+          "classes"
+        ],
+        "prerequisites": [
+          "for-loops",
+          "arrays"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "416a1489-12af-4593-8540-0f55285c96b4",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "conditionals-if",
-          "games",
-          "integers",
+        "practices": [
           "lists",
-          "matrices",
-          "strings"
-        ]
+          "constructors"
+        ],
+        "prerequisites": [
+          "strings",
+          "for-loops",
+          "classes"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "queen-attack",
