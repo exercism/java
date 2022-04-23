@@ -47,7 +47,7 @@ We recommend closing the administrative command prompt and opening a new command
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
