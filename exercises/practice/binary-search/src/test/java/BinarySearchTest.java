@@ -1,5 +1,4 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
@@ -17,7 +16,7 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(listOfUnitLength);
 
-        assertEquals(0, search.indexOf(6));
+        assertThat(search.indexOf(6)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -29,7 +28,7 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(3, search.indexOf(6));
+        assertThat(search.indexOf(6)).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
@@ -41,7 +40,7 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(0, search.indexOf(1));
+        assertThat(search.indexOf(1)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -53,7 +52,7 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        assertEquals(6, search.indexOf(11));
+        assertThat(search.indexOf(11)).isEqualTo(6);
     }
 
     @Ignore("Remove to run test")
@@ -65,7 +64,7 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedListOfOddLength);
 
-        assertEquals(9, search.indexOf(144));
+        assertThat(search.indexOf(144)).isEqualTo(9);
     }
 
     @Ignore("Remove to run test")
@@ -77,7 +76,7 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedListOfEvenLength);
 
-        assertEquals(5, search.indexOf(21));
+        assertThat(search.indexOf(21)).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
