@@ -33,7 +33,7 @@ car.distanceDisplay();
 
 ## 3. Display the battery percentage
 
-Implement the `ElonsToyCar.batteryDisplay()` method to return the distance as displayed on the LED display:
+Implement the `ElonsToyCar.batteryDisplay()` method to return the battery percentage as displayed on the LED display:
 
 ```java
 ElonsToyCar car = ElonsToyCar.buy();
