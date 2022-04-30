@@ -1,5 +1,4 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
@@ -15,7 +14,7 @@ public class BankAccountTest {
     public void newlyOpenedAccountHasEmptyBalance() throws BankAccountActionInvalidException {
         bankAccount.open();
 
-        assertEquals(0, bankAccount.getBalance());
+        assertThat(bankAccount.getBalance()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -25,7 +24,7 @@ public class BankAccountTest {
 
         bankAccount.deposit(10);
 
-        assertEquals(10, bankAccount.getBalance());
+        assertThat(bankAccount.getBalance()).isEqualTo(10);
     }
 
     @Ignore("Remove to run test")
@@ -36,7 +35,7 @@ public class BankAccountTest {
         bankAccount.deposit(5);
         bankAccount.deposit(23);
 
-        assertEquals(28, bankAccount.getBalance());
+        assertThat(bankAccount.getBalance()).isEqualTo(28);
     }
 
     @Ignore("Remove to run test")
@@ -47,7 +46,7 @@ public class BankAccountTest {
 
         bankAccount.withdraw(5);
 
-        assertEquals(5, bankAccount.getBalance());
+        assertThat(bankAccount.getBalance()).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
@@ -59,7 +58,7 @@ public class BankAccountTest {
         bankAccount.withdraw(10);
         bankAccount.withdraw(13);
 
-        assertEquals(0, bankAccount.getBalance());
+        assertThat(bankAccount.getBalance()).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -185,7 +184,7 @@ public class BankAccountTest {
 
         for (int i = 0; i < 10; i++) {
             adjustBalanceConcurrently();
-            assertEquals(1000, bankAccount.getBalance());
+            assertThat(bankAccount.getBalance()).isEqualTo(1000);
         }
     }
 
