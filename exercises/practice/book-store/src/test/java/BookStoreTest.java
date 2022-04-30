@@ -1,5 +1,4 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
@@ -122,7 +121,8 @@ public class BookStoreTest {
     @Test
     public void threeCopiesOfFirstBookAnd2EachOfRemaining() {
         List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1);
-        assertEquals(68.00, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+        assertThat(bookStore.calculateBasketCost(books))
+            .isCloseTo(68.00, Assertions.offset(EQUALITY_TOLERANCE));
     }
 
     @Ignore("Remove to run test")
