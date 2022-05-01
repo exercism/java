@@ -3,7 +3,7 @@
 Go through the setup instructions for Java to install the necessary
 dependencies:
 
-[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+[https://exercism.org/tracks/java/installation](https://exercism.org/tracks/java/installation)
 
 # Running the tests
 

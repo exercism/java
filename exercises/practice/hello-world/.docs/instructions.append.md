@@ -234,7 +234,7 @@ Success! Our solution passes the only test case supplied. We're good to go!
 # Submitting your first iteration
 
 With a working solution that we've reviewed, we're ready to submit it to
-exercism.io.
+exercism.org.
 
 ```
 $ exercism submit src/main/java/Greeter.java
@@ -248,7 +248,7 @@ Regardless of what you decide to do next, we sincerely hope you learn
 and enjoy being part of this community.  If at any time you need assistance
 do not hesitate to ask for help:
 
-http://exercism.io/languages/java/help
+http://exercism.org/languages/java/help
 
 Cheers!
 
@@ -273,7 +273,7 @@ completely different. Seeing both kinds can be instructive and interesting.
 
 Mentors review submitted solutions for the track they've chosen to mentor
 to help users learn as much as possible. To read more about mentoring and
-to sign up see: http://mentoring.exercism.io/.
+to sign up see: http://mentoring.exercism.org/.
 
 ## Contribute to Exercism
 
