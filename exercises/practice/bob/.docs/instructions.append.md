@@ -1,6 +1,6 @@
 # Instructions append
 
-Since this exercise has difficulty 5 it doesn't come with any starter implementation.
+Since this exercise has difficulty 5, it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
 It does mean that when you first try to run the tests, they won't compile.
 They will give you an error similar to:
@@ -13,9 +13,9 @@ They will give you an error similar to:
 ```
 This error occurs because the test refers to a class that hasn't been created yet (`ExerciseClassName`).
 To resolve the error you need to add a file matching the class name in the error to the `src/main/java` directory.
-For example, for the error above you would add a file called `ExerciseClassName.java`.
+For example, for the error above, you would add a file called `ExerciseClassName.java`.
 
-When you try to run the tests again you will get slightly different errors.
+When you try to run the tests again, you will get slightly different errors.
 You might get an error similar to:
 ```
   constructor ExerciseClassName in class ExerciseClassName cannot be applied to given types;
@@ -46,7 +46,7 @@ You might also get an error similar to:
   location: variable exerciseClassName of type ExerciseClassName
 ```
 This error means that you need to add a method called `someMethod` to your new class.
-In the example above you would add:
+In the example above, you would add:
 ```
 String someMethod() {
   return "";
@@ -57,4 +57,4 @@ You can find out which return type it should have by looking at the type of obje
 Or you could set your method to return some random type (e.g. `void`), and run the tests again.
 The new error should tell you which type it's expecting.
 
-After having resolved these errors you should be ready to start making the tests pass!
+After having resolved these errors, you should be ready to start making the tests pass!
