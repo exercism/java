@@ -22,9 +22,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void findsAValueInTheMiddleOfAnArray() throws ValueNotFoundException {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-        );
+        List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
 
@@ -34,9 +32,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void findsAValueAtTheBeginningOfAnArray() throws ValueNotFoundException {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-        );
+        List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
 
@@ -46,9 +42,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void findsAValueAtTheEndOfAnArray() throws ValueNotFoundException {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-        );
+        List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
 
@@ -58,9 +52,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void findsAValueInAnArrayOfOddLength() throws ValueNotFoundException {
-        List<Integer> sortedListOfOddLength = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634)
-        );
+        List<Integer> sortedListOfOddLength = List.of(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634);
 
         BinarySearch search = new BinarySearch(sortedListOfOddLength);
 
@@ -70,9 +62,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void findsAValueInAnArrayOfEvenLength() throws ValueNotFoundException {
-        List<Integer> sortedListOfEvenLength = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377)
-        );
+        List<Integer> sortedListOfEvenLength = List.of(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377);
 
         BinarySearch search = new BinarySearch(sortedListOfEvenLength);
 
@@ -82,9 +72,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void identifiesThatAValueIsNotFoundInTheArray() {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-        );
+        List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
 
@@ -99,9 +87,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void aValueSmallerThanTheArraysSmallestValueIsNotFound() {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-        );
+        List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
 
@@ -116,9 +102,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void aValueLargerThanTheArraysSmallestValueIsNotFound() throws ValueNotFoundException {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-        );
+        List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
 
@@ -148,9 +132,7 @@ public class BinarySearchTest {
     @Ignore("Remove to run test")
     @Test
     public void nothingIsFoundWhenTheLeftAndRightBoundCross() throws ValueNotFoundException {
-        List<Integer> sortedList = Collections.unmodifiableList(
-                Arrays.asList(1, 2)
-        );
+        List<Integer> sortedList = List.of(1, 2);
 
         BinarySearch search = new BinarySearch(sortedList);
 
