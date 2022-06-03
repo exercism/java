@@ -39,7 +39,7 @@ public class TwoferTest {
     @Test
     public void emptyStringIsNotTheSameAsNull() {
         assertThat(twofer.twofer(""))
-                .isEqualTo("One for , one for me.");
+                .isEqualTo("One for you, one for me.");
     }
 
 }
