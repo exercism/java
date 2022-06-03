@@ -5,9 +5,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class FighterTest {
 
     @Test
-    public void testToString() {
+    public void testWarriorToString() {
         Fighter warrior = new Warrior();
         assertThat(warrior.toString()).isEqualTo("Fighter is a Warrior");
+    }
+
+    @Test
+    public void testWizardToString() {
+        Wizard wizard = new Wizard();
+        assertThat(wizard.toString()).isEqualTo("Fighter is a Wizard");
     }
 
     @Test
