@@ -1,0 +1,10 @@
+{
+  "blurb": "Learn about strings by processing logs.",
+  "icon": "logs-logs-logs",
+  "authors": ["pvcarrera"],
+  "files": {
+    "solution": ["log_line_parser.rb"],
+    "test": ["log_line_parser_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
+  }
+}

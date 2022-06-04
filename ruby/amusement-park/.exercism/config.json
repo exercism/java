@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn about nil and instance variables by designing a system to administer attendance and rides in an amusement park.",
+  "authors": ["neenjaw", "iHiD"],
+  "contributors": ["kotp"],
+  "language_versions": ">=2.6.6",
+  "files": {
+    "solution": ["attendee.rb"],
+    "test": ["attendee_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
+  }
+}

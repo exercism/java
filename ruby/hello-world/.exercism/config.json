@@ -1,0 +1,39 @@
+{
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
+  "authors": [
+    "ramonh"
+  ],
+  "contributors": [
+    "abartov",
+    "bgrabow",
+    "budmc29",
+    "gilmatic",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "Kosmas",
+    "kotp",
+    "kytrinyx",
+    "mike-hewitson",
+    "NeimadTL",
+    "sivabudh",
+    "skeskali",
+    "thejoycekung",
+    "trayo",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "hello_world.rb"
+    ],
+    "test": [
+      "hello_world_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
