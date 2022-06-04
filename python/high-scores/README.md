@@ -1,5 +1,10 @@
 # High Scores
 
+Welcome to High Scores on Exercism's Python Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Manage a game player's High Score list.
 
 Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games of all time, and a classic of the arcade era. Your task is to write methods that return the highest score from the list, the last added score and the three highest scores.
@@ -10,49 +15,24 @@ In this exercise, you're going to use and manipulate lists. Python lists are ver
 - [**Lists and Tuples in Python (Real Python)**](https://realpython.com/python-lists-tuples/)
 - [**Python Lists (Google for Education)**](https://developers.google.com/edu/python/lists)
 
-
-## Exception messages
-
-Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
-indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
-every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
-a message.
-
-To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you should write:
-
-```python
-raise Exception("Meaningful message indicating the source of the error")
-```
-
-## Running the tests
-
-To run the tests, run `pytest high_scores_test.py`
-
-Alternatively, you can tell Python to run the pytest module:
-`python -m pytest high_scores_test.py`
-
-### Common `pytest` options
-
-- `-v` : enable verbose output
-- `-x` : stop running tests on first failure
-- `--ff` : run failures from previous test before running other test cases
-
-For other options, see `python -m pytest -h`
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/high-scores` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
-
-For more detailed information about running tests, code style and linting,
-please see [Running the Tests](http://exercism.io/tracks/python/tests).
-
 ## Source
 
+### Created by
+
+- @behrtam
+
+### Contributed to by
+
+- @BethanyG
+- @cmccandless
+- @Dog
+- @gabriel376
+- @GascaK
+- @IsaacG
+- @simmol
+- @tqa236
+- @yawpitch
+
+### Based on
+
 Tribute to the eighties' arcade game Frogger
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.

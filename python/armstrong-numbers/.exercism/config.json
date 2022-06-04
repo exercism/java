@@ -1,0 +1,27 @@
+{
+  "blurb": "Determine if a number is an Armstrong number.",
+  "authors": [
+    "pheanex"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "K4cePhoenix",
+    "sukovanej",
+    "tqa236"
+  ],
+  "files": {
+    "solution": [
+      "armstrong_numbers.py"
+    ],
+    "test": [
+      "armstrong_numbers_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}

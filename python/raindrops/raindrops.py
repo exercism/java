@@ -1,8 +1,10 @@
 def convert(number):
-    drops = ''
-    drops += 'Pling' if number % 3 == 0 else ''
-    drops += 'Plang' if number % 5 == 0 else ''
-    drops += 'Plong' if number % 7 == 0 else ''
-    return drops or str(number)
+    result = ''
+    if not number % 3:
+        result += 'Pling'
+    if not number % 5:
+        result += 'Plang'
+    if not number % 7:
+        result += 'Plong'
 
-
+    return result or str(number)

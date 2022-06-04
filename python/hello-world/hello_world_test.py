@@ -1,8 +1,10 @@
 import unittest
 
-from hello_world import hello
+from hello_world import (
+    hello,
+)
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class HelloWorldTest(unittest.TestCase):
