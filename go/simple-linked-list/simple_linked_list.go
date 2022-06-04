@@ -2,8 +2,6 @@ package linkedlist
 
 import "errors"
 
-// Define the List and Element types here.
-
 type List struct {
 	head *Element
 	size int

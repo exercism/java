@@ -16,7 +16,7 @@ A slice is written like `[]T` with `T` being the type of the elements in the sli
 
 ```go
 var empty []int                 // an empty slice
-withData := []int{0,1,2,3,4,5}  // a slice pre-filled with some data
+withData := []int{0, 1, 2, 3, 4, 5}  // a slice pre-filled with some data
 ```
 
 You can get/set an element at a given zero-based index using square-bracket notation:
@@ -34,30 +34,93 @@ If you don't specify an ending index, it defaults to the length of the slice.
 newSlice := withData[2:4] // newSlice == []int{2,3}
 ```
 
-## Multiple Return Values
-
-Go functions and methods can return multiple values.
-Very often, a second return value is used to return an error.
-For example:
+It is common to add new elements to the end of a slice, and so Go provides a built-in [`append`][append-yourbasic] function.
 
 ```go
-func GetCard() (Card, error) { ... }
+a := []int{1, 3}
+b := append(a, 4, 2) // b == []int{1,3,4,2}
 ```
 
-The assignment for multiple return values just uses a comma to separate the variables:
+Note that `append` is a variadic function, see details below.
+
+## Variadic Functions
+
+Usually, functions in Go accept only a fixed number of arguments.
+However, it is also possible to write variadic functions in Go.
+
+A variadic function is a function that accepts a variable number of arguments.
+
+If the type of the last parameter in a function definition is prefixed by ellipsis `...`, then the function can accept any number of arguments for that parameter.
 
 ```go
-card, err := GetCard()
-```
-
-If statements can use an initializer before the condition separated by a semicolon.
-This is a common idiom seen for error handling:
-
-```go
-if card, err := GetCard(); err != nil {
-    // handle the error
+func find(a int, b ...int) {
+    // ...
 }
 ```
+
+In the above function, parameter `b` is variadic and we can pass 0 or more arguments to `b`.
+
+```go
+find(5, 6)
+find(5, 6, 7)
+find(5)
+```
+
+```exercism/caution
+The variadic parameter must be the last parameter of the function.
+```
+
+The way variadic functions work is by converting the variable number of arguments to a slice of the type of the variadic parameter.
+
+Here is an example of an implementation of a variadic function.
+
+```go
+func find(num int, nums ...int) {
+    fmt.Printf("type of nums is %T\n", nums)
+
+    for i, v := range nums {
+        if v == num {
+            fmt.Println(num, "found at index", i, "in", nums)
+            return
+        }
+    }
+
+    fmt.Println(num, "not found in ", nums)
+}
+
+func main() {
+    find(89, 90, 91, 95)
+    // Output:
+    // type of nums is []int
+    // 89 not found in  [90 91 95]
+
+    find(45, 56, 67, 45, 90, 109)
+    // Output:
+    // type of nums is []int
+    // 45 found at index 2 in [56 67 45 90 109]
+
+    find(87)
+    // Output:
+    // type of nums is []int
+    // 87 not found in  []
+}
+```
+
+In line `find(89, 90, 91, 95)` of the program above, the variable number of arguments to the find function are `90`, `91` and `95`.
+The `find` function expects a variadic int parameter after `num`.
+Hence these three arguments will be converted by the compiler to a slice of type `int` `[]int{90, 91, 95}` and then it will be passed to the find function as `nums`.
+
+Sometimes you already have a slice and want to pass that to a variadic function.
+This can be achieved by passing the slice followed by `...`.
+That will tell the compiler to use the slice as is inside the variadic function.
+The step described above where a slice is created will simply be omitted in this case.
+
+```go
+list := []int{1, 2, 3}
+find(1, list...) // "find" defined as shown above
+```
+
+[append-yourbasic]: https://yourbasic.org/golang/append-explained/
 
 ## Instructions
 
@@ -65,38 +128,42 @@ As a magician-to-be, Elyse needs to practice some basics. She has a stack of car
 
 To make things a bit easier she only uses the cards 1 to 10.
 
-## 1. Retrieve a card from a stack
+## 1. Create a slice with certain cards
+
+When practicing with her cards, Elyse likes to start with her favorite three cards of the deck: 2, 6 and 9.
+Write a function `FavoriteCards` that returns a slice with those cards in that order.
+
+```go
+cards := FavoriteCards()
+fmt.Println(cards)
+// Output: [2 6 9]
+```
+
+## 2. Retrieve a card from a stack
 
 Return the card at position `index` from the given stack.
 
 ```go
-card, ok := GetItem([]int{1, 2, 4, 1}, 2)
-fmt.Println(card)
-// Output: 4
-fmt.Println(ok)
-// Output: true
+card := GetItem([]int{1, 2, 4, 1}, 2) // card == 4
 ```
 
-If the index is out of bounds (ie. if it is negative or after the end of the stack), we want to return `0` and `false`:
+If the index is out of bounds (ie. if it is negative or after the end of the stack), we want to return `-1`:
 
 ```go
-card, ok := GetItem([]int{1, 2, 4, 1}, 10)
-fmt.Println(card)
-// Output: 0
-fmt.Println(ok)
-// Output: false
+card := GetItem([]int{1, 2, 4, 1}, 10) // card == -1
 ```
 
-## 2. Exchange a card in the stack
+## 3. Exchange a card in the stack
 
 Exchange the card at position `index` with the new card provided and return the adjusted stack.
-Note that this will also change the input slice which is ok.
+Note that this will modify the input slice which is the expected behavior.
 
 ```go
 index := 2
 newCard := 6
-SetItem([]int{1, 2, 4, 1}, index, newCard)
-// Output: []int{1, 2, 6, 1}
+cards := SetItem([]int{1, 2, 4, 1}, index, newCard)
+fmt.Println(cards)
+// Output: [1 2 6 1]
 ```
 
 If the index is out of bounds (ie. if it is negative or after the end of the stack), we want to append the new card to the end of the stack:
@@ -104,33 +171,48 @@ If the index is out of bounds (ie. if it is negative or after the end of the sta
 ```go
 index := -1
 newCard := 6
-SetItem([]int{1, 2, 4, 1}, index, newCard)
-// Output: []int{1, 2, 4, 1, 6}
+cards := SetItem([]int{1, 2, 4, 1}, index, newCard)
+fmt.Println(cards)
+// Output: [1 2 4 1 6]
 ```
 
-## 3. Create a stack of cards
+## 4. Add cards to the top of the stack
 
-Create a stack of given `length` and fill it with cards of the given `value`. If the given `length` is negative or zero, return an empty stack.
+Add the card(s) specified in the `value` parameter at the top of the stack.
 
 ```go
-PrefilledSlice(8, 3)
-// Output: []int{8, 8, 8}
+slice := []int{3, 2, 6, 4, 8}
+cards := PrependItems(slice, 5, 1)
+fmt.Println(cards)
+// Output: [5 1 3 2 6 4 8]
 ```
 
-## 4. Remove a card from the stack
+If no argument is given for the `value` parameter, then the result equals the original slice.
+
+```go
+slice := []int{3, 2, 6, 4, 8}
+cards := PrependItems(slice)
+fmt.Println(cards)
+// Output: [3 2 6 4 8]
+```
+
+## 5. Remove a card from the stack
 
 Remove the card at position `index` from the stack and return the stack.
+Note that this may modify the input slice which is ok.
 
 ```go
-RemoveItem([]int{3, 2, 6, 4, 8}, 2)
-// Output: []int{3, 2, 4, 8}
+cards := RemoveItem([]int{3, 2, 6, 4, 8}, 2)
+fmt.Println(cards)
+// Output: [3 2 4 8]
 ```
 
 If the index is out of bounds (ie. if it is negative or after the end of the stack), we want to leave the stack unchanged:
 
 ```go
-RemoveItem([]int{3, 2, 6, 4, 8}, 11)
-// Output: []int{3, 2, 6, 4, 8}
+cards := RemoveItem([]int{3, 2, 6, 4, 8}, 11)
+fmt.Println(cards)
+// Output: [3 2 6 4 8]
 ```
 
 ## Source
@@ -138,3 +220,7 @@ RemoveItem([]int{3, 2, 6, 4, 8}, 11)
 ### Created by
 
 - @tehsphinx
+
+### Contributed to by
+
+- @norbs57

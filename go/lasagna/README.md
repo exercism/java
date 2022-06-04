@@ -95,7 +95,7 @@ Define the `OvenTime` constant with how many minutes the lasagna should be in th
 
 ```go
 OvenTime
-// Output: 40
+// => 40
 ```
 
 ## 2. Calculate the remaining oven time in minutes
@@ -108,7 +108,7 @@ func RemainingOvenTime(actual int) int {
 }
 
 RemainingOvenTime(30)
-// Output: 10
+// => 10
 ```
 
 ## 3. Calculate the preparation time in minutes
@@ -121,7 +121,7 @@ func PreparationTime(numberOfLayers int) int {
 }
 
 PreparationTime(2)
-// Output: 4
+// => 4
 ```
 
 ## 4. Calculate the elapsed working time in minutes
@@ -135,7 +135,7 @@ func ElapsedTime(numberOfLayers, actualMinutesInOven int) int {
 }
 
 ElapsedTime(3, 20)
-// Output: 26
+// => 26
 ```
 
 ## Source

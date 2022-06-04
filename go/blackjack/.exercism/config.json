@@ -1,1 +1,23 @@
-null
+{
+  "blurb": "Learn about conditionals by playing Blackjack.",
+  "authors": [
+    "andres-zartab"
+  ],
+  "contributors": [
+    "tehsphinx",
+    "andrerfcsantos", 
+    "norbs57"
+  ],
+  "forked_from": [],
+  "files": {
+    "solution": [
+      "blackjack.go"
+    ],
+    "test": [
+      "blackjack_test.go"
+    ],
+    "exemplar": [
+      ".meta/exemplar.go"
+    ]
+  }
+}

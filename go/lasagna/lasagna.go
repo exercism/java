@@ -19,3 +19,4 @@ func PreparationTime(layers int) int {
 func ElapsedTime(layers int, elapsed int) int {
 	return PreparationTime(layers) + elapsed
 }
+

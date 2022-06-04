@@ -29,7 +29,6 @@ func NewTrack(distance int) Track {
 	}
 }
 
-
 // Drive drives the car one time. If there is not enough battry to drive on more time,
 // the car will not move but use the leftover battery.
 func Drive(car Car) Car {

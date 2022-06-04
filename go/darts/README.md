@@ -21,6 +21,7 @@ The outer circle has a radius of 10 units (This is equivalent to the total radiu
 
 Write a function that given a point in the target (defined by its `real` cartesian coordinates `x` and `y`), returns the correct amount earned by a dart landing in that point.
 
+
 ## Scoring Note
 
 In scoring, consider a dart landing on the border of a circle to be "in the circle"

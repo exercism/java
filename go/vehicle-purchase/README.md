@@ -29,8 +29,8 @@ a > 5  // false
 ```
 
 The comparison operators above can also be used to compare strings.
-In that case a dictionary (lexicographical) order is applied.
-You can find a list of the exact order of all the characters [here][utf-16-list].
+In that case a lexicographical (dictionary) order is applied.
+For example:
 
 ```Go
 	"apple" < "banana"  // true
@@ -83,8 +83,6 @@ if v := 2 * num; v > 10 {
 
 > Note: any variables created in the initialization statement go out of scope after the end of the if statement.
 
-[utf-16-list]: https://www.fileformat.info/info/charset/UTF-16/list.htm
-
 ## Instructions
 
 In this exercise, you are going to write some code to help you prepare to buy a vehicle.
@@ -110,7 +108,7 @@ needLicense = NeedsLicense("bike")
 
 You evaluate your options of available vehicles.
 You manage to narrow it down to two options but you need help making the final decision.
-For that, implement the function `ChooseVehicle(option1, option2)` that takes two vehicles as arguments and returns a decision that includes the option that comes first in dictionary order.
+For that, implement the function `ChooseVehicle(option1, option2)` that takes two vehicles as arguments and returns a decision that includes the option that comes first in lexicographical order.
 
 ```go
 vehicle := ChooseVehicle("Wuling Hongguang", "Toyota Corolla")

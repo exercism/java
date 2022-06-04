@@ -13,6 +13,8 @@ the 6th prime is 13.
 If your language provides methods in the standard library to deal with prime
 numbers, pretend they don't exist and implement them yourself.
 
+For inputs lesser than `1`, the nth prime number can't be computed. In that case, your function must return an error. The error message should be descriptive of the error. In case the input is inside a valid range, the function must return the actual prime number and no error.
+
 ## Source
 
 ### Created by
@@ -33,6 +35,7 @@ numbers, pretend they don't exist and implement them yourself.
 - @robphoenix
 - @sebito91
 - @tleen
+- @MikaeelMF
 
 ### Based on
 

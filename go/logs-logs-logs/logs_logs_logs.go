@@ -28,3 +28,4 @@ func Replace(log string, old, new rune) string {
 func WithinLimit(log string, limit int) bool {
 	return len([]rune(log)) <= limit
 }
+
