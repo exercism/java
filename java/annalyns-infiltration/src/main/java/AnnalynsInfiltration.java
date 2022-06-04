@@ -15,3 +15,4 @@ class AnnalynsInfiltration {
         return (prisonerIsAwake && !knightIsAwake && !archerIsAwake) || (petDogIsPresent && !archerIsAwake);
     }
 }
+

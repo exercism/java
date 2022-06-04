@@ -1,1 +1,17 @@
-null
+{
+  "blurb": "Learn about ternary operators by calculating salaries.",
+  "authors": [
+    "TalesDias"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SalaryCalculator.java"
+    ],
+    "test": [
+      "src/test/java/SalaryCalculatorTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/SalaryCalculator.java"
+    ]
+  }
+}

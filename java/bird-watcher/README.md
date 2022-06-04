@@ -27,7 +27,7 @@ int[] threeIntsV1 = new int[] { 4, 9, 7 };
 int[] threeIntsV2 = { 4, 9, 7 };
 ```
 
-Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Array` class.
+Arrays can be manipulated by either calling an array instance's methods or properties, or by using the static methods defined in the `Arrays` class.
 
 The fact that an array is also a _collection_ means that, besides accessing values by index, you can iterate over _all_ its values using a `foreach` loop:
 
@@ -83,12 +83,12 @@ birdCount.getToday();
 
 ## 3. Increment today's count
 
-Implement the `BirdWatcher.incrementDayCount()` method to increment today's count:
+Implement the `BirdWatcher.incrementTodaysCount()` method to increment today's count:
 
 ```java
 int[] birdsPerDay = { 2, 5, 0, 7, 4, 1 };
 BirdWatcher birdCount = new BirdWatcher(birdsPerDay);
-birdCount.incrementDayCount();
+birdCount.incrementTodaysCount();
 birdCount.getToday();
 // => 2
 ```

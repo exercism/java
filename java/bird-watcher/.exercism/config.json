@@ -1,1 +1,21 @@
-null
+{
+  "blurb": "Learn about arrays by keeping track of how many birds visit your garden.",
+  "authors": [
+    "samuelteixeiras",
+    "ystromm"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/BirdWatcher.java"
+    ],
+    "test": [
+      "src/test/java/BirdWatcherTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/BirdWatcher.java"
+    ]
+  },
+  "forked_from": [
+    "csharp/bird-watcher"
+  ]
+}

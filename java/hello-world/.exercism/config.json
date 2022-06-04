@@ -1,1 +1,44 @@
-{"blurb":"The classical introductory exercise. Just say \"Hello, World!\"","authors":["counterleft"],"files":{"solution":["src/main/java/Greeter.java"],"test":["src/test/java/GreeterTest.java"],"example":[".meta/src/reference/java/Greeter.java"]},"source":"This is an exercise to introduce users to using Exercism","source_url":"http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"}
+{
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
+  "authors": [
+    "counterleft"
+  ],
+  "contributors": [
+    "c-thornton",
+    "di72nn",
+    "FridaTveit",
+    "imwithsam",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "katrinleinweber",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mohamedFalah",
+    "msomji",
+    "muzimuzhi",
+    "otraczyk",
+    "PTrottier",
+    "rcraggs",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Greeter.java"
+    ],
+    "test": [
+      "src/test/java/GreeterTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Greeter.java"
+    ]
+  },
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}

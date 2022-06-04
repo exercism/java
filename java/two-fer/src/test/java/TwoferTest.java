@@ -19,14 +19,14 @@ public class TwoferTest {
                 .isEqualTo("One for you, one for me.");
     }
 
-    
+
     @Test
     public void aNameGiven() {
         assertThat(twofer.twofer("Alice"))
                 .isEqualTo("One for Alice, one for me.");
     }
 
-    
+
     @Test
     public void anotherNameGiven() {
         assertThat(twofer.twofer("Bob"))
@@ -35,11 +35,11 @@ public class TwoferTest {
 
     /* Track specific */
 
-    
+
     @Test
     public void emptyStringIsNotTheSameAsNull() {
         assertThat(twofer.twofer(""))
-                .isEqualTo("One for , one for me.");
+                .isEqualTo("One for you, one for me.");
     }
 
 }

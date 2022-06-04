@@ -1,1 +1,20 @@
-null
+{
+  "blurb": "Learn about conditionals by playing Blackjack.",
+  "authors": [
+    "TalesDias"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Blackjack.java"
+    ],
+    "test": [
+      "src/test/java/BlackjackTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/Blackjack.java"
+    ]
+  },
+  "forked_from": [
+    "go/blackjack"
+  ]
+}

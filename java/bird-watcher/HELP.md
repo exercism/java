@@ -10,7 +10,6 @@ Choose your operating system:
 
 ----
 
-
 1. Open a Command Prompt.
 2. Get the first exercise:
 
@@ -48,7 +47,6 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 
 ----
 
-
 1. In the terminal window, get the first exercise:
 
      ```
@@ -80,7 +78,6 @@ Good luck!  Have fun!
 If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
 
 ----
-
 
 1. In the terminal window, get the first exercise:
 

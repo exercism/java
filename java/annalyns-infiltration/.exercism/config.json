@@ -1,1 +1,20 @@
-null
+{
+  "blurb": "Learn about booleans while helping Annalyn rescue her friend.",
+  "authors": [
+    "mikedamay"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/AnnalynsInfiltration.java"
+    ],
+    "test": [
+      "src/test/java/AnnalynsInfiltrationTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/AnnalynsInfiltration.java"
+    ]
+  },
+  "forked_from": [
+    "csharp/annalyns-infiltration"
+  ]
+}

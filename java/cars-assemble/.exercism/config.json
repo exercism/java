@@ -1,1 +1,20 @@
-null
+{
+  "blurb": "Learn about numbers by analyzing the production of an assembly line.",
+  "authors": [
+    "TalesDias"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/CarsAssemble.java"
+    ],
+    "test": [
+      "src/test/java/CarsAssembleTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/CarsAssemble.java"
+    ]
+  },
+  "forked_from": [
+    "csharp/cars-assemble"
+  ]
+}

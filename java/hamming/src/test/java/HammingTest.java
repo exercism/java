@@ -1,87 +1,73 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class HammingTest {
 
     @Test
     public void testNoDistanceBetweenEmptyStrands() {
-        assertEquals(0, new Hamming("", "").getHammingDistance());
+        assertThat(new Hamming("", "").getHammingDistance()).isEqualTo(0);
     }
 
-    
     @Test
     public void testNoDistanceBetweenShortIdenticalStrands() {
-        assertEquals(0, new Hamming("A", "A").getHammingDistance());
+        assertThat(new Hamming("A", "A").getHammingDistance()).isEqualTo(0);
     }
 
-    
     @Test
     public void testCompleteDistanceInSingleLetterDifferentStrands() {
-        assertEquals(1, new Hamming("G", "T").getHammingDistance());
+        assertThat(new Hamming("G", "T").getHammingDistance()).isEqualTo(1);
     }
 
-    
     @Test
     public void testDistanceInLongIdenticalStrands() {
-        assertEquals(0, new Hamming("GGACTGAAATCTG", "GGACTGAAATCTG").getHammingDistance());
+        assertThat(new Hamming("GGACTGAAATCTG", "GGACTGAAATCTG").getHammingDistance()).isEqualTo(0);
     }
 
-    
     @Test
     public void testDistanceInLongDifferentStrands() {
-        assertEquals(9, new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance());
+        assertThat(new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance()).isEqualTo(9);
     }
 
-    
     @Test
     public void testValidatesFirstStrandNotLonger() {
-        IllegalArgumentException expected =
-            assertThrows(
+        IllegalArgumentException expected = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Hamming("AATG", "AAA"));
 
         assertThat(expected)
-            .hasMessage("leftStrand and rightStrand must be of equal length.");
+                .hasMessage("leftStrand and rightStrand must be of equal length.");
     }
 
-    
     @Test
     public void testValidatesSecondStrandNotLonger() {
-        IllegalArgumentException expected =
-            assertThrows(
+        IllegalArgumentException expected = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Hamming("ATA", "AGTG"));
 
         assertThat(expected)
-            .hasMessage("leftStrand and rightStrand must be of equal length.");
+                .hasMessage("leftStrand and rightStrand must be of equal length.");
     }
 
-    
     @Test
     public void testDisallowLeftEmptyStrand() {
-        IllegalArgumentException expected =
-            assertThrows(
+        IllegalArgumentException expected = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Hamming("", "G"));
 
         assertThat(expected)
-            .hasMessage("left strand must not be empty.");
+                .hasMessage("left strand must not be empty.");
     }
 
-    
     @Test
     public void testDisallowRightEmptyStrand() {
-        IllegalArgumentException expected =
-            assertThrows(
+        IllegalArgumentException expected = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Hamming("G", ""));
 
         assertThat(expected)
-            .hasMessage("right strand must not be empty.");
+                .hasMessage("right strand must not be empty.");
     }
 
 }

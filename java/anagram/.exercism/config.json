@@ -1,1 +1,43 @@
-{"blurb":"Given a word and a list of possible anagrams, select the correct sublist.","authors":["wdjunaidi"],"files":{"solution":["src/main/java/Anagram.java"],"test":["src/test/java/AnagramTest.java"],"example":[".meta/src/reference/java/Anagram.java"]},"source":"Inspired by the Extreme Startup game","source_url":"https://github.com/rchatley/extreme_startup"}
+{
+  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
+  "authors": [
+    "wdjunaidi"
+  ],
+  "contributors": [
+    "ericbalawejder",
+    "FridaTveit",
+    "javaeeeee",
+    "jmrunkle",
+    "jonnynabors",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "rohit1104",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick",
+    "Zhiyuan-Amos"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Anagram.java"
+    ],
+    "test": [
+      "src/test/java/AnagramTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Anagram.java"
+    ]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}

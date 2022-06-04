@@ -1,1 +1,36 @@
-{"blurb":"Reverse a string.","authors":["bmkiefer"],"files":{"solution":["src/main/java/ReverseString.java"],"test":["src/test/java/ReverseStringTest.java"],"example":[".meta/src/reference/java/ReverseString.java"]},"source":"Introductory challenge to reverse an input string","source_url":"https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"}
+{
+  "blurb": "Reverse a string.",
+  "authors": [
+    "bmkiefer"
+  ],
+  "contributors": [
+    "barisozcanli",
+    "FridaTveit",
+    "ikhadykin",
+    "jmrunkle",
+    "Kyle-Pu",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "ppiliar",
+    "sjwarner",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ReverseString.java"
+    ],
+    "test": [
+      "src/test/java/ReverseStringTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ReverseString.java"
+    ]
+  },
+  "source": "Introductory challenge to reverse an input string",
+  "source_url": "https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"
+}
