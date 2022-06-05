@@ -1,0 +1,23 @@
+{
+  "blurb": "Given a year, report if it is a leap year.",
+  "authors": [
+    "andrej-makarov-skrt"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "leap.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}
