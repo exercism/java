@@ -1,0 +1,24 @@
+{
+  "blurb": "Determine if a sentence is a pangram.",
+  "authors": [
+    "andrej-makarov-skrt"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann",
+    "Wikunia"
+  ],
+  "files": {
+    "solution": [
+      "pangram.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
