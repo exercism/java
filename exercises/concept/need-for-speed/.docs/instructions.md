@@ -80,6 +80,11 @@ var car = new NeedForSpeed(speed, batteryDrain);
 int distance = 100;
 var race = new RaceTrack(distance);
 
+car.distanceDriven()
+// => 0
+
 race.tryFinishTrack(car);
 // => true
-```
+
+car.distanceDriven()
+// => 100
