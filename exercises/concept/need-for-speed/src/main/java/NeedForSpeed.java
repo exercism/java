@@ -21,7 +21,7 @@ class NeedForSpeed {
 class RaceTrack {
     // TODO: define the constructor for the 'RaceTrack' class
 
-    public boolean carCanFinish(NeedForSpeed car) {
-        throw new UnsupportedOperationException("Please implement the RaceTrack.carCanFinish() method");
+    public boolean tryFinishTrack(NeedForSpeed car) {
+        throw new UnsupportedOperationException("Please implement the RaceTrack.tryFinishTrack() method");
     }
 }
