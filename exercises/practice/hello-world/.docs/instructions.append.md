@@ -248,7 +248,7 @@ Regardless of what you decide to do next, we sincerely hope you learn
 and enjoy being part of this community.  If at any time you need assistance
 do not hesitate to ask for help:
 
-http://exercism.io/languages/java/help
+https://gitter.im/exercism/support
 
 Cheers!
 

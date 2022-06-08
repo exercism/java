@@ -43,7 +43,7 @@ Choose your operating system:
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
+If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
 
 ----
 
@@ -77,7 +77,7 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
+If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
 
 ----
 
@@ -112,5 +112,5 @@ If you get stuck, at any point, don't forget to reach out for [help](http://exer
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](http://exercism.io/languages/java/help).
+If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
 
