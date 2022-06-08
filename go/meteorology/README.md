@@ -37,7 +37,7 @@ type Distance struct {
 } 
 ```
 
-In the example above, `Kilometer` and `Mile` ane constants of type `DistanceUnit`.
+In the example above, `Kilometer` and `Mile` are constants of type `DistanceUnit`.
 
 These types do not implement interface `Stringer` as they lack the `String` method.
 Hence `fmt` functions will print `Distance` values using Go's "default format":
@@ -194,7 +194,7 @@ fmt.Sprint(windSpeedYesterday)
 Meteorological data specifies location, temperature, wind direction, wind speed
 and humidity. It should be formatted as in the example below:
 
-For that to happen, make the `MeteorologyData` type implement the `Stringer` interface by adding a `String` method to it. This method should return the meteorology data in the following format: `"<location>: <temperature>, Wind <wind_speed> at <wind_direction>, <humidity>% Humidity"`:
+For that to happen, make the `MeteorologyData` type implement the `Stringer` interface by adding a `String` method to it. This method should return the meteorology data in the following format: `"<location>: <temperature>, Wind <wind_direction> at <wind_speed>, <humidity>% Humidity"`:
 
 ```go 
 sfData := MeteorologyData{

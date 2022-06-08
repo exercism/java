@@ -126,7 +126,7 @@ If a log line does not contain one of the characters from the above table, retur
 
 ```go
 Application("❗ recommended search product 🔍")
-// Output: recommendation
+// => recommendation
 ```
 
 ## 2. Fix corrupted logs
@@ -139,7 +139,7 @@ Implement the `Replace` function that takes a log line, a corrupted character, a
 log := "please replace '👎' with '👍'"
 
 Replace(log, '👎', '👍')
-// Output: please replace '👍' with '👍'"
+// => please replace '👍' with '👍'"
 ```
 
 ## 3. Determine if a log can be displayed
@@ -150,7 +150,7 @@ Implement the `WithinLimit` function that takes a log line and character limit a
 
 ```go
 WithinLimit("hello❗", 6)
-// Output: true
+// => true
 ```
 
 ## Source
