@@ -45,7 +45,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 
 1. **Ensure you have the basic Java tooling installed:**  JDK 1.11+, an editor and Gradle 2.x.
 
-   (see [exercism.io: Installing Java](http://exercism.io/languages/java/installation))
+   (see [exercism.io: Installing Java](https://exercism.org/docs/tracks/java/installation))
 -  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
    See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing/git-basics.md)) to:
@@ -170,7 +170,6 @@ Any completely new exercise needs to be added and accepted there before it can b
 There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
 Please review this before porting an exercise to the Java track.
 
-See [here](http://exercism.io/languages/java/todo) for a list of exercises that have yet to be implemented on the Java track and can therefore be ported to this track.
 Please make sure no one else has a pull request open to implement your chosen exercise before you start.
 
 It might also be a good idea to open a WIP pull request to make it clear to others that you are working on this exercise.

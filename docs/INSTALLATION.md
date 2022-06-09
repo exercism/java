@@ -47,7 +47,7 @@ We recommend closing the administrative command prompt and opening a new command
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
@@ -83,7 +83,7 @@ Below are instructions for install using the most common method - using Homebrew
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
@@ -120,7 +120,7 @@ If you are using Debian or its derivatives (like Ubuntu), use APT:
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
@@ -145,7 +145,7 @@ both OpenJdk11 and the latest Gradle with ease. Use the following steps:
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
@@ -173,7 +173,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
@@ -207,7 +207,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
@@ -240,7 +240,7 @@ To get started, see "[Running the Tests](http://exercism.io/languages/java/tests
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](http://exercism.io/languages/java/tests)".
+To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
 ----
 
