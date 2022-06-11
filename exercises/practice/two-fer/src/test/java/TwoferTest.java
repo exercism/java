@@ -33,13 +33,4 @@ public class TwoferTest {
                 .isEqualTo("One for Bob, one for me.");
     }
 
-    /* Track specific */
-
-    @Ignore("Remove to run test")
-    @Test
-    public void emptyStringIsNotTheSameAsNull() {
-        assertThat(twofer.twofer(""))
-                .isEqualTo("One for you, one for me.");
-    }
-
 }
