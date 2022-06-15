@@ -35,7 +35,16 @@ SqueakyClean.clean("à-ḃç");
 // => "àḂç"
 ```
 
-## 4. Omit Greek lower case letters
+## 4. Omit characters that are not letters
+
+Modify the (_static_) `SqueakyClean.clean()` method to omit any characters that are not letters.
+
+```java
+SqueakyClean.clean("a1😀2😀3😀b");
+// => "ab"
+```
+
+## 5. Omit Greek lower case letters
 
 Modify the (_static_) `SqueakyClean.clean()` method to omit any Greek letters in the range 'α' to 'ω'.
 

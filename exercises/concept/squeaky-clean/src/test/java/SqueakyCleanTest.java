@@ -38,6 +38,10 @@ public class SqueakyCleanTest {
     public void string_with_no_letters() {
         assertThat(SqueakyClean.clean("\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00")).isEmpty();
     }
+    @Test
+    public void remove_no_letters() {
+        assertThat(SqueakyClean.clean("a1\uD83D\uDE002\uD83D\uDE003\uD83D\uDE00b")).isEqualTo("ab");
+    }
 
     @Test
     public void kebab_to_camel_case() {
