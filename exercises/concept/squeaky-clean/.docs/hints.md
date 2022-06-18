@@ -33,4 +33,3 @@
 [iscontrol]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isISOControl(char)
 [toupper]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#toUpperCase(char)
 [isLetter]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isLetter(char)
-[
