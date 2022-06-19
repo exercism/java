@@ -40,6 +40,11 @@ public class SqueakyCleanTest {
     }
 
     @Test
+    public void keep_only_letters() {
+        assertThat(SqueakyClean.clean("a1\uD83D\uDE002\uD83D\uDE003\uD83D\uDE00b")).isEqualTo("ab");
+    }
+
+    @Test
     public void kebab_to_camel_case() {
         assertThat(SqueakyClean.clean("à-ḃç")).isEqualTo("àḂç");
     }

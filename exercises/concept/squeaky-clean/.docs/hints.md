@@ -17,7 +17,11 @@
 
 - See [this method][toupper] to convert a character to upper case.
 
-## 4. Omit Greek lower case letters
+## 4. Omit characters that are not letters
+
+- See [this method][isLetter] to check if a character is a letter.
+
+## 5. Omit Greek lower case letters
 
 - `char`s support the default equality and comparison operators.
 
@@ -28,3 +32,4 @@
 [iswhitespace]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isWhitespace(char)
 [iscontrol]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isISOControl(char)
 [toupper]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#toUpperCase(char)
+[isLetter]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isLetter(char)
