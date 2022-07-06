@@ -11,7 +11,9 @@ assistance!
 * [Introduction](#introduction)
 * [Exercise Structure](#exercise-structure)
 * [Solving "Hello, World!"](#solving-hello-world)
-* [Submitting your first iteration](#submitting-your-first-iteration)
+* [Step 1: Replace the `UnsupportedOperationException`](#step-1-replace-the-unsupportedoperationexception)
+  [Step 2: Run the Tests](#step-2-run-the-tests)
+* [Step 3: Submitting your first iteration](#step-3-submitting-your-first-iteration)
 * [Next Steps](#next-steps)
 
 # Introduction
@@ -39,12 +41,12 @@ in order to solve the current problem.
 
 # Solving "Hello, World!"
 
-Before proceeding any further, make sure you have completed the required setup
-steps described by the link below:
-* [Installing Java and Gradle](https://exercism.org/docs/tracks/java/installation);
+You can use our online editor to solve your solution and run the tests, but 
+if you want to solve the problem and run tests locally check these links below:
 
-You can run test online by utilizing our online text editor, but if you want test locally see link ->
-[Testing locally on the java track](https://exercism.org/docs/tracks/java/tests)
+* [Installing Java and Gradle](https://exercism.org/docs/tracks/java/installation);
+* [Working Locally](https://exercism.org/docs/using/solving-exercises/working-locally);
+* [Testing locally on the java track](https://exercism.org/docs/tracks/java/tests);
 
 
 ## Step 1: Replace the `UnsupportedOperationException`
@@ -71,7 +73,9 @@ Delete the contents of line 4 and replace it with:
     }
 ```
 
-## Step 2: Run the tests within the online editor
+## Step 2: Run the Tests
+
+Once again, tests can be 
 
 After making corrections and implementing your solution, ensure to run the program by selecting the "Run Tests"
 
@@ -80,7 +84,7 @@ button on the online editor. If the tests fails, that's ok! Simply refactor your
 
 Success! Our solution passes the test cases . We're good to go!
 
-# Submitting your first iteration
+# Step 3: Submitting your first iteration
 
 With a working solution that we've reviewed, we're ready to submit it to
 exercism.io.
@@ -88,6 +92,10 @@ exercism.io.
 ```
 $ exercism submit src/main/java/Greeter.java
 ```
+
+For a closer look at submitting a solution locally:
+
+* [Submitting locally](https://exercism.org/docs/using/solving-exercises/working-locally);
 
 
 # Next Steps
