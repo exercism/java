@@ -213,7 +213,7 @@ To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/t
 
 ## Installing on Linux without a package manager
 
-*NOTE: these instructions are intended for experienced Linux users.  Unless you specifically do not want to use a package manager, we highly recommend using the the installation instructions, [above](#linux).*
+*NOTE: these instructions are intended for experienced Linux users.  Unless you specifically do not want to use a package manager, we highly recommend using the installation instructions, [above](#linux).*
 
 1. Install the JDK:
    1. Choose your distribution and download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11) (choose **"Install JDK"**).
