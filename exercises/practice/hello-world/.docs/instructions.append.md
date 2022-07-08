@@ -75,19 +75,15 @@ Delete the contents of line 4 and replace it with:
 
 ## Step 2: Run the Tests
 
-Once again, tests can be 
-
+Once again, you can run the tests that are located locally within the editor.
 After making corrections and implementing your solution, ensure to run the program by selecting the "Run Tests"
-
 button on the online editor. If the tests fails, that's ok! Simply refactor your code and test again.
-
-
-Success! Our solution passes the test cases . We're good to go!
+Success! Our solution passes the test cases. We're good to go!
 
 # Step 3: Submitting your first iteration
 
 With a working solution that we've reviewed, we're ready to submit it to
-exercism.io.
+exercism.org.
 
 ```
 $ exercism submit src/main/java/Greeter.java
