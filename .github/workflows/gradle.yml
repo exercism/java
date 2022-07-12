@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
     - name: Set up JDK 1.11
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3.4.1
       with:
         java-version: 11
         distribution: 'adopt'
@@ -29,7 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
     - name: Set up JDK 1.11
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3.4.1
       with:
         java-version: 11
         distribution: 'adopt'
