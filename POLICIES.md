@@ -125,7 +125,7 @@ References: [[1](https://github.com/exercism/java/issues/1075)]
 
 > The hello world exercise has an extensive tutorial on how to solve exercism exercises.
 > This tutorial would probably be useful to have as a reference when solving some of the other earlier exercises as well.
-> Therefore any exercise with difficulty less than 3 should have a hints.md file which references [the hello world tutorial](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md).
+> Therefore any exercise with difficulty less than 3 should have a hints.md file which references [the hello world tutorial](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial).
 
 References: [[1](https://github.com/exercism/java/issues/1389)]
 
