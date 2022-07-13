@@ -51,7 +51,7 @@ if you want to solve the problem and run tests locally check these links below:
 
 ## Step 1: Replace the `UnsupportedOperationException`
 
-In the online editor, you should find an exception on line 4:
+Either working locally or using the online editor, you should find an exception on line 4:
 
 ```java
 throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
@@ -75,19 +75,21 @@ Delete the contents of line 4 and replace it with:
 
 ## Step 2: Run the Tests
 
-Once again, you can run the tests that are located locally within the editor.
-After making corrections and implementing your solution, ensure to run the program by selecting the "Run Tests"
-button on the online editor. If the tests fails, that's ok! Simply refactor your code and test again.
-Success! Our solution passes the test cases. We're good to go!
+After making corrections and implementing your solution, run the tests again.
+You can run the tests using the online editor or locally on your machine:
+- To run the tests in the online editor, click the "Run Tests" button.
+- To run the tests locally, check [Testing on the Java track](https://exercism.org/docs/tracks/java/tests)
+  If the tests fails, that's ok! See what the error message is telling you, change your code and test again.
+  When your tests pass, move on to the next step.
 
 # Step 3: Submitting your first iteration
 
 With a working solution that we've reviewed, we're ready to submit it to
 exercism.org.
+You can submit the solution using the online editor or locally using the [Exercism CLI](https://exercism.org/docs/using/solving-exercises/working-locally):
+- To submit the exercise locally, first [install the exercism CLI](https://exercism.org/docs/using/solving-exercises/working-locally) if you haven't already  and then submit the files of your solution, e.g:
 
-```
-$ exercism submit src/main/java/Greeter.java
-```
+- If you want to use the online editor to submit your solution, just click the "Submit" button!
 
 For a closer look at submitting a solution locally:
 
