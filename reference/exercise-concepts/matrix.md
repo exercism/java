@@ -1,6 +1,6 @@
 # Matrix
 
-[Example implementation](https://github.com/exercism/java/blob/master/exercises/matrix/.meta/src/reference/java/Matrix.java)
+[Example implementation](https://github.com/exercism/java/blob/main/exercises/practice/matrix/.meta/src/reference/java/Matrix.java)
 
 ## General
 

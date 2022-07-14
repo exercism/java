@@ -36,7 +36,7 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 > - Exercises of difficulty 4 or lower: provide stubs for all required constructors and methods. This means that you need to provide stubs for those constructors or methods that are necessary to pass all tests. E.g. stubs for private methods may be skipped.
 Stubs should include the following body:
     `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
-> - Exercises of difficulty 5 or higher: copy the StubTemplate.java file (provided [here](https://github.com/exercism/java/tree/master/_template/src/main/java)) and rename it to fit the exercise. For example, for the exercise linked-list the file could be named LinkedList.java. Then either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
+> - Exercises of difficulty 5 or higher: copy the StubTemplate.java file (provided [here](https://github.com/exercism/java/tree/main/_template/src/main/java)) and rename it to fit the exercise. For example, for the exercise linked-list the file could be named LinkedList.java. Then either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
 
 References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)], [[3](https://github.com/exercism/java/issues/977)], [[4](https://github.com/exercism/java/issues/1721)]
 
@@ -103,7 +103,7 @@ References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
 
 > If you're testing a class called `SomeClassName` then your test class should be called `SomeClassNameTest`.
 
-> The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/master/exercises/clock) as an example.
+> The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/main/exercises/practice/clock) as an example.
 
 References: [[1](https://github.com/exercism/java/issues/697)]
 
@@ -115,7 +115,7 @@ References: [[1](https://github.com/exercism/java/issues/697)]
 
 > Therefore a hints.md file should be added to the .meta directory for every exercise with difficulty 5.
 > This file should explain what they need to do when there is no starter implementation.
-> The files should all be the same so you can copy it from any other exercise with difficulty 5, e.g. [flatten-array](https://github.com/exercism/java/tree/master/exercises/flatten-array/.meta/hints.md).
+> The files should all be the same so you can copy it from any other exercise with difficulty 5, e.g. [flatten-array](https://github.com/exercism/java/tree/main/exercises/pratice/flatten-array/.meta/hints.md).
 
 > We add the file to every exercise with difficulty 5 because the structure of the track means that we don't know which exercise will be the first one without starter implementation that a user will be faced with.
 
@@ -131,7 +131,7 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 
 ### Avoid returning null
 
-> The [canonical data](https://github.com/exercism/problem-specifications/tree/master/exercises) for each exercise intentionally doesn't deal with error handling.
+> The [canonical data](https://github.com/exercism/problem-specifications/tree/main/exercises) for each exercise intentionally doesn't deal with error handling.
 > When an error has occured or a method can't return anything, the canonical data will just mark that as `"expected": null`.
 > This is because error handling varies from language to language, so the canonical data is leaving it up to each language track to decide how to deal with those situations.
 > It doesn't mean that the method needs to return `null`.
@@ -141,11 +141,11 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 
 > It's considered best practice to deal with errors and unexpected circumstances by throwing exceptions.
 > If you throw an exception then you force the user to deal with the problem.
-> You can either define your own exception (see [the triangle exercise](https://github.com/exercism/java/blob/master/exercises/triangle/.meta/src/reference/java/TriangleException.java) for an example) or use a predefined one (see [the collatz-conjecture exercise](https://github.com/exercism/java/blob/master/exercises/collatz-conjecture/src/test/java/CollatzCalculatorTest.java) for an example).
+> You can either define your own exception (see [the triangle exercise](https://github.com/exercism/java/blob/main/exercises/practice/triangle/.meta/src/reference/java/TriangleException.java) for an example) or use a predefined one (see [the collatz-conjecture exercise](https://github.com/exercism/java/blob/main/exercises/practice/collatz-conjecture/src/test/java/CollatzCalculatorTest.java) for an example).
 
 > Another option is to use [Optionals](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html).
 > This can be more suitable if the case you want to deal with isn't an exceptional occurence, but rather an expected scenario, e.g. a search method not finding what it was searching for.
-> See [the word-search exercise](https://github.com/exercism/java/blob/master/exercises/word-search/src/test/java/WordSearcherTest.java) for an example where `Optional` is used.
+> See [the word-search exercise](https://github.com/exercism/java/blob/main/exercises/practice/word-search/src/test/java/WordSearcherTest.java) for an example where `Optional` is used.
 
 References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 
@@ -159,7 +159,7 @@ References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 > Furthermore, you can make assertions on the state of a domain object after the exception has been thrown.
 > To be consistent, please use `assertThrows` whenever you expect an exception to be thrown.
 
-> See [the triangle tests](https://github.com/exercism/java/blob/master/exercises/triangle/src/test/java/TriangleTest.java) for an example of where `assertThrows` is used.
+> See [the triangle tests](https://github.com/exercism/java/blob/main/exercises/practice/triangle/src/test/java/TriangleTest.java) for an example of where `assertThrows` is used.
 
 References: [[1](https://github.com/junit-team/junit4/wiki/Exception-testing)]
 

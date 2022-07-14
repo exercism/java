@@ -27,7 +27,7 @@ For general guidelines about contributing to Exercism see the [Exercism contribu
 
 Hi! Thanks for contributing to the Exercism Java track!
 
-Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md) and make sure your changes comply with them all.
+Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md) and make sure your changes comply with them all.
 This helps us focus our review time on the more important aspects of your contributions.
 
 Also please only address one issue per pull request and reference the issue in your pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
@@ -48,7 +48,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    (see [exercism.io: Installing Java](https://exercism.org/docs/tracks/java/installation))
 -  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
-   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Git Basics doc](https://github.com/exercism/docs/blob/master/contributing/git-basics.md)) to:
+   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Contributing via GitHub](https://github.com/exercism/docs/tree/main/building/github#contributing-via-github)) to:
    * "fork" a repository on GitHub;
    - install `git`;
    - "clone" a copy of your fork;
@@ -164,7 +164,7 @@ The easiest way to achieve this is simply use the `bin/journey-test.sh` script. 
 The easiest way to add a new exercise to the Java track is to port an exercise from another track.
 That means that you take an exercise that has already been implemented in another language and you implement it in this track.
 
-To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/master/exercises).
+To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/main/exercises).
 Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
 
 There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
@@ -186,7 +186,7 @@ This list is in alphabetical order so please add your exercise so that it mainta
 
 * Please add an exercise submodule for your exercise.
 See [The Problem Submodules](#the-problem-submodules) section for what needs to be in this.
-See the [POLICIES doc](https://github.com/exercism/java/blob/master/POLICIES.md#starter-implementations) for an explanation of when you need to add a starter implementation.
+See the [POLICIES doc](https://github.com/exercism/java/blob/main/POLICIES.md#starter-implementations) for an explanation of when you need to add a starter implementation.
 The `build.gradle` file can just be copied from any other exercise submodule.
 The `README.md` file can be generated using [configlet](https://github.com/exercism/configlet/releases).
 You can do this by:
@@ -203,16 +203,16 @@ If there is canonical data for your exercise then you should follow this when ma
 We aim to follow the canonical data as closely as possible in our tests to ensure thorough test coverage.
 If there is canonical data available you also need to create a file at `exercises/exercise-slug/.meta/version` specifying the canonical data version you have implemented (e.g. `1.0.0`).
 The canonical data version can be found at the top of the canonical data file for that exercise.
-See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/master/exercises/acronym/.meta), for an example `version` file.
+See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/main/exercises/practice/acronym/.meta), for an example `version` file.
 
-* Make sure you've followed the [track policies](https://github.com/exercism/java/blob/master/POLICIES.md), especially the ones for exercise added/updated.
+* Make sure you've followed the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md), especially the ones for exercise added/updated.
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
 Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
 
 ## Updating the READMEs
 
-The `README.md` files are generated from the exercise descriptions in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises).
+The `README.md` files are generated from the exercise descriptions in [problem specifications](https://github.com/exercism/problem-specifications/tree/main/exercises).
 They need to be regenerated regularly so that any changes to the descriptions in problem specifications propagate to our READMEs.
 This can be done using [configlet](https://github.com/exercism/configlet/releases):
 
@@ -224,14 +224,14 @@ This can be done using [configlet](https://github.com/exercism/configlet/release
 
 ## Checking tests are up to date
 
-The tests for each exercise should follow the canonical data in [problem specifications](https://github.com/exercism/problem-specifications/tree/master/exercises) as closely as possible.
+The tests for each exercise should follow the canonical data in [problem specifications](https://github.com/exercism/problem-specifications/tree/main/exercises) as closely as possible.
 The canonical data can change quite regularly, in which case the [canonical data version](https://github.com/exercism/problem-specifications#test-data-versioning) for that exercise will be updated.
 
-We keep track of which version of the canonical data each exercise implements in a version file, for example: https://github.com/exercism/java/blob/master/exercises/two-fer/.meta/version.
+We keep track of which version of the canonical data each exercise implements in a version file, for example: https://github.com/exercism/java/blob/main/exercises/practice/two-fer/.meta/version.
 Not all exercises have canonical data in problem specifications.
 For those that don't we don't add a version file.
 
-We have [a script](https://github.com/exercism/java/blob/master/scripts/canonical_data_check.sh) which can check if these version are up to date with the ones in problem specification.
+We have [a script](https://github.com/exercism/java/blob/main/scripts/canonical_data_check.sh) which can check if these version are up to date with the ones in problem specification.
 This script can be used to check if any version files, tests and reference implementations need updating.
 
 To run this script:
@@ -242,7 +242,7 @@ To run this script:
   
 ## Checking tests are up to date and submit new issues
 
-There is [a script which allows you to submit new issues](https://github.com/exercism/java/blob/master/scripts/create_issues_versionchange_canonical.sh) to this repo with generic title, description and labels if a change in version was detected.
+There is [a script which allows you to submit new issues](https://github.com/exercism/java/blob/main/scripts/create_issues_versionchange_canonical.sh) to this repo with generic title, description and labels if a change in version was detected.
 
 Example generic new issue:
 <img width="1005" alt="image" src="https://user-images.githubusercontent.com/6614867/57221803-bf1a6600-7000-11e9-93cf-b930ef24ce97.png">
@@ -271,7 +271,7 @@ To run this script:
 
 ## Checking exercises are implemented and submit new issues
 
-There is [a script](https://github.com/exercism/java/blob/master/scripts/create_issues_new_exercise.sh) which allows you to easily check if there are any exercism exercises which haven't been implemented in the Java track, and create issues for those exercises if there are any.
+There is [a script](https://github.com/exercism/java/blob/main/scripts/create_issues_new_exercise.sh) which allows you to easily check if there are any exercism exercises which haven't been implemented in the Java track, and create issues for those exercises if there are any.
 
 Before you may submit a new issue, the script
   1. Checks whether the exercise exists in the Java track (compared to exercism/problem-specifications)
