@@ -1,5 +1,5 @@
 {
-  "authors": [],
+  "authors": ["tlphat"],
   "files": {
     "solution": [
       "src/main/java/SgfParsing.java"
