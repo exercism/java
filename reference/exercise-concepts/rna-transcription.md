@@ -1,6 +1,6 @@
 # Rna-transcription
 
-[Example implementation](https://github.com/exercism/java/blob/master/exercises/rna-transcription/.meta/src/reference/java/RnaTranscription.java)
+[Example implementation](https://github.com/exercism/java/blob/main/exercises/practice/rna-transcription/.meta/src/reference/java/RnaTranscription.java)
 
 ## General
 

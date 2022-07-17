@@ -1,6 +1,6 @@
 # Gigasecond
 
-[Example implementation](https://github.com/exercism/java/blob/master/exercises/gigasecond/.meta/src/reference/java/Gigasecond.java)
+[Example implementation](https://github.com/exercism/java/blob/main/exercises/practice/gigasecond/.meta/src/reference/java/Gigasecond.java)
 
 ## General
 
