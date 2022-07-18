@@ -115,7 +115,7 @@ public class SgfParsing {
     }
 
     private void checkIfThereAreDelimiters(StringBuilder buffer) throws SgfParsingException {
-        if (!buffer.isEmpty()) {
+        if (buffer.length() != 0) {
             throw new SgfParsingException("properties without delimiter");
         }
     }
