@@ -62,7 +62,7 @@ public class DartsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void justWithinTheMiddleCirlce() {
+    public void justWithinTheMiddleCircle() {
         Darts darts = new Darts(-3.5, 3.5);
         assertEquals(5, darts.score());
     }
@@ -77,7 +77,7 @@ public class DartsTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void justWithinTheOuterCirlce() {
+    public void justWithinTheOuterCircle() {
         Darts darts = new Darts(-7.0, 7.0);
         assertEquals(1, darts.score());
     }
