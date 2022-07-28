@@ -37,7 +37,7 @@ class RaceTrack {
     }
 
     public boolean tryFinishTrack(NeedForSpeed car) {
-        while ( car.distanceDriven() < length ) {
+        while ( car.distanceDriven() < distance ) {
             if ( car.batteryDrained() ) {
                 return false;
             }
