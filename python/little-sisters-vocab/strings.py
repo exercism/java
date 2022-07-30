@@ -1,7 +1,9 @@
 """Functions for creating, transforming, and adding prefixes to strings."""
 
+from typing import Sequence
 
-def add_prefix_un(word):
+
+def add_prefix_un(word: str) -> str:
     """Take the given word and add the 'un' prefix.
 
     :param word: str - containing the root word.
@@ -11,7 +13,7 @@ def add_prefix_un(word):
     return 'un' + word
 
 
-def make_word_groups(vocab_words):
+def make_word_groups(vocab_words: Sequence[str]) -> str:
     """Transform a list containing a prefix and words into a string with the prefix followed by the words with prefix prepended.
 
     :param vocab_words: list - of vocabulary words with prefix in first index.
@@ -30,7 +32,7 @@ def make_word_groups(vocab_words):
     return ' :: '.join(vocab_words)
 
 
-def remove_suffix_ness(word):
+def remove_suffix_ness(word: str) -> str:
     """Remove the suffix from the word while keeping spelling in mind.
 
     :param word: str - of word to remove suffix from.
@@ -48,7 +50,7 @@ def remove_suffix_ness(word):
     return word
 
 
-def adjective_to_verb(sentence, index):
+def adjective_to_verb(sentence: str, index: int) -> str:
     """Change the adjective within the sentence to a verb.
 
     :param sentence: str - that uses the word in sentence.
