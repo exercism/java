@@ -22,7 +22,7 @@ class NeedForSpeed {
     }
 
     public void drive() {
-        if ( !batteryDrained() ) {
+        if (!batteryDrained()) {
             battery -= batteryDrain;
             distance += speed;
         }
@@ -37,8 +37,8 @@ class RaceTrack {
     }
 
     public boolean tryFinishTrack(NeedForSpeed car) {
-        while ( car.distanceDriven() < distance ) {
-            if ( car.batteryDrained() ) {
+        while (car.distanceDriven() < distance) {
+            if (car.batteryDrained()) {
                 return false;
             }
 
