@@ -49,13 +49,6 @@ if you want to solve the problem and run tests locally check these links below:
 * [Testing locally on the java track](https://exercism.org/docs/tracks/java/tests);
 
 
-## Step 1: Replace the `UnsupportedOperationException`
-
-Either working locally or using the online editor, you should find an exception on line 4:
-
-```java
-throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-```
 
 [`Exception`s](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 are often used in Java to draw the attention of a developer when something goes
