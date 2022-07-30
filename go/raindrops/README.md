@@ -40,6 +40,7 @@ The rules of `raindrops` are that if a given number:
 - @sebito91
 - @soniakeys
 - @tleen
+- @eklatzer
 
 ### Based on
 

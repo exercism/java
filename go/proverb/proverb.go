@@ -15,3 +15,4 @@ func Proverb(rhyme []string) []string {
 	res = append(res, "And all for the want of a "+rhyme[0]+".")
 	return res
 }
+

@@ -52,6 +52,7 @@ receiver see [Go Wiki: Receiver Type](https://github.com/golang/go/wiki/CodeRevi
 - @sebito91
 - @thenickcox
 - @tleen
+- @eklatzer
 
 ### Based on
 

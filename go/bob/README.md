@@ -44,6 +44,7 @@ Bob's conversational partner is a purist when it comes to written communication 
 - @tleen
 - @tompao
 - @Tonkpils
+- @eklatzer
 
 ### Based on
 

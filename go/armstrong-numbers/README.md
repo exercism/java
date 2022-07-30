@@ -33,6 +33,7 @@ Write some code to determine whether a number is an Armstrong number.
 - @kytrinyx
 - @leenipper
 - @sebito91
+- @eklatzer
 
 ### Based on
 

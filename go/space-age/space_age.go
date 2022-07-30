@@ -18,5 +18,8 @@ var conversionTable = map[Planet]float64{
 // Age computes the age in Earth years of someone in another planet
 // given the age in seconds
 func Age(seconds float64, planet Planet) float64 {
+    if _, exists := conversionTable[planet]; !exists {
+        return -1
+    }
 	return (seconds / 31557600) / conversionTable[planet]
 }

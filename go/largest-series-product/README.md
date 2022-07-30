@@ -18,6 +18,10 @@ in the input; the digits need not be *numerically consecutive*.
 For the input `'73167176531330624919225119674426574742355349194934'`,
 the largest product for a series of 6 digits is 23520.
 
+For a series of zero digits, the largest product is 1 because 1 is the multiplicative identity.
+(You don't need to know what a multiplicative identity is to solve this problem;
+it just means that multiplying a number by 1 gives you the same number.)
+
 ## Source
 
 ### Created by
@@ -37,6 +41,7 @@ the largest product for a series of 6 digits is 23520.
 - @petertseng
 - @robphoenix
 - @sebito91
+- @eklatzer
 
 ### Based on
 

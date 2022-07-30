@@ -27,6 +27,7 @@ output: "looc"
 - @leenipper
 - @sbromberger
 - @sebito91
+- @eklatzer
 
 ### Based on
 

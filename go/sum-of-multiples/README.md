@@ -34,6 +34,7 @@ The sum of these multiples is 78.
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer
 
 ### Based on
 

@@ -102,3 +102,4 @@ func (v VigenereCipher) Decode(s string) string {
 	}
 	return res
 }
+

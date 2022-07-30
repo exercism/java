@@ -32,6 +32,7 @@ A gigasecond is 10^9 (1,000,000,000) seconds.
 - @sebito91
 - @soniakeys
 - @tleen
+- @eklatzer
 
 ### Based on
 

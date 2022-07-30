@@ -57,6 +57,7 @@ score is 257, your program should only report the eggs (1) allergy.
 - @strangeman
 - @tleen
 - @tompao
+- @eklatzer
 
 ### Based on
 

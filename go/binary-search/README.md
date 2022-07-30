@@ -56,6 +56,7 @@ A binary search is a dichotomic divide and conquer search algorithm.
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer
 
 ### Based on
 

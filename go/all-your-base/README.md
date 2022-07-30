@@ -67,3 +67,4 @@ returns one of following messages:
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer

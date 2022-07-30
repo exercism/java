@@ -1,5 +1,5 @@
 {
-  "blurb": "Reverse a string",
+  "blurb": "Reverse a string.",
   "authors": [
     "ferhatelmas"
   ],
@@ -11,7 +11,8 @@
     "ilmanzo",
     "leenipper",
     "sbromberger",
-    "sebito91"
+    "sebito91",
+    "eklatzer"
   ],
   "files": {
     "solution": [
@@ -22,6 +23,9 @@
     ],
     "example": [
       ".meta/example.go"
+    ],
+    "editor": [
+      "cases_test.go"
     ]
   },
   "source": "Introductory challenge to reverse an input string",

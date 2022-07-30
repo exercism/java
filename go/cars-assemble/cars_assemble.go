@@ -23,4 +23,3 @@ func CalculateCost(carsCount int) uint {
     
 	return oneCarsCost + tenCarsCost
 }
-

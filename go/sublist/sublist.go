@@ -10,28 +10,27 @@ const (
 )
 
 func Sublist(a, b []int) Relation {
-	if Equal(a, b) {
-		return EqualLists
-	}
-	if subList(a, b) {
-		return SubList
-	}
-	if subList(b, a) {
-		return SuperList
-	}
-	return UnequalLists
-}
+    
+	if len(b) <= len(a) {
+		isSub := subList(b, a)
+		if len(a) == len(b) {
+			if isSub {
+				return EqualLists
+			}
+			return UnequalLists
+		}
 
-func Equal(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i := 0; i < len(a); i++ {
-		if a[i] != b[i] {
-			return false
+		if isSub {
+			if subList(b, a) {
+				return SuperList
+			}
+		}
+	} else {
+		if subList(a, b) {
+			return SubList
 		}
 	}
-	return true
+	return UnequalLists
 }
 
 func subList(a, b []int) bool {

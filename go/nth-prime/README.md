@@ -36,6 +36,7 @@ For inputs lesser than `1`, the nth prime number can't be computed. In that case
 - @sebito91
 - @tleen
 - @MikaeelMF
+- @eklatzer
 
 ### Based on
 

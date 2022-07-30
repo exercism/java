@@ -51,6 +51,8 @@ From one seed we can generate many random numbers.
 
 If you don't call `rand.Seed`, then the package will produce the same sequence of random numbers each time your program runs!
 
+[mathrand]: https://pkg.go.dev/math/rand
+
 ## Instructions
 
 Elaine is working on a new children's game that features animals and magic wands.

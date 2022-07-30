@@ -38,6 +38,7 @@ See <http://en.wikipedia.org/wiki/Pig_latin> for more details.
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer
 
 ### Based on
 

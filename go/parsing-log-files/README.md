@@ -269,3 +269,7 @@ You can assume that:
 ### Created by
 
 - @norbs57
+
+### Contributed to by
+
+- @eklatzer

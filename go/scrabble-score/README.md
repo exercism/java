@@ -67,6 +67,7 @@ And to total:
 - @sebito91
 - @sjakobi
 - @tleen
+- @eklatzer
 
 ### Based on
 

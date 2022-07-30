@@ -89,6 +89,7 @@ Sum the digits
 - @robphoenix
 - @sebito91
 - @tehsphinx
+- @eklatzer
 
 ### Based on
 

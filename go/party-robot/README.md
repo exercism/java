@@ -38,11 +38,13 @@ To make a function, type, variable, constant or struct field externally visible 
 
 ```go
 package greeting
-// Hello is a public function (callable from other packages)
+
+// Hello is a public function (callable from other packages).
 func Hello(name string) string {
     return "Hello " + name
 }
-// hello is a private function (not callable from other packages)
+
+// hello is a private function (not callable from other packages).
 func hello(name string) string {
     return "Hello " + name
 }
@@ -92,7 +94,7 @@ Implement the `Welcome` function to return a welcome message using the given nam
 
 ```go
 Welcome("Christiane")
-// Output: Welcome to my party, Christiane!
+// => Welcome to my party, Christiane!
 ```
 
 ## 2. Welcome a new guest to the party whose birthday is today
@@ -102,7 +104,7 @@ Unfortunately the programmer is a bit of a show-off, so the robot has to demonst
 
 ```go
 HappyBirthday("Frank", 58)
-// Output: Happy birthday Frank! You are now 58 years old!
+// => Happy birthday Frank! You are now 58 years old!
 ```
 
 ## 3. Give directions
@@ -125,7 +127,7 @@ Fortunately only with a precision that's limited to 1 digit.
 
 ```go
 AssignTable("Christiane", 27, "Frank", "on the left", 23.7834298)
-// Output:
+// =>
 // Welcome to my party, Christiane!
 // You have been assigned to table 027. Your table is on the left, exactly 23.8 meters from here.
 // You will be sitting next to Frank.

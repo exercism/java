@@ -45,6 +45,7 @@ Resulting in 9 steps. So for input n = 12, the return value would be 9.
 - @hilary
 - @leenipper
 - @sebito91
+- @eklatzer
 
 ### Based on
 

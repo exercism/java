@@ -6,7 +6,6 @@ func IsValidISBN(isbn string) bool {
 	ndigits, checksum := 0, 0
 
 	for _, ch := range isbn {
-
 		multiplier := 10 - ndigits
 
 		switch {
@@ -20,6 +19,10 @@ func IsValidISBN(isbn string) bool {
 			}
 			checksum += 10 * multiplier
 			ndigits++
+        case ch == '-':
+        	continue
+    	default:
+        	return false
 		}
 
 	}

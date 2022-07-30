@@ -57,6 +57,7 @@ You can check this yourself:
 - @soniakeys
 - @tehsphinx
 - @tleen
+- @eklatzer
 
 ### Based on
 

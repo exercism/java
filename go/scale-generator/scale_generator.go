@@ -30,6 +30,7 @@ func ParseInterval(intervals string) []int {
 			pos += inc
 		}
 	}
+	notePos = append(notePos, pos)
 	return notePos
 }
 

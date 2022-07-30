@@ -20,7 +20,8 @@
     "sebito91",
     "strangeman",
     "tleen",
-    "tompao"
+    "tompao",
+    "eklatzer"
   ],
   "files": {
     "solution": [
@@ -31,6 +32,9 @@
     ],
     "example": [
       ".meta/example.go"
+    ],
+    "editor": [
+      "cases_test.go"
     ]
   },
   "source": "Inspired by the Extreme Startup game",

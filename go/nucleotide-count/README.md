@@ -68,6 +68,7 @@ You may be wondering about the `cases_test.go` file. We explain it in the
 - @soniakeys
 - @tleen
 - @tompao
+- @eklatzer
 
 ### Based on
 

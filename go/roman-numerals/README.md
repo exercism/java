@@ -45,7 +45,7 @@ In Roman numerals 1990 is MCMXC:
 2000=MM
 8=VIII
 
-See also: [http://www.novaroma.org/via_romana/numbers.html](http://www.novaroma.org/via_romana/numbers.html)
+See also: [https://wiki.imperivm-romanvm.com/wiki/Roman_Numerals](https://wiki.imperivm-romanvm.com/wiki/Roman_Numerals)
 
 ## Source
 
@@ -70,6 +70,7 @@ See also: [http://www.novaroma.org/via_romana/numbers.html](http://www.novaroma.
 - @soniakeys
 - @tleen
 - @tompao
+- @eklatzer
 
 ### Based on
 

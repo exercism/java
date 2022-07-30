@@ -202,11 +202,11 @@ var voteCounter *int
 voteCounter = &votes
 
 VoteCount(voteCounter)
-// Output: 3
+// => 3
 
 var nilVoteCounter *int
 VoteCount(nilVoteCounter)
-// Output: 0
+// => 0
 ```
 
 ## 3. Increment the votes of a counter
@@ -234,10 +234,10 @@ With all the votes now counted, it's time to prepare the result announcement to 
 For this, you notice that having only counters for the votes is insufficient.
 There needs to be a way to associate the number of votes with a particular candidate.
 
-Create a function `NewElectionResult` that receives the name of a candidate and their number of votes and 
+Create a function `NewElectionResult` that receives the name of a candidate and their number of votes and
 returns a new election result.
 
-```go 
+```go
 var result *ElectionResult
 result = NewElectionResult("Peter", 3)
 
@@ -273,7 +273,7 @@ result = &ElectionResult{
 }
 
 DisplayResult(result)
-// Output: John (32)
+// => John (32)
 ```
 
 ## 6. Vote recounting
@@ -291,7 +291,7 @@ var finalResults = map[string]int{
 DecrementVotesOfCandidate(finalResults, "Mary")
 
 finalResults["Mary"]
-// Output: 9
+// => 9
 ```
 
 ## Source

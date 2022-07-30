@@ -18,7 +18,8 @@
     "robphoenix",
     "sebito91",
     "sjakobi",
-    "tleen"
+    "tleen",
+    "eklatzer"
   ],
   "files": {
     "solution": [
@@ -29,6 +30,9 @@
     ],
     "example": [
       ".meta/example.go"
+    ],
+    "editor": [
+      "cases_test.go"
     ]
   },
   "source": "Inspired by the Extreme Startup game",

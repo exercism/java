@@ -16,7 +16,8 @@
     "sebito91",
     "soniakeys",
     "tleen",
-    "tompao"
+    "tompao",
+    "eklatzer"
   ],
   "files": {
     "solution": [
@@ -27,6 +28,9 @@
     ],
     "example": [
       ".meta/example.go"
+    ],
+    "editor": [
+      "cases_test.go"
     ]
   },
   "source": "Hyperphysics",

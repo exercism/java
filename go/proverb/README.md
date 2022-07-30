@@ -34,6 +34,7 @@ Note that the list of inputs may vary; your solution should be able to handle li
 - @hilary
 - @leenipper
 - @sebito91
+- @eklatzer
 
 ### Based on
 

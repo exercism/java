@@ -17,16 +17,17 @@ const name = "Jane"
 Strings can be concatenated via the `+` operator:
 
 ```go
-fullName := "Jane" + " " + "Austen"
-// "Jane Austen"
+"Jane" + " " + "Austen"
+// => "Jane Austen"
 ```
 
 Some special characters need to be escaped with a leading backslash, such as `\t` for a tab and `\n` for a new line in strings.
 
 ```go
-Dialogue := "How is the weather today?\nIt's sunny"  
-// "How is the weather today?
-// It's sunny"
+"How is the weather today?\nIt's sunny"  
+// =>
+// How is the weather today?
+// It's sunny
 ```
 
 The `strings` package contains many useful functions to work on strings.
@@ -38,11 +39,11 @@ import "strings"
 
 // strings.ToLower returns the string given as argument with all its characters lowercased
 strings.ToLower("MaKEmeLoweRCase")
-// "makemelowercase"
+// => "makemelowercase"
 
 // strings.Repeat returns a string with a substring given as argument repeated many times
 strings.Repeat("Go", 3)
-// "GoGoGo"
+// => "GoGoGo"
 ```
 
 ## Instructions
@@ -61,7 +62,7 @@ Implement the function `WelcomeMessage` that accepts the name of the customer as
 
 ```go
 WelcomeMessage("Judy")
-// Output: Welcome to the Tech Palace, JUDY
+// => Welcome to the Tech Palace, JUDY
 ```
 
 ## 2. Add a fancy border
@@ -74,7 +75,7 @@ It should return a `string` that consists of 3 lines, a line with the desired nu
 
 ```go
 AddBorder("Welcome!", 10)
-// Output:
+// =>
 // **********
 // Welcome!
 // **********
@@ -99,7 +100,7 @@ message := `
 `
 
 CleanUpMessage(message)
-// Output: BUY NOW, SAVE 10%
+// => BUY NOW, SAVE 10%
 ```
 
 ## Source

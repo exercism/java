@@ -60,6 +60,7 @@ which is returned when the input is not a positive integer.
 - @sebito91
 - @Skarlso
 - @tleen
+- @eklatzer
 
 ### Based on
 

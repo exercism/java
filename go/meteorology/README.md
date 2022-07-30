@@ -112,7 +112,7 @@ celsiusUnit.String()
 fahrenheitUnit.String()
 // => °F
 fmt.Sprint(celsiusUnit)
-// => °C
+// Output: °C
 ```
 
 ## 2. Implement the `Stringer` interface for type  `Temperature`
@@ -130,7 +130,7 @@ celsiusTemp := Temperature{
 celsiusTemp.String()
 // => 21 °C
 fmt.Sprint(celsiusTemp)
-// => 21 °C
+// Output: 21 °C
 
 fahrenheitTemp := Temperature{
     degree: 75,
@@ -139,7 +139,7 @@ fahrenheitTemp := Temperature{
 fahrenheitTemp.String()
 // => 75 °F
 fmt.Sprint(fahrenheitTemp) 
-// => 75 °F
+// Output: 75 °F
 ```
 
 ## 3. Implement the `Stringer` interface for type `SpeedUnit`
@@ -154,13 +154,13 @@ mphUnit := MilesPerHour
 mphUnit.String()
 // => mph
 fmt.Sprint(mphUnit)
-// => mph
+// Output: mph
 
 kmhUnit := KmPerHour
 kmhUnit.String()
 // => km/h
-fmt.Sprint(mphUnit)
-// => km/h
+fmt.Sprint(kmhUnit)
+// Output: km/h
 ```
 
 ## 4. Implement the `Stringer` interface for `Speed` 
@@ -177,7 +177,7 @@ windSpeedNow := Speed{
 windSpeedNow.String(windSpeedNow)
 // => 18 km/h
 fmt.Sprintf(windSpeedNow)
-// => 18 km/h
+// Output: 18 km/h
 
 windSpeedYesterday := Speed{
     magnitude: 22,
@@ -186,7 +186,7 @@ windSpeedYesterday := Speed{
 windSpeedYesterday.String(windSpeedYesterday)
 // => 22 mph
 fmt.Sprint(windSpeedYesterday)
-// => 22 mph
+// Output: 22 mph
 ```
 
 ## 5. Implement the `Stringer` interface for type `MetData`
@@ -194,7 +194,11 @@ fmt.Sprint(windSpeedYesterday)
 Meteorological data specifies location, temperature, wind direction, wind speed
 and humidity. It should be formatted as in the example below:
 
-For that to happen, make the `MeteorologyData` type implement the `Stringer` interface by adding a `String` method to it. This method should return the meteorology data in the following format: `"<location>: <temperature>, Wind <wind_direction> at <wind_speed>, <humidity>% Humidity"`:
+For that to happen, make the `MeteorologyData` type implement the `Stringer` interface by adding a `String` method to it. This method should return the meteorology data in the following format:
+
+```
+<location>: <temperature>, Wind <wind_direction> at <wind_speed>, <humidity>% Humidity
+```
 
 ```go 
 sfData := MeteorologyData{
@@ -214,7 +218,7 @@ sfData := MeteorologyData{
 sfData.String()
 // => San Francisco: 57 °F, Wind NW at 19 mph, 60% Humidity
 fmt.Sprint(sfData) 
-// => San Francisco: 57 °F, Wind NW at 19 mph, 60% Humidity
+// Output: San Francisco: 57 °F, Wind NW at 19 mph, 60% Humidity
 ```
 
 ## Source
@@ -226,3 +230,4 @@ fmt.Sprint(sfData)
 ### Contributed to by
 
 - @andrerfcsantos
+- @eklatzer

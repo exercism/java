@@ -44,6 +44,7 @@ each nucleotide with its complement:
 - @soniakeys
 - @tleen
 - @tompao
+- @eklatzer
 
 ### Based on
 

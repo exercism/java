@@ -1,5 +1,5 @@
 // Package wordcount provides function to calculate count
-// of words
+// of words.
 package wordcount
 
 import (
@@ -9,7 +9,7 @@ import (
 
 type Frequency map[string]int
 
-// WordCount returns Frequency map with counts of words from input
+// WordCount returns Frequency map with counts of words from input.
 func WordCount(input string) Frequency {
 	splitFn := func(c rune) bool {
 		return !unicode.IsNumber(c) && !unicode.IsLetter(c) && c != '\''
@@ -21,7 +21,9 @@ func WordCount(input string) Frequency {
 
 	for _, candidate := range wordCandidates {
 		word := strings.Trim(strings.ToLower(candidate), "'")
-		res[word]++
+        if word != "" {
+            res[word]++
+        }
 	}
 
 	return res

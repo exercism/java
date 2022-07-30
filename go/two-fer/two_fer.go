@@ -3,6 +3,7 @@ package twofer
 
 // ShareWith tells who you should share something with
 func ShareWith(name string) string {
+
 	if name == "" {
 		name = "you"
 	}

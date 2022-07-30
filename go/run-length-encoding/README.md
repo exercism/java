@@ -43,6 +43,7 @@ be decoded always represent the count for the following character.
 - @ilmanzo
 - @leenipper
 - @sebito91
+- @eklatzer
 
 ### Based on
 

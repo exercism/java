@@ -1,6 +1,6 @@
 package cards
 
-func validIndex(slice []int, index int) bool {
+func validIndex[T any](slice []T, index int) bool {
 	size := len(slice)
 	if index < 0 || index >= size {
 		return false
@@ -24,7 +24,7 @@ func GetItem(slice []int, index int) int {
 
 // SetItem writes an item to a slice at given position overwriting an existing value.
 // If the index is out of range the value needs to be appended.
-func SetItem(slice []int, index, value int) []int {
+func SetItem[T any](slice []T, index int, value T) []T {
 	if !validIndex(slice, index) {
 		slice = append(slice, value)
 	} else {
@@ -34,12 +34,12 @@ func SetItem(slice []int, index, value int) []int {
 }
 
 // PrependItems adds an arbitrary number of values at the front of a slice.
-func PrependItems(slice []int, value ...int) []int {
+func PrependItems[T any](slice []T, value ...T) []T {
 	return append(value, slice...)
 }
 
 // RemoveItem removes an item from a slice by modifying the existing slice.
-func RemoveItem(slice []int, index int) []int {
+func RemoveItem[T any](slice []T, index int) []T {
 	if slice == nil {
 		return nil
 	}

@@ -32,6 +32,7 @@ and nested correctly.
 - @sebito91
 - @strangeman
 - @tleen
+- @eklatzer
 
 ### Based on
 
