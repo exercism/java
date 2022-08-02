@@ -19,6 +19,8 @@ For example,
 3**2 + 4**2 = 9 + 16 = 25 = 5**2.
 ```
 
-Given an input integer N, find all Pythagorean triplets for which `a + b + c = N`.
+Given an input natural number N, find all Pythagorean triplets for which `a + b + c = N`.
 
 For example, with N = 1000, there is exactly one Pythagorean triplet for which `a + b + c = 1000`: `{200, 375, 425}`.
+
+Furthermore, the set of solutions may be constrained by a maximum value for the three numbers a, b, and c.
