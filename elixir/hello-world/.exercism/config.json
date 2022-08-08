@@ -1,0 +1,34 @@
+{
+  "authors": [],
+  "contributors": [
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "dalexj",
+    "devonestes",
+    "George-Hudson",
+    "hanmd82",
+    "lpil",
+    "neenjaw",
+    "parkerl",
+    "rawkode",
+    "rubysolo",
+    "sotojuan",
+    "Teapane",
+    "Thrillberg",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/hello_world.ex"
+    ],
+    "test": [
+      "test/hello_world_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
