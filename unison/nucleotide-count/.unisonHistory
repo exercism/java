@@ -1,0 +1,56 @@
+ui
+add
+a
+load nucleotideCount.u
+add
+quit
+load nucleotideCount.test.u
+update
+update
+update
+load nucleotideCount.test.u
+update
+load nucleotideCount.test.u
+load nucleotideCount.test.u
+update
+load nucleotideCount.test.u
+add
+update
+update
+load nucleotideCount.test.u
+update
+load nucleotideCount.test.u
+load nucleotideCount.test.u
+update
+load nucleotideCount.test.u
+load nucleotideCount.test.u
+update
+ui
+load nucleotideCount.test.u
+quit
+load nucleotideCount.test.u
+update
+update
+add
+quit
+load nucleotideCount.test.u
+update
+quit
+load nucleotideCount.test.u
+update
+upadate
+upadte
+quit
+load nucleotideCount.test.u
+update nucleotideCounts
+add
+update
+load nucleotideCount.test.u
+exit
+load nucleotideCount.test.u
+add
+update
+add
+load nucleotideCount.test.u
+update
+add

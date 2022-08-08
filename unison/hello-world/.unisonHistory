@@ -1,0 +1,6 @@
+load hello.test.u
+update hello
+load hello.test.u
+ui
+ls
+add hello

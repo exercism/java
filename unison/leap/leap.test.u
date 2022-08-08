@@ -1,0 +1,40 @@
+leap.test.t1 =
+  test.label "leap should be false when year is not divisible by 4" (test.expect ((leap 2015) === false))
+
+leap.test.t2 =
+  test.label "leap should be false when year is divisible by 2 not divisible by 4" (test.expect ((leap 1970) === false))
+
+leap.test.t3 =
+  test.label "leap should be true when year is divisible by 4" (test.expect ((leap 1964) === true))
+
+leap.test.t4 =
+  test.label "leap should be true when year divisible by 4, not divisible by 100" (test.expect ((leap 1996)=== true))
+
+leap.test.t5 =
+  test.label "leap should be true when year divisible by 4 and 5" (test.expect ((leap 1960)=== true))
+
+leap.test.t6 =
+  test.label "leap should be false when year divisible by 100, not divisible by 400" (test.expect ((leap 2100)=== false))
+
+leap.test.t7 =
+  test.label "leap should be true when year divisible by 400 and 100" (test.expect ((leap 2000) === true))
+
+leap.test.t8 =
+  test.label "leap should be false when year divisible by 4 and 100" (test.expect ((leap 1900) === false))
+
+leap.test.t9 =
+  test.label "leap should be false when year divisible by 200, not divisble by 400" (test.expect ((leap 1800) === false))
+
+
+test> tests =
+  runAll [
+    leap.test.t1,
+    leap.test.t2,
+    leap.test.t3,
+    leap.test.t4,
+    leap.test.t5,
+    leap.test.t6,
+    leap.test.t7,
+    leap.test.t8,
+    leap.test.t9
+  ]

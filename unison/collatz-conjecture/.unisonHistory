@@ -1,0 +1,6 @@
+quit
+ui
+load collatz.test.u
+load collatz.tests.u
+quit
+ui

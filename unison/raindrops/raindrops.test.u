@@ -1,0 +1,74 @@
+raindrops.test.ex1 = let
+	test.label "the sound for 1 is 1" <| test.expect (convert 1 === "1")
+
+raindrops.test.ex2 = let
+	test.label "the sound for 3 is Pling" <| test.expect (convert 3 === "Pling")
+
+raindrops.test.ex3 = let
+	test.label "the sound for 5 is Plang" <| test.expect (convert 5 === "Plang")
+
+raindrops.test.ex4 = let
+	test.label "the sound for 7 is Plong" <| test.expect (convert 7 === "Plong")
+
+raindrops.test.ex5 = let
+	test.label "the sound for 6 is Pling as it has a factor 3" <| test.expect (convert 6 === "Pling")
+
+raindrops.test.ex6 = let
+	test.label "2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base" <| test.expect (convert 8 === "8")
+
+raindrops.test.ex7 = let
+	test.label "the sound for 9 is Pling as it has a factor 3" <| test.expect (convert 9 === "Pling")
+
+raindrops.test.ex8 = let
+	test.label "the sound for 10 is Plang as it has a factor 5" <| test.expect (convert 10 === "Plang")
+
+raindrops.test.ex9 = let
+	test.label "the sound for 14 is Plong as it has a factor of 7" <| test.expect (convert 14 === "Plong")
+
+raindrops.test.ex10 = let
+	test.label "the sound for 15 is PlingPlang as it has factors 3 and 5" <| test.expect (convert 15 === "PlingPlang")
+
+raindrops.test.ex11 = let
+	test.label "the sound for 21 is PlingPlong as it has factors 3 and 7" <| test.expect (convert 21 === "PlingPlong")
+
+raindrops.test.ex12 = let
+	test.label "the sound for 25 is Plang as it has a factor 5" <| test.expect (convert 25 === "Plang")
+
+raindrops.test.ex13 = let
+	test.label "the sound for 27 is Pling as it has a factor 3" <| test.expect (convert 27 === "Pling")
+
+raindrops.test.ex14 = let
+	test.label "the sound for 35 is PlangPlong as it has factors 5 and 7" <| test.expect (convert 35 === "PlangPlong")
+
+raindrops.test.ex15 = let
+	test.label "the sound for 49 is Plong as it has a factor 7" <| test.expect (convert 49 === "Plong")
+
+raindrops.test.ex16 = let
+	test.label "the sound for 52 is 52" <| test.expect (convert 52 === "52")
+
+raindrops.test.ex17 = let
+	test.label "the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7" <| test.expect (convert 105 === "PlingPlangPlong")
+
+raindrops.test.ex18 = let
+	test.label "the sound for 3125 is Plang as it has a factor 5" <| test.expect (convert 3125 === "Plang")
+
+test> tests = runAll [
+	raindrops.test.ex1,
+	raindrops.test.ex2,
+	raindrops.test.ex3,
+	raindrops.test.ex4,
+	raindrops.test.ex5,
+	raindrops.test.ex6,
+	raindrops.test.ex7,
+	raindrops.test.ex8,
+	raindrops.test.ex9,
+	raindrops.test.ex10,
+	raindrops.test.ex11,
+	raindrops.test.ex12,
+	raindrops.test.ex13,
+	raindrops.test.ex14,
+	raindrops.test.ex15,
+	raindrops.test.ex16,
+	raindrops.test.ex17,
+	raindrops.test.ex18
+]

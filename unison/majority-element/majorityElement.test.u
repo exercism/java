@@ -1,0 +1,27 @@
+majorityFinder.test.ex1 = let
+  test.label "should find the simple majority in a list" <| test.expect (majorityFinder [Red, Blue, Red, Red, Yellow] === (Some Red))
+
+majorityFinder.test.ex2 = let
+  test.label "should not return value if no majority exists" <| test.expect (majorityFinder [Red, Blue, Green, Yellow] === None)
+
+majorityFinder.test.ex3 = let
+  test.label "should not return value if most common element is exactly n/2" <| test.expect (majorityFinder [Red, Blue, Red, Green, Red, Yellow] === None)
+
+majorityFinder.test.ex4 = let
+  test.label "should not return value if 50/50 split" <| test.expect (majorityFinder [Red, Red, Blue, Blue, Red, Blue] === None)
+
+majorityFinder.test.ex5 = let
+  test.label "should handle empty list case" <| test.expect (majorityFinder [] === None)
+
+majorityFinder.test.ex6 _ = let
+  all =  [Red, Orange, Yellow, Green, Blue]
+  selection = !(gen.oneOf all)
+  fillN = !(gen.natIn 0 (List.size all))
+  mostCommonElems = List.fill fillN selection
+  testList = all List.++ mostCommonElems
+  -- fill + 1 because the element exists in the original list one time
+  expected = if ((fillN + 1) > ((List.size testList) / 2) ) then Some selection else None
+
+  test.label "should handle wide distribution of inputs" <| test.expect (majorityFinder testList === expected)
+
+test> tests = test.run ex1 ++ test.run ex2 ++ test.run ex3 ++ test.run ex4 ++  test.run ex5  ++ (runs 20 ex6)

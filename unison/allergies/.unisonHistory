@@ -1,0 +1,7 @@
+quit
+q
+load allergies.test.u
+update
+load allergies.test.u
+add
+ui

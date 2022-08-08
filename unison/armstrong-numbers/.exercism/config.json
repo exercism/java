@@ -1,0 +1,17 @@
+{
+  "authors": ["rlmark"],
+  "files": {
+    "solution": [
+      "armstrongNumbers.u"
+    ],
+    "test": [
+      "armstrongNumbers.test.u"
+    ],
+    "example": [
+      ".meta/examples/armstrongNumbers.example.u"
+    ]
+  },
+  "blurb": "Determine if a number is an Armstrong number.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}

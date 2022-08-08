@@ -1,0 +1,16 @@
+
+allergensList : [Text]
+allergensList = ["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+
+-- allergensToBitIdx maps each alergen to its bit index in the score
+allergensToBitIdx : Map Text Nat
+allergensToBitIdx = Map.fromList (indexed allergensList)
+
+
+allergicTo : Text -> Nat -> Boolean
+allergicTo allergen score = Nat.isSetBit (Map.getOrElse 8 allergen allergensToBitIdx) score
+
+list : Nat -> [Text]
+list score = indexed allergensList
+              |> filter (e -> Nat.isSetBit (at2 e) score)
+              |> map at1

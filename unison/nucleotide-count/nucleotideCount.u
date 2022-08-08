@@ -1,0 +1,31 @@
+emptyNucleotideCountMap : Map Text Nat
+emptyNucleotideCountMap = Map.fromList [("A", 0), ("C", 0), ("G", 0), ("T", 0)]
+
+addNucleotideToBag : Char -> Bag Text -> Bag Text
+addNucleotideToBag nucleotide = Bag.add (Char.toText nucleotide)
+
+allValidNucleotides : [Char] -> Boolean
+allValidNucleotides = List.all (n -> List.contains n [?A, ?G, ?C, ?T])
+
+countNucleotides : [Char] -> Bag Text
+countNucleotides = List.foldRight addNucleotideToBag Bag.empty
+
+nucleotideCounts : Text -> Optional (Map Text Nat)
+nucleotideCounts strand = 
+  ns = Text.toCharList strand
+
+  if allValidNucleotides ns then
+    strandBag = countNucleotides ns
+    Some (Map.union (Bag.counts strandBag) emptyNucleotideCountMap)
+  else
+    None
+
+nucleotideCounts2 strand = 
+  ns = Text.toBag strand
+  valid = Text.toBag "AGCT"
+  if from ns valid then
+    counts (ns + valid) 
+      |> map decrement
+      |> mapKeys toText
+      |> Some
+  else None

@@ -1,0 +1,27 @@
+toSortedList : Optional (Map Text Nat) -> Optional [(Text,Nat)]
+toSortedList input =
+  go map = Map.toList map |> List.sortBy (cases (text, val) -> text)
+  Optional.map go input
+
+nucleotideCount.test.ex1 = let
+	test.label "empty strand" <| test.expect (toSortedList (nucleotideCounts "") === (Some [("A",0),("C",0),("G",0),("T",0)]))
+
+nucleotideCount.test.ex2 = let
+	test.label "can count one nucleotide in single-character input" <| test.expect (toSortedList (nucleotideCounts "G") === (Some [("A",0),("C",0),("G",1),("T",0)]))
+
+nucleotideCount.test.ex3 = let
+	test.label "strand with repeated nucleotide" <| test.expect (toSortedList (nucleotideCounts "GGGGGGG") === (Some [("A",0),("C",0),("G",7),("T",0)]))
+
+nucleotideCount.test.ex4 = let
+	test.label "strand with multiple nucleotides" <| test.expect (toSortedList (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") === (Some [("A",20),("C",12),("G",17),("T",21)]))
+
+nucleotideCount.test.ex5 = let
+	test.label "strand with invalid nucleotides" <| test.expect (toSortedList (nucleotideCounts "AGXXACT") === None)
+
+test> tests = runAll [
+	nucleotideCount.test.ex1,
+	nucleotideCount.test.ex2,
+	nucleotideCount.test.ex3,
+	nucleotideCount.test.ex4,
+	nucleotideCount.test.ex5
+]

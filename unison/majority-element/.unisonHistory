@@ -1,0 +1,16 @@
+quit
+load majorityElement.test.u
+update
+load majorityElement.test.u
+update
+load majorityElement.u
+quit
+load majorityElement.test.u
+update
+quit
+update
+update
+ui
+d majorityElement.test.u
+update
+ui

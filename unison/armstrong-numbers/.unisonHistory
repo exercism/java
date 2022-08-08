@@ -1,0 +1,7 @@
+quit
+load armstrongNumbers.test.u
+update
+quit
+load armstrongNumbers.test.u
+add
+ui

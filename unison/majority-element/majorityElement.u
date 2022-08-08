@@ -1,0 +1,17 @@
+unique type Color = Red | Orange | Yellow | Green | Blue | Purple
+
+majorityFinder : [Color] -> Optional Color
+majorityFinder colors = 
+  freqList = colors
+              |> Bag.fromList
+              |> occurrenceList
+              |> List.sortBy at2
+  
+  n = List.size colors
+
+  match freqList with 
+    []                                                             -> None
+    [(m1, f)]                                                      -> Some m1
+    uncommon ++ [(m2, f2), (m1, f1)]  | (f1 != f2) && (f1 > (n/2)) -> Some m1
+                                      | otherwise                  -> None
+
