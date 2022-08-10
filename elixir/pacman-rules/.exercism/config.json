@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "Cohen-Carlisle"
+  ],
+  "files": {
+    "solution": [
+      "lib/rules.ex"
+    ],
+    "test": [
+      "test/rules_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "blurb": "Learn about booleans by implementing the rules of the Pac-Man game."
+}
