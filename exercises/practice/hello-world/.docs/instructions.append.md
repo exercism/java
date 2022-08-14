@@ -52,20 +52,15 @@ if you want to solve the problem and run tests locally check these links below:
 
 ## Step 1: `Fix the solution`
 
-Either working locally or using the online editor, you should find an exception on line 4:
+Either working locally or using the online editor, you should find the following code:
 
 ```java
-throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+String getGreeting() {
+        return "Goodbye, Mars!";
+}
 ```
 
-The objective is to modify the provided code so it produces the text "Hello, World!". To accomplish this, delete the contents of line 4 and replace it with:
-
-
-```java
-    public String getGreeting() {
-        return "Hello, World!";
-    }
-```
+The objective is to modify the provided code so it produces the text `"Hello, World!"` instead of `"Goodbye, Mars!"`.
 
 ## Step 2: Run the Tests
 
