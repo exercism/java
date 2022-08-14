@@ -1,0 +1,15 @@
+{
+  "authors": ["tlphat"],
+  "files": {
+    "solution": [
+      "src/main/java/SgfParsing.java"
+    ],
+    "test": [
+      "src/test/java/SgfParsingTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SgfParsing.java"
+    ]
+  },
+  "blurb": "Parsing a Smart Game Format string."
+}

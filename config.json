@@ -1879,6 +1879,20 @@
           "conditionals-if"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "sgf-parsing",
+        "name": "SGF Parsing",
+        "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
+        "practices": [],
+        "prerequisites": [
+            "strings",
+            "chars",
+            "conditionals-if",
+            "lists",
+            "for-loops"
+        ],
+        "difficulty": 7
       }
     ],
     "foregone": []
