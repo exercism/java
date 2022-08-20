@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.fail;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.fail;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -66,13 +66,9 @@ public class BankAccountTest {
     public void cannotWithdrawMoneyFromEmptyAccount() {
         bankAccount.open();
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                () -> bankAccount.withdraw(5));
-
-        assertThat(expected)
-            .hasMessage("Cannot withdraw money from an empty account");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(() -> bankAccount.withdraw(5))
+            .withMessage("Cannot withdraw money from an empty account");
     }
 
     @Ignore("Remove to run test")
@@ -81,15 +77,9 @@ public class BankAccountTest {
         bankAccount.open();
         bankAccount.deposit(6);
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                () -> bankAccount.withdraw(7));
-
-        assertThat(expected)
-            .hasMessage(
-                "Cannot withdraw more money than is currently in the account");
-
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(() -> bankAccount.withdraw(7))
+            .withMessage("Cannot withdraw more money than is currently in the account");
     }
 
     @Ignore("Remove to run test")
@@ -97,13 +87,9 @@ public class BankAccountTest {
     public void cannotDepositNegativeAmount() {
         bankAccount.open();
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                () -> bankAccount.deposit(-1));
-
-        assertThat(expected)
-            .hasMessage("Cannot deposit or withdraw negative amount");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(() -> bankAccount.deposit(-1))
+            .withMessage("Cannot deposit or withdraw negative amount");
     }
 
     @Ignore("Remove to run test")
@@ -112,13 +98,9 @@ public class BankAccountTest {
         bankAccount.open();
         bankAccount.deposit(105);
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                () -> bankAccount.withdraw(-5));
-
-        assertThat(expected)
-            .hasMessage("Cannot deposit or withdraw negative amount");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(() -> bankAccount.withdraw(-5))
+            .withMessage("Cannot deposit or withdraw negative amount");
     }
 
     @Ignore("Remove to run test")
@@ -128,12 +110,9 @@ public class BankAccountTest {
         bankAccount.deposit(10);
         bankAccount.close();
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                bankAccount::getBalance);
-
-        assertThat(expected).hasMessage("Account closed");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(bankAccount::getBalance)
+            .withMessage("Account closed");
     }
 
     @Ignore("Remove to run test")
@@ -142,12 +121,9 @@ public class BankAccountTest {
         bankAccount.open();
         bankAccount.close();
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                () -> bankAccount.deposit(5));
-
-        assertThat(expected).hasMessage("Account closed");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(() -> bankAccount.deposit(5))
+            .withMessage("Account closed");
     }
 
     @Ignore("Remove to run test")
@@ -157,23 +133,17 @@ public class BankAccountTest {
         bankAccount.deposit(20);
         bankAccount.close();
 
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                () -> bankAccount.withdraw(5));
-
-        assertThat(expected).hasMessage("Account closed");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(() -> bankAccount.withdraw(5))
+            .withMessage("Account closed");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void bankAccountIsClosedBeforeItIsOpened() {
-        BankAccountActionInvalidException expected =
-            assertThrows(
-                BankAccountActionInvalidException.class,
-                bankAccount::getBalance);
-
-        assertThat(expected).hasMessage("Account closed");
+        assertThatExceptionOfType(BankAccountActionInvalidException.class)
+            .isThrownBy(bankAccount::getBalance)
+            .withMessage("Account closed");
     }
 
     @Ignore("Remove to run test")

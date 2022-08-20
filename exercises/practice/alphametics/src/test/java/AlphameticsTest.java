@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static java.util.Map.entry;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class AlphameticsTest {
 
@@ -21,7 +21,8 @@ public class AlphameticsTest {
     public void testUniqueValue() {
         Alphametics alphametics = new Alphametics("A == B");
 
-        assertThrows(UnsolvablePuzzleException.class, alphametics::solve);
+        assertThatExceptionOfType(UnsolvablePuzzleException.class)
+            .isThrownBy(alphametics::solve);
     }
 
     @Ignore("Remove to run test")
@@ -29,7 +30,8 @@ public class AlphameticsTest {
     public void testLeadingZero() {
         Alphametics alphametics = new Alphametics("ACA + DD == BD");
 
-        assertThrows(UnsolvablePuzzleException.class, alphametics::solve);
+        assertThatExceptionOfType(UnsolvablePuzzleException.class)
+            .isThrownBy(alphametics::solve);
     }
 
     @Ignore("Remove to run test")

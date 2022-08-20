@@ -1,5 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -75,12 +75,9 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        ValueNotFoundException expected =
-            assertThrows(
-                ValueNotFoundException.class,
-                () -> search.indexOf(7));
-
-        assertThat(expected).hasMessage("Value not in array");
+        assertThatExceptionOfType(ValueNotFoundException.class)
+            .isThrownBy(() -> search.indexOf(7))
+            .withMessage("Value not in array");
     }
 
     @Ignore("Remove to run test")
@@ -90,12 +87,9 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        ValueNotFoundException expected =
-            assertThrows(
-                ValueNotFoundException.class,
-                () -> search.indexOf(0));
-
-        assertThat(expected).hasMessage("Value not in array");
+        assertThatExceptionOfType(ValueNotFoundException.class)
+            .isThrownBy(() -> search.indexOf(0))
+            .withMessage("Value not in array");
     }
 
     @Ignore("Remove to run test")
@@ -105,12 +99,9 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        ValueNotFoundException expected =
-            assertThrows(
-                ValueNotFoundException.class,
-                () -> search.indexOf(13));
-
-        assertThat(expected).hasMessage("Value not in array");
+        assertThatExceptionOfType(ValueNotFoundException.class)
+            .isThrownBy(() -> search.indexOf(13))
+            .withMessage("Value not in array");
     }
 
     @Ignore("Remove to run test")
@@ -120,12 +111,9 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(emptyList);
 
-        ValueNotFoundException expected =
-            assertThrows(
-                ValueNotFoundException.class,
-                () -> search.indexOf(1));
-
-        assertThat(expected).hasMessage("Value not in array");
+        assertThatExceptionOfType(ValueNotFoundException.class)
+            .isThrownBy(() -> search.indexOf(1))
+            .withMessage("Value not in array");
     }
 
     @Ignore("Remove to run test")
@@ -135,12 +123,9 @@ public class BinarySearchTest {
 
         BinarySearch search = new BinarySearch(sortedList);
 
-        ValueNotFoundException expected =
-            assertThrows(
-                ValueNotFoundException.class,
-                () -> search.indexOf(0));
-
-        assertThat(expected).hasMessage("Value not in array");
+        assertThatExceptionOfType(ValueNotFoundException.class)
+            .isThrownBy(() -> search.indexOf(0))
+            .withMessage("Value not in array");
     }
 
 }
