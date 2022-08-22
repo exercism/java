@@ -1,13 +1,9 @@
 """Functions to prevent a nuclear meltdown."""
 
-from typing import TypeVar
-
-T = TypeVar('T', int, float)
-
 
 def is_criticality_balanced(
-        temperature: T,
-        neutrons_emitted: T,
+        temperature: int | float,
+        neutrons_emitted: int | float,
 ) -> bool:
     """Verify criticality is balanced.
 
@@ -25,9 +21,9 @@ def is_criticality_balanced(
 
 
 def reactor_efficiency(
-        voltage: T,
-        current: T,
-        theoretical_max_power: T,
+        voltage: int | float,
+        current: int | float,
+        theoretical_max_power: int | float,
 ) -> str:
     """Assess reactor efficiency zone.
 
@@ -61,9 +57,9 @@ def reactor_efficiency(
 
 
 def fail_safe(
-        temperature: T,
-        neutrons_produced_per_second: T,
-        threshold: T,
+        temperature: int | float,
+        neutrons_produced_per_second: int | float,
+        threshold: int | float,
 ) -> str:
     """Assess and return status code for the reactor.
 
@@ -78,8 +74,10 @@ def fail_safe(
     """
     criticality = temperature * neutrons_produced_per_second
 
-    if criticality < (threshold * 0.9):
-        return 'LOW'
-    if criticality <= (threshold * 1.1):
-        return 'NORMAL'
-    return 'DANGER'
+    match criticality:
+        case n if n < threshold * 0.9:
+            return 'LOW'
+        case n if n > threshold * 1.1:
+            return 'DANGER'
+        case _:
+            return 'NORMAL'
