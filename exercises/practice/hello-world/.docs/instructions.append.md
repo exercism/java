@@ -56,7 +56,7 @@ Either working locally or using the online editor, you should find the following
 
 ```java
 String getGreeting() {
-        return "Goodbye, Mars!";
+        return ("Hello, World!");
 }
 ```
 
