@@ -7,6 +7,7 @@ import static org.assertj.core.api.Assertions.*;
 public class CarsAssembleTest {
 
     private CarsAssemble carsAssemble;
+    private double epsilon = 0.0000001d;
 
     @Before
     public void setUp() {
@@ -15,32 +16,32 @@ public class CarsAssembleTest {
 
     @Test
     public void productionRatePerHourForSpeedZero() {
-        assertThat(carsAssemble.productionRatePerHour(0)).isEqualTo(0.0);
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(0) - 0.0) < epsilon).isTrue();
     }
-    
+
     @Test
     public void productionRatePerHourForSpeedOne() {
-        assertThat(carsAssemble.productionRatePerHour(1)).isEqualTo(221.0);
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(1) - 221.0) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedFour() {
-        assertThat(carsAssemble.productionRatePerHour(4)).isEqualTo(884.0);
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(4) - 884.0) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedSeven() {
-        assertThat(carsAssemble.productionRatePerHour(7)).isEqualTo(1392.3);
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(7) - 1392.3) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedNine() {
-        assertThat(carsAssemble.productionRatePerHour(9)).isEqualTo(1591.2);
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(9) - 1591.2) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedTen() {
-        assertThat(carsAssemble.productionRatePerHour(10)).isEqualTo(1701.7);
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(10) - 1701.7) < epsilon).isTrue();
     }
 
     @Test
