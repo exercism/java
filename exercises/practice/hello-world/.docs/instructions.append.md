@@ -11,10 +11,10 @@ assistance!
 * [Introduction](#introduction)
 * [Exercise Structure](#exercise-structure)
 * [Solving "Hello, World!"](#solving-hello-world)
-* [Step 1: Replace the `UnsupportedOperationException`](#step-1-replace-the-unsupportedoperationexception)
-  [Step 2: Run the Tests](#step-2-run-the-tests)
+* [Step 1: Fix the solution](#step-1-fix-the-solution)
+* [Step 2: Run the tests](#step-2-run-the-tests)
 * [Step 3: Submitting your first iteration](#step-3-submitting-your-first-iteration)
-* [Next Steps](#next-steps)
+* [Next steps](#next-steps)
 
 # Introduction
 
@@ -44,13 +44,13 @@ in order to solve the current problem.
 You can use our online editor to solve your solution and run the tests, but 
 if you want to solve the problem and run tests locally check these links below:
 
-* [Installing Java and Gradle](https://exercism.org/docs/tracks/java/installation);
-* [Working Locally](https://exercism.org/docs/using/solving-exercises/working-locally);
-* [Testing locally on the java track](https://exercism.org/docs/tracks/java/tests);
+* [Installing Java and Gradle](https://exercism.org/docs/tracks/java/installation)
+* [Working Locally](https://exercism.org/docs/using/solving-exercises/working-locally)
+* [Testing locally on the java track](https://exercism.org/docs/tracks/java/tests)
 
 
 
-## Step 1: `Fix the solution`
+# Step 1: Fix the solution
 
 Either working locally or using the online editor, you should find the following code:
 
@@ -62,7 +62,7 @@ String getGreeting() {
 
 The objective is to modify the provided code so it produces the text `"Hello, World!"` instead of `"Goodbye, Mars!"`.
 
-## Step 2: Run the Tests
+# Step 2: Run the Tests
 
 After making corrections and implementing your solution, run the tests again.
 You can run the tests using the online editor or locally on your machine:
@@ -85,7 +85,7 @@ For a closer look at submitting a solution locally:
 * [Submitting locally](https://exercism.org/docs/using/solving-exercises/working-locally);
 
 
-# Next Steps
+# Next steps
 
 From here, there are a number of paths you can take.
 
@@ -97,7 +97,7 @@ https://gitter.im/exercism/support
 
 Cheers!
 
-## Move on to the next exercise
+# Move on to the next exercise
 
 There are many more exercises you can practice with.  Grab the next one! (example for `two-fer`)
 
@@ -105,7 +105,7 @@ There are many more exercises you can practice with.  Grab the next one! (exampl
 $ exercism download --exercise=two-fer --track=java
 ```
 
-## Become a mentor
+# Become a mentor
 
 The heart of Exercism are the conversations about coding
 practices. It's definitely fun to practice, but engaging with others
@@ -120,7 +120,7 @@ Mentors review submitted solutions for the track they've chosen to mentor
 to help users learn as much as possible. To read more about mentoring and
 to sign up see: http://mentoring.exercism.io/.
 
-## Contribute to Exercism
+# Contribute to Exercism
 
 The entire of Exercism is Open Source and is a labor of love for over
 100 maintainers and many more contributors.
