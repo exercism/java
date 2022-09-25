@@ -2,7 +2,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class AffineCipherTest {
 
@@ -62,13 +62,9 @@ public class AffineCipherTest {
     @Ignore("Remove to run test")
     @Test
     public void testEncodeThrowsMeaningfulException() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> affineCipher.encode("This is a test", 6, 17));
-
-        assertThat(expected)
-            .hasMessage("Error: keyA and alphabet size must be coprime.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> affineCipher.encode("This is a test", 6, 17))
+            .withMessage("Error: keyA and alphabet size must be coprime.");
     }
 
     @Ignore("Remove to run test")
@@ -116,13 +112,9 @@ public class AffineCipherTest {
     @Ignore("Remove to run test")
     @Test
     public void testDecodeThrowsMeaningfulException() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> affineCipher.decode("Test", 13, 5));
-
-        assertThat(expected)
-            .hasMessage("Error: keyA and alphabet size must be coprime.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> affineCipher.decode("Test", 13, 5))
+            .withMessage("Error: keyA and alphabet size must be coprime.");
     }
 
 }

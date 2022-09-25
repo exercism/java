@@ -2,7 +2,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class BaseConverterTest {
 
@@ -116,57 +116,41 @@ public class BaseConverterTest {
     @Ignore("Remove to run test")
     @Test
     public void testFirstBaseIsOne() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new BaseConverter(1, new int[]{1}));
-
-        assertThat(expected).hasMessage("Bases must be at least 2.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new BaseConverter(1, new int[]{1}))
+            .withMessage("Bases must be at least 2.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testFirstBaseIsZero() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new BaseConverter(0, new int[]{1}));
-
-        assertThat(expected).hasMessage("Bases must be at least 2.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new BaseConverter(0, new int[]{1}))
+            .withMessage("Bases must be at least 2.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testFirstBaseIsNegative() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new BaseConverter(-2, new int[]{1}));
-
-        assertThat(expected).hasMessage("Bases must be at least 2.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new BaseConverter(-2, new int[]{1}))
+            .withMessage("Bases must be at least 2.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testNegativeDigit() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new BaseConverter(2, new int[]{1, -1, 1, 0, 1, 0}));
-
-        assertThat(expected).hasMessage("Digits may not be negative.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new BaseConverter(2, new int[]{1, -1, 1, 0, 1, 0}))
+            .withMessage("Digits may not be negative.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInvalidPositiveDigit() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new BaseConverter(2, new int[]{1, 2, 1, 0, 1, 0}));
-
-        assertThat(expected)
-            .hasMessage("All digits must be strictly less than the base.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new BaseConverter(2, new int[]{1, 2, 1, 0, 1, 0}))
+            .withMessage("All digits must be strictly less than the base.");
     }
 
     @Ignore("Remove to run test")
@@ -175,12 +159,9 @@ public class BaseConverterTest {
         BaseConverter baseConverter =
             new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> baseConverter.convertToBase(1));
-
-        assertThat(expected).hasMessage("Bases must be at least 2.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> baseConverter.convertToBase(1))
+            .withMessage("Bases must be at least 2.");
     }
 
     @Ignore("Remove to run test")
@@ -188,12 +169,9 @@ public class BaseConverterTest {
     public void testSecondBaseIsZero() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{7});
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> baseConverter.convertToBase(0));
-
-        assertThat(expected).hasMessage("Bases must be at least 2.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> baseConverter.convertToBase(0))
+            .withMessage("Bases must be at least 2.");
     }
 
     @Ignore("Remove to run test")
@@ -201,12 +179,9 @@ public class BaseConverterTest {
     public void testSecondBaseIsNegative() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1});
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> baseConverter.convertToBase(-7));
-
-        assertThat(expected).hasMessage("Bases must be at least 2.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> baseConverter.convertToBase(-7))
+            .withMessage("Bases must be at least 2.");
     }
 
 }
