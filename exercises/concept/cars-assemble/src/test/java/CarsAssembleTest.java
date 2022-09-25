@@ -16,32 +16,32 @@ public class CarsAssembleTest {
 
     @Test
     public void productionRatePerHourForSpeedZero() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(0)-0.0) < epsilon).isTrue();
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(0) - 0.0) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedOne() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(1)-221.0) < epsilon).isTrue();
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(1) - 221.0) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedFour() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(4)-884.0) < epsilon).isTrue();
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(4) - 884.0) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedSeven() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(7)-1392.3) < epsilon).isTrue();
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(7) - 1392.3) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedNine() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(9)-1591.2) < epsilon).isTrue();
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(9) - 1591.2) < epsilon).isTrue();
     }
 
     @Test
     public void productionRatePerHourForSpeedTen() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(10)-1701.7) < epsilon).isTrue();
+        assertThat(Math.abs(carsAssemble.productionRatePerHour(10) - 1701.7) < epsilon).isTrue();
     }
 
     @Test
