@@ -97,7 +97,7 @@ public class PythagoreanTripletTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void tripletsWhoseSumIs840() {
+    public void tripletsWhoseSumIs840WithFactorsLessThanOrEqualTo370() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
                         .makeTripletsList()
@@ -134,7 +134,7 @@ public class PythagoreanTripletTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void tripletsWhoseSumIs30000() {
+    public void tripletsWhoseSumIs30000WithFactorsLessThanOrEqualTo12500() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
                         .makeTripletsList()

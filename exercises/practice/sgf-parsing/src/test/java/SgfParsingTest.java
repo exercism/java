@@ -128,7 +128,7 @@ public class SgfParsingTest {
     @Ignore("Remove to run test")
     public void escapedProperty() throws SgfParsingException {
         String input = "(;A[\\]b\nc\nd\t\te \n\\]])";
-        SgfNode expected = new SgfNode(Map.of("A", List.of("]b\nc\nd  e \n]")));
+        SgfNode expected = new SgfNode(Map.of("A", List.of("]b\nc\nd\t\te \n]")));
         SgfNode actual = new SgfParsing().parse(input);
         assertEquals(expected, actual);
     }
