@@ -1,0 +1,29 @@
+{
+  "name": "@exercism/javascript-lasagna-master",
+  "description": "Exercism concept exercise on functions",
+  "author": "Franziska Obbarius <12543047+junedev@users.noreply.github.com>",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exercism/javascript",
+    "directory": "exercises/concept/lasagna-master"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@exercism/babel-preset-javascript": "^0.1.2",
+    "@exercism/eslint-config-javascript": "^0.6.0",
+    "@types/jest": "^29.0.3",
+    "@types/node": "^18.7.23",
+    "babel-jest": "^29.0.3",
+    "core-js": "^3.25.3",
+    "eslint": "^8.24.0",
+    "jest": "^29.0.3"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "jest ./*",
+    "watch": "jest --watch ./*",
+    "lint": "eslint ."
+  }
+}

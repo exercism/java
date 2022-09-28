@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "junedev"
+  ],
+  "files": {
+    "solution": [
+      "lasagna-master.js"
+    ],
+    "test": [
+      "lasagna-master.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
+  },
+  "blurb": "Dive deeper into JavaScript functions while preparing to cook the perfect lasagna.",
+  "source": "Inspired by the Lasagna Master exercise in the Swift track",
+  "source_url": "https://github.com/exercism/swift/blob/main/exercises/concept/lasagna-master/.docs/instructions.md",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
