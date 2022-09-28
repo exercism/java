@@ -1,11 +1,28 @@
 {
-  "blurb": "Practice type conversion while helping your friend Kojo with his website www.fun-with-numbers.com.",
-  "authors": ["shubhsk88", "junedev"],
-  "contributors": ["neenjaw", "SleeplessByte"],
+  "authors": [
+    "shubhsk88",
+    "junedev"
+  ],
+  "contributors": [
+    "neenjaw",
+    "SleeplessByte"
+  ],
   "files": {
-    "solution": ["lucky-numbers.js"],
-    "test": ["lucky-numbers.spec.js"],
-    "exemplar": [".meta/exemplar.js"]
+    "solution": [
+      "lucky-numbers.js"
+    ],
+    "test": [
+      "lucky-numbers.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
   },
-  "forked_from": []
+  "blurb": "Practice type conversion while helping your friend Kojo with his website www.fun-with-numbers.com.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
 }

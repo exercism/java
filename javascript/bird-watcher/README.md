@@ -48,7 +48,7 @@ You already digitalized the bird counts per day for the past weeks that you kept
 Now you want to determine the total number of birds that you counted, calculate the bird count for a specific week and correct a counting mistake.
 
 ```exercism/note
-To practice, use a for loop solve each of the tasks below.
+To practice, use a for loop to solve each of the tasks below.
 ```
 
 ## 1. Determine the total number of birds that you counted so far

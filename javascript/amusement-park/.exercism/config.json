@@ -1,11 +1,26 @@
 {
-  "blurb": "Learn about undefined and null by managing visitors and tickets at an amusement park.",
-  "authors": ["junedev"],
-  "contributors": [],
+  "authors": [
+    "junedev"
+  ],
   "files": {
-    "solution": ["amusement-park.js"],
-    "test": ["amusement-park.spec.js"],
-    "exemplar": [".meta/exemplar.js"]
+    "solution": [
+      "amusement-park.js"
+    ],
+    "test": [
+      "amusement-park.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
   },
-  "forked_from": ["ruby/amusement-park"]
+  "forked_from": [
+    "ruby/amusement-park"
+  ],
+  "blurb": "Learn about undefined and null by managing visitors and tickets at an amusement park.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
 }

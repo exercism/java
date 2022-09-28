@@ -220,7 +220,7 @@ Implement `updateScore`, which takes 3 parameters:
 The function should return the score board after the update was done.
 
 ```javascript
-updateScore({"Freyja Ćirić", 12771008}, "Freyja Ćirić", 73)
+updateScore({ 'Freyja Ćirić': 12771008 }, 'Freyja Ćirić', 73);
 // => {"Freyja Ćirić", 12771081}
 ```
 

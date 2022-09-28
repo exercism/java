@@ -10,7 +10,7 @@
 - Capitalization means having a single _uppercase_ character, followed by _lowercase_ characters.
 - So first, you need to extract the first letter and convert it [to upper case][mdn-to-upper-case].
 - Then you need to determine the rest of the string (everything besides the first character).
-  The [slice method][mdn.slice] can help you with that.
+  The [slice method][mdn-slice] can help you with that.
 - After you applied the conversion [to lower case][mdn-to-lower-case], you can combine the first letter with the rest using the addition operator `+`.
 
 ## 3. Get the last letter of a sentence

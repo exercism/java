@@ -1,11 +1,29 @@
 {
-  "blurb": "Learn about comparison and conditionals while preparing for your next vehicle purchase",
-  "authors": ["junedev"],
-  "contributors": [],
+  "authors": [
+    "junedev"
+  ],
+  "contributors": [
+    "SleeplessByte"
+  ],
   "files": {
-    "solution": ["vehicle-purchase.js"],
-    "test": ["vehicle-purchase.spec.js"],
-    "exemplar": [".meta/exemplar.js"]
+    "solution": [
+      "vehicle-purchase.js"
+    ],
+    "test": [
+      "vehicle-purchase.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
   },
-  "forked_from": ["julia/vehicle-purchase"]
+  "forked_from": [
+    "julia/vehicle-purchase"
+  ],
+  "blurb": "Learn about comparison and conditionals while preparing for your next vehicle purchase",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
 }

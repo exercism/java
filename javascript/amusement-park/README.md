@@ -203,13 +203,13 @@ const tickets = {
   '23LA9T41': 'Verena Nardi',
 };
 
-ticketStatus(tickets, '23LA9T41');
+simpleTicketStatus(tickets, '23LA9T41');
 // => 'Verena Nardi'
 
-ticketStatus(tickets, '0H2AZ123');
+simpleTicketStatus(tickets, '0H2AZ123');
 // => 'invalid ticket !!!'
 
-ticketStatus(tickets, 'RE90VAW7');
+simpleTicketStatus(tickets, 'RE90VAW7');
 // => 'invalid ticket !!!'
 ```
 

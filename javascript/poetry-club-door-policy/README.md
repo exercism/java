@@ -136,7 +136,7 @@ Eager to leave
 
 When the guard recites **Stands so high**, you'll respond **h**, when the guard recites **Huge hooves too**, you'll respond **o**.
 
-Note that sometimes the guard does stylist pauses (in the form of whitespace) at the end of a line.
+Note that sometimes the guard does stylistic pauses (in the form of whitespace) at the beginning or at the end of a line.
 You will need to ignore those pauses to derive the correct letter.
 
 Implement the function `backDoorResponse` that takes a line of the poem as an argument and returns the last letter of that line that is not a whitespace character.

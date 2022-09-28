@@ -1,11 +1,27 @@
 {
-  "blurb": "Practice JavaScript objects by tracking high scores of an arcade game.",
-  "authors": ["junedev"],
-  "contributors": [],
+  "authors": [
+    "junedev"
+  ],
   "files": {
-    "solution": ["high-score-board.js"],
-    "test": ["high-score-board.spec.js"],
-    "exemplar": [".meta/exemplar.js"]
+    "solution": [
+      "high-score-board.js"
+    ],
+    "test": [
+      "high-score-board.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
   },
-  "forked_from": ["elixir/high-score", "swift/high-score-board"]
+  "forked_from": [
+    "elixir/high-score",
+    "swift/high-score-board"
+  ],
+  "blurb": "Practice JavaScript objects by tracking high scores of an arcade game.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
 }

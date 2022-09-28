@@ -90,9 +90,9 @@ describe('back door response', () => {
     // with trailing whitespace
     const SHIRE_HORSE_WITH_SPACES = [
       'Stands so high   ',
-      'Huge hooves too\t',
+      '\tHuge hooves too\t',
       'Impatiently waits for \t \t',
-      'Reins and harness    ',
+      '    Reins and harness    ',
       'Eager to leave\n\n',
     ];
 

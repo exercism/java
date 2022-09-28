@@ -1,11 +1,28 @@
 {
-  "blurb": "Learn about strings using poems to get into the poetry club.",
-  "authors": ["SleeplessByte"],
-  "contributors": ["hayashi-ay", "junedev", "mmmmmrob"],
+  "authors": [
+    "SleeplessByte"
+  ],
+  "contributors": [
+    "hayashi-ay",
+    "junedev",
+    "mmmmmrob"
+  ],
   "files": {
-    "solution": ["door-policy.js"],
-    "test": ["door-policy.spec.js"],
-    "exemplar": [".meta/exemplar.js"]
+    "solution": [
+      "door-policy.js"
+    ],
+    "test": [
+      "door-policy.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
   },
-  "forked_from": []
+  "blurb": "Learn about strings using poems to get into the poetry club.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
 }
