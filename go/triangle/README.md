@@ -58,6 +58,7 @@ excellent write up about it
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer
 
 ### Based on
 
