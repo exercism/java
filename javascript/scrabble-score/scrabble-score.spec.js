@@ -5,43 +5,43 @@ describe('Scrabble', () => {
     expect(score('a')).toEqual(1);
   });
 
-  xtest('uppercase letter', () => {
+  test('uppercase letter', () => {
     expect(score('A')).toEqual(1);
   });
 
-  xtest('valuable letter', () => {
+  test('valuable letter', () => {
     expect(score('f')).toEqual(4);
   });
 
-  xtest('short word', () => {
+  test('short word', () => {
     expect(score('at')).toEqual(2);
   });
 
-  xtest('short, valuable word', () => {
+  test('short, valuable word', () => {
     expect(score('zoo')).toEqual(12);
   });
 
-  xtest('medium word', () => {
+  test('medium word', () => {
     expect(score('street')).toEqual(6);
   });
 
-  xtest('medium, valuable word', () => {
+  test('medium, valuable word', () => {
     expect(score('quirky')).toEqual(22);
   });
 
-  xtest('long, mixed-case word', () => {
+  test('long, mixed-case word', () => {
     expect(score('OxyphenButazone')).toEqual(41);
   });
 
-  xtest('english-like word', () => {
+  test('english-like word', () => {
     expect(score('pinata')).toEqual(8);
   });
 
-  xtest('empty input', () => {
+  test('empty input', () => {
     expect(score('')).toEqual(0);
   });
 
-  xtest('entire alphabet available', () => {
+  test('entire alphabet available', () => {
     expect(score('abcdefghijklmnopqrstuvwxyz')).toEqual(87);
   });
 });
