@@ -1,23 +1,22 @@
 {
   "authors": [
-    "ovidiu141"
-  ],
-  "contributors": [
-    "rishiosaur",
-    "SleeplessByte"
+    "pertrai1"
   ],
   "files": {
     "solution": [
-      "annalyns-infiltration.js"
+      "custom-signs.js"
     ],
     "test": [
-      "annalyns-infiltration.spec.js"
+      "custom-signs.spec.js"
     ],
     "exemplar": [
       ".meta/exemplar.js"
     ]
   },
-  "blurb": "Help Annalyn free her best friend using boolean logic in JavaScript",
+  "forked_from": [
+    "swift/custom-signs"
+  ],
+  "blurb": "Learn about template strings and the ternary operator ...",
   "custom": {
     "version.tests.compatibility": "jest-27",
     "flag.tests.task-per-describe": true,

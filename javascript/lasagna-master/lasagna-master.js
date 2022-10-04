@@ -4,7 +4,8 @@
 export function cookingStatus(remainingTime) {
   if (remainingTime === 0) {
     return "Lasagna is done.";
-  } else if (remainingTime > 0) {
+  }
+  if (remainingTime > 0) {
     return "Not done, please wait.";
   }
   return "You forgot to set the timer.";

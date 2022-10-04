@@ -1,23 +1,23 @@
 {
-  "name": "@exercism/javascript-freelancer-rates",
-  "description": "Exercism concept exercise on numbers",
-  "author": "Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>",
+  "name": "@exercism/javascript-custom-signs",
+  "description": "Exercism concept exercise on template strings",
+  "author": "Rob Simpson",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/javascript",
-    "directory": "exercises/concept/freelancer-rates"
+    "directory": "exercises/concept/custom-signs"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@exercism/babel-preset-javascript": "^0.1.2",
     "@exercism/eslint-config-javascript": "^0.6.0",
     "@types/jest": "^29.0.3",
-    "@types/node": "^18.7.18",
+    "@types/node": "^18.7.23",
     "babel-jest": "^29.0.3",
-    "core-js": "^3.25.2",
-    "eslint": "^8.23.1",
+    "core-js": "^3.25.3",
+    "eslint": "^8.24.0",
     "jest": "^29.0.3"
   },
   "dependencies": {},

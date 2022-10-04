@@ -1,11 +1,27 @@
 {
-  "blurb": "Learn about numbers whilst helping a freelancer communicate with a project manager about day- and month rates.",
-  "authors": ["SleeplessByte", "JaPatGitHub"],
-  "contributors": ["junedev"],
+  "authors": [
+    "SleeplessByte",
+    "JaPatGitHub"
+  ],
+  "contributors": [
+    "junedev"
+  ],
   "files": {
-    "solution": ["freelancer-rates.js"],
-    "test": ["freelancer-rates.spec.js"],
-    "exemplar": [".meta/exemplar.js"]
+    "solution": [
+      "freelancer-rates.js"
+    ],
+    "test": [
+      "freelancer-rates.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
   },
-  "forked_from": []
+  "blurb": "Learn about numbers whilst helping a freelancer communicate with a project manager about day- and month rates.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
 }

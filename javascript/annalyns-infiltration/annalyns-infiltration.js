@@ -24,6 +24,7 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
   return knightIsAwake || archerIsAwake || prisonerIsAwake
 }
 
+
 /**
  * You'll get caught by the archer if you signal while they're awake.
  *

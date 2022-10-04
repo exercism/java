@@ -1,7 +1,3 @@
-//
-// This is only a SKELETON file for the 'Scrabble Score' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
 
 const letterMap = {
   'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'R': 1, 'S': 1, 'T': 1,
