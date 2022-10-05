@@ -1,0 +1,29 @@
+{
+  "name": "@exercism/javascript-fruit-picker",
+  "description": "Exercism concept exercise on callbacks",
+  "author": "Tim Austin",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exercism/javascript",
+    "directory": "exercises/concept/fruit-picker"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@exercism/babel-preset-javascript": "^0.2.0",
+    "@exercism/eslint-config-javascript": "^0.6.0",
+    "@types/jest": "^29.1.1",
+    "@types/node": "^18.8.0",
+    "babel-jest": "^29.1.2",
+    "core-js": "~3.25.4",
+    "eslint": "^8.24.0",
+    "jest": "^29.1.2"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "jest ./*",
+    "watch": "jest --watch ./*",
+    "lint": "eslint ."
+  }
+}

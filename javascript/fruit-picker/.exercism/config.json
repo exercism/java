@@ -1,0 +1,30 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "SleeplessByte"
+  ],
+  "files": {
+    "solution": [
+      "fruit-picker.js"
+    ],
+    "test": [
+      "fruit-picker.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ],
+    "editor": [
+      "notifier.js",
+      "grocer.js"
+    ]
+  },
+  "blurb": "Learn about callbacks ordering fruit from the grocer",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
