@@ -4,12 +4,14 @@ set -eo pipefail
 platform=$(uname)
 
 function unskip_tests {
-  echo "Unskipping tests in $1"
   cd $1
-  if [ "$platform" == "Darwin" ]; then
-    sed -i '' 's/xtest/test/g' *.test.js
-  else
-    sed -i 's/xtest/test/g' *.test.js
+  if [ -f *.spec.js ]; then
+    echo "Unskipping tests in $1"
+    if [ "$platform" == "Darwin" ]; then
+        sed -i '' 's/xtest/test/g' *.spec.js
+    else
+        sed -i 's/xtest/test/g' *.spec.js
+    fi
   fi
   cd ..
 }
@@ -17,11 +19,11 @@ function unskip_tests {
 if [ "$1" == "" ];
 then
     for d in */ ; do
-        run_tests $d
+        unskip_tests $d
     done
 else
     for exercise in "$@"
     do
-        run_tests $exercise
+        unskip_tests $exercise
     done
 fi
