@@ -84,28 +84,28 @@ public class SeriesTest {
         Series series = new Series("12345");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> series.slices(6))
-            .withMessage("Slice size is too big.");
+                .isThrownBy(() -> series.slices(6))
+                .withMessage("Slice size is too big.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void sliceLengthZero() {
         Series series = new Series("12345");
-        
+
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> series.slices(0))
-            .withMessage("Slice size is too small.");
+                .isThrownBy(() -> series.slices(0))
+                .withMessage("Slice size is too small.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void sliceLengthNegative() {
         Series series = new Series("123");
-         
+
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> series.slices(-1))
-            .withMessage("Slice size is too small.");
+                .isThrownBy(() -> series.slices(-1))
+                .withMessage("Slice size is too small.");
     }
 
     @Ignore("Remove to run test")
@@ -114,8 +114,8 @@ public class SeriesTest {
         Series series = new Series("");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> series.slices(1))
-            .withMessage("Slice size is too big.");
+                .isThrownBy(() -> series.slices(1))
+                .withMessage("Slice size is too big.");
     }
 
 }
