@@ -1,6 +1,5 @@
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -83,13 +82,9 @@ public class SeriesTest {
     public void sliceLengthIsToolarge() {
         Series series = new Series("12345");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> series.slices(6));
-
-        assertThat(expected)
-            .hasMessage("Slice size is too big.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> series.slices(6))
+                .withMessage("Slice size is too big.");
     }
 
     @Ignore("Remove to run test")
@@ -97,13 +92,9 @@ public class SeriesTest {
     public void sliceLengthZero() {
         Series series = new Series("12345");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> series.slices(0));
-
-        assertThat(expected)
-            .hasMessage("Slice size is too small.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> series.slices(0))
+                .withMessage("Slice size is too small.");
     }
 
     @Ignore("Remove to run test")
@@ -111,13 +102,9 @@ public class SeriesTest {
     public void sliceLengthNegative() {
         Series series = new Series("123");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> series.slices(-1));
-
-        assertThat(expected)
-            .hasMessage("Slice size is too small.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> series.slices(-1))
+                .withMessage("Slice size is too small.");
     }
 
     @Ignore("Remove to run test")
@@ -125,13 +112,9 @@ public class SeriesTest {
     public void emptySeries() {
         Series series = new Series("");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> series.slices(1));
-
-        assertThat(expected)
-            .hasMessage("Slice size is too big.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> series.slices(1))
+                .withMessage("Slice size is too big.");
     }
 
 }
