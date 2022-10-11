@@ -1,6 +1,5 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -35,25 +34,17 @@ public class CollatzCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testZeroIsConsideredInvalidInput() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> collatzCalculator.computeStepCount(0));
-
-        assertThat(expected)
-            .hasMessage("Only natural numbers are allowed");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> collatzCalculator.computeStepCount(0))
+                .withMessage("Only natural numbers are allowed");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testNegativeIntegerIsConsideredInvalidInput() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> collatzCalculator.computeStepCount(-15));
-
-        assertThat(expected)
-            .hasMessage("Only natural numbers are allowed");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> collatzCalculator.computeStepCount(-15))
+                .withMessage("Only natural numbers are allowed");
     }
 
 }
