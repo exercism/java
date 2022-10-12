@@ -1,6 +1,5 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
@@ -98,13 +97,9 @@ public class ChangeCalculatorTest {
     public void testChangeLessThanSmallestCoinInCurrencyCannotBeRepresented() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> changeCalculator.computeMostEfficientChange(3));
-
-        assertThat(expected)
-            .hasMessage("The total 3 cannot be represented in the given currency.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> changeCalculator.computeMostEfficientChange(3))
+                .withMessage("The total 3 cannot be represented in the given currency.");
     }
 
     @Ignore("Remove to run test")
@@ -112,13 +107,9 @@ public class ChangeCalculatorTest {
     public void testChangeLargerThanAllCoinsInCurrencyThatCannotBeRepresented() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> changeCalculator.computeMostEfficientChange(94));
-
-        assertThat(expected)
-            .hasMessage("The total 94 cannot be represented in the given currency.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> changeCalculator.computeMostEfficientChange(94))
+                .withMessage("The total 94 cannot be represented in the given currency.");
     }
 
     @Ignore("Remove to run test")
@@ -126,13 +117,9 @@ public class ChangeCalculatorTest {
     public void testNegativeChangeIsRejected() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 2, 5));
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> changeCalculator.computeMostEfficientChange(-5));
-
-        assertThat(expected)
-            .hasMessage("Negative totals are not allowed.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> changeCalculator.computeMostEfficientChange(-5))
+                .withMessage("Negative totals are not allowed.");
     }
 
 }
