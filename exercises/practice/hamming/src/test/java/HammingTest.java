@@ -39,44 +39,32 @@ public class HammingTest {
     @Test
     public void testValidatesFirstStrandNotLonger() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() ->  new Hamming("AATG", "AAA"))
+                .isThrownBy(() -> new Hamming("AATG", "AAA"))
                 .withMessage("leftStrand and rightStrand must be of equal length.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testValidatesSecondStrandNotLonger() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Hamming("ATA", "AGTG"));
-
-        assertThat(expected)
-            .hasMessage("leftStrand and rightStrand must be of equal length.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Hamming("ATA", "AGTG"))
+                .withMessage("leftStrand and rightStrand must be of equal length.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDisallowLeftEmptyStrand() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Hamming("", "G"));
-
-        assertThat(expected)
-            .hasMessage("left strand must not be empty.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Hamming("", "G"))
+                .withMessage("left strand must not be empty.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDisallowRightEmptyStrand() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Hamming("G", ""));
-
-        assertThat(expected)
-            .hasMessage("right strand must not be empty.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Hamming("G", ""))
+                .withMessage("right strand must not be empty.");
     }
 
 }
