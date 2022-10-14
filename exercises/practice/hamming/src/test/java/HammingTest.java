@@ -1,5 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -38,13 +38,9 @@ public class HammingTest {
     @Ignore("Remove to run test")
     @Test
     public void testValidatesFirstStrandNotLonger() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Hamming("AATG", "AAA"));
-
-        assertThat(expected)
-            .hasMessage("leftStrand and rightStrand must be of equal length.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() ->  new Hamming("AATG", "AAA"))
+                .withMessage("leftStrand and rightStrand must be of equal length.");
     }
 
     @Ignore("Remove to run test")
