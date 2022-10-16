@@ -1,6 +1,5 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -228,13 +227,9 @@ public class VariableLengthQuantityTest {
     public void testCannotDecodeIncompleteSequence() {
         List<Long> bytes = Arrays.asList(0xffL);
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> variableLengthQuantity.decode(bytes));
-
-        assertThat(expected)
-            .hasMessage("Invalid variable-length quantity encoding");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> variableLengthQuantity.decode(bytes))
+                .withMessage("Invalid variable-length quantity encoding");
     }
 
     @Ignore("Remove to run test")
@@ -242,13 +237,9 @@ public class VariableLengthQuantityTest {
     public void testCannotDecodeIncompleteSequenceEvenIfValueIsZero() {
         List<Long> bytes = Arrays.asList(0x80L);
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> variableLengthQuantity.decode(bytes));
-
-        assertThat(expected)
-            .hasMessage("Invalid variable-length quantity encoding");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> variableLengthQuantity.decode(bytes))
+                .withMessage("Invalid variable-length quantity encoding");
     }
 
     @Ignore("Remove to run test")
