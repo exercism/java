@@ -6,18 +6,18 @@ class Darts {
 
     int score(double x, double y) {
         if (RADIUS_CIRCLE_MIDDLE < distanceDartToOrigin(x, y)
-                && distanceDartToOrigin() <= RADIUS_CIRCLE_OUTER) {
+                && distanceDartToOrigin(x, y) <= RADIUS_CIRCLE_OUTER) {
             return 1;
         } else if (RADIUS_CIRCLE_INNER < distanceDartToOrigin(x, y)
-                && distanceDartToOrigin() <= RADIUS_CIRCLE_MIDDLE) {
+                && distanceDartToOrigin(x, y) <= RADIUS_CIRCLE_MIDDLE) {
             return 5;
-        } else if (distanceDartToOrigin() <= RADIUS_CIRCLE_INNER) {
+        } else if (distanceDartToOrigin(x, y) <= RADIUS_CIRCLE_INNER) {
             return 10;
         }
         return 0;
     }
 
-    private double distanceDartToOrigin(x, y) {
+    private double distanceDartToOrigin(double x, double y) {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
 

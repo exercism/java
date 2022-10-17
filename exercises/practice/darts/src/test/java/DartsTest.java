@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class DartsTest {
 
+    Darts darts = new Darts();
     @Test
     public void missedTarget() {
         assertEquals(0, darts.score(-9, 9));
