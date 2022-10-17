@@ -1,7 +1,7 @@
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class FootballMatchReportsTest {
 
@@ -50,15 +50,13 @@ public class FootballMatchReportsTest {
 
     @Test
     public void test_exception() {
-        assertThrows(
-            IllegalArgumentException.class,
-            () -> FootballMatchReports.onField(13));
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> FootballMatchReports.onField(13));
     }
 
     @Test
     public void test_exception_negative_number() {
-        assertThrows(
-            IllegalArgumentException.class,
-            () -> FootballMatchReports.onField(-1));
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> FootballMatchReports.onField(-1));
     }
 }
