@@ -1,11 +1,5 @@
 class Darts {
-
-    Darts(double x, double y) {
+    int score(int xOfDart, int yOfDart) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
-
-    int score() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
-
 }
