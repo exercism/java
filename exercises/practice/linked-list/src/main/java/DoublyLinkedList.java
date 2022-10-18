@@ -1,10 +1,29 @@
-/*
+class DoublyLinkedList<T> {
+    private Element<T> head;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    void push(T value) {
+        throw new UnsupportedOperationException("Please implement the DoublyLinkedList.push() method.");
+    }
 
-Please remove this comment when submitting your solution.
+    T pop() {
+        throw new UnsupportedOperationException("Please implement the DoublyLinkedList.pop() method.");
+    }
 
-*/
+    void unshift(T value) {
+        throw new UnsupportedOperationException("Please implement the DoublyLinkedList.unshift() method.");
+    }
+
+    T shift() {
+        throw new UnsupportedOperationException("Please implement the DoublyLinkedList.shift() method.");
+    }
+
+    private static final class Element<T> {
+        private final T value;
+        private Element<T> prev;
+        private Element<T> next;
+
+        Element(T value, Element<T> prev, Element<T> next) {
+            throw new UnsupportedOperationException("Please implement the Element constructor.");
+        }
+    }
+}
