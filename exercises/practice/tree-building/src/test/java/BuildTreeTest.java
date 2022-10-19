@@ -1,7 +1,6 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -158,12 +157,9 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        InvalidRecordsException expected =
-            assertThrows(
-                InvalidRecordsException.class,
-                () -> test.buildTree(records));
-
-        assertThat(expected).hasMessage("Invalid Records");
+        assertThatExceptionOfType(InvalidRecordsException.class)
+                .isThrownBy(() -> test.buildTree(records))
+                .withMessage("Invalid Records");
     }
 
     @Ignore("Remove to run test")
@@ -175,12 +171,9 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        InvalidRecordsException expected =
-            assertThrows(
-                InvalidRecordsException.class,
-                () -> test.buildTree(records));
-
-        assertThat(expected).hasMessage("Invalid Records");
+        assertThatExceptionOfType(InvalidRecordsException.class)
+                .isThrownBy(() -> test.buildTree(records))
+                .withMessage("Invalid Records");
     }
 
     @Ignore("Remove to run test")
@@ -194,12 +187,9 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        InvalidRecordsException expected =
-            assertThrows(
-                InvalidRecordsException.class,
-                () -> test.buildTree(records));
-
-        assertThat(expected).hasMessage("Invalid Records");
+        assertThatExceptionOfType(InvalidRecordsException.class)
+                .isThrownBy(() -> test.buildTree(records))
+                .withMessage("Invalid Records");
     }
 
     @Ignore("Remove to run test")
@@ -216,12 +206,9 @@ public class BuildTreeTest {
 
         BuildTree test = new BuildTree();
 
-        InvalidRecordsException expected =
-            assertThrows(
-                InvalidRecordsException.class,
-                () -> test.buildTree(records));
-
-        assertThat(expected).hasMessage("Invalid Records");
+        assertThatExceptionOfType(InvalidRecordsException.class)
+                .isThrownBy(() -> test.buildTree(records))
+                .withMessage("Invalid Records");
     }
 
     private void assertNodeIsLeaf(TreeNode node) {
