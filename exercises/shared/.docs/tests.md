@@ -43,8 +43,6 @@ Choose your operating system:
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
-
 ----
 
 # macOS
@@ -76,8 +74,6 @@ If you get stuck, at any point, don't forget to reach out for [help](https://git
 4. Solve the exercise.  Find and work through the `instructions.append.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial)).
 
 Good luck!  Have fun!
-
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
 
 ----
 
@@ -111,5 +107,3 @@ If you get stuck, at any point, don't forget to reach out for [help](https://git
 4. Solve the exercise.  Find and work through the `instructions.append.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial)).
 
 Good luck!  Have fun!
-
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
