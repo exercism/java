@@ -19,7 +19,7 @@
 
 This guide covers contributing to the Java track.  If you are new to the exercism Java track, this guide is for you.
 
-If, at any point, you're having any trouble, pop in the [Gitter exercism/java room](https://gitter.im/exercism/java) or the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
+If, at any point, you're having any trouble, pop in the [Exercism forum][forum] for help.
 
 For general guidelines about contributing to Exercism see the [Exercism contributing guide](https://exercism.org/docs/building).
 
@@ -208,7 +208,7 @@ See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/main/e
 * Make sure you've followed the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md), especially the ones for exercise added/updated.
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
-Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
+Feel free to open an issue or post in the [Building Exercism](https://forum.exercism.org/c/exercism/building-exercism/125) category of the [Exercism forum](https://forum.exercism.org/) if you have any questions and we'll try and answer as soon as we can.
 
 ## Updating the READMEs
 
@@ -294,3 +294,5 @@ To run this script:
   4. Run `./scripts/create_issues_new_exercise.sh -t . -s --spec-path path_to_problem_specifications` from the root of this repository and follow the directions.
   
   5. If you decide to submit a new issue you can find the opened issue on the [issues page](https://github.com/exercism/java/issues).
+
+[forum]: https://forum.exercism.org/
