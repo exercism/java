@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Map;
+import java.util.Optional;
 
 class WordSearcher {
     Map<String, Optional<WordLocation>> search(final Set<String> words, final char[][] grid) {
