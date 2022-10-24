@@ -1,10 +1,9 @@
-/*
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
-
-Please remove this comment when submitting your solution.
-
-*/
+class WordSearcher {
+    Map<String, Optional<WordLocation>> search(final Set<String> words, final char[][] grid) {
+        throw new UnsupportedOperationException("Please implement the WordSearcher.search() method.");
+    }
+}

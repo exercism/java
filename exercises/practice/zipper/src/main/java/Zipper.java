@@ -1,10 +1,43 @@
-/*
+class Zipper {
+    Zipper(int val) {
+        throw new UnsupportedOperationException("Please implement the Zipper(int) constructor.");
+    }
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    BinaryTree toTree() {
+        throw new UnsupportedOperationException("Please implement the Zipper.toTree() method.");
+    }
 
-Please remove this comment when submitting your solution.
+    int getValue() {
+        throw new UnsupportedOperationException("Please implement the Zipper.getValue() method.");
+    }
 
-*/
+    Zipper setLeft(Zipper leftChild) {
+        throw new UnsupportedOperationException("Please implement the Zipper.setLeft() method.");
+    }
+
+    Zipper setRight(Zipper rightChild) {
+        throw new UnsupportedOperationException("Please implement the Zipper.setRight() method.");
+    }
+
+    void setValue(int val) {
+        throw new UnsupportedOperationException("Please implement the Zipper.setValue() method.");
+    }
+}
+
+class BinaryTree {
+    BinaryTree(int value) {
+        throw new UnsupportedOperationException("Please implement the BinaryTree(int) constructor.");
+    }
+
+    BinaryTree(Zipper root) {
+        throw new UnsupportedOperationException("Please implement the BinaryTree(Zipper) constructor.");
+    }
+
+    Zipper getRoot() {
+        throw new UnsupportedOperationException("Please implement the BinaryTree.getRoot() method.");
+    }
+
+    String printTree() {
+        throw new UnsupportedOperationException("Please implement the BinaryTree.printTree() method.");
+    }
+}
