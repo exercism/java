@@ -43,7 +43,7 @@ Choose your operating system:
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
+If you get stuck, at any point, don't forget to reach out for help in [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91) or [Exercism Forum: Support](https://forum.exercism.org/c/support/8).
 
 ----
 
@@ -77,7 +77,7 @@ If you get stuck, at any point, don't forget to reach out for [help](https://git
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
+If you get stuck, at any point, don't forget to reach out for help in [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91) or [Exercism Forum: Support](https://forum.exercism.org/c/support/8).
 
 ----
 
@@ -112,4 +112,4 @@ If you get stuck, at any point, don't forget to reach out for [help](https://git
 
 Good luck!  Have fun!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
+If you get stuck, at any point, don't forget to reach out for help in [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91) or [Exercism Forum: Support](https://forum.exercism.org/c/support/8).

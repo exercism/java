@@ -91,9 +91,10 @@ From here, there are a number of paths you can take.
 
 Regardless of what you decide to do next, we sincerely hope you learn
 and enjoy being part of this community.  If at any time you need assistance
-do not hesitate to ask for help:
+do not hesitate to ask for help in our forum:
 
-https://gitter.im/exercism/support
+- [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91) - for Java related questions
+- [Exercism Forum: Support](https://forum.exercism.org/c/programming/java/91) - for Exercism related questions
 
 Cheers!
 

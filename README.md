@@ -2,9 +2,10 @@
 
 ![Java CI with Gradle](https://github.com/exercism/java/workflows/Java%20CI%20with%20Gradle/badge.svg)
 [![Configlet](https://github.com/exercism/java/actions/workflows/configlet.yml/badge.svg)](https://github.com/exercism/java/actions/workflows/configlet.yml)
-[![Join the chat at https://gitter.im/exercism/xjava](https://badges.gitter.im/exercism/java.svg)](https://gitter.im/exercism/java?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Source for Exercism Exercises in Java.
+
+- [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91)
 
 ## Contributing Guide
 

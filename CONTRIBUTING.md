@@ -19,7 +19,7 @@
 
 This guide covers contributing to the Java track.  If you are new to the exercism Java track, this guide is for you.
 
-If, at any point, you're having any trouble, pop in the [Gitter exercism/java room](https://gitter.im/exercism/java) or the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
+If, at any point, you're having any trouble, pop in [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91) or [Exercism Forum: Support](https://forum.exercism.org/c/support/8) for help.
 
 For general guidelines about contributing to Exercism see the [Exercism contributing guide](https://exercism.org/docs/building).
 
@@ -208,7 +208,7 @@ See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/main/e
 * Make sure you've followed the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md), especially the ones for exercise added/updated.
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
-Feel free to open an issue or post in the [Gitter exercism/java room](https://gitter.im/exercism/java) if you have any questions and we'll try and answer as soon as we can.
+Feel free to open an issue or post in [Exercism Forum: Java](https://forum.exercism.org/c/programming/java/91) or [Exercism Forum: Support](https://forum.exercism.org/c/support/8) if you have any questions and we'll try and answer as soon as we can.
 
 ## Updating the READMEs
 
