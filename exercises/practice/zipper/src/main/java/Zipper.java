@@ -1,6 +1,6 @@
 class Zipper {
     Zipper(int val) {
-        throw new UnsupportedOperationException("Please implement the Zipper(int) method.");
+        throw new UnsupportedOperationException("Please implement the Zipper(int) constructor.");
     }
 
     BinaryTree toTree() {
@@ -26,11 +26,11 @@ class Zipper {
 
 class BinaryTree {
     BinaryTree(int value) {
-        throw new UnsupportedOperationException("Please implement the BinaryTree(int) method.");
+        throw new UnsupportedOperationException("Please implement the BinaryTree(int) constructor.");
     }
 
     BinaryTree(Zipper root) {
-        throw new UnsupportedOperationException("Please implement the BinaryTree(Zipper) method.");
+        throw new UnsupportedOperationException("Please implement the BinaryTree(Zipper) constructor.");
     }
 
     Zipper getRoot() {
