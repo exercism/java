@@ -1,10 +1,21 @@
-/*
+public class Cipher {
+    public Cipher() {
+        throw new UnsupportedOperationException("Please implement the Cipher() constructor.");
+    }
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    public Cipher(String key) {
+        throw new UnsupportedOperationException("Please implement the Cipher(String) constructor.");
+    }
 
-Please remove this comment when submitting your solution.
+    public String getKey() {
+        throw new UnsupportedOperationException("Please implement the Cipher.getKey() method.");
+    }
 
-*/
+    public String encode(String plainText) {
+        throw new UnsupportedOperationException("Please implement the Cipher.encode() method.");
+    }
+
+    public String decode(String cipherText) {
+        throw new UnsupportedOperationException("Please implement the Cipher.decode() method.");
+    }
+}
