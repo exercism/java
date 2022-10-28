@@ -1,10 +1,7 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
-
-Please remove this comment when submitting your solution.
-
-*/
+class RelationshipComputer<T> {
+    Relationship computeRelationship(List<T> firstList, List<T> secondList) {
+        throw new UnsupportedOperationException("Please implement the RelationshipComputer.computeRelationship() method.");
+    }
+}
