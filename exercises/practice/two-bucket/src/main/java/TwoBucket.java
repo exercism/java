@@ -1,10 +1,17 @@
-/*
+class TwoBucket {
+    TwoBucket(int bucketOneCap, int bucketTwoCap, int desiredLiters, String startBucket) {
+        throw new UnsupportedOperationException("Please implement the TwoBucket(int, int, int, String) constructor.");
+    }
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    int getTotalMoves() {
+        throw new UnsupportedOperationException("Please implement the TwoBucket.getTotalMoves() method.");
+    }
 
-Please remove this comment when submitting your solution.
+    String getFinalBucket() {
+        throw new UnsupportedOperationException("Please implement the TwoBucket.getFinalBucket() method.");
+    }
 
-*/
+    int getOtherBucket() {
+        throw new UnsupportedOperationException("Please implement the TwoBucket.getOtherBucket() method.");
+    }
+}
