@@ -1,10 +1,9 @@
-/*
+class Tournament {
+    String printTable() {
+        throw new UnsupportedOperationException("Please implement the Tournament.printTable() method.");
+    }
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
-
-Please remove this comment when submitting your solution.
-
-*/
+    void applyResults(String resultString) {
+        throw new UnsupportedOperationException("Please implement the Tournament.applyResults() method.");
+    }
+}
