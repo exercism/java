@@ -1,10 +1,11 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Series {
+    Series(String string) {
+        throw new UnsupportedOperationException("Please implement the Series(string) constructor.");
+    }
 
-Please remove this comment when submitting your solution.
-
-*/
+    List<String> slices(int num) {
+        throw new UnsupportedOperationException("Please implement the Series.slices() method.");
+    }
+}

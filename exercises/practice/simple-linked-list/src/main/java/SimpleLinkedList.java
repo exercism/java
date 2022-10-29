@@ -1,10 +1,29 @@
-/*
+class SimpleLinkedList<T> {
+    SimpleLinkedList() {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList() constructor.");
+    }
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    SimpleLinkedList(T[] values) {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList(T[]) constructor.");
+    }
 
-Please remove this comment when submitting your solution.
+    void push(T value) {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList.push() method.");
+    }
 
-*/
+    T pop() {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList.pop() method.");
+    }
+
+    void reverse() {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList.reverse() method.");
+    }
+
+    T[] asArray(Class<T> clazz) {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList.asArray() method.");
+    }
+
+    int size() {
+        throw new UnsupportedOperationException("Please implement the SimpleLinkedList.size() method.");
+    }
+}
