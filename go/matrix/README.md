@@ -75,6 +75,7 @@ This means that first row will be row 0, the second row will be row 1, and so on
 - @sebito91
 - @suzaku
 - @tleen
+- @eklatzer
 
 ### Based on
 
