@@ -4,6 +4,7 @@ set -eo pipefail
 function run_tests {
   echo "Running tests in $1"
   cd $1
+  npm install
   npm run test
   cd ..
 }
