@@ -24,6 +24,9 @@
     "solution": [
       "src/main/java/HandshakeCalculator.java"
     ],
+    "editor": [
+      "src/main/java/Signal.java"
+    ],
     "test": [
       "src/test/java/HandshakeCalculatorTest.java"
     ],
