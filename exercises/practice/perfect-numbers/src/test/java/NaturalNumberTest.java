@@ -1,6 +1,5 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -79,25 +78,17 @@ public class NaturalNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void testThatNonNegativeIntegerIsRejected() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new NaturalNumber(0));
-
-        assertThat(expected)
-            .hasMessage("You must supply a natural number (positive integer)");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new NaturalNumber(0))
+            .withMessage("You must supply a natural number (positive integer)");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThatNegativeIntegerIsRejected() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new NaturalNumber(-1));
-
-        assertThat(expected)
-            .hasMessage("You must supply a natural number (positive integer)");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> new NaturalNumber(-1))
+            .withMessage("You must supply a natural number (positive integer)");
     }
 
 }
