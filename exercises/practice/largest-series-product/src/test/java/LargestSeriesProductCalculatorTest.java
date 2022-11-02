@@ -1,6 +1,5 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -75,8 +74,8 @@ public class LargestSeriesProductCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductInLongStringToSearchV1() {
-        LargestSeriesProductCalculator calculator
-                = new LargestSeriesProductCalculator("73167176531330624919225119674426574742355349194934");
+        LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator(
+                "73167176531330624919225119674426574742355349194934");
 
         long expectedProduct = 23520;
 
@@ -112,14 +111,9 @@ public class LargestSeriesProductCalculatorTest {
     public void testSeriesLengthLongerThanLengthOfStringToTestIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("123");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> calculator.calculateLargestProductForSeriesLength(4));
-
-        assertThat(expected)
-            .hasMessage(
-                "Series length must be less than or equal to the length of the string to search.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> calculator.calculateLargestProductForSeriesLength(4))
+                .withMessage("Series length must be less than or equal to the length of the string to search.");
     }
 
     @Ignore("Remove to run test")
@@ -149,26 +143,17 @@ public class LargestSeriesProductCalculatorTest {
     public void testEmptyStringToSearchAndSeriesOfNonZeroLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> calculator.calculateLargestProductForSeriesLength(1));
-
-        assertThat(expected)
-            .hasMessage(
-                "Series length must be less than or equal to the length of the string to search.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> calculator.calculateLargestProductForSeriesLength(1))
+                .withMessage("Series length must be less than or equal to the length of the string to search.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testStringToSearchContainingNonDigitCharacterIsRejected() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new LargestSeriesProductCalculator("1234a5"));
-
-        assertThat(expected)
-            .hasMessage("String to search may only contain digits.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new LargestSeriesProductCalculator("1234a5"))
+                .withMessage("String to search may only contain digits.");
     }
 
     @Ignore("Remove to run test")
@@ -176,15 +161,11 @@ public class LargestSeriesProductCalculatorTest {
     public void testNegativeSeriesLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("12345");
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> calculator.calculateLargestProductForSeriesLength(-1));
-
-        assertThat(expected)
-            .hasMessage("Series length must be non-negative.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> calculator.calculateLargestProductForSeriesLength(-1))
+                .withMessage("Series length must be non-negative.");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void testForIntegerOverflow() {
