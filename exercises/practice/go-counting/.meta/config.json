@@ -20,6 +20,9 @@
     "solution": [
       "src/main/java/GoCounting.java"
     ],
+    "editor": [
+      "src/main/java/Player.java"
+    ],
     "test": [
       "src/test/java/GoCountingTest.java"
     ],

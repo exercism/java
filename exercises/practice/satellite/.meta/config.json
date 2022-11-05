@@ -11,6 +11,10 @@
     "solution": [
       "src/main/java/Satellite.java"
     ],
+    "editor": [
+      "src/main/java/Node.java",
+      "src/main/java/Tree.java"
+    ],
     "test": [
       "src/test/java/SatelliteTest.java"
     ],

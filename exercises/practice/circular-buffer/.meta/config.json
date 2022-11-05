@@ -24,6 +24,9 @@
     "solution": [
       "src/main/java/CircularBuffer.java"
     ],
+    "editor": [
+      "src/main/java/BufferIOException.java"
+    ],
     "test": [
       "src/test/java/CircularBufferTest.java"
     ],

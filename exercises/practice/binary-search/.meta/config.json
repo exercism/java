@@ -29,6 +29,9 @@
     "solution": [
       "src/main/java/BinarySearch.java"
     ],
+    "editor": [
+      "src/main/java/ValueNotFoundException.java"
+    ],
     "test": [
       "src/test/java/BinarySearchTest.java"
     ],

@@ -31,6 +31,9 @@
     "solution": [
       "src/main/java/Allergies.java"
     ],
+    "editor": [
+      "src/main/java/Allergen.java"
+    ],
     "test": [
       "src/test/java/AllergiesTest.java"
     ],

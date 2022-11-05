@@ -28,6 +28,9 @@
     "solution": [
       "src/main/java/Meetup.java"
     ],
+    "editor": [
+      "src/main/java/MeetupSchedule.java"
+    ],
     "test": [
       "src/test/java/MeetupTest.java"
     ],

@@ -18,6 +18,9 @@
     "solution": [
       "src/main/java/BankAccount.java"
     ],
+    "editor": [
+      "src/main/java/BankAccountActionInvalidException.java"
+    ],
     "test": [
       "src/test/java/BankAccountTest.java"
     ],

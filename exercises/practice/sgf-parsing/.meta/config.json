@@ -4,6 +4,10 @@
     "solution": [
       "src/main/java/SgfParsing.java"
     ],
+    "editor": [
+      "src/main/java/SgfNode.java",
+      "src/main/java/SgfParsingException.java"
+    ],
     "test": [
       "src/test/java/SgfParsingTest.java"
     ],

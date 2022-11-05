@@ -26,6 +26,9 @@
     "solution": [
       "src/main/java/RelationshipComputer.java"
     ],
+    "editor": [
+      "src/main/java/Relationship.java"
+    ],
     "test": [
       "src/test/java/RelationshipComputerTest.java"
     ],

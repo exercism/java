@@ -25,6 +25,9 @@
     "solution": [
       "src/main/java/KindergartenGarden.java"
     ],
+    "editor": [
+      "src/main/java/Plant.java"
+    ],
     "test": [
       "src/test/java/KindergartenGardenTest.java"
     ],
