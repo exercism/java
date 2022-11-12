@@ -27,6 +27,9 @@
     "solution": [
       "src/main/java/Matrix.java"
     ],
+    "editor": [
+      "src/main/java/MatrixCoordinate.java"
+    ],
     "test": [
       "src/test/java/MatrixTest.java"
     ],

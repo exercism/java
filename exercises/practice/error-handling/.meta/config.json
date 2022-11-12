@@ -19,6 +19,10 @@
     "solution": [
       "src/main/java/ErrorHandling.java"
     ],
+    "editor": [
+      "src/main/java/CustomCheckedException.java",
+      "src/main/java/CustomUncheckedException.java"
+    ],
     "test": [
       "src/test/java/ErrorHandlingTest.java"
     ],

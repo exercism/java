@@ -20,6 +20,9 @@
     "solution": [
       "src/main/java/Alphametics.java"
     ],
+    "editor": [
+      "src/main/java/UnsolvablePuzzleException.java"
+    ],
     "test": [
       "src/test/java/AlphameticsTest.java"
     ],

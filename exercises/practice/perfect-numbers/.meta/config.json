@@ -24,6 +24,9 @@
     "solution": [
       "src/main/java/NaturalNumber.java"
     ],
+    "editor": [
+      "src/main/java/Classification.java"
+    ],
     "test": [
       "src/test/java/NaturalNumberTest.java"
     ],

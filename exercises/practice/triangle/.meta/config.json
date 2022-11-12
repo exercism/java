@@ -28,6 +28,9 @@
     "solution": [
       "src/main/java/Triangle.java"
     ],
+    "editor": [
+      "src/main/java/TriangleException.java"
+    ],
     "test": [
       "src/test/java/TriangleTest.java"
     ],

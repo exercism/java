@@ -19,6 +19,10 @@
     "solution": [
       "src/main/java/Dominoes.java"
     ],
+    "editor": [
+      "src/main/java/ChainNotFoundException.java",
+      "src/main/java/Domino.java"
+    ],
     "test": [
       "src/test/java/DominoesTest.java"
     ],

@@ -16,6 +16,9 @@
     "solution": [
       "src/main/java/Yacht.java"
     ],
+    "editor": [
+      "src/main/java/YachtCategory.java"
+    ],
     "test": [
       "src/test/java/YachtTest.java"
     ],

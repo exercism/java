@@ -24,6 +24,10 @@
     "solution": [
       "src/main/java/WordSearcher.java"
     ],
+    "editor": [
+      "src/main/java/Pair.java",
+      "src/main/java/WordLocation.java"
+    ],
     "test": [
       "src/test/java/WordSearcherTest.java"
     ],

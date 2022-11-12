@@ -12,6 +12,10 @@
     "solution": [
       "src/main/java/RestApi.java"
     ],
+    "editor": [
+      "src/main/java/Iou.java",
+      "src/main/java/User.java"
+    ],
     "test": [
       "src/test/java/RestApiTest.java"
     ],
