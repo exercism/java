@@ -2,18 +2,24 @@
 
 ## Table of Contents
 
-* [Overview](#overview)
-* [Before Making Your Pull Request](#before-making-your-pull-request)
-* [Contributing With Minimal Setup](#contributing-with-minimal-setup)
-* [Getting Familiar With the Codebase](#getting-familiar-with-the-codebase)
-  * [The `exercises` Module](#the-exercises-module)
-  * [The Problem Submodules](#the-problem-submodules)
-* [Advanced: Complete Local Setup](#advanced-complete-local-setup)
-  * [Tip: `gradle clean` before `exercism fetch`](#tip-gradle-clean-before-exercism-fetch)
-* [Adding a New Exercise](#adding-a-new-exercise)
-* [Updating the READMEs](#updating-the-readmes)
-* [Checking tests are up to date](#checking-tests-are-up-to-date)
-* [Checking tests are up to date and submit new issues](#checking-tests-are-up-to-date-and-submit-new-issues)
+<!-- TOC -->
+  * [Overview](#overview)
+  * [Before Making Your Pull Request](#before-making-your-pull-request)
+  * [Contributing With Minimal Setup](#contributing-with-minimal-setup)
+  * [Contributing using Intellij IDEA](#contributing-using-intellij-idea)
+  * [Getting Familiar With the Codebase](#getting-familiar-with-the-codebase)
+    * [The `exercises` Module](#the-exercises-module)
+    * [The Problem Submodules](#the-problem-submodules)
+  * [Advanced: Complete Local Setup](#advanced--complete-local-setup)
+    * [Prerequisites](#prerequisites)
+      * [Debian Linux](#debian-linux)
+      * [macOS](#macos)
+  * [Adding a New Exercise](#adding-a-new-exercise)
+  * [Updating the READMEs](#updating-the-readmes)
+  * [Checking tests are up to date](#checking-tests-are-up-to-date)
+  * [Checking tests are up to date and submit new issues](#checking-tests-are-up-to-date-and-submit-new-issues)
+  * [Checking exercises are implemented and submit new issues](#checking-exercises-are-implemented-and-submit-new-issues)
+<!-- TOC -->
 
 ## Overview
 
@@ -144,7 +150,7 @@ Each problem/submodule has three source sets:
 
 ----
 
-## Advanced: Complete Local Setup
+## <a name="advanced--complete-local-setup"></a> Advanced: Complete Local Setup
 
 ### Prerequisites
 Before you proceed, please ensure that you have `jq` (library that parses JSON) & `ruby` installed on your machine.
