@@ -65,7 +65,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    $ git commit -m "(An intention-revealing commit message)"
    $ git push
    ```
-   The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
+   The GitHub doc has a section on [pull requests](https://exercism.org/docs/building/github/contributors-pull-request-guide) that provides practical advices on how to create them.
 -  **Verify that your work passes all tests.**  When you create a pull request (PR), GitHub triggers a build on Travis CI.  Your PR will not be merged unless those tests pass.
 -  **Check the style of your code**. Running `gradle check` from the root folder of the exercise, the checkstyle plugin will show you every style violation of your code
 
@@ -177,7 +177,7 @@ This can just be a pull request with an empty commit that states which new exerc
 
 The Java specific details you need to know about adding an exercise are:
 
-* Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
+* Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://exercism.org/docs/building/tracks/config-json).
 You can also look at other entries in `config.json` as examples and try to mimic them.
 
 * Please add an entry for your exercise to `settings.gradle`.
