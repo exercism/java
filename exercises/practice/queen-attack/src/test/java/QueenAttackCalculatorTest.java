@@ -1,10 +1,9 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 public class QueenAttackCalculatorTest {
@@ -17,49 +16,33 @@ public class QueenAttackCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHavePositiveRow() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Queen(-2, 2));
-
-        assertThat(expected)
-            .hasMessage("Queen position must have positive row.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Queen(-2, 2))
+                .withMessage("Queen position must have positive row.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHaveRowOnBoard() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Queen(8, 4));
-
-        assertThat(expected)
-            .hasMessage("Queen position must have row <= 7.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Queen(8, 4))
+                .withMessage("Queen position must have row <= 7.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHavePositiveColumn() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Queen(2, -2));
-
-        assertThat(expected)
-            .hasMessage("Queen position must have positive column.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Queen(2, -2))
+                .withMessage("Queen position must have positive column.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHaveColumnOnBoard() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new Queen(4, 8));
-
-        assertThat(expected)
-            .hasMessage("Queen position must have column <= 7.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Queen(4, 8))
+                .withMessage("Queen position must have column <= 7.");
     }
 
     @Ignore("Remove to run test")
@@ -128,25 +111,17 @@ public class QueenAttackCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testNullPositionsNotAllowed() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new QueenAttackCalculator(null, new Queen(0, 7)));
-
-        assertThat(expected)
-            .hasMessage("You must supply valid positions for both Queens.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new QueenAttackCalculator(null, new Queen(0, 7)))
+                .withMessage("You must supply valid positions for both Queens.");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testQueensMustNotOccupyTheSameSquare() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new QueenAttackCalculator(new Queen(2, 2), new Queen(2, 2)));
-
-        assertThat(expected)
-            .hasMessage("Queens cannot occupy the same position.");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new QueenAttackCalculator(new Queen(2, 2), new Queen(2, 2)))
+                .withMessage("Queens cannot occupy the same position.");
     }
 
 }
