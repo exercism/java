@@ -173,8 +173,7 @@ That means that you take an exercise that has already been implemented in anothe
 To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/main/exercises).
 Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
 
-There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
-Please review this before porting an exercise to the Java track.
+Before porting an exercise to the Java track, please review the [concept exercises guide](https://exercism.org/docs/building/tracks/concept-exercises) and/or the [practice exercise guide](https://exercism.org/docs/building/tracks/practice-exercises).
 
 Please make sure no one else has a pull request open to implement your chosen exercise before you start.
 
