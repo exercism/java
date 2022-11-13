@@ -150,7 +150,7 @@ Each problem/submodule has three source sets:
 
 ----
 
-## <a name="advanced--complete-local-setup"></a> Advanced: Complete Local Setup
+## Advanced: Complete Local Setup
 
 ### Prerequisites
 Before you proceed, please ensure that you have `jq` (library that parses JSON) & `ruby` installed on your machine.
