@@ -1,0 +1,15 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "src/main/java/Ledger.java"
+    ],
+    "test": [
+      "src/test/java/LedgerTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Ledger.java"
+    ]
+  },
+  "blurb": "Refactor a ledger printer."
+}
