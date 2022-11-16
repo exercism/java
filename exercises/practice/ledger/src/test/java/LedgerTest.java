@@ -1,4 +1,5 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,13 +13,20 @@ public class LedgerTest {
     private final static String USD_CURRENCY = "USD";
     private final static String EUR_CURRENCY = "EUR";
 
+    private Ledger ledger;
+
+    @Before
+    public void setUp() throws Exception {
+        ledger = new Ledger();
+    }
+
     @Test
     public void emptyLedgerUS() {
         // given
         var entries = new Ledger.LedgerEntry[]{};
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected = "Date       | Description               | Change       ";
@@ -31,7 +39,7 @@ public class LedgerTest {
         var entries = new Ledger.LedgerEntry[]{};
 
         // when
-        String actual = Ledger.format(EUR_CURRENCY, NL_LOCALE, entries);
+        String actual = ledger.format(EUR_CURRENCY, NL_LOCALE, entries);
 
         // then
         String expected = "Datum      | Omschrijving              | Verandering  ";
@@ -42,11 +50,11 @@ public class LedgerTest {
     public void oneEntry() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-02-01", "Buy present", -1000)
+                ledger.createLedgerEntry("2015-02-01", "Buy present", -1000)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected =
@@ -59,12 +67,12 @@ public class LedgerTest {
     public void creditAndDebit() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-02", "Get present", 1000),
-                Ledger.createLedgerEntry("2015-01-01", "Buy present", -1000)
+                ledger.createLedgerEntry("2015-01-02", "Get present", 1000),
+                ledger.createLedgerEntry("2015-01-01", "Buy present", -1000)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected =
@@ -80,12 +88,12 @@ public class LedgerTest {
     public void multipleEntriesOnSameDateOrderedByDescription() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-01", "Get present", 1000),
-                Ledger.createLedgerEntry("2015-01-01", "Buy present", -1000)
+                ledger.createLedgerEntry("2015-01-01", "Get present", 1000),
+                ledger.createLedgerEntry("2015-01-01", "Buy present", -1000)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected =
@@ -101,13 +109,13 @@ public class LedgerTest {
     public void finalOrderTieBreakerIsChange() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-01", "Something", 0),
-                Ledger.createLedgerEntry("2015-01-01", "Something", -1),
-                Ledger.createLedgerEntry("2015-01-01", "Something", 1)
+                ledger.createLedgerEntry("2015-01-01", "Something", 0),
+                ledger.createLedgerEntry("2015-01-01", "Something", -1),
+                ledger.createLedgerEntry("2015-01-01", "Something", 1)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected =
@@ -125,11 +133,11 @@ public class LedgerTest {
     public void overlongDescriptions() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-01", "Freude schoner Gotterfunken", -123456)
+                ledger.createLedgerEntry("2015-01-01", "Freude schoner Gotterfunken", -123456)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected =
@@ -143,11 +151,11 @@ public class LedgerTest {
     public void euros() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-01", "Buy present", -1000)
+                ledger.createLedgerEntry("2015-01-01", "Buy present", -1000)
         };
 
         // when
-        String actual = Ledger.format(EUR_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(EUR_CURRENCY, US_LOCALE, entries);
 
         // then
         var expected =
@@ -161,11 +169,11 @@ public class LedgerTest {
     public void dutchLocale() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-03-12", "Buy present", 123456)
+                ledger.createLedgerEntry("2015-03-12", "Buy present", 123456)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, NL_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, NL_LOCALE, entries);
 
         // then
         var expected =
@@ -179,11 +187,11 @@ public class LedgerTest {
     public void dutchNegativeNumberWith3DigitsBeforeDecimalPoint() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-03-12", "Buy present", -12345)
+                ledger.createLedgerEntry("2015-03-12", "Buy present", -12345)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, NL_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, NL_LOCALE, entries);
 
         // then
         var expected =
@@ -199,11 +207,11 @@ public class LedgerTest {
 
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-03-12", "Buy present", -12345)
+                ledger.createLedgerEntry("2015-03-12", "Buy present", -12345)
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         var expected =
@@ -221,7 +229,7 @@ public class LedgerTest {
         var locale = "it-IT";
 
         // when
-        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> Ledger.format(EUR_CURRENCY, locale, entries));
+        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> ledger.format(EUR_CURRENCY, locale, entries));
 
         // then
         assertEquals("Invalid locale", illegalArgumentException.getMessage());
@@ -235,7 +243,7 @@ public class LedgerTest {
         var currency = "Pieces o' Eight";
 
         // when
-        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> Ledger.format(currency, US_LOCALE, entries));
+        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> ledger.format(currency, US_LOCALE, entries));
 
         // then
         assertEquals("Invalid currency", illegalArgumentException.getMessage());

@@ -9,18 +9,18 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class Ledger {
+public class Ledger {
 
     private static final int DESCRIPTION_MAX_LENGTH = 25;
     private static final String TRUNCATED_SUFFIX = "...";
 
-    public static LedgerEntry createLedgerEntry(String date, String description, int change) {
+    public LedgerEntry createLedgerEntry(String date, String description, int change) {
         var parsedDate = LocalDate.parse(date);
         var parsedChange = change / 100.0f;
         return new LedgerEntry(parsedDate, description, parsedChange);
     }
 
-    public static String format(String currency, String locale, LedgerEntry... entries) {
+    public String format(String currency, String locale, LedgerEntry... entries) {
         var currentLocale = getLocale(locale);
         var formattedEntries = formatEntries(currency, currentLocale, entries);
         var header = formatHeader(currentLocale);

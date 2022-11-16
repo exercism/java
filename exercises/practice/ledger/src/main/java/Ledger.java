@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class Ledger {
-    public static LedgerEntry createLedgerEntry(String d, String desc, int c) {
+    public LedgerEntry createLedgerEntry(String d, String desc, int c) {
         LedgerEntry le = new LedgerEntry();
         le.setChange(c / 100.0f);
         le.setDescription(desc);
@@ -16,7 +16,7 @@ public class Ledger {
         return le;
     }
 
-    public static String format(String cur, String loc, LedgerEntry[] entries) {
+    public String format(String cur, String loc, LedgerEntry[] entries) {
         String s = null;
         String header = null;
         String curSymb = null;
