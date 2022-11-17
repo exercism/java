@@ -16,7 +16,13 @@ for exercise_type in 'concept' 'practice'; do
     declare -A files
     for file_type in 'editor' 'solution'; do
       for file in $(echo "${config_files}" | jq -r ".${file_type} | @sh"); do
-        files[${file}]=true
+        if [[ "${file}" != null ]]; then
+          if [[ "${file_type}" == 'editor' && $(grep 'UnsupportedOperationException' < "${exercise_path}/${file//\'/}") != '' ]]; then
+            echo "${file} should be editable"
+            exit 1
+          fi
+          files[${file}]=true
+        fi
       done
     done
     mapfile -t java_files < <(find "${exercise_path}/src/main" -type f -name '*.java')

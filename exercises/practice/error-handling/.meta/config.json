@@ -17,9 +17,7 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/ErrorHandling.java"
-    ],
-    "editor": [
+      "src/main/java/ErrorHandling.java",
       "src/main/java/CustomCheckedException.java",
       "src/main/java/CustomUncheckedException.java"
     ],
