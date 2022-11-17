@@ -130,10 +130,11 @@ This is the top-level module, contained in the `exercises` directory.  It is a c
 
 ### The Problem Submodules
 
-The `exercises` subdirectory contains all of the problem submodules.
-Each problem/submodule is a subdirectory of the same name as its slug.
+The `exercises` subdirectory contains two exercises directories, [concept](https://exercism.org/docs/building/tracks/concept-exercises) and [practice](https://exercism.org/docs/building/tracks/practice-exercises), each containing the related problems submodules.
 
-  * its `build.gradle` names dependencies required to work that problem.
+Each problem/submodule is a subdirectory of the same name as its slug:
+
+  * its `build.gradle` names dependencies required to work that problem;
   * its `README.md` describes the exercise.
 
 Each problem/submodule has three source sets:
@@ -147,13 +148,19 @@ Each problem/submodule has three source sets:
 ## Advanced: Complete Local Setup
 
 ### Prerequisites
-Before you proceed, please ensure that you have `jq` (library that parses JSON) & `ruby` installed on your machine.
+Before you proceed, please ensure that you have [jq](https://stedolan.github.io/jq/) (library that parses JSON) & `ruby` installed on your machine.
 
 #### Debian Linux
-`sudo apt-get install jq ruby-full`
+```shell
+$ sudo apt-get install jq ruby-full
+```
 
 #### macOS
-`brew install jq ruby`
+Prerequisite: [Homebrew](https://brew.sh/)
+
+```shell
+$ brew install jq ruby
+```
 
 If you are going to make significant contribution(s) to the track, you might find it handy to have a complete local install of exercism on your computer.  This way, you can run the full suite of tests without having to create/update a PR.
 
@@ -161,43 +168,55 @@ The easiest way to achieve this is simply use the `bin/journey-test.sh` script. 
 
 ## Adding a New Exercise
 
-The easiest way to add a new exercise to the Java track is to port an exercise from another track.
-That means that you take an exercise that has already been implemented in another language and you implement it in this track.
-
-To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/main/exercises).
-Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
-
-There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
-Please review this before porting an exercise to the Java track.
-
-Please make sure no one else has a pull request open to implement your chosen exercise before you start.
+ **Please make sure no one else has a pull request open to implement your chosen exercise before you start.**
 
 It might also be a good idea to open a WIP pull request to make it clear to others that you are working on this exercise.
 This can just be a pull request with an empty commit that states which new exercise you're working on, with WIP (work in progress) in the title so that the maintainers know that it's not ready for review yet.
 
+### Porting from another track
+The easiest way to add a new exercise to the Java track is to port an exercise from another track.
+That means that you take an exercise that has already been implemented in another language and you implement it in this track.
+
+~~There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
+Please review this before porting an exercise to the Java track.~~
+
+1. Go to the [main repository of Exercism](https://github.com/exercism).
+
+2. Search in the existing tracks looking for the exercise you chose to implement. If you are lucky, there is already an implementation of the same exercise in a different language, and you can use it as a reference for your implementation.
+3. Follow the [new exercise steps](#completely-new-exercise), but now you have the advantage of being able to copy/take cue from already existing and validated files
+
+
+### Completely new exercise
+To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/main/exercises).
+Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
+
+
+
+
 The Java specific details you need to know about adding an exercise are:
 
-* Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
+1. Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
 You can also look at other entries in `config.json` as examples and try to mimic them.
+   * Note: to generate a UUID for your exercise, [follow this guide](https://exercism.org/docs/building/configlet/uuid).
 
-* Please add an entry for your exercise to `settings.gradle`.
+2. Please add an entry for your exercise to `settings.gradle`.
 This should just be `include 'exercise-name'`.
 This list is in alphabetical order so please add your exercise so that it maintains this order.
 
-* Please add an exercise submodule for your exercise.
+3. Please add an exercise submodule for your exercise.
 See [The Problem Submodules](#the-problem-submodules) section for what needs to be in this.
 See the [POLICIES doc](https://github.com/exercism/java/blob/main/POLICIES.md#starter-implementations) for an explanation of when you need to add a starter implementation.
 The `build.gradle` file can just be copied from any other exercise submodule.
 The `README.md` file can be generated using [configlet](https://github.com/exercism/configlet/releases).
 You can do this by:
 
-  1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
+   1. Download configlet and put it somewhere in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))
 
-  2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
+   2. Clone [the problem-specifications repository](https://github.com/exercism/problem-specifications).
 
-  3. Run `configlet generate . --only name_of_new_exercise --spec-path path_to_problem_specifications` from the root of this repository.
+   3. Follow the instructions specified in [concept exercises](#generate-files-for-concept-exercises) or [practice exercise](#generate-files-for-practice-exercises)
 
-* Check if there is canonical data for the exercise you're adding.
+4. Check if there is canonical data for the exercise you're adding.
 This can be found at `https://github.com/exercism/problem-specifications/tree/master/exercises/EXERCISE-SLUG/canonical-data.json`.
 If there is canonical data for your exercise then you should follow this when making the tests.
 We aim to follow the canonical data as closely as possible in our tests to ensure thorough test coverage.
@@ -205,10 +224,23 @@ If there is canonical data available you also need to create a file at `exercise
 The canonical data version can be found at the top of the canonical data file for that exercise.
 See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/main/exercises/practice/acronym/.meta), for an example `version` file.
 
-* Make sure you've followed the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md), especially the ones for exercise added/updated.
+5. Make sure you've followed the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md), especially the ones for exercise added/updated.
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
 Feel free to open an issue or post in the [Building Exercism](https://forum.exercism.org/c/exercism/building-exercism/125) category of the [Exercism forum](https://forum.exercism.org/) if you have any questions and we'll try and answer as soon as we can.
+
+### Generate files for concept exercises
+Run the following command from the root of this repository:
+```shell
+$ configlet generate . --only name_of_new_exercise --spec-path path_to_problem_specifications
+```
+### Generate files for practice exercises
+Run the following command from the root of this repository, accepting (`y`) all the prompted questions:
+```shell
+$ configlet sync -e name_of_new_exercise -u
+```
+
+[Here](https://exercism.org/docs/building/configlet/sync) you can find the complete guide.
 
 ## Updating the READMEs
 
