@@ -2,18 +2,24 @@
 
 ## Table of Contents
 
-* [Overview](#overview)
-* [Before Making Your Pull Request](#before-making-your-pull-request)
-* [Contributing With Minimal Setup](#contributing-with-minimal-setup)
-* [Getting Familiar With the Codebase](#getting-familiar-with-the-codebase)
-  * [The `exercises` Module](#the-exercises-module)
-  * [The Problem Submodules](#the-problem-submodules)
-* [Advanced: Complete Local Setup](#advanced-complete-local-setup)
-  * [Tip: `gradle clean` before `exercism fetch`](#tip-gradle-clean-before-exercism-fetch)
-* [Adding a New Exercise](#adding-a-new-exercise)
-* [Updating the READMEs](#updating-the-readmes)
-* [Checking tests are up to date](#checking-tests-are-up-to-date)
-* [Checking tests are up to date and submit new issues](#checking-tests-are-up-to-date-and-submit-new-issues)
+<!-- TOC -->
+  * [Overview](#overview)
+  * [Before Making Your Pull Request](#before-making-your-pull-request)
+  * [Contributing With Minimal Setup](#contributing-with-minimal-setup)
+  * [Contributing using Intellij IDEA](#contributing-using-intellij-idea)
+  * [Getting Familiar With the Codebase](#getting-familiar-with-the-codebase)
+    * [The `exercises` Module](#the-exercises-module)
+    * [The Problem Submodules](#the-problem-submodules)
+  * [Advanced: Complete Local Setup](#advanced--complete-local-setup)
+    * [Prerequisites](#prerequisites)
+      * [Debian Linux](#debian-linux)
+      * [macOS](#macos)
+  * [Adding a New Exercise](#adding-a-new-exercise)
+  * [Updating the READMEs](#updating-the-readmes)
+  * [Checking tests are up to date](#checking-tests-are-up-to-date)
+  * [Checking tests are up to date and submit new issues](#checking-tests-are-up-to-date-and-submit-new-issues)
+  * [Checking exercises are implemented and submit new issues](#checking-exercises-are-implemented-and-submit-new-issues)
+<!-- TOC -->
 
 ## Overview
 
@@ -30,12 +36,12 @@ Hi! Thanks for contributing to the Exercism Java track!
 Before opening your pull request, please review the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md) and make sure your changes comply with them all.
 This helps us focus our review time on the more important aspects of your contributions.
 
-Also please only address one issue per pull request and reference the issue in your pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
+Also, please only address one issue per pull request and reference the issue in your pull request. This makes it easier for us to review it, and it means that if we request changes to the fix for one issue, it won't prevent to a fix for another issue being merged.
 
 It's perfectly fine to have more than one pull request open at a time.
 In that case it's important to keep the work for each pull request on a separate [branch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) to prevent unrelated commits being added to your pull request. This is good practice to do always, even if you only have one pull request open.
 
-One last thing to note before you get started. When you fork the repository and you want to [sync your fork](https://help.github.com/articles/syncing-a-fork/), you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
+One last thing to note before you get started. When you fork the repository, and you want to [sync your fork](https://help.github.com/articles/syncing-a-fork/), you can perform a [`git rebase`](https://git-scm.com/docs/git-rebase). This is preferred over merging the changes because merging leads to a dirty commit history whereas performing a rebase adds in those changes without making extra commit messages. However, this is only preferred, so don't worry about it too much.
 
 ## Contributing With Minimal Setup
 
@@ -46,7 +52,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
 1. **Ensure you have the basic Java tooling installed:**  JDK 1.11+, an editor and Gradle 2.x.
 
    (see [exercism.io: Installing Java](https://exercism.org/docs/tracks/java/installation))
--  **Setup a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
+-  **Set up a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
    See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Contributing via GitHub](https://github.com/exercism/docs/tree/main/building/github#contributing-via-github)) to:
    * "fork" a repository on GitHub;
@@ -65,7 +71,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    $ git commit -m "(An intention-revealing commit message)"
    $ git push
    ```
-   The Git Basics doc has a section on [commit messages](https://github.com/exercism/docs/blob/master/contributing/git-basics.md#commit-messages) that provides practical advice on crafting meaningful commit messages.
+   The GitHub doc has a section on [pull requests](https://exercism.org/docs/building/github/contributors-pull-request-guide) that provides practical advices on how to create them.
 -  **Verify that your work passes all tests.**  When you create a pull request (PR), GitHub triggers a build on Travis CI.  Your PR will not be merged unless those tests pass.
 -  **Check the style of your code**. Running `gradle check` from the root folder of the exercise, the checkstyle plugin will show you every style violation of your code
 
@@ -74,7 +80,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    Intellij IDEA is one of the more popular IDEs when working with Java, and it includes several tools to help simplify the process. The following steps outline how to import the git repository, make changes, and push
    them back to your fork (this is assuming you have already forked the repo...if you haven't, see the link about [forking](https://help.github.com/articles/fork-a-repo/)).
    
-- **Open the IDE and import the project**  From the startup menu, select "Check out from Version Control". This will open a dialog where you can enter in the URL of the git repository and specify the directory that you would
+- **Open the IDE and import the project**  From the startup menu, select "Check out from Version Control". This will open a dialog where you can enter the URL of the git repository and specify the directory that you would
 like to clone the repo into.
 
 ![import](assets/clone-repo.png)
@@ -91,7 +97,7 @@ like to clone the repo into.
 
 ![java-module](assets/java-module.png)
 
-- **Create a feature branch**  The git tools in IDEA are located in the VCS menu. To createa a new branch, select VCS > Git > Branches and then click "New Branch". Give the branch a meaningful name and create.
+- **Create a feature branch**  The git tools in IDEA are located in the VCS menu. To create a new branch, select VCS > Git > Branches and then click "New Branch". Give the branch a meaningful name and create.
 
 ![branch](assets/branch-menu.png)
 ![create](assets/branch-name.png)
@@ -103,8 +109,8 @@ open the Tasks > Verification folder and double click `test`
 
  ![diff](assets/run-test.png)
 
- - **Commit/Merge changes**  Once all of the changes have been made, you can look at the diffs and commit from the "Commit File" window, which can be reached by selecting VCS > Git > Commit File from the top menu.
- If all of the changes are acceptable, checkmark all of the files that are to be committed, enter a meaningful commit message, and then click "Commit and Push".    
+ - **Commit/Merge changes**  Once all the changes have been made, you can look at the diffs and commit from the "Commit File" window, which can be reached by selecting VCS > Git > Commit File from the top menu.
+ If all the changes are acceptable, checkmark all the files that are to be committed, enter a meaningful commit message, and then click "Commit and Push".    
  
  ![diff](assets/commit-files.png)
  
@@ -123,14 +129,14 @@ This repo is a multi-project gradle build.
 
 ### The `exercises` Module
 
-This is the top-level module, contained in the `exercises` directory.  It is a container for the problem sub-modules.
+This is the top-level module, contained in the `exercises` directory.  It is a container for the problem submodules.
 
   * its `build.gradle` points the "main" sourceset to the reference solution.
   * its `settings.gradle` names each of the subprojects, one for each problem in the set.
 
 ### The Problem Submodules
 
-The `exercises` subdirectory contains all of the problem submodules.
+The `exercises` subdirectory contains all the problem submodules.
 Each problem/submodule is a subdirectory of the same name as its slug.
 
   * its `build.gradle` names dependencies required to work that problem.
@@ -155,20 +161,19 @@ Before you proceed, please ensure that you have `jq` (library that parses JSON) 
 #### macOS
 `brew install jq ruby`
 
-If you are going to make significant contribution(s) to the track, you might find it handy to have a complete local install of exercism on your computer.  This way, you can run the full suite of tests without having to create/update a PR.
+If you are going to make significant contribution(s) to the track, you might find it handy to have a complete local installation of exercism on your computer.  This way, you can run the full suite of tests without having to create/update a PR.
 
 The easiest way to achieve this is simply use the `bin/journey-test.sh` script.  However, you may want to perform other tests, depending on what you are doing.  You can do so by duplicating the setup performed by the `bin/journey-test.sh` script.
 
 ## Adding a New Exercise
 
 The easiest way to add a new exercise to the Java track is to port an exercise from another track.
-That means that you take an exercise that has already been implemented in another language and you implement it in this track.
+That means that you take an exercise that has already been implemented in another language, and you implement it in this track.
 
 To add a completely new exercise you need to open a pull request to the [problem specifications repository](https://github.com/exercism/problem-specifications/tree/main/exercises).
 Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
 
-There is a [general Exercism guide for porting an exercise to a new language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md).
-Please review this before porting an exercise to the Java track.
+Before porting an exercise to the Java track, please review the [concept exercises guide](https://exercism.org/docs/building/tracks/concept-exercises) and/or the [practice exercise guide](https://exercism.org/docs/building/tracks/practice-exercises).
 
 Please make sure no one else has a pull request open to implement your chosen exercise before you start.
 
@@ -177,7 +182,7 @@ This can just be a pull request with an empty commit that states which new exerc
 
 The Java specific details you need to know about adding an exercise are:
 
-* Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md).
+* Please add an entry to the `exercises` array in `config.json`. You can find details about what should be in that entry [here](https://exercism.org/docs/building/tracks/config-json).
 You can also look at other entries in `config.json` as examples and try to mimic them.
 
 * Please add an entry for your exercise to `settings.gradle`.
@@ -208,7 +213,7 @@ See other exercises, e.g. [acronym](https://github.com/exercism/java/tree/main/e
 * Make sure you've followed the [track policies](https://github.com/exercism/java/blob/main/POLICIES.md), especially the ones for exercise added/updated.
 
 Hopefully that should be enough information to help you port an exercise to the Java track.
-Feel free to open an issue or post in the [Building Exercism](https://forum.exercism.org/c/exercism/building-exercism/125) category of the [Exercism forum](https://forum.exercism.org/) if you have any questions and we'll try and answer as soon as we can.
+Feel free to open an issue or post in the [Building Exercism](https://forum.exercism.org/c/exercism/building-exercism/125) category of the [Exercism forum](https://forum.exercism.org/) if you have any questions, and we'll try and answer as soon as we can.
 
 ## Updating the READMEs
 
