@@ -184,6 +184,7 @@ public class DominoesTest {
     }
 
 
+
     private void assertValidChain(List<Domino> inputDominoes, List<Domino> outputDominoes) {
         assertSameDominoes(inputDominoes, outputDominoes);
         assertEndDominoesMatch(outputDominoes);
