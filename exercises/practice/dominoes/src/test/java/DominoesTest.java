@@ -168,7 +168,6 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
-
     @Ignore("Remove to run test")
     @Test
     public void seperateThreeDominoLoopsTest() {
@@ -182,8 +181,6 @@ public class DominoesTest {
                 .isThrownBy(() -> dominoes.formChain(dominoesList))
                 .withMessage("No domino chain found.");
     }
-
-
 
     private void assertValidChain(List<Domino> inputDominoes, List<Domino> outputDominoes) {
         assertSameDominoes(inputDominoes, outputDominoes);
