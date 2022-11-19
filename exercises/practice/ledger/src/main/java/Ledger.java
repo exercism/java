@@ -1,16 +1,12 @@
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Ledger {
-    public LedgerEntry createLedgerEntry(String d, String desc, int c) {
+    public LedgerEntry createLedgerEntry(String d, String desc, double c) {
         LedgerEntry le = new LedgerEntry();
-        le.setChange(c / 100.0f);
+        le.setChange(c);
         le.setDescription(desc);
         le.setLocalDate(LocalDate.parse(d));
         return le;
@@ -21,9 +17,8 @@ public class Ledger {
         String header = null;
         String curSymb = null;
         String datPat = null;
-        Locale cuLoc = null;
-        DecimalFormat df = null;
-        DecimalFormatSymbols dfs = null;
+        String decSep = null;
+        String thSep = null;
         if (!cur.equals("USD") && !cur.equals("EUR")) {
             throw new IllegalArgumentException("Invalid currency");
         } else if (!loc.equals("en-US") && !loc.equals("nl-NL")) {
@@ -33,34 +28,28 @@ public class Ledger {
                 if (loc.equals("en-US")) {
                     curSymb = "$";
                     datPat = "MM/dd/yyyy";
-                    cuLoc = new Locale("en", "US");
-                    df = (DecimalFormat) NumberFormat.getCurrencyInstance(cuLoc);
+                    decSep = ".";
+                    thSep = ",";
                     header = "Date       | Description               | Change       ";
                 } else if (loc.equals("nl-NL")) {
                     curSymb = "$";
                     datPat = "dd/MM/yyyy";
-                    cuLoc = new Locale("nl", "NL");
-                    df = (DecimalFormat) NumberFormat.getCurrencyInstance(cuLoc);
-                    dfs = df.getDecimalFormatSymbols();
-                    dfs.setCurrencySymbol(curSymb);
-                    df.setDecimalFormatSymbols(dfs);
+                    decSep = ",";
+                    thSep = ".";
                     header = "Datum      | Omschrijving              | Verandering  ";
                 }
             } else if (cur.equals("EUR")) {
                 if (loc.equals("en-US")) {
                     curSymb = "€";
                     datPat = "MM/dd/yyyy";
-                    cuLoc = new Locale("en", "US");
-                    df = (DecimalFormat) NumberFormat.getCurrencyInstance(cuLoc);
-                    dfs = df.getDecimalFormatSymbols();
-                    dfs.setCurrencySymbol(curSymb);
-                    df.setDecimalFormatSymbols(dfs);
+                    decSep = ".";
+                    thSep = ",";
                     header = "Date       | Description               | Change       ";
                 } else if (loc.equals("nl-NL")) {
                     curSymb = "€";
                     datPat = "dd/MM/yyyy";
-                    cuLoc = new Locale("nl", "NL");
-                    df = (DecimalFormat) NumberFormat.getCurrencyInstance(cuLoc);
+                    decSep = ",";
+                    thSep = ".";
                     header = "Datum      | Omschrijving              | Verandering  ";
                 }
             }
@@ -96,7 +85,28 @@ public class Ledger {
                     desc = desc + "...";
                 }
 
-                String amount = df.format(e.getChange());
+                String converted = null;
+                if (e.getChange() < 0)
+                    converted = String.format("%.02f", e.getChange() * -1);
+                else
+                    converted = String.format("%.02f", e.getChange());
+
+                String[] parts = converted.split("\\.");
+                String amount = "";
+                int count = 1;
+                for (int ind = parts[0].length() - 1; ind >= 0; ind--) {
+                    if (((count % 3) == 0) && ind > 0) {
+                        amount = thSep + parts[0].charAt(ind) + amount;
+                    } else {
+                        amount = parts[0].charAt(ind) + amount;
+                    }
+                    count++;
+                }
+
+                amount = curSymb + amount + decSep + parts[1];
+
+                if (e.getChange() < 0)
+                    amount = "-" + amount;
 
 
                 s = s + "\n";
@@ -115,7 +125,7 @@ public class Ledger {
     public static class LedgerEntry {
         LocalDate localDate;
         String description;
-        float change;
+        double change;
 
         public LocalDate getLocalDate() {
             return localDate;
@@ -133,11 +143,11 @@ public class Ledger {
             this.description = description;
         }
 
-        public float getChange() {
+        public double getChange() {
             return change;
         }
 
-        public void setChange(float change) {
+        public void setChange(double change) {
             this.change = change;
         }
     }
