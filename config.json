@@ -1918,6 +1918,14 @@
         "practices": [],
         "prerequisites": ["strings", "string-formatting"],
         "difficulty": 5
+       },
+       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
+        "practices": ["lists", "classes", "for-loops"],
+        "prerequisites" :["lists"],
+        "difficulty": 2
       }
     ],
     "foregone": []

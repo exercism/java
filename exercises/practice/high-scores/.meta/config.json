@@ -1,0 +1,16 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "src/main/java/HighScores.java"
+    ],
+    "test": [
+      "src/test/java/HighScoresTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/HighScores.java"
+    ]
+  },
+  "blurb": "Manage a player's High Score list.",
+  "source": "Tribute to the eighties' arcade game Frogger"
+}
