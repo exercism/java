@@ -1,6 +1,12 @@
+import java.util.List;
+
 class DnDCharacter {
 
-    int ability() {
+    int ability(List<Integer> scores) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    List<Integer> rollDice() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
@@ -35,5 +41,4 @@ class DnDCharacter {
     int getHitpoints() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
-
 }
