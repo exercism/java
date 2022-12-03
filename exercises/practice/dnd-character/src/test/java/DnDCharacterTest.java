@@ -105,41 +105,49 @@ public class DnDCharacterTest {
         assertEquals(4, dndCharacter.modifier(18));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void test4DiceWereUsedForRollingScores() {
         assertEquals(4, dndCharacter.rollDice().size());
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testDiceValuesBetween1And6() {
         assertTrue(dndCharacter.rollDice().stream().allMatch(d -> d >= 1 && d <= 6));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testAbilityCalculationsUses3LargestNumbersFromScoresInDescendingOrder() {
         assertEquals(9, dndCharacter.ability(List.of(4, 3, 2, 1)));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testAbilityCalculationsUses3LargestNumbersFromFromScoresInAscendingOrder() {
         assertEquals(9, dndCharacter.ability(List.of(1, 2, 3, 4)));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testAbilityCalculationsUses3LargestNumbersFromScoresInRandomOrder() {
         assertEquals(9, dndCharacter.ability(List.of(2, 4, 3, 1)));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testAbilityCalculationsWithLowestEqualNumbers() {
         assertEquals(3, dndCharacter.ability(List.of(1, 1, 1, 1)));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testAbilityCalculationsWithHighestEqualNumbers() {
         assertEquals(18, dndCharacter.ability(List.of(6, 6, 6, 6)));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testAbilityCalculationDoesNotChangeInputScores() {
         List<Integer> scores = List.of(1, 2, 3, 4);
@@ -149,6 +157,7 @@ public class DnDCharacterTest {
         assertEquals(scores, List.of(1, 2, 3, 4));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testRandomCharacterIsValid() {
         for (int i = 0; i < 1000; i++) {
@@ -163,11 +172,13 @@ public class DnDCharacterTest {
         }
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testEachAbilityIsOnlyCalculatedOnce() {
         assertEquals(dndCharacter.getStrength(), dndCharacter.getStrength());
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testUniqueCharacterIsCreated() {
         DnDCharacter uniqueDnDCharacter = new DnDCharacter();
