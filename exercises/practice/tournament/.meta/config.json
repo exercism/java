@@ -1,5 +1,4 @@
 {
-  "blurb": "Tally the results of a small football competition.",
   "authors": [
     "mortenaa"
   ],
@@ -27,5 +26,6 @@
     "example": [
       ".meta/src/reference/java/Tournament.java"
     ]
-  }
+  },
+  "blurb": "Tally the results of a small football competition."
 }

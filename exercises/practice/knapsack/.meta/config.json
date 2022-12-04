@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a knapsack that can only carry a certain weight, determine which items to put in the knapsack in order to maximize their combined value.",
   "authors": [
     "sonapraneeth-a"
   ],
@@ -20,6 +19,7 @@
       ".meta/src/reference/java/Knapsack.java"
     ]
   },
+  "blurb": "Given a knapsack that can only carry a certain weight, determine which items to put in the knapsack in order to maximize their combined value.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Knapsack_problem"
 }

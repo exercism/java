@@ -1,5 +1,4 @@
 {
-  "blurb": "Rebuild binary trees from pre-order and in-order traversals.",
   "authors": [
     "jmrunkle"
   ],
@@ -11,15 +10,16 @@
     "solution": [
       "src/main/java/Satellite.java"
     ],
-    "editor": [
-      "src/main/java/Node.java",
-      "src/main/java/Tree.java"
-    ],
     "test": [
       "src/test/java/SatelliteTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Satellite.java"
+    ],
+    "editor": [
+      "src/main/java/Node.java",
+      "src/main/java/Tree.java"
     ]
-  }
+  },
+  "blurb": "Rebuild binary trees from pre-order and in-order traversals."
 }

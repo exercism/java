@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about conditionals by playing Blackjack.",
   "authors": [
     "TalesDias"
   ],
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "go/blackjack"
-  ]
+  ],
+  "blurb": "Learn about conditionals by playing Blackjack."
 }

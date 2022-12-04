@@ -1,5 +1,4 @@
 {
-  "blurb": "Pick the best hand(s) from a list of poker hands.",
   "authors": [
     "Zaldrick"
   ],
@@ -31,6 +30,7 @@
       ".meta/src/reference/java/Poker.java"
     ]
   },
+  "blurb": "Pick the best hand(s) from a list of poker hands.",
   "source": "Inspired by the training course from Udacity.",
   "source_url": "https://www.udacity.com/course/viewer#!/c-cs212/"
 }

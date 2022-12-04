@@ -1,5 +1,4 @@
 {
-  "blurb": "Calculate the date of meetups.",
   "authors": [
     "sit"
   ],
@@ -28,16 +27,17 @@
     "solution": [
       "src/main/java/Meetup.java"
     ],
-    "editor": [
-      "src/main/java/MeetupSchedule.java"
-    ],
     "test": [
       "src/test/java/MeetupTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Meetup.java"
+    ],
+    "editor": [
+      "src/main/java/MeetupSchedule.java"
     ]
   },
+  "blurb": "Calculate the date of meetups.",
   "source": "Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month",
   "source_url": "https://twitter.com/copiousfreetime"
 }

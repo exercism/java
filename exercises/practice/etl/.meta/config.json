@@ -1,5 +1,4 @@
 {
-  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "authors": [
     "sit"
   ],
@@ -38,6 +37,7 @@
       ".meta/src/reference/java/Etl.java"
     ]
   },
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "source": "The Jumpstart Lab team",
   "source_url": "http://jumpstartlab.com"
 }

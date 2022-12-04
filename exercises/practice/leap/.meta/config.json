@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a year, report if it is a leap year.",
   "authors": [
     "sonapraneeth-a"
   ],
@@ -21,6 +20,7 @@
       ".meta/src/reference/java/Leap.java"
     ]
   },
+  "blurb": "Given a year, report if it is a leap year.",
   "source": "JavaRanch Cattle Drive, exercise 3",
   "source_url": "http://www.javaranch.com/leap.jsp"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about ternary operators by calculating salaries.",
   "authors": [
     "TalesDias"
   ],
@@ -13,5 +12,6 @@
     "exemplar": [
       ".meta/src/reference/java/SalaryCalculator.java"
     ]
-  }
+  },
+  "blurb": "Learn about ternary operators by calculating salaries."
 }

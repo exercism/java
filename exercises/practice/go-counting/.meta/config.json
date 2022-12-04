@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the scored points on a Go board.",
   "authors": [
     "jssander"
   ],
@@ -20,14 +19,15 @@
     "solution": [
       "src/main/java/GoCounting.java"
     ],
-    "editor": [
-      "src/main/java/Player.java"
-    ],
     "test": [
       "src/test/java/GoCountingTest.java"
     ],
     "example": [
       ".meta/src/reference/java/GoCounting.java"
+    ],
+    "editor": [
+      "src/main/java/Player.java"
     ]
-  }
+  },
+  "blurb": "Count the scored points on a Go board."
 }

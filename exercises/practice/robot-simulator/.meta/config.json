@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a robot simulator.",
   "authors": [
     "stkent"
   ],
@@ -29,16 +28,17 @@
     "solution": [
       "src/main/java/Robot.java"
     ],
-    "editor": [
-      "src/main/java/GridPosition.java",
-      "src/main/java/Orientation.java"
-    ],
     "test": [
       "src/test/java/RobotTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Robot.java"
+    ],
+    "editor": [
+      "src/main/java/GridPosition.java",
+      "src/main/java/Orientation.java"
     ]
   },
+  "blurb": "Write a robot simulator.",
   "source": "Inspired by an interview question at a famous company."
 }

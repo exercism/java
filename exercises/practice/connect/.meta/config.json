@@ -1,9 +1,7 @@
 {
-  "blurb": "Compute the result for a game of Hex / Polygon.",
   "authors": [
     "kkyb123"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "src/main/java/Connect.java"
@@ -20,5 +18,6 @@
     "editor": [
       "src/main/java/Winner.java"
     ]
-  }
+  },
+  "blurb": "Compute the result for a game of Hex / Polygon."
 }

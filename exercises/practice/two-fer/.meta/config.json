@@ -1,5 +1,4 @@
 {
-  "blurb": "Create a sentence of the form \"One for X, one for me.\"",
   "authors": [
     "Smarticles101"
   ],
@@ -32,5 +31,6 @@
       ".meta/src/reference/java/Twofer.java"
     ]
   },
+  "blurb": "Create a sentence of the form \"One for X, one for me.\"",
   "source_url": "https://github.com/exercism/problem-specifications/issues/757"
 }

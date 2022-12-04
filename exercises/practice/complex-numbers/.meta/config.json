@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement complex numbers.",
   "authors": [
     "stkent"
   ],
@@ -27,6 +26,7 @@
       ".meta/src/reference/java/ComplexNumber.java"
     ]
   },
+  "blurb": "Implement complex numbers.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Complex_number"
 }

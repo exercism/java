@@ -1,5 +1,4 @@
 {
-  "blurb": "Create a program to solve a word search puzzle.",
   "authors": [
     "stkent"
   ],
@@ -24,15 +23,16 @@
     "solution": [
       "src/main/java/WordSearcher.java"
     ],
-    "editor": [
-      "src/main/java/Pair.java",
-      "src/main/java/WordLocation.java"
-    ],
     "test": [
       "src/test/java/WordSearcherTest.java"
     ],
     "example": [
       ".meta/src/reference/java/WordSearcher.java"
+    ],
+    "editor": [
+      "src/main/java/Pair.java",
+      "src/main/java/WordLocation.java"
     ]
-  }
+  },
+  "blurb": "Create a program to solve a word search puzzle."
 }

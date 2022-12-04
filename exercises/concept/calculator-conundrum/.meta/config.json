@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about exception-handling by making a simple calculator.",
   "authors": [
     "rv02",
     "jmrunkle"
@@ -21,5 +20,6 @@
   },
   "forked_from": [
     "csharp/calculator-conundrum"
-  ]
+  ],
+  "blurb": "Learn about exception-handling by making a simple calculator."
 }

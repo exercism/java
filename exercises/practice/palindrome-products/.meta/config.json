@@ -1,5 +1,4 @@
 {
-  "blurb": "Detect palindrome products in a given range.",
   "authors": [
     "javaeeeee"
   ],
@@ -31,6 +30,7 @@
       ".meta/src/reference/java/PalindromeCalculator.java"
     ]
   },
+  "blurb": "Detect palindrome products in a given range.",
   "source": "Problem 4 at Project Euler",
   "source_url": "http://projecteuler.net/problem=4"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product a * b * c.",
   "authors": [
     "javaeeeee"
   ],
@@ -34,6 +33,7 @@
       ".meta/src/reference/java/PythagoreanTriplet.java"
     ]
   },
+  "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product a * b * c.",
   "source": "Problem 9 at Project Euler",
   "source_url": "http://projecteuler.net/problem=9"
 }

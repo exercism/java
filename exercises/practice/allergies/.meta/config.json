@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
   "authors": [],
   "contributors": [
     "c-thornton",
@@ -31,16 +30,17 @@
     "solution": [
       "src/main/java/Allergies.java"
     ],
-    "editor": [
-      "src/main/java/Allergen.java"
-    ],
     "test": [
       "src/test/java/AllergiesTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Allergies.java"
+    ],
+    "editor": [
+      "src/main/java/Allergen.java"
     ]
   },
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
   "source": "Jumpstart Lab Warm-up",
   "source_url": "http://jumpstartlab.com"
 }

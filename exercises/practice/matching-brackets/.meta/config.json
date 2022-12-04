@@ -1,5 +1,4 @@
 {
-  "blurb": "Make sure the brackets and braces all match.",
   "authors": [
     "stkent"
   ],
@@ -39,5 +38,6 @@
       ".meta/src/reference/java/BracketChecker.java"
     ]
   },
+  "blurb": "Make sure the brackets and braces all match.",
   "source": "Ginna Baker"
 }

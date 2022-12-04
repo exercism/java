@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about booleans while helping Annalyn rescue her friend.",
   "authors": [
     "mikedamay"
   ],
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "csharp/annalyns-infiltration"
-  ]
+  ],
+  "blurb": "Learn about booleans while helping Annalyn rescue her friend."
 }

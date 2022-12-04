@@ -1,6 +1,7 @@
 {
-  "blurb": "Learn about classes by working on a remote controlled car.",
-  "icon": "elons-toys",
+  "authors": [
+    "mikedamay"
+  ],
   "contributors": [
     "mirkoperillo"
   ],
@@ -15,7 +16,6 @@
       ".meta/src/reference/java/ElonsToyCar.java"
     ]
   },
-  "authors": [
-    "mikedamay"
-  ]
+  "icon": "elons-toys",
+  "blurb": "Learn about classes by working on a remote controlled car."
 }

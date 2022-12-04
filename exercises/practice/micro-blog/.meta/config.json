@@ -1,5 +1,4 @@
 {
-  "blurb": "Given an input string, truncate it to 5 characters.",
   "authors": [
     "jmrunkle"
   ],
@@ -17,5 +16,6 @@
     "example": [
       ".meta/src/reference/java/MicroBlog.java"
     ]
-  }
+  },
+  "blurb": "Given an input string, truncate it to 5 characters."
 }

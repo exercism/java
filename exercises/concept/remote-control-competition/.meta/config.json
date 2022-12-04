@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about interfaces by working on cars.",
   "authors": [
     "mikedamay"
   ],
@@ -19,5 +18,6 @@
       ".meta/src/reference/java/RemoteControlCar.java",
       ".meta/src/reference/java/TestTrack.java"
     ]
-  }
+  },
+  "blurb": "Learn about interfaces by working on cars."
 }

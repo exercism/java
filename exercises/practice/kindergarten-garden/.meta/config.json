@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
   "authors": [
     "Smarticles101"
   ],
@@ -25,16 +24,17 @@
     "solution": [
       "src/main/java/KindergartenGarden.java"
     ],
-    "editor": [
-      "src/main/java/Plant.java"
-    ],
     "test": [
       "src/test/java/KindergartenGardenTest.java"
     ],
     "example": [
       ".meta/src/reference/java/KindergartenGarden.java"
+    ],
+    "editor": [
+      "src/main/java/Plant.java"
     ]
   },
+  "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
   "source": "Random musings during airplane trip.",
   "source_url": "http://jumpstartlab.com"
 }

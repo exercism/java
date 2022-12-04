@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a sentence is a pangram.",
   "authors": [
     "matthewmorgan"
   ],
@@ -34,6 +33,7 @@
       ".meta/src/reference/java/PangramChecker.java"
     ]
   },
+  "blurb": "Determine if a sentence is a pangram.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Pangram"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about inheritance by creating an RPG.",
   "authors": [
     "himanshugoyal1065"
   ],
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "csharp/wizards-and-warriors"
-  ]
+  ],
+  "blurb": "Learn about inheritance by creating an RPG."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a binary search algorithm.",
   "authors": [
     "javaeeeee"
   ],
@@ -29,16 +28,17 @@
     "solution": [
       "src/main/java/BinarySearch.java"
     ],
-    "editor": [
-      "src/main/java/ValueNotFoundException.java"
-    ],
     "test": [
       "src/test/java/BinarySearchTest.java"
     ],
     "example": [
       ".meta/src/reference/java/BinarySearch.java"
+    ],
+    "editor": [
+      "src/main/java/ValueNotFoundException.java"
     ]
   },
+  "blurb": "Implement a binary search algorithm.",
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"
 }

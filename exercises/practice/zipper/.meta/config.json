@@ -1,5 +1,4 @@
 {
-  "blurb": "Creating a zipper for a binary tree.",
   "authors": [
     "LuLechuan"
   ],
@@ -23,5 +22,6 @@
     "example": [
       ".meta/src/reference/java/Zipper.java"
     ]
-  }
+  },
+  "blurb": "Creating a zipper for a binary tree."
 }

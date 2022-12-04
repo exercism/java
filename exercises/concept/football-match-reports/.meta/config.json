@@ -1,7 +1,6 @@
 {
-  "blurb": "Learn about switches by developing a system to report on soccer matches.",
   "authors": [
-      "Azumix"
+    "Azumix"
   ],
   "files": {
     "solution": [
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "csharp/football-match-reports"
-  ]
+  ],
+  "blurb": "Learn about switches by developing a system to report on soccer matches."
 }

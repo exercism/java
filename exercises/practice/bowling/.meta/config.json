@@ -1,5 +1,4 @@
 {
-  "blurb": "Score a bowling game.",
   "authors": [],
   "contributors": [
     "aadityakulkarni",
@@ -30,6 +29,7 @@
       ".meta/src/reference/java/BowlingGame.java"
     ]
   },
+  "blurb": "Score a bowling game.",
   "source": "The Bowling Game Kata at but UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
 }
