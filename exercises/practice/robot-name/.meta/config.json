@@ -1,5 +1,4 @@
 {
-  "blurb": "Manage robot factory settings.",
   "authors": [],
   "contributors": [
     "c-thornton",
@@ -34,5 +33,6 @@
       ".meta/src/reference/java/Robot.java"
     ]
   },
+  "blurb": "Manage robot factory settings.",
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

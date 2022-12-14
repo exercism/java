@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about characters and StringBuilder by cleaning strings.",
   "authors": [
     "ystromm"
   ],
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "csharp/squeaky-clean"
-  ]
+  ],
+  "blurb": "Learn about characters and StringBuilder by cleaning strings."
 }

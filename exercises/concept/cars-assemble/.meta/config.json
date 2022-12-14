@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about numbers by analyzing the production of an assembly line.",
   "authors": [
     "TalesDias"
   ],
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "csharp/cars-assemble"
-  ]
+  ],
+  "blurb": "Learn about numbers by analyzing the production of an assembly line."
 }

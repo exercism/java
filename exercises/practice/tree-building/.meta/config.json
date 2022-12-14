@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a tree building algorithm.",
   "authors": [
     "junming403"
   ],
@@ -14,16 +13,17 @@
     "solution": [
       "src/main/java/BuildTree.java"
     ],
-    "editor": [
-      "src/main/java/InvalidRecordsException.java",
-      "src/main/java/Record.java",
-      "src/main/java/TreeNode.java"
-    ],
     "test": [
       "src/test/java/BuildTreeTest.java"
     ],
     "example": [
       ".meta/src/reference/java/BuildTree.java"
+    ],
+    "editor": [
+      "src/main/java/InvalidRecordsException.java",
+      "src/main/java/Record.java",
+      "src/main/java/TreeNode.java"
     ]
-  }
+  },
+  "blurb": "Refactor a tree building algorithm."
 }

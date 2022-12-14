@@ -1,5 +1,4 @@
 {
-  "blurb": "Create a custom set type.",
   "authors": [
     "javaeeeee"
   ],
@@ -34,5 +33,6 @@
     "example": [
       ".meta/src/reference/java/CustomSet.java"
     ]
-  }
+  },
+  "blurb": "Create a custom set type."
 }

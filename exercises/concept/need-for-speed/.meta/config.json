@@ -1,5 +1,7 @@
 {
-  "blurb": "Learn about classes by creating cars.",
+  "authors": [
+    "ystromm"
+  ],
   "contributors": [
     "mirkoperillo"
   ],
@@ -14,7 +16,5 @@
       ".meta/src/reference/java/NeedForSpeed.java"
     ]
   },
-  "authors": [
-    "ystromm"
-  ]
+  "blurb": "Learn about classes by creating cars."
 }

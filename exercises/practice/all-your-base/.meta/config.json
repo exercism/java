@@ -1,5 +1,4 @@
 {
-  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
   "authors": [
     "stkent"
   ],
@@ -34,5 +33,6 @@
     "example": [
       ".meta/src/reference/java/BaseConverter.java"
     ]
-  }
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
 }

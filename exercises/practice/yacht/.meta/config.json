@@ -1,5 +1,4 @@
 {
-  "blurb": "Score a single throw of dice in the game Yacht.",
   "authors": [
     "lemoncurry"
   ],
@@ -16,16 +15,17 @@
     "solution": [
       "src/main/java/Yacht.java"
     ],
-    "editor": [
-      "src/main/java/YachtCategory.java"
-    ],
     "test": [
       "src/test/java/YachtTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Yacht.java"
+    ],
+    "editor": [
+      "src/main/java/YachtCategory.java"
     ]
   },
+  "blurb": "Score a single throw of dice in the game Yacht.",
   "source": "James Kilfiger, using wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Yacht_(dice_game)"
 }

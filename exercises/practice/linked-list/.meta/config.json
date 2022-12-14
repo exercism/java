@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a doubly linked list.",
   "authors": [
     "counterleft"
   ],
@@ -35,5 +34,6 @@
       ".meta/src/reference/java/DoublyLinkedList.java"
     ]
   },
+  "blurb": "Implement a doubly linked list.",
   "source": "Classic computer science topic"
 }

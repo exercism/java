@@ -1,5 +1,4 @@
 {
-  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!",
   "authors": [
     "FridaTveit"
   ],
@@ -18,14 +17,15 @@
     "solution": [
       "src/main/java/BankAccount.java"
     ],
-    "editor": [
-      "src/main/java/BankAccountActionInvalidException.java"
-    ],
     "test": [
       "src/test/java/BankAccountTest.java"
     ],
     "example": [
       ".meta/src/reference/java/BankAccount.java"
+    ],
+    "editor": [
+      "src/main/java/BankAccountActionInvalidException.java"
     ]
-  }
+  },
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!"
 }

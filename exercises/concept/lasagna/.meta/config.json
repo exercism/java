@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about the basics of Java by following a lasagna recipe.",
   "authors": [
     "mirkoperillo"
   ],
@@ -16,5 +15,6 @@
   },
   "forked_from": [
     "csharp/lucians-luscious-lasagna"
-  ]
+  ],
+  "blurb": "Learn about the basics of Java by following a lasagna recipe."
 }

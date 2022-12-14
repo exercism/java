@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the frequency of letters in texts using parallel computation.",
   "authors": [
     "matthewmorgan"
   ],
@@ -26,5 +25,6 @@
     "example": [
       ".meta/src/reference/java/ParallelLetterFrequency.java"
     ]
-  }
+  },
+  "blurb": "Count the frequency of letters in texts using parallel computation."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Add the numbers to a minesweeper board.",
   "authors": [
     "stkent"
   ],
@@ -33,5 +32,6 @@
     "example": [
       ".meta/src/reference/java/MinesweeperBoard.java"
     ]
-  }
+  },
+  "blurb": "Add the numbers to a minesweeper board."
 }

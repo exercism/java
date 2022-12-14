@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the rectangles in an ASCII diagram.",
   "authors": [
     "stkent"
   ],
@@ -32,5 +31,6 @@
     "example": [
       ".meta/src/reference/java/RectangleCounter.java"
     ]
-  }
+  },
+  "blurb": "Count the rectangles in an ASCII diagram."
 }

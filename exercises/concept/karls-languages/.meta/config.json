@@ -1,19 +1,18 @@
 {
-    "blurb": "Learn about lists by helping Karl keep track of the languages he wants to learn on Exercism.",
-    "authors": [
-        "jmrunkle"
+  "authors": [
+    "jmrunkle"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/LanguageList.java"
     ],
-    "files": {
-      "solution": [
-        "src/main/java/LanguageList.java"
-      ],
-      "test": [
-        "src/test/java/LanguageListTest.java"
-      ],
-      "exemplar": [
-        ".meta/src/reference/java/LanguageList.java"
-      ]
-    },
-    "icon": "language-list"
-  }
-  
+    "test": [
+      "src/test/java/LanguageListTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/LanguageList.java"
+    ]
+  },
+  "icon": "language-list",
+  "blurb": "Learn about lists by helping Karl keep track of the languages he wants to learn on Exercism."
+}

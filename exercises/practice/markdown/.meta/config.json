@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a Markdown parser.",
   "authors": [
     "bmkiefer"
   ],
@@ -27,5 +26,6 @@
     "example": [
       ".meta/src/reference/java/Markdown.java"
     ]
-  }
+  },
+  "blurb": "Refactor a Markdown parser."
 }

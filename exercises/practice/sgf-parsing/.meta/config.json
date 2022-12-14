@@ -1,18 +1,20 @@
 {
-  "authors": ["tlphat"],
+  "authors": [
+    "tlphat"
+  ],
   "files": {
     "solution": [
       "src/main/java/SgfParsing.java"
-    ],
-    "editor": [
-      "src/main/java/SgfNode.java",
-      "src/main/java/SgfParsingException.java"
     ],
     "test": [
       "src/test/java/SgfParsingTest.java"
     ],
     "example": [
       ".meta/src/reference/java/SgfParsing.java"
+    ],
+    "editor": [
+      "src/main/java/SgfNode.java",
+      "src/main/java/SgfParsingException.java"
     ]
   },
   "blurb": "Parsing a Smart Game Format string."

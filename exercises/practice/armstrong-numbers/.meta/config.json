@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a number is an Armstrong number.",
   "authors": [
     "sjwarner-bp"
   ],
@@ -25,6 +24,7 @@
       ".meta/src/reference/java/ArmstrongNumbers.java"
     ]
   },
+  "blurb": "Determine if a number is an Armstrong number.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
 }

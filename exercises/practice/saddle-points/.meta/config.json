@@ -1,5 +1,4 @@
 {
-  "blurb": "Detect saddle points in a matrix.",
   "authors": [
     "stkent"
   ],
@@ -27,16 +26,17 @@
     "solution": [
       "src/main/java/Matrix.java"
     ],
-    "editor": [
-      "src/main/java/MatrixCoordinate.java"
-    ],
     "test": [
       "src/test/java/MatrixTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Matrix.java"
+    ],
+    "editor": [
+      "src/main/java/MatrixCoordinate.java"
     ]
   },
+  "blurb": "Detect saddle points in a matrix.",
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about arrays by keeping track of how many birds visit your garden.",
   "authors": [
     "samuelteixeiras",
     "ystromm"
@@ -17,5 +16,6 @@
   },
   "forked_from": [
     "csharp/bird-watcher"
-  ]
+  ],
+  "blurb": "Learn about arrays by keeping track of how many birds visit your garden."
 }

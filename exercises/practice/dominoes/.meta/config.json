@@ -1,5 +1,4 @@
 {
-  "blurb": "Make a chain of dominoes.",
   "authors": [
     "jssander"
   ],
@@ -19,15 +18,16 @@
     "solution": [
       "src/main/java/Dominoes.java"
     ],
-    "editor": [
-      "src/main/java/ChainNotFoundException.java",
-      "src/main/java/Domino.java"
-    ],
     "test": [
       "src/test/java/DominoesTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Dominoes.java"
+    ],
+    "editor": [
+      "src/main/java/ChainNotFoundException.java",
+      "src/main/java/Domino.java"
     ]
-  }
+  },
+  "blurb": "Make a chain of dominoes."
 }
