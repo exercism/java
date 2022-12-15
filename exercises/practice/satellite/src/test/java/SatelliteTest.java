@@ -1,5 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.List;
 import org.junit.Ignore;
@@ -52,12 +52,10 @@ public class SatelliteTest {
         List<Character> preorder = List.of('a', 'b');
         List<Character> inorder = List.of('b', 'a', 'r');
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> satellite.treeFromTraversals(preorder, inorder));
-        assertThat(expected)
-            .hasMessage("traversals must have the same length");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> satellite.treeFromTraversals(preorder, inorder))
+                .withMessage("traversals must have the same length");
+
     }
 
     @Ignore("Remove to run test")
@@ -66,12 +64,9 @@ public class SatelliteTest {
         List<Character> preorder = List.of('x', 'y', 'z');
         List<Character> inorder = List.of('a', 'b', 'c');
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> satellite.treeFromTraversals(preorder, inorder));
-        assertThat(expected)
-            .hasMessage("traversals must have the same elements");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> satellite.treeFromTraversals(preorder, inorder))
+                .withMessage("traversals must have the same elements");
     }
 
     @Ignore("Remove to run test")
@@ -80,11 +75,8 @@ public class SatelliteTest {
         List<Character> preorder = List.of('a', 'b', 'a');
         List<Character> inorder = List.of('b', 'a', 'a');
 
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> satellite.treeFromTraversals(preorder, inorder));
-        assertThat(expected)
-            .hasMessage("traversals must contain unique items");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> satellite.treeFromTraversals(preorder, inorder))
+                .withMessage("traversals must contain unique items");
     }
 }
