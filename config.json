@@ -1893,6 +1893,20 @@
             "for-loops"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "pov",
+        "name": "POV",
+        "uuid": "cae26d37-2977-42c4-af10-b6bb83adef19",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "conditionals-if",
+          "lists",
+          "for-loops",
+          "maps"
+        ],
+        "difficulty": 8
       }
     ],
     "foregone": []
