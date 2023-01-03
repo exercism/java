@@ -107,16 +107,18 @@ public class PovTest {
     @Test
     public void testPathWhenDestinationDoesNotExist() {
         Tree tree = Tree.of("parent", List.of(Tree.of("x", List.of(Tree.of("kid-0"), Tree.of("kid-1"))), Tree.of("sibling-0"), Tree.of("sibling-1")));
-        List<String> expected = null;
-        assertEquals(expected, tree.pathTo("x", "nonexistent"));
+        assertThatExceptionOfType(UnsupportedOperationException.class)
+                .isThrownBy(() -> tree.pathTo("x","nonexistent"))
+                .withMessage("No path found");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testPathWhenSourceDoesNotExist() {
         Tree tree = Tree.of("parent", List.of(Tree.of("x", List.of(Tree.of("kid-0"), Tree.of("kid-1"))), Tree.of("sibling-0"), Tree.of("sibling-1")));
-        List<String> expected = null;
-        assertEquals(expected, tree.pathTo("nonexistent", "x"));
+        assertThatExceptionOfType(UnsupportedOperationException.class)
+                .isThrownBy(() -> tree.pathTo("nonexistent", "x"))
+                .withMessage("No path found");
     }
 
 }

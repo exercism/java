@@ -65,7 +65,7 @@ class Tree {
         }
 
         if(!this.graph.containsKey(fromNode) || !this.graph.containsKey(toNode)){
-            return null;
+            throw new UnsupportedOperationException("No path found");
         }
 
         Tree root = fromPov(fromNode);
