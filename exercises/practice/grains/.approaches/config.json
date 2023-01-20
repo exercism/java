@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "authors": ["bobahop"]
+  },
+  "approaches": [
+    {
+      "uuid": "92f88a04-31e2-4ae9-8f05-55b290490ad0",
+      "slug": "pow",
+      "title": "Pow",
+      "blurb": "Use BigInteger.pow to raise 2 by a specified power.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "00186454-8013-4f5e-9177-cdab3ef98a31",
+      "slug": "bit-shifting",
+      "title": "Bit-shifting",
+      "blurb": "Use bit-shifting to raise 2 by a specified power.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
