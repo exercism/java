@@ -39,7 +39,7 @@ Add a day to February 28th for the year and see if the new day is the 29th. For 
 
 ## Built-in method approach:
 
-Use the built-in method for the year. For more information, see the [`isLeapYear` approach][approach-isleapyear].
+Use the built-in method for the [Year][year]. For more information, see the [`isLeap()` approach][approach-isleap].
 
 ## Which approach to use?
 
@@ -54,4 +54,5 @@ Use the built-in method for the year. For more information, see the [`isLeapYear
 [approach-boolean-chain]: https://exercism.org/tracks/java/exercises/leap/approaches/boolean-chain
 [approach-ternary-operator]: https://exercism.org/tracks/java/exercises/leap/approaches/ternary-operator
 [approach-plusdays]: https://exercism.org/tracks/java/exercises/leap/approaches/plusdays
-[approach-isleapyear]: https://exercism.org/tracks/java/exercises/leap/approaches/built-in-method
+[year]: https://docs.oracle.com/javase/8/docs/api/java/time/Year.html
+[approach-isleap]: https://exercism.org/tracks/java/exercises/leap/approaches/built-in-method
