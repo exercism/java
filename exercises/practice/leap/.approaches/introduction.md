@@ -35,7 +35,7 @@ Besides the aforementioned, idiomatic approaches, you could also approach the ex
 
 ## `plusDays()` approach:
 
-Add a day to February 28th for the year and see if the new day is the 29th. For more information, see the [`plusDays` approach][approach-plusdays].
+Add a day to February 28th for the year and see if the new day is the 29th. For more information, see the [`plusDays()` approach][approach-plusdays].
 
 ## Built-in method approach:
 
