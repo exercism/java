@@ -1,10 +1,10 @@
 ```java
-import java.time.*;
+import java.time.Year;
 
 class Leap {
 
     boolean isLeapYear(int year) {
-        return LocalDate.of(year, Month.FEBRUARY, 28).isLeapYear();
+        return Year.of(year).isLeap();
     }
 }
 ```
