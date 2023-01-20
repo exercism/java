@@ -1,4 +1,3 @@
-```java
 import java.time.*;
 
 class Leap {
@@ -7,4 +6,3 @@ class Leap {
         return LocalDate.of(year, Month.FEBRUARY, 28).plusDays(1).getDayOfMonth() == 29;
     }
 }
-```
