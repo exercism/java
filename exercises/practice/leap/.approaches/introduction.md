@@ -33,7 +33,7 @@ For more information, check the [Ternary operator approach][approach-ternary-ope
 
 Besides the aforementioned, idiomatic approaches, you could also approach the exercise as follows:
 
-## `plusDays` approach:
+## `plusDays()` approach:
 
 Add a day to February 28th for the year and see if the new day is the 29th. For more information, see the [`plusDays` approach][approach-plusdays].
 
@@ -46,8 +46,8 @@ Use the built-in method for the [Year][year]. For more information, see the [`is
 - The chain of boolean expressions is most efficient, as it proceeds from the most likely to least likely conditions.
   It has a maximum of three checks.
 - The ternary operator has a maximum of only two checks, but it starts from a less likely condition.
-- Using `plusDays` or using the built-in `isLeapYear` method may be considered "cheats" for the exercise,
-  but `isLeapYear` would be the idiomatic way to check if a year is a leap year in Java.
+- Using `plusDays()` or using the built-in `isLeap()` method may be considered "cheats" for the exercise,
+  but `isLeap()` would be the idiomatic way to check if a year is a leap year in Java.
 
 [remainder-operator]: https://www.geeksforgeeks.org/modulo-or-remainder-operator-in-java/
 [ternary-operator]: https://www.geeksforgeeks.org/java-ternary-operator-with-examples/
