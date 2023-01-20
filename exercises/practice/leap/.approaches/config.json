@@ -20,9 +20,9 @@
     },
     {
       "uuid": "fd01895e-2a15-453a-889a-b6db88047b07",
-      "slug": "datetime-addition",
-      "title": "DateTime addition",
-      "blurb": "Use DateTime addition.",
+      "slug": "plusdays",
+      "title": "plusDays method",
+      "blurb": "Use the plusDays method.",
       "authors": ["bobahop"]
     },
     {
