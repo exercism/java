@@ -1,0 +1,36 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "588b8946-b46b-4ba2-81c7-09651f78d5bd",
+      "slug": "boolean-chain",
+      "title": "Boolean chain",
+      "blurb": "Use a chain of boolean expressions.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "5af62bf0-1b7e-4091-9f2f-c4e61328389e",
+      "slug": "ternary-operator",
+      "title": "Ternary operator",
+      "blurb": "Use a ternary operator of boolean expressions.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "fd01895e-2a15-453a-889a-b6db88047b07",
+      "slug": "plusdays",
+      "title": "plusDays method",
+      "blurb": "Use the plusDays method.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "fc2d7749-1fe2-4df3-b121-b7c4f25dd103",
+      "slug": "built-in-method",
+      "title": "Built-in method",
+      "blurb": "Use the built-in method.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
