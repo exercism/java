@@ -133,7 +133,7 @@ public class AnnalynsInfiltrationTest {
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = true;
         assertThat(AnnalynsInfiltration.canFreePrisoner(knightIsAwake, archerIsAwake,
-                   prisonerIsAwake, petDogIsPresent)).isTrue();
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
@@ -193,7 +193,7 @@ public class AnnalynsInfiltrationTest {
         boolean prisonerIsAwake = false;
         boolean petDogIsPresent = true;
         assertThat(AnnalynsInfiltration.canFreePrisoner(knightIsAwake, archerIsAwake,
-                   prisonerIsAwake, petDogIsPresent)).isTrue();
+                   prisonerIsAwake, petDogIsPresent)).isFalse();
     }
 
     @Test
