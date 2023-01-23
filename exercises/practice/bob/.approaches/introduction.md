@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 
 class Bob {
 
-    final private static Pattern isAlpha = Pattern.compile("[a-zA-Z]+");
+    final private static Pattern isAlpha = Pattern.compile("[a-zA-Z]");
     final private static Predicate < String > isShout = msg -> isAlpha.matcher(msg).find() && msg == msg.toUpperCase();
 
     public String hey(String message) {
@@ -70,7 +70,7 @@ class Bob {
         "Whoa, chill out!",
         "Calm down, I know what I'm doing!"
     };
-    final private static Pattern isAlpha = Pattern.compile("[a-zA-Z]+");
+    final private static Pattern isAlpha = Pattern.compile("[a-zA-Z]");
     final private static Predicate < String > isShout = msg -> isAlpha.matcher(msg).find() && msg == msg.toUpperCase();
 
     public String hey(String message) {
