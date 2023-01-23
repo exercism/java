@@ -44,9 +44,8 @@ class Bob {
         if (questioning) {
             if (shouting) {
                 return "Calm down, I know what I'm doing!";
-            } else {
-                return "Sure.";
             }
+            return "Sure.";
         }
         if (shouting) {
             return "Whoa, chill out!";
@@ -95,6 +94,6 @@ the choice between `pow` and bit-shifting can be made by perceived readability.
 [trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()
 [endswith]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#endsWith(java.lang.String)
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[approach-if]: https://exercism.org/tracks/java/exercises/bob/approaches/if
+[approach-if]: https://exercism.org/tracks/java/exercises/bob/approaches/if-statements
 [approach-answer-array]: https://exercism.org/tracks/java/exercises/bob/approaches/answer-array
 [jmh]: https://github.com/openjdk/jmh
