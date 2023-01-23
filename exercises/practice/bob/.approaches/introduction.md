@@ -37,8 +37,9 @@ class Bob {
 
     public String hey(String message) {
         var speech = message.trim();
-        if (speech.isEmpty())
+        if (speech.isEmpty()) {
             return "Fine. Be that way!";
+        }
         var questioning = speech.endsWith("?");
         var shouting = isShout.test(speech);
         if (questioning) {
@@ -75,8 +76,9 @@ class Bob {
 
     public String hey(String message) {
         var speech = message.trim();
-        if (speech.isEmpty())
+        if (speech.isEmpty()) {
             return "Fine. Be that way!";
+        }
         var questioning = speech.endsWith("?") ? 1 : 0;
         var shouting = isShout.test(speech) ? 2 : 0;
         return answers[questioning + shouting];
