@@ -91,7 +91,7 @@ For more information, check the [Answer array approach][approach-answer-array].
 ## Which approach to use?
 
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
-the choice between `pow` and bit-shifting can be made by perceived readability.
+the choice between `if` statements and answers array can be made by perceived readability.
 
 [trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()
 [endswith]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#endsWith(java.lang.String)
