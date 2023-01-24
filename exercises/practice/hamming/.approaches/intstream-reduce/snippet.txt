@@ -1,0 +1,2 @@
+difference = IntStream.range(0, leftStrand.length()).reduce(0,
+    (hamcount, index) -> hamcount + (leftStrand.charAt(index) != rightStrand.charAt(index) ? 1 : 0));
