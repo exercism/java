@@ -1,4 +1,4 @@
-this.difference = IntStream
+difference = IntStream
     .range(0, leftStrand.length())
     .filter(i -> leftStrand.charAt(i) != rightStrand.charAt(i))
     .count();
