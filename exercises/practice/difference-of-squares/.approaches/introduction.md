@@ -18,7 +18,7 @@ class DifferenceOfSquaresCalculator {
     
     int computeSumOfSquaresTo(int input) {
         return IntStream.rangeClosed(1, input)
-            .map(num -> (int) Math.pow(num, 2))
+            .map(num -> num * num)
             .sum();
     }
     
