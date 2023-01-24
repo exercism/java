@@ -58,7 +58,7 @@ public class Hamming {
         if (leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
         }
-        this.difference = IntStream
+        difference = IntStream
             .range(0, leftStrand.length())
             .filter(i -> leftStrand.charAt(i) != rightStrand.charAt(i))
             .count();
@@ -91,7 +91,7 @@ public class Hamming {
         if (leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
         }
-        this.difference = IntStream
+        difference = IntStream
             .range(0, leftStrand.length())
             .map(i -> leftStrand.charAt(i) != rightStrand.charAt(i) ? 1 : 0)
             .sum();
@@ -124,7 +124,7 @@ public class Hamming {
         if (leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
         }
-        this.difference = IntStream.range(0, leftStrand.length()).reduce(0,
+        difference = IntStream.range(0, leftStrand.length()).reduce(0,
             (hamcount, index) -> hamcount + (leftStrand.charAt(index) != rightStrand.charAt(index) ? 1 : 0));
     }
 
