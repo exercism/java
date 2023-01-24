@@ -4,5 +4,5 @@ int computeSquareOfSumTo(int input) {
 }
 
 int computeSumOfSquaresTo(int input) {
-    return IntStream.rangeClosed(1, input).map(num -> (int) Math.pow(num, 2)).sum();
+    return IntStream.rangeClosed(1, input).map(num -> num * num).sum();
 }
