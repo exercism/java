@@ -35,7 +35,7 @@ It iterates from `0` up to but not including the length of the left strand.
 For each value of `i`, it compares the values of the elements in the two strands at the index of `i`.
 If the values are different, the difference variable is incremented.
 
-The `getHammingDistance()` function returns the difference variable, which is set to the correct value after the `for` loop is done.
+The `getHammingDistance()` method returns the difference variable, which is set to the correct value after the `for` loop is done.
 
 [private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
 [for]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html
