@@ -38,7 +38,7 @@ Each number is passed into the [`map()`][map] method.
 For each value of `i`, the [lambda][lambda] function inside the `map()` method compares the values of the elements in the two strands at the index of `i`.
 The `map()` method converts the index to `1` for only those indexes whose elements differ between the two strands.
 Otherwise it converts the index value to `0`.
-The [`sum()`][sum] of the converted indexes is set to the difference variable.
+The difference variable is set to [`sum()`][sum] of the converted indexes.
 
 The `getHammingDistance()` method returns the difference variable, which is set to the correct value after the `IntStream` is done.
 
