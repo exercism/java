@@ -24,10 +24,7 @@ class RaindropConverter {
         if (number % 7 == 0) {
             stringBuilder.append("Plong");
         }
-        if (stringBuilder.toString().isEmpty()) {
-            stringBuilder.append(number);
-        }
-        return stringBuilder.toString();
+        return stringBuilder.length() != 0 ? stringBuilder.toString() : Integer.toString(number);
     }
 }
 ```
@@ -37,13 +34,10 @@ For more information, check the [`if` statements approach][approach-if-statement
 ## Approach: `Map`
 
 ```java
-import java.util.function.BiFunction;
 import java.util.Map;
 import java.util.TreeMap;
 
 class RaindropConverter {
-    final private static BiFunction < String, Integer, String > Default = (val, defaultVal) -> (!val.isEmpty()) ? val :
-        String.valueOf(defaultVal);
     final private static TreeMap < Integer, String > lookup = new TreeMap < Integer, String > (
         Map.of(3, "Pling", 5, "Plang", 7, "Plong"));
         
@@ -53,7 +47,7 @@ class RaindropConverter {
             if (number % divisor == 0)
                 output.append(drop);
         });
-        return Default.apply(output.toString(), number);
+        return output.length() != 0 ? output.toString() : Integer.toString(number);
     }
 }
 ```
