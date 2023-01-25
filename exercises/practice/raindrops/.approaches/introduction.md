@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 class RaindropConverter {
-    final private static TreeMap < Integer, String > lookup = new TreeMap < Integer, String > (
+    private static final TreeMap < Integer, String > lookup = new TreeMap < Integer, String > (
         Map.of(3, "Pling", 5, "Plang", 7, "Plong"));
         
     String convert(int number) {
