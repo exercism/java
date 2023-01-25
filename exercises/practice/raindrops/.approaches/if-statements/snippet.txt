@@ -1,0 +1,7 @@
+if (number % 7 == 0) {
+    stringBuilder.append("Plong");
+}
+if (stringBuilder.toString().isEmpty()) {
+    stringBuilder.append(number);
+}
+return stringBuilder.toString();
