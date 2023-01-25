@@ -2,7 +2,7 @@
 
 There are several idiomatic ways to solve Hamming.
 One way is to use a [`for`][for] loop to iterate to a solution.
-Other ways to iterate can use [`IntStream`][intstream].
+Another way to iterate can use [`IntStream`][intstream].
 `IntStream` can be used with its [`filter()`][filter] and [`count()`][count] methods.
 Or `IntStream` could be used with its [`map()`][map] and [`sum()`][sum] methods.
 `IntStream` could also be used with its [`reduce()`][reduce] method.
