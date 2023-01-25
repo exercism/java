@@ -151,6 +151,11 @@ For more information, check the [`IntStream` with `reduce()` approach][approach-
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
 the choice between the various approaches can be made by perceived readability.
 
+Of the `IntStream` approaches, the `reduce()` approach likely might be fastest, as it is only one iteration
+instead of an iteration for `filter()` or `map()` and another iteration for `count()` or `sum()`.
+
+The `for` loop may also be fast, but it leaves a mutable member variable for the distance instead of one marked `final`.
+
 [for]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
