@@ -1,0 +1,7 @@
+if (number % 5 == 0) {
+    stringBuilder.append("Plang");
+}
+if (number % 7 == 0) {
+    stringBuilder.append("Plong");
+}
+return stringBuilder.length() != 0 ? stringBuilder.toString() : Integer.toString(number);

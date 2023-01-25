@@ -1,0 +1,8 @@
+String convert(int number) {
+    var output = new StringBuilder("");
+    lookup.forEach((divisor, drop) -> {
+        if (number % divisor == 0)
+            output.append(drop);
+    });
+    return output.length() != 0 ? output.toString() : Integer.toString(number);
+}
