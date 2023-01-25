@@ -4,5 +4,5 @@ String convert(int number) {
         if (number % divisor == 0)
             output.append(drop);
     });
-    return Default.apply(output.toString(), number);
+    return output.length() != 0 ? output.toString() : Integer.toString(number);
 }
