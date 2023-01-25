@@ -28,7 +28,7 @@ public class Hamming {
 }
 ```
 
-This approach starts be defining a private `int` variable to keep track of the difference between the strands.
+This approach starts be defining a [`private`][private] `int` variable to keep track of the difference between the strands.
 
 After the validation code, the real work is done by the [`for` loop][for].
 It iterates from `0` up to but not including the length of the left strand.
@@ -37,4 +37,5 @@ If the values are different, the difference variable is incremented.
 
 The `getHammingDistance()` function returns the difference variable, which is set to the correct value after the `for` loop is done.
 
+[private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
 [for]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html
