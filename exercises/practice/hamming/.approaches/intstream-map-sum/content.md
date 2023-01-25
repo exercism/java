@@ -36,9 +36,9 @@ After the validation code, the real work is done by the [`IntStream`][intstream]
 It uses its [`range()`][range] method to iterate from `0` up to but not including the length of the left strand.
 Each number is passed into the [`map()`][map] method.
 For each value of `i`, the [lambda][lambda] function inside the `map()` method compares the values of the elements in the two strands at the index of `i`.
-The `map()` method converts the index to `1` for only those indexes whose elements differ between the two strands.
+Using a [ternary operator][ternary], the `map()` method converts the index to `1` for only those indexes whose elements differ between the two strands.
 Otherwise it converts the index value to `0`.
-The difference variable is set to [`sum()`][sum] of the converted indexes.
+The difference variable is set to the [`sum()`][sum] of the converted indexes.
 
 The `getHammingDistance()` method returns the difference variable, which is set to the correct value after the `IntStream` is done.
 
@@ -48,4 +48,5 @@ The `getHammingDistance()` method returns the difference variable, which is set 
 [range]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#range-int-int-
 [map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#map-java.util.function.IntUnaryOperator-
 [lambda]: https://www.geeksforgeeks.org/lambda-expressions-java-8/
+[ternary]: https://www.geeksforgeeks.org/java-ternary-operator-with-examples/
 [sum]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#sum--
