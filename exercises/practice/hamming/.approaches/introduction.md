@@ -10,7 +10,7 @@ Or `IntStream` could be used with its [`map()`][map] and [`sum()`][sum] methods.
 # General guidance
 
 Regardless of the approach used, one thing to look out for is to whether to calculate the hamming distance
-in the constructor or in the `getHammingDistance()` function.
+in the constructor (or a method called by the constructor) or in the `getHammingDistance()` method.
 A benefit to calculating in the constructor is that the distance is calculated only once,
 no matter how many times `getHammingDistance()` is called.
 A benefit to calculating in `getHammingDistance()` is that, if it is not called,
@@ -154,7 +154,7 @@ the choice between the various approaches can be made by perceived readability.
 Of the `IntStream` approaches, the `reduce()` approach likely might be fastest, as it is only one iteration
 instead of an iteration for `filter()` or `map()` and another iteration for `count()` or `sum()`.
 
-The `for` loop may also be fast, but it leaves a mutable member variable for the distance instead of one marked `final`.
+The `for` loop may also be fast, but it leaves a mutable member variable for the distance, instead of one marked [`final`][final].
 
 [for]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
@@ -168,3 +168,4 @@ The `for` loop may also be fast, but it leaves a mutable member variable for the
 [approach-intstream-map-sum]:  https://exercism.org/tracks/java/exercises/hamming/approaches/intstream-map-sum
 [approach-intstream-reduce]:  https://exercism.org/tracks/java/exercises/hamming/approaches/intstream-reduce
 [jmh]: https://github.com/openjdk/jmh
+[final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
