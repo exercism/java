@@ -8,14 +8,14 @@
       "uuid": "4b5a0b14-ea3c-4dfb-9930-ed0f013bd618",
       "slug": "if-statements",
       "title": "if statements",
-      "blurb": "Use if statements to return the value.",
+      "blurb": "Use if statements to return the result.",
       "authors": ["bobahop"]
     },
     {
       "uuid": "69a3ec80-27f3-44a1-a4a4-555e5a23d490",
       "slug": "map",
       "title": "Map",
-      "blurb": "Iterate a Map to return the value.",
+      "blurb": "Iterate a Map to return the result.",
       "authors": ["bobahop"]
     }
   ]
