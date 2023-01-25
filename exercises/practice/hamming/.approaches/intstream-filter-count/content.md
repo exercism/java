@@ -37,8 +37,8 @@ After the validation code, the real work is done by the [`IntStream`][intstream]
 It uses its [`range()`][range] method to iterate from `0` up to but not including the length of the left strand.
 Each number is passed into the [`filter()`][filter] method.
 For each value of `i`, the [lambda][lambda] function inside the `filter()` method compares the values of the elements in the two strands at the index of `i`.
-The `filter()` method filters in only those index values that differ between the two strands.
-The [`count()`][count] of the surviving index values is set to the difference variable.
+The `filter()` method filters in only those indexes whose elements differ between the two strands.
+The [`count()`][count] of the surviving indexes is set to the difference variable.
 
 The `getHammingDistance()` method returns the difference variable, which is set to the correct value after the `IntStream` is done.
 
