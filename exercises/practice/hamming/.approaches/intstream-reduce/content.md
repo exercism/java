@@ -33,7 +33,8 @@ It then defines a [`private`][private] [`final`][final] `long` variable to keep 
 After the validation code, the real work is done by the [`IntStream`][intstream].
 It uses its [`range()`][range] method to iterate from `0` up to but not including the length of the left strand.
 Each number is passed into the [`reduce()`][reduce] method, whose accumulator is initialized to `0`.
-For each value of `index`, the [lambda][lambda] function inside the `reduce()` method compares the values of the elements in the two strands at the index of `i`.
+For each value of `index`,
+the [lambda][lambda] function inside the `reduce()` method compares the values of the elements in the two strands at the index of `index`.
 Using a [ternary operator][ternary], the `reduce()` method adds `1` to the accumulator for only those indexes whose elements differ between the two strands.
 Otherwise it adds `0`.
 The difference variable is set to the value returned from the `reduce()` method, which is the value of its accumulator.
