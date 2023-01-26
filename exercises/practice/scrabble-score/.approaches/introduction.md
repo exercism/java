@@ -1,3 +1,11 @@
+# Introduction
+
+There are various idiomatiuc ways to solve Scrabble Score.
+The approaches could be to use a series of `if` statements, or a single `switch` statment.
+Another approach could be to look up the score in a `HashMap` from inside the `reduce()` method.
+
+## Approach: `if` statements
+
 ```java
 class Scrabble {
     private int score = 0;
@@ -26,6 +34,10 @@ class Scrabble {
     }
 }
 ```
+
+For more information, check the [`if` statements approach][approach-if-statements].
+
+## Approach: `switch` statement
 
 ```java
 class Scrabble {
@@ -65,6 +77,10 @@ class Scrabble {
     }
 }
 ```
+
+For more information, check the [`switch` statement approach][approach-switch-statement].
+
+## Approach: `HashMap` with `reduce()`
 
 ```java
 import java.util.HashMap;
@@ -108,3 +124,15 @@ class Scrabble {
 
 }
 ```
+
+For more information, check the [`HashMap` with `reduce()` approach][approach-map-reduce].
+
+## Which approach to use?
+
+Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
+the choice between the approaches can be made by perceived readability.
+
+[approach-if-statements]: https://exercism.org/tracks/java/exercises/scrabble=score/approaches/if-statements
+[approach-switch-statement]: https://exercism.org/tracks/java/exercises/scrabble=score/approaches/switch-statement
+[approach-map-reduce]: https://exercism.org/tracks/java/exercises/scrabble=score/approaches/map-reduce
+[jmh]: https://github.com/openjdk/jmh
