@@ -18,10 +18,11 @@ But then, in that case, why instantiate the `Scrabble` object at all?
 
 ```java
 class Scrabble {
-    private int score = 0;
+    private final int score;
     
     Scrabble(String word) {
         word = word.toUpperCase();
+        int score = 0;
         for (int i = 0; i < word.length(); i++) {
             var ltr = word.substring(i, i + 1);
             if ("AEIOULNRST".contains(ltr))
@@ -53,10 +54,11 @@ For more information, check the [`if` statements approach][approach-if-statement
 
 ```java
 class Scrabble {
-    private int score = 0;
+    private final int score;
     
     Scrabble(String word) {
         word = word.toLowerCase();
+        int score = 0;
         
         for (int i = 0; i < word.length(); i++) {
             switch (word.charAt(i)) {
@@ -85,6 +87,7 @@ class Scrabble {
                 break;
             }
         }
+        this.score = score;
     }
     
     int getScore() {
