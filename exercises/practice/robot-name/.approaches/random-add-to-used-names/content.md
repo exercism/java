@@ -38,7 +38,7 @@ public class Robot {
 }
 ```
 
-This approach starts by importing from packagss for what will be needed.
+This approach starts by importing from packages for what will be needed.
 
 A [`HashSet`][hashset] to hold the used names is defined as [`private`][private] [`static`][static] and [`final`][final].
 It is `private` because it doesn't need to be seen outside the class.
