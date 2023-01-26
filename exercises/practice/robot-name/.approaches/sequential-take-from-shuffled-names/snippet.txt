@@ -1,0 +1,7 @@
+static {
+    IntStream.rangeClosed('A', 'Z')
+        .forEach(letter1 -> IntStream.rangeClosed('A', 'Z').forEach(letter2 ->
+            IntStream.range(0, 1000).forEach(num ->
+                names.add(String.format("%c%c%03d", (char) letter1, (char) letter2, num)))));
+    Collections.shuffle(names, new Random(System.currentTimeMillis()));
+}
