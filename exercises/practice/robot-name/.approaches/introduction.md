@@ -16,7 +16,9 @@ Regardless of the approach used, one thing to consider is to generate the whole 
 ## Approach: Randomly add to used names
 
 ```java
-import java.util.*;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Robot {
