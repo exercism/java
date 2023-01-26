@@ -7,6 +7,7 @@ class Scrabble {
     Scrabble(String word) {
         word = word.toUpperCase();
         int score = 0;
+        
         for (int i = 0; i < word.length(); i++) {
             var ltr = word.substring(i, i + 1);
             if ("AEIOULNRST".contains(ltr))
