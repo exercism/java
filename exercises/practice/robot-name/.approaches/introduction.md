@@ -61,6 +61,7 @@ For more information, check the [randomly add to used names approach][approach-r
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.stream.IntStream;
 
 class Robot {
@@ -83,7 +84,7 @@ class Robot {
                 .forEach(letter1 -> IntStream.rangeClosed('A', 'Z').forEach(letter2 ->
                     IntStream.range(0, 1000).forEach(num ->
                         names.add(String.format("%c%c%03d", (char) letter1, (char) letter2, num)))));
-            Collections.shuffle(names);
+            Collections.shuffle(names, new Random(System.currentTimeMillis()));
         }
         
         public static String GetName() {
