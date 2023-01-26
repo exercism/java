@@ -19,6 +19,7 @@ But then, in that case, why instantiate the `Scrabble` object at all?
 ```java
 class Scrabble {
     private int score = 0;
+    
     Scrabble(String word) {
         word = word.toUpperCase();
         for (int i = 0; i < word.length(); i++) {
@@ -39,6 +40,7 @@ class Scrabble {
                 score += 10;
         }
     }
+    
     int getScore() {
         return score;
     }
@@ -52,8 +54,10 @@ For more information, check the [`if` statements approach][approach-if-statement
 ```java
 class Scrabble {
     private int score = 0;
+    
     Scrabble(String word) {
         word = word.toLowerCase();
+        
         for (int i = 0; i < word.length(); i++) {
             switch (word.charAt(i)) {
             case 'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't':
@@ -82,6 +86,7 @@ class Scrabble {
             }
         }
     }
+    
     int getScore() {
         return score;
     }
