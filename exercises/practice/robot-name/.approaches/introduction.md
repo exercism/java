@@ -64,7 +64,7 @@ import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 class Robot {
-    String name = RobotNameGen.GetName();
+    private String name = RobotNameGen.GetName();
     
     public void reset() {
         name = RobotNameGen.GetName();
@@ -75,8 +75,8 @@ class Robot {
     }
 
     static class RobotNameGen {
-        static int namesIndex = -1;
-        static List < String > names = new ArrayList < > ();
+        private static int namesIndex = -1;
+        private static List < String > names = new ArrayList();
         
         static {
             IntStream.rangeClosed('A', 'Z')
@@ -86,7 +86,7 @@ class Robot {
             Collections.shuffle(names);
         }
         
-        static String GetName() {
+        public static String GetName() {
             return names.get(++namesIndex);
         }
     }
