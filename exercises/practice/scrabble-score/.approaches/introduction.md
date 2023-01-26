@@ -40,6 +40,7 @@ class Scrabble {
             else if ("QZ".contains(ltr))
                 score += 10;
         }
+        this.score = score;
     }
     
     int getScore() {
