@@ -69,7 +69,7 @@ unless constructing the `HashSet` takes more time than constructing a short list
 [maptoobj]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#mapToObj-java.util.function.IntFunction-
 [char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
 [boxed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#boxed--
-[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#collect-java.util.function.Supplier-java.util.function.ObjIntConsumer-java.util.function.BiConsumer-
+[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector-
 [size]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html#size--
 [approach-filter-map-allmatch]: https://exercism.org/tracks/java/exercises/isogram/approaches/filter-map-allmatch
 [approach-filter-maptoobj-distinct]: https://exercism.org/tracks/java/exercises/isogram/approaches/filter-maptoobj-distinct
