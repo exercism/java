@@ -48,7 +48,7 @@ If they are not equal, then there are one or more duplicate letters and the comp
 [maptoobj]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#mapToObj-java.util.function.IntFunction-
 [char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
 [boxed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#boxed--
-[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#collect-java.util.function.Supplier-java.util.function.ObjIntConsumer-java.util.function.BiConsumer-
+[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector-
 [tolist]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html#toList--
 [tolowercase-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-int-
 [tolowercase-char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-
