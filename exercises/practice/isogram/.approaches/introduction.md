@@ -54,7 +54,7 @@ For more information, check the [`filter()` and `mapToObj()` with `distinct()` a
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
 the choice between the various approaches can be made by perceived readability.
 
-Due to the short-circuiting of the `allMatch()` method, it is probably more performant than the `disinct()` method,
+Due to the short-circuiting of the `allMatch()` method, it is probably more performant than the `distinct()` method,
 unless constructing the `HashSet` takes more time than constructing a short list and a short stream.
 
 [chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
