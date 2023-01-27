@@ -48,7 +48,7 @@ class HandshakeCalculator {
 
     List < Signal > calculateHandshake(int number) {
 
-        List < Signal > output = new Vector < Signal > ();
+        final List < Signal > output = new Vector < Signal > ();
         int action = 0, action_incr = 1, end = Signal.values().length;
 
         if ((number & 16) != 0) {
