@@ -30,6 +30,7 @@ final class HandshakeCalculator {
         if (isBitOn.test(Signal.values().length)) {
             Collections.reverse(signals);
         }
+
         return signals;
     }
 }
