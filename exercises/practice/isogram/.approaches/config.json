@@ -6,7 +6,7 @@
   "approaches": [
     {
       "uuid": "81101495-1d35-4b2e-b071-2c2b7fb726b3",
-      "slug": "filter-map-allMatch",
+      "slug": "filter-map-allmatch",
       "title": "filter(), map() and allMatch()",
       "blurb": "Use filter(), map() and allMatch() to return the answer.",
       "authors": ["bobahop"]
