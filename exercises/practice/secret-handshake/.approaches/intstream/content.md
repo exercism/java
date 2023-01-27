@@ -66,7 +66,7 @@ The `IntPredicate` is used once more to compare the input number with the bitwis
 The bit index of `4` to pass in happens to be the length of the `Signal` values collection.
 If the input contains bitwise `16`, then the `List` is [reversed][reverse].
 
-Finally, the list is returned from `calculateHandshake()`.
+Finally, the `List` is returned from `calculateHandshake()`.
 
 [intpredicate]: https://docs.oracle.com/javase/9/docs/api/java/util/function/IntPredicate.html
 [lambda]: https://www.geeksforgeeks.org/lambda-expressions-java-8/
