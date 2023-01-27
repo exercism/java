@@ -1,0 +1,58 @@
+# `filter()` and `mapToObj()` with `distinct()`
+
+
+```java
+import java.util.stream.Collectors;
+
+public class IsogramChecker {
+
+    public boolean isIsogram(String input) {
+        final var scrubbed = input.chars()
+            .filter(Character::isLetter)
+            .mapToObj(c -> Character.toLowerCase((char) c))
+            .collect(Collectors.toList());
+
+        return scrubbed.size() == scrubbed.stream().distinct().count();
+    }
+}
+```
+
+This approach starts by importing [`Collectors`][collectors].
+
+In the `isIsogram()` method, the [`chars()`][chars] method is called on the input `String`.
+Each character is passed as a primitive `int` representing its [Unicode codepoint][char] to the [`filter()`][filter] method.
+The `filter()` passes each codepoint to the [`IsLetter()`][isletter-codepoint] method to filter in only letter characters.
+
+```exercism/note
+Another method that could be used is [`isAlphabetic()`](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-).
+For the difference between `isAlphabetic()` and `isLetter()`, see [here](https://www.baeldung.com/java-character-isletter-isalphabetic).
+```
+
+The surviving codepoints are passed to the [`mapToObj()`][maptoobj] method which converts each codepoint to a `char` and then
+converts the `char` to lower case.
+The reason for the conversion to `char` is due to the following [`collect()`][collect] method.
+Primitive `int` values are not automatically [boxed][boxed] by the [`ToList()`][tolist] collector, but `char` values are.
+So, by converting the codepoint to `char`,  the [`toLowerCase()`][tolowercase-char] method that takes a `char`
+and returns a `char` is used instead of the [`toLowerCase()`][tolowercase-codepoint] method that takes a codepoint
+and returns an `int`.
+
+The `collect()` method assembles the lowercased `char`s into a [`List`][list] of `Character`s.
+The [`size()`][size] of the `List` is compared with the [`count()`][count] of the [`distinct()`][distinct] letters in the `List`.
+If they are equal, then there are no duplicate letters and the comparison returns `true` from the `isIsogram()` method.
+If they are not equal, then there are one or more duplicate letters and the comparison returns `false` from the `isIsogram()` method.
+
+[collectors]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html
+[chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
+[filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
+[isletter-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isLetter-int-
+[maptoobj]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#mapToObj-java.util.function.IntFunction-
+[char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
+[boxed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#boxed--
+[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#collect-java.util.function.Supplier-java.util.function.ObjIntConsumer-java.util.function.BiConsumer-
+[tolist]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html#toList--
+[tolowercase-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-int-
+[tolowercase-char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-
+[list]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html
+[size]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html#size--
+[distinct]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#distinct--
+[count]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#count--
