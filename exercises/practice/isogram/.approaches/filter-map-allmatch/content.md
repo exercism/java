@@ -32,7 +32,7 @@ into the `HashSet`'s [`add()`][add] method.
 The `add()` method returns `true` if the value is not already in the `HashSet` and `false` if the value is already in the `HashSet`.
 If `add()` returns `false`, then the `allMatch()` method can know that it will never be `true` and [short-circuit][short-circuiting]
 with a result of `false`.
-If `add()` always returns `true`, theh `allMatch()` will return `true`.
+If `add()` always returns `true`, then `allMatch()` will return `true`.
 
 Finally, the result of `allMatch()` is returned from the `IsIsogram()` function.
 
