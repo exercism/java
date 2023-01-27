@@ -1,0 +1,8 @@
+List < Signal > signals = IntStream.range(0, Signal.values().length)
+    .filter(isBitOn)
+    .mapToObj(i -> Signal.values()[i])
+    .collect(Collectors.toList());
+if (isBitOn.test(Signal.values().length)) {
+    Collections.reverse(signals);
+}
+return signals;

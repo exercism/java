@@ -1,0 +1,5 @@
+for (; action != end; action += action_incr)
+    if ((number & (1 << action)) != 0)
+        output.add(Signal.values()[action]);
+
+return output;
