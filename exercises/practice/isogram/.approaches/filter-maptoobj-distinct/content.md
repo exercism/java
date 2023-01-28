@@ -9,7 +9,7 @@ public class IsogramChecker {
     public boolean isIsogram(String input) {
         final var scrubbed = input.chars()
             .filter(Character::isLetter)
-            .mapToObj(c -> Character.toLowerCase((char) c))
+            .mapToObj(Character::toLowerCase)
             .collect(Collectors.toList());
 
         return scrubbed.size() == scrubbed.stream().distinct().count();
@@ -28,15 +28,9 @@ Another method that could be used is [`isAlphabetic()`](https://docs.oracle.com/
 For the difference between `isAlphabetic()` and `isLetter()`, see [here](https://www.baeldung.com/java-character-isletter-isalphabetic).
 ```
 
-The surviving codepoints are passed to the [`mapToObj()`][maptoobj] method which converts each codepoint to a `char` and then
-converts the `char` to lower case.
-The reason for the conversion to `char` is due to the following [`collect()`][collect] method.
-Primitive `int` values are not automatically [boxed][boxed] by the [`ToList()`][tolist] collector, but `char` values are.
-So, by converting the codepoint to `char`,  the [`toLowerCase()`][tolowercase-char] method that takes a `char`
-and returns a `char` is used instead of the [`toLowerCase()`][tolowercase-codepoint] method that takes a codepoint
-and returns an `int`.
+The surviving codepoints are passed to the [`mapToObj()`][maptoobj] method which converts each codepoint to a lowercased codepoint.
 
-The `collect()` method assembles the lowercased `char`s into a [`List`][list] of `Character`s.
+The `collect()` method assembles the lowercased codepoints into a [`List`][list] of codepoint `Integer`s.
 The [`size()`][size] of the `List` is compared with the [`count()`][count] of the [`distinct()`][distinct] letters in the `List`.
 If they are equal, then there are no duplicate letters and the comparison returns `true` from the `isIsogram()` method.
 If they are not equal, then there are one or more duplicate letters and the comparison returns `false` from the `isIsogram()` method.
