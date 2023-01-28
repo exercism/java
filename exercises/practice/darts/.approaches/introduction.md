@@ -45,13 +45,13 @@ class Darts {
 
     int score(double x, double y) {
         var pointRadius = (Math.sqrt((x * x) + (y * y)));
-        DoublePredicate throwOutside = ring -> pointRadius > ring;
+        DoublePredicate thrownOutside = ring -> pointRadius > ring;
 
-        if (throwOutside.test(outerRing))
+        if (thrownOutside.test(outerRing))
             return 0;
-        if (throwOutside.test(middleRing))
+        if (thrownOutside.test(middleRing))
             return 1;
-        if (throwOutside.test(innerRing))
+        if (thrownOutside.test(innerRing))
             return 5;
         return 10;
     }
