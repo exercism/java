@@ -23,6 +23,7 @@ public class PangramChecker {
     }
 }
 ```
+
 For more information, check the [`filter()` and `distinct()` with `count()` approach][approach-filter-distinct-count].
 
 ## Approach: `containsAll()`
