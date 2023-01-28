@@ -24,7 +24,7 @@ For `Arrays.asList()` to work as desired, it must take an array of reference typ
 The `split()` method is used here because it returns an array of `String`s, and `String` is a reference type.
 ```
 
-The `List` of input characters is chained to the [`containsAll()`][containsall] method.
+The `List` of input character `Strings` is chained to the [`containsAll()`][containsall] method.
 A `String` `List` of the English lowercase letters is passed to `containsAll()`.
 If all letters in the English alphabet are contained in the input, then `containsAll()` returns `true`,
 otherwise it returns `false`.
