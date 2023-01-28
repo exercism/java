@@ -39,7 +39,7 @@ public class IsogramChecker {
     public boolean isIsogram(String input) {
         final var scrubbed = input.chars()
             .filter(Character::isLetter)
-            .mapToObj(c -> Character.toLowerCase((char) c))
+            .mapToObj(Character::toLowerCase)
             .collect(Collectors.toList());
 
         return scrubbed.size() == scrubbed.stream().distinct().count();
