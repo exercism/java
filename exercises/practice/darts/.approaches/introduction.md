@@ -68,5 +68,5 @@ the choice between `if` statements and `DoublePredicate` can be made by perceive
 [doublepredicate]: https://docs.oracle.com/javase/9/docs/api/java/util/function/DoublePredicate.html
 [magic-numbers]: https://en.wikipedia.org/wiki/Magic_number_(programming)
 [jmh]: https://github.com/openjdk/jmh
-[approach-if-staements]: https://exercism.org/tracks/java/exercises/dart/approaches/if-statements
-[approach-doublepredicate]: https://exercism.org/tracks/java/exercises/dart/approaches/doublepredicate
+[approach-if-staements]: https://exercism.org/tracks/java/exercises/darts/approaches/if-statements
+[approach-doublepredicate]: https://exercism.org/tracks/java/exercises/darts/approaches/doublepredicate
