@@ -82,6 +82,6 @@ If all of the checks are `true`, the function returns `true`.
 
 [chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
 [char]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html#unicode
-[foreach]: https://www.geeksforgeeks.org/for-each-loop-in-java/
+[foreach]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#forEach-java.util.function.IntConsumer-
 [ascii]: https://www.asciitable.com/
 [short-circuit]: https://www.geeksforgeeks.org/short-circuit-logical-operators-in-java-with-examples/
