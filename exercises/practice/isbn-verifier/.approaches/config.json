@@ -7,15 +7,15 @@
     {
       "uuid": "2891a7bb-e107-4dfe-af03-10e6ca16dfcb",
       "slug": "map-sum",
-      "title": "map ad sum",
-      "blurb": "Use map and sum to return the answer.",
+      "title": "map with sum",
+      "blurb": "Use map with sum to return the answer.",
       "authors": ["bobahop"]
     },
     {
       "uuid": "dac71c32-41ae-4b6b-b3ee-c457dceb57de",
-      "slug": "foreach",
-      "title": "forEach",
-      "blurb": "Use forEach to return the answer.",
+      "slug": "chars-foreach",
+      "title": "chars with forEach",
+      "blurb": "Use chars with forEach to return the answer.",
       "authors": ["bobahop"]
     }
   ]
