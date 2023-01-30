@@ -39,23 +39,23 @@ class IsbnAcc {
 ```
 
 This variant of validating as you go begins with instantiating an object which does the work of validating the letters and accumulating
-their values in the ISBN string to be verified.
+their values for the ISBN string to be verified.
 The object initializes its `sum` and `pos` variables to `0`, and its `allValidChars` variable to `true`.
 
 The [`chars()`][chars] method is then called on the string.
 Each [`Character`][char] is a Unicode codepoint that is passed into the [`forEach()`][foreach]method.
-The `forEach` method passes the `char` into the `calc()` method of the validating/accumulating object.
+The `forEach` method passes the codepoint into the `calc()` method of the validating/accumulating object.
 
 The `calc()` method starts by checking if the codepoint is a digit, which is the most likely condition.
-If so, it gets the digit value of the `char` by subtracting the [ASCII][ascii] value of `0` from its own ASCII value.
-So, if the character is a `0`, then subtracting the ASCII value of `0` from itself results in `0`.
-If the character is a `1`, then subtracting the ASCII value of `0` from the ASCII value of `1` results in `1`, and so on.
+If so, it gets the digit value of the codepoint by subtracting the [ASCII][ascii] value of `0` from its own ASCII value.
+So, if the codepoint is a `0`, then subtracting the ASCII value of `0` from itself results in `0`.
+If the codepoint is a `1`, then subtracting the ASCII value of `0` from the ASCII value of `1` results in `1`, and so on.
 
 ```exercism/note/
-Another way to convert the character to a digit is to use the built-in
+Another way to convert the codepoint to a digit is to use the built-in
 [`Character.digit()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#digit(char,%20int))
-method, which also works for [Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html) digits.
-Since for this exercise all of the digits are ASCII, simple ASCII math will do. 
+method, which also works for [Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html) codepoints.
+Since for this exercise all of the codepoints are ASCII, simple ASCII math will do. 
 ```
 
 The digit is multiplied by 10 minus the position, with the position starting at `0`.
@@ -70,14 +70,14 @@ If the `char` is not a digit but a dash, the function returns without incrementi
 If the `char` is an `X` and the position is `9` (position `9` being at the end of a string whose length is `10`),
 then `10` is added to the `sum`, `pos` is incremented, and the function returns.
 
-If none of those legal conditions apply, then the `char` is illegal and `allValidChars` is set to false.
+If none of those legal conditions apply, then the codepoint is illegal and `allValidChars` is set to false.
 
 After the `forEach()` is done, the `isValid()` function returns a call to the object's `isIsbn()` method.
 The `isIsbn()` method first checks if all chars are valid.
 If not, then the `&&` operator [short circuits][short-circuit] and returns false from the function.
 If it is `true`, it then checks if the position is `10`.
 If not, then the `&&` operator [short circuits][short-circuit] and returns false from the function.
-If `true`, then the last check is if the sum is evenly divisible by `11`.
+If `true`, then the last check is if the `sum` is evenly divisible by `11`.
 If all of the checks are `true`, the function returns `true`.
 
 [chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
