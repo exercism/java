@@ -4,7 +4,8 @@ There ae at least a couple general ways to solve ISBN Verifier.
 One approach is to scrub and validate the input first.
 A variation of that aproach could then use [`map()`][map] and [`sum()`][sum] to iterate to the result.
 Another approach is to validate as you go.
-A variation of that approach could use [`chars()`][chars] and [`forEach()`][foreach] to iterate to the result.
+One way to do that is in a `for()` loop to iterate to the result.
+Another way could use [`chars()`][chars] and [`forEach()`][foreach] to iterate to the result.
 
 ## Approaches: `map()` with `sum()`
 
@@ -28,6 +29,39 @@ class IsbnVerifier {
 ```
 
 For more information, check the [`map()` with `sum()` approach][approach-map-sum].
+
+## Approach `for()`
+
+```java
+class IsbnVerifier {
+
+    boolean isValid(String stringToVerify) {
+        int sum = 0;
+        int pos = 0;
+        
+        for (var chr: stringToVerify.toCharArray()) {
+            if (Character.isDigit(chr)) {
+                sum += (chr - '0') * (10 - pos);
+                pos++;
+                continue;
+            }
+            if (chr == '-')
+                continue;
+            if (chr == 'X' && pos == 9) {
+                sum += 10;
+                pos++;
+                continue;
+            }
+            return false;
+        }
+        
+        return pos == 10 && sum % 11 == 0;
+    }
+
+}
+```
+
+For more information, check the [`for` approach][approach-for].
 
 ## Approach: `chars()` with `forEach()`
 
@@ -81,6 +115,11 @@ It might be thought that iterating to [`replace()`][replace] dash characters and
 a [regular expression patttern][pattern] might be less efficient than validating as you go,
 but the string to be iterated is so short that it may not matter much.
 
+An advantage to the `for()` approach is that the function can return `false` immediately upon encountering an illegal character.
+
+An advantage  to the `chars()` with `forEach()` approach is that the validation/accumulating is encapsulated somewhere else,
+making the `isValid()` method's implementation itself quite simple.
+
 [map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#map-java.util.function.IntUnaryOperator-
 [sum]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#sum--
 [replace]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replace(java.lang.CharSequence,%20java.lang.CharSequence)
@@ -90,5 +129,6 @@ but the string to be iterated is so short that it may not matter much.
 [foreach]: https://www.geeksforgeeks.org/for-each-loop-in-java/
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [approach-map-sum]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/map-sum
+[approach-for]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/for
 [approach-chars-foreach]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/foreach
 [jmh]: https://github.com/openjdk/jmh
