@@ -4,7 +4,7 @@ There ae at least a couple general ways to solve ISBN Verifier.
 One approach is to scrub and validate the input first.
 A variation of that aproach could then use [`map()`][map] and [`sum()`][sum] to iterate to the result.
 Another approach is to validate as you go.
-A variation of that approach could use [`forEach()`][foreach] to iterate to the result.
+A variation of that approach could use [`chars()`][chars] and [`forEach()`][foreach] to iterate to the result.
 
 ## Approaches: `map()` with `sum()`
 
@@ -29,7 +29,7 @@ class IsbnVerifier {
 
 For more information, check the [`map()` with `sum()` approach][approach-map-sum].
 
-## Approach: `forEach()`
+## Approach: `chars()` with `forEach()`
 
 ```java
 class IsbnVerifier {
@@ -69,7 +69,7 @@ class IsbnAcc {
 }
 ```
 
-For more information, check the [`forEach` approach][approach-foreach].
+For more information, check the [`chars()` with `forEach()` approach][approach-chars-foreach].
 
 
 ## Which approach to use?
@@ -86,8 +86,9 @@ but the string to be iterated is so short that it may not matter much.
 [replace]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replace(java.lang.CharSequence,%20java.lang.CharSequence)
 [pattern]: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
 [matches]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#matches(java.lang.String)
+[chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
 [foreach]: https://www.geeksforgeeks.org/for-each-loop-in-java/
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [approach-map-sum]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/map-sum
-[approach-foreach]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/foreach
+[approach-chars-foreach]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/foreach
 [jmh]: https://github.com/openjdk/jmh
