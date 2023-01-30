@@ -35,14 +35,14 @@ A [`for-each`][for-each] loop is used to iterate the characters of the string to
 
 A series of `if` statements begins by checking if the  `char` is a digit, which is the most likely condition.
 If so, it gets the digit value of the `char` by subtracting the [ASCII][ascii] value of `0` from its own ASCII value.
-So, if the character is a `0`, then subtracting the ASCII value of `0` from itself results in `0`.
-If the character is a `1`, then subtracting the ASCII value of `0` from the ASCII value of `1` results in `1`, and so on.
+So, if the `char` is a `0`, then subtracting the ASCII value of `0` from itself results in `0`.
+If the `char` is a `1`, then subtracting the ASCII value of `0` from the ASCII value of `1` results in `1`, and so on.
 
 ```exercism/note/
-Another way to convert the character to a digit is to use the built-in
+Another way to convert the `char` to a digit is to use the built-in
 [`Character.digit()`](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isDigit-char-)
-method, which also works for [Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html) digits.
-Since for this exercise all of the digits are ASCII, simple ASCII math will do. 
+method, which also works for [Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html) `char`s.
+Since for this exercise all of the `chars` are ASCII, simple ASCII math will do. 
 ```
 
 The digit is multiplied by 10 minus the position, with the position starting at `0`.
