@@ -65,9 +65,9 @@ The result of the multiplication is added to the `sum` variable.
 
 The `pos` variable is incremented and the function returns.
 
-If the `char` is not a digit but a dash, the function returns without incrementing the `pos` variable.
+If the codepoint is not a digit but a dash, the function returns without incrementing the `pos` variable.
 
-If the `char` is an `X` and the position is `9` (position `9` being at the end of a string whose length is `10`),
+If the codepoint is an `X` and the position is `9` (position `9` being at the end of a string whose length is `10`),
 then `10` is added to the `sum`, `pos` is incremented, and the function returns.
 
 If none of those legal conditions apply, then the codepoint is illegal and `allValidChars` is set to false.
