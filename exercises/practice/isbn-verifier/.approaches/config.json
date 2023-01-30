@@ -13,8 +13,8 @@
     },
     {
       "uuid": "1585d7c4-3cab-4b37-a66b-138d6e6b7be3",
-      "slug": "for",
-      "title": "for",
+      "slug": "for-each",
+      "title": "for-each loop",
       "blurb": "Use a for loop to return the answer.",
       "authors": ["bobahop"]
     },
