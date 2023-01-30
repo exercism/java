@@ -14,12 +14,12 @@ import java.util.stream.IntStream;
 class IsbnVerifier {
 
     public boolean isValid(String s) {
-        String st = s.replace("-", "");
+        String scrubbed = s.replace("-", "");
 
-        return st.matches("^([0-9]{10}|[0-9]{9}X)$") &&
-            IntStream.range(0, st.length())
+        return scrubbed.matches("^([0-9]{10}|[0-9]{9}X)$") &&
+            IntStream.range(0, scrubbed.length())
             .map(pos -> {
-                var chr = st.charAt(pos);
+                var chr = scrubbed.charAt(pos);
                 return (chr != 'X' ? chr - '0' : 10) * (10 - pos);
             })
             .sum() % 11 == 0;
