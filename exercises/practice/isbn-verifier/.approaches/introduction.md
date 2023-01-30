@@ -2,10 +2,16 @@
 
 There ae at least a couple general ways to solve ISBN Verifier.
 One approach is to scrub and validate the input first.
-A variation of that aproach could then use [`map()`][map] and [`sum()`][sum] to iterate to the result.
+A variation of that approach could then use [`map()`][map] and [`sum()`][sum] to iterate to the result.
 Another approach is to validate as you go.
 One way to do that is in a [`for-each`][for-each] loop to iterate to the result.
 Another way could use [`chars()`][chars] and [`forEach()`][foreach] to iterate to the result.
+
+## General guidance
+
+One important aspect to solving ISBN is to process the characters as digits according to their position, while disregarding dashes,
+and paying special attention that an `X` character is only a legal value of `10` if it is in the last legal digit position.
+Another important aspect is that the number of digit positions must be ten.
 
 ## Approaches: `map()` with `sum()`
 
