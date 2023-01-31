@@ -84,8 +84,8 @@ The `IntStream` is chained to the [`parallel()`][parallel] method so that the ca
 
 The parallel `IntStream` is [`boxed()`][boxed] to convert the `IntStream` to a `Stream<Integer>` so its mapped `Stream`
 can later be chained to [`toList()`][tolist].
-The `Stream` of `Integers` is chained to the [`flatMap()`][flatmap] method that will flatten the `a` values with the `b` values into the same array
-of `PythagoreanTriplets` (instead of being a `Stream` of `Stream`s).
+The `Stream` of `Integers` is chained to the [`flatMap()`][flatmap] method that will flatten the `a` values with the `b` values into a `Stream`
+of `PythagoreanTriplet`s (instead of being a `Stream` of a `Stream` of `PythagoreanTriplet`s).
 This takes place in a [lambda] that is passed the `a` value.
 
 The `b` values are generated from an `IntStream.rangeClosed()` that starts with the value for `a` and goes through the `limit` value.
