@@ -104,15 +104,10 @@ public class PythagoreanTriplet {
         this.a = a;
         this.b = b;
         this.c = c;
-
     }
 
     public static Triplets makeTripletsList() {
         return new Triplets();
-    }
-
-    public double sum() {
-        return a + b + c;
     }
 
     @Override
