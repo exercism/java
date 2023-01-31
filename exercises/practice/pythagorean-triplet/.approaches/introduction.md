@@ -88,7 +88,7 @@ public class PythagoreanTriplet {
 
 For more information, check the [`for` loops approach][approach-for-loops].
 
-## Approach: `IntStream` with `parallel`, `flatMap` and `filter()`
+## Approach: `IntStream` with `parallel()`, `flatMap()` and `filter()`
 
 ```java
 import java.util.List;
