@@ -1,0 +1,7 @@
+if (Character.isDigit(codePoint)) {
+    sum += (codePoint - '0') * (10 - pos);
+    pos++;
+    return;
+}
+if (codePoint == '-')
+    return;
