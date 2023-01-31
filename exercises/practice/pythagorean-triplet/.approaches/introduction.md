@@ -142,7 +142,7 @@ class Triplets {
         int start = (int) Math.sqrt(num);
         if (limit == 0)
             limit = (int) num / 2;
-        return IntStream.rangeClosed(start, limit).parallel().boxed().parallel()
+        return IntStream.rangeClosed(start, limit).parallel().boxed()
             .flatMap(a -> IntStream.rangeClosed(a, limit).parallel()
                 .filter(b -> {
                     var c = Math.sqrt(a * a + b * b);
