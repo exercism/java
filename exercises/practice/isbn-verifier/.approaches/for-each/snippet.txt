@@ -1,0 +1,8 @@
+for (var chr: stringToVerify.toCharArray()) {
+    if (Character.isDigit(chr)) {
+        sum += (chr - '0') * (10 - pos);
+        pos++;
+        continue;
+    }
+    if (chr == '-')
+        continue;
