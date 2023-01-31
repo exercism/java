@@ -1,0 +1,8 @@
+while (start > 1) {
+    if ((start & 1) == 1) {
+        start = start * 3 + 1;
+    } else {
+        start >>= 1;
+    }
+    steps++;
+}
