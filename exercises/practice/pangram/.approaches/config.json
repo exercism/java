@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "723cb19b-174c-4f84-a498-6aab6fbee966",
+      "slug": "filter-distinct-count",
+      "title": "filter(), distinct() and count()",
+      "blurb": "Use filter(), distinct() and count() to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "7b980297-ef29-453f-b0fd-812131850dea",
+      "slug": "containsall",
+      "title": "containsAll()",
+      "blurb": "Use containsAll() to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
