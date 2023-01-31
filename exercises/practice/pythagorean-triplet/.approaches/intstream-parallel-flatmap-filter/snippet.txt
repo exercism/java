@@ -1,0 +1,6 @@
+return IntStream.rangeClosed(start, limit).parallel().boxed()
+    .flatMap(a -> IntStream.rangeClosed(a, limit).parallel().mapToObj(
+            b -> new PythagoreanTriplet(a, b, Math.sqrt(a * a + b * b)))
+        .filter(pt -> pt.c % 1 == 0 && pt.c <= limit &&
+            pt.sum() == num))
+    .toList()
