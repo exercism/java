@@ -24,9 +24,10 @@ class CollatzCalculator {
 ```
 
 This approach defines a `steps` variable initialized to `0` that will be incremented for each iteration of the [`while` loop][while-loop].
-The `while` loop iterates until the input number calculates to `1`.
-[Bitwise operators][bitwise-operators] are used to check if the number is odd and to divide it in half if it is even.
+The `while` loop iterates as long as the input number is greater than `1`.
+If the number is already `1` before control flow gets to the `while` loop, then the `while` loop won't run.
 
+[Bitwise operators][bitwise-operators] are used to check if the number is odd and to divide it in half if it is even.
 The bitwise AND operator (`&`) compares the number with `1` to see if it is odd.
 
 ```exercism/note
