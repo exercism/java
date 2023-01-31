@@ -96,11 +96,11 @@ import java.util.Objects;
 import java.util.stream.IntStream;
 
 public class PythagoreanTriplet {
-    public final int a;
+    public final Integer a;
     public final int b;
     public final double c;
 
-    public PythagoreanTriplet(int a, int b, double c) {
+    public PythagoreanTriplet(Integer a, int b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -147,11 +147,13 @@ class Triplets {
         int start = (int) Math.sqrt(num);
         if (limit == 0)
             limit = (int) num / 2;
-        return IntStream.rangeClosed(start, limit).parallel().boxed()
-            .flatMap(a -> IntStream.rangeClosed(a, limit).parallel().mapToObj(
-                    b -> new PythagoreanTriplet(a, b, Math.sqrt(a * a + b * b)))
-                .filter(pt -> pt.c % 1 == 0 && pt.c <= limit &&
-                    pt.sum() == num))
+        return IntStream.rangeClosed(start, limit).parallel().boxed().parallel()
+            .flatMap(a -> IntStream.rangeClosed(a, limit).parallel()
+                .filter(b -> {
+                    var c = Math.sqrt(a * a + b * b);
+                    return c % 1 == 0 && c <= limit && a + b + c == num;
+                })
+                .mapToObj(b -> new PythagoreanTriplet(a, b, Math.sqrt(a * a + b * b))))
             .toList();
     }
 }
