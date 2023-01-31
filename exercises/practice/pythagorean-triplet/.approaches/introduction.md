@@ -164,7 +164,7 @@ For more information, check the [`IntStream` with `parallel()`, `flatmap()` and 
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
 the choice between `for` loops and `IntStream` with `parallel()`, `flatmap()` and `filter()` can be made by perceived readability.
 
-However, depending on the amount of cores in the machine being run, running `IntStream`s in parallel has a good chance
+However, depending on the amount of cores available in the machine being run, running `IntStream`s in parallel has a good chance
 of being considerably faster than nested `for` loops.
 But the nested `for` loops may be more readable than the more functional approach, especially for those not used to functional programming.
 So if the nested `for` loops approach is fast enough, it may be preferred for readability.
