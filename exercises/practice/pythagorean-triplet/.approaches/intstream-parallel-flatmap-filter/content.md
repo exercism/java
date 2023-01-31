@@ -95,10 +95,10 @@ The first check is for determing if `c` is a whole number. If it is not, then th
 The second check is for determining that `c` is less than or equal to the `limit`.
 The final check is for determing that the sum of `a`, `b`, and `c` is equal to the desired sum.
 
-The surviving `PythagoreanTriplet` objects are chained to the [`mapToObj()`][maptoobj] method, in which a `PythagoreanTriplet`object is instantiated
+The surviving `b` values are chained to the [`mapToObj()`][maptoobj] method, in which a `PythagoreanTriplet`object is instantiated
 from `a`, `b`, and the recalculated value for `c`, which is computed from the square root of `a` squared plus `b` squared.
 
-It is possible that the filtering and the mapping to a `PythagoreanTriplet` object could happen in the same iteration
+It is possible that the filtering of the `b` values and the mapping to a `PythagoreanTriplet` object could happen in the same iteration
 due to [loop fusion][loop-fusion].
 
 The `Stream` of `PythagoreanTriplet` objects is finally chained to [`toList()`][tolist], whose result is returned from the `build()` method.
