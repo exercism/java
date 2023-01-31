@@ -1,0 +1,8 @@
+public boolean isIsogram(String input) {
+    final var scrubbed = input.chars()
+        .filter(Character::isLetter)
+        .mapToObj(Character::toLowerCase)
+        .collect(Collectors.toList());
+
+    return scrubbed.size() == scrubbed.stream().distinct().count();
+}

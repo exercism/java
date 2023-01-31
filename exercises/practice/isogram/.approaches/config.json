@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "81101495-1d35-4b2e-b071-2c2b7fb726b3",
+      "slug": "filter-map-allmatch",
+      "title": "filter(), map() and allMatch()",
+      "blurb": "Use filter(), map() and allMatch() to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "50c09d6b-c0b0-495a-a3de-8f96a94b3f42",
+      "slug": "filter-maptoobj-distinct",
+      "title": "filter(), mapToObj() and distinct()",
+      "blurb": "Use filter(), mapToObj() and distinct() to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
