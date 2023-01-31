@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "1bfb4201-fa1e-42d6-8922-f2dbe6da2f5e",
+      "slug": "if-statements",
+      "title": "if statements",
+      "blurb": "Use if statements to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "5345154d-bb5e-4e08-abb6-f735d5d796d2",
+      "slug": "doublepredicate",
+      "title": "DoublePredicate",
+      "blurb": "Use a DoublePredicate to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
