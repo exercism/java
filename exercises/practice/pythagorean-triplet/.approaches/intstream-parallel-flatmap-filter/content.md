@@ -6,23 +6,18 @@ import java.util.Objects;
 import java.util.stream.IntStream;
 
 public class PythagoreanTriplet {
-    public final int a;
+    public final Integer a;
     public final int b;
     public final double c;
 
-    public PythagoreanTriplet(int a, int b, double c) {
+    public PythagoreanTriplet(Integer a, int b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
-
     }
 
     public static Triplets makeTripletsList() {
         return new Triplets();
-    }
-
-    public double sum() {
-        return a + b + c;
     }
 
     @Override
@@ -58,10 +53,12 @@ class Triplets {
         if (limit == 0)
             limit = (int) num / 2;
         return IntStream.rangeClosed(start, limit).parallel().boxed()
-            .flatMap(a -> IntStream.rangeClosed(a, limit).parallel().mapToObj(
-                    b -> new PythagoreanTriplet(a, b, Math.sqrt(a * a + b * b)))
-                .filter(pt -> pt.c % 1 == 0 && pt.c <= limit &&
-                    pt.sum() == num))
+            .flatMap(a -> IntStream.rangeClosed(a, limit).parallel()
+                .filter(b -> {
+                    var c = Math.sqrt(a * a + b * b);
+                    return c % 1 == 0 && c <= limit && a + b + c == num;
+                })
+                .mapToObj(b -> new PythagoreanTriplet(a, b, Math.sqrt(a * a + b * b))))
             .toList();
     }
 }
@@ -90,16 +87,21 @@ This takes place in a [lambda] that is passed the `a` value.
 
 The `b` values are generated from an `IntStream.rangeClosed()` that starts with the value for `a` and goes through the `limit` value.
 The `IntStream` for the `b` values is also chained to the `parallel()` method.
-That is chained to the [`mapToObj()`][maptoobj] method, in which a `PythagoreanTriplet`object is instantiated
-from `a`, `b`, and the value for `c` computed from the square root of `a` squared plus `b` squared.
 
-The `PythagoreanTriplet` objects are then chained to the [`filter()`][filter] method to be run through some checks.
+The `b` stream is then chained to the [`filter()`][filter] method to be run through some checks.
+To prepare for the checks, the `c` value is calculated from the square root of `a` squared plus `b` squared.
 The first check is for determing if `c` is a whole number. If it is not, then the logical AND operator (`&&`)
 [short circuits][short-circuit].
 The second check is for determining that `c` is less than or equal to the `limit`.
 The final check is for determing that the sum of `a`, `b`, and `c` is equal to the desired sum.
 
-The surviving `PythagoreanTriplet` objects are chained to [`toList()`][tolist], whose result is returned from the `build()` method.
+The surviving `PythagoreanTriplet` objects are chained to the [`mapToObj()`][maptoobj] method, in which a `PythagoreanTriplet`object is instantiated
+from `a`, `b`, and the recalculated value for `c`, which is computed from the square root of `a` squared plus `b` squared.
+
+It is possible that the filtering and the mapping to a `PythagoreanTriplet` object could happen in the same iteration
+due to [loop fusion][loop-fusion].
+
+The `Stream` of `PythagoreanTriplet` objects is finally chained to [`toList()`][tolist], whose result is returned from the `build()` method.
 
 [fluent-api]: https://dzone.com/articles/java-fluent-api-design
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
