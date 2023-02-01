@@ -59,7 +59,7 @@ For more information, check the [`charAt()` and `substring()` statements approac
 [final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
 [hashset]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html
 [arraylist]: https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
-[foreach]: https://www.geeksforgeeks.org/for-each-loop-in-java/
+[for-each]: https://www.geeksforgeeks.org/for-each-loop-in-java/
 [contains]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html#contains(java.lang.Object)
 [add]: https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#add-E-
 [join]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#join(java.lang.CharSequence,java.lang.Iterable)
