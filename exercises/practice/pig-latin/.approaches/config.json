@@ -5,7 +5,7 @@
   },
   "approaches": [
     {
-      "uuid": "11baf0c0-a596-4495-8c25-521c023c3103",
+      "uuid": "23cda406-7123-4a8a-8455-5731f5f6ad48",
       "slug": "charat-substring",
       "title": "charAt and substring",
       "blurb": "Use charAt and substring to return the answer.",
