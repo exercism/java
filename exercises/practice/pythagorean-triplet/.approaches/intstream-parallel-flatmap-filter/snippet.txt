@@ -1,0 +1,8 @@
+return IntStream.rangeClosed(start, limit).parallel().boxed()
+    .flatMap(a -> IntStream.rangeClosed(a, limit).parallel()
+        .filter(b -> {
+            var c = Math.sqrt(a * a + b * b);
+            return c % 1 == 0 && c <= limit && a + b + c == num;
+        })
+        .mapToObj(b -> new PythagoreanTriplet(a, b, Math.sqrt(a * a + b * b))))
+    .toList();
