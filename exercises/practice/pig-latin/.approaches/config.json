@@ -1,0 +1,15 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "23cda406-7123-4a8a-8455-5731f5f6ad48",
+      "slug": "charat-substring",
+      "title": "charAt and substring",
+      "blurb": "Use charAt and substring to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
