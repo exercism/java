@@ -62,14 +62,20 @@ process_current_directory() {
                 fi
         done
 
-        tmp=$(mktemp)
+        total_files=${#editor_files[*]}
 
-        # this one basically clears the editor portion of the json file
-        # and assigns it with an empty list if it exists
-        jq '.files.editor = []' $json_file --args "${editor_files[@]}" >"$tmp" && mv "$tmp" "$json_file"
+        if [ $total_files -gt 0 ] 
+        then
 
-        # this one updates the editor portion of the json
-        jq '.files.editor += $ARGS.positional' $json_file --args "${editor_files[@]}" >"$tmp" && mv "$tmp" "$json_file"
+            tmp=$(mktemp)
+
+            # this one basically clears the editor portion of the json file
+            # and assigns it with an empty list if it exists
+            jq '.files.editor = []' $json_file --args "${editor_files[@]}" >"$tmp" && mv "$tmp" "$json_file"
+
+            # this one updates the editor portion of the json
+            jq '.files.editor += $ARGS.positional' $json_file --args "${editor_files[@]}" >"$tmp" && mv "$tmp" "$json_file"
+        fi
 
         echo "Successfully processed $(basename $1)"
 }
