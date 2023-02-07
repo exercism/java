@@ -44,7 +44,7 @@ They are `private` because they don't need to be directly accessed from outside 
 because they don't need to be reassigned after being created.
 They are `static` because they don't need to differ between object instantiations, so they can belong to the class itself.
 
-The `translate()` method starts be defining the [`ArrayList()`][arraylist] to hold the words to be output.
+The `translate()` method starts by defining the [`ArrayList()`][arraylist] to hold the words to be output.
 The input `String` is then [`split()`][split] on a space to create the array of words.
 
 A [for-each][for-each] loop is used to iterate the words.
