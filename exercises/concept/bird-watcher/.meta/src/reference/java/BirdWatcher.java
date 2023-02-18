@@ -11,9 +11,6 @@ class BirdWatcher {
     }
 
     public int getToday() {
-        if (birdsPerDay.length == 0) {
-            return 0;
-        }
         return birdsPerDay[birdsPerDay.length - 1];
     }
 
