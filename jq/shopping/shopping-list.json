@@ -1,0 +1,87 @@
+{
+  "name": "Ingredients for pancakes",
+  "ingredients": [
+    {
+      "item": "flour",
+      "amount": {
+        "quantity": 1,
+        "unit": "cup"
+      }
+    },
+    {
+      "item": "sugar",
+      "amount": {
+        "quantity": 0.25,
+        "unit": "cup"
+      }
+    },
+    {
+      "item": "baking powder",
+      "amount": {
+        "quantity": 1,
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "item": "baking soda",
+      "amount": {
+        "quantity": 0.25,
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "item": "salt",
+      "amount": {
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    },
+    {
+      "item": "buttermilk",
+      "amount": {
+        "quantity": 1,
+        "unit": "cup"
+      },
+      "substitute": "regular milk"
+    },
+    {
+      "item": "eggs",
+      "amount": {
+        "quantity": 1,
+        "unit": "egg"
+      }
+    },
+    {
+      "item": "melted butter",
+      "amount": {
+        "quantity": 1,
+        "unit": "tablespoon"
+      },
+      "substitute": "vegetable oil"
+    }
+  ],
+  "optional ingredients": [
+    {
+      "item": "cinnamon",
+      "amount": {
+        "quantity": 0.25,
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "item": "vanilla extract",
+      "amount": {
+        "quantity": 0.5,
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "item": "blueberries",
+      "amount": {
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      "substitute": "chopped apple"
+    }
+  ]
+}

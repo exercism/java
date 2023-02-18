@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "remote-control-car.jq"
+    ],
+    "test": [
+      "test-remote-control-car.bats"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jq"
+    ]
+  },
+  "forked_from": [
+    "elixir/elons-toys"
+  ],
+  "icon": "elons-toys",
+  "blurb": "Learn about functions by playing around with a remote controlled car."
+}

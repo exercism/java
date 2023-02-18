@@ -1,0 +1,9 @@
+{
+  "authors": ["glennj"],
+  "files": {
+    "solution": ["lasagna.jq"],
+    "test": ["test-lasagna.bats"],
+    "exemplar": [".meta/exemplar.jq"]
+  },
+  "blurb": "Demonstrating variables in jq"
+}
