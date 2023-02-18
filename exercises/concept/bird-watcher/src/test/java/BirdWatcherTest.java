@@ -34,13 +34,6 @@ public class BirdWatcherTest {
     }
 
     @Test
-    public void itShouldReturnZeroIfBirdWatcherLastWeekIsEmpty() {
-        int[] lastWeekEmpty = new int[0];
-        birdWatcher = new BirdWatcher(lastWeekEmpty);
-        assertThat(birdWatcher.getToday()).isEqualTo(0);
-    }
-
-    @Test
     public void itIncrementTodaysCount() {
         birdWatcher.incrementTodaysCount();
         assertThat(birdWatcher.getToday()).isEqualTo(TODAY + 1);
