@@ -1,7 +1,10 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class DnDCharacterTest {
 
@@ -104,9 +107,54 @@ public class DnDCharacterTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testRandomAbilityIsWithinRange() {
-        int score = dndCharacter.ability();
-        assertTrue(score > 2 && score < 19);
+    public void test4DiceWereUsedForRollingScores() {
+        assertEquals(4, dndCharacter.rollDice().size());
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testDiceValuesBetween1And6() {
+        assertTrue(dndCharacter.rollDice().stream().allMatch(d -> d >= 1 && d <= 6));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbilityCalculationsUses3LargestNumbersFromScoresInDescendingOrder() {
+        assertEquals(9, dndCharacter.ability(List.of(4, 3, 2, 1)));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbilityCalculationsUses3LargestNumbersFromFromScoresInAscendingOrder() {
+        assertEquals(9, dndCharacter.ability(List.of(1, 2, 3, 4)));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbilityCalculationsUses3LargestNumbersFromScoresInRandomOrder() {
+        assertEquals(9, dndCharacter.ability(List.of(2, 4, 3, 1)));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbilityCalculationsWithLowestEqualNumbers() {
+        assertEquals(3, dndCharacter.ability(List.of(1, 1, 1, 1)));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbilityCalculationsWithHighestEqualNumbers() {
+        assertEquals(18, dndCharacter.ability(List.of(6, 6, 6, 6)));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbilityCalculationDoesNotChangeInputScores() {
+        List<Integer> scores = List.of(1, 2, 3, 4);
+        dndCharacter.ability(scores);
+
+        assertEquals(4, scores.size());
+        assertEquals(scores, List.of(1, 2, 3, 4));
     }
 
     @Ignore("Remove to run test")
@@ -120,8 +168,7 @@ public class DnDCharacterTest {
             assertTrue(character.getIntelligence() > 2 && character.getIntelligence() < 19);
             assertTrue(character.getWisdom() > 2 && character.getWisdom() < 19);
             assertTrue(character.getCharisma() > 2 && character.getCharisma() < 19);
-            assertEquals(character.getHitpoints(),
-                    10 + character.modifier(character.getConstitution()));
+            assertEquals(10 + character.modifier(character.getConstitution()), character.getHitpoints());
         }
     }
 
@@ -131,4 +178,21 @@ public class DnDCharacterTest {
         assertEquals(dndCharacter.getStrength(), dndCharacter.getStrength());
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testUniqueCharacterIsCreated() {
+        DnDCharacter uniqueDnDCharacter = new DnDCharacter();
+        for (int i = 0; i < 1000; i++) {
+            DnDCharacter dnDCharacter = new DnDCharacter();
+            boolean dnDCharactersHaveDifferentAttributes =
+                    dnDCharacter.getStrength() != uniqueDnDCharacter.getStrength()
+                            || dnDCharacter.getDexterity() != uniqueDnDCharacter.getDexterity()
+                            || dnDCharacter.getConstitution() != uniqueDnDCharacter.getConstitution()
+                            || dnDCharacter.getIntelligence() != uniqueDnDCharacter.getIntelligence()
+                            || dnDCharacter.getWisdom() != uniqueDnDCharacter.getWisdom()
+                            || dnDCharacter.getCharisma() != uniqueDnDCharacter.getCharisma()
+                            || dnDCharacter.getHitpoints() != uniqueDnDCharacter.getHitpoints();
+            assertTrue(dnDCharactersHaveDifferentAttributes);
+        }
+    }
 }
