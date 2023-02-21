@@ -12,7 +12,7 @@ class ProductionRemoteControlCar {
         throw new UnsupportedOperationException("Please implement the ProductionRemoteControlCar.getNumberOfVictories() method");
     }
 
-    public void setNumberOfVictories(int numberofVictories) {
+    public void setNumberOfVictories(int numberOfVictories) {
         throw new UnsupportedOperationException("Please implement the ProductionRemoteControlCar.setNumberOfVictories() method");
     }
 }
