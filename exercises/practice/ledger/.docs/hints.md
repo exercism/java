@@ -1,3 +1,0 @@
-# Hints
-
-TBD

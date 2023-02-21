@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "zankyr"
+  ],
   "files": {
     "solution": [
       "src/main/java/Ledger.java"

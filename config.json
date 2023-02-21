@@ -1898,10 +1898,9 @@
         "slug": "ledger",
         "name": "Ledger",
         "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
-        "practices": ["globalization", "string-formatting"],
-        "prerequisites": ["strings", "string-formatting", "globalization"],
-        "difficulty": 5,
-        "status": "wip"
+        "practices": [],
+        "prerequisites": ["strings", "string-formatting"],
+        "difficulty": 5
       }
     ],
     "foregone": []
