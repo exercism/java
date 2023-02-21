@@ -10,6 +10,21 @@ page at http://checkstyle.sourceforge.net/config.html -->
 
 <module name="Checker">
 
+    <module name="LineLength">
+        <!-- Checks if a line is too long. -->
+        <property name="max" value="120" default="120" />
+        <property name="severity" value="error" />
+
+        <!--
+          The default ignore pattern exempts the following elements:
+            - import statements
+            - long URLs inside comments
+        -->
+
+        <property name="ignorePattern" value="${com.puppycrawl.tools.checkstyle.checks.sizes.LineLength.ignorePattern}"
+                  default="^(package .*;\s*)|(import .*;\s*)|( *\* *https?://.*)$" />
+    </module>
+
     <module name="FileTabCharacter">
         <property name="severity" value="error" />
         <!-- Checks that there are no tab characters in the file.
@@ -41,9 +56,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
 
     <!-- All Java AST specific tests live under TreeWalker module. -->
     <module name="TreeWalker">
-
-        <!-- required for SupressionCommentFilter and SuppressWithNearbyCommentFilter -->
-        <module name="FileContentsHolder" />
 
         <!-- check for indentation with 4 spaces -->
         <module name="Indentation" />
@@ -172,21 +184,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
 
         -->
 
-        <module name="LineLength">
-            <!-- Checks if a line is too long. -->
-            <property name="max" value="120" default="120" />
-            <property name="severity" value="error" />
-
-            <!--
-              The default ignore pattern exempts the following elements:
-                - import statements
-                - long URLs inside comments
-            -->
-
-            <property name="ignorePattern" value="${com.puppycrawl.tools.checkstyle.checks.sizes.LineLength.ignorePattern}"
-                default="^(package .*;\s*)|(import .*;\s*)|( *\* *https?://.*)$" />
-        </module>
-
         <module name="LeftCurly">
             <!-- Checks for placement of the left curly brace ('{'). -->
             <property name="severity" value="error" />
@@ -310,12 +307,13 @@ page at http://checkstyle.sourceforge.net/config.html -->
             <property name="severity" value="error" />
         </module>
 
+        <module name="SuppressionCommentFilter">
+            <property name="offCommentFormat" value="CHECKSTYLE OFF: (.+)" />
+            <property name="onCommentFormat" value="CHECKSTYLE ON" />
+            <property name="checkFormat" value="Javadoc.*" />
+            <property name="messageFormat" value="$1" />
+        </module>
+
     </module>
 
-    <module name="SuppressionCommentFilter">
-        <property name="offCommentFormat" value="CHECKSTYLE OFF: (.+)" />
-        <property name="onCommentFormat" value="CHECKSTYLE ON" />
-        <property name="checkFormat" value="Javadoc.*" />
-        <property name="messageFormat" value="$1" />
-    </module>
 </module>
