@@ -7,18 +7,18 @@ compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  testImplementation "junit:junit:4.13"
-  testImplementation "org.assertj:assertj-core:3.15.0"
+    testImplementation "junit:junit:4.13"
+    testImplementation "org.assertj:assertj-core:3.15.0"
 }
 
 test {
-  testLogging {
-    exceptionFormat = 'full'
-    showStandardStreams = true
-    events = ["passed", "failed", "skipped"]
-  }
+    testLogging {
+        exceptionFormat = 'full'
+        showStandardStreams = true
+        events = ["passed", "failed", "skipped"]
+    }
 }

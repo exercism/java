@@ -2,6 +2,9 @@
   "authors": [
     "zankyr"
   ],
+  "contributors": [
+    "andrerfcsantos"
+  ],
   "files": {
     "solution": [
       "src/main/java/Ledger.java"

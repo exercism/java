@@ -1,145 +1,154 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ledger {
-
-    private static final int DESCRIPTION_MAX_LENGTH = 25;
-    private static final String TRUNCATED_SUFFIX = "...";
-
-    private String header;
-    private String currencySymbol;
-    private String thousandsSeparator;
-    private String decimalSeparator;
-    private String datePattern;
-
-    public LedgerEntry createLedgerEntry(String date, String description, double change) {
-        return new LedgerEntry(LocalDate.parse(date), description, change);
+    public LedgerEntry createLedgerEntry(String d, String desc, double c) {
+        LedgerEntry le = new LedgerEntry();
+        le.setChange(c);
+        le.setDescription(desc);
+        le.setLocalDate(LocalDate.parse(d));
+        return le;
     }
 
-    public String format(String currency, String locale, LedgerEntry... entries) {
-        setFormats(currency, locale);
-        var formattedEntries = formatEntries(entries);
-
-        return Stream.of(this.header, formattedEntries)
-                .filter(s -> !s.isEmpty())
-                .collect(Collectors.joining("\n"));
-    }
-
-    private void setFormats(String currency, String locale) {
-        setCurrencySymbolByCurrencyCode(currency);
-        setFormatsByLocale(locale);
-    }
-
-    private void setCurrencySymbolByCurrencyCode(String currencyCode) {
-        this.currencySymbol = switch (currencyCode) {
-            case "USD" -> "$";
-            case "EUR" -> "€";
-            default -> throw new IllegalArgumentException("Invalid currency");
-        };
-    }
-
-    private void setFormatsByLocale(String locale) {
-        if (locale.equals("en-US")) {
-            this.datePattern = "MM/dd/yyyy";
-            this.thousandsSeparator = ",";
-            this.decimalSeparator = ".";
-            this.header = "Date       | Description               | Change       ";
-        } else if (locale.equals("nl-NL")) {
-            this.datePattern = "dd/MM/yyyy";
-            this.thousandsSeparator = ".";
-            this.decimalSeparator = ",";
-            this.header = "Datum      | Omschrijving              | Verandering  ";
-        } else {
+    public String format(String cur, String loc, LedgerEntry[] entries) {
+        String s = null;
+        String header = null;
+        String curSymb = null;
+        String datPat = null;
+        String decSep = null;
+        String thSep = null;
+        if (!cur.equals("USD") && !cur.equals("EUR")) {
+            throw new IllegalArgumentException("Invalid currency");
+        } else if (!loc.equals("en-US") && !loc.equals("nl-NL")) {
             throw new IllegalArgumentException("Invalid locale");
-        }
-    }
-
-    private String formatEntries(LedgerEntry... entries) {
-        Comparator<LedgerEntry> ledgerEntryComparator = Comparator.comparing(LedgerEntry::date)
-                .thenComparing(LedgerEntry::description)
-                .thenComparing(LedgerEntry::change);
-
-        return Arrays.stream(entries)
-                .sorted(ledgerEntryComparator)
-                .map(this::formatLedgerEntry)
-                .collect(Collectors.joining("\n"));
-    }
-
-    private String formatLedgerEntry(LedgerEntry ledgerEntry) {
-        var formattedDate = getFormattedDate(ledgerEntry.date());
-        var formattedDescription = getFormattedDescription(ledgerEntry.description());
-        var formattedChange = getFormattedChange(ledgerEntry.change());
-
-        return String.format("%s | %-25s | %13s",
-                formattedDate,
-                formattedDescription,
-                formattedChange);
-    }
-
-    private String getFormattedDate(LocalDate date) {
-        return date.format(DateTimeFormatter.ofPattern(this.datePattern));
-    }
-
-    private String getFormattedDescription(String description) {
-        return (description.length() <= DESCRIPTION_MAX_LENGTH)
-                ? description
-                : description.substring(0, DESCRIPTION_MAX_LENGTH - TRUNCATED_SUFFIX.length()).concat(TRUNCATED_SUFFIX);
-    }
-
-    private String getFormattedChange(double change) {
-        boolean isChangeNegative = (change < 0.0);
-        String changeToString = getChangeToString(change, isChangeNegative);
-        return formatChangeToCurrency(changeToString, isChangeNegative);
-    }
-
-    private String getChangeToString(double change, boolean isNegative) {
-        if (isNegative) {
-            return String.format("%.02f", change * -1);
-        }
-        return String.format("%.02f", change);
-    }
-
-    private String formatChangeToCurrency(String change, boolean isNegative) {
-        String[] splitChange = change.split("\\.");
-        String integerPart = splitChange[0];
-        String decimalPart = splitChange[1];
-
-        if (integerPart.length() <= 3) {
-            return formatCurrency(integerPart, decimalPart, isNegative);
+        } else {
+            if (cur.equals("USD")) {
+                if (loc.equals("en-US")) {
+                    curSymb = "$";
+                    datPat = "MM/dd/yyyy";
+                    decSep = ".";
+                    thSep = ",";
+                    header = "Date       | Description               | Change       ";
+                } else if (loc.equals("nl-NL")) {
+                    curSymb = "$";
+                    datPat = "dd/MM/yyyy";
+                    decSep = ",";
+                    thSep = ".";
+                    header = "Datum      | Omschrijving              | Verandering  ";
+                }
+            } else if (cur.equals("EUR")) {
+                if (loc.equals("en-US")) {
+                    curSymb = "€";
+                    datPat = "MM/dd/yyyy";
+                    decSep = ".";
+                    thSep = ",";
+                    header = "Date       | Description               | Change       ";
+                } else if (loc.equals("nl-NL")) {
+                    curSymb = "€";
+                    datPat = "dd/MM/yyyy";
+                    decSep = ",";
+                    thSep = ".";
+                    header = "Datum      | Omschrijving              | Verandering  ";
+                }
+            }
         }
 
-        String changeWithThousandsSeparator = formatChangeWithThousandsSeparator(integerPart);
-        return formatCurrency(changeWithThousandsSeparator, decimalPart, isNegative);
-    }
+        s = header;
 
-    private String formatCurrency(String integerPart, String decimalPart, boolean isNegative) {
-        String sign = isNegative ? "-" : "";
-        return sign + this.currencySymbol + integerPart + this.decimalSeparator + decimalPart;
-    }
-
-    private String formatChangeWithThousandsSeparator(String integerPart) {
-        StringBuilder stringBuilder = new StringBuilder("");
-        int count = 1;
-        for (int i = integerPart.length() - 1; i >= 0; i--) {
-            char currentChar = integerPart.charAt(i);
-
-            if (i > 0 && (count % 3) == 0) {
-                stringBuilder.append(currentChar).append(this.thousandsSeparator);
-            } else {
-                stringBuilder.append(currentChar);
+        if (entries.length > 0) {
+            List<LedgerEntry> neg = new ArrayList<>();
+            List<LedgerEntry> pos = new ArrayList<>();
+            for (int i = 0; i < entries.length; i++) {
+                LedgerEntry e = entries[i];
+                if (e.getChange() >= 0) {
+                    pos.add(e);
+                } else {
+                    neg.add(e);
+                }
             }
 
-            count++;
+            neg.sort((o1, o2) -> o1.getLocalDate().compareTo(o2.getLocalDate()));
+            pos.sort((o1, o2) -> o1.getLocalDate().compareTo(o2.getLocalDate()));
+
+            List<LedgerEntry> all = new ArrayList<>();
+            all.addAll(neg);
+            all.addAll(pos);
+
+            for (int i = 0; i < all.size(); i++) {
+                LedgerEntry e = all.get(i);
+
+                String date = e.getLocalDate().format(DateTimeFormatter.ofPattern(datPat));
+
+                String desc = e.getDescription();
+                if (desc.length() > 25) {
+                    desc = desc.substring(0, 22);
+                    desc = desc + "...";
+                }
+
+                String converted = null;
+                if (e.getChange() < 0) {
+                    converted = String.format("%.02f", e.getChange() * -1);
+                } else {
+                    converted = String.format("%.02f", e.getChange());
+                }
+
+                String[] parts = converted.split("\\.");
+                String amount = "";
+                int count = 1;
+                for (int ind = parts[0].length() - 1; ind >= 0; ind--) {
+                    if (((count % 3) == 0) && ind > 0) {
+                        amount = thSep + parts[0].charAt(ind) + amount;
+                    } else {
+                        amount = parts[0].charAt(ind) + amount;
+                    }
+                    count++;
+                }
+
+                amount = curSymb + amount + decSep + parts[1];
+
+                if (e.getChange() < 0) {
+                    amount = "-" + amount;
+                }
+
+                s = s + "\n";
+                s = s + String.format("%s | %-25s | %13s", date, desc, amount);
+            }
+
         }
 
-        return stringBuilder.reverse().toString();
+        return s;
     }
 
-    public record LedgerEntry(LocalDate date, String description, double change) {
+    public static class LedgerEntry {
+        LocalDate localDate;
+        String description;
+        double change;
+
+        public LocalDate getLocalDate() {
+            return localDate;
+        }
+
+        public void setLocalDate(LocalDate localDate) {
+            this.localDate = localDate;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public double getChange() {
+            return change;
+        }
+
+        public void setChange(double change) {
+            this.change = change;
+        }
     }
 
 }

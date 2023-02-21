@@ -62,10 +62,11 @@ public class Ledger {
             List<LedgerEntry> pos = new ArrayList<>();
             for (int i = 0; i < entries.length; i++) {
                 LedgerEntry e = entries[i];
-                if (e.getChange() >= 0)
+                if (e.getChange() >= 0) {
                     pos.add(e);
-                else
+                } else {
                     neg.add(e);
+                }
             }
 
             neg.sort((o1, o2) -> o1.getLocalDate().compareTo(o2.getLocalDate()));
@@ -87,10 +88,11 @@ public class Ledger {
                 }
 
                 String converted = null;
-                if (e.getChange() < 0)
+                if (e.getChange() < 0) {
                     converted = String.format("%.02f", e.getChange() * -1);
-                else
+                } else {
                     converted = String.format("%.02f", e.getChange());
+                }
 
                 String[] parts = converted.split("\\.");
                 String amount = "";
@@ -106,8 +108,9 @@ public class Ledger {
 
                 amount = curSymb + amount + decSep + parts[1];
 
-                if (e.getChange() < 0)
+                if (e.getChange() < 0) {
                     amount = "-" + amount;
+                }
 
                 s = s + "\n";
                 s = s + String.format("%s | %-25s | %13s",
