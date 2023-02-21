@@ -64,7 +64,8 @@ public class Ledger {
                 LedgerEntry e = entries[i];
                 if (e.getChange() >= 0)
                     pos.add(e);
-                else neg.add(e);
+                else
+                    neg.add(e);
             }
 
             neg.sort((o1, o2) -> o1.getLocalDate().compareTo(o2.getLocalDate()));
@@ -108,14 +109,12 @@ public class Ledger {
                 if (e.getChange() < 0)
                     amount = "-" + amount;
 
-
                 s = s + "\n";
                 s = s + String.format("%s | %-25s | %13s",
                         date,
                         desc,
                         amount);
             }
-
 
         }
 
