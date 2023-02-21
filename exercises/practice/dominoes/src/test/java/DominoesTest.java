@@ -168,6 +168,20 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void seperateThreeDominoLoopsTest() {
+        Dominoes dominoes = new Dominoes();
+
+        Domino[] dominoesArray = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1),
+            new Domino(4, 5), new Domino(5, 6), new Domino (6, 4)};
+        List<Domino> dominoesList = Arrays.asList(dominoesArray);
+
+        assertThatExceptionOfType(ChainNotFoundException.class)
+                .isThrownBy(() -> dominoes.formChain(dominoesList))
+                .withMessage("No domino chain found.");
+    }
+
     private void assertValidChain(List<Domino> inputDominoes, List<Domino> outputDominoes) {
         assertSameDominoes(inputDominoes, outputDominoes);
         assertEndDominoesMatch(outputDominoes);
