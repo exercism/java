@@ -29,7 +29,6 @@ public class Ledger {
                 .collect(Collectors.joining("\n"));
     }
 
-
     private void setFormats(String currency, String locale) {
         setCurrencySymbolByCurrencyCode(currency);
         setFormatsByLocale(locale);
@@ -142,6 +141,5 @@ public class Ledger {
 
     public record LedgerEntry(LocalDate date, String description, double change) {
     }
-
 
 }
