@@ -1893,6 +1893,14 @@
             "for-loops"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "ledger",
+        "name": "Ledger",
+        "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
+        "practices": [],
+        "prerequisites": ["strings", "string-formatting"],
+        "difficulty": 5
       }
     ],
     "foregone": []
