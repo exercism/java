@@ -1,5 +1,5 @@
 class Darts {
-    int score(int xOfDart, int yOfDart) {
+    int score(double xOfDart, double yOfDart) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }
