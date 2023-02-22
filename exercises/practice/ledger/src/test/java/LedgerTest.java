@@ -79,7 +79,7 @@ public class LedgerTest {
         String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
-        String expected = "Date       | Description               | Change      \n" +
+        String expected = "Date       | Description               | Change       \n" +
                 "01/01/2015 | Buy present               |       -$10.00\n" +
                 "01/02/2015 | Get present               |        $10.00";
 
@@ -99,7 +99,7 @@ public class LedgerTest {
         String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
-        String expected = "Date       | Description               | Change      \n" +
+        String expected = "Date       | Description               | Change       \n" +
                 "01/01/2015 | Buy present               |       -$10.00\n" +
                 "01/01/2015 | Get present               |        $10.00";
 
@@ -120,7 +120,7 @@ public class LedgerTest {
         String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
-        String expected = "Date       | Description               | Change      \n" +
+        String expected = "Date       | Description               | Change       \n" +
                 "01/01/2015 | Something                 |        -$0.01\n" +
                 "01/01/2015 | Something                 |         $0.00\n" +
                 "01/01/2015 | Something                 |         $0.01";
