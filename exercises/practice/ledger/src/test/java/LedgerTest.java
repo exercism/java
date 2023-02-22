@@ -27,7 +27,7 @@ public class LedgerTest {
         var entries = new Ledger.LedgerEntry[]{};
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, US_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, US_LOCALE, entries);
 
         // then
         String expected = "Date       | Description               | Change       ";
@@ -90,8 +90,8 @@ public class LedgerTest {
     public void multipleEntriesOnSameDateOrderedByDescription() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-01", "Get present", 10.00),
-                Ledger.createLedgerEntry("2015-01-01", "Buy present", -10.00)
+                ledger.createLedgerEntry("2015-01-01", "Get present", 10.00),
+                ledger.createLedgerEntry("2015-01-01", "Buy present", -10.00)
         };
 
         // when
@@ -110,9 +110,9 @@ public class LedgerTest {
     public void finalOrderTieBreakerIsChange() {
         // given
         var entries = new Ledger.LedgerEntry[]{
-                Ledger.createLedgerEntry("2015-01-01", "Something", 0),
-                Ledger.createLedgerEntry("2015-01-01", "Something", -0.01),
-                Ledger.createLedgerEntry("2015-01-01", "Something", 0.01)
+                ledger.createLedgerEntry("2015-01-01", "Something", 0),
+                ledger.createLedgerEntry("2015-01-01", "Something", -0.01),
+                ledger.createLedgerEntry("2015-01-01", "Something", 0.01)
         };
 
         // when
@@ -191,7 +191,7 @@ public class LedgerTest {
         };
 
         // when
-        String actual = Ledger.format(USD_CURRENCY, NL_LOCALE, entries);
+        String actual = ledger.format(USD_CURRENCY, NL_LOCALE, entries);
 
         // then
         var expected = "Datum      | Omschrijving              | Verandering  \n" +
