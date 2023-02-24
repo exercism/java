@@ -18,7 +18,7 @@ TestTrack.race(new ExperimentalRemoteControlCar());
 
 ## 2. Enable the distance travelled by different models on the test track to be compared
 
-Please add a method to the `RemoteControlCar` interface to encapsulate the behavior of the `getDistanceTravelled()` method for the two types of car. Notice that Experimental model has a different speed than Production model. 
+Please add a method to the `RemoteControlCar` interface to encapsulate the behavior of the `getDistanceTravelled()` method for the two types of car. Notice that the Experimental model has a different speed than the Production model. 
 
 ```java
 ProductionRemoteControlCar prod = new ProductionRemoteControlCar();
