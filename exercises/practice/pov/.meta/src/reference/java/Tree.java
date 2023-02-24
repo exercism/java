@@ -24,8 +24,12 @@ class Tree {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Tree tree = (Tree) o;
         return label.equals(tree.label)
                 && children.size() == tree.children.size()
@@ -46,7 +50,7 @@ class Tree {
     }
 
     public Tree fromPov(String fromNode) {
-        if(this.graph == null) {
+        if (this.graph == null) {
             this.graph = new HashMap<>();
             convertToGraph(this.label, this.children);
         }
@@ -59,12 +63,12 @@ class Tree {
     }
 
     public List<String> pathTo(String fromNode, String toNode) {
-        if(this.graph == null) {
+        if (this.graph == null) {
             this.graph = new HashMap<>();
             convertToGraph(this.label, this.children);
         }
 
-        if(!this.graph.containsKey(fromNode) || !this.graph.containsKey(toNode)){
+        if (!this.graph.containsKey(fromNode) || !this.graph.containsKey(toNode)) {
             throw new UnsupportedOperationException("No path found");
         }
 
@@ -77,6 +81,7 @@ class Tree {
 
     /**
      * Method to convert tree to graph recursively and populate the private class attribute graph
+     *
      * @param label    label String of root node
      * @param children children list of root node
      */
@@ -95,7 +100,8 @@ class Tree {
     /**
      * Method to create Tree object recursively with node as root.
      * It utilizes the previously populated class attribute graph
-     * @param node string label of current node
+     *
+     * @param node   string label of current node
      * @param parent string label of parent node of current node
      * @return Tree object of root node
      */
@@ -111,19 +117,20 @@ class Tree {
 
     /**
      * Method to traverse the tree and populate the path object
-     * @param node Root node Tree object
+     *
+     * @param node   Root node Tree object
      * @param target String label of target node
-     * @param path List of String, to be populated
+     * @param path   List of String, to be populated
      * @return boolean value representing if path was found in the subtree
      */
-    private boolean generatePath(Tree node, String target, List<String> path){
+    private boolean generatePath(Tree node, String target, List<String> path) {
         path.add(node.label);
-        if(node.label.equals(target)){
+        if (node.label.equals(target)) {
             return true;
         }
 
-        for(Tree child : node.children){
-            if(generatePath(child, target, path)){
+        for (Tree child : node.children) {
+            if (generatePath(child, target, path)) {
                 return true;
             }
         }
