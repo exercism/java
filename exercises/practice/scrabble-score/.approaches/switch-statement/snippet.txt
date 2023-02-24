@@ -1,0 +1,7 @@
+word = word.toLowerCase();
+int score = 0;
+for (int i = 0; i < word.length(); i++) {
+    switch (word.charAt(i)) {
+    case 'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't':
+        score += 1;
+        break;

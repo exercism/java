@@ -1,0 +1,7 @@
+Scrabble(String word) {
+    savedScore = word.toUpperCase().chars().reduce(0, (score, letter) -> score + lookup.get(letter));
+}
+
+int getScore() {
+    return savedScore;
+}

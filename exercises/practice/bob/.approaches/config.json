@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "323eb230-7f27-4301-88ea-19c39d3eb5b6",
+      "slug": "if-statements",
+      "title": "if statements",
+      "blurb": "Use if statements to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "11baf0c0-a596-4495-8c25-521c023c3103",
+      "slug": "answer-array",
+      "title": "Answer array",
+      "blurb": "Index into an array to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}

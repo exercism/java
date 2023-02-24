@@ -1,0 +1,8 @@
+for (int a = start; a <= limit; a++) {
+    for (int b = a; b <= limit; b++) {
+        double c = Math.sqrt(a * a + b * b);
+        if (c % 1 == 0 && c <= limit && a + b + c == sum) {
+            triplets.add(new PythagoreanTriplet(a, b, (int) c));
+        }
+    }
+}

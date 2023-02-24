@@ -27,7 +27,7 @@ public class RemoteControlCarTest {
     }
 
     @Test
-    public void ensureCarsAreComparables() {
+    public void ensureCarsAreComparable() {
         assertThat(RemoteControlCar.class).isAssignableFrom(ProductionRemoteControlCar.class);
     }
 }

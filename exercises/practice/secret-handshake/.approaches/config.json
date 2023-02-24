@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "e38f5ebd-54b5-45b7-9521-532f2cc9f898",
+      "slug": "for-loop",
+      "title": "for loop",
+      "blurb": "Use a for loop to iterate to the result.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "6bcce1d2-1be6-4f62-8548-69ce6490f27a",
+      "slug": "intstream",
+      "title": "IntStream",
+      "blurb": "Use an IntStream to iterate to the result.",
+      "authors": ["bobahop"]
+    }
+  ]
+}

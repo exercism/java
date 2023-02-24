@@ -1,0 +1,6 @@
+boolean isIsogram(final String phrase) {
+    return phrase.chars()
+        .filter(Character::isLetter)
+        .map(Character::toLowerCase)
+        .allMatch(new HashSet < > ()::add);
+}

@@ -1,0 +1,4 @@
+public boolean isPangram(String input) {
+    return Arrays.asList(input.toLowerCase().split(""))
+        .containsAll(Arrays.asList("abcdefghijklmnopqrstuvwxyz".split("")));
+}

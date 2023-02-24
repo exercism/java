@@ -1,0 +1,7 @@
+if (thrownOutside.test(outerRing))
+    return 0;
+if (thrownOutside.test(middleRing))
+    return 1;
+if (thrownOutside.test(innerRing))
+    return 5;
+return 10;

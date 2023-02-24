@@ -1,0 +1,8 @@
+if (vowels.contains(word.charAt(0)) || specials.contains(word.substring(0, 2))) {
+    piggyfied.add(word + "ay");
+    continue;
+}
+var length = word.length();
+for (int pos = 1; pos < length; pos++) {
+    var letter = word.charAt(pos);
+    if (vowels.contains(letter) || letter == 'y') {

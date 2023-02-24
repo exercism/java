@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "5d57c985-ffcd-406b-afa3-8bb1c2d10700",
+      "slug": "intstream",
+      "title": "IntStream",
+      "blurb": "Use an IntStream to iterate for a solution.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "a3ee7234-8593-4cc6-b7f2-30105ceff275",
+      "slug": "formula",
+      "title": "Formula",
+      "blurb": "Use a formula to calculate a solution.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
