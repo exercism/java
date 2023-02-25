@@ -175,6 +175,19 @@ public class PovTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testPathToCanFindPathNotEnvolvingRoot() {
+        Tree tree = Tree.of("grandparent",
+                List.of(Tree.of("parent",
+                        List.of(Tree.of("x"),
+                                Tree.of("sibling-0"),
+                                Tree.of("sibling-1")))));
+
+        List<String> expected = List.of("x", "parent", "sibling-1");
+        assertEquals(expected, tree.pathTo("x", "sibling-1"));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testPathToCanFindPathFromNodesOtherThanX() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("a"),
