@@ -1,3 +1,5 @@
+import java.util.List;
+
 class HighScores {
 
     public HighScores(List<Integer> highScores) {
