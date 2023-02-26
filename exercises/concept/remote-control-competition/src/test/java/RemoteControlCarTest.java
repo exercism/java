@@ -28,6 +28,6 @@ public class RemoteControlCarTest {
 
     @Test
     public void ensureCarsAreComparable() {
-        assertThat(RemoteControlCar.class).isAssignableFrom(ProductionRemoteControlCar.class);
+        assertThat(Comparable.class).isAssignableFrom(ProductionRemoteControlCar.class);
     }
 }
