@@ -25,6 +25,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Markdown.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Refactor a Markdown parser."

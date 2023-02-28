@@ -17,6 +17,9 @@
     ],
     "editor": [
       "src/main/java/Winner.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Compute the result for a game of Hex / Polygon."

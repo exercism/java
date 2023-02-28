@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Accumulate.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "source": "Conversation with James Edward Gray II",

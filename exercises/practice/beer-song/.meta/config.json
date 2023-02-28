@@ -32,6 +32,9 @@
     ],
     "example": [
       ".meta/src/reference/java/BeerSong.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",

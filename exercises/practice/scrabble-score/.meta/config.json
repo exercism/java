@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Scrabble.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a word, compute the Scrabble score for that word.",

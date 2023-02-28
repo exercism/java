@@ -14,6 +14,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/NeedForSpeed.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Learn about classes by creating cars."

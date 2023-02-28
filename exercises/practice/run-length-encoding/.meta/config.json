@@ -28,6 +28,9 @@
     ],
     "example": [
       ".meta/src/reference/java/RunLengthEncoding.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement run-length encoding and decoding.",

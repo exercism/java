@@ -19,6 +19,9 @@
     ],
     "example": [
       ".meta/src/reference/java/AffineCipher.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Create an implementation of the Affine cipher, an ancient encryption algorithm from the Middle East.",

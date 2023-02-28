@@ -13,6 +13,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Tree.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "title": "POV",

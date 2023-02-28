@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Gigasecond.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a moment, determine the moment that would be after a gigasecond has passed.",

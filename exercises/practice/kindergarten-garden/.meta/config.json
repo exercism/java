@@ -32,6 +32,9 @@
     ],
     "editor": [
       "src/main/java/Plant.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",

@@ -35,6 +35,9 @@
     ],
     "example": [
       ".meta/src/reference/java/PrimeCalculator.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a number n, determine what the nth prime is.",

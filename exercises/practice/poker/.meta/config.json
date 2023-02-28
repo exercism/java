@@ -28,6 +28,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Poker.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Pick the best hand(s) from a list of poker hands.",

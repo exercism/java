@@ -32,6 +32,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Clock.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement a clock that handles times without dates.",

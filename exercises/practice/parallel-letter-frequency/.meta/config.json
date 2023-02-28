@@ -24,6 +24,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ParallelLetterFrequency.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Count the frequency of letters in texts using parallel computation."

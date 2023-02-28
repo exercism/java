@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Hexadecimal.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "source": "All of Computer Science",

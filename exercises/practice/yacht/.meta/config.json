@@ -23,6 +23,9 @@
     ],
     "editor": [
       "src/main/java/YachtCategory.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Score a single throw of dice in the game Yacht.",

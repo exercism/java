@@ -25,6 +25,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ErrorHandling.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement various kinds of error handling and resource management."

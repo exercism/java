@@ -32,6 +32,9 @@
     ],
     "example": [
       ".meta/src/reference/java/CryptoSquare.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement the classic method for composing secret messages called a square code.",

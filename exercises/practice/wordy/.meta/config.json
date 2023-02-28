@@ -32,6 +32,9 @@
     ],
     "example": [
       ".meta/src/reference/java/WordProblemSolver.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",

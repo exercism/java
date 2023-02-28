@@ -32,6 +32,9 @@
     "editor": [
       "src/main/java/Pair.java",
       "src/main/java/WordLocation.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Create a program to solve a word search puzzle."

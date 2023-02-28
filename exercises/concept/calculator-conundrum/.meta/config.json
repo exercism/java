@@ -16,6 +16,9 @@
     "editor": [
       "src/main/java/IllegalOperationException.java",
       "src/main/java/SimpleOperation.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "forked_from": [

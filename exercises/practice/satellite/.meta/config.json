@@ -19,6 +19,9 @@
     "editor": [
       "src/main/java/Node.java",
       "src/main/java/Tree.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Rebuild binary trees from pre-order and in-order traversals."

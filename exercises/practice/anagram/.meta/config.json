@@ -35,6 +35,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Anagram.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",

@@ -30,6 +30,9 @@
     ],
     "example": [
       ".meta/src/reference/java/PrimeFactorsCalculator.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Compute the prime factors of a given natural number.",

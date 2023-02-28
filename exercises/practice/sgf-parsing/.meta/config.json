@@ -15,6 +15,9 @@
     "editor": [
       "src/main/java/SgfNode.java",
       "src/main/java/SgfParsingException.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Parsing a Smart Game Format string."

@@ -32,6 +32,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ListOps.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement basic list operations"

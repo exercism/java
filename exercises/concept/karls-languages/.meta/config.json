@@ -11,6 +11,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/LanguageList.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "icon": "language-list",

@@ -31,6 +31,9 @@
     ],
     "example": [
       ".meta/src/reference/java/MinesweeperBoard.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Add the numbers to a minesweeper board."

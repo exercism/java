@@ -35,6 +35,9 @@
     ],
     "editor": [
       "src/main/java/MeetupSchedule.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Calculate the date of meetups.",

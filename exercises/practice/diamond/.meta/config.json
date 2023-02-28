@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/DiamondPrinter.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a letter, print a diamond starting with 'A' with the supplied letter at the widest point.",

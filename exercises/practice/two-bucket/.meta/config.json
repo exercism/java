@@ -22,6 +22,9 @@
     ],
     "example": [
       ".meta/src/reference/java/TwoBucket.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given two buckets of different size, demonstrate how to measure an exact number of liters.",

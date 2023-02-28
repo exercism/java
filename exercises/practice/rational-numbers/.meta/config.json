@@ -19,6 +19,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Rational.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement rational numbers.",

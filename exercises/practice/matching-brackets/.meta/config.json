@@ -36,6 +36,9 @@
     ],
     "example": [
       ".meta/src/reference/java/BracketChecker.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Make sure the brackets and braces all match.",

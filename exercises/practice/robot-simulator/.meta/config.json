@@ -37,6 +37,9 @@
     "editor": [
       "src/main/java/GridPosition.java",
       "src/main/java/Orientation.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Write a robot simulator.",

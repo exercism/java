@@ -36,6 +36,9 @@
     ],
     "example": [
       ".meta/src/reference/java/PhoneNumber.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",

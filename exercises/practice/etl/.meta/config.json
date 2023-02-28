@@ -35,6 +35,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Etl.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",

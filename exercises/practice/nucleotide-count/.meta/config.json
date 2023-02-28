@@ -38,6 +38,9 @@
     ],
     "example": [
       ".meta/src/reference/java/NucleotideCounter.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",

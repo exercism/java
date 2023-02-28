@@ -27,6 +27,9 @@
     ],
     "example": [
       ".meta/src/reference/java/BowlingGame.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Score a bowling game.",
