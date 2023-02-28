@@ -23,16 +23,14 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/RelationshipComputer.java"
+      "src/main/java/RelationshipComputer.java",
+      "src/main/java/Relationship.java"
     ],
     "test": [
       "src/test/java/RelationshipComputerTest.java"
     ],
     "example": [
       ".meta/src/reference/java/RelationshipComputer.java"
-    ],
-    "editor": [
-      "src/main/java/Relationship.java"
     ]
   },
   "blurb": "Write a function to determine if a list is a sublist of another list."
