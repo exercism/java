@@ -25,8 +25,7 @@
     ],
     "example": [
       ".meta/src/reference/java/ErrorHandling.java"
-    ],
-    "editor": []
+    ]
   },
   "blurb": "Implement various kinds of error handling and resource management."
 }

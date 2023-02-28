@@ -31,8 +31,7 @@
     ],
     "example": [
       ".meta/src/reference/java/RelationshipComputer.java"
-    ],
-    "editor": []
+    ]
   },
   "blurb": "Write a function to determine if a list is a sublist of another list."
 }
