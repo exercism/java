@@ -23,6 +23,9 @@
       "src/main/java/InvalidRecordsException.java",
       "src/main/java/Record.java",
       "src/main/java/TreeNode.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Refactor a tree building algorithm."

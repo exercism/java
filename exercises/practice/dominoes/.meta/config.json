@@ -27,6 +27,9 @@
     "editor": [
       "src/main/java/ChainNotFoundException.java",
       "src/main/java/Domino.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Make a chain of dominoes."

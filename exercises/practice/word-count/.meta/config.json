@@ -39,6 +39,9 @@
     ],
     "example": [
       ".meta/src/reference/java/WordCount.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",

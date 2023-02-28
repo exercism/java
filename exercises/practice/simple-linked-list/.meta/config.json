@@ -27,6 +27,9 @@
     ],
     "example": [
       ".meta/src/reference/java/SimpleLinkedList.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Write a simple linked list implementation that uses Elements and a List.",

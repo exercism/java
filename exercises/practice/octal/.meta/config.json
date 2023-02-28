@@ -27,6 +27,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Octal.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "source": "All of Computer Science",

@@ -18,6 +18,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Leap.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given a year, report if it is a leap year.",

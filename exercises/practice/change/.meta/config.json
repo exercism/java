@@ -30,6 +30,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ChangeCalculator.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Correctly determine change to be given using the least number of coins.",

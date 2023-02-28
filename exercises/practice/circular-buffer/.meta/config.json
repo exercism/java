@@ -31,6 +31,9 @@
     ],
     "editor": [
       "src/main/java/BufferIOException.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "A data structure that uses a single, fixed-size buffer as if it were connected end-to-end.",

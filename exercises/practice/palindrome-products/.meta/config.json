@@ -28,6 +28,9 @@
     ],
     "example": [
       ".meta/src/reference/java/PalindromeCalculator.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Detect palindrome products in a given range.",

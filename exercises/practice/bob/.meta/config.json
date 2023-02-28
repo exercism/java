@@ -34,6 +34,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Bob.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",

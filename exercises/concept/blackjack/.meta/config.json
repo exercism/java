@@ -11,6 +11,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/Blackjack.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "forked_from": [

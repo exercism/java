@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/TwelveDays.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Output the lyrics to \"The Twelve Days of Christmas.\"",

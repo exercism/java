@@ -33,6 +33,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Flattener.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Take a nested list and return a single list with all values except nil/null.",

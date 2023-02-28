@@ -14,6 +14,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/ElonsToyCar.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "icon": "elons-toys",

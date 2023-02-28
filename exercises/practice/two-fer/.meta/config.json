@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Twofer.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Create a sentence of the form \"One for X, one for me.\"",

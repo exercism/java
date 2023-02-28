@@ -21,6 +21,9 @@
       "src/main/java/Output.java",
       "src/main/java/Part.java",
       "src/main/java/Status.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement the logic of the hangman game using functional reactive programming."

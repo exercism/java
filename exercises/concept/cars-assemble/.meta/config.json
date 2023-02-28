@@ -11,6 +11,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/CarsAssemble.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "forked_from": [

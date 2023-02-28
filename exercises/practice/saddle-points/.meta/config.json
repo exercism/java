@@ -34,6 +34,9 @@
     ],
     "editor": [
       "src/main/java/MatrixCoordinate.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Detect saddle points in a matrix.",

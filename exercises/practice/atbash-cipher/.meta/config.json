@@ -34,6 +34,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Atbash.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",

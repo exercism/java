@@ -20,6 +20,9 @@
     "editor": [
       "src/main/java/Iou.java",
       "src/main/java/User.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement a RESTful API for tracking IOUs."

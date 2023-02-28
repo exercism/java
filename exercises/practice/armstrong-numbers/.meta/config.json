@@ -22,6 +22,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ArmstrongNumbers.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Determine if a number is an Armstrong number.",

@@ -31,6 +31,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Binary.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "source": "All of Computer Science",

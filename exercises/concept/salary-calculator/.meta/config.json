@@ -11,6 +11,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/SalaryCalculator.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Learn about ternary operators by calculating salaries."

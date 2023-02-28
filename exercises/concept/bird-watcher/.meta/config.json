@@ -12,6 +12,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/BirdWatcher.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "forked_from": [

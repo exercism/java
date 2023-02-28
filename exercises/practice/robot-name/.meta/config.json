@@ -31,6 +31,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Robot.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Manage robot factory settings.",

@@ -28,6 +28,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ReverseString.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Reverse a string.",

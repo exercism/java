@@ -34,6 +34,9 @@
     ],
     "example": [
       ".meta/src/reference/java/BinarySearchTree.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Insert and search for numbers in a binary tree.",

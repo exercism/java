@@ -26,6 +26,9 @@
     ],
     "example": [
       ".meta/src/reference/java/IsbnVerifier.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Check if a given string is a valid ISBN-10 number.",

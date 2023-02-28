@@ -25,6 +25,9 @@
     ],
     "example": [
       ".meta/src/reference/java/ForthEvaluator.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement an evaluator for a very simple subset of Forth."

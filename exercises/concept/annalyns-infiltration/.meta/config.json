@@ -11,6 +11,9 @@
     ],
     "exemplar": [
       ".meta/src/reference/java/AnnalynsInfiltration.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "forked_from": [

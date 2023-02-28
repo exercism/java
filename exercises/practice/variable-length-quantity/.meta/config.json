@@ -23,6 +23,9 @@
     ],
     "example": [
       ".meta/src/reference/java/VariableLengthQuantity.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Implement variable length quantity encoding and decoding.",

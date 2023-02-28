@@ -36,6 +36,9 @@
     ],
     "example": [
       ".meta/src/reference/java/Greeter.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",

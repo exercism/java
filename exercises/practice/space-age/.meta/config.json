@@ -29,6 +29,9 @@
     ],
     "example": [
       ".meta/src/reference/java/SpaceAge.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Given an age in seconds, calculate how old someone is in terms of a given planet's solar years.",

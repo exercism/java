@@ -26,6 +26,9 @@
     ],
     "example": [
       ".meta/src/reference/java/House.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Output the nursery rhyme 'This is the House that Jack Built'.",

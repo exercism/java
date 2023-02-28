@@ -17,6 +17,9 @@
       ".meta/src/reference/java/ProductionRemoteControlCar.java",
       ".meta/src/reference/java/RemoteControlCar.java",
       ".meta/src/reference/java/TestTrack.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Learn about interfaces by working on cars."
