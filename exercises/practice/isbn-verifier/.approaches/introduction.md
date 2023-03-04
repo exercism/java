@@ -1,6 +1,6 @@
 # Introduction
 
-There ae at least a couple general ways to solve ISBN Verifier.
+There are at least a couple general ways to solve ISBN Verifier.
 One approach is to scrub and validate the input first.
 A variation of that approach could then use [`map()`][map] and [`sum()`][sum] to iterate to the result.
 Another approach is to validate as you go.
