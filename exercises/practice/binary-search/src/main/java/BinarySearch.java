@@ -1,10 +1,20 @@
-/*
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class BinarySearch {
 
-Please remove this comment when submitting your solution.
+    int search(int a, int [] arr){
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    int search(float a, float [] arr){
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    int search(double a, double [] arr){
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    int search(long a,long [] arr){
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
