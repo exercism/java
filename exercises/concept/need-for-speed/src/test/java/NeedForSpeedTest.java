@@ -137,6 +137,22 @@ public class NeedForSpeedTest {
     }
 
     @Test
+    public void car_can_finish_with_distance_driven() {
+        int speed = 2;
+        int batteryDrain = 10;
+        var car = new NeedForSpeed(speed, batteryDrain);
+
+        car.drive();
+        car.drive();
+        car.drive();
+
+        int distance = 20;
+        var race = new RaceTrack(distance);
+
+        assertThat(race.tryFinishTrack(car)).isTrue();
+    }
+
+    @Test
     public void car_can_finish_with_car_that_just_cannot_finish() {
         int speed = 3;
         int batteryDrain = 20;
