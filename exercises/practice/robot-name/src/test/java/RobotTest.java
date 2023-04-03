@@ -23,6 +23,7 @@ public class RobotTest {
     }
 
     @Test
+    @Ignore("Remove to run test")
     public void sameRobotsHaveSameNames() {
         assertThat(robot.getName()).isEqualTo(robot.getName());
     }
