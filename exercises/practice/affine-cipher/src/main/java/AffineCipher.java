@@ -1,10 +1,10 @@
-/*
+public class AffineCipher {
+    
+    public String encode(String text, int coefficient1, int coefficient2){
+        throw new UnsupportedOperationException("Please implement AffineCipher.encode() method.");
+    }
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
-
-Please remove this comment when submitting your solution.
-
-*/
+    public String decode(String text, int coefficient1, int coefficient2){
+        throw new UnsupportedOperationException("Please implement AffineCipher.decode() method.");
+    }
+}
