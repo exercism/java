@@ -54,7 +54,7 @@ To submit a fix for an existing exercise or port an exercise to Java with the le
    (see [exercism.io: Installing Java](https://exercism.org/docs/tracks/java/installation))
 -  **Set up a branch on a fork of [exercism/java](https://github.com/exercism/java) on your computer.**
 
-   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Contributing via GitHub](https://github.com/exercism/docs/tree/main/building/github#contributing-via-github)) to:
+   See [GitHub Help: Forking](https://help.github.com/articles/fork-a-repo/).  Use those instructions (in conjunction with the [Contributing via GitHub](https://exercism.org/docs/building/github)) to:
    * "fork" a repository on GitHub;
    - install `git`;
    - "clone" a copy of your fork;
