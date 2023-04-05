@@ -12,7 +12,8 @@ Please add two methods to the `RemoteControlCar` interface:
 - `drive()`, returning nothing, and
 - `getDistanceTravelled()`, returning an `int`.
 
-Then make `ProductionRemoteControlCar` and `ExperimentalRemoteControlCar` implement the `RemoteControlCar` interface. This includes implementing all methods required by the interface. 
+Then make `ProductionRemoteControlCar` and `ExperimentalRemoteControlCar` implement the `RemoteControlCar` interface.
+This includes implementing all methods required by the interface. 
 
 ## 2. Drive.
 
@@ -45,7 +46,8 @@ TestTrack.race(new ExperimentalRemoteControlCar());
 
 ## 4. Allow the production cars to be sorted
 
-Please implement the `Comparable<T>` interface in the `ProductionRemoteControlCar` class. The default sort order for cars should be descending order of victories.
+Please implement the `Comparable<T>` interface in the `ProductionRemoteControlCar` class.
+The default sort order for cars should be descending order of victories.
 
 Implement the static `TestTrack.getRankedCars()` to return the cars passed in, sorted in descending order of number of victories.
 
