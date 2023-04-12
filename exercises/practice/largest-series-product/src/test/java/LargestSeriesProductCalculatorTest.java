@@ -118,28 +118,6 @@ public class LargestSeriesProductCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testCorrectlyCalculatesLargestProductOfLength0ForEmptyStringToSearch() {
-        LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
-        long expectedProduct = 1;
-
-        long actualProduct = calculator.calculateLargestProductForSeriesLength(0);
-
-        assertEquals(expectedProduct, actualProduct);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testCorrectlyCalculatesLargestProductOfLength0ForNonEmptyStringToSearch() {
-        LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("123");
-        long expectedProduct = 1;
-
-        long actualProduct = calculator.calculateLargestProductForSeriesLength(0);
-
-        assertEquals(expectedProduct, actualProduct);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testEmptyStringToSearchAndSeriesOfNonZeroLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
 
