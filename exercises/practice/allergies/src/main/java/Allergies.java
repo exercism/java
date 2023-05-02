@@ -1,10 +1,18 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Allergies{
 
-Please remove this comment when submitting your solution.
+    private int score;
 
-*/
+    Allergies(int score){
+        this.score = score;
+    }
+
+    List<Allergen> getList(){
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    boolean isAllergicTo(Allergen allergen) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+}
