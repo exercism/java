@@ -1,0 +1,18 @@
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
+
+[d6863355-15b7-40bb-abe0-bfb1a25512ed]
+description = "Orange and orange and black"
+
+[1224a3a9-8c8e-4032-843a-5224e04647d6]
+description = "Blue and grey and brown"
+
+[b8bda7dc-6b95-4539-abb2-2ad51d66a207]
+description = "Red and red and black"
+
+[f5d37ef9-1919-4719-a90d-a33c5a6934c9]
+description = "Yellow and violet and yellow"
+
+[30872c92-f567-4b69-a105-8455611c10c4]
+description = "Ignore extra colors"
