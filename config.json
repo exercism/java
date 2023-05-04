@@ -601,6 +601,18 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "9fe09c71-8088-4b87-b79a-fb6770c59ec1",
+        "practices": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "8295ae71-5c0e-49d0-bbe9-9b43a85bf2dd",
