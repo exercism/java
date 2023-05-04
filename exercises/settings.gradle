@@ -143,7 +143,4 @@ include 'practice:wordy'
 include 'practice:yacht'
 include 'practice:zebra-puzzle'
 include 'practice:zipper'
-findProject(':practice:resistor-color-trio')?.name = 'resistor-color-trio'
-include 'practice:resistor-color-trio'
-findProject(':practice:resistor-color-trio')?.name = 'resistor-color-trio'
 
