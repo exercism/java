@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -50,38 +50,28 @@ public class OpticalCharacterReaderTest {
     @Ignore("Remove to run test")
     @Test
     public void testReaderThrowsExceptionWhenNumberOfInputLinesIsNotAMultipleOf4() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new OpticalCharacterReader()
-                    .parse(
-                        Arrays.asList(
-                            " _ ",
-                            "| |",
-                            "   ")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Number of input rows must be a positive multiple of 4");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new OpticalCharacterReader()
+                        .parse(
+                                Arrays.asList(
+                                        " _ ",
+                                        "| |",
+                                        "   ")))
+                .withMessage( "Number of input rows must be a positive multiple of 4");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testReaderThrowsExceptionWhenNumberOfInputColumnsIsNotAMultipleOf3() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new OpticalCharacterReader()
-                    .parse(
-                        Arrays.asList(
-                            "    ",
-                            "   |",
-                            "   |",
-                            "    ")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Number of input columns must be a positive multiple of 3");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new OpticalCharacterReader()
+                        .parse(
+                                Arrays.asList(
+                                        "    ",
+                                        "   |",
+                                        "   |",
+                                        "    ")))
+                .withMessage( "Number of input columns must be a positive multiple of 3");
     }
 
     @Ignore("Remove to run test")

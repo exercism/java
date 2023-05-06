@@ -43,6 +43,10 @@ public class CalculatorConundrumTest {
         );
         assertThat(thrown.getCause()).isInstanceOf(ArithmeticException.class);
         assertThat(thrown).hasMessage("Divide by zero operation illegal");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> errorHandling.handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(
+                        "This is the detail message."))
+                .withMessage("This is the detail message.");
     }
 
     @Test

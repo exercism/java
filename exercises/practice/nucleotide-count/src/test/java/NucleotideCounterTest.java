@@ -1,5 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -51,8 +51,7 @@ public class NucleotideCounterTest {
     @Ignore("Remove to run test")
     @Test
     public void testDnaStringHasInvalidNucleotides() {
-        assertThrows(
-            IllegalArgumentException.class,
-            () -> new NucleotideCounter("AGXXACT"));
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new NucleotideCounter("AGXXACT"));
     }
 }

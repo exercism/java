@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -28,9 +28,9 @@ public class SimpleLinkedListTest {
     public void popOnEmptyListWillThrow() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
 
-        assertThrows(
-            NoSuchElementException.class,
-            list::pop);
+
+        assertThatExceptionOfType(NoSuchElementException.class)
+                .isThrownBy(() -> list.pop());
     }
 
     @Ignore("Remove to run test")

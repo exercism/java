@@ -1,6 +1,6 @@
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Test;
 import org.junit.Ignore;
@@ -33,9 +33,8 @@ public class TriangleTest {
     @Ignore("Remove to run test")
     @Test
     public void trianglesWithNoSizeAreIllegal() {
-        assertThrows(
-            TriangleException.class,
-            () -> new Triangle(0, 0, 0));
+        assertThatExceptionOfType(TriangleException.class)
+                .isThrownBy(() ->  new Triangle(0, 0, 0));
     }
 
     @Ignore("Remove to run test")
@@ -89,25 +88,23 @@ public class TriangleTest {
     @Ignore("Remove to run test")
     @Test
     public void firstTriangleInequalityViolation() {
-        assertThrows(
-            TriangleException.class,
-            () -> new Triangle(1, 1, 3));
+        assertThatExceptionOfType(TriangleException.class)
+                .isThrownBy(() ->  new Triangle(1, 1, 3));
+
     }
     
     @Ignore("Remove to run test")
     @Test
     public void secondTriangleInequalityViolation() {
-        assertThrows(
-            TriangleException.class,
-            () -> new Triangle(1, 3, 1));
+        assertThatExceptionOfType(TriangleException.class)
+                .isThrownBy(() -> new Triangle(1, 3, 1));
     }
     
     @Ignore("Remove to run test")
     @Test
     public void thirdTriangleInequalityViolation() {
-        assertThrows(
-            TriangleException.class,
-            () -> new Triangle(3, 1, 1));
+        assertThatExceptionOfType(TriangleException.class)
+                .isThrownBy(() -> new Triangle(3, 1, 1));
     }
 
     @Ignore("Remove to run test")
@@ -145,9 +142,8 @@ public class TriangleTest {
     @Ignore("Remove to run test")
     @Test
     public void mayNotViolateTriangleInequality() {
-        assertThrows(
-            TriangleException.class,
-            () -> new Triangle(7, 3, 2));
+        assertThatExceptionOfType(TriangleException.class)
+                .isThrownBy(() -> new Triangle(7, 3, 2));
     }
 
     @Ignore("Remove to run test")

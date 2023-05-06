@@ -46,12 +46,17 @@ public class SqueakyCleanTest {
 
     @Test
     public void kebab_to_camel_case() {
-        assertThat(SqueakyClean.clean("à-ëç")).isEqualTo("àËç");
+        assertThat(SqueakyClean.clean("à-ḃç")).isEqualTo("àḂç");
     }
 
     @Test
     public void kebab_to_camel_case_no_letter() {
         assertThat(SqueakyClean.clean("a-1C")).isEqualTo("aC");
+    }
+
+    @Test
+    public void omit_lower_case_greek_letters() {
+        assertThat(SqueakyClean.clean("MyΟβιεγτFinder")).isEqualTo("MyΟFinder");
     }
 
     @Test

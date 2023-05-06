@@ -1,5 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -34,9 +34,8 @@ public class PrimeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testUndefinedPrime() {
-        assertThrows(
-            IllegalArgumentException.class,
-            () -> primeCalculator.nth(0));
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> primeCalculator.nth(0));
     }
 
 }

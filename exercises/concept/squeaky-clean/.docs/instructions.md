@@ -31,8 +31,8 @@ SqueakyClean.clean("my\0Id");
 Modify the (_static_) `SqueakyClean.clean()` method to convert kebab-case to camelCase.
 
 ```java
-SqueakyClean.clean("à-ëç");
-// => "àËç"
+SqueakyClean.clean("à-ḃç");
+// => "àḂç"
 ```
 
 ## 4. Omit characters that are not letters
@@ -40,8 +40,15 @@ SqueakyClean.clean("à-ëç");
 Modify the (_static_) `SqueakyClean.clean()` method to omit any characters that are not letters.
 
 ```java
-SqueakyClean.clean("a1<2?3@b");
+SqueakyClean.clean("a1😀2😀3😀b");
 // => "ab"
 ```
 
+## 5. Omit Greek lower case letters
 
+Modify the (_static_) `SqueakyClean.clean()` method to omit any Greek letters in the range 'α' to 'ω'.
+
+```java
+SqueakyClean.clean("MyΟβιεγτFinder");
+// => "MyΟFinder"
+```

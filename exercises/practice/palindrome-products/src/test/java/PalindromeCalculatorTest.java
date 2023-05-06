@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -165,27 +165,17 @@ public class PalindromeCalculatorTest {
     @Ignore("Remove to run test")
     @Test
     public void errorSmallestMinIsMoreThanMax() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> palindromeCalculator
-                    .getPalindromeProductsWithFactors(10000, 1));
-
-        assertThat(expected)
-            .hasMessage("invalid input: min must be <= max");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> palindromeCalculator.getPalindromeProductsWithFactors(10000, 1))
+                .withMessage("invalid input: min must be <= max");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void errorLargestMinIsMoreThanMax() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> palindromeCalculator
-                    .getPalindromeProductsWithFactors(2, 1));
-
-        assertThat(expected)
-            .hasMessage("invalid input: min must be <= max");
+         assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> palindromeCalculator.getPalindromeProductsWithFactors(2, 1))
+                .withMessage("invalid input: min must be <= max");
     }
 
 
