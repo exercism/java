@@ -22,4 +22,4 @@ class SqueakyClean {
     private static boolean isLetter(char ch) {
         return Character.isLetter(ch) && !(ch >= 'α' && ch <= 'ω');
     }
-}
+    }

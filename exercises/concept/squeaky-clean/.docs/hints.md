@@ -1,4 +1,4 @@
-# Hints
+ # Hints
 
 ## 1. Replace any spaces encountered with underscores
 
