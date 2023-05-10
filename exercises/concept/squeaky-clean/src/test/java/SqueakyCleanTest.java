@@ -56,6 +56,6 @@ public class SqueakyCleanTest {
 
     @Test
     public void combine_conversions() {
-        assertThat(SqueakyClean.clean("9 -abcĐ\uD83D\uDE00ω\0")).isEqualTo("_AbcĐCTRL");
+        assertThat(SqueakyClean.clean("9 -abcË\uD83D\uDE00ω\0")).isEqualTo("_AbcËCTRL");
     }
 }
