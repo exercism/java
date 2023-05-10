@@ -4,7 +4,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class LedgerTest {
 
@@ -227,13 +227,9 @@ public class LedgerTest {
         var entries = new Ledger.LedgerEntry[0];
         var locale = "it-IT";
 
-        // when
-        IllegalArgumentException illegalArgumentException = assertThrows(
-            IllegalArgumentException.class,
-            () -> ledger.format(EUR_CURRENCY, locale, entries));
-
-        // then
-        assertEquals("Invalid locale", illegalArgumentException.getMessage());
+        assertThatExceptionOfType( IllegalArgumentException.class)
+                .isThrownBy(() -> ledger.format(EUR_CURRENCY, locale, entries))
+                .withMessage("Invalid locale");
 
     }
 
@@ -244,12 +240,8 @@ public class LedgerTest {
         var entries = new Ledger.LedgerEntry[0];
         var currency = "Pieces o' Eight";
 
-        // when
-        IllegalArgumentException illegalArgumentException = assertThrows(
-            IllegalArgumentException.class,
-            () -> ledger.format(currency, US_LOCALE, entries));
-
-        // then
-        assertEquals("Invalid currency", illegalArgumentException.getMessage());
+        assertThatExceptionOfType( IllegalArgumentException.class)
+                .isThrownBy(() -> ledger.format(currency, US_LOCALE, entries))
+                .withMessage("Invalid currency");
     }
 }

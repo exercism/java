@@ -1,5 +1,5 @@
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.List;
 import java.util.Map;
@@ -12,27 +12,27 @@ public class SgfParsingTest {
     @Test
     public void emptyInput() {
         String input = "";
-        assertThrows("tree missing",
-            SgfParsingException.class,
-            () -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class)
+                .isThrownBy(() -> new SgfParsing().parse(input))
+                .withMessage("tree missing");
     }
 
     @Test
     @Ignore("Remove to run test")
     public void treeWithNoNodes() {
         String input = "()";
-        assertThrows("tree with no nodes",
-            SgfParsingException.class,
-            () -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class)
+                .isThrownBy(() -> new SgfParsing().parse(input))
+                .withMessage("tree with no nodes");
     }
 
     @Test
     @Ignore("Remove to run test")
     public void nodeWithoutTree() {
         String input = ";";
-        assertThrows("tree missing",
-            SgfParsingException.class,
-            () -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class)
+                .isThrownBy(() -> new SgfParsing().parse(input))
+                .withMessage("tree missing");
     }
 
     @Test
@@ -67,27 +67,27 @@ public class SgfParsingTest {
     @Ignore("Remove to run test")
     public void propertiesWithoutDelimiter() {
         String input = "(;A)";
-        assertThrows("properties without delimiter",
-            SgfParsingException.class,
-            () -> new SgfParsing().parse(input));
+         assertThatExceptionOfType(SgfParsingException.class)
+                .isThrownBy(() -> new SgfParsing().parse(input))
+                .withMessage("properties without delimiter");
     }
 
     @Test
     @Ignore("Remove to run test")
     public void allLowercaseProperty() {
         String input = "(;a[b])";
-        assertThrows("property must be in uppercase",
-            SgfParsingException.class,
-            () -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class)
+                .isThrownBy(() -> new SgfParsing().parse(input))
+                .withMessage("property must be in uppercase");
     }
 
     @Test
     @Ignore("Remove to run test")
     public void upperAndLowercaseProperty() {
         String input = "(;Aa[b])";
-        assertThrows("property must be in uppercase",
-            SgfParsingException.class,
-            () -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class)
+                .isThrownBy(() -> new SgfParsing().parse(input))
+                .withMessage("property must be in uppercase");
     }
 
     @Test

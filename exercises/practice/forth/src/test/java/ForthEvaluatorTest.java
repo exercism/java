@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -30,29 +30,18 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfAdditionAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("+")));
 
-        assertThat(expected)
-            .hasMessage(
-                "Addition requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("+")))
+                .withMessage("Addition requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfAdditionAttemptedWithOneNumberOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("1 +")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Addition requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 +")))
+                .withMessage("Addition requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
@@ -66,29 +55,17 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfSubtractionAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("-")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Subtraction requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("-")))
+                .withMessage("Subtraction requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfSubtractionAttemptedWithOneNumberOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("1 -")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Subtraction requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 -")))
+                .withMessage("Subtraction requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
@@ -102,29 +79,17 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfMultiplicationAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("*")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Multiplication requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("*")))
+                .withMessage("Multiplication requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfMultiplicationAttemptedWithOneNumberOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("1 *")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Multiplication requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 *")))
+                .withMessage("Multiplication requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
@@ -146,42 +111,25 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfDividingByZero() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("4 0 /")));
-
-        assertThat(expected)
-            .hasMessage("Division by 0 is not allowed");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("4 0 /")))
+                .withMessage("Division by 0 is not allowed");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfDivisionAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("/")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Division requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("/")))
+                .withMessage("Division requires that the stack contain at least 2 values");
     }
 
-    @Ignore("Remove to run test")
+    //@Ignore("Remove to run test")
     @Test
     public void testErrorIfDivisionAttemptedWithOneNumberOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("1 /")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Division requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 /")))
+                .withMessage("Division requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
@@ -219,15 +167,9 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfDuplicatingAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("dup")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Duplicating requires that the stack contain at least 1 value");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("dup")))
+                .withMessage("Duplicating requires that the stack contain at least 1 value");
     }
 
     @Ignore("Remove to run test")
@@ -249,15 +191,9 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfDroppingAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("drop")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Dropping requires that the stack contain at least 1 value");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("drop")))
+                .withMessage("Dropping requires that the stack contain at least 1 value");
     }
 
     @Ignore("Remove to run test")
@@ -279,29 +215,17 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfSwappingAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("swap")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Swapping requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("swap")))
+                .withMessage("Swapping requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfSwappingAttemptedWithOneNumberOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("1 swap")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Swapping requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 swap")))
+                .withMessage("Swapping requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
@@ -323,29 +247,17 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfOveringAttemptedWithNothingOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("over")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Overing requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("over")))
+                .withMessage("Overing requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfOveringAttemptedWithOneNumberOnTheStack() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("1 over")));
-
-        assertThat(expected)
-            .hasMessage(
-                "Overing requires that the stack contain at least 2 values");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 over")))
+                .withMessage("Overing requires that the stack contain at least 2 values");
     }
 
     @Ignore("Remove to run test")
@@ -407,26 +319,18 @@ public class ForthEvaluatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testCannotRedefineNumbers() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList(": 1 2 ;")));
-
-        assertThat(expected).hasMessage("Cannot redefine numbers");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList(": 1 2 ;")))
+                .withMessage("Cannot redefine numbers");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testErrorIfEvaluatingAnUndefinedOperator() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> forthEvaluator
-                    .evaluateProgram(Collections.singletonList("foo")));
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("foo")))
+                .withMessage("No definition available for operator \"foo\"");
 
-        assertThat(expected)
-            .hasMessage("No definition available for operator \"foo\"");
     }
 
     @Ignore("Remove to run test")

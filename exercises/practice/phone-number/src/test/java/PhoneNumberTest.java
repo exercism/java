@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -42,25 +42,17 @@ public class PhoneNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void invalidWhen9Digits() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("123456789"));
-
-        assertThat(expected)
-            .hasMessage("incorrect number of digits");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("123456789"))
+                .withMessage("incorrect number of digits");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void invalidWhen11DigitsDoesNotStartWith1() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("22234567890"));
-
-        assertThat(expected)
-            .hasMessage("11 digits must start with 1");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("22234567890"))
+                .withMessage("11 digits must start with 1");
     }
 
     @Ignore("Remove to run test")
@@ -88,132 +80,88 @@ public class PhoneNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void invalidWhenMoreThan11Digits() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("321234567890"));
-
-        assertThat(expected)
-            .hasMessage("more than 11 digits");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("321234567890"))
+                .withMessage("more than 11 digits");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void invalidWithLetters() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("123-abc-7890"));
-
-        assertThat(expected)
-            .hasMessage("letters not permitted");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("123-abc-7890"))
+                .withMessage("letters not permitted");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void invalidWithPunctuations() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("123-@:!-7890"));
-
-        assertThat(expected)
-            .hasMessage("punctuations not permitted");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("123-@:!-7890"))
+                .withMessage("punctuations not permitted");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith0() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("(023) 456-7890"));
-
-        assertThat(expected)
-            .hasMessage("area code cannot start with zero");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("(023) 456-7890"))
+                .withMessage("area code cannot start with zero");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith1() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("(123) 456-7890"));
-
-        assertThat(expected)
-            .hasMessage("area code cannot start with one");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("(123) 456-7890"))
+                .withMessage("area code cannot start with one");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith0() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("(223) 056-7890"));
-
-        assertThat(expected)
-            .hasMessage("exchange code cannot start with zero");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("(223) 056-7890"))
+                .withMessage("exchange code cannot start with zero");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith1() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("(223) 156-7890"));
-
-        assertThat(expected)
-            .hasMessage("exchange code cannot start with one");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new PhoneNumber("(223) 156-7890"))
+                .withMessage("exchange code cannot start with one");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith0OnValid11DigitNumber() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("1 (023) 456-7890"));
-
-        assertThat(expected)
-            .hasMessage("area code cannot start with zero");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() ->  new PhoneNumber("1 (023) 456-7890"))
+                .withMessage("area code cannot start with zero");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith1OnValid11DigitNumber() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("1 (123) 456-7890"));
-
-        assertThat(expected)
-            .hasMessage("area code cannot start with one");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() ->  new PhoneNumber("1 (123) 456-7890"))
+                .withMessage("area code cannot start with one");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith0OnValid11DigitNumber() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("1 (223) 056-7890"));
-
-        assertThat(expected)
-            .hasMessage("exchange code cannot start with zero");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() ->  new PhoneNumber("1 (223) 056-7890"))
+                .withMessage("exchange code cannot start with zero");
     }
     
     @Ignore("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith1OnValid11DigitNumber() {
-        IllegalArgumentException expected =
-            assertThrows(
-                IllegalArgumentException.class,
-                () -> new PhoneNumber("1 (223) 156-7890"));
-
-        assertThat(expected)
-            .hasMessage("exchange code cannot start with one");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() ->  new PhoneNumber("1 (223) 156-7890"))
+                .withMessage("exchange code cannot start with one");
     }
 }
