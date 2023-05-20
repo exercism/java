@@ -4,11 +4,12 @@ Implement a RESTful API for tracking IOUs.
 
 Four roommates have a habit of borrowing money from each other frequently, and have trouble remembering who owes whom, and how much.
 
-Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) that receives [IOU](https://en.wikipedia.org/wiki/IOU)s as POST requests, and can deliver specified summary information via GET requests.
+Your task is to implement a simple [RESTful API][restful-wikipedia] that receives [IOU][iou]s as POST requests, and can deliver specified summary information via GET requests.
 
 ## API Specification
 
 ### User object
+
 ```json
 {
   "name": "Adam",
@@ -33,8 +34,15 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
 | Create user | POST | /add | `{"user":<name of new user (unique)>}` | N/A | `<User object for new user>` |
 | Create IOU | POST | /iou | `{"lender":<name of lender>,"borrower":<name of borrower>,"amount":5.25}` | N/A | `{"users":<updated User objects for <lender> and <borrower> (sorted by name)>}` |
 
-## Other Resources:
-- https://restfulapi.net/
+## Other Resources
+
+- [REST API Tutorial][restfulapi]
 - Example RESTful APIs
-  - [GitHub](https://developer.github.com/v3/)
-  - [Reddit](https://www.reddit.com/dev/api/)
+  - [GitHub][github-rest]
+  - [Reddit][reddit-rest]
+
+[restful-wikipedia]: https://en.wikipedia.org/wiki/Representational_state_transfer
+[iou]: https://en.wikipedia.org/wiki/IOU
+[github-rest]: https://developer.github.com/v3/
+[reddit-rest]: https://www.reddit.com/dev/api/
+[restfulapi]: https://restfulapi.net/
