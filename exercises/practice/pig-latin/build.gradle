@@ -22,3 +22,7 @@ test {
     events = ["passed", "failed", "skipped"]
   }
 }
+
+tasks.named("compileTestJava").configure {
+  dependsOn("copyTestsFilteringIgnores")
+}
