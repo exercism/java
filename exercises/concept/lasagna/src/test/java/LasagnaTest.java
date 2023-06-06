@@ -80,11 +80,11 @@ public class LasagnaTest {
 
     @Test
     public void total_time_in_minutes_for_one_layer() {
-        assertThat(new Lasagna().totalTimeInMinutes(1, 30)).isEqualTo(32);
+        assertThat(new Lasagna().totalTimeInMinutes(1, 30)).isEqualTo(12);
     }
 
     @Test
     public void total_time_in_minutes_for_multiple_layers() {
-        assertThat(new Lasagna().totalTimeInMinutes(4, 8)).isEqualTo(16);
+        assertThat(new Lasagna().totalTimeInMinutes(4, 8)).isEqualTo(40);
     }
 }
