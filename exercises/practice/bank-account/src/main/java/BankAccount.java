@@ -1,10 +1,23 @@
-/*
+class BankAccount {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    void open() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-Please remove this comment when submitting your solution.
+    void close() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    synchronized int getBalance() throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    synchronized void deposit(final int amount) throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    synchronized void withdraw(final int amount) throws BankAccountActionInvalidException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
