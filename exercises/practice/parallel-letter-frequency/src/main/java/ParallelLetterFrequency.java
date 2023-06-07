@@ -1,10 +1,13 @@
-/*
+import java.util.Map;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class ParallelLetterFrequency {
 
-Please remove this comment when submitting your solution.
+    ParallelLetterFrequency(final String letters) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    Map<Integer, Integer> letterCounts() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
