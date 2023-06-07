@@ -1,10 +1,29 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class PythagoreanTriplet {
 
-Please remove this comment when submitting your solution.
+    PythagoreanTriplet(final int a, final int b, final int c) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    TripletListBuilder makeTripletsList() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    class TripletListBuilder {
+
+        TripletListBuilder thatSumTo(final int sum) {
+            throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        }
+
+        TripletListBuilder withFactorsLessThanOrEqualTo(final int maxFactor) {
+            throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        }
+
+        List<PythagoreanTriplet> build() {
+            throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        }
+
+    }
+
+}
