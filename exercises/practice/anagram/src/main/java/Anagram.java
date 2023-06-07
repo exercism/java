@@ -1,10 +1,13 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Anagram {
 
-Please remove this comment when submitting your solution.
+    Anagram(final String word) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    List<String> match(final List<String> candidates) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
