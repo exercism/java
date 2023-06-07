@@ -1,10 +1,9 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class GrepTool {
 
-Please remove this comment when submitting your solution.
+    String grep(final String pattern, final List<String> flags, final List<String> files) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+}
