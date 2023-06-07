@@ -1,10 +1,11 @@
-/*
+class QueenAttackCalculator {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    QueenAttackCalculator(final Queen queen1, final Queen queen2) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-Please remove this comment when submitting your solution.
+    boolean canQueensAttackOneAnother() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+}
