@@ -1,10 +1,9 @@
-/*
+import io.reactivex.Observable;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Hangman {
 
-Please remove this comment when submitting your solution.
+    Observable<Output> play(final Observable<String> words, final Observable<String> letters) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+}
