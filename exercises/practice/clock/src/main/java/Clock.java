@@ -1,10 +1,21 @@
-/*
+class Clock {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    Clock(final int hours, final int minutes) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-Please remove this comment when submitting your solution.
+    void add(final int minutes) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    @Override
+    public String toString() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}

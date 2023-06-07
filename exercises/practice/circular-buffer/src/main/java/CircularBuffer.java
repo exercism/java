@@ -1,10 +1,23 @@
-/*
+class CircularBuffer<T> {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    CircularBuffer(final int size) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-Please remove this comment when submitting your solution.
+    T read() throws BufferIOException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    void write(T data) throws BufferIOException {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    void overwrite(T data) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    void clear() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
