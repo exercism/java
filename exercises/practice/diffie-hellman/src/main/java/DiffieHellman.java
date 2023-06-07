@@ -1,10 +1,17 @@
-/*
+import java.math.BigInteger;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class DiffieHellman {
 
-Please remove this comment when submitting your solution.
+    BigInteger privateKey(final BigInteger primeP) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    BigInteger publicKey(final BigInteger primeP, final BigInteger primeG, final BigInteger privateKey) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    BigInteger secret(final BigInteger primeP, final BigInteger publicKey, final BigInteger privateKey) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
