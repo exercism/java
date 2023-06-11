@@ -3,7 +3,7 @@ import java.time.LocalDate;
 
 class Meetup {
 
-    Meetup(final int monthOfYear, final int year) {
+    Meetup(int monthOfYear, int year) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

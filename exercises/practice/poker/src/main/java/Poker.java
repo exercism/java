@@ -2,7 +2,7 @@ import java.util.List;
 
 class Poker {
 
-    Poker(final List<String> hand) {
+    Poker(List<String> hand) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

@@ -2,7 +2,7 @@ import java.util.List;
 
 class MinesweeperBoard {
 
-    MinesweeperBoard(final List<String> boardRows) {
+    MinesweeperBoard(List<String> boardRows) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

@@ -2,15 +2,15 @@ import java.math.BigInteger;
 
 class DiffieHellman {
 
-    BigInteger privateKey(final BigInteger primeP) {
+    BigInteger privateKey(BigInteger primeP) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    BigInteger publicKey(final BigInteger primeP, final BigInteger primeG, final BigInteger privateKey) {
+    BigInteger publicKey(BigInteger primeP, BigInteger primeG, BigInteger privateKey) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    BigInteger secret(final BigInteger primeP, final BigInteger publicKey, final BigInteger privateKey) {
+    BigInteger secret(BigInteger primeP, BigInteger publicKey, BigInteger privateKey) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

@@ -1,6 +1,6 @@
 class BowlingGame {
 
-    void roll(final int pins) {
+    void roll(int pins) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

@@ -2,7 +2,7 @@ import java.util.Map;
 
 class ParallelLetterFrequency {
 
-    ParallelLetterFrequency(final String letters) {
+    ParallelLetterFrequency(String letters) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

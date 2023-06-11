@@ -2,11 +2,11 @@ import java.util.Map;
 
 class NucleotideCounter {
 
-    NucleotideCounter(final String sequence) {
+    NucleotideCounter(String sequence) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    int count(final char base) {
+    int count(char base) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

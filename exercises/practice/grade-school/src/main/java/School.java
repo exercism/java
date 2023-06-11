@@ -2,7 +2,7 @@ import java.util.List;
 
 class School {
 
-    void add(final String student, final int grade) {
+    void add(String student, int grade) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

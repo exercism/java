@@ -1,6 +1,6 @@
 class CryptoSquare {
 
-    CryptoSquare(final String plaintext) {
+    CryptoSquare(String plaintext) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

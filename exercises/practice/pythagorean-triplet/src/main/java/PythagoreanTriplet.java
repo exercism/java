@@ -2,7 +2,7 @@ import java.util.List;
 
 class PythagoreanTriplet {
 
-    PythagoreanTriplet(final int a, final int b, final int c) {
+    PythagoreanTriplet(int a, int b, int c) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
@@ -12,11 +12,11 @@ class PythagoreanTriplet {
 
     class TripletListBuilder {
 
-        TripletListBuilder thatSumTo(final int sum) {
+        TripletListBuilder thatSumTo(int sum) {
             throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
         }
 
-        TripletListBuilder withFactorsLessThanOrEqualTo(final int maxFactor) {
+        TripletListBuilder withFactorsLessThanOrEqualTo(int maxFactor) {
             throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
         }
 

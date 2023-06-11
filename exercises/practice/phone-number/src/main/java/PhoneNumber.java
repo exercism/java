@@ -1,6 +1,6 @@
 class PhoneNumber {
 
-    PhoneNumber(final String numberString) {
+    PhoneNumber(String numberString) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

@@ -6,7 +6,7 @@ class CustomSet<T> {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    CustomSet(final Collection<T> data) {
+    CustomSet(Collection<T> data) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
@@ -14,32 +14,32 @@ class CustomSet<T> {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    boolean contains(final T element) {
+    boolean contains(T element) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    boolean isDisjoint(final CustomSet<T> other) {
+    boolean isDisjoint(CustomSet<T> other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    boolean add(final T element) {
+    boolean add(T element) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
     @Override
-    public boolean equals(final Object obj) {
+    public boolean equals(Object obj) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    CustomSet<T> getIntersection(final CustomSet<T> other) {
+    CustomSet<T> getIntersection(CustomSet<T> other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    CustomSet<T> getUnion(final CustomSet<T> other) {
+    CustomSet<T> getUnion(CustomSet<T> other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    CustomSet<T> getDifference(final CustomSet<T> other) {
+    CustomSet<T> getDifference(CustomSet<T> other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

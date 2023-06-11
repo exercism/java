@@ -1,10 +1,10 @@
 class House {
 
-    String verse(final int verse) {
+    String verse(int verse) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    String verses(final int startVerse, final int endVerse) {
+    String verses(int startVerse, int endVerse) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

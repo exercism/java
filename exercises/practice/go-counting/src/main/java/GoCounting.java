@@ -8,11 +8,11 @@ class GoCounting {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    Player getTerritoryOwner(final int x, final int y) {
+    Player getTerritoryOwner(int x, int y) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    Set<Point> getTerritory(final int x, final int y) {
+    Set<Point> getTerritory(int x, int y) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

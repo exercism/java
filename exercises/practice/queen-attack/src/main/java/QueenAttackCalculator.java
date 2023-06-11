@@ -1,6 +1,6 @@
 class QueenAttackCalculator {
 
-    QueenAttackCalculator(final Queen queen1, final Queen queen2) {
+    QueenAttackCalculator(Queen queen1, Queen queen2) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

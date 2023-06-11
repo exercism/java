@@ -1,10 +1,10 @@
 class Clock {
 
-    Clock(final int hours, final int minutes) {
+    Clock(int hours, int minutes) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    void add(final int minutes) {
+    void add(int minutes) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
