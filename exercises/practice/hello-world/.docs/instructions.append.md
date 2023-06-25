@@ -77,7 +77,14 @@ With a working solution that we've reviewed, we're ready to submit it to
 exercism.org.
 You can submit the solution using the online editor or locally using the [Exercism CLI](https://exercism.org/docs/using/solving-exercises/working-locally):
 - To submit the exercise locally, first [install the exercism CLI](https://exercism.org/docs/using/solving-exercises/working-locally) if you haven't already  and then submit the files of your solution, e.g:
-
+```
+ $ exercism submit <file location>
+```
+replace <file location> with the relative location of your hello-world.java file.
+so if you are working in "C:\exercism\java\hello-world" then the command would be
+ ```
+  $ exercism submit .\src\main\java\Blackjack.java
+ ```
 - If you want to use the online editor to submit your solution, just click the "Submit" button!
 
 For a closer look at submitting a solution locally:
