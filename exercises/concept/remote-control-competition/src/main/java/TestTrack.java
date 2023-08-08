@@ -6,8 +6,7 @@ public class TestTrack {
         throw new UnsupportedOperationException("Please implement the (static) TestTrack.race() method");
     }
 
-    public static List<ProductionRemoteControlCar> getRankedCars(ProductionRemoteControlCar prc1,
-                                                                 ProductionRemoteControlCar prc2) {
+    public static List<ProductionRemoteControlCar> getRankedCars(List<ProductionRemoteControlCar> prcs) {
         throw new UnsupportedOperationException("Please implement the (static) TestTrack.getRankedCars() method");
     }
 }
