@@ -20,6 +20,17 @@ public class DoublyLinkedListTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testPushOncePopTwice() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        list.push(10);
+
+        assertThat(list.pop()).isEqualTo(10);
+        assertThat(list.pop()).isNull();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testPushShift() {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
@@ -30,6 +41,17 @@ public class DoublyLinkedListTest {
         assertThat(list.shift()).isEqualTo("10");
         assertThat(list.shift()).isEqualTo("20");
         assertThat(list.shift()).isEqualTo("30");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testPushPopShift() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        list.push(10);
+
+        assertThat(list.pop()).isEqualTo(10);
+        assertThat(list.shift()).isNull();
     }
 
     @Ignore("Remove to run test")
@@ -48,6 +70,17 @@ public class DoublyLinkedListTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testUnshiftOnceShiftTwice() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+
+        list.unshift("10");
+
+        assertThat(list.shift()).isEqualTo("10");
+        assertThat(list.shift()).isNull();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testUnshiftPop() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -58,6 +91,17 @@ public class DoublyLinkedListTest {
         assertThat(list.pop()).isEqualTo(10);
         assertThat(list.pop()).isEqualTo(20);
         assertThat(list.pop()).isEqualTo(30);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testUnshiftShiftPop() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        list.unshift(10);
+
+        assertThat(list.shift()).isEqualTo(10);
+        assertThat(list.pop()).isNull();
     }
 
     @Ignore("Remove to run test")
