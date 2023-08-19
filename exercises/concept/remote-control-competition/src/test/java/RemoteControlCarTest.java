@@ -64,7 +64,7 @@ public class RemoteControlCarTest {
                 add(getCarWithVictories(3));
             }
         };
-        List<ProductionRemoteControlCar> rankings = TestTrack.getRankedCars(unsortedCars);
+        List<ProductionRemoteControlCar> rankings = TestTrack.getRankedCars(unsortedCars.get(0),unsortedCars.get(1));
         assertThat(rankings.get(0).getNumberOfVictories()).isEqualTo(3);
         assertThat(rankings.get(1).getNumberOfVictories()).isEqualTo(2);
     }
