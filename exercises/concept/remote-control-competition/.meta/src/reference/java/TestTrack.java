@@ -8,13 +8,9 @@ public class TestTrack {
         car.drive();
     }
 
-    public static List<ProductionRemoteControlCar> getRankedCars(ProductionRemoteControlCar prc1,
-                                                                 ProductionRemoteControlCar prc2) {
-        List<ProductionRemoteControlCar> rankings = new ArrayList<>();
-        rankings.add(prc1);
-        rankings.add(prc1);
+    public static List<ProductionRemoteControlCar> getRankedCars(List<ProductionRemoteControlCar> cars) {
+        List<ProductionRemoteControlCar> rankings = new ArrayList<>(cars);
         Collections.sort(rankings);
-
         return rankings;
     }
 }
