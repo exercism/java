@@ -73,7 +73,7 @@ subprojects {
 
     // When running the standard test task, make sure we prepopulate the test source set with the
     // @Ignore-stripped tests.
-    test.dependsOn(copyTestsFilteringIgnores)
+    compileTestJava.dependsOn(copyTestsFilteringIgnores)
   }
 
 
