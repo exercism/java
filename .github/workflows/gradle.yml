@@ -19,7 +19,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Compile and checkstyle with Gradle
-        run: cd exercises && ../gradlew check compileStarterSourceJava --parallel --continue --info
+        run: cd exercises && ../gradlew check compileStarterSourceJava --exclude-task test --continue
 
   test:
     runs-on: ubuntu-latest
