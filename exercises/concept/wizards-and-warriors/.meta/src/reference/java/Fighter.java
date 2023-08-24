@@ -35,6 +35,11 @@ class Wizard extends Fighter {
     boolean isSpellPrepared = false;
 
     @Override
+    public String toString() {
+        return "Fighter is a Wizard";
+    }
+
+    @Override
     boolean isVulnerable() {
         if (isSpellPrepared == false) {
             return true;
