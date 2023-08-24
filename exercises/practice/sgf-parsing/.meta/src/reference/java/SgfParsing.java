@@ -107,9 +107,6 @@ public class SgfParsing {
         while (character == '\\') {
             character = input.charAt(++index);
         }
-        if (character == '\t') {
-            character = ' ';
-        }
         buffer.append(character);
         return index;
     }

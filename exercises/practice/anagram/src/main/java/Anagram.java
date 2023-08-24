@@ -1,13 +1,12 @@
 import java.util.List;
 
 class Anagram {
-
-    Anagram(String word) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    public Anagram(String word) {
+        throw new UnsupportedOperationException("Please implement the Anagram(String word) constructor");
     }
 
-    List<String> match(List<String> candidates) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    public List<String> match(List<String> candidates) {
+        throw new UnsupportedOperationException("Please implement the match() method");
     }
 
 }
