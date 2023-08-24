@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class PythagoreanTriplet {
 
@@ -35,8 +34,9 @@ public class PythagoreanTriplet {
         }
 
         public List<PythagoreanTriplet> build() {
-            if (limit == 0)
+            if (limit == 0) {
                 limit = sum / 2;
+            }
             int start = (int) Math.sqrt(sum);
             for (int a = start; a <= limit; a++) {
                 for (int b = a; b <= limit; b++) {
