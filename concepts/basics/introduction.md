@@ -24,7 +24,7 @@ class Calculator {
 }
 ```
 
-A function within a class is referred to as a _method_. Each _method_ can have zero or more parameters. All parameters must be explicitly typed, there is no type inference for parameters. Similarly, the return type must also be made explicit. Values are returned from _methods_ using the `return` keyword. To allow a _method_ to be called by other classes, the `public` access modifier must be added.
+A function within a class is referred to as a _method_. Each method can have zero or more parameters. All parameters must be explicitly typed, there is no type inference for parameters. Similarly, the return type must also be made explicit. Values are returned from methods using the `return` keyword. To allow a method to be called by other classes, the `public` access modifier must be added.
 
 ```java
 class Calculator {
@@ -34,10 +34,10 @@ class Calculator {
 }
 ```
 
-Invoking a method is done by specifying its class and method name and passing arguments for each of the method's parameters.
+Invoking/calling a method is done by specifying its class and method name and passing arguments for each of the method's parameters.
 
 ```java
-int sum = new Calculator().add(1, 2);
+int sum = new Calculator().add(1, 2);  // here the  "add" method has been called to perform the task of addition 
 ```
 
 Scope in Java is defined between the `{` and `}` characters.
