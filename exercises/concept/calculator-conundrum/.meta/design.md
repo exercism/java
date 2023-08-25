@@ -2,24 +2,20 @@
 
 ## Learning Objectives
 
-* Know the concept of exception handling in java
-* Know how to implement and handle exception in different ways
+- Know the concept of exception handling in Java.
+- Know how and when to throw an exception.
+- Know how to catch an exception.
 
-## Out of scope 
+## Out of scope
 
-* finally
+- The `finally` keyword.
 
 ## Concepts
 
-* exception-handling
-* try-catch
-* throw and throws keyword
-* user-defined exceptions
+- `exceptions`: know what exceptions are, how and when to throw an exception, know how to catch an exception.
 
 ## Prerequisites
 
-* `basics`: know how to define methods.
-* `conditionals`: know how to do conditional logic.
-* `switch-case`: know how to work with a switch-case conditionals.
-
-
+- `basics`: know how to define methods.
+- `conditionals-if`: know how to do conditional logic.
+- `switch-statement`: know how to work with a `switch` statement.

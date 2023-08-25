@@ -90,12 +90,12 @@
         "name": "Calculator Conundrum",
         "uuid": "9e62feec-c2c3-4fd6-94f5-0574cc65447d",
         "concepts": [
-          "exception-handling"
+          "exceptions"
         ],
         "prerequisites": [
-          "conditionals",
-          "switch-case",
-          "basics"
+          "basics",
+          "conditionals-if",
+          "switch-statement"
         ],
         "status": "wip"
       },
