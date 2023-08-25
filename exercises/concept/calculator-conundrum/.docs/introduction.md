@@ -1,9 +1,11 @@
-# Exception Handling in Java
+# Introduction
+
+## Exceptions
 
 Exception Handling in Java is one of the powerful mechanism to handle errors so that the normal flow of the application can be maintained.
 Good exception handling can re-route the program to give the user still a positive experience.
 
-## Why use Exception Handling with an example
+### Why use Exception Handling with an example
 
 ```java
 public static List<Player> getPlayers() throws IOException {
@@ -16,10 +18,10 @@ public static List<Player> getPlayers() throws IOException {
 }
 ```
 
-This code chooses not to handle the IOException, passing it up the call stack instead. 
+This code chooses not to handle the `IOException`, passing it up the call stack instead.
 In an idealized environment, the code works fine.
 
-But what might happen in production if players.dat is missing?
+But what might happen in production if `players.dat` is missing?
 
 ```log
 Exception in thread "main" java.nio.file.NoSuchFileException: players.dat <-- players.dat file doesn't exist
@@ -34,36 +36,41 @@ Exception in thread "main" java.nio.file.NoSuchFileException: players.dat <-- pl
 
 We must handle these conditions because they affect the flow of the application negatively and form exceptions.
 
-## Types of Java Exceptions
+### Types of Java Exceptions
 
-There are mainly two types of exceptions: checked and unchecked. An error is considered as the unchecked exception. However, according to Oracle, there are three types of exceptions namely:
+There are mainly two types of exceptions: checked and unchecked. An error is considered as the unchecked exception.
+However, according to Oracle, there are three types of exceptions namely:
 
 1. Checked Exception
 2. Unchecked Exception
 3. Error
 
-### 1. Checked Exception
-The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions. 
-For example, IOException, SQLException, etc. Checked exceptions are checked at compile-time.
+#### 1. Checked Exception
 
-### 2. Unchecked Exception
-The classes that inherit the RuntimeException are known as unchecked exceptions. 
-For example, ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc. 
+The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions.
+For example, `IOException`, `SQLException`, etc. Checked exceptions are checked at compile-time.
+
+#### 2. Unchecked Exception
+
+The classes that inherit the `RuntimeException` are known as unchecked exceptions.
+For example, `ArithmeticException`, `NullPointerException`, `ArrayIndexOutOfBoundsException`, etc.
 Unchecked exceptions are not checked at compile-time, but they are checked at runtime.
 
-### 3. Error
-Error is irrecoverable. 
-Some example of errors are OutOfMemoryError, VirtualMachineError, AssertionError etc.
+#### 3. Error
 
-## Handling Exceptions
+Error is irrecoverable.
+Some example of errors are `OutOfMemoryError`, `VirtualMachineError`, `AssertionError` etc.
 
-### Try-Catch block
+### Handling Exceptions
+
+#### Try-Catch block
 
 The `try` statement allows you to define a block of code to be tested for errors while it is being executed.
 
 The `catch` statement allows you to define a block of code to be executed, if an error occurs in the try block.
 
 For example:
+
 ```java
 public int getPlayerScore(String playerFile) {
     try {
@@ -75,17 +82,19 @@ public int getPlayerScore(String playerFile) {
 }
 ```
 
-### The Throw/Throws keyword
+#### The Throw/Throws keyword
 
-If a method does not handle a checked exception, the method must declare it using the `throws` keyword. 
+If a method does not handle a checked exception, the method must declare it using the `throws` keyword.
 The `throws` keyword appears at the end of a method's signature.
 
 You can throw an exception, either a newly instantiated one or an exception that you just caught, by using the `throw` keyword.
 
-#### Example
+For example:
+
 ```java
 import java.io.*;
-public class className {
+
+public class BankAccount {
 
    public void deposit(double amount) throws RemoteException {
       // Method implementation
@@ -95,11 +104,11 @@ public class className {
 }
 ```
 
-### Finally
+#### Finally
 
 The `finally` statement (optional) lets you execute code, after `try...catch`, **regardless of the result**.
 
-#### Example
+For example:
 
 ```java
 public class Main {
@@ -120,19 +129,19 @@ The output will be:
 
 ```
 Something went wrong.
-The 'try catch' is finished. 
+The 'try catch' is finished.
 ```
 
-## User-Defined Exceptions
+### User-Defined Exceptions
 
-You can create your own exceptions in Java. 
+You can create your own exceptions in Java.
 Keep the following points in mind when writing your own exception classes −
 
-* All exceptions must be a child of Throwable.
+- All exceptions must be a child of Throwable.
 
-* If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.
+- If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.
 
-* If you want to write a runtime exception, you need to extend the RuntimeException class.
+- If you want to write a runtime exception, you need to extend the RuntimeException class.
 
 We can define our own Exception class as below:
 
