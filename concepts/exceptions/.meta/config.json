@@ -1,0 +1,5 @@
+{
+  "blurb": "Exceptions should be thrown when an error that needs special handling occurs.",
+  "authors": ["sanderploegsma"],
+  "contributors": []
+}

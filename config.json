@@ -1967,6 +1967,11 @@
       "name": "Constructors"
     },
     {
+      "uuid": "b7f8e129-303c-45b8-ac07-297bfd5a9906",
+      "slug": "exceptions",
+      "name": "Exceptions"
+    },
+    {
       "uuid": "3a1f7a96-b4a5-43d3-99e2-7c248e74e6c8",
       "slug": "foreach-loops",
       "name": "For-Each Loops"
