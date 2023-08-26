@@ -25,7 +25,8 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/QueenAttackCalculator.java"
+      "src/main/java/QueenAttackCalculator.java",
+      "src/main/java/Queen.java"
     ],
     "test": [
       "src/test/java/QueenAttackCalculatorTest.java"
