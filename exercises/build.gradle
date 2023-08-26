@@ -57,7 +57,10 @@ subprojects {
       logCompileTaskSourcePath(project, "compileJava") // Corresponds to the "main" source set.
       logCompileTaskSourcePath(project, "compileStarterSourceJava")
       logCompileTaskSourcePath(project, "compileTestJava")
+    }
 
+    configurations {
+      starterSourceImplementation.extendsFrom implementation
     }
 
     // configuration of the linter
