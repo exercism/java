@@ -16,7 +16,7 @@ count = 2;     // Update to new value
 // count = false;
 ```
 
-Java is an [object-oriented language][object-oriented programming] and requires all functions to be defined in a _class_. The `class` keyword is used to define a class.
+Java is an [object-oriented language][object-oriented-programming] and requires all functions to be defined in a _class_. The `class` keyword is used to define a class.
 
 ```java
 class Calculator {
