@@ -16,6 +16,10 @@ final class DoublyLinkedList<T> {
     }
 
     T pop() {
+        if (head == null) {
+            return null;
+        }
+
         head = head.prev;
         return shift();
     }
@@ -26,6 +30,10 @@ final class DoublyLinkedList<T> {
     }
 
     T shift() {
+        if (head == null) {
+            return null;
+        }
+
         T value = head.value;
 
         Element<T> newHead = head.next;
