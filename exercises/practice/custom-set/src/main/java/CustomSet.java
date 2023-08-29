@@ -1,7 +1,6 @@
 import java.util.Collection;
 
 class CustomSet<T> {
-
     CustomSet() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
@@ -43,4 +42,7 @@ class CustomSet<T> {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
+    boolean isSubset(CustomSet<T> other) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 }
