@@ -1,4 +1,8 @@
 class Zipper {
+    Zipper up;
+    Zipper left;
+    Zipper right;
+
     Zipper(int val) {
         throw new UnsupportedOperationException("Please implement the Zipper(int) constructor.");
     }
