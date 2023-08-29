@@ -24,7 +24,7 @@ class Robot {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    void simulate() {
+    void simulate(String instructions) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
