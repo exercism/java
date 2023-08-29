@@ -6,11 +6,11 @@ class PythagoreanTriplet {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    TripletListBuilder makeTripletsList() {
+    static TripletListBuilder makeTripletsList() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    class TripletListBuilder {
+    static class TripletListBuilder {
 
         TripletListBuilder thatSumTo(int sum) {
             throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
