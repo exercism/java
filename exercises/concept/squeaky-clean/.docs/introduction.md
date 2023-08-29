@@ -3,6 +3,7 @@
 The Java `char` type represents the smallest addressable components of text.
 Multiple `char`s can comprise a string such as `"word"` or `char`s can be
 processed independently. Their literals have single quotes e.g. `'A'`.
+Every `char` type data takes up one byte(8 bit) of memory.
 
 Java `char`s support Unicode encoding so in addition to the Latin character set
 pretty much all the writing systems in use worldwide can be represented,
