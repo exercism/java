@@ -1,10 +1,14 @@
-/*
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Meetup {
 
-Please remove this comment when submitting your solution.
+    Meetup(int monthOfYear, int year) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    LocalDate day(DayOfWeek dayOfWeek, MeetupSchedule schedule) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}

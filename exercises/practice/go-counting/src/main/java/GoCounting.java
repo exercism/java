@@ -1,10 +1,23 @@
-/*
+import java.awt.Point;
+import java.util.Map;
+import java.util.Set;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class GoCounting {
 
-Please remove this comment when submitting your solution.
+    GoCounting(String board) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    Player getTerritoryOwner(int x, int y) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Set<Point> getTerritory(int x, int y) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Map<Player, Set<Point>> getTerritories() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}

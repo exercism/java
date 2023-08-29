@@ -1,6 +1,6 @@
-class RomanNumerals {
+class Queen {
 
-    RomanNumerals(int number) {
+    Queen(int row, int column) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

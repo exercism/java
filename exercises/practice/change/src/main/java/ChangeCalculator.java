@@ -1,10 +1,13 @@
-/*
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class ChangeCalculator {
 
-Please remove this comment when submitting your solution.
+    ChangeCalculator(List<Integer> currencyCoins) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    List<Integer> computeMostEfficientChange(int grandTotal) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}
