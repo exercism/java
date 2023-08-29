@@ -1,5 +1,7 @@
 class NeedForSpeed {
-    // TODO: define the constructor for the 'NeedForSpeed' class
+    NeedForSpeed(int speed, int batteryDrain) {
+        throw new UnsupportedOperationException("Please implement the NeedForSpeed constructor");
+    }
 
     public boolean batteryDrained() {
         throw new UnsupportedOperationException("Please implement the NeedForSpeed.batteryDrained() method");
@@ -19,7 +21,9 @@ class NeedForSpeed {
 }
 
 class RaceTrack {
-    // TODO: define the constructor for the 'RaceTrack' class
+    RaceTrack(int distance) {
+        throw new UnsupportedOperationException("Please implement the RaceTrack constructor");
+    }
 
     public boolean tryFinishTrack(NeedForSpeed car) {
         throw new UnsupportedOperationException("Please implement the RaceTrack.tryFinishTrack() method");
