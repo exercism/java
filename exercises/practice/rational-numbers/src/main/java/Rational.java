@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 class Rational {
 
     Rational(int numerator, int denominator) {
@@ -12,6 +14,34 @@ class Rational {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
+    Rational add(Rational other) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Rational subtract(Rational other) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Rational multiply(Rational other) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Rational divide(Rational other) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Rational abs() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    Rational pow(int power) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+    double exp(double exponent) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
     @Override
     public String toString() {
         return String.format("%d/%d", this.getNumerator(), this.getDenominator());
@@ -19,22 +49,16 @@ class Rational {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || !this.getClass().isAssignableFrom(obj.getClass())) {
-            return false;
+        if (obj instanceof Rational other) {
+            return this.getNumerator() == other.getNumerator()
+                    && this.getDenominator() == other.getDenominator();
         }
 
-        Rational other = (Rational) obj;
-        return this.getNumerator() == other.getNumerator()
-            && this.getDenominator() == other.getDenominator();
+        return false;
     }
 
     @Override
     public int hashCode() {
-        int prime = 31;
-        int result = 1;
-        result = prime * result + this.getNumerator();
-        result = prime * result + this.getDenominator();
-
-        return result;
+        return Objects.hash(this.getDenominator(), this.getDenominator());
     }
 }
