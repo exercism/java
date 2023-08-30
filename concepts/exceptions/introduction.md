@@ -41,7 +41,7 @@ All exceptions in Java that inherit from `Error` are considered errors.
 
 ## Throwing exceptions
 
-A method in Java can throw an exception by using the `throw` keyword.
+A method in Java can throw an exception by using the `throw` statement.
 
 ### Throwing a checked exception
 
