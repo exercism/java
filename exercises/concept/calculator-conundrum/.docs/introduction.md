@@ -2,150 +2,134 @@
 
 ## Exceptions
 
-Exception Handling in Java is one of the powerful mechanism to handle errors so that the normal flow of the application can be maintained.
-Good exception handling can re-route the program to give the user still a positive experience.
+The Java programming language uses _exceptions_ to handle errors and other exceptional events.
 
-### Why use Exception Handling with an example
+### What is an exception
+
+An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions.
+
+Java distinguishes three types of exceptions:
+
+1. Checked exceptions
+2. Unchecked exceptions
+3. Errors
+
+#### Checked exceptions
+
+_Checked exceptions_ are exceptional conditions that an application should anticipate and recover from.
+An example of a checked exception is the `FileNotFoundException` which occurs when a method is trying to read a file that does not exist.
+
+This type of exception is checked at compile-time: methods that throw checked exceptions should specify this in their method signature, and code calling a method that might throw a checked exception is required to handle it or the code will not compile.
+
+All exceptions in Java that do not inherit from `RuntimeException` or `Error` are considered checked exceptions.
+
+#### Unchecked exceptions
+
+_Unchecked exceptions_ are exceptional conditions that an application usually cannot anticipate or recover from.
+An example of an unchecked exception is the `NullPointerException` which occurs when a method that is expecting a non-null value but receives `null`.
+
+This type of exception is not checked at compile-time: methods that throw unchecked exceptions are not required to specify this in their method signature, and code calling a method that might throw an unchecked exception is not required to handle it.
+
+All exceptions in Java that inherit from `RuntimeException` are considered unchecked exceptions.
+
+#### Errors
+
+_Errors_ are exceptional conditions that are external to an application.
+An example of an error is the `OutOfMemoryError` which occurs when an application is trying to use more memory than is available on the system.
+
+Like unchecked exceptions, errors are not checked at compile-time. They are not usually thrown from application code.
+
+All exceptions in Java that inherit from `Error` are considered errors.
+
+### Throwing exceptions
+
+A method in Java can throw an exception by using the `throw` keyword.
+
+#### Throwing a checked exception
+
+When throwing a checked exception from a method, it is required to specify this in the method signature by using the `throws` keyword, as shown in the example below.
+This forces calling code to anticipate that an exception might be thrown and handle it accordingly.
 
 ```java
-public static List<Player> getPlayers() throws IOException {
-    Path path = Paths.get("players.dat");
-    List<String> players = Files.readAllLines(path);
+public class InsufficientBalanceException extends Exception {
 
-    return players.stream()
-      .map(Player::new)
-      .collect(Collectors.toList());
 }
-```
-
-This code chooses not to handle the `IOException`, passing it up the call stack instead.
-In an idealized environment, the code works fine.
-
-But what might happen in production if `players.dat` is missing?
-
-```log
-Exception in thread "main" java.nio.file.NoSuchFileException: players.dat <-- players.dat file doesn't exist
-    at sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
-    at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
-    // ... more stack trace
-    at java.nio.file.Files.readAllLines(Unknown Source)
-    at java.nio.file.Files.readAllLines(Unknown Source)
-    at Exceptions.getPlayers(Exceptions.java:12) <-- Exception arises in getPlayers() method, on line 12
-    at Exceptions.main(Exceptions.java:19) <-- getPlayers() is called by main(), on line 19
-```
-
-We must handle these conditions because they affect the flow of the application negatively and form exceptions.
-
-### Types of Java Exceptions
-
-There are mainly two types of exceptions: checked and unchecked. An error is considered as the unchecked exception.
-However, according to Oracle, there are three types of exceptions namely:
-
-1. Checked Exception
-2. Unchecked Exception
-3. Error
-
-#### 1. Checked Exception
-
-The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions.
-For example, `IOException`, `SQLException`, etc. Checked exceptions are checked at compile-time.
-
-#### 2. Unchecked Exception
-
-The classes that inherit the `RuntimeException` are known as unchecked exceptions.
-For example, `ArithmeticException`, `NullPointerException`, `ArrayIndexOutOfBoundsException`, etc.
-Unchecked exceptions are not checked at compile-time, but they are checked at runtime.
-
-#### 3. Error
-
-Error is irrecoverable.
-Some example of errors are `OutOfMemoryError`, `VirtualMachineError`, `AssertionError` etc.
-
-### Handling Exceptions
-
-#### Try-Catch block
-
-The `try` statement allows you to define a block of code to be tested for errors while it is being executed.
-
-The `catch` statement allows you to define a block of code to be executed, if an error occurs in the try block.
-
-For example:
-
-```java
-public int getPlayerScore(String playerFile) {
-    try {
-        Scanner contents = new Scanner(new File(playerFile));
-        return Integer.parseInt(contents.nextLine());
-    } catch (FileNotFoundException noFile) {
-        throw new IllegalArgumentException("File not found", noFile);
-    }
-}
-```
-
-#### The Throw/Throws keyword
-
-If a method does not handle a checked exception, the method must declare it using the `throws` keyword.
-The `throws` keyword appears at the end of a method's signature.
-
-You can throw an exception, either a newly instantiated one or an exception that you just caught, by using the `throw` keyword.
-
-For example:
-
-```java
-import java.io.*;
 
 public class BankAccount {
+  public void withdraw(double amount) throws InsufficientBalanceException {
+    if (balance < amount) {
+      throw new InsufficientBalanceException();
+    }
 
-   public void deposit(double amount) throws RemoteException {
-      // Method implementation
-      throw new RemoteException();
-   }
-   // Remainder of class definition
+    // rest of the method implementation
+  }
 }
 ```
 
-#### Finally
+#### Throwing an unchecked exception
 
-The `finally` statement (optional) lets you execute code, after `try...catch`, **regardless of the result**.
-
-For example:
+When throwing an unchecked exception from a method, it is not required to specify this in the method signature - although it is supported.
 
 ```java
-public class Main {
-  public static void main(String[] args) {
+public class BankAccount {
+  public void withdraw(double amount) {
+    if (amount < 0) {
+      throw new IllegalArgumentException("Cannot withdraw a negative amount");
+    }
+
+    // rest of the method implementation
+  }
+}
+```
+
+### Handling exceptions
+
+Handling exceptions in Java is done with the `try`, `catch` and `finally` keywords.
+
+- Code statements that might throw an exception should be wrapped in a `try` block.
+- The `try` block is followed by one or more `catch` blocks that catch the exceptions thrown in the `try` block.
+- The `catch` blocks are optionally followed by a `finally` block that always executes after the `try` block, regardless of whether an exception was thrown or not.
+
+The following example shows how these keywords work:
+
+```java
+public class ATM {
+  public void withdraw(BankAccount bankAccount, double amount) {
     try {
-      int[] myNumbers = {1, 2, 3};
-      System.out.println(myNumbers[10]);
-    } catch (Exception e) {
-      System.out.println("Something went wrong.");
+      System.out.println("Withdrawing " + amount);
+      bankAccount.withdraw(amount);
+      System.out.println("Withdrawal succeeded");
+    } catch (InsufficientBalanceException) {
+      System.out.println("Withdrawal failed: insufficient balance");
+    } catch (RuntimeException e) {
+      System.out.println("Withdrawal failed: " + e.getMessage());
     } finally {
-      System.out.println("The 'try catch' is finished.");
+      System.out.println("Current balance: " + bankAccount.getBalance());
     }
   }
 }
 ```
 
-The output will be:
+In this example, when no exception is thrown, the following is printed:
 
 ```
-Something went wrong.
-The 'try catch' is finished.
+Withdrawing 10.0
+Withdrawal succeeded
+Current balance: 5.0
 ```
 
-### User-Defined Exceptions
+However, should the `bankAccount.withdraw(amount)` statement throw an `InsufficientBalanceException`, the following is printed:
 
-You can create your own exceptions in Java.
-Keep the following points in mind when writing your own exception classes −
+```
+Withdrawing 10.0
+Withdrawal failed: insufficient balance
+Current balance: 5.0
+```
 
-- All exceptions must be a child of Throwable.
+Or, in case an unchecked exception is thrown by the `bankAccount.withdraw(amount)`, the following is printed:
 
-- If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.
-
-- If you want to write a runtime exception, you need to extend the RuntimeException class.
-
-We can define our own Exception class as below:
-
-```java
-class MyException extends Exception {
-}
+```
+Withdrawing -10.0
+Withdrawal failed: Cannot withdraw a negative amount
+Current balance: 5.0
 ```
