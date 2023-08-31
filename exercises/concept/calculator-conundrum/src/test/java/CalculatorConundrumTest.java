@@ -7,38 +7,38 @@ public class CalculatorConundrumTest {
 
     @Test
     public void additionWithSmallOperands() {
-        assertThat(CalculatorConundrum.calculate(22, 25, "+")).isEqualTo("22 + 25 = 47");
+        assertThat(new CalculatorConundrum().calculate(22, 25, "+")).isEqualTo("22 + 25 = 47");
     }
 
     @Test
     public void additionWithLargeOperands() {
-        assertThat(CalculatorConundrum.calculate(378_961, 399_635, "+")).isEqualTo("378961 + 399635 = 778596");
+        assertThat(new CalculatorConundrum().calculate(378_961, 399_635, "+")).isEqualTo("378961 + 399635 = 778596");
     }
 
     @Test
     public void multiplicationWithSmallOperands() {
-        assertThat(CalculatorConundrum.calculate(3, 21, "*")).isEqualTo("3 * 21 = 63");
+        assertThat(new CalculatorConundrum().calculate(3, 21, "*")).isEqualTo("3 * 21 = 63");
     }
 
     @Test
     public void multiplicationWithLargeOperands() {
-        assertThat(CalculatorConundrum.calculate(72_441, 2_048, "*")).isEqualTo("72441 * 2048 = 148359168");
+        assertThat(new CalculatorConundrum().calculate(72_441, 2_048, "*")).isEqualTo("72441 * 2048 = 148359168");
     }
 
     @Test
     public void divisionWithSmallOperands() {
-        assertThat(CalculatorConundrum.calculate(72, 9, "/")).isEqualTo("72 / 9 = 8");
+        assertThat(new CalculatorConundrum().calculate(72, 9, "/")).isEqualTo("72 / 9 = 8");
     }
 
     @Test
     public void divisionWithLargeOperands() {
-        assertThat(CalculatorConundrum.calculate(1_338_800, 83_675, "/")).isEqualTo("1338800 / 83675 = 16");
+        assertThat(new CalculatorConundrum().calculate(1_338_800, 83_675, "/")).isEqualTo("1338800 / 83675 = 16");
     }
 
     @Test
     public void throwExceptionForDivisionByZero() {
         assertThatExceptionOfType(IllegalOperationException.class)
-                .isThrownBy(() -> CalculatorConundrum.calculate(33, 0, "/"))
+                .isThrownBy(() -> new CalculatorConundrum().calculate(33, 0, "/"))
                 .withMessage("Division by zero is not allowed")
                 .withCauseInstanceOf(ArithmeticException.class);
     }
@@ -48,21 +48,21 @@ public class CalculatorConundrumTest {
         String invalidOperation = "**";
         String expectedMessage = String.format("Operation '%s' does not exist", invalidOperation);
         assertThatExceptionOfType(IllegalOperationException.class)
-                .isThrownBy(() -> CalculatorConundrum.calculate(3, 78, invalidOperation))
+                .isThrownBy(() -> new CalculatorConundrum().calculate(3, 78, invalidOperation))
                 .withMessage(expectedMessage);
     }
 
     @Test
     public void throwExceptionForNullAsOperation() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> CalculatorConundrum.calculate(66, 65, null))
+                .isThrownBy(() -> new CalculatorConundrum().calculate(66, 65, null))
                 .withMessage("Operation cannot be null");
     }
 
     @Test
     public void throwExceptionForAnEmptyStringOperation() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> CalculatorConundrum.calculate(34, 324, ""))
+                .isThrownBy(() -> new CalculatorConundrum().calculate(34, 324, ""))
                 .withMessage("Operation cannot be empty");
     }
 }

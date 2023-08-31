@@ -6,13 +6,15 @@ To make matters simple, methods for calculating addition, multiplication and div
 The goal is to have a working calculator that returns a String with the following pattern: `16 + 51 = 67`, when provided with arguments `16`, `51` and `+`.
 
 ```java
-CalculatorConundrum.calculate(16, 51, "+");
+CalculatorConundrum calculator = new CalculatorConundrum();
+
+calculator.calculate(16, 51, "+");
 // => returns "16 + 51 = 67"
 
-CalculatorConundrum.calculate(32, 6, "*");
+calculator.calculate(32, 6, "*");
 // => returns "32 * 6 = 192"
 
-CalculatorConundrum.calculate(512, 4, "/");
+calculator.calculate(512, 4, "/");
 // => returns "512 / 4 = 128"
 ```
 
@@ -36,13 +38,13 @@ Update the `CalculatorConundrum.calculate()` method to handle illegal operations
 - When the `operation` argument is any operation other than `+`, `*`, or `/`, an `IllegalOperationException` should be thrown with the message `Operation '{operation}' does not exist`.
 
 ```java
-CalculatorConundrum.calculate(10, 1, null);
+calculator.calculate(10, 1, null);
 // => throws IllegalArgumentException with message "Operation cannot be null"
 
-CalculatorConundrum.calculate(10, 1, "");
+calculator.calculate(10, 1, "");
 // => throws IllegalArgumentException with message "Operation cannot be empty"
 
-CalculatorConundrum.calculate(10, 1, "-");
+calculator.calculate(10, 1, "-");
 // => throws IllegalOperationException with message "Operation '-' does not exist"
 ```
 
@@ -52,6 +54,6 @@ In Java, attempting to divide by zero throws an `ArithmeticException`.
 Update the `CalculatorConundrum.calculate()` method to catch this exception and then throw an `IllegalOperationException` with the message `Division by zero is not allowed` and the caught `ArithmeticException` as its cause.
 
 ```java
-CalculatorConundrum.calculate(512, 0, "/");
+calculator.calculate(512, 0, "/");
 // => throws IllegalOperationException with message "Division by zero is not allowed"
 ```
