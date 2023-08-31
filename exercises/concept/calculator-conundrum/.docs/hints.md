@@ -2,17 +2,14 @@
 
 ## 1. Implement the method calculate to support a few basic operations
 
-* Use a `switch-case` block to match different operations and implement them using the `SimpleOperation` class.
+- Use a `switch` statement to match different operations and implement them using the `SimpleOperation` class.
 
 ## 2. Handle illegal operations
 
+- You cannot check for `null` inside a `switch` statement.
+- Use a `default` case for anything else at the end of the switch.
 
-* Check for `null` operations before the switch.
-* Add a case to the switch for the empty String.
-* Use a default for anything else at the end of the switch.
-* Throw an `IllegalOpertionException` with appropriate messages in different cases.
+## 3. Handle the exception thrown when dividing by zero
 
-## 3. Handle the thrown DivideByZero exceptions
-
-* Use a `try-catch` block to catch `ArithmeticException`
-* Pass both the `message` and the `ArithmeticException` as the `cause` parameter when throwing the exception.
+- Use a `try-catch` block to catch the `ArithmeticException` thrown when dividing by zero.
+- The `IllegalOperationException` class has a constructor that takes a message and a cause as its parameters.
