@@ -4,14 +4,14 @@ public class ElonsToyCar {
     }
 
     public String distanceDisplay() {
-        throw new UnsupportedOperationException("Please implement the (static) RemoteControlCar.distanceDisplay()  method");
+        throw new UnsupportedOperationException("Please implement the RemoteControlCar.distanceDisplay()  method");
     }
 
     public String batteryDisplay() {
-        throw new UnsupportedOperationException("Please implement the (static) RemoteControlCar.batteryDisplay()  method");
+        throw new UnsupportedOperationException("Please implement the RemoteControlCar.batteryDisplay()  method");
     }
 
     public void drive() {
-        throw new UnsupportedOperationException("Please implement the (static) RemoteControlCar.drive()  method");
+        throw new UnsupportedOperationException("Please implement the RemoteControlCar.drive()  method");
     }
 }
