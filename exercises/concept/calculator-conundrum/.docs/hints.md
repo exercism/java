@@ -2,7 +2,7 @@
 
 ## 1. Implement the method calculate to support a few basic operations
 
-- Use a `switch` statement to match different operations and implement them using the `SimpleOperation` class.
+- Use a `switch` statement to match different operations.
 
 ## 2. Handle illegal operations
 
