@@ -97,7 +97,7 @@
           "conditionals-if",
           "switch-statement"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "squeaky-clean",
