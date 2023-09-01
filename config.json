@@ -1873,11 +1873,10 @@
         "slug": "connect",
         "name": "Connect",
         "uuid": "1532b9a8-7e0d-479f-ad55-636e01e9d19f",
-        "practices": ["enums", "switch-statement"],
+        "practices": ["switch-statement"],
         "prerequisites": [
           "strings",
           "chars",
-          "enums",
           "arrays",
           "conditionals-if"
         ],
@@ -1906,8 +1905,7 @@
           "strings",
           "conditionals-if",
           "lists",
-          "for-loops",
-          "maps"
+          "for-loops"
         ],
         "difficulty": 8
        },
@@ -1916,7 +1914,7 @@
         "name": "Ledger",
         "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
         "practices": [],
-        "prerequisites": ["strings", "string-formatting"],
+        "prerequisites": ["strings"],
         "difficulty": 5
        },
        {
