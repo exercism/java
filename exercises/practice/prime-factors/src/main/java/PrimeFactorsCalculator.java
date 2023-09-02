@@ -2,7 +2,7 @@ import java.util.List;
 
 class PrimeFactorsCalculator {
 
-    List<Integer> calculatePrimeFactorsOf(int number) {
+    List<Long> calculatePrimeFactorsOf(long number) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

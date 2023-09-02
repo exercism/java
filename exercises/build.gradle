@@ -31,13 +31,19 @@ subprojects {
     // skip project named 'concept' or 'practice'
     // they are only folders containing exercises
     if(project.name == 'concept' || project.name == 'practice')
-      return;
+      return
 
     sourceSets {
       // Set the directory containing the reference solution as the default source set. Default
       // compile tasks will now run against this source set.
       main {
         java.srcDirs = [".meta/src/reference/java"]
+      }
+
+      // Set the directory containing the @Ignore-stripped tests as the default test source set.
+      // Default test tasks will now run against this source set.
+      test {
+        java.srcDirs = [generatedTestSourceDir]
       }
 
       // Define a custom source set named "starterSource" that points to the starter implementations
@@ -47,20 +53,24 @@ subprojects {
         java.srcDirs = ["src/main/java"]
       }
 
-      // Set the directory containing the @Ignore-stripped tests as the default test source set.
-      // Default test tasks will now run against this source set.
-      test {
-        java.srcDirs = [generatedTestSourceDir]
+      // Define a custom source set named "starterTest" that points to the tests delivered to users.
+      // We can then use the generated "compileStarterTestJava" task to verify that the tests compile
+      // cleanly against the starter source.
+      starterTest {
+        java.srcDirs = ["src/test/java"]
+        compileClasspath += starterSource.runtimeClasspath
       }
 
       // Log the source paths associated with each source set to verify they are what we expect.
-      logCompileTaskSourcePath(project, "compileJava") // Corresponds to the "main" source set.
-      logCompileTaskSourcePath(project, "compileStarterSourceJava")
+      logCompileTaskSourcePath(project, "compileJava")
       logCompileTaskSourcePath(project, "compileTestJava")
+      logCompileTaskSourcePath(project, "compileStarterSourceJava")
+      logCompileTaskSourcePath(project, "compileStarterTestJava")
     }
 
     configurations {
       starterSourceImplementation.extendsFrom implementation
+      starterTestImplementation.extendsFrom testImplementation
     }
 
     // configuration of the linter

@@ -18,8 +18,12 @@ jobs:
           distribution: "temurin"
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Compile and checkstyle with Gradle
-        run: cd exercises && ../gradlew check compileStarterSourceJava --exclude-task test --continue
+      - name: Check if tests compile cleanly with starter sources
+        working-directory: exercises
+        run: ../gradlew compileStarterTestJava --continue
+      - name: Run checkstyle
+        working-directory: exercises
+        run: ../gradlew check --exclude-task test --continue
 
   test:
     runs-on: ubuntu-latest
@@ -33,5 +37,6 @@ jobs:
           distribution: "temurin"
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Test all exercises with Gradle
-        run: cd exercises && ../gradlew test --continue
+      - name: Test all reference implementations with Gradle
+        working-directory: exercises
+        run: ../gradlew test --continue
