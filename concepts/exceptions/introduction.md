@@ -5,6 +5,8 @@ The Java programming language uses _exceptions_ to handle errors and other excep
 ## What is an exception
 
 An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions.
+Exceptions are raised explicitly in Java, and the act of raising an exception is called _throwing an exception_.
+The act of handling an exception is called _catching an exception_.
 
 Java distinguishes three types of exceptions:
 
