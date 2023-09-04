@@ -16,6 +16,5 @@
 
 ## Prerequisites
 
-- `basics`: know how to define methods.
 - `conditionals-if`: know how to do conditional logic.
 - `switch-statement`: know how to work with a `switch` statement.
