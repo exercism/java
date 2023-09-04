@@ -134,9 +134,15 @@ Withdrawal failed: Cannot withdraw a negative amount
 Current balance: 5.0
 ```
 
+## When not to use exceptions
+
+As stated previously, exceptions are events that disrupt the normal flow of instructions, and are used to handle _exceptional events_.
+It is therefore [not recommended to use exceptions for flow control][dont-use-exceptions-for-flow-control] in your application.
+
 [exceptions]: https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
 [throw-statement]: https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html
 [try-block]: https://docs.oracle.com/javase/tutorial/essential/exceptions/try.html
 [catch-block]: https://docs.oracle.com/javase/tutorial/essential/exceptions/catch.html
 [finally-block]: https://docs.oracle.com/javase/tutorial/essential/exceptions/finally.html
 [throws-keyword]: https://docs.oracle.com/javase/tutorial/essential/exceptions/declaring.html
+[dont-use-exceptions-for-flow-control]: https://web.archive.org/web/20140430044213/http://c2.com/cgi-bin/wiki?DontUseExceptionsForFlowControl
