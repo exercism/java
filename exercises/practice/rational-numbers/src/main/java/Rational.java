@@ -59,6 +59,6 @@ class Rational {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getDenominator(), this.getDenominator());
+        return Objects.hash(this.getNumerator(), this.getDenominator());
     }
 }
