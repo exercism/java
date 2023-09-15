@@ -1,10 +1,8 @@
 # Introduction
 
-## Exceptions
-
 The Java programming language uses _exceptions_ to handle errors and other exceptional events.
 
-### What is an exception
+## What is an exception
 
 An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions.
 Exceptions are raised explicitly in Java, and the act of raising an exception is called _throwing an exception_.
@@ -16,7 +14,7 @@ Java distinguishes three types of exceptions:
 2. Unchecked exceptions
 3. Errors
 
-#### Checked exceptions
+### Checked exceptions
 
 _Checked exceptions_ are exceptional conditions that an application should anticipate and recover from.
 An example of a checked exception is the `FileNotFoundException` which occurs when a method is trying to read a file that does not exist.
@@ -25,7 +23,7 @@ This type of exception is checked at compile-time: methods that throw checked ex
 
 All exceptions in Java that do not inherit from `RuntimeException` or `Error` are considered checked exceptions.
 
-#### Unchecked exceptions
+### Unchecked exceptions
 
 _Unchecked exceptions_ are exceptional conditions that an application usually cannot anticipate or recover from.
 An example of an unchecked exception is the `NullPointerException` which occurs when a method that is expecting a non-null value but receives `null`.
@@ -34,7 +32,7 @@ This type of exception is not checked at compile-time: methods that throw unchec
 
 All exceptions in Java that inherit from `RuntimeException` are considered unchecked exceptions.
 
-#### Errors
+### Errors
 
 _Errors_ are exceptional conditions that are external to an application.
 An example of an error is the `OutOfMemoryError` which occurs when an application is trying to use more memory than is available on the system.
@@ -43,11 +41,11 @@ Like unchecked exceptions, errors are not checked at compile-time. They are not 
 
 All exceptions in Java that inherit from `Error` are considered errors.
 
-### Throwing exceptions
+## Throwing exceptions
 
 A method in Java can throw an exception by using the `throw` statement.
 
-#### Throwing a checked exception
+### Throwing a checked exception
 
 When throwing a checked exception from a method, it is required to specify this in the method signature by using the `throws` keyword, as shown in the example below.
 This forces calling code to anticipate that an exception might be thrown and handle it accordingly.
@@ -68,7 +66,7 @@ public class BankAccount {
 }
 ```
 
-#### Throwing an unchecked exception
+### Throwing an unchecked exception
 
 When throwing an unchecked exception from a method, it is not required to specify this in the method signature - although it is supported.
 
@@ -84,7 +82,7 @@ public class BankAccount {
 }
 ```
 
-### Handling exceptions
+## Handling exceptions
 
 Handling exceptions in Java is done with the `try`, `catch` and `finally` keywords.
 

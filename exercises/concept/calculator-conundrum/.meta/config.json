@@ -3,6 +3,9 @@
     "rv02",
     "jmrunkle"
   ],
+  "contributors": [
+    "sanderploegsma"
+  ],
   "files": {
     "solution": [
       "src/main/java/CalculatorConundrum.java"
@@ -14,8 +17,7 @@
       ".meta/src/reference/java/CalculatorConundrum.java"
     ],
     "editor": [
-      "src/main/java/IllegalOperationException.java",
-      "src/main/java/SimpleOperation.java"
+      "src/main/java/IllegalOperationException.java"
     ],
     "invalidator": [
       "build.gradle"

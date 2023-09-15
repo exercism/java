@@ -90,14 +90,13 @@
         "name": "Calculator Conundrum",
         "uuid": "9e62feec-c2c3-4fd6-94f5-0574cc65447d",
         "concepts": [
-          "exception-handling"
+          "exceptions"
         ],
         "prerequisites": [
-          "conditionals",
-          "switch-case",
-          "basics"
+          "conditionals-if",
+          "switch-statement"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "squeaky-clean",
@@ -1963,6 +1962,11 @@
       "uuid": "e552c05c-6360-4b2f-a438-7ec7e855c0f5",
       "slug": "constructors",
       "name": "Constructors"
+    },
+    {
+      "uuid": "b7f8e129-303c-45b8-ac07-297bfd5a9906",
+      "slug": "exceptions",
+      "name": "Exceptions"
     },
     {
       "uuid": "3a1f7a96-b4a5-43d3-99e2-7c248e74e6c8",

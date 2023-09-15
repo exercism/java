@@ -2,17 +2,17 @@
 
 ## 1. Implement the method calculate to support a few basic operations
 
-* Use a `switch-case` block to match different operations and implement them using the `SimpleOperation` class.
+- Use a [`switch` statement][switch-statement-docs] to match different operations.
 
 ## 2. Handle illegal operations
 
+- You cannot check for `null` inside a `switch` statement.
+- Use a `default` case for anything else at the end of the switch.
 
-* Check for `null` operations before the switch.
-* Add a case to the switch for the empty String.
-* Use a default for anything else at the end of the switch.
-* Throw an `IllegalOpertionException` with appropriate messages in different cases.
+## 3. Handle the exception thrown when dividing by zero
 
-## 3. Handle the thrown DivideByZero exceptions
+- Use a [`try-catch` block][exception-handling-docs] to catch the `ArithmeticException` thrown when dividing by zero.
+- The `IllegalOperationException` class has a constructor that takes a message and a cause as its parameters.
 
-* Use a `try-catch` block to catch `ArithmeticException`
-* Pass both the `message` and the `ArithmeticException` as the `cause` parameter when throwing the exception.
+[switch-statement-docs]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html
+[exception-handling-docs]: https://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html
