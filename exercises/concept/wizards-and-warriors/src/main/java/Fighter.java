@@ -16,7 +16,7 @@ class Warrior extends Fighter {
     }
 
     @Override
-    int damagePoints(Fighter wizard) {
+    int damagePoints(Fighter fighter) {
         throw new UnsupportedOperationException("Please implement Warrior.damagePoints() method");
     }
 }
@@ -29,7 +29,7 @@ class Wizard extends Fighter {
     }
 
     @Override
-    int damagePoints(Fighter warrior) {
+    int damagePoints(Fighter fighter) {
         throw new UnsupportedOperationException("Please implement Wizard.damagePoints() method");
     }
 
