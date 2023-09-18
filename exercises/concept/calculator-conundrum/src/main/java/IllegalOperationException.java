@@ -1,5 +1,4 @@
 public class IllegalOperationException extends RuntimeException {
-
     public IllegalOperationException(String errorMessage) {
         super(errorMessage);
     }
@@ -8,4 +7,3 @@ public class IllegalOperationException extends RuntimeException {
         super(errorMessage, cause);
     }
 }
-

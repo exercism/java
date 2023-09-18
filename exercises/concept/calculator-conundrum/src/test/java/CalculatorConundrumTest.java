@@ -1,5 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Test;
 
@@ -37,39 +37,32 @@ public class CalculatorConundrumTest {
 
     @Test
     public void throwExceptionForDivisionByZero() {
-        IllegalOperationException thrown = assertThrows(
-                IllegalOperationException.class,
-                () -> new CalculatorConundrum().calculate(33, 0, "/")
-        );
-        assertThat(thrown.getCause()).isInstanceOf(ArithmeticException.class);
-        assertThat(thrown).hasMessage("Divide by zero operation illegal");
+        assertThatExceptionOfType(IllegalOperationException.class)
+                .isThrownBy(() -> new CalculatorConundrum().calculate(33, 0, "/"))
+                .withMessage("Division by zero is not allowed")
+                .withCauseInstanceOf(ArithmeticException.class);
     }
 
     @Test
-    public void throwExceptionForNonValidArguments() {
+    public void throwExceptionForUnknownOperation() {
         String invalidOperation = "**";
-        IllegalOperationException thrown = assertThrows(
-                IllegalOperationException.class,
-                () -> new CalculatorConundrum().calculate(3, 78, invalidOperation)
-        );
-        assertThat(thrown).hasMessage(String.format("%s operation does not exist", invalidOperation));
+        String expectedMessage = String.format("Operation '%s' does not exist", invalidOperation);
+        assertThatExceptionOfType(IllegalOperationException.class)
+                .isThrownBy(() -> new CalculatorConundrum().calculate(3, 78, invalidOperation))
+                .withMessage(expectedMessage);
     }
 
     @Test
     public void throwExceptionForNullAsOperation() {
-        IllegalOperationException thrown = assertThrows(
-                IllegalOperationException.class,
-                () -> new CalculatorConundrum().calculate(66, 65, null)
-        );
-        assertThat(thrown).hasMessage("Operation cannot be null");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new CalculatorConundrum().calculate(66, 65, null))
+                .withMessage("Operation cannot be null");
     }
 
     @Test
     public void throwExceptionForAnEmptyStringOperation() {
-        IllegalOperationException thrown = assertThrows(
-                IllegalOperationException.class,
-                () -> new CalculatorConundrum().calculate(34, 324, "")
-        );
-        assertThat(thrown).hasMessage("Operation cannot be empty");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new CalculatorConundrum().calculate(34, 324, ""))
+                .withMessage("Operation cannot be empty");
     }
 }

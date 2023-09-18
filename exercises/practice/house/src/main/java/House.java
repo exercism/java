@@ -1,10 +1,15 @@
-/*
+class House {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    String verse(int verse) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-Please remove this comment when submitting your solution.
+    String verses(int startVerse, int endVerse) {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
 
-*/
+    String sing() {
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    }
+
+}

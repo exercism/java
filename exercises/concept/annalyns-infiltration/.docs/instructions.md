@@ -53,7 +53,7 @@ AnnalynsInfiltration.canSignalPrisoner(archerIsAwake, prisonerIsAwake);
 
 ## 4. Check if the prisoner can be freed
 
-Implement the (_static_) `AnnalynsInfiltration.canFreePrisoner()` method that takes four boolean values. The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. The method returns `true` if the prisoner can be freed based on the state of the three characters and Annalyn's pet dog presence. Otherwise, it returns `false`:
+Implement the (_static_) `AnnalynsInfiltration.canFreePrisoner()` method that takes four boolean values. The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. The method returns `true` if the prisoner can be freed based on the state of the three characters and Annalyn's pet dog's presence. Otherwise, it returns `false`:
 
 ```java
 boolean knightIsAwake = false;

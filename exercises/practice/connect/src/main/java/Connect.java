@@ -4,7 +4,7 @@ class Connect {
         throw new UnsupportedOperationException("Implement this function");
     }
 
-    public Winner computeWinner(String[] board) {
+    public Winner computeWinner() {
         throw new UnsupportedOperationException("Implement this function");
     }
 }

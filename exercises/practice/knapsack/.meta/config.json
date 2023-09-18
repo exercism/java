@@ -18,6 +18,9 @@
     "example": [
       ".meta/src/reference/java/Knapsack.java"
     ],
+    "editor": [
+      "src/main/java/Item.java"
+    ],
     "invalidator": [
       "build.gradle"
     ]
