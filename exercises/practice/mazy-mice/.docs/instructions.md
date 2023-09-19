@@ -14,7 +14,7 @@ It's time to create some perfect mazes for these adventurous mice!
 
 ### Examples
 
-1. The small square maze 5x5 cells (or 11x11 characters)
+1. A small square maze 5x5 cells (or 11x11 characters)
 ```text
 	┌───────┬─┐
 	│       │ │
@@ -28,7 +28,7 @@ It's time to create some perfect mazes for these adventurous mice!
 	│         │
 	└─────────┘
 ```
-2. The rectangular maze 6x18 cells
+2. A rectangular maze 6x18 cells
 ```text
 	┌───────────┬─────────┬───────────┬─┐
 	│           │         │           │ │
