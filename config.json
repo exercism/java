@@ -680,14 +680,10 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "56943095-de76-40bf-b42b-fa3e70f8df5e",
-        "practices": [
-          "strings"
-        ],
-        "prerequisites": [
-          "for-loops",
-          "classes"
-        ],
-        "difficulty": 6
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6,
+        "status": "deprecated"
       },
       {
         "slug": "food-chain",
