@@ -1,4 +1,4 @@
-# placeholder
+# Hints
 
 ## Maze generation
 
