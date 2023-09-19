@@ -1923,6 +1923,14 @@
         "practices": ["lists", "classes", "for-loops"],
         "prerequisites" :["lists"],
         "difficulty": 2
+      },
+      {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "61886554-ec84-422a-bbf9-aeee37c45bb6",
+        "practices": ["numbers"],
+        "prerequisites": ["numbers"],
+        "difficulty": 2
       }
     ],
     "foregone": []
