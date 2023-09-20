@@ -1,5 +1,7 @@
 # Introduction
 
+## Classes
+
 The primary object-oriented construct in Java is the _class_, which is a combination of data (_fields_) and behavior (_methods_). The fields and methods of a class are known as its _members_.
 
 Access to members can be controlled through access modifiers, the two most common ones being:
@@ -55,7 +57,7 @@ Private fields are usually updated as a side effect of calling a method. Such me
 class CarImporter {
     private int carsImported;
 
-    public void ImportCars(int numberOfCars)
+    public void importCars(int numberOfCars)
     {
         // Update private field from public method
         carsImported = carsImported + numberOfCars;
