@@ -12,14 +12,18 @@ subprojects {
 
   apply plugin: "checkstyle"
 
-  // Add a task that copies test source files into a build directory.
-  // All @Ignore and @Disabled annotations are removed during this copying,
-  // so that when we run the copied tests, none are skipped and all should execute.
+  // Add a task that copies test source files into a build directory. All @Ignore annotations
+  // are removed during this copying, so that when we run the copied tests, none are skipped and
+  // all should execute.
+  //
+  // Note that journey-test.sh also strips @Ignore annotations using sed. The
+  // stripping implementations here and in journey-test.sh should be kept
+  // consistent.
   task copyTestsFilteringIgnores(type: Copy) {
     from "src/test/java"
     into generatedTestSourceDir
     filter { line ->
-      line.contains("@Ignore") || line.contains("@Disabled") ? null : line
+      line.contains("@Ignore") ? null : line
     }
   }
 
