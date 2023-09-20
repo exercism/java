@@ -1,18 +1,20 @@
 # Introduction
 
-Java is a statically-typed language, which means that everything has a type at compile-time. Assigning a value to a name is referred to as defining a variable. A variable is defined by explicitly specifying its type.
+## Basics
+
+Java is a statically-typed language, which means that the type of a variable is known at compile-time. Assigning a value to a name is referred to as defining a variable. A variable is defined by explicitly specifying its type.
 
 ```java
 int explicitVar = 10;
 ```
 
-Updating a variable's value is done through the `=` operator. Once defined, a variable's type can never change.
+Updating a variable's value is done through the `=` operator. Here, `=` does not represent mathematical equality. It simply assigns a value to a variable. Once defined, a variable's type can never change.
 
 ```java
 int count = 1; // Assign initial value
 count = 2;     // Update to new value
 
-// Compiler error when assigning different type
+// Compiler error when assigning a different type
 // count = false;
 ```
 
@@ -24,7 +26,7 @@ class Calculator {
 }
 ```
 
-A function within a class is referred to as a _method_. Each method can have zero or more parameters. All parameters must be explicitly typed, there is no type inference for parameters. Similarly, the return type must also be made explicit. Values are returned from functions using the `return` keyword. To allow a method to be called by other classes, the `public` access modifier must be added.
+A function within a class is referred to as a _method_. Each method can have zero or more parameters. All parameters must be explicitly typed, there is no type inference for parameters. Similarly, the return type must also be made explicit. Values are returned from methods using the `return` keyword. To allow a method to be called by other classes, the `public` access modifier must be added.
 
 ```java
 class Calculator {
@@ -34,10 +36,10 @@ class Calculator {
 }
 ```
 
-Invoking a method is done by specifying its class and method name and passing arguments for each of the method's parameters.
+Invoking/calling a method is done by specifying its class and method name and passing arguments for each of the method's parameters.
 
 ```java
-int sum = new Calculator().add(1, 2);
+int sum = new Calculator().add(1, 2);  // here the  "add" method has been called to perform the task of addition 
 ```
 
 Scope in Java is defined between the `{` and `}` characters.

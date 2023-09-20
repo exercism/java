@@ -1,5 +1,7 @@
 # Introduction
 
+## Switch Statements
+
 Like an _if/else_ statement, a `switch` statement allows you to change the flow of the program by conditionally executing code. The difference is that a `switch` statement can only compare the value of a primitive or string expression against pre-defined constant values.
 
 Some keywords are useful when using a switch statement.

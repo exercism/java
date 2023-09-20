@@ -1,5 +1,7 @@
 # Introduction
 
+## Interfaces
+
 An interface is a type containing members defining a group of related functionality. It distances the uses of a class from the implementation allowing multiple different implementations or support for some generic behavior such as formatting, comparison or conversion.
 
 The syntax of an interface is similar to that of a class except that methods appear as the signature only and no body is provided.
@@ -24,7 +26,7 @@ public class ItalianTraveller implements Language, Cloneable {
 
     // from Cloneable interface
     public Object clone() {
-        ItalianTaveller it = new ItalianTaveller();
+        ItalianTraveller it = new ItalianTraveller();
         return it;
     }
 }

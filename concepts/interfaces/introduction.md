@@ -10,11 +10,11 @@ public interface Language {
     String speak();
 }
 
-public class ItalianTaveller implements Language, Cloneable {
+public class ItalianTraveller implements Language, Cloneable {
 
     // from Language interface
     public String getLanguageName() {
-        return  "Italiano";
+        return "Italiano";
     }
 
     // from Language interface
@@ -23,8 +23,8 @@ public class ItalianTaveller implements Language, Cloneable {
     }
 
     // from Cloneable interface
-    public Object Clone() {
-        ItalianTaveller it = new ItalianTaveller();
+    public Object clone() {
+        ItalianTraveller it = new ItalianTraveller();
         return it;
     }
 }

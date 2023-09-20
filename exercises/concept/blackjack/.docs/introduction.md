@@ -1,10 +1,12 @@
 # Introduction
 
-## Logical Operators
+## Conditionals If
+
+### Logical Operators
 
 Java supports the three logical operators `&&` (AND), `||` (OR), and `!` (NOT).
 
-## If statement
+### If statement
 
 The underlying type of any conditional operation is the `boolean` type, which can have the value of `true` or `false`. Conditionals are often used as flow control mechanisms to check for various conditions. For checking a particular case an `if` statement can be used, which executes its code if the underlying condition is `true` like this:
 
@@ -28,7 +30,7 @@ if(val == 10) {
 }
 ```
 
-## Switch statement
+### Switch statement
 
 Java also provides a `switch` statement for scenarios with multiple options.
 

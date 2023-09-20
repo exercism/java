@@ -4,12 +4,12 @@ Like an _if/else_ statement, a `switch` statement allows you to change the flow 
 
 Some keywords are useful when using a switch statement.
 
-- `switch` : this keyword allows you to declare the structure of the switch. It is followed by the expression or the variable that will make the result change.
-- `case` : you will use this  to declare the differents possibilties for the result.
+- `switch` : this keyword allows you to declare the structure of the switch. It is followed by the expression or the variable that will change the result.
+- `case` : you will use this keyword to declare the different possibilities for the result.
 - `break` : the `break` keyword is very useful in order to stop the execution of the switch at the end of the wanted flow. If you forget it, the program will continue and may lead to unexpected results.
-- `default` : as its name says, use it as a default result when no other case matchs your expression's result.
+- `default` : as its name says, use it as a default result when no other case matches your expression's result.
 
-At their simplest, they test a primitive or string expression and make a decision based on its value. For example:
+At their simplest they test a primitive or string expression and make a decision based on its value. For example:
 
 ```java
 String direction = getDirection();
