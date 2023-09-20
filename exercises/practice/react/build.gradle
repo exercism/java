@@ -10,12 +10,6 @@ repositories {
   mavenCentral()
 }
 
-gradle.projectsEvaluated {
-  tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:unchecked"
-  }
-}
-
 dependencies {
   testImplementation "junit:junit:4.13"
   testImplementation "org.assertj:assertj-core:3.15.0"

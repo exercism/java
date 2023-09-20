@@ -1,5 +1,7 @@
 {
-  "authors": ["kahgoh"],
+  "authors": [
+    "kahgoh"
+  ],
   "files": {
     "solution": [
       "src/main/java/React.java"
