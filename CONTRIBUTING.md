@@ -10,10 +10,6 @@
   * [Getting Familiar With the Codebase](#getting-familiar-with-the-codebase)
     * [The `exercises` Module](#the-exercises-module)
     * [The Problem Submodules](#the-problem-submodules)
-  * [Advanced: Complete Local Setup](#advanced--complete-local-setup)
-    * [Prerequisites](#prerequisites)
-      * [Debian Linux](#debian-linux)
-      * [macOS](#macos)
   * [Adding a New Exercise](#adding-a-new-exercise)
   * [Updating the READMEs](#updating-the-readmes)
   * [Checking tests are up to date](#checking-tests-are-up-to-date)
@@ -147,23 +143,6 @@ Each problem/submodule has three source sets:
 * `src/test/java/` — a test suite defining the edges of the problem
 * `.meta/src/reference/java/` — a reference solution that passes all the tests
 * `src/main/java/` — starter source file(s).
-
-----
-
-## Advanced: Complete Local Setup
-
-### Prerequisites
-Before you proceed, please ensure that you have `jq` (library that parses JSON) & `ruby` installed on your machine.
-
-#### Debian Linux
-`sudo apt-get install jq ruby-full`
-
-#### macOS
-`brew install jq ruby`
-
-If you are going to make significant contribution(s) to the track, you might find it handy to have a complete local installation of exercism on your computer.  This way, you can run the full suite of tests without having to create/update a PR.
-
-The easiest way to achieve this is simply use the `bin/journey-test.sh` script.  However, you may want to perform other tests, depending on what you are doing.  You can do so by duplicating the setup performed by the `bin/journey-test.sh` script.
 
 ## Adding a New Exercise
 
