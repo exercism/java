@@ -1,0 +1,13 @@
+{
+  "authors": ["sanderploegsma"],
+  "contributors": [],
+  "files": {
+    "solution": ["src/main/java/SquareRoot.java"],
+    "test": ["src/test/java/SquareRootTest.java"],
+    "example": [".meta/src/reference/java/SquareRoot.java"],
+    "invalidator": ["build.gradle"]
+  },
+  "blurb": "Given a natural radicand, return its square root.",
+  "source": "wolf99",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/1582"
+}
