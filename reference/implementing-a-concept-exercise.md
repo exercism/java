@@ -75,10 +75,10 @@ Append to `languages/java/exercises/settings.gradle` the following line: `concep
 
 ## Step 2: Validate the solution
 
-Before submitting your solution, be sure it works following these two steps from the folder of your exercise:
+Before submitting your solution, be sure it works following these two steps from the `exercises` folder:
 
-1. Test the solution running `./gradlew test`
-2. Validate the coding style running `./gradlew check`
+1. Test the solution running `./gradlew concept:<slug>:test`
+2. Validate the coding style running `./gradlew concept:<slug>:check`
 
 ## Step 3: Add documentation files
 
