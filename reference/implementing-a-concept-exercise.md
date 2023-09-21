@@ -77,8 +77,8 @@ Append to `languages/java/exercises/settings.gradle` the following line: `concep
 
 Before submitting your solution, be sure it works following these two steps from the folder of your exercise:
 
-1. Test the solution running `gradle test`
-2. Validate the coding style running `gradle check`
+1. Test the solution running `./gradlew test`
+2. Validate the coding style running `./gradlew check`
 
 ## Step 3: Add documentation files
 
