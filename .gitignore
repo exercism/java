@@ -16,9 +16,6 @@ exercises/*/bin
 exercises/*/.classpath
 exercises/*/.project
 exercises/*/.settings/
-exercises/gradle/
-exercises/gradlew
-exercises/gradlew.bat
 _template/bin
 _template/.classpath
 _template/.project
