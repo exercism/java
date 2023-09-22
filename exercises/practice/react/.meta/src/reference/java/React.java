@@ -6,53 +6,55 @@ import java.util.stream.Collectors;
 
 public class React {
 
-    interface Cell<T> {
-        T getValue();
-        default T getTentativeValue() {
-            return getValue();
-        }
-        void addDependent(ComputeCell<T> dependent);
-    }
+    public static class Cell<T> {
 
-    interface InputCell<T> extends Cell<T> {
-        void setValue(T newValue);
-    }
-
-    interface ComputeCell<T> extends Cell<T> {
-        void prepareTentativeUpdate();
-        void commitTentativeUpdate();
-        void addCallback(Consumer<T> callback);
-        void removeCallback(Consumer<T> callback);
-    }
-
-    static class CellImpl<T> implements Cell<T> {
-        private T value;
-
-        final Collection<ComputeCell<T>> dependentCells = new ArrayList<>();
-
-        final Collection<Consumer<T>> callbacks = new ArrayList<>();
-
-        public CellImpl(T initialValue) {
-            this.value = initialValue;
-        }
+        T value;
 
         public T getValue() {
             return value;
         }
 
-        void setValue(T newValue) {
-            if (!Objects.equals(value, newValue)) {
-                value = newValue;
+        final Collection<ComputeCell<T>> dependentCells = new ArrayList<>();
+    }
 
-                dependentCells.forEach(ComputeCell::prepareTentativeUpdate);
-                dependentCells.forEach(ComputeCell::commitTentativeUpdate);
-                callbacks.forEach(cb -> cb.accept(newValue));
-            }
+    public static class InputCell<T> extends Cell<T> {
+
+        InputCell(T initialValue) {
+            this.value = initialValue;
         }
 
-        @Override
-        public void addDependent(ComputeCell<T> dependent) {
-            dependentCells.add(dependent);
+        public void setValue(T newValue) {
+            this.value = newValue;
+            dependentCells.forEach(cell -> cell.propagateUpdate());
+            dependentCells.forEach(cell -> cell.fireCallbacks());
+        }
+    }
+
+    public static class ComputeCell<T> extends Cell<T> {
+
+        private T lastFiredValue;
+
+        private final Supplier<T> formula;
+
+        final Collection<Consumer<T>> callbacks = new ArrayList<>();
+
+        ComputeCell(Supplier<T> formula) {
+            this.formula = formula;
+            this.value = formula.get();
+            this.lastFiredValue = value;
+        }
+
+        private void propagateUpdate() {
+            value = formula.get();
+            dependentCells.forEach(cell -> cell.propagateUpdate());
+        }
+
+        private void fireCallbacks() {
+            if (!Objects.equals(value, lastFiredValue)) {
+                callbacks.forEach(callback -> callback.accept(value));
+                dependentCells.forEach(cell -> cell.fireCallbacks());
+                lastFiredValue = value;
+            }
         }
 
         public void addCallback(Consumer<T> callback) {
@@ -64,61 +66,19 @@ public class React {
         }
     }
 
-    static class InputCellImpl<T> extends CellImpl<T> implements InputCell<T> {
-        InputCellImpl(T initialValue) {
-            super(initialValue);
-        }
-
-        @Override
-        public void setValue(T newValue) {
-            super.setValue(newValue);
-        }
-    }
-
-    static class ComputeCellImpl<T> extends CellImpl<T> implements ComputeCell<T> {
-
-        private final Supplier<T> formula;
-
-        private Optional<T> tentativeValue = Optional.empty();
-
-        ComputeCellImpl(Supplier<T> formula) {
-            super(formula.get());
-            this.formula = formula;
-        }
-
-        @Override
-        public void prepareTentativeUpdate() {
-            tentativeValue = Optional.of(formula.get());
-            dependentCells.forEach(ComputeCell::prepareTentativeUpdate);
-        }
-
-        @Override
-        public void commitTentativeUpdate() {
-            dependentCells.forEach(ComputeCell::commitTentativeUpdate);
-            tentativeValue.ifPresent(this::setValue);
-            tentativeValue = Optional.empty();
-        }
-
-        @Override
-        public T getTentativeValue() {
-            return tentativeValue.orElseGet(this::getValue);
-        }
-
-    }
-
     public static <T> InputCell<T> inputCell(T initialValue) {
-        return new InputCellImpl<>(initialValue);
+        return new InputCell<>(initialValue);
     }
 
 
     public static <T> ComputeCell<T> computeCell(Function<List<T>, T> function, List<Cell<T>> cells) {
         Supplier<T> formula = () -> {
-            List<T> cellValues = cells.stream().map(Cell::getTentativeValue).collect(Collectors.toList());
+            List<T> cellValues = cells.stream().map(Cell::getValue).collect(Collectors.toList());
             return function.apply(cellValues);
         };
 
-        var computeCell = new ComputeCellImpl<T>(formula);
-        cells.forEach(cell -> cell.addDependent(computeCell));
+        var computeCell = new ComputeCell<>(formula);
+        cells.forEach(cell -> cell.dependentCells.add(computeCell));
         return computeCell;
     }
 }

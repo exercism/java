@@ -4,17 +4,26 @@ import java.util.function.Function;
 
 public class React {
 
-    interface Cell<T> {
-        T getValue();
+    public static class Cell<T> {
+        public T getValue() {
+            throw new UnsupportedOperationException("Please implement the Cell.getValue() method");
+        }
     }
 
-    interface InputCell<T> extends Cell<T> {
-        void setValue(T newValue);
+    public static class InputCell<T> extends Cell<T> {
+        public void setValue(T newValue) {
+            throw new UnsupportedOperationException("Please implement the InputCell.setValue() method");
+        }
     }
 
-    interface ComputeCell<T> extends Cell<T> {
-        void addCallback(Consumer<T> callback);
-        void removeCallback(Consumer<T> callback);
+    public static class ComputeCell<T> extends Cell<T> {
+        public void addCallback(Consumer<T> callback) {
+            throw new UnsupportedOperationException("Please implement the ComputeCell.addCallback() method");
+        }
+
+        public void removeCallback(Consumer<T> callback) {
+            throw new UnsupportedOperationException("Please implement the ComputeCell.removeCallback() method");
+        }
     }
 
     public static <T> InputCell<T> inputCell(T initialValue) {
