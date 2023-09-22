@@ -50,7 +50,7 @@ public class CalculatorConundrumTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The calculate method throws an IllegalOperationException with custom message when passing an invalid operation")
+    @DisplayName("The calculate method throws IllegalOperationException when passing invalid operation")
     public void throwExceptionForUnknownOperation() {
         String invalidOperation = "**";
         String expectedMessage = String.format("Operation '%s' does not exist", invalidOperation);
@@ -61,7 +61,7 @@ public class CalculatorConundrumTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The calculate method throws an IllegalOperationException with custom message when passing null as operation")
+    @DisplayName("The calculate method throws IllegalArgumentException when passing null operation")
     public void throwExceptionForNullAsOperation() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new CalculatorConundrum().calculate(66, 65, null))
@@ -70,7 +70,7 @@ public class CalculatorConundrumTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The calculate method throws an IllegalOperationException with custom message when passing an empty operation")
+    @DisplayName("The calculate method throws IllegalArgumentException when passing empty operation")
     public void throwExceptionForAnEmptyStringOperation() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new CalculatorConundrum().calculate(34, 324, ""))
@@ -79,7 +79,7 @@ public class CalculatorConundrumTest {
 
     @Test
     @Tag("task:3")
-    @DisplayName("The calculate method throws an IllegalOperationException with custom message when dividing by zero")
+    @DisplayName("The calculate method throws IllegalOperationException when dividing by zero")
     public void throwExceptionForDivisionByZero() {
         assertThatExceptionOfType(IllegalOperationException.class)
                 .isThrownBy(() -> new CalculatorConundrum().calculate(33, 0, "/"))
