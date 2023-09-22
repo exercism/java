@@ -55,7 +55,7 @@ public class BirdWatcherTest {
 
     @Test
     @Tag("task:4")
-    @DisplayName("The itHasDayWithoutBirds method returns false when there was no day with zero visits")
+    @DisplayName("The itHasDayWithoutBirds method returns false when no day had zero visits")
     public void itShouldNotHaveDaysWithoutBirds() {
         birdWatcher = new BirdWatcher(new int[]{1, 2, 5, 3, 7, 8, 4});
         assertThat(birdWatcher.hasDayWithoutBirds()).isFalse();
@@ -64,14 +64,14 @@ public class BirdWatcherTest {
 
     @Test
     @Tag("task:5")
-    @DisplayName("The getCountForFirstDays method returns the correct count of visits for a given number of days")
+    @DisplayName("The getCountForFirstDays method returns correct visits' count for given number of days")
     public void itTestGetCountForFirstDays() {
         assertThat(birdWatcher.getCountForFirstDays(4)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4);
     }
 
     @Test
     @Tag("task:5")
-    @DisplayName("The getCountForFirstDays method returns the overall count when number of days is higher than array size")
+    @DisplayName("The getCountForFirstDays method returns overall count when number of days is higher than array size")
     public void itTestGetCountForMoreDaysThanTheArraySize() {
         assertThat(birdWatcher.getCountForFirstDays(10))
             .isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6 + TODAY);
