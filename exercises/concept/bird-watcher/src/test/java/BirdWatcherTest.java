@@ -48,14 +48,14 @@ public class BirdWatcherTest {
 
     @Test
     @Tag("task:4")
-    @DisplayName("The itHasDayWithoutBirds method returns true when day had no visits")
+    @DisplayName("The hasDayWithoutBirds method returns true when day had no visits")
     public void itHasDayWithoutBirds() {
         assertThat(birdWatcher.hasDayWithoutBirds()).isTrue();
     }
 
     @Test
     @Tag("task:4")
-    @DisplayName("The itHasDayWithoutBirds method returns false when no day had zero visits")
+    @DisplayName("The hasDayWithoutBirds method returns false when no day had zero visits")
     public void itShouldNotHaveDaysWithoutBirds() {
         birdWatcher = new BirdWatcher(new int[]{1, 2, 5, 3, 7, 8, 4});
         assertThat(birdWatcher.hasDayWithoutBirds()).isFalse();
