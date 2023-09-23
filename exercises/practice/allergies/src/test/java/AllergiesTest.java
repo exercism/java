@@ -447,4 +447,13 @@ public class AllergiesTest {
                         Allergen.POLLEN,
                         Allergen.CATS);
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void listNoAllergenScorePartsWithoutHighestValidScore() {
+        Allergies allergies = new Allergies(257);
+
+        assertThat(allergies.getList())
+                .containsExactly(Allergen.EGGS);
+    }
 }
