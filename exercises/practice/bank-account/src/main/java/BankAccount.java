@@ -1,10 +1,10 @@
 class BankAccount {
 
-    void open() {
+    void open() throws BankAccountActionInvalidException {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    void close() {
+    void close() throws BankAccountActionInvalidException {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

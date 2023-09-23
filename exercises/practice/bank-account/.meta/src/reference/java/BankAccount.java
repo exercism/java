@@ -2,11 +2,18 @@ class BankAccount {
     private int balance = 0;
     private boolean isClosed = true;
 
-    void open() {
+    void open() throws BankAccountActionInvalidException {
+        if (!isClosed) {
+            throw new BankAccountActionInvalidException("Account already open");
+        }
         isClosed = false;
+        balance = 0;
     }
 
-    void close() {
+    void close() throws BankAccountActionInvalidException {
+        if (isClosed) {
+            throw new BankAccountActionInvalidException("Account not open");
+        }
         isClosed = true;
     }
 
