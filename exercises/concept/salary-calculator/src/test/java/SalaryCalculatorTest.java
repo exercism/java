@@ -59,14 +59,14 @@ public class SalaryCalculatorTest {
 
     @Test
     @Tag("task:3")
-    @DisplayName("The finalSalary method returns correct result when daysSkipped below and productsSold above threshold")
+    @DisplayName("finalSalary method returns correct result when daysSkipped below and productsSold above threshold")
     public void skippedBelowThresholdAndSoldAboveThreshold() {
         assertThat(calculator.finalSalary(4, 40)).isEqualTo(1520.0);
     }   
      
     @Test
     @Tag("task:3")
-    @DisplayName("The finalSalary method returns correct result when daysSkipped above and productsSold below threshold")
+    @DisplayName("finalSalary method returns correct result when daysSkipped above and productsSold below threshold")
     public void skippedAboveThresholdAndSoldBelowThreshold() {
         assertThat(calculator.finalSalary(10, 2)).isEqualTo(870.0);
     }
