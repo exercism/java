@@ -15,13 +15,24 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 ## Event Checklist
 
-| Track Event | Policies to review |
-|:------------|:-----------------|
-| Exercise added/updated | [Prefer instance methods](#prefer-instance-methods); [Avoid using final](#avoid-using-final); [Adhere to best practices](#adhere-to-best-practices); [Starter implementations](#starter-implementations); [Ignore noninitial tests](#ignore-noninitial-tests); [Multiple file submissions](#multiple-file-submissions); [Name test class after class under test](#name-test-class-after-class-under-test); [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation); [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises); [Avoid returning null](#avoid-returning-null); [Use assertThrows](#use-assertthrows); [Using other assertion libraries](#using-other-assertion-libraries)
-| Track rearranged | [Starter implementations](#starter-implementations); [Multiple file submissions](#multiple-file-submissions) |
-| New issue observed in track | [Good first issues](#good-first-issues) |
-| "Good first issue" issue completed | [Good first issues](#good-first-issues) |
-| Installing Java instructions updated | [Simple onboarding](#simple-onboarding) |
+| Track Event                          | Policies to review                                                                      |
+| :----------------------------------- | :-------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Exercise added/updated               | [Prefer instance methods](#prefer-instance-methods)                                     |
+|                                      | [Avoid using final](#avoid-using-final)                                                 |
+|                                      | [Adhere to best practices](#adhere-to-best-practices)                                   |
+|                                      | [Starter implementations](#starter-implementations)                                     |
+|                                      | [Ignore noninitial tests](#ignore-noninitial-tests)                                     |
+|                                      | [Multiple file submissions](#multiple-file-submissions)                                 |
+|                                      | [Name test class after class under test](#name-test-class-after-class-under-test)       |
+|                                      | [Add hint for the first exercises without starter implementation]                       | (#add-hint-for-the-first-exercises-without-starter-implementation) |
+|                                      | [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises) |
+|                                      | [Avoid returning null](#avoid-returning-null)                                           |
+|                                      | [Prefer AssertJ assertions](#prefer-assertj-assertions)                                 |
+| Track rearranged                     | [Starter implementations](#starter-implementations)                                     |
+|                                      | [Multiple file submissions](#multiple-file-submissions)                                 |
+| New issue observed in track          | [Good first issues](#good-first-issues)                                                 |
+| "Good first issue" issue completed   | [Good first issues](#good-first-issues)                                                 |
+| Installing Java instructions updated | [Simple onboarding](#simple-onboarding)                                                 |
 
 ## Policy Descriptions
 
@@ -34,8 +45,12 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 ### Starter implementations
 
 > - Exercises of difficulty 4 or lower: provide stubs for all required constructors and methods. This means that you need to provide stubs for those constructors or methods that are necessary to pass all tests. E.g. stubs for private methods may be skipped.
-Stubs should include the following body:
-    `throw new UnsupportedOperationException("Delete this statement and write your own implementation.");`
+>   Stubs should include the following body:
+>
+>   ```java
+>   throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+>   ```
+>
 > - Exercises of difficulty 5 or higher: copy the StubTemplate.java file (provided [here](https://github.com/exercism/java/tree/main/_template/src/main/java)) and rename it to fit the exercise. For example, for the exercise linked-list the file could be named LinkedList.java. Then either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
 
 References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)], [[3](https://github.com/exercism/java/issues/977)], [[4](https://github.com/exercism/java/issues/1721)]
@@ -47,8 +62,10 @@ References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://git
 ### Adhere to best practices
 
 > Ensure that all Java code adheres to the best practices listed below:
+>
 > - Minimize the accessibility of classes and members ([Effective Java, item 13](http://jtechies.blogspot.com/2012/07/item-13-minimize-accessibility-of.html))
 > - Always use curly brackets in `if statements`. This makes your code easier to maintain and easier to read ([Oracle style guide, item 7.4](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html#431))
+
 ```java
 // Please do this
 if (condition) {
@@ -61,7 +78,9 @@ if (condition)
 
 if (condition) doSomething();
 ```
+
 > - Always put opening curly bracket not on a newline ([Oracle style guide, item 7.2](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html#431))
+
 ```java
 // Please do this
 for (int i = 0; i < 10; i++) {
@@ -149,24 +168,12 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 
 References: [[1](https://www.codebyamir.com/blog/stop-returning-null-in-java)]
 
-### Use assertThrows
+### Prefer AssertJ assertions
 
-> Some exercises expect exceptions to be thrown in the tests.
-> The exercises on this track are all using [`org.junit.Assert.assertThrows`](https://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertThrows(java.lang.Class,%20org.junit.function.ThrowingRunnable)) instead of `@Test(expected = SomeException.class)`.
-> `assertThrows` is more powerful than using the `@Test` annotation.
-> With this method you can assert that a given function call (specified, for instance, as a lambda expression or method reference) results in a particular type of exception being thrown.
-> In addition it returns the exception that was thrown, so that further assertions can be made (e.g. to verify that the message and cause are correct).
-> Furthermore, you can make assertions on the state of a domain object after the exception has been thrown.
-> To be consistent, please use `assertThrows` whenever you expect an exception to be thrown.
+> Use [AssertJ](https://assertj.github.io/doc/) assertions over JUnit assertions in exercise test suites.
+> AssertJ assertions are more robust and provide more readable output in assertion failures.
+> This is especially useful for students using the online editor, as the output of the assertion is all they have to debug test failures in their iterations.
+>
+> All other assertion libraries (eg. [Hamcrest](http://hamcrest.org/JavaHamcrest/) and [Truth](https://truth.dev/)) should not be used.
 
-> See [the triangle tests](https://github.com/exercism/java/blob/main/exercises/practice/triangle/src/test/java/TriangleTest.java) for an example of where `assertThrows` is used.
-
-References: [[1](https://github.com/junit-team/junit4/wiki/Exception-testing)]
-
-### Using other assertion libraries
-
-> Some exercises have expected results that may be better handled by another assertion library.
-> While the default will continue to be using JUnit's assertions (eg. `org.junit.Assert.assertEquals`), we do allow [AssertJ](https://assertj.github.io/doc/) as well.
-> All other assertion libraries (eg. [Hamcrest](http://hamcrest.org/JavaHamcrest/) and [Truth](https://truth.dev/)) are banned.
-
-References: [[1](https://github.com/exercism/java/issues/1803)]
+References: [[1](https://github.com/exercism/java/issues/1803)], [[2](https://github.com/exercism/java/issues/2147)]
