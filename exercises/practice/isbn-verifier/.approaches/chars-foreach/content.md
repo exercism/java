@@ -51,12 +51,12 @@ If so, it gets the digit value of the codepoint by subtracting the [ASCII][ascii
 So, if the codepoint is a `0`, then subtracting the ASCII value of `0` from itself results in `0`.
 If the codepoint is a `1`, then subtracting the ASCII value of `0` from the ASCII value of `1` results in `1`, and so on.
 
-```exercism/note/
+~~~~exercism/note/
 Another way to convert the codepoint to a digit is to use the built-in
 [`Character.digit()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#digit(char,%20int))
 method, which also works for [Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html) codepoints.
 Since for this exercise all of the codepoints are ASCII, simple ASCII math will do. 
-```
+~~~~
 
 The digit is multiplied by 10 minus the position, with the position starting at `0`.
 So, for the position furthest to the left, the digit is multiplied by `10 - 0` (`10`).

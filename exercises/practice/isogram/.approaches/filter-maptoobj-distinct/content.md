@@ -23,10 +23,10 @@ In the `isIsogram()` method, the [`chars()`][chars] method is called on the inpu
 Each character is passed as a primitive `int` representing its [Unicode codepoint][char] to the [`filter()`][filter] method.
 The `filter()` passes each codepoint to the [`IsLetter()`][isletter-codepoint] method to filter in only letter characters.
 
-```exercism/note
+~~~~exercism/note
 Another method that could be used is [`isAlphabetic()`](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-).
 For the difference between `isAlphabetic()` and `isLetter()`, see [here](https://www.baeldung.com/java-character-isletter-isalphabetic).
-```
+~~~~
 
 The surviving codepoints are passed to the [`mapToObj()`][maptoobj] method which converts each codepoint to a lowercased codepoint.
 
