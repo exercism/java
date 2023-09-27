@@ -26,6 +26,11 @@ jobs:
         run: ./gradlew compileStarterTestJava --continue
       - name: Run checkstyle
         run: ./gradlew check --exclude-task test --continue
+      - name: Create Checkstyle summary
+        uses: jwgmeligmeyling/checkstyle-github-action@master
+        with:
+          path: "**/build/reports/checkstyle/*.xml"
+        if: always()
 
   test:
     runs-on: ubuntu-latest
