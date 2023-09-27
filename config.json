@@ -224,6 +224,13 @@
           "booleans"
         ],
         "status": "active"
+      },
+      {
+        "slug": "logs-logs-logs",
+        "name": "Logs, Logs, Logs!",
+        "uuid": "f33927f7-676f-4045-b1fc-34e719453c61",
+        "concepts": ["enums"],
+        "prerequisites": ["strings", "switch-statement", "constructors"]
       }
     ],
     "practice": [
