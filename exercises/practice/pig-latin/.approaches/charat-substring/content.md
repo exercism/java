@@ -75,12 +75,12 @@ Finally, the word is made into Pig Latin by getting a [`substring()`][substring-
 to which is concatenated a [`substring()`][substring-two] from the beginning of the word up to but not including the indexed character,
 and concatenating `ay`.
 
-```exercism/note
+~~~~exercism/note
 Note that there are two overloads of the `substring()` method.
 One takes one argument which will return a substring from the index of the argument until the end of the `String`.
 The other takes two arguments: the starting index and the ending index.
 It returns a substring from the starting index up to but not including the ending index.
-```
+~~~~
 
 After all of the words are iterated, the `ArrayList` of words is assembled into a single `String` by using the
 [`String.join()`][join] method to join all of the words together, separated by a single space,

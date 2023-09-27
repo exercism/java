@@ -37,12 +37,12 @@ So, if the character is a `0`, then subtracting the ASCII value of `0` from itse
 If the character is a `1`, then subtracting the ASCII value of `0` from the ASCII value of `1` results in `1`,
 and so on.
 
-```exercism/note/
+~~~~exercism/note/
 Another way to convert the character to a digit is to use the built-in
 [`Character.digit()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#digit(char,%20int))
 method, which also works for [Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html) digits.
 Since for this exercise all of the digits are ASCII, simple ASCII math will do. 
-```
+~~~~
 
 The digit is multiplied by 10 minus the position, with the position starting at `0`.
 So, for the position furthest to the left, the digit is multiplied by `10 - 0` (`10`).
