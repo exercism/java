@@ -84,6 +84,7 @@ public class SqueakyCleanTest {
     }
 
     @Test
+    @Tag("task:5")
     @DisplayName("The clean method returns the correct result after performing a few cleaning operations")
     public void combine_conversions() {
         assertThat(SqueakyClean.clean("9 -abcĐ\uD83D\uDE00ω\0")).isEqualTo("_AbcĐCTRL");
