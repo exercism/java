@@ -1978,6 +1978,11 @@
       "name": "Constructors"
     },
     {
+      "uuid": "cb753863-b7c1-4ff6-adeb-ae9a1f39deca",
+      "slug": "enums",
+      "name": "Enums"
+    },
+    {
       "uuid": "b7f8e129-303c-45b8-ac07-297bfd5a9906",
       "slug": "exceptions",
       "name": "Exceptions"
