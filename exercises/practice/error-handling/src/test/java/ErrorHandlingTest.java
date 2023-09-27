@@ -14,8 +14,8 @@ public class ErrorHandlingTest {
 
     @Test
     public void testThrowIllegalArgumentException() {
-        assertThatExceptionOfType(Exception.class).
-                isThrownBy(() -> errorHandling.handleErrorByThrowingIllegalArgumentException());
+        assertThatExceptionOfType(Exception.class)
+                .isThrownBy(() -> errorHandling.handleErrorByThrowingIllegalArgumentException());
     }
 
     @Ignore("Remove to run test")
