@@ -92,7 +92,7 @@ public class TriangleTest {
     @Ignore("Remove to run test")
     @Test
     public void secondTriangleInequalityViolation() {
-        assertThatExceptionOfType(TriangleException.class).isThrownBy(() -> new Triangle(1, 3, 1);
+        assertThatExceptionOfType(TriangleException.class).isThrownBy(() -> new Triangle(1, 3, 1));
     }
 
     @Ignore("Remove to run test")
