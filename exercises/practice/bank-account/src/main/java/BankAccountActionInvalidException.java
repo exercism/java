@@ -1,6 +1,6 @@
-class BankAccountActionInvalidException extends Exception {
+public class BankAccountActionInvalidException extends Exception {
 
-    BankAccountActionInvalidException(String message) {
+    public BankAccountActionInvalidException(String message) {
         super(message);
     }
 }

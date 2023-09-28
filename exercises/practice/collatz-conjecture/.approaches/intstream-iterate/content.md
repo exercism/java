@@ -27,12 +27,12 @@ Another lambda is used to process the input number.
 [Bitwise operators][bitwise-operators] are used to check if the number is odd and to divide it in half if it is even.
 The bitwise AND operator (`&`) compares the number with `1` to see if it is odd.
 
-```exercism/note
+~~~~exercism/note
 Another way to go about checking if the number is even or odd is to see if it is evenly divided by `2`
 by using the [modulo (also know as the remainder) operator](https://www.geeksforgeeks.org/modulo-or-remainder-operator-in-java/).
 So, to see if it is even we could use `start % 2 == 0`.
 That might be slightly less performant but perhaps more readable for intent, especially for those who don't "speak binary".
-```
+~~~~
 
 If the number is even, then the right shift operator (`>>`) shifts all of the bits once to the right, which is the equivalent
 of dividing the number by `2`.

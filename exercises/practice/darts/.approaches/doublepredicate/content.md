@@ -33,22 +33,22 @@ Then the radius of the dart throw is calculated and assigned to a variable.
 A `DoublePredicate` is defined as a [lambda][lambda] that takes in a `double` value that represents the ring radius
 and compares it with the dart throw radius.
 
-```exercism/note
+~~~~exercism/note
 Although the dart throw radius is not directly passed to the lambda, the lambda can use it.
 To do so is called [capturing](https://www.geeksforgeeks.org/java-lambda-expression-variable-capturing-with-examples/) the variable.
 To capture a variable, it must be in the enclosing [scope](https://www.geeksforgeeks.org/variable-scope-in-java/)
 of the lambda, and it must be effectively `final`,
 meaning that is is not changed in the course of the program.
-```
+~~~~
 
-```exercism/note
+~~~~exercism/note
 The reason `DoublePredicate` is used instead of `Predicate<Double>` is to avoid the
 [autoboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
 that `Predicate<Double>` would do.
 `DoublePredicate` handles its primitive `double` argument without boxing it.
 This is also why the lambda is required to be given a specific target type instead of `var`,
 since the same lambda could be used for either `DoublePredicate` or `Predicate<Double>`.
-```
+~~~~
 
 A series of calls to the `DoublePredicate` is then made.
 

@@ -40,10 +40,10 @@ because its value does not need to be changed once it is set.
 
 In the constructor, a local variable is defined for being updated in the [`for` loop][for-loop].
 
-```exercism/note
+~~~~exercism/note
 Using the same for a variable in a nested local scope that is used in its enclosing higher scope is called
 [variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
-```
+~~~~
 
 The variable is updated  by a series of `if` statements that checks each letter of the uppercased word.
 The letter is selected as a `String` by the [`substring()`][substring] method and is passed to the

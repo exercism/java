@@ -50,18 +50,18 @@ because its value does not need to be changed once it is set.
 
 In the constructor, a local variable is defined for being updated in the [`for` loop][for-loop].
 
-```exercism/note
+~~~~exercism/note
 Using the same for a variable in a nested local scope that is used in its enclosing higher scope is called
 [variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
-```
+~~~~
 
 The variable is updated  by a [`switch`][switch] statement that checks each letter of the lowercased word.
 
-```exercism/note
+~~~~exercism/note
 If most of the input will already be lower case, it is a bit more performant to normalize the input as lowercased,
 since fewer characters will need to be changed.
 However, it may be considered that to use upper case letters is more readable.
-```
+~~~~
 
 The letter is selected as a `char` by the [`charAt()`][charat] method and is passed to the
 `switch`, with each case representing the letters for a particular score.
