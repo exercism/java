@@ -1,10 +1,10 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
 
 public class LedgerTest {
 
@@ -32,7 +32,7 @@ public class LedgerTest {
 
         // then
         String expected = "Date       | Description               | Change       ";
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -46,7 +46,7 @@ public class LedgerTest {
 
         // then
         String expected = "Datum      | Omschrijving              | Verandering  ";
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -63,7 +63,7 @@ public class LedgerTest {
         // then
         String expected = "Date       | Description               | Change       \n"
                 + "02/01/2015 | Buy present               |       -$10.00";
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -83,7 +83,7 @@ public class LedgerTest {
                 "01/01/2015 | Buy present               |       -$10.00\n" +
                 "01/02/2015 | Get present               |        $10.00";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -103,7 +103,7 @@ public class LedgerTest {
                 "01/01/2015 | Buy present               |       -$10.00\n" +
                 "01/01/2015 | Get present               |        $10.00";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -125,8 +125,7 @@ public class LedgerTest {
                 "01/01/2015 | Something                 |         $0.00\n" +
                 "01/01/2015 | Something                 |         $0.01";
         ;
-
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -144,7 +143,7 @@ public class LedgerTest {
         String expected = "Date       | Description               | Change       \n" +
                 "01/01/2015 | Freude schoner Gotterf... |    -$1,234.56";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -162,7 +161,7 @@ public class LedgerTest {
         var expected = "Date       | Description               | Change       \n" +
                 "01/01/2015 | Buy present               |       -€10.00";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -180,7 +179,7 @@ public class LedgerTest {
         var expected = "Datum      | Omschrijving              | Verandering  \n" +
                 "12/03/2015 | Buy present               |     $1.234,56";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -198,7 +197,7 @@ public class LedgerTest {
         var expected = "Datum      | Omschrijving              | Verandering  \n" +
                 "12/03/2015 | Buy present               |      -$123,45";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -217,7 +216,7 @@ public class LedgerTest {
         var expected = "Date       | Description               | Change       \n" +
                 "03/12/2015 | Buy present               |      -$123.45";
 
-        Assert.assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -227,13 +226,10 @@ public class LedgerTest {
         var entries = new Ledger.LedgerEntry[0];
         var locale = "it-IT";
 
-        // when
-        IllegalArgumentException illegalArgumentException = assertThrows(
-            IllegalArgumentException.class,
-            () -> ledger.format(EUR_CURRENCY, locale, entries));
-
         // then
-        assertEquals("Invalid locale", illegalArgumentException.getMessage());
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> ledger.format(EUR_CURRENCY, locale, entries))
+                .withMessage("Invalid locale");
 
     }
 
@@ -244,12 +240,9 @@ public class LedgerTest {
         var entries = new Ledger.LedgerEntry[0];
         var currency = "Pieces o' Eight";
 
-        // when
-        IllegalArgumentException illegalArgumentException = assertThrows(
-            IllegalArgumentException.class,
-            () -> ledger.format(currency, US_LOCALE, entries));
-
         // then
-        assertEquals("Invalid currency", illegalArgumentException.getMessage());
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> ledger.format(currency, US_LOCALE, entries))
+                .withMessage("Invalid currency");
     }
 }
