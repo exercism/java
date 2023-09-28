@@ -2,56 +2,56 @@ final class ComplexNumber {
 
     private final double real;
 
-    private final double imag;
+    private final double imaginary;
 
-    ComplexNumber(double real, double imag) {
+    ComplexNumber(double real, double imaginary) {
         this.real = real;
-        this.imag = imag;
+        this.imaginary = imaginary;
     }
 
     double getReal() {
         return real;
     }
 
-    double getImag() {
-        return imag;
+    double getImaginary() {
+        return imaginary;
     }
 
-    ComplexNumber times(ComplexNumber other) {
+    ComplexNumber multiply(ComplexNumber other) {
         return new ComplexNumber(
-                real * other.real - imag * other.imag,
-                real * other.imag + imag * other.real);
+                real * other.real - imaginary * other.imaginary,
+                real * other.imaginary + imaginary * other.real);
     }
 
     ComplexNumber add(ComplexNumber other) {
-        return new ComplexNumber(real + other.real, imag + other.imag);
+        return new ComplexNumber(real + other.real, imaginary + other.imaginary);
     }
 
-    ComplexNumber minus(ComplexNumber other) {
-        return new ComplexNumber(real - other.real, imag - other.imag);
+    ComplexNumber subtract(ComplexNumber other) {
+        return new ComplexNumber(real - other.real, imaginary - other.imaginary);
     }
 
-    ComplexNumber div(ComplexNumber other) {
-        return this.times(other.conjugate()).div(Math.pow(other.abs(), 2));
+    ComplexNumber divide(ComplexNumber other) {
+        return this.multiply(other.conjugate()).divide(Math.pow(other.abs(), 2));
     }
 
     double abs() {
-        return Math.hypot(real, imag);
+        return Math.hypot(real, imaginary);
     }
 
     ComplexNumber conjugate() {
-        return new ComplexNumber(real, -imag);
+        return new ComplexNumber(real, -imaginary);
     }
 
     ComplexNumber exponentialOf() {
-        return new ComplexNumber(Math.cos(imag), Math.sin(imag)).times(Math.exp(real));
+        return new ComplexNumber(Math.cos(imaginary), Math.sin(imaginary)).multiply(Math.exp(real));
     }
 
-    private ComplexNumber div(double factor) {
-        return new ComplexNumber(real / factor, imag / factor);
+    private ComplexNumber divide(double factor) {
+        return new ComplexNumber(real / factor, imaginary / factor);
     }
 
-    private ComplexNumber times(double factor) {
-        return new ComplexNumber(factor * real, factor * imag);
+    private ComplexNumber multiply(double factor) {
+        return new ComplexNumber(factor * real, factor * imaginary);
     }
 }
