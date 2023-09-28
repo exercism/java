@@ -1,7 +1,4 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.*;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,8 +11,8 @@ public class ErrorHandlingTest {
 
     @Test
     public void testThrowIllegalArgumentException() {
-        assertThatExceptionOfType(Exception.class).
-                isThrownBy(() -> errorHandling.handleErrorByThrowingIllegalArgumentException());
+        assertThatExceptionOfType(Exception.class)
+                .isThrownBy(() -> errorHandling.handleErrorByThrowingIllegalArgumentException());
     }
 
     @Ignore("Remove to run test")
@@ -97,11 +94,11 @@ public class ErrorHandlingTest {
     @Test
     public void testReturnOptionalInstance() {
         Optional<Integer> successfulResult = errorHandling.handleErrorByReturningOptionalInstance("1");
-        assertTrue(successfulResult.isPresent());
-        assertEquals(1, (int) successfulResult.get());
+        assertThat(successfulResult).isPresent().hasValue(1);
 
         Optional<Integer> failureResult = errorHandling.handleErrorByReturningOptionalInstance("a");
-        assertFalse(failureResult.isPresent());
+        assertThat(failureResult).isNotPresent();
+
     }
 
 }

@@ -40,10 +40,10 @@ Execution will either return or will continue to the next statement anyway.
 The `String` [`trim()`][trim] method is applied to the input to eliminate any whitespace at either end of the input.
 If the string has no characters left, it returns the response for saying nothing.
 
-```exercism/caution
+~~~~exercism/caution
 Note that a `null` `string` would be different from a `String` of all whitespace.
 A `null` `String` would throw a `NullPointerException` if `trim()` were applied to it.
-```
+~~~~
 
 A [Pattern][pattern] is defined to look for at least one English alphabetic character.
 

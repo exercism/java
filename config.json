@@ -1549,6 +1549,21 @@
         ]
       },
       {
+        "slug": "react",
+        "name": "React",
+        "uuid": "33531718-1d8a-4abd-bd2a-090303ad0c39",
+        "practices": [
+          "classes",
+          "generic-types"
+        ],
+        "prerequisites": [
+          "classes",
+          "generic-types"
+        ],
+        "difficulty": 8,
+        "topics": []
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "64cda115-919a-4eef-9a45-9ec5d1af98cc",

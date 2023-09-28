@@ -24,12 +24,12 @@ class DifferenceOfSquaresCalculator {
 
 This solution iterates using the [`rangeClosed()`][rangeclosed] method of the [`IntStream`][intstream] class.
 
-```exercism/note
+~~~~exercism/note
 The difference between `rangeClosed()` and [`range()`](https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#range-int-int-)
 is that the ending bound is _inclusive_ for `rangeClosed()` and _exclusive_ for `range()`.
 So, `IntStream.range(1, 10)` iterates from `1` up to but not including `10`,
 and `IntStream.rangeClosed(1, 10)` iterates from `1` through `10`.
-```
+~~~~
 
 In `computeSquareOfSumTo`, the numbers are added with the [`sum()`][sum] method.
 The sum of the numbers is then multiplied by itself to get the square of the summed numbers.

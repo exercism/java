@@ -22,10 +22,10 @@ The input `String` is lowercased and chained into the [`chars()`][chars] method.
 Each character is passed as a primitive `int` representing its [Unicode codepoint][char] to the [`filter()`][filter] method.
 The `filter()` passes each codepoint to the [`IsLetter()`][isletter-codepoint] method to filter in only letter characters.
 
-```exercism/note
+~~~~exercism/note
 Another method that could be used is [`isAlphabetic()`](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-).
 For the difference between `isAlphabetic()` and `isLetter()`, see [here](https://www.baeldung.com/java-character-isletter-isalphabetic).
-```
+~~~~
 
 The the [`count()`][count] of the [`distinct()`][distinct] surviving codepoints are compared with the number of letters expected,
 which for the English alphabet is `26`.
