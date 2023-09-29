@@ -41,3 +41,8 @@ jobs:
         run: chmod +x gradlew
       - name: Test all reference implementations with Gradle
         run: ./gradlew test --continue
+      - name: Create test summary
+        uses: test-summary/action@62bc5c68de2a6a0d02039763b8c754569df99e3f
+        with:
+          paths: "**/build/test-results/test/*.xml"
+        if: always()
