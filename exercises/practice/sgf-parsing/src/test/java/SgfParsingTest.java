@@ -12,7 +12,8 @@ public class SgfParsingTest {
     @Test
     public void emptyInput() {
         String input = "";
-        assertThatExceptionOfType(SgfParsingException.class).isThrownBy(() -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class).as("tree missing")
+                .isThrownBy(() -> new SgfParsing().parse(input));
     }
 
     @Test
