@@ -12,14 +12,16 @@ public class SgfParsingTest {
     @Test
     public void emptyInput() {
         String input = "";
-        assertThatExceptionOfType(SgfParsingException.class).isThrownBy(() -> new SgfParsing().parse(input));
+        assertThatExceptionOfType(SgfParsingException.class).as("tree missing")
+                .isThrownBy(() -> new SgfParsing().parse(input));
     }
 
     @Test
     @Ignore("Remove to run test")
     public void treeWithNoNodes() {
         String input = "()";
-        assertThatExceptionOfType(SgfParsingException.class).as("tree missing")
+        assertThatExceptionOfType(SgfParsingException.class)
+                .as("tree with no nodes")
                 .isThrownBy(() -> new SgfParsing().parse(input));
     }
 
