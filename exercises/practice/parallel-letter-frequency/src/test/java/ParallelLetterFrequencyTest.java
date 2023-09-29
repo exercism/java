@@ -1,10 +1,10 @@
-import org.junit.*;
+import org.junit.Ignore;
+import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import java.util.concurrent.*;
-import java.util.stream.*;
-import java.util.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ParallelLetterFrequencyTest {
 
@@ -26,7 +26,7 @@ public class ParallelLetterFrequencyTest {
         Map<Integer, Integer> expectedOutput = new HashMap<Integer, Integer>();
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
-        assertEquals(expectedOutput, p.letterCounts());
+        assertThat(p.letterCounts()).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -40,7 +40,7 @@ public class ParallelLetterFrequencyTest {
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
-        assertEquals(expectedOutput, p.letterCounts());
+        assertThat(p.letterCounts()).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -54,7 +54,7 @@ public class ParallelLetterFrequencyTest {
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
-        assertEquals(expectedOutput, p.letterCounts());
+        assertThat(p.letterCounts()).isEqualTo(expectedOutput);
     }
 
 
@@ -69,7 +69,7 @@ public class ParallelLetterFrequencyTest {
         Map<Integer, Integer> expectedOutput = new HashMap<Integer, Integer>();
         ParallelLetterFrequency p = new ParallelLetterFrequency(b.toString());
 
-        assertEquals(expectedOutput, p.letterCounts());
+        assertThat(p.letterCounts()).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -89,7 +89,7 @@ public class ParallelLetterFrequencyTest {
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(b.toString());
 
-        assertEquals(expectedOutput, p.letterCounts());
+        assertThat(p.letterCounts()).isEqualTo(expectedOutput);
     }
 
 
@@ -98,7 +98,7 @@ public class ParallelLetterFrequencyTest {
     public void punctuationDoesntCount() {
         ParallelLetterFrequency p = new ParallelLetterFrequency(starSpangledBanner);
 
-        assertFalse(p.letterCounts().containsKey((int) ','));
+        assertThat(p.letterCounts().containsKey((int) ',')).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -106,6 +106,6 @@ public class ParallelLetterFrequencyTest {
     public void numbersDontCount() {
         ParallelLetterFrequency p = new ParallelLetterFrequency("Testing, 1, 2, 3");
 
-        assertFalse(p.letterCounts().containsKey((int) '1'));
+        assertThat(p.letterCounts().containsKey((int) '1')).isFalse();
     }
 }
