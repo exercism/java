@@ -187,7 +187,8 @@ public class CustomSetTest {
 
         actual.add(element);
 
-        assertThat(actual).isNotNull().returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.equals(expected)).isTrue();
         assertThat(actual.isEmpty()).isFalse();
 
     }
@@ -202,10 +203,9 @@ public class CustomSetTest {
 
         actual.add(element);
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(true, s -> s.equals(expected))
-                .returns(false, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.equals(expected)).isTrue();
+        assertThat(actual.isEmpty()).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -217,7 +217,8 @@ public class CustomSetTest {
 
         actual.add(element);
 
-        assertThat(actual).isNotNull().returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -226,7 +227,8 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<Integer>(Collections.emptyList())
                 .getIntersection(new CustomSet<>(Collections.emptyList()));
 
-        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -235,7 +237,8 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<Character>(Collections.emptyList())
                 .getIntersection(new CustomSet<>(Arrays.asList('3', '2', '5')));
 
-        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -244,7 +247,8 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<>(Arrays.asList("1", "2", "3", "4"))
                 .getIntersection(new CustomSet<>(Collections.emptyList()));
 
-        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
 
     }
 
@@ -254,7 +258,8 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<>(Arrays.asList(1, 2, 3))
                 .getIntersection(new CustomSet<>(Arrays.asList(4, 5, 6)));
 
-        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -264,10 +269,9 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '3', '4'))
                 .getIntersection(new CustomSet<>(Arrays.asList('3', '2', '5')));
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(false, CustomSet::isEmpty)
-                .returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isFalse();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -276,7 +280,8 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<String>(Collections.emptyList())
                 .getDifference(new CustomSet<>(Collections.emptyList()));
 
-        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -285,7 +290,8 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<Integer>(Collections.emptyList())
                 .getDifference(new CustomSet<>(Arrays.asList(3, 2, 5)));
 
-        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -296,10 +302,9 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '3', '4'))
                 .getDifference(new CustomSet<>(Collections.emptyList()));
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(false, CustomSet::isEmpty)
-                .returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isFalse();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -310,10 +315,9 @@ public class CustomSetTest {
                 .getDifference(new CustomSet<>(Arrays.asList("2", "4")));
 
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(false, CustomSet::isEmpty)
-                .returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isFalse();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -322,9 +326,8 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<Integer>(Collections.emptyList())
                 .getUnion(new CustomSet<>(Collections.emptyList()));
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(true, CustomSet::isEmpty);
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -334,10 +337,9 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<Character>(Collections.emptyList())
                 .getUnion(new CustomSet<>(Collections.singletonList('2')));
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(false, CustomSet::isEmpty)
-                .returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isFalse();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -347,10 +349,9 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<>(Arrays.asList("1", "3"))
                 .getUnion(new CustomSet<>(Collections.emptyList()));
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(false, CustomSet::isEmpty)
-                .returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isFalse();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -360,10 +361,9 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<>(Arrays.asList(1, 3))
                 .getUnion(new CustomSet<>(Arrays.asList(2, 3)));
 
-        assertThat(actual)
-                .isNotNull()
-                .returns(false, CustomSet::isEmpty)
-                .returns(true, s -> s.equals(expected));
+        assertThat(actual).isNotNull();
+        assertThat(actual.isEmpty()).isFalse();
+        assertThat(actual.equals(expected)).isTrue();
     }
 
 }
