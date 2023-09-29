@@ -4,42 +4,42 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CustomSetTest {
 
     @Test
     public void setsWithNoElementsAreEmpty() {
         CustomSet<Integer> customSet = new CustomSet<>(Collections.emptyList());
-        assertTrue(customSet.isEmpty());
+        assertThat(customSet.isEmpty()).isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void setsWithElementsAreNotEmpty() {
         CustomSet<Character> customSet = new CustomSet<>(Collections.singletonList('1'));
-        assertFalse(customSet.isEmpty());
+        assertThat(customSet.isEmpty()).isFalse();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void nothingIsContainedInAnEmptySet() {
         CustomSet<String> customSet = new CustomSet<>(Collections.emptyList());
-        assertFalse(customSet.contains("1"));
+        assertThat(customSet.contains("1")).isFalse();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void whenTheElementIsInTheSet() {
         CustomSet<Integer> customSet = new CustomSet<>(Arrays.asList(1, 2, 3));
-        assertTrue(customSet.contains(1));
+        assertThat(customSet.contains(1)).isTrue();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void whenTheElementIsNotInTheSet() {
         CustomSet<Character> customSet = new CustomSet<>(Arrays.asList('1', '2', '3'));
-        assertFalse(customSet.contains('4'));
+        assertThat(customSet.contains('4')).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -47,7 +47,7 @@ public class CustomSetTest {
     public void emptySetIsASubsetOfAnotherEmptySet() {
         CustomSet<String> customSet = new CustomSet<>(Collections.emptyList());
         CustomSet<String> secondCustomSet = new CustomSet<>(Collections.emptyList());
-        assertTrue(customSet.isSubset(secondCustomSet));
+        assertThat(customSet.isSubset(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -55,7 +55,7 @@ public class CustomSetTest {
     public void emptySetIsASubsetOfNonEmptySet() {
         CustomSet<Integer> customSet = new CustomSet<>(Collections.singletonList(1));
         CustomSet<Integer> secondCustomSet = new CustomSet<>(Collections.emptyList());
-        assertTrue(customSet.isSubset(secondCustomSet));
+        assertThat(customSet.isSubset(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -63,7 +63,7 @@ public class CustomSetTest {
     public void nonEmptySetIsNotASubsetOfEmptySet() {
         CustomSet<Character> customSet = new CustomSet<>(Collections.emptyList());
         CustomSet<Character> secondCustomSet = new CustomSet<>(Collections.singletonList('1'));
-        assertFalse(customSet.isSubset(secondCustomSet));
+        assertThat(customSet.isSubset(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -71,7 +71,7 @@ public class CustomSetTest {
     public void setIsASubsetOfSetWithExactSameElements() {
         CustomSet<String> customSet = new CustomSet<>(Arrays.asList("1", "2", "3"));
         CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "2", "3"));
-        assertTrue(customSet.isSubset(secondCustomSet));
+        assertThat(customSet.isSubset(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -79,7 +79,7 @@ public class CustomSetTest {
     public void setIsASubsetOfLargerSetWithSameElements() {
         CustomSet<Integer> customSet = new CustomSet<>(Arrays.asList(4, 1, 2, 3));
         CustomSet<Integer> secondCustomSet = new CustomSet<>(Arrays.asList(1, 2, 3));
-        assertTrue(customSet.isSubset(secondCustomSet));
+        assertThat(customSet.isSubset(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -87,7 +87,7 @@ public class CustomSetTest {
     public void setIsNotASubsetOfSetThatDoesNotContainItsElements() {
         CustomSet<Character> customSet = new CustomSet<>(Arrays.asList('4', '1', '3'));
         CustomSet<Character> secondCustomSet = new CustomSet<>(Arrays.asList('1', '2', '3'));
-        assertFalse(customSet.isSubset(secondCustomSet));
+        assertThat(customSet.isSubset(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -95,7 +95,7 @@ public class CustomSetTest {
     public void theEmptySetIsDisjointWithItself() {
         CustomSet<String> customSet = new CustomSet<>(Collections.emptyList());
         CustomSet<String> secondCustomSet = new CustomSet<>(Collections.emptyList());
-        assertTrue(customSet.isDisjoint(secondCustomSet));
+        assertThat(customSet.isDisjoint(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -103,7 +103,7 @@ public class CustomSetTest {
     public void emptySetIsDisjointWithNonEmptySet() {
         CustomSet<Integer> customSet = new CustomSet<>(Collections.emptyList());
         CustomSet<Integer> secondCustomSet = new CustomSet<>(Collections.singletonList(1));
-        assertTrue(customSet.isDisjoint(secondCustomSet));
+        assertThat(customSet.isDisjoint(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -111,7 +111,7 @@ public class CustomSetTest {
     public void nonEmptySetIsDisjointWithEmptySet() {
         CustomSet<Character> customSet = new CustomSet<>(Collections.singletonList('1'));
         CustomSet<Character> secondCustomSet = new CustomSet<>(Collections.emptyList());
-        assertTrue(customSet.isDisjoint(secondCustomSet));
+        assertThat(customSet.isDisjoint(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -119,7 +119,7 @@ public class CustomSetTest {
     public void setsAreNotDisjointIfTheyShareAnElement() {
         CustomSet<String> customSet = new CustomSet<>(Arrays.asList("1", "2"));
         CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("2", "3"));
-        assertFalse(customSet.isDisjoint(secondCustomSet));
+        assertThat(customSet.isDisjoint(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -127,7 +127,7 @@ public class CustomSetTest {
     public void setsAreDisjointIfTheyShareNoElements() {
         CustomSet<Integer> customSet = new CustomSet<>(Arrays.asList(1, 2));
         CustomSet<Integer> secondCustomSet = new CustomSet<>(Arrays.asList(3, 4));
-        assertTrue(customSet.isDisjoint(secondCustomSet));
+        assertThat(customSet.isDisjoint(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -135,7 +135,7 @@ public class CustomSetTest {
     public void emptySetsAreEqual() {
         CustomSet<Character> customSet = new CustomSet<>(Collections.emptyList());
         CustomSet<Character> secondCustomSet = new CustomSet<>(Collections.emptyList());
-        assertTrue(customSet.equals(secondCustomSet));
+        assertThat(customSet.equals(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -143,7 +143,7 @@ public class CustomSetTest {
     public void emptySetIsNotEqualToNonEmptySet() {
         CustomSet<String> customSet = new CustomSet<>(Collections.emptyList());
         CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "2", "3"));
-        assertFalse(customSet.equals(secondCustomSet));
+        assertThat(customSet.equals(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -151,7 +151,7 @@ public class CustomSetTest {
     public void nonEmptySetIsNotEqualToEmptySet() {
         CustomSet<Integer> customSet = new CustomSet<>(Arrays.asList(1, 2, 3));
         CustomSet<Integer> secondCustomSet = new CustomSet<>(Collections.emptyList());
-        assertFalse(customSet.equals(secondCustomSet));
+        assertThat(customSet.equals(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -159,7 +159,7 @@ public class CustomSetTest {
     public void setsWithTheSameElementsAreEqual() {
         CustomSet<Character> customSet = new CustomSet<>(Arrays.asList('1', '2'));
         CustomSet<Character> secondCustomSet = new CustomSet<>(Arrays.asList('2', '1'));
-        assertTrue(customSet.equals(secondCustomSet));
+        assertThat(customSet.equals(secondCustomSet)).isTrue();
     }
 
     @Ignore("Remove to run test")
@@ -167,7 +167,7 @@ public class CustomSetTest {
     public void setsWithDifferentElementsAreNotEqual() {
         CustomSet<String> customSet = new CustomSet<>(Arrays.asList("1", "2", "3"));
         CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "2", "4"));
-        assertFalse(customSet.equals(secondCustomSet));
+        assertThat(customSet.equals(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -175,7 +175,7 @@ public class CustomSetTest {
     public void setIsNotEqualToLargerSetWithSameElements() {
         CustomSet<String> customSet = new CustomSet<>(Arrays.asList("1", "2", "3"));
         CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "2", "3", "4"));
-        assertFalse(customSet.equals(secondCustomSet));
+        assertThat(customSet.equals(secondCustomSet)).isFalse();
     }
 
     @Ignore("Remove to run test")
@@ -187,9 +187,9 @@ public class CustomSetTest {
 
         actual.add(element);
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual).isNotNull().returns(true, s -> s.equals(expected));
+        assertThat(actual.isEmpty()).isFalse();
+
     }
 
     @Ignore("Remove to run test")
@@ -197,14 +197,16 @@ public class CustomSetTest {
     public void addToNonEmptySet() {
         char element = '3';
         CustomSet<Character> expected = new CustomSet<>(Collections.unmodifiableList(
-            Arrays.asList('1', '2', '3', '4')));
+                Arrays.asList('1', '2', '3', '4')));
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '4'));
 
         actual.add(element);
+        System.out.println(actual);
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual)
+                .isNotNull()
+                .returns(true, s -> s.equals(expected))
+                .returns(false, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -216,8 +218,7 @@ public class CustomSetTest {
 
         actual.add(element);
 
-        assertNotNull(actual);
-        assertTrue(expected.equals(actual));
+        assertThat(actual).isNotNull().returns(true, s -> s.equals(expected));
     }
 
     @Ignore("Remove to run test")
@@ -226,8 +227,7 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<Integer>(Collections.emptyList())
                 .getIntersection(new CustomSet<>(Collections.emptyList()));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -236,8 +236,7 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<Character>(Collections.emptyList())
                 .getIntersection(new CustomSet<>(Arrays.asList('3', '2', '5')));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -246,8 +245,7 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<>(Arrays.asList("1", "2", "3", "4"))
                 .getIntersection(new CustomSet<>(Collections.emptyList()));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
 
     }
 
@@ -257,8 +255,7 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<>(Arrays.asList(1, 2, 3))
                 .getIntersection(new CustomSet<>(Arrays.asList(4, 5, 6)));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -268,9 +265,10 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '3', '4'))
                 .getIntersection(new CustomSet<>(Arrays.asList('3', '2', '5')));
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual)
+                .isNotNull()
+                .returns(false, CustomSet::isEmpty)
+                .returns(true, s -> s.equals(expected));
     }
 
     @Ignore("Remove to run test")
@@ -279,8 +277,7 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<String>(Collections.emptyList())
                 .getDifference(new CustomSet<>(Collections.emptyList()));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -289,8 +286,7 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<Integer>(Collections.emptyList())
                 .getDifference(new CustomSet<>(Arrays.asList(3, 2, 5)));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual).isNotNull().returns(true, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -301,9 +297,10 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '3', '4'))
                 .getDifference(new CustomSet<>(Collections.emptyList()));
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual)
+                .isNotNull()
+                .returns(false, CustomSet::isEmpty)
+                .returns(true, s -> s.equals(expected));
     }
 
     @Ignore("Remove to run test")
@@ -313,9 +310,11 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<>(Arrays.asList("3", "2", "1"))
                 .getDifference(new CustomSet<>(Arrays.asList("2", "4")));
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+
+        assertThat(actual)
+                .isNotNull()
+                .returns(false, CustomSet::isEmpty)
+                .returns(true, s -> s.equals(expected));
     }
 
     @Ignore("Remove to run test")
@@ -324,8 +323,9 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<Integer>(Collections.emptyList())
                 .getUnion(new CustomSet<>(Collections.emptyList()));
 
-        assertNotNull(actual);
-        assertTrue(actual.isEmpty());
+        assertThat(actual)
+                .isNotNull()
+                .returns(true, CustomSet::isEmpty);
     }
 
     @Ignore("Remove to run test")
@@ -335,9 +335,10 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<Character>(Collections.emptyList())
                 .getUnion(new CustomSet<>(Collections.singletonList('2')));
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual)
+                .isNotNull()
+                .returns(false, CustomSet::isEmpty)
+                .returns(true, s -> s.equals(expected));
     }
 
     @Ignore("Remove to run test")
@@ -347,9 +348,10 @@ public class CustomSetTest {
         CustomSet<String> actual = new CustomSet<>(Arrays.asList("1", "3"))
                 .getUnion(new CustomSet<>(Collections.emptyList()));
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual)
+                .isNotNull()
+                .returns(false, CustomSet::isEmpty)
+                .returns(true, s -> s.equals(expected));
     }
 
     @Ignore("Remove to run test")
@@ -359,9 +361,10 @@ public class CustomSetTest {
         CustomSet<Integer> actual = new CustomSet<>(Arrays.asList(1, 3))
                 .getUnion(new CustomSet<>(Arrays.asList(2, 3)));
 
-        assertNotNull(actual);
-        assertFalse(actual.isEmpty());
-        assertTrue(expected.equals(actual));
+        assertThat(actual)
+                .isNotNull()
+                .returns(false, CustomSet::isEmpty)
+                .returns(true, s -> s.equals(expected));
     }
 
 }
