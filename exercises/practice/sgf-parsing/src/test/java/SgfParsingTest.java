@@ -19,7 +19,8 @@ public class SgfParsingTest {
     @Ignore("Remove to run test")
     public void treeWithNoNodes() {
         String input = "()";
-        assertThatExceptionOfType(SgfParsingException.class).as("tree missing")
+        assertThatExceptionOfType(SgfParsingException.class)
+                .as("tree with no nodes")
                 .isThrownBy(() -> new SgfParsing().parse(input));
     }
 
