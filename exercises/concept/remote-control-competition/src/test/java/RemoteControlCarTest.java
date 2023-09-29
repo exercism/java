@@ -46,7 +46,7 @@ public class RemoteControlCarTest {
 
     @Test
     @Tag("task:3")
-    @DisplayName("The getDistanceTravelled method returns different distances for production and experimental car")
+    @DisplayName("The TestTrack.race method uses the drive method on the remote control car")
     public void race() {
         ProductionRemoteControlCar productionCar = new ProductionRemoteControlCar();
         ExperimentalRemoteControlCar experimentalCar = new ExperimentalRemoteControlCar();
