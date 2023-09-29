@@ -201,7 +201,6 @@ public class CustomSetTest {
         CustomSet<Character> actual = new CustomSet<>(Arrays.asList('1', '2', '4'));
 
         actual.add(element);
-        System.out.println(actual);
 
         assertThat(actual)
                 .isNotNull()
