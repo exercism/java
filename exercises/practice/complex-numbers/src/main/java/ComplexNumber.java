@@ -1,6 +1,6 @@
 class ComplexNumber {
 
-    ComplexNumber(double real, double imag) {
+    ComplexNumber(double real, double imaginary) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
@@ -8,7 +8,7 @@ class ComplexNumber {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    double getImag() {
+    double getImaginary() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
@@ -20,23 +20,23 @@ class ComplexNumber {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    ComplexNumber minus(ComplexNumber other) {
+    ComplexNumber subtract(ComplexNumber other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    ComplexNumber times(ComplexNumber other) {
+    ComplexNumber multiply(ComplexNumber other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    ComplexNumber times(double factor) {
+    ComplexNumber multiply(double factor) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    ComplexNumber div(ComplexNumber other) {
+    ComplexNumber divide(ComplexNumber other) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    ComplexNumber div(double divisor) {
+    ComplexNumber divide(double divisor) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

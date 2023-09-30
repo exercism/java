@@ -52,12 +52,12 @@ to generate the second letter.
 In another `forEach()`, the second letter is passed in a lambda function that calls [`IntStream.range()`][range] to generate
 a number from `0` up to but not including `1000`.
 
-```exercism/note
+~~~~exercism/note
 Note that the difference between `IntStream range()` and `IntStream rangeClosed()` is that the upper bound is _exclusive_
 for `range()` and is _inclusive_ for `rangeClosed()`.
 So, `IntStream.range(1, 10)` iterates from `1` up to but not including `10`,
 and `IntStream.rangeClosed(1, 10)` iterates from `1` through `10`.
-```
+~~~~
 
 The number is passed to a lambda which formats the two ASCII values and the number into a string.
 The `%03d` [format specifier][format-specifiers] indicates having leading zeros for a number up to three places,

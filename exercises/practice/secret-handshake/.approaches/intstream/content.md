@@ -34,13 +34,13 @@ It does this by use of the [left shift operator][left-shift].
 So, if the bit index is `2`, then `1` would be shifted left two places for a binary value of `0100`, which is decimal `4`.
 It then compares the bitwise value with the `int` argument to the `calculateHandshake()` method by using the [bitwise AND operator][and].
 
-```exercism/note
+~~~~exercism/note
 Although the argument to `calculateHandshake()` is not directly passed to the lambda, the lambda can use it.
 To do so is called [capturing](https://www.geeksforgeeks.org/java-lambda-expression-variable-capturing-with-examples/) the variable.
 To capture a variable, it must be in the enclosing [scope](https://www.geeksforgeeks.org/variable-scope-in-java/)
 of the lambda, and it must be effectively `final`,
 meaning that is is not changed in the course of the program.
-```
+~~~~
 
 If comparing the bitwise value with the input results in a non-zero bitwise value, then the input contains the value of the bitwise value.
 

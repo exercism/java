@@ -20,11 +20,11 @@ public class AnagramTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testDetectMultipleAnagrams() {
-        Anagram detector = new Anagram("master");
+    public void testDetectsTwoAnagrams() {
+        Anagram detector = new Anagram("solemn");
 
-        assertThat(detector.match(Arrays.asList("stream", "pigeon", "maters")))
-            .containsExactlyInAnyOrder("maters", "stream");
+        assertThat(detector.match(Arrays.asList("lemons", "cherry", "melons")))
+            .containsExactlyInAnyOrder("lemons", "melons");
     }
 
     @Ignore("Remove to run test")
@@ -118,7 +118,7 @@ public class AnagramTest {
     public void testIdenticalWordRepeatedIsNotAnagram() {
         Anagram detector = new Anagram("go");
 
-        assertThat(detector.match(Collections.singletonList("go Go GO")))
+        assertThat(detector.match(Collections.singletonList("goGoGO")))
             .isEmpty();
     }
 
@@ -136,7 +136,25 @@ public class AnagramTest {
     public void testWordsAreNotAnagramsOfThemselvesCaseInsensitive() {
         Anagram detector = new Anagram("BANANA");
 
-        assertThat(detector.match(Arrays.asList("BANANA", "Banana", "banana")))
+        assertThat(detector.match(Collections.singletonList("BANANA")))
+            .isEmpty();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsPartiallyDifferent() {
+        Anagram detector = new Anagram("BANANA");
+
+        assertThat(detector.match(Collections.singletonList("Banana")))
+            .isEmpty();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsCompletelyDifferent() {
+        Anagram detector = new Anagram("BANANA");
+
+        assertThat(detector.match(Collections.singletonList("banana")))
             .isEmpty();
     }
 
@@ -145,7 +163,7 @@ public class AnagramTest {
     public void testWordsOtherThanThemselvesCanBeAnagrams() {
         Anagram detector = new Anagram("LISTEN");
 
-        assertThat(detector.match(Arrays.asList("Listen", "Silent", "LISTEN")))
+        assertThat(detector.match(Arrays.asList("LISTEN", "Silent")))
             .containsExactlyInAnyOrder("Silent");
     }
 

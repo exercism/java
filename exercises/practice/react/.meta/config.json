@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "kahgoh"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/React.java"
+    ],
+    "test": [
+      "src/test/java/ReactTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/React.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Implement a basic reactive system."
+}

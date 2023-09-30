@@ -1,4 +1,6 @@
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,18 +9,24 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RemoteControlCarTest {
     @Test
+    @Tag("task:1")
+    @DisplayName("The ProductionRemoteControlCar is an instance of the RemoteControlCar interface")
     public void productionRccIsRemoteControlCar() {
         ProductionRemoteControlCar productionCar = new ProductionRemoteControlCar();
         assertThat(productionCar instanceof RemoteControlCar).isTrue();
     }
 
     @Test
+    @Tag("task:1")
+    @DisplayName("The ExperimentalRemoteControlCar is an instance of the RemoteControlCar interface")
     public void experimentalRccIsRemoteControlCar() {
         ExperimentalRemoteControlCar experimentalCar = new ExperimentalRemoteControlCar();
         assertThat(experimentalCar instanceof RemoteControlCar).isTrue();
     }
 
     @Test
+    @Tag("task:2")
+    @DisplayName("The getDistanceTravelled method of the ProductionRemoteControlCar returns 10 after driving once")
     public void productionCarTravels10UnitsPerDrive() {
         ProductionRemoteControlCar car = new ProductionRemoteControlCar();
         assertThat(car.getDistanceTravelled()).isEqualTo(0);
@@ -27,6 +35,8 @@ public class RemoteControlCarTest {
     }
 
     @Test
+    @Tag("task:2")
+    @DisplayName("The getDistanceTravelled method of the ExperimentalRemoteControlCar returns 20 after driving once")
     public void experimentalCarTravels20UnitsPerDrive() {
         ExperimentalRemoteControlCar car = new ExperimentalRemoteControlCar();
         assertThat(car.getDistanceTravelled()).isEqualTo(0);
@@ -35,6 +45,8 @@ public class RemoteControlCarTest {
     }
 
     @Test
+    @Tag("task:3")
+    @DisplayName("The TestTrack.race method uses the drive method on the remote control car")
     public void race() {
         ProductionRemoteControlCar productionCar = new ProductionRemoteControlCar();
         ExperimentalRemoteControlCar experimentalCar = new ExperimentalRemoteControlCar();
@@ -46,6 +58,8 @@ public class RemoteControlCarTest {
     }
 
     @Test
+    @Tag("task:4")
+    @DisplayName("The ProductionRemoteControlCar implements the Comparable interface")
     public void ensureCarsAreComparable() {
         assertThat(Comparable.class).isAssignableFrom(ProductionRemoteControlCar.class);
     }
@@ -57,6 +71,8 @@ public class RemoteControlCarTest {
     }
 
     @Test
+    @Tag("task:4")
+    @DisplayName("The getRankedCars returns a list of two cars sorted by number of victories")
     public void rankTwoCars() {
         List<ProductionRemoteControlCar> unsortedCars = new ArrayList<>() {
             {
@@ -70,6 +86,8 @@ public class RemoteControlCarTest {
     }
 
     @Test
+    @Tag("task:4")
+    @DisplayName("The getRankedCars returns a list of multiple cars sorted by number of victories")
     public void rankManyCars() {
         List<ProductionRemoteControlCar> unsortedCars = new ArrayList<>() {
             {

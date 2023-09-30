@@ -1,6 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -28,9 +27,7 @@ public class SimpleLinkedListTest {
     public void popOnEmptyListWillThrow() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
 
-        assertThrows(
-            NoSuchElementException.class,
-            list::pop);
+        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(list::pop);
     }
 
     @Ignore("Remove to run test")
@@ -72,7 +69,7 @@ public class SimpleLinkedListTest {
         list.push('6');
         list.push('5');
         Character[] expected = {'5', '6', '7', '8', '9'};
-        assertArrayEquals(expected, list.asArray(Character.class));
+        assertThat(list.asArray(Character.class)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -80,7 +77,7 @@ public class SimpleLinkedListTest {
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
         Object[] expected = {};
-        assertArrayEquals(expected, list.asArray(Object.class));
+        assertThat(list.asArray(Object.class)).isEqualTo(expected);
     }
 
 }

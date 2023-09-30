@@ -5,38 +5,44 @@ name: Java CI with Gradle
 
 on: [push, pull_request, workflow_dispatch]
 
+defaults:
+  run:
+    working-directory: exercises
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
       - name: Set up JDK 1.17
-        uses: actions/setup-java@cd89f46ac9d01407894225f350157564c9c7cee2
+        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0
         with:
           java-version: 17
           distribution: "temurin"
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Check if tests compile cleanly with starter sources
-        working-directory: exercises
-        run: ../gradlew compileStarterTestJava --continue
+        run: ./gradlew compileStarterTestJava --continue
       - name: Run checkstyle
-        working-directory: exercises
-        run: ../gradlew check --exclude-task test --continue
+        run: ./gradlew check --exclude-task test --continue
 
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
       - name: Set up JDK 1.17
-        uses: actions/setup-java@cd89f46ac9d01407894225f350157564c9c7cee2
+        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0
         with:
           java-version: 17
           distribution: "temurin"
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Test all reference implementations with Gradle
-        working-directory: exercises
-        run: ../gradlew test --continue
+        run: ./gradlew test --continue
+      - name: Create test summary
+        uses: test-summary/action@62bc5c68de2a6a0d02039763b8c754569df99e3f
+        with:
+          paths: "**/build/test-results/test/*.xml"
+        if: always()

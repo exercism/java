@@ -1,5 +1,7 @@
 # Introduction
 
+## Numbers
+
 There are two different types of numbers in Java:
 
 - Integers: numbers with no digits behind the decimal separator (whole numbers). Examples are `-6`, `0`, `1`, `25`, `976` and `-500000`.
@@ -7,7 +9,7 @@ There are two different types of numbers in Java:
 
 The two most common numeric types in Java are `int` and `double`. An `int` is a 32-bit integer and a `double` is a 64-bit floating-point number.
 
-Arithmetic is done using the standard arithmetic operators. Numbers can be compared using the standard numeric comparison operators and the equality (`==`) and inequality (`!=`) operators.
+Arithmetic is done using the standard arithmetic operators. Numbers can be compared using the standard numeric comparison operators (eg. `5 > 4` and `4 <= 5`) and the equality (`==`) and inequality (`!=`) operators.
 
 Java has two types of numeric conversions:
 
@@ -30,4 +32,4 @@ if (x == 5) {
 }
 ```
 
-The condition of an `if` statement must be of type `boolean`. Java has no concept of _truthy_ values.
+The condition of an `if` statement must be of type `boolean`.
