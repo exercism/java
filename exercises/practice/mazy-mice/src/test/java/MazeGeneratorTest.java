@@ -48,7 +48,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void the_dimensions_are_correct() {
+    void theDimensionsAreCorrect() {
         var maze = sut.generatePerfectMaze(RECTANGLE);
 
         assertThat(maze)
