@@ -58,7 +58,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void twoMazesShouldNotBeEqual() {
+    void aMazeIsDifferentEachTimeItIsGenerated() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE);
         var maze2 = sut.generatePerfectMaze(RECTANGLE);
 
