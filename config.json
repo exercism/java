@@ -686,6 +686,18 @@
         "status": "deprecated"
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "3fa6750f-cf01-4542-a494-df9a8c658733",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d",
