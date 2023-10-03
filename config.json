@@ -224,6 +224,13 @@
           "booleans"
         ],
         "status": "active"
+      },
+      {
+        "slug": "logs-logs-logs",
+        "name": "Logs, Logs, Logs!",
+        "uuid": "f33927f7-676f-4045-b1fc-34e719453c61",
+        "concepts": ["enums"],
+        "prerequisites": ["strings", "switch-statement", "constructors"]
       }
     ],
     "practice": [
@@ -307,9 +314,11 @@
         "name": "Secret Handshake",
         "uuid": "71c7c174-7e2c-43c2-bdd6-7515fcb12a91",
         "practices": [
-          "lists"
+          "lists",
+          "enums"
         ],
         "prerequisites": [
+          "enums",
           "numbers",
           "for-loops"
         ],
@@ -592,10 +601,11 @@
         "name": "Resistor Color Duo",
         "uuid": "0ae1989d-df46-414d-ad1f-4bd0f0f78421",
         "practices": [
-          "arrays"
+          "arrays",
+          "enums"
         ],
         "prerequisites": [
-          "basics"
+          "enums"
         ],
         "difficulty": 2
       },
@@ -826,11 +836,14 @@
         "name": "Allergies",
         "uuid": "6a617ddb-04e3-451c-bb30-27ccd0be9125",
         "practices": [
+          "classes",
+          "enums",
+          "for-loops",
           "lists"
         ],
         "prerequisites": [
           "for-loops",
-          "classes"
+          "enums"
         ],
         "difficulty": 5
       },
@@ -839,11 +852,11 @@
         "name": "Meetup",
         "uuid": "602511d5-7e89-4def-b072-4dd311816810",
         "practices": [
+          "enums",
           "for-loops"
         ],
         "prerequisites": [
-          "conditionals-if",
-          "classes"
+          "enums"
         ],
         "difficulty": 7
       },
@@ -852,11 +865,12 @@
         "name": "Yacht",
         "uuid": "0cb45688-9598-49aa-accc-ed48c5d6962d",
         "practices": [
-          "arrays"
+          "arrays",
+          "enums",
+          "switch-statement"
         ],
         "prerequisites": [
-          "switch-statement",
-          "classes"
+          "enums"
         ],
         "difficulty": 4
       },
@@ -921,15 +935,15 @@
         "slug": "go-counting",
         "name": "Go Counting",
         "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "algorithms",
+        "practices": [
           "conditionals-if",
-          "games",
-          "loops"
-        ]
+          "for-loops",
+          "enums"
+        ],
+        "prerequisites": [
+          "enums"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "markdown",
@@ -978,16 +992,16 @@
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "d0dcc898-ec38-4822-9e3c-1a1829c9b2d9",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "enumerations",
-          "exception_handling",
-          "filtering",
-          "integers",
-          "math"
-        ]
+        "practices": [
+          "enums",
+          "exceptions",
+          "numbers"
+        ],
+        "prerequisites": [
+          "enums",
+          "exceptions"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "say",
@@ -1062,15 +1076,15 @@
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "993bde9d-7774-4e7a-a381-9eee75f28ecb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
+        "practices": [
           "classes",
-          "enumerations",
-          "logic",
-          "loops"
-        ]
+          "enums",
+          "for-loops"
+        ],
+        "prerequisites": [
+          "enums"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "wordy",
@@ -1110,18 +1124,18 @@
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "df41c70c-daa1-4380-9729-638c17b4105d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
+        "practices": [
           "arrays",
-          "enumerations",
+          "enums",
+          "for-loops",
           "lists",
-          "logic",
-          "loops",
-          "pattern_recognition",
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "enums",
+          "lists"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "pascals-triangle",
@@ -1623,16 +1637,16 @@
         "slug": "sublist",
         "name": "Sublist",
         "uuid": "d2aedbd7-092a-43d0-8a5e-ae3ebd5b9c7f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "enumerations",
-          "generics",
-          "lists",
-          "loops",
-          "searching"
-        ]
+        "practices": [
+          "enums",
+          "generic-types",
+          "lists"
+        ],
+        "prerequisites": [
+          "enums",
+          "generic-types"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "tree-building",
@@ -1688,14 +1702,14 @@
         "slug": "hangman",
         "name": "Hangman",
         "uuid": "ab3f8bf4-cfae-4f7a-b134-bb0fa4fafa63",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "strings",
-          "reactive_programming",
-          "functional_programming"
-        ]
+        "practices": [
+          "enums",
+          "strings"
+        ],
+        "prerequisites": [
+          "enums"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "list-ops",
@@ -1878,12 +1892,12 @@
         "slug": "connect",
         "name": "Connect",
         "uuid": "1532b9a8-7e0d-479f-ad55-636e01e9d19f",
-        "practices": ["switch-statement"],
+        "practices": [
+          "enums",
+          "switch-statement"
+        ],
         "prerequisites": [
-          "strings",
-          "chars",
-          "arrays",
-          "conditionals-if"
+          "enums"
         ],
         "difficulty": 8
       },
@@ -1976,6 +1990,11 @@
       "uuid": "e552c05c-6360-4b2f-a438-7ec7e855c0f5",
       "slug": "constructors",
       "name": "Constructors"
+    },
+    {
+      "uuid": "cb753863-b7c1-4ff6-adeb-ae9a1f39deca",
+      "slug": "enums",
+      "name": "Enums"
     },
     {
       "uuid": "b7f8e129-303c-45b8-ac07-297bfd5a9906",
