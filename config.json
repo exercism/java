@@ -128,13 +128,9 @@
         "slug": "blackjack",
         "name": "Play Your Cards!",
         "uuid": "43b8f2e3-99e9-49cc-a897-d66f0f26670d",
-        "concepts": [
-          "conditionals-if"
-        ],
-        "prerequisites": [
-          "booleans"
-        ],
-        "status": "active"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "slug": "need-for-speed",
