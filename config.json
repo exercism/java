@@ -162,12 +162,8 @@
         "slug": "cars-assemble",
         "name": "Cars, Assemble!",
         "uuid": "3f451c6b-04e2-4b08-8bb0-7dcd2ec5b8f4",
-        "concepts": [
-          "numbers"
-        ],
-        "prerequisites": [
-          "if-else-statements"
-        ],
+        "concepts": ["if-else-statements", "numbers"],
+        "prerequisites": ["booleans"],
         "status": "active"
       },
       {
