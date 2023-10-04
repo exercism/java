@@ -2,7 +2,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.Before;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ZipperTest {
 
@@ -22,42 +22,42 @@ public class ZipperTest {
 
     @Test
     public void testToTree() {
-        assertEquals(binaryTree, zipper.toTree());
+        assertThat(zipper.toTree()).isEqualTo(binaryTree);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLeftRightAndValue() {
         zipper = binaryTree.getRoot();
-        assertEquals(3, zipper.left.right.getValue());
+        assertThat(zipper.left.right.getValue()).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testDeadEnd() {
         zipper = binaryTree.getRoot();
-        assertEquals(null, zipper.left.left);
+        assertThat(zipper.left.left).isNull();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testToTreeFromDeepFocus() {
         zipper = binaryTree.getRoot();
-        assertEquals(binaryTree, zipper.left.right.toTree());
+        assertThat(zipper.left.right.toTree()).isEqualTo(binaryTree);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testTraversingUpFromTop() {
         zipper = binaryTree.getRoot();
-        assertEquals(null, zipper.up);
+        assertThat(zipper.up).isNull();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLeftRightAndUp() {
         zipper = binaryTree.getRoot();
-        assertEquals(3, zipper.left.up.right.up.left.right.getValue());
+        assertThat(zipper.left.up.right.up.left.right.getValue()).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
@@ -79,7 +79,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().printTree());
+        assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -101,7 +101,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().printTree());
+        assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -126,7 +126,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().printTree());
+        assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -139,7 +139,7 @@ public class ZipperTest {
                 "value: 1, " +
                 "left: { value: 2, left: null, right: null }, " +
                 "right: { value: 4, left: null, right: null }";
-        assertEquals(expected, zipper.toTree().printTree());
+        assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -169,7 +169,7 @@ public class ZipperTest {
                         "value: 8, " +
                         "left: null, " +
                         "right: null } }";
-        assertEquals(expected, zipper.toTree().printTree());
+        assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -191,7 +191,7 @@ public class ZipperTest {
                     "value: 4, " +
                     "left: null, " +
                     "right: null }";
-        assertEquals(expected, zipper.toTree().printTree());
+        assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -199,6 +199,6 @@ public class ZipperTest {
     public void differentPathToSameZipper() {
         Zipper zipper1 = binaryTree.getRoot().left.up.right;
         Zipper zipper2 = binaryTree.getRoot().right;
-        assertEquals(zipper2, zipper1);
+        assertThat(zipper1).isEqualTo(zipper2);
     }
 }
