@@ -229,7 +229,8 @@ public class DominoesTest {
                 + leftValueOfNextDomino
                 + ").";
 
-            assertThat(dominoes.get(i).getRight()).withFailMessage(errorMessage).isEqualTo(dominoes.get(i + 1).getLeft());
+            assertThat(dominoes.get(i).getRight()).withFailMessage(errorMessage)
+                .isEqualTo(dominoes.get(i + 1).getLeft());
         }
     }
 }
