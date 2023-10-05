@@ -66,7 +66,7 @@
           "foreach-loops"
         ],
         "prerequisites": [
-          "conditionals-if"
+          "if-else-statements"
         ],
         "status": "active"
       },
@@ -93,7 +93,7 @@
           "exceptions"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "switch-statement"
         ],
         "status": "beta"
@@ -118,7 +118,7 @@
           "classes"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "numbers",
           "strings"
         ],
@@ -128,13 +128,9 @@
         "slug": "blackjack",
         "name": "Play Your Cards!",
         "uuid": "43b8f2e3-99e9-49cc-a897-d66f0f26670d",
-        "concepts": [
-          "conditionals-if"
-        ],
-        "prerequisites": [
-          "booleans"
-        ],
-        "status": "active"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "slug": "need-for-speed",
@@ -166,12 +162,8 @@
         "slug": "cars-assemble",
         "name": "Cars, Assemble!",
         "uuid": "3f451c6b-04e2-4b08-8bb0-7dcd2ec5b8f4",
-        "concepts": [
-          "numbers"
-        ],
-        "prerequisites": [
-          "conditionals-if"
-        ],
+        "concepts": ["if-else-statements", "numbers"],
+        "prerequisites": ["booleans"],
         "status": "active"
       },
       {
@@ -194,7 +186,7 @@
           "ternary-operators"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "numbers"
         ],
         "status": "active"
@@ -250,7 +242,7 @@
         "uuid": "74515d45-565b-4be2-96c4-77e58efa9257",
         "practices": [
           "strings",
-          "conditionals-if"
+          "if-else-statements"
         ],
         "prerequisites": [
           "basics"
@@ -348,7 +340,7 @@
         ],
         "prerequisites": [
           "numbers",
-          "conditionals-if"          
+          "if-else-statements"          
         ],
         "difficulty": 4
       },
@@ -361,7 +353,7 @@
         ],
         "prerequisites": [
           "strings",
-          "conditionals-if",
+          "if-else-statements",
           "for-loops"
         ],
         "difficulty": 4
@@ -388,7 +380,7 @@
           "lists"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "for-loops",
           "classes"
         ],
@@ -429,7 +421,7 @@
           "lists"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "classes"
         ],
         "difficulty": 6
@@ -470,12 +462,12 @@
         "name": "Raindrops",
         "uuid": "d916e4f8-fda1-41c0-ab24-79e8fc3f1272",
         "practices": [
-          "conditionals-if",
+          "if-else-statements",
           "numbers",
           "strings"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "numbers",
           "strings"
         ],
@@ -486,12 +478,12 @@
         "name": "Isogram",
         "uuid": "c3e89c7c-3a8a-4ddc-b653-9b0ff9e1d7d8",
         "practices": [
-          "conditionals-if",
+          "if-else-statements",
           "for-loops",
           "strings"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "for-loops",
           "strings"
         ],
@@ -519,13 +511,13 @@
         "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283",
         "practices": [
           "arrays",
-          "conditionals-if",
+          "if-else-statements",
           "lists",
           "for-loops"
         ],
         "prerequisites": [
           "arrays",
-          "conditionals-if",
+          "if-else-statements",
           "lists",
           "for-loops"
         ],
@@ -549,7 +541,7 @@
         "name": "Darts",
         "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
         "practices": [
-          "conditionals-if",
+          "if-else-statements",
           "constructors"
         ],
         "prerequisites": [
@@ -579,7 +571,7 @@
           "numbers"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "for-loops"
         ],
         "difficulty": 2
@@ -678,7 +670,7 @@
         "name": "Bob",
         "uuid": "34cd328c-cd96-492b-abd4-2b8716cdcd9a",
         "practices": [
-          "conditionals-if"
+          "if-else-statements"
         ],
         "prerequisites": [
           "strings",
@@ -783,7 +775,7 @@
           "lists"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "classes"
         ],
         "difficulty": 5
@@ -796,7 +788,7 @@
           "strings"
         ],
         "prerequisites": [
-          "conditionals-if",
+          "if-else-statements",
           "for-loops",
           "classes"
         ],
@@ -811,7 +803,7 @@
         ],
         "prerequisites": [
           "chars",
-          "conditionals-if",
+          "if-else-statements",
           "classes"
         ],
         "difficulty": 5
@@ -924,7 +916,7 @@
         "topics": [
           "arrays",
           "classes",
-          "conditionals-if",
+          "if-else-statements",
           "games",
           "matrices"
         ]
@@ -948,7 +940,7 @@
         "name": "Go Counting",
         "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9",
         "practices": [
-          "conditionals-if",
+          "if-else-statements",
           "for-loops",
           "enums"
         ],
@@ -965,7 +957,7 @@
         "prerequisites": [],
         "difficulty": 7,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "pattern_matching",
           "refactoring",
           "strings"
@@ -1050,7 +1042,7 @@
         "difficulty": 4,
         "topics": [
           "arrays",
-          "conditionals-if",
+          "if-else-statements",
           "integers",
           "loops",
           "math"
@@ -1065,7 +1057,7 @@
         "difficulty": 4,
         "topics": [
           "bitwise_operations",
-          "conditionals-if",
+          "if-else-statements",
           "exception_handling",
           "lists",
           "loops",
@@ -1080,7 +1072,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "logic"
         ]
       },
@@ -1218,7 +1210,7 @@
         "prerequisites": [],
         "difficulty": 4,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "exception_handling",
           "integers",
           "math",
@@ -1262,7 +1254,7 @@
         "difficulty": 5,
         "topics": [
           "arrays",
-          "conditionals-if",
+          "if-else-statements",
           "integers",
           "lists",
           "loops",
@@ -1278,7 +1270,7 @@
         "difficulty": 7,
         "topics": [
           "algorithms",
-          "conditionals-if",
+          "if-else-statements",
           "loops"
         ]
       },
@@ -1370,7 +1362,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "loops",
           "strings"
         ]
@@ -1414,7 +1406,7 @@
         "difficulty": 6,
         "topics": [
           "arrays",
-          "conditionals-if",
+          "if-else-statements",
           "exception_handling",
           "integers",
           "loops",
@@ -1456,7 +1448,7 @@
         "prerequisites": [],
         "difficulty": 8,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "integers",
           "lists",
           "loops",
@@ -1525,7 +1517,7 @@
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "lists",
           "maps",
           "sorting",
@@ -1896,7 +1888,7 @@
         "prerequisites": [],
         "difficulty": 3,
         "topics": [
-          "conditionals-if",
+          "if-else-statements",
           "floating_point_numbers"
         ]
       },
@@ -1921,7 +1913,7 @@
         "prerequisites": [
             "strings",
             "chars",
-            "conditionals-if",
+            "if-else-statements",
             "lists",
             "for-loops"
         ],
@@ -1934,7 +1926,7 @@
         "practices": [],
         "prerequisites": [
           "strings",
-          "conditionals-if",
+          "if-else-statements",
           "lists",
           "for-loops"
         ],
@@ -1995,8 +1987,8 @@
     },
     {
       "uuid": "4ce7cdbb-4ff3-4988-89db-8fbcef380500",
-      "slug": "conditionals-if",
-      "name": "Conditionals If"
+      "slug": "if-else-statements",
+      "name": "If-Else Statements"
     },
     {
       "uuid": "e552c05c-6360-4b2f-a438-7ec7e855c0f5",

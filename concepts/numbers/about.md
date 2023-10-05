@@ -62,20 +62,6 @@ double fromInt = i;
 int fromDouble = (int)d;
 ```
 
-An `if` statement can be used to conditionally execute code. The condition of an `if` statement must be of type `boolean`. Java has no concept of _truthy_ values.
-
-```java
-int x = 6;
-
-if (x == 5){
-    // Execute logic if x equals 5
-} else if (x > 7){
-    // Execute logic if x greater than 7
-} else{
-    // Execute logic in all other cases
-}
-```
-
 [arithmetic-operators]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op1.html
 [comparison-operators]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html
 [type-casting]: https://www.programiz.com/java-programming/typecasting
