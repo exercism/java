@@ -2,11 +2,12 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import java.math.BigInteger;
+import java.util.*;
 
 public class DiffieHellmanTest {
 
@@ -26,8 +27,8 @@ public class DiffieHellmanTest {
         }
 
         for (BigInteger privateKey : privateKeys) {
-            assertThat(privateKey.compareTo(BigInteger.ONE)).isGreaterThanOrEqualTo(0);
-            assertThat(privateKey.compareTo(prime)).isLessThan(0);
+            assertTrue(privateKey.compareTo(BigInteger.ONE) >= 0);
+            assertTrue(privateKey.compareTo(prime) < 0);
         }
     }
 
@@ -40,7 +41,7 @@ public class DiffieHellmanTest {
         BigInteger privateKeyA = diffieHellman.privateKey(prime);
         BigInteger privateKeyB = diffieHellman.privateKey(prime);
 
-        assertThat(privateKeyA).isNotEqualTo(privateKeyB);
+        assertNotEquals(privateKeyA, privateKeyB);
     }
 
     @Ignore("Remove to run test")
@@ -51,7 +52,7 @@ public class DiffieHellmanTest {
         BigInteger privateKey = BigInteger.valueOf(6);
         BigInteger expected = BigInteger.valueOf(8);
 
-        assertThat(diffieHellman.publicKey(primeA, primeB, privateKey)).isEqualTo(expected);
+        assertEquals(expected, diffieHellman.publicKey(primeA, primeB, privateKey));
     }
 
     @Ignore("Remove to run test")
@@ -62,7 +63,7 @@ public class DiffieHellmanTest {
         BigInteger privateKey = BigInteger.valueOf(6);
         BigInteger expected = BigInteger.valueOf(2);
 
-        assertThat(diffieHellman.secret(prime, publicKey, privateKey)).isEqualTo(expected);
+        assertEquals(expected, diffieHellman.secret(prime, publicKey, privateKey));
     }
 
     @Ignore("Remove to run test")
@@ -80,7 +81,7 @@ public class DiffieHellmanTest {
         BigInteger secretA = diffieHellman.secret(primeA, bobPublicKey, alicePrivateKey);
         BigInteger secretB = diffieHellman.secret(primeA, alicePublicKey, bobPrivateKey);
 
-        assertThat(secretA).isEqualTo(secretB);
+        assertEquals(secretA, secretB);
     }
 
 }
