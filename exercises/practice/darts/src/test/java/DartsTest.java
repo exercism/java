@@ -1,87 +1,87 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DartsTest {
 
     Darts darts = new Darts();
     @Test
     public void missedTarget() {
-        assertEquals(0, darts.score(-9, 9));
+        assertThat(darts.score(-9, 9)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void onTheOuterCircle() {
-        assertEquals(1, darts.score(0, 10));
+        assertThat(darts.score(0, 10)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void onTheMiddleCircle() {
-        assertEquals(5, darts.score(-5, 0));
+        assertThat(darts.score(-5, 0)).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void onTheInnerCircle() {
-        assertEquals(10, darts.score(0, -1));
+        assertThat(darts.score(0, -1)).isEqualTo(10);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void exactlyOnCentre() {
-        assertEquals(10, darts.score(0, 0));
+        assertThat(darts.score(0, 0)).isEqualTo(10);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void nearTheCentre() {
-        assertEquals(10, darts.score(-0.1, -0.1));
+        assertThat(darts.score(-0.1, -0.1)).isEqualTo(10);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void justWithinTheInnerCircle() {
-        assertEquals(10, darts.score(0.7, 0.7));
+        assertThat(darts.score(0.7, 0.7)).isEqualTo(10);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void justOutsideTheInnerCircle() {
-        assertEquals(5, darts.score(0.8, -0.8));
+        assertThat(darts.score(0.8, -0.8)).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void justWithinTheMiddleCircle() {
-        assertEquals(5, darts.score(-3.5, 3.5));
+        assertThat(darts.score(-3.5, 3.5)).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void justOutsideTheMiddleCircle() {
-        assertEquals(1, darts.score(-3.6, -3.6));
+        assertThat(darts.score(-3.6, -3.6)).isEqualTo(1);
     }
 
 
     @Ignore("Remove to run test")
     @Test
     public void justWithinTheOuterCircle() {
-        assertEquals(1, darts.score(-7.0, 7.0));
+        assertThat(darts.score(-7.0, 7.0)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void justOutsideTheOuterCircle() {
-        assertEquals(0, darts.score(7.1, -7.1));
+        assertThat(darts.score(7.1, -7.1)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void asymmetricPositionBetweenTheInnerAndMiddleCircles() {
-        assertEquals(5, darts.score(0.5, -4));
+        assertThat(darts.score(0.5, -4)).isEqualTo(5);
     }
 
 }
