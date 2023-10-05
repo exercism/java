@@ -73,6 +73,7 @@ public class RotationalCipherTest {
     @Test
     public void rotateAllLetters() {
         rotationalCipher = new RotationalCipher(13);
-        assertThat(rotationalCipher.rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.")).isEqualTo("The quick brown fox jumps over the lazy dog.");
+        assertThat(rotationalCipher.rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt."))
+            .isEqualTo("The quick brown fox jumps over the lazy dog.");
     }
 }

@@ -117,7 +117,8 @@ public class ProteinTranslatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testTranslationOfRnaToProteinList() {
-        assertThat(proteinTranslator.translate("AUGUUUUGG")).containsExactly("Methionine", "Phenylalanine", "Tryptophan");
+        assertThat(proteinTranslator.translate("AUGUUUUGG"))
+            .containsExactly("Methionine", "Phenylalanine", "Tryptophan");
     }
 
     @Ignore("Remove to run test")
@@ -147,7 +148,8 @@ public class ProteinTranslatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testTranslationStopsIfStopCodonInMiddle2() {
-        assertThat(proteinTranslator.translate("UGGUGUUAUUAAUGGUUU")).containsExactly("Tryptophan", "Cysteine", "Tyrosine");
+        assertThat(proteinTranslator.translate("UGGUGUUAUUAAUGGUUU"))
+            .containsExactly("Tryptophan", "Cysteine", "Tyrosine");
     }
 
 }
