@@ -1,7 +1,8 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.withPrecision;
 
 public class ComplexNumberTest {
 
@@ -12,7 +13,7 @@ public class ComplexNumberTest {
     private void assertDoublesEqual(double d1, double d2, String numberPart) {
         String errorMessage = "While testing " + numberPart + " part of number,";
 
-        assertEquals(errorMessage, d1, d2, DOUBLE_EQUALITY_TOLERANCE);
+        assertThat(d1).withFailMessage(errorMessage).isCloseTo(d2, withPrecision(DOUBLE_EQUALITY_TOLERANCE));
     }
 
     private void assertComplexNumbersEqual(ComplexNumber c1, ComplexNumber c2) {
