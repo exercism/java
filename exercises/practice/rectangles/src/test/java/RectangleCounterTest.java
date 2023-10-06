@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RectangleCounterTest {
 
@@ -17,7 +17,7 @@ public class RectangleCounterTest {
     public void testInputWithNoRowsContainsNoRectangles() {
         String[] inputGrid = new String[]{};
 
-        assertEquals(0, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -25,7 +25,7 @@ public class RectangleCounterTest {
     public void testInputWithNoColumnsContainsNoRectangles() {
         String[] inputGrid = new String[]{""};
 
-        assertEquals(0, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -33,7 +33,7 @@ public class RectangleCounterTest {
     public void testNonTrivialInputWithNoRectangles() {
         String[] inputGrid = new String[]{" "};
 
-        assertEquals(0, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(0);
     }
 
     @Ignore("Remove to run test")
@@ -45,7 +45,7 @@ public class RectangleCounterTest {
             "+-+"
         };
 
-        assertEquals(1, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -59,7 +59,7 @@ public class RectangleCounterTest {
             "+-+  "
         };
 
-        assertEquals(2, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(2);
     }
 
     @Ignore("Remove to run test")
@@ -73,7 +73,7 @@ public class RectangleCounterTest {
             "+-+-+"
         };
 
-        assertEquals(5, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(5);
     }
 
     @Ignore("Remove to run test")
@@ -84,7 +84,7 @@ public class RectangleCounterTest {
             "+--+"
         };
 
-        assertEquals(1, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -96,7 +96,7 @@ public class RectangleCounterTest {
             "++"
         };
 
-        assertEquals(1, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -107,7 +107,7 @@ public class RectangleCounterTest {
             "++"
         };
 
-        assertEquals(1, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -121,7 +121,7 @@ public class RectangleCounterTest {
             "+-+-+"
         };
 
-        assertEquals(1, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
@@ -135,7 +135,7 @@ public class RectangleCounterTest {
             "+---+-------+"
         };
 
-        assertEquals(3, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(3);
     }
 
     @Ignore("Remove to run test")
@@ -149,7 +149,7 @@ public class RectangleCounterTest {
             "+---+-------+"
         };
 
-        assertEquals(2, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(2);
     }
 
     @Ignore("Remove to run test")
@@ -166,7 +166,7 @@ public class RectangleCounterTest {
             "          +-+"
         };
 
-        assertEquals(60, rectangleCounter.countRectangles(inputGrid));
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(60);
     }
 
 }

@@ -1,42 +1,42 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReverseStringTest {
 
     @Test
     public void testAnEmptyString() {
-        assertEquals("", new ReverseString().reverse(""));
+        assertThat(new ReverseString().reverse("")).isEqualTo("");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAWord() {
-        assertEquals("tobor", new ReverseString().reverse("robot"));
+        assertThat(new ReverseString().reverse("robot")).isEqualTo("tobor");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testACapitalizedWord() {
-        assertEquals("nemaR", new ReverseString().reverse("Ramen"));
+        assertThat(new ReverseString().reverse("Ramen")).isEqualTo("nemaR");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testASentenceWithPunctuation() {
-        assertEquals("!yrgnuh m'I", new ReverseString().reverse("I'm hungry!"));
+        assertThat(new ReverseString().reverse("I'm hungry!")).isEqualTo("!yrgnuh m'I");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAPalindrome() {
-        assertEquals("racecar", new ReverseString().reverse("racecar"));
+        assertThat(new ReverseString().reverse("racecar")).isEqualTo("racecar");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testAnEvenSizedWord() {
-        assertEquals("reward", new ReverseString().reverse("drawer"));
+        assertThat(new ReverseString().reverse("drawer")).isEqualTo("reward");
     }
 }

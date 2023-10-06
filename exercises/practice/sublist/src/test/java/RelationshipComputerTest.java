@@ -5,17 +5,17 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RelationshipComputerTest {
 
     @Test
     public void testThatTwoEmptyListsAreConsideredEqual() {
-        Relationship computedRelationship = new RelationshipComputer<>().computeRelationship(
+        Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 emptyList(),
                 emptyList());
 
-        assertEquals(Relationship.EQUAL, computedRelationship);
+        assertThat(relationship).isEqualTo(Relationship.EQUAL);
     }
 
     @Ignore("Remove to run test")
@@ -25,7 +25,7 @@ public class RelationshipComputerTest {
                 emptyList(),
                 asList(1, 2, 3));
 
-        assertEquals(Relationship.SUBLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUBLIST);
     }
 
     @Ignore("Remove to run test")
@@ -35,7 +35,7 @@ public class RelationshipComputerTest {
                 asList('1', '2', '3'),
                 emptyList());
 
-        assertEquals(Relationship.SUPERLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUPERLIST);
     }
 
     @Ignore("Remove to run test")
@@ -47,7 +47,7 @@ public class RelationshipComputerTest {
                 anyList,
                 anyList);
 
-        assertEquals(Relationship.EQUAL, relationship);
+        assertThat(relationship).isEqualTo(Relationship.EQUAL);
     }
 
     @Ignore("Remove to run test")
@@ -57,7 +57,7 @@ public class RelationshipComputerTest {
                 asList(1, 2, 3),
                 asList(2, 3, 4));
 
-        assertEquals(Relationship.UNEQUAL, relationship);
+        assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
     }
 
     @Ignore("Remove to run test")
@@ -67,7 +67,7 @@ public class RelationshipComputerTest {
                 asList('1', '2', '5'),
                 asList('0', '1', '2', '3', '1', '2', '5', '6'));
 
-        assertEquals(Relationship.SUBLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUBLIST);
     }
 
     @Ignore("Remove to run test")
@@ -77,7 +77,7 @@ public class RelationshipComputerTest {
                 asList("1", "1", "2"),
                 asList("0", "1", "1", "1", "2", "1", "2"));
 
-        assertEquals(Relationship.SUBLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUBLIST);
     }
 
     @Ignore("Remove to run test")
@@ -87,7 +87,7 @@ public class RelationshipComputerTest {
                 asList(0, 1, 2),
                 asList(0, 1, 2, 3, 4, 5));
 
-        assertEquals(Relationship.SUBLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUBLIST);
     }
 
     @Ignore("Remove to run test")
@@ -97,7 +97,7 @@ public class RelationshipComputerTest {
                 asList('2', '3', '4'),
                 asList('0', '1', '2', '3', '4', '5'));
 
-        assertEquals(Relationship.SUBLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUBLIST);
     }
 
     @Ignore("Remove to run test")
@@ -107,7 +107,7 @@ public class RelationshipComputerTest {
                 asList("3", "4", "5"),
                 asList("0", "1", "2", "3", "4", "5"));
 
-        assertEquals(Relationship.SUBLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUBLIST);
     }
 
     @Ignore("Remove to run test")
@@ -117,7 +117,7 @@ public class RelationshipComputerTest {
                 asList(0, 1, 2, 3, 4, 5),
                 asList(0, 1, 2));
 
-        assertEquals(Relationship.SUPERLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUPERLIST);
     }
 
     @Ignore("Remove to run test")
@@ -127,7 +127,7 @@ public class RelationshipComputerTest {
                 asList('0', '1', '2', '3', '4', '5'),
                 asList('2', '3'));
 
-        assertEquals(Relationship.SUPERLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUPERLIST);
     }
 
     @Ignore("Remove to run test")
@@ -137,7 +137,7 @@ public class RelationshipComputerTest {
                 asList("0", "1", "2", "3", "4", "5"),
                 asList("3", "4", "5"));
 
-        assertEquals(Relationship.SUPERLIST, relationship);
+        assertThat(relationship).isEqualTo(Relationship.SUPERLIST);
     }
 
     @Ignore("Remove to run test")
@@ -147,7 +147,7 @@ public class RelationshipComputerTest {
                 asList(1, 3),
                 asList(1, 2, 3));
 
-        assertEquals(Relationship.UNEQUAL, relationship);
+        assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
     }
 
     @Ignore("Remove to run test")
@@ -157,7 +157,7 @@ public class RelationshipComputerTest {
                 asList('1', '2', '3'),
                 asList('1', '3'));
 
-        assertEquals(Relationship.UNEQUAL, relationship);
+        assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
     }
 
     @Ignore("Remove to run test")
@@ -167,7 +167,7 @@ public class RelationshipComputerTest {
                 asList("1", "2", "3"),
                 asList("3", "2", "1"));
 
-        assertEquals(Relationship.UNEQUAL, relationship);
+        assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
     }
 
     @Ignore("Remove to run test")
@@ -177,7 +177,7 @@ public class RelationshipComputerTest {
                 asList(1, 0, 1),
                 asList(10, 1));
 
-        assertEquals(Relationship.UNEQUAL, relationship);
+        assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
     }
 
 }

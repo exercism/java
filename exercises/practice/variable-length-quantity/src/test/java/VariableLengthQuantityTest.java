@@ -1,11 +1,11 @@
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class VariableLengthQuantityTest {
 
@@ -17,7 +17,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x0");
         List<Long> numbers = Arrays.asList(0x0L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -26,7 +26,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x40");
         List<Long> numbers = Arrays.asList(0x40L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -35,7 +35,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x7f");
         List<Long> numbers = Arrays.asList(0x7fL);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -44,7 +44,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x81", "0x0");
         List<Long> numbers = Arrays.asList(0x80L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -53,7 +53,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xc0", "0x0");
         List<Long> numbers = Arrays.asList(0x2000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -62,7 +62,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xff", "0x7f");
         List<Long> numbers = Arrays.asList(0x3fffL);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -71,7 +71,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x81", "0x80", "0x0");
         List<Long> numbers = Arrays.asList(0x4000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -80,7 +80,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xc0", "0x80", "0x0");
         List<Long> numbers = Arrays.asList(0x100000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -89,7 +89,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xff", "0xff", "0x7f");
         List<Long> numbers = Arrays.asList(0x1fffffL);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -98,7 +98,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x81", "0x80", "0x80", "0x0");
         List<Long> numbers = Arrays.asList(0x200000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -107,7 +107,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xc0", "0x80", "0x80", "0x0");
         List<Long> numbers = Arrays.asList(0x8000000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -116,7 +116,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xff", "0xff", "0xff", "0x7f");
         List<Long> numbers = Arrays.asList(0xfffffffL);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -125,7 +125,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x81", "0x80", "0x80", "0x80", "0x0");
         List<Long> numbers = Arrays.asList(0x10000000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -134,7 +134,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x8f", "0xf8", "0x80", "0x80", "0x0");
         List<Long> numbers = Arrays.asList(0xff000000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -143,7 +143,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x8f", "0xff", "0xff", "0xff", "0x7f");
         List<Long> numbers = Arrays.asList(0xffffffffL);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -152,7 +152,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x40", "0x7f");
         List<Long> numbers = Arrays.asList(0x40L, 0x7fL);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -161,7 +161,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x81", "0x80", "0x0", "0xc8", "0xe8", "0x56");
         List<Long> numbers = Arrays.asList(0x4000L, 0x123456L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -174,7 +174,7 @@ public class VariableLengthQuantityTest {
         List<Long> numbers = Arrays.asList(0x2000L, 0x123456L, 0xfffffffL,
                                            0x0L, 0x3fffL, 0x4000L);
 
-        assertEquals(expected, variableLengthQuantity.encode(numbers));
+        assertThat(variableLengthQuantity.encode(numbers)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -183,7 +183,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x7f");
         List<Long> bytes = Arrays.asList(0x7fL);
 
-        assertEquals(expected, variableLengthQuantity.decode(bytes));
+        assertThat(variableLengthQuantity.decode(bytes)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -192,7 +192,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x2000");
         List<Long> bytes = Arrays.asList(0xc0L, 0x0L);
 
-        assertEquals(expected, variableLengthQuantity.decode(bytes));
+        assertThat(variableLengthQuantity.decode(bytes)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -201,7 +201,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x1fffff");
         List<Long> bytes = Arrays.asList(0xffL, 0xffL, 0x7fL);
 
-        assertEquals(expected, variableLengthQuantity.decode(bytes));
+        assertThat(variableLengthQuantity.decode(bytes)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -210,7 +210,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0x200000");
         List<Long> bytes = Arrays.asList(0x81L, 0x80L, 0x80L, 0x0L);
 
-        assertEquals(expected, variableLengthQuantity.decode(bytes));
+        assertThat(variableLengthQuantity.decode(bytes)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -219,7 +219,7 @@ public class VariableLengthQuantityTest {
         List<String> expected = Arrays.asList("0xffffffff");
         List<Long> bytes = Arrays.asList(0x8fL, 0xffL, 0xffL, 0xffL, 0x7fL);
 
-        assertEquals(expected, variableLengthQuantity.decode(bytes));
+        assertThat(variableLengthQuantity.decode(bytes)).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -252,6 +252,6 @@ public class VariableLengthQuantityTest {
                                          0xffL, 0xffL, 0xffL, 0x7fL, 0x0L,
                                          0xffL, 0x7fL, 0x81L, 0x80L, 0x0L);
 
-        assertEquals(expected, variableLengthQuantity.decode(bytes));
+        assertThat(variableLengthQuantity.decode(bytes)).isEqualTo(expected);
     }
 }

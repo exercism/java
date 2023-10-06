@@ -1,7 +1,8 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RunLengthEncodingTest {
     private RunLengthEncoding runLengthEncoding;
@@ -13,92 +14,77 @@ public class RunLengthEncodingTest {
 
     @Test
     public void encodeEmpty() {
-        Assert.assertEquals("", runLengthEncoding.encode(""));
+        assertThat(runLengthEncoding.encode("")).isEmpty();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void encodeWithOnlySingleValues() {
-        Assert.assertEquals("XYZ", runLengthEncoding.encode("XYZ"));
+        assertThat(runLengthEncoding.encode("XYZ")).isEqualTo("XYZ");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void encodeWithNoSingleValues() {
-        Assert.assertEquals(
-                "2A3B4C",
-                runLengthEncoding.encode("AABBBCCCC"));
+        assertThat(runLengthEncoding.encode("AABBBCCCC")).isEqualTo("2A3B4C");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void encodeWithMixedValues() {
-        Assert.assertEquals(
-                "12WB12W3B24WB",
-                runLengthEncoding.encode(
-                        "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"));
+        assertThat(runLengthEncoding.encode(
+            "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"))
+            .isEqualTo("12WB12W3B24WB");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void encodeWithWhitespaceValues() {
-        Assert.assertEquals(
-                "2 hs2q q2w2 ",
-                runLengthEncoding.encode("  hsqq qww  "));
+        assertThat(runLengthEncoding.encode("  hsqq qww  "))
+            .isEqualTo("2 hs2q q2w2 ");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void encodeWithLowercaseValues() {
-        Assert.assertEquals(
-                "2a3b4c",
-                runLengthEncoding.encode("aabbbcccc"));
+        assertThat(runLengthEncoding.encode("aabbbcccc")).isEqualTo("2a3b4c");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void decodeEmpty() {
-        Assert.assertEquals("", runLengthEncoding.decode(""));
+        assertThat(runLengthEncoding.decode("")).isEmpty();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void decodeWithOnlySingleValues() {
-        Assert.assertEquals(
-                "XYZ",
-                runLengthEncoding.decode("XYZ"));
+        assertThat(runLengthEncoding.decode("XYZ")).isEqualTo("XYZ");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void decodeWithNoSingleValues() {
-        Assert.assertEquals(
-                "AABBBCCCC",
-                runLengthEncoding.decode("2A3B4C"));
+        assertThat(runLengthEncoding.decode("2A3B4C")).isEqualTo("AABBBCCCC");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void decodeWithMixedValues() {
-        Assert.assertEquals(
-                "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB",
-                runLengthEncoding.decode("12WB12W3B24WB"));
+        assertThat(runLengthEncoding.decode("12WB12W3B24WB"))
+            .isEqualTo("WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void decodeWithWhitespaceValues() {
-        Assert.assertEquals(
-                "  hsqq qww  ",
-                runLengthEncoding.decode("2 hs2q q2w2 "));
+        assertThat(runLengthEncoding.decode("2 hs2q q2w2 ")).isEqualTo("  hsqq qww  ");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void decodeWithLowercaseValues() {
-        Assert.assertEquals(
-                "aabbbcccc",
-                runLengthEncoding.decode("2a3b4c"));
+        assertThat(runLengthEncoding.decode("2a3b4c")).isEqualTo("aabbbcccc");
     }
 
     @Ignore("Remove to run test")
@@ -106,6 +92,6 @@ public class RunLengthEncodingTest {
     public void encodeThenDecode() {
         String inOut = "zzz ZZ  zZ";
         String encoded = runLengthEncoding.encode(inOut);
-        Assert.assertEquals(inOut, runLengthEncoding.decode(encoded));
+        assertThat(runLengthEncoding.decode(encoded)).isEqualTo(inOut);
     }
 }

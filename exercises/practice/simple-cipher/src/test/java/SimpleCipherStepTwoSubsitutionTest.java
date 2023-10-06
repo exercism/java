@@ -1,7 +1,7 @@
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SimpleCipherStepTwoSubsitutionTest {
 
@@ -12,7 +12,7 @@ public class SimpleCipherStepTwoSubsitutionTest {
     public void cipherCanEncode() {
         String plainText = "aaaaaaaaaa";
         String cipherText = "abcdefghij";
-        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));
+        assertThat(cipherWithDefaultKey.encode(plainText)).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
@@ -20,14 +20,14 @@ public class SimpleCipherStepTwoSubsitutionTest {
     public void cipherCanDecode() {
         String plainText = "abcdefghij";
         String cipherText = "aaaaaaaaaa";
-        assertEquals(cipherText, cipherWithDefaultKey.decode(plainText));
+        assertThat(cipherWithDefaultKey.decode(plainText)).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void cipherIsReversibleGivenKey() {
         String plainText = "abcdefghij";
-        assertEquals(plainText, cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText)));
+        assertThat(cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText))).isEqualTo(plainText);
     }
 
     @Ignore("Remove to run test")
@@ -35,7 +35,7 @@ public class SimpleCipherStepTwoSubsitutionTest {
     public void cipherCanDoubleShiftEncode() {
         String plainText = "iamapandabear";
         String cipherText = "qayaeaagaciai";
-        assertEquals(cipherText, new Cipher(plainText).encode(plainText));
+        assertThat(new Cipher(plainText).encode(plainText)).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
@@ -43,7 +43,7 @@ public class SimpleCipherStepTwoSubsitutionTest {
     public void cipherCanWrapEncode() {
         String plainText = "zzzzzzzzzz";
         String cipherText = "zabcdefghi";
-        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));
+        assertThat(cipherWithDefaultKey.encode(plainText)).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
@@ -51,7 +51,7 @@ public class SimpleCipherStepTwoSubsitutionTest {
     public void cipherCanWrapDecode() {
         String plainText = "zabcdefghi";
         String cipherText = "zzzzzzzzzz";
-        assertEquals(cipherText, cipherWithDefaultKey.decode(plainText));
+        assertThat(cipherWithDefaultKey.decode(plainText)).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
@@ -60,7 +60,7 @@ public class SimpleCipherStepTwoSubsitutionTest {
         String plainText = "iamapandabear";
         String key = "abc";
         String cipherText = "iboaqcnecbfcr";
-        assertEquals(cipherText, new Cipher(key).encode(plainText));
+        assertThat(new Cipher(key).encode(plainText)).isEqualTo(cipherText);
     }
 
 }

@@ -1,10 +1,11 @@
-import org.junit.Assert;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class StrainTest {
 
@@ -12,8 +13,7 @@ public class StrainTest {
     @Test
     public void emptyKeep() {
         List<Integer> input = new LinkedList<>();
-        List<Integer> expectedOutput = new LinkedList<>();
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x < 10));
+        assertThat(Strain.keep(input, x -> x < 10)).isEmpty();
     }
 
     @Ignore("Remove to run test")
@@ -21,7 +21,7 @@ public class StrainTest {
     public void keepEverything() {
         List<Integer> input = Arrays.asList(1, 2, 3);
         List<Integer> expectedOutput = Arrays.asList(1, 2, 3);
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x < 10));
+        assertThat(Strain.keep(input, x -> x < 10)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -29,7 +29,7 @@ public class StrainTest {
     public void keepFirstAndLast() {
         List<Integer> input = Arrays.asList(1, 2, 3);
         List<Integer> expectedOutput = Arrays.asList(1, 3);
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x % 2 != 0));
+        assertThat(Strain.keep(input, x -> x % 2 != 0)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -37,7 +37,7 @@ public class StrainTest {
     public void keepNeitherFirstNorLast() {
         List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> expectedOutput = Arrays.asList(2, 4);
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x % 2 == 0));
+        assertThat(Strain.keep(input, x -> x % 2 == 0)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -46,8 +46,7 @@ public class StrainTest {
         List<String> words = Arrays
                 .asList("apple zebra banana zombies cherimoya zelot".split(" "));
         List<String> expectedOutput = Arrays.asList("zebra", "zombies", "zelot");
-        Assert.assertEquals(expectedOutput,
-                Strain.keep(words, x -> x.startsWith("z")));
+        assertThat(Strain.keep(words, x -> x.startsWith("z"))).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -66,8 +65,7 @@ public class StrainTest {
                 Arrays.asList(5, 1, 2),
                 Arrays.asList(1, 5, 2),
                 Arrays.asList(1, 2, 5));
-        Assert.assertEquals(expectedOutput,
-                Strain.keep(actual, col -> col.contains(5)));
+        assertThat(Strain.keep(actual, col -> col.contains(5))).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -75,7 +73,7 @@ public class StrainTest {
     public void emptyDiscard() {
         List<Integer> input = new LinkedList<>();
         List<Integer> expectedOutput = new LinkedList<>();
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x < 10));
+        assertThat(Strain.discard(input, x -> x < 10)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -83,7 +81,7 @@ public class StrainTest {
     public void discardNothing() {
         List<Integer> input = Arrays.asList(1, 2, 3);
         List<Integer> expectedOutput = Arrays.asList(1, 2, 3);
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x > 10));
+        assertThat(Strain.discard(input, x -> x > 10)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -91,7 +89,7 @@ public class StrainTest {
     public void discardFirstAndLast() {
         List<Integer> input = Arrays.asList(1, 2, 3);
         List<Integer> expectedOutput = Arrays.asList(2);
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x % 2 != 0));
+        assertThat(Strain.discard(input, x -> x % 2 != 0)).isEqualTo(expectedOutput);
 
     }
 
@@ -100,7 +98,7 @@ public class StrainTest {
     public void discardNeitherFirstNorLast() {
         List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> expectedOutput = Arrays.asList(1, 3, 5);
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x % 2 == 0));
+        assertThat(Strain.discard(input, x -> x % 2 == 0)).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -109,8 +107,7 @@ public class StrainTest {
         List<String> words = Arrays
                 .asList("apple zebra banana zombies cherimoya zelot".split(" "));
         List<String> expectedOutput = Arrays.asList("apple", "banana", "cherimoya");
-        Assert.assertEquals(expectedOutput,
-                Strain.discard(words, x -> x.startsWith("z")));
+        assertThat(Strain.discard(words, x -> x.startsWith("z"))).isEqualTo(expectedOutput);
     }
 
     @Ignore("Remove to run test")
@@ -128,7 +125,6 @@ public class StrainTest {
                 Arrays.asList(1, 2, 3),
                 Arrays.asList(2, 1, 2),
                 Arrays.asList(2, 2, 1));
-        Assert.assertEquals(expectedOutput,
-                Strain.discard(actual, col -> col.contains(5)));
+        assertThat(Strain.discard(actual, col -> col.contains(5))).isEqualTo(expectedOutput);
     }
 }
