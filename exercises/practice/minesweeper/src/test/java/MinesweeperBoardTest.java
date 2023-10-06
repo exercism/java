@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MinesweeperBoardTest {
 
@@ -15,7 +15,7 @@ public class MinesweeperBoardTest {
         List<String> expectedNumberedBoard = Collections.emptyList();
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -25,7 +25,7 @@ public class MinesweeperBoardTest {
         List<String> expectedNumberedBoard = Collections.singletonList("");
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -45,7 +45,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -65,7 +65,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -85,7 +85,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -105,7 +105,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -121,7 +121,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -137,7 +137,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -161,7 +161,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -185,7 +185,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -209,7 +209,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
     @Ignore("Remove to run test")
@@ -235,7 +235,7 @@ public class MinesweeperBoardTest {
 
         List<String> actualNumberedBoard = new MinesweeperBoard(inputBoard).withNumbers();
 
-        assertEquals(expectedNumberedBoard, actualNumberedBoard);
+        assertThat(actualNumberedBoard).isEqualTo(expectedNumberedBoard);
     }
 
 }
