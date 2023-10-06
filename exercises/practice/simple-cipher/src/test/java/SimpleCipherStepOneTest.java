@@ -2,8 +2,6 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.regex.Pattern;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -45,7 +43,6 @@ public class SimpleCipherStepOneTest {
     @Ignore("Remove to run test")
     @Test
     public void keyIsLowercaseLetters() {
-        String key = cipherWithDefaultKey.getKey();
-        assertThat(Pattern.matches("^[a-z]+$", key)).isTrue();
+        assertThat(cipherWithDefaultKey.getKey()).matches("^[a-z]+$");
     }
 }
