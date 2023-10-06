@@ -1,98 +1,99 @@
+import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class OctalTest {
 
     @Test
     public void testCovertDecimalOneToOctal() {
         Octal octal = new Octal("1");
-        assertThat(octal.getDecimal()).isEqualTo(1);
+        assertEquals(1, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCovertDecimalTenToOctal() {
         Octal octal = new Octal("10");
-        assertThat(octal.getDecimal()).isEqualTo(8);
+        assertEquals(8, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCovertDecimalSeventeenToOctal() {
         Octal octal = new Octal("17");
-        assertThat(octal.getDecimal()).isEqualTo(15);
+        assertEquals(15, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCovertElevenToOctal() {
         Octal octal = new Octal("11");
-        assertThat(octal.getDecimal()).isEqualTo(9);
+        assertEquals(9, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCovertDecimalElevenWithZeroToOctal() {
         Octal octal = new Octal("011");
-        assertThat(octal.getDecimal()).isEqualTo(9);
+        assertEquals(9, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testThreeDigitDecimalToOctal() {
         Octal octal = new Octal("130");
-        assertThat(octal.getDecimal()).isEqualTo(88);
+        assertEquals(88, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSmallFourDigitDecimalToOctal() {
         Octal octal = new Octal("2047");
-        assertThat(octal.getDecimal()).isEqualTo(1063);
+        assertEquals(1063, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLargeFourDigitDecimalToOctal() {
         Octal octal = new Octal("7777");
-        assertThat(octal.getDecimal()).isEqualTo(4095);
+        assertEquals(4095, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSevenDigitDecimalToOctal() {
         Octal octal = new Octal("1234567");
-        assertThat(octal.getDecimal()).isEqualTo(342391);
+        assertEquals(342391, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInvalidStringFirst() {
         Octal octal = new Octal("carrot");
-        assertThat(octal.getDecimal()).isEqualTo(0);
+        assertEquals(0, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInvalidStringSecond() {
         Octal octal = new Octal("abc1z");
-        assertThat(octal.getDecimal()).isEqualTo(0);
+        assertEquals(0, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInvalidDecimalEight() {
         Octal octal = new Octal("8");
-        assertThat(octal.getDecimal()).isEqualTo(0);
+        assertEquals(0, octal.getDecimal());
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testInvalidNumberNine() {
         Octal octal = new Octal("9");
-        assertThat(octal.getDecimal()).isEqualTo(0);
+        assertEquals(0, octal.getDecimal());
     }
 
 }
