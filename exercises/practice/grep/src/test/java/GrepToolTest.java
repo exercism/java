@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GrepToolTest {
     private GrepTool grepTool;
@@ -75,7 +75,7 @@ public class GrepToolTest {
             Collections.singletonList("iliad.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -89,7 +89,7 @@ public class GrepToolTest {
             Collections.singletonList("paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -103,7 +103,7 @@ public class GrepToolTest {
             Collections.singletonList("paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -117,7 +117,7 @@ public class GrepToolTest {
             Collections.singletonList("paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -131,7 +131,7 @@ public class GrepToolTest {
             Collections.singletonList("paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -145,7 +145,7 @@ public class GrepToolTest {
             Collections.singletonList("iliad.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -161,7 +161,7 @@ public class GrepToolTest {
             Collections.singletonList("midsummer-night.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -177,7 +177,7 @@ public class GrepToolTest {
             Collections.singletonList("midsummer-night.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -191,7 +191,7 @@ public class GrepToolTest {
             Collections.singletonList("midsummer-night.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -206,7 +206,7 @@ public class GrepToolTest {
             Collections.singletonList("iliad.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -224,7 +224,7 @@ public class GrepToolTest {
             Collections.singletonList("paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -238,7 +238,7 @@ public class GrepToolTest {
             Collections.singletonList("iliad.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -252,7 +252,7 @@ public class GrepToolTest {
             Collections.singletonList("iliad.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -273,7 +273,7 @@ public class GrepToolTest {
             Collections.singletonList("iliad.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -287,7 +287,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -303,7 +303,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -320,7 +320,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -335,7 +335,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -358,7 +358,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -374,7 +374,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -388,7 +388,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -402,7 +402,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -416,7 +416,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -431,7 +431,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -467,7 +467,7 @@ public class GrepToolTest {
             Arrays.asList("iliad.txt", "midsummer-night.txt", "paradise-lost.txt")
         );
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     private void writeToFile(String filename, List<String> contents) throws IOException {

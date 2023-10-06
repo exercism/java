@@ -1,68 +1,68 @@
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class NaturalNumberTest {
 
     @Test
     public void testSmallPerfectNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.PERFECT, new NaturalNumber(6).getClassification());
+        assertThat(new NaturalNumber(6).getClassification()).isEqualTo(Classification.PERFECT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testMediumPerfectNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.PERFECT, new NaturalNumber(28).getClassification());
+        assertThat(new NaturalNumber(28).getClassification()).isEqualTo(Classification.PERFECT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLargePerfectNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.PERFECT, new NaturalNumber(33550336).getClassification());
+        assertThat(new NaturalNumber(33550336).getClassification()).isEqualTo(Classification.PERFECT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSmallAbundantNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.ABUNDANT, new NaturalNumber(12).getClassification());
+        assertThat(new NaturalNumber(12).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testMediumAbundantNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.ABUNDANT, new NaturalNumber(30).getClassification());
+        assertThat(new NaturalNumber(30).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLargeAbundantNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.ABUNDANT, new NaturalNumber(33550335).getClassification());
+        assertThat(new NaturalNumber(33550335).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSmallestPrimeDeficientNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.DEFICIENT, new NaturalNumber(2).getClassification());
+        assertThat(new NaturalNumber(2).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSmallestNonPrimeDeficientNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.DEFICIENT, new NaturalNumber(4).getClassification());
+        assertThat(new NaturalNumber(4).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testMediumDeficientNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.DEFICIENT, new NaturalNumber(32).getClassification());
+        assertThat(new NaturalNumber(32).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testLargeDeficientNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.DEFICIENT, new NaturalNumber(33550337).getClassification());
+        assertThat(new NaturalNumber(33550337).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
 
     @Ignore("Remove to run test")
@@ -72,7 +72,7 @@ public class NaturalNumberTest {
      * additive identity is 0, so the aliquot sum of 1 should be 0. Hence 1 should be classified as deficient.
      */
     public void testThatOneIsCorrectlyClassifiedAsDeficient() {
-        assertEquals(Classification.DEFICIENT, new NaturalNumber(1).getClassification());
+        assertThat(new NaturalNumber(1).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
 
     @Ignore("Remove to run test")
