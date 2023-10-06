@@ -1,30 +1,30 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
+import org.junit.Ignore;
 
 public class TrinaryTest {
 
     @Test
     public void testNonTrinaryCharacterIsZero() {
-        assertThat(Trinary.toDecimal("-")).isEqualTo(0);
+        assertEquals(0, Trinary.toDecimal("-"));
     }
 
     @Ignore
     @Test
     public void testNonTrinaryNumberIsZero() {
-        assertThat(Trinary.toDecimal("3")).isEqualTo(0);
+        assertEquals(0, Trinary.toDecimal("3"));
     }
 
     @Ignore
     @Test
     public void testTrinaryWithNonTrinaryIsZero() {
-        assertThat(Trinary.toDecimal("102-12")).isEqualTo(0);
+        assertEquals(0, Trinary.toDecimal("102-12"));
     }
 
     @Ignore
     @Test
     public void testTrinary() {
-        assertThat(Trinary.toDecimal("102012")).isEqualTo(302);
+        assertEquals(302, Trinary.toDecimal("102012"));
     }
 }
