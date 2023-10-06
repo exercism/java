@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TournamentTest {
 
@@ -15,51 +15,51 @@ public class TournamentTest {
 
     @Test
     public void justTheHeaderIfNoInput() {
-        assertEquals("Team                           | MP |  W |  D |  L |  P\n", tournament.printTable());
+        assertThat(tournament.printTable()).isEqualTo("Team                           | MP |  W |  D |  L |  P\n");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void aWinIsThreePointsALossIsZeroPoints() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;win");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n" +
-                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n",
-                tournament.printTable());
+                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void aWinCanAlsoBeExpressedAsALoss() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;loss");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n" +
-                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n",
-                tournament.printTable());
+                "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void aDifferentTeamCanWin() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;win");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Blithering Badgers             |  1 |  1 |  0 |  0 |  3\n" +
-                "Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0\n",
-                tournament.printTable());
+                "Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0\n");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void aDrawIsOnePointEach() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;draw");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1\n" +
-                "Blithering Badgers             |  1 |  0 |  1 |  0 |  1\n",
-                tournament.printTable());
+                "Blithering Badgers             |  1 |  0 |  1 |  0 |  1\n");
     }
 
     @Ignore("Remove to run test")
@@ -68,11 +68,11 @@ public class TournamentTest {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
                 "Allegoric Alaskans;Blithering Badgers;win");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n" +
-                "Blithering Badgers             |  2 |  0 |  0 |  2 |  0\n",
-                tournament.printTable());
+                "Blithering Badgers             |  2 |  0 |  0 |  2 |  0\n");
     }
 
     @Ignore("Remove to run test")
@@ -81,11 +81,11 @@ public class TournamentTest {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
                 "Allegoric Alaskans;Blithering Badgers;win");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3\n" +
-                "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n",
-                tournament.printTable());
+                "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n");
     }
 
     @Ignore("Remove to run test")
@@ -95,12 +95,12 @@ public class TournamentTest {
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
                 "Blithering Badgers;Courageous Californians;win\n" +
                 "Courageous Californians;Allegoric Alaskans;loss");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n" +
                 "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n" +
-                "Courageous Californians        |  2 |  0 |  0 |  2 |  0\n",
-                tournament.printTable());
+                "Courageous Californians        |  2 |  0 |  0 |  2 |  0\n");
     }
 
     @Ignore("Remove to run test")
@@ -113,13 +113,13 @@ public class TournamentTest {
                 "Courageous Californians;Blithering Badgers;loss\n" +
                 "Blithering Badgers;Devastating Donkeys;loss\n" +
                 "Allegoric Alaskans;Courageous Californians;win");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Devastating Donkeys            |  3 |  2 |  1 |  0 |  7\n" +
                 "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n" +
                 "Blithering Badgers             |  3 |  1 |  0 |  2 |  3\n" +
-                "Courageous Californians        |  3 |  0 |  1 |  2 |  1\n",
-                tournament.printTable());
+                "Courageous Californians        |  3 |  0 |  1 |  2 |  1\n");
     }
 
     @Ignore("Remove to run test")
@@ -130,13 +130,13 @@ public class TournamentTest {
                 "Devastating Donkeys;Allegoric Alaskans;loss\n" +
                 "Courageous Californians;Blithering Badgers;draw\n" +
                 "Allegoric Alaskans;Courageous Californians;win");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n" +
                 "Blithering Badgers             |  2 |  1 |  1 |  0 |  4\n" +
                 "Courageous Californians        |  2 |  0 |  1 |  1 |  1\n" +
-                "Devastating Donkeys            |  1 |  0 |  0 |  1 |  0\n",
-                tournament.printTable());
+                "Devastating Donkeys            |  1 |  0 |  0 |  1 |  0\n");
     }
 
     @Ignore("Remove to run test")
@@ -149,12 +149,12 @@ public class TournamentTest {
                 "Courageous Californians;Blithering Badgers;win\n" +
                 "Blithering Badgers;Devastating Donkeys;draw\n" +
                 "Allegoric Alaskans;Courageous Californians;draw");
-        assertEquals(
+        assertThat(tournament.printTable())
+            .isEqualTo(
                 "Team                           | MP |  W |  D |  L |  P\n" +
                 "Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7\n" +
                 "Courageous Californians        |  3 |  2 |  1 |  0 |  7\n" +
                 "Blithering Badgers             |  3 |  0 |  1 |  2 |  1\n" +
-                "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1\n",
-                tournament.printTable());
+                "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1\n");
     }
 }

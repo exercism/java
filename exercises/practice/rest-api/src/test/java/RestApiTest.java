@@ -1,11 +1,11 @@
-import static org.junit.Assert.assertEquals;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(Enclosed.class)
 public class RestApiTest {
@@ -17,7 +17,7 @@ public class RestApiTest {
                 new JSONObject().put("users", new JSONArray()).toString();
             String url = "/users";
 
-            assertEquals(expected, new RestApi().get(url));
+            assertThat(new RestApi().get(url)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -32,7 +32,7 @@ public class RestApiTest {
             String url = "/add";
             JSONObject payload = new JSONObject().put("user", "Adam");
 
-            assertEquals(expected, new RestApi().post(url, payload));
+            assertThat(new RestApi().post(url, payload)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -53,12 +53,10 @@ public class RestApiTest {
             JSONObject payload =
                 new JSONObject().put("users", new JSONArray().put("Bob"));
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").build())
-                    .get(url, payload));
+                    .get(url, payload)).isEqualTo(expected);
         }
     }
 
@@ -94,12 +92,10 @@ public class RestApiTest {
                     .put("borrower", "Bob")
                     .put("amount", 3.0);
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").build())
-                    .post(url, payload));
+                    .post(url, payload)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -136,13 +132,11 @@ public class RestApiTest {
                     .put("borrower", "Bob")
                     .put("amount", 3.0);
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").owes("Chuck", 3.0).build(),
                     User.builder().setName("Chuck").owedBy("Bob", 3.0).build())
-                    .post(url, payload));
+                    .post(url, payload)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -181,13 +175,11 @@ public class RestApiTest {
                     .put("borrower", "Adam")
                     .put("amount", 3.0);
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").build(),
                     User.builder().setName("Bob").owes("Chuck", 3.0).build(),
                     User.builder().setName("Chuck").owedBy("Bob", 3.0).build())
-                    .post(url, payload));
+                    .post(url, payload)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -222,12 +214,10 @@ public class RestApiTest {
                     .put("borrower", "Bob")
                     .put("amount", 2.0);
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").owes("Bob", 3.0).build(),
                     User.builder().setName("Bob").owedBy("Adam", 3.0).build())
-                    .post(url, payload));
+                    .post(url, payload)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -262,12 +252,10 @@ public class RestApiTest {
                     .put("borrower", "Bob")
                     .put("amount", 4.0);
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").owes("Bob", 3.0).build(),
                     User.builder().setName("Bob").owedBy("Adam", 3.0).build())
-                    .post(url, payload));
+                    .post(url, payload)).isEqualTo(expected);
         }
 
         @Ignore("Remove to run test")
@@ -298,12 +286,10 @@ public class RestApiTest {
                     .put("borrower", "Bob")
                     .put("amount", 3.0);
 
-            assertEquals(
-                expected,
-                new RestApi(
+            assertThat(new RestApi(
                     User.builder().setName("Adam").owes("Bob", 3.0).build(),
                     User.builder().setName("Bob").owedBy("Adam", 3.0).build())
-                    .post(url, payload));
+                    .post(url, payload)).isEqualTo(expected);
         }
     }
 }
