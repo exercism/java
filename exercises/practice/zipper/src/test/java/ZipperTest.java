@@ -36,14 +36,14 @@ public class ZipperTest {
     @Test
     public void testDeadEnd() {
         zipper = binaryTree.getRoot();
-        assertThat( zipper.left.left).isNull();
+        assertThat(zipper.left.left).isNull();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testToTreeFromDeepFocus() {
         zipper = binaryTree.getRoot();
-        assertThat( zipper.left.right.toTree()).isEqualTo(binaryTree);
+        assertThat(zipper.left.right.toTree()).isEqualTo(binaryTree);
     }
 
     @Ignore("Remove to run test")
