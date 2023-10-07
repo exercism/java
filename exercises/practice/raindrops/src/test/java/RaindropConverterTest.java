@@ -1,7 +1,7 @@
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RaindropConverterTest {
 
@@ -9,109 +9,109 @@ public class RaindropConverterTest {
 
     @Test
     public void soundFor1Is1() {
-        assertEquals("1", raindropConverter.convert(1));
+        assertThat(raindropConverter.convert(1)).isEqualTo("1");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor3IsPling() {
-        assertEquals("Pling", raindropConverter.convert(3));
+        assertThat(raindropConverter.convert(3)).isEqualTo("Pling");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor5IsPlang() {
-        assertEquals("Plang", raindropConverter.convert(5));
+        assertThat(raindropConverter.convert(5)).isEqualTo("Plang");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor7IsPlong() {
-        assertEquals("Plong", raindropConverter.convert(7));
+        assertThat(raindropConverter.convert(7)).isEqualTo("Plong");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor6IsPlingAsItHasFactor3() {
-        assertEquals("Pling", raindropConverter.convert(6));
+        assertThat(raindropConverter.convert(6)).isEqualTo("Pling");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void noSoundFor2Cubed() {
-        assertEquals("8", raindropConverter.convert(8));
+        assertThat(raindropConverter.convert(8)).isEqualTo("8");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor9IsPlingAsItHasFactor3() {
-        assertEquals("Pling", raindropConverter.convert(9));
+        assertThat(raindropConverter.convert(9)).isEqualTo("Pling");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor10IsPlangAsItHasFactor5() {
-        assertEquals("Plang", raindropConverter.convert(10));
+        assertThat(raindropConverter.convert(10)).isEqualTo("Plang");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor14IsPlongAsItHasFactor7() {
-        assertEquals("Plong", raindropConverter.convert(14));
+        assertThat(raindropConverter.convert(14)).isEqualTo("Plong");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor15IsPlingPlangAsItHasFactors3And5() {
-        assertEquals("PlingPlang", raindropConverter.convert(15));
+        assertThat(raindropConverter.convert(15)).isEqualTo("PlingPlang");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor21IsPlingPlongAsItHasFactors3And7() {
-        assertEquals("PlingPlong", raindropConverter.convert(21));
+        assertThat(raindropConverter.convert(21)).isEqualTo("PlingPlong");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor25IsPlangAsItHasFactor5() {
-        assertEquals("Plang", raindropConverter.convert(25));
+        assertThat(raindropConverter.convert(25)).isEqualTo("Plang");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor27IsPlingAsItHasFactor3() {
-        assertEquals("Pling", raindropConverter.convert(27));
+        assertThat(raindropConverter.convert(27)).isEqualTo("Pling");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor35IsPlangPlongAsItHasFactors5And7() {
-        assertEquals("PlangPlong", raindropConverter.convert(35));
+        assertThat(raindropConverter.convert(35)).isEqualTo("PlangPlong");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor49IsPlongAsItHasFactor7() {
-        assertEquals("Plong", raindropConverter.convert(49));
+        assertThat(raindropConverter.convert(49)).isEqualTo("Plong");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void noSoundFor52() {
-        assertEquals("52", raindropConverter.convert(52));
+        assertThat(raindropConverter.convert(52)).isEqualTo("52");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor105IsPlingPlangPlongAsItHasFactors3And5And7() {
-        assertEquals("PlingPlangPlong", raindropConverter.convert(105));
+        assertThat(raindropConverter.convert(105)).isEqualTo("PlingPlangPlong");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void soundFor3125IsPlangAsItHasFactor5() {
-        assertEquals("Plang", raindropConverter.convert(3125));
+        assertThat(raindropConverter.convert(3125)).isEqualTo("Plang");
     }
 
 }

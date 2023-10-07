@@ -1,10 +1,13 @@
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class WordSearcherTest {
 
@@ -29,7 +32,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -47,7 +50,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -65,7 +68,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -83,7 +86,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -101,7 +104,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -120,7 +123,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -140,7 +143,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -167,7 +170,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -194,7 +197,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -221,7 +224,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -249,7 +252,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -267,7 +270,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -295,7 +298,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -324,7 +327,7 @@ public class WordSearcherTest {
                 }
         );
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -352,7 +355,7 @@ public class WordSearcherTest {
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -381,7 +384,7 @@ public class WordSearcherTest {
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -411,7 +414,7 @@ public class WordSearcherTest {
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -442,7 +445,7 @@ public class WordSearcherTest {
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -474,7 +477,7 @@ public class WordSearcherTest {
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
     @Ignore("Remove to run test")
@@ -507,7 +510,7 @@ public class WordSearcherTest {
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
 
-        assertEquals(expectedLocations, actualLocations);
+        assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
 }

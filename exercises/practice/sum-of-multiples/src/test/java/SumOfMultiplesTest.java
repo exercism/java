@@ -1,7 +1,7 @@
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SumOfMultiplesTest {
 
@@ -13,7 +13,7 @@ public class SumOfMultiplesTest {
             5
         };
         int output = new SumOfMultiples(1, set).getSum();
-        assertEquals(0, output);
+        assertThat(output).isEqualTo(0);
 
     }
 
@@ -26,7 +26,7 @@ public class SumOfMultiplesTest {
             5
         };
         int output = new SumOfMultiples(4, set).getSum();
-        assertEquals(3, output);
+        assertThat(output).isEqualTo(3);
 
     }
 
@@ -38,7 +38,7 @@ public class SumOfMultiplesTest {
             3
         };
         int output = new SumOfMultiples(7, set).getSum();
-        assertEquals(9, output);
+        assertThat(output).isEqualTo(9);
 
     }
 
@@ -51,7 +51,7 @@ public class SumOfMultiplesTest {
             5
         };
         int output = new SumOfMultiples(10, set).getSum();
-        assertEquals(23, output);
+        assertThat(output).isEqualTo(23);
 
     }
 
@@ -64,7 +64,7 @@ public class SumOfMultiplesTest {
             5
         };
         int output = new SumOfMultiples(100, set).getSum();
-        assertEquals(2318, output);
+        assertThat(output).isEqualTo(2318);
 
     }
 
@@ -77,7 +77,7 @@ public class SumOfMultiplesTest {
             5
         };
         int output = new SumOfMultiples(1000, set).getSum();
-        assertEquals(233168, output);
+        assertThat(output).isEqualTo(233168);
 
     }
 
@@ -91,7 +91,7 @@ public class SumOfMultiplesTest {
             17
         };
         int output = new SumOfMultiples(20, set).getSum();
-        assertEquals(51, output);
+        assertThat(output).isEqualTo(51);
 
     }
 
@@ -104,7 +104,7 @@ public class SumOfMultiplesTest {
             6
         };
         int output = new SumOfMultiples(15, set).getSum();
-        assertEquals(30, output);
+        assertThat(output).isEqualTo(30);
 
     }
 
@@ -118,7 +118,7 @@ public class SumOfMultiplesTest {
             8
         };
         int output = new SumOfMultiples(150, set).getSum();
-        assertEquals(4419, output);
+        assertThat(output).isEqualTo(4419);
 
     }
 
@@ -131,7 +131,7 @@ public class SumOfMultiplesTest {
             25
         };
         int output = new SumOfMultiples(51, set).getSum();
-        assertEquals(275, output);
+        assertThat(output).isEqualTo(275);
 
     }
 
@@ -144,7 +144,7 @@ public class SumOfMultiplesTest {
             47
         };
         int output = new SumOfMultiples(10000, set).getSum();
-        assertEquals(2203160, output);
+        assertThat(output).isEqualTo(2203160);
 
     }
 
@@ -156,7 +156,7 @@ public class SumOfMultiplesTest {
             1
         };
         int output = new SumOfMultiples(100, set).getSum();
-        assertEquals(4950, output);
+        assertThat(output).isEqualTo(4950);
 
     }
 
@@ -166,7 +166,7 @@ public class SumOfMultiplesTest {
 
         int[] set = {};
         int output = new SumOfMultiples(10000, set).getSum();
-        assertEquals(0, output);
+        assertThat(output).isEqualTo(0);
 
     }
 
@@ -178,7 +178,7 @@ public class SumOfMultiplesTest {
             0
         };
         int output = new SumOfMultiples(1, set).getSum();
-        assertEquals(0, output);
+        assertThat(output).isEqualTo(0);
 
     }
 
@@ -191,7 +191,7 @@ public class SumOfMultiplesTest {
             0
         };
         int output = new SumOfMultiples(4, set).getSum();
-        assertEquals(3, output);
+        assertThat(output).isEqualTo(3);
 
     }
 
@@ -207,7 +207,7 @@ public class SumOfMultiplesTest {
             11
         };
         int output = new SumOfMultiples(10000, set).getSum();
-        assertEquals(39614537, output);
+        assertThat(output).isEqualTo(39614537);
 
     }
 

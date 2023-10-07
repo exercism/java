@@ -1,10 +1,10 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThrows;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class NucleotideCounterTest {
 
@@ -51,8 +51,7 @@ public class NucleotideCounterTest {
     @Ignore("Remove to run test")
     @Test
     public void testDnaStringHasInvalidNucleotides() {
-        assertThrows(
-            IllegalArgumentException.class,
-            () -> new NucleotideCounter("AGXXACT"));
+        assertThatThrownBy(() -> new NucleotideCounter("AGXXACT"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 }

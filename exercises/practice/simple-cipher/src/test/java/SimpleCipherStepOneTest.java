@@ -2,10 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.util.regex.Pattern;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Step 1: Make a simple shift cipher
@@ -26,27 +23,26 @@ public class SimpleCipherStepOneTest {
     public void cipherCanEncode() {
         String plainText = "aaaaaaaaaa";
         String cipherText = cipherWithDefaultKey.getKey().substring(0, 10);
-        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));
+        assertThat(cipherWithDefaultKey.encode(plainText)).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void cipherCanDecode() {
         String cipherText = "aaaaaaaaaa";
-        assertEquals(cipherText, cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10)));
+        assertThat(cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10))).isEqualTo(cipherText);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void cipherIsReversible() {
         String plainText = "abcdefghij";
-        assertEquals(plainText, cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText)));
+        assertThat(cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText))).isEqualTo(plainText);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void keyIsLowercaseLetters() {
-        String key = cipherWithDefaultKey.getKey();
-        assertTrue(Pattern.matches("^[a-z]+$", key));
+        assertThat(cipherWithDefaultKey.getKey()).matches("^[a-z]+$");
     }
 }

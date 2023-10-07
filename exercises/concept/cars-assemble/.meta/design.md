@@ -17,10 +17,11 @@
 ## Concepts
 
 - `numbers`: know of the existence of the two most commonly used number types, `int` and `double`; understand that the former represents whole numbers, and the latter floating-point numbers; know of basic operators such as multiplication, comparison and equality; know how to convert from one numeric type to another; know what implicit and explicit conversions are.
-- `conditionals`: know how to conditionally execute code using an `if` statement.
+- `if-else-statements`: know how to conditionally execute code using an `if` statement.
 
 ## Prerequisites
 
 This exercise's prerequisites Concepts are:
 
 - `basics`: know how to define methods.
+- `booleans`: know how to use boolean operators.

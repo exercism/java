@@ -1,8 +1,8 @@
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class LargestSeriesProductCalculatorTest {
 
@@ -13,7 +13,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(2);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -24,7 +24,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(2);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -35,7 +35,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(2);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -46,7 +46,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(3);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -57,7 +57,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(3);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -68,7 +68,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(5);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -81,7 +81,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(6);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -92,7 +92,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(2);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -103,7 +103,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(3);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
     @Ignore("Remove to run test")
@@ -152,7 +152,7 @@ public class LargestSeriesProductCalculatorTest {
 
         long actualProduct = calculator.calculateLargestProductForSeriesLength(10);
 
-        assertEquals(expectedProduct, actualProduct);
+        assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
 }

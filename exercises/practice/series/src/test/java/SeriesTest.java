@@ -1,12 +1,12 @@
-import static org.junit.Assert.assertEquals;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.Test;
-import org.junit.Ignore;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class SeriesTest {
 
@@ -15,7 +15,7 @@ public class SeriesTest {
         Series series = new Series("1");
         List<String> expected = Collections.singletonList("1");
         List<String> actual = series.slices(1);
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -24,7 +24,7 @@ public class SeriesTest {
         Series series = new Series("12");
         List<String> expected = Arrays.asList("1", "2");
         List<String> actual = series.slices(1);
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -33,7 +33,7 @@ public class SeriesTest {
         Series series = new Series("35");
         List<String> expected = Collections.singletonList("35");
         List<String> actual = series.slices(2);
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -42,7 +42,7 @@ public class SeriesTest {
         Series series = new Series("9142");
         List<String> expected = Arrays.asList("91", "14", "42");
         List<String> actual = series.slices(2);
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -56,7 +56,7 @@ public class SeriesTest {
                 "777"
         );
         List<String> actual = series.slices(3);
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
@@ -74,7 +74,7 @@ public class SeriesTest {
                 "04243"
         );
         List<String> actual = series.slices(5);
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")

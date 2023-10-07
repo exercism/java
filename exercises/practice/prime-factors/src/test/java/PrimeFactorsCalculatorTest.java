@@ -2,10 +2,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
-
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PrimeFactorsCalculatorTest {
 
@@ -18,43 +15,43 @@ public class PrimeFactorsCalculatorTest {
 
     @Test
     public void testNoFactors() {
-        assertEquals(Collections.emptyList(), primeFactorsCalculator.calculatePrimeFactorsOf(1L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(1L)).isEmpty();
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testPrimeNumber() {
-        assertEquals(Collections.singletonList(2L), primeFactorsCalculator.calculatePrimeFactorsOf(2L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(2L)).containsExactly(2L);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testSquareOfAPrime() {
-        assertEquals(Arrays.asList(3L, 3L), primeFactorsCalculator.calculatePrimeFactorsOf(9L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(9L)).containsExactly(3L, 3L);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testCubeOfAPrime() {
-        assertEquals(Arrays.asList(2L, 2L, 2L), primeFactorsCalculator.calculatePrimeFactorsOf(8L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(8L)).containsExactly(2L, 2L, 2L);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testProductOfPrimesAndNonPrimes() {
-        assertEquals(Arrays.asList(2L, 2L, 3L), primeFactorsCalculator.calculatePrimeFactorsOf(12L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(12L)).containsExactly(2L, 2L, 3L);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testProductOfPrimes() {
-        assertEquals(Arrays.asList(5L, 17L, 23L, 461L), primeFactorsCalculator.calculatePrimeFactorsOf(901255L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(901255L)).containsExactly(5L, 17L, 23L, 461L);
     }
 
     @Ignore("Remove to run test")
     @Test
     public void testFactorsIncludingALargePrime() {
-        assertEquals(Arrays.asList(11L, 9539L, 894119L), primeFactorsCalculator.calculatePrimeFactorsOf(93819012551L));
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(93819012551L)).containsExactly(11L, 9539L, 894119L);
     }
 
 }
