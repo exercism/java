@@ -2,7 +2,7 @@
 
 # Instructions
 
-In Dungeons & Dragons, each player starts by generating a character they can play with. This character has six primary abilities:
+In [Dungeons & Dragons](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons), each player starts by generating a character they can play with. This character has six primary abilities:
 
 - Strength
 - Dexterity
