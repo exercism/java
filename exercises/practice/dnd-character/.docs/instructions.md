@@ -1,26 +1,76 @@
 # Instructions
 
-For a game of [Dungeons & Dragons][dnd], each player starts by generating a character they can play with.
-This character has, among other things, six abilities; strength, dexterity, constitution, intelligence, wisdom and charisma.
-These six abilities have scores that are determined randomly.
-You do this by rolling four 6-sided dice and record the sum of the largest three dice.
-You do this six times, once for each ability.
+# Instructions
 
-Your character's initial hitpoints are 10 + your character's constitution modifier.
-You find your character's constitution modifier by subtracting 10 from your character's constitution, divide by 2 and round down.
+In Dungeons & Dragons, each player starts by generating a character they can play with. This character has six primary abilities:
+
+- Strength
+- Dexterity
+- Constitution
+- Intelligence
+- Wisdom
+- Charisma
+
+These abilities have scores determined randomly by rolling four 6-sided dice and recording the sum of the largest three dice. This process is repeated six times, once for each ability.
+
+Your character's initial hitpoints are `10 + your character's constitution modifier`. The constitution modifier is found by subtracting 10 from the constitution score, dividing the result by 2, and rounding down.
 
 Write a random character generator that follows the rules above.
 
-For example, the six throws of four dice may look like:
+## Example
 
-- 5, 3, 1, 6: You discard the 1 and sum 5 + 3 + 6 = 14, which you assign to strength.
-- 3, 2, 5, 3: You discard the 2 and sum 3 + 5 + 3 = 11, which you assign to dexterity.
-- 1, 1, 1, 1: You discard the 1 and sum 1 + 1 + 1 = 3, which you assign to constitution.
-- 2, 1, 6, 6: You discard the 1 and sum 2 + 6 + 6 = 14, which you assign to intelligence.
-- 3, 5, 3, 4: You discard the 3 and sum 5 + 3 + 4 = 12, which you assign to wisdom.
-- 6, 6, 6, 6: You discard the 6 and sum 6 + 6 + 6 = 18, which you assign to charisma.
+Let's walk through the process of generating a character:
 
-Because constitution is 3, the constitution modifier is -4 and the hitpoints are 6.
+1. **Rolling for Strength**:
+   - Dice rolls: 5, 3, 1, 6
+   - Discard the lowest roll (1)
+   - Sum the remaining rolls: 5 + 3 + 6 = 14
+   - Assign 14 to Strength
+
+2. **Rolling for Dexterity**:
+   - Dice rolls: 3, 2, 5, 3
+   - Discard the lowest roll (2)
+   - Sum the remaining rolls: 3 + 5 + 3 = 11
+   - Assign 11 to Dexterity
+
+3. **Rolling for Constitution**:
+   - Dice rolls: 1, 1, 1, 1
+   - Discard the lowest roll (1, as all are the same)
+   - Sum the remaining rolls: 1 + 1 + 1 = 3
+   - Assign 3 to Constitution
+
+4. **Rolling for Intelligence**:
+   - Dice rolls: 2, 1, 6, 6
+   - Discard the lowest roll (1)
+   - Sum the remaining rolls: 2 + 6 + 6 = 14
+   - Assign 14 to Intelligence
+
+5. **Rolling for Wisdom**:
+   - Dice rolls: 3, 5, 3, 4
+   - Discard the lowest roll (3)
+   - Sum the remaining rolls: 5 + 3 + 4 = 12
+   - Assign 12 to Wisdom
+
+6. **Rolling for Charisma**:
+   - Dice rolls: 6, 6, 6, 6
+   - Discard the lowest roll (6, as all are the same)
+   - Sum the remaining rolls: 6 + 6 + 6 = 18
+   - Assign 18 to Charisma
+
+7. **Calculating Hitpoints**:
+   - Constitution score is 3
+   - Constitution modifier = (3 - 10) / 2 = -3.5 (rounded down to -4)
+   - Hitpoints = 10 - 4 = 6
+
+Your character now has the following abilities:
+- Strength: 14
+- Dexterity: 11
+- Constitution: 3 (Modifier: -4)
+- Intelligence: 14
+- Wisdom: 12
+- Charisma: 18
+- Hitpoints: 6
+
 
 ## Notes
 
