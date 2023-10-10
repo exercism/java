@@ -43,7 +43,7 @@ public class SchoolTest {
         school.add("Chelsea", 3);
         school.add("Logan", 7);
         List<String> expected = Arrays.asList("Chelsea", "Logan");
-        assertThat(school.roster());
+        assertThat(school.roster()).isEqualTo(expected);
     }
 
     @Ignore("Remove to run test")
