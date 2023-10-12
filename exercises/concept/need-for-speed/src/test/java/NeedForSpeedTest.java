@@ -137,7 +137,7 @@ public class NeedForSpeedTest {
     public void nitro_battery_completely_drains() {
         var car = NeedForSpeed.nitro();
 
-        // The battery is almost drained
+        // The battery is drained
         for (var i = 0; i < 25; i++) {
             car.drive();
         }
