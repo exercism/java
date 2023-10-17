@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CarsAssembleTest {
@@ -20,42 +21,42 @@ public class CarsAssembleTest {
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 0")
     public void productionRatePerHourForSpeedZero() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(0) - 0.0) < epsilon).isTrue();
+        assertEquals(0.0, carsAssemble.productionRatePerHour(0), epsilon);
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 1")
     public void productionRatePerHourForSpeedOne() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(1) - 221.0) < epsilon).isTrue();
+        assertEquals(221.0, carsAssemble.productionRatePerHour(1), epsilon);
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 4")
     public void productionRatePerHourForSpeedFour() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(4) - 884.0) < epsilon).isTrue();
+        assertEquals(884.0, carsAssemble.productionRatePerHour(4), epsilon);
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 7")
     public void productionRatePerHourForSpeedSeven() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(7) - 1392.3) < epsilon).isTrue();
+        assertEquals(1392.3, carsAssemble.productionRatePerHour(7), epsilon);
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 9")
     public void productionRatePerHourForSpeedNine() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(9) - 1591.2) < epsilon).isTrue();
+        assertEquals(1591.2, carsAssemble.productionRatePerHour(9), epsilon);
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 10")
     public void productionRatePerHourForSpeedTen() {
-        assertThat(Math.abs(carsAssemble.productionRatePerHour(10) - 1701.7) < epsilon).isTrue();
+        assertEquals(1701.7, carsAssemble.productionRatePerHour(10), epsilon);
     }
 
     @Test
