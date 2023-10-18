@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.within;
 
 
 public class CarsAssembleTest {
@@ -21,42 +21,42 @@ public class CarsAssembleTest {
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 0")
     public void productionRatePerHourForSpeedZero() {
-        assertEquals(0.0, carsAssemble.productionRatePerHour(0), epsilon);
+        assertThat(carsAssemble.productionRatePerHour(0)).isCloseTo(0.0, within(epsilon));
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 1")
     public void productionRatePerHourForSpeedOne() {
-        assertEquals(221.0, carsAssemble.productionRatePerHour(1), epsilon);
+        assertThat(carsAssemble.productionRatePerHour(1)).isCloseTo(221.0, within(epsilon));
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 4")
     public void productionRatePerHourForSpeedFour() {
-        assertEquals(884.0, carsAssemble.productionRatePerHour(4), epsilon);
+        assertThat(carsAssemble.productionRatePerHour(4)).isCloseTo(884.0, within(epsilon));
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 7")
     public void productionRatePerHourForSpeedSeven() {
-        assertEquals(1392.3, carsAssemble.productionRatePerHour(7), epsilon);
+        assertThat(carsAssemble.productionRatePerHour(7)).isCloseTo(1392.3, within(epsilon));
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 9")
     public void productionRatePerHourForSpeedNine() {
-        assertEquals(1591.2, carsAssemble.productionRatePerHour(9), epsilon);
+        assertThat(carsAssemble.productionRatePerHour(9)).isCloseTo(1591.2, within(epsilon));
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The productionRatePerHour method returns the correct result when line's speed is 10")
     public void productionRatePerHourForSpeedTen() {
-        assertEquals(1701.7, carsAssemble.productionRatePerHour(10), epsilon);
+        assertThat(carsAssemble.productionRatePerHour(10)).isCloseTo(1701.7, within(epsilon));
     }
 
     @Test
