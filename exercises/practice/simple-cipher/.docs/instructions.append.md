@@ -1,6 +1,6 @@
 # Instructions append
 
-This exercise has three test classes: SimpleCipherStepOneTest.java, SimpleCipherStepTwoTest.java and SimpleCipherStepThreeTest.java.
+This exercise has two test classes: SimpleCipherStepOneTest.java and SimpleCipherStepTwoTest.java.
 
 To run only one test class (e.g. in this example SimpleCipherStepOneTest.java):
 ```
