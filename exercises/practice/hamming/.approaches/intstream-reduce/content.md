@@ -28,7 +28,7 @@ public class Hamming {
 ```
 
 This approach starts by importing `java.util.stream.IntStream`.
-It then defines a [`private`][private] [`final`][final] `long` variable to keep track of the difference between the strands.
+It then defines a [`private`][private] [`final`][final] `int` variable to keep track of the difference between the strands.
 
 After the validation code, the real work is done by the [`IntStream`][intstream].
 It uses its [`range()`][range] method to iterate from `0` up to but not including the length of the left strand.
