@@ -25,8 +25,7 @@
       "src/main/java/Cipher.java"
     ],
     "test": [
-      "src/test/java/SimpleCipherStepTwoSubsitutionTest.java",
-      "src/test/java/SimpleCipherStepOneTest.java"
+      "src/test/java/SimpleCipherTest.java"
     ],
     "example": [
       ".meta/src/reference/java/Cipher.java"
