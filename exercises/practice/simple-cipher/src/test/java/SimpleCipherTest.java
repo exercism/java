@@ -19,8 +19,8 @@ public class SimpleCipherTest {
         }
 
         /**
-         * Here we take advantage of the fact that plaintext of "aaa..." doesn't output the key. This is a critical problem
-         * with shift ciphers, some characters will always output the key verbatim.
+         * Here we take advantage of the fact that plaintext of "aaa..." doesn't output the key. This is a critical
+         * problem with shift ciphers, some characters will always output the key verbatim.
          */
         @Test
         public void cipherCanEncode() {
@@ -33,7 +33,8 @@ public class SimpleCipherTest {
         @Test
         public void cipherCanDecode() {
             String cipherText = "aaaaaaaaaa";
-            assertThat(cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10))).isEqualTo(cipherText);
+            assertThat(cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10)))
+                .isEqualTo(cipherText);
         }
 
         @Ignore("Remove to run test")
