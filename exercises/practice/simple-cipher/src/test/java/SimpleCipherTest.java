@@ -1,14 +1,13 @@
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({SimpleCipherTest.RandomKeyCipher.class, SimpleCipherTest.SubstitutionCipher.class})
+@RunWith(Enclosed.class)
 public class SimpleCipherTest {
     public static class RandomKeyCipher {
         private Cipher cipherWithDefaultKey;
