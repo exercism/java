@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,28 +10,36 @@
       "slug": "for-loop",
       "title": "for loop",
       "blurb": "Use a for loop to iterate to the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "33be8fbe-af94-4e48-89e0-bb8b3bb8b08e",
       "slug": "intstream-filter-count",
       "title": "IntStream filter count",
       "blurb": "Use IntStream filter and count to iterate to the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "9728f657-d83e-4994-b9d5-59c7f24b0d78",
       "slug": "intstream-map-sum",
       "title": "IntStream map sum",
       "blurb": "Use IntStream map and sum to iterate to the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "cd898a90-42fc-466c-b0d1-d8c053d4eeda",
       "slug": "intstream-reduce",
       "title": "IntStream reduce",
       "blurb": "Use IntStream reduce to iterate to the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }

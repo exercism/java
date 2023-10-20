@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,14 +10,18 @@
       "slug": "filter-distinct-count",
       "title": "filter(), distinct() and count()",
       "blurb": "Use filter(), distinct() and count() to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "7b980297-ef29-453f-b0fd-812131850dea",
       "slug": "containsall",
       "title": "containsAll()",
       "blurb": "Use containsAll() to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }

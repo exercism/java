@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,7 +10,9 @@
       "slug": "charat-substring",
       "title": "charAt and substring",
       "blurb": "Use charAt and substring to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }

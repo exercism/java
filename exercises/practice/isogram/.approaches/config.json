@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,14 +10,18 @@
       "slug": "filter-map-allmatch",
       "title": "filter(), map() and allMatch()",
       "blurb": "Use filter(), map() and allMatch() to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "50c09d6b-c0b0-495a-a3de-8f96a94b3f42",
       "slug": "filter-maptoobj-distinct",
       "title": "filter(), mapToObj() and distinct()",
       "blurb": "Use filter(), mapToObj() and distinct() to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }
