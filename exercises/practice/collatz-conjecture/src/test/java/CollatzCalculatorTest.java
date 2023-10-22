@@ -36,7 +36,7 @@ public class CollatzCalculatorTest {
     public void testZeroIsConsideredInvalidInput() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> collatzCalculator.computeStepCount(0))
-                .withMessage("Only natural numbers are allowed");
+                .withMessage("Only positive integers are allowed");
     }
 
     @Ignore("Remove to run test")
@@ -44,7 +44,7 @@ public class CollatzCalculatorTest {
     public void testNegativeIntegerIsConsideredInvalidInput() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> collatzCalculator.computeStepCount(-15))
-                .withMessage("Only natural numbers are allowed");
+                .withMessage("Only positive integers are allowed");
     }
 
 }
