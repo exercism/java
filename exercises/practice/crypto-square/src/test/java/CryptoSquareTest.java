@@ -15,6 +15,15 @@ public class CryptoSquareTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void normalizationResultsInEmptyCiphertext() {
+        CryptoSquare cryptoSquare = new CryptoSquare("... --- ...");
+        String expectedOutput = "";
+
+        assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void lettersAreLowerCasedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare("A");
         String expectedOutput = "a";
@@ -62,7 +71,7 @@ public class CryptoSquareTest {
     @Test
     public void fiftyFourCharacterPlaintextResultsInSevenChunksWithTrailingSpaces() {
         CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have " +
-                                                     "given us roots.");
+                "given us roots.");
         String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ";
 
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
