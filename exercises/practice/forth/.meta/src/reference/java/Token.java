@@ -77,7 +77,7 @@ class Token {
             return Collections.singletonList(OpDefToken.opDefTokenFromString(string));
         } else if (string.matches("[A-z+/*\\-]+(?:-[A-z+/*\\-]+)*")) {
             return Collections.singletonList(new OpToken(string.toLowerCase()));
-        } else if (string.matches("\\d+")) {
+        } else if (string.matches("-?\\d+")) {
             return Collections.singletonList(new IntToken(Integer.parseInt(string)));
         } else {
             return Arrays.stream(string.split(" "))
