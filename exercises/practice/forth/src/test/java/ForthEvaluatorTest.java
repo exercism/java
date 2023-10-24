@@ -1,11 +1,12 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class ForthEvaluatorTest {
 
@@ -15,6 +16,13 @@ public class ForthEvaluatorTest {
     public void testNumbersAreJustPushedOntoTheStack() {
         assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 2 3 4 5")))
                 .containsExactly(1, 2, 3, 4, 5);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testNegativeNumbersArePushedOntoTheStack() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("-1 -2 -3 -4 -5")))
+                .containsExactly(-1, -2, -3, -4, -5);
     }
 
     @Ignore("Remove to run test")
@@ -284,9 +292,17 @@ public class ForthEvaluatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testCannotRedefineNumbers() {
+    public void testCannotRedefineNonNegativeNumbers() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList(": 1 2 ;")))
+                .withMessage("Cannot redefine numbers");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testCannotRedefineNegativeNumbers() {
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList(": -1 2 ;")))
                 .withMessage("Cannot redefine numbers");
     }
 
@@ -338,6 +354,19 @@ public class ForthEvaluatorTest {
     public void testDefinitionsAreCaseInsensitive() {
         assertThat(forthEvaluator.evaluateProgram(Arrays.asList(": SWAP DUP Dup dup ;", "1 swap")))
                 .containsExactly(1, 1, 1, 1);
+    }
+
+    @Ignore
+    @Test
+    public void testDefinitionsAreOnlyDefinedLocally() {
+        ForthEvaluator firstInstance = new ForthEvaluator();
+        ForthEvaluator secondInstance = new ForthEvaluator();
+
+        List<Integer> firstOutput = firstInstance.evaluateProgram(Arrays.asList(": + - ;", "1 1 +"));
+        List<Integer> secondOutput = secondInstance.evaluateProgram(Collections.singletonList("1 1 +"));
+
+        assertThat(firstOutput).containsExactly(0);
+        assertThat(secondOutput).containsExactly(2);
     }
 
 }
