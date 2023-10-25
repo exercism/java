@@ -11,9 +11,9 @@ public class ComplexNumberTest {
     private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-15;
 
     private void assertDoublesEqual(double d1, double d2, String numberPart) {
-        String errorMessage = "While testing " + numberPart + " part of number,";
+        String errorMessage = "While testing " + numberPart + " part of number";
 
-        assertThat(d1).withFailMessage(errorMessage).isCloseTo(d2, withPrecision(DOUBLE_EQUALITY_TOLERANCE));
+        assertThat(d1).as(errorMessage).isCloseTo(d2, withPrecision(DOUBLE_EQUALITY_TOLERANCE));
     }
 
     private void assertComplexNumbersEqual(ComplexNumber c1, ComplexNumber c2) {
@@ -265,8 +265,8 @@ public class ComplexNumberTest {
     @Ignore("Remove to run test")
     @Test
     public void testExponentialOfNumberWithRealAndImaginaryParts() {
-        ComplexNumber expected = new ComplexNumber(-2.0, 0);
-        ComplexNumber actual = new ComplexNumber(Math.log(2.0), Math.PI).exponentialOf();
+        ComplexNumber expected = new ComplexNumber(1, 1);
+        ComplexNumber actual = new ComplexNumber(Math.log(2.0) / 2, Math.PI / 4).exponentialOf();
         assertComplexNumbersEqual(expected, actual);
     }
 
