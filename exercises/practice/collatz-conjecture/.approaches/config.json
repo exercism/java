@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,14 +10,18 @@
       "slug": "while-loop",
       "title": "while loop",
       "blurb": "Use a while loop to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "9e6ec107-1273-4e0d-a1c8-cc09130768ee",
       "slug": "intstream-iterate",
       "title": "IntStream.iterate()",
       "blurb": "Use IntStream.iterate() to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }

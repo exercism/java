@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,21 +10,27 @@
       "slug": "if-statements",
       "title": "if statements",
       "blurb": "Use if statements in a for loop to add up the score.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "af827512-b35e-4db5-8c27-e999aecdc111",
       "slug": "switch-statement",
       "title": "switch statement",
       "blurb": "Use a switch statement in a for loop to add up the score.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "4c3c8164-abe2-4851-bf94-edfdf42199d6",
       "slug": "map-reduce",
       "title": "HashMap with reduce",
       "blurb": "Use a HashMap in reduce to add up the score.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }

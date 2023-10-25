@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,14 +10,18 @@
       "slug": "random-add-to-used-names",
       "title": "Randomly add to used names",
       "blurb": "Check used names for new random name.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "4b8a6115-a252-4ac7-a3e2-ffb4cad93cc6",
       "slug": "sequential-take-from-shuffled-names",
       "title": "Sequentially take from shuffled names",
       "blurb": "Avoid collision by taking from shuffled names.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }
