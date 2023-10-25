@@ -8,6 +8,15 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class ChangeCalculatorTest {
 
     @Test
+    public void testChangeFor1Cent() {
+        ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 25));
+
+        assertThat(changeCalculator.computeMostEfficientChange(1))
+                .containsExactly(1);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testChangeThatCanBeGivenInASingleCoin() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 25, 100));
 
