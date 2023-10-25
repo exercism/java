@@ -180,6 +180,14 @@ public class CustomSetTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void setIsEqualToSetConstructedFromListWithDuplicates() {
+        CustomSet<String> customSet = new CustomSet<>(Collections.singletonList("1"));
+        CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "1"));
+        assertThat(customSet.equals(secondCustomSet)).isTrue();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void addToEmptySet() {
         int element = 3;
         CustomSet<Integer> expected = new CustomSet<>(Collections.unmodifiableList(Collections.singletonList(element)));
