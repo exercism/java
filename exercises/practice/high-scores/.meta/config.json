@@ -9,6 +9,9 @@
     ],
     "example": [
       ".meta/src/reference/java/HighScores.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Manage a player's High Score list.",

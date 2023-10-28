@@ -13,3 +13,6 @@ permissions:
 jobs:
   configlet:
     uses: exercism/github-actions/.github/workflows/configlet.yml@main
+    with:
+      lint: true
+      fmt: true

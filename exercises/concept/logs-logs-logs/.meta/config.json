@@ -1,15 +1,25 @@
 {
-  "authors": ["sanderploegsma"],
-  "contributors": [],
+  "authors": [
+    "sanderploegsma"
+  ],
   "files": {
-    "solution": ["src/main/java/LogLevel.java", "src/main/java/LogLine.java"],
-    "test": ["src/test/java/LogsLogsLogsTest.java"],
+    "solution": [
+      "src/main/java/LogLevel.java",
+      "src/main/java/LogLine.java"
+    ],
+    "test": [
+      "src/test/java/LogsLogsLogsTest.java"
+    ],
     "exemplar": [
       ".meta/src/reference/java/LogLevel.java",
       ".meta/src/reference/java/LogLine.java"
     ],
-    "invalidator": ["build.gradle"]
+    "invalidator": [
+      "build.gradle"
+    ]
   },
-  "forked_from": ["csharp/logs-logs-logs"],
+  "forked_from": [
+    "csharp/logs-logs-logs"
+  ],
   "blurb": "Learn about enums by parsing logs."
 }

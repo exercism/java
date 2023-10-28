@@ -170,7 +170,7 @@ public class DominoesTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void seperateThreeDominoLoopsTest() {
+    public void separateThreeDominoLoopsTest() {
         Dominoes dominoes = new Dominoes();
 
         Domino[] dominoesArray = {new Domino(1, 2), new Domino(2, 3), new Domino(3, 1),

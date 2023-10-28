@@ -5,7 +5,7 @@
   "status": {
     "concept_exercises": true,
     "test_runner": true,
-    "representer": true,
+    "representer": false,
     "analyzer": false
   },
   "blurb": "Java is a very widely used Object Oriented programming language. It's safe, simple to use and portable so that you can \"write once, run anywhere\".",
@@ -162,8 +162,13 @@
         "slug": "cars-assemble",
         "name": "Cars, Assemble!",
         "uuid": "3f451c6b-04e2-4b08-8bb0-7dcd2ec5b8f4",
-        "concepts": ["if-else-statements", "numbers"],
-        "prerequisites": ["booleans"],
+        "concepts": [
+          "if-else-statements",
+          "numbers"
+        ],
+        "prerequisites": [
+          "booleans"
+        ],
         "status": "active"
       },
       {
@@ -221,8 +226,14 @@
         "slug": "logs-logs-logs",
         "name": "Logs, Logs, Logs!",
         "uuid": "f33927f7-676f-4045-b1fc-34e719453c61",
-        "concepts": ["enums"],
-        "prerequisites": ["strings", "switch-statement", "constructors"]
+        "concepts": [
+          "enums"
+        ],
+        "prerequisites": [
+          "strings",
+          "switch-statement",
+          "constructors"
+        ]
       }
     ],
     "practice": [
@@ -336,11 +347,11 @@
         "name": "Triangle",
         "uuid": "ec268d8e-997b-4553-8c67-8bdfa1ecb888",
         "practices": [
-          "constructors"          
+          "constructors"
         ],
         "prerequisites": [
           "numbers",
-          "if-else-statements"          
+          "if-else-statements"
         ],
         "difficulty": 4
       },
@@ -1578,8 +1589,7 @@
           "classes",
           "generic-types"
         ],
-        "difficulty": 8,
-        "topics": []
+        "difficulty": 8
       },
       {
         "slug": "rectangles",
@@ -1762,7 +1772,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -1772,7 +1781,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -1782,7 +1790,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -1792,7 +1799,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -1802,7 +1808,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -1812,7 +1817,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null,
         "status": "deprecated"
       },
       {
@@ -1911,11 +1915,11 @@
         "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
         "practices": [],
         "prerequisites": [
-            "strings",
-            "chars",
-            "if-else-statements",
-            "lists",
-            "for-loops"
+          "strings",
+          "chars",
+          "if-else-statements",
+          "lists",
+          "for-loops"
         ],
         "difficulty": 7
       },
@@ -1931,29 +1935,41 @@
           "for-loops"
         ],
         "difficulty": 8
-       },
-       {
+      },
+      {
         "slug": "ledger",
         "name": "Ledger",
         "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
         "practices": [],
-        "prerequisites": ["strings"],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 5
-       },
-       {
+      },
+      {
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
-        "practices": ["lists", "classes", "for-loops"],
-        "prerequisites" :["lists"],
+        "practices": [
+          "lists",
+          "classes",
+          "for-loops"
+        ],
+        "prerequisites": [
+          "lists"
+        ],
         "difficulty": 2
       },
       {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "61886554-ec84-422a-bbf9-aeee37c45bb6",
-        "practices": ["numbers"],
-        "prerequisites": ["numbers"],
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
         "difficulty": 5
       },
       {
@@ -1970,8 +1986,7 @@
         ],
         "difficulty": 8
       }
-    ],
-    "foregone": []
+    ]
   },
   "concepts": [
     {
@@ -2072,51 +2087,51 @@
   ],
   "key_features": [
     {
-      "icon": "evolving",
       "title": "Modern",
-      "content": "Java is a modern, fast-evolving language with releases every 6 months."
+      "content": "Java is a modern, fast-evolving language with releases every 6 months.",
+      "icon": "evolving"
     },
     {
-      "icon": "statically-typed",
       "title": "Statically-typed",
-      "content": "Every expression has a type known at compile time."
+      "content": "Every expression has a type known at compile time.",
+      "icon": "statically-typed"
     },
     {
-      "icon": "multi-paradigm",
       "title": "Multi-paradigm",
-      "content": "Java is primarily an object-oriented language, but has many functional features introduced in v1.8."
+      "content": "Java is primarily an object-oriented language, but has many functional features introduced in v1.8.",
+      "icon": "multi-paradigm"
     },
     {
-      "icon": "general-purpose",
       "title": "General purpose",
-      "content": "Java is used for a variety of workloads like web, cloud, mobile and game applications."
+      "content": "Java is used for a variety of workloads like web, cloud, mobile and game applications.",
+      "icon": "general-purpose"
     },
     {
-      "icon": "portable",
       "title": "Portable",
-      "content": "Java was designed to be cross-platform with the slogan \"Write once, run anywhere\"."
+      "content": "Java was designed to be cross-platform with the slogan \"Write once, run anywhere\".",
+      "icon": "portable"
     },
     {
-      "icon": "garbage-collected",
       "title": "Garbage Collection",
-      "content": "Java programs perform automatic memory management for their lifecycles."
+      "content": "Java programs perform automatic memory management for their lifecycles.",
+      "icon": "garbage-collected"
     }
   ],
   "tags": [
+    "execution_mode/compiled",
     "paradigm/functional",
     "paradigm/imperative",
     "paradigm/object_oriented",
-    "typing/static",
-    "execution_mode/compiled",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
     "platform/android",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
     "runtime/jvm",
+    "typing/static",
+    "used_for/artificial_intelligence",
     "used_for/backends",
     "used_for/cross_platform_development",
-    "used_for/mobile",
-    "used_for/artificial_intelligence",
-    "used_for/games"
+    "used_for/games",
+    "used_for/mobile"
   ]
 }

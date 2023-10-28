@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/reference/java/BottleSong.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Produce the lyrics to the popular children's repetitive song: Ten Green Bottles.",
