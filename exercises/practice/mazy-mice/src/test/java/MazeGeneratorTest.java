@@ -32,7 +32,7 @@ class MazeGeneratorTest {
     private MazeGenerator sut;
 
     @Before
-    void SetUp() {
+    void setup() {
         sut = new MazeGenerator();
     }
 
@@ -51,7 +51,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void theDimensionsAreCorrect() {
+    void theDimensionsOfTheMazeAreCorrect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         var expectedWidth = RECTANGLE_COLUMNS * 2 + 1;
         var expectedHeight = RECTANGLE_ROWS * 2 + 1;
@@ -63,6 +63,43 @@ class MazeGeneratorTest {
         assertThat(maze[0])
                 .as("The dimensions of the maze are correct.")
                 .hasSize(expectedWidth);
+    }
+
+
+    @Ignore("Remove to run test")
+    @Test
+    void theMazeContainsOnlyValidCharacters() {
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
+
+        for (var row : maze) {
+            for (var cell : row) {
+                assertThat(cell)
+                        .as("The maze contains only valid characters")
+                        .isIn(ALLOWED_SYMBOLS);
+            }
+        }
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    void theMazeHasOnlyOneEntranceOnTheLeftSide() {
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
+        int entranceCount = countEntrances(maze);
+
+        assertThat(entranceCount)
+                .as("The maze has only one entrance on the left side")
+                .isOne();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    void theMazeHasSingleExitOnTheRightSideOfTheMaze() {
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
+        int exitCount = countExits(maze);
+
+        assertThat(exitCount)
+                .as("The maze has a single exit on the right side of the maze")
+                .isOne();
     }
 
     @Ignore("Remove to run test")
@@ -96,42 +133,6 @@ class MazeGeneratorTest {
         assertThat(maze1)
                 .as("Two mazes with different seeds should not be equal")
                 .isNotEqualTo(maze2);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    void theMazeContainsOnlyValidCharacters() {
-        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
-
-        for (var row : maze) {
-            for (var cell : row) {
-                assertThat(cell)
-                        .as("The maze contains only valid characters")
-                        .isIn(ALLOWED_SYMBOLS);
-            }
-        }
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    void theMazeHasOnlyOneEntranceOnTheLeftSide() {
-        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
-        int entranceCount = countEntrances(maze);
-
-        assertThat(entranceCount)
-                .as("The maze has only one entrance on the left side")
-                .isOne();
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    void theMazeHasASingleExitOnTheRightSideOfTheMaze() {
-        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
-        int exitCount = countExits(maze);
-
-        assertThat(exitCount)
-                .as("The maze has a single exit on the right side of the maze")
-                .isOne();
     }
 
     @Ignore("Remove to run test")

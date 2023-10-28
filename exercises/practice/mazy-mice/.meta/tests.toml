@@ -1,0 +1,21 @@
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
+
+[e01f6db6-613c-4b55-9c09-e87edc0b04dd]
+description = "The dimensions of the maze are correct"
+
+[4782cea6-a1e3-48b2-b825-a805890b5118]
+description = "The maze contains only valid characters"
+
+[1433a6ff-d18e-4ade-b37c-40b286218f07]
+description = "The maze has a single entrance on the left side"
+
+[a0be2a1c-4ec1-412a-8a30-36d6b1d96df2]
+description = "The maze has a single exit on the right side"
+
+[9fc2d2e3-af4a-4ab1-8e8f-cf6f6f7eaf04]
+description = "if the seed parameter is omitted, random mazes should be generated"
+
+[a0d3e4f4-b05b-4ac2-8e8a-df7f7f8eaf05]
+description = "if the seed parameter is specified, the same maze should be generated"
