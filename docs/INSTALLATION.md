@@ -31,7 +31,7 @@ Open an administrative command prompt.  (If you need assistance opening an admin
 2.  Install the JDK:
 
      ```batchfile
-     C:\Windows\system32> choco install openjdk11
+     C:\Windows\system32> choco install openjdk
      ...
      C:\Windows\system32> refreshenv
      ...
@@ -63,19 +63,13 @@ Below are instructions for install using the most common method - using Homebrew
      $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
      ```
 
-2. Tap the [Homebrew Cask](https://caskroom.github.io/) — this allows us to install pre-built binaries like the JDK.
+2.  Install the JDK:
 
      ```
-     $ brew tap adoptopenjdk/openjdk
+     $ brew install --cask temurin
      ```
 
-3.  Install the JDK:
-
-     ```
-     $ brew install --cask adoptopenjdk11
-     ```
-
-4.  Install Gradle:
+3.  Install Gradle:
 
      ```
      $ brew install gradle
@@ -98,7 +92,7 @@ Below are instructions for install using the package manager of your distro.  If
 
 If you are using Debian or its derivatives (like Ubuntu), use APT:
 
-*(verified on: Ubuntu 14, 16 and 18)*
+*(verified on: Ubuntu 20.04 and 22.04)*
 
 1. Install the JDK:
 
@@ -107,7 +101,7 @@ If you are using Debian or its derivatives (like Ubuntu), use APT:
      $ sudo apt-get install software-properties-common
      $ sudo add-apt-repository ppa:openjdk-r/ppa
      $ sudo apt-get update
-     $ sudo apt-get install openjdk-11-jdk
+     $ sudo apt-get install openjdk-21-jdk
      ```
 
 2. Install Gradle:
@@ -126,17 +120,17 @@ To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/t
 
 ## Other Linux distributions
 
-There are a lot of ways to install Jdk 11, but one of the easiest ways is to use SDKMAN, which lets you install
-both OpenJdk11 and the latest Gradle with ease. Use the following steps:
+There are a lot of ways to install JDK 21, but one of the easiest ways is to use SDKMAN, which lets you install
+both OpenJDK 21 and the latest Gradle with ease. Use the following steps:
 
 1. Install SDKMAN:
     ```sh
     $ curl -s "https://get.sdkman.io" | bash
     ```
     (if that doesn't work, take a look at the instructions found here: https://sdkman.io/install )
-1. Install openjdk11:
+1. Install OpenJDK 21:
     ```
-    $ sdk install java 11.0.2-open
+    $ sdk install java 21.0.1-tem
     ```
 1. Install Gradle:
     ```sh
@@ -162,7 +156,7 @@ To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/t
 *NOTE: these instructions are intended for experienced Windows users.  If you don't already know how to set environment variables or feel comfortable managing the directory structure, we highly recommend you use the Chocolatey-based install, [above](#windows).*
 
 1. Install the JDK:
-   1. Download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11#x64_win) (choose **"Install JDK"**).
+   1. Download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=windows&arch=x64&package=jdk&version=21) (choose **".msi"**).
    -  Run the installer, using all the defaults.
 2. Install Gradle:
    - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
@@ -182,7 +176,7 @@ To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/t
 *NOTE: these instructions are intended for experienced macOS users.  Unless you specifically do not want to use a package manager, we highly recommend using the Homebrew-based installation instructions, [above](#macos).*
 
 1. Install the JDK:
-   1. Download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11#x64_mac) (choose **"Install JDK"**).
+   1. Download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=mac&package=jdk&version=21) (choose **".pkg"**).
    2. Run the installer, using all the defaults.
 2. Install Gradle:
    1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
@@ -216,7 +210,7 @@ To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/t
 *NOTE: these instructions are intended for experienced Linux users.  Unless you specifically do not want to use a package manager, we highly recommend using the installation instructions, [above](#linux).*
 
 1. Install the JDK:
-   1. Choose your distribution and download "**OpenJDK 11 (LTS)**" from [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk11) (choose **"Install JDK"**).
+   1. Choose your distribution and download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=linux&package=jdk&version=21) (choose **".tar.gz"**).
    2. Run the installer, using all the defaults.
 2. Install Gradle:
    1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
