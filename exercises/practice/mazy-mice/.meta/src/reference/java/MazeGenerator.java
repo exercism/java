@@ -8,15 +8,15 @@ import static java.util.stream.IntStream.range;
 
 public class MazeGenerator {
 
-    public char[][] generatePerfectMaze(Dimensions dimensions) {
-        return new Grid(dimensions, RandomGenerator.getDefault())
+    public char[][] generatePerfectMaze(int rows, int columns) {
+        return new Grid(new Dimensions(rows, columns), RandomGenerator.getDefault())
                 .generateMaze()
                 .placeDoors()
                 .print();
     }
 
-    public char[][] generatePerfectMaze(Dimensions dimensions, int seed) {
-        return new Grid(dimensions, new Random(seed))
+    public char[][] generatePerfectMaze(int rows, int columns, int seed) {
+        return new Grid(new Dimensions(rows, columns), new Random(seed))
                 .generateMaze()
                 .placeDoors()
                 .print();

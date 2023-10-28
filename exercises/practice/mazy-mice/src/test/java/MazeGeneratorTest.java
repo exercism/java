@@ -25,7 +25,10 @@ class MazeGeneratorTest {
             '⇨'  // rightwards white arrow
     );
     private static final char VISITED_CELL = '.';
-    private static final Dimensions RECTANGLE = new Dimensions(6, 18);
+    private static final int RECTANGLE_ROWS = 6;
+    private static final int RECTANGLE_COLUMNS = 18;
+    private static final int SEED_ONE = 42;
+    private static final int SEED_TWO = 43;
     private MazeGenerator sut;
 
     @Before
@@ -35,7 +38,7 @@ class MazeGeneratorTest {
 
     @Test
     void mazeIsNotNull() {
-        var maze = sut.generatePerfectMaze(RECTANGLE);
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         assertThat(maze)
                 .as("The maze is not null.")
@@ -49,18 +52,24 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void theDimensionsAreCorrect() {
-        var maze = sut.generatePerfectMaze(RECTANGLE);
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
+        var expectedWidth = RECTANGLE_COLUMNS * 2 + 1;
+        var expectedHeight = RECTANGLE_ROWS * 2 + 1;
 
         assertThat(maze)
                 .as("The dimensions of the maze are correct.")
-                .hasDimensions(RECTANGLE.height(), RECTANGLE.width());
+                .hasSize(expectedHeight);
+
+        assertThat(maze[0])
+                .as("The dimensions of the maze are correct.")
+                .hasSize(expectedWidth);
     }
 
     @Ignore("Remove to run test")
     @Test
     void aMazeIsDifferentEachTimeItIsGenerated() {
-        var maze1 = sut.generatePerfectMaze(RECTANGLE);
-        var maze2 = sut.generatePerfectMaze(RECTANGLE);
+        var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
+        var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         assertThat(maze1)
                 .as("Two mazes should not be equal")
@@ -70,8 +79,8 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void twoMazesWithSameSeedShouldBeEqual() {
-        var maze1 = sut.generatePerfectMaze(RECTANGLE, 42);
-        var maze2 = sut.generatePerfectMaze(RECTANGLE, 42);
+        var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
+        var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
 
         assertThat(maze1)
                 .as("Two mazes with the same seed should be equal")
@@ -81,8 +90,8 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void twoMazesWithDifferentSeedsShouldNotBeEqual() {
-        var maze1 = sut.generatePerfectMaze(RECTANGLE, 42);
-        var maze2 = sut.generatePerfectMaze(RECTANGLE, 43);
+        var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
+        var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_TWO);
 
         assertThat(maze1)
                 .as("Two mazes with different seeds should not be equal")
@@ -92,7 +101,7 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void theMazeContainsOnlyValidCharacters() {
-        var maze = sut.generatePerfectMaze(RECTANGLE);
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         for (var row : maze) {
             for (var cell : row) {
@@ -106,7 +115,7 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void theMazeHasOnlyOneEntranceOnTheLeftSide() {
-        var maze = sut.generatePerfectMaze(RECTANGLE);
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         int entranceCount = countEntrances(maze);
 
         assertThat(entranceCount)
@@ -117,7 +126,7 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void theMazeHasASingleExitOnTheRightSideOfTheMaze() {
-        var maze = sut.generatePerfectMaze(RECTANGLE);
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         int exitCount = countExits(maze);
 
         assertThat(exitCount)
@@ -128,11 +137,7 @@ class MazeGeneratorTest {
     @Ignore("Remove to run test")
     @Test
     void theMazeIsPerfect() {
-        var maze = sut.generatePerfectMaze(RECTANGLE);
-
-        assertThat(maze)
-                .as("The dimensions of the maze are correct.")
-                .hasDimensions(RECTANGLE.height(), RECTANGLE.width());
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         assertThatMazeHasSinglePath(maze);
         assertThatMazeHasNoIsolatedSections(maze);
@@ -189,5 +194,27 @@ class MazeGeneratorTest {
             }
         }
         return entranceCount;
+    }
+}
+
+enum Direction {
+    NORTH(0, 1),
+    EAST(1, 0),
+    SOUTH(0, -1),
+    WEST(-1, 0);
+    private final int dx;
+    private final int dy;
+
+    Direction(int dx, int dy) {
+        this.dx = dx;
+        this.dy = dy;
+    }
+
+    public int dx() {
+        return dx;
+    }
+
+    public int dy() {
+        return dy;
     }
 }
