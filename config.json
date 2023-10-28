@@ -1971,6 +1971,18 @@
           "numbers"
         ],
         "difficulty": 5
+      },
+      {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "2d5b6404-3315-48c1-892f-b594a960e7a1",
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
+        "difficulty": 3
       }
     ]
   },
