@@ -7,7 +7,7 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class MazeGeneratorTest {
+public class MazeGeneratorTest {
     private static final char EMPTY_CELL = ' ';
     private static final Set<Character> ALLOWED_SYMBOLS = Set.of(
             EMPTY_CELL, // space
@@ -32,12 +32,12 @@ class MazeGeneratorTest {
     private MazeGenerator sut;
 
     @Before
-    void setup() {
+    public void setup() {
         sut = new MazeGenerator();
     }
 
     @Test
-    void mazeIsNotNull() {
+    public void mazeIsNotNull() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         assertThat(maze)
@@ -51,7 +51,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void theDimensionsOfTheMazeAreCorrect() {
+    public void theDimensionsOfTheMazeAreCorrect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         var expectedWidth = RECTANGLE_COLUMNS * 2 + 1;
         var expectedHeight = RECTANGLE_ROWS * 2 + 1;
@@ -68,7 +68,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void theMazeContainsOnlyValidCharacters() {
+    public void theMazeContainsOnlyValidCharacters() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         for (var row : maze) {
@@ -82,7 +82,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void theMazeHasOnlyOneEntranceOnTheLeftSide() {
+    public void theMazeHasOnlyOneEntranceOnTheLeftSide() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         int entranceCount = countEntrances(maze);
 
@@ -93,7 +93,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void theMazeHasSingleExitOnTheRightSideOfTheMaze() {
+    public void theMazeHasSingleExitOnTheRightSideOfTheMaze() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         int exitCount = countExits(maze);
 
@@ -104,7 +104,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void aMazeIsDifferentEachTimeItIsGenerated() {
+    public void aMazeIsDifferentEachTimeItIsGenerated() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
@@ -115,7 +115,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void twoMazesWithSameSeedShouldBeEqual() {
+    public void twoMazesWithSameSeedShouldBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
         var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
 
@@ -126,7 +126,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void twoMazesWithDifferentSeedsShouldNotBeEqual() {
+    public void twoMazesWithDifferentSeedsShouldNotBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
         var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_TWO);
 
@@ -137,7 +137,7 @@ class MazeGeneratorTest {
 
     @Ignore("Remove to run test")
     @Test
-    void theMazeIsPerfect() {
+    public void theMazeIsPerfect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
         assertThatMazeHasSinglePath(maze);
