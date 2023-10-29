@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class MazeGeneratorTest {
     private static final char EMPTY_CELL = ' ';
@@ -151,6 +152,34 @@ public class MazeGeneratorTest {
 
         assertThatMazeHasSinglePath(maze);
         assertThatMazeHasNoIsolatedSections(maze);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void shouldThrowExceptionWhenRowsIsLessThanFive() {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> sut.generatePerfectMaze(0, RECTANGLE_COLUMNS));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void shouldThrowExceptionWhenColumnsIsLessThanFive() {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> sut.generatePerfectMaze(RECTANGLE_ROWS, 0));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void shouldThrowExceptionWhenRowsIsMoreThenHundred() {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> sut.generatePerfectMaze(101, RECTANGLE_COLUMNS));
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void shouldThrowExceptionWhenColumnsIsMoreThenHundred() {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> sut.generatePerfectMaze(RECTANGLE_ROWS, 101));
     }
 
     private void assertThatMazeHasSinglePath(char[][] maze) {
