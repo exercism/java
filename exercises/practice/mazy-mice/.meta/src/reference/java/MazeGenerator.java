@@ -9,6 +9,7 @@ import static java.util.stream.IntStream.range;
 public class MazeGenerator {
 
     public char[][] generatePerfectMaze(int rows, int columns) {
+        validateDimensions(rows, columns);
         return new Grid(new Dimensions(rows, columns), RandomGenerator.getDefault())
                 .generateMaze()
                 .placeDoors()
@@ -16,10 +17,17 @@ public class MazeGenerator {
     }
 
     public char[][] generatePerfectMaze(int rows, int columns, int seed) {
+        validateDimensions(rows, columns);
         return new Grid(new Dimensions(rows, columns), new Random(seed))
                 .generateMaze()
                 .placeDoors()
                 .print();
+    }
+
+    private void validateDimensions(int rows, int columns) {
+        if (rows < 5 || columns < 5 || rows > 100 || columns > 100) {
+            throw new IllegalArgumentException("Dimensions must be in range.");
+        }
     }
 }
 
