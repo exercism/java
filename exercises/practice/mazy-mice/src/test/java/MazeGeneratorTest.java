@@ -144,6 +144,15 @@ public class MazeGeneratorTest {
         assertThatMazeHasNoIsolatedSections(maze);
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void theMazeIsPerfectWithSeed() {
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
+
+        assertThatMazeHasSinglePath(maze);
+        assertThatMazeHasNoIsolatedSections(maze);
+    }
+
     private void assertThatMazeHasSinglePath(char[][] maze) {
         assertMazeHasSinglePath(maze, 1, 1);
     }
