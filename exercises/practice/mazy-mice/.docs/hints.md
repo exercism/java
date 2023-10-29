@@ -1,5 +1,10 @@
 # Hints
 
+## General
+
+-   You can use the [Random class][random-class] to generate random numbers.
+-   Read more in article: [Random Number Generators in Java 17][random-number-generators].
+
 ## Maze generation
 
 You can use any algorithm to generate a perfect maze. The [recursive backtracker][recursive-backtracker] is a good choice.
@@ -21,3 +26,5 @@ You can use any algorithm to generate a perfect maze. The [recursive backtracker
 
 
 [recursive-backtracker]: https://en.wikipedia.org/wiki/Maze_generation_algorithm
+[random-class]: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html
+[random-number-generators]: https://www.baeldung.com/java-17-random-number-generators
