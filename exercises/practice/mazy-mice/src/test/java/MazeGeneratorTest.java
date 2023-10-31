@@ -58,11 +58,11 @@ public class MazeGeneratorTest {
         var expectedHeight = RECTANGLE_ROWS * 2 + 1;
 
         assertThat(maze)
-                .as("The dimensions of the maze are correct.")
+                .as("The maze has the correct number of rows")
                 .hasSize(expectedHeight);
 
         assertThat(maze[0])
-                .as("The dimensions of the maze are correct.")
+                .as("The maze has the correct number of columns")
                 .hasSize(expectedWidth);
     }
 
