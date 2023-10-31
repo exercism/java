@@ -62,7 +62,7 @@ public class MazeGeneratorTest {
                 .hasSize(expectedHeight);
 
         assertThat(maze[0])
-                .as("The dimensions of the maze are correct.")
+                .as("The maze has the correct number of columns")
                 .hasSize(expectedWidth);
     }
 
