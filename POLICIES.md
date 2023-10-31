@@ -15,24 +15,24 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 
 ## Event Checklist
 
-| Track Event                          | Policies to review                                                                      |
-| :----------------------------------- | :-------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| Exercise added/updated               | [Prefer instance methods](#prefer-instance-methods)                                     |
-|                                      | [Avoid using final](#avoid-using-final)                                                 |
-|                                      | [Adhere to best practices](#adhere-to-best-practices)                                   |
-|                                      | [Starter implementations](#starter-implementations)                                     |
-|                                      | [Ignore noninitial tests](#ignore-noninitial-tests)                                     |
-|                                      | [Multiple file submissions](#multiple-file-submissions)                                 |
-|                                      | [Name test class after class under test](#name-test-class-after-class-under-test)       |
-|                                      | [Add hint for the first exercises without starter implementation]                       | (#add-hint-for-the-first-exercises-without-starter-implementation) |
-|                                      | [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises) |
-|                                      | [Avoid returning null](#avoid-returning-null)                                           |
-|                                      | [Prefer AssertJ assertions](#prefer-assertj-assertions)                                 |
-| Track rearranged                     | [Starter implementations](#starter-implementations)                                     |
-|                                      | [Multiple file submissions](#multiple-file-submissions)                                 |
-| New issue observed in track          | [Good first issues](#good-first-issues)                                                 |
-| "Good first issue" issue completed   | [Good first issues](#good-first-issues)                                                 |
-| Installing Java instructions updated | [Simple onboarding](#simple-onboarding)                                                 |
+| Track Event                          | Policies to review                                                                                                                  |
+| :----------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| Exercise added/updated               | [Prefer instance methods](#prefer-instance-methods)                                                                                 |
+|                                      | [Avoid using final](#avoid-using-final)                                                                                             |
+|                                      | [Adhere to best practices](#adhere-to-best-practices)                                                                               |
+|                                      | [Starter implementations](#starter-implementations)                                                                                 |
+|                                      | [Ignore noninitial tests](#ignore-noninitial-tests)                                                                                 |
+|                                      | [Multiple file submissions](#multiple-file-submissions)                                                                             |
+|                                      | [Name test class after class under test](#name-test-class-after-class-under-test)                                                   |
+|                                      | [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation) |
+|                                      | [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises)                                             |
+|                                      | [Avoid returning null](#avoid-returning-null)                                                                                       |
+|                                      | [Prefer AssertJ assertions](#prefer-assertj-assertions)                                                                             |
+| Track rearranged                     | [Starter implementations](#starter-implementations)                                                                                 |
+|                                      | [Multiple file submissions](#multiple-file-submissions)                                                                             |
+| New issue observed in track          | [Good first issues](#good-first-issues)                                                                                             |
+| "Good first issue" issue completed   | [Good first issues](#good-first-issues)                                                                                             |
+| Installing Java instructions updated | [Simple onboarding](#simple-onboarding)                                                                                             |
 
 ## Policy Descriptions
 

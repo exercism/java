@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "sanderploegsma"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/PopCount.java"
+    ],
+    "test": [
+      "src/test/java/PopCountTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/PopCount.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Count the 1 bits in a number",
+  "source": "Christian Willner, Eric Willigers",
+  "source_url": "https://forum.exercism.org/t/new-exercise-suggestion-pop-count/7632/5"
+}
