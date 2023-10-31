@@ -10,7 +10,8 @@
       "src/test/java/MazeGeneratorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/MazeGenerator.java"
+      ".meta/src/reference/java/MazeGenerator.java",
+      ".meta/src/reference/java/Dimensions.java"
     ],
     "invalidator": [
       "build.gradle"
