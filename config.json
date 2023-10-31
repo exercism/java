@@ -1978,6 +1978,8 @@
         "uuid": "1bac7473-9ee8-4cfc-928b-77792102ffc1",
         "practices": [
           "chars",
+          "strings",
+          "for-loops",
           "arrays"
         ],
         "prerequisites": [
