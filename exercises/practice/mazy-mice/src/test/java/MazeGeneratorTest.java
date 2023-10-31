@@ -38,20 +38,6 @@ public class MazeGeneratorTest {
     }
 
     @Test
-    public void mazeIsNotNull() {
-        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
-
-        assertThat(maze)
-                .as("The maze is not null.")
-                .isNotNull();
-
-        Arrays.stream(maze)
-                .map(String::new)
-                .forEach(System.out::println);
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void theDimensionsOfTheMazeAreCorrect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         var expectedWidth = RECTANGLE_COLUMNS * 2 + 1;
@@ -65,7 +51,6 @@ public class MazeGeneratorTest {
                 .as("The maze has the correct number of columns")
                 .hasSize(expectedWidth);
     }
-
 
     @Ignore("Remove to run test")
     @Test
