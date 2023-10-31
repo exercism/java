@@ -1,4 +1,4 @@
-## Instructions
+# Instructions
 
 Your task is to generate the perfect mazes for Mickey and Minerva — those with only one solution and no isolated sections.
 Here's what you need to know:
