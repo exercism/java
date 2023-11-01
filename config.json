@@ -1983,6 +1983,23 @@
           "numbers"
         ],
         "difficulty": 3
+      },
+      {
+        "slug": "mazy-mice",
+        "name": "Mazy Mice",
+        "uuid": "1bac7473-9ee8-4cfc-928b-77792102ffc1",
+        "practices": [
+          "chars",
+          "strings",
+          "for-loops",
+          "arrays"
+        ],
+        "prerequisites": [
+          "strings",
+          "for-loops"
+        ],
+        "difficulty": 8,
+        "status": "beta"
       }
     ]
   },

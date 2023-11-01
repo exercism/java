@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/MazeGenerator.java"
+    ],
+    "test": [
+      "src/test/java/MazeGeneratorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/MazeGenerator.java",
+      ".meta/src/reference/java/Dimensions.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Meet Mickey and Minerva, two clever mice who love to navigate their way through a maze to find cheese. They enjoy a good challenge, but with only their tiny mouse brains, they prefer if there is only one correct path to the cheese.",
+  "source": "Inspired by the 'Maze Generator' created by Jan Boström at Alance AB.",
+  "source_url": "https://mazegenerator.net/"
+}
