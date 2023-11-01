@@ -31,7 +31,7 @@ Open an administrative command prompt.  (If you need assistance opening an admin
 2.  Install the JDK:
 
      ```batchfile
-     C:\Windows\system32> choco install openjdk
+     C:\Windows\system32> choco install temurin21
      ...
      C:\Windows\system32> refreshenv
      ...
