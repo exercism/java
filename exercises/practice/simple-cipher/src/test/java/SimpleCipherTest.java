@@ -41,7 +41,7 @@ public class SimpleCipherTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void keyIsLowercaseLetters() {
+    public void randomKeyCipherKeyIsLowercaseLetters() {
         assertThat(randomKeyCipher.getKey()).matches("^[a-z]+$");
     }
 
