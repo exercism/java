@@ -1998,7 +1998,8 @@
           "strings",
           "for-loops"
         ],
-        "difficulty": 8
+        "difficulty": 8,
+        "status": "beta"
       }
     ]
   },
