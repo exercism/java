@@ -62,14 +62,19 @@ Below are instructions for install using the most common method - using Homebrew
      ```sh
      $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
      ```
-
-2.  Install the JDK:
+2. Tap the [Homebrew Cask](https://github.com/Homebrew/homebrew-cask-versions) — this allows us to install a specific JDK version.
 
      ```
-     $ brew install --cask temurin
+     $ brew tap homebrew/cask-versions
      ```
 
-3.  Install Gradle:
+3.  Install the JDK:
+
+     ```
+     $ brew install --cask temurin21
+     ```
+
+4.  Install Gradle:
 
      ```
      $ brew install gradle
