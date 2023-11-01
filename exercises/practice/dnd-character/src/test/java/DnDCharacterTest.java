@@ -175,6 +175,11 @@ public class DnDCharacterTest {
     @Test
     public void testEachAbilityIsOnlyCalculatedOnce() {
         assertThat(dndCharacter.getStrength()).isEqualTo(dndCharacter.getStrength());
+        assertThat(dndCharacter.getDexterity()).isEqualTo(dndCharacter.getDexterity());
+        assertThat(dndCharacter.getConstitution()).isEqualTo(dndCharacter.getConstitution());
+        assertThat(dndCharacter.getIntelligence()).isEqualTo(dndCharacter.getIntelligence());
+        assertThat(dndCharacter.getWisdom()).isEqualTo(dndCharacter.getWisdom());
+        assertThat(dndCharacter.getCharisma()).isEqualTo(dndCharacter.getCharisma());
     }
 
     @Ignore("Remove to run test")
