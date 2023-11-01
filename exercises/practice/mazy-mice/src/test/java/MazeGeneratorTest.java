@@ -8,6 +8,28 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
+enum Direction {
+    NORTH(0, 1),
+    EAST(1, 0),
+    SOUTH(0, -1),
+    WEST(-1, 0);
+    private final int dx;
+    private final int dy;
+
+    Direction(int dx, int dy) {
+        this.dx = dx;
+        this.dy = dy;
+    }
+
+    public int dx() {
+        return dx;
+    }
+
+    public int dy() {
+        return dy;
+    }
+}
+
 public class MazeGeneratorTest {
     private static final char EMPTY_CELL = ' ';
     private static final Set<Character> ALLOWED_SYMBOLS = Set.of(
@@ -47,9 +69,11 @@ public class MazeGeneratorTest {
                 .as("The maze has the correct number of rows")
                 .hasSize(expectedHeight);
 
-        assertThat(maze[0])
-                .as("The maze has the correct number of columns")
-                .hasSize(expectedWidth);
+        Arrays.stream(maze).forEach(row ->
+                assertThat(row)
+                        .as("The maze has the correct number of columns")
+                        .hasSize(expectedWidth)
+        );
     }
 
     @Ignore("Remove to run test")
@@ -218,27 +242,5 @@ public class MazeGeneratorTest {
             }
         }
         return entranceCount;
-    }
-}
-
-enum Direction {
-    NORTH(0, 1),
-    EAST(1, 0),
-    SOUTH(0, -1),
-    WEST(-1, 0);
-    private final int dx;
-    private final int dy;
-
-    Direction(int dx, int dy) {
-        this.dx = dx;
-        this.dy = dy;
-    }
-
-    public int dx() {
-        return dx;
-    }
-
-    public int dy() {
-        return dy;
     }
 }
