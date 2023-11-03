@@ -58,3 +58,4 @@ description = "random character is valid"
 
 [2ca77b9b-c099-46c3-a02c-0d0f68ffa0fe]
 description = "each ability is only calculated once"
+"comment" = "The canonical data only verify the strength ability, we chose to verify every ability instead."
