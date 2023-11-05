@@ -1138,7 +1138,7 @@
       {
         "slug": "killer-sudoku-helper",
         "name": "Killer Sudoku Helper",
-        "uuid": "7b16fc93-791b-42a9-8aae-1f78fef2f2f3",
+        "uuid": "8c45a47d-b3e3-484c-a124-90136ec838fd",
         "practices": [
           "constructors",
           "lists",
@@ -1151,7 +1151,7 @@
           "arrays",
           "if-else-statements"
         ],
-        "difficulty": 5
+        "difficulty": 4
       },
       {
         "slug": "kindergarten-garden",
