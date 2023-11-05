@@ -2,7 +2,6 @@
   "authors": [
     "sougat818"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "src/main/java/KillerSudokuHelper.java"
