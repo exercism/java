@@ -1140,16 +1140,11 @@
         "name": "Killer Sudoku Helper",
         "uuid": "8c45a47d-b3e3-484c-a124-90136ec838fd",
         "practices": [
-          "constructors",
-          "lists",
-          "recursion"
+          "for-loops"
         ],
         "prerequisites": [
           "basics",
-          "numbers",
-          "loops",
-          "arrays",
-          "if-else-statements"
+          "numbers"
         ],
         "difficulty": 4
       },

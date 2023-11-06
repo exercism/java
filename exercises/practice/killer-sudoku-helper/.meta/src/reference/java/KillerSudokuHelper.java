@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Arrays.asList;
-
 public class KillerSudokuHelper {
 
     // Method to be called when no numbers are to be excluded.
@@ -14,7 +12,7 @@ public class KillerSudokuHelper {
     // Main method that includes to exclude list in the parameters.
     public List<List<Integer>> combinationsInCage(Integer cageSum, Integer cageSize, List<Integer> exclude) {
         // The range of valid numbers for a standard Sudoku puzzle.
-        List<Integer> numbers = new ArrayList<>(asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        List<Integer> numbers = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
         numbers.removeAll(exclude);
 
         return findCombinations(numbers, cageSum, cageSize, 0, new ArrayList<>());
