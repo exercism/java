@@ -2148,5 +2148,8 @@
     "used_for/cross_platform_development",
     "used_for/games",
     "used_for/mobile"
+  ],
+  "foregone": [
+    "lens-person"
   ]
 }
