@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "sougat818"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/KillerSudokuHelper.java"
+    ],
+    "test": [
+      "src/test/java/KillerSudokuHelperTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/KillerSudokuHelper.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Write a tool that makes it easier to solve Killer Sudokus",
+  "source": "Created by Sascha Mann, Jeremy Walker, and BethanyG for the Julia track on Exercism.",
+  "source_url": "https://github.com/exercism/julia/pull/413"
+}
