@@ -2017,6 +2017,9 @@
         "difficulty": 8,
         "status": "beta"
       }
+    ],
+    "foregone": [
+      "lens-person"
     ]
   },
   "concepts": [
