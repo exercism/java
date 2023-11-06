@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,7 +29,7 @@ public class KillerSudokuHelperTest {
     @Disabled("Remove to run test")
     @DisplayName("Cage with sum 45 contains all digits 1:9")
     public void testCageWithSum45ContainsAllDigits() {
-        List<List<Integer>> expected = List.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        List<List<Integer>> expected = List.of(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
         assertThat(helper.combinationsInCage(45, 9)).isEqualTo(expected);
     }
 
