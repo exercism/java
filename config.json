@@ -1136,6 +1136,22 @@
         ]
       },
       {
+        "slug": "killer-sudoku-helper",
+        "name": "Killer Sudoku Helper",
+        "uuid": "8c45a47d-b3e3-484c-a124-90136ec838fd",
+        "practices": [
+          "for-loops",
+          "if-else-statements",
+          "numbers",
+          "lists"
+        ],
+        "prerequisites": [
+          "numbers",
+          "lists"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "df41c70c-daa1-4380-9729-638c17b4105d",
