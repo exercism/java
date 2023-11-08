@@ -19,4 +19,4 @@ jobs:
         with:
           name: test-results
           path: exercises/**/build/results.json
-        if: always()
+        if: failure()
