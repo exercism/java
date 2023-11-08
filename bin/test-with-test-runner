@@ -39,12 +39,10 @@ function verify_exercise() {
 
     for stub_file in "${stub_files[@]}"; do
         cp "${stub_file}" "${stub_file}.bak"
+    done
 
-        for impl_file in "${implementation_files[@]}"; do
-            if [[ $(basename "${stub_file}") == $(basename "${impl_file}") ]]; then
-                cp "${impl_file}" "${stub_file}"
-            fi
-        done
+    for impl_file in "${implementation_files[@]}"; do
+        cp "${impl_file}" "${dir}/src/main/java/$(basename ${impl_file})"
     done
 
     run_test_runner "${slug}" "${dir}" "${output_dir}"
@@ -53,6 +51,10 @@ function verify_exercise() {
         echo "${slug}: ${implementation_file_key} solution did not pass the tests"
         exit_code=1
     fi
+
+    for impl_file in "${implementation_files[@]}"; do
+        rm "${dir}/src/main/java/$(basename ${impl_file})"
+    done
 
     for stub_file in "${stub_files[@]}"; do
         mv "${stub_file}.bak" "${stub_file}"
