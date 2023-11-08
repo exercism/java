@@ -1,4 +1,4 @@
-name: Java CI with Gradle
+name: Gradle
 
 on:
   pull_request:
@@ -14,7 +14,6 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Set up JDK 1.17
@@ -22,16 +21,11 @@ jobs:
         with:
           java-version: 17
           distribution: "temurin"
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
       - name: Check if tests compile cleanly with starter sources
         run: ./gradlew compileStarterTestJava --continue
-      - name: Run checkstyle
-        run: ./gradlew check --exclude-task test --continue
 
-  test:
+  lint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Set up JDK 1.17
@@ -39,12 +33,5 @@ jobs:
         with:
           java-version: 17
           distribution: "temurin"
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Test all reference implementations with Gradle
-        run: ./gradlew test --continue
-      - name: Create test summary
-        uses: test-summary/action@62bc5c68de2a6a0d02039763b8c754569df99e3f
-        with:
-          paths: "**/build/test-results/test/*.xml"
-        if: always()
+      - name: Run checkstyle
+        run: ./gradlew check --exclude-task test --continue
