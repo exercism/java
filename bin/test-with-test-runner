@@ -13,14 +13,15 @@ docker pull exercism/java-test-runner
 exit_code=0
 
 function run_test_runner() {
-    local dir=$1
-    local slug=$2
+    local slug=$1
+    local solution_dir=$2
+    local output_dir=$3
 
     docker run \
         --rm \
         --network none \
-        --mount type=bind,src="${dir}",dst=/solution \
-        --mount type=bind,src="${dir}",dst=/output \
+        --mount type=bind,src="${solution_dir}",dst=/solution \
+        --mount type=bind,src="${output_dir}",dst=/output \
         --tmpfs /tmp:rw \
         exercism/java-test-runner "${slug}" "/solution" "/output"
 }
@@ -28,16 +29,18 @@ function run_test_runner() {
 function verify_exercise() {
     local dir=$(realpath $1)
     local slug=$(basename "${dir}")
+    local output_dir="${dir}/build"
     local implementation_file_key=$2
     local implementation_file=$(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][0]' "${dir}/.meta/config.json")
     local stub_file=$(jq -r --arg d "${dir}" '$d + "/" + .files.solution[0]' "${dir}/.meta/config.json")
     local stub_backup_file="${stub_file}.bak"
-    local results_file="${dir}/results.json"
+    local results_file="${output_dir}/results.json"
 
     cp "${stub_file}" "${stub_backup_file}"
     cp "${implementation_file}" "${stub_file}"
+    mkdir -p "${output_dir}"
 
-    run_test_runner "${dir}" "${slug}"
+    run_test_runner "${slug}" "${dir}" "${output_dir}"
 
     if [[ $(jq -r '.status' "${results_file}") != "pass" ]]; then
         echo "${slug}: ${implementation_file_key} solution did not pass the tests"
@@ -45,7 +48,6 @@ function verify_exercise() {
     fi
 
     mv "${stub_backup_file}" "${stub_file}"
-    rm -f "${results_file}"
 }
 
 # Verify the Concept Exercises
