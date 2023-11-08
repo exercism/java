@@ -23,6 +23,8 @@
       "src/test/java/SpiralMatrixBuilderTest.java"
     ],
     "example": [
+      ".meta/src/reference/java/Coordinate.java",
+      ".meta/src/reference/java/Direction.java",
       ".meta/src/reference/java/SpiralMatrixBuilder.java"
     ],
     "invalidator": [

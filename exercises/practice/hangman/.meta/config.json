@@ -9,16 +9,17 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/Hangman.java"
+      "src/main/java/Hangman.java",
+      "src/main/java/Output.java"
     ],
     "test": [
       "src/test/java/HangmanTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Hangman.java"
+      ".meta/src/reference/java/Hangman.java",
+      ".meta/src/reference/java/Output.java"
     ],
     "editor": [
-      "src/main/java/Output.java",
       "src/main/java/Part.java",
       "src/main/java/Status.java"
     ],

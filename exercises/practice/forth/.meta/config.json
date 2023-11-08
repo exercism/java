@@ -24,7 +24,8 @@
       "src/test/java/ForthEvaluatorTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/ForthEvaluator.java"
+      ".meta/src/reference/java/ForthEvaluator.java",
+      ".meta/src/reference/java/Token.java"
     ],
     "invalidator": [
       "build.gradle"

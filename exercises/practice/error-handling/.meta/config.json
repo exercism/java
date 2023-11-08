@@ -24,7 +24,9 @@
       "src/test/java/ErrorHandlingTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/ErrorHandling.java"
+      ".meta/src/reference/java/ErrorHandling.java",
+      ".meta/src/reference/java/CustomCheckedException.java",
+      ".meta/src/reference/java/CustomUncheckedException.java"
     ],
     "invalidator": [
       "build.gradle"
