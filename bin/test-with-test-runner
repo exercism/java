@@ -31,14 +31,21 @@ function verify_exercise() {
     local slug=$(basename "${dir}")
     local output_dir="${dir}/build"
     local implementation_file_key=$2
-    local implementation_file=$(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][0]' "${dir}/.meta/config.json")
-    local stub_file=$(jq -r --arg d "${dir}" '$d + "/" + .files.solution[0]' "${dir}/.meta/config.json")
-    local stub_backup_file="${stub_file}.bak"
+    local implementation_files=($(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][]' "${dir}/.meta/config.json"))
+    local stub_files=($(jq -r --arg d "${dir}" '$d + "/" + .files.solution[]' "${dir}/.meta/config.json"))
     local results_file="${output_dir}/results.json"
 
-    cp "${stub_file}" "${stub_backup_file}"
-    cp "${implementation_file}" "${stub_file}"
     mkdir -p "${output_dir}"
+
+    for stub_file in "${stub_files[@]}"; do
+        cp "${stub_file}" "${stub_file}.bak"
+
+        for impl_file in "${implementation_files[@]}"; do
+            if [[ $(basename "${stub_file}") == $(basename "${impl_file}") ]]; then
+                cp "${impl_file}" "${stub_file}"
+            fi
+        done
+    done
 
     run_test_runner "${slug}" "${dir}" "${output_dir}"
 
@@ -47,7 +54,9 @@ function verify_exercise() {
         exit_code=1
     fi
 
-    mv "${stub_backup_file}" "${stub_file}"
+    for stub_file in "${stub_files[@]}"; do
+        mv "${stub_file}.bak" "${stub_file}"
+    done
 }
 
 # Verify the Concept Exercises
