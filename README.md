@@ -1,7 +1,8 @@
 # Exercism Java Track
 
-![Java CI with Gradle](https://github.com/exercism/java/workflows/Java%20CI%20with%20Gradle/badge.svg)
 [![Configlet](https://github.com/exercism/java/actions/workflows/configlet.yml/badge.svg)](https://github.com/exercism/java/actions/workflows/configlet.yml)
+[![Gradle](https://github.com/exercism/java/actions/workflows/gradle.yml/badge.svg)](https://github.com/exercism/java/actions/workflows/gradle.yml)
+[![Test](https://github.com/exercism/java/actions/workflows/test.yml/badge.svg)](https://github.com/exercism/java/actions/workflows/test.yml)
 
 Source for Exercism Exercises in Java.
 
