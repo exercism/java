@@ -24,6 +24,8 @@
       "src/test/java/TournamentTest.java"
     ],
     "example": [
+      ".meta/src/reference/java/Result.java",
+      ".meta/src/reference/java/TeamResult.java",
       ".meta/src/reference/java/Tournament.java"
     ],
     "invalidator": [

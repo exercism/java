@@ -32,6 +32,7 @@
       "src/test/java/QueenAttackCalculatorTest.java"
     ],
     "example": [
+      ".meta/src/reference/java/Queen.java",
       ".meta/src/reference/java/QueenAttackCalculator.java"
     ],
     "invalidator": [

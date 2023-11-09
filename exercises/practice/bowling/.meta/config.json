@@ -26,7 +26,8 @@
       "src/test/java/BowlingGameTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/BowlingGame.java"
+      ".meta/src/reference/java/BowlingGame.java",
+      ".meta/src/reference/java/Frame.java"
     ],
     "invalidator": [
       "build.gradle"

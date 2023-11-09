@@ -27,6 +27,8 @@
       "src/test/java/PokerTest.java"
     ],
     "example": [
+      ".meta/src/reference/java/Card.java",
+      ".meta/src/reference/java/Hand.java",
       ".meta/src/reference/java/Poker.java"
     ],
     "invalidator": [

@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+# Test if the example/exemplar solution of each
+# Practice/Concept Exercise passes the exercise's tests.
+
+# Example:
+# ./bin/test-with-test-runner
+
+set -eo pipefail
+
+docker pull exercism/java-test-runner
+
+exit_code=0
+
+function run_test_runner() {
+    local slug=$1
+    local solution_dir=$2
+    local output_dir=$3
+
+    docker run \
+        --rm \
+        --network none \
+        --mount type=bind,src="${solution_dir}",dst=/solution \
+        --mount type=bind,src="${output_dir}",dst=/output \
+        --tmpfs /tmp:rw \
+        exercism/java-test-runner "${slug}" "/solution" "/output"
+}
+
+function verify_exercise() {
+    local dir=$(realpath $1)
+    local slug=$(basename "${dir}")
+    local output_dir="${dir}/build"
+    local implementation_file_key=$2
+    local implementation_files=($(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][]' "${dir}/.meta/config.json"))
+    local stub_files=($(jq -r --arg d "${dir}" '$d + "/" + .files.solution[]' "${dir}/.meta/config.json"))
+    local results_file="${output_dir}/results.json"
+
+    mkdir -p "${output_dir}"
+
+    for stub_file in "${stub_files[@]}"; do
+        cp "${stub_file}" "${stub_file}.bak"
+    done
+
+    for impl_file in "${implementation_files[@]}"; do
+        cp "${impl_file}" "${dir}/src/main/java/$(basename ${impl_file})"
+    done
+
+    run_test_runner "${slug}" "${dir}" "${output_dir}"
+
+    if [[ $(jq -r '.status' "${results_file}") != "pass" ]]; then
+        echo "${slug}: ${implementation_file_key} solution did not pass the tests"
+        exit_code=1
+    fi
+
+    for impl_file in "${implementation_files[@]}"; do
+        rm "${dir}/src/main/java/$(basename ${impl_file})"
+    done
+
+    for stub_file in "${stub_files[@]}"; do
+        mv "${stub_file}.bak" "${stub_file}"
+    done
+}
+
+# Verify the Concept Exercises
+for concept_exercise_dir in ./exercises/concept/*/; do
+    if [ -d $concept_exercise_dir ]; then
+        echo "Checking $(basename "${concept_exercise_dir}") exercise..."
+        verify_exercise $concept_exercise_dir "exemplar"
+    fi
+done
+
+# Verify the Practice Exercises
+for practice_exercise_dir in ./exercises/practice/*/; do
+    if [ -d $practice_exercise_dir ]; then
+        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
+        verify_exercise $practice_exercise_dir "example"
+    fi
+done
+
+exit ${exit_code}

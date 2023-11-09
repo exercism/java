@@ -28,7 +28,8 @@
       "src/test/java/OpticalCharacterReaderTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/OpticalCharacterReader.java"
+      ".meta/src/reference/java/OpticalCharacterReader.java",
+      ".meta/src/reference/java/Digit.java"
     ],
     "invalidator": [
       "build.gradle"
