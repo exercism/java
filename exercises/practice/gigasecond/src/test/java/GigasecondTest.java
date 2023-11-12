@@ -47,4 +47,13 @@ public class GigasecondTest {
 
         assertThat(gigaSecond.getDateTime()).isEqualTo(LocalDateTime.of(2046, Month.OCTOBER, 3, 1, 46, 39));
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void doesNotMutateInput() {
+        LocalDateTime input = LocalDateTime.of(2015, Month.JANUARY, 24, 23, 59, 59);
+        new Gigasecond(input).getDateTime();
+
+        assertThat(input).isEqualTo(LocalDateTime.of(2015, Month.JANUARY, 24, 23, 59, 59));
+    }
 }
