@@ -5,15 +5,8 @@ class Hamming {
     private final int hammingDistance;
 
     Hamming(String leftStrand, String rightStrand) {
-        String exceptionMessage = "leftStrand and rightStrand must be of equal length.";
         if (leftStrand.length() != rightStrand.length()) {
-            if (leftStrand.isEmpty()) {
-                exceptionMessage = "left strand must not be empty.";
-            }
-            if (rightStrand.isEmpty()) {
-                exceptionMessage = "right strand must not be empty.";
-            }
-            throw new IllegalArgumentException(exceptionMessage);
+            throw new IllegalArgumentException(("strands must be of equal length"));
         }
 
         IntPredicate areNotEqual = index -> leftStrand.charAt(index) != rightStrand.charAt(index);
