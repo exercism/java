@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "sougat818"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/GameMaster.java"
+    ],
+    "test": [
+      "src/test/java/GameMasterTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/GameMaster.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "csharp/wizards-and-warriors-2"
+  ],
+  "blurb": "Learn about inheritance by creating an RPG."
+}

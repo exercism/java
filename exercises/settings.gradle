@@ -20,6 +20,7 @@ include 'concept:salary-calculator'
 include 'concept:squeaky-clean'
 include 'concept:tim-from-marketing'
 include 'concept:wizards-and-warriors'
+include 'concept:wizards-and-warriors-2'
 
 // practice exercises
 // include 'practice:accumulate' // deprecated
