@@ -15,6 +15,7 @@ include 'concept:salary-calculator'
 include 'concept:remote-control-competition'
 include 'concept:football-match-reports'
 include 'concept:wizards-and-warriors'
+include 'concept:wizards-and-warriors-2'
 include 'concept:calculator-conundrum'
 include 'concept:logs-logs-logs'
 
