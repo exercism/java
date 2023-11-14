@@ -1,8 +1,8 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class HammingTest {
 
@@ -40,7 +40,7 @@ public class HammingTest {
     public void testValidatesFirstStrandNotLonger() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new Hamming("AATG", "AAA"))
-                .withMessage("leftStrand and rightStrand must be of equal length.");
+                .withMessage("strands must be of equal length");
     }
 
     @Ignore("Remove to run test")
@@ -48,7 +48,7 @@ public class HammingTest {
     public void testValidatesSecondStrandNotLonger() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new Hamming("ATA", "AGTG"))
-                .withMessage("leftStrand and rightStrand must be of equal length.");
+                .withMessage("strands must be of equal length");
     }
 
     @Ignore("Remove to run test")
@@ -56,7 +56,7 @@ public class HammingTest {
     public void testDisallowLeftEmptyStrand() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new Hamming("", "G"))
-                .withMessage("left strand must not be empty.");
+                .withMessage("strands must be of equal length");
     }
 
     @Ignore("Remove to run test")
@@ -64,7 +64,7 @@ public class HammingTest {
     public void testDisallowRightEmptyStrand() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new Hamming("G", ""))
-                .withMessage("right strand must not be empty.");
+                .withMessage("strands must be of equal length");
     }
 
 }
