@@ -43,6 +43,12 @@ public class IsbnVerifierTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void invalidCheckDigitInIsbn() {
+        assertThat(isbnVerifier.isValid("4-598-21507-B")).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void invalidCharacterInIsbn() {
         assertThat(isbnVerifier.isValid("3-598-P1581-X")).isFalse();
     }
@@ -109,8 +115,14 @@ public class IsbnVerifierTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void invalidCharactersAreNotIgnored() {
+    public void invalidCharactersAreNotIgnoredAfterCheckingLength() {
         assertThat(isbnVerifier.isValid("3132P34035")).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void invalidCharactersAreNotIgnoredBeforeCheckingLength() {
+        assertThat(isbnVerifier.isValid("3598P215088")).isFalse();
     }
 
     @Ignore("Remove to run test")
