@@ -49,7 +49,7 @@ public class IsogramCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testDuplicatMixedCase() {
+    public void testDuplicateMixedCase() {
         assertThat(isogramChecker.isIsogram("alphAbet")).isFalse();
     }
 
@@ -89,4 +89,9 @@ public class IsogramCheckerTest {
         assertThat(new IsogramChecker().isIsogram("angola")).isFalse();
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testDuplicatedCharacterAndTwoHyphens() {
+        assertThat(new IsogramChecker().isIsogram("up-to-date")).isFalse();
+    }
 }
