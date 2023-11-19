@@ -10,10 +10,6 @@ The goal of this exercise is to teach the student the basics of the Concept of `
 - Know how to overload a method with different number of parameters
 - Know how to overload a method with different argument types
 
-## Out of scope
-
-- Inheritance 
-
 ## Concepts
 
 - `method-overloading`
