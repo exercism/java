@@ -223,6 +223,19 @@
         "status": "active"
       },
       {
+        "slug": "logs-logs-logs",
+        "name": "Logs, Logs, Logs!",
+        "uuid": "f33927f7-676f-4045-b1fc-34e719453c61",
+        "concepts": [
+          "enums"
+        ],
+        "prerequisites": [
+          "strings",
+          "switch-statement",
+          "constructors"
+        ]
+      },
+      {
         "slug": "wizards-and-warriors-2",
         "name": "Wizards and Warriors 2",
         "uuid": "752d6968-8600-426f-ad26-fa7c53cf1ac2",
