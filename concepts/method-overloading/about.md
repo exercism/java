@@ -1,9 +1,11 @@
-# About 
+# About
 
-Method overloading is a key concept in Java, allowing a class to have more than one method with the same name, as long as each method has a different parameter list. This feature is a fundamental aspect of Java's object-oriented programming and provides a way to perform similar operations with different types or numbers of inputs.
-Method overloading enhances the readability and organization of code by allowing methods that perform similar functions to share the same name. It is important to note that overloading is determined by the method's signature, which includes the method name and the parameter list.
+[Method overloading][method-overloading] is a key concept in Java, allowing a class to have more than one method with the same name, as long as each method has a different parameter list.
+This feature is a fundamental aspect of Java's object-oriented programming and provides a way to perform similar operations with different types or numbers of inputs.
+Method overloading enhances the readability and organization of code by allowing methods that perform similar functions to share the same name.
+It is important to note that overloading is determined by the method's signature, which includes the method name and the parameter list.
 
-## Key Points:
+## Key Points
 
 - **Signature Matters**: The return type is not part of the method signature, so just changing the return type of a method does not constitute overloading.
 - **Parameter Differences**: Overloaded methods must differ in the number or type of parameters.
@@ -38,10 +40,9 @@ public class Calculator {
 - **Consistent Return Types**: While return types can vary in overloaded methods, it's generally good practice to keep them consistent where possible to avoid confusion.
 - **Limit Overloading**: Avoid overusing method overloading. Excessive overloading can make the code harder to read and maintain.
 
-
 ## Conclusion
 
-Method overloading is a powerful feature in Java that, when used correctly, can greatly enhance the readability and flexibility of your code. It allows methods to be more versatile and adaptable to different contexts, making your Java programs more modular and maintainable
+Method overloading is a powerful feature in Java that, when used correctly, can greatly enhance the readability and flexibility of your code.
+It allows methods to be more versatile and adaptable to different contexts, making your Java programs more modular and maintainable.
 
-[polymorphism]: https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html
 [method-overloading]: https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html#overloading

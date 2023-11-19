@@ -11,7 +11,6 @@ There is no method overloading based on the return type.
 
 The compiler will automatically infer which overloaded method to call based on the number of parameters and their type.
 
-
 1. **Different Number of Parameters**: Methods can have the same name but a different number of parameters.
 
    ```java
@@ -26,6 +25,7 @@ The compiler will automatically infer which overloaded method to call based on t
        }
    }
    ```
+
 2. **Different Types of Parameters**: Methods can have the same name and the same number of parameters but with
    different types.
 

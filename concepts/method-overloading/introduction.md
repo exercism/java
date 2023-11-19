@@ -1,4 +1,4 @@
-# Introduction 
+# Introduction
 
 In Java, method overloading is a feature that allows a class to have more than one method having the same name, if their
 parameter lists are different. It is related to compile-time (or static) polymorphism. This concept is crucial for
@@ -29,6 +29,7 @@ signatures. There are two ways to overload a method:
        }
    }
    ```
+
 2. **Different Types of Parameters**: Methods can have the same name and the same number of parameters but with
    different types.
 
