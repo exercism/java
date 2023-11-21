@@ -8,12 +8,12 @@ public class SalaryCalculator {
         return productsSold < 20 ? 10 : 13;
     }
 
-    public double bonusForProductSold (int productsSold) {
+    public double bonusForProductsSold (int productsSold) {
         return productsSold * multiplierPerProductsSold(productsSold);
     }
 
     public double finalSalary (int daysSkipped, int productsSold) {
-        double finalSalary = 1000.0 * multiplierPerDaysSkipped(daysSkipped) + bonusForProductSold(productsSold);
+        double finalSalary = 1000.0 * multiplierPerDaysSkipped(daysSkipped) + bonusForProductsSold(productsSold);
         return finalSalary > 2000.0 ? 2000.0 : finalSalary;
     } 
 

@@ -20,19 +20,19 @@ multiplierPerDaysSkipped(daysSkipped);
 
 ## 2. Calculate the bonus for products sold
 
-Implement the `multiplierPerProductsSold` and `bonusForProductSold` methods. The ISC pays ten monetary units for each product sold, and if an employee sells twenty products or more, the multiplier improves to thirteen. `multiplierPerProductsSold` should determine which multiplier to apply, and `bonusForProductSold` should return the total bonus in monetary units.
+Implement the `multiplierPerProductsSold` and `bonusForProductsSold` methods. The ISC pays ten monetary units for each product sold, and if an employee sells twenty products or more, the multiplier improves to thirteen. `multiplierPerProductsSold` should determine which multiplier to apply, and `bonusForProductSold` should return the total bonus in monetary units.
 
 ```java
 int productsSold = 21;
 multiplierPerProductsSold(productsSold);
 // => 13
-bonusForProductSold(productsSold);
+bonusForProductsSold(productsSold);
 // => 273
 
 productsSold = 5;
 multiplierPerProductsSold(productsSold);
 // => 10
-bonusForProductSold(productsSold);
+bonusForProductsSold(productsSold);
 // => 50
 ```
 

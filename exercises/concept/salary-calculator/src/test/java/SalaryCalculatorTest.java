@@ -64,6 +64,22 @@ public class SalaryCalculatorTest {
     }
 
     @Test
+    @Tag("task:2")
+    @DisplayName("The bonusForProductsSold method returns 5 when productsSold is below the threshold")
+    public void bonusForProductsSoldWhenProductsSoldIs5() {
+        int productsSold = 5;
+        assertThat(calculator.bonusForProductsSold(productsSold)).isEqualTo(50);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The bonusForProductsSold method returns 273 when productsSold is above the threshold")
+    public void bonusForProductsSoldWhenProductsSoldIs21() {
+        int productsSold = 21;
+        assertThat(calculator.bonusForProductsSold(productsSold)).isEqualTo(273);
+    }
+
+    @Test
     @Tag("task:3")
     @DisplayName("The finalSalary method returns the regular salary without multiplier and bonus")
     public void regularSalary() {
