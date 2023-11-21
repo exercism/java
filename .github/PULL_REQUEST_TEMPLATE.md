@@ -1,10 +1,12 @@
-# Pull Request
+# pull request
 
-<!-- Please describe the contents of your Pull Request here. -->
+<!-- Your content goes here: -->
 
-## Reviewer Resources
 
-<!-- Please do not edit this section, as it's used by reviewers while reviewing your PR. -->
 
-- [Contributing Guide](https://github.com/exercism/java/blob/main/CONTRIBUTING.md)
-- [Track Policies](https://github.com/exercism/java/blob/main/POLICIES.md#event-checklist)
+<!-- DO NOT EDIT BELOW THIS LINE! -->
+---
+
+Reviewer Resources:
+
+[Track Policies](https://github.com/exercism/java/blob/main/POLICIES.md#event-checklist)
