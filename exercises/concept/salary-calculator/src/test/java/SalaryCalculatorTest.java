@@ -16,17 +16,59 @@ public class SalaryCalculatorTest {
     }
 
     @Test
+    @Tag("task:1")
+    @DisplayName("The salaryMultiplier method returns 1.0 when daysSkipped is below the threshold")
+    public void msalaryMultiplierWhenDaysSkippedIs4() {
+        assertThat(calculator.salaryMultiplier(4)).isEqualTo(1.0);
+    }
+
+    @Test
+    @Tag("task:1")
+    @DisplayName("The salaryMultiplier method returns 0.85 when daysSkipped is equal to the threshold")
+    public void salaryMultiplierWhenDaysSkippedIs5() {
+        assertThat(calculator.salaryMultiplier(5)).isEqualTo(0.85);
+    }
+
+    @Test
+    @Tag("task:1")
+    @DisplayName("The bonusMultiplier method returns 0.85 when daysSkipped is above the threshold")
+    public void salaryMultiplierWhenDaysSkippedIs6() {
+        assertThat(calculator.salaryMultiplier(6)).isEqualTo(0.85);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The bonusMultiplier method returns 10 when productsSold is below the threshold")
+    public void bonusMultiplierWhenProductsSoldIs19() {
+        assertThat(calculator.bonusMultiplier(19)).isEqualTo(10);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The bonusMultiplier method returns 13 when productsSold is equal to the threshold")
+    public void bonusMultiplierWhenProductsSoldIs20() {
+        assertThat(calculator.bonusMultiplier(20)).isEqualTo(13);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The bonusMultiplier method returns 13 when productsSold is above the threshold")
+    public void bonusMultiplierWhenProductsSoldIs21() {
+        assertThat(calculator.bonusMultiplier(21)).isEqualTo(13);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The bonusForProductsSold method returns the right result")
+    public void bonusForProductsSoldWhenProductsSoldIs5() {
+        assertThat(calculator.bonusForProductsSold(5)).isEqualTo(50);
+    }
+
+    @Test
     @Tag("task:3")
     @DisplayName("The finalSalary method returns the regular salary without multiplier and bonus")
     public void regularSalary() {
         assertThat(calculator.finalSalary(0, 0)).isEqualTo(1000.0);
-    }
-    
-    @Test
-    @Tag("task:3")
-    @DisplayName("The finalSalary method returns the correct result when daysSkipped below threshold")
-    public void skippedBelowThreshold () {
-        assertThat(calculator.finalSalary(3, 0)).isEqualTo(1000.0);
     }
 
     @Test
@@ -38,53 +80,11 @@ public class SalaryCalculatorTest {
     
     @Test
     @Tag("task:3")
-    @DisplayName("The finalSalary method returns the correct result when productsSold below threshold")
-    public void soldBelowThreshold() {
-        assertThat(calculator.finalSalary(0, 10)).isEqualTo(1100.0);
-    }
-
-    @Test
-    @Tag("task:3")
-    @DisplayName("The finalSalary method returns the correct result when productsSold above threshold")
-    public void soldAboveThreshold() {
-        assertThat(calculator.finalSalary(0, 25)).isEqualTo(1325.0);
-    }
-    
-    @Test
-    @Tag("task:3")
     @DisplayName("The finalSalary method returns the correct result when daysSkipped and productsSold below threshold")
     public void skippedBelowThresholdAndSoldBelowThreshold() {
         assertThat(calculator.finalSalary(2, 5)).isEqualTo(1050.0);
     }
 
-    @Test
-    @Tag("task:3")
-    @DisplayName("finalSalary method returns correct result when daysSkipped below and productsSold above threshold")
-    public void skippedBelowThresholdAndSoldAboveThreshold() {
-        assertThat(calculator.finalSalary(4, 40)).isEqualTo(1520.0);
-    }   
-     
-    @Test
-    @Tag("task:3")
-    @DisplayName("finalSalary method returns correct result when daysSkipped above and productsSold below threshold")
-    public void skippedAboveThresholdAndSoldBelowThreshold() {
-        assertThat(calculator.finalSalary(10, 2)).isEqualTo(870.0);
-    }
-
-    @Test
-    @Tag("task:3")
-    @DisplayName("The finalSalary method returns the correct result when daysSkipped and productsSold above threshold")
-    public void skippedAboveThresholdAndSoldAboveThreshold() {
-        assertThat(calculator.finalSalary(7, 50)).isEqualTo(1500.0);
-    }
-
-    @Test
-    @Tag("task:3")
-    @DisplayName("The finalSalary method returns the correct result getting closer to the maximum")
-    public void salaryCanReachCloseToMaximum() {
-        assertThat(calculator.finalSalary(0, 76)).isEqualTo(1988.0);
-    }
-    
     @Test
     @Tag("task:3")
     @DisplayName("The finalSalary method returns the correct result capped at maximum salary")
