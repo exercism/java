@@ -1,11 +1,14 @@
-// Configuration is based on the problem-specifications, see:
-// https://github.com/exercism/problem-specifications/blob/main/.markdownlint.jsonc
+// Configuration is based on the Exercism Markdown specification, see:
+// https://exercism.org/docs/building/markdown/markdown
+//
 // For information on writing markdownlint configuration see:
 // https://github.com/DavidAnson/markdownlint/blob/main/README.md#optionsconfig
 {
-  "MD004": "dash", // Prefer hyphens for unordered lists
-  "MD013": false,  // Exercism tends to break lines at sentence ends rather than at a column limit
-  "MD024": false,  // The format for instructions.md requires  repeated headings, e.g. "Task"
-  "MD033": false,  // Inline HTML is allowed when used sparingly
-  "MD048": false   // We want three backticks for codeblocks, but four tildes for special blocks.
+  "MD004": {
+    "style": "dash" // Prefer hyphens for unordered lists
+  },
+  "MD013": false, // Exercism tends to break lines at sentence ends rather than at a column limit
+  "MD024": false, // The format for instructions.md requires  repeated headings, e.g. "Task"
+  "MD033": false, // Inline HTML is allowed when used sparingly
+  "MD048": false // We want three backticks for codeblocks, but four tildes for special blocks.
 }
