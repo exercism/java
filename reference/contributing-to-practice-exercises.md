@@ -61,6 +61,7 @@ bin/configlet sync --tests --update --exercise <exercise-slug>
 Note that this only updates the `.meta/tests.toml` file.
 Any tests that were added or updated should be implemented in the exercise's unit tests!
 
+[docs-building-config-json]: https://exercism.org/docs/building/tracks/config-json
 [docs-building-configlet-sync-new-exercise]: https://exercism.org/docs/building/configlet/sync#h-using-sync-when-adding-a-new-exercise-to-a-track
 [docs-building-exercises-practice]: https://exercism.org/docs/building/tracks/practice-exercises
 [forum]: https://forum.exercism.org/

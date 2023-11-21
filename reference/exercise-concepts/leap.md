@@ -1,7 +1,5 @@
 # Leap
 
-#Leap
-
 [Example implementation](https://github.com/exercism/java/blob/main/exercises/practice/leap/.meta/src/reference/java/Leap.java)
 
 ## General
