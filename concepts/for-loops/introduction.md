@@ -45,7 +45,7 @@ for (int i = 1; i <= 4; i++) {
 
 The output would be:
 
-```
+```text
 square of 1 is 1
 square of 2 is 4
 square of 3 is 9

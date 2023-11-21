@@ -10,7 +10,7 @@ Java supports three boolean operators:
 - `&&` (AND): takes two booleans and results in true if they're both true  
 - `||` (OR): results in true if any of the two booleans is true  
 
-**Examples**
+### Examples
 
 ```java
 !true // => false
