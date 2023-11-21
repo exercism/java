@@ -25,9 +25,6 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Lint markdown
         uses: DavidAnson/markdownlint-cli2-action@ed4dec634fd2ef689c7061d5647371d8248064f1
-        with:
-          globs: |
-            **/*.md
 
   java:
     name: Lint Java files using Checkstyle
