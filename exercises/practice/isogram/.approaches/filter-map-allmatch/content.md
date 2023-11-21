@@ -39,11 +39,9 @@ Finally, the result of `allMatch()` is returned from the `IsIsogram()` function.
 [chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
 [char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
 [isletter-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isLetter-int-
-[intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
 [map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#map-java.util.function.IntUnaryOperator-
 [allmatch]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#allMatch-java.util.function.IntPredicate-
-[tolowercase-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-int-
 [add]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html#add(E)
 [short-circuiting]: https://www.geeksforgeeks.org/short-circuit-logical-operators-in-java-with-examples/
 [hashset]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html

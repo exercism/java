@@ -72,10 +72,6 @@ Finally, the `List` is returned from `calculateHandshake()`.
 [lambda]: https://www.geeksforgeeks.org/lambda-expressions-java-8/
 [left-shift]: https://www.geeksforgeeks.org/left-shift-operator-in-java/
 [and]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
-[capture]: https://www.geeksforgeeks.org/java-lambda-expression-variable-capturing-with-examples/
-[scope]: https://www.geeksforgeeks.org/variable-scope-in-java/
-[private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
-[final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [range]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#range-int-int-
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-

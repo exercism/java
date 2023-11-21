@@ -30,7 +30,6 @@ For more information, check the [`filter()` and `map()` with `allMatch()` approa
 
 ## Approach: `filter()` and `mapToObj()` with `distinct()`
 
-
 ```java
 import java.util.stream.Collectors;
 
@@ -57,24 +56,11 @@ the choice between the various approaches can be made by perceived readability.
 Due to the short-circuiting of the `allMatch()` method, it is probably more performant than the `distinct()` method,
 unless constructing the `HashSet` takes more time than constructing a short list and a short stream.
 
-[chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
-[intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
 [map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#map-java.util.function.IntUnaryOperator-
 [allmatch]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#allMatch-java.util.function.IntPredicate-
-[tolowercase-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-int-
-[tolowercase-char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-
 [distinct]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#distinct--
-[count]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#count--
 [maptoobj]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#mapToObj-java.util.function.IntFunction-
-[char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
-[boxed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#boxed--
-[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector-
-[size]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html#size--
 [approach-filter-map-allmatch]: https://exercism.org/tracks/java/exercises/isogram/approaches/filter-map-allmatch
 [approach-filter-maptoobj-distinct]: https://exercism.org/tracks/java/exercises/isogram/approaches/filter-maptoobj-distinct
 [jmh]: https://github.com/openjdk/jmh
-[final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
-[short-circuiting]: https://www.geeksforgeeks.org/short-circuit-logical-operators-in-java-with-examples/
-[hashset]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html
-[list]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html

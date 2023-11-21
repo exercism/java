@@ -1,6 +1,5 @@
 # `filter()` and `mapToObj()` with `distinct()`
 
-
 ```java
 import java.util.stream.Collectors;
 
@@ -41,11 +40,6 @@ If they are not equal, then there are one or more duplicate letters and the comp
 [isletter-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isLetter-int-
 [maptoobj]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#mapToObj-java.util.function.IntFunction-
 [char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
-[boxed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#boxed--
-[collect]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector-
-[tolist]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html#toList--
-[tolowercase-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-int-
-[tolowercase-char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-
 [list]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html
 [size]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html#size--
 [distinct]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#distinct--

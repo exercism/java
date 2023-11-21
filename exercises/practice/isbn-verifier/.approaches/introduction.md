@@ -111,7 +111,6 @@ class IsbnAcc {
 
 For more information, check the [`chars()` with `forEach()` approach][approach-chars-foreach].
 
-
 ## Which approach to use?
 
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
@@ -130,11 +129,9 @@ making the `isValid()` method's implementation itself quite simple.
 [sum]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#sum--
 [replace]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replace(java.lang.CharSequence,%20java.lang.CharSequence)
 [pattern]: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
-[matches]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#matches(java.lang.String)
 [chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
 [for-each]: https://www.geeksforgeeks.org/for-each-loop-in-java/
 [foreach]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#forEach-java.util.function.IntConsumer-
-[intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [approach-map-sum]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/map-sum
 [approach-for-each]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/for-each
 [approach-chars-foreach]: https://exercism.org/tracks/java/exercises/isbn-verifier/approaches/chars-foreach

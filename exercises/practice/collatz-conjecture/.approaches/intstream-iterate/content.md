@@ -46,6 +46,5 @@ The function returns the result of the `count()` method.
 [intstream-iterate]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/IntStream.html#iterate(int,java.util.function.IntPredicate,java.util.function.IntUnaryOperator)
 [lambda]: https://www.geeksforgeeks.org/lambda-expressions-java-8/
 [bitwise-operators]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
-[remainder-operator]: https://www.geeksforgeeks.org/modulo-or-remainder-operator-in-java/
 [count]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/IntStream.html#count()
 [intstream]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/IntStream.html

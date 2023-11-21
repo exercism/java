@@ -46,4 +46,3 @@ After the condition for the `while` loop is satisifed, it ends and the value of 
 
 [while-loop]: https://www.geeksforgeeks.org/java-while-loop-with-examples/
 [bitwise-operators]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
-[remainder-operator]: https://www.geeksforgeeks.org/modulo-or-remainder-operator-in-java/

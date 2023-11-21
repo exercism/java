@@ -23,6 +23,7 @@ To calculate the grains on a square you can set a bit in the correct position of
 To understand how this works, consider just two squares that are represented in binary bits as `00`.
 
 You use the [`BigInteger.shiftLeft()`][shiftleft] method to set `1` (i.e. [`BigInteger.ONE`][one]) at the position needed to make the correct decimal value.
+
 - To set the one grain on Square One you shift `1` for `0` positions to the left.
 So, if `square` is `1` for square One, you subtract `square` by `1` to get `0`, which will not move it any positions to the left.
 The result is binary `01`, which is decimal `1`.
