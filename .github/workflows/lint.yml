@@ -1,0 +1,44 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  config:
+    name: Lint Exercism config files using the Configlet
+    uses: exercism/github-actions/.github/workflows/configlet.yml@main
+    with:
+      lint: true
+      fmt: true
+
+  markdown:
+    name: Lint Markdown files
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@ed4dec634fd2ef689c7061d5647371d8248064f1
+        with:
+          globs: |
+            **/*.md
+
+  java:
+    name: Lint Java files using Checkstyle
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Set up JDK 1.17
+        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0
+        with:
+          java-version: 17
+          distribution: "temurin"
+      - name: Run checkstyle
+        run: ./gradlew check --exclude-task test --continue
+        working-directory: exercises
