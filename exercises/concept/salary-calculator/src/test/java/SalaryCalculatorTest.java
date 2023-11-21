@@ -40,6 +40,30 @@ public class SalaryCalculatorTest {
     }
 
     @Test
+    @Tag("task:2")
+    @DisplayName("The multiplierPerProductsSold method returns 10 when productsSold is below the threshold")
+    public void multiplierPerProductsSoldWhenProductsSoldIs19() {
+        int productsSold = 19;
+        assertThat(calculator.multiplierPerProductsSold(productsSold)).isEqualTo(10);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The multiplierPerProductsSold method returns 13 when productsSold is equal to the threshold")
+    public void multiplierPerProductsSoldWhenProductsSoldIs20() {
+        int productsSold = 20;
+        assertThat(calculator.multiplierPerProductsSold(productsSold)).isEqualTo(13);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The multiplierPerProductsSold method returns 13 when productsSold is above the threshold")
+    public void multiplierPerProductsSoldWhenProductsSoldIs21() {
+        int productsSold = 21;
+        assertThat(calculator.multiplierPerProductsSold(productsSold)).isEqualTo(13);
+    }
+
+    @Test
     @Tag("task:3")
     @DisplayName("The finalSalary method returns the regular salary without multiplier and bonus")
     public void regularSalary() {
