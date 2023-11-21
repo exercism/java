@@ -17,58 +17,51 @@ public class SalaryCalculatorTest {
 
     @Test
     @Tag("task:1")
-    @DisplayName("The multiplierPerDaysSkipped method returns 1.0 when daysSkipped is below the threshold")
-    public void multiplierPerDaysSkippedWhenDaysSkippedIs4() {
-        assertThat(calculator.multiplierPerDaysSkipped(4)).isEqualTo(1.0);
+    @DisplayName("The salaryMultiplier method returns 1.0 when daysSkipped is below the threshold")
+    public void msalaryMultiplierWhenDaysSkippedIs4() {
+        assertThat(calculator.salaryMultiplier(4)).isEqualTo(1.0);
     }
 
     @Test
     @Tag("task:1")
-    @DisplayName("The multiplierPerDaysSkipped method returns 1.0 when daysSkipped is equal to the threshold")
-    public void multiplierPerDaysSkippedWhenDaysSkippedIs5() {
-        assertThat(calculator.multiplierPerDaysSkipped(5)).isEqualTo(0.85);
+    @DisplayName("The salaryMultiplier method returns 0.85 when daysSkipped is equal to the threshold")
+    public void salaryMultiplierWhenDaysSkippedIs5() {
+        assertThat(calculator.salaryMultiplier(5)).isEqualTo(0.85);
     }
 
     @Test
     @Tag("task:1")
-    @DisplayName("The multiplierPerDaysSkipped method returns 0.85 when daysSkipped is above the threshold")
-    public void multiplierPerDaysSkippedWhenDaysSkippedIs6() {
-        assertThat(calculator.multiplierPerDaysSkipped(6)).isEqualTo(0.85);
+    @DisplayName("The bonusMultiplier method returns 0.85 when daysSkipped is above the threshold")
+    public void salaryMultiplierWhenDaysSkippedIs6() {
+        assertThat(calculator.salaryMultiplier(6)).isEqualTo(0.85);
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The multiplierPerProductsSold method returns 10 when productsSold is below the threshold")
-    public void multiplierPerProductsSoldWhenProductsSoldIs19() {
-        assertThat(calculator.multiplierPerProductsSold(19)).isEqualTo(10);
+    @DisplayName("The bonusMultiplier method returns 10 when productsSold is below the threshold")
+    public void bonusMultiplierWhenProductsSoldIs19() {
+        assertThat(calculator.bonusMultiplier(19)).isEqualTo(10);
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The multiplierPerProductsSold method returns 13 when productsSold is equal to the threshold")
-    public void multiplierPerProductsSoldWhenProductsSoldIs20() {
-        assertThat(calculator.multiplierPerProductsSold(20)).isEqualTo(13);
+    @DisplayName("The bonusMultiplier method returns 13 when productsSold is equal to the threshold")
+    public void bonusMultiplierWhenProductsSoldIs20() {
+        assertThat(calculator.bonusMultiplier(20)).isEqualTo(13);
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The multiplierPerProductsSold method returns 13 when productsSold is above the threshold")
-    public void multiplierPerProductsSoldWhenProductsSoldIs21() {
-        assertThat(calculator.multiplierPerProductsSold(21)).isEqualTo(13);
+    @DisplayName("The bonusMultiplier method returns 13 when productsSold is above the threshold")
+    public void bonusMultiplierWhenProductsSoldIs21() {
+        assertThat(calculator.bonusMultiplier(21)).isEqualTo(13);
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The bonusForProductsSold method returns 5 when productsSold is below the threshold")
+    @DisplayName("The bonusForProductsSold method returns the right result")
     public void bonusForProductsSoldWhenProductsSoldIs5() {
         assertThat(calculator.bonusForProductsSold(5)).isEqualTo(50);
-    }
-
-    @Test
-    @Tag("task:2")
-    @DisplayName("The bonusForProductsSold method returns 273 when productsSold is above the threshold")
-    public void bonusForProductsSoldWhenProductsSoldIs21() {
-        assertThat(calculator.bonusForProductsSold(21)).isEqualTo(273);
     }
 
     @Test

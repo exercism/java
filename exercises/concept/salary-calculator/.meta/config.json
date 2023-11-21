@@ -2,6 +2,9 @@
   "authors": [
     "TalesDias"
   ],
+  "contributors": [
+    "smicaliz"
+  ],
   "files": {
     "solution": [
       "src/main/java/SalaryCalculator.java"
