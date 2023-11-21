@@ -2,15 +2,19 @@
 
 ## General
 
-- Check the [this][ternary-operator-first] and [this][ternary-operator-second] examples on how to use _ternary operators_.
+- Refer to examples [here][ternary-operator-first] and [here][ternary-operator-second] for guidance on using _ternary operators_.
 
-## 1. Implement the multipliers
+## 1. Determine the salary multiplier
 
-- Both multiplier methods depend on a certain condition being met, you must check that before deciding what should be returned.
+- The salary multiplier depends on meeting a specific condition.
 
-## 2. Calculate the final salary
+## 2. Calculate the bonus for products sold
 
-- If a salary is greater then the maximum, you can ignore the final value and use the maximim value instead.
+- The bonus multiplier depends on meeting a specific condition.
+
+## 3. Calculate the final salary
+
+- If the salary exceeds the maximum, ignore the final value and use the maximum value instead.
 
 [ternary-operator-first]: https://www.programiz.com/java-programming/ternary-operator
 [ternary-operator-second]: https://www.baeldung.com/java-ternary-operator
