@@ -2,7 +2,7 @@ import java.util.List;
 
 class School {
 
-    void add(String student, int grade) {
+    boolean add(String student, int grade) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
