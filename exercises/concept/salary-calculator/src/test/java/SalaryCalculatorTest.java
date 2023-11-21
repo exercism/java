@@ -16,6 +16,30 @@ public class SalaryCalculatorTest {
     }
 
     @Test
+    @Tag("task:1")
+    @DisplayName("The multiplierPerDaysSkipped method returns 1.0 when daysSkipped is below the threshold")
+    public void multiplierPerDaysSkippedWhenDaysSkippedIs4() {
+        int daysSkipped = 4;
+        assertThat(calculator.multiplierPerDaysSkipped(daysSkipped)).isEqualTo(1.0);
+    }
+
+    @Test
+    @Tag("task:1")
+    @DisplayName("The multiplierPerDaysSkipped method returns 1.0 when daysSkipped is equal to the threshold")
+    public void multiplierPerDaysSkippedWhenDaysSkippedIs5() {
+        int daysSkipped = 5;
+        assertThat(calculator.multiplierPerDaysSkipped(daysSkipped)).isEqualTo(0.85);
+    }
+
+    @Test
+    @Tag("task:1")
+    @DisplayName("The multiplierPerDaysSkipped method returns 0.85 when daysSkipped is above the threshold")
+    public void multiplierPerDaysSkippedWhenDaysSkippedIs6() {
+        int daysSkipped = 6;
+        assertThat(calculator.multiplierPerDaysSkipped(daysSkipped)).isEqualTo(0.85);
+    }
+
+    @Test
     @Tag("task:3")
     @DisplayName("The finalSalary method returns the regular salary without multiplier and bonus")
     public void regularSalary() {
