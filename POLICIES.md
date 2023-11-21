@@ -121,7 +121,7 @@ References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
 ### Name test class after class under test
 
 > If you're testing a class called `SomeClassName` then your test class should be called `SomeClassNameTest`.
-
+>
 > The exception to this is if the tests are split into several test classes where each test class tests different functionality. In that case each class should be named `SomeClassNameFunctionalityTest` where `Functionality` is the name of the functionality to be tested in that class. See the [clock exercise](https://github.com/exercism/java/tree/main/exercises/practice/clock) as an example.
 
 References: [[1](https://github.com/exercism/java/issues/697)]
@@ -131,11 +131,11 @@ References: [[1](https://github.com/exercism/java/issues/697)]
 > According to the starter implementation policy, any exercise with difficulty 4 or lower should have starter implementation.
 > Any exercise with difficulty 5 or above will have no starter implementation (unless its signature is very complicated).
 > This could be confusing to users when tackling their first exercise with difficulty 5 when they are used to starter implementation being provided.
-
+>
 > Therefore a hints.md file should be added to the .meta directory for every exercise with difficulty 5.
 > This file should explain what they need to do when there is no starter implementation.
 > The files should all be the same so you can copy it from any other exercise with difficulty 5, e.g. [flatten-array](https://github.com/exercism/java/tree/main/exercises/pratice/flatten-array/.meta/hints.md).
-
+>
 > We add the file to every exercise with difficulty 5 because the structure of the track means that we don't know which exercise will be the first one without starter implementation that a user will be faced with.
 
 References: [[1](https://github.com/exercism/java/issues/1075)]
@@ -154,14 +154,14 @@ References: [[1](https://github.com/exercism/java/issues/1389)]
 > When an error has occured or a method can't return anything, the canonical data will just mark that as `"expected": null`.
 > This is because error handling varies from language to language, so the canonical data is leaving it up to each language track to decide how to deal with those situations.
 > It doesn't mean that the method needs to return `null`.
-
+>
 > In Java it's considered bad practice to return `null`.
 > If you return `null` then the user of the method has to remember to check for `null` and they have to look at the implementation of the method to find out that this is necessary.
-
+>
 > It's considered best practice to deal with errors and unexpected circumstances by throwing exceptions.
 > If you throw an exception then you force the user to deal with the problem.
 > You can either define your own exception (see [the triangle exercise](https://github.com/exercism/java/blob/main/exercises/practice/triangle/.meta/src/reference/java/TriangleException.java) for an example) or use a predefined one (see [the collatz-conjecture exercise](https://github.com/exercism/java/blob/main/exercises/practice/collatz-conjecture/src/test/java/CollatzCalculatorTest.java) for an example).
-
+>
 > Another option is to use [Optionals](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html).
 > This can be more suitable if the case you want to deal with isn't an exceptional occurence, but rather an expected scenario, e.g. a search method not finding what it was searching for.
 > See [the word-search exercise](https://github.com/exercism/java/blob/main/exercises/practice/word-search/src/test/java/WordSearcherTest.java) for an example where `Optional` is used.
