@@ -2,22 +2,26 @@
 
 In this exercise you will be doing some more work on remote control cars.
 
-An experimental car has been developed and the test track needs to be adapted to handle both production and experimental models. The two types of car have already been built and you need to find a way to deal with them both on the test track.
+An experimental car has been developed and the test track needs to be adapted to handle both production and experimental models.
+The two types of car have already been built and you need to find a way to deal with them both on the test track.
 
-In addition, production cars are beginning to have some success. The team boss is keen to maintain the competitive spirit by publishing a ranking of the production cars.
+In addition, production cars are beginning to have some success.
+The team boss is keen to maintain the competitive spirit by publishing a ranking of the production cars.
 
 ## 1. Implement the Interface
 
 Please add two methods to the `RemoteControlCar` interface:
+
 - `drive()`, returning nothing, and
 - `getDistanceTravelled()`, returning an `int`.
 
 Then make `ProductionRemoteControlCar` and `ExperimentalRemoteControlCar` implement the `RemoteControlCar` interface.
-This includes implementing all methods required by the interface. 
+This includes implementing all methods required by the interface.
 
-## 2. Drive.
+## 2. Drive
 
 Each call of `.drive()` should make the car travel a certain distance:
+
 - a `ProductionRemoteControlCar` drives 10 units,
 - an `ExperimentalRemoteControlCar` drives 20 units.
 
@@ -35,9 +39,10 @@ exp.getDistanceTravelled();
 // => 20
 ```
 
-## 3. Race!
+## 3. Race
 
 Implement the `TestTrack.race(RemoteControlCar car)` method in which the `car`s get to `drive()`.
+
 ```java
 TestTrack.race(new ProductionRemoteControlCar());
 TestTrack.race(new ExperimentalRemoteControlCar());
