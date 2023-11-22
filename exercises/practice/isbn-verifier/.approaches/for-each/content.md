@@ -64,8 +64,6 @@ If not, then the `&&` operator [short circuits][short-circuit] and returns false
 If it is `true`, the function then returns if the `sum` is evenly divisible by `11`.
 
 [for-each]: https://www.geeksforgeeks.org/for-each-loop-in-java/
-[char]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html#unicode
-[foreach]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#forEach-java.util.function.IntConsumer-
 [ascii]: https://www.asciitable.com/
 [continue]: https://www.geeksforgeeks.org/continue-statement-in-java/
 [short-circuit]: https://www.geeksforgeeks.org/short-circuit-logical-operators-in-java-with-examples/

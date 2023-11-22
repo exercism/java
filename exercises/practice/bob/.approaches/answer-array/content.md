@@ -1,6 +1,5 @@
 # Answer array
 
-
 ```java
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
@@ -62,7 +61,6 @@ For example, giving a question a score of `1` would use an index of `1` to get t
 | `false` | `true`     | 0 + 1 = 1 | `"Sure."`                             |
 | `true`  | `false`    | 2 + 0 = 2 | `"Whoa, chill out!"`                  |
 | `true`  | `true`     | 2 + 1 = 3 | `"Calm down, I know what I'm doing!"` |
-
 
 ## Shortening
 

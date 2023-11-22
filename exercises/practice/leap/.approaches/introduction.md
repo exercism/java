@@ -33,11 +33,11 @@ For more information, check the [Ternary operator approach][approach-ternary-ope
 
 Besides the aforementioned, idiomatic approaches, you could also approach the exercise as follows:
 
-## `plusDays()` approach:
+## `plusDays()` approach
 
 Add a day to February 28th for the year and see if the new day is the 29th. For more information, see the [`plusDays()` approach][approach-plusdays].
 
-## Built-in method approach:
+## Built-in method approach
 
 Use the built-in method for the [Year][year]. For more information, see the [`isLeap()` approach][approach-isleap].
 

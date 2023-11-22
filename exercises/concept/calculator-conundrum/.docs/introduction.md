@@ -114,7 +114,7 @@ public class ATM {
 
 In this example, when no exception is thrown, the following is printed:
 
-```
+```text
 Withdrawing 10.0
 Withdrawal succeeded
 Current balance: 5.0
@@ -122,7 +122,7 @@ Current balance: 5.0
 
 However, should the `bankAccount.withdraw(amount)` statement throw an `InsufficientBalanceException`, the following is printed:
 
-```
+```text
 Withdrawing 10.0
 Withdrawal failed: insufficient balance
 Current balance: 5.0
@@ -130,7 +130,7 @@ Current balance: 5.0
 
 Or, in case an unchecked exception is thrown by the `bankAccount.withdraw(amount)`, the following is printed:
 
-```
+```text
 Withdrawing -10.0
 Withdrawal failed: Cannot withdraw a negative amount
 Current balance: 5.0

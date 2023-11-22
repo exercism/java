@@ -1,0 +1,21 @@
+{
+  "globs": [
+    "concepts/**/*.md",
+    "docs/**/*.md",
+    "exercises/**/*.md",
+    "reference/**/*.md",
+    "*.md"
+  ],
+  "ignores": [
+    // Deprecated exercises should never be updated
+    "exercises/concept/blackjack/**/*.md",
+    "exercises/practice/accumulate/**/*.md",
+    "exercises/practice/beer-song/**/*.md",
+    "exercises/practice/binary/**/*.md",
+    "exercises/practice/diffie-hellman/**/*.md",
+    "exercises/practice/hexadecimal/**/*.md",
+    "exercises/practice/octal/**/*.md",
+    "exercises/practice/strain/**/*.md",
+    "exercises/practice/trinary/**/*.md"
+  ]
+}

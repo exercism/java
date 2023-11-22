@@ -124,7 +124,6 @@ Moreover, the concept of [polymorphism can be implemented through interfaces][in
 [so-mocking-interfaces]: https://stackoverflow.com/a/9226437/96167
 [comparable]: https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html
 [wiki-test-double]: https://en.wikipedia.org/wiki/Test_double
-[wiki-polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 [wiki-namespaces]: https://en.wikipedia.org/wiki/Namespace
 [wiki-loose-coupling]: https://en.wikipedia.org/wiki/Loose_coupling
 [interfaces]: https://docs.oracle.com/javase/tutorial/java/concepts/interface.html

@@ -2,7 +2,7 @@
 
 Booleans in Java are represented by the `boolean` type, which values can be either `true` or `false`.
 
-Java supports three [boolean operators][operators]: 
+Java supports three [boolean operators][operators]:
 
 - `!` (NOT): negates the boolean  
 - `&&` (AND): takes two booleans and results in true if they're both true  

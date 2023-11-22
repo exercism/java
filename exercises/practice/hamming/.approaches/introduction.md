@@ -7,7 +7,7 @@ Another way to iterate can use [`IntStream`][intstream].
 Or `IntStream` could be used with its [`map()`][map] and [`sum()`][sum] methods.
 `IntStream` could also be used with its [`reduce()`][reduce] method.
 
-# General guidance
+## General guidance
 
 Regardless of the approach used, one thing to look out for is to whether to calculate the hamming distance
 in the constructor (or a method called by the constructor) or in the `getHammingDistance()` method.
@@ -17,7 +17,7 @@ A benefit to calculating in `getHammingDistance()` is that, if it is not called,
 then the calculation never has to be performed.
 But then, in that case, why instantiate the `Hamming` object at all?
 
-## Approach: `for ` loop
+## Approach: `for` loop
 
 ```java
 public class Hamming {

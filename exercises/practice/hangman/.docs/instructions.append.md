@@ -8,9 +8,9 @@ In the exercise, we will be using [RxJava](https://github.com/ReactiveX/RxJava),
 
 The simulated context of this exercise is an application receiving two inputs:
 
- - the new words to guess from some game engine,
- - the letters chosen by the player.
- 
+- the new words to guess from some game engine,
+- the letters chosen by the player.
+
  Those two inputs are implemented with [Observables](http://reactivex.io/documentation/observable.html) - using the class [io.reactivex.Observable](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Observable.html).
  Basically, you can subscribe to an `Observable` to "react" to the values that are produced somewhere. For example, the game engine pushes new words when it detects a new game has started, or keyboard events generate letter inputs.  
  But many Reactive Frameworks offer powerful abstractions, such as [`map`](http://reactivex.io/documentation/operators/map.html) that allows you to change the received input, or [`combine`](http://reactivex.io/documentation/operators/combinelatest.html) that lets you merge together one or more `Observable`s.
