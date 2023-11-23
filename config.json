@@ -234,6 +234,19 @@
           "switch-statement",
           "constructors"
         ]
+      },
+      {
+        "slug": "captains-log",
+        "name": "Captain's Log",
+        "uuid": "1ade8233-7a73-4fd9-afe2-f80d7cca14ab",
+        "concepts": [
+          "randomness"
+        ],
+        "prerequisites": [
+          "arrays",
+          "numbers",
+          "strings"
+        ]
       }
     ],
     "practice": [
