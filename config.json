@@ -2094,6 +2094,11 @@
       "name": "Numbers"
     },
     {
+      "uuid": "07674a94-5f10-4b99-8f18-36c841e4aff8",
+      "slug": "randomness",
+      "name": "Randomness"
+    },
+    {
       "uuid": "8a468b14-724a-4036-8edb-d19a02809840",
       "slug": "strings",
       "name": "Strings"
