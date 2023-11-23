@@ -1220,244 +1220,253 @@
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "57b76837-4610-466f-9373-d5c2697625f1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "arrays",
+        "practices": [
+          "for-loops",
+          "lists"
+        ],
+        "prerequisites": [
+          "for-loops",
           "lists",
-          "loops",
-          "matrices",
-          "strings",
-          "text_formatting"
-        ]
+          "strings"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "1500d39a-c9d9-4d3a-9e77-fdc1837fc6ad",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
+        "practices": [
           "if-else-statements",
-          "exception_handling",
-          "integers",
-          "math",
-          "recursion"
-        ]
+          "numbers"
+        ],
+        "prerequisites": [
+          "exceptions",
+          "if-else-statements",
+          "numbers"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "error-handling",
         "name": "Error Handling",
         "uuid": "846ae792-7ca7-43e1-b523-bb1ec9fa08eb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "exception_handling",
-          "optional_values"
-        ]
+        "practices": [
+          "exceptions"
+        ],
+        "prerequisites": [
+          "exceptions"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "2c69db99-648d-4bd7-8012-1fbdeff6ca0a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "arrays",
-          "exception_handling",
-          "integers",
-          "lists",
-          "loops",
-          "math"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "exceptions",
+          "for-loops",
+          "if-else-statements",
+          "numbers"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "prime-factors",
         "name": "Prime Factors",
         "uuid": "599c08ec-7338-46ed-99f8-a76f78f724e6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "arrays",
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
           "if-else-statements",
-          "integers",
           "lists",
-          "loops",
-          "math"
-        ]
+          "numbers"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "210bf628-b385-443b-8329-3483cc6e8d7e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "algorithms",
+        "practices": [
+          "constructors",
+          "numbers"
+        ],
+        "prerequisites": [
+          "constructors",
           "if-else-statements",
-          "loops"
-        ]
+          "numbers"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "52d11278-0d65-4b5b-b387-1374fced3243",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "floating_point_numbers",
-          "math"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "50ed54ce-3047-4590-9fda-0a7e9aeeba30",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "algorithms",
-          "floating_point_numbers",
-          "math"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "88505f95-89e5-4a08-8ed2-208eb818cdf1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 9,
-        "topics": [
-          "integers",
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "constructors",
           "lists",
-          "logic",
-          "math"
-        ]
+          "numbers"
+        ],
+        "difficulty": 9
       },
       {
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "d36ce010-210f-4e9a-9d6c-cb933e0a59af",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "cryptography",
-          "security",
-          "strings"
-        ]
+        "practices": [
+          "chars",
+          "foreach-loops"
+        ],
+        "prerequisites": [
+          "chars",
+          "foreach-loops"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "4499a3f9-73a7-48bf-8753-d5b6abf588c9",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "integers",
-          "pattern_matching",
-          "strings",
-          "transforming"
-        ]
+        "practices": [
+          "chars",
+          "for-loops"
+        ],
+        "prerequisites": [
+          "chars",
+          "if-else-statements",
+          "for-loops"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "e6e3faaf-54c2-4782-93af-bb8d95403f2a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "cryptography",
-          "security",
-          "strings",
-          "text_formatting"
-        ]
+        "practices": [
+          "chars"
+        ],
+        "prerequisites": [
+          "chars",
+          "exceptions",
+          "for-loops",
+          "if-else-statements",
+          "numbers"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "rail-fence-cipher",
         "name": "Rail Fence Cipher",
         "uuid": "6e4ad4ed-cc02-4132-973d-b9163ba0ea3d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "if-else-statements",
-          "loops",
-          "strings"
-        ]
+        "practices": [
+          "chars",
+          "foreach-loops"
+        ],
+        "prerequisites": [
+          "arrays",
+          "chars",
+          "foreach-loops",
+          "if-else-statements"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "162bebdc-9bf2-43c0-8460-a91f5fc16147",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "cryptography",
-          "lists",
-          "security",
-          "strings",
-          "text_formatting"
-        ]
+        "practices": [
+          "chars",
+          "for-loops"
+        ],
+        "prerequisites": [
+          "chars",
+          "constructors",
+          "for-loops",
+          "if-else-statements",
+          "numbers"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "f654831f-c34b-44f5-9dd5-054efbb486f2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "cryptography",
-          "exception_handling",
-          "randomness",
-          "security",
-          "strings"
-        ]
+        "practices": [
+          "chars",
+          "for-loops"
+        ],
+        "prerequisites": [
+          "chars",
+          "exceptions",
+          "for-loops",
+          "if-else-statements",
+          "numbers"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "f7c2e4b5-1995-4dfe-b827-c9aff8ac5332",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
+        "practices": [
           "arrays",
+          "numbers"
+        ],
+        "prerequisites": [
+          "arrays",
+          "exceptions",
+          "for-loops",
           "if-else-statements",
-          "exception_handling",
-          "integers",
-          "loops",
-          "math"
-        ]
+          "numbers"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "clock",
         "name": "Clock",
         "uuid": "97c8fcd4-85b6-41cb-9de2-b4e1b4951222",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "equality",
-          "integers",
-          "logic",
-          "object_oriented_programming",
-          "strings",
-          "time"
-        ]
+        "practices": [
+          "constructors",
+          "numbers"
+        ],
+        "prerequisites": [
+          "constructors",
+          "if-else-statements",
+          "numbers",
+          "strings"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "zebra-puzzle",
@@ -1465,136 +1474,138 @@
         "uuid": "b1e2bd39-3f4b-44c1-b7e2-258d4ee241f8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "logic"
-        ]
+        "difficulty": 7
       },
       {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "873c05de-b5f5-4c5b-97f0-d1ede8a82832",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
+        "practices": [
+          "for-loops",
+          "numbers"
+        ],
+        "prerequisites": [
+          "exceptions",
+          "for-loops",
           "if-else-statements",
-          "integers",
-          "lists",
-          "loops",
-          "maps",
-          "math"
-        ]
+          "numbers"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "85aa50ac-0141-49eb-bc6f-62f3f7a97647",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "stacks",
+        "practices": [
+          "foreach-loops",
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "foreach-loops",
+          "strings"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "e5f05d00-fe5b-4d78-b2fa-934c1c9afb32",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "algorithms",
-          "floating_point_numbers",
-          "integers",
-          "lists"
-        ]
+        "practices": [
+          "lists",
+          "numbers"
+        ],
+        "prerequisites": [
+          "exceptions",
+          "if-else-statements",
+          "lists",
+          "numbers"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "change",
         "name": "Change",
         "uuid": "bac1f4bc-eea9-43c1-8e95-097347f5925e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "algorithms",
-          "exception_handling",
-          "integers",
-          "lists"
-        ]
+        "practices": [
+          "numbers",
+          "for-loops"
+        ],
+        "prerequisites": [
+          "exceptions",
+          "lists",
+          "numbers"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "etl",
         "name": "ETL",
         "uuid": "76d28d97-75d3-47eb-bb77-3d347b76f1b6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "lists",
-          "maps",
-          "transforming"
-        ]
+        "practices": [
+          "foreach-loops"
+        ],
+        "prerequisites": [
+          "foreach-loops",
+          "strings"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "b4af5da1-601f-4b0f-bfb8-4a381851090c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
           "if-else-statements",
           "lists",
-          "maps",
-          "sorting",
           "strings"
-        ]
+        ],
+        "difficulty": 6
       },
       {
         "slug": "grep",
         "name": "Grep",
         "uuid": "9c15ddab-7b52-43d4-b38c-0bf635b363c3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "files",
-          "filtering",
-          "pattern_matching",
-          "searching",
+        "practices": [
+          "booleans",
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "lists",
+          "strings"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "rest-api",
         "name": "REST API",
         "uuid": "809c0e3d-3494-4a85-843d-2bafa8752ce8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "strings",
-          "parsing"
-        ]
+        "practices": [
+          "classes",
+          "constructors"
+        ],
+        "prerequisites": [
+          "classes",
+          "constructors",
+          "lists"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "ocr-numbers",
         "name": "OCR Numbers",
         "uuid": "5cbc6a67-3a53-4aad-ae68-ff469525437f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "exception_handling",
-          "lists",
-          "loops",
-          "parsing",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "exceptions",
+          "lists",
+          "strings"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "react",
@@ -1614,57 +1625,57 @@
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "64cda115-919a-4eef-9a45-9ec5d1af98cc",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
+        "practices": [
           "arrays",
-          "logic",
-          "pattern_recognition",
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "arrays",
+          "exceptions",
+          "strings"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "binary-search-tree",
         "name": "Binary Search Tree",
         "uuid": "0a2d18aa-7b5e-4401-a952-b93d2060694f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "generics",
-          "graphs",
-          "searching",
-          "sorting",
-          "trees"
-        ]
+        "practices": [
+          "generic-types"
+        ],
+        "prerequisites": [
+          "classes",
+          "generic-types",
+          "lists"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "38a405e8-619d-400f-b53c-2f06461fdf9d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": [
-          "concurrency",
-          "maps",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 6
       },
       {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "e3e5ffe5-cfc1-467e-a28a-da0302130144",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "algorithms",
-          "exception_handling",
-          "generics",
+        "practices": [
+          "generic-types"
+        ],
+        "prerequisites": [
+          "constructors",
+          "exceptions",
+          "generic-types",
           "lists"
-        ]
+        ],
+        "difficulty": 7
       },
       {
         "slug": "sublist",
@@ -1685,42 +1696,47 @@
         "slug": "tree-building",
         "name": "Tree Building",
         "uuid": "cb9540e2-a980-4275-924e-bdb504f04363",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "maps",
-          "records",
-          "refactoring",
-          "sorting",
-          "trees"
-        ]
+        "practices": [
+          "classes",
+          "exceptions"
+        ],
+        "prerequisites": [
+          "classes",
+          "exceptions",
+          "if-else-statements",
+          "lists"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "zipper",
         "name": "Zipper",
         "uuid": "25d2c7a5-1ec8-464a-b3de-ad1b27464ef1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": [
-          "integers",
-          "graphs",
-          "trees"
-        ]
+        "practices": [
+          "classes"
+        ],
+        "prerequisites": [
+          "classes",
+          "constructors",
+          "if-else-statements",
+          "numbers",
+          "strings"
+        ],
+        "difficulty": 7
       },
       {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "626dc25a-062c-4053-a8c1-788e4dc44ca0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
+        "practices": [
+          "generic-types"
+        ],
+        "prerequisites": [
           "classes",
-          "exception_handling",
-          "queues"
-        ]
+          "exceptions",
+          "generic-types"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "diffie-hellman",
@@ -1748,41 +1764,41 @@
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "a9836565-5c39-4285-b83a-53408be36ccc",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
-          "filtering",
-          "functional_programming",
-          "generics",
-          "lists",
-          "loops"
-        ]
+        "practices": [
+          "generic-types",
+          "lists"
+        ],
+        "prerequisites": [
+          "generic-types",
+          "lists"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "377fe38b-08ad-4f3a-8118-a43c10f7b9b2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 10,
-        "topics": [
-          "equality",
-          "generics",
-          "sets"
-        ]
+        "practices": [
+          "generic-types"
+        ],
+        "prerequisites": [
+          "generic-types",
+          "if-else-statements"
+        ],
+        "difficulty": 10
       },
       {
         "slug": "satellite",
         "name": "Satellite",
         "uuid": "a5f8aef3-9661-49c7-9eb3-786ef9fe0e85",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 10,
-        "topics": [
-          "trees",
-          "graphs"
-        ]
+        "practices": [
+          "classes"
+        ],
+        "prerequisites": [
+          "classes",
+          "lists"
+        ],
+        "difficulty": 10
       },
       {
         "slug": "accumulate",
@@ -1842,21 +1858,26 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "61fe1fa6-246d-4e38-92d6-b74af64c88af",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
           "booleans",
-          "integers",
-          "logic"
-        ]
+          "numbers"
+        ],
+        "prerequisites": [
+          "booleans",
+          "numbers"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "8e1dd48c-e05e-4a72-bf0f-5aed8dd123f5",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
         "difficulty": 2,
         "topics": [
           "integers",
@@ -1867,35 +1888,38 @@
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "8e983ed2-62f7-439a-a144-fb8fdbdf4d30",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "loops",
-          "maps",
+        "practices": [
+          "foreach-loops"
+        ],
+        "prerequisites": [
+          "foreach-loops",
           "strings"
-        ]
+        ],
+        "difficulty": 2
       },
       {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "c31bbc6d-bdcf-44f7-bf35-5f98752e38d0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "loops",
-          "parsing",
-          "searching",
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "for-loops",
+          "strings"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "133b0f84-bdc7-4508-a0a1-5732a7db81ef",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "chars"
+        ],
+        "prerequisites": [
+          "chars"
+        ],
         "difficulty": 3,
         "topics": [
           "pattern_matching",
@@ -1907,13 +1931,13 @@
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "e5b524cd-3a1c-468a-8981-13e8eeccb29d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "if-else-statements",
-          "floating_point_numbers"
-        ]
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "connect",
@@ -1959,8 +1983,11 @@
         "slug": "ledger",
         "name": "Ledger",
         "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
-        "practices": [],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [
+          "classes",
           "strings"
         ],
         "difficulty": 5
