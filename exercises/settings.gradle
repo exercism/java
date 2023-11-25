@@ -17,6 +17,7 @@ include 'concept:football-match-reports'
 include 'concept:wizards-and-warriors'
 include 'concept:calculator-conundrum'
 include 'concept:logs-logs-logs'
+include 'concept:tim-from-marketing'
 
 // practice exercises
 include 'practice:accumulate'
@@ -150,3 +151,6 @@ include 'practice:wordy'
 include 'practice:yacht'
 include 'practice:zebra-puzzle'
 include 'practice:zipper'
+include 'concept:tim-from-marketing'
+findProject(':concept:tim-from-marketing')?.name = 'tim-from-marketing'
+
