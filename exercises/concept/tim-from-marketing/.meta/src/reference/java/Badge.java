@@ -1,6 +1,6 @@
 public class Badge {
 
-    public static String print(Integer id, String name, String department) {
+    public String print(Integer id, String name, String department) {
 
         String worksAt;
 

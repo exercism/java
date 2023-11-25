@@ -7,7 +7,7 @@
       "src/main/java/Badge.java"
     ],
     "test": [
-      "src/test/java/BadgeTests.java"
+      "src/test/java/BadgeTest.java"
     ],
     "exemplar": [
       ".meta/src/reference/java/Badge.java"

@@ -1,5 +1,5 @@
 {
-  "blurb": "Learn about the null literal and nullable variables in java by printing name badges.",
+  "blurb": "In Java, the null literal is used to denote the absence of a value.",
   "authors": [
     "smcg468"
   ],
