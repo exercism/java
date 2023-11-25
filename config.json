@@ -234,6 +234,18 @@
           "switch-statement",
           "constructors"
         ]
+      },
+      {
+        "slug": "tim-from-marketing",
+        "name": "Tim from Marketing",
+        "uuid": "28bd20c5-4fdd-4660-9225-54f24aae24e4",
+        "concepts": [
+          "nullability"
+        ],
+        "prerequisites": [
+          "if-else-statements",
+          "strings"
+        ]
       }
     ],
     "practice": [
@@ -2087,6 +2099,11 @@
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
       "name": "Lists"
+    },
+    {
+      "uuid": "0718bff1-25ad-42bb-860d-1b0834beb9fc",
+      "slug": "nullability",
+      "name": "Nullability"
     },
     {
       "uuid": "58529dab-0ef2-4943-ac12-a98ca79b922b",
