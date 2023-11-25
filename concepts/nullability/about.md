@@ -3,7 +3,7 @@
 In Java, the [`null` literal][null-keyword] is used to denote the absence of a value.
 
 [Primitive variables][primitive-data-types] in java all have a default value and therefore can never be `null`.
-By convention they start with a lowercase letter e.g `int`
+By convention, they start with a lowercase letter e.g `int`
 
 [Reference variables][reference-data-types] contain the memory address of an object and can have a value of null.
 These variables usually start with an uppercase e.g `String`
