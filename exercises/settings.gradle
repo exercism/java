@@ -151,6 +151,4 @@ include 'practice:wordy'
 include 'practice:yacht'
 include 'practice:zebra-puzzle'
 include 'practice:zipper'
-include 'concept:tim-from-marketing'
-findProject(':concept:tim-from-marketing')?.name = 'tim-from-marketing'
 
