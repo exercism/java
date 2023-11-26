@@ -9,7 +9,7 @@ The whole inheritance concept has a lot to do with the concepts around [overridi
 
 - In Java, the `toString()` method is actually present inside the `Object` class (which is a superclass to all the classes in Java).
   You can read more about it [here][object-class-java].
-- To override this method inside your implementation class, you should have a method with same name i.e `toString()` and same return type i.e `String`.
+- To override this method inside your implementation class, you should have a method with same name i.e. `toString()` and same return type i.e. `String`.
 
 ## 2. Making Fighters not vulnerable by default
 
