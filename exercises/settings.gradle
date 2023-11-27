@@ -150,3 +150,8 @@ include 'practice:wordy'
 include 'practice:yacht'
 include 'practice:zebra-puzzle'
 include 'practice:zipper'
+include 'concept:arcade-high-score'
+findProject(':concept:arcade-high-score')?.name = 'arcade-high-score'
+include 'concept:arcade-high-score'
+findProject(':concept:arcade-high-score')?.name = 'arcade-high-score'
+

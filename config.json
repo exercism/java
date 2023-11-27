@@ -402,12 +402,14 @@
         "name": "Word Count",
         "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1",
         "practices": [
-          "strings"
+          "strings",
+          "maps"
         ],
         "prerequisites": [
           "for-loops",
           "arrays",
-          "classes"
+          "classes",
+          "maps"
         ],
         "difficulty": 5
       },
@@ -796,12 +798,14 @@
         "name": "Nucleotide Count",
         "uuid": "2d80fdfc-5bd7-4b67-9fbe-8ab820d89051",
         "practices": [
-          "strings"
+          "strings",
+          "maps"
         ],
         "prerequisites": [
           "if-else-statements",
           "for-loops",
-          "classes"
+          "classes",
+          "maps"
         ],
         "difficulty": 5
       },
@@ -953,10 +957,12 @@
         "practices": [
           "if-else-statements",
           "for-loops",
-          "enums"
+          "enums",
+          "maps"
         ],
         "prerequisites": [
-          "enums"
+          "enums",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -991,8 +997,12 @@
         "slug": "word-search",
         "name": "Word Search",
         "uuid": "b53bde52-cb5f-4d43-86ec-18aa509d62f9",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "maps"
+        ],
+        "prerequisites": [
+          "maps"
+        ],
         "difficulty": 7,
         "topics": [
           "games",
@@ -1471,8 +1481,12 @@
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "873c05de-b5f5-4c5b-97f0-d1ede8a82832",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "maps"
+        ],
+        "prerequisites": [
+          "maps"
+        ],
         "difficulty": 8,
         "topics": [
           "if-else-statements",
@@ -1640,8 +1654,12 @@
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "38a405e8-619d-400f-b53c-2f06461fdf9d",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "maps"
+        ],
+        "prerequisites": [
+          "maps"
+        ],
         "difficulty": 6,
         "topics": [
           "concurrency",
@@ -1929,13 +1947,16 @@
         "slug": "sgf-parsing",
         "name": "SGF Parsing",
         "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
-        "practices": [],
+        "practices": [
+          "maps"
+        ],
         "prerequisites": [
           "strings",
           "chars",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "for-loops",
+          "maps"
         ],
         "difficulty": 7
       },
