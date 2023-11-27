@@ -234,6 +234,18 @@
           "switch-statement",
           "constructors"
         ]
+      },
+      {
+        "slug": "tim-from-marketing",
+        "name": "Tim from Marketing",
+        "uuid": "28bd20c5-4fdd-4660-9225-54f24aae24e4",
+        "concepts": [
+          "nullability"
+        ],
+        "prerequisites": [
+          "if-else-statements",
+          "strings"
+        ]
       }
     ],
     "practice": [
@@ -256,7 +268,8 @@
           "if-else-statements"
         ],
         "prerequisites": [
-          "basics"
+          "strings",
+          "if-else-statements"
         ],
         "difficulty": 1
       },
@@ -268,8 +281,7 @@
           "for-loops"
         ],
         "prerequisites": [
-          "strings",
-          "chars"
+          "for-loops"
         ],
         "difficulty": 3
       },
@@ -281,7 +293,7 @@
           "numbers"
         ],
         "prerequisites": [
-          "basics"
+          "numbers"
         ],
         "difficulty": 3
       },
@@ -295,8 +307,9 @@
           "chars"
         ],
         "prerequisites": [
-          "strings",
-          "for-loops"
+          "arrays",
+          "switch-statement",
+          "chars"
         ],
         "difficulty": 3
       },
@@ -308,7 +321,7 @@
           "numbers"
         ],
         "prerequisites": [
-          "basics"
+          "numbers"
         ],
         "difficulty": 3
       },
@@ -322,8 +335,7 @@
         ],
         "prerequisites": [
           "enums",
-          "numbers",
-          "for-loops"
+          "lists"
         ],
         "difficulty": 3
       },
@@ -336,9 +348,8 @@
           "arrays"
         ],
         "prerequisites": [
-          "strings",
-          "numbers",
-          "for-loops"
+          "constructors",
+          "arrays"
         ],
         "difficulty": 4
       },
@@ -350,8 +361,7 @@
           "constructors"
         ],
         "prerequisites": [
-          "numbers",
-          "if-else-statements"
+          "constructors"
         ],
         "difficulty": 4
       },
@@ -363,7 +373,7 @@
           "chars"
         ],
         "prerequisites": [
-          "strings",
+          "chars",
           "if-else-statements",
           "for-loops"
         ],
@@ -377,9 +387,7 @@
           "lists"
         ],
         "prerequisites": [
-          "numbers",
-          "for-loops",
-          "classes"
+          "lists"
         ],
         "difficulty": 4
       },
@@ -388,12 +396,12 @@
         "name": "Flatten Array",
         "uuid": "a732a838-8170-458a-a85e-d6b4c46f97a1",
         "practices": [
-          "lists"
+          "lists",
+          "generic-types"
         ],
         "prerequisites": [
-          "if-else-statements",
-          "for-loops",
-          "classes"
+          "lists",
+          "generic-types"
         ],
         "difficulty": 5
       },
@@ -406,8 +414,7 @@
         ],
         "prerequisites": [
           "for-loops",
-          "arrays",
-          "classes"
+          "arrays"
         ],
         "difficulty": 5
       },
@@ -432,8 +439,7 @@
           "lists"
         ],
         "prerequisites": [
-          "if-else-statements",
-          "classes"
+          "lists"
         ],
         "difficulty": 6
       },
@@ -446,8 +452,7 @@
           "classes"
         ],
         "prerequisites": [
-          "numbers",
-          "classes"
+          "constructors"
         ],
         "difficulty": 6
       },
@@ -463,8 +468,7 @@
         "prerequisites": [
           "lists",
           "classes",
-          "generic-types",
-          "for-loops"
+          "generic-types"
         ],
         "difficulty": 6
       },
@@ -543,7 +547,7 @@
           "chars"
         ],
         "prerequisites": [
-          "basics"
+          "chars"
         ],
         "difficulty": 1
       },
@@ -556,7 +560,8 @@
           "constructors"
         ],
         "prerequisites": [
-          "numbers"
+          "if-else-statements",
+          "constructors"
         ],
         "difficulty": 2
       },
@@ -569,8 +574,8 @@
           "constructors"
         ],
         "prerequisites": [
-          "numbers",
-          "for-loops"
+          "arrays",
+          "constructors"
         ],
         "difficulty": 2
       },
@@ -583,7 +588,7 @@
         ],
         "prerequisites": [
           "if-else-statements",
-          "for-loops"
+          "numbers"
         ],
         "difficulty": 2
       },
@@ -595,7 +600,7 @@
           "arrays"
         ],
         "prerequisites": [
-          "basics"
+          "arrays"
         ],
         "difficulty": 2
       },
@@ -608,6 +613,7 @@
           "enums"
         ],
         "prerequisites": [
+          "arrays",
           "enums"
         ],
         "difficulty": 2
@@ -620,7 +626,7 @@
           "strings"
         ],
         "prerequisites": [
-          "basics"
+          "strings"
         ],
         "difficulty": 3
       },
@@ -632,8 +638,8 @@
           "arrays"
         ],
         "prerequisites": [
-          "strings",
-          "for-loops"
+          "arrays",
+          "strings"
         ],
         "difficulty": 3
       },
@@ -646,7 +652,7 @@
           "lists"
         ],
         "prerequisites": [
-          "strings"
+          "lists"
         ],
         "difficulty": 4
       },
@@ -684,8 +690,8 @@
           "if-else-statements"
         ],
         "prerequisites": [
-          "strings",
-          "classes"
+          "if-else-statements",
+          "strings"
         ],
         "difficulty": 5
       },
@@ -718,8 +724,7 @@
           "arrays"
         ],
         "prerequisites": [
-          "strings",
-          "classes"
+          "arrays"
         ],
         "difficulty": 6
       },
@@ -732,8 +737,8 @@
           "for-loops"
         ],
         "prerequisites": [
-          "arrays",
-          "classes"
+          "strings",
+          "for-loops"
         ],
         "difficulty": 6
       },
@@ -786,8 +791,7 @@
           "lists"
         ],
         "prerequisites": [
-          "if-else-statements",
-          "classes"
+          "lists"
         ],
         "difficulty": 5
       },
@@ -800,8 +804,7 @@
         ],
         "prerequisites": [
           "if-else-statements",
-          "for-loops",
-          "classes"
+          "for-loops"
         ],
         "difficulty": 5
       },
@@ -814,8 +817,7 @@
         ],
         "prerequisites": [
           "chars",
-          "if-else-statements",
-          "classes"
+          "if-else-statements"
         ],
         "difficulty": 5
       },
@@ -828,8 +830,8 @@
           "lists"
         ],
         "prerequisites": [
-          "strings",
-          "classes"
+          "lists",
+          "strings"
         ],
         "difficulty": 5
       },
@@ -838,11 +840,11 @@
         "name": "Roman Numerals",
         "uuid": "3e728cd4-5e5f-4c69-8a53-bc36d020fcdb",
         "practices": [
-          "arrays"
+          "numbers"
         ],
         "prerequisites": [
-          "strings",
-          "classes"
+          "numbers",
+          "strings"
         ],
         "difficulty": 6
       },
@@ -907,13 +909,13 @@
         "name": "Minesweeper",
         "uuid": "416a1489-12af-4593-8540-0f55285c96b4",
         "practices": [
-          "lists",
-          "constructors"
+          "constructors",
+          "lists"
         ],
         "prerequisites": [
-          "strings",
-          "for-loops",
-          "classes"
+          "constructors",
+          "lists",
+          "strings"
         ],
         "difficulty": 6
       },
@@ -2118,6 +2120,11 @@
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
       "name": "Lists"
+    },
+    {
+      "uuid": "0718bff1-25ad-42bb-860d-1b0834beb9fc",
+      "slug": "nullability",
+      "name": "Nullability"
     },
     {
       "uuid": "58529dab-0ef2-4943-ac12-a98ca79b922b",

@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "smcg468"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Badge.java"
+    ],
+    "test": [
+      "src/test/java/BadgeTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/Badge.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "csharp/tim-from-marketing"
+  ],
+  "blurb": "Learn about the null literal and nullable variables in java by printing name badges."
+}
