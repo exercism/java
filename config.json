@@ -1878,11 +1878,7 @@
         "prerequisites": [
           "numbers"
         ],
-        "difficulty": 2,
-        "topics": [
-          "integers",
-          "math"
-        ]
+        "difficulty": 2
       },
       {
         "slug": "rna-transcription",
@@ -1920,12 +1916,7 @@
         "prerequisites": [
           "chars"
         ],
-        "difficulty": 3,
-        "topics": [
-          "pattern_matching",
-          "regular_expressions",
-          "strings"
-        ]
+        "difficulty": 3
       },
       {
         "slug": "space-age",
