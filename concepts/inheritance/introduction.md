@@ -1,8 +1,9 @@
 # Introduction
 
-Inheritance is a core concept in OOP (Object Oriented Programming). It donates IS-A relationship.
-It literally means in programming as it means in english, inheriting features from parent(in programming features is normally functions
-and variables).
+## Inheritance
+
+Inheritance is a core concept in OOP (Object-Oriented Programming). It donates IS-A relationship.
+It literally means in programming as it means in english, inheriting features from parent(in programming features is normally functions and variables).
 
 Consider a class, `Animal` as shown,
 
@@ -11,7 +12,7 @@ Consider a class, `Animal` as shown,
 public class Animal {
 
     public void bark() {
-        System.out.println("This is a animal");
+        System.out.println("This is an animal");
     }
 
 }
@@ -36,7 +37,7 @@ Now whenever we do,
 
 ```java
 Animal animal = new Lion(); //creating instance of Animal, of type Lion
-animal.bark();
+        animal.bark();
 ```
 
 Note: Initialising the `Animal` class with `Lion`.
