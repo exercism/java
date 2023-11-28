@@ -246,6 +246,19 @@
           "if-else-statements",
           "strings"
         ]
+      },
+      {
+        "slug": "captains-log",
+        "name": "Captain's Log",
+        "uuid": "1ade8233-7a73-4fd9-afe2-f80d7cca14ab",
+        "concepts": [
+          "randomness"
+        ],
+        "prerequisites": [
+          "arrays",
+          "numbers",
+          "strings"
+        ]
       }
     ],
     "practice": [
@@ -423,11 +436,12 @@
         "name": "Robot Name",
         "uuid": "d7c2eed9-64c7-4c4a-b45d-c787d460337f",
         "practices": [
-          "strings"
+          "randomness"
         ],
         "prerequisites": [
           "constructors",
-          "classes"
+          "classes",
+          "randomness"
         ],
         "difficulty": 5
       },
@@ -571,11 +585,13 @@
         "uuid": "09bb515c-0270-4d34-8d56-89ee04588494",
         "practices": [
           "arrays",
-          "constructors"
+          "constructors",
+          "randomness"
         ],
         "prerequisites": [
           "arrays",
-          "constructors"
+          "constructors",
+          "randomness"
         ],
         "difficulty": 2
       },
@@ -1426,14 +1442,16 @@
         "uuid": "f654831f-c34b-44f5-9dd5-054efbb486f2",
         "practices": [
           "chars",
-          "for-loops"
+          "for-loops",
+          "randomness"
         ],
         "prerequisites": [
           "chars",
           "exceptions",
           "for-loops",
           "if-else-statements",
-          "numbers"
+          "numbers",
+          "randomness"
         ],
         "difficulty": 8
       },
@@ -2028,14 +2046,16 @@
         "name": "Mazy Mice",
         "uuid": "1bac7473-9ee8-4cfc-928b-77792102ffc1",
         "practices": [
+          "arrays",
           "chars",
-          "strings",
           "for-loops",
-          "arrays"
+          "randomness",
+          "strings"
         ],
         "prerequisites": [
-          "strings",
-          "for-loops"
+          "for-loops",
+          "randomness",
+          "strings"
         ],
         "difficulty": 8,
         "status": "beta"
@@ -2130,6 +2150,11 @@
       "uuid": "58529dab-0ef2-4943-ac12-a98ca79b922b",
       "slug": "numbers",
       "name": "Numbers"
+    },
+    {
+      "uuid": "07674a94-5f10-4b99-8f18-36c841e4aff8",
+      "slug": "randomness",
+      "name": "Randomness"
     },
     {
       "uuid": "8a468b14-724a-4036-8edb-d19a02809840",

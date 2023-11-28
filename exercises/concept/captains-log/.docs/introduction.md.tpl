@@ -1,0 +1,5 @@
+# Introduction
+
+## Randomness
+
+%{concept:randomness}
