@@ -11,7 +11,7 @@ Help Mary by creating random generators for data commonly appearing in the capta
 The starter implementation of this exercise takes a `java.util.Random` instance as constructor argument.
 This allows the exercise's tests to pass an instance with a predefined seed, which makes the test results predictable.
 
-Therefore, you are expected to use provided the `java.util.Random` instance in your implementation.
+Therefore, you are expected to use the provided `java.util.Random` instance in your implementation.
 ~~~~
 
 ## 1. Generate a random planet
