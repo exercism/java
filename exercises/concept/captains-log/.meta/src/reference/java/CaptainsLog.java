@@ -17,7 +17,7 @@ class CaptainsLog {
 
     String randomShipRegistryNumber() {
         var start = 1000;
-        var end = 9999;
+        var end = 10000;
         return String.format("NCC-%d", start + random.nextInt(end - start));
     }
 

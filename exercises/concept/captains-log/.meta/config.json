@@ -2,6 +2,9 @@
   "authors": [
     "sanderploegsma"
   ],
+  "contributors": [
+    "santialb"
+  ],
   "files": {
     "solution": [
       "src/main/java/CaptainsLog.java"
