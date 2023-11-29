@@ -45,9 +45,9 @@ public class CaptainsLogTest {
     @Tag("task:2")
     @DisplayName("Generating a random ship registry number")
     public void testRandomShipRegistryNumber() {
-        assertThat(new CaptainsLog(random1).randomShipRegistryNumber()).isEqualTo("NCC-8773");
-        assertThat(new CaptainsLog(random2).randomShipRegistryNumber()).isEqualTo("NCC-2473");
-        assertThat(new CaptainsLog(random3).randomShipRegistryNumber()).isEqualTo("NCC-9576");
+        assertThat(new CaptainsLog(random1).randomShipRegistryNumber()).isEqualTo("NCC-6258");
+        assertThat(new CaptainsLog(random2).randomShipRegistryNumber()).isEqualTo("NCC-1683");
+        assertThat(new CaptainsLog(random3).randomShipRegistryNumber()).isEqualTo("NCC-4922");
     }
 
     @Test

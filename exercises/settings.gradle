@@ -1,9 +1,9 @@
 rootProject.name = 'exercism-java'
 
-//concept exercises
+// concept exercises
 include 'concept:annalyns-infiltration'
 include 'concept:bird-watcher'
-include 'concept:blackjack'
+// include 'concept:blackjack' // deprecated
 include 'concept:booking-up-for-beauty'
 include 'concept:calculator-conundrum'
 include 'concept:captains-log'
@@ -22,7 +22,7 @@ include 'concept:tim-from-marketing'
 include 'concept:wizards-and-warriors'
 
 // practice exercises
-include 'practice:accumulate'
+// include 'practice:accumulate' // deprecated
 include 'practice:acronym'
 include 'practice:affine-cipher'
 include 'practice:all-your-base'
@@ -32,8 +32,8 @@ include 'practice:anagram'
 include 'practice:armstrong-numbers'
 include 'practice:atbash-cipher'
 include 'practice:bank-account'
-include 'practice:beer-song'
-include 'practice:binary'
+// include 'practice:beer-song' // deprecated
+// include 'practice:binary' // deprecated
 include 'practice:binary-search'
 include 'practice:binary-search-tree'
 include 'practice:bob'
@@ -51,7 +51,7 @@ include 'practice:custom-set'
 include 'practice:darts'
 include 'practice:diamond'
 include 'practice:difference-of-squares'
-include 'practice:diffie-hellman'
+// include 'practice:diffie-hellman' // deprecated
 include 'practice:dnd-character'
 include 'practice:dominoes'
 include 'practice:error-handling'
@@ -66,7 +66,7 @@ include 'practice:grains'
 include 'practice:grep'
 include 'practice:hamming'
 include 'practice:hangman'
-include 'practice:hexadecimal'
+// include 'practice:hexadecimal' // deprecated
 include 'practice:hello-world'
 include 'practice:high-scores'
 include 'practice:house'
@@ -91,7 +91,7 @@ include 'practice:minesweeper'
 include 'practice:nth-prime'
 include 'practice:nucleotide-count'
 include 'practice:ocr-numbers'
-include 'practice:octal'
+// include 'practice:octal' // deprecated
 include 'practice:palindrome-products'
 include 'practice:pangram'
 include 'practice:parallel-letter-frequency'
@@ -135,14 +135,14 @@ include 'practice:sgf-parsing'
 include 'practice:space-age'
 include 'practice:spiral-matrix'
 include 'practice:square-root'
-include 'practice:strain'
+// include 'practice:strain'  // deprecated
 include 'practice:sublist'
 include 'practice:sum-of-multiples'
 include 'practice:tournament'
 include 'practice:transpose'
 include 'practice:tree-building'
 include 'practice:triangle'
-include 'practice:trinary'
+// include 'practice:trinary' // deprecated
 include 'practice:twelve-days'
 include 'practice:two-bucket'
 include 'practice:two-fer'
