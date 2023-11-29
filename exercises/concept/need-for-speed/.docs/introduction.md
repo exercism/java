@@ -2,7 +2,9 @@
 
 ## Constructors
 
-Creating an instance of a _class_ is done by calling its _constructor_ through the `new` operator. A constructor is a special type of method whose goal is to initialize a newly created instance. Constructors look like regular methods, but without a return type and with a name that matches the class's name.
+Creating an instance of a _class_ is done by calling its _constructor_ through the `new` operator.
+A constructor is a special type of method whose goal is to initialize a newly created instance.
+Constructors look like regular methods, but without a return type and with a name that matches the class's name.
 
 ```java
 class Library {
@@ -18,7 +20,9 @@ class Library {
 var library = new Library();
 ```
 
-Like regular methods, constructors can have parameters. Constructor parameters are usually stored as (private) fields to be accessed later, or else used in some one-off calculation. Arguments can be passed to constructors just like passing arguments to regular methods.
+Like regular methods, constructors can have parameters.
+Constructor parameters are usually stored as (private) fields to be accessed later, or else used in some one-off calculation.
+Arguments can be passed to constructors just like passing arguments to regular methods.
 
 ```java
 class Building {
