@@ -315,9 +315,10 @@
         "name": "Gigasecond",
         "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553",
         "practices": [
-          "numbers"
+          "datetime"
         ],
         "prerequisites": [
+          "datetime",
           "numbers"
         ],
         "difficulty": 3
@@ -897,10 +898,11 @@
         "name": "Meetup",
         "uuid": "602511d5-7e89-4def-b072-4dd311816810",
         "practices": [
-          "enums",
-          "for-loops"
+          "datetime",
+          "enums"
         ],
         "prerequisites": [
+          "datetime",
           "enums"
         ],
         "difficulty": 7
@@ -2007,10 +2009,12 @@
         "name": "Ledger",
         "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
         "practices": [
+          "datetime",
           "strings"
         ],
         "prerequisites": [
           "classes",
+          "datetime",
           "strings"
         ],
         "difficulty": 5
