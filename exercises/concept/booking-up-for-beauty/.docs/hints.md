@@ -7,7 +7,7 @@
 
 ## 2. Check if an appointment has already passed
 
-- `LocalDateTime` instances have [methods][localdatetime-comparing] to compare them to other `LocalDateTime`s.
+- `LocalDateTime` instances have [methods][localdatetime-methods] to compare them to other `LocalDateTime`s.
 - There is a [method][localdatetime-methods] to retrieve the current date and time.
 
 ## 3. Check if appointment is in the afternoon
@@ -29,4 +29,3 @@
 [localdatetime-parse]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html#parse-java.lang.CharSequence-java.time.format.DateTimeFormatter-
 [datetimeformatter-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 [datetimeformatter-ofpattern-with-locale]: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ofPattern-java.lang.String-java.util.Locale-
-
