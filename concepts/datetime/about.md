@@ -8,15 +8,6 @@ The [`java.time.LocalDate`][localdate-docs] class represents a date without a ti
 
 ```java
 LocalDate date = LocalDate.of(2007, 12, 3);
-
-date.getYear();
-// => 2007
-
-date.getMonthValue();
-// => 12
-
-date.getDayOfMonth();
-// => 3
 ```
 
 Dates can be compared to other dates:
@@ -30,6 +21,21 @@ date1.isBefore(date2);
 
 date1.isAfter(date2);
 // => false
+```
+
+A `LocalDate` instance has getters to retrieve time portions from it:
+
+```java
+LocalDate date = LocalDate.of(2007, 12, 3);
+
+date.getYear();
+// => 2007
+
+date.getMonthValue();
+// => 12
+
+date.getDayOfMonth();
+// => 3
 ```
 
 A `LocalDate` instance has methods to add time units to it.

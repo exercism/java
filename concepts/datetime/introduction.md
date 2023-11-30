@@ -8,15 +8,6 @@ The `java.time.LocalDate` class represents a date without a time-zone in the [IS
 
 ```java
 LocalDate date = LocalDate.of(2007, 12, 3);
-
-date.getYear();
-// => 2007
-
-date.getMonthValue();
-// => 12
-
-date.getDayOfMonth();
-// => 3
 ```
 
 Dates can be compared to other dates:
@@ -32,7 +23,16 @@ date1.isAfter(date2);
 // => false
 ```
 
-A `LocalDate` instance has methods to add time units to it.
+A `LocalDate` instance has getters to retrieve time portions from it:
+
+```java
+LocalDate date = LocalDate.of(2007, 12, 3);
+
+date.getDayOfMonth();
+// => 3
+```
+
+A `LocalDate` instance has methods to add time units to it:
 
 ```exercism/note
 These methods return a _new_ `LocalDate` instance and do not update the existing instance, as the `LocalDate` class is immutable.
@@ -43,12 +43,6 @@ LocalDate date = LocalDate.of(2007, 12, 3);
 
 date.addDays(3);
 // => 2007-12-06
-
-date.addMonths(1);
-// => 2008-01-03
-
-date.addYears(1);
-// => 2008-12-03
 ```
 
 ## `LocalDateTime`
@@ -57,29 +51,9 @@ The `java.time.LocalDateTime` class represents a date-time without a time-zone i
 
 ```java
 LocalDateTime datetime = LocalDateTime.of(2007, 12, 3, 10, 15, 30);
-
-datetime.getYear();
-// => 2007
-
-datetime.getMonthValue();
-// => 12
-
-datetime.getDayOfMonth();
-// => 3
-
-datetime.getHours();
-// => 10
-
-datetime.getMinutes();
-// => 15
-
-datetime.getSeconds();
-// => 30
 ```
 
-Like the `LocalDate` class, a `LocalDateTime` instance has the same methods to compare to other `LocalDateTime`s and to add time units to it.
-
-It is also possible to convert a `LocalDate` instance into a `LocalDateTime`:
+You can convert a `LocalDate` instance into a `LocalDateTime`:
 
 ```java
 LocalDate date = LocalDate.of(2007, 12, 3);
