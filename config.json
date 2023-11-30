@@ -259,6 +259,18 @@
           "numbers",
           "strings"
         ]
+      },
+      {
+        "slug": "booking-up-for-beauty",
+        "name": "Booking Up For Beauty",
+        "uuid": "6a514e9a-ed92-4e01-8af7-579d659415a4",
+        "concepts": [
+          "datetime"
+        ],
+        "prerequisites": [
+          "numbers",
+          "strings"
+        ]
       }
     ],
     "practice": [
@@ -303,9 +315,10 @@
         "name": "Gigasecond",
         "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553",
         "practices": [
-          "numbers"
+          "datetime"
         ],
         "prerequisites": [
+          "datetime",
           "numbers"
         ],
         "difficulty": 3
@@ -885,10 +898,11 @@
         "name": "Meetup",
         "uuid": "602511d5-7e89-4def-b072-4dd311816810",
         "practices": [
-          "enums",
-          "for-loops"
+          "datetime",
+          "enums"
         ],
         "prerequisites": [
+          "datetime",
           "enums"
         ],
         "difficulty": 7
@@ -1995,10 +2009,12 @@
         "name": "Ledger",
         "uuid": "6597548e-176d-49c6-be33-789f4c43867a",
         "practices": [
+          "datetime",
           "strings"
         ],
         "prerequisites": [
           "classes",
+          "datetime",
           "strings"
         ],
         "difficulty": 5
@@ -2100,6 +2116,11 @@
       "uuid": "e552c05c-6360-4b2f-a438-7ec7e855c0f5",
       "slug": "constructors",
       "name": "Constructors"
+    },
+    {
+      "uuid": "16e1b053-f99d-410e-8b3c-054e764da953",
+      "slug": "datetime",
+      "name": "Date-Time"
     },
     {
       "uuid": "cb753863-b7c1-4ff6-adeb-ae9a1f39deca",
