@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ArcadeHighScore {
 
@@ -28,7 +29,7 @@ public class ArcadeHighScore {
         return highScores;
     }
 
-    Map<String, Integer> listOfPlayers (HashMap<String, Integer> highScores) {
-        return highScores;
+    Set<String> listOfPlayers () {
+        return highScores.keySet();
     }
 }

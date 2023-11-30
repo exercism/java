@@ -5,112 +5,79 @@ In this exercise, you're implementing a way to keep track of the high scores for
 ## 1. Define a new high score map
 
 To make a new high score map, create an empty hashmap object with keys of type String and values of type Integer.
+Create this map outside of the functions scopes so we can reference it within each function.
 
 ```java
-Map<String, Integer> highScores = new HashMap<>();
+System.out.println(ArcadeHighScores.highScores);
+// => {} 
 ```
 
 ## 2. Add players to the high score map
 
-To add a player to the high score map, define `highScores.addPlayer()`, which is a function which takes 2 arguments:
+To add a player to the high score map, define `ArcadeHighScore.addPlayer()`, which is a function which takes two arguments:
 
 - The first argument is the players name as a String.
 - The second argument is the players score as an Integer.
 
 ````java
-Map<String, Integer> highScores = new HashMap<>();
+ArcadeHighScore.addPlayer("Dave Thomas", 0);
 
-// {Dave Thomas=78}
-highScores.put("Dave Thomas", 0);
-
-// {José Valim=81}
-highScores.put("José Valim", 0);
+// => {Dave Thomas=0}
 ````
 
 ## 3. Remove players from the score map
 
-To remove a player from the high score map, define the `highScores.removePlayer()` method, which takes 1 argument:
+To remove a player from the high score map, define the `ArcadeHighScore.removePlayer()` method, which takes one argument:
 
 - The argument is the key of the item, in this case the name of the player.
 
 ````java
-Map<String, Integer> highScores = new HashMap<>();
-// Adding the player to the highScores HashMap
-highScores.put("Dave Thomas", 0);
+ArcadeHighScore.removePlayer("Dave Thomas");
 
-//Removing the player
-highScores.remove("Dave Thomas");
+// => {}
 ````
 
 ## 4. Reset a player's score
 
-To reset a player's score, use the `highScores.resetScore()` method, which takes 2 arguments:
+To reset a player's score, define the `ArcadeHighScore.resetScore()` method, which takes 2 arguments:
 
 - The first argument is the players name.
 - The second argument is the new score for the player, in this case 0.
 
-The function should also work if the player doesn't have a score.
+The function should also work if the player isn't currently present in the map.
 
 ```java
-Map<String, Integer> highScores = new HashMap<>();
-// Resetting Daves score to 0
-highScores.put("Dave Thomas", 0);
+ArcadeHighScore.resetScore("Dave Thomas", 0);
+// => (Dave Thomas=0);
 ```
 
 ## 5. Update a player's score
 
-To update a player's score by adding to the previous score, define `highScore.update_score/3`, which takes 3 arguments:
+To update a player's score by adding to the previous score, define `ArcadeHighScore.updateScore()`, which takes two arguments:
 
-- The first argument is the map of scores.
-- The second argument is the name of the player as a string, whose score you wish to update.
-- The third argument is the score that you wish to **add** to the stored high score.
+- The first argument is the name of the player whose score you wish to update.
+- The second argument is the score that you wish to **add** to their current high score.
 
 The function should also work if the player doesn't have a previous score - assume the previous score is 0.
 
 ```java
-Map<String, Integer> highScores = new HashMap<>();
-// Add players score to the highScores map
-highScores.put("Dave Thomas", 19);
+// Adding a players score to update.
+ArcadeHighScore.addPlayer("Lional Messi", 48);
+// => {Lionel Messi=18}
 
-// Save t
-Integer oldScore = highScores.get("Dave Thomas");
-
-highScores.put("Dave Thomas", oldScore + score);
-
-
+ArcadeHighScore.updateScore("Lionel Messi", 40);
+// => {Lionel Messi=88}
+        
+// Updating a players score who doesn't have a previous score
+ArcadeHighScore.updateScore("Dave Thomas", 57);
+// => {Lionel Messi=88, Dave Thomas=57}
 ```
 
 ## 6. Get a list of players
 
-To get a list of players, reference the `highScores` object by printing it:
+To get a list of players, define the `ArcadeHighScore.listOfPlayers()`, which takes no arguments:
 
 ````java
-Map<String, Integer> highScores = new HashMap<>();
-
-// Key: "Dave Thomas", Value: 78
-highScores.put("Dave Thomas", 78);
-
-// Key: "José Valim", Value: 81
-highScores.put("José Valim", 81);
-
-// Print the highScore HashMap
-// Returns {Dave Thomas=78, José Valim=81}
-System.out.println(highScores);
-````
-
-Or we can simply return highScores:
-
-````java
-Map<String, Integer> highScores = new HashMap<>();
-
-// Key: "Dave Thomas", Value: 78
-highScores.put("Dave Thomas", 78);
-
-// Key: "José Valim", Value: 81
-highScores.put("José Valim", 81);
-
-Map<String, Integer> listOfPlayers(){
-     // Returns {Dave Thomas=78, José Valim=81}
-        return highscores;
-}
+ArcadeHighScore.listOfPlayers();
+// => {Lionel Messi, Dave Thomas}
 ````

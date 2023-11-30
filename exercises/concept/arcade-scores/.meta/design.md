@@ -10,10 +10,10 @@
 - Know how to update values in a map.
 - Know how to remove items from a map.
 - Know how to retrieve all items in a map.
-- Know the difference in `Map` and `SortedMap` interfaces.
 - Know what a `HashMap` is.
 - Know what a `LinkedHashMap` is.
 - Know what a `TreeMap` is.
+- Know the main differences in `HashMap`, `LinkedHashMap` and `TreeMap`.
 
 ## Out of scope
 
@@ -23,6 +23,7 @@
 - `EnumMap`
 - `ConcurrentHashMap`
 - `ConcurrentSkipListMap`
+- `SortedMap`
 
 ## Concepts
 
@@ -30,5 +31,5 @@
 
 ## Prerequisites
 
-- `String`: strings will be the key in our map.
+- `String`: Strings will be the key in our map.
 - `Integer`: Integers will be the value in our map.

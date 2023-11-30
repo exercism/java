@@ -1,5 +1,5 @@
 {
-  "blurb": "Maps are a data structure that holds key-value pairs. Keys and values can be of any data type, and the keys must be unique.",
+  "blurb": "Maps are a data structure that holds key-value pairs. Keys and values can be of any reference data type, and the keys must be unique.",
   "authors": [
     "smcg468"
   ],
