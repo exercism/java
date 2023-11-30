@@ -39,7 +39,8 @@ All exceptions in Java that inherit from `RuntimeException` are considered unche
 _Errors_ are exceptional conditions that are external to an application.
 An example of an error is the `OutOfMemoryError` which occurs when an application is trying to use more memory than is available on the system.
 
-Like unchecked exceptions, errors are not checked at compile-time. They are not usually thrown from application code.
+Like unchecked exceptions, errors are not checked at compile-time.
+They are not usually thrown from application code.
 
 All exceptions in Java that inherit from `Error` are considered errors.
 

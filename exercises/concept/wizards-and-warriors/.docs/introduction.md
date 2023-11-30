@@ -2,8 +2,9 @@
 
 ## Inheritance
 
-Inheritance is a core concept in OOP (Object-Oriented Programming). It donates IS-A relationship.
-It literally means in programming as it means in english, inheriting features from parent(in programming features is normally functions and variables).
+Inheritance is a core concept in OOP (Object-Oriented Programming).
+It represents an IS-A relationship.
+It literally means in programming as it means in english, inheriting features from parent (in programming features is normally functions and variables).
 
 Consider a class, `Animal` as shown,
 
@@ -47,7 +48,7 @@ The output will look like
 Lion here!!
 ```
 
-According to OOP, there are many types of inheritance, but Java supports only some of them(Multi-level and Hierarchical).
+According to OOP, there are many types of inheritance, but Java supports only some of them (Multi-level and Hierarchical).
 To read more about it, please read [this][java-inheritance].
 
 [java-inheritance]: https://www.javatpoint.com/inheritance-in-java#:~:text=On%20the%20basis%20of%20class,will%20learn%20about%20interfaces%20later.

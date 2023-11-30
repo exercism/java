@@ -1,14 +1,17 @@
 # About
 
-The key thing to remember about Java strings is that they are immutable objects representing text as a sequence of Unicode characters (letters, digits, punctuation, etc.). Double quotes are used to define a `String` instance:
+The key thing to remember about Java strings is that they are immutable objects representing text as a sequence of Unicode characters (letters, digits, punctuation, etc.).
+Double quotes are used to define a `String` instance:
 
 ```java
 String fruit = "Apple";
 ```
 
-Manipulating a string can be done using method of class [`String`][string-class]. As string values can never change after having been defined, all string manipulation methods will return a new string.
+Manipulating a string can be done using method of class [`String`][string-class].
+As string values can never change after having been defined, all string manipulation methods will return a new string.
 
-A string is delimited by double quote (`"`) characters. Some special characters need escaping using the backslash (`\`) character.
+A string is delimited by double quote (`"`) characters.
+Some special characters need escaping using the backslash (`\`) character.
 Characters to be escaped in Java:
 
 - `"`
@@ -19,7 +22,8 @@ String escaped = "c:\\test.txt";
 // => c:\test.txt
 ```
 
-Finally, there are many ways to concatenate a string. The simplest one is the `+` operator
+Finally, there are many ways to concatenate a string.
+The simplest one is the `+` operator:
 
 ```java
 String name = "Jane";
