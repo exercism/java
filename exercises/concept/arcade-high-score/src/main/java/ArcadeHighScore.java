@@ -19,7 +19,7 @@ public class ArcadeHighScore {
     }
 
     Map<String, Integer> resetScore (String name) {
-        throw new UnsupportedOperationException("Please implement the ArcadeHighScore.resetScore(name, score) method");
+        throw new UnsupportedOperationException("Please implement the ArcadeHighScore.resetScore(name) method");
     }
 
     Map<String, Integer> updateScore (String name, Integer score) {

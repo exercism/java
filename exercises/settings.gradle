@@ -17,7 +17,7 @@ include 'concept:football-match-reports'
 include 'concept:wizards-and-warriors'
 include 'concept:calculator-conundrum'
 include 'concept:logs-logs-logs'
-include 'concept:arcade-scores'
+include 'concept:arcade-high-score'
 
 // practice exercises
 include 'practice:accumulate'

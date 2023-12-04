@@ -14,7 +14,7 @@ public class ArcadeHighScoreTest {
     @Tag("task:1")
     @DisplayName("Define a map to store the high scores")
     public void defineMap() {
-        assertNotNull(arcadeHighScore.highScores);
+        assertNotNull(arcadeHighScore.defineMap());
     }
 
     @Test
@@ -85,6 +85,6 @@ public class ArcadeHighScoreTest {
         arcadeHighScore.addPlayer(name, score);
         arcadeHighScore.addPlayer(secondName, secondScore);
 
-        assertThat(arcadeHighScore.highScores).containsEntry(name, score).containsEntry(secondName, secondScore);
+        assertThat(arcadeHighScore.listOfPlayers()).contains(name).contains(secondName);
     }
 }

@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "smcg468"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ArcadeHighScore.java"
+    ],
+    "test": [
+      "src/test/java/ArcadeHighScoreTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/ArcadeHighScore.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "elixir/high-score"
+  ],
+  "blurb": "Maps are a data structure that holds key-value pairs. Keys and values can be of any reference data type, and the keys must be unique."
+}
