@@ -31,5 +31,5 @@
 
 ## Prerequisites
 
-- `String`: Strings will be the key in our map.
-- `Integer`: Integers will be the value in our map.
+- `strings`: know how to use string formatting.
+- `numbers`: know how to apply basic mathematical operators.
