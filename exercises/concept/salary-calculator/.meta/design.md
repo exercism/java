@@ -2,7 +2,7 @@
 
 ## Learning objectives
 
-- Know how to use ternary exepressions - using the `?:` operator.
+- Know how to use ternary expressions - using the `?:` operator.
 
 ## Out of scope
 

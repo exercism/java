@@ -1,6 +1,5 @@
 # `IntStream` with `filter()` and `count()`
 
-
 ```java
 import java.util.stream.IntStream;
 
@@ -38,7 +37,7 @@ The `getHammingDistance()` method returns the difference variable, which is set 
 
 Note that the `count()` method returns a `long` value.
 In this approach, the difference variable was defined as `long`, and the return type of the `getHammingDistance()` method was changed
-from `int` to `long`. 
+from `int` to `long`.
 This is to prevent an `incompatible types: possible lossy conversion from long to int` compilation error.
 The tests accept that, but another approach could keep the `getHammingDistance()` return value as `int` by explicitly casting the value returned from `count()`
 to an `int`, like so:

@@ -51,7 +51,6 @@ For the position furthest to the right of a string whose length is `10`, the dig
 Each mapped value is passed into the [`sum()`][sum] method to be added up.
 The function returns whether the `sum()` is evenly divisible by `11` or not.
 
-[map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#map-java.util.function.IntUnaryOperator-
 [sum]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#sum--
 [replace]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replace(java.lang.CharSequence,%20java.lang.CharSequence)
 [pattern]: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html

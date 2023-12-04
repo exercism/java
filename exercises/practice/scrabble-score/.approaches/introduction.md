@@ -4,7 +4,7 @@ There are various idiomatiuc ways to solve Scrabble Score.
 The approaches could be to use a series of `if` statements, or a single `switch` statment.
 Another approach could be to look up the score in a `HashMap` from inside the `reduce()` method.
 
-# General guidance
+## General guidance
 
 Regardless of the approach used, one thing to look out for is to whether to calculate the score
 in the constructor (or a method called by the constructor) or in the `getScore()` method.

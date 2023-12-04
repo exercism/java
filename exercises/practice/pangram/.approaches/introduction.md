@@ -9,7 +9,7 @@ Another approach is to use [`containsAll()`][containsall].
 - One way to look the problem can be "Does the input string have all of the letters in the alphabet?"
 - Another way to look at the problem is "Are all of the letters in the alphabet in the input string?"
 
-# Approach: `filter()` and `distinct()` with `count()`
+## Approach: `filter()` and `distinct()` with `count()`
 
 ```java
 public class PangramChecker {
@@ -47,21 +47,10 @@ For more information, check the [`containsAll()` approach][approach-containsall]
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
 the choice between the various approaches can be made by perceived readability.
 
-[chars]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#chars()
-[intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
-[aslist]: https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#asList-T...-
-[tolowercase-codepoint]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-int-
-[tolowercase-char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-
 [distinct]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#distinct--
 [count]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#count--
 [containsall]: https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#containsAll-java.util.Collection-
-[char]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
 [approach-filter-distinct-count]: https://exercism.org/tracks/java/exercises/pangram/approaches/filter-distinct-count
 [approach-containsall]: https://exercism.org/tracks/java/exercises/pangram/approaches/containsall
 [jmh]: https://github.com/openjdk/jmh
-[private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
-[final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
-[static]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/static
-[short-circuiting]: https://www.geeksforgeeks.org/short-circuit-logical-operators-in-java-with-examples/
-[list]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html

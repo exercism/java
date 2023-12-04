@@ -90,7 +90,6 @@ Any higher limit would result in factors whose combined squared values would exc
 The starting value is set to be the square root of the desired sum, since any valid factor will be no less than the square root of the desired sum.
 Constraining the starting and limit values instead of using `2` through the desired sum is a way of minimizing unneccesary calculations.
 
-
 The first [`for` loop][for-loop] starts at the starting value for `a` and keeps looping while `a` is less than or equal to the `limit`.
 The nested `for` loop starts at the value of `a` for `b` and keeps looping while `b` is less than or equal to the `limit`.
 The factor for `c` is calculated from the square root of the `a` squared plus `b` squared.

@@ -34,7 +34,7 @@ and `IntStream.rangeClosed(1, 10)` iterates from `1` through `10`.
 In `computeSquareOfSumTo`, the numbers are added with the [`sum()`][sum] method.
 The sum of the numbers is then multiplied by itself to get the square of the summed numbers.
 Note it avoids using [`Math.pow()`][pow] here,
-since multiplying a value by itself is usually more efficient than type-casting from `int `to `double` back to `int`.
+since multiplying a value by itself is usually more efficient than type-casting from `int`to `double` back to `int`.
 
 In `computeSumOfSquaresTo`, each number is squared by multiplying it by itself inside the [`map()`][map] method.
 Again, the number is multiplied by itself instead of using `pow()` and converting the `double` result back into an `int`.
@@ -42,7 +42,6 @@ All of the squared numbers are added using the [`sum()`][sum] method.
 
 [rangeclosed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#rangeClosed-int-int-
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
-[range]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#range-int-int-
 [sum]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#sum--
 [pow]: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#pow-double-double-
 [map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#map-java.util.function.IntUnaryOperator-

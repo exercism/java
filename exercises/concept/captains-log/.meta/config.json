@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "sanderploegsma"
+  ],
+  "contributors": [
+    "santialb"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/CaptainsLog.java"
+    ],
+    "test": [
+      "src/test/java/CaptainsLogTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/CaptainsLog.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "elixir/captains-log"
+  ],
+  "blurb": "Learn about randomness by helping Mary generate stardates and starship registry numbers for her Star Trek themed pen-and-paper role playing sessions."
+}

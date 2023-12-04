@@ -2,19 +2,19 @@
 
 One of the key aspects of working with numbers in Java is the distinction between integers (numbers with no digits after the decimal separator) and floating-point numbers (numbers with zero or more digits after the decimal separator).
 
-Java has other [datatypes][numeric-datatypes] apart from `int` and `double`
+Java has other [datatypes][numeric-datatypes] apart from `int` and `double`:
 
 ```java
-//8-Bit Integer
+// 8-Bit Integer
 byte   a = 127;
 
-//16-Bit Integer
+// 16-Bit Integer
 short  b = 262143;
 
-//64-Bit Integer
+// 64-Bit Integer
 long   d = 18446744073709551999L;
 
-//32-bit Single-Precision Floating-Point
+// 32-bit Single-Precision Floating-Point
 float  e = 5409.29f;
 ```
 
@@ -28,7 +28,8 @@ double largeDouble = 9_876_543.21;
 // => 9876543.21
 ```
 
-Arithmetic is done using the standard [arithmetic operators][arithmetic-operators] (`+`, `-`, `*`, etc.). Numbers can be compared using the standard [comparison operators][comparison-operators] (`<`, `>=`, etc.) along with the equality operator (`==`) and inequality operator (`!=`).
+Arithmetic is done using the standard [arithmetic operators][arithmetic-operators] (`+`, `-`, `*`, etc.).
+Numbers can be compared using the standard [comparison operators][comparison-operators] (`<`, `>=`, etc.) along with the equality operator (`==`) and inequality operator (`!=`).
 
 ```java
 5 * 6
@@ -49,7 +50,8 @@ When converting between numeric types, there are two types of numeric conversion
 1. Implicit conversions: no data will be lost and no additional syntax is required.
 2. Explicit conversions: data could be lost and additional syntax in the form of a _cast_ is required.
 
-As an `int` has less precision than a `double`, converting from an `int` to a `double` is safe and is thus an [implicit conversion][type-casting]. However, converting from a `double` to an `int` could mean losing data, so that requires an [explicit conversion][type-casting].
+As an `int` has less precision than a `double`, converting from an `int` to a `double` is safe and is thus an [implicit conversion][type-casting].
+However, converting from a `double` to an `int` could mean losing data, so that requires an [explicit conversion][type-casting].
 
 ```java
 int i = 9;

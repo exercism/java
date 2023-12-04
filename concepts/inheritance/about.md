@@ -9,14 +9,13 @@ A class can extend another class using `extends` keyword and can inherit from an
 
 ## Access Modifiers
 
-The access modifiers define rules for the member variables and methods of a class about their access from other classes (or anywhere in
-the code).
+The access modifiers define rules for the member variables and methods of a class about their access from other classes (or anywhere in the code).
 
-There are four  access modifiers:
+There are four access modifiers:
 
-- private
-- public
-- protected
+- `private`
+- `public`
+- `protected`
 - default (No keyword required)
 
 You can read more about them [here][access-modifiers]
@@ -25,7 +24,7 @@ You can read more about them [here][access-modifiers]
 
 These concepts are very similar and are often confused.
 
-- Inheritance means that the child has IS-A relationship with the parent class.
+- Inheritance means that the child has an IS-A relationship with the parent class.
 
 ```java
 interface Animal() {

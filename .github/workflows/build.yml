@@ -1,4 +1,4 @@
-name: Gradle
+name: Build
 
 on:
   pull_request:
@@ -13,25 +13,14 @@ defaults:
 
 jobs:
   build:
+    name: Check if tests compile cleanly with starter sources
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Set up JDK 1.17
-        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0
+        uses: actions/setup-java@387ac29b308b003ca37ba93a6cab5eb57c8f5f93
         with:
           java-version: 17
           distribution: "temurin"
       - name: Check if tests compile cleanly with starter sources
         run: ./gradlew compileStarterTestJava --continue
-
-  lint:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-      - name: Set up JDK 1.17
-        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0
-        with:
-          java-version: 17
-          distribution: "temurin"
-      - name: Run checkstyle
-        run: ./gradlew check --exclude-task test --continue

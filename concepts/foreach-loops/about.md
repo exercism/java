@@ -29,7 +29,7 @@ for(char vowel: vowels) {
 
 which outputs:
 
-```
+```text
 a
 e
 i

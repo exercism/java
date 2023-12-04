@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/util/Random.html",
+    "description": "java.util.Random API documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--",
+    "description": "Math.random() documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html",
+    "description": "java.security.SecureRandom API documentation"
+  }
+]

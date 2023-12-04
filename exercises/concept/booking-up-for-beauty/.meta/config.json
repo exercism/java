@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "sanderploegsma"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/AppointmentScheduler.java"
+    ],
+    "test": [
+      "src/test/java/AppointmentSchedulerTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/AppointmentScheduler.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "csharp/booking-up-for-beauty"
+  ],
+  "blurb": "Learn about the LocalDate and LocalDateTime classes by working on an appointment scheduler for a beauty salon."
+}

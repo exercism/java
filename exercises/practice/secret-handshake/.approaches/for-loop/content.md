@@ -65,5 +65,4 @@ After the `for` loop is done, the `List` is returned from `calculateHandshake()`
 [final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
 [list]: https://docs.oracle.com/javase/8/docs/api/java/util/List.html
 [and]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
-[for-loop]: https://www.geeksforgeeks.org/java-for-loop-with-examples/
 [left-shift]: https://www.geeksforgeeks.org/left-shift-operator-in-java/

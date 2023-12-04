@@ -60,10 +60,7 @@ there is more likelihood that the throw will be outside of the dart board
 The combination of meaningful names for each radius of the rings and the meaningful name for the `DoublePredicate`
 result in statements that read much like a natural sentence.
 
-[magic-numbers]: https://en.wikipedia.org/wiki/Magic_number_(programming)
 [private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
 [final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
 [static]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/static
-[doublepredicate]: https://docs.oracle.com/javase/9/docs/api/java/util/function/DoublePredicate.html
 [lambda]: https://www.geeksforgeeks.org/lambda-expressions-java-8/
-[capture]: https://www.geeksforgeeks.org/java-lambda-expression-variable-capturing-with-examples/

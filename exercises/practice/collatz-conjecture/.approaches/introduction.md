@@ -55,8 +55,6 @@ For more information, check the [`IntStream.iterate()` approach][approach-intstr
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
 the choice between the `while` loop and `IntStream.iterate()` can be made by perceived readability.
 
-[intstream-iterate]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/IntStream.html#iterate(int,java.util.function.IntPredicate,java.util.function.IntUnaryOperator)
-[count]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/IntStream.html#count()
 [while-loop]: https://www.geeksforgeeks.org/java-while-loop-with-examples/
 [approach-while-loop]: https://exercism.org/tracks/java/exercises/collatz-conjecture/approaches/while-loop
 [approach-intstream-iterate]: https://exercism.org/tracks/java/exercises/collatz-conjecture/approaches/intstream-iterate

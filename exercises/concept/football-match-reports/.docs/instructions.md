@@ -1,6 +1,7 @@
 # Instructions
 
-You are developing a system to help the staff of a football/soccer club's web site report on matches. Data is received from a variety of sources and piped into a single stream after being cleaned up.
+You are developing a system to help the staff of a football/soccer club's web site report on matches.
+Data is received from a variety of sources and piped into a single stream after being cleaned up.
 
 ## 1. Output descriptions of the players based on their shirt number
 
@@ -8,7 +9,7 @@ The team only ever plays a 4-3-3 formation and has never agreed with the 1965 ch
 
 The player descriptions are as follows:
 
-```
+```text
 1 -> "goalie"
 2 -> "left back"
 3 & 4 "center back"

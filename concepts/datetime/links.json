@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html",
+    "description": "LocalDate documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html",
+    "description": "LocalDateTime documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html",
+    "description": "DateTimeFormatter documentation"
+  }
+]

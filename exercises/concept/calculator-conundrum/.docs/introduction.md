@@ -39,7 +39,8 @@ All exceptions in Java that inherit from `RuntimeException` are considered unche
 _Errors_ are exceptional conditions that are external to an application.
 An example of an error is the `OutOfMemoryError` which occurs when an application is trying to use more memory than is available on the system.
 
-Like unchecked exceptions, errors are not checked at compile-time. They are not usually thrown from application code.
+Like unchecked exceptions, errors are not checked at compile-time.
+They are not usually thrown from application code.
 
 All exceptions in Java that inherit from `Error` are considered errors.
 
@@ -114,7 +115,7 @@ public class ATM {
 
 In this example, when no exception is thrown, the following is printed:
 
-```
+```text
 Withdrawing 10.0
 Withdrawal succeeded
 Current balance: 5.0
@@ -122,7 +123,7 @@ Current balance: 5.0
 
 However, should the `bankAccount.withdraw(amount)` statement throw an `InsufficientBalanceException`, the following is printed:
 
-```
+```text
 Withdrawing 10.0
 Withdrawal failed: insufficient balance
 Current balance: 5.0
@@ -130,7 +131,7 @@ Current balance: 5.0
 
 Or, in case an unchecked exception is thrown by the `bankAccount.withdraw(amount)`, the following is printed:
 
-```
+```text
 Withdrawing -10.0
 Withdrawal failed: Cannot withdraw a negative amount
 Current balance: 5.0

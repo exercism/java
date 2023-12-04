@@ -1,9 +1,8 @@
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.*;
-import java.util.stream.Collectors;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 class ListOps {
 
@@ -21,7 +20,13 @@ class ListOps {
     }
 
     static <T> List<T> filter(final List<T> list, Predicate<T> predicate) {
-        return list.stream().filter(predicate).collect(Collectors.toList());
+        final List<T> result = new ArrayList<>();
+        for (T item : list) {
+            if (predicate.test(item)) {
+                result.add(item);
+            }
+        }
+        return result;
     }
 
     static <T> int size(final List<T> list) {
@@ -29,39 +34,39 @@ class ListOps {
     }
 
     static <T, U> List<U> map(final List<T> list, Function<T, U> transform) {
-        return list.stream().map(transform).collect(Collectors.toList());
+        final List<U> result = new ArrayList<>();
+        for (T item : list) {
+            result.add(transform.apply(item));
+        }
+        return result;
     }
 
     static <T> List<T> reverse(final List<T> list) {
-        final List<T> result = new ArrayList<>(list);
-        Collections.reverse(result);
+        final List<T> result = new ArrayList<>();
+        for (int i = list.size() - 1; i >= 0; i--) {
+            result.add(list.get(i));
+        }
         return result;
     }
 
     static <T, U> U foldLeft(final List<T> list, final U initial, final BiFunction<U, T, U> f) {
-        if (list.isEmpty()) {
-            return initial;
+        U acc = initial;
+
+        for (T item : list) {
+            acc = f.apply(acc, item);
         }
 
-        return foldLeft(
-                new ArrayList<>(list.subList(1, list.size())),
-                f.apply(
-                        initial,
-                        list.get(0)),
-                f);
+        return acc;
     }
 
     static <T, U> U foldRight(final List<T> list, final U initial, final BiFunction<T, U, U> f) {
-        if (list.isEmpty()) {
-            return initial;
+        U acc = initial;
+
+        for (int i = list.size() - 1; i >= 0; i--) {
+            acc = f.apply(list.get(i), acc);
         }
 
-        return f.apply(
-                list.get(0),
-                foldRight(
-                        new ArrayList<>(list.subList(1, list.size())),
-                        initial,
-                        f));
+        return acc;
     }
 
     private ListOps() {

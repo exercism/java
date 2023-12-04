@@ -4,7 +4,7 @@ There are many ways to solve Pythagorean Triplet.
 One approach could use a [`for` loop][for-loop] nested inside another `for` loop.
 Another approach could use an [`IntStream`][intstream] with [`parallel()`][parallel], [`flatMap()`][flatmap] and [`filter()`][filter].
 
-# General Guidance
+## General Guidance
 
 An important consideration to solving Pythagoren Triplet is to calculate efficiently enough so that the tests don't time out.
 
@@ -169,10 +169,8 @@ So if the nested `for` loops approach is fast enough, it may be preferred for re
 [for-loop]: https://www.geeksforgeeks.org/java-for-loop-with-examples/
 [intstream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
 [parallel]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#parallel--
-[rangeclosed]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#rangeClosed-int-int-
 [flatmap]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#flatMap-java.util.function.IntFunction-
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
-[lambda]: https://www.geeksforgeeks.org/lambda-expressions-java-8/
 [approach-for-loops]: https://exercism.org/tracks/java/exercises/pythagorean-triplets/approaches/for-loops
 [approach-intstream-parallel-flatmap-filter]: https://exercism.org/tracks/java/exercises/pythagorean-triplets/approaches/if-intstream-parallel-flatmap-filter
 [jmh]: https://github.com/openjdk/jmh

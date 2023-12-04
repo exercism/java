@@ -102,9 +102,15 @@ gradle compileStarterTestJava
 When you finished your changes and checked that all validations have passed, it's time to commit and push them to your fork:
 
 ```sh
-$ git add .
-$ git commit -m "(An intention-revealing commit message)"
-$ git push -u origin your-branch-name
+git add .
+```
+
+```sh
+git commit -m "(An intention-revealing commit message)"
+```
+
+```sh
+git push -u origin your-branch-name
 ```
 
 Then, open a Pull Request on the [exercism/java][track-repo] repository.

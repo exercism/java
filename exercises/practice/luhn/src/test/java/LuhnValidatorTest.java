@@ -1,5 +1,5 @@
-import org.junit.Ignore;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -61,6 +61,12 @@ public class LuhnValidatorTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testInvalidLongNumberWithARemainderDivisibleBy5() {
+        assertThat(luhnValidator.isValid("1 2345 6789 1234 5678 9013")).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testValidNumberWithAnEvenNumberOfDigits() {
         assertThat(luhnValidator.isValid("095 245 88")).isTrue();
     }
@@ -107,6 +113,17 @@ public class LuhnValidatorTest {
         assertThat(luhnValidator.isValid("091")).isTrue();
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testVeryLongInputIsValid() {
+        assertThat(luhnValidator.isValid("9999999999 9999999999 9999999999 9999999999")).isTrue();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testValidLuhnWithOddNumberOfDigitsAndNonZeroFirstDigit() {
+        assertThat(luhnValidator.isValid("109")).isTrue();
+    }
 
     @Ignore("Remove to run test")
     @Test
@@ -120,6 +137,12 @@ public class LuhnValidatorTest {
         assertThat(luhnValidator.isValid(":9")).isFalse();
     }
 
+    @Ignore("Remove to run test")
+    @Test
+    public void testNonNumericNonSpaceCharInMiddleWithSumDivisibleBy10IsNotAllowed() {
+        assertThat(luhnValidator.isValid("59%59")).isFalse();
+    }
+
     /* The following test diverges from the canonical test data. This is because the corresponding canonical test does
      * not account for Java specific functions (such as Character.getNumericValue()), which can be part of incorrect yet
      * passing implementations. For more detail, check out issue #972 here:
@@ -128,6 +151,6 @@ public class LuhnValidatorTest {
     @Ignore("Remove to run test")
     @Test
     public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
-        assertThat(luhnValidator.isValid("85&"));
+        assertThat(luhnValidator.isValid("85&")).isFalse();
     }
 }

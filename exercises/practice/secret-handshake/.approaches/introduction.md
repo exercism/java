@@ -4,7 +4,7 @@ There are at least a couple of idiomatic ways to solve Secret Handshake.
 One approach is to use an `IntStream` to iterate to the result.
 Another approach can use a `for` loop to iterate to the result.
 
-# General guidance
+## General guidance
 
 Regardless of the approach used, one thing to consider is the use of bitwise operations for comparing the binary values.
 

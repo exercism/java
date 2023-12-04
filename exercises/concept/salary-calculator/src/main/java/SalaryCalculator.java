@@ -1,14 +1,14 @@
 public class SalaryCalculator {
-    public double multiplierPerDaysSkipped(int daysSkipped) {
-        throw new UnsupportedOperationException("Please implement the SalaryCalculator.multiplierPerDaysSkipped() method");
+    public double salaryMultiplier(int daysSkipped) {
+        throw new UnsupportedOperationException("Please implement the SalaryCalculator.salaryMultiplier() method");
     }
 
-    public int multiplierPerProductsSold(int productsSold) {
-        throw new UnsupportedOperationException("Please implement the SalaryCalculator.multiplierPerProductsSold() method");
+    public int bonusMultiplier(int productsSold) {
+        throw new UnsupportedOperationException("Please implement the SalaryCalculator.bonusMultiplier() method");
     }
 
-    public double bonusForProductSold(int productsSold) {
-        throw new UnsupportedOperationException("Please implement the SalaryCalculator.bonusForProductSold() method");
+    public double bonusForProductsSold(int productsSold) {
+        throw new UnsupportedOperationException("Please implement the SalaryCalculator.bonusForProductsSold() method");
     }
 
     public double finalSalary(int daysSkipped, int productsSold) {

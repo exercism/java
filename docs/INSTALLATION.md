@@ -2,254 +2,260 @@
 
 In addition to the exercism CLI and your favorite text editor, practicing with Exercism exercises in Java requires:
 
-* the **Java Development Kit** (JDK) — which includes both a Java Runtime *and* development tools (most notably, the Java compiler); and
-* **Gradle** — a build tool specifically for Java projects.
+- the **Java Development Kit** (JDK) — which includes both a Java Runtime _and_ development tools (most notably, the Java compiler); and
+- **Gradle** — a build tool specifically for Java projects.
 
 Choose your operating system:
 
-* [Windows](#windows)
-* [macOS](#macos)
-* [Linux](#linux)
+- [Windows](#windows)
+- [macOS](#macos)
+- [Linux](#linux)
 
 ... or ...
-* if you prefer to not use a package manager, you can [install manually](#install-manually).
+
+- if you prefer to not use a package manager, you can [install manually](#install-manually).
 
 Optionally, you can also use a [Java IDE](#java-ides).
 
-----
+## Windows
 
-# Windows
-
-Open an administrative command prompt.  (If you need assistance opening an administrative prompt, see [open an elevated prompt in Windows 8+](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/) (or [Windows 7](http://www.howtogeek.com/howto/windows-vista/run-a-command-as-administrator-from-the-windows-vista-run-box/)).
+Open an administrative command prompt. (If you need assistance opening an administrative prompt, see [open an elevated prompt in Windows 8+](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/) (or [Windows 7](http://www.howtogeek.com/howto/windows-vista/run-a-command-as-administrator-from-the-windows-vista-run-box/))).
 
 1. If you have not installed Chocolatey, do so now:
 
-     ```batchfile
-     C:\Windows\system32> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
-     ```
+   ```batchfile
+   C:\Windows\system32> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+   ```
 
-2.  Install the JDK:
+2. Install the JDK:
 
-     ```batchfile
-     C:\Windows\system32> choco install temurin21
-     ...
-     C:\Windows\system32> refreshenv
-     ...
-     ```
-3.  Install Gradle:
+   ```batchfile
+   C:\Windows\system32> choco install temurin21
+   ...
+   C:\Windows\system32> refreshenv
+   ...
+   ```
 
-     ```batchfile
-     C:\Windows\system32>choco install gradle
-     ...
-     ```
+3. Install Gradle:
 
-We recommend closing the administrative command prompt and opening a new command prompt -- you do not require administrator privileges to practice Exercism exercises.
+   ```batchfile
+   C:\Windows\system32>choco install gradle
+   ...
+   ```
+
+We recommend closing the administrative command prompt and opening a new command prompt.
+You do not require administrator privileges to practice Exercism exercises.
 
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
+## macOS
 
-# macOS
-
-Below are instructions for install using the most common method - using Homebrew.  If you'd rather, you can also [install on macOS without Homebrew](#installing-on-macos-without-homebrew).
+Below are instructions for install using the most common method - using Homebrew.
+If you'd rather, you can also [install on macOS without Homebrew](#installing-on-macos-without-homebrew).
 
 ## Installing
 
 1. If you haven't installed [Homebrew](http://brew.sh), yet, do so now:
 
-     ```sh
-     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-     ```
+   ```sh
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ```
+
 2. Tap the [Homebrew Cask](https://github.com/Homebrew/homebrew-cask-versions) — this allows us to install a specific JDK version.
 
-     ```
-     $ brew tap homebrew/cask-versions
-     ```
+   ```sh
+   brew tap homebrew/cask-versions
+   ```
 
-3.  Install the JDK:
+3. Install the JDK:
 
-     ```
-     $ brew install --cask temurin21
-     ```
+   ```sh
+   brew install --cask temurin21
+   ```
 
-4.  Install Gradle:
+4. Install Gradle:
 
-     ```
-     $ brew install gradle
-     ```
+   ```sh
+   brew install gradle
+   ```
 
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
+## Linux
 
-# Linux
+Below are instructions for install using the package manager of your distro.
+If you'd rather, you can also [install on Linux without a package manager](#installing-on-linux-without-a-package-manager).
 
-Below are instructions for install using the package manager of your distro.  If you'd rather, you can also [install on Linux without a package manager](#installing-on-linux-without-a-package-manager).
+- [Debian](#debian)
+- [Other Linux distributions](#other-linux-distributions)
 
-* [Debian](#debian)
-* [Fedora](#fedora)
+### Debian
 
-## Debian
+If you are using Debian or its derivatives (like Ubuntu), use APT.
 
-If you are using Debian or its derivatives (like Ubuntu), use APT:
-
-*(verified on: Ubuntu 20.04 and 22.04)*
+~~~~exercism/note
+These steps have been verified on Ubuntu 20.04 and 22.04
+~~~~
 
 1. Install the JDK:
 
-     ```sh
-     $ sudo apt-get update
-     $ sudo apt-get install software-properties-common
-     $ sudo add-apt-repository ppa:openjdk-r/ppa
-     $ sudo apt-get update
-     $ sudo apt-get install openjdk-21-jdk
-     ```
+   ```sh
+   sudo apt-get update
+   sudo apt-get install software-properties-common
+   sudo add-apt-repository ppa:openjdk-r/ppa
+   sudo apt-get update
+   sudo apt-get install openjdk-21-jdk
+   ```
 
 2. Install Gradle:
 
-     ```sh
-     $ sudo add-apt-repository ppa:cwchien/gradle
-     $ sudo apt-get update
-     $ sudo apt-get install gradle
-     ```
+   ```sh
+   sudo add-apt-repository ppa:cwchien/gradle
+   sudo apt-get update
+   sudo apt-get install gradle
+   ```
 
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
-
-## Other Linux distributions
+### Other Linux distributions
 
 There are a lot of ways to install JDK 21, but one of the easiest ways is to use SDKMAN, which lets you install
-both OpenJDK 21 and the latest Gradle with ease. Use the following steps:
+both OpenJDK 21 and the latest Gradle with ease.
+
+Use the following steps:
 
 1. Install SDKMAN:
-    ```sh
-    $ curl -s "https://get.sdkman.io" | bash
-    ```
-    (if that doesn't work, take a look at the instructions found here: https://sdkman.io/install )
-1. Install OpenJDK 21:
-    ```
-    $ sdk install java 21.0.1-tem
-    ```
-1. Install Gradle:
-    ```sh
-   $ sdk install gradle
-    ```
+
+   ```sh
+   curl -s "https://get.sdkman.io" | bash
+   ```
+
+   (if that doesn't work, take a look at the [installation instructions](https://sdkman.io/install))
+
+2. Install OpenJDK 21:
+
+   ```sh
+   sdk install java 21.0.1-tem
+   ```
+
+3. Install Gradle:
+
+   ```sh
+   sdk install gradle
+   ```
 
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
+## Install Manually
 
-# Install Manually
+- [Installing on Windows manually](#installing-on-windows-manually)
+- [Installing on macOS without Homebrew](#installing-on-macos-without-homebrew)
+- [Installing on Linux without a package manager](#installing-on-linux-without-a-package-manager)
 
-* [Installing on Windows manually](#installing-on-windows-manually)
-* [Installing on macOS without Homebrew](#installing-on-macos-without-homebrew)
-* [Installing on Linux without a package manager](#installing-on-linux-without-a-package-manager)
+### Installing on Windows manually
 
-----
-
-## Installing on Windows manually
-
-*NOTE: these instructions are intended for experienced Windows users.  If you don't already know how to set environment variables or feel comfortable managing the directory structure, we highly recommend you use the Chocolatey-based install, [above](#windows).*
+~~~~exercism/note
+These instructions are intended for experienced Windows users.
+If you don't already know how to set environment variables or feel comfortable managing the directory structure, we highly recommend you use the Chocolatey-based install, [above](#windows).
+~~~~
 
 1. Install the JDK:
-   1. Download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=windows&arch=x64&package=jdk&version=21) (choose **".msi"**).
-   -  Run the installer, using all the defaults.
+   - Download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=windows&arch=x64&package=jdk&version=21) (choose **".msi"**).
+   - Run the installer, using all the defaults.
 2. Install Gradle:
    - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
-   - Unzip the archive.  We recommend a place like `C:\Users\JohnDoe\Tools`.
+   - Unzip the archive. We recommend a place like `C:\Users\JohnDoe\Tools`.
    - Add a new system environment variable named `GRADLE_HOME` and set it to the path you just created (e.g. `C:\Users\JohnDoe\Tools\gradle-x.y`).
    - Update the system `Path` to include the `bin` directory from Gradle's home (e.g. `Path`=`...;%GRADLE_HOME%\bin`).
 
-
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
+### Installing on macOS without Homebrew
 
-## Installing on macOS without Homebrew
-
-*NOTE: these instructions are intended for experienced macOS users.  Unless you specifically do not want to use a package manager, we highly recommend using the Homebrew-based installation instructions, [above](#macos).*
+~~~~exercism/note
+These instructions are intended for experienced macOS users.
+Unless you specifically do not want to use a package manager, we highly recommend using the Homebrew-based installation instructions, [above](#macos).
+~~~~
 
 1. Install the JDK:
-   1. Download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=mac&package=jdk&version=21) (choose **".pkg"**).
-   2. Run the installer, using all the defaults.
+   - Download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=mac&package=jdk&version=21) (choose **".pkg"**).
+   - Run the installer, using all the defaults.
 2. Install Gradle:
-   1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
-   2. Unpack Gradle:
+
+   - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
+   - Unpack Gradle:
 
      ```sh
-     $ mkdir ~/tools
-     $ cd ~/tools
-     $ unzip ~/Downloads/gradle-*-bin.zip
-     $ cd gradle*
+     mkdir ~/tools
+     cd ~/tools
+     unzip ~/Downloads/gradle-*-bin.zip
+     cd gradle*
      ```
 
-   3. Configure Gradle and add it to the path:
+   - Configure Gradle and add it to the path:
 
      ```sh
-     $ cat << DONE >> ~/.bashrc
+     cat << DONE >> ~/.bashrc
      export GRADLE_HOME=`pwd`
      export PATH=\$PATH:\$GRADLE_HOME/bin
-    DONE
-    ```
-
+     DONE
+     ```
 
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
+### Installing on Linux without a package manager
 
-## Installing on Linux without a package manager
-
-*NOTE: these instructions are intended for experienced Linux users.  Unless you specifically do not want to use a package manager, we highly recommend using the installation instructions, [above](#linux).*
+```exercism/note
+These instructions are intended for experienced Linux users.
+Unless you specifically do not want to use a package manager, we highly recommend using the installation instructions, [above](#linux).
+```
 
 1. Install the JDK:
-   1. Choose your distribution and download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=linux&package=jdk&version=21) (choose **".tar.gz"**).
-   2. Run the installer, using all the defaults.
+   - Choose your distribution and download "**OpenJDK 21 (LTS)**" from [Adoptium](https://adoptium.net/temurin/releases/?os=linux&package=jdk&version=21) (choose **".tar.gz"**).
+   - Run the installer, using all the defaults.
 2. Install Gradle:
-   1. Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
-   2. Unpack Gradle:
+
+   - Download "**Binary only distribution**" from the [Gradle download page](https://gradle.org/gradle-download/).
+   - Unpack Gradle:
 
      ```sh
-     $ mkdir ~/tools
-     $ cd ~/tools
-     $ unzip ~/Downloads/gradle-*-bin.zip
-     $ cd gradle*
+     mkdir ~/tools
+     cd ~/tools
+     unzip ~/Downloads/gradle-*-bin.zip
+     cd gradle*
      ```
 
-   3. Configure Gradle and add it to the path:
+   - Configure Gradle and add it to the path:
 
      ```sh
-     $ cat << DONE >> ~/.bashrc
+     cat << DONE >> ~/.bashrc
      export GRADLE_HOME=`pwd`
      export PATH=\$PATH:\$GRADLE_HOME/bin
-    DONE
-    ```
+     DONE
+     ```
 
 You now are ready to get started with the Java track of Exercism!
 
 To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
 
-----
+## Java IDEs
 
-# Java IDEs
+There are many Java IDEs available. The three most popular are:
 
-There are many Java IDEs available.  The three most popular are:
-
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) (download the "Community" edition)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) (download the "Community" edition)
 - [Eclipse](https://www.eclipse.org/downloads/)
 - [NetBeans](https://netbeans.org/downloads/) (download the "Java SE" bundle)
 
 and there are [others](https://en.wikibooks.org/wiki/Java_Programming/Java_IDEs).
-

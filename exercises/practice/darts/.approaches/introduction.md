@@ -65,7 +65,6 @@ For more information, check the [`DoublePredicate` approach][approach-doublepred
 Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
 the choice between `if` statements and `DoublePredicate` can be made by perceived readability.
 
-[doublepredicate]: https://docs.oracle.com/javase/9/docs/api/java/util/function/DoublePredicate.html
 [magic-numbers]: https://en.wikipedia.org/wiki/Magic_number_(programming)
 [jmh]: https://github.com/openjdk/jmh
 [approach-if-staements]: https://exercism.org/tracks/java/exercises/darts/approaches/if-statements

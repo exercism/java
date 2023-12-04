@@ -49,18 +49,6 @@ class PigLatinTranslator {
 
 For more information, check the [`charAt()` and `substring()` statements approach][approach-charat-substring].
 
-
 [charat]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#charAt(int)
-[substring-one]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int)
 [substring-two]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int)
-[split]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#split(java.lang.String)
-[private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
-[static]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/static
-[final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
-[hashset]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html
-[arraylist]: https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
-[for-each]: https://www.geeksforgeeks.org/for-each-loop-in-java/
-[contains]: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html#contains(java.lang.Object)
-[add]: https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#add-E-
-[join]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#join(java.lang.CharSequence,java.lang.Iterable)
 [approach-charat-substring]: https://exercism.org/tracks/java/exercises/pig-latin/approaches/charat-substring
