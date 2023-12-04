@@ -271,6 +271,18 @@
           "numbers",
           "strings"
         ]
+      },
+      {
+        "slug": "arcade-high-score",
+        "name": "Arcade High Score",
+        "uuid": "07893a1a-eb93-4ad2-b98e-f3946c5e7fb2",
+        "concepts": [
+          "maps"
+        ],
+        "prerequisites": [
+          "numbers",
+          "strings"
+        ]
       }
     ],
     "practice": [
