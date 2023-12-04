@@ -7,7 +7,7 @@
 
 We have three different views that can all be accessed individually
 
-- set of keys,
+- keys,
 
 ```java
 Map<String, Integer> map = new HashMap<>();
@@ -16,7 +16,7 @@ Map<String, Integer> map = new HashMap<>();
 map.keySet();
 ```
 
-- collection of values
+- values
 
 ```java
 Map<String, Integer> map = new HashMap<>();
@@ -25,7 +25,7 @@ Map<String, Integer> map = new HashMap<>();
 map.values();
 ```
 
-- set of key-value mappings.
+- and key-value mappings.
 
 ````java
 Map<String, Integer> map = new HashMap<>();
@@ -45,7 +45,7 @@ There are many useful [built-in functions][start-of-map-functions] that allow yo
 Map<String, Integer> hashmap = new HashMap<>();
 ```
 
-In regard to the declaration of the HashMap object, the first data type specified `String` represents the data type of the key, and `Integer` represents the data type of the value in the example above.
+In regards to the declaration of the HashMap object, the first data type specified `String` represents the data type of the key, and `Integer` represents the data type of the value in the example above.
 
 ## Classes that implement Map
 

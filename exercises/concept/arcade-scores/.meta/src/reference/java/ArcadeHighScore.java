@@ -6,6 +6,10 @@ public class ArcadeHighScore {
 
     Map<String, Integer> highScores = new HashMap<>();
 
+    Map<String, Integer> defineMap() {
+        return highScores;
+    }
+
     Map<String, Integer> addPlayer (String name, Integer score) {
         highScores.put(name, score);
         return highScores;

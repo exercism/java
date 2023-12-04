@@ -4,11 +4,10 @@ In this exercise, you're implementing a way to keep track of the high scores for
 
 ## 1. Define a new high score map
 
-To make a new high score map, create an empty hashmap object with keys of type String and values of type Integer.
-Create this map outside of the functions scopes so we can reference it within each function.
+To make a new high score map, create an empty hashmap object with keys of type String and values of type Integer using the `Map<String, Integer> highScores` declaration provided.
 
 ```java
-System.out.println(ArcadeHighScores.highScores);
+System.out.println(ArcadeHighScore.highScores);
 // => {} 
 ```
 
@@ -39,15 +38,14 @@ ArcadeHighScore.removePlayer("Dave Thomas");
 
 ## 4. Reset a player's score
 
-To reset a player's score, define the `ArcadeHighScore.resetScore()` method, which takes 2 arguments:
+To reset a player's score, define the `ArcadeHighScore.resetScore()` method, which takes 1 argument:
 
 - The first argument is the players name.
-- The second argument is the new score for the player, in this case 0.
 
 The function should also work if the player isn't currently present in the map.
 
 ```java
-ArcadeHighScore.resetScore("Dave Thomas", 0);
+ArcadeHighScore.resetScore("Dave Thomas");
 // => (Dave Thomas=0);
 ```
 

@@ -7,7 +7,7 @@
 ## 1. Define a new high score map
 
 - It should return an empty [map][maps].
-- [Create an object][create-object] of the HashMap class using the appropriate [reference type][reference-data-types] for the keys and the values.
+- [Create an object][create-object] of the HashMap class using the declared `Map<String ,Integer> highScores`.
 
 ## 2. Add players to the high score map
 

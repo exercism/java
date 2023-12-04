@@ -17,6 +17,7 @@ include 'concept:football-match-reports'
 include 'concept:wizards-and-warriors'
 include 'concept:calculator-conundrum'
 include 'concept:logs-logs-logs'
+include 'concept:arcade-scores'
 
 // practice exercises
 include 'practice:accumulate'
@@ -150,8 +151,3 @@ include 'practice:wordy'
 include 'practice:yacht'
 include 'practice:zebra-puzzle'
 include 'practice:zipper'
-include 'concept:arcade-high-score'
-findProject(':concept:arcade-high-score')?.name = 'arcade-high-score'
-include 'concept:arcade-high-score'
-findProject(':concept:arcade-high-score')?.name = 'arcade-high-score'
-
