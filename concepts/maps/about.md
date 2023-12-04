@@ -1,6 +1,6 @@
 # About
 
-[Maps][maps] in Java is an interface that holds data in key-value pairs. 
+[Maps][maps] in Java is an interface that holds data in key-value pairs.
 
 - Keys can be of any [reference type][reference-data-types], but must be unique.
 - Values can be of any reference type, they do not have to be unique.
@@ -54,11 +54,11 @@ Below are some key differences in the three classes.
 
 ### Hashmap
 
-- Implements the Map interface. 
+- Implements the Map interface.
 - No guaranteed order of the elements inserted.
 - Null values are allowed.
 
-### LinkedHashMap 
+### LinkedHashMap
 
 - Implements the Map interface.
 - Elements are in the order that they have been inserted.

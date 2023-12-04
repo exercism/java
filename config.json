@@ -2218,6 +2218,11 @@
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
       "slug": "ternary-operators",
       "name": "Ternary Operators"
+    },
+    {
+      "uuid": "5a10c26d-1f8a-46d3-ab85-686235000f0e",
+      "slug": "maps",
+      "name": "Maps"
     }
   ],
   "key_features": [

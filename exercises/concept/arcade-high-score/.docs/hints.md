@@ -35,8 +35,7 @@
   
 [maps]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html
 [create-object]: https://docs.oracle.com/javase/tutorial/java/javaOO/objectcreation.html
-[reference-data-types]: https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.3
 [map-put]: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#put-K-V-
 [map-remove]: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#remove-java.lang.Object-
 [map-get-or-default]: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#getOrDefault-java.lang.Object-V-
-[map-keys]: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#keySet-- 
+[map-keys]: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#keySet--
