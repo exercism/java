@@ -1038,6 +1038,7 @@
         "practices": [
           "arrays",
           "strings",
+          "if-else-statements",
           "maps"
         ],
         "prerequisites": [
