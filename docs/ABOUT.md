@@ -16,4 +16,4 @@ This is important because the larger a programming language community is, the mo
 
 Java also has a powerful and well-designed set of built-in [APIs - Application Programming Interfaces](https://docs.oracle.com/en/java/javase/11/docs/api/index.html), which can be used for various activities like Database connection, networking, I/O, XML parsing, utilities, and much more.
 
-From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, [Java is everywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere)!
+From laptops to data-centers, game consoles to scientific supercomputers, cell phones to the Internet, [Java is everywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere)!
