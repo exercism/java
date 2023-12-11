@@ -586,8 +586,7 @@
           "if-else-statements"
         ],
         "prerequisites": [
-          "if-else-statements",
-          "constructors"
+          "if-else-statements"
         ],
         "difficulty": 2
       },
