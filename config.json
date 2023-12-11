@@ -583,12 +583,10 @@
         "name": "Darts",
         "uuid": "4d400a44-b190-4a0c-affb-99fad8ea18da",
         "practices": [
-          "if-else-statements",
-          "constructors"
+          "if-else-statements"
         ],
         "prerequisites": [
-          "if-else-statements",
-          "constructors"
+          "if-else-statements"
         ],
         "difficulty": 2
       },
