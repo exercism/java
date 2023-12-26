@@ -6,10 +6,6 @@ class NucleotideCounter {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    int count(char base) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
-
     Map<Character, Integer> nucleotideCounts() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
