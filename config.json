@@ -133,6 +133,14 @@
         "status": "deprecated"
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "fe8e9fa9-37af-4d7e-aa24-2f4b8517161a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "need-for-speed",
         "name": "Need for Speed",
         "uuid": "a85b6394-3ca5-4913-b554-b460dd49c0ea",
