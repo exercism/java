@@ -1,8 +1,7 @@
 # Instructions append
 
-## Notes
+~~~~exercism/note
+Remember that you character should be ``unique``. If you are not sure how to achieve it review [Constructors][constructors]
 
-Most programming languages feature (pseudo-)random generators, but few programming languages are designed to roll dice.
-One such language is [Troll][troll].
-
-[troll]: https://di.ku.dk/Ansatte/?pure=da%2Fpublications%2Ftroll-a-language-for-specifying-dicerolls(84a45ff0-068b-11df-825d-000ea68e967b)%2Fexport.html
+[constructors]: https://github.com/exercism/java/blob/main/concepts/constructors/introduction.md
+~~~~
