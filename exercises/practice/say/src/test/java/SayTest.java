@@ -6,12 +6,12 @@ import static org.assertj.core.api.Assertions.*;
 public class SayTest {
 
     private Say say = new Say();
-    
+
     @Test
     public void zero() {
         assertThat(say.say(0)).isEqualTo("zero");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void one() {
@@ -38,6 +38,18 @@ public class SayTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void thirty() {
+        assertThat(say.say(30)).isEqualTo("thirty");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void ninetyNine() {
+        assertThat(say.say(99)).isEqualTo("ninety-nine");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void oneHundred() {
         assertThat(say.say(100)).isEqualTo("one hundred");
     }
@@ -46,6 +58,18 @@ public class SayTest {
     @Test
     public void oneHundredTwentyThree() {
         assertThat(say.say(123)).isEqualTo("one hundred twenty-three");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void twoHundred() {
+        assertThat(say.say(200)).isEqualTo("two hundred");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void nineHundredNinetyNine() {
+        assertThat(say.say(999)).isEqualTo("nine hundred ninety-nine");
     }
 
     @Ignore("Remove to run test")
@@ -65,27 +89,27 @@ public class SayTest {
     public void oneMillion() {
         assertThat(say.say(1_000_000)).isEqualTo("one million");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void oneMillionTwoThousandThreeHundredFortyFive() {
         assertThat(say.say(1_002_345)).isEqualTo("one million two thousand three hundred forty-five");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void oneBillion() {
         assertThat(say.say(1_000_000_000)).isEqualTo("one billion");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void nineHundredEightySevenBillionSixHundredFiftyFourThreeHundredTwentyOneThousandOneHundredTwentyThree() {
         assertThat(say.say(987_654_321_123L))
-            .isEqualTo("nine hundred eighty-seven billion six hundred fifty-four million" + 
-                       " three hundred twenty-one thousand one hundred twenty-three");
+                .isEqualTo("nine hundred eighty-seven billion six hundred fifty-four million" +
+                        " three hundred twenty-one thousand one hundred twenty-three");
     }
-    
+
     @Ignore("Remove to run test")
     @Test(expected = IllegalArgumentException.class)
     public void illegalNegativeNumber() {
@@ -96,5 +120,5 @@ public class SayTest {
     @Test(expected = IllegalArgumentException.class)
     public void illegalTooBigNumber() {
         say.say(1_000_000_000_000L);
-    }    
+    }
 }
