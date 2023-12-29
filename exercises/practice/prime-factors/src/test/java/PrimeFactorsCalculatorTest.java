@@ -26,14 +26,44 @@ public class PrimeFactorsCalculatorTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testAnotherPrimeNumber() {
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(3L)).containsExactly(3L);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testSquareOfAPrime() {
         assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(9L)).containsExactly(3L, 3L);
     }
 
     @Ignore("Remove to run test")
     @Test
+    public void testProductOfFirstPrime() {
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(4L)).containsExactly(2L, 2L);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testCubeOfAPrime() {
         assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(8L)).containsExactly(2L, 2L, 2L);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testProductOfSecondPrime() {
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(625L)).containsExactly(5L, 5L, 5L, 5L);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testProductOfThirdPrime() {
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(27L)).containsExactly(3L, 3L, 3L);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testProductOfFirstAndSecondPrime() {
+        assertThat(primeFactorsCalculator.calculatePrimeFactorsOf(6L)).containsExactly(2L, 3L);
     }
 
     @Ignore("Remove to run test")
