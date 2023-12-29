@@ -30,8 +30,8 @@ public class ResistorColorDuoTest {
     @Ignore("Remove to run test")
     @Test
     public void testYellowAndViolet() {
-        assertThat(resistorColorDuo.value(
-                new String[]{ "yellow", "violet" })
+        assertThat(
+                resistorColorDuo.value(new String[]{ "yellow", "violet" })
         ).isEqualTo(47);
     }
 
@@ -41,6 +41,22 @@ public class ResistorColorDuoTest {
         assertThat(
                 resistorColorDuo.value(new String[]{ "orange", "orange" })
         ).isEqualTo(33);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testWhiteAndRed() {
+        assertThat(
+                resistorColorDuo.value(new String[]{ "white", "red" })
+        ).isEqualTo(92);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testBlackAndBrownOneDigit() {
+        assertThat(
+                resistorColorDuo.value(new String[]{ "black", "brown" })
+        ).isEqualTo(1);
     }
 
     @Ignore("Remove to run test")
