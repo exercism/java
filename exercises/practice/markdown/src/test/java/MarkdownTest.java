@@ -68,9 +68,45 @@ public class MarkdownTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void withH3HeaderLevel() {
+        String input = "### This will be an h3";
+        String expected = "<h3>This will be an h3</h3>";
+
+        assertThat(markdown.parse(input)).isEqualTo(expected);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void withH4HeaderLevel() {
+        String input = "#### This will be an h4";
+        String expected = "<h4>This will be an h4</h4>";
+
+        assertThat(markdown.parse(input)).isEqualTo(expected);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void withH5HeaderLevel() {
+        String input = "##### This will be an h5";
+        String expected = "<h5>This will be an h5</h5>";
+
+        assertThat(markdown.parse(input)).isEqualTo(expected);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void withH6HeaderLevel() {
         String input = "###### This will be an h6";
         String expected = "<h6>This will be an h6</h6>";
+
+        assertThat(markdown.parse(input)).isEqualTo(expected);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void h7HeaderLevelIsAParagraph() {
+        String input = "####### This will not be an h7";
+        String expected = "<p>####### This will not be an h7</p>";
 
         assertThat(markdown.parse(input)).isEqualTo(expected);
     }
