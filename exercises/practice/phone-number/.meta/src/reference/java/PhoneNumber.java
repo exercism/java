@@ -26,11 +26,11 @@ public class PhoneNumber {
 
     private String normalize(String number) {
         if (number.length() < 10) {
-            throw new IllegalArgumentException("incorrect number of digits");
+            throw new IllegalArgumentException("must not be fewer than 10 digits");
         }
 
         if (number.length() > 11) {
-            throw new IllegalArgumentException("more than 11 digits");
+            throw new IllegalArgumentException("must not be greater than 11 digits");
         }
         
         if (number.length() == 11) {
