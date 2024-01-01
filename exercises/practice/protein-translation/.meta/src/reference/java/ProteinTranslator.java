@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 class ProteinTranslator {
 
-    private final static Map<String, String> aminoAcidsMap = new HashMap<>() {
+    private final Map<String, String> aminoAcidsMap = new HashMap<>() {
         {
             put("AUG", "Methionine");
             put("UUU", "Phenylalanine");
@@ -30,14 +30,16 @@ class ProteinTranslator {
     List<String> translate(String rnaSequence) {
         List<String> proteinList = new ArrayList<>();
 
-        if (rnaSequence.length() % 3 != 0 && (!rnaSequence.contains("UAA") || !rnaSequence.contains("UAG") || !rnaSequence.contains("UGA")))
+        if (rnaSequence.length() % 3 != 0 && !(rnaSequence.contains("UAA") || rnaSequence.contains("UAG") || rnaSequence.contains("UGA"))) {
             throw new IllegalArgumentException("Invalid codon");
+        }
 
         for (int i = 0; i < rnaSequence.length(); i += 3) {
             String currentSequence = rnaSequence.substring(i, i + 3);
 
-            if (aminoAcidsMap.get(currentSequence).equals("STOP"))
+            if (aminoAcidsMap.get(currentSequence).equals("STOP")) {
                 return proteinList;
+            }
 
             if (aminoAcidsMap.containsKey(currentSequence)) {
                 proteinList.add(aminoAcidsMap.get(currentSequence));
