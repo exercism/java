@@ -39,7 +39,7 @@ public class PhoneNumberTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new PhoneNumber("123456789"))
-                .withMessage("incorrect number of digits");
+                .withMessage("must not be fewer than 10 digits");
     }
 
     @Ignore("Remove to run test")
@@ -74,14 +74,14 @@ public class PhoneNumberTest {
     public void invalidWhenMoreThan11Digits() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new PhoneNumber("321234567890"))
-                .withMessage("more than 11 digits");
+                .withMessage("must not be greater than 11 digits");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void invalidWithLetters() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> new PhoneNumber("123-abc-7890"))
+                .isThrownBy(() -> new PhoneNumber("523-abc-7890"))
                 .withMessage("letters not permitted");
     }
 
@@ -89,7 +89,7 @@ public class PhoneNumberTest {
     @Test
     public void invalidWithPunctuations() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> new PhoneNumber("123-@:!-7890"))
+                .isThrownBy(() -> new PhoneNumber("523-@:!-7890"))
                 .withMessage("punctuations not permitted");
     }
 
