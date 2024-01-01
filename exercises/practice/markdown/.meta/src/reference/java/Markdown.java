@@ -57,6 +57,10 @@ class Markdown {
             return null;
         }
 
+        if (count > 6) {
+            return parseParagraph(markdown);
+        }
+
         return wrap(markdown.substring(count + 1), "h" + Integer.toString(count));
     }
 
