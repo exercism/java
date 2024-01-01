@@ -168,5 +168,20 @@ public class RectangleCounterTest {
 
         assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(60);
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testRectanglesMustHaveFourSides() {
+        String[] inputGrid = new String[]{
+            "+-+ +-+",
+            "| | | |",
+            "+-+-+-+",
+            "  | |  ",
+            "+-+-+-+",
+            "| | | |",
+            "+-+ +-+"
+        };
 
+        assertThat(rectangleCounter.countRectangles(inputGrid)).isEqualTo(5);
+    }
 }
