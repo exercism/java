@@ -13,12 +13,13 @@ public class ProteinTranslatorTest {
     public void setUp() {
         proteinTranslator = new ProteinTranslator();
     }
-    
+
     @Test
     public void testEmptyRnaSequenceResultInNoproteins() {
         assertThat(proteinTranslator.translate("")).isEmpty();
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void testMethionineRnaSequence() {
         assertThat(proteinTranslator.translate("AUG")).containsExactly("Methionine");
@@ -119,12 +120,12 @@ public class ProteinTranslatorTest {
     public void testStopRnaSequence3() {
         assertThat(proteinTranslator.translate("UGA")).isEmpty();
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void testSequenceOfTwoProteinCodonsTranslatesIntoProteins() {
         assertThat(proteinTranslator.translate("UUUUUU")).containsExactly("Phenylalanine", "Phenylalanine");
-    }    
+    }
 
     @Ignore("Remove to run test")
     @Test
@@ -193,10 +194,10 @@ public class ProteinTranslatorTest {
                 .isThrownBy(() -> proteinTranslator.translate("AUGU"))
                 .withMessage("Invalid codon");
     }
-    
+
     @Ignore("Remove to run test")
     @Test
     public void testIncompleteRnaSequenceCanTranslateIfValidUntilAStopCodon() {
         assertThat(proteinTranslator.translate("UUCUUCUAAUGGU")).containsExactly("Phenylalanine", "Phenylalanine");
-    }    
+    }
 }
