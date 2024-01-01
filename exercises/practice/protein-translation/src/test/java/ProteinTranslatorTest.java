@@ -13,6 +13,11 @@ public class ProteinTranslatorTest {
     public void setUp() {
         proteinTranslator = new ProteinTranslator();
     }
+    
+    @Test
+    public void testEmptyRnaSequenceResultInNoproteins() {
+        assertThat(proteinTranslator.translate("")).isEmpty();
+    }
 
     @Test
     public void testMethionineRnaSequence() {
@@ -114,6 +119,18 @@ public class ProteinTranslatorTest {
     public void testStopRnaSequence3() {
         assertThat(proteinTranslator.translate("UGA")).isEmpty();
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testSequenceOfTwoProteinCodonsTranslatesIntoProteins() {
+        assertThat(proteinTranslator.translate("UUUUUU")).containsExactly("Phenylalanine", "Phenylalanine");
+    }    
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testSequenceOfTwoDifferentProteinCodonsTranslatesIntoProteins() {
+        assertThat(proteinTranslator.translate("UUAUUG")).containsExactly("Leucine", "Leucine");
+    }
 
     @Ignore("Remove to run test")
     @Test
@@ -155,30 +172,6 @@ public class ProteinTranslatorTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void testEmptyRnaSequenceResultInNoproteins() {
-        assertThat(proteinTranslator.translate("")).isEmpty();
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testSequenceOfTwoProteinCodonsTranslatesIntoProteins() {
-        assertThat(proteinTranslator.translate("UUUUUU")).containsExactly("Phenylalanine", "Phenylalanine");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testSequenceOfTwoDifferentProteinCodonsTranslatesIntoProteins() {
-        assertThat(proteinTranslator.translate("UUAUUG")).containsExactly("Leucine", "Leucine");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testIncompleteRnaSequenceCanTranslateIfValidUntilAStopCodon() {
-        assertThat(proteinTranslator.translate("UUCUUCUAAUGGU")).containsExactly("Phenylalanine", "Phenylalanine");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
     public void testNonExistingCodonCantTranslate() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> proteinTranslator.translate("AAA"))
@@ -200,4 +193,10 @@ public class ProteinTranslatorTest {
                 .isThrownBy(() -> proteinTranslator.translate("AUGU"))
                 .withMessage("Invalid codon");
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testIncompleteRnaSequenceCanTranslateIfValidUntilAStopCodon() {
+        assertThat(proteinTranslator.translate("UUCUUCUAAUGGU")).containsExactly("Phenylalanine", "Phenylalanine");
+    }    
 }
