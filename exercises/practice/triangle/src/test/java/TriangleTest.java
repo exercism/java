@@ -135,6 +135,22 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void FirstAndThirdSidesAreEqualAreNotScalene() throws TriangleException {
+        Triangle triangle = new Triangle(3, 4, 3);
+
+        assertThat(triangle.isScalene()).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void SecondAndThirdSidesAreEqualAreNotScalene() throws TriangleException {
+        Triangle triangle = new Triangle(4, 3, 3);
+
+        assertThat(triangle.isScalene()).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void mayNotViolateTriangleInequality() {
         assertThatExceptionOfType(TriangleException.class).isThrownBy(() -> new Triangle(7, 3, 2));
     }
