@@ -2,11 +2,11 @@ import java.util.Map;
 
 class ParallelLetterFrequency {
 
-    ParallelLetterFrequency(String letters) {
+    ParallelLetterFrequency(String[] letters) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    Map<Integer, Integer> letterCounts() {
+    Map<Character, Integer> letterCounts() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
