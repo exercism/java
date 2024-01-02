@@ -135,7 +135,7 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void FirstAndThirdSidesAreEqualAreNotScalene() throws TriangleException {
+    public void firstAndThirdSidesAreEqualAreNotScalene() throws TriangleException {
         Triangle triangle = new Triangle(3, 4, 3);
 
         assertThat(triangle.isScalene()).isFalse();
@@ -143,7 +143,7 @@ public class TriangleTest {
 
     @Ignore("Remove to run test")
     @Test
-    public void SecondAndThirdSidesAreEqualAreNotScalene() throws TriangleException {
+    public void secondAndThirdSidesAreEqualAreNotScalene() throws TriangleException {
         Triangle triangle = new Triangle(4, 3, 3);
 
         assertThat(triangle.isScalene()).isFalse();
