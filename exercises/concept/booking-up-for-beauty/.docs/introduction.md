@@ -80,8 +80,8 @@ Attempting to parse a `LocalDate` or `LocalDateTime` from a `String` like this u
 Instead, to format dates using a custom format, you should use the `java.time.format.DateTimeFormatter`:
 
 ```java
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-LocalDate date = LocalDate.parse("03/12/2007", formatter);
+DateTimeFormatter parser = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+LocalDate date = LocalDate.parse("03/12/2007", parser);
 
 DateTimeFormatter printer = DateTimeFormatter.ofPattern("MMMM d, yyyy");
 printer.format(date);
