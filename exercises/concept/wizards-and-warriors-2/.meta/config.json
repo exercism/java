@@ -14,6 +14,11 @@
     ],
     "invalidator": [
       "build.gradle"
+    ],
+    "editor": [
+      "src/main/java/Character.java",
+      "src/main/java/Destination.java",
+      "src/main/java/TravelMethod.java"
     ]
   },
   "forked_from": [
