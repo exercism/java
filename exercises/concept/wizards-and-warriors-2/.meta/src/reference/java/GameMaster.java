@@ -16,7 +16,7 @@ public class GameMaster {
     }
 
     public static String describe(TravelMethod travelMethod) {
-        if (java.util.Objects.requireNonNull(travelMethod) == TravelMethod.WALKING) {
+        if (travelMethod == TravelMethod.WALKING) {
             return "You're traveling to your destination by walking.";
         }
         return "You're traveling to your destination on horseback.";
@@ -28,7 +28,7 @@ public class GameMaster {
     }
 
     public static String describe(Character character, Destination destination) {
-        return describe(character) + " You're traveling to your destination by walking. " + describe(destination);
+        return describe(character) + " " + describe(TravelMethod.WALKING) + " " + describe(destination);
     }
 }
 
