@@ -79,6 +79,9 @@ class Rational {
     }
 
     Rational pow(int n) {
+        if (n < 0) {
+            return new Rational(pow(this.denominator, n), pow(this.numerator, n));    
+        }
         return new Rational(pow(this.numerator, n), pow(this.denominator, n));
     }
 
@@ -86,7 +89,9 @@ class Rational {
         return Math.pow(this.numerator, x) / Math.pow(this.denominator, x);
     }
 
-    private int pow(final int base, final int exponent) {
+    private int pow(final int base, int exponent) {
+        exponent = exponent < 0 ? exponent * -1 : exponent;
+
         int product = 1;
 
         for (int i = 0; i < exponent; i++) {
