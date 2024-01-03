@@ -69,6 +69,6 @@ public class PangramCheckerTest {
     @Ignore("Remove to run test")
     @Test
     public void caseInsensitivePhraseIsNotPangram() {
-        assertThat(pangramChecker.isPangram("the quick brown fox jumps over with lazy FX")).isFalse();
+        assertThat(pangramChecker.isPangram("abcdefghijklm ABCDEFGHIJKLM")).isFalse();
     }
 }
