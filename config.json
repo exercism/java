@@ -298,6 +298,20 @@
           "numbers",
           "strings"
         ]
+      },
+      {
+        "slug": "wizards-and-warriors-2",
+        "name": "Wizards and Warriors 2",
+        "uuid": "752d6968-8600-426f-ad26-fa7c53cf1ac2",
+        "concepts": [
+          "method-overloading"
+        ],
+        "prerequisites": [
+          "classes",
+          "strings",
+          "enums"
+        ],
+        "status": "active"
       }
     ],
     "practice": [
