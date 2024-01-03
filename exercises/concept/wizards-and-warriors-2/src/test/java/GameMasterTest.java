@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +8,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:1")
+    @DisplayName("Describe a character by class: Warrior")
     public void describeWarriorCharacter() {
         Character character = new Character();
         character.setCharacterClass("Warrior");
@@ -18,6 +20,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:1")
+    @DisplayName("Describe a character by class: Wizard")
     public void describeWizardCharacter() {
         Character character = new Character();
         character.setCharacterClass("Wizard");
@@ -29,6 +32,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:2")
+    @DisplayName("Describe a destination: Tol Honeth")
     public void describeSmallTownDestination() {
         Destination destination = new Destination();
         destination.setName("Tol Honeth");
@@ -40,6 +44,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:2")
+    @DisplayName("Describe a destination: Ashaba")
     public void describeLargeTownDestination() {
         Destination destination = new Destination();
         destination.setName("Ashaba");
@@ -50,6 +55,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:3")
+    @DisplayName("Describe the travel method: walking")
     public void describeWalkingTravelMethod() {
         assertThat(GameMaster.describe(TravelMethod.WALKING)).isEqualTo("You're traveling to your destination by " +
                                                                         "walking.");
@@ -57,6 +63,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:3")
+    @DisplayName("Describe the travel method: horseback")
     public void describeHorseTravelMethod() {
         assertThat(GameMaster.describe(TravelMethod.HORSEBACK)).isEqualTo("You're traveling to your destination on " +
                                                                           "horseback.");
@@ -64,6 +71,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:4")
+    @DisplayName("Describe a character traveling to a destination")
     public void describeCharacterTravelingToDestinationWithExplicitTravelMethod() {
         Character character = new Character();
         character.setCharacterClass("Wizard");
@@ -81,6 +89,7 @@ public class GameMasterTest {
 
     @Test
     @Tag("task:5")
+    @DisplayName("Combined description should handle character and destination with default travel method")
     public void describeCharacterTravelingToDestinationWithoutExplicitTravelMethod() {
         Character character = new Character();
         character.setCharacterClass("Warrior");
