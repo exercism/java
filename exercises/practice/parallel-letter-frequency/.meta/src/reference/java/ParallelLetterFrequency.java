@@ -1,31 +1,29 @@
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.Collections;
 
 class ParallelLetterFrequency {
     private String letters;
 
     ParallelLetterFrequency(String[] texts) {
-        this.letters = Arrays.stream(texts)
-                .collect(Collectors.joining())
+        this.letters = String.join("", texts)
                 .replaceAll("[^\\p{L}a-zA-Z]", "")
                 .toLowerCase();
     }
 
-    Map<Integer, Integer> letterCounts() {
+    Map<Character, Integer> countLetters() {
         return this.letters
                 .chars()
+                .mapToObj(i -> (char) i)
                 .parallel()
                 .collect(Counts::new, Counts::increment, Counts::combine)
                 .buildMap();
     }
 
     private static class Counts {
-        private Map<Integer, Integer> letterCounts = new HashMap<>();
+        private Map<Character, Integer> letterCounts = new HashMap<>();
 
-        private void increment(int letter) {
+        private void increment(char letter) {
             letterCounts.put(letter, letterCounts.getOrDefault(letter, 0) + 1);
         }
 
@@ -34,7 +32,7 @@ class ParallelLetterFrequency {
                     .forEach(letter -> letterCounts.merge(letter, other.letterCounts.get(letter), Integer::sum));
         }
 
-        private Map<Integer, Integer> buildMap() {
+        private Map<Character, Integer> buildMap() {
             return Collections.unmodifiableMap(letterCounts);
         }
     }
