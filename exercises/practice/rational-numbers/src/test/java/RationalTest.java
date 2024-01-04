@@ -198,6 +198,14 @@ public class RationalTest {
         Rational actual = new Rational(0, 1).abs();
         assertThat(actual).isEqualTo(expected);
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testAbsoluteValueOfARationalNumberIsReducedToLowestTerms() {
+        Rational expected = new Rational(1, 2);
+        Rational actual = new Rational(2, 4).abs();
+        assertThat(actual).isEqualTo(expected);
+    }
 
     @Ignore("Remove to run test")
     @Test
@@ -212,6 +220,30 @@ public class RationalTest {
     public void testRaiseANegativeRationalNumberToAPositiveIntegerPower() {
         Rational expected = new Rational(-1, 8);
         Rational actual = new Rational(-1, 2).pow(3);
+        assertThat(actual).isEqualTo(expected);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testRaiseAPositiveRationalNumberToANegativeIntegerPower() {
+        Rational expected = new Rational(25, 9);
+        Rational actual = new Rational(3, 5).pow(-2);
+        assertThat(actual).isEqualTo(expected);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testRaiseANegativeRationalNumberToAnEvenNegativeIntegerPower() {
+        Rational expected = new Rational(25, 9);
+        Rational actual = new Rational(-3, 5).pow(-2);
+        assertThat(actual).isEqualTo(expected);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testRaiseANegativeRationalNumberToAnOddNegativeIntegerPower() {
+        Rational expected = new Rational(-125, 27);
+        Rational actual = new Rational(-3, 5).pow(-3);
         assertThat(actual).isEqualTo(expected);
     }
 
@@ -260,6 +292,14 @@ public class RationalTest {
     public void testReduceAPositiveRationalNumberToLowestTerms() {
         Rational expected = new Rational(1, 2);
         Rational actual = new Rational(2, 4);
+        assertThat(actual).isEqualTo(expected);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testReducePlacesTheMinusSignOnTheNumerator() {
+        Rational expected = new Rational(-3, 4);
+        Rational actual = new Rational(3, -4);
         assertThat(actual).isEqualTo(expected);
     }
 
