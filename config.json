@@ -271,6 +271,20 @@
           "numbers",
           "strings"
         ]
+      },
+      {
+        "slug": "wizards-and-warriors-2",
+        "name": "Wizards and Warriors 2",
+        "uuid": "752d6968-8600-426f-ad26-fa7c53cf1ac2",
+        "concepts": [
+          "method-overloading"
+        ],
+        "prerequisites": [
+          "classes",
+          "strings",
+          "enums"
+        ],
+        "status": "active"
       }
     ],
     "practice": [
@@ -2159,6 +2173,11 @@
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
       "name": "Lists"
+    },
+    {
+      "uuid": "54118389-9c01-431b-a850-f47da498f845",
+      "slug": "method-overloading",
+      "name": "Method Overloading"
     },
     {
       "uuid": "0718bff1-25ad-42bb-860d-1b0834beb9fc",

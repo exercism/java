@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "sougat818"
+  ],
+  "contributors": [
+    "sanderploegsma"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/GameMaster.java"
+    ],
+    "test": [
+      "src/test/java/GameMasterTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/GameMaster.java"
+    ],
+    "editor": [
+      "src/main/java/Character.java",
+      "src/main/java/Destination.java",
+      "src/main/java/TravelMethod.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "csharp/wizards-and-warriors-2"
+  ],
+  "blurb": "Learn about method overloading by extending your favorite RPG."
+}
