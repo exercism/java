@@ -13,7 +13,8 @@ It is important to note that overloading is determined by the method's signature
 
 ## Examples of Method Overloading
 
-Consider a class `Calculator` that can add numbers. Overloading allows different types of addition operations:
+Consider a class `Calculator` that can add numbers.
+Overloading allows different types of addition operations:
 
 ```java
 public class Calculator {
@@ -34,11 +35,14 @@ public class Calculator {
 
 ## Best Practices
 
-- **Clarity**: Overloaded methods should be used in a way that makes code more intuitive. The behavior of overloaded methods should be related and consistent.
+- **Clarity**: Overloaded methods should be used in a way that makes code more intuitive.
+  - The behavior of overloaded methods should be related and consistent.
 - **Avoid Ambiguity**: Ensure that each overloaded method has a clear purpose and that the differences in parameter lists are significant enough to avoid confusion.
-- **Documentation**: Properly document each version of the overloaded methods. Clear documentation helps other developers understand the purpose and usage of each method variant.
+- **Documentation**: Properly document each version of the overloaded methods.
+  - Clear documentation helps other developers understand the purpose and usage of each method variant.
 - **Consistent Return Types**: While return types can vary in overloaded methods, it's generally good practice to keep them consistent where possible to avoid confusion.
-- **Limit Overloading**: Avoid overusing method overloading. Excessive overloading can make the code harder to read and maintain.
+- **Limit Overloading**: Avoid overusing method overloading.
+  - Excessive overloading can make the code harder to read and maintain.
 
 ## Conclusion
 
