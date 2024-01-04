@@ -14,7 +14,7 @@ character.setCharacterClass("Wizard");
 character.setLevel(4);
 character.setHitPoints(28);
 
-GameMaster.describe(character);
+new GameMaster().describe(character);
 // => "You're a level 4 Wizard with 28 hit points."
 ```
 
@@ -27,7 +27,7 @@ Destination destination = new Destination();
 destination.setName("Muros");
 destination.setInhabitants(732);
 
-GameMaster.describe(destination);
+new GameMaster().describe(destination);
 // => "You've arrived at Muros, which has 732 inhabitants."
 ```
 
@@ -41,7 +41,7 @@ Characters can travel to a destination using one of two options:
 Implement the (static) `GameMaster.describe` method that takes a `TravelMethod` as its sole parameter and returns its description.
 
 ```java
-GameMaster.describe(TravelMethod.HORSEBACK);
+new GameMaster().describe(TravelMethod.HORSEBACK);
 // => "You're traveling to your destination on horseback."
 ```
 
@@ -59,7 +59,7 @@ Destination destination = new Destination();
 destination.setName("Muros");
 destination.setInhabitants(732);
 
-GameMaster.describe(character, destination, TravelMethod.HORSEBACK);
+new GameMaster().describe(character, destination, TravelMethod.HORSEBACK);
 // => "You're a level 4 Wizard with 28 hit points. You're traveling to your destination on horseback. You've arrived at Muros, which has 732 inhabitants."
 ```
 
@@ -77,6 +77,6 @@ Destination destination = new Destination();
 destination.setName("Muros");
 destination.setInhabitants(732);
 
-GameMaster.describe(character, destination);
+new GameMaster().describe(character, destination);
 // => "You're a level 4 Wizard with 28 hit points. You're traveling to your destination by walking. You've arrived at Muros, which has 732 inhabitants."
 ```
