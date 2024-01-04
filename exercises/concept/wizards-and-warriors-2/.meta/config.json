@@ -2,6 +2,9 @@
   "authors": [
     "sougat818"
   ],
+  "contributors": [
+    "sanderploegsma"
+  ],
   "files": {
     "solution": [
       "src/main/java/GameMaster.java"
