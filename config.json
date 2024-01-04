@@ -271,6 +271,18 @@
           "numbers",
           "strings"
         ]
+      },
+      {
+        "slug": "arcade-high-score",
+        "name": "Arcade High Score",
+        "uuid": "07893a1a-eb93-4ad2-b98e-f3946c5e7fb2",
+        "concepts": [
+          "maps"
+        ],
+        "prerequisites": [
+          "numbers",
+          "strings"
+        ]
       }
     ],
     "practice": [
@@ -436,11 +448,13 @@
         "name": "Word Count",
         "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1",
         "practices": [
-          "strings"
+          "strings",
+          "maps"
         ],
         "prerequisites": [
           "for-loops",
-          "arrays"
+          "arrays",
+          "maps"
         ],
         "difficulty": 5
       },
@@ -827,11 +841,13 @@
         "name": "Nucleotide Count",
         "uuid": "2d80fdfc-5bd7-4b67-9fbe-8ab820d89051",
         "practices": [
-          "strings"
+          "strings",
+          "maps"
         ],
         "prerequisites": [
           "if-else-statements",
-          "for-loops"
+          "for-loops",
+          "maps"
         ],
         "difficulty": 5
       },
@@ -985,10 +1001,12 @@
         "practices": [
           "if-else-statements",
           "for-loops",
-          "enums"
+          "enums",
+          "maps"
         ],
         "prerequisites": [
-          "enums"
+          "enums",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -1030,12 +1048,14 @@
         "practices": [
           "arrays",
           "strings",
-          "if-else-statements"
+          "if-else-statements",
+          "maps"
         ],
         "prerequisites": [
           "arrays",
           "strings",
-          "if-else-statements"
+          "if-else-statements",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -1514,13 +1534,15 @@
         "uuid": "873c05de-b5f5-4c5b-97f0-d1ede8a82832",
         "practices": [
           "for-loops",
-          "numbers"
+          "numbers",
+          "maps"
         ],
         "prerequisites": [
           "exceptions",
           "for-loops",
           "if-else-statements",
-          "numbers"
+          "numbers",
+          "maps"
         ],
         "difficulty": 8
       },
@@ -1687,10 +1709,12 @@
         "name": "Parallel Letter Frequency",
         "uuid": "38a405e8-619d-400f-b53c-2f06461fdf9d",
         "practices": [
-          "strings"
+          "strings",
+          "maps"
         ],
         "prerequisites": [
-          "strings"
+          "strings",
+          "maps"
         ],
         "difficulty": 6
       },
@@ -1979,13 +2003,16 @@
         "slug": "sgf-parsing",
         "name": "SGF Parsing",
         "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
-        "practices": [],
+        "practices": [
+          "maps"
+        ],
         "prerequisites": [
           "strings",
           "chars",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "for-loops",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -2189,6 +2216,11 @@
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
       "slug": "ternary-operators",
       "name": "Ternary Operators"
+    },
+    {
+      "uuid": "5a10c26d-1f8a-46d3-ab85-686235000f0e",
+      "slug": "maps",
+      "name": "Maps"
     }
   ],
   "key_features": [
