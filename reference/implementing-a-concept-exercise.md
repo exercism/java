@@ -1,8 +1,11 @@
 # How to implement a Java Concept Exercise
 
 This document describes how to implement a Concept Exercise for the Java track.
+It assumes you have read the main [Contributing guide][contributing-guide], so make sure to read this first!
 
-**Please please please read the docs before starting.** Posting PRs without reading these docs will be a lot more frustrating for you during the review cycle, and exhaust Exercism's maintainers' time. So, before diving into the implementation, please read the following documents:
+**Please please please read the docs before starting.**
+Posting PRs without reading these docs will be a lot more frustrating for you during the review cycle, and exhaust Exercism's maintainers' time.
+So, before diving into the implementation, please read the following documents:
 
 - [The features of v3][docs-features-of-v3].
 - [Rationale for v3][docs-rationale-for-v3].
@@ -14,107 +17,109 @@ Please also watch the following video:
 
 As this document is generic, the following placeholders are used:
 
-- `<slug>`: the name of the exercise in snake_case (e.g. `calculator-conundrum`).
-- `<concepts>`: the Concepts the exercise is about (e.g. `loops`),
-- `<concept-1>`: a single Concept slug,
-- `<prerequisite-n>`: a single Concept slug,
-- `<uuid>`: a _new_ v4 UUID (random!)
-- `<first-and-last-name>`: your first and last name (e.g. `John Doe`)
-- `<git-email>`: the email address you use for git (e.g. `johndoe@email.com`)
+- `<exercise-slug>`: the slug of the exercise (e.g. `calculator-conundrum`),
+- `<ExerciseName>`: the name of the exercise (e.g. `CalculatorConundrum`),
+- `<concept-slug>`: the slug of the concept (e.g. `loops`).
 
-Before implementing the exercise, please make sure you have a good understanding of what the exercise should be teaching (and what not). This information can be found in the exercise's GitHub issue. Having done this, please read the [Java Concept exercises introduction][concept-exercises]. If you have come up with something completely new, create a new issue _first_ so we can discuss the Concept Exercise.
+Before implementing the exercise, please make sure you have a good understanding of what the exercise should be teaching (and what not).
+This information can be found in the exercise's GitHub issue.
+If you have come up with something completely new, create a new issue _first_ so we can discuss the Concept Exercise.
 
 To implement a Concept Exercise, the following files must be added:
 
 <pre>
-languages
-└── java
-    ├── concepts
-    |   └── &lt;concept-1&gt;
-    |       ├── about.md
-    |       └── links.json
-    └── exercises
-        └── concept
-            └── &lt;slug&gt;
-                |── .docs
-                |   |── instructions.md
-                |   |── introduction.md
-                |   |── hints.md
-                |   └── source.md (required if there are third-party sources)
-                |── .gitignore
-                |── .meta
-                |   |── design.md
-                |   |── config.json
-                |   └── src
-                |       └── reference
-                |           └── java
-                |               └── &lt;slug&gt;.java
-                |── build.gradle
-                └── src
-                    |── main
-                    |   └── java
-                    |       └── &lt;slug&gt;.java
-                    └── test
-                        └── java
-                            └── &lt;slug&gt;Test.java
+.
+├── concepts
+│   └── &lt;concept-slug&gt;
+│       ├── .meta
+│       │   └── config.json
+│       ├── about.md
+│       ├── introduction.md
+│       └── links.json
+└── exercises
+    └── concept
+        └── &lt;exercise-slug&gt;
+            ├── .docs
+            │   ├── hints.md
+            │   ├── instructions.md
+            │   ├── introduction.md
+            │   └── introduction.md.tpl
+            ├── .meta
+            │   ├── config.json
+            │   ├── design.md
+            │   └── src
+            │       └── reference
+            │           └── java
+            │               └── &lt;ExerciseName&gt;.java
+            ├── build.gradle
+            └── src
+                ├── main
+                │   └── java
+                │       └── &lt;ExerciseName&gt;.java
+                └── test
+                    └── java
+                        └── &lt;ExerciseName&gt;Test.java
 </pre>
 
 ## Step 1: Add code files
 
-The configuration files may be copied from another exercise. We aim to keep these in sync. We suggest to use:
+The configuration files may be copied from another exercise.
+We aim to keep these in sync.
+We suggest to use:
 
-- `languages/java/exercises/concept/basics/build.gradle`
+- `exercises/concept/lasagna/build.gradle`
 
 Now create the following three files:
 
-- `src/main/java/<slug>.java`. the stub implementation file, which is the starting point for students to work on the exercise.
-- `src/test/java/<slug>Test.java`: the test suite, please use `assertj` to describe assertions instead of those offered by JUnit.
-- `.meta/src/reference/java/<slug>.java`: an exemplar implementation that passes all the tests.
+- `src/main/java/<ExerciseName>.java`: the stub implementation file, which is the starting point for students to work on the exercise.
+- `src/test/java/<ExerciseName>Test.java`: the test suite, please use `assertj` to describe assertions instead of those offered by JUnit.
+- `.meta/src/reference/java/<ExerciseName>.java`: an exemplar implementation that passes all the tests.
 
-Append to `languages/java/exercises/settings.gradle` the following line: `concept:<slug>`
+Append to `exercises/settings.gradle` the following line:
+
+```groovy
+include 'concept:<exercise-slug>'
+```
 
 ## Step 2: Validate the solution
 
 Before submitting your solution, be sure it works following these two steps from the `exercises` folder:
 
-1. Test the solution running `./gradlew concept:<slug>:test`
-2. Validate the coding style running `./gradlew concept:<slug>:check`
+1. Test the solution running `./gradlew concept:<exercise-slug>:test`
+2. Validate the coding style running `./gradlew concept:<exercise-slug>:check`
 
 ## Step 3: Add documentation files
 
-How to create the files common to all tracks is described in the [how to implement a concept exercise document][how-to-implement-a-concept-exercise].
+For more information on the documentation files used in a concept exercise, refer to the [Concept Exercise docs][docs-concept-exercises].
 
-## Step 4: Update list of implemented exercises
+## Step 4: Add analyzer (optional)
 
-- Add the exercise to the [list of implemented exercises][implemented-exercises].
-
-## Step 5: Add analyzer (optional)
-
-Some exercises could benefit from having an exercise-specific [analyzer][analyzer]. If so, specify what analysis rules should be applied to this exercise and why.
+Some exercises could benefit from having an exercise-specific [analyzer][analyzer].
+If so, specify what analysis rules should be applied to this exercise and why.
 
 _Skip this step if you're not sure what to do._
 
-## Step 6: Add representation (optional)
+## Step 5: Add representation (optional)
 
-Some exercises could benefit from having an custom representation as generated by the [Java representer][representer]. If so, specify what changes to the representation should be applied and why.
+Some exercises could benefit from having an custom representation as generated by the [Java representer][representer].
+If so, specify what changes to the representation should be applied and why.
 
 _Skip this step if you're not sure what to do._
 
 ## Inspiration
 
-When implementing an exercise, it can be very useful to look at already implemented Java exercises like the strings or numbers exercises. You can also check the exercise's [general concepts documents][reference] to see if other languages have already implemented an exercise for that Concept.
+When implementing an exercise, it can be very useful to look at other concept exercises in the Java track, such as `annalyns-infiltration` or `cars-assemble`.
+You can also check the [Concept exercise stories][docs-concept-exercise-stories] to see if other languages have already implemented an exercise for that Concept.
 
 ## Help
 
 If you have any questions regarding implementing the exercise, please post them as comments in the exercise's GitHub issue.
 
 [analyzer]: https://github.com/exercism/java-analyzer
-[representer]: https://github.com/exercism/java-representer
-[concept-exercises]: ../exercises/concept/README.md
-[how-to-implement-a-concept-exercise]: https://github.com/exercism/v3/blob/main/docs/maintainers/generic-how-to-implement-a-concept-exercise.md
-[docs-concept-exercises]: https://github.com/exercism/v3/blob/main/docs/concept-exercises.md
-[docs-rationale-for-v3]: https://github.com/exercism/v3/blob/main/docs/rationale-for-v3.md
-[docs-features-of-v3]: https://github.com/exercism/v3/blob/main/docs/features-of-v3.md
 [anatomy-of-a-concept-exercise]: https://www.youtube.com/watch?v=gkbBqd7hPrA
-[reference]: https://github.com/exercism/v3/blob/main/reference/README.md
-[implemented-exercises]: ../exercises/concept/README.md#implemented-exercises
+[contributing-guide]: ../CONTRIBUTING.md
+[docs-concept-exercises]: https://exercism.org/docs/building/tracks/concept-exercises
+[docs-concept-exercise-stories]: https://exercism.org/docs/building/tracks/stories
+[docs-features-of-v3]: https://github.com/exercism/v3/blob/main/docs/features-of-v3.md
+[docs-rationale-for-v3]: https://github.com/exercism/v3/blob/main/docs/rationale-for-v3.md
+[representer]: https://github.com/exercism/java-representer
