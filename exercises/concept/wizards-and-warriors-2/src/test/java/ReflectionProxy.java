@@ -2,6 +2,11 @@ import java.lang.reflect.*;
 
 import static java.lang.Class.forName;
 
+/**
+ * This is a helper class to be able to run the tests for this exercise.
+ * The tests are located in the {@link GameMasterTest} class.
+ * @see GameMasterTest
+ */
 public abstract class ReflectionProxy {
 
     /**

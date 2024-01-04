@@ -1,3 +1,8 @@
+/**
+ * This is a helper class to be able to run the tests for this exercise.
+ * The tests are located in the {@link GameMasterTest} class.
+ * @see GameMasterTest
+ */
 public class GameMasterProxy extends ReflectionProxy {
 
     @Override
