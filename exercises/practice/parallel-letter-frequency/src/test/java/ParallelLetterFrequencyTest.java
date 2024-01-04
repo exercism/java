@@ -206,7 +206,7 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testNoTexts() {
         String[] input = {};
-        Map<Character, Integer> expectedOutput = new HashMap<>();
+        Map<Integer, Integer> expectedOutput = new HashMap<>();
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
         assertThat(p.letterCounts()).isEqualTo(expectedOutput);
@@ -216,9 +216,9 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testOneTextWithOneLetter() {
         String[] input = { "a" };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('a', 1);
+                put((int) 'a', 1);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -230,11 +230,11 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testOneTextWithMultipleLetters() {
         String[] input = { "bbcccd" };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('b', 2);
-                put('c', 3);
-                put('d', 1);
+                put((int) 'b', 2);
+                put((int) 'c', 3);
+                put((int) 'd', 1);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -246,10 +246,10 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testTwoTextsWithOneLetter() {
         String[] input = { "e", "f" };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('e', 1);
-                put('f', 1);
+                put((int) 'e', 1);
+                put((int) 'f', 1);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -261,11 +261,11 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testTwoTextsWithMultipleLetters() {
         String[] input = { "ggh", "hhi" };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('g', 2);
-                put('h', 3);
-                put('i', 1);
+                put((int) 'g', 2);
+                put((int) 'h', 3);
+                put((int) 'i', 1);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -277,9 +277,9 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testIgnoreLetterCasing() {
         String[] input = { "m", "M" };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('m', 2);
+                put((int) 'm', 2);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -291,7 +291,7 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testIgnoreWhitespace() {
         String[] input = { "   ", "\t", "\r\n" };
-        Map<Character, Integer> expectedOutput = new HashMap<>();
+        Map<Integer, Integer> expectedOutput = new HashMap<>();
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
         assertThat(p.letterCounts()).isEqualTo(expectedOutput);
@@ -301,7 +301,7 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testIgnorePunctuation() {
         String[] input = { "!", "?", ";", ",", "." };
-        Map<Character, Integer> expectedOutput = new HashMap<>();
+        Map<Integer, Integer> expectedOutput = new HashMap<>();
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
         assertThat(p.letterCounts()).isEqualTo(expectedOutput);
@@ -311,7 +311,7 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testIgnoreNumbers() {
         String[] input = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        Map<Character, Integer> expectedOutput = new HashMap<>();
+        Map<Integer, Integer> expectedOutput = new HashMap<>();
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
         assertThat(p.letterCounts()).isEqualTo(expectedOutput);
@@ -321,12 +321,12 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testUnicodeLetters() {
         String[] input = { "本", "φ", "ほ", "ø" };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('本', 1);
-                put('φ', 1);
-                put('ほ', 1);
-                put('ø', 1);
+                put((int) '本', 1);
+                put((int) 'φ', 1);
+                put((int) 'ほ', 1);
+                put((int) 'ø', 1);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -338,30 +338,30 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testCombinationOfLowerAndUppercaseLettersPunctuationAndWhiteSpace() {
         String[] input = { calculateFrecuencies };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('a',  32);
-                put('b',  4);
-                put('c',  6);
-                put('d',  14);
-                put('e',  37);
-                put('f',  7);
-                put('g',  8);
-                put('h',  29);
-                put('i',  19);
-                put('k',  6);
-                put('l',  12);
-                put('m',  7);
-                put('n',  19);
-                put('o',  22);
-                put('p',  7);
-                put('r',  17);
-                put('s',  16);
-                put('t',  30);
-                put('u',  9);
-                put('v',  2);
-                put('w',  9);
-                put('y',  4);
+                put((int) 'a',  32);
+                put((int) 'b',  4);
+                put((int) 'c',  6);
+                put((int) 'd',  14);
+                put((int) 'e',  37);
+                put((int) 'f',  7);
+                put((int) 'g',  8);
+                put((int) 'h',  29);
+                put((int) 'i',  19);
+                put((int) 'k',  6);
+                put((int) 'l',  12);
+                put((int) 'm',  7);
+                put((int) 'n',  19);
+                put((int) 'o',  22);
+                put((int) 'p',  7);
+                put((int) 'r',  17);
+                put((int) 's',  16);
+                put((int) 't',  30);
+                put((int) 'u',  9);
+                put((int) 'v',  2);
+                put((int) 'w',  9);
+                put((int) 'y',  4);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -377,11 +377,11 @@ public class ParallelLetterFrequencyTest {
         for (int i = 0; i < input.length; i++) {
             input[i] = "abbccc";
         }
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('a', 50);
-                put('b', 100);
-                put('c', 150);
+                put((int) 'a', 50);
+                put((int) 'b', 100);
+                put((int) 'c', 150);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
@@ -393,33 +393,33 @@ public class ParallelLetterFrequencyTest {
     @Test
     public void testLargeTexts() {
         String[] input = { largeTexts1, largeTexts2, largeTexts3, largeTexts4 };
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
+        Map<Integer, Integer> expectedOutput = new HashMap<>() {
             {
-                put('a',  845);
-                put('b',  155);
-                put('c',  278);
-                put('d',  359);
-                put('e',  1143);
-                put('f',  222);
-                put('g',  187);
-                put('h',  507);
-                put('i',  791);
-                put('j', 12);
-                put('k',  67);
-                put('l',  423);
-                put('m',  288);
-                put('n',  833);
-                put('o',  791);
-                put('p',  197);
-                put('q',  8);
-                put('r',  432);
-                put('s',  700);
-                put('t',  1043);
-                put('u',  325);
-                put('v',  111);
-                put('w',  223);
-                put('x',  7);
-                put('y',  251);
+                put((int) 'a',  845);
+                put((int) 'b',  155);
+                put((int) 'c',  278);
+                put((int) 'd',  359);
+                put((int) 'e',  1143);
+                put((int) 'f',  222);
+                put((int) 'g',  187);
+                put((int) 'h',  507);
+                put((int) 'i',  791);
+                put((int) 'j', 12);
+                put((int) 'k',  67);
+                put((int) 'l',  423);
+                put((int) 'm',  288);
+                put((int) 'n',  833);
+                put((int) 'o',  791);
+                put((int) 'p',  197);
+                put((int) 'q',  8);
+                put((int) 'r',  432);
+                put((int) 's',  700);
+                put((int) 't',  1043);
+                put((int) 'u',  325);
+                put((int) 'v',  111);
+                put((int) 'w',  223);
+                put((int) 'x',  7);
+                put((int) 'y',  251);
             }
         };
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
