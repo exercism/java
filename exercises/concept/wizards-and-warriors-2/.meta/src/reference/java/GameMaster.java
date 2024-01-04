@@ -1,16 +1,16 @@
 public class GameMaster {
 
-    public static String describe(Character character) {
-        return "You're a level " + character.getLevel() + " " + character.getCharacterClass() + " with " +
-               character.getHitPoints() + " hit points.";
+    public String describe(Character character) {
+        return "You're a level %d %s with %d hit points.".formatted(character.getLevel(),
+                character.getCharacterClass(), character.getHitPoints());
     }
 
-    public static String describe(Destination destination) {
-        return "You've arrived at " + destination.getName() + ", which has " + destination.getInhabitants() + " " +
-               "inhabitants.";
+    public String describe(Destination destination) {
+        return "You've arrived at %s, which has %d inhabitants.".formatted(destination.getName(),
+                destination.getInhabitants());
     }
 
-    public static String describe(TravelMethod travelMethod) {
+    public String describe(TravelMethod travelMethod) {
         if (travelMethod == TravelMethod.WALKING) {
             return "You're traveling to your destination by walking.";
         }
@@ -18,11 +18,11 @@ public class GameMaster {
 
     }
 
-    public static String describe(Character character, Destination destination, TravelMethod travelMethod) {
+    public String describe(Character character, Destination destination, TravelMethod travelMethod) {
         return describe(character) + " " + describe(travelMethod) + " " + describe(destination);
     }
 
-    public static String describe(Character character, Destination destination) {
-        return describe(character) + " " + describe(TravelMethod.WALKING) + " " + describe(destination);
+    public String describe(Character character, Destination destination) {
+        return describe(character, destination, TravelMethod.WALKING);
     }
 }

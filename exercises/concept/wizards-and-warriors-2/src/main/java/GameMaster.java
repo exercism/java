@@ -1,13 +1,12 @@
 public class GameMaster {
 
-    // TODO: define the 'describe(Character character)' static method
+    // TODO: define a 'describe' method that returns a description of a Character
 
-    // TODO: define the 'describe(Destination destination)' static method
+    // TODO: define a 'describe' method that returns a description of a Destination
 
-    // TODO: define the 'describe(TravelMethod travelMethod)' static method
+    // TODO: define a 'describe' method that returns a description of a TravelMethod
 
-    // TODO: define the 'describe(Character character, Destination destination, TravelMethod travelMethod)' static method
+    // TODO: define a 'describe' method that returns a description of a Character, Destination and TravelMethod
 
-    // TODO: define the 'describe(Character character, Destination destination)' static method
-
+    // TODO: define a 'describe' method that returns a description of a Character and Destination
 }

@@ -12,13 +12,13 @@
     "exemplar": [
       ".meta/src/reference/java/GameMaster.java"
     ],
-    "invalidator": [
-      "build.gradle"
-    ],
     "editor": [
       "src/main/java/Character.java",
       "src/main/java/Destination.java",
       "src/main/java/TravelMethod.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "forked_from": [
