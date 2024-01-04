@@ -9,7 +9,7 @@ public class GameMasterProxy extends ReflectionProxy {
         try {
             return invokeMethod("describe", new Class[]{Character.class}, character);
         } catch (Exception e) {
-            throw new UnsupportedOperationException("Please implement the 'describe(Character character)' static " +
+            throw new UnsupportedOperationException("Please implement the 'describe(Character character)' " +
                                                     "method");
         }
     }
@@ -18,7 +18,7 @@ public class GameMasterProxy extends ReflectionProxy {
         try {
             return invokeMethod("describe", new Class[]{Destination.class}, character);
         } catch (Exception e) {
-            throw new UnsupportedOperationException("Please implement the 'describe(Destination destination)' static " +
+            throw new UnsupportedOperationException("Please implement the 'describe(Destination destination)' " +
                                                     "method");
         }
     }
@@ -28,7 +28,7 @@ public class GameMasterProxy extends ReflectionProxy {
             return invokeMethod("describe", new Class[]{TravelMethod.class}, character);
         } catch (Exception e) {
             throw new UnsupportedOperationException("Please implement the 'describe(TravelMethod travelMethod)' " +
-                                                    "static method");
+                                                    "method");
         }
     }
 
@@ -38,7 +38,7 @@ public class GameMasterProxy extends ReflectionProxy {
                     character, destination, travelMethod);
         } catch (Exception e) {
             throw new UnsupportedOperationException("Please implement the 'describe(Character character, Destination " +
-                                                    "destination, TravelMethod travelMethod)' static method");
+                                                    "destination, TravelMethod travelMethod)' method");
         }
     }
 
@@ -48,7 +48,7 @@ public class GameMasterProxy extends ReflectionProxy {
                     character, destination);
         } catch (Exception e) {
             throw new UnsupportedOperationException("Please implement the 'describe(Character character, Destination " +
-                                                    "destination)' static method");
+                                                    "destination)' method");
         }
     }
 
