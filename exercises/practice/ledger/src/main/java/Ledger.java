@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ledger {
-    public LedgerEntry createLedgerEntry(String d, String desc, double c) {
+    public LedgerEntry createLedgerEntry(String d, String desc, int c) {
         LedgerEntry le = new LedgerEntry();
         le.setChange(c);
         le.setDescription(desc);
@@ -89,12 +89,12 @@ public class Ledger {
 
                 String converted = null;
                 if (e.getChange() < 0) {
-                    converted = String.format("%.02f", e.getChange() * -1);
+                    converted = String.format("%.02f", (e.getChange() / 100) * -1);
                 } else {
-                    converted = String.format("%.02f", e.getChange());
+                    converted = String.format("%.02f", e.getChange() / 100);
                 }
 
-                String[] parts = converted.split("\\.");
+                String[] parts = converted.split("\\,");
                 String amount = "";
                 int count = 1;
                 for (int ind = parts[0].length() - 1; ind >= 0; ind--) {
@@ -106,12 +106,23 @@ public class Ledger {
                     count++;
                 }
 
-                amount = curSymb + amount + decSep + parts[1];
-
-                if (e.getChange() < 0) {
-                    amount = "-" + amount;
+                if (loc.equals("nl-NL")) {
+                    amount = curSymb + " " + amount + decSep + parts[1];
+                } else {
+                    amount = curSymb + amount + decSep + parts[1];
                 }
+                
 
+                if (e.getChange() < 0 && loc.equals("en-US")) {
+                    amount = "(" + amount + ")";
+                } else if (e.getChange() < 0 && loc.equals("nl-NL")) {
+                    amount = curSymb + " -" + amount.replace(curSymb, "").trim() + " ";
+                } else if (loc.equals("nl-NL")) {
+                    amount = " " + amount + " ";
+                } else {
+                    amount = amount + " ";
+                }
+                
                 s = s + "\n";
                 s = s + String.format("%s | %-25s | %13s",
                         date,
