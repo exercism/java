@@ -97,6 +97,13 @@ public class BracketCheckerTest {
 
     @Ignore("Remove to run test")
     @Test
+    public void testPairedAndWrongNestedBracketsButInnermostAreCorrect() {
+        BracketChecker bracketChecker = new BracketChecker("[({}])");
+        assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
     public void testPairedAndIncompleteBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{}[");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -106,6 +113,20 @@ public class BracketCheckerTest {
     @Test
     public void testTooManyClosingBrackets() {
         BracketChecker bracketChecker = new BracketChecker("[]]");
+        assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testEarlyUnexpectedBrackets() {
+        BracketChecker bracketChecker = new BracketChecker(")()");
+        assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testEarlyMismatchedBrackets() {
+        BracketChecker bracketChecker = new BracketChecker("{)()");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
     }
 
