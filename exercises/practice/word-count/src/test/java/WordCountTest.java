@@ -117,8 +117,11 @@ public class WordCountTest {
         expectedWordCount.put("laugh", 1);
         expectedWordCount.put("then", 1);
         expectedWordCount.put("cry", 1);
+        expectedWordCount.put("you're", 1);
+        expectedWordCount.put("getting", 1);
+        expectedWordCount.put("it", 1);
 
-        actualWordCount = wordCount.phrase("First: don't laugh. Then: don't cry.");
+        actualWordCount = wordCount.phrase("'First: don't laugh. Then: don't cry. You're getting it.'");
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
@@ -170,6 +173,16 @@ public class WordCountTest {
         expectedWordCount.put("three", 1);
 
         actualWordCount = wordCount.phrase(",\n,one,\n ,two \n 'three'");
+        assertThat(actualWordCount).isEqualTo(expectedWordCount);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void quotationForWordWithApostrophe() {
+        expectedWordCount.put("can", 1);
+        expectedWordCount.put("can't", 2);
+
+        actualWordCount = wordCount.phrase("can, can't, 'can't'");
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
