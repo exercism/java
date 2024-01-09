@@ -231,7 +231,7 @@ public class WordSearcherTest {
     @Test
     public void testShouldLocateMultipleWords() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("fortran",  Optional.of(new WordLocation(new Pair(1,  7), new Pair(7,  7))));
+        expectedLocations.put("fortran", Optional.of(new WordLocation(new Pair(1,  7), new Pair(7,  7))));
         expectedLocations.put("clojure", Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
 
         Set<String> searchWords = expectedLocations.keySet();
@@ -509,6 +509,83 @@ public class WordSearcherTest {
                         {'a', 'l', 'x', 'h', 'p', 'b', 'u', 'r', 'y', 'i'},
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testFailToLocateWordsThatAreNotOnHorizontalVerticalOrDiagonalLines() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("aef", Optional.empty());
+        expectedLocations.put("ced", Optional.empty());
+        expectedLocations.put("abf", Optional.empty());
+        expectedLocations.put("cbd", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'j', 'e', 'f'},
+                        {'c', 'a', 'm'}});
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testNotConcatenateDifferentLinesToFindAHorizontalWord() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("elixir", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'a', 'b', 'c', 'e', 'l', 'i'},
+                        {'x', 'i', 'r', 'd', 'f', 'g'}});
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testNotWrapAroundHorizontallyToFindAWord() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("lisp", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'s', 'i', 'l', 'a', 'b', 'c', 'd', 'e', 'f', 'p'}
+                }
+        );
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testNotWrapAroundVerticallyToFindAWord() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("rust", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'s'},
+                        {'u'},
+                        {'r'},
+                        {'a'},
+                        {'b'},
+                        {'c'},
+                        {'t'}});
 
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
