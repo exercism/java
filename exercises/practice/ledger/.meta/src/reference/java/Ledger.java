@@ -94,7 +94,7 @@ public class Ledger {
                     converted = String.format("%.02f", e.getChange() / 100);
                 }
 
-                String[] parts = converted.split("\\,");
+                String[] parts = converted.split("\\.");
                 String amount = "";
                 int count = 1;
                 for (int ind = parts[0].length() - 1; ind >= 0; ind--) {
