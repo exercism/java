@@ -66,6 +66,13 @@ public class YachtTest {
         Yacht yacht = new Yacht(new int[]{ 3, 3, 3, 3, 3 }, YachtCategory.FIVES);
         assertThat(yacht.score()).isEqualTo(0);
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void fives() {
+        Yacht yacht = new Yacht(new int[]{ 1, 5, 3, 5, 3 }, YachtCategory.FIVES);
+        assertThat(yacht.score()).isEqualTo(10);
+    }
 
     @Ignore("Remove to run test")
     @Test
