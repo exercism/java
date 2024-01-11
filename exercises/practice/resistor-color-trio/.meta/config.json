@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "manumafe98"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ResistorColorTrio.java"
+    ],
+    "test": [
+      "src/test/java/ResistorColorTrioTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ResistorColorTrio.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Convert color codes, as used on resistors, to a human-readable label.",
+  "source": "Maud de Vries, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/1549"
+}
