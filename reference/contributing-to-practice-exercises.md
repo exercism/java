@@ -27,9 +27,8 @@ The Java specific details you need to know about adding an exercise are:
   This list is in alphabetical order so please add your exercise so that it maintains this order.
 
 - Please add an exercise submodule for your exercise.
-  See [The Problem Submodules](../CONTRIBUTING.md#the-problem-submodules) section for what needs to be in this.
-  See the [Policies](../POLICIES.md#starter-implementations) for an explanation of when you need to add a starter implementation.
-  The `build.gradle` file can just be copied from any other exercise submodule.
+  In the `resources/exercise-template` you will find a template to get you started.
+  See [The Problem Submodules](../CONTRIBUTING.md#the-problem-submodules) section for details on how each exercise submodule is structured.
 
 - Use the configlet to [generate documentation and metadata files][docs-building-configlet-sync-new-exercise] for the new exercise.
 
