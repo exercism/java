@@ -1,0 +1,9 @@
+{
+  "authors": ["your-github-username-here"],
+  "files": {
+    "solution": ["src/main/java/ExerciseName.java"],
+    "test": ["src/test/java/ExerciseNameTest.java"],
+    "exemplar": [".meta/src/reference/java/ExerciseName.java"],
+    "invalidator": ["build.gradle"]
+  }
+}
