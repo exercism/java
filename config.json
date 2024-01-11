@@ -451,8 +451,17 @@
         "uuid": "0ae1989d-df46-414d-ad1f-4bd0f0f78421",
         "practices": [],
         "prerequisites": [
-          "arrays",
-          "enums"
+          "arrays"
+        ],
+        "difficulty": 2
+      },
+      {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "e8e6c84e-4982-4bb0-af49-fd67e6f32920",
+        "practices": [],
+        "prerequisites": [
+          "arrays"
         ],
         "difficulty": 2
       },
