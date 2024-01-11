@@ -1,8 +1,7 @@
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -44,14 +43,8 @@ public class MazeGeneratorTest {
         var expectedHeight = RECTANGLE_ROWS * 2 + 1;
 
         assertThat(maze)
-                .as("The maze has the correct number of rows")
-                .hasSize(expectedHeight);
-
-        Arrays.stream(maze).forEach(row ->
-                assertThat(row)
-                        .as("The maze has the correct number of columns")
-                        .hasSize(expectedWidth)
-        );
+                .as("The maze has the correct dimensions")
+                .hasDimensions(expectedHeight, expectedWidth);
     }
 
     @Ignore("Remove to run test")
