@@ -63,17 +63,15 @@ To implement a Concept Exercise, the following files must be added:
 
 ## Step 1: Add code files
 
-The configuration files may be copied from another exercise.
-We aim to keep these in sync.
-We suggest to use:
+Start by copying the `resources/exercise-template` directory to `exercises/concept/exercise-slug`, this will be the root of the new exercise.
 
-- `exercises/concept/lasagna/build.gradle`
+Among others, this directory contains the following files:
 
-Now create the following three files:
+- `src/main/java/ExerciseName.java`: the stub implementation file, which is the starting point for students to work on the exercise.
+- `src/test/java/ExerciseNameTest.java`: the test suite, please use `assertj` to describe assertions instead of those offered by JUnit.
+- `.meta/src/reference/java/ExerciseName.java`: an exemplar implementation that passes all the tests.
 
-- `src/main/java/<ExerciseName>.java`: the stub implementation file, which is the starting point for students to work on the exercise.
-- `src/test/java/<ExerciseName>Test.java`: the test suite, please use `assertj` to describe assertions instead of those offered by JUnit.
-- `.meta/src/reference/java/<ExerciseName>.java`: an exemplar implementation that passes all the tests.
+Make sure to rename each file to match the name of your new exercise.
 
 Append to `exercises/settings.gradle` the following line:
 
@@ -91,6 +89,26 @@ Before submitting your solution, be sure it works following these two steps from
 ## Step 3: Add documentation files
 
 For more information on the documentation files used in a concept exercise, refer to the [Concept Exercise docs][docs-concept-exercises].
+
+The introduction of each concept exercise typically contains the introduction for the corresponding concept(s).
+We aim to keep these in sync by using a special template for each concept exercise.
+
+This template should be named `.docs/introduction.md.tpl` and should look like the example below, where `concept-slug` contains the slug for the concept related to the exercise.
+
+```md
+# Introduction
+
+%{concept:concept-slug}
+```
+
+With the introduction template file in place, the introduction can be generated using the Configlet:
+
+```sh
+bin/configlet generate
+```
+
+Running this will create (or update) the exercise's `.docs/introduction.md`.
+Make sure to commit both the template and the generated introduction.
 
 ## Step 4: Add analyzer (optional)
 
