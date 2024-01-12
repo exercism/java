@@ -12,8 +12,8 @@ repositories {
 
 dependencies {
   implementation 'org.json:json:20190722'
-  testImplementation "junit:junit:4.13"
-  testImplementation "org.assertj:assertj-core:3.15.0"
+  testImplementation "junit:junit:4.13.1"
+  testImplementation "org.assertj:assertj-core:3.25.1"
 }
 
 test {
