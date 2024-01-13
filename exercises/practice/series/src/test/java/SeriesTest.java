@@ -120,11 +120,10 @@ public class SeriesTest {
     @Ignore("Remove to run test")
     @Test
     public void emptySeries() {
-        Series series = new Series("");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> series.slices(1))
-                .withMessage("Slice size is too big.");
+                .isThrownBy(() -> new Series(""))
+                .withMessage("series cannot be empty");
     }
 
 }
