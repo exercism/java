@@ -84,7 +84,17 @@ public class SeriesTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> series.slices(6))
-                .withMessage("Slice size is too big.");
+                .withMessage("slice length cannot be greater than series length");
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void sliceLengthIsWayToolarge() {
+        Series series = new Series("12345");
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> series.slices(42))
+                .withMessage("slice length cannot be greater than series length");
     }
 
     @Ignore("Remove to run test")
@@ -94,7 +104,7 @@ public class SeriesTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> series.slices(0))
-                .withMessage("Slice size is too small.");
+                .withMessage("slice length cannot be negative or zero");
     }
 
     @Ignore("Remove to run test")
@@ -104,17 +114,16 @@ public class SeriesTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> series.slices(-1))
-                .withMessage("Slice size is too small.");
+                .withMessage("slice length cannot be negative or zero");
     }
 
     @Ignore("Remove to run test")
     @Test
     public void emptySeries() {
-        Series series = new Series("");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> series.slices(1))
-                .withMessage("Slice size is too big.");
+                .isThrownBy(() -> new Series(""))
+                .withMessage("series cannot be empty");
     }
 
 }
