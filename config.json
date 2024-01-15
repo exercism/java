@@ -1054,7 +1054,12 @@
         "name": "State Of Tic Tac Toe",
         "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
         "practices": [],
-        "prerequisites": [],
+        "prerequisites": [
+          "arrays",
+          "for-loops",
+          "if-else-statements",
+          "strings"
+        ],
         "difficulty": 5
       },      
       {
