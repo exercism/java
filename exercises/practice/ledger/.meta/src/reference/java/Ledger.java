@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Ledger {
     public LedgerEntry createLedgerEntry(String d, String desc, int c) {
@@ -89,9 +90,9 @@ public class Ledger {
 
                 String converted = null;
                 if (e.getChange() < 0) {
-                    converted = String.format("%.02f", (e.getChange() / 100) * -1);
+                    converted = String.format(Locale.US, "%.02f", (e.getChange() / 100) * -1);
                 } else {
-                    converted = String.format("%.02f", e.getChange() / 100);
+                    converted = String.format(Locale.US, "%.02f", e.getChange() / 100);
                 }
 
                 String[] parts = converted.split("\\.");
