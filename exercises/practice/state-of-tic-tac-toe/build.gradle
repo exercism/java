@@ -1,23 +1,24 @@
-plugins {
-    id "java"
-}
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+// set default encoding to UTF-8
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    testImplementation platform("org.junit:junit-bom:5.10.0")
-    testImplementation "org.junit.jupiter:junit-jupiter"
-    testImplementation "org.assertj:assertj-core:3.25.1"
+  testImplementation "junit:junit:4.13.1"
+  testImplementation "org.assertj:assertj-core:3.25.1"
 }
 
 test {
-    useJUnitPlatform()
-
-    testLogging {
-        exceptionFormat = "full"
-        showStandardStreams = true
-        events = ["passed", "failed", "skipped"]
-    }
+  testLogging {
+    exceptionFormat = 'full'
+    showStandardStreams = true
+    events = ["passed", "failed", "skipped"]
+  }
 }

@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-class StateOfTicTacToeTest {
+public class StateOfTicTacToeTest {
     private StateOfTicTacToe stateOfTicTacToe;
 
     @Before
@@ -38,6 +38,15 @@ class StateOfTicTacToeTest {
             stateOfTicTacToe.determineState(new String[]{"OOX", "  X", "  X"})
         ).isEqualTo(GameStates.WIN);
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testFinishedGameWhereOWonViaLeftColumnVictory() {
+
+        assertThat(
+            stateOfTicTacToe.determineState(new String[]{"OXX", "OX ", "O  "})
+        ).isEqualTo(GameStates.WIN);
+    }
 
     @Ignore("Remove to run test")
     @Test
@@ -65,15 +74,6 @@ class StateOfTicTacToeTest {
             stateOfTicTacToe.determineState(new String[]{"XXX", "XOO", "O  "})
         ).isEqualTo(GameStates.WIN);
     }
-    
-    @Ignore("Remove to run test")
-    @Test
-    public void testFinishedGameWhereXWonViaTopRowVictory() {
-
-        assertThat(
-            stateOfTicTacToe.determineState(new String[]{"XXX", "XOO", "O  "})
-        ).isEqualTo(GameStates.WIN);
-    }
 
     @Ignore("Remove to run test")
     @Test
@@ -84,15 +84,6 @@ class StateOfTicTacToeTest {
         ).isEqualTo(GameStates.WIN);
     }
     
-    @Ignore("Remove to run test")
-    @Test
-    public void testFinishedGameWhereXWonViaBottomRowVictory() {
-
-        assertThat(
-            stateOfTicTacToe.determineState(new String[]{" OO", "O X", "XXX"})
-        ).isEqualTo(GameStates.WIN);
-    }
-
     @Ignore("Remove to run test")
     @Test
     public void testFinishedGameWhereXWonViaBottomRowVictory() {
@@ -173,6 +164,15 @@ class StateOfTicTacToeTest {
             stateOfTicTacToe.determineState(new String[]{"XXX", "XOO", "XOO"})
         ).isEqualTo(GameStates.WIN);
     }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testFinishedGameWhereXWonViaTwoDiagonalVictories() {
+
+        assertThat(
+            stateOfTicTacToe.determineState(new String[]{"XOX", "OXO", "XOX"})
+        ).isEqualTo(GameStates.WIN);
+    }
     
     @Ignore("Remove to run test")
     @Test
@@ -200,6 +200,24 @@ class StateOfTicTacToeTest {
             stateOfTicTacToe.determineState(new String[]{"   ", "X  ", "   "})
         ).isEqualTo(GameStates.ONGOING);
     }
+    
+    @Ignore("Remove to run test")
+    @Test
+    public void testOngoingGameTwoMovesIn() {
+
+        assertThat(
+            stateOfTicTacToe.determineState(new String[]{"O  ", " X ", "   "})
+        ).isEqualTo(GameStates.ONGOING);
+    }
+
+    @Ignore("Remove to run test")
+    @Test
+    public void testOngoingGameFiveMovesIn() {
+
+        assertThat(
+            stateOfTicTacToe.determineState(new String[]{"X  ", " XO", "OX "})
+        ).isEqualTo(GameStates.ONGOING);
+    }
 
     @Ignore("Remove to run test")
     @Test
@@ -215,17 +233,8 @@ class StateOfTicTacToeTest {
     public void testInvalidBoardOStarted() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"OXX", "   ", "   "}))
+            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"OOX", "   ", "   "}))
             .withMessage("Wrong turn order: O started");
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testInvalidBoard() {
-
-        assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"XXX", "OOO", "   "}))
-            .withMessage("Impossible board: game should have ended after X won");
     }
 
     @Ignore("Remove to run test")
