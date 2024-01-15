@@ -65,5 +65,5 @@ Implement the `LogLine.getOutputForShortLog()` method that can output the shorte
 ```java
 var logLine = new LogLine("[ERR]: Stack Overflow");
 logLine.getOutputForShortLog();
-// => "6:Stack overflow"
+// => "6:Stack Overflow"
 ```
