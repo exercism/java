@@ -285,6 +285,17 @@
           "enums"
         ],
         "status": "active"
+      },
+      {
+        "slug": "secrets",
+        "name": "secrets",
+        "uuid": "b6485b16-e94d-41ce-9689-d94b70266f5e",
+        "concepts": [
+          "bit-manipulation"
+        ],
+        "prerequisites": [
+          "numbers"
+        ]
       }
     ],
     "practice": [
@@ -555,7 +566,8 @@
         "uuid": "2d5b6404-3315-48c1-892f-b594a960e7a1",
         "practices": [],
         "prerequisites": [
-          "numbers"
+          "numbers",
+          "bit-manipulation"
         ],
         "difficulty": 3
       },
@@ -854,7 +866,8 @@
         "practices": [],
         "prerequisites": [
           "for-loops",
-          "enums"
+          "enums",
+          "bit-manipulation"
         ],
         "difficulty": 5
       },
@@ -1769,6 +1782,11 @@
       "uuid": "18bd44ca-9af7-4116-81d8-791b5eac8183",
       "slug": "basics",
       "name": "Basics"
+    },
+    {
+      "uuid": "3491358c-26fd-4c08-91c4-a6f76b3ed01a",
+      "slug": "bit-manipulation",
+      "name": "Bit Manipulation"
     },
     {
       "uuid": "ea12527d-7a9d-461e-93b1-bf639652430e",
