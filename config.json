@@ -1061,7 +1061,7 @@
           "strings"
         ],
         "difficulty": 5
-      },      
+      },
       {
         "slug": "affine-cipher",
         "name": "Affine Cipher",
