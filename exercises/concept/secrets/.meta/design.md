@@ -6,7 +6,7 @@ The goal of this exercise is to teach the student about bitwise operations in Ja
 
 ## Learning objectives
 
-- Learn about the bitwise operators <<, >>, >>>, &, |, ^ and ~
+- Learn about the bitwise operators `<<`, `>>`, `>>>`, `&`, `|`, `^` and `~`
 
 ## Concepts
 
