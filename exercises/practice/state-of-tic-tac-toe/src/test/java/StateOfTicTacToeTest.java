@@ -18,7 +18,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XOO", "X  ", "X  "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -27,7 +27,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"OXO", " X ", " X "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -36,7 +36,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"OOX", "  X", "  X"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -45,7 +45,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"OXX", "OX ", "O  "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -54,7 +54,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XOX", " OX", " O "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -63,7 +63,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XXO", " XO", "  O"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -72,7 +72,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XXX", "XOO", "O  "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -81,7 +81,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"O  ", "XXX", " O "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -90,7 +90,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{" OO", "O X", "XXX"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -99,7 +99,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"OOO", "XXO", "XX "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -108,7 +108,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XX ", "OOO", "X  "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -117,7 +117,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XOX", " XX", "OOO"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -126,7 +126,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XOO", " X ", "  X"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -135,7 +135,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"O X", "OX ", "X  "})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -144,7 +144,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"OXX", "OOX", "X O"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -153,7 +153,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"  O", " OX", "OXX"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -162,7 +162,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XXX", "XOO", "XOO"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
 
     @Ignore("Remove to run test")
@@ -171,7 +171,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XOX", "OXO", "XOX"})
-        ).isEqualTo(GameStates.WIN);
+        ).isEqualTo(GameState.WIN);
     }
     
     @Ignore("Remove to run test")
@@ -180,7 +180,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XOX", "XXO", "OXO"})
-        ).isEqualTo(GameStates.DRAW);
+        ).isEqualTo(GameState.DRAW);
     }
     
     @Ignore("Remove to run test")
@@ -189,7 +189,7 @@ public class StateOfTicTacToeTest {
         
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XXO", "OXX", "XOO"})
-        ).isEqualTo(GameStates.DRAW);
+        ).isEqualTo(GameState.DRAW);
     }
 
     @Ignore("Remove to run test")
@@ -198,7 +198,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"   ", "X  ", "   "})
-        ).isEqualTo(GameStates.ONGOING);
+        ).isEqualTo(GameState.ONGOING);
     }
     
     @Ignore("Remove to run test")
@@ -207,7 +207,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"O  ", " X ", "   "})
-        ).isEqualTo(GameStates.ONGOING);
+        ).isEqualTo(GameState.ONGOING);
     }
 
     @Ignore("Remove to run test")
@@ -216,7 +216,7 @@ public class StateOfTicTacToeTest {
 
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"X  ", " XO", "OX "})
-        ).isEqualTo(GameStates.ONGOING);
+        ).isEqualTo(GameState.ONGOING);
     }
 
     @Ignore("Remove to run test")

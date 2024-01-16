@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 class StateOfTicTacToe {
-    public GameStates determineState(String[] board) {
+    public GameState determineState(String[] board) {
         int xWin = 0;
         int oWin = 0;
 
@@ -52,14 +52,14 @@ class StateOfTicTacToe {
         }
 
         if (xWin > 0 || oWin > 0) {
-            return GameStates.WIN;
+            return GameState.WIN;
         }
 
         if (xCount + oCount < 9) {
-            return GameStates.ONGOING;
+            return GameState.ONGOING;
         }
 
-        return GameStates.DRAW;
+        return GameState.DRAW;
     }
     
     private List<String> getColumns(String[] board) {
