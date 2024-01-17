@@ -1,13 +1,13 @@
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ResistorColorDuoTest {
     private ResistorColorDuo resistorColorDuo;
 
-    @Before
+    @BeforeEach
     public void setup() {
         resistorColorDuo = new ResistorColorDuo();
     }
@@ -19,7 +19,7 @@ public class ResistorColorDuoTest {
         ).isEqualTo(10);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBlueAndGrey() {
         assertThat(
@@ -27,7 +27,7 @@ public class ResistorColorDuoTest {
         ).isEqualTo(68);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testYellowAndViolet() {
         assertThat(
@@ -35,7 +35,7 @@ public class ResistorColorDuoTest {
         ).isEqualTo(47);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testOrangeAndOrange() {
         assertThat(
@@ -43,7 +43,7 @@ public class ResistorColorDuoTest {
         ).isEqualTo(33);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testWhiteAndRed() {
         assertThat(
@@ -51,7 +51,7 @@ public class ResistorColorDuoTest {
         ).isEqualTo(92);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBlackAndBrownOneDigit() {
         assertThat(
@@ -59,7 +59,7 @@ public class ResistorColorDuoTest {
         ).isEqualTo(1);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testIgnoreAdditionalColors() {
         assertThat(

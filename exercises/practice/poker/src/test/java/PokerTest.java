@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,7 +14,7 @@ public class PokerTest {
             .containsExactly(hand);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void highestCardWins() {
         String highest8 = "4D 5S 6S 8D 3C";
@@ -24,7 +24,7 @@ public class PokerTest {
             .containsExactly(highestJ);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tieHasMultipleWinners() {
         String highest8 = "4D 5S 6S 8D 3C";
@@ -35,7 +35,7 @@ public class PokerTest {
             .containsExactly(highestJh, highestJd);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sameHighCards() {
         String nextHighest3 = "3S 5H 6S 8D 7H";
@@ -44,7 +44,7 @@ public class PokerTest {
             .containsExactly(nextHighest3);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void nothingVsOnePair() {
         String nothing = "4S 5H 6C 8D KH";
@@ -53,7 +53,7 @@ public class PokerTest {
             .containsExactly(pairOf4);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoPairs() {
         String pairOf2 = "4S 2H 6S 2D JH";
@@ -62,7 +62,7 @@ public class PokerTest {
             .containsExactly(pairOf4);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void onePairVsDoublePair() {
         String pairOf8 = "2S 8H 6S 8D JH";
@@ -71,7 +71,7 @@ public class PokerTest {
             .containsExactly(doublePair);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoDoublePairs() {
         String doublePair2And8 = "2S 8H 2D 8D 3H";
@@ -80,7 +80,7 @@ public class PokerTest {
             .containsExactly(doublePair2And8);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sameHighestPair() {
         String doublePair2AndQ = "2S QS 2C QD JH";
@@ -89,7 +89,7 @@ public class PokerTest {
             .containsExactly(doublePairJAndQ);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void identicallyRankedPairs() {
         String kicker8 = "JD QH JS 8D QC";
@@ -98,7 +98,7 @@ public class PokerTest {
             .containsExactly(kicker8);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void doublePairVsThree() {
         String doublePair2And8 = "2S 8H 2H 8D JH";
@@ -107,7 +107,7 @@ public class PokerTest {
             .containsExactly(threeOf4);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoThrees() {
         String threeOf2 = "2S 2H 2C 8D JH";
@@ -116,7 +116,7 @@ public class PokerTest {
             .containsExactly(threeOf1);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sameThreesMultipleDecks() {
         String remainingCard7 = "4S AH AS 7C AD";
@@ -125,7 +125,7 @@ public class PokerTest {
             .containsExactly(remainingCard8);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void threeVsStraight() {
         String threeOf4 = "4S 5H 4C 8D 4H";
@@ -134,7 +134,7 @@ public class PokerTest {
             .containsExactly(straight);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void acesCanEndAStraight() {
         String hand = "4S 5H 4C 8D 4H";
@@ -143,7 +143,7 @@ public class PokerTest {
             .containsExactly(straightEndsA);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void acesCanStartAStraight() {
         String hand = "4S 5H 4C 8D 4H";
@@ -152,7 +152,7 @@ public class PokerTest {
             .containsExactly(straightStartA);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoStraights() {
         String straightTo8 = "4S 6C 7S 8D 5H";
@@ -161,7 +161,7 @@ public class PokerTest {
             .containsExactly(straightTo9);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void theLowestStraightStartsWithAce() {
         String straight = "2H 3C 4D 5D 6H";
@@ -170,7 +170,7 @@ public class PokerTest {
             .containsExactly(straight);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void straightVsFlush() {
         String straightTo8 = "4C 6H 7D 8D 5H";
@@ -179,7 +179,7 @@ public class PokerTest {
             .containsExactly(flushTo7);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoFlushes() {
         String flushTo8 = "4H 7H 8H 9H 6H";
@@ -188,7 +188,7 @@ public class PokerTest {
             .containsExactly(flushTo8);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void flushVsFull() {
         String flushTo8 = "3H 6H 7H 8H 5H";
@@ -197,7 +197,7 @@ public class PokerTest {
             .containsExactly(full);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoFulls() {
         String fullOf4By9 = "4H 4S 4D 9S 9D";
@@ -206,7 +206,7 @@ public class PokerTest {
             .containsExactly(fullOf5By8);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoFullssameThripletMultipleDecks() {
         String fullOf5By9 = "5H 5S 5D 9S 9D";
@@ -215,7 +215,7 @@ public class PokerTest {
             .containsExactly(fullOf5By9);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullVsSquare() {
         String full = "4S 5H 4D 5D 4H";
@@ -224,7 +224,7 @@ public class PokerTest {
             .containsExactly(squareOf3);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoSquares() {
         String squareOf2 = "2S 2H 2C 8D 2D";
@@ -233,7 +233,7 @@ public class PokerTest {
             .containsExactly(squareOf5);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sameSquaresMultipleDecks() {
         String kicker2 = "3S 3H 2S 3D 3C";
@@ -242,7 +242,7 @@ public class PokerTest {
             .containsExactly(kicker4);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void squareVsStraightFlush() {
         String squareOf5 = "4S 5H 5S 5D 5C";
@@ -251,7 +251,7 @@ public class PokerTest {
             .containsExactly(straightFlushTo9);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoStraightFlushes() {
         String straightFlushTo8 = "4H 6H 7H 8H 5H";

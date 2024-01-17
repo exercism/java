@@ -1,13 +1,13 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FoodChainTest {
     private FoodChain foodChain;
 
-    @Before
+    @BeforeEach
     public void setup() {
         foodChain = new FoodChain();
     }
@@ -22,7 +22,7 @@ public class FoodChainTest {
     }
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void spider() {
         int verse = 2;
         String expected = "I know an old lady who swallowed a spider.\n" +
@@ -34,7 +34,7 @@ public class FoodChainTest {
     }
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void bird() {
         int verse = 3;
         String expected = "I know an old lady who swallowed a bird.\n" +
@@ -48,7 +48,7 @@ public class FoodChainTest {
     }
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void cat() {
         int verse = 4;
         String expected = "I know an old lady who swallowed a cat.\n" +
@@ -64,7 +64,7 @@ public class FoodChainTest {
 
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void dog() {
         int verse = 5;
         String expected = "I know an old lady who swallowed a dog.\n" +
@@ -80,7 +80,7 @@ public class FoodChainTest {
     }
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void goat() {
         int verse = 6;
         String expected = "I know an old lady who swallowed a goat.\n" +
@@ -97,7 +97,7 @@ public class FoodChainTest {
     }
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void cow() {
         int verse = 7;
         String expected = "I know an old lady who swallowed a cow.\n" +
@@ -115,7 +115,7 @@ public class FoodChainTest {
     }
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void horse() {
         int verse = 8;
         String expected = "I know an old lady who swallowed a horse.\n" +
@@ -126,7 +126,7 @@ public class FoodChainTest {
 
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void multipleVerses() {
         int startVerse = 1;
         int endVerse = 3;
@@ -150,7 +150,7 @@ public class FoodChainTest {
 
 
     @Test
-    @Ignore("Remove to run test.")
+    @Disabled("Remove to run test.")
     public void wholeSong() {
         int startVerse = 1;
         int endVerse = 8;

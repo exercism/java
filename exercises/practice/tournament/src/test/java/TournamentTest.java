@@ -1,6 +1,6 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ public class TournamentTest {
 
     private Tournament tournament;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         tournament = new Tournament();
     }
@@ -18,7 +18,7 @@ public class TournamentTest {
         assertThat(tournament.printTable()).isEqualTo("Team                           | MP |  W |  D |  L |  P\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void aWinIsThreePointsALossIsZeroPoints() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;win");
@@ -29,7 +29,7 @@ public class TournamentTest {
                 "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void aWinCanAlsoBeExpressedAsALoss() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;loss");
@@ -40,7 +40,7 @@ public class TournamentTest {
                 "Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void aDifferentTeamCanWin() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;win");
@@ -51,7 +51,7 @@ public class TournamentTest {
                 "Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void aDrawIsOnePointEach() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;draw");
@@ -62,7 +62,7 @@ public class TournamentTest {
                 "Blithering Badgers             |  1 |  0 |  1 |  0 |  1\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void thereCanBeMoreThanOneMatch() {
         tournament.applyResults(
@@ -75,7 +75,7 @@ public class TournamentTest {
                 "Blithering Badgers             |  2 |  0 |  0 |  2 |  0\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void thereCanBeMoreThanOneWinner() {
         tournament.applyResults(
@@ -88,7 +88,7 @@ public class TournamentTest {
                 "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void thereCanBeMoreThanTwoTeams() {
         tournament.applyResults(
@@ -103,7 +103,7 @@ public class TournamentTest {
                 "Courageous Californians        |  2 |  0 |  0 |  2 |  0\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void typicalInput() {
         tournament.applyResults(
@@ -122,7 +122,7 @@ public class TournamentTest {
                 "Courageous Californians        |  3 |  0 |  1 |  2 |  1\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void incompleteCompetition() {
         tournament.applyResults(
@@ -139,7 +139,7 @@ public class TournamentTest {
                 "Devastating Donkeys            |  1 |  0 |  0 |  1 |  0\n");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tiesBrokenAlphabetically() {
         tournament.applyResults(

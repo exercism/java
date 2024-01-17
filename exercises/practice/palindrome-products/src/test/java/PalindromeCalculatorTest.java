@@ -1,8 +1,8 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,7 +28,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void largestPalindromeFromSingleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -44,7 +44,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void largestPalindromeFromDoubleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -60,7 +60,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void smallestPalindromeFromDoubleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -76,7 +76,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void largestPalindromeFromTripleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -92,7 +92,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void smallestPalindromeFromTripleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -108,7 +108,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void smallestPalindromeFromQuadDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -124,7 +124,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void largestPalindromeFromQuadDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
@@ -140,7 +140,7 @@ public class PalindromeCalculatorTest {
         checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.lastKey());
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void emtpyResultSmallestNoPalindromeInRange() {
 
@@ -149,7 +149,7 @@ public class PalindromeCalculatorTest {
         assertThat(palindromes).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void emptyResultLargestNoPalindromeInRange() {
 
@@ -158,7 +158,7 @@ public class PalindromeCalculatorTest {
         assertThat(palindromes).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void errorSmallestMinIsMoreThanMax() {
 
@@ -167,7 +167,7 @@ public class PalindromeCalculatorTest {
                 .withMessage("invalid input: min must be <= max");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void errorLargestMinIsMoreThanMax() {
 

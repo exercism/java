@@ -1,14 +1,14 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Ignore;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class DiamondPrinterTest {
 
     private DiamondPrinter diamondPrinter;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         diamondPrinter = new DiamondPrinter();
     }
@@ -19,7 +19,7 @@ public class DiamondPrinterTest {
             .containsExactly("A");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTwoByTwoDiamond() {
         assertThat(diamondPrinter.printToList('B'))
@@ -29,7 +29,7 @@ public class DiamondPrinterTest {
                 " A ");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testThreeByThreeDiamond() {
         assertThat(diamondPrinter.printToList('C'))
@@ -41,7 +41,7 @@ public class DiamondPrinterTest {
                 "  A  ");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFourByFourDiamond() {
         assertThat(diamondPrinter.printToList('D'))
@@ -55,7 +55,7 @@ public class DiamondPrinterTest {
                 "   A   ");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFullDiamond() {
         assertThat(diamondPrinter.printToList('Z'))

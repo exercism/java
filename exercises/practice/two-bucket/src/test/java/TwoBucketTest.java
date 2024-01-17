@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +16,7 @@ public class TwoBucketTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBucketOneSizeThreeBucketTwoSizeFiveStartWithTwo() {
 
@@ -28,7 +28,7 @@ public class TwoBucketTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBucketOneSizeSevenBucketTwoSizeElevenStartWithOne() {
 
@@ -40,7 +40,7 @@ public class TwoBucketTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBucketOneSizeSevenBucketTwoSizeElevenStartWithTwo() {
 
@@ -52,7 +52,7 @@ public class TwoBucketTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBucketOneSizeOneBucketTwoSizeThreeStartWithTwo() {
 
@@ -64,7 +64,7 @@ public class TwoBucketTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testBucketOneSizeTwoBucketTwoSizeThreeStartWithOne() {
 

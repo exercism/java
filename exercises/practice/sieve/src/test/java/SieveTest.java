@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,7 +17,7 @@ public class SieveTest {
         assertThat(sieve.getPrimes()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void findFirstPrime() {
         Sieve sieve = new Sieve(2);
@@ -26,7 +26,7 @@ public class SieveTest {
         assertThat(sieve.getPrimes()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void findPrimesUpTo10() {
         Sieve sieve = new Sieve(10);
@@ -35,7 +35,7 @@ public class SieveTest {
         assertThat(sieve.getPrimes()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void limitIsPrime() {
         Sieve sieve = new Sieve(13);
@@ -44,7 +44,7 @@ public class SieveTest {
         assertThat(sieve.getPrimes()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void findPrimesUpTo1000() {
         Sieve sieve = new Sieve(1000);

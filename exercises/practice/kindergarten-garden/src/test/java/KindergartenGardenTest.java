@@ -1,6 +1,6 @@
 
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,7 +15,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.RADISHES, Plant.CLOVER, Plant.GRASS, Plant.GRASS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void singleStudent2() {
         String garden = "VC\nRC";
@@ -25,7 +25,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoStudents() {
         String garden = "VVCG\nVVRC";
@@ -35,7 +35,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.CLOVER, Plant.GRASS, Plant.RADISHES, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void oneGardenSecondStudent() {
         String garden = "VVCCGG\nVVCCGG";
@@ -45,7 +45,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.CLOVER, Plant.CLOVER, Plant.CLOVER, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void oneGardenThirdStudent() {
         String garden = "VVCCGG\nVVCCGG";
@@ -55,7 +55,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.GRASS, Plant.GRASS, Plant.GRASS, Plant.GRASS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForAlice() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -65,7 +65,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.VIOLETS, Plant.RADISHES, Plant.VIOLETS, Plant.RADISHES);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForBob() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -75,7 +75,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.CLOVER, Plant.GRASS, Plant.CLOVER, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForCharlie() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -85,7 +85,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.VIOLETS, Plant.VIOLETS, Plant.CLOVER, Plant.GRASS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForDavid() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -95,7 +95,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.RADISHES, Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForEve() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -105,7 +105,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.CLOVER, Plant.GRASS, Plant.RADISHES, Plant.GRASS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForFred() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -115,7 +115,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.GRASS, Plant.CLOVER, Plant.VIOLETS, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForGinny() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -125,7 +125,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.CLOVER, Plant.GRASS, Plant.GRASS, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForHarriet() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -135,7 +135,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.VIOLETS, Plant.RADISHES, Plant.RADISHES, Plant.VIOLETS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForIleana() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -145,7 +145,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.GRASS, Plant.CLOVER, Plant.VIOLETS, Plant.CLOVER);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForJoseph() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -155,7 +155,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.VIOLETS, Plant.CLOVER, Plant.VIOLETS, Plant.GRASS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForKincaid() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
@@ -165,7 +165,7 @@ public class KindergartenGardenTest {
                 .containsExactly(Plant.GRASS, Plant.CLOVER, Plant.CLOVER, Plant.GRASS);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fullGardenForLarry() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";

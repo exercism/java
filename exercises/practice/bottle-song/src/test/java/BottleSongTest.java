@@ -1,6 +1,6 @@
-import org.junit.Test;
-import org.junit.Ignore;
-import org.junit.Before;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ public class BottleSongTest {
 
     private BottleSong bottleSong;
 
-    @Before
+    @BeforeEach
     public void setup() {
         bottleSong = new BottleSong();
     }
@@ -23,7 +23,7 @@ public class BottleSongTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void lastGenericVerse() {
         assertThat(bottleSong.recite(3, 1)).isEqualTo(
@@ -34,7 +34,7 @@ public class BottleSongTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void verseWithTwoBottles() {
         assertThat(bottleSong.recite(2, 1)).isEqualTo(
@@ -45,7 +45,7 @@ public class BottleSongTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void verseWithOneBottle() {
         assertThat(bottleSong.recite(1, 1)).isEqualTo(
@@ -56,7 +56,7 @@ public class BottleSongTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void firstTwoVerses() {
         assertThat(bottleSong.recite(10, 2)).isEqualTo(
@@ -72,7 +72,7 @@ public class BottleSongTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void lastThreeVerses() {
         assertThat(bottleSong.recite(3, 3)).isEqualTo(
@@ -93,7 +93,7 @@ public class BottleSongTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void allVerses() {
         assertThat(bottleSong.recite(10, 10))

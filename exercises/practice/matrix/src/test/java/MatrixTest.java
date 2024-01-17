@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +16,7 @@ public class MatrixTest {
         assertThat(matrix.getRow(rowIndex)).isEqualTo(expectedRow);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractRowFromMatrixTest() {
         String matrixAsString = "1 2\n3 4";
@@ -28,7 +28,7 @@ public class MatrixTest {
         assertThat(matrix.getRow(rowIndex)).isEqualTo(expectedRow);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractRowFromDiffWidthsMatrixTest() {
         String matrixAsString = "1 2\n10 20";
@@ -40,7 +40,7 @@ public class MatrixTest {
         assertThat(matrix.getRow(rowIndex)).isEqualTo(expectedRow);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractRowFromNonSquareMatrixTest() {
         String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
@@ -52,7 +52,7 @@ public class MatrixTest {
         assertThat(matrix.getRow(rowIndex)).isEqualTo(expectedRow);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractColumnFromOneNumberMatrixTest() {
         String matrixAsString = "1";
@@ -64,7 +64,7 @@ public class MatrixTest {
         assertThat(matrix.getColumn(columnIndex)).isEqualTo(expectedColumn);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractColumnMatrixTest() {
         String matrixAsString = "1 2 3\n4 5 6\n7 8 9";
@@ -76,7 +76,7 @@ public class MatrixTest {
         assertThat(matrix.getColumn(columnIndex)).isEqualTo(expectedColumn);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractColumnFromNonSquareMatrixTest() {
         String matrixAsString = "1 2 3 4\n5 6 7 8\n9 8 7 6";
@@ -88,7 +88,7 @@ public class MatrixTest {
         assertThat(matrix.getColumn(columnIndex)).isEqualTo(expectedColumn);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void extractColumnFromDiffWidthsMatrixTest() {
         String matrixAsString = "89 1903 3\n18 3 1\n9 4 800";

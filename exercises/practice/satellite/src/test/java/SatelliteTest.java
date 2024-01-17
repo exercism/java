@@ -2,8 +2,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.List;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class SatelliteTest {
     Satellite satellite = new Satellite();
@@ -20,7 +20,7 @@ public class SatelliteTest {
         assertThat(tree.postorder()).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void treeWithOneItem() {
         List<Character> preorder = List.of('a');
@@ -33,7 +33,7 @@ public class SatelliteTest {
         assertThat(tree.postorder()).containsExactly('a');
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void treeWithManyItems() {
         List<Character> preorder = List.of('a', 'i', 'x', 'f', 'r');
@@ -46,7 +46,7 @@ public class SatelliteTest {
         assertThat(tree.postorder()).containsExactly('i', 'f', 'r', 'x', 'a');
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void rejectTraversalsOfDifferentLengths() {
         List<Character> preorder = List.of('a', 'b');
@@ -58,7 +58,7 @@ public class SatelliteTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void rejectInconsistentTraversalsOfSameLength() {
         List<Character> preorder = List.of('x', 'y', 'z');
@@ -69,7 +69,7 @@ public class SatelliteTest {
                 .withMessage("traversals must have the same elements");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void rejectTraversalsWithRepeatedItems() {
         List<Character> preorder = List.of('a', 'b', 'a');

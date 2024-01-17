@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class PovTest {
         assertThat(tree.fromPov("x")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenTreeWithParentAndOneSibling() {
         Tree tree = Tree.of("parent",
@@ -28,7 +28,7 @@ public class PovTest {
         assertThat(tree.fromPov("x")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenTreeWithParentAndManySibling() {
         Tree tree = Tree.of("parent",
@@ -46,7 +46,7 @@ public class PovTest {
         assertThat(tree.fromPov("x")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenTreeWithNewRootDeeplyNested() {
         Tree tree = Tree.of("level-0",
@@ -64,7 +64,7 @@ public class PovTest {
         assertThat(tree.fromPov("x")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenMovesChildrenOfNewRootToSameLevelAsFormerParent() {
         Tree tree = Tree.of("parent",
@@ -80,7 +80,7 @@ public class PovTest {
         assertThat(tree.fromPov("x")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenComplexTreeWithCousins() {
         Tree tree = Tree.of("grandparent",
@@ -108,7 +108,7 @@ public class PovTest {
         assertThat(tree.fromPov("x")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenNonExistentTargetInSingletonTree() {
         Tree tree = Tree.of("x");
@@ -117,7 +117,7 @@ public class PovTest {
                 .withMessage("Tree could not be reoriented");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFromPovGivenNonExistentTargetInLargeTree() {
         Tree tree = Tree.of("parent",
@@ -132,7 +132,7 @@ public class PovTest {
                 .withMessage("Tree could not be reoriented");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathToCanFindPathToParent() {
         Tree tree = Tree.of("parent",
@@ -143,7 +143,7 @@ public class PovTest {
         assertThat(tree.pathTo("x", "parent")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathToCanFindPathToSibling() {
         Tree tree = Tree.of("parent",
@@ -156,7 +156,7 @@ public class PovTest {
         assertThat(tree.pathTo("x", "b")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathToCanFindPathToCousin() {
         Tree tree = Tree.of("grandparent",
@@ -174,7 +174,7 @@ public class PovTest {
         assertThat(tree.pathTo("x", "cousin-1")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathToCanFindPathNotEnvolvingRoot() {
         Tree tree = Tree.of("grandparent",
@@ -187,7 +187,7 @@ public class PovTest {
         assertThat(tree.pathTo("x", "sibling-1")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathToCanFindPathFromNodesOtherThanX() {
         Tree tree = Tree.of("parent",
@@ -200,7 +200,7 @@ public class PovTest {
         assertThat(tree.pathTo("a", "c")).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathWhenDestinationDoesNotExist() {
         Tree tree = Tree.of("parent",
@@ -215,7 +215,7 @@ public class PovTest {
                 .withMessage("No path found");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testPathWhenSourceDoesNotExist() {
         Tree tree = Tree.of("parent",
