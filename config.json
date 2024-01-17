@@ -288,7 +288,7 @@
       },
       {
         "slug": "secrets",
-        "name": "secrets",
+        "name": "Secrets",
         "uuid": "b6485b16-e94d-41ce-9689-d94b70266f5e",
         "concepts": [
           "bit-manipulation"
