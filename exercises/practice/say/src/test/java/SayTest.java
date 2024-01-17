@@ -111,14 +111,16 @@ public class SayTest {
     }
 
     @Disabled("Remove to run test")
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void illegalNegativeNumber() {
-        say.say(-1);
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> say.say(-1));
     }
 
     @Disabled("Remove to run test")
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void illegalTooBigNumber() {
-        say.say(1_000_000_000_000L);
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> say.say(1_000_000_000_000L));
     }
 }
