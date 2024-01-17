@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -213,7 +213,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testOneTextWithOneLetter() {
         String[] input = { "a" };
@@ -227,7 +227,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testOneTextWithMultipleLetters() {
         String[] input = { "bbcccd" };
@@ -243,7 +243,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTwoTextsWithOneLetter() {
         String[] input = { "e", "f" };
@@ -258,7 +258,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTwoTextsWithMultipleLetters() {
         String[] input = { "ggh", "hhi" };
@@ -274,7 +274,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testIgnoreLetterCasing() {
         String[] input = { "m", "M" };
@@ -288,7 +288,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testIgnoreWhitespace() {
         String[] input = { "   ", "\t", "\r\n" };
@@ -298,7 +298,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testIgnorePunctuation() {
         String[] input = { "!", "?", ";", ",", "." };
@@ -308,7 +308,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testIgnoreNumbers() {
         String[] input = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -318,7 +318,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testUnicodeLetters() {
         String[] input = { "本", "φ", "ほ", "ø" };
@@ -335,7 +335,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCombinationOfLowerAndUppercaseLettersPunctuationAndWhiteSpace() {
         String[] input = { calculateFrecuencies };
@@ -370,7 +370,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testManySmallTexts() {
         String[] input = new String[50];
@@ -387,7 +387,7 @@ public class ParallelLetterFrequencyTest {
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLargeTexts() {
         String[] input = { largeTexts1, largeTexts2, largeTexts3, largeTexts4 };

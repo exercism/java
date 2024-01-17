@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -21,7 +21,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs108() {
         List<PythagoreanTriplet> actual
@@ -34,7 +34,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs1000() {
         List<PythagoreanTriplet> actual
@@ -48,7 +48,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs1001() {
         List<PythagoreanTriplet> actual
@@ -60,7 +60,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs90() {
         List<PythagoreanTriplet> actual
@@ -75,7 +75,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs840() {
         List<PythagoreanTriplet> actual
@@ -96,7 +96,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs840WithFactorsLessThanOrEqualTo370() {
         List<PythagoreanTriplet> actual
@@ -115,7 +115,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs30000() {
         List<PythagoreanTriplet> actual
@@ -133,7 +133,7 @@ public class PythagoreanTripletTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void tripletsWhoseSumIs30000WithFactorsLessThanOrEqualTo12500() {
         List<PythagoreanTriplet> actual

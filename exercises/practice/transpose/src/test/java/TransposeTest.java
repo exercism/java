@@ -1,13 +1,13 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.Before;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class TransposeTest {
     private Transpose transpose;
 
-    @Before
+    @BeforeEach
     public void setup() {
         transpose = new Transpose();
     }
@@ -17,7 +17,7 @@ public class TransposeTest {
         assertThat(transpose.transpose("")).isEqualTo("");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoCharactersInARow() {
         assertThat(transpose.transpose("A1"))
@@ -26,7 +26,7 @@ public class TransposeTest {
                 "\n1");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoCharactersInAColumn() {
         assertThat(
@@ -36,7 +36,7 @@ public class TransposeTest {
             .isEqualTo("A1");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void simple() {
         assertThat(
@@ -49,7 +49,7 @@ public class TransposeTest {
                 "C3");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void singleLine() {
         assertThat(transpose.transpose("Single line."))
@@ -68,7 +68,7 @@ public class TransposeTest {
                 ".");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void firstLineLongerThanSecondLine() {
         assertThat(
@@ -94,7 +94,7 @@ public class TransposeTest {
                 ".");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void secondLineLongerThanFirstLine() {
         assertThat(
@@ -120,7 +120,7 @@ public class TransposeTest {
                 " .");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void mixedLineLength() {
         assertThat(
@@ -149,7 +149,7 @@ public class TransposeTest {
                 ".");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void square() {
         assertThat(
@@ -167,7 +167,7 @@ public class TransposeTest {
                 "TREND");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void rectangle() {
         assertThat(
@@ -187,7 +187,7 @@ public class TransposeTest {
                 "EDGE");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void triangle() {
         assertThat(
@@ -207,7 +207,7 @@ public class TransposeTest {
                 "     R");
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void jaggedTriangle() {
         assertThat(

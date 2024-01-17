@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -13,7 +13,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void normalizationResultsInEmptyCiphertext() {
         CryptoSquare cryptoSquare = new CryptoSquare("... --- ...");
@@ -22,7 +22,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void lettersAreLowerCasedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare("A");
@@ -31,7 +31,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void spacesAreRemovedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare(" b ");
@@ -40,7 +40,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void punctuationIsRemovedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare("@1,%!");
@@ -49,7 +49,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void nineCharacterPlaintextResultsInThreeChunksOfThreeCharacters() {
         CryptoSquare cryptoSquare = new CryptoSquare("This is fun!");
@@ -58,7 +58,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void eightCharacterPlaintextResultsInThreeChunksWithATrailingSpace() {
         CryptoSquare cryptoSquare = new CryptoSquare("Chill out.");
@@ -67,7 +67,7 @@ public class CryptoSquareTest {
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void fiftyFourCharacterPlaintextResultsInSevenChunksWithTrailingSpaces() {
         CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have " +

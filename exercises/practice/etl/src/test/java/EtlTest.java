@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +32,7 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTransformMoreValues() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
@@ -56,7 +56,7 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testMoreKeys() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
@@ -80,7 +80,7 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFullDataset() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {

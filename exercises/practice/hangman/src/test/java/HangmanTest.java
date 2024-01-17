@@ -1,15 +1,13 @@
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.disposables.Disposable;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
-
-import org.junit.rules.ExpectedException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -18,10 +16,7 @@ public class HangmanTest {
 
     private Hangman hangman;
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-
-    @Before
+    @BeforeEach
     public void init() {
         hangman = new Hangman();
     }
@@ -42,7 +37,7 @@ public class HangmanTest {
         assertThat(init.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void firstGuess() {
         Observable<Output> result = hangman.play(
@@ -57,7 +52,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void firstMiss() {
         Observable<Output> result = hangman.play(
@@ -72,7 +67,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void gameInProgress() {
         Observable<Output> result = hangman.play(
@@ -87,7 +82,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void wonGame() {
         Observable<Output> result = hangman.play(
@@ -100,7 +95,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.WIN);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void lostGame() {
         Observable<Output> result = hangman.play(
@@ -121,7 +116,7 @@ public class HangmanTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void consecutiveGames() {
         // This test setup is more complex because we have to order the emission of values in the
@@ -192,7 +187,7 @@ public class HangmanTest {
             });
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void cannotPlayAGuessTwice() {
         Observable<Output> result = hangman.play(
@@ -204,7 +199,7 @@ public class HangmanTest {
             .hasMessageContaining("Letter c was already played");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void cannotPlayAMissTwice() {
         Observable<Output> result = hangman.play(

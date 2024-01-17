@@ -1,8 +1,8 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class PhoneNumberTest {
 
@@ -14,7 +14,7 @@ public class PhoneNumberTest {
         assertThat(actualNumber).isEqualTo(expectedNumber);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void cleansNumbersWithDots() {
         String expectedNumber = "2234567890";
@@ -24,7 +24,7 @@ public class PhoneNumberTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void cleansNumbersWithMultipleSpaces() {
         String expectedNumber = "2234567890";
@@ -33,7 +33,7 @@ public class PhoneNumberTest {
         assertThat(actualNumber).isEqualTo(expectedNumber);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidWhen9Digits() {
 
@@ -42,7 +42,7 @@ public class PhoneNumberTest {
                 .withMessage("must not be fewer than 10 digits");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidWhen11DigitsDoesNotStartWith1() {
 
@@ -51,7 +51,7 @@ public class PhoneNumberTest {
                 .withMessage("11 digits must start with 1");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void validWhen11DigitsAndStartingWith1() {
         String expectedNumber = "2234567890";
@@ -60,7 +60,7 @@ public class PhoneNumberTest {
         assertThat(actualNumber).isEqualTo(expectedNumber);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void validWhen11DigitsAndStartingWith1EvenWithPunctuation() {
         String expectedNumber = "2234567890";
@@ -69,7 +69,7 @@ public class PhoneNumberTest {
         assertThat(actualNumber).isEqualTo(expectedNumber);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidWhenMoreThan11Digits() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -77,7 +77,7 @@ public class PhoneNumberTest {
                 .withMessage("must not be greater than 11 digits");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidWithLetters() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -85,7 +85,7 @@ public class PhoneNumberTest {
                 .withMessage("letters not permitted");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidWithPunctuations() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -93,7 +93,7 @@ public class PhoneNumberTest {
                 .withMessage("punctuations not permitted");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith0() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -101,7 +101,7 @@ public class PhoneNumberTest {
                 .withMessage("area code cannot start with zero");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith1() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -109,7 +109,7 @@ public class PhoneNumberTest {
                 .withMessage("area code cannot start with one");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith0() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -117,7 +117,7 @@ public class PhoneNumberTest {
                 .withMessage("exchange code cannot start with zero");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith1() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -125,7 +125,7 @@ public class PhoneNumberTest {
                 .withMessage("exchange code cannot start with one");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith0OnValid11DigitNumber() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -133,7 +133,7 @@ public class PhoneNumberTest {
                 .withMessage("area code cannot start with zero");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith1OnValid11DigitNumber() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -141,7 +141,7 @@ public class PhoneNumberTest {
                 .withMessage("area code cannot start with one");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith0OnValid11DigitNumber() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -149,7 +149,7 @@ public class PhoneNumberTest {
                 .withMessage("exchange code cannot start with zero");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith1OnValid11DigitNumber() {
         assertThatExceptionOfType(IllegalArgumentException.class)

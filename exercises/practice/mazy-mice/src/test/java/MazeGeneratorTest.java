@@ -1,6 +1,6 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
@@ -31,7 +31,7 @@ public class MazeGeneratorTest {
     private static final int SEED_TWO = 43;
     private MazeGenerator sut;
 
-    @Before
+    @BeforeEach
     public void setup() {
         sut = new MazeGenerator();
     }
@@ -47,7 +47,7 @@ public class MazeGeneratorTest {
                 .hasDimensions(expectedHeight, expectedWidth);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void theMazeContainsOnlyValidCharacters() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
@@ -61,7 +61,7 @@ public class MazeGeneratorTest {
         }
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void theMazeHasOnlyOneEntranceOnTheLeftSide() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
@@ -72,7 +72,7 @@ public class MazeGeneratorTest {
                 .isOne();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void theMazeHasSingleExitOnTheRightSideOfTheMaze() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
@@ -83,7 +83,7 @@ public class MazeGeneratorTest {
                 .isOne();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void aMazeIsDifferentEachTimeItIsGenerated() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
@@ -94,7 +94,7 @@ public class MazeGeneratorTest {
                 .isNotEqualTo(maze2);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoMazesWithSameSeedShouldBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
@@ -105,7 +105,7 @@ public class MazeGeneratorTest {
                 .isEqualTo(maze2);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void twoMazesWithDifferentSeedsShouldNotBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
@@ -116,7 +116,7 @@ public class MazeGeneratorTest {
                 .isNotEqualTo(maze2);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void theMazeIsPerfect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
@@ -125,7 +125,7 @@ public class MazeGeneratorTest {
         assertThatMazeHasNoIsolatedSections(maze);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void theMazeIsPerfectWithSeed() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
@@ -134,28 +134,28 @@ public class MazeGeneratorTest {
         assertThatMazeHasNoIsolatedSections(maze);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void shouldThrowExceptionWhenRowsIsLessThanFive() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(0, RECTANGLE_COLUMNS));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void shouldThrowExceptionWhenColumnsIsLessThanFive() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(RECTANGLE_ROWS, 0));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void shouldThrowExceptionWhenRowsIsMoreThenHundred() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(101, RECTANGLE_COLUMNS));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void shouldThrowExceptionWhenColumnsIsMoreThenHundred() {
         assertThatIllegalArgumentException()

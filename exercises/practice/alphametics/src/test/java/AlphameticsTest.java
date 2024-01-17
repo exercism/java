@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Map.entry;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -16,7 +16,7 @@ public class AlphameticsTest {
                         entry('L', 0));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testUniqueValue() {
         Alphametics alphametics = new Alphametics("A == B");
@@ -25,7 +25,7 @@ public class AlphameticsTest {
             .isThrownBy(alphametics::solve);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLeadingZero() {
         Alphametics alphametics = new Alphametics("ACA + DD == BD");
@@ -34,7 +34,7 @@ public class AlphameticsTest {
             .isThrownBy(alphametics::solve);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTwoDigitsFinalCarry() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("A + A + A + A + A + A + A + A + A + A + A + B == BCC").solve())
@@ -44,7 +44,7 @@ public class AlphameticsTest {
                         entry('C', 0));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFourLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("AS + A == MOM").solve())
@@ -55,7 +55,7 @@ public class AlphameticsTest {
                         entry('O', 0));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSixLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("NO + NO + TOO == LATE").solve())
@@ -68,7 +68,7 @@ public class AlphameticsTest {
                         entry('E', 2));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSevenLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("HE + SEES + THE == LIGHT").solve())
@@ -82,7 +82,7 @@ public class AlphameticsTest {
                         entry('T', 7));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testEightLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("SEND + MORE == MONEY").solve())
@@ -97,7 +97,7 @@ public class AlphameticsTest {
                         entry('Y', 2));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTenLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE").solve())
@@ -114,7 +114,7 @@ public class AlphameticsTest {
                         entry('T', 9));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTenLetters41Addends() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL + A + " +
