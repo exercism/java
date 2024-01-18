@@ -1,9 +1,11 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.DefaultLocale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DefaultLocale(language = "us")
 public class LedgerTest {
 
     private static final String US_LOCALE = "en-US";
