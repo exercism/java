@@ -61,9 +61,7 @@ class SpaceAge {
     }
 
     private double calculateAge(Planet planet) {
-        double planetYears = (seconds / EARTH_ORBITAL_PERIOD_IN_SECONDS) / planet.getRelativeOrbitalPeriod();
-        
-        return (double) Math.round(planetYears * 100) / 100;
+        return (seconds / EARTH_ORBITAL_PERIOD_IN_SECONDS) / planet.getRelativeOrbitalPeriod();
     }
 
 }
