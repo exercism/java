@@ -1,5 +1,3 @@
-import java.math.BigDecimal;
-
 class SpaceAge {
 
     private enum Planet {
@@ -24,8 +22,6 @@ class SpaceAge {
     }
 
     private static final double EARTH_ORBITAL_PERIOD_IN_SECONDS = 31557600.0;
-    private static final int PRECISION = 2;
-
     private double seconds;
 
     SpaceAge(double seconds) {
@@ -65,9 +61,7 @@ class SpaceAge {
     }
 
     private double calculateAge(Planet planet) {
-        double age = seconds / (EARTH_ORBITAL_PERIOD_IN_SECONDS * planet.getRelativeOrbitalPeriod());
-
-        return new BigDecimal(age).setScale(PRECISION, BigDecimal.ROUND_HALF_UP).doubleValue();
+        return (seconds / EARTH_ORBITAL_PERIOD_IN_SECONDS) / planet.getRelativeOrbitalPeriod();
     }
 
 }
