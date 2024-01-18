@@ -1,9 +1,11 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junitpioneer.jupiter.DefaultLocale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DefaultLocale(language = "us")
 public class LedgerTest {
 
     private static final String US_LOCALE = "en-US";
@@ -14,12 +16,12 @@ public class LedgerTest {
 
     private Ledger ledger;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         ledger = new Ledger();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void emptyLedgerUS() {
         var entries = new Ledger.LedgerEntry[] {};
@@ -30,7 +32,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void oneEntry() {
         var entries = new Ledger.LedgerEntry[] {
@@ -44,7 +46,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void creditAndDebit() {
         var entries = new Ledger.LedgerEntry[] {
@@ -61,7 +63,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void multipleEntriesOnSameDateOrderedByDescription() {
         var entries = new Ledger.LedgerEntry[] {
@@ -78,7 +80,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void finalOrderTieBreakerIsChange() {
         var entries = new Ledger.LedgerEntry[] {
@@ -97,7 +99,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void overlongDescriptions() {
         var entries = new Ledger.LedgerEntry[] {
@@ -112,7 +114,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void euros() {
         var entries = new Ledger.LedgerEntry[] {
@@ -127,7 +129,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void dutchLocale() {
         var entries = new Ledger.LedgerEntry[] {
@@ -142,7 +144,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void dutchLocaleAndEuros() {
         var entries = new Ledger.LedgerEntry[] {
@@ -157,7 +159,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void dutchNegativeNumberWith3DigitsBeforeDecimalPoint() {
         var entries = new Ledger.LedgerEntry[] {
@@ -172,7 +174,7 @@ public class LedgerTest {
         assertThat(actual).isEqualTo(expected);
     }
     
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void americanNegativeNumberWith3DigitsBeforeDecimalPoint() {
         var entries = new Ledger.LedgerEntry[] {
