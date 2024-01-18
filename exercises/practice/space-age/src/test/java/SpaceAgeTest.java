@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.within;
+import static org.assertj.core.api.Assertions.offset;
 
 public class SpaceAgeTest {
 
@@ -12,7 +12,7 @@ public class SpaceAgeTest {
     public void ageOnEarth() {
         SpaceAge age = new SpaceAge(1000000000);
 
-        assertThat(age.onEarth()).isEqualTo(31.69, within(MAXIMUM_DELTA));
+        assertThat(age.onEarth()).isEqualTo(31.69, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -20,7 +20,7 @@ public class SpaceAgeTest {
     public void ageOnMercury() {
         SpaceAge age = new SpaceAge(2134835688);
 
-        assertThat(age.onMercury()).isEqualTo(280.88, within(MAXIMUM_DELTA));
+        assertThat(age.onMercury()).isEqualTo(280.88, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -28,7 +28,7 @@ public class SpaceAgeTest {
     public void ageOnVenus() {
         SpaceAge age = new SpaceAge(189839836);
 
-        assertThat(age.onVenus()).isEqualTo(9.78, within(MAXIMUM_DELTA));
+        assertThat(age.onVenus()).isEqualTo(9.78, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -36,7 +36,7 @@ public class SpaceAgeTest {
     public void ageOnMars() {
         SpaceAge age = new SpaceAge(2129871239L);
 
-        assertThat(age.onMars()).isEqualTo(35.88, within(MAXIMUM_DELTA));
+        assertThat(age.onMars()).isEqualTo(35.88, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -44,7 +44,7 @@ public class SpaceAgeTest {
     public void ageOnJupiter() {
         SpaceAge age = new SpaceAge(901876382);
 
-        assertThat(age.onJupiter()).isEqualTo(2.41, within(MAXIMUM_DELTA));
+        assertThat(age.onJupiter()).isEqualTo(2.41, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -52,7 +52,7 @@ public class SpaceAgeTest {
     public void ageOnSaturn() {
         SpaceAge age = new SpaceAge(2000000000L);
 
-        assertThat(age.onSaturn()).isEqualTo(2.15, within(MAXIMUM_DELTA));
+        assertThat(age.onSaturn()).isEqualTo(2.15, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -60,7 +60,7 @@ public class SpaceAgeTest {
     public void ageOnUranus() {
         SpaceAge age = new SpaceAge(1210123456L);
 
-        assertThat(age.onUranus()).isEqualTo(0.46, within(MAXIMUM_DELTA));
+        assertThat(age.onUranus()).isEqualTo(0.46, offset(MAXIMUM_DELTA));
     }
 
     @Disabled("Remove to run test")
@@ -68,6 +68,6 @@ public class SpaceAgeTest {
     public void ageOnNeptune() {
         SpaceAge age = new SpaceAge(1821023456L);
 
-        assertThat(age.onNeptune()).isEqualTo(0.35, within(MAXIMUM_DELTA));
+        assertThat(age.onNeptune()).isEqualTo(0.35, offset(MAXIMUM_DELTA));
     }
 }
