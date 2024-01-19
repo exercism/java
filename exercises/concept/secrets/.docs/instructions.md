@@ -12,7 +12,7 @@ There will be further steps in the decryption process that assume 0s are inserte
 Implement the `Secrets.shiftBack` method that takes a value and the number of places to shift and peforms the shift.
 
 ```java
-Secrets.shiftBack(0b1001, 2);s
+Secrets.shiftBack(0b1001, 2);
 # => 0b0010
 ```
 
@@ -40,7 +40,7 @@ If the bit is 1 in mask, the bit is flipped in the value.
 All other bits are kept unchanged.
 
 ```java
-Secrets.flipBits(0b1100, 0b0101)
+Secrets.flipBits(0b1100, 0b0101);
 # => 0b1001
 ```
 
@@ -53,6 +53,6 @@ The bits in the `value` should be set to 0 where the bit in the mask is 1.
 All other bits should be kept unchanged.
 
 ```java
-Secrets.applyMask(0b0110, 0b0101);
+Secrets.clearBits(0b0110, 0b0101);
 # => 0b0010
 ```
