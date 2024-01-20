@@ -82,19 +82,19 @@ After making changes to one or more exercises, make sure that they pass all vali
 #### Check whether the reference implementation passes the tests
 
 ```sh
-gradle test
+./gradlew test
 ```
 
 #### Check whether the reference implementation passes the Checkstyle validations
 
 ```sh
-gradle check
+./gradlew check
 ```
 
 #### Check whether the starter implementation is able to compile with the tests
 
 ```sh
-gradle compileStarterTestJava
+./gradlew compileStarterTestJava
 ```
 
 ### Open a Pull Request
