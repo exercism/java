@@ -30,7 +30,7 @@ Here are some popular choices:
 
 You now are ready to get started with the Java track of Exercism!
 
-To get started, see "[Running the Tests](https://exercism.org/docs/tracks/java/tests)".
+To get started, see "[Running the Tests][exercism-java-tests-docs]".
 
 [eclipse]: https://www.eclipse.org/downloads/
 [exercism-java-tests-docs]: https://exercism.org/docs/tracks/java/tests
