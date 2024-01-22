@@ -24,7 +24,7 @@ Choose your operating system:
 4. Run the tests:
 
    ```batchfile
-   C:\Users\JohnDoe>gradle test
+   C:\Users\JohnDoe>gradlew.bat test
    ```
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
@@ -50,7 +50,7 @@ Good luck! Have fun!
 3. Run the tests:
 
    ```sh
-   gradle test
+   ./gradlew test
    ```
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
@@ -76,7 +76,7 @@ Good luck! Have fun!
 3. Run the tests:
 
    ```sh
-   gradle test
+   ./gradlew test
    ```
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
