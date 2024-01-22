@@ -4,7 +4,14 @@
 # Force the following filetypes to have unix eols, so Windows does not break them
 *.* text eol=lf
 
+# Force the following filetypes to have Windows eols, so unix does not break them
+*.bat text eol=crlf
+
 # Force images/fonts to be handled as binaries
 *.jpg binary
 *.jpeg binary
 *.png binary
+
+# Force JARs to be handled as binaries
+*.jar binary
+
