@@ -20,7 +20,4 @@ resources/exercise-template/bin
 resources/exercise-template/.classpath
 resources/exercise-template/.project
 resources/exercise-template/.settings/
-resources/exercise-template/gradle/
-resources/exercise-template/gradlew
-resources/exercise-template/gradlew.bat
 *.class

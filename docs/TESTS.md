@@ -24,12 +24,12 @@ Choose your operating system:
 4. Run the tests:
 
    ```batchfile
-   C:\Users\JohnDoe>gradle test
+   C:\Users\JohnDoe>gradlew.bat test
    ```
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
 
-5. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial)).
+5. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub][hello-world-tutorial]).
 
 Good luck! Have fun!
 
@@ -50,12 +50,12 @@ Good luck! Have fun!
 3. Run the tests:
 
    ```sh
-   gradle test
+   ./gradlew test
    ```
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
 
-4. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial)).
+4. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub][hello-world-tutorial]).
 
 Good luck! Have fun!
 
@@ -76,11 +76,13 @@ Good luck! Have fun!
 3. Run the tests:
 
    ```sh
-   gradle test
+   ./gradlew test
    ```
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
 
-4. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial)).
+4. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub][hello-world-tutorial]).
 
 Good luck! Have fun!
+
+[hello-world-tutorial]: https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial

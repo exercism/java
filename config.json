@@ -5,8 +5,8 @@
   "status": {
     "concept_exercises": true,
     "test_runner": true,
-    "representer": false,
-    "analyzer": false
+    "representer": true,
+    "analyzer": true
   },
   "blurb": "Java is a very widely used Object Oriented programming language. It's safe, simple to use and portable so that you can \"write once, run anywhere\".",
   "version": 3,
