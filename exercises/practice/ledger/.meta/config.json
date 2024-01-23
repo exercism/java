@@ -10,7 +10,8 @@
       "src/main/java/Ledger.java"
     ],
     "test": [
-      "src/test/java/LedgerTest.java"
+      "src/test/java/LedgerTest.java",
+      "src/test/java/LocaleExtension.java"
     ],
     "example": [
       ".meta/src/reference/java/Ledger.java"
