@@ -24,14 +24,21 @@ public class SqueakyCleanTest {
     @Tag("task:1")
     @DisplayName("The clean method returns the same string when invoked on a string of three letters")
     public void string() {
-        assertThat(SqueakyClean.clean("àḃç")).isEqualTo("àḃç");
+        assertThat(SqueakyClean.clean("abc")).isEqualTo("abc");
+    }
+    
+    @Test
+    @Tag("task:1")
+    @DisplayName("The clean method replaces numbers with underscores")
+    public void numbers() {
+        assertThat(SqueakyClean.clean("4bcd3")).isEqualTo("_bcd_");
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("The clean method replaces whitespaces with underscores in the middle of the string")
     public void spaces() {
-        assertThat(SqueakyClean.clean("my   Id")).isEqualTo("my___Id");
+        assertThat(SqueakyClean.clean("my   Id 1")).isEqualTo("my___Id__");
     }
 
     @Test
@@ -40,53 +47,46 @@ public class SqueakyCleanTest {
     public void leading_and_trailing_spaces() {
         assertThat(SqueakyClean.clean(" myId ")).isEqualTo("_myId_");
     }
+    
+    @Test
+    @Tag("task:1")
+    @DisplayName("The clean method replaces numbers and spaces with underscores")
+    public void numbers_and_spaces() {
+        assertThat(SqueakyClean.clean("my id 123")).isEqualTo("my_id____");
+    }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The clean method replaces control characters with CTRL")
-    public void ctrl() {
-        assertThat(SqueakyClean.clean("my\0\r\u007FId")).isEqualTo("myCTRLCTRLCTRLId");
-    }
-
-    @Test
-    @Tag("task:4")
-    @DisplayName("The clean method returns an empty string when invoked on a string with no letters")
-    public void string_with_no_letters() {
-        assertThat(SqueakyClean.clean("\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00")).isEmpty();
-    }
-
-    @Test
-    @Tag("task:3")
     @DisplayName("The clean method converts kebab to camel case after removing a dash")
     public void kebab_to_camel_case() {
         assertThat(SqueakyClean.clean("à-ḃç")).isEqualTo("àḂç");
     }
 
     @Test
+    @Tag("task:2")
+    @DisplayName("The clean method returns a string in camel case after removing a dash and replacing the number")
+    public void kebab_to_camel_case_and_number() {
+        assertThat(SqueakyClean.clean("a-C1")).isEqualTo("aC_");
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("The clean method returns a string in camel case after removing a dash and replaces whitespaces")
+    public void kebab_to_camel_case_and_spaces() {
+        assertThat(SqueakyClean.clean(" hello-world ")).isEqualTo("_helloWorld_");
+    }
+
+    @Test
     @Tag("task:3")
-    @DisplayName("The clean method returns a string in camel case after removing a dash and a number")
-    public void kebab_to_camel_case_no_letter() {
-        assertThat(SqueakyClean.clean("a-1C")).isEqualTo("aC");
-    }
-
-    @Test
-    @Tag("task:4")
     @DisplayName("The clean method removes all characters that are not letters")
-    public void keep_only_letters() {
-        assertThat(SqueakyClean.clean("a1\uD83D\uDE002\uD83D\uDE003\uD83D\uDE00b")).isEqualTo("ab");
+    public void special_characters() {
+        assertThat(SqueakyClean.clean("a$#.b")).isEqualTo("ab");
     }
 
     @Test
-    @Tag("task:5")
-    @DisplayName("The clean method removes all lowercase greek letters")
-    public void omit_lower_case_greek_letters() {
-        assertThat(SqueakyClean.clean("MyΟβιεγτFinder")).isEqualTo("MyΟFinder");
-    }
-
-    @Test
-    @Tag("task:5")
-    @DisplayName("The clean method returns the correct result after performing a few cleaning operations")
-    public void combine_conversions() {
-        assertThat(SqueakyClean.clean("9 -abcĐ\uD83D\uDE00ω\0")).isEqualTo("_AbcĐCTRL");
+    @Tag("task:3")
+    @DisplayName("The clean method removes all characters that are not letters and replaces spaces and numbers")
+    public void special_characters_with_numbers_and_spaces() {
+        assertThat(SqueakyClean.clean("h3llo world!. ")).isEqualTo("h_llo_world_");
     }
 }

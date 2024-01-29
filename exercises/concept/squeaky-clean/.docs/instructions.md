@@ -10,45 +10,27 @@ In all cases the input string is guaranteed to be non-null. Note that the `clean
 
 ## 1. Replace any spaces encountered with underscores
 
-Implement the (_static_) `SqueakyClean.clean()` method to replace any spaces with underscores. This also applies to leading and trailing spaces.
+Implement the (_static_) `SqueakyClean.clean()` method to replace any spaces or numbers with underscores. This also applies to leading and trailing spaces.
 
 ```java
-SqueakyClean.clean("my   Id");
-// => "my___Id"
+SqueakyClean.clean("my   Id 1");
+// => "my___Id__"
 ```
 
-## 2. Replace control characters with the upper case string "CTRL"
-
-Modify the (_static_) `SqueakyClean.clean()` method to replace control characters with the upper case string `"CTRL"`.
-
-```java
-SqueakyClean.clean("my\0Id");
-// => "myCTRLId",
-```
-
-## 3. Convert kebab-case to camelCase
+## 2. Convert kebab-case to camelCase
 
 Modify the (_static_) `SqueakyClean.clean()` method to convert kebab-case to camelCase.
 
 ```java
-SqueakyClean.clean("à-ḃç");
-// => "àḂç"
+SqueakyClean.clean("a-bc");
+// => "aBc"
 ```
 
-## 4. Omit characters that are not letters
+## 3. Omit characters that are not letters
 
 Modify the (_static_) `SqueakyClean.clean()` method to omit any characters that are not letters.
 
 ```java
-SqueakyClean.clean("a1😀2😀3😀b");
+SqueakyClean.clean("a$#.b");
 // => "ab"
-```
-
-## 5. Omit Greek lower case letters
-
-Modify the (_static_) `SqueakyClean.clean()` method to omit any Greek letters in the range 'α' to 'ω'.
-
-```java
-SqueakyClean.clean("MyΟβιεγτFinder");
-// => "MyΟFinder"
 ```
