@@ -64,7 +64,7 @@ public class SqueakyCleanTest {
 
     @Test
     @Tag("task:3")
-    @DisplayName("The clean method converts leetspeak to normal text after reeplacing numbers with chars")
+    @DisplayName("The clean method converts leetspeak to normal text after replacing numbers with chars")
     public void leetspeak_to_normal_text() {
         assertThat(SqueakyClean.clean("H3ll0 W0rld")).isEqualTo("Hello_World");
     }
