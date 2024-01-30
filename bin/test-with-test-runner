@@ -34,6 +34,12 @@ function verify_exercise() {
     local implementation_files=($(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][]' "${dir}/.meta/config.json"))
     local stub_files=($(jq -r --arg d "${dir}" '$d + "/" + .files.solution[]' "${dir}/.meta/config.json"))
     local results_file="${output_dir}/results.json"
+    local exercise_type=$3
+    local exercise_status=($(jq -r --arg t ${exercise_type} --arg s ${slug} '.exercises[$t][] | select(.slug == $s).status' config.json))
+
+    if [ "$exercise_status" == "deprecated"]; then
+        return
+    fi
 
     mkdir -p "${output_dir}"
 
@@ -65,7 +71,7 @@ function verify_exercise() {
 for concept_exercise_dir in ./exercises/concept/*/; do
     if [ -d $concept_exercise_dir ]; then
         echo "Checking $(basename "${concept_exercise_dir}") exercise..."
-        verify_exercise $concept_exercise_dir "exemplar"
+        verify_exercise $concept_exercise_dir "exemplar" "concept"
     fi
 done
 
@@ -73,7 +79,7 @@ done
 for practice_exercise_dir in ./exercises/practice/*/; do
     if [ -d $practice_exercise_dir ]; then
         echo "Checking $(basename "${practice_exercise_dir}") exercise..."
-        verify_exercise $practice_exercise_dir "example"
+        verify_exercise $practice_exercise_dir "example" "practice"
     fi
 done
 
