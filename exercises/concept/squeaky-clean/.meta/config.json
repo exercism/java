@@ -2,6 +2,9 @@
   "authors": [
     "ystromm"
   ],
+  "contributors": [
+    "sanderploegsma"
+  ],
   "files": {
     "solution": [
       "src/main/java/SqueakyClean.java"
