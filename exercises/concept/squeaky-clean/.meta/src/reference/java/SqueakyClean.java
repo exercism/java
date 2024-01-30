@@ -1,14 +1,23 @@
-import java.util.Map;
-import java.util.HashMap;
-
 class SqueakyClean {
-    private static Map<Character, Character> leetSpeakMap = new HashMap<>() {{
-            put('3', 'e');
-            put('4', 'a');
-            put('0', 'o');
-            put('1', 'l');
-            put('7', 't');
-        }};
+
+    private static char replaceDigit(char digit) {
+        if (digit == '3') {
+            return 'e';
+        }
+
+        if (digit == '4') {
+            return 'a';
+        }
+
+        if (digit == '0') {
+            return 'o';
+        }
+
+        if (digit == '1') {
+            return 'l';
+        }
+        return 't';
+    }
 
     static String clean(String identifier) {
         final StringBuilder cleanIdentifier = new StringBuilder();
@@ -18,7 +27,7 @@ class SqueakyClean {
             if (Character.isSpaceChar(ch)) {
                 cleanIdentifier.append("_");
             } else if (Character.isDigit(ch)) {
-                cleanIdentifier.append(leetSpeakMap.get(ch));
+                cleanIdentifier.append(SqueakyClean.replaceDigit(ch));
             } else if (ch == '-') {
                 kebab = true;
             } else if (Character.isLetter(ch)) {

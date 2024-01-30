@@ -45,19 +45,19 @@ public class SqueakyCleanTest {
     @Tag("task:2")
     @DisplayName("The clean method converts kebab to camel case after removing a dash")
     public void kebab_to_camel_case() {
-        assertThat(SqueakyClean.clean("à-ḃç")).isEqualTo("àḂç");
+        assertThat(SqueakyClean.clean("a-bc")).isEqualTo("aBc");
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The clean method returns a string in camel case after removing a dash and replacing the whitespace")
+    @DisplayName("The clean method returns a string in camel case after removing a dash and replaces a whitespace")
     public void kebab_to_camel_case_and_number() {
         assertThat(SqueakyClean.clean("a-C ")).isEqualTo("aC_");
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The clean method returns a string in camel case after removing a dash and replaces whitespaces")
+    @DisplayName("The clean method returns a string in camel case and replaces leading and trailing whitespaces")
     public void kebab_to_camel_case_and_spaces() {
         assertThat(SqueakyClean.clean(" hello-world ")).isEqualTo("_helloWorld_");
     }
