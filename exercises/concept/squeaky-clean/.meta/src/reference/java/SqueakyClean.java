@@ -1,4 +1,24 @@
 class SqueakyClean {
+
+    private static char replaceDigit(char digit) {
+        if (digit == '3') {
+            return 'e';
+        }
+
+        if (digit == '4') {
+            return 'a';
+        }
+
+        if (digit == '0') {
+            return 'o';
+        }
+
+        if (digit == '1') {
+            return 'l';
+        }
+        return 't';
+    }
+
     static String clean(String identifier) {
         final StringBuilder cleanIdentifier = new StringBuilder();
         boolean kebab = false;
@@ -6,11 +26,11 @@ class SqueakyClean {
             final char ch = identifier.charAt(i);
             if (Character.isSpaceChar(ch)) {
                 cleanIdentifier.append("_");
-            } else if (Character.isISOControl(ch)) {
-                cleanIdentifier.append("CTRL");
+            } else if (Character.isDigit(ch)) {
+                cleanIdentifier.append(SqueakyClean.replaceDigit(ch));
             } else if (ch == '-') {
                 kebab = true;
-            } else if (isLetter(ch)) {
+            } else if (Character.isLetter(ch)) {
                 cleanIdentifier.append(
                         kebab ? Character.toUpperCase(ch) : ch
                 );
@@ -18,8 +38,5 @@ class SqueakyClean {
             }
         }
         return cleanIdentifier.toString();
-    }
-    private static boolean isLetter(char ch) {
-        return Character.isLetter(ch) && !(ch >= 'α' && ch <= 'ω');
     }
 }
