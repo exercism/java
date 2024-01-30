@@ -10,11 +10,11 @@ In all cases the input string is guaranteed to be non-null. Note that the `clean
 
 ## 1. Replace any spaces encountered with underscores
 
-Implement the (_static_) `SqueakyClean.clean()` method to replace any spaces or numbers with underscores. This also applies to leading and trailing spaces.
+Implement the (_static_) `SqueakyClean.clean()` method to replace any spaces with underscores. This also applies to leading and trailing spaces.
 
 ```java
-SqueakyClean.clean("my   Id 1");
-// => "my___Id__"
+SqueakyClean.clean("my   Id");
+// => "my___Id"
 ```
 
 ## 2. Convert kebab-case to camelCase
@@ -26,7 +26,16 @@ SqueakyClean.clean("a-bc");
 // => "aBc"
 ```
 
-## 3. Omit characters that are not letters
+## 3. Convert leetspeak to normal text
+
+Modify the (_static_) `SqueakyClean.clean()` method to convert [leetspeak][leet-speak] to normal text.
+
+```java
+SqueakyClean.clean("H3ll0 W0rld");
+// => "Hello_World"
+```
+
+## 4. Omit characters that are not letters
 
 Modify the (_static_) `SqueakyClean.clean()` method to omit any characters that are not letters.
 
@@ -34,3 +43,5 @@ Modify the (_static_) `SqueakyClean.clean()` method to omit any characters that 
 SqueakyClean.clean("a$#.b");
 // => "ab"
 ```
+
+[leet-speak]: https://en.wikipedia.org/wiki/Leet

@@ -26,19 +26,12 @@ public class SqueakyCleanTest {
     public void string() {
         assertThat(SqueakyClean.clean("abc")).isEqualTo("abc");
     }
-    
-    @Test
-    @Tag("task:1")
-    @DisplayName("The clean method replaces numbers with underscores")
-    public void numbers() {
-        assertThat(SqueakyClean.clean("4bcd3")).isEqualTo("_bcd_");
-    }
 
     @Test
     @Tag("task:1")
     @DisplayName("The clean method replaces whitespaces with underscores in the middle of the string")
     public void spaces() {
-        assertThat(SqueakyClean.clean("my   Id 1")).isEqualTo("my___Id__");
+        assertThat(SqueakyClean.clean("my   Id")).isEqualTo("my___Id");
     }
 
     @Test
@@ -46,13 +39,6 @@ public class SqueakyCleanTest {
     @DisplayName("The clean method replaces leading and trailing whitespaces with underscores")
     public void leading_and_trailing_spaces() {
         assertThat(SqueakyClean.clean(" myId ")).isEqualTo("_myId_");
-    }
-    
-    @Test
-    @Tag("task:1")
-    @DisplayName("The clean method replaces numbers and spaces with underscores")
-    public void numbers_and_spaces() {
-        assertThat(SqueakyClean.clean("my id 123")).isEqualTo("my_id____");
     }
 
     @Test
@@ -64,9 +50,9 @@ public class SqueakyCleanTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The clean method returns a string in camel case after removing a dash and replacing the number")
+    @DisplayName("The clean method returns a string in camel case after removing a dash and replacing the whitespace")
     public void kebab_to_camel_case_and_number() {
-        assertThat(SqueakyClean.clean("a-C1")).isEqualTo("aC_");
+        assertThat(SqueakyClean.clean("a-C ")).isEqualTo("aC_");
     }
 
     @Test
@@ -78,15 +64,29 @@ public class SqueakyCleanTest {
 
     @Test
     @Tag("task:3")
+    @DisplayName("The clean method converts leetspeak to normal text after reeplacing numbers with chars")
+    public void leetspeak_to_normal_text() {
+        assertThat(SqueakyClean.clean("H3ll0 W0rld")).isEqualTo("Hello_World");
+    }
+
+    @Test
+    @Tag("task:3")
+    @DisplayName("The clean method converts leetspeak to normal text with spaces and special characters")
+    public void leetspeak_to_normal_text_with_spaces_and_special_characters() {
+        assertThat(SqueakyClean.clean("¡1337sp34k is fun!")).isEqualTo("leetspeak_is_fun");
+    }
+
+    @Test
+    @Tag("task:4")
     @DisplayName("The clean method removes all characters that are not letters")
     public void special_characters() {
         assertThat(SqueakyClean.clean("a$#.b")).isEqualTo("ab");
     }
 
     @Test
-    @Tag("task:3")
-    @DisplayName("The clean method removes all characters that are not letters and replaces spaces and numbers")
-    public void special_characters_with_numbers_and_spaces() {
-        assertThat(SqueakyClean.clean("h3llo world!. ")).isEqualTo("h_llo_world_");
+    @Tag("task:4")
+    @DisplayName("The clean method removes all characters that are not letters and replaces spaces")
+    public void special_characters_and_spaces() {
+        assertThat(SqueakyClean.clean("¡hello world!. ")).isEqualTo("hello_world_");
     }
 }

@@ -7,14 +7,17 @@
 - You can retrieve `char`s from a string using the [charAt][char-at] method.
 - You should use a [`StringBuilder`][string-builder] to build the output string.
 - See [this method][iswhitespace] for detecting spaces. Remember it is a static method.
-- See [this method][isdigit] for detecting numbers.
 - `char` literals are enclosed in single quotes.
 
 ## 2. Convert kebab-case to camel-case
 
 - See [this method][toupper] to convert a character to upper case.
 
-## 3. Omit characters that are not letters
+## 3. Convert leetspeak to normal text
+
+- See [this method][isdigit] for detecting numbers.
+
+## 4. Omit characters that are not letters
 
 - See [this method][isletter] to check if a character is a letter.
 
