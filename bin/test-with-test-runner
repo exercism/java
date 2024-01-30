@@ -37,7 +37,7 @@ function verify_exercise() {
     local exercise_type=$3
     local exercise_status=($(jq -r --arg t ${exercise_type} --arg s ${slug} '.exercises[$t][] | select(.slug == $s).status' config.json))
 
-    if [ "$exercise_status" == "deprecated"]; then
+    if [[ $exercise_status == "deprecated" ]]; then
         return
     fi
 
