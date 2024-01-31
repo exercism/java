@@ -27,6 +27,7 @@ This exercise's prerequisites Concepts are:
 
 This exercise could benefit from the following rules in the [analyzer]:
 
+- `essential`: Verify that the solution does not hard-code the log levels (`[ERROR]:`, `[WARNING]:`, `[INFO]:`)
 - `actionable`: If the student did not reuse the implementation of the `message` and `logLevel` methods in the `reformat` method, instruct them to do so.
 - `actionable`: If the solution did not use `substring` in the methods `message` and `logLevel`, instruct them to do so.
 - `informative`: If the solution uses string concatenation in the `reformat` method, suggest to the student that it can be simplified using `String.format`.
