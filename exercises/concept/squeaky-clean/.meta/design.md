@@ -14,6 +14,7 @@
 
 ## Out of scope
 
+- Handling control characters and unicode characters.
 - Advanced unicode issues such as surrogates, text normalization, combining characters.
 - Cultural considerations and invariants.
 
