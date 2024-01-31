@@ -29,3 +29,4 @@
 [toupper]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#toUpperCase(char)
 [isletter]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isLetter(char)
 [isdigit]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html#isDigit(char)
+
