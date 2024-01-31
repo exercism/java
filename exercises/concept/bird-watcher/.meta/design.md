@@ -36,3 +36,17 @@ This exercise's prerequisites Concepts are:
 - `classes`: know how to work with fields.
 - `booleans`: know what a `boolean` is.
 - `basics`: know how to work with `integers` and how to assign and update variables.
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `essential`: Verify that the solution does not hard-code the array passed in the constructor of the class `{2, 5, 0, 7, 4, 1 }`.
+- `essential`: The solution requires that the user uses at least once a `For` loop, the method `getCountForFirstDays()` could be a great place to do it.
+- `essential`: The solution requires that the user uses at least once a `For-Each` loop, the method `getBusyDays()` could be a great place to do it.
+- `actionable`: If the student did not use `clone` in the constructor to make a copy of the array, instruct them to do so. This is because if not, allows code outside the class to mutate the contents of the array.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
+
+[analyzer]: https://github.com/exercism/java-analyzer
