@@ -29,6 +29,9 @@ This exercise could benefit from the following rules in the [analyzer]:
 
 - `actionable`: If the student did not reuse the implementation of the `message` and `logLevel` methods in the `reformat` method, instruct them to do so.
 - `actionable`: If the solution did not use `substring` in the methods `message` and `logLevel`, instruct them to do so.
-- `actionable`: If the solution did not use `String.format` in the method `reformat`, instruct them to do so.
+- `informative`: If the solution uses string concatenation in the `reformat` method, suggest to the student that it can be simplified using `String.format`.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
 
 [analyzer]: https://github.com/exercism/java-analyzer
