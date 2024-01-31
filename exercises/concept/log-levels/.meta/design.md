@@ -22,3 +22,17 @@
 This exercise's prerequisites Concepts are:
 
 - `basics`: know how to define methods.
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `essential`: Verify that the solution does not hard-code the log levels (`[ERROR]:`, `[WARNING]:`, `[INFO]:`)
+- `actionable`: If the student did not reuse the implementation of the `message` and `logLevel` methods in the `reformat` method, instruct them to do so.
+- `actionable`: If the solution did not use `substring` in the methods `message` and `logLevel`, instruct the student to do so.
+- `informative`: If the solution uses `String.format` in the `reformat` method, inform the student that this cause a small performance penalty compared to string concatenation.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
+
+[analyzer]: https://github.com/exercism/java-analyzer
