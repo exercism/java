@@ -15,4 +15,3 @@ public class Lasagna {
         return preparationTimeInMinutes(numberOfLayers) + actualMinutesInOven;
     }
 }
-
