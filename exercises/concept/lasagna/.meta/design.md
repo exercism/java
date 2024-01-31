@@ -55,5 +55,8 @@ This exercise could benefit from the following rules in the [analyzer]:
   Explain that reusing existing code instead of copy-pasting can help make code easier to maintain.
 - `actionable`: If the student left any `// TODO: ...` comments in the code, instruct them to remove these.
 
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
+
 [analyzer]: https://github.com/exercism/java-analyzer
 [representer]: https://github.com/exercism/java-representer
