@@ -36,3 +36,13 @@ This exercise's prerequisites Concepts are:
 - `classes`: know how to work with fields.
 - `booleans`: know what a `boolean` is.
 - `basics`: know how to work with `integers` and how to assign and update variables.
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `essential`: Verify that the solution does not hard-code the arrays used by the tests (`{2, 5, 0, 7, 4, 1 }`, `{0, 2, 5, 3, 7, 8, 4}`)
+- `actionable`: If the student did not use `clone` in the constructor to make a copy of the array, instruct them to do so.
+- `informative`: If the student used a different loop than a `For-Each` one in the methods `hasDayWithoutBirds` and `getBusyDays`, inform them that the solution can be improve using it.
+
+[analyzer]: https://github.com/exercism/java-analyzer
