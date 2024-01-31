@@ -14,7 +14,6 @@
 
 ## Out of scope
 
-- Converting an integer to a character and vice versa.
 - Advanced unicode issues such as surrogates, text normalization, combining characters.
 - Cultural considerations and invariants.
 
