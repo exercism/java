@@ -22,3 +22,13 @@
 This exercise's prerequisites Concepts are:
 
 - `basics`: know how to define methods.
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `actionable`: If the student did not reuse the implementation of the `message` and `logLevel` methods in the `reformat` method, instruct them to do so.
+- `actionable`: If the solution did not use `substring` in the methods `message` and `logLevel`, instruct them to do so.
+- `actionable`: If the solution did not use `String.format` in the method `reformat`, instruct them to do so.
+
+[analyzer]: https://github.com/exercism/java-analyzer
