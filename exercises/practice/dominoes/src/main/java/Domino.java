@@ -27,7 +27,7 @@ class Domino {
     
     @Override
     public boolean equals(Object o) {
-    if (!o instanceof Domino ) {
+    if (!(o instanceof Domino) ) {
         return false;
     }
         Domino otherDomino = (Domino) o;
