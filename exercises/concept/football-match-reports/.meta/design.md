@@ -36,7 +36,7 @@ switch(shirtNum) {
 ```
 
 - `actionable`: If the student does not directly return the answer from the case in the switch statement, instruct them to do so.
-- `informative`: If the solution is returning the answer inside the cases, inform the student that it can be simplified to by directly returning the switch statement and using arrow functionality.
+- `informative`: If the solution is returning the answer inside the cases, inform the student that it can be simplified by using a switch expression:
 
 ```java
 return switch(shirtNum) {
