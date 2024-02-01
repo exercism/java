@@ -2,33 +2,25 @@
 
 ## Learning objectives
 
-- Know what classes are.
-- Know what encapsulation is.
-- Know what fields are.
-- Know how to create an object.
-- Know how to update state through methods.
-- Know about the `void` type.
+- Know what constructors are.
+- Know how to create a constructor.
+- Know how to initialize a new instance of a class.
+- Know how to differentiate them with normal methods.
 
 ## Out of scope
 
-- Reference equality.
-- Constructors.
-- Interfaces.
-- Inheritance.
-- Finalizers.
 - Method overloading.
-- Loops.
+- No arguments constructor.
 
 ## Concepts
 
-- `classes`: know what classes are; know what encapsulation is; know what fields are; know how to create an object; know how to update state through methods; know about the `void` type.
+- `constructors`: Know how to create `constructors` and what they are.
 
 ## Prerequisites
 
 - `basics`: know how to define a basic class with basic methods.
-- `strings`: know how to do basic string interpolation.
-- `numbers`: know how to compare numbers.
 - `conditionals`: know how to do conditional logic.
+- `classes`: know how classes work.
 
 ## Analyzer
 
