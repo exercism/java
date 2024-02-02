@@ -23,17 +23,19 @@ Nothing to report
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `essential`: If student returns a boolean literal, tell them it is possible to directly return the result of a expression. For example:
-                ```java
-                // instead of
-                if (knightIsAwake) {
-                    return true;
-                } else {
-                    return false;
-                }
 
-                // ... return the expression directly
-                return knightIsAwake;
-                ```
+  ```java
+  // instead of
+  if (knightIsAwake) {
+    return true;
+  } else {
+    return false;
+  }
+
+  // ... return the expression directly
+  return knightIsAwake;
+  ```
+
 - `essential`: If the student compares a boolean variable with a boolean literal (e.g. `knightIsAwake == true` or `archerIsAwake == false`), tell them this can be simplified to just the variables (e.g. `knightIsAwake` or `archerIsAwake`).
 - `essential`: If the student uses an `if` statement or the ternary operator, tell them this exercise was to explore booleans and boolean operators and this exercise can be solved without them.
 - `informative`: If the student uses an `||` expression to OR two smaller expressions and either expression is surrounded by parentheses and only ANDs some terms together (e.g. `knightIsAwake || (archerIsAwake && !prisonerIsAwake)`), tell them the parentheses is unnecessary because `&&` has the higher precedence over `||`.
