@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PopCountTest {
+public class EliudsEggsTest {
     @Test
     @DisplayName("0 eggs")
     public void test0Eggs() {
-        assertThat(new PopCount().eggCount(0))
+        assertThat(new EliudsEggs().eggCount(0))
                 .isEqualTo(0);
     }
 
@@ -16,7 +16,7 @@ public class PopCountTest {
     @Test
     @DisplayName("1 egg")
     public void test1Egg() {
-        assertThat(new PopCount().eggCount(16))
+        assertThat(new EliudsEggs().eggCount(16))
                 .isEqualTo(1);
     }
 
@@ -24,7 +24,7 @@ public class PopCountTest {
     @Test
     @DisplayName("4 eggs")
     public void test4Eggs() {
-        assertThat(new PopCount().eggCount(89))
+        assertThat(new EliudsEggs().eggCount(89))
                 .isEqualTo(4);
     }
 
@@ -32,7 +32,7 @@ public class PopCountTest {
     @Test
     @DisplayName("13 eggs")
     public void test13Eggs() {
-        assertThat(new PopCount().eggCount(2000000000))
+        assertThat(new EliudsEggs().eggCount(2000000000))
                 .isEqualTo(13);
     }
 }
