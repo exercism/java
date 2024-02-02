@@ -4,13 +4,13 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/PopCount.java"
+      "src/main/java/EliudEggs.java"
     ],
     "test": [
-      "src/test/java/PopCountTest.java"
+      "src/test/java/EliudEggsTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/PopCount.java"
+      ".meta/src/reference/java/EliudEggs.java"
     ],
     "invalidator": [
       "build.gradle"

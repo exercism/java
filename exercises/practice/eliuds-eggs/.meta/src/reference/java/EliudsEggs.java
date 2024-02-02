@@ -1,4 +1,4 @@
-public class PopCount {
+public class EliudsEggs {
     public int eggCount(int number) {
         var count = 0;
         var remaining = number;
