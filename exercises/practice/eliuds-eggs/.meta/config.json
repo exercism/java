@@ -4,13 +4,13 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/EliudEggs.java"
+      "src/main/java/EliudsEggs.java"
     ],
     "test": [
-      "src/test/java/EliudEggsTest.java"
+      "src/test/java/EliudsEggsTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/EliudEggs.java"
+      ".meta/src/reference/java/EliudsEggs.java"
     ],
     "invalidator": [
       "build.gradle"
