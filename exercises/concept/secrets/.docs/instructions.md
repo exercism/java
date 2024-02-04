@@ -46,7 +46,7 @@ Secrets.flipBits(0b1100, 0b0101);
 
 ## 4. Clear specific bits
 
-Lastly, there are also certain bits that always decrpyt to 0.
+Lastly, there are also certain bits that always decrypt to 0.
 
 Implement the `Secrets.clearBits` method that takes a value and a mask.
 The bits in the `value` should be set to 0 where the bit in the mask is 1.
