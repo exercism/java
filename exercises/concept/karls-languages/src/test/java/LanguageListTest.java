@@ -10,18 +10,18 @@ public class LanguageListTest {
 
     @Test
     @Tag("task:1")
-    @DisplayName("The isEmpty method returns true when the list contains no languages")
+    @DisplayName("The checkIfEmpty method returns true when the list contains no languages")
     public void empty() {
-        assertThat(languageList.isEmpty()).isTrue();
+        assertThat(languageList.checkIfEmpty()).isTrue();
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The isEmpty method returns false after adding a language to the list")
+    @DisplayName("The checkIfEmpty method returns false after adding a language to the list")
     public void nonEmpty() {
         languageList.addLanguage("Java");
 
-        assertThat(languageList.isEmpty()).isFalse();
+        assertThat(languageList.checkIfEmpty()).isFalse();
     }
 
     @Test
@@ -31,7 +31,7 @@ public class LanguageListTest {
         languageList.addLanguage("Java");
         languageList.removeLanguage("Java");
 
-        assertThat(languageList.isEmpty()).isTrue();
+        assertThat(languageList.checkIfEmpty()).isTrue();
     }
 
     @Test

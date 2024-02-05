@@ -4,7 +4,7 @@ import java.util.List;
 public class LanguageList {
     private final List<String> languages = new ArrayList<>();
 
-    public boolean isEmpty() {
+    public boolean checkIfEmpty() {
         return languages.isEmpty();
     }
 
