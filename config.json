@@ -80,7 +80,6 @@
         ],
         "prerequisites": [
           "arrays",
-          "for-loops",
           "strings"
         ],
         "status": "active"
