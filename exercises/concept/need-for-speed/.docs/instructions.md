@@ -12,7 +12,7 @@ You have six tasks, each of which will work with remote controller car instances
 
 ## 1. Creating a remote controlled car
 
-Allow creating a remote controller car by defining a constructor for the `NeedForSpeed` class that takes the speed of the car in meters and the battery drain percentage as its two parameters (both of type `int`):
+Allow creating a remote controlled car by defining a constructor for the `NeedForSpeed` class that takes the speed of the car in meters and the battery drain percentage as its two parameters (both of type `int`):
 
 ```java
 int speed = 5;
