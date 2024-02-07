@@ -24,7 +24,7 @@ class SqueakyClean {
         boolean kebab = false;
         for (int i = 0; i < identifier.length(); i++) {
             final char ch = identifier.charAt(i);
-            if (Character.isSpaceChar(ch)) {
+            if (Character.isWhitespace(ch)) {
                 cleanIdentifier.append("_");
             } else if (Character.isDigit(ch)) {
                 cleanIdentifier.append(SqueakyClean.replaceDigit(ch));
