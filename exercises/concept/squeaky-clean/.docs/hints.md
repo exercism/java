@@ -10,15 +10,15 @@
 
 ## 2. Convert kebab-case to camel-case
 
-- Check the [Character][chars-docs] documentation for a method to convert a character to upper case.
+- Check the [Character][chars-docs] documentation for a method to convert a character to upper case. Remember it is a static method.
 
 ## 3. Convert leetspeak to normal text
 
-- Check the [Character][chars-docs] documentation for a method to detect when a character is a digit.
+- Check the [Character][chars-docs] documentation for a method to detect when a character is a digit. Remember it is a static method.
 
 ## 4. Omit characters that are not letters
 
-- Check the [Character][chars-docs] documentation for a method to detect when a character is a letter.
+- Check the [Character][chars-docs] documentation for a method to detect when a character is a letter. Remember it is a static method.
 
 [chars-docs]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Character.html
 [chars-tutorial]: https://docs.oracle.com/javase/tutorial/java/data/characters.html
