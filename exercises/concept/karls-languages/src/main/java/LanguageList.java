@@ -4,8 +4,8 @@ import java.util.List;
 public class LanguageList {
     private final List<String> languages = new ArrayList<>();
 
-    public boolean checkIfEmpty() {
-        throw new UnsupportedOperationException("Please implement the checkIfEmpty() method");
+    public boolean isEmpty() {
+        throw new UnsupportedOperationException("Please implement the isEmpty() method");
     }
 
     public void addLanguage(String language) {
