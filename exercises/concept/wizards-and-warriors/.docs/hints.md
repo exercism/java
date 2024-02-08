@@ -9,7 +9,7 @@ The whole inheritance concept has a lot to do with the concepts around [overridi
 
 - Review the [class][class-concept] concept.
 
-## 2. Extend Wizard and Warrior classes with Figther class
+## 2. Extend Wizard and Warrior classes with Fighter class
 
 - Review the [inheritance][inheritance-concept] concept.
 
