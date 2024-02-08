@@ -7,7 +7,7 @@ The whole inheritance concept has a lot to do with the concepts around [overridi
 
 ## 1. Create the Warrior and Wizard classes
 
-- Review the [class][class-concept] concept.
+- Review the [concept:java/classes]() concept.
 
 ## 2. Extend Wizard and Warrior classes with Fighter class
 
@@ -49,4 +49,3 @@ The whole inheritance concept has a lot to do with the concepts around [overridi
 [object-class-java]: https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
 [java-overriding]: https://docs.oracle.com/javase/tutorial/java/IandI/override.html
 [if-else]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html
-[class-concept]: https://github.com/exercism/java/blob/main/concepts/classes/introduction.md

@@ -33,10 +33,10 @@ public class Lion extends Animal {
 }
 ```
 
-```exercism/note
+~~~~exercism/note
 The `Override` annotation is used to indicate that a method in a subclass is overriding a method of its superclass.
 It's not strictly necessary but it's a best practice to use it.
-```
+~~~~
 
 Now whenever we do,
 

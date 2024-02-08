@@ -86,7 +86,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:6")
+    @Tag("task:7")
     @DisplayName("The damagePoints method of the Wizard returns 3 when spell has not been prepared")
     public void testWizardsDamagePoints() {
         Wizard wizard = new Wizard();
@@ -95,7 +95,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:6")
+    @Tag("task:7")
     @DisplayName("The damagePoints method of the Wizard returns 12 after a spell has been prepared")
     public void testWizardsDamagePointsAfterPreparingSpell() {
         Wizard wizard = new Wizard();
@@ -105,7 +105,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:7")
+    @Tag("task:8")
     @DisplayName("The damagePoints method of the Warrior returns 10 when target is vulnerable")
     public void testWarriorsDamagePointsWhenTargetVulnerable() {
         Warrior warrior = new Warrior();
@@ -114,7 +114,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:7")
+    @Tag("task:8")
     @DisplayName("The damagePoints method of the Warrior returns 6 when target is not vulnerable")
     public void testWarriorsDamagePointsWhenTargetNotVulnerable() {
         Warrior warrior = new Warrior();

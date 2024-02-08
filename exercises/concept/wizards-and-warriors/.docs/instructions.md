@@ -28,9 +28,9 @@ public class Warrior {
 }
 ```
 
-## 2. Extend Wizard and Warrior classes with Figther class
+## 2. Extend Wizard and Warrior classes with Fighter class
 
-Use the `extends` keyword to inherit the `Fighter` class.
+Make the `Warrior` and `Wizard` classes inherit the `Fighter` class
 
 ```java
 public class Warrior extends Fighter {
