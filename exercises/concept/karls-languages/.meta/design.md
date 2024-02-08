@@ -43,6 +43,20 @@ This Concepts Exercise's Concepts are:
 
 This Concept Exercise's prerequisites Concepts are:
 
-- `for-loops`: know how to use a for-loop to iterate over a collection.
 - `arrays`: know of the array collection type and that it has a fixed length.
 - `strings`: data types used in this exercise
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `actionable`: If the solution did not use `contains` in the method `containsLanguage`, instruct the student to do so.
+- `actionable`: If the solution did not use `isEmpty` in the method `isEmpty`, instruct the student to do so.
+- `informative`: If the student did not reuse the implementation of the `containsLanguage` method in the `isExciting` method, instruct them to do so.
+  Explain that reusing existing code instead of copy-pasting can help make code easier to maintain.
+- `informative`: If the solution uses an `if statement` in the `containsLanguage` method, instruct the student to return directly the `contains` method.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
+
+[analyzer]: https://github.com/exercism/java-analyzer
