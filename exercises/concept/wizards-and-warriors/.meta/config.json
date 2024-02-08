@@ -2,6 +2,9 @@
   "authors": [
     "himanshugoyal1065"
   ],
+  "contributors": [
+    "manumafe98"
+  ],
   "files": {
     "solution": [
       "src/main/java/Fighter.java"

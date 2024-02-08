@@ -8,6 +8,44 @@ public class FighterTest {
 
     @Test
     @Tag("task:1")
+    @DisplayName("Test that the Wizard class exists in the code")
+    public void testWizardClassExists() {
+        try {
+            Class.forName("Wizard");
+        } catch (ClassNotFoundException e) {
+            fail("Should have a class called Wizard");
+        }
+    }
+
+    @Test
+    @Tag("task:1")
+    @DisplayName("Test that the Warrior class exists in the code")
+    public void testWarriorClassExists() {
+        try {
+            Class.forName("Warrior");
+        } catch (ClassNotFoundException e) {
+            fail("Should have a class called Warrior");
+        }
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("Test that the Warrior class is an instance of the Fighter class")
+    public void testWarriorIsInstanceOfFighter() {
+        Warrior warrior = new Warrior();
+        assertThat(warrior).isInstanceOf(Fighter.class);
+    }
+
+    @Test
+    @Tag("task:2")
+    @DisplayName("Test that the Wizard class is an instance of the Fighter class")
+    public void testWizardIsInstanceOfFighter() {
+        Wizard wizard = new Wizard();
+        assertThat(wizard).isInstanceOf(Fighter.class);
+    }
+
+    @Test
+    @Tag("task:3")
     @DisplayName("The toString method of the Warrior returns the correct description of the fighter")
     public void testWarriorToString() {
         Fighter warrior = new Warrior();
@@ -15,7 +53,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:1")
+    @Tag("task:3")
     @DisplayName("The toString method of the Wizard returns the correct description of the fighter")
     public void testWizardToString() {
         Wizard wizard = new Wizard();
@@ -23,7 +61,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:2")
+    @Tag("task:4")
     @DisplayName("The isVulnerable method of the Warrior returns false by default")
     public void testFighterNotVulnerableByDefault() {
         Fighter warrior = new Warrior();
@@ -31,7 +69,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:3")
+    @Tag("task:5")
     @DisplayName("The prepareSpell method makes the Wizard not vulnerable")
     public void testWizardVulnerable() {
         Wizard wizard = new Wizard();
@@ -40,7 +78,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:4")
+    @Tag("task:6")
     @DisplayName("The isVulnerable method of the Wizard returns true by default")
     public void testWizardVulnerableByDefault() {
         Wizard wizard = new Wizard();
@@ -48,7 +86,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:4")
+    @Tag("task:6")
     @DisplayName("The damagePoints method of the Wizard returns 3 when spell has not been prepared")
     public void testWizardsDamagePoints() {
         Wizard wizard = new Wizard();
@@ -57,7 +95,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:4")
+    @Tag("task:6")
     @DisplayName("The damagePoints method of the Wizard returns 12 after a spell has been prepared")
     public void testWizardsDamagePointsAfterPreparingSpell() {
         Wizard wizard = new Wizard();
@@ -67,7 +105,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:5")
+    @Tag("task:7")
     @DisplayName("The damagePoints method of the Warrior returns 10 when target is vulnerable")
     public void testWarriorsDamagePointsWhenTargetVulnerable() {
         Warrior warrior = new Warrior();
@@ -76,7 +114,7 @@ public class FighterTest {
     }
 
     @Test
-    @Tag("task:5")
+    @Tag("task:7")
     @DisplayName("The damagePoints method of the Warrior returns 6 when target is not vulnerable")
     public void testWarriorsDamagePointsWhenTargetNotVulnerable() {
         Warrior warrior = new Warrior();
