@@ -1,9 +1,10 @@
-abstract class Fighter {
+class Fighter {
 
     boolean isVulnerable() {
-        throw new UnsupportedOperationException("Please provide implementation for this method");
+        return true;
     }
 
-    abstract int damagePoints(Fighter fighter);
-
+    int getDamagePoints(Fighter fighter) {
+        return 1;
+    }
 }

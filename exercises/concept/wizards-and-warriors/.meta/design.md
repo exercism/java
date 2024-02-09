@@ -9,6 +9,7 @@ The goal of this exercise is to teach the student the basics of the Concept of `
 - Know what inheritance is.
 - Know how to inherit from a class.
 - Know that all types inherit from object.
+- Know what the override annotation means.
 
 ## Out of scope
 

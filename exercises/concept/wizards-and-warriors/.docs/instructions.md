@@ -16,49 +16,59 @@ For a Wizard, these are the rules:
 
 In general, fighters are never vulnerable. However, Wizards _are_ vulnerable if they haven't prepared a spell.
 
-You have eight tasks that work with Warriors and Wizard fighters.
+You have nine tasks that work with Warriors and Wizard fighters.
 
-## 1. Create the Warrior and Wizard classes
+## 1. Create the Warrior
 
-Define the classes `Wizard` and `Warrior` outside of the `Fighter` class
+Define the `Warrior` class and make it inherit the `Fighter` class
 
-```java
-public class Warrior {
-
-}
-```
-
-## 2. Extend Wizard and Warrior classes with Fighter class
-
-Make the `Warrior` and `Wizard` classes inherit the `Fighter` class
-
-```java
-public class Warrior extends Fighter {
-    
-}
-```
-
-## 3. Describe a fighter
+## 2. Describe a Warrior
 
 Override the `toString()` method of the `Fighter` class for the `Warrior` to return a description of the fighter, formatted as `"Fighter is a <FIGHTER_TYPE>"`.
 
 ```java
-Fighter warrior = new Warrior();
+Warrior warrior = new Warrior();
 warrior.toString();
 // => "Fighter is a Warrior"
 ```
 
-## 4. Make fighters not vulnerable by default
+## 3. Make Warriors invulnerable
 
-Ensure that the `Fighter.isVulnerable()` method always returns `false`.
+Override the `isVulnerable()` method for the `Warrior` and make sure that returns always `false`.
 
 ```java
-Fighter warrior = new Warrior();
+Warrior warrior = new Warrior();
 warrior.isVulnerable();
 // => false
 ```
 
-## 5. Allow Wizards to prepare a spell
+## 4. Calculate the damage points for a Warrior
+
+Override the `getDamagePoints()` method to return the damage points dealt by the warrior: 10 damage points when the target is vulnerable, 6 damage points when not.
+
+```java
+Warrior warrior = new Warrior();
+Wizard wizard = new Wizard();
+
+warrior.getgetDamagePoints(wizard);
+// => 10
+```
+
+## 5. Create the Wizard
+
+Define the `Wizard` class and make it inherit the `Fighter` class
+
+## 6. Describe a Wizard
+
+Override the `toString()` method of the `Fighter` class for the `Wizard` to return a description of the fighter, formatted as `"Fighter is a <FIGHTER_TYPE>"`.
+
+```java
+Wizard wizard = new Wizard();
+wizard.toString();
+// => "Fighter is a Wizard"
+```
+
+## 7. Allow Wizards to prepare a spell
 
 Implement the `Wizard.prepareSpell()` method to allow a Wizard to prepare a spell in advance.
 
@@ -67,7 +77,7 @@ Wizard wizard = new Wizard();
 wizard.prepareSpell();
 ```
 
-## 6. Make Wizards vulnerable when not having prepared a spell
+## 8. Make Wizards vulnerable when not having prepared a spell
 
 Override the `isVulnerable()` method for the `Wizard` and make sure that returns `true` if the wizard did not prepare a spell; otherwise, return `false`.
 
@@ -77,27 +87,15 @@ wizard.isVulnerable();
 // => true
 ```
 
-## 7. Calculate the damage points for a Wizard
+## 9. Calculate the damage points for a Wizard
 
-Override the `damagePoints()` method to return the damage points dealt by the wizard: 12 damage points when a spell has been prepared, 3 damage points when not.
+Override the `getgetDamagePoints()` method to return the damage points dealt by the wizard: 12 damage points when a spell has been prepared, 3 damage points when not.
 
 ```java
 Wizard wizard = new Wizard();
 Warrior warrior = new Warrior();
 
 wizard.prepareSpell();
-wizard.damagePoints(warrior);
+wizard.getgetDamagePoints(warrior);
 // => 12
-```
-
-## 8. Calculate the damage points for a Warrior
-
-Override the `damagePoints()` method to return the damage points dealt by the warrior: 10 damage points when the target is vulnerable, 6 damage points when not.
-
-```java
-Warrior warrior = new Warrior();
-Wizard wizard = new Wizard();
-
-warrior.damagePoints(wizard);
-// => 10
 ```
