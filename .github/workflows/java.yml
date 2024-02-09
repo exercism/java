@@ -46,9 +46,32 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Test all exercises using java-test-runner
         run: bin/test-with-test-runner
-      - name: Archive test results
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3
+      - name: Create test summary
+        uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975
         with:
-          name: test-results
-          path: exercises/**/build/results.json
-        if: failure()
+          script: |
+            const fs = require('node:fs/promises')
+            const globber = await glob.create('exercises/**/build/results.json')
+            for await (const file of globber.globGenerator()) {
+              const data = await fs.readFile(file, 'utf8')
+              const results = JSON.parse(data)
+
+              if (results.status === 'error') {
+                core.error(results.message, {title: `Error while running tests`});
+                continue;
+              }
+
+              for (const test of results.tests) {
+                switch (test.status) {
+                  case "pass":
+                    core.info(`Test passed: ${test.name}`);
+                    break;
+                  case "fail":
+                    core.warning(test.message, {title: `Test failed: ${test.name}`});
+                    break;
+                  case "error":
+                    core.warning(test.message, {title: `Test errored: ${test.name}`});
+                    break;
+                }
+              }
+            }
