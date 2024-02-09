@@ -53,24 +53,25 @@ jobs:
             const fs = require('node:fs/promises')
             const globber = await glob.create('exercises/**/build/results.json')
             for await (const file of globber.globGenerator()) {
+              const slug = file.split('/').slice(-3, -2)[0]
               const data = await fs.readFile(file, 'utf8')
               const results = JSON.parse(data)
 
               if (results.status === 'error') {
-                core.error(results.message, {title: `Error while running tests`});
+                core.error(results.message, {title: `[${slug}] Error while running tests`});
                 continue;
               }
 
               for (const test of results.tests) {
                 switch (test.status) {
                   case "pass":
-                    core.info(`Test passed: ${test.name}`);
+                    core.info(`[${slug}] Test passed: ${test.name}`);
                     break;
                   case "fail":
-                    core.warning(test.message, {title: `Test failed: ${test.name}`});
+                    core.warning(test.message, {title: `[${slug}] Test failed: ${test.name}`});
                     break;
                   case "error":
-                    core.warning(test.message, {title: `Test errored: ${test.name}`});
+                    core.warning(test.message, {title: `[${slug}] Test errored: ${test.name}`});
                     break;
                 }
               }
