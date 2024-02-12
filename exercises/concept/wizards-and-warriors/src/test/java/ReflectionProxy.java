@@ -1,5 +1,3 @@
-package utils;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -161,7 +159,7 @@ public abstract class ReflectionProxy {
         if (targetClass == null) {
             return new Constructor<?>[]{};
         }
-        return targetClass.getConstructors();
+        return targetClass.getDeclaredConstructors();
     }
 
 
