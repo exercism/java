@@ -68,26 +68,19 @@ wizard.toString();
 // => "Fighter is a Wizard"
 ```
 
-## 7. Allow Wizards to prepare a spell
+## 7. Allow Wizards to prepare a spell and make them vulnerable when not having prepared a spell
 
 Implement the `Wizard.prepareSpell()` method to allow a Wizard to prepare a spell in advance.
+Then override the `isVulnerable()` method for the `Wizard` and make sure that returns `true` if the wizard did not prepare a spell; otherwise, return `false`.
 
 ```java
 Wizard wizard = new Wizard();
 wizard.prepareSpell();
-```
-
-## 8. Make Wizards vulnerable when not having prepared a spell
-
-Override the `isVulnerable()` method for the `Wizard` and make sure that returns `true` if the wizard did not prepare a spell; otherwise, return `false`.
-
-```java
-Fighter wizard = new Wizard();
 wizard.isVulnerable();
-// => true
+// => false
 ```
 
-## 9. Calculate the damage points for a Wizard
+## 8. Calculate the damage points for a Wizard
 
 Override the `getgetDamagePoints()` method to return the damage points dealt by the wizard: 12 damage points when a spell has been prepared, 3 damage points when not.
 

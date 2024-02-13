@@ -35,19 +35,15 @@ The whole inheritance concept has a lot to do with the concepts around [overridi
   You can read more about it [here][object-class-java].
 - To override this method inside your implementation class, you should have a method with same name i.e. `toString()` and same return type i.e. `String`.
 
-## 7. Allow Wizards to prepare a spell
+## 7. Allow Wizards to prepare a spell and make them vulnerable when not having prepared a spell
 
-- Preparing a spell can only be done by a wizard.
-  So, it makes sense to have this property defined inside the `Wizard` class.
+- Preparing a spell can only be done by a wizard. So, it makes sense to have this property defined inside the `Wizard` class.
 - Create `prepareSpell()` method inside `Wizard` class.
 - Remember: Parent class (here `Fighter`) has no access to the properties of the child class (for example, `Wizard`)
 - Remember: As the method does not have a return type you should use `void` instead.
-
-## 8. Make Wizards vulnerable when not having prepared a spell
-
 - Override the `isVulnerable()` method in the `Wizard` class to make Wizards vulnerable if they haven't prepared a spell.
 
-## 9. Calculate the damage points for a Wizard
+## 8. Calculate the damage points for a Wizard
 
 - Use a [conditional statement][if-else] to return the damage points, taking into account the value of the prepare spell field.
 

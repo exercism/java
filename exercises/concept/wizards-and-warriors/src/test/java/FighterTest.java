@@ -156,7 +156,7 @@ class FighterTest {
     }
 
     @Test
-    @Tag("task:8")
+    @Tag("task:7")
     @DisplayName("Wizard has the isVulnerable method implemented")
     void implemented_is_vulnerable_for_wizard() {
         assertThat(wizard.hasMethod("isVulnerable"))
@@ -168,14 +168,14 @@ class FighterTest {
     }
 
     @Test
-    @Tag("task:8")
+    @Tag("task:7")
     @DisplayName("The isVulnerable method of the Wizard returns true by default")
     void testWizardVulnerableByDefault() {
         assertThat(wizard.isVulnerable()).isTrue();
     }
 
     @Test
-    @Tag("task:4")
+    @Tag("task:8")
     @DisplayName("Wizard has the getDamagePoints method implemented")
     void implemented_get_damage_points_for_wizard() {
         assertThat(wizard.hasMethod("getDamagePoints", Fighter.class))
@@ -187,14 +187,14 @@ class FighterTest {
     }
 
     @Test
-    @Tag("task:9")
+    @Tag("task:8")
     @DisplayName("The getDamagePoints method of the Wizard returns 3 when spell has not been prepared")
     void testWizardsDamagePoints() {
         assertThat(wizard.getDamagePoints(new Fighter())).isEqualTo(3);
     }
 
     @Test
-    @Tag("task:9")
+    @Tag("task:8")
     @DisplayName("The getDamagePoints method of the Wizard returns 12 after a spell has been prepared")
     void testWizardsDamagePointsAfterPreparingSpell() {
         wizard.prepareSpell();
