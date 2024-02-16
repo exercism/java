@@ -3,8 +3,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
+import static org.assertj.core.api.Assertions.*;
 
 class FighterTest {
     private WarriorProxy warrior;
@@ -148,6 +147,14 @@ class FighterTest {
         assertThat(wizard.hasMethod("prepareSpell"))
                 .withFailMessage("Method prepareSpell must be created")
                 .isTrue();
+    }
+
+    @Test
+    @Tag("task:7")
+    @DisplayName("The Fighter class does not contain the prepareSpell method")
+    void testFighterDoesNotHavePrepareSpellMethod() {
+        assertThatExceptionOfType(NoSuchMethodException.class)
+                .isThrownBy(() -> Fighter.class.getDeclaredMethod("prepareSpell"));
     }
 
     @Test
