@@ -217,7 +217,7 @@
         "prerequisites": [
           "classes",
           "strings",
-          "booleans"
+          "if-else-statements"
         ],
         "status": "active"
       },
