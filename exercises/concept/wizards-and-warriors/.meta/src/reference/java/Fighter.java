@@ -22,12 +22,8 @@ class Warrior extends Fighter {
     }
 
     @Override
-    int getDamagePoints(Fighter wizard) {
-        if (wizard.isVulnerable()) {
-            return 10;
-        } else {
-            return 6;
-        }
+    int getDamagePoints(Fighter target) {
+        return target.isVulnerable() ? 10 : 6;
     }
 }
 
@@ -46,12 +42,8 @@ class Wizard extends Fighter {
     }
 
     @Override
-    int getDamagePoints(Fighter warrior) {
-        if (isSpellPrepared) {
-            return 12;
-        } else {
-            return 3;
-        }
+    int getDamagePoints(Fighter target) {
+        return isSpellPrepared ? 12 : 3;
     }
 
     void prepareSpell() {
