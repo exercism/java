@@ -25,12 +25,18 @@ Consider an animal named `Lion`, having a class like,
 //Lion class is a child class of Animal.
 public class Lion extends Animal {
 
+    @Override
     public void bark() {
         System.out.println("Lion here!!");
     }
 
 }
 ```
+
+~~~~exercism/note
+The `Override` annotation is used to indicate that a method in a subclass is overriding a method of its superclass.
+It's not strictly necessary but it's a best practice to use it.
+~~~~
 
 Now whenever we do,
 
