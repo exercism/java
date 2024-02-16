@@ -27,6 +27,7 @@
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `actionable`: If the student used a loop in the `tryFinishTrack()` method, encourage it to explore a different approach.
+- `actionable`: If the student used a conditional statement like `if/else` or ternary expressions in the `batteryDrained` method, encourage it to explore a different approach.
 
 If the solution does not receive any of the above feedback, it must be exemplar.
 Leave a `celebratory` comment to celebrate the success!
