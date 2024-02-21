@@ -27,7 +27,6 @@ This exercise's prerequisites Concepts are:
 - `classes`
 - `strings`
 - `if-else-statements`
-- `ternary-operators`
 
 ## Representer
 
@@ -37,9 +36,8 @@ This exercise does not require any specific representation logic to be added to 
 
 This exercise could benefit from the following rules in the [analyzer]:
 
-- `actionable`: If the solution uses an `if` statement in the `getDamagePoints` method for Wizard and Warrior classes, instruct the student to use a ternary expression instead.
-- `actionable`: If the student uses an `if` statement in the `isVulnerable` method for the Wizard class, tell them thas this could be simplified returning directly the `isSpellPrepared` variable.
 - `actionable`: If the student left any `// TODO: ...` comments in the code, instruct them to remove these.
+- `informative`: If the solution didn't use the `Override` annotation for the overrided methods, inform the student that it's a good practice to add it.
 
 If the solution does not receive any of the above feedback, it must be exemplar.
 Leave a `celebratory` comment to celebrate the success!

@@ -217,8 +217,7 @@
         "prerequisites": [
           "classes",
           "strings",
-          "if-else-statements",
-          "ternary-operators"
+          "if-else-statements"
         ],
         "status": "active"
       },
