@@ -19,7 +19,7 @@ This exercise could benefit from the following rules in the [analyzer]:
   ```
 
 - `actionable`: If the solution uses an `if` statement, instruct the student to use a ternary expression instead.
-- `actionable`: If the solution uses `String.format`, instruct the student to use simple string concatenation instead.
+- `informative`: If the solution uses `String.format`, instruct the student to use simple string concatenation instead.
   Explain that `String.format` is significantly slower than concatenating strings and should be used in more complex scenarios.
 
 [analyzer]: https://github.com/exercism/java-analyzer
