@@ -28,7 +28,14 @@ This exercise does not require any specific representation logic to be added to 
 
 ## Analyzer
 
-This exercise does not require any specific analyzer logic to be added to the [analyzer][analyzer-java].
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `actionable`: If the student does not reuse the methods `describe(Character)`, `describe(Destination)` or `describe(TravelMethod)` to solve the `describe(Character, Destination, TravelMethod)` method, instruct them to do so.
+- `actionable`: If the student does not reuse the method `describe(Character)`, `describe(Destination)`, `describe(TravelMethod)` or `describe(Character, Destination, TravelMethod)` to solve the `describe(Character, Destination)` method, instruct them to do so.
+- `informative`: If the solution uses `String.format` in any of the `describe` methods, inform the student that this cause a small performance penalty compared to string concatenation.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
 
 [representer-java]: https://github.com/exercism/java-representer
-[analyzer-java]: https://github.com/exercism/java-analyzer
+[analyzer]: https://github.com/exercism/java-analyzer
