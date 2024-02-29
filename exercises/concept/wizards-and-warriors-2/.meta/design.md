@@ -26,6 +26,8 @@ This exercise's prerequisites Concepts are:
 
 This exercise does not require any specific representation logic to be added to the [representer][representer-java].
 
+## Analyzer
+
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `actionable`: If the student does not reuse the methods `describe(Character)`, `describe(Destination)` or `describe(TravelMethod)` to solve the `describe(Character, Destination, TravelMethod)` mehtod, instruct them to do so.
