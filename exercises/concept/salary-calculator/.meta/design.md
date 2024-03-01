@@ -23,9 +23,7 @@ This exercise's prerequisites Concepts are:
 
 This exercise could benefit from the following rules in the [analyzer]:
 
-- `essential`: If the student did not use `ternary operators` in the `salaryMultiplier` method, instruct them to do so.
-- `essential`: If the student did not use `ternary operators` in the `bonusMultiplier` method, instruct them to do so.
-- `essential`: If the student did not use `ternary operators` in the `finalSalary` method, instruct them to do so.
+- `essential`: If the student did not use `ternary operators` on `salaryMultiplier`, `bonusMultiplier` or `finalSalary` methods, instruct them to do so.
 - `actionable`: If the student did not reuse the implementation of the `bonusMultiplier` method in the `bonusForProductsSold` method, instruct them to do so.
 - `actionable`: If the student did not reuse the implementation of the `salaryMultiplier` or `bonusForProductsSold` methods in the `finalSalary` method, instruct them to do so.
 
