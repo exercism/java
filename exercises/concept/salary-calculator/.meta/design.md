@@ -21,6 +21,13 @@ This exercise's prerequisites Concepts are:
 
 ## Analyzer
 
-This exercise could have the following rule added to the analyzer:
+This exercise could benefit from the following rules in the [analyzer]:
 
-- Verify that ternary operators were used.
+- `essential`: If the student did not use `ternary operators` on `salaryMultiplier`, `bonusMultiplier` or `finalSalary` methods, instruct them to do so.
+- `actionable`: If the student did not reuse the implementation of the `bonusMultiplier` method in the `bonusForProductsSold` method, instruct them to do so.
+- `actionable`: If the student did not reuse the implementation of the `salaryMultiplier` or `bonusForProductsSold` methods in the `finalSalary` method, instruct them to do so.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
+
+[analyzer]: https://github.com/exercism/java-analyzer
