@@ -65,6 +65,6 @@ List<ProductionRemoteControlCar> unsortedCars = new ArrayList<>();
 unsortedCars.add(prc1);
 unsortedCars.add(prc2);
 List<ProductionRemoteControlCar> rankings = TestTrack.getRankedCars(unsortedCars);
-// => rankings.get(0) == prc2
-// => rankings.get(1) == prc1
+// => rankings.get(0) == prc1
+// => rankings.get(1) == prc2
 ```
