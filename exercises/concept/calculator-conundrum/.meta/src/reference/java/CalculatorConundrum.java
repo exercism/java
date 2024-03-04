@@ -19,9 +19,9 @@ public class CalculatorConundrum {
                     throw new IllegalOperationException("Division by zero is not allowed", e);
                 }
             }
-            default -> throw new IllegalOperationException(String.format("Operation '%s' does not exist", operation));
+            default -> throw new IllegalOperationException("Operation '" + operation + "' does not exist");
         }
 
-        return String.format("%d %s %d = %s", operand1, operation, operand2, result);
+        return String.valueOf(operand1) + " " + String.valueOf(operation) + " " + operand2 + " = " +  result;
     }
 }
