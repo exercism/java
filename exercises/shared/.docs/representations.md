@@ -4,8 +4,9 @@ The [Java representer][github-java-representer] applies the following normalizat
 
 - All comments are removed
 - All import declarations are removed
-- Whitespace is normalized
 - Identifiers are normalized to a placeholder value
+
+After applying the above normalizations, the resulting representation is formatted according to [Google Java Style][google-java-style], to eliminate any remaining differences in code formatting.
 
 ## Before you submit
 
@@ -18,3 +19,4 @@ Please check the following things:
   Only identifiers used by the exercise tests can be safely referred to because these are always the same for everyone.
 
 [github-java-representer]: https://github.com/exercism/java-representer
+[google-java-style]: https://google.github.io/styleguide/javaguide.html
