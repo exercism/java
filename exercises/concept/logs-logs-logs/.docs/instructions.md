@@ -26,7 +26,7 @@ Define a `LogLevel` enum that has six elements corresponding to the above log le
 - `ERROR`
 - `FATAL`
 
-Next, implement the `LogLine.getLogLevel()` method that returns the parsed the log level of a log line:
+Next, implement the `LogLine.getLogLevel()` method that returns the parsed log level of a log line:
 
 ```java
 var logLine = new LogLine("[INF]: File deleted");
