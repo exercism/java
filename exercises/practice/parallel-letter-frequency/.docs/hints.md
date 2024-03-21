@@ -1,6 +1,6 @@
 # Hints
 
-The following resources may help you with this:
+The following resources may help you solve this exercise:
 
 - [Concurrency (Oracle Java Tutorials)](https://docs.oracle.com/javase/tutorial/essential/concurrency)
 - [Java Concurrency (Baeldung)](https://www.baeldung.com/java-concurrency)
