@@ -6,8 +6,6 @@ import java.util.Locale;
 
 class AppointmentScheduler {
 
-    private static final LocalDate OPENING_DATE = LocalDate.of(2015, Month.SEPTEMBER, 15);
-
     public LocalDateTime schedule(String appointmentDateDescription) {
         var formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss", Locale.ENGLISH);
         return LocalDateTime.parse(appointmentDateDescription, formatter);
@@ -27,6 +25,6 @@ class AppointmentScheduler {
     }
 
     public LocalDate getAnniversaryDate() {
-        return OPENING_DATE.withYear(LocalDate.now().getYear());
+        return LocalDate.of(LocalDate.now().getYear(), Month.SEPTEMBER, 15);
     }
 }
