@@ -24,7 +24,7 @@
 
 This exercise could benefit from the following rules in the [analyzer]:
 
-- `essential`: If the student did not use the `nextInt` method in the `randomShipRegistryNumber` method, instruct the student to do so.
+- `essential`: If the student did not use the `nextInt` method in the `randomShipRegistryNumber` or `randomPlanetClass` methods, instruct the student to do so.
 - `essential`: If the student did not use the `nextDouble` method in the `randomStardate` method, instruct the student to do so.
 - `informative`: If the solution uses `String.format` in the `randomShipRegistryNumber` method, inform the student that this cause a small performance penalty compared to string concatenation.
 
