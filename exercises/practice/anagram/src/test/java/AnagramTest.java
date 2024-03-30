@@ -1,10 +1,10 @@
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AnagramTest {
 
@@ -13,9 +13,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("diaper");
 
         assertThat(
-            detector.match(
-                Arrays.asList("hello", "world", "zombies", "pants")))
-            .isEmpty();
+                detector.match(
+                        Arrays.asList("hello", "world", "zombies", "pants")))
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -24,7 +24,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("solemn");
 
         assertThat(detector.match(Arrays.asList("lemons", "cherry", "melons")))
-            .containsExactlyInAnyOrder("lemons", "melons");
+                .containsExactlyInAnyOrder("lemons", "melons");
     }
 
     @Disabled("Remove to run test")
@@ -41,9 +41,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("listen");
 
         assertThat(
-            detector.match(
-                Arrays.asList("enlists", "google", "inlets", "banana")))
-            .containsExactlyInAnyOrder("inlets");
+                detector.match(
+                        Arrays.asList("enlists", "google", "inlets", "banana")))
+                .containsExactlyInAnyOrder("inlets");
     }
 
     @Disabled("Remove to run test")
@@ -51,15 +51,15 @@ public class AnagramTest {
     public void testDetectMultipleAnagramsForLongerWord() {
         Anagram detector = new Anagram("allergy");
         assertThat(
-            detector.match(
-                Arrays.asList(
-                    "gallery",
-                    "ballerina",
-                    "regally",
-                    "clergy",
-                    "largely",
-                    "leading")))
-            .containsExactlyInAnyOrder("gallery", "regally", "largely");
+                detector.match(
+                        Arrays.asList(
+                                "gallery",
+                                "ballerina",
+                                "regally",
+                                "clergy",
+                                "largely",
+                                "leading")))
+                .containsExactlyInAnyOrder("gallery", "regally", "largely");
     }
 
     @Disabled("Remove to run test")
@@ -68,7 +68,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("nose");
 
         assertThat(detector.match(Arrays.asList("Eons", "ONES")))
-            .containsExactlyInAnyOrder("Eons", "ONES");
+                .containsExactlyInAnyOrder("Eons", "ONES");
     }
 
     @Disabled("Remove to run test")
@@ -77,7 +77,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("mass");
 
         assertThat(detector.match(Collections.singletonList("last")))
-            .isEmpty();
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -86,9 +86,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("Orchestra");
 
         assertThat(
-            detector.match(
-                Arrays.asList("cashregister", "Carthorse", "radishes")))
-            .containsExactlyInAnyOrder("Carthorse");
+                detector.match(
+                        Arrays.asList("cashregister", "Carthorse", "radishes")))
+                .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Disabled("Remove to run test")
@@ -97,9 +97,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("Orchestra");
 
         assertThat(
-            detector.match(
-                Arrays.asList("cashregister", "carthorse", "radishes")))
-            .containsExactlyInAnyOrder("carthorse");
+                detector.match(
+                        Arrays.asList("cashregister", "carthorse", "radishes")))
+                .containsExactlyInAnyOrder("carthorse");
     }
 
     @Disabled("Remove to run test")
@@ -108,9 +108,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("orchestra");
 
         assertThat(
-            detector.match(
-                Arrays.asList("cashregister", "Carthorse", "radishes")))
-            .containsExactlyInAnyOrder("Carthorse");
+                detector.match(
+                        Arrays.asList("cashregister", "Carthorse", "radishes")))
+                .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Disabled("Remove to run test")
@@ -119,7 +119,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("go");
 
         assertThat(detector.match(Collections.singletonList("goGoGO")))
-            .isEmpty();
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -128,7 +128,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("tapper");
 
         assertThat(detector.match(Collections.singletonList("patter")))
-            .isEmpty();
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -137,7 +137,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("BANANA");
 
         assertThat(detector.match(Collections.singletonList("BANANA")))
-            .isEmpty();
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -146,7 +146,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("BANANA");
 
         assertThat(detector.match(Collections.singletonList("Banana")))
-            .isEmpty();
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -155,7 +155,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("BANANA");
 
         assertThat(detector.match(Collections.singletonList("banana")))
-            .isEmpty();
+                .isEmpty();
     }
 
     @Disabled("Remove to run test")
@@ -164,7 +164,24 @@ public class AnagramTest {
         Anagram detector = new Anagram("LISTEN");
 
         assertThat(detector.match(Arrays.asList("LISTEN", "Silent")))
-            .containsExactlyInAnyOrder("Silent");
+                .containsExactlyInAnyOrder("Silent");
     }
 
+    @Disabled("Remove to run test")
+    @Test
+    public void testHandlesCaseOfGreekLetters() {
+        Anagram detector = new Anagram("ΑΒΓ");
+
+        assertThat(detector.match(Arrays.asList("ΒΓΑ", "ΒΓΔ", "γβα", "αβγ")))
+                .containsExactlyInAnyOrder("ΒΓΑ", "γβα");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testDifferentCharactersWithSameBytes() {
+        Anagram detector = new Anagram("a⬂");
+
+        assertThat(detector.match(Collections.singletonList("€a")))
+                .isEmpty();
+    }
 }
