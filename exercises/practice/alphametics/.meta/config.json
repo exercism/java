@@ -32,5 +32,5 @@
       "build.gradle"
     ]
   },
-  "blurb": "Write a function to solve alphametics puzzles."
+  "blurb": "Given an alphametics puzzle, find the correct solution."
 }
