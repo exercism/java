@@ -24,7 +24,7 @@
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `essential`: If the student did not use the `null` expression in the `print` method, instruct the student to do so.
-- `actionable`: If the solution uses `Optionals` to solve the exercise, encourage the student to try solving it differently.
+- `actionable`: If the solution uses `Optionals` to solve the exercise, encourage the student to try solving it using `null` instead.
 - `informative`: If the solution uses `String.format`, instruct the student to use simple string concatenation instead.
   Explain that `String.format` is significantly slower than concatenating strings and should be used in more complex scenarios.
 
