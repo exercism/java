@@ -31,7 +31,7 @@ This exercise's prerequisites Concepts are:
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `actionable`: If the student did not reuse the implementation of the `productionRatePerHour` method in the `workingItemsPerMinute` method, instruct them to do so.
-- `informative`: If the solution is hardcoding the value `221`, inform the student that it could be great to extrapolate this value to a `private final` field to make a more readable code.
+- `informative`: If the solution is repeatedly hard-coding the value `221`, inform the student that they could store this value in a field to make the code easier to maintain.
 - `informative`: If the solution has `if/else-if` statements in the `productionRatePerHour` method, inform the student that creating a helper method to calculate the succes rate might make their code easier to understand.
 - `informative`: If the solution is using `if/else-if` logic that contains return statements, inform the students that the `else` keywords are redundant and that their code can become more clear by omitting them.
 
