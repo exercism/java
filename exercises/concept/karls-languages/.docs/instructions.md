@@ -6,7 +6,7 @@ It would be very exciting if Karl wants to learn Java or Kotlin!
 
 ## 1. Define a function to check if the language list is empty
 
-Karl needs to know if his list of languages ever becomes empty so he can go find more to learn!
+Karl needs to know if his list of languages ever becomes empty, so he can go find more to learn!
 Define a method called `isEmpty` which returns `true` if there are no languages in the list.
 
 ```java
