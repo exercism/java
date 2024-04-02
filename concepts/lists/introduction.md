@@ -13,7 +13,7 @@ For example:
 List<String> emptyListOfStrings = List.of();
 List<Integer> singleInteger = List.of(1);
 List<Boolean> threeBooleans = List.of(true, false, true);
-List<Object> listWithMulitipleTypes = List.of("hello", 1, true);
+List<Object> listWithMultipleTypes = List.of("hello", 1, true);
 ```
 
 `List`s have various helpful methods to add, remove, get, and check for an element to be present:
