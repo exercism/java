@@ -1891,6 +1891,11 @@
       "name": "Randomness"
     },
     {
+      "uuid": "775572da-46f5-4d8a-b154-f35ae344ea40",
+      "slug": "sets",
+      "name": "Sets"
+    },
+    {
       "uuid": "8a468b14-724a-4036-8edb-d19a02809840",
       "slug": "strings",
       "name": "Strings"
