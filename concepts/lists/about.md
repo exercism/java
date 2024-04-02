@@ -1,7 +1,7 @@
 # About Lists
 
 **Lists** are the ordered sequence collection in Java.
-Unlike arrays, a [`List`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html) can grow in size to accomodate any number of items.
+Unlike arrays, a [`List`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html) can grow in size to accommodate any number of items.
 One standard implementation is the `ArrayList` which is backed by a re-sizable array.
 Another standard implementation is the `LinkedList` class which is backed by a doubly-linked list.
 
