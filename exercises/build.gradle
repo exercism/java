@@ -33,6 +33,7 @@ subprojects {
     // matching the Gradle version of the project root.
     tasks.register('allWrappers', Wrapper) {
       gradleVersion = "$gradle.gradleVersion"
+      validateDistributionUrl = true
     }
 
     sourceSets {
