@@ -28,7 +28,7 @@
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `actionable`: If the student did not use `ofPattern` and `parse` methods in the `schedule` method, instruct the student to do so.
-- `actionable`: If the student did not use `isBefore` in the `hasPassed` method, instruct the student to do so.
+- `actionable`: If the student did not use `isBefore` or `compareTo` methods in the `hasPassed` method, instruct the student to do so.
 - `actionable`: If the student did not use `getHour` in the `isAfternoonAppointment` method, instruct the student to do so.
 - `actionable`: If the student did not use `ofPattern` and `DateTimeFormatter.format` methods in the `getDescription` method, instruct the student to do so.
 - `actionable`: If the student did not use `getYear` in the `getAnniversaryDate` method, instruct the student to do so.
