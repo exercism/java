@@ -58,7 +58,7 @@ The goal of this task is to find the [intersection][set-intersection] of a list 
 If the solution manually loops through the contents of any set, leave an `essential` comment pointing to the `retainAll` method.
 
 The solution may use Java Streams to find the intersection of the sets.
-This is also an acceptable solution and requires no feedback. 
+This is also an acceptable solution and requires no feedback.
 
 ### Task 5
 
@@ -67,7 +67,6 @@ If the solution manually loops through the contents of any set, leave an `essent
 
 The solution may use Java Streams to find the union of the sets.
 This is also an acceptable solution and requires no feedback.
-
 
 [analyzer]: https://github.com/exercism/java-analyzer
 [set-relative-complement]: https://www.baeldung.com/java-set-operations#4-the-relative-complement-of-sets
