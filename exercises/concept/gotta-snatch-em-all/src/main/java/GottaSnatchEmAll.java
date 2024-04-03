@@ -16,10 +16,10 @@ class GottaSnatchEmAll {
     }
 
     static Set<String> commonCards(List<Set<String>> collections) {
-        throw new UnsupportedOperationException("Please implement the (static) GottaSnatchEmAll.boringCards() method");
+        throw new UnsupportedOperationException("Please implement the (static) GottaSnatchEmAll.commonCards() method");
     }
 
     static Set<String> allCards(List<Set<String>> collections) {
-        throw new UnsupportedOperationException("Please implement the (static) GottaSnatchEmAll.totalCards() method");
+        throw new UnsupportedOperationException("Please implement the (static) GottaSnatchEmAll.allCards() method");
     }
 }
