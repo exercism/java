@@ -23,7 +23,7 @@ GottaSnatchEmAll.newCollection(List.of("Newthree", "Newthree", "Newthree"));
 
 ## 2. Grow the collection
 
-Once you have a collection, it takes a life of its owm and must grow.
+Once you have a collection, it takes a life of its own and must grow.
 
 Implement the `addCard` method, which takes a new card and your current set of collected cards.
 The method should add the new card to the collection if it wasn't already present, and should return a `boolean`

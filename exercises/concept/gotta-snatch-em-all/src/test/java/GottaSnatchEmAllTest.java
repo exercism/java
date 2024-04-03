@@ -46,7 +46,7 @@ class GottaSnatchEmAllTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("addCard returns true when the collection did not yet contain the new card")
+    @DisplayName("addCard returns true when the collection does not yet contain the new card")
     void testAddCardReturnsTrueWhenCardNotInCollection() {
         Set<String> collection = new HashSet<>();
         assertThat(GottaSnatchEmAll.addCard("Veevee", collection)).isTrue();
@@ -72,7 +72,7 @@ class GottaSnatchEmAllTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("addCard adds the card to the collection when it is a new card")
+    @DisplayName("addCard doesn't add the card to the collection when it already contains the new card")
     void testAddCardShouldNotAddExistingCardToCollection() {
         Set<String> collection = new HashSet<>(Set.of("Veevee"));
         Set<String> expected = Set.of("Veevee");
