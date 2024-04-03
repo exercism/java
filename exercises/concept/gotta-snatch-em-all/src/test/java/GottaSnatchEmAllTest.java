@@ -135,6 +135,24 @@ class GottaSnatchEmAllTest {
     }
 
     @Test
+    @Tag("task:3")
+    @DisplayName("canTrade returns true when my collection is a non-empty subset of their collection")
+    void testCanTradeMyCollectionSubsetOfTheirCollection() {
+        Set<String> myCollection = new HashSet<>(Set.of("Gyros", "Garilord"));
+        Set<String> theirCollection = new HashSet<>(Set.of("Garilord", "Veevee", "Gyros"));
+        assertThat(GottaSnatchEmAll.canTrade(myCollection, theirCollection)).isTrue();
+    }
+
+    @Test
+    @Tag("task:3")
+    @DisplayName("canTrade returns false when their collection is a non-empty subset of my collection")
+    void testCanTradeTheirCollectionSubsetOfMyCollection() {
+        Set<String> myCollection = new HashSet<>(Set.of("Garilord", "Veevee", "Gyros"));
+        Set<String> theirCollection = new HashSet<>(Set.of("Gyros", "Garilord"));
+        assertThat(GottaSnatchEmAll.canTrade(myCollection, theirCollection)).isFalse();
+    }
+
+    @Test
     @Tag("task:4")
     @DisplayName("commonCards returns an empty set when all cards are different")
     void testCommonCardsAllCardsDifferent() {

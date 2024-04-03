@@ -2,6 +2,9 @@
   "authors": [
     "sanderploegsma"
   ],
+  "contributors": [
+    "kahgoh"
+  ],
   "files": {
     "solution": [
       "src/main/java/GottaSnatchEmAll.java"
