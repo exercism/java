@@ -49,5 +49,5 @@ Implement the `AppointmentScheduler.getAnniversaryDate()` method that returns th
 ```java
 AppointmentScheduler scheduler = new AppointmentScheduler();
 scheduler.getAnniversaryDate()
-// => LocalDate.of(2023, 9, 15)
+// => LocalDate.of(<current year>, 9, 15)
 ```
