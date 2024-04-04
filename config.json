@@ -295,6 +295,19 @@
         "prerequisites": [
           "numbers"
         ]
+      },
+      {
+        "slug": "gotta-snatch-em-all",
+        "name": "gotta-snatch-em-all",
+        "uuid": "a7938215-4597-4c51-8ceb-6514d5654485",
+        "concepts": [
+          "sets"
+        ],
+        "prerequisites": [
+          "lists",
+          "generic-types"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -1889,6 +1902,11 @@
       "uuid": "07674a94-5f10-4b99-8f18-36c841e4aff8",
       "slug": "randomness",
       "name": "Randomness"
+    },
+    {
+      "uuid": "775572da-46f5-4d8a-b154-f35ae344ea40",
+      "slug": "sets",
+      "name": "Sets"
     },
     {
       "uuid": "8a468b14-724a-4036-8edb-d19a02809840",

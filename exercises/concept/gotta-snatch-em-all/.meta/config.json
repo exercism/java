@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "sanderploegsma"
+  ],
+  "contributors": [
+    "kahgoh"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/GottaSnatchEmAll.java"
+    ],
+    "test": [
+      "src/test/java/GottaSnatchEmAllTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/GottaSnatchEmAll.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "elm/gotta-snatch-em-all"
+  ],
+  "icon": "character-study",
+  "blurb": "Learn to use sets by playing a vintage trading card game"
+}
