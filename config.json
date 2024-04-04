@@ -61,12 +61,11 @@
         "name": "Bird Watcher",
         "uuid": "60600885-8684-45c3-b8a9-a2f9e3ce2d97",
         "concepts": [
-          "arrays",
-          "for-loops",
-          "foreach-loops"
+          "arrays"
         ],
         "prerequisites": [
-          "if-else-statements"
+          "if-else-statements",
+          "loops"
         ],
         "status": "active"
       },
@@ -306,6 +305,18 @@
         "prerequisites": [
           "lists",
           "generic-types"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "making-the-grade",
+        "name": "Making the Grade",
+        "uuid": "e5d2a004-8c9b-4da3-831b-f7bbabf178a3",
+        "concepts": [
+          "loops"
+        ],
+        "prerequisites": [
+          "if-else-statements"
         ],
         "status": "beta"
       }
@@ -1854,16 +1865,6 @@
       "name": "Exceptions"
     },
     {
-      "uuid": "3a1f7a96-b4a5-43d3-99e2-7c248e74e6c8",
-      "slug": "foreach-loops",
-      "name": "For-Each Loops"
-    },
-    {
-      "uuid": "b1bb63e6-4540-48fc-9d11-4ee72653484e",
-      "slug": "for-loops",
-      "name": "For Loops"
-    },
-    {
       "uuid": "7de03b7d-ed91-4699-b275-96a6ab2e441c",
       "slug": "generic-types",
       "name": "Generic Types"
@@ -1882,6 +1883,11 @@
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
       "name": "Lists"
+    },
+    {
+      "uuid": "b84a2119-71cc-46d0-af7f-32fe9a07d0e2",
+      "slug": "loops",
+      "name": "Loops"
     },
     {
       "uuid": "54118389-9c01-431b-a850-f47da498f845",
