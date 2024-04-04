@@ -8,7 +8,7 @@ important when your goal is to get all existing cards.
 
 ## 1. Start a collection
 
-You just found your old stash of Blorkemon™️ cards! so it's time to start a new collection!
+You just found your old stash of Blorkemon™️ cards!
 The stash contains a bunch of duplicate cards, so it's time to start a new collection by removing the duplicates.
 
 You really want your friends to join your Blorkemon™️ madness, and the best way is to kickstart their collection by
