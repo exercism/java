@@ -9,41 +9,39 @@ You decide to make things a little more interesting by putting together some fun
 As you were grading the exam, you noticed some students weren't performing as well as you had hoped.
 But you were distracted, and forgot to note exactly _how many_ students.
 
-Create the method `countFailedStudentd(List<Integer> studentScores)` that takes a `List<Integer>` of students scores.
+Create the method `countFailedStudents(List<Integer> studentScores)` that takes a `List<Integer>` of students scores.
 This method should count up the number of students who don't have passing scores and return that count as an integer.
 A student needs a score greater than **40** to achieve a passing grade on the exam.
 
 ```java
-MakingTheGrade.countFailedStudentd(List.of(40, 70, 80, 20, 39));
+MakingTheGrade.countFailedStudents(List.of(40, 70, 80, 20, 39));
 // => 3
 ```
 
-## 2. Get the average of the first 10 graded exams
+## 2. Get the average grade of students
 
-As your second task of the day the professor asks you to get the average score of the first 10 students to handle the exam.
+As your second task of the day the professor asks you to get the average score of a certain number of students.
 
-Create the method `getAverageScoreOfTheFirstTenExams(List<Integer> studentScores)` that takes a `List<Integer>` of students scores.
-This method should get the first 10 students sum their score and return the average of the sum as an integer.
+Create the method `getAverageScoreOfStudents(List<Integer> studentScores, int numberOfStudents)` that takes a `List<Integer>` of studentScores and a `int` of numberOfStudents. This method should get the average score of the number of students passed. numberOfStudents it's guaranteed to be lower than the size of the list of scores.
 
 ```java
-MakingTheGrade.getAverageScoreOfTheFirstTenExams(List.of(40, 70, 80, 20, 39, 50, 100, 90, 66, 15, 79));
+MakingTheGrade.getAverageScoreOfStudents(List.of(40, 70, 80, 20, 39, 50, 100, 90, 66, 15, 79), 10);
 // => 57
 ```
 
 ## 3. Calculating letter grades
 
-The teacher you are assisting needs to handle a letter with the amount of students needed to score a maximum score of 95 to the principal of the school.
+The teacher you are assisting needs to handle a letter with the amount of students needed to sum a score of 95 to the principal of the school.
 This letter has to have at least 1 student in it (if the first students alone exceeds the score should be added as well).
 And if already one student was added to the letter do not exceed the maximum score.
 
-Create the method `MakingTheGrade.letterGrades(Map<String, Integer> studentScores, int maxScore)` that takes a `Map<String, Integer>` of students with their scores and a `int` that represents the maximum score to be achieved for the letter to be completed.
-This method should return the list of students added to the letter.
+Create the method `MakingTheGrade.letterGrades(List<Integer> studentScores, List<String> studentNames)` that takes a `List<Integer> studentScores` of students scores and `List<String> studentNames` corresponding with the names of the students. This method should return the list of students added to the letter.
 
 ```java
-MakingTheGrade.letterGrades(Map.of("Joci", 100, "Sara", 20, "Bern", 53, "Fred", 91));
+MakingTheGrade.letterGrades(List.of(100, 20, 53, 91), List.of("Joci", "Sara", "Bern", "Fred"));
 // => ["Joci"]
 
-MakingTheGrade.letterGrades(Map.of("Jan", 20, "Kora", 40, "Sara", 30, "Peter", 85));
+MakingTheGrade.letterGrades(List.of(20, 40, 30, 85), List.of("Jan", "Kora", "Sara", "Peter"));
 // => ["Jan", "Kora", "Sara"]
 ```
 
