@@ -36,14 +36,18 @@ class MakingTheGrade {
             sum += studentScores.get(count);
             letter.add(studentNames.get(count));
             count++;
-        } while (sum < 95);
+        } while (sum + studentScores.get(count) < 95);
+
+        return letter;
     }
     
     static List<String> studentRanking(List<Integer> studentScores, List<String> studentNames) {
         List<String> ranking = new ArrayList<>();
 
         for (int i = 0; i < studentScores.size(); i++) {
-            String student = String.valueOf(i) + ". " + studentNames.get(i) + ": " + String.valueOf(studentScores.get(i));
+            String student = String.valueOf(i + 1) + ". " + studentNames.get(i) + ": " + 
+                String.valueOf(studentScores.get(i));
+            
             ranking.add(student);
         }
 
