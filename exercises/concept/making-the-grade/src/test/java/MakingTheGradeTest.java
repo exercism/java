@@ -124,7 +124,7 @@ class MakingTheGradeTest {
     @DisplayName("Giving empty students and score lists")
     void testEmptyLists() {
         assertThat(
-            MakingTheGrade.studentRanking(List.of(),List.of())
+            MakingTheGrade.studentRanking(List.of(), List.of())
             ).isEqualTo(List.of());
     }
 }
