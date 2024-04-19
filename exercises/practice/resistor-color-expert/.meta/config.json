@@ -1,0 +1,22 @@
+{
+  "authors": [
+      "manumafe98"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ResistorColorExpert.java"
+    ],
+    "test": [
+      "src/test/java/ResistorColorExpertTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ResistorColorExpert.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Convert color codes as used on resistors with different bands to a human-readable label.",
+  "source": "Based on earlier resistor color exercises made by Erik Schierboom and Maud de Vries",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/1464"
+}
