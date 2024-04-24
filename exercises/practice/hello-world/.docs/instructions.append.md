@@ -68,7 +68,7 @@ You can submit the solution using the online editor or locally using the [Exerci
   exercism submit <file location>
   ```
 
-- Replace `<file location>` with the relative location of your `Greeter.java` file. so if you are working in `C:\exercism\java\hello-world` then the command would be
+- Replace `<file location>` with the relative location of your `Greeter.java` file, so if you are working in `C:\exercism\java\hello-world` then the command would be
 
   ```sh
   exercism submit .\src\main\java\Greeter.java
