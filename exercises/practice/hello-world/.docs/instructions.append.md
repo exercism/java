@@ -104,7 +104,7 @@ Some submissions will be nearly identical to yours, others will be completely di
 
 Mentors review submitted solutions for the track they've chosen to mentor to help users learn as much as possible.
 
-To read more about mentoring go to the following [link][Mentoring]
+To read more about mentoring, go to the following [link][Mentoring].
 
 ### Contribute to Exercism
 
