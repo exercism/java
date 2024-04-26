@@ -110,7 +110,7 @@ To read more about mentoring go to the following [link][Mentoring]
 
 The entire of Exercism is Open Source and is a labor of love for over 100 maintainers and many more contributors.
 
-A starting point to jumping in can be found [here][Contributing]
+A starting point to jumping in and becoming a contributor can be found [here][Contributing].
 
 [Mentoring]: https://exercism.org/docs/mentoring
 [Contributing]: https://github.com/exercism/docs/tree/main/building
