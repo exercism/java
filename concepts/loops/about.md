@@ -55,7 +55,7 @@ square of 3 is 9
 square of 4 is 16
 ```
 
-If iterating through every element in a collection, a `for-each` loop is preferred, but it can be done with a `for` loop like this:
+Iterating through every element in a collection is usually performed using a `for-each`, but it can be done with a `for` loop like this:
 
 ```java
 for (int i = 0; i < array.length; i++) {
