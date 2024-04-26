@@ -6,7 +6,7 @@
 
 ## 2. Get the average grade of students
 
-- Try using one of the loops that is condition centric using numberOfStudents as one of the core conditions.
+- Try using one of the loops that is condition centric using `numberOfStudents` as one of the core conditions.
 
 ## 3. Calculating letter grades
 
