@@ -22,7 +22,9 @@ MakingTheGrade.countFailedStudents(List.of(40, 70, 80, 20, 39));
 
 As your second task of the day the professor asks you to get the average score of a certain number of students.
 
-Create the method `getAverageScoreOfStudents(List<Integer> studentScores, int numberOfStudents)` that takes a `List<Integer>` of studentScores and a `int` of numberOfStudents. This method should get the average score of the number of students passed. numberOfStudents it's guaranteed to be lower than the size of the list of scores.
+Create the method `getAverageScoreOfStudents(List<Integer> studentScores, int numberOfStudents)` that takes a `List<Integer>` of studentScores and a `int` of numberOfStudents.
+This method should get the average score of the number of students passed.
+The number of students is guaranteed to be lower than the size of the list of scores.
 
 ```java
 MakingTheGrade.getAverageScoreOfStudents(List.of(40, 70, 80, 20, 39, 50, 100, 90, 66, 15, 79), 10);
