@@ -58,14 +58,14 @@ After making corrections and implementing your solution, run the tests again.
 You can run the tests using the online editor or locally on your machine:
 
 - To run the tests in the online editor, click the "Run Tests" button.
-- To run the tests locally, check [Testing on the Java track] If the tests fails, that's ok! See what the error message is telling you, change your code and test again, when your tests pass, move on to the next step.
+- To run the tests locally, check [Testing on the Java track][Testing locally on the java track] If the tests fails, that's ok! See what the error message is telling you, change your code and test again, when your tests pass, move on to the next step.
 
 ### Step 3: Submitting your first iteration
 
 With a working solution that we've reviewed, we're ready to submit it to exercism.org.
-You can submit the solution using the online editor or locally using the [Exercism CLI]:
+You can submit the solution using the online editor or locally using the [Exercism CLI][Working Locally]:
 
-- To submit the exercise locally, first [install the exercism CLI] if you haven't already and then submit the files of your solution, e.g:
+- To submit the exercise locally, first [install the exercism CLI][Working Locally] if you haven't already and then submit the files of your solution, e.g:
 
   ```sh
   exercism submit <file location>
@@ -81,7 +81,7 @@ You can submit the solution using the online editor or locally using the [Exerci
 
 For a closer look at submitting a solution locally:
 
-- [Submitting locally]
+- [Submitting locally][Working Locally]
 
 ### Next steps
 
@@ -133,7 +133,3 @@ A starting point to jumping in and becoming a contributor can be found [here][Co
 [Installing Java]: https://exercism.org/docs/tracks/java/installation
 [Working Locally]: https://exercism.org/docs/using/solving-exercises/working-locally
 [Testing locally on the java track]: https://exercism.org/docs/tracks/java/tests
-[Testing on the Java track]: https://exercism.org/docs/tracks/java/tests
-[Exercism CLI]: https://exercism.org/docs/using/solving-exercises/working-locally
-[install the exercism CLI]: https://exercism.org/docs/using/solving-exercises/working-locally
-[Submitting locally]: https://exercism.org/docs/using/solving-exercises/working-locally
