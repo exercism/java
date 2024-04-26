@@ -25,8 +25,8 @@
 This exercise could benefit from the following rules in the [analyzer]:
 
 - `actionable`: If the solution hardcodes the number of planet classes in `randomPlanetClass`, instruct the student to use `length` method instead.
-- `informative`: If the solution uses [`RandomGenerator.nextDouble(double)`][nextDouble(double)], inform the student that they could use [`RandomGenerator.nextDouble(double, double)`][nextDouble(double, double)] to achieve a clearer solution.
-- `informative`: If the solution uses [`RandomGenerator.nextInt(int)`][nextInt(int)], inform the student that they could use [`RandomGenerator.nextInt(int, int)`][nextInt(int, int)] to achieve a clearer solution.
+- `informative`: If the solution uses Java version >= 17 and [`RandomGenerator.nextDouble(double)`][nextDouble(double)], inform the student that they could use [`RandomGenerator.nextDouble(double, double)`][nextDouble(double, double)] to achieve a clearer solution.
+- `informative`: If the solution uses Java version >= 17 and [`RandomGenerator.nextInt(int)`][nextInt(int)], inform the student that they could use [`RandomGenerator.nextInt(int, int)`][nextInt(int, int)] to achieve a clearer solution.
 - `informative`: If the solution uses `String.format` in the `randomShipRegistryNumber` method, inform the student that this cause a small performance penalty compared to string concatenation.
 
 If the solution does not receive any of the above feedback, it must be exemplar.
