@@ -1,10 +1,8 @@
 # Introduction
 
-## Loops
+In Java there are four looping constructs, two that are iteration centric: [`For`] and [`For-each`] and the other two are condition centric: [`While`] and [`Do-while`].
 
-In Java there are four looping constructs, two that are condition centric: `while` and `do-while` and the other two are iteration centric: `for` and `for-each`.
-
-### For
+## For
 
 A for loop provides a mechanism to execute a group of statements repeatedly until some condition is met.
 
@@ -57,7 +55,7 @@ square of 3 is 9
 square of 4 is 16
 ```
 
-If iterating through every element in a collection, a `for-each` loop is preferred, but it can be done with a `for` loop like this:
+Iterating through every element in a collection is usually performed using a `for-each`, but it can be done with a `for` loop like this:
 
 ```java
 for (int i = 0; i < array.length; i++) {
@@ -73,7 +71,7 @@ A `for` loop does have some advantages over a `for-each` loop:
 - You can process collections from back to front by counting down.
 - You can use `for` loops in scenarios that do not involve collections.
 
-### For-each
+## For-each
 
 A for-each loop provides a mechanism for executing a block of code for each element in a collection.
 
@@ -116,7 +114,7 @@ Generally a `for-each` loop is preferrable over a `for` loop for the following r
 - A `for-each` loop is foolproof, whereas with `for` loops it is easy to have an off-by-one error (think of using `<` versus `<=`).
 - A `for-each` loop works on all collection types, including those that do not support using an index to access elements (eg. a `Set`).
 
-### While
+## While
 
 The `while` loop continually executes a block of statements while a particular condition is true.
 
@@ -152,7 +150,7 @@ which outputs:
 
 Generally good rule of thumb is to use a `while` loops when you don't know exactly how many times you need to loop beforehand.
 
-### Do-while
+## Do-while
 
 As `while` loops `do-while` loops are condition centric loops, but unlike a regular `while` loop, a `do-while` loop guarantees that the code inside the loop will run at least once, no matter what.
 
@@ -178,3 +176,8 @@ which outputs:
 ```text
 1
 ```
+
+[`For`]: #for
+[`For-each`]: #for-each
+[`While`]: #while
+[`Do-while`]: #do-while

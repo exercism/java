@@ -1,6 +1,6 @@
 # About
 
-In Java there are four looping constructs, two that are condition centric: `while` and `do-while` and the other two are iteration centric: `for` and `for-each`.
+In Java there are four looping constructs, two that are iteration centric: [`For`] and [`For-each`] and the other two are condition centric: [`While`] and [`Do-while`].
 
 ## For
 
@@ -176,3 +176,8 @@ which outputs:
 ```text
 1
 ```
+
+[`For`]: #for
+[`For-each`]: #for-each
+[`While`]: #while
+[`Do-while`]: #do-while
