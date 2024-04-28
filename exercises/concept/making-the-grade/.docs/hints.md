@@ -15,3 +15,14 @@
 ## 4. Matching Names to Scores
 
 - Try using a iteration centric loop that allow you to work with indexes.
+
+## 5. Count Odd Scores
+
+- Remember that you could use the modulus operator `%` to check if a division has a certain reminder.
+- Try using a iteration centric loop
+- Check the statements/keywords covered in the concept an use one of them.
+
+## 6. Challenging Exam
+
+- Try using a iteration centric loop
+- Check the statements/keywords covered in the concept an use one of them.

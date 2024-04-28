@@ -60,3 +60,28 @@ List<String> studentNames = List.of("Joci", "Sara", "Kora", "Jan", "John", "Bern
 MakingTheGrade.studentRanking(studentScores, studentNames);
 // => ["1. Joci: 100", "2. Sara: 99", "3. Kora: 90", "4. Jan: 84", "5. John: 66", "6. Bern: 53", "7. Fred: 47"]
 ```
+
+## 5. Count Odd Scores
+
+As an investigation, the principal asked the teacher to count how many scores of the math exam result being odd scores, and since you want to help him handle it efficiently.
+
+We are going to create the method `countOddScores(List<Integer> studentScores)` with the parameter `List<integer>` of studentScores.
+This method should count up the number of odd students scores and return that count as an integer.
+
+```java
+MakingTheGrade.countOddScores(List.of(20, 35, 40, 10, 39, 77));
+// => 3
+```
+
+## 6. Challenging Exam
+
+The teacher has prepared a challenging exam and wants to analyze the results. As his assistant you'll evaluate the exams in the same order students handed them in. The teacher is particularly interested in knowing how many students passed the exam before the first non-passing student.
+As you know a student needs a score greater than **40** to achieve a passing grade on the exam.
+
+Create the method `evaluateChallengingExam(List<Integer> studentScores)` that takes a `List<Integer>` of students scores in the handed order.
+This method should count up the number of passing student scores until the first non-passing score and return that count as an integer.
+
+```java
+MakingTheGrade.evaluateChallengingExam(List.of(45, 90, 15, 100, 70));
+// => 2
+```

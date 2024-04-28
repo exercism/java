@@ -53,4 +53,32 @@ class MakingTheGrade {
 
         return ranking;
     }
+
+    static int countOddScores(List<Integer> studentScores) {
+        int count = 0;
+
+        for (int score : studentScores) {
+            if (score % 2 == 0) {
+                continue;
+            }
+
+            count++;
+        }
+
+        return count;
+    }
+
+    static int evaluateChallengingExam(List<Integer> studentScores) {
+        int count = 0;
+
+        for (int score : studentScores) {
+            if (score <= 40) {
+                break;
+            }
+
+            count++;
+        }
+
+        return count;
+    }
 }

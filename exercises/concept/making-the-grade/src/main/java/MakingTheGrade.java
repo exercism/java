@@ -17,4 +17,12 @@ class MakingTheGrade {
     static List<String> studentRanking(List<Integer> studentScores, List<String> studentNames) {
         throw new UnsupportedOperationException("Please implement the (static) MakingTheGrade.studentRanking() method");
     }
+
+    static int countOddScores(List<Integer> studentScores) {
+        throw new UnsupportedOperationException("Please implement the (static) MakingTheGrade.countOddScores() method");
+    }
+
+    static int evaluateChallengingExam(List<Integer> studentScores) {
+        throw new UnsupportedOperationException("Please implement the (static) MakingTheGrade.evaluateChallengingExam() method");
+    }
 }

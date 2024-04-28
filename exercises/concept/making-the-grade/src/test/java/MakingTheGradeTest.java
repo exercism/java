@@ -127,4 +127,22 @@ class MakingTheGradeTest {
             MakingTheGrade.studentRanking(List.of(), List.of())
             ).isEqualTo(List.of());
     }
+
+    @Test
+    @Tag("task:5")
+    @DisplayName("Three student scores were odd after the correction of the math tests")
+    void testThreeOddScores() {
+        assertThat(
+            MakingTheGrade.countOddScores(List.of(20, 35, 40, 10, 39, 77))
+            ).isEqualTo(3);
+    }
+
+    @Test
+    @Tag("task:6")
+    @DisplayName("Two students passed the exam before the first non-passing score")
+    void testTwoStudentsPassedTheExamBeforeTheNonPassingScore() {
+        assertThat(
+            MakingTheGrade.evaluateChallengingExam(List.of(45, 90, 15, 100, 70))
+            ).isEqualTo(2);
+    }
 }

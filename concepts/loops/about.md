@@ -4,7 +4,8 @@ In Java there are four looping constructs, two that are iteration centric: [`For
 
 ## For
 
-A for loop provides a mechanism to execute a group of statements repeatedly until some condition is met.
+A for loop is a control flow statement that allows you to efficiently execute a block of code multiple times.
+It achieves this repetition through a concept called iteration, where a variable (often called a loop counter) takes on different values within a specified range. This loop continues executing the code block until the iteration reaches its end.
 
 ```java
 for (initialization; test; update) {
@@ -24,6 +25,7 @@ The `test` expression tests if the loop should end.
 If it evaluates to `true`, the body and then the update expression will be executed.
 If it evaluates to `false`, neither the body nor the update statement will be executed and execution resumes after the loop's closing bracket.
 Typically it checks the variable assigned in the initialization block.
+
 For example:
 
 ```java
@@ -175,6 +177,57 @@ which outputs:
 
 ```text
 1
+```
+
+## Break
+
+The break statement acts as an "exit door" for a looping construct.
+When encountered within the loop's body, `break` immediately terminates the loop's execution.
+
+For example:
+
+```java
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+
+    System.out.println(i);
+}
+```
+
+which outputs:
+
+```text
+0
+1
+2
+3
+4
+```
+
+## Continue
+
+The continue statement in the other hand acts similar to a "skip button" in a looping construct.
+When encountered within a loop's body, `continue` skips the remaining statements in the current iteration.
+
+For exmaple:
+
+```java
+for (int i = 0; i < 5; i++) {
+    if (i < 3) {
+        continue;
+    }
+
+    System.out.println(i);
+}
+```
+
+which outputs:
+
+```text
+3
+4
 ```
 
 [`For`]: #for
