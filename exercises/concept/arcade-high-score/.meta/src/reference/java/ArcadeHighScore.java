@@ -26,7 +26,7 @@ public class ArcadeHighScore {
         highScores.put(name, 0);
     }
 
-   void updateScore (String name, Integer score) {
+    void updateScore (String name, Integer score) {
 
         Integer oldScore = highScores.getOrDefault(name, 0);
 
@@ -34,6 +34,6 @@ public class ArcadeHighScore {
     }
 
     Set<String> listOfPlayers () {
-        return highScores.keySet();
-    }
+            return highScores.keySet();
+        }
 }
