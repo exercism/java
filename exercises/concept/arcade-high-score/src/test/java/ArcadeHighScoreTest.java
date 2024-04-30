@@ -1,16 +1,20 @@
 import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ArcadeHighScoreTest {
 
-    private final ArcadeHighScore arcadeHighScore = new ArcadeHighScore();
+    private ArcadeHighScore arcadeHighScore;
 
+    @BeforeEach
+    public void setUp() {
+        arcadeHighScore = new ArcadeHighScore();
+    }
 
     @Test
     @Tag("task:1")
