@@ -33,7 +33,7 @@ public class ArcadeHighScore {
         highScores.put(name, oldScore + score);
     }
 
-    Set<String> listOfPlayers () {
+    Set<String> getPlayers () {
             return highScores.keySet();
         }
 }

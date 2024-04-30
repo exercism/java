@@ -4,10 +4,10 @@
 
 - A [map][maps] is an associative data structure of key-value pairs.
 
-## 1. Define a new high score map
+## 1. Get all Highscores
 
-- It should return an empty [map][maps].
-- [Create an object][create-object] of the HashMap class using the declared `Map<String ,Integer> highScores`.
+- It should return a [map][maps] with all the players and their scores.
+- [Create an object][create-object] of the HashMap class using the declared `Map<String ,Integer> highScores` to initialise the map.
 
 ## 2. Add players to the high score map
 
@@ -29,7 +29,7 @@
 - The resulting map should be returned with the player's updated score.
 - One of the [built-in functions][map-get-or-default] can be used to get a value in a map under a given key if the key is present and update the value, or add the key with a default value if it is not present..
 
-## 6. Get a list of players
+## 6. Get all players
 
 - One of the [built-in functions][map-keys] returns a set of all keys in a map.
   

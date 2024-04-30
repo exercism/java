@@ -1,4 +1,3 @@
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -19,8 +18,8 @@ public class ArcadeHighScoreTest {
     @Test
     @Tag("task:1")
     @DisplayName("Define an empty map to store the high scores")
-    public void defineMap() {
-        assertNotNull(arcadeHighScore.defineMap());
+    public void getHighScores() {
+        assertNotNull(arcadeHighScore.getHighScores());
         assertThat(arcadeHighScore.highScores.isEmpty());
     }
 
@@ -94,8 +93,8 @@ public class ArcadeHighScoreTest {
 
     @Test
     @Tag("task:6")
-    @DisplayName("Get a list of players")
-    public void listOfPlayers() {
+    @DisplayName("Get all players")
+    public void getPlayers() {
         String name = "David James";
         Integer score = 67;
 
@@ -105,6 +104,6 @@ public class ArcadeHighScoreTest {
         arcadeHighScore.addPlayer(name, score);
         arcadeHighScore.addPlayer(secondName, secondScore);
 
-        assertThat(arcadeHighScore.listOfPlayers()).contains(name).contains(secondName);
+        assertThat(arcadeHighScore.getPlayers()).contains(name).contains(secondName);
     }
 }
