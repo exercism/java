@@ -27,18 +27,15 @@ Map<String, Integer> hashmap = new HashMap<>();
 hashmap.put(String key, Integer value)
 ```
 
-
 ## Retrieving values from a Map
 
 The [get][get] method is used to retrieve values from a map. Only one argument is passed to this method which is the key of the map entry you want to retrieve.
-
 
 ```java
 Map<String, Integer> hashmap = new HashMap<>();
 
 hashmap.get(String key)
 ```
-
 
 [maps]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html
 [reference-data-types]: https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.3
