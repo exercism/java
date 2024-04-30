@@ -1,8 +1,10 @@
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ArcadeHighScoreTest {
@@ -12,9 +14,10 @@ public class ArcadeHighScoreTest {
 
     @Test
     @Tag("task:1")
-    @DisplayName("Define a map to store the high scores")
+    @DisplayName("Define an empty map to store the high scores")
     public void defineMap() {
         assertNotNull(arcadeHighScore.defineMap());
+        assertThat(arcadeHighScore.highScores.isEmpty());
     }
 
     @Test
@@ -70,6 +73,19 @@ public class ArcadeHighScoreTest {
 
         arcadeHighScore.updateScore(name, newScore);
         assertThat(arcadeHighScore.highScores).containsEntry(name, score + newScore);
+    }
+
+    @Test
+    @Tag("task:5")
+    @DisplayName("Update a players score who does not exist")
+    public void updateScoreOfNonExistentPlayer() {
+        String name = "David James";
+        Integer score = 67;
+
+        assertThat(arcadeHighScore).isNull();
+
+        arcadeHighScore.updateScore(name, score);
+        assertThat(arcadeHighScore.highScores).containsEntry(name, score);
     }
 
     @Test

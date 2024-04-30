@@ -7,73 +7,76 @@ In this exercise, you're implementing a way to keep track of the high scores for
 To make a new high score map, create an empty `HashMap` object by initialising the `Map<String, Integer> highScores` declaration provided.
 
 ```java
-System.out.println(ArcadeHighScore.highScores);
+ArcadeHighScore arcadeHighScore = new ArcadeHighScore();
+arcadeHighScore.getHighScores();
 // => {} 
 ```
 
 ## 2. Add players to the high score map
 
-To add a player to the high score map, define `ArcadeHighScore.addPlayer()`, which is a function which takes two arguments:
+To add a player to the high score map, implement the `ArcadeHighScore.addPlayer()` method, which takes the player's name and score as arguments.
 
-- The first argument is the players name as a String.
-- The second argument is the players score as an Integer.
+When called, it should store the player and their score in the `highScores` map.
 
 ````java
-ArcadeHighScore.addPlayer("Dave Thomas", 0);
-
+arcadeHighScore.addPlayer("Dave Thomas", 0);
+arcadeHighScore.getHighScores();
 // => {Dave Thomas=0}
 ````
 
 ## 3. Remove players from the score map
 
-To remove a player from the high score map, define the `ArcadeHighScore.removePlayer()` method, which takes one argument:
+To remove a player from the high score map, implement the `ArcadeHighScore.removePlayer()` method, which takes the player's name as an argument.
 
-- The argument is the key of the item, in this case the name of the player.
+When called, it should remove the entry associated to the player from the `highScores` map.
 
 ````java
-ArcadeHighScore.removePlayer("Dave Thomas");
-
+arcadeHighScore.removePlayer("Dave Thomas");
+arcadeHighScore.getHighScores();
 // => {}
 ````
 
 ## 4. Reset a player's score
 
-To reset a player's score, define the `ArcadeHighScore.resetScore()` method, which takes 1 argument:
+To reset a player's score, implement the `ArcadeHighScore.resetScore()` method, which takes the player's name as an argument.
 
-- The argument is the players name.
+When called, it should reset the score of the player to `0` in the `highScores` map.
 
 ```java
-ArcadeHighScore.resetScore("Dave Thomas");
+arcadeHighScore.resetScore("Dave Thomas");
+arcadeHighScore.getHighScores();
 // => (Dave Thomas=0);
 ```
 
 ## 5. Update a player's score
 
-To update a player's score by adding to the previous score, define `ArcadeHighScore.updateScore()`, which takes two arguments:
+To update a player's score by adding to the previous score, implement `ArcadeHighScore.updateScore()` method, which takes the player's name and their new score as arguments.
 
-- The first argument is the name of the player whose score you wish to update.
-- The second argument is the score that you wish to **add** to their current high score.
+When called, it should _add_ the new score to the player's previous score stored in the `highScores` map.
 
-The function should also work if the player doesn't have a previous score - assume the previous score is 0.
+If the player doesn't have a previous score, assume the previous score is `0`.
 
 ```java
-// Adding a players score to update.
-ArcadeHighScore.addPlayer("Lional Messi", 48);
-// => {Lionel Messi=48}
-
-ArcadeHighScore.updateScore("Lionel Messi", 40);
+ArcadeHighScore arcadeHighScore = new ArcadeHighScore();
+// Adding a players score to update
+arcadeHighScore.addPlayer("Lionel Messi", 48);
+arcadeHighScore.updateScore("Lionel Messi", 40);
+arcadeHighScore.getHighScores();
 // => {Lionel Messi=88}
         
 // Updating a players score who doesn't have a previous score
-ArcadeHighScore.updateScore("Dave Thomas", 57);
+arcadeHighScore.updateScore("Dave Thomas", 57);
+arcadeHighScore.getHighScores();
 // => {Lionel Messi=88, Dave Thomas=57}
 ```
 
 ## 6. Get a list of players
 
-To get a list of players, define the `ArcadeHighScore.listOfPlayers()`, which takes no arguments:
+To get a list of players, implement the `ArcadeHighScore.getPlayers()` method.
+
+When called, it should return a collection containing all player's names currently stored in the `highScores` map.
 
 ````java
-ArcadeHighScore.listOfPlayers();
+arcadeHighScore.getPlayers();
 // => {Lionel Messi, Dave Thomas}
 ````

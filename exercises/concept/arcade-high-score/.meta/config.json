@@ -19,5 +19,5 @@
   "forked_from": [
     "elixir/high-score"
   ],
-  "blurb": "Maps are a data structure that holds key-value pairs. Keys and values can be of any reference data type, and the keys must be unique."
+  "blurb": "Learn about maps by keeping track of the high scores in your local arcade"
 }
