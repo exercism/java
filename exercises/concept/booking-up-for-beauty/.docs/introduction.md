@@ -81,7 +81,7 @@ Instead, to format dates using a custom format, you should use the `java.time.fo
 
 ```java
 DateTimeFormatter parser = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-LocalDate date = LocalDate.parse("03/12/2007", formatter);
+LocalDate date = LocalDate.parse("03/12/2007", parser);
 
 DateTimeFormatter printer = DateTimeFormatter.ofPattern("MMMM d, yyyy");
 printer.format(date);

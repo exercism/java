@@ -17,22 +17,23 @@ SqueakyClean.clean("my   Id");
 // => "my___Id"
 ```
 
-## 2. Replace control characters with the upper case string "CTRL"
-
-Modify the (_static_) `SqueakyClean.clean()` method to replace control characters with the upper case string `"CTRL"`.
-
-```java
-SqueakyClean.clean("my\0Id");
-// => "myCTRLId",
-```
-
-## 3. Convert kebab-case to camelCase
+## 2. Convert kebab-case to camelCase
 
 Modify the (_static_) `SqueakyClean.clean()` method to convert kebab-case to camelCase.
 
 ```java
-SqueakyClean.clean("à-ḃç");
-// => "àḂç"
+SqueakyClean.clean("a-bc");
+// => "aBc"
+```
+
+## 3. Convert leetspeak to normal text
+
+Modify the (_static_) `SqueakyClean.clean()` method to convert [leetspeak][leet-speak] to normal text.
+For simplicity we will only be using `4`, `3`, `0`, `1` and `7` from the table.
+
+```java
+SqueakyClean.clean("H3ll0 W0rld");
+// => "Hello_World"
 ```
 
 ## 4. Omit characters that are not letters
@@ -40,15 +41,8 @@ SqueakyClean.clean("à-ḃç");
 Modify the (_static_) `SqueakyClean.clean()` method to omit any characters that are not letters.
 
 ```java
-SqueakyClean.clean("a1😀2😀3😀b");
+SqueakyClean.clean("a$#.b");
 // => "ab"
 ```
 
-## 5. Omit Greek lower case letters
-
-Modify the (_static_) `SqueakyClean.clean()` method to omit any Greek letters in the range 'α' to 'ω'.
-
-```java
-SqueakyClean.clean("MyΟβιεγτFinder");
-// => "MyΟFinder"
-```
+[leet-speak]: https://en.wikipedia.org/wiki/Leet

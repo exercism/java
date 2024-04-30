@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,7 +15,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(0)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithOneRow() {
         int[][] expectedOutput = new int[][]{
@@ -25,7 +25,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(1)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithTwoRows() {
         int[][] expectedOutput = new int[][]{
@@ -36,7 +36,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(2)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithThreeRows() {
         int[][] expectedOutput = new int[][]{
@@ -48,7 +48,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(3)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithFourRows() {
         int[][] expectedOutput = new int[][]{
@@ -61,7 +61,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(4)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithFiveRows() {
         int[][] expectedOutput = new int[][]{
@@ -75,7 +75,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(5)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
@@ -90,7 +90,7 @@ public class PascalsTriangleGeneratorTest {
         assertThat(pascalsTriangleGenerator.generateTriangle(6)).isEqualTo(expectedOutput);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTriangleWithTenRows() {
         int[][] expectedOutput = new int[][]{

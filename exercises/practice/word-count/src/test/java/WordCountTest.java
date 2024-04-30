@@ -1,6 +1,6 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class WordCountTest {
     private Map<String, Integer> actualWordCount;
     private Map<String, Integer> expectedWordCount;
 
-    @Before
+    @BeforeEach
     public void setup() {
         wordCount = new WordCount();
         expectedWordCount = new HashMap<>();
@@ -28,7 +28,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void countOneOfEachWord() {
         expectedWordCount.put("one", 1);
@@ -39,7 +39,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void multipleOccurrencesOfAWord() {
         expectedWordCount.put("one", 1);
@@ -52,7 +52,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void handlesCrampedLists() {
         expectedWordCount.put("one", 1);
@@ -63,7 +63,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void handlesExpandedLists() {
         expectedWordCount.put("one", 1);
@@ -74,7 +74,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void ignorePunctuation() {
         expectedWordCount.put("car", 1);
@@ -88,7 +88,7 @@ public class WordCountTest {
 
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
@@ -99,7 +99,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void normalizeCase() {
         expectedWordCount.put("go", 3);
@@ -109,7 +109,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void withApostrophes() {
         expectedWordCount.put("first", 1);
@@ -117,12 +117,15 @@ public class WordCountTest {
         expectedWordCount.put("laugh", 1);
         expectedWordCount.put("then", 1);
         expectedWordCount.put("cry", 1);
+        expectedWordCount.put("you're", 1);
+        expectedWordCount.put("getting", 1);
+        expectedWordCount.put("it", 1);
 
-        actualWordCount = wordCount.phrase("First: don't laugh. Then: don't cry.");
+        actualWordCount = wordCount.phrase("'First: don't laugh. Then: don't cry. You're getting it.'");
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substringsFromTheBeginning() {
         expectedWordCount.put("joe", 1);
@@ -138,7 +141,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void withQuotations() {
         expectedWordCount.put("joe", 1);
@@ -152,7 +155,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void multipleSpacesNotDetectedAsAWord() {
         expectedWordCount.put("multiple", 1);
@@ -162,7 +165,7 @@ public class WordCountTest {
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void alternatingWordSeperatorsNotDetectedAsAWord() {
         expectedWordCount.put("one", 1);
@@ -170,6 +173,16 @@ public class WordCountTest {
         expectedWordCount.put("three", 1);
 
         actualWordCount = wordCount.phrase(",\n,one,\n ,two \n 'three'");
+        assertThat(actualWordCount).isEqualTo(expectedWordCount);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void quotationForWordWithApostrophe() {
+        expectedWordCount.put("can", 1);
+        expectedWordCount.put("can't", 2);
+
+        actualWordCount = wordCount.phrase("can, can't, 'can't'");
         assertThat(actualWordCount).isEqualTo(expectedWordCount);
     }
 

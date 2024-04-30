@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [79666dce-e0f1-46de-95a1-563802913c35]
 description = "cleans the number"
@@ -13,6 +20,11 @@ description = "cleans numbers with multiple spaces"
 
 [598d8432-0659-4019-a78b-1c6a73691d21]
 description = "invalid when 9 digits"
+include = false
+
+[2de74156-f646-42b5-8638-0ef1d8b58bc2]
+description = "invalid when 9 digits"
+reimplements = "598d8432-0659-4019-a78b-1c6a73691d21"
 
 [57061c72-07b5-431f-9766-d97da7c4399d]
 description = "invalid when 11 digits does not start with a 1"
@@ -25,12 +37,27 @@ description = "valid when 11 digits and starting with 1 even with punctuation"
 
 [c6a5f007-895a-4fc5-90bc-a7e70f9b5cad]
 description = "invalid when more than 11 digits"
+include = false
+
+[4a1509b7-8953-4eec-981b-c483358ff531]
+description = "invalid when more than 11 digits"
+reimplements = "c6a5f007-895a-4fc5-90bc-a7e70f9b5cad"
 
 [63f38f37-53f6-4a5f-bd86-e9b404f10a60]
 description = "invalid with letters"
+include = false
+
+[eb8a1fc0-64e5-46d3-b0c6-33184208e28a]
+description = "invalid with letters"
+reimplements = "63f38f37-53f6-4a5f-bd86-e9b404f10a60"
 
 [4bd97d90-52fd-45d3-b0db-06ab95b1244e]
 description = "invalid with punctuations"
+include = false
+
+[065f6363-8394-4759-b080-e6c8c351dd1f]
+description = "invalid with punctuations"
+reimplements = "4bd97d90-52fd-45d3-b0db-06ab95b1244e"
 
 [d77d07f8-873c-4b17-8978-5f66139bf7d7]
 description = "invalid if area code starts with 0"

@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -12,34 +12,34 @@ public class ListOpsTest {
         assertThat(ListOps.append(List.of(), List.of())).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testAppendingListToEmptyList() {
         assertThat(ListOps.append(List.of(), List.of('1', '2', '3', '4')))
                 .containsExactly('1', '2', '3', '4');
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testAppendingEmptyListToList() {
         assertThat(ListOps.append(List.of('1', '2', '3', '4'), List.of()))
                 .containsExactly('1', '2', '3', '4');
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testAppendingNonEmptyLists() {
         assertThat(ListOps.append(List.of("1", "2"), List.of("2", "3", "4", "5")))
                 .containsExactly("1", "2", "2", "3", "4", "5");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testConcatEmptyList() {
         assertThat(ListOps.concat(List.of())).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testConcatListOfLists() {
         List<List<Character>> listOfLists = List.of(
@@ -52,7 +52,7 @@ public class ListOpsTest {
         assertThat(ListOps.concat(listOfLists)).containsExactly('1', '2', '3', '4', '5', '6');
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testConcatListOfNestedLists() {
         List<List<List<Character>>> listOfNestedLists = List.of(
@@ -80,46 +80,46 @@ public class ListOpsTest {
                         List.of('4', '5', '6'));
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFilteringEmptyList() {
         assertThat(ListOps.filter(List.<Integer>of(), integer -> integer % 2 == 1))
                 .isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFilteringNonEmptyList() {
         assertThat(ListOps.filter(List.of(1, 2, 3, 5), integer -> integer % 2 == 1))
                 .containsExactly(1, 3, 5);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSizeOfEmptyList() {
         assertThat(ListOps.size(List.of())).isEqualTo(0);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSizeOfNonEmptyList() {
         assertThat(ListOps.size(List.of("one", "two", "three", "four"))).isEqualTo(4);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTransformingEmptyList() {
         assertThat(ListOps.map(List.<Integer>of(), integer -> integer + 1)).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTransformingNonEmptyList() {
         assertThat(ListOps.map(List.of(1, 3, 5, 7), integer -> integer + 1))
                 .containsExactly(2, 4, 6, 8);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFoldLeftEmptyList() {
         assertThat(
@@ -130,7 +130,7 @@ public class ListOpsTest {
                 .isEqualTo(2.0);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFoldLeftDirectionIndependentFunctionAppliedToNonEmptyList() {
         assertThat(
@@ -141,7 +141,7 @@ public class ListOpsTest {
                 .isEqualTo(15);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFoldLeftDirectionDependentFunctionAppliedToNonEmptyList() {
         assertThat(
@@ -152,7 +152,7 @@ public class ListOpsTest {
                 .isEqualTo(64.0);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFoldRightEmptyList() {
         assertThat(
@@ -163,7 +163,7 @@ public class ListOpsTest {
                 .isEqualTo(2.0);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFoldRightDirectionIndependentFunctionAppliedToNonEmptyList() {
         assertThat(
@@ -174,7 +174,7 @@ public class ListOpsTest {
                 .isEqualTo(15);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFoldRightDirectionDependentFunctionAppliedToNonEmptyList() {
         assertThat(
@@ -185,20 +185,20 @@ public class ListOpsTest {
                 .isEqualTo(9.0);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testReversingEmptyList() {
         assertThat(ListOps.reverse(List.of())).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testReversingNonEmptyList() {
         assertThat(ListOps.reverse(List.of('1', '3', '5', '7')))
                 .containsExactly('7', '5', '3', '1');
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testReversingListOfListIsNotFlattened() {
         List<List<Character>> listOfLists = List.of(

@@ -5,9 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-
 public class SalaryCalculatorTest {
-    
+
     public SalaryCalculator calculator;
 
     @BeforeEach
@@ -18,7 +17,7 @@ public class SalaryCalculatorTest {
     @Test
     @Tag("task:1")
     @DisplayName("The salaryMultiplier method returns 1.0 when daysSkipped is below the threshold")
-    public void msalaryMultiplierWhenDaysSkippedIs4() {
+    public void salaryMultiplierWhenDaysSkippedIs4() {
         assertThat(calculator.salaryMultiplier(4)).isEqualTo(1.0);
     }
 
@@ -77,7 +76,7 @@ public class SalaryCalculatorTest {
     public void skippedAboveThreshold() {
         assertThat(calculator.finalSalary(7, 0)).isEqualTo(850.0);
     }
-    
+
     @Test
     @Tag("task:3")
     @DisplayName("The finalSalary method returns the correct result when daysSkipped and productsSold below threshold")
@@ -91,5 +90,5 @@ public class SalaryCalculatorTest {
     public void salaryRespectMaximum() {
         assertThat(calculator.finalSalary(0, 77)).isEqualTo(2000.0);
     }
-    
+
 }

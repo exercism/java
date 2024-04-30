@@ -47,7 +47,8 @@ class Markdown {
         {
             count++;
         }
-
+        
+        if (count > 6) { return "<p>" + markdown + "</p>"; }
         if (count == 0) { return null; }
 
         return "<h" + Integer.toString(count) + ">" + markdown.substring(count + 1) + "</h" + Integer.toString(count)+ ">";

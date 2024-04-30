@@ -13,18 +13,6 @@ final class NucleotideCounter {
         }
     }
 
-    int count(char base) {
-        if (isCountable(base)) {
-            throw new IllegalArgumentException(base + " is not a nucleotide");
-        }
-
-        try {
-            return nucleotideCounts().get(base);
-        } catch (NullPointerException e) {
-            return 0;
-        }
-    }
-
     private static boolean isCountable(char base) {
         final String countableNucleoTides = "ACGT";
         return countableNucleoTides.indexOf(base) == -1;

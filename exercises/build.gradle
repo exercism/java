@@ -13,13 +13,13 @@ subprojects {
   apply plugin: "checkstyle"
 
   // Add a task that copies test source files into a build directory.
-  // All @Ignore and @Disabled annotations are removed during this copying, 
+  // All @Disabled annotations are removed during this copying,
   // so that when we run the copied tests, none are skipped and all should execute.
   tasks.register('copyTestsFilteringIgnores', Copy) {
     from "src/test/java"
     into generatedTestSourceDir
     filter { line ->
-      line ==~ /.*@(Ignore|Disabled).*/ ? null : line
+      line ==~ /.*@Disabled.*/ ? null : line
     }
   }
 
@@ -29,6 +29,13 @@ subprojects {
     if(project.name == 'concept' || project.name == 'practice')
       return
 
+    // Add a task that creates Gradle wrappers for all exercises,
+    // matching the Gradle version of the project root.
+    tasks.register('allWrappers', Wrapper) {
+      gradleVersion = "$gradle.gradleVersion"
+      validateDistributionUrl = true
+    }
+
     sourceSets {
       // Set the directory containing the reference solution as the default source set. Default
       // compile tasks will now run against this source set.
@@ -36,7 +43,7 @@ subprojects {
         java.srcDirs = [".meta/src/reference/java"]
       }
 
-      // Set the directory containing the @Ignore-stripped tests as the default test source set.
+      // Set the directory containing the @Disabled-stripped tests as the default test source set.
       // Default test tasks will now run against this source set.
       test {
         java.srcDirs = [generatedTestSourceDir]
@@ -80,8 +87,8 @@ subprojects {
       source = "src/test/java"
     }
 
-    // When running the standard test task, make sure we prepopulate the test source set with the
-    // @Ignore-stripped tests.
+    // When running the standard test task, make sure we pre-populate the test source set with the
+    // @Disabled-stripped tests.
     compileTestJava.dependsOn(copyTestsFilteringIgnores)
 
     // Enable test logging when running test task from the console

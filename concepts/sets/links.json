@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html",
+    "description": "java.util.Set API documentation"
+  },
+  {
+    "url": "https://www.baeldung.com/java-set-operations",
+    "description": "Implementing set operations in Java"
+  }
+]

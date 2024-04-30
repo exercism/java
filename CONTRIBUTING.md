@@ -82,19 +82,19 @@ After making changes to one or more exercises, make sure that they pass all vali
 #### Check whether the reference implementation passes the tests
 
 ```sh
-gradle test
+./gradlew test
 ```
 
 #### Check whether the reference implementation passes the Checkstyle validations
 
 ```sh
-gradle check
+./gradlew check
 ```
 
 #### Check whether the starter implementation is able to compile with the tests
 
 ```sh
-gradle compileStarterTestJava
+./gradlew compileStarterTestJava
 ```
 
 ### Open a Pull Request
@@ -130,24 +130,24 @@ The following steps outline how to import the git repository, make changes, and 
 Open the IDE, and from the startup menu select "Check out from Version Control".
 This will open a dialog where you can enter the URL of your fork repository and specify the directory that you would like to clone the repo into.
 
-![Cloning a repository from IntelliJ IDEA](assets/clone-repo.png)
+![Cloning a repository from IntelliJ IDEA](resources/images/clone-repo.png)
 
 ### Importing the Gradle project
 
 Select "Import Project from External Model" and click the "Gradle" radio.
 
-![Importing a Gradle project in IntelliJ IDEA](assets/gradle-import.png)
+![Importing a Gradle project in IntelliJ IDEA](resources/images/gradle-import.png)
 
 Set the Gradle properties per the screenshot below. Ensure that the "exercises" folder is selected as the root of the project
 
-![Gradle properties to use when importing the project in IntelliJ IDEA](assets/gradle-setup.png)
+![Gradle properties to use when importing the project in IntelliJ IDEA](resources/images/gradle-setup.png)
 
 **Add the `java` folder as a module**.
 Open the project settings and view the modules.
 Click the `+` button, select "Import Module".
 Select the `java` directory and accept the default values.
 
-![Importing a Gradle module in IntelliJ IDEA](assets/java-module.png)
+![Importing a Gradle module in IntelliJ IDEA](resources/images/java-module.png)
 
 ### Creating a new branch
 
@@ -155,22 +155,22 @@ The git tools in IDEA are located in the VCS menu.
 To create a new branch, select VCS > Git > Branches and then click "New Branch".
 Give the branch a meaningful name and create.
 
-![Git branches menu in IntelliJ IDEA](assets/branch-menu.png)
-![Creating a new git branch in IntelliJ IDEA](assets/branch-name.png)
+![Git branches menu in IntelliJ IDEA](resources/images/branch-menu.png)
+![Creating a new git branch in IntelliJ IDEA](resources/images/branch-name.png)
 
 ### Testing your changes
 
 Each exercise will have gradle tasks that can be executed from the IDE.
 To test changes within an exercise, find the gradle task for that folder in the "Gradle" toolbar on the right, open the Tasks > Verification folder and double click `test`.
 
-![Running the Gradle `test` task for a single exercise in IntelliJ IDEA](assets/run-test.png)
+![Running the Gradle `test` task for a single exercise in IntelliJ IDEA](resources/images/run-test.png)
 
 ### Committing your changes
 
 Once all the changes have been made, you can look at the diffs and commit from the "Commit File" window, which can be reached by selecting VCS > Git > Commit File from the top menu.
 If all the changes are acceptable, checkmark all the files that are to be committed, enter a meaningful commit message, and then click "Commit and Push".
 
-![Committing changes to git in IntelliJ IDEA](assets/commit-files.png)
+![Committing changes to git in IntelliJ IDEA](resources/images/commit-files.png)
 
 After pushing your changes, [Open a Pull Request](#open-a-pull-request) to contribute them to the Java track.
 

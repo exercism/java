@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html#overloading",
+    "description": "Detailed explanation of method overloading in Java, covering the basics and advanced usage."
+  },
+  {
+    "url": "https://www.baeldung.com/java-method-overload-override",
+    "description": "A comprehensive guide to understanding method overloading in Java with examples."
+  },
+  {
+    "url": "https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading",
+    "description": "Practical insights and common questions about method overloading in Java."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Egzz2I3iseg",
+    "description": "Video tutorial explaining method overloading with visual examples and coding demonstrations."
+  }
+]

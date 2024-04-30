@@ -1,6 +1,6 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ public class SpiralMatrixBuilderTest {
 
     private SpiralMatrixBuilder spiralMatrixBuilder;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         spiralMatrixBuilder = new SpiralMatrixBuilder();
     }
@@ -18,7 +18,7 @@ public class SpiralMatrixBuilderTest {
         assertThat(spiralMatrixBuilder.buildMatrixOfSize(0)).isEmpty();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTrivialSpiral() {
         int[][] expected = {
@@ -28,7 +28,7 @@ public class SpiralMatrixBuilderTest {
         assertThat(spiralMatrixBuilder.buildMatrixOfSize(1)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSpiralOfSize2() {
         int[][] expected = {
@@ -39,7 +39,7 @@ public class SpiralMatrixBuilderTest {
         assertThat(spiralMatrixBuilder.buildMatrixOfSize(2)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSpiralOfSize3() {
         int[][] expected = {
@@ -51,7 +51,7 @@ public class SpiralMatrixBuilderTest {
         assertThat(spiralMatrixBuilder.buildMatrixOfSize(3)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSpiralOfSize4() {
         int[][] expected = {
@@ -64,7 +64,7 @@ public class SpiralMatrixBuilderTest {
         assertThat(spiralMatrixBuilder.buildMatrixOfSize(4)).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSpiralOfSize5() {
         int[][] expected = {

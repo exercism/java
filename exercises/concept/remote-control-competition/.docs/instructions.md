@@ -59,8 +59,8 @@ Implement the static `TestTrack.getRankedCars()` to return the cars passed in, s
 ```java
 ProductionRemoteControlCar prc1 = new ProductionRemoteControlCar();
 ProductionRemoteControlCar prc2 = new ProductionRemoteControlCar();
-prc1.setNumberOfVictories(3);
-prc2.setNumberOfVictories(2);
+prc1.setNumberOfVictories(2);
+prc2.setNumberOfVictories(3);
 List<ProductionRemoteControlCar> unsortedCars = new ArrayList<>();
 unsortedCars.add(prc1);
 unsortedCars.add(prc2);

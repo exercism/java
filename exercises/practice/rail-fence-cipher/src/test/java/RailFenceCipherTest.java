@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,7 +14,7 @@ public class RailFenceCipherTest {
             .isEqualTo("XXXXXXXXXOOOOOOOOO");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void encodeWithThreeRails() {
         railFenceCipher = new RailFenceCipher(3);
@@ -22,7 +22,7 @@ public class RailFenceCipherTest {
             .isEqualTo("WECRLTEERDSOEEFEAOCAIVDEN");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void encodeWithEndingInTheMiddle() {
         railFenceCipher = new RailFenceCipher(4);
@@ -30,7 +30,7 @@ public class RailFenceCipherTest {
             .isEqualTo("ESXIEECSR");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void decodeWithThreeRails() {
         railFenceCipher = new RailFenceCipher(3);
@@ -38,7 +38,7 @@ public class RailFenceCipherTest {
             .isEqualTo("THEDEVILISINTHEDETAILS");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void decodeWithFiveRails() {
         railFenceCipher = new RailFenceCipher(5);
@@ -46,7 +46,7 @@ public class RailFenceCipherTest {
             .isEqualTo("EXERCISMISAWESOME");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void decodeWithSixRails() {
         railFenceCipher = new RailFenceCipher(6);

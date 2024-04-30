@@ -3,8 +3,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class BinarySearchTreeTest {
 
@@ -22,7 +22,7 @@ public class BinarySearchTreeTest {
     }
 
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void insertsLess() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
@@ -43,7 +43,7 @@ public class BinarySearchTreeTest {
         assertThat(left.getData()).isEqualTo(expectedLeft);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void insertsSame() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
@@ -63,7 +63,7 @@ public class BinarySearchTreeTest {
         assertThat(left.getData()).isEqualTo(expectedLeft);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void insertsRight() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
@@ -83,7 +83,7 @@ public class BinarySearchTreeTest {
         assertThat(right.getData()).isEqualTo(expectedRight);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void createsComplexTree() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
@@ -95,7 +95,7 @@ public class BinarySearchTreeTest {
         assertThat(binarySearchTree.getAsLevelOrderList()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sortsSingleElement() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
@@ -106,7 +106,7 @@ public class BinarySearchTreeTest {
         assertThat(binarySearchTree.getAsSortedList()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sortsCollectionOfTwoIfSecondInsertedIsSmallerThanFirst() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
@@ -118,7 +118,7 @@ public class BinarySearchTreeTest {
         assertThat(binarySearchTree.getAsSortedList()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sortsCollectionOfTwoIfSecondNumberisSameAsFirst() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
@@ -130,7 +130,7 @@ public class BinarySearchTreeTest {
         assertThat(binarySearchTree.getAsSortedList()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void sortsCollectionOfTwoIfSecondInsertedIsBiggerThanFirst() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
@@ -142,7 +142,7 @@ public class BinarySearchTreeTest {
         assertThat(binarySearchTree.getAsSortedList()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void iteratesOverComplexTree() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();

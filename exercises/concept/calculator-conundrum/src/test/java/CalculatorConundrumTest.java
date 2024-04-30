@@ -53,7 +53,7 @@ public class CalculatorConundrumTest {
     @DisplayName("The calculate method throws IllegalOperationException when passing invalid operation")
     public void throwExceptionForUnknownOperation() {
         String invalidOperation = "**";
-        String expectedMessage = String.format("Operation '%s' does not exist", invalidOperation);
+        String expectedMessage = "Operation '" + invalidOperation + "' does not exist";
         assertThatExceptionOfType(IllegalOperationException.class)
                 .isThrownBy(() -> new CalculatorConundrum().calculate(3, 78, invalidOperation))
                 .withMessage(expectedMessage);

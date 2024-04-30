@@ -21,6 +21,6 @@ public class LogLine {
     }
 
     public String getOutputForShortLog() {
-        return String.format("%d:%s", this.level.getEncodedLevel(), this.message);
+        return String.valueOf(this.level.getEncodedLevel()) + ":" + this.message;
     }
 }

@@ -1,6 +1,6 @@
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.Before;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,7 +9,7 @@ public class ZipperTest {
     Zipper zipper;
     BinaryTree binaryTree;
 
-    @Before
+    @BeforeEach
     public void setup() {
         zipper = new Zipper(1);
         binaryTree = new BinaryTree(zipper);
@@ -25,42 +25,42 @@ public class ZipperTest {
         assertThat(zipper.toTree()).isEqualTo(binaryTree);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLeftRightAndValue() {
         zipper = binaryTree.getRoot();
         assertThat(zipper.left.right.getValue()).isEqualTo(3);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testDeadEnd() {
         zipper = binaryTree.getRoot();
         assertThat(zipper.left.left).isNull();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testToTreeFromDeepFocus() {
         zipper = binaryTree.getRoot();
         assertThat(zipper.left.right.toTree()).isEqualTo(binaryTree);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testTraversingUpFromTop() {
         zipper = binaryTree.getRoot();
         assertThat(zipper.up).isNull();
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLeftRightAndUp() {
         zipper = binaryTree.getRoot();
         assertThat(zipper.left.up.right.up.left.right.getValue()).isEqualTo(3);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSetValue() {
         zipper = binaryTree.getRoot();
@@ -82,7 +82,7 @@ public class ZipperTest {
         assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSetValueAfterTraversingUp() {
         zipper = binaryTree.getRoot();
@@ -104,7 +104,7 @@ public class ZipperTest {
         assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSetLeftWithLeaf() {
         zipper = binaryTree.getRoot();
@@ -129,7 +129,7 @@ public class ZipperTest {
         assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSetRightWithNull() {
         zipper = binaryTree.getRoot();
@@ -142,7 +142,7 @@ public class ZipperTest {
         assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSetRightWithSubtree() {
         BinaryTree subtree = new BinaryTree(6);
@@ -172,7 +172,7 @@ public class ZipperTest {
         assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSetValueOnDeepFocus() {
         zipper = binaryTree.getRoot();
@@ -194,7 +194,7 @@ public class ZipperTest {
         assertThat(zipper.toTree().printTree()).isEqualTo(expected);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void differentPathToSameZipper() {
         Zipper zipper1 = binaryTree.getRoot().left.up.right;

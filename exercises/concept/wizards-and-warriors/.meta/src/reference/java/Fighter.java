@@ -1,16 +1,12 @@
-abstract class Fighter {
+class Fighter {
 
-    /**
-     * this method sets the default vulnerability to false for all the child classes.
-     *
-     * @return the vulnerability i.e. false.
-     */
     boolean isVulnerable() {
-        return false;
+        return true;
     }
 
-    abstract int damagePoints(Fighter fighter);
-
+    int getDamagePoints(Fighter fighter) {
+        return 1;
+    }
 }
 
 class Warrior extends Fighter {
@@ -21,12 +17,13 @@ class Warrior extends Fighter {
     }
 
     @Override
-    int damagePoints(Fighter wizard) {
-        if (wizard.isVulnerable()) {
-            return 10;
-        } else {
-            return 6;
-        }
+    public boolean isVulnerable() {
+        return false;
+    }
+
+    @Override
+    int getDamagePoints(Fighter target) {
+        return target.isVulnerable() ? 10 : 6;
     }
 }
 
@@ -41,23 +38,15 @@ class Wizard extends Fighter {
 
     @Override
     boolean isVulnerable() {
-        if (isSpellPrepared == false) {
-            return true;
-        }
-        return false;
+        return !isSpellPrepared;
     }
 
     @Override
-    int damagePoints(Fighter warrior) {
-        if (isSpellPrepared) {
-            return 12;
-        } else {
-            return 3;
-        }
+    int getDamagePoints(Fighter target) {
+        return isSpellPrepared ? 12 : 3;
     }
 
     void prepareSpell() {
         isSpellPrepared = true;
     }
-
 }

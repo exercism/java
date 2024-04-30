@@ -1,6 +1,6 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ public class SimpleCipherTest {
     private Cipher randomKeyCipher;
     private Cipher substitutionCipher = new Cipher("abcdefghij");
 
-    @Before
+    @BeforeEach
     public void setup() {
         randomKeyCipher = new Cipher();
     }
@@ -24,7 +24,7 @@ public class SimpleCipherTest {
         assertThat(randomKeyCipher.encode(plainText)).isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void randomKeyCipherCanDecode() {
         String cipherText = "aaaaaaaaaa";
@@ -32,20 +32,20 @@ public class SimpleCipherTest {
             .isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void randomKeyCipherIsReversible() {
         String plainText = "abcdefghij";
         assertThat(randomKeyCipher.decode(randomKeyCipher.encode(plainText))).isEqualTo(plainText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void randomKeyCipherKeyIsLowercaseLetters() {
         assertThat(randomKeyCipher.getKey()).matches("^[a-z]+$");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherCanEncode() {
         String plainText = "aaaaaaaaaa";
@@ -53,7 +53,7 @@ public class SimpleCipherTest {
         assertThat(substitutionCipher.encode(plainText)).isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherCanDecode() {
         String plainText = "abcdefghij";
@@ -61,14 +61,14 @@ public class SimpleCipherTest {
         assertThat(substitutionCipher.decode(plainText)).isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherIsReversibleGivenKey() {
         String plainText = "abcdefghij";
         assertThat(substitutionCipher.decode(substitutionCipher.encode(plainText))).isEqualTo(plainText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherCanDoubleShiftEncode() {
         String plainText = "iamapandabear";
@@ -76,7 +76,7 @@ public class SimpleCipherTest {
         assertThat(new Cipher(plainText).encode(plainText)).isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherCanWrapEncode() {
         String plainText = "zzzzzzzzzz";
@@ -84,7 +84,7 @@ public class SimpleCipherTest {
         assertThat(substitutionCipher.encode(plainText)).isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherCanWrapDecode() {
         String plainText = "zabcdefghi";
@@ -92,7 +92,7 @@ public class SimpleCipherTest {
         assertThat(substitutionCipher.decode(plainText)).isEqualTo(cipherText);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void substitutionCipherMessageLongerThanKey() {
         String plainText = "iamapandabear";

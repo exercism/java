@@ -1,6 +1,6 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class WordSearcherTest {
 
     private WordSearcher wordSearcher;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         wordSearcher = new WordSearcher();
     }
@@ -35,7 +35,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesOneWordWrittenLeftToRight() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -53,7 +53,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateTheSameWordLeftToRightInDifferentPosition() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -71,7 +71,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateADifferentLeftToRightWord() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -89,7 +89,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateThatDifferentLeftToRightWordInADifferentPosition() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -107,7 +107,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateLeftToRightWordInTwoLineGrid() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -126,7 +126,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateLeftToRightWordInThreeLineGrid() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -146,7 +146,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordWrittenLeftToRightInTenLineGrid() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -173,7 +173,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesSameWordWrittenLeftToRightInDifferentTenLineGrid() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -200,7 +200,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesDifferentWordWrittenLeftToRightInTenLineGrid() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -227,11 +227,11 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateMultipleWords() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
-        expectedLocations.put("fortran",  Optional.of(new WordLocation(new Pair(1,  7), new Pair(7,  7))));
+        expectedLocations.put("fortran", Optional.of(new WordLocation(new Pair(1,  7), new Pair(7,  7))));
         expectedLocations.put("clojure", Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
 
         Set<String> searchWords = expectedLocations.keySet();
@@ -255,7 +255,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateASingleWordRightToLeft() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -273,7 +273,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testShouldLocateMultipleWordsWrittenInDifferentHorizontalDirections() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -301,7 +301,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordsWrittenTopToBottom() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -330,7 +330,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordsWrittenBottomToTop() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -358,7 +358,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordsWrittenTopLeftToBottomRight() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -387,7 +387,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordsWrittenBottomRightToTopLeft() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -417,7 +417,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordsWrittenBottomLeftToTopRight() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -448,7 +448,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testLocatesWordsWrittenTopRightToBottomLeft() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -480,7 +480,7 @@ public class WordSearcherTest {
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testFailsToLocateAWordsThatIsNotInThePuzzle() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -509,6 +509,83 @@ public class WordSearcherTest {
                         {'a', 'l', 'x', 'h', 'p', 'b', 'u', 'r', 'y', 'i'},
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+    
+    @Disabled("Remove to run test")
+    @Test
+    public void testFailToLocateWordsThatAreNotOnHorizontalVerticalOrDiagonalLines() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("aef", Optional.empty());
+        expectedLocations.put("ced", Optional.empty());
+        expectedLocations.put("abf", Optional.empty());
+        expectedLocations.put("cbd", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'j', 'e', 'f'},
+                        {'c', 'a', 'm'}});
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testNotConcatenateDifferentLinesToFindAHorizontalWord() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("elixir", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'a', 'b', 'c', 'e', 'l', 'i'},
+                        {'x', 'i', 'r', 'd', 'f', 'g'}});
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+    
+    @Disabled("Remove to run test")
+    @Test
+    public void testNotWrapAroundHorizontallyToFindAWord() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("lisp", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'s', 'i', 'l', 'a', 'b', 'c', 'd', 'e', 'f', 'p'}
+                }
+        );
+
+        assertThat(actualLocations).isEqualTo(expectedLocations);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testNotWrapAroundVerticallyToFindAWord() {
+        Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
+        expectedLocations.put("rust", Optional.empty());
+
+        Set<String> searchWords = expectedLocations.keySet();
+
+        Map<String, Optional<WordLocation>> actualLocations = wordSearcher.search(
+                searchWords,
+                new char[][]{
+                        {'s'},
+                        {'u'},
+                        {'r'},
+                        {'a'},
+                        {'b'},
+                        {'c'},
+                        {'t'}});
 
         assertThat(actualLocations).isEqualTo(expectedLocations);
     }

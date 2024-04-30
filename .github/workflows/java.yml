@@ -1,0 +1,54 @@
+name: Java
+
+on:
+  pull_request:
+    paths:
+      - "**/*.java"
+      - "**/*.gradle"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Check if tests compile cleanly with starter sources
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+      - name: Set up JDK 1.17
+        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9
+        with:
+          java-version: 17
+          distribution: "temurin"
+      - name: Check if tests compile cleanly with starter sources
+        run: ./gradlew compileStarterTestJava --continue
+        working-directory: exercises
+
+  lint:
+    name: Lint Java files using Checkstyle
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+      - name: Set up JDK 1.17
+        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9
+        with:
+          java-version: 17
+          distribution: "temurin"
+      - name: Run checkstyle
+        run: ./gradlew check --exclude-task test --continue
+        working-directory: exercises
+
+  test:
+    name: Test all exercises using java-test-runner
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+      - name: Test all exercises using java-test-runner
+        run: bin/test-with-test-runner
+      - name: Archive test results
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808
+        with:
+          name: test-results
+          path: exercises/**/build/results.json
+        if: failure()

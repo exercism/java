@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -16,7 +16,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfLengthTwoWithNumbersInOrder() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("0123456789");
@@ -27,7 +27,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfLengthTwoWithNumbersNotInOrder() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("576802143");
@@ -38,7 +38,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfLengthThreeWithNumbersInOrder() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("0123456789");
@@ -49,7 +49,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfLengthThreeWithNumbersNotInOrder() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("1027839564");
@@ -60,7 +60,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfLengthFiveWithNumbersInOrder() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("0123456789");
@@ -71,7 +71,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductInLongStringToSearchV1() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator(
@@ -84,7 +84,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfZeroIfAllDigitsAreZeroes() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("0000");
@@ -95,7 +95,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testCorrectlyCalculatesLargestProductOfZeroIfAllSeriesOfGivenLengthContainZero() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("99099");
@@ -106,7 +106,7 @@ public class LargestSeriesProductCalculatorTest {
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testSeriesLengthLongerThanLengthOfStringToTestIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("123");
@@ -116,7 +116,7 @@ public class LargestSeriesProductCalculatorTest {
                 .withMessage("Series length must be less than or equal to the length of the string to search.");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testEmptyStringToSearchAndSeriesOfNonZeroLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
@@ -126,7 +126,7 @@ public class LargestSeriesProductCalculatorTest {
                 .withMessage("Series length must be less than or equal to the length of the string to search.");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testStringToSearchContainingNonDigitCharacterIsRejected() {
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -134,7 +134,7 @@ public class LargestSeriesProductCalculatorTest {
                 .withMessage("String to search may only contain digits.");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testNegativeSeriesLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("12345");
@@ -144,7 +144,7 @@ public class LargestSeriesProductCalculatorTest {
                 .withMessage("Series length must be non-negative.");
     }
 
-    @Ignore("Remove to run test")
+    @Disabled("Remove to run test")
     @Test
     public void testForIntegerOverflow() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("9999999999");

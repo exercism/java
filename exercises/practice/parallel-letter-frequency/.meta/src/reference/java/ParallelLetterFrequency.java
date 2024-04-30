@@ -2,30 +2,28 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-
 class ParallelLetterFrequency {
+    private String letters;
 
-    private static Map<Integer, Integer> letterFrequencyMap;
-    private static final String NOT_A_LETTER = "\\P{L}+";
-
-
-    ParallelLetterFrequency(String letters) {
-        letterFrequencyMap = getMapFromLetters(letters.toLowerCase().replaceAll(NOT_A_LETTER, ""));
+    ParallelLetterFrequency(String[] texts) {
+        this.letters = String.join("", texts)
+                .replaceAll("[^\\p{L}a-zA-Z]", "")
+                .toLowerCase();
     }
 
-    Map<Integer, Integer> getMapFromLetters(String letters) {
-        return letters
+    Map<Character, Integer> countLetters() {
+        return this.letters
                 .chars()
+                .mapToObj(i -> (char) i)
                 .parallel()
                 .collect(Counts::new, Counts::increment, Counts::combine)
                 .buildMap();
     }
 
     private static class Counts {
+        private Map<Character, Integer> letterCounts = new HashMap<>();
 
-        private Map<Integer, Integer> letterCounts = new HashMap<>();
-
-        private void increment(int letter) {
+        private void increment(char letter) {
             letterCounts.put(letter, letterCounts.getOrDefault(letter, 0) + 1);
         }
 
@@ -34,12 +32,8 @@ class ParallelLetterFrequency {
                     .forEach(letter -> letterCounts.merge(letter, other.letterCounts.get(letter), Integer::sum));
         }
 
-        private Map<Integer, Integer> buildMap() {
+        private Map<Character, Integer> buildMap() {
             return Collections.unmodifiableMap(letterCounts);
         }
-    }
-
-    Map<Integer, Integer> letterCounts() {
-        return letterFrequencyMap;
     }
 }

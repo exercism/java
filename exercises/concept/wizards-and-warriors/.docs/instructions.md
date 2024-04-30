@@ -1,83 +1,97 @@
 # Instructions
 
-In this exercise you're playing a role-playing game named "Wizards and Warriors," which allows you to play as either a Wizard or a Warrior.
-
-There are different rules for Warriors and Wizards to determine how much damage points they deal.
+In this exercise you're playing a role-playing game where different types of fighters can combat each other.
+The game has different rules for each type of fighter.
+We are going to focus on two specific types: Wizards and Warriors.
 
 For a Warrior, these are the rules:
 
-- Deal 6 points of damage if the fighter they are attacking is not vulnerable
-- Deal 10 points of damage if the fighter they are attacking is vulnerable
+- A Warrior is never vulnerable.
+- A Warrior deals `6` points of damage if the fighter they are attacking is not vulnerable.
+- A Warrior deals `10` points of damage if the fighter they are attacking is vulnerable.
 
 For a Wizard, these are the rules:
 
-- Deal 12 points of damage if the Wizard prepared a spell in advance
-- Deal 3 points of damage if the Wizard did not prepare a spell in advance
+- A Wizard can prepare a spell in advance.
+- A Wizard is vulnerable unless they have prepared a spell in advance.
+- A Wizard deals `12` points of damage if they prepared a spell in advance.
+- A Wizard deals `3` points of damage if they did not prepare a spell in advance.
 
-In general, fighters are never vulnerable. However, Wizards _are_ vulnerable if they haven't prepared a spell.
+## 1. Create the Warrior class
 
-You have six tasks that work with Warriors and Wizard fighters.
+Create a new class called `Warrior`.
+This class should inherit from the existing `Fighter` class.
 
-## 1. Describe a fighter
+## 2. Describe a Warrior
 
-Override the `toString()` method on the `Fighter` class to return a description of the fighter, formatted as `"Fighter is a <FIGHTER_TYPE>"`.
+Update the `Warrior` class so that its `toString()` method describes what kind of fighter they are.
+The method should return the string `"Fighter is a Warrior"`.
 
 ```java
-Fighter warrior = new Warrior();
+Warrior warrior = new Warrior();
 warrior.toString();
 // => "Fighter is a Warrior"
 ```
 
-## 2. Make fighters not vulnerable by default
+## 3. Make Warriors invulnerable
 
-Ensure that the `Fighter.isVulnerable()` method always returns `false`.
+Update the `Warrior` class so that its `isVulnerable()` method always returns `false`.
 
 ```java
-Fighter warrior = new Warrior();
+Warrior warrior = new Warrior();
 warrior.isVulnerable();
 // => false
 ```
 
-## 3. Allow Wizards to prepare a spell
+## 4. Calculate the damage points for a Warrior
 
-Implement the `Wizard.prepareSpell()` method to allow a Wizard to prepare a spell in advance.
-
-```java
-Wizard wizard = new Wizard();
-wizard.prepareSpell();
-```
-
-## 4. Make Wizards vulnerable when not having prepared a spell
-
-Ensure that the `isVulnerable()` method returns `true` if the wizard did not prepare a spell; otherwise, return `false`.
-
-```java
-Fighter wizard = new Wizard();
-wizard.isVulnerable();
-// => true
-```
-
-## 5. Calculate the damage points for a Wizard
-
-Implement the `Wizard.damagePoints()` method to return the damage points dealt: 12 damage points when a spell has been prepared, 3 damage points when not.
-
-```java
-Wizard wizard = new Wizard();
-Warrior warrior = new Warrior();
-
-wizard.prepareSpell();
-wizard.damagePoints(warrior);
-// => 12
-```
-
-## 6. Calculate the damage points for a Warrior
-
-Implement the `Warrior.damagePoints()` method to return the damage points dealt: 10 damage points when the target is vulnerable, 6 damage points when not.
+Update the `Warrior` class so that its `getDamagePoints(Fighter)` method calculates the damage dealt by a Warrior according to the rules above.
 
 ```java
 Warrior warrior = new Warrior();
 Wizard wizard = new Wizard();
 
-warrior.damagePoints(wizard);
+warrior.getDamagePoints(wizard);
 // => 10
+```
+
+## 5. Create the Wizard class
+
+Create another new class called `Wizard`.
+This class should also inherit from the existing `Fighter` class.
+
+## 6. Describe a Wizard
+
+Update the `Wizard` class so that its `toString()` method describes what kind of fighter they are.
+The method should return the string `"Fighter is a Wizard"`.
+
+```java
+Wizard wizard = new Wizard();
+wizard.toString();
+// => "Fighter is a Wizard"
+```
+
+## 7. Allow Wizards to prepare a spell and make them vulnerable when not having prepared a spell
+
+Update the `Wizard` class to add a method called `prepareSpell()`.
+The class should remember when this method is called, and make sure that its `isVulnerable()` method returns `false` only when a spell is prepared.
+
+```java
+Wizard wizard = new Wizard();
+wizard.prepareSpell();
+wizard.isVulnerable();
+// => false
+```
+
+## 8. Calculate the damage points for a Wizard
+
+Update the `Wizard` class so that its `getDamagePoints(Fighter)` method calculates the damage dealt by a Wizard according to the rules above.
+
+```java
+Wizard wizard = new Wizard();
+Warrior warrior = new Warrior();
+
+wizard.prepareSpell();
+wizard.getDamagePoints(warrior);
+// => 12
 ```

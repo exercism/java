@@ -14,7 +14,7 @@
 
 ## Out of scope
 
-- Converting an integer to a character and vice versa.
+- Handling control characters and unicode characters.
 - Advanced unicode issues such as surrogates, text normalization, combining characters.
 - Cultural considerations and invariants.
 
@@ -27,3 +27,18 @@
 
 - `strings`: know of the `string` type that will be iterated over and accessed by index.
 - `for-loop` for loops (rather than foreach) are the best means of highlighting the relationship between strings and `char`s
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `actionable`: If the solution did not use `Character.isWhitespace`, instruct the student to do so, because this concept intends to teach the character concept and methods.
+- `actionable`: If the solution did not use `Character.isDigit`, instruct the student to do so.
+- `actionable`: If the solution did not use `Character.isLetter`, instruct the student to do so.
+- `actionable`: If the solution did not use `Character.toUpperCase`, instruct the student to do so.
+- `informative`: If the solution uses string concatenation instead of `StringBuilder`, inform the student that this cause a small performance and memory penalty compared to `StringBuilder`.
+
+If the solution does not receive any of the above feedback, it must be exemplar.
+Leave a `celebratory` comment to celebrate the success!
+
+[analyzer]: https://github.com/exercism/java-analyzer
