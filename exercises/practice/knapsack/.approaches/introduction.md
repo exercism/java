@@ -8,6 +8,7 @@ Or, you can solve it iteratively using a dynamic programming approach.
 
 The key to solving Knapsack is to determine whether each item should be added to the knapsack or not.
 An item should be added only if:
+
 1. There is enough capacity to add the item and:
 2. It increases the total value.
 
@@ -78,7 +79,7 @@ For more information, check the [dynamic programming approach][approach-dynamic]
 
 The recursive approach is inefficient because it recalculates the maximum value for some item combinations a number of times.
 The dynamic programming approach avoids this by storing them in an [array][array].
-In addition, the dynamic programming approach is also an iterative approach and avoids overhead of making method calls. 
+In addition, the dynamic programming approach is also an iterative approach and avoids overhead of making method calls.
 
 [approach-recursive]: https://exercism.org/tracks/java/exercises/knapsack/approaches/recursive
 [approach-dynamic]: https://exercism.org/tracks/java/exercises/knapsack/approaches/dynamic-programming
