@@ -1,0 +1,27 @@
+{
+  "introduction": {
+    "authors": [
+      "kahgoh"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "bf439128-7610-4959-b9f6-bd033c979d8e",
+      "slug": "recursive",
+      "title": "Recursive",
+      "blurb": "Use recursion to work out whether each item should be added.",
+      "authors": [
+        "kahgoh"
+      ]
+    },
+    {
+      "uuid": "c51300cb-94f8-4a33-8f64-56deebaa1a22",
+      "slug": "dynamic-programming",
+      "title": "Dynamic Programming",
+      "blurb": "Build up a table of maximum values.",
+      "authors": [
+        "kahgoh"
+      ]
+    }
+  ]
+}

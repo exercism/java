@@ -1,0 +1,5 @@
+int maximumValue(int maxWeight, List<Item> items) {
+    int valueWithout = maximumValue(maxWeight, remainingItems);
+    int valueWith = maximumValue(maxWeight - item.weight, remainingItems) + item.value;
+    return Math.max(valueWithout, valueWith);
+}
