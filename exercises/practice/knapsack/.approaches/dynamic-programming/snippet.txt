@@ -1,0 +1,7 @@
+for (int itemIndex = 0; itemIndex < items.size(); itemIndex++) {
+    for (int capacity = 0; capacity <= maxWeight; capacity++) {
+        int valueWith = maxValues[capacity - item.weight][itemIndex] + item.value;
+        int valueWithout = maxValues[capacity][itemIndex];
+        maxValues[capacity][itemIndex + 1] = Math.max(valueWith, valueWithout);
+    }
+}
