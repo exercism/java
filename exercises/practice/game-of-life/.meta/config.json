@@ -9,7 +9,9 @@
     "test": [
       "src/test/java/GameOfLifeTest.java"
     ],
-    "example": [".meta/src/reference/java/GameOfLife.java"],
+    "example": [
+      ".meta/src/reference/java/GameOfLife.java"
+    ],
     "invalidator": [
       "build.gradle"
     ]

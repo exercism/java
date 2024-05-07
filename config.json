@@ -1795,10 +1795,10 @@
       {
         "slug": "game-of-life",
         "name": "Conway's Game of Life",
-        "uuid": "a5f8aef3-9661-49c7-9eb3",
-        "practices": ["multi-dimensional-arrays"],
+        "uuid": "749de7fc-3dcb-4231-9b4f-115d153af74f",
+        "practices": [],
         "prerequisites": [
-          "multi-dimensional-arrays",
+          "arrays",
           "if-statements"
         ],
         "difficulty": 5
