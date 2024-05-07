@@ -1791,6 +1791,17 @@
           "lists"
         ],
         "difficulty": 10
+      },
+      {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "749de7fc-3dcb-4231-9b4f-115d153af74f",
+        "practices": [],
+        "prerequisites": [
+          "arrays",
+          "if-statements"
+        ],
+        "difficulty": 5
       }
     ],
     "foregone": [

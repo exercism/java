@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "akbatra567"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/GameOfLife.java"
+    ],
+    "test": [
+      "src/test/java/GameOfLifeTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/GameOfLife.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Implement Conway's Game of Life.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+}

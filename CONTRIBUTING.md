@@ -207,6 +207,10 @@ Each problem/submodule has three source sets:
 - `.meta/src/reference/java/` — a reference solution that passes all the tests
 - `src/main/java/` — starter source file(s).
 
+### Update/sync Gradle versions
+
+Please read [How to Update Gradle](../reference/how-to-update-gradle.md)
+
 ## Contributing to Concept Exercises
 
 Please read [Implementing a Concept Exercise](reference/implementing-a-concept-exercise.md).
