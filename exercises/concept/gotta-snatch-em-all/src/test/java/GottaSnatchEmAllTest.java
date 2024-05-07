@@ -136,11 +136,11 @@ class GottaSnatchEmAllTest {
 
     @Test
     @Tag("task:3")
-    @DisplayName("canTrade returns true when my collection is a non-empty subset of their collection")
+    @DisplayName("canTrade returns false when my collection is a non-empty subset of their collection")
     void testCanTradeMyCollectionSubsetOfTheirCollection() {
         Set<String> myCollection = new HashSet<>(Set.of("Gyros", "Garilord"));
         Set<String> theirCollection = new HashSet<>(Set.of("Garilord", "Veevee", "Gyros"));
-        assertThat(GottaSnatchEmAll.canTrade(myCollection, theirCollection)).isTrue();
+        assertThat(GottaSnatchEmAll.canTrade(myCollection, theirCollection)).isFalse();
     }
 
     @Test

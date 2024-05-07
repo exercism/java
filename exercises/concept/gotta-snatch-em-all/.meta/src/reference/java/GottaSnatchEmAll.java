@@ -13,9 +13,11 @@ class GottaSnatchEmAll {
     }
 
     static boolean canTrade(Set<String> myCollection, Set<String> theirCollection) {
-        Set<String> cardsWorthTradingFor = new HashSet<>(theirCollection);
-        cardsWorthTradingFor.removeAll(myCollection);
-        return !myCollection.isEmpty() && !cardsWorthTradingFor.isEmpty();
+        Set<String> myUniqueCards = new HashSet<>(myCollection);
+        Set<String> theirUniqueCards = new HashSet<>(theirCollection);
+        myUniqueCards.removeAll(theirCollection);
+        theirUniqueCards.removeAll(myCollection);
+        return !myUniqueCards.isEmpty() && !theirUniqueCards.isEmpty();
     }
 
     static Set<String> commonCards(List<Set<String>> collections) {

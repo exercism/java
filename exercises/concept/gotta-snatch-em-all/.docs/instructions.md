@@ -42,8 +42,8 @@ collection.contains("Scientuna");
 
 You really want your friends to join your Blorkemon™️ madness, so it's time to start trading!
 
-Not every trade is worth doing, or can be done at all.
-You cannot trade a card you don't have, and you shouldn't trade a card for one that you already have.
+When trading with friends not every trade is worth doing, or can be done at all.
+You should only trade if both you and your friend have a card the other does not have.
 
 Implement the `canTrade` method, that takes your current collection and the collection of one of your friends.
 It should return a `boolean` indicating whether a trade is possible, following the rules above.
