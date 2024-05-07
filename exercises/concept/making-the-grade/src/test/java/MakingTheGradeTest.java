@@ -138,11 +138,47 @@ class MakingTheGradeTest {
     }
 
     @Test
+    @Tag("task:5")
+    @DisplayName("None of the scores are odd")
+    void testNoneOfTheScoresAreOdd() {
+        assertThat(
+            MakingTheGrade.countOddScores(List.of(20, 40, 60, 80, 10))
+            ).isEqualTo(0);
+    }
+
+    @Test
+    @Tag("task:5")
+    @DisplayName("All the scores are odd")
+    void testAllTheScoresAreOdd() {
+        assertThat(
+            MakingTheGrade.countOddScores(List.of(11, 33, 55, 77, 99))
+            ).isEqualTo(5);
+    }
+
+    @Test
     @Tag("task:6")
     @DisplayName("Two students passed the exam before the first non-passing score")
     void testTwoStudentsPassedTheExamBeforeTheNonPassingScore() {
         assertThat(
             MakingTheGrade.evaluateChallengingExam(List.of(45, 90, 15, 100, 70))
             ).isEqualTo(2);
+    }
+
+    @Test
+    @Tag("task:6")
+    @DisplayName("None of the students passed the exam")
+    void testNoneOfTheStudentsPassedTheExam() {
+        assertThat(
+            MakingTheGrade.evaluateChallengingExam(List.of(5, 10, 25, 2, 37))
+            ).isEqualTo(0);
+    }
+
+    @Test
+    @Tag("task:6")
+    @DisplayName("All the students passed the exam")
+    void testAllTheStudentsPassedTheExam() {
+        assertThat(
+            MakingTheGrade.evaluateChallengingExam(List.of(90, 98, 75, 80, 100))
+            ).isEqualTo(5);
     }
 }

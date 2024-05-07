@@ -6,10 +6,7 @@
 - Know how to repeteadly execute code using a `for-each` loop.
 - Know how to repeteadly execute code using a `while` loop.
 - Know how to repeteadly execute code using a `do-while` loop.
-
-## Out of scope
-
-- Specific iteration over a `Map`
+- Know the control flow statements `break` and `continue`.
 
 ## Concepts
 

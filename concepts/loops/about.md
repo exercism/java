@@ -179,7 +179,11 @@ which outputs:
 1
 ```
 
-## Break
+## Loop control statements
+
+Loop control statements are special keywords used within loops to alter the normal execution flow.
+
+### Break
 
 The break statement acts as an "exit door" for a looping construct.
 When encountered within the loop's body, `break` immediately terminates the loop's execution.
@@ -206,7 +210,7 @@ which outputs:
 4
 ```
 
-## Continue
+### Continue
 
 The continue statement in the other hand acts similar to a "skip button" in a looping construct.
 When encountered within a loop's body, `continue` skips the remaining statements in the current iteration.
