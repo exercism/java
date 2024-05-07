@@ -212,7 +212,7 @@ which outputs:
 
 ### Continue
 
-The continue statement in the other hand acts similar to a "skip button" in a looping construct.
+The continue statement on the other hand acts similar to a "skip button" in a looping construct.
 When encountered within a loop's body, `continue` skips the remaining statements in the current iteration.
 
 For exmaple:
