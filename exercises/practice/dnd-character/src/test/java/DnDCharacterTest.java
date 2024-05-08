@@ -148,6 +148,12 @@ public class DnDCharacterTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testAbilityCalculationsWithTwoLowestNumbers() {
+        assertThat(dndCharacter.ability(List.of(3, 5, 3, 4))).isEqualTo(12);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testAbilityCalculationDoesNotChangeInputScores() {
         List<Integer> scores = List.of(1, 2, 3, 4);
         dndCharacter.ability(scores);
