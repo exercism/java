@@ -1,6 +1,6 @@
 # Instructions
 
-You're an avid bird watcher that keeps track of how many birds have visited your garden in the last seven days.
+You're an avid bird watcher who keeps track of how many birds have visited your garden in the last seven days.
 
 You have six tasks, all dealing with the numbers of birds that visited your garden.
 
@@ -49,7 +49,7 @@ birdCount.hasDayWithoutBirds();
 
 ## 5. Calculate the number of visiting birds for the first number of days
 
-Implement the `BirdWatcher.getCountForFirstDays()` method that returns the number of birds that have visited your garden from the start of the week, but limit the count to the specified number of days from the start of the week.
+Implement the `BirdWatcher.getCountForFirstDays()` method that returns the number of birds that have visited your garden from the start of the week, but limit the count to the specified number of days from the beginning of the week.
 
 ```java
 int[] birdsPerDay = { 2, 5, 0, 7, 4, 1 };
@@ -60,7 +60,7 @@ birdCount.getCountForFirstDays(4);
 
 ## 6. Calculate the number of busy days
 
-Some days are busier that others. A busy day is one where five or more birds have visited your garden.
+Some days are busier than others. A busy day is one where five or more birds have visited your garden.
 Implement the `BirdWatcher.getBusyDays()` method to return the number of busy days:
 
 ```java
