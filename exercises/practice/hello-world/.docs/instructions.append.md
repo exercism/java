@@ -58,7 +58,7 @@ After making corrections and implementing your solution, run the tests again.
 You can run the tests using the online editor or locally on your machine:
 
 - To run the tests in the online editor, click the "Run Tests" button.
-- To run the tests locally, check [Testing on the Java track][Testing locally on the java track] If the tests fails, that's ok! See what the error message is telling you, change your code and test again, when your tests pass, move on to the next step.
+- To run the tests locally, check [Testing on the Java track][Testing locally on the java track] If the tests fail, that's ok! See what the error message tells you: change your code and test again; when your tests pass, move on to the next step.
 
 ### Step 3: Submitting your first iteration
 
@@ -103,7 +103,7 @@ exercism download --exercise=two-fer --track=java
 
 ### Become a mentor
 
-The heart of Exercism are the conversations about coding practices.
+The heart of Exercism is the conversations about coding practices.
 It's definitely fun to practice, but engaging with others both in their attempts and your own is how you get feedback.
 That feedback can help point out what you're doing well and where you might need to improve.
 
