@@ -14,7 +14,7 @@
 ## 3. Display the battery percentage
 
 - Keep track of the distance driven in a [field][fields].
-- Initialize the field to a specific value to correspond to the initial battery charge.
+- Initialize the field to a specific value corresponding to the initial battery charge.
 - Consider what visibility to use for the field (does it need to be used outside the class?).
 
 ## 4. Update the number of meters driven when driving
