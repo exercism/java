@@ -2,7 +2,7 @@
 
 ## Classes
 
-The primary object-oriented construct in Java is the _class_, which is a combination of data (_fields_) and behavior (_methods_).
+The primary object-oriented construct in Java is the _class_, which is a combination of data (_fields_) and behaviour (_methods_).
 The fields and methods of a class are known as its _members_.
 
 Access to members can be controlled through access modifiers, the two most common ones being:
@@ -35,8 +35,8 @@ class Car {
 ```
 
 One can optionally assign an initial value to a field.
-If a field does _not_ specify an initial value, it wll be set to its type's default value.
-An instance's field values can be accessed and updated using dot-notation.
+If a field does _not_ specify an initial value, it will be set to its type's default value.
+An instance's field values can be accessed and updated using dot notation.
 
 ```java
 class Car {
