@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise you'll be organizing races between various types of remote controlled cars. Each car has its own speed and battery drain characteristics.
+In this exercise, you'll be organizing races between various types of remote controlled cars. Each car has its own speed and battery drain characteristics.
 
 Cars start with full (100%) batteries. Each time you drive the car using the remote control, it covers the car's speed in meters and decreases the remaining battery percentage by its battery drain.
 
@@ -31,7 +31,7 @@ var raceTrack = new RaceTrack(distance);
 
 ## 3. Drive the car
 
-Implement the `NeedForSpeed.drive()` method that updates the number of meters driven based on the car's speed. Also implement the `NeedForSpeed.distanceDriven()` method to return the number of meters driven by the car:
+Implement the `NeedForSpeed.drive()` method that updates the number of meters driven based on the car's speed. Also, implement the `NeedForSpeed.distanceDriven()` method to return the number of meters driven by the car:
 
 ```java
 int speed = 5;
@@ -45,7 +45,7 @@ car.distanceDriven();
 
 ## 4. Check for a drained battery
 
-Update the `NeedForSpeed.drive()` method to drain the battery based on the car's battery drain. Also implement the `NeedForSpeed.batteryDrained()` method that indicates if the battery is drained:
+Update the `NeedForSpeed.drive()` method to drain the battery based on the car's battery drain. Also, implement the `NeedForSpeed.batteryDrained()` method that indicates if the battery is drained:
 
 ```java
 int speed = 5;
