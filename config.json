@@ -489,6 +489,16 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-expert",
+        "name": "Resistor Color Expert",
+        "uuid": "9be3fb37-9b52-4e23-bb4f-0c7a8c4c3299",
+        "practices": [],
+        "prerequisites": [
+          "arrays"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "8e983ed2-62f7-439a-a144-fb8fdbdf4d30",
