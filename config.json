@@ -308,6 +308,18 @@
           "generic-types"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "arcade-high-score",
+        "name": "Arcade High Score",
+        "uuid": "07893a1a-eb93-4ad2-b98e-f3946c5e7fb2",
+        "concepts": [
+          "maps"
+        ],
+        "prerequisites": [
+          "numbers",
+          "strings"
+        ]
       }
     ],
     "practice": [
@@ -1455,7 +1467,9 @@
         "slug": "poker",
         "name": "Poker",
         "uuid": "57eeac00-741c-4843-907a-51f0ac5ea4cb",
-        "practices": [],
+        "practices": [
+          "maps"
+        ],
         "prerequisites": [
           "constructors",
           "if-else-statements",
@@ -1473,7 +1487,8 @@
           "chars",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "for-loops",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -1933,55 +1948,60 @@
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
       "slug": "ternary-operators",
       "name": "Ternary Operators"
+    },
+    {
+      "uuid": "5a10c26d-1f8a-46d3-ab85-686235000f0e",
+      "slug": "maps",
+      "name": "Maps"
     }
   ],
-  "key_features": [
-    {
-      "title": "Modern",
-      "content": "Java is a modern, fast-evolving language with releases every 6 months.",
-      "icon": "evolving"
-    },
-    {
-      "title": "Statically-typed",
-      "content": "Every expression has a type known at compile time.",
-      "icon": "statically-typed"
-    },
-    {
-      "title": "Multi-paradigm",
-      "content": "Java is primarily an object-oriented language, but has many functional features introduced in v1.8.",
-      "icon": "multi-paradigm"
-    },
-    {
-      "title": "General purpose",
-      "content": "Java is used for a variety of workloads like web, cloud, mobile and game applications.",
-      "icon": "general-purpose"
-    },
-    {
-      "title": "Portable",
-      "content": "Java was designed to be cross-platform with the slogan \"Write once, run anywhere\".",
-      "icon": "portable"
-    },
-    {
-      "title": "Garbage Collection",
-      "content": "Java programs perform automatic memory management for their lifecycles.",
-      "icon": "garbage-collected"
+      "key_features": [
+        {
+          "title": "Modern",
+          "content": "Java is a modern, fast-evolving language with releases every 6 months.",
+          "icon": "evolving"
+        },
+        {
+          "title": "Statically-typed",
+          "content": "Every expression has a type known at compile time.",
+          "icon": "statically-typed"
+        },
+        {
+          "title": "Multi-paradigm",
+          "content": "Java is primarily an object-oriented language, but has many functional features introduced in v1.8.",
+          "icon": "multi-paradigm"
+        },
+        {
+          "title": "General purpose",
+          "content": "Java is used for a variety of workloads like web, cloud, mobile and game applications.",
+          "icon": "general-purpose"
+        },
+        {
+          "title": "Portable",
+          "content": "Java was designed to be cross-platform with the slogan \"Write once, run anywhere\".",
+          "icon": "portable"
+        },
+        {
+          "title": "Garbage Collection",
+          "content": "Java programs perform automatic memory management for their lifecycles.",
+          "icon": "garbage-collected"
+        }
+      ],
+      "tags": [
+        "execution_mode/compiled",
+        "paradigm/functional",
+        "paradigm/imperative",
+        "paradigm/object_oriented",
+        "platform/android",
+        "platform/linux",
+        "platform/mac",
+        "platform/windows",
+        "runtime/jvm",
+        "typing/static",
+        "used_for/artificial_intelligence",
+        "used_for/backends",
+        "used_for/cross_platform_development",
+        "used_for/games",
+        "used_for/mobile"
+      ]
     }
-  ],
-  "tags": [
-    "execution_mode/compiled",
-    "paradigm/functional",
-    "paradigm/imperative",
-    "paradigm/object_oriented",
-    "platform/android",
-    "platform/linux",
-    "platform/mac",
-    "platform/windows",
-    "runtime/jvm",
-    "typing/static",
-    "used_for/artificial_intelligence",
-    "used_for/backends",
-    "used_for/cross_platform_development",
-    "used_for/games",
-    "used_for/mobile"
-  ]
-}
