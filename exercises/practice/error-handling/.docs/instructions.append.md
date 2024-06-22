@@ -22,7 +22,7 @@ This is because checked exceptions are meant to be handled at runtime, i.e. they
 
 They're often used when a method can't return any valid result, for example a search method which hasn't found the item it was searching for.
 
-It's an alternative to returning null or a error code. A checked exception is better than those alternatives because it forces the user of the method to consider the error case.
+It's an alternative to returning null or an error code. A checked exception is better than those alternatives because it forces the user of the method to consider the error case.
 
 ## Unchecked exceptions
 
@@ -34,4 +34,4 @@ You don't have to declare them in the [method signature](https://docs.oracle.com
 
 ### Examples of where they are used
 
-Unchecked exceptions are mean to be used for any error than can't be handled at runtime, e.g. running out of memory.
+Unchecked exceptions are meant to be used for any error that can't be handled at runtime, e.g. running out of memory.
