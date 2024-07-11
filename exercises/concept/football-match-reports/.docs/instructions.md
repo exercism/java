@@ -1,7 +1,7 @@
 # Instructions
 
-You are developing a system to help the staff of a football/soccer club's web site report on matches.
-Data is received from a variety of sources and piped into a single stream after being cleaned up.
+You are developing a system to help the staff of a football/soccer club's website report on matches.
+Data is received from various sources and piped into a single stream after being cleaned up.
 
 ## 1. Output descriptions of the players based on their shirt number
 
