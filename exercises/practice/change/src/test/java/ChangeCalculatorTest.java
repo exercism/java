@@ -35,7 +35,6 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
     public void testLilliputianCurrency() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 4, 15, 20, 50));
 
@@ -45,7 +44,6 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
     public void testLowerElbonianCurrency() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 21, 25));
 
@@ -64,7 +62,6 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
     public void testPossibleChangeWithoutUnitCoinAvailable() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(2, 5, 10, 20, 50));
 
@@ -74,12 +71,20 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    // https://en.wikipedia.org/wiki/Change-making_problem#Greedy_method
     public void testAnotherPossibleChangeWithoutUnitCoinAvailable() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(4, 5));
 
         assertThat(changeCalculator.computeMostEfficientChange(27))
             .containsExactly(4, 4, 4, 5, 5, 5);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testAGreedyApproachIsNotOptimal() {
+        ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 10, 11));
+
+        assertThat(changeCalculator.computeMostEfficientChange(20))
+            .containsExactly(10, 10);
     }
 
     @Disabled("Remove to run test")
