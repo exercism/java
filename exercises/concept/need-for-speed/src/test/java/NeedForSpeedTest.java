@@ -62,6 +62,17 @@ public class NeedForSpeedTest {
 
     @Test
     @Tag("task:4")
+    @DisplayName("The batteryDrained method returns false when there's not enough battery")
+    public void new_remote_control_car_that_can_only_drive_once() {
+        var car = new NeedForSpeed(1, 99);
+        car.drive();
+        assertThat(car.batteryDrained()).isTrue();
+        // Ensure that the car was driven once
+        assertThat(car.distanceDriven()).isEqualTo(1);
+    }
+
+    @Test
+    @Tag("task:4")
     @DisplayName("The batteryDrained method returns false when car battery did not completely drain after driving")
     public void drive_to_almost_drain_battery() {
         int speed = 2;
