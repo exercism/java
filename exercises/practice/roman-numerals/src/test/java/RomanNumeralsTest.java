@@ -183,6 +183,13 @@ public class RomanNumeralsTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void test3888ToRomanNumberMMMDCCCLXXXVIII() {
+        romanNumerals = new RomanNumerals(3888);
+        assertThat(romanNumerals.getRomanNumeral()).isEqualTo("MMMDCCCLXXXVIII");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void test3999ToRomanNumberMMMCMXCIX() {
         romanNumerals = new RomanNumerals(3999);
         assertThat(romanNumerals.getRomanNumeral()).isEqualTo("MMMCMXCIX");

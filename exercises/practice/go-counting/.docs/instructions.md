@@ -25,7 +25,7 @@ Empty spaces represent empty intersections.
 
 To be more precise an empty intersection is part of a player's territory if all of its neighbors are either stones of that player or empty intersections that are part of that player's territory.
 
-For more information see [wikipedia][go-wikipedia] or [Sensei's Library][go-sensei].
+For more information see [Wikipedia][go-wikipedia] or [Sensei's Library][go-sensei].
 
 [go-wikipedia]: https://en.wikipedia.org/wiki/Go_%28game%29
 [go-sensei]: https://senseis.xmp.net/

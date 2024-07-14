@@ -109,6 +109,15 @@ public class QueenAttackCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testQueenCannotAttackIfFallingDiagonalsAreOnlyTheSameWhenReflectedAcrossTheLongestFallingDiagonal() {
+        QueenAttackCalculator calculator
+                = new QueenAttackCalculator(new Queen(4, 1), new Queen(2, 5));
+
+        assertThat(calculator.canQueensAttackOneAnother()).isFalse();
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testNullPositionsNotAllowed() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new QueenAttackCalculator(null, new Queen(0, 7)))

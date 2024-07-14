@@ -173,6 +173,13 @@ public class ProteinTranslatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testSequenceOfTwoNonStopCodonsDoNotTranslateToAStopCodon() {
+        assertThat(proteinTranslator.translate("AUGAUG"))
+                .containsExactly("Methionine", "Methionine");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testNonExistingCodonCantTranslate() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> proteinTranslator.translate("AAA"))

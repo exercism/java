@@ -180,4 +180,13 @@ public class RelationshipComputerTest {
         assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
     }
 
+    @Disabled("Remove to run test")
+    @Test
+    public void testFirstListMissingAdditionalDigitsFromSecondList() {
+        Relationship relationship = new RelationshipComputer<>().computeRelationship(
+                asList(1, 2),
+                asList(1, 22));
+
+        assertThat(relationship).isEqualTo(Relationship.UNEQUAL);
+    }
 }

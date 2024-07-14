@@ -180,9 +180,17 @@ public class CustomSetTest {
 
     @Disabled("Remove to run test")
     @Test
-    public void setIsEqualToSetConstructedFromListWithDuplicates() {
+    public void secondSetWithDuplicatesIsEqualToFirstSet() {
         CustomSet<String> customSet = new CustomSet<>(Collections.singletonList("1"));
         CustomSet<String> secondCustomSet = new CustomSet<>(Arrays.asList("1", "1"));
+        assertThat(customSet.equals(secondCustomSet)).isTrue();
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void firstSetWithDuplicatesIsEqualToSecondSet() {
+        CustomSet<String> customSet = new CustomSet<>(Arrays.asList("1", "1"));
+        CustomSet<String> secondCustomSet = new CustomSet<>(Collections.singletonList("1"));
         assertThat(customSet.equals(secondCustomSet)).isTrue();
     }
 
