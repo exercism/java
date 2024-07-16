@@ -70,7 +70,7 @@ car.distanceDriven();
 
 ## 6. Check if a remote control car can finish a race
 
-To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `RaceTrack.tryFinishTrack()` method that takes a `NeedForSpeed` instance as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
+To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `RaceTrack.canFinishRace()` method that takes a `NeedForSpeed` instance as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
 
 ```java
 int speed = 5;
@@ -83,7 +83,7 @@ var race = new RaceTrack(distance);
 car.distanceDriven()
 // => 0
 
-race.tryFinishTrack(car);
+race.canFinishRace(car);
 // => true
 
 car.distanceDriven()

@@ -25,7 +25,7 @@ class RaceTrack {
         throw new UnsupportedOperationException("Please implement the RaceTrack constructor");
     }
 
-    public boolean tryFinishTrack(NeedForSpeed car) {
-        throw new UnsupportedOperationException("Please implement the RaceTrack.tryFinishTrack() method");
+    public boolean canFinishRace(NeedForSpeed car) {
+        throw new UnsupportedOperationException("Please implement the RaceTrack.canFinishRace() method");
     }
 }
