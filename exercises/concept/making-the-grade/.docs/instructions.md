@@ -75,7 +75,9 @@ MakingTheGrade.countOddScores(List.of(20, 35, 40, 10, 39, 77));
 
 ## 6. Challenging Exam
 
-The teacher has prepared a challenging exam and wants to analyze the results. As his assistant you'll evaluate the exams in the same order students handed them in. The teacher is particularly interested in knowing how many students passed the exam before the first non-passing student.
+The teacher has prepared a challenging exam and wants to analyze the results. 
+As his assistant you'll evaluate the exams in the same order students handed them in. 
+The teacher is particularly interested in knowing how many students passed the exam before the first non-passing student.
 As you know a student needs a score greater than **40** to achieve a passing grade on the exam.
 
 Create the method `evaluateChallengingExam(List<Integer> studentScores)` that takes a `List<Integer>` of students scores in the handed order.
