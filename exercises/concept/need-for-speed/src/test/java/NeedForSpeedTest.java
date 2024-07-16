@@ -200,7 +200,7 @@ public class NeedForSpeedTest {
 
     @Test
     @Tag("task:6")
-    @DisplayName("The  method returns false when car cannot finish a race")
+    @DisplayName("The canFinishRace method returns false when car cannot finish a race")
     public void car_can_finish_with_car_that_cannot_finish() {
         int speed = 1;
         int batteryDrain = 20;
