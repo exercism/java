@@ -158,7 +158,7 @@ public class NeedForSpeedTest {
 
     @Test
     @Tag("task:6")
-    @DisplayName("The tryFinishCar method returns true when car can finish a race")
+    @DisplayName("The canFinishRace method returns true when car can finish a race")
     public void car_can_finish_with_car_that_can_easily_finish() {
         int speed = 10;
         int batteryDrain = 2;
@@ -167,12 +167,12 @@ public class NeedForSpeedTest {
         int distance = 100;
         var race = new RaceTrack(distance);
 
-        assertThat(race.tryFinishTrack(car)).isTrue();
+        assertThat(race.canFinishRace(car)).isTrue();
     }
 
     @Test
     @Tag("task:6")
-    @DisplayName("The tryFinishCar method returns true when car can just finish a race")
+    @DisplayName("The canFinishRace method returns true when car can just finish a race")
     public void car_can_finish_with_car_that_can_just_finish() {
         int speed = 2;
         int batteryDrain = 10;
@@ -181,12 +181,12 @@ public class NeedForSpeedTest {
         int distance = 20;
         var race = new RaceTrack(distance);
 
-        assertThat(race.tryFinishTrack(car)).isTrue();
+        assertThat(race.canFinishRace(car)).isTrue();
     }
 
     @Test
     @Tag("task:6")
-    @DisplayName("The tryFinishCar method returns false when car just cannot finish a race")
+    @DisplayName("The canFinishRace method returns false when car just cannot finish a race")
     public void car_can_finish_with_car_that_just_cannot_finish() {
         int speed = 3;
         int batteryDrain = 20;
@@ -195,12 +195,12 @@ public class NeedForSpeedTest {
         int distance = 16;
         var race = new RaceTrack(distance);
 
-        assertThat(race.tryFinishTrack(car)).isFalse();
+        assertThat(race.canFinishRace(car)).isFalse();
     }
 
     @Test
     @Tag("task:6")
-    @DisplayName("The tryFinishCar method returns false when car cannot finish a race")
+    @DisplayName("The canFinishRace method returns false when car cannot finish a race")
     public void car_can_finish_with_car_that_cannot_finish() {
         int speed = 1;
         int batteryDrain = 20;
@@ -209,7 +209,7 @@ public class NeedForSpeedTest {
         int distance = 678;
         var race = new RaceTrack(distance);
 
-        assertThat(race.tryFinishTrack(car)).isFalse();
+        assertThat(race.canFinishRace(car)).isFalse();
     }
 }
 
