@@ -21,16 +21,14 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/HandshakeCalculator.java"
+      "src/main/java/HandshakeCalculator.java",
+      "src/main/java/Signal.java"
     ],
     "test": [
       "src/test/java/HandshakeCalculatorTest.java"
     ],
     "example": [
       ".meta/src/reference/java/HandshakeCalculator.java"
-    ],
-    "editor": [
-      "src/main/java/Signal.java"
     ],
     "invalidator": [
       "build.gradle"
