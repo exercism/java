@@ -2,7 +2,7 @@
 
 ## Basics
 
-Java is a statically-typed language, which means that the type of a variable is known at compile-time.
+Java is a statically typed language, which means that the type of a variable is known at compile-time.
 Assigning a value to a name is referred to as defining a variable.
 A variable is defined by explicitly specifying its type.
 
