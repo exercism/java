@@ -34,4 +34,4 @@ You don't have to declare them in the [method signature](https://docs.oracle.com
 
 ### Examples of where they are used
 
-Unchecked exceptions are mean to be used for any error than can't be handled at runtime, e.g. running out of memory.
+Unchecked exceptions are meant to be used for any error that can't be handled at runtime, e.g. running out of memory.
