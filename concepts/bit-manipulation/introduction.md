@@ -55,7 +55,7 @@ Otherwise, the result's bit is 0.
 ### Bitwise OR
 
 The bitwise OR (`|`) operator takes two values and performs an OR on each bit.
-It compares each bit from the first value with the bit in thes same position from the second value.
+It compares each bit from the first value with the bit in the same position from the second value.
 If either bit is 1, the result's bit is 1.
 Otherwise, it is 0.
 
