@@ -34,4 +34,4 @@ You don't have to declare them in the [method signature](https://docs.oracle.com
 
 ### Examples of where they are used
 
-Unchecked exceptions are meant to be used for any error that can't be handled at runtime, e.g. running out of memory.
+Unchecked exceptions are typically caused by defects in the program and can be prevented by proper coding. Example: ArrayIndexOutOfBoundsException can be prevented by ensuring that the array indices are between 0 and the array's length.
