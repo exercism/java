@@ -8,7 +8,7 @@
 
 ## 2. Generate a random starship registry number
 
-- The `java.util.Random` class provides an overloaded method (a variation on another method) to generate a random `int` between given minimum (inclusive) and a given maximum (exclusive).
+- The `java.util.Random` class provides another method to generate a random `int` between given minimum (inclusive) and a given maximum (exclusive).
 
 ## 3. Generate a random stardate
 
