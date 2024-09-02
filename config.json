@@ -1809,7 +1809,7 @@
         "uuid": "03e1070d-a3ed-4664-9559-283e535c6bc4",
         "practices": [],
         "prerequisites": [
-          "classes"
+          "inheritance"
         ],
         "difficulty": 5
       }
