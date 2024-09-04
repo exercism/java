@@ -4,6 +4,6 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'monthly'
     labels:
       - 'x:size/tiny'
