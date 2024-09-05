@@ -1,4 +1,6 @@
 # Instructions append
 
-The DSL uses method chaining.
-You can learn more about method chaining [here](https://www.geeksforgeeks.org/method-chaining-in-java-with-examples/).
+The graph is represented in the DSL by the `Graph` class.
+The implementation for the nodes and edges (represented by the `Node` and `Edge` classes respectively) are provided.
+
+For more details on the DSL's expected design, take a look at the test cases in `GraphTest.java`. 
