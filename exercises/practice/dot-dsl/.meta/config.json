@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "kahgoh",
+    "manumafe98"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Graph.java"
+    ],
+    "test": [
+      "src/test/java/GraphTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Graph.java"
+    ],
+    "editor": [
+      "src/main/java/Node.java",
+      "src/main/java/Edge.java"
+    ]
+  },
+  "blurb": "Write a Domain Specific Language similar to the Graphviz dot language.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/DOT_(graph_description_language)"
+}

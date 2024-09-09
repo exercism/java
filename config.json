@@ -438,6 +438,17 @@
         "difficulty": 2
       },
       {
+        "slug": "dot-dsl",
+        "name": "DOT DSL",
+        "uuid": "03e1070d-a3ed-4664-9559-283e535c6bc4",
+        "practices": [],
+        "prerequisites": [
+          "classes",
+          "lists"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "5ee66f39-5e37-4907-a6d9-f55d38324c6c",
@@ -913,6 +924,17 @@
         "prerequisites": [
           "lists",
           "generic-types"
+        ],
+        "difficulty": 5
+      },
+      {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "749de7fc-3dcb-4231-9b4f-115d153af74f",
+        "practices": [],
+        "prerequisites": [
+          "arrays",
+          "if-statements"
         ],
         "difficulty": 5
       },
@@ -1791,17 +1813,6 @@
           "lists"
         ],
         "difficulty": 10
-      },
-      {
-        "slug": "game-of-life",
-        "name": "Conway's Game of Life",
-        "uuid": "749de7fc-3dcb-4231-9b4f-115d153af74f",
-        "practices": [],
-        "prerequisites": [
-          "arrays",
-          "if-statements"
-        ],
-        "difficulty": 5
       }
     ],
     "foregone": [

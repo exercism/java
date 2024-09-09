@@ -57,6 +57,7 @@ include 'practice:difference-of-squares'
 // include 'practice:diffie-hellman' // deprecated
 include 'practice:dnd-character'
 include 'practice:dominoes'
+include 'practice:dot-dsl'
 include 'practice:error-handling'
 include 'practice:etl'
 include 'practice:flatten-array'
