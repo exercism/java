@@ -77,15 +77,15 @@ int speed = 5;
 int batteryDrain = 2;
 var car = new NeedForSpeed(speed, batteryDrain);
 
-int distance = 100;
-var race = new RaceTrack(distance);
+int distance1 = 100;
+var race1 = new RaceTrack(distance1);
 
-car.distanceDriven()
-// => 0
+int distance2 = 300;
+var race2 = new RaceTrack(distance2);
 
-race.canFinishRace(car);
+race1.canFinishRace(car);
 // => true
 
-car.distanceDriven()
-// => 100
+race2.canFinishRace(car);
+// => false
 ```
