@@ -1,5 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class TreeTest {
@@ -15,6 +16,7 @@ public class TreeTest {
             .containsExactly('A', 'B', 'C', 'D', 'E', 'F');
     }
 
+    @Disabled("Remove to run test")
     @Test
     public void preorder() {
         Tree tree = new Tree(
@@ -27,6 +29,7 @@ public class TreeTest {
             .containsExactly('A', 'B', 'C', 'D', 'E', 'F');
     }
 
+    @Disabled("Remove to run test")
     @Test
     public void postorder() {
         Tree tree = new Tree(
