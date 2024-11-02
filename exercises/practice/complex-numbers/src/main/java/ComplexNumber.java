@@ -28,15 +28,7 @@ class ComplexNumber {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    ComplexNumber multiply(double factor) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
-
     ComplexNumber divide(ComplexNumber other) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
-
-    ComplexNumber divide(double divisor) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
