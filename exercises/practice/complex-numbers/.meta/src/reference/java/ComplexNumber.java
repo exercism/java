@@ -48,5 +48,5 @@ final class ComplexNumber {
     ComplexNumber exponentialOf() {
         return new ComplexNumber(Math.exp(real) * Math.cos(imaginary), Math.exp(real) * Math.sin(imaginary));
     }
-    
+
 }
