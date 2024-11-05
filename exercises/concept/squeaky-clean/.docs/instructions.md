@@ -30,7 +30,7 @@ SqueakyClean.clean("a-bc");
 
 Modify the (_static_) `SqueakyClean.clean()` method to convert [leetspeak][leet-speak] to normal text.
 
-For simplicity we will only be using `4`, `3`, `0`, `1` and `7` from the table.
+For simplicity we will only be replacing `4`, `3`, `0`, `1` and `7` with `a`, `e`, `o`, `l`, and `t`, respectively.
 
 ```java
 SqueakyClean.clean("H3ll0 W0rld");
