@@ -15,9 +15,9 @@ jobs:
     name: Check if tests compile cleanly with starter sources
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up JDK 1.17
-        uses: actions/setup-java@b36c23c0d998641eff861008f374ee103c25ac73
+        uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b
         with:
           java-version: 17
           distribution: "temurin"
@@ -29,9 +29,9 @@ jobs:
     name: Lint Java files using Checkstyle
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up JDK 1.17
-        uses: actions/setup-java@b36c23c0d998641eff861008f374ee103c25ac73
+        uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b
         with:
           java-version: 17
           distribution: "temurin"
@@ -43,11 +43,11 @@ jobs:
     name: Test all exercises using java-test-runner
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Test all exercises using java-test-runner
         run: bin/test-with-test-runner
       - name: Archive test results
-        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882
         with:
           name: test-results
           path: exercises/**/build/results.json

@@ -1,7 +1,6 @@
 final class ComplexNumber {
 
     private final double real;
-
     private final double imaginary;
 
     ComplexNumber(double real, double imaginary) {
@@ -32,7 +31,10 @@ final class ComplexNumber {
     }
 
     ComplexNumber divide(ComplexNumber other) {
-        return this.multiply(other.conjugate()).divide(Math.pow(other.abs(), 2));
+        double divisor = Math.pow(other.real, 2) + Math.pow(other.imaginary, 2);
+        return new ComplexNumber(
+            (real * other.real + imaginary * other.imaginary) / divisor,
+            (imaginary * other.real - real * other.imaginary) / divisor);
     }
 
     double abs() {
@@ -44,14 +46,7 @@ final class ComplexNumber {
     }
 
     ComplexNumber exponentialOf() {
-        return new ComplexNumber(Math.cos(imaginary), Math.sin(imaginary)).multiply(Math.exp(real));
+        return new ComplexNumber(Math.exp(real) * Math.cos(imaginary), Math.exp(real) * Math.sin(imaginary));
     }
 
-    private ComplexNumber divide(double factor) {
-        return new ComplexNumber(real / factor, imaginary / factor);
-    }
-
-    private ComplexNumber multiply(double factor) {
-        return new ComplexNumber(factor * real, factor * imaginary);
-    }
 }
