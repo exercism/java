@@ -4,7 +4,7 @@
 
 In Java, the `null` literal is used to denote the absence of a value.
 
-Primitive data types in java all have a default value and therefore can never be `null`.
+Primitive data types in Java all have a default value and therefore can never be `null`.
 By convention, they start with a lowercase letter e.g `int`.
 
 Reference types contain the memory address of an object and can have a value of null. 
