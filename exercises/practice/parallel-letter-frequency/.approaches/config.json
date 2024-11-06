@@ -1,0 +1,27 @@
+{
+  "introduction": {
+    "authors": [
+      "masiljangajji"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "dee2a79d-3e64-4220-b99f-55667549c12c",
+      "slug": "fork-join",
+      "title": "Fork/Join",
+      "blurb": "Parallel Computation Using Fork/Join",
+      "authors": [
+        "masiljangajji"
+      ]
+    },
+    {
+      "uuid": "75e9e93b-4da4-4474-8b6e-3c0cb9b3a9bb",
+      "slug": "parallel-stream",
+      "title": "Parallel Stream",
+      "blurb": "Parallel Computation Using Parallel Stream",
+      "authors": [
+        "masiljangajji"
+      ]
+    }
+  ]
+}
