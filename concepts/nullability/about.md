@@ -2,10 +2,10 @@
 
 In Java, the [`null` literal][null-keyword] is used to denote the absence of a value.
 
-[Primitive variables][primitive-data-types] in Java all have a default value and therefore can never be `null`.
+[Primitive data types][primitive-data-types] in Java all have a default value and therefore can never be `null`.
 By convention, they start with a lowercase letter e.g `int`.
 
-[Reference variables][reference-data-types] contain the memory address of an object and can have a value of `null`.
+[Reference types][reference-data-types] contain the memory address of an object and can have a value of `null`.
 They generally start with an uppercase letter, e.g. `String`.
 
 Attempting to assign a primitive variable a value of `null` will result in a compile time error as the variable always holds a default value of the type assigned.
