@@ -1,30 +1,58 @@
 # Introduction
 
-There are various idiomatic approaches to solve Bob.
-A basic approach can use a series of `if` statements to test the conditions.
-An array can contain answers from which the right response is selected by an index calculated from scores given to the conditions.
+In this exercise, we’re working on a program to determine Bob’s responses based on the tone and style of given messages. Bob responds differently depending on whether a message is a question, a shout, both, or silence. Various approaches can be used to implement this logic efficiently and cleanly, ensuring the code remains readable and easy to maintain.
 
-## General guidance
+## General Guidance
 
-Regardless of the approach used, some things you could look out for include
+When implementing your solution, consider the following tips to keep your code optimized and idiomatic:
 
-- If the input is trimmed, [`trim()`][trim] only once.
+- **Trim the Input Once**: Use [`trim()`][trim] only once at the start to remove any unnecessary whitespace.
+- **Use Built-in Methods**: For checking if a message is a question, prefer [`endsWith("?")`][endswith] instead of manually checking the last character.
+- **DRY Code**: Avoid duplicating code by combining the logic for determining a shout and a question when handling shouted questions. Following the [DRY][dry] principle helps maintain clear and maintainable code.
+- **Single Determinations**: Use variables for `questioning` and `shouting` rather than calling these checks multiple times to improve efficiency.
+- **Return Statements**: An early return in an `if` statement eliminates the need for additional `else` blocks, making the code more readable.
+- **Curly Braces**: While optional for single-line statements, some teams may require them for readability and consistency.
 
-- Use the [`endsWith()`][endswith] `String` method instead of checking the last character by index for `?`.
+## Approach: Method-Based
 
-- Don't copy/paste the logic for determining a shout and for determining a question into determining a shouted question.
-  Combine the two determinations instead of copying them.
-  Not duplicating the code will keep the code [DRY][dry].
+```java
+class Bob {
+    String hey(String input) {
+        var inputTrimmed = input.trim();
+        
+        if (isSilent(inputTrimmed))
+           return "Fine. Be that way!";
+        if (isYelling(inputTrimmed) && isAsking(inputTrimmed))
+            return "Calm down, I know what I'm doing!";
+        if (isYelling(inputTrimmed))
+            return "Whoa, chill out!";
+        if (isAsking(inputTrimmed))
+            return "Sure.";
+            
+        return "Whatever.";
+    }
 
-- Perhaps consider making `questioning` and `shouting` values set once instead of functions that are possibly called twice.
+    private boolean isYelling(String input) {
+        return input.chars()
+                    .anyMatch(Character::isLetter) &&
+                input.chars()
+                    .filter(Character::isLetter)
+                    .allMatch(Character::isUpperCase);
+    }
 
-- If an `if` statement can return, then an `else if` or `else` is not needed.
-  Execution will either return or will continue to the next statement anyway.
+    private boolean isAsking(String input) {
+        return input.endsWith("?");
+    }
 
-- If the body of an `if` statement is only one line, curly braces aren't needed.
-  Some teams may still require them in their style guidelines, though.
+    private boolean isSilent(String input) {
+        return input.length() == 0;
+    }
+}
+```
 
-## Approach: `if` statements
+This approach defines helper methods for each type of message—silent, yelling, and asking—to keep each condition clean and easily testable. For more details, refer to the [Method-Based Approach][approach-method-based].
+
+## Approach: `if` Statements
 
 ```java
 import java.util.function.Predicate;
@@ -56,9 +84,9 @@ class Bob {
 }
 ```
 
-For more information, check the [`if` statements approach][approach-if].
+This approach utilizes nested `if` statements and a predicate for determining if a message is a shout. For more details, refer to the [`if` Statements Approach][approach-if].
 
-## Approach: answer array
+## Approach: Answer Array
 
 ```java
 import java.util.function.Predicate;
@@ -86,16 +114,22 @@ class Bob {
 }
 ```
 
-For more information, check the [Answer array approach][approach-answer-array].
+This approach uses an array of answers and calculates the appropriate index based on flags for shouting and questioning. For more details, refer to the [Answer Array Approach][approach-answer-array].
 
-## Which approach to use?
+## Which Approach to Use?
 
-Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
-the choice between `if` statements and answers array can be made by perceived readability.
+Choosing between the method-based approach, `if` statements, and answer array approach can come down to readability and maintainability. Each has its advantages:
+
+- **Method-Based**: Clear and modular, great for readability.
+- **`if` Statements**: Compact and straightforward, suited for smaller projects.
+- **Answer Array**: Minimizes condition checks by using indices, efficient for a variety of responses.
+
+Experiment with these approaches to find the balance between readability and performance that best suits your needs.
 
 [trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()
 [endswith]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#endsWith(java.lang.String)
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[approach-method-based]: https://exercism.org/tracks/java/exercises/bob/approaches/method-based
 [approach-if]: https://exercism.org/tracks/java/exercises/bob/approaches/if-statements
 [approach-answer-array]: https://exercism.org/tracks/java/exercises/bob/approaches/answer-array
 [jmh]: https://github.com/openjdk/jmh

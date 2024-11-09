@@ -2,9 +2,24 @@
   "introduction": {
     "authors": [
       "bobahop"
+    ],
+    "contributors": [
+        "jagdish-15"
     ]
   },
   "approaches": [
+    {
+      "uuid": "",
+      "slug": "function-based",
+      "title": "Function based",
+      "blurb": "Uses boolean functions to check conditions",
+      "authors": [
+        "jagdish-15"
+      ],
+      "contributors": [
+        "BenjaminGale"
+      ]
+    },
     {
       "uuid": "323eb230-7f27-4301-88ea-19c39d3eb5b6",
       "slug": "if-statements",
