@@ -8,8 +8,8 @@ When implementing your solution, consider the following tips to keep your code o
 
 - **Trim the Input Once**: Use [`trim()`][trim] only once at the start to remove any unnecessary whitespace.
 - **Use Built-in Methods**: For checking if a message is a question, prefer [`endsWith("?")`][endswith] instead of manually checking the last character.
-- **DRY Code**: Avoid duplicating code by combining the logic for determining a shout and a question when handling shouted questions. Following the [DRY][dry] principle helps maintain clear and maintainable code.
 - **Single Determinations**: Use variables for `questioning` and `shouting` rather than calling these checks multiple times to improve efficiency.
+- **DRY Code**: Avoid duplicating code by combining the logic for determining a shout and a question when handling shouted questions. Following the [DRY][dry] principle helps maintain clear and maintainable code.
 - **Return Statements**: An early return in an `if` statement eliminates the need for additional `else` blocks, making the code more readable.
 - **Curly Braces**: While optional for single-line statements, some teams may require them for readability and consistency.
 
