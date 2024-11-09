@@ -69,7 +69,7 @@ class QueenAttackCalculator {
 
 ## Additional Explanation for Code
 
-1. **Constructor**: 
+1. **Constructor**:
    In the constructor of `QueenAttackCalculator`, we check if the queens are positioned at valid places. If either queen is `null`, or if both queens occupy the same position, an exception is thrown. The constructor takes two `Queen` objects, `queen1` and `queen2`, and stores them as instance variables.
 
 2. **Method (`canQueensAttackOneAnother`)**:
