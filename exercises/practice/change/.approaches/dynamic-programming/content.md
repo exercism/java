@@ -14,14 +14,13 @@ This approach ensures that we find the most efficient way to make change and han
 2. **Iterative Dynamic Programming**:
 
    - For each value `i` from 1 to `grandTotal`, we explore all available coin denominations to find the best combination that can achieve the total `i`.
-   - For each coin, we check if it can be part of the solution (i.e., if `coin <= i` and `coinsUsed[i - coin]` is a valid combination). 
+   - For each coin, we check if it can be part of the solution (i.e., if `coin <= i` and `coinsUsed[i - coin]` is a valid combination).
    - If so, we generate a new combination by adding the current coin to the solution for `i - coin`. We then compare the size of this new combination with the existing best combination and keep the one with fewer coins.
 
 3. **Result**:
 
    - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
    - If no valid combination exists for `grandTotal`, an exception is thrown.
-
 
 ```java
 import java.util.List;
@@ -77,7 +76,7 @@ class ChangeCalculator {
 
 - **Efficiency**: This approach is highly efficient in terms of minimizing the number of coins, but it might require significant memory for larger `grandTotal` values, as the space complexity grows linearly with `grandTotal`.
   
-- **Alternative Approaches**: 
+- **Alternative Approaches**:
 
   - A **Greedy Approach** could be faster for some cases but does not always guarantee the minimum number of coins.
   - This dynamic programming approach is best when the goal is to guarantee the fewest coins possible, especially when no simple greedy solution exists.
