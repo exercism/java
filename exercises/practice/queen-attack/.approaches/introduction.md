@@ -3,6 +3,7 @@
 In this exercise, we determine if two queens on a chessboard can attack each other based on their positions. A queen in chess can move any number of squares horizontally, vertically, or diagonally. The task is to check if two queens, placed on specific coordinates, can attack each other.
 
 The problem boils down to checking three conditions:
+
 1. **Same Row**: If the queens are on the same row.
 2. **Same Column**: If the queens are on the same column.
 3. **Same Diagonal**: If the queens are on the same diagonal, i.e., the absolute difference between their row and column positions is equal.
