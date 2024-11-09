@@ -132,4 +132,3 @@ Experiment with these approaches to find the balance between readability and per
 [approach-method-based]: https://exercism.org/tracks/java/exercises/bob/approaches/method-based
 [approach-if]: https://exercism.org/tracks/java/exercises/bob/approaches/if-statements
 [approach-answer-array]: https://exercism.org/tracks/java/exercises/bob/approaches/answer-array
-[jmh]: https://github.com/openjdk/jmh
