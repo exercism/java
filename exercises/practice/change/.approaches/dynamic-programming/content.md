@@ -7,7 +7,7 @@ This approach ensures that we find the most efficient way to make change and han
 ## Explanation
 
 1. **Initialize Coins Usage Tracker**: 
-   - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`. 
+   - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
    - The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
 
 2. **Iterative Dynamic Programming**: 
@@ -66,6 +66,7 @@ class ChangeCalculator {
 - **Space Complexity**: The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
 
 - **Edge Cases**:
+
   - If the `grandTotal` is negative, an exception is thrown immediately.
   - If there is no way to make the exact total with the given denominations, an exception is thrown with a descriptive message.
 
@@ -74,6 +75,7 @@ class ChangeCalculator {
 - **Efficiency**: This approach is highly efficient in terms of minimizing the number of coins, but it might require significant memory for larger `grandTotal` values, as the space complexity grows linearly with `grandTotal`.
   
 - **Alternative Approaches**: 
+
   - A **Greedy Approach** could be faster for some cases but does not always guarantee the minimum number of coins.
   - This dynamic programming approach is best when the goal is to guarantee the fewest coins possible, especially when no simple greedy solution exists.
 
