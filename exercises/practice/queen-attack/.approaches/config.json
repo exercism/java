@@ -1,0 +1,19 @@
+{
+    "introduction": {
+      "authors": [
+        "jagdish-15"
+      ]
+    },
+    "approaches": [
+      {
+        "uuid": "",
+        "slug": "simple-comparison",
+        "title": "Simple Comparison Approach",
+        "blurb": "Use basic comparison checks to determine if queens can attack each other.",
+        "authors": [
+          "jagdish-15"
+        ]
+      }
+    ]
+  }
+  
