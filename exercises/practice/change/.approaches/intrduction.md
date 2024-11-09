@@ -1,10 +1,11 @@
-## Introduction to Change Calculation
+# Introduction to Change Calculator
 
 In the "Change Calculator" exercise, the goal is to determine the minimum number of coins needed to reach a given total using a specific set of coin denominations. This is a classic problem in dynamic programming, where efficient change-making is essential, especially when there are constraints on coin types or large totals.
 
 ### Problem Overview
 
 Given:
+
 - A list of coin denominations, each representing an available currency unit.
 - A total amount (`grandTotal`) we want to reach using the fewest possible coins from the given denominations.
 
