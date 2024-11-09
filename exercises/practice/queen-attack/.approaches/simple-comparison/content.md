@@ -6,6 +6,7 @@ In this exercise, we determine if two queens on a chessboard can attack each oth
 
 1. **Check if Queens are on the Same Row**:
    - If both queens are on the same row, they can attack each other. This is checked by comparing their row values:
+
      ```java
      if (queen1.getRow() == queen2.getRow()) {
          return true;
@@ -14,6 +15,7 @@ In this exercise, we determine if two queens on a chessboard can attack each oth
 
 2. **Check if Queens are on the Same Column**:
    - If both queens are on the same column, they can attack each other. This is checked by comparing their column values:
+
      ```java
      if (queen1.getColumn() == queen2.getColumn()) {
          return true;
@@ -22,6 +24,7 @@ In this exercise, we determine if two queens on a chessboard can attack each oth
 
 3. **Check if Queens are on the Same Diagonal**:
    - If both queens are on the same diagonal, they can attack each other. This is checked by comparing the absolute difference between their row and column values:
+
      ```java
      if (Math.abs(queen1.getRow() - queen2.getRow()) == Math.abs(queen1.getColumn() - queen2.getColumn())) {
          return true;
@@ -64,7 +67,7 @@ class QueenAttackCalculator {
 }
 ```
 
-## Additional Explanation for Code:
+## Additional Explanation for Code
 
 1. **Constructor**: 
    In the constructor of `QueenAttackCalculator`, we check if the queens are positioned at valid places. If either queen is `null`, or if both queens occupy the same position, an exception is thrown. The constructor takes two `Queen` objects, `queen1` and `queen2`, and stores them as instance variables.
