@@ -1,4 +1,4 @@
-# `Fork/Join` 
+# `Fork/Join`
 
 ```java
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.concurrent.RecursiveTask;
 class ParallelLetterFrequency {
 
     List<String> texts;
-    ConcurrentMap<Character, Integer> letterCount;
+    ConcurrentMap<Character, Integer> letterCount; 
 
     ParallelLetterFrequency(String[] texts) {
         this.texts = List.of(texts);
@@ -81,8 +81,6 @@ For tasks that are within the threshold, letter frequency is calculated. The [`i
 Additionally, since uppercase and lowercase letters are treated as the same character (e.g., A and a), each character is converted to lowercase.
 
 After updating letter frequencies, the final map is returned.
-
-
 
 [ConcurrentHashMap]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html
 [ForkJoinPool]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html

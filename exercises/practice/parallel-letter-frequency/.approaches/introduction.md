@@ -17,8 +17,7 @@ However, parallelStream() uses the common ForkJoinPool by default, meaning multi
 
 Although this doesn’t directly impact solving the Parallel Letter Frequency problem, it may introduce issues when thread pool sharing causes conflicts in other applications. Therefore, a custom ForkJoinPool approach is also provided below.
 
-
-## Approach: `parallelStream` 
+## Approach: `parallelStream`
 
 ```java
 import java.util.Map;

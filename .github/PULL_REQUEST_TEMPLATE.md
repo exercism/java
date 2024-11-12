@@ -2,8 +2,6 @@
 
 <!-- Your content goes here: -->
 
-
-
 <!-- DO NOT EDIT BELOW THIS LINE! -->
 ---
 

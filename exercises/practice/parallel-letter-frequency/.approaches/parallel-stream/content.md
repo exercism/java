@@ -1,4 +1,4 @@
-# `parallelStream` 
+# `parallelStream`
 
 ```java
 import java.util.Map;
@@ -42,8 +42,6 @@ To calculate letter frequency, a parallel stream is used. The [`isAlphabetic`][i
 Since we treat uppercase and lowercase letters as the same character (e.g., A and a), characters are converted to lowercase.
 
 After updating letter frequencies, the final map is returned.
-
-
 
 [ConcurrentHashMap]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html
 [isAlphabetic]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-
