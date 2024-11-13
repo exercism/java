@@ -70,13 +70,19 @@ Using [`ConcurrentHashMap`][ConcurrentHashMap] ensures that frequency counting a
 
 If there are no strings, a validation step prevents unnecessary processing.
 
-A [`ForkJoinPool`][ForkJoinPool] is then created. The core of [`ForkJoinPool`][ForkJoinPool] is the Fork/Join mechanism, which divides tasks into smaller units and processes them in parallel.
+A [`ForkJoinPool`][ForkJoinPool] is then created. 
 
-THRESHOLD is the criterion for task division. If the range of texts exceeds the THRESHOLD, the task is divided into two subtasks, and [`invokeAll`][invokeAll](leftTask, rightTask) is called to execute both tasks in parallel.
+The core of [`ForkJoinPool`][ForkJoinPool] is the Fork/Join mechanism, which divides tasks into smaller units and processes them in parallel.
+
+THRESHOLD is the criterion for task division. 
+
+If the range of texts exceeds the THRESHOLD, the task is divided into two subtasks, and [`invokeAll`][invokeAll](leftTask, rightTask) is called to execute both tasks in parallel.
 
 Each subtask in LetterCountTask will continue calling compute() to divide itself further until the range is smaller than or equal to the threshold.
 
-For tasks that are within the threshold, letter frequency is calculated. The [`Character.isAlphabetic`][isAlphabetic] method is used to identify all characters classified as alphabetic in Unicode, covering various languages like English, Korean, Japanese, Chinese, etc., returning true for alphabetic characters and false for numbers, special characters, spaces, and others.
+For tasks that are within the threshold, letter frequency is calculated. 
+
+The [`Character.isAlphabetic`][isAlphabetic] method is used to identify all characters classified as alphabetic in Unicode, covering various languages like English, Korean, Japanese, Chinese, etc., returning true for alphabetic characters and false for numbers, special characters, spaces, and others.
 
 Additionally, since uppercase and lowercase letters are treated as the same character (e.g., A and a), each character is converted to lowercase.
 

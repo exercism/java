@@ -1,23 +1,32 @@
 # Introduction
 
 There are multiple ways to solve the Parallel Letter Frequency problem.
-One approach is to use parallelStream, and another involves using ForkJoinPool.
+
+One approach is to use [`Stream.parallelStream`][stream], and another involves using [`ForkJoinPool`][ForkJoinPool].
 
 ## General guidance
 
 To count occurrences of items, a map data structure is often used, though arrays and lists can work as well.
 
-A map, being a key-value pair structure, is suitable for recording frequency by incrementing the value for each key.
+A [`map`][map], being a key-value pair structure, is suitable for recording frequency by incrementing the value for each key.
 
-If the data being counted has a limited range (e.g., characters or integers), an int[] array or List<Integer> can be used to record frequencies.
+If the data being counted has a limited range (e.g., characters or integers), an `int[] array` or [`List<Integer>`][list] can be used to record frequencies.
 
-Parallel processing typically takes place in a multi-[`thread`][thread] environment. The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the parallelStream() method. With parallelStream(), developers can use the ForkJoinPool model for workload division and parallel execution, without the need to manually manage threads or create custom thread pools.
+Parallel processing typically takes place in a multi-[`thread`][thread] environment. 
+
+The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the parallelStream() method. 
+
+With parallelStream(), developers can use the ForkJoinPool model for workload division and parallel execution, without the need to manually manage threads or create custom thread pools.
 
 The [`ForkJoinPool`][ForkJoinPool] class, optimized for dividing and managing tasks, makes parallel processing efficient.
 
-However, parallelStream() uses the common ForkJoinPool by default, meaning multiple parallelStream instances share the same thread pool unless configured otherwise. As a result, parallel streams may interfere with each other when sharing this thread pool, potentially affecting performance.
+However, parallelStream() uses the common ForkJoinPool by default, meaning multiple parallelStream instances share the same thread pool unless configured otherwise. 
 
-Although this doesn’t directly impact solving the Parallel Letter Frequency problem, it may introduce issues when thread pool sharing causes conflicts in other applications. Therefore, a custom ForkJoinPool approach is also provided below.
+As a result, parallel streams may interfere with each other when sharing this thread pool, potentially affecting performance.
+
+Although this doesn’t directly impact solving the Parallel Letter Frequency problem, it may introduce issues when thread pool sharing causes conflicts in other applications. 
+
+Therefore, a custom ForkJoinPool approach is also provided below.
 
 ## Approach: `parallelStream`
 
@@ -135,5 +144,7 @@ However, if the work is complex or there is a need to isolate thread pools from 
 [thread]: https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html
 [stream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
 [ForkJoinPool]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html
+[map]: https://docs.oracle.com/javase/8/docs/api/?java/util/Map.html
+[list]: https://docs.oracle.com/javase/8/docs/api/?java/util/List.html
 [approach-parallel-stream]:  https://exercism.org/tracks/java/exercises/parallel-letter-frequency/approaches/parallel-stream
 [approach-fork-join]:  https://exercism.org/tracks/java/exercises/parallel-letter-frequency/approaches/fork-join
