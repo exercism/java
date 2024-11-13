@@ -37,7 +37,7 @@ Using [`ConcurrentHashMap`][ConcurrentHashMap] ensures that frequency counting a
 
 If there are no strings to process, a validation step avoids unnecessary computation.
 
-To calculate letter frequency, a parallel stream is used. 
+To calculate letter frequency, a parallel stream is used.  
 
 The [`Character.isAlphabetic`][isAlphabetic] method identifies all characters classified as alphabetic in Unicode, covering characters from various languages like English, Korean, Japanese, Chinese, etc., returning true. Non-alphabetic characters, including numbers, special characters, and spaces, return false.
 

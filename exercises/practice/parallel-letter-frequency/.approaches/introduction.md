@@ -12,19 +12,19 @@ A [`map`][map], being a key-value pair structure, is suitable for recording freq
 
 If the data being counted has a limited range (e.g., characters or integers), an `int[] array` or [`List<Integer>`][list] can be used to record frequencies.
 
-Parallel processing typically takes place in a multi-[`thread`][thread] environment. 
+Parallel processing typically takes place in a multi-[`thread`][thread] environment.
 
-The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the parallelStream() method. 
+The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the parallelStream() method.
 
 With parallelStream(), developers can use the ForkJoinPool model for workload division and parallel execution, without the need to manually manage threads or create custom thread pools.
 
 The [`ForkJoinPool`][ForkJoinPool] class, optimized for dividing and managing tasks, makes parallel processing efficient.
 
-However, parallelStream() uses the common ForkJoinPool by default, meaning multiple parallelStream instances share the same thread pool unless configured otherwise. 
+However, parallelStream() uses the common ForkJoinPool by default, meaning multiple parallelStream instances share the same thread pool unless configured otherwise.  
 
 As a result, parallel streams may interfere with each other when sharing this thread pool, potentially affecting performance.
 
-Although this doesn’t directly impact solving the Parallel Letter Frequency problem, it may introduce issues when thread pool sharing causes conflicts in other applications. 
+Although this doesn’t directly impact solving the Parallel Letter Frequency problem, it may introduce issues when thread pool sharing causes conflicts in other applications.  
 
 Therefore, a custom ForkJoinPool approach is also provided below.
 
