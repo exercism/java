@@ -5,7 +5,9 @@ One approach is to use parallelStream, and another involves using ForkJoinPool.
 
 ## General guidance
 
-To count occurrences of items, a map data structure is often used, though arrays and lists can work as well. A map, being a key-value pair structure, is suitable for recording frequency by incrementing the value for each key.
+To count occurrences of items, a map data structure is often used, though arrays and lists can work as well.
+
+A map, being a key-value pair structure, is suitable for recording frequency by incrementing the value for each key.
 
 If the data being counted has a limited range (e.g., characters or integers), an int[] array or List<Integer> can be used to record frequencies.
 
