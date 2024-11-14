@@ -88,4 +88,4 @@ After updating letter frequencies, the final map is returned.
 [ConcurrentHashMap]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html
 [ForkJoinPool]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html
 [isAlphabetic]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-
-https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html
+[invokeAll]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html
