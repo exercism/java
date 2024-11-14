@@ -1,32 +1,24 @@
 # Introduction
 
 There are multiple ways to solve the Parallel Letter Frequency problem.
-
 One approach is to use [`Stream.parallelStream`][stream], and another involves using [`ForkJoinPool`][ForkJoinPool].
 
 ## General guidance
 
 To count occurrences of items, a map data structure is often used, though arrays and lists can work as well.
-
 A [`map`][map], being a key-value pair structure, is suitable for recording frequency by incrementing the value for each key.
-
 If the data being counted has a limited range (e.g., characters or integers), an `int[] array` or [`List<Integer>`][list] can be used to record frequencies.
 
 Parallel processing typically takes place in a multi-[`thread`][thread] environment.
-
-The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the parallelStream() method.
-
-With parallelStream(), developers can use the ForkJoinPool model for workload division and parallel execution, without the need to manually manage threads or create custom thread pools.
+The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the `parallelStream()` method.
+With `parallelStream()`, developers can use the [`ForkJoinPool`][ForkJoinPool] model for workload division and parallel execution, without the need to manually manage threads or create custom thread pools.
 
 The [`ForkJoinPool`][ForkJoinPool] class, optimized for dividing and managing tasks, makes parallel processing efficient.
-
-However, parallelStream() uses the common ForkJoinPool by default, meaning multiple parallelStream instances share the same thread pool unless configured otherwise.  
+However, `parallelStream()` uses the common [`ForkJoinPool`][ForkJoinPool] by default, meaning multiple `parallelStream` instances share the same thread pool unless configured otherwise.  
 
 As a result, parallel streams may interfere with each other when sharing this thread pool, potentially affecting performance.
-
 Although this doesn’t directly impact solving the Parallel Letter Frequency problem, it may introduce issues when thread pool sharing causes conflicts in other applications.  
-
-Therefore, a custom ForkJoinPool approach is also provided below.
+Therefore, a custom [`ForkJoinPool`][ForkJoinPool] approach is also provided below.
 
 ## Approach: `parallelStream`
 
@@ -138,8 +130,8 @@ For more information, check the [`fork/join` approach][approach-fork-join].
 
 ## Which approach to use?
 
-When tasks are simple or do not require a dedicated thread pool (such as in this case), the parallelStream approach is recommended.
-However, if the work is complex or there is a need to isolate thread pools from other concurrent tasks, the ForkJoinPool approach is preferable.
+When tasks are simple or do not require a dedicated thread pool (such as in this case), the `parallelStream` approach is recommended.
+However, if the work is complex or there is a need to isolate thread pools from other concurrent tasks, the [`ForkJoinPool`][ForkJoinPool] approach is preferable.
 
 [thread]: https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html
 [stream]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
