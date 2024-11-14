@@ -7,7 +7,7 @@ One approach is to use [`Stream.parallelStream`][stream], and another involves u
 
 To count occurrences of items, a map data structure is often used, though arrays and lists can work as well.
 A [`map`][map], being a key-value pair structure, is suitable for recording frequency by incrementing the value for each key.
-If the data being counted has a limited range (e.g., characters or integers), an `int[] array` or [`List<Integer>`][list] can be used to record frequencies.
+If the data being counted has a limited range (e.g., `Characters` or `Integers`), an `int[] array` or [`List<Integer>`][list] can be used to record frequencies.
 
 Parallel processing typically takes place in a multi-[`thread`][thread] environment.
 The Java 8 [`stream`][stream] API provides methods that make parallel processing easier, including the `parallelStream()` method.
