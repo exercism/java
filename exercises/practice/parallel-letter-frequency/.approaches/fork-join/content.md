@@ -75,7 +75,7 @@ The core of [`ForkJoinPool`][ForkJoinPool] is the Fork/Join mechanism, which div
 
 `THRESHOLD` is the criterion for task division.
 If the range of texts exceeds the `THRESHOLD`, the task is divided into two subtasks, and [`invokeAll(leftTask, rightTask)`][invokeAll] is called to execute both tasks in parallel.
-Each subtask in LetterCountTask will continue calling compute() to divide itself further until the range is smaller than or equal to the `THRESHOLD`.
+Each subtask in `LetterCountTask` will continue calling `compute()` (via `invokeAll(leftTask, rightTask)`) to divide itself further until the range is smaller than or equal to the `THRESHOLD`.
 For tasks that are within the `THRESHOLD`, letter frequency is calculated.  
 
 The [`Character.isAlphabetic`][isAlphabetic] method identifies all characters classified as alphabetic in Unicode, covering characters from various languages like English, Korean, Japanese, Chinese, etc., returning `true`.
