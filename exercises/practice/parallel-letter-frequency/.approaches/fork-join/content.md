@@ -71,24 +71,21 @@ Using [`ConcurrentHashMap`][ConcurrentHashMap] ensures that frequency counting a
 If there are no strings, a validation step prevents unnecessary processing.
 
 A [`ForkJoinPool`][ForkJoinPool] is then created.
-
 The core of [`ForkJoinPool`][ForkJoinPool] is the Fork/Join mechanism, which divides tasks into smaller units and processes them in parallel.
 
-THRESHOLD is the criterion for task division.
+`THRESHOLD` is the criterion for task division.
+If the range of texts exceeds the `THRESHOLD`, the task is divided into two subtasks, and [`invokeAll(leftTask, rightTask)`][invokeAll] is called to execute both tasks in parallel.
+Each subtask in LetterCountTask will continue calling compute() to divide itself further until the range is smaller than or equal to the `THRESHOLD`.
+For tasks that are within the `THRESHOLD`, letter frequency is calculated.  
 
-If the range of texts exceeds the THRESHOLD, the task is divided into two subtasks, and [`invokeAll`][invokeAll](leftTask, rightTask) is called to execute both tasks in parallel.
+The [`Character.isAlphabetic`][isAlphabetic] method identifies all characters classified as alphabetic in Unicode, covering characters from various languages like English, Korean, Japanese, Chinese, etc., returning `true`.
+Non-alphabetic characters, including numbers, special characters, and spaces, return `false`.
 
-Each subtask in LetterCountTask will continue calling compute() to divide itself further until the range is smaller than or equal to the threshold.
-
-For tasks that are within the threshold, letter frequency is calculated.  
-
-The [`Character.isAlphabetic`][isAlphabetic] method is used to identify all characters classified as alphabetic in Unicode, covering various languages like English, Korean, Japanese, Chinese, etc., returning true for alphabetic characters and false for numbers, special characters, spaces, and others.
-
-Additionally, since uppercase and lowercase letters are treated as the same character (e.g., A and a), each character is converted to lowercase.
+Additionally, since uppercase and lowercase letters are treated as the same character (e.g., `A` and `a`), each character is converted to lowercase.
 
 After updating letter frequencies, the final map is returned.
 
 [ConcurrentHashMap]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html
 [ForkJoinPool]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html
 [isAlphabetic]: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-
-[invokeAll]: https://docs.oracle.com/javase/6/docs/api/java/util/concurrent/ExecutorService.html
+https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html
