@@ -10,8 +10,8 @@
   "approaches": [
     {
       "uuid": "6ca5c7c0-f8f1-49b2-b137-951fa39f89eb",
-      "slug": "function-based",
-      "title": "Function based",
+      "slug": "method-based",
+      "title": "Method based",
       "blurb": "Uses boolean functions to check conditions",
       "authors": [
         "jagdish-15"
