@@ -1,0 +1,5 @@
+boolean canQueensAttackOneAnother() {
+    int rowDifference = Math.abs(queen1.getRow() - queen2.getRow());
+    int columnDifference = Math.abs(queen1.getColumn() - queen2.getColumn());
+    return rowDifference == 0 || columnDifference == 0 || rowDifference == columnDifference;
+}
