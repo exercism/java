@@ -49,9 +49,11 @@ A [`private`][private] [`final`][final] variable is defined to be returned by th
 It is `private` because it does not need to be directly accessed from outside the class, and it is `final` because its value does not need to be changed once it is set.
 
 Several `private` `final` [`static`][static] variables are then defined:
-a [`HashMap`][hashmap] to hold the lookups of the scores for the letters;
-a `String` array  of the letters grouped by their common score;
-and an `int` array of the scores for the letters.
+
+- a [`HashMap`][hashmap] to hold the lookups of the scores for the letters
+- a `String` array of the letters grouped by their common score
+- an `int` array of the scores for the letters
+
 They are `static` because they don't need to differ between object instantiations, so they can belong to the class itself.
 
 In a [static block][static-block], the [`IntStream.range()`][range] method is called to iterate an index from `0` up to but including the length of the array of letters.
