@@ -1,27 +1,5 @@
 # Dynamic Programming Approach
 
-The **Dynamic Programming (DP)** approach is an efficient way to solve the problem of making change for a given total using a list of available coin denominations. It minimizes the number of coins needed by breaking down the problem into smaller subproblems and solving them progressively.
-
-This approach ensures that we find the most efficient way to make change and handles edge cases where no solution exists.
-
-## Explanation
-
-1. **Initialize Coins Usage Tracker**:
-
-   - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
-   - The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
-
-2. **Iterative Dynamic Programming**:
-
-   - For each value `i` from 1 to `grandTotal`, we explore all available coin denominations to find the best combination that can achieve the total `i`.
-   - For each coin, we check if it can be part of the solution (i.e., if `coin <= i` and `coinsUsed[i - coin]` is a valid combination).
-   - If so, we generate a new combination by adding the current coin to the solution for `i - coin`. We then compare the size of this new combination with the existing best combination and keep the one with fewer coins.
-
-3. **Result**:
-
-   - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
-   - If no valid combination exists for `grandTotal`, an exception is thrown.
-
 ```java
 import java.util.List;
 import java.util.ArrayList;
@@ -61,6 +39,29 @@ class ChangeCalculator {
 }
 ```
 
+The **Dynamic Programming (DP)** approach is an efficient way to solve the problem of making change for a given total using a list of available coin denominations.
+It minimizes the number of coins needed by breaking down the problem into smaller subproblems and solving them progressively.
+
+This approach ensures that we find the most efficient way to make change and handles edge cases where no solution exists.
+
+## Explanation
+
+1. **Initialize Coins Usage Tracker**:
+
+   - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
+   - The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
+
+2. **Iterative Dynamic Programming**:
+
+   - For each value `i` from 1 to `grandTotal`, we explore all available coin denominations to find the best combination that can achieve the total `i`.
+   - For each coin, we check if it can be part of the solution (i.e., if `coin <= i` and `coinsUsed[i - coin]` is a valid combination).
+   - If so, we generate a new combination by adding the current coin to the solution for `i - coin`. We then compare the size of this new combination with the existing best combination and keep the one with fewer coins.
+
+3. **Result**:
+
+   - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
+   - If no valid combination exists for `grandTotal`, an exception is thrown.
+
 ## Key Points
 
 - **Time Complexity**: The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
@@ -72,15 +73,7 @@ class ChangeCalculator {
   - If the `grandTotal` is negative, an exception is thrown immediately.
   - If there is no way to make the exact total with the given denominations, an exception is thrown with a descriptive message.
 
-## Trade-offs and Considerations
-
-- **Efficiency**: This approach is highly efficient in terms of minimizing the number of coins, but it might require significant memory for larger `grandTotal` values, as the space complexity grows linearly with `grandTotal`.
-  
-- **Alternative Approaches**:
-
-  - A **Greedy Approach** could be faster for some cases but does not always guarantee the minimum number of coins.
-  - This dynamic programming approach is best when the goal is to guarantee the fewest coins possible, especially when no simple greedy solution exists.
-
 ## Conclusion
 
-The dynamic programming approach provides an optimal solution for the change-making problem, ensuring that we minimize the number of coins used while efficiently solving the problem for any `grandTotal`. However, it’s essential to consider the trade-offs in terms of memory usage and the time complexity when dealing with very large inputs.
+The dynamic programming approach provides an optimal solution for the change-making problem, ensuring that we minimize the number of coins used while efficiently solving the problem for any `grandTotal`.
+However, it’s essential to consider the trade-offs in terms of memory usage and the time complexity when dealing with very large inputs.

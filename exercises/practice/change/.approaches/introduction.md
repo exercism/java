@@ -1,19 +1,17 @@
-# Introduction to Change Calculator
+# Introduction  
 
-In the "Change Calculator" exercise, the goal is to determine the minimum number of coins needed to reach a given total using a specific set of coin denominations. This is a classic problem in dynamic programming, where efficient change-making is essential, especially when there are constraints on coin types or large totals.
+There is an idiomatic approach to solving "Change."  
+You can use [dynamic programming][dynamic-programming] to calculate the minimum number of coins required for a given total.
 
-## Problem Overview
+## General guidance
 
-Given:
+The key to solving "Change" is understanding that not all totals can be reached with the available coin denominations.
+The solution needs to figure out which totals can be achieved and how to combine the coins optimally.
 
-- A list of coin denominations, each representing an available currency unit.
-- A total amount (`grandTotal`) we want to reach using the fewest possible coins from the given denominations.
+## Approach: Dynamic Programming
 
-The solution should find the optimal combination of coins to match the total. If it's impossible to match the total exactly, the solution should indicate this by throwing an exception.
-
-## Approach Overview
-
-Our solution uses a **dynamic programming approach**, where we systematically build up the optimal combinations for all totals from `0` up to the target amount (`grandTotal`). For each total, we track the fewest coins needed to make that total, reusing previous results to make the solution efficient.
+Our solution uses a **dynamic programming approach**, where we systematically build up the optimal combinations for all totals from `0` up to the target amount (`grandTotal`).
+For each total, we track the fewest coins needed to make that total, reusing previous results to make the solution efficient.
 
 This approach ensures that we find the minimum number of coins required in a structured, repeatable way, avoiding the need for complex recursive calls or excessive backtracking.
 
@@ -23,4 +21,7 @@ This approach ensures that we find the minimum number of coins required in a str
 - **Flexibility**: Handles cases where exact change is impossible by checking at each step.
 - **Scalability**: Works for various coin denominations and totals, though large inputs may impact performance.
 
-For a detailed look at the code and logic, see the full explanation in the [approach file](https://exercism.org/tracks/java/exercises/change/approaches/dynamic-programming).
+For a detailed look at the code and logic, see the full explanation in the [Dynamic Programming Approach][approach-dynamic-programming].
+
+[approach-dynamic-programming]: https://exercism.org/tracks/java/exercises/change/approaches/dynamic-programming
+[dynamic-programming]: https://en.wikipedia.org/wiki/Dynamic_programming
