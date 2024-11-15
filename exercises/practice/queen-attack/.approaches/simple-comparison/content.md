@@ -1,6 +1,28 @@
 # Queen Attack Approach
 
-In this exercise, we determine if two queens on a chessboard can attack each other based on their positions. A queen can attack another queen if they are on the same row, column, or diagonal.
+```java
+class QueenAttackCalculator {
+    private final Queen queen1;
+    private final Queen queen2;
+    
+    QueenAttackCalculator(Queen queen1, Queen queen2) {
+        if (queen1 == null || queen2 == null) {
+            throw new IllegalArgumentException("You must supply valid positions for both Queens.");
+        }
+        if (queen1.getRow() == queen2.getRow() && queen1.getColumn() == queen2.getColumn()) {
+            throw new IllegalArgumentException("Queens cannot occupy the same position.");
+        }
+        this.queen1 = queen1;
+        this.queen2 = queen2;
+    }
+
+    boolean canQueensAttackOneAnother() {
+        int rowDifference = Math.abs(queen1.getRow() - queen2.getRow());
+        int columnDifference = Math.abs(queen1.getColumn() - queen2.getColumn());
+        return rowDifference == 0 || columnDifference == 0 || rowDifference == columnDifference;
+    }
+}
+```
 
 ## Approach Steps
 
@@ -41,36 +63,13 @@ In this exercise, we determine if two queens on a chessboard can attack each oth
 - **Diagonal Check**: Lastly, we check if the queens are positioned on the same diagonal. This is determined by comparing the absolute differences in their row and column positions.
 - **Final Decision**: If any of these checks return `true`, the queens can attack each other. If none of these conditions are met, they cannot attack each other.
 
-## Full Code Implementation
-
-```java
-class QueenAttackCalculator {
-    private final Queen queen1;
-    private final Queen queen2;
-    
-    QueenAttackCalculator(Queen queen1, Queen queen2) {
-        if (queen1 == null || queen2 == null) {
-            throw new IllegalArgumentException("You must supply valid positions for both Queens.");
-        }
-        if (queen1.getRow() == queen2.getRow() && queen1.getColumn() == queen2.getColumn()) {
-            throw new IllegalArgumentException("Queens cannot occupy the same position.");
-        }
-        this.queen1 = queen1;
-        this.queen2 = queen2;
-    }
-
-    boolean canQueensAttackOneAnother() {
-        int rowDifference = Math.abs(queen1.getRow() - queen2.getRow());
-        int columnDifference = Math.abs(queen1.getColumn() - queen2.getColumn());
-        return rowDifference == 0 || columnDifference == 0 || rowDifference == columnDifference;
-    }
-}
-```
-
 ## Additional Explanation for Code
 
 1. **Constructor**:
-   In the constructor of `QueenAttackCalculator`, we check if the queens are positioned at valid places. If either queen is `null`, or if both queens occupy the same position, an exception is thrown. The constructor takes two `Queen` objects, `queen1` and `queen2`, and stores them as instance variables.
+
+   In the constructor of `QueenAttackCalculator`, we check if the queens are positioned at valid places.
+   If either queen is `null`, or if both queens occupy the same position, an exception is thrown.
+   The constructor takes two `Queen` objects, `queen1` and `queen2`, and stores them as instance variables.
 
 2. **Method (`canQueensAttackOneAnother`)**:
 
