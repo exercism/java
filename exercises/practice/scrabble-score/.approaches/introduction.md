@@ -6,12 +6,9 @@ Another approach could be to look up the score in a `HashMap` from inside the `r
 
 ## General guidance
 
-Regardless of the approach used, one thing to look out for is to whether to calculate the score
-in the constructor (or a method called by the constructor) or in the `getScore()` method.
-A benefit to calculating in the constructor is that the score is calculated only once,
-no matter how many times `getScore()` is called.
-A benefit to calculating in `getScore()` is that, if it is not called,
-then the calculation never has to be performed.
+Regardless of the approach used, one thing to look out for is to whether to calculate the score in the constructor (or a method called by the constructor) or in the `getScore()` method.
+A benefit to calculating in the constructor is that the score is calculated only once, no matter how many times `getScore()` is called.
+A benefit to calculating in `getScore()` is that, if it is not called, then the calculation never has to be performed.
 But then, in that case, why instantiate the `Scrabble` object at all?
 
 ## Approach: `if` statements
@@ -149,8 +146,7 @@ For more information, check the [`HashMap` with `reduce()` approach][approach-ma
 
 ## Which approach to use?
 
-Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
-the choice between the approaches can be made by perceived readability.
+Since benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document, the choice between the approaches can be made by perceived readability.
 
 [approach-if-statements]: https://exercism.org/tracks/java/exercises/scrabble-score/approaches/if-statements
 [approach-switch-statement]: https://exercism.org/tracks/java/exercises/scrabble-score/approaches/switch-statement

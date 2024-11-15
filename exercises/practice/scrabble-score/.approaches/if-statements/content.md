@@ -35,21 +35,17 @@ class Scrabble {
 ```
 
 This approach defines a [`private`][private] [`final`][final] variable to be returned by the `getScore()` method.
-It is `private` because it does not need to be directly accessed from outside the class, and it is `final`
-because its value does not need to be changed once it is set.
+It is `private` because it does not need to be directly accessed from outside the class, and it is `final` because its value does not need to be changed once it is set.
 
 In the constructor, a local variable is defined for being updated in the [`for` loop][for-loop].
 
 ~~~~exercism/note
-Using the same for a variable in a nested local scope that is used in its enclosing higher scope is called
-[variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
+Using the same for a variable in a nested local scope that is used in its enclosing higher scope is called [variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
 ~~~~
 
 The variable is updated  by a series of `if` statements that checks each letter of the uppercased word.
-The letter is selected as a `String` by the [`substring()`][substring] method and is passed to the
-[`contains()`][contains] method for the `String` representing the letters for a particular score.
-The first `if` statement checks for the most common letters, and each succeeding `if` statement
-checks for letters less common than the statement before it.
+The letter is selected as a `String` by the [`substring()`][substring] method and is passed to the [`contains()`][contains] method for the `String` representing the letters for a particular score.
+The first `if` statement checks for the most common letters, and each succeeding `if` statement checks for letters less common than the statement before it.
 When the loop is done, the class-level `score` variable is set to the value of the local `score` variable.
 
 [private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private

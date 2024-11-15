@@ -45,26 +45,22 @@ class Scrabble {
 ```
 
 This approach defines a [`private`][private] [`final`][final] variable to be returned by the `getScore()` method.
-It is `private` because it does not need to be directly accessed from outside the class, and it is `final`
-because its value does not need to be changed once it is set.
+It is `private` because it does not need to be directly accessed from outside the class, and it is `final` because its value does not need to be changed once it is set.
 
 In the constructor, a local variable is defined for being updated in the [`for` loop][for-loop].
 
 ~~~~exercism/note
-Using the same name for a variable in a nested local scope that is used in its enclosing higher scope is called
-[variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
+Using the same name for a variable in a nested local scope that is used in its enclosing higher scope is called [variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
 ~~~~
 
 The variable is updated  by a [`switch`][switch] statement that checks each letter of the lowercased word.
 
 ~~~~exercism/note
-If most of the input will already be lower case, it is a bit more performant to normalize the input as lowercased,
-since fewer characters will need to be changed.
+If most of the input will already be lower case, it is a bit more performant to normalize the input as lowercased, since fewer characters will need to be changed.
 However, it may be considered that to use upper case letters is more readable.
 ~~~~
 
-The letter is selected as a `char` by the [`charAt()`][charat] method and is passed to the
-`switch`, with each case representing the letters for a particular score.
+The letter is selected as a `char` by the [`charAt()`][charat] method and is passed to the `switch`, with each case representing the letters for a particular score.
 When the loop is done, the class-level `score` variable is set to the value of the local `score` variable.
 
 [private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
