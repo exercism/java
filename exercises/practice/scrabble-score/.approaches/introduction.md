@@ -1,7 +1,7 @@
 # Introduction
 
-There are various idiomatiuc ways to solve Scrabble Score.
-The approaches could be to use a series of `if` statements, or a single `switch` statment.
+There are various idiomatic ways to solve Scrabble Score.
+The approaches could be to use a series of `if` statements, or a single `switch` statement.
 Another approach could be to look up the score in a `HashMap` from inside the `reduce()` method.
 
 ## General guidance

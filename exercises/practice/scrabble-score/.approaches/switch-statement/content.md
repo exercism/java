@@ -51,7 +51,7 @@ because its value does not need to be changed once it is set.
 In the constructor, a local variable is defined for being updated in the [`for` loop][for-loop].
 
 ~~~~exercism/note
-Using the same for a variable in a nested local scope that is used in its enclosing higher scope is called
+Using the same name for a variable in a nested local scope that is used in its enclosing higher scope is called
 [variable shadowing](https://www.geeksforgeeks.org/shadowing-in-java/).
 ~~~~
 
