@@ -1,0 +1,7 @@
+texts.parallelStream().forEach(text -> {
+    for (char c: text.toLowerCase().toCharArray()) {
+        if (Character.isAlphabetic(c)) {
+            letterCount.merge(c, 1, Integer::sum);
+        }
+    }
+});
