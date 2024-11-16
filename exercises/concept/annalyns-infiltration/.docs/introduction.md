@@ -7,8 +7,8 @@ Booleans in Java are represented by the `boolean` type, which values can be eith
 Java supports three boolean operators:  
 
 - `!` (NOT): negates the boolean  
-- `&&` (AND): takes two booleans and results in true if they're both true  
-- `||` (OR): results in true if any of the two booleans is true  
+- `&&` (AND): takes two booleans and returns `true` if they're both `true`
+- `||` (OR): returns `true` if any of the two booleans is `true`
 
 ### Examples
 
