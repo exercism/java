@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [161f485e-39c2-4012-84cf-bec0c755b66c]
 description = "single hand always wins"
@@ -14,11 +21,17 @@ description = "a tie has multiple winners"
 [61ed83a9-cfaa-40a5-942a-51f52f0a8725]
 description = "multiple hands with the same high cards, tie compares next highest ranked, down to last card"
 
+[da01becd-f5b0-4342-b7f3-1318191d0580]
+description = "winning high card hand also has the lowest card"
+
 [f7175a89-34ff-44de-b3d7-f6fd97d1fca4]
 description = "one pair beats high card"
 
 [e114fd41-a301-4111-a9e7-5a7f72a76561]
 description = "highest pair wins"
+
+[b3acd3a7-f9fa-4647-85ab-e0a9e07d1365]
+description = "both hands have the same pair, high card wins"
 
 [935bb4dc-a622-4400-97fa-86e7d06b1f76]
 description = "two pairs beats one pair"
@@ -32,6 +45,12 @@ description = "both hands have two pairs, with the same highest ranked pair, tie
 [15a7a315-0577-47a3-9981-d6cf8e6f387b]
 description = "both hands have two identically ranked pairs, tie goes to remaining card (kicker)"
 
+[f761e21b-2560-4774-a02a-b3e9366a51ce]
+description = "both hands have two pairs that add to the same value, win goes to highest pair"
+
+[fc6277ac-94ac-4078-8d39-9d441bc7a79e]
+description = "two pairs first ranked by largest pair"
+
 [21e9f1e6-2d72-49a1-a930-228e5e0195dc]
 description = "three of a kind beats two pair"
 
@@ -40,6 +59,11 @@ description = "both hands have three of a kind, tie goes to highest ranked tripl
 
 [eb856cc2-481c-4b0d-9835-4d75d07a5d9d]
 description = "with multiple decks, two players can have same three of a kind, ties go to highest remaining cards"
+include = false
+
+[26a4a7d4-34a2-4f18-90b4-4a8dd35d2bb1]
+description = "with multiple decks, two players can have same three of a kind, ties go to highest remaining cards"
+reimplements = "eb856cc2-481c-4b0d-9835-4d75d07a5d9d"
 
 [a858c5d9-2f28-48e7-9980-b7fa04060a60]
 description = "a straight beats three of a kind"
@@ -49,6 +73,9 @@ description = "aces can end a straight (10 J Q K A)"
 
 [76856b0d-35cd-49ce-a492-fe5db53abc02]
 description = "aces can start a straight (A 2 3 4 5)"
+
+[e214b7df-dcba-45d3-a2e5-342d8c46c286]
+description = "aces cannot be in the middle of a straight (Q K A 2 3)"
 
 [6980c612-bbff-4914-b17a-b044e4e69ea1]
 description = "both hands with a straight, tie goes to highest ranked card"
@@ -61,6 +88,11 @@ description = "flush beats a straight"
 
 [4d90261d-251c-49bd-a468-896bf10133de]
 description = "both hands have a flush, tie goes to high card, down to the last one if necessary"
+include = false
+
+[e04137c5-c19a-4dfc-97a1-9dfe9baaa2ff]
+description = "both hands have a flush, tie goes to high card, down to the last one if necessary"
+reimplements = "4d90261d-251c-49bd-a468-896bf10133de"
 
 [3a19361d-8974-455c-82e5-f7152f5dba7c]
 description = "full house beats a flush"
@@ -83,5 +115,17 @@ description = "with multiple decks, both hands with identical four of a kind, ti
 [923bd910-dc7b-4f7d-a330-8b42ec10a3ac]
 description = "straight flush beats four of a kind"
 
+[d9629e22-c943-460b-a951-2134d1b43346]
+description = "aces can end a straight flush (10 J Q K A)"
+
+[05d5ede9-64a5-4678-b8ae-cf4c595dc824]
+description = "aces can start a straight flush (A 2 3 4 5)"
+
+[ad655466-6d04-49e8-a50c-0043c3ac18ff]
+description = "aces cannot be in the middle of a straight flush (Q K A 2 3)"
+
 [d0927f70-5aec-43db-aed8-1cbd1b6ee9ad]
-description = "both hands have straight flush, tie goes to highest-ranked card"
+description = "both hands have a straight flush, tie goes to highest-ranked card"
+
+[be620e09-0397-497b-ac37-d1d7a4464cfc]
+description = "even though an ace is usually high, a 5-high straight flush is the lowest-scoring straight flush"
