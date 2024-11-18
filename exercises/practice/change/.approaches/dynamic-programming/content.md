@@ -46,7 +46,7 @@ It minimizes the number of coins needed by breaking down the problem into smalle
 
 1. **Initialize Coins Usage Tracker**:
 
-   - If the `grandTotal` is negative, an exception is thrown immediately. 
+   - If the `grandTotal` is negative, an exception is thrown immediately.
    - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
    - The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
 
@@ -60,7 +60,6 @@ It minimizes the number of coins needed by breaking down the problem into smalle
 
    - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
    - If no valid combination exists for `grandTotal`, an exception is thrown.
-
 
 - **Time Complexity**: The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
   
