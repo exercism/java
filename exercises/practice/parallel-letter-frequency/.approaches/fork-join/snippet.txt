@@ -1,0 +1,7 @@
+for (int i = start; i < end; i++) {
+    for (char c : texts.get(i).toLowerCase().toCharArray()) {
+        if (Character.isAlphabetic(c)) {
+            letterCount.merge(c, 1, Integer::sum);
+        }
+    }
+}
