@@ -10,16 +10,44 @@ The solution needs to figure out which totals can be achieved and how to combine
 
 ## Approach: Dynamic Programming
 
-Our solution uses a **dynamic programming approach**, where we systematically build up the optimal combinations for all totals from `0` up to the target amount (`grandTotal`).
-For each total, we track the fewest coins needed to make that total, reusing previous results to make the solution efficient.
+```java
+import java.util.List;
+import java.util.ArrayList;
 
-This approach ensures that we find the minimum number of coins required in a structured, repeatable way, avoiding the need for complex recursive calls or excessive backtracking.
+class ChangeCalculator {
+    private final List<Integer> currencyCoins;
 
-## Key Features of the Approach
+    ChangeCalculator(List<Integer> currencyCoins) {
+        this.currencyCoins = currencyCoins;
+    }
 
-- **Efficiency**: By building solutions for each increment up to `grandTotal`, this approach minimizes redundant calculations.
-- **Flexibility**: Handles cases where exact change is impossible by checking at each step.
-- **Scalability**: Works for various coin denominations and totals, though large inputs may impact performance.
+    List<Integer> computeMostEfficientChange(int grandTotal) {
+        if (grandTotal < 0) 
+            throw new IllegalArgumentException("Negative totals are not allowed.");
+
+        List<List<Integer>> coinsUsed = new ArrayList<>(grandTotal + 1);
+        coinsUsed.add(new ArrayList<Integer>());
+
+        for (int i = 1; i <= grandTotal; i++) {
+            List<Integer> bestCombination = null;
+            for (int coin: currencyCoins) {
+                if (coin <= i && coinsUsed.get(i - coin) != null) {
+                    List<Integer> currentCombination = new ArrayList<>(coinsUsed.get(i - coin));
+                    currentCombination.add(0, coin);
+                    if (bestCombination == null || currentCombination.size() < bestCombination.size())
+                        bestCombination = currentCombination;
+                }
+            }
+            coinsUsed.add(bestCombination);
+        }
+
+        if (coinsUsed.get(grandTotal) == null)
+            throw new IllegalArgumentException("The total " + grandTotal + " cannot be represented in the given currency.");
+
+        return coinsUsed.get(grandTotal);
+    }
+}
+```
 
 For a detailed look at the code and logic, see the full explanation in the [Dynamic Programming Approach][approach-dynamic-programming].
 

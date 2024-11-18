@@ -42,12 +42,11 @@ class ChangeCalculator {
 The **Dynamic Programming (DP)** approach is an efficient way to solve the problem of making change for a given total using a list of available coin denominations.
 It minimizes the number of coins needed by breaking down the problem into smaller subproblems and solving them progressively.
 
-This approach ensures that we find the most efficient way to make change and handles edge cases where no solution exists.
-
 ## Explanation
 
 1. **Initialize Coins Usage Tracker**:
 
+   - If the `grandTotal` is negative, an exception is thrown immediately. 
    - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
    - The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
 
@@ -62,18 +61,7 @@ This approach ensures that we find the most efficient way to make change and han
    - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
    - If no valid combination exists for `grandTotal`, an exception is thrown.
 
-## Key Points
 
 - **Time Complexity**: The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
   
 - **Space Complexity**: The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
-
-- **Edge Cases**:
-
-  - If the `grandTotal` is negative, an exception is thrown immediately.
-  - If there is no way to make the exact total with the given denominations, an exception is thrown with a descriptive message.
-
-## Conclusion
-
-The dynamic programming approach provides an optimal solution for the change-making problem, ensuring that we minimize the number of coins used while efficiently solving the problem for any `grandTotal`.
-However, it’s essential to consider the trade-offs in terms of memory usage and the time complexity when dealing with very large inputs.
