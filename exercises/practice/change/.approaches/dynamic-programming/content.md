@@ -61,6 +61,6 @@ It minimizes the number of coins needed by breaking down the problem into smalle
    - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
    - If no valid combination exists for `grandTotal`, an exception is thrown.
 
-- **Time Complexity**: The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
+The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
   
 - **Space Complexity**: The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
