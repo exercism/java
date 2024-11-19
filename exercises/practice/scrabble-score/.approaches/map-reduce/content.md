@@ -46,25 +46,23 @@ class Scrabble {
 This approach starts by importing from packages for what is needed.
 
 A [`private`][private] [`final`][final] variable is defined to be returned by the `getScore()` method.
-It is `private` because it does not need to be directly accessed from outside the class, and it is `final`
-because its value does not need to be changed once it is set.
+It is `private` because it does not need to be directly accessed from outside the class, and it is `final` because its value does not need to be changed once it is set.
 
 Several `private` `final` [`static`][static] variables are then defined:
-a [`HashMap`][hashmap] to hold the lookups of the scores for the letters;
-a `String` array  of the letters grouped by their common score;
-and an `int` array of the scores for the letters.
+
+- a [`HashMap`][hashmap] to hold the lookups of the scores for the letters
+- a `String` array of the letters grouped by their common score
+- an `int` array of the scores for the letters
+
 They are `static` because they don't need to differ between object instantiations, so they can belong to the class itself.
 
-In a [static block][static-block], the [`IntStream.range()`][range] method is called to iterate an index from `0`
-up to but including the length of the array of letters.
-In a [`forEach()`][foreach] method, each index value is passed into a [lambda][lambda] which calls the [`chars{}`][chars]
-method on each string at the index of the letters array.
+In a [static block][static-block], the [`IntStream.range()`][range] method is called to iterate an index from `0` up to but including the length of the array of letters.
+In a [`forEach()`][foreach] method, each index value is passed into a [lambda][lambda] which calls the [`chars{}`][chars] method on each string at the index of the letters array.
 In another `forEach`, each letter is passed into a lambda that adds the letter and its corresponding score to the `HashMap`.
 This works because the groups of letters and their scores are at the same index in their respective arrays.
 
 In the constructor, `chars()` is called on the uppercased word and chained to the [`reduce()`][reduce] method.
-The accumulator is initialized to `0`, and the accumulator and each letter is passed to a lambda that adds the score
-looked up from the `HashMap` for the letter.
+The accumulator is initialized to `0`, and the accumulator and each letter is passed to a lambda that adds the score looked up from the `HashMap` for the letter.
 The score variable is set to the value returned from `reduce()`, which is the value of its accumulator.
 
 [private]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/private
