@@ -12,7 +12,7 @@ The problem boils down to checking three conditions:
 2. **Same Column**: If the queens are on the same column.
 3. **Same Diagonal**: If the queens are on the same diagonal, i.e., the absolute difference between their row and column positions is equal.
 
-## Approach: Simple Comparison Approach
+## Approach: Difference Comparison Approach
 
 ```java
 class QueenAttackCalculator {
@@ -38,6 +38,6 @@ class QueenAttackCalculator {
 }
 ```
 
-For more details on the implementation of this approach, check out the [Simple Comparison Approach][simple-comparison-approach].
+For more details on the implementation of this approach, check out the [Difference Comparison Approach][difference-comparison-approach].
 
-[simple-comparison-approach]: https://exercism.org/tracks/java/exercises/queen-attack/approaches/simple-comparison
+[difference-comparison-approach]: https://exercism.org/tracks/java/exercises/queen-attack/approaches/difference-comparison
