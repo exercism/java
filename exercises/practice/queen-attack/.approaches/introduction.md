@@ -1,4 +1,4 @@
-# Queen Attack Exercise
+# Introduction
 
 In this exercise, we determine if two queens on a chessboard can attack each other based on their positions.
 A queen in chess can move any number of squares horizontally, vertically, or diagonally.
