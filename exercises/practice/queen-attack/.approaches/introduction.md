@@ -4,7 +4,7 @@ In this exercise, we determine if two queens on a chessboard can attack each oth
 A queen in chess can move any number of squares horizontally, vertically, or diagonally.
 The task is to check if two queens, placed on specific coordinates, can attack each other.
 
-## Genral Advice
+## General Guidance
 
 The problem boils down to checking three conditions:
 
