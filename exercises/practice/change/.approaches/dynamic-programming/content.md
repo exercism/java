@@ -63,4 +63,4 @@ It minimizes the number of coins needed by breaking down the problem into smalle
 
 The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
   
-- **Space Complexity**: The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
+The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
