@@ -154,13 +154,6 @@ public class BobTest {
 
     @Disabled("Remove to run test")
     @Test
-    public void multipleLineQuestion() {
-        assertThat(bob.hey("\nDoes this cryogenic chamber make me look fat?\nNo."))
-                .isEqualTo("Whatever.");
-    }
-
-    @Disabled("Remove to run test")
-    @Test
     public void startingWithWhitespace() {
         assertThat(bob.hey("         hmmmmmmm..."))
                 .isEqualTo("Whatever.");
@@ -185,6 +178,13 @@ public class BobTest {
     public void nonQuestionEndingWithWhiteSpace() {
         assertThat(bob.hey("This is a statement ending with whitespace      "))
                 .isEqualTo("Whatever.");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void multipleLineQuestion() {
+        assertThat(bob.hey("\nDoes this cryogenic chamber make\n me look fat?"))
+                .isEqualTo("Sure.");
     }
 
 }

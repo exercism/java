@@ -62,6 +62,13 @@ public class ZipperTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testAbilityToReturnAfterMultipleLevelDescend() {
+        zipper = binaryTree.getRoot();
+        assertThat(zipper.left.right.up.up.getValue()).isEqualTo(1);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testSetValue() {
         zipper = binaryTree.getRoot();
         zipper = zipper.left;
