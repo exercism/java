@@ -16,6 +16,9 @@
     "editor": [
       "src/main/java/Node.java",
       "src/main/java/Edge.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Write a Domain Specific Language similar to the Graphviz dot language.",
