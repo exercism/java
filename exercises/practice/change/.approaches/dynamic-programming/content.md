@@ -44,25 +44,25 @@ It minimizes the number of coins needed by breaking down the problem into smalle
 
 ## Explanation
 
-1. **Initialize Coins Usage Tracker**:
+### Initialize Coins Usage Tracker
 
-   - If the `grandTotal` is negative, an exception is thrown immediately.
-   - We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
-   - The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
+- If the `grandTotal` is negative, an exception is thrown immediately.
+- We create a list `coinsUsed`, where each index `i` stores the most efficient combination of coins that sum up to the value `i`.
+- The list is initialized with an empty list at index `0`, as no coins are needed to achieve a total of zero.
 
-2. **Iterative Dynamic Programming**:
+### Iterative Dynamic Programming
 
-   - For each value `i` from 1 to `grandTotal`, we explore all available coin denominations to find the best combination that can achieve the total `i`.
-   - For each coin, we check if it can be part of the solution (i.e., if `coin <= i` and `coinsUsed[i - coin]` is a valid combination).
-   - If so, we generate a new combination by adding the current coin to the solution for `i - coin`. We then compare the size of this new combination with the existing best combination and keep the one with fewer coins.
+- For each value `i` from 1 to `grandTotal`, we explore all available coin denominations to find the best combination that can achieve the total `i`.
+- For each coin, we check if it can be part of the solution (i.e., if `coin <= i` and `coinsUsed[i - coin]` is a valid combination).
+- If so, we generate a new combination by adding the current coin to the solution for `i - coin`. We then compare the size of this new combination with the existing best combination and keep the one with fewer coins.
 
-3. **Result**:
+### Result
 
-   - After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
-   - If no valid combination exists for `grandTotal`, an exception is thrown.
+- After processing all values up to `grandTotal`, the combination at `coinsUsed[grandTotal]` will represent the most efficient solution.
+- If no valid combination exists for `grandTotal`, an exception is thrown.
 
 ## Time and Space Complexity
 
-- The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
+The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
   
-- The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
+The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.
