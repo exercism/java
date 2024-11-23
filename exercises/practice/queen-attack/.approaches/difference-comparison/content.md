@@ -26,21 +26,21 @@ class QueenAttackCalculator {
 
 ## Explanation
 
-1. **Constructor**:
+### Constructor
 
-   The constructor takes two `Queen` objects, `queen1` and `queen2`, and stores them as instance variables after validating the following conditions:
+The constructor takes two `Queen` objects, `queen1` and `queen2`, and stores them as instance variables after validating the following conditions:
 
-   - If either queen is `null`.
-   - If both queens occupy the same position.
+- Either queen is `null`.
+- Both queens occupy the same position.
 
-   If either of these conditions is true, an exception is thrown.
+If either of these conditions is true, an exception is thrown.
 
-2. **Method (`canQueensAttackOneAnother`)**:
+### `canQueensAttackOneAnother` Method
 
-   This method calculates the row and column differences between the two queens and checks the following conditions:
+This method calculates the row and column differences between the two queens and checks the following conditions:
 
-   - If the row difference is zero (the queens are on the same row).
-   - If the column difference is zero (the queens are on the same column).
-   - If the row and column differences are equal (the queens are on the same diagonal).
+- The row difference is zero (the queens are on the same row).
+- The column difference is zero (the queens are on the same column).
+- The row and column differences are equal (the queens are on the same diagonal).
 
-   If any of these conditions are true, the method returns `true`, indicating that the queens can attack each other.
+If any of these conditions are true, the method returns `true`, indicating that the queens can attack each other.

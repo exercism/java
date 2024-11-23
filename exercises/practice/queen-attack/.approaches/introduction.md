@@ -8,9 +8,9 @@ The task is to check if two queens, placed on specific coordinates, can attack e
 
 The problem boils down to checking three conditions:
 
-1. **Same Row**: If the queens are on the same row.
-2. **Same Column**: If the queens are on the same column.
-3. **Same Diagonal**: If the queens are on the same diagonal, i.e., the absolute difference between their row and column positions is equal.
+1. **Same Row**: The queens are on the same row.
+2. **Same Column**: The queens are on the same column.
+3. **Same Diagonal**: The queens are on the same diagonal, i.e., the absolute difference between their row and column positions is equal.
 
 ## Approach: Difference Comparison Approach
 
