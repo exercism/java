@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": [
+      "jagdish-15"
+    ],
+    "contributors": [
+      "kahgoh",
+      "tasxatzial"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "b2e474c8-b778-41e7-83c0-8e41cc84af9e",
+      "slug": "difference-comparison",
+      "title": "Difference Comparison Approach",
+      "blurb": "Use difference comparison checks to determine if queens can attack each other.",
+      "authors": [
+        "jagdish-15"
+      ]
+    }
+  ]
+}
