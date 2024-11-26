@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "authors": [
+      "jagdish-15"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "d0b615ca-3a02-4d66-ad10-e0c513062189",
+      "slug": "dynamic-programming",
+      "title": "Dynamic Programming Approach",
+      "blurb": "Use dynamic programming to find the most efficient change combination.",
+      "authors": [
+        "jagdish-15"
+      ],
+      "contributors": [
+        "kahgoh"
+      ]
+    }
+  ]
+}
