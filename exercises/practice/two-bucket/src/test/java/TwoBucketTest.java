@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Collections;
+
 public class TwoBucketTest {
 
     @Test
@@ -73,6 +75,54 @@ public class TwoBucketTest {
         assertThat(twoBucket.getTotalMoves()).isEqualTo(2);
         assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
         assertThat(twoBucket.getOtherBucket()).isEqualTo(2);
+
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testReachingGoalIsImpossible() {
+
+        TwoBucket twoBucket = new TwoBucket(6, 15, 5, "one");
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> twoBucket.getTotalMoves()))
+                .withMessage("impossible");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> twoBucket.getFinalBucket()))
+                .withMessage("impossible");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> twoBucket.getOtherBucket()))
+                .withMessage("impossible");
+
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testBucketOneSizeSixBucketTwoSizeFifteenStartWithOne() {
+
+        TwoBucket twoBucket = new TwoBucket(6, 15, 9, "one");
+
+        assertThat(twoBucket.getTotalMoves()).isEqualTo(10);
+        assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
+        assertThat(twoBucket.getOtherBucket()).isEqualTo(0);
+
+    }   
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testGoalLargerThanBothBucketsIsImpossible() {
+
+        TwoBucket twoBucket = new TwoBucket(5, 7, 8, "one");
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> twoBucket.getTotalMoves()))
+                .withMessage("impossible");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> twoBucket.getFinalBucket()))
+                .withMessage("impossible");
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> twoBucket.getOtherBucket()))
+                .withMessage("impossible");
 
     }
 }
