@@ -1,10 +1,10 @@
 class Card {
-    private int rank;
-    private int suit;
+    private final int rank;
+    private final int suit;
 
     Card(String card) {
-        rank = parseRank(card);
-        suit = parseSuit(card);
+        this.rank = parseRank(card);
+        this.suit = parseSuit(card);
     }
 
     int getRank() {
@@ -16,9 +16,7 @@ class Card {
     }
 
     private int parseRank(String card) {
-        if (card.substring(0, 2).equals("10")) {
-            return 10;
-        }
+        if (card.startsWith("10")) return 10;
         return "..23456789TJQKA".indexOf(card.charAt(0));
     }
 
