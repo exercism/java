@@ -4,31 +4,27 @@ import java.util.stream.Collectors;
 class Poker {
     private final List<String> bestHands;
 
-    Poker(final List<String> hands) {
-        bestHands = bestHands(hands);
+    Poker(List<String> hands) {
+        this.bestHands = evaluateBestHands(hands);
     }
 
     List<String> getBestHands() {
         return bestHands;
     }
 
-    private List<String> bestHands(final List<String> hands) {
-        ArrayList<Hand> scoredHands = new ArrayList<>();
+    private List<String> evaluateBestHands(List<String> hands) {
+        List<Hand> parsedHands = hands.stream()
+            .map(Hand::new)
+            .collect(Collectors.toList());
 
-        for (String s : hands) {
-            scoredHands.add(new Hand(s));
-        }
-        Optional<Integer> maxScoreIfAny = scoredHands
-                .stream()
-                .map(Hand::getScore)
-                .max(Comparator.naturalOrder());
-        return maxScoreIfAny
-                .map(maxScore -> scoredHands
-                        .stream()
-                        .filter(h -> h.getScore() == maxScore)
-                        .map(Hand::getInput)
-                        .collect(Collectors.toList()))
-                .orElseGet(Collections::emptyList);
+        int maxScore = parsedHands.stream()
+            .mapToInt(Hand::calculateScore)
+            .max()
+            .orElse(0);
 
+        return parsedHands.stream()
+            .filter(hand -> hand.calculateScore() == maxScore)
+            .map(Hand::getOriginal)
+            .collect(Collectors.toList());
     }
 }
