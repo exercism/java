@@ -81,6 +81,16 @@ Good luck! Have fun!
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
 
+   If you get the following error:
+
+   ./gradlew: Permission denied
+
+   Then that means there's an issue regarding permissions, that the file isn't executable. To fix this, run:
+
+   chmod +x ./gradlew
+
+   And now you should be able to run the previous command.
+
 4. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub][hello-world-tutorial]).
 
 Good luck! Have fun!
