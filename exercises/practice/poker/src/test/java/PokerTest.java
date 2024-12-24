@@ -77,7 +77,7 @@ public class PokerTest {
         String pairOf4Lower = "4H 4S AH JC 3D";
         String pairOf4Higher = "4C 4D AS 5D 6C";
         assertThat(new Poker(Arrays.asList(pairOf4Lower, pairOf4Higher)).getBestHands())
-            .containsExactly(pairOf4Higher);
+            .containsExactly(pairOf4Lower);
     }
 
     @Disabled("Remove to run test")
