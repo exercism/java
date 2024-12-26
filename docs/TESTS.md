@@ -81,6 +81,20 @@ Good luck! Have fun!
 
    _(Don't worry about the tests failing, at first, this is how you begin each exercise.)_
 
+   If you get the following error:
+
+   ```sh
+   ./gradlew: Permission denied
+   ```
+
+   Then the file is missing the execute permission. To fis this, run:
+
+   ```sh
+   chmod +x ./gradlew
+   ```
+
+   And now you should be able to run the previous command.
+
 4. Solve the exercise. Find and work through the `instructions.append.md` guide ([view on GitHub][hello-world-tutorial]).
 
 Good luck! Have fun!
