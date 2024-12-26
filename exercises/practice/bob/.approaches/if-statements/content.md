@@ -1,88 +1,86 @@
 # `if` statements
 
 ```java
-import java.util.function.Predicate;
-import java.util.regex.Pattern;
-
 class Bob {
-
-    final private static Pattern isAlpha = Pattern.compile("[a-zA-Z]");
-    final private static Predicate < String > isShout = msg -> isAlpha.matcher(msg).find() && msg == msg.toUpperCase();
-
-    public String hey(String message) {
-        var speech = message.trim();
-        if (speech.isEmpty()) {
-            return "Fine. Be that way!";
-        }
-        var questioning = speech.endsWith("?");
-        var shouting = isShout.test(speech);
-        if (questioning) {
-            if (shouting) {
-                return "Calm down, I know what I'm doing!";
-            }
-            return "Sure.";
-        }
-        if (shouting) {
+    String hey(String input) {
+        var inputTrimmed = input.trim();
+        
+        if (isSilent(inputTrimmed))
+           return "Fine. Be that way!";
+        if (isShouting(inputTrimmed) && isQuestioning(inputTrimmed))
+            return "Calm down, I know what I'm doing!";
+        if (isShouting(inputTrimmed))
             return "Whoa, chill out!";
-        }
+        if (isQuestioning(inputTrimmed))
+            return "Sure.";
+            
         return "Whatever.";
+    }
+
+    private boolean isShouting(String input) {
+        return input.chars()
+                    .anyMatch(Character::isLetter) &&
+                input.chars()
+                    .filter(Character::isLetter)
+                    .allMatch(Character::isUpperCase);
+    }
+
+    private boolean isQuestioning(String input) {
+        return input.endsWith("?");
+    }
+
+    private boolean isSilent(String input) {
+        return input.length() == 0;
     }
 }
 ```
 
-In this approach you have a series of `if` statements using the private methods to evaluate the conditions.
-As soon as the right condition is found, the correct response is returned.
+In this approach, the different conditions for Bob’s responses are separated into dedicated private methods within the `Bob` class. This method-based approach improves readability and modularity by organizing each condition check into its own method, making the main response method easier to understand and maintain.
 
-Note that there are no `else if` or `else` statements.
-If an `if` statement can return, then an `else if` or `else` is not needed.
-Execution will either return or will continue to the next statement anyway.
+## Explanation
 
-The `String` [`trim()`][trim] method is applied to the input to eliminate any whitespace at either end of the input.
-If the string has no characters left, it returns the response for saying nothing.
+This approach simplifies the main method `hey` by breaking down each response condition into helper methods:
 
-~~~~exercism/caution
-Note that a `null` `string` would be different from a `String` of all whitespace.
-A `null` `String` would throw a `NullPointerException` if `trim()` were applied to it.
-~~~~
+### Trimming the Input
 
-A [Pattern][pattern] is defined to look for at least one English alphabetic character.
+   The `input` is trimmed using the `String` [`trim()`][trim] method to remove any leading or trailing whitespace. This helps to accurately detect if the input is empty and should prompt a `"Fine. Be that way!"` response.
 
-The first half of the `isShout` [Predicate][predicate]
+### **Delegating to Helper Methods**:
+   
+   Each condition is evaluated using the following helper methods:
 
-```java
-isAlpha.matcher(msg).find() && msg == msg.toUpperCase();
-```
+   - **`isSilent`**: Checks if the trimmed input has no characters.
+   - **`isShouting`**: Checks if the input is all uppercase and contains at least one alphabetic character, indicating shouting.
+   - **`isQuestioning`**: Verifies if the trimmed input ends with a question mark.
 
-is constructed from the `Pattern` [`matcher()`][matcher-method] method and the [`Matcher`][matcher]  [`find()`][find] method
-to ensure there is at least one letter character in the `String`.
-This is because the second half of the condition tests that the uppercased input is the same as the input.
-If the input were only `"123"` it would equal itself uppercased, but without letters it would not be a shout.
+   This modular approach keeps each condition encapsulated, enhancing code clarity.
 
-A question is determined by use of the [`endsWith()`][endswith] method to see if the input ends with a question mark.
+### **Order of Checks**:
+   
+   The order of checks within `hey` is important:
+   - Silence is evaluated first, as it requires an immediate response.
+   - Shouted questions take precedence over individual checks for yelling and asking.
+   - Yelling comes next, requiring its response if not combined with a question.
+   - Asking (a non-shouted question) is checked afterward.
+
+   This ordering ensures that Bob’s response matches the expected behavior without redundancy.
 
 ## Shortening
 
-When the body of an `if` statement is a single line, both the test expression and the body _could_ be put on the same line, like so
+When the body of an `if` statement is a single line, both the test expression and the body _could_ be put on the same line, like so:
 
 ```java
-if (speech.isEmpty()) return "Fine. Be that way!";
+if (isSilent(inputTrimmed)) return "Fine. Be that way!";
 ```
 
-or the body _could_ be put on a separate line without curly braces
+or the body _could_ be put on a separate line without curly braces:
 
 ```java
-if (speech.isEmpty())
+if (isSilent(inputTrimmed))
     return "Fine. Be that way!";
 ```
 
-However, the [Java Coding Conventions][coding-conventions] advise to always use curly braces for `if` statements, which helps to avoid errors.
-Your team may choose to overrule them at its own risk.
+However, the [Java Coding Conventions][coding-conventions] advise always using curly braces for `if` statements, which helps to avoid errors. Your team may choose to overrule them at its own risk.
 
-[trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()
-[pattern]: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-[predicate]: https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html
-[matcher]: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html
-[matcher-method]: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#matcher-java.lang.CharSequence-
-[find]: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#find--
-[endswith]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#endsWith(java.lang.String)
+[trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()  
 [coding-conventions]: https://www.oracle.com/java/technologies/javase/codeconventions-statements.html#449
