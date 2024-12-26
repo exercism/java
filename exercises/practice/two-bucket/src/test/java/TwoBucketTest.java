@@ -86,13 +86,13 @@ public class TwoBucketTest {
         TwoBucket twoBucket = new TwoBucket(6, 15, 5, "one");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getTotalMoves()))
+                .isThrownBy(() -> twoBucket.getTotalMoves())
                 .withMessage("impossible");
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getFinalBucket()))
+                .isThrownBy(() -> twoBucket.getFinalBucket())
                 .withMessage("impossible");
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getOtherBucket()))
+                .isThrownBy(() -> twoBucket.getOtherBucket())
                 .withMessage("impossible");
 
     }
@@ -116,13 +116,13 @@ public class TwoBucketTest {
         TwoBucket twoBucket = new TwoBucket(5, 7, 8, "one");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getTotalMoves()))
+                .isThrownBy(() -> twoBucket.getTotalMoves())
                 .withMessage("impossible");
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getFinalBucket()))
+                .isThrownBy(() -> twoBucket.getFinalBucket())
                 .withMessage("impossible");
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getOtherBucket()))
+                .isThrownBy(() -> twoBucket.getOtherBucket())
                 .withMessage("impossible");
 
     }
