@@ -58,6 +58,7 @@ This approach simplifies the main method `hey` by breaking down each response co
 ### Order of Checks
 
    The order of checks within `hey` is important:
+   
    1. Silence is evaluated first, as it requires an immediate response.
    2. Shouted questions take precedence over individual checks for shouting and questioning.
    3. Shouting comes next, requiring its response if not combined with a question.
