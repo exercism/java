@@ -74,6 +74,12 @@ public class PigLatinTranslatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testWordBeginningWithConsonantAndVowelContainingQu() {
+        assertThat(pigLatinTranslator.translate("liquid")).isEqualTo("iquidlay");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testChTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertThat(pigLatinTranslator.translate("chair")).isEqualTo("airchay");
     }

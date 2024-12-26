@@ -50,6 +50,13 @@ public class ForthEvaluatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testAdditionForMoreThanTwoValuesOnTheStack() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 2 3 +")))
+                .containsExactly(1, 5);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testTwoNumbersCanBeSubtracted() {
         assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("3 4 -")))
                 .containsExactly(-1);
@@ -74,6 +81,13 @@ public class ForthEvaluatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testSubtractionForMoreThanTwoValuesOnTheStack() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 12 3 -")))
+                .containsExactly(1, 9);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testTwoNumbersCanBeMultiplied() {
         assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("2 4 *"))).containsExactly(8);
     }
@@ -92,6 +106,13 @@ public class ForthEvaluatorTest {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> forthEvaluator.evaluateProgram(Collections.singletonList("1 *")))
                 .withMessage("Multiplication requires that the stack contain at least 2 values");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testMultiplicationForMoreThanTwoValuesOnTheStack() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 2 3 *")))
+                .containsExactly(1, 6);
     }
 
     @Disabled("Remove to run test")
@@ -132,6 +153,13 @@ public class ForthEvaluatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    public void testDivisionForMoreThanTwoValuesOnTheStack() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 12 3 /")))
+                .containsExactly(1, 4);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     public void testCombinedAdditionAndSubtraction() {
         assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 2 + 4 -"))).containsExactly(-1);
     }
@@ -140,6 +168,18 @@ public class ForthEvaluatorTest {
     @Test
     public void testCombinedMultiplicationAndDivision() {
         assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("2 4 * 3 /"))).containsExactly(2);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testCombinedMultiplicationAndAddition() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 3 4 * +"))).containsExactly(13);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testCombinedAdditionAndMultiplication() {
+        assertThat(forthEvaluator.evaluateProgram(Collections.singletonList("1 3 4 + *"))).containsExactly(7);
     }
 
     @Disabled("Remove to run test")
