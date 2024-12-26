@@ -1,0 +1,8 @@
+class ChangeCalculator {
+    private final List<Integer> currencyCoins;
+
+    ChangeCalculator(List<Integer> currencyCoins) {
+        this.currencyCoins = currencyCoins;
+    }
+    // computeMostEfficientChange method
+}
