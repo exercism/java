@@ -121,7 +121,7 @@ This approach uses an array of answers and calculates the appropriate index base
 Choosing between the method-based approach, `if` statements, and answer array approach can come down to readability and maintainability. Each has its advantages:
 
 - **Method-Based**: Clear and modular, great for readability.
-- **`if` Statements**: Compact and straightforward, suited for smaller projects.
+- **`if` Statements**: Compact and straightforward.
 - **Answer Array**: Minimizes condition checks by using indices, efficient for a variety of responses.
 
 Experiment with these approaches to find the balance between readability and performance that best suits your needs.
