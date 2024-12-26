@@ -41,7 +41,7 @@ In this approach, the different conditions for Bob’s responses are separated i
 
 This approach simplifies the main method `hey` by breaking down each response condition into helper methods:
 
-1. **Trimming the Input**:
+### Trimming the Input
    The `input` is trimmed using the `String` [`trim()`][trim] method to remove any leading or trailing whitespace. This helps to accurately detect if the input is empty and should prompt a `"Fine. Be that way!"` response.
 
 2. **Delegating to Helper Methods**:
