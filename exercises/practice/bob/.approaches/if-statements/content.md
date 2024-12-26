@@ -45,23 +45,23 @@ This approach simplifies the main method `hey` by breaking down each response co
 
    The `input` is trimmed using the `String` [`trim()`][trim] method to remove any leading or trailing whitespace. This helps to accurately detect if the input is empty and should prompt a `"Fine. Be that way!"` response.
 
-### **Delegating to Helper Methods**:
-   
+### Delegating to Helper Methods
+
    Each condition is evaluated using the following helper methods:
 
-   - **`isSilent`**: Checks if the trimmed input has no characters.
-   - **`isShouting`**: Checks if the input is all uppercase and contains at least one alphabetic character, indicating shouting.
-   - **`isQuestioning`**: Verifies if the trimmed input ends with a question mark.
+   1. **`isSilent`**: Checks if the trimmed input has no characters.
+   2. **`isShouting`**: Checks if the input is all uppercase and contains at least one alphabetic character, indicating shouting.
+   3. **`isQuestioning`**: Verifies if the trimmed input ends with a question mark.
 
    This modular approach keeps each condition encapsulated, enhancing code clarity.
 
-### **Order of Checks**:
-   
+### Order of Checks
+
    The order of checks within `hey` is important:
-   - Silence is evaluated first, as it requires an immediate response.
-   - Shouted questions take precedence over individual checks for yelling and asking.
-   - Yelling comes next, requiring its response if not combined with a question.
-   - Asking (a non-shouted question) is checked afterward.
+   1. Silence is evaluated first, as it requires an immediate response.
+   2. Shouted questions take precedence over individual checks for shouting and questioning.
+   3. Shouting comes next, requiring its response if not combined with a question.
+   4. Questioning (a non-shouted question) is checked afterward.
 
    This ordering ensures that Bob’s response matches the expected behavior without redundancy.
 
