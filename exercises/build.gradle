@@ -12,24 +12,6 @@ subprojects {
 
   apply plugin: "checkstyle"
 
-  task.register('runOnGitHub') {
-    group = 'Verification'
-    description = 'Run checks for GitHub Actions'
-    
-    dependsOn 'checkstyleMain'
-    dependsOn 'checkstyleTest'
-    dependsOn 'checkstyleStarterSource'
-    dependsOn 'checkstyleStarterTest'
-
-    // Define the task actions
-    doLast {
-      tasks.checkstyleMain.execute()
-      tasks.checkstyleTest.execute()
-      tasks.checkstyleStarterSource.execute()
-      tasks.checkstyleStarterTest.execute()
-    }
-  }
-
   // Add a task that copies test source files into a build directory.
   // All @Disabled annotations are removed during this copying,
   // so that when we run the copied tests, none are skipped and all should execute.
