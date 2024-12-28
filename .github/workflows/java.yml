@@ -11,19 +11,32 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Check if tests compile cleanly with starter sources
+  check-java-exercises:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - name: Set up JDK 1.17
-        uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b
+      - uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: "temurin"
-      - name: Check if tests compile cleanly with starter sources
-        run: ./gradlew compileStarterTestJava --continue
-        working-directory: exercises
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            java:
+              - 'exercises/**/*.java'
+
+      - name: Check if modified tests compile cleanly with starter sources
+        if: steps.changes.outputs.java == 'true'
+        run: | 
+          for file in ${{ steps.changes.outputs.java_files }}; do
+            # Extract the exercise name from the file path
+            exercise=$(echo "$file" | sed -E 's/exercises\/(.*)\/.*\.java/\1/')
+            # Compile, check and run tests for the modified exercise
+            ./gradlew ":${exercise}:compileStarterTestJava" --continue
+            ./gradlew ":${exercise}:check" --exclude-task test --continue
+            ./gradlew ":${exercise}:test"
+          done
 
   lint:
     name: Lint Java files using Checkstyle
