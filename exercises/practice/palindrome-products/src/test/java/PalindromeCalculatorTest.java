@@ -176,6 +176,22 @@ public class PalindromeCalculatorTest {
                 .withMessage("invalid input: min must be <= max");
     }
 
+    @Disabled("Remove to run test")
+    @Test
+    public void smallestProductDoesNotUseTheSmallestFactor() {
+        List<List<Integer>> expected = Collections.unmodifiableList(
+                Arrays.asList(
+                        Arrays.asList(3297, 3333)
+                )
+        );
+        long expectedValue = 10988901L;
+
+        SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(3215,
+                4000);
+
+        checkPalindromeWithFactorsMatchesExpected(expected, expectedValue, palindromes, palindromes.firstKey());
+    }
+
 
     private void checkPalindromeWithFactorsMatchesExpected(List<List<Integer>> expectedPalindromeFactors,
                                                            long expectedValueOfPalindrome,
