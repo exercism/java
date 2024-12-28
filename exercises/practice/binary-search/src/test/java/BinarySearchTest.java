@@ -94,7 +94,7 @@ public class BinarySearchTest {
 
     @Disabled("Remove to run test")
     @Test
-    public void aValueLargerThanTheArraysSmallestValueIsNotFound() throws ValueNotFoundException {
+    public void aValueLargerThanTheArraysLargestValueIsNotFound() throws ValueNotFoundException {
         List<Integer> sortedList = List.of(1, 3, 4, 6, 8, 9, 11);
 
         BinarySearch search = new BinarySearch(sortedList);
@@ -119,7 +119,7 @@ public class BinarySearchTest {
     @Disabled("Remove to run test")
     @Test
     public void nothingIsFoundWhenTheLeftAndRightBoundCross() throws ValueNotFoundException {
-        List<Integer> sortedList = List.of(1, 2);
+        List<Integer> sortedList = List.of(2, 1);
 
         BinarySearch search = new BinarySearch(sortedList);
 
