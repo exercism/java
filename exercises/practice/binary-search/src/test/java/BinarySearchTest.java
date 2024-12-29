@@ -119,7 +119,7 @@ public class BinarySearchTest {
     @Disabled("Remove to run test")
     @Test
     public void nothingIsFoundWhenTheLeftAndRightBoundCross() throws ValueNotFoundException {
-        List<Integer> sortedList = List.of(2, 1);
+        List<Integer> sortedList = List.of(1, 2);
 
         BinarySearch search = new BinarySearch(sortedList);
 
