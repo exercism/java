@@ -39,19 +39,19 @@ import java.util.function.DoublePredicate;
 
 class Darts {
 
-    final private static double innerRing = 1.0;
-    final private static double middleRing = 5.0;
-    final private static double outerRing = 10.0;
+    private static final double INNER_RING = 1.0;
+    private static final double MIDDLE_RING = 5.0;
+    private static final double OUTER_RING = 10.0;
 
     int score(double x, double y) {
         var pointRadius = (Math.sqrt((x * x) + (y * y)));
         DoublePredicate thrownOutside = ring -> pointRadius > ring;
 
-        if (thrownOutside.test(outerRing))
+        if (thrownOutside.test(OUTER_RING))
             return 0;
-        if (thrownOutside.test(middleRing))
+        if (thrownOutside.test(MIDDLE_RING))
             return 1;
-        if (thrownOutside.test(innerRing))
+        if (thrownOutside.test(INNER_RING))
             return 5;
         return 10;
     }
