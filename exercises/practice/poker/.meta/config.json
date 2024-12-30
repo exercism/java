@@ -6,10 +6,12 @@
     "aadityakulkarni",
     "FridaTveit",
     "hgvanpariya",
+    "jagdish-15",
     "jmrunkle",
     "katmpatz",
     "kytrinyx",
     "lemoncurry",
+    "MartinDekanovsky",
     "mirkoperillo",
     "msomji",
     "muzimuzhi",
@@ -27,8 +29,6 @@
       "src/test/java/PokerTest.java"
     ],
     "example": [
-      ".meta/src/reference/java/Card.java",
-      ".meta/src/reference/java/Hand.java",
       ".meta/src/reference/java/Poker.java"
     ],
     "invalidator": [
