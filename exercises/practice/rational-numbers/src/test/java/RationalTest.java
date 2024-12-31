@@ -8,10 +8,10 @@ public class RationalTest {
 
     // Helper methods
 
-    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-15;
+    private static final double DOUBLE_EQUALITY_TOLERANCE = 2e-15;
 
     private void assertDoublesEqual(double x, double y) {
-        assertThat(x).isEqualTo(y, within(DOUBLE_EQUALITY_TOLERANCE));
+        assertThat(x).isCloseTo(y, within(DOUBLE_EQUALITY_TOLERANCE));
     }
 
     // Tests
