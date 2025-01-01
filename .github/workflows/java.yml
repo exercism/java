@@ -47,7 +47,7 @@ jobs:
       - name: Test all exercises using java-test-runner
         run: bin/test-with-test-runner
       - name: Archive test results
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882
+        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b
         with:
           name: test-results
           path: exercises/**/build/results.json
