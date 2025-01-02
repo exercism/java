@@ -35,7 +35,7 @@ switch (direction) {
 
 ## Modern Switch Statements
 
-The switch statement was improved in the latest Java versions. 
+The switch statement was improved in the latest Java versions.
 
 - The `break` keyword is not needed and the arrow operator is used instead of the semicolon.
 - Multiple case values can be provided in a single case statement.
