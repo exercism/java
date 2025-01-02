@@ -32,3 +32,63 @@ switch (direction) {
         break;
 }
 ```
+
+## Modern Switch Statements
+
+The switch statement was improved in the latest Java versions. 
+
+- The `break` keyword is not needed and the arrow operator is used instead of the semicolon.
+- Multiple case values can be provided in a single case statement.
+
+```java
+String direction = getDirection();
+switch (direction) {
+    case "left" -> goLeft();
+    case "right" -> goRight();
+    case "top", "bottom" -> goStraight();
+    default -> markTime();
+}
+```
+
+The first LTS (Long Term Support) version that had these improvements was Java 17, released on September, 2021.
+
+Other improvement is that the case values can be any object.
+
+## Switch Expressions
+
+Going even further, the switch block is now an expression, meaning it returns a value.
+
+```java
+return switch (day) {   // switch expression
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> "Week day";
+    case "Saturday", "Sunday" -> "Weekend";
+    default -> "Unknown";
+};
+```
+
+instead of using a switch statement:
+
+```java
+String day = "";
+switch (day) {          // switch statement
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> day = "Week day";
+    case "Saturday", "Sunday" -> day = "Weekend";
+    default-> day = "Unknown";
+};
+```
+
+In addition, a feature called `Guarded Patterns` was added, which allows you to do checks in the case label itself.
+
+```java
+String dayOfMonth = getDayOfMonth();
+String day = "";
+return switch (day) {
+    case "Tuesday" && dayOfMonth == 13 -> "Forbidden day!!";
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> "Week day";
+    case "Saturday", "Sunday" -> "Weekend";
+    default -> "Unknown";
+};
+```
+
+The first LTS (Long Term Support) version that had these improvements was Java 21, released on September, 2023.
+
