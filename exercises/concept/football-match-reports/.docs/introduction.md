@@ -91,4 +91,3 @@ return switch (day) {
 ```
 
 The first LTS (Long Term Support) version that had these improvements was Java 21, released on September, 2023.
-
