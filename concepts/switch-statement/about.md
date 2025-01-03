@@ -159,7 +159,6 @@ return switch (day) {
 };
 ```
 
-The first LTS (Long Term Support) version that had these improvements was Java 21, released on September, 2023.
 
 You can find more information on enhanced switch [here][switch1], [here][switch2] and on the [oracle documentation][oracle-doc].
 
