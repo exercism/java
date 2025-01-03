@@ -1,1 +1,4 @@
-../../../../src/main/java/TravelMethod.java
+public enum TravelMethod {
+    WALKING,
+    HORSEBACK
+}
