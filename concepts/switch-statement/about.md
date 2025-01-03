@@ -145,6 +145,23 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
    However if you use the new `->` notation it must be followed by either: a single statement/expression, a `throw` statement or a `{}` block.
    No more confusion!
 
+The first LTS (Long Term Support) version that had these improvements was Java 17, released on September, 2021.
+
+In addition, a feature called `Guarded Patterns` was added, which allows you to do checks in the case label itself.
+
+```java
+String dayOfMonth = getDayOfMonth();
+String day = "";
+return switch (day) {
+    case "Tuesday" && dayOfMonth == 13 -> "Forbidden day!!";
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> "Week day";
+    case "Saturday", "Sunday" -> "Weekend";
+    default -> "Unknown";
+};
+```
+
+The first LTS (Long Term Support) version that had these improvements was Java 21, released on September, 2023.
+
 You can find more information on enhanced switch [here][switch1], [here][switch2] and on the [oracle documentation][oracle-doc].
 
 [yield-keyword]: https://www.codejava.net/java-core/the-java-language/yield-keyword-in-java
