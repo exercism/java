@@ -146,7 +146,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
    No more confusion!
 
 
-In addition, a feature called `Guarded Patterns` was added, which allows you to do checks in the case label itself.
+In addition, a feature called `Guarded Patterns` was added in Java 21, which allows you to do checks in the case label itself.
 
 ```java
 String dayOfMonth = getDayOfMonth();
