@@ -2,7 +2,7 @@ import java.util.List;
 
 class Flattener {
 
-    <T> List<T> flatten(List<T> list) {
+    List<Object> flatten(List<?> list) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
