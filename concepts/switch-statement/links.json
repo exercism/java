@@ -14,5 +14,9 @@
   {
     "url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html",
     "description": "oracle-doc"
+  },
+  {
+    "url": "https://blog.adamgamboa.dev/switch-expression-on-java-21/#3-guarded-pattern",
+    "description": "switch-on-Java-21"
   }
 ]
