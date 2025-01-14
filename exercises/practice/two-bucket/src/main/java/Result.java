@@ -21,5 +21,4 @@ final class Result {
     public int getOtherBucket() {
         return otherBucket;
     }
-
 }

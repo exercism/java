@@ -104,7 +104,7 @@ final class TwoBucket {
         boolean invalidDivision = desiredLiters % gcd(bucketOneCap, bucketTwoCap) != 0;
         
         if (exceedsCapacity || invalidDivision) {
-            throw new IllegalArgumentException("impossible");
+            throw new UnreachableGoalException("impossible");
         }
     }
 
