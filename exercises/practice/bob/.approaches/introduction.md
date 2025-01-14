@@ -13,7 +13,7 @@ When implementing your solution, consider the following tips to keep your code o
 - **Return Statements**: An early return in an `if` statement eliminates the need for additional `else` blocks, making the code more readable.
 - **Curly Braces**: While optional for single-line statements, some teams may require them for readability and consistency.
 
-## Approach: `if` statements
+## Approach: method-based `if` statements
 
 ```java
 class Bob {
@@ -50,9 +50,9 @@ class Bob {
 }
 ```
 
-This approach defines helper methods for each type of message—silent, shouting, and questioning—to keep each condition clean and easily testable. For more details, refer to the [`if` Statements Approach][approach-if].
+This approach defines helper methods for each type of message—silent, shouting, and questioning—to keep each condition clean and easily testable. For more details, refer to the [method-based `if` Statements Approach][approach-method-if].
 
-## Approach: nested `if` statements
+## Approach: `if` statements
 
 ```java
 import java.util.function.Predicate;
@@ -84,7 +84,7 @@ class Bob {
 }
 ```
 
-This approach utilizes nested `if` statements and a predicate for determining if a message is a shout. For more details, refer to the [nested `if` Statements Approach][approach-nested-if].
+This approach utilizes nested `if` statements and a predicate for determining if a message is a shout. For more details, refer to the [`if` Statements Approach][approach-if].
 
 ## Approach: answer array
 
@@ -118,10 +118,10 @@ This approach uses an array of answers and calculates the appropriate index base
 
 ## Which Approach to Use?
 
-The choice between the **`if` Statements Approach**, **Nested `if` Statements Approach**, and the **Answer Array Approach** depends on readability, maintainability, and efficiency:
+The choice between the **Method-Based `if` Statements Approach**, **Nested `if` Statements Approach**, and the **Answer Array Approach** depends on readability, maintainability, and efficiency:
 
-- **`if` Statements Approach**: This is clear and easy to follow but checks conditions multiple times, potentially affecting performance. Storing results in variables like `questioning` and `shouting` can improve efficiency but may reduce clarity slightly.
-- **Nested `if` Statements Approach**: This approach can be more efficient by avoiding redundant checks, but its nested structure can reduce readability and maintainability.
+- **Method-Based `if` Statements Approach**: This is clear and easy to follow but checks conditions multiple times, potentially affecting performance. Storing results in variables like `questioning` and `shouting` can improve efficiency but may reduce clarity slightly.
+- **`if` Statements Approach**: This approach can be more efficient by avoiding redundant checks, but its nested structure can reduce readability and maintainability.
 - **Answer Array Approach**: Efficient and compact, this method uses an array of responses based on flags for questioning and shouting. However, it may be less intuitive and harder to modify if more responses are needed.
 
 Each approach offers a balance between readability and performance, with trade-offs in flexibility and clarity.
@@ -129,6 +129,6 @@ Each approach offers a balance between readability and performance, with trade-o
 [trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()
 [endswith]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#endsWith(java.lang.String)
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[approach-nested-if]: https://exercism.org/tracks/java/exercises/bob/approaches/nested-if-statements
+[approach-method-if]: https://exercism.org/tracks/java/exercises/bob/approaches/method-based-if-statements
 [approach-if]: https://exercism.org/tracks/java/exercises/bob/approaches/if-statements
 [approach-answer-array]: https://exercism.org/tracks/java/exercises/bob/approaches/answer-array

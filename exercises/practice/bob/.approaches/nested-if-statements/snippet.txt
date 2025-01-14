@@ -1,8 +1,0 @@
-if (questioning) {
-    if (shouting)
-        return "Calm down, I know what I'm doing!";
-    return "Sure.";
-}
-if (shouting)
-    return "Whoa, chill out!";
-return "Whatever.";

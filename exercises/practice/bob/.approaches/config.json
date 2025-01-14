@@ -11,9 +11,9 @@
   "approaches": [
     {
       "uuid": "6ca5c7c0-f8f1-49b2-b137-951fa39f89eb",
-      "slug": "if-statements",
-      "title": "if statements",
-      "blurb": "Use if statements to return the answer.",
+      "slug": "method-based-if-statements",
+      "title": "method-based if statements",
+      "blurb": "Use if statements to return the answer with the help of methods.",
       "authors": [
         "jagdish-15"
       ],
@@ -24,9 +24,9 @@
     },
     {
       "uuid": "323eb230-7f27-4301-88ea-19c39d3eb5b6",
-      "slug": "nested-if-statements",
-      "title": "nested if statements",
-      "blurb": "Use nested if statements to return the answer.",
+      "slug": "if-statements",
+      "title": "if statements",
+      "blurb": "Use if statements to return the answer.",
       "authors": [
         "bobahop"
       ]

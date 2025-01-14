@@ -1,4 +1,4 @@
-# Answer array
+# answer array
 
 ```java
 import java.util.function.Predicate;
