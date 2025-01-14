@@ -7,7 +7,7 @@ final class TwoBucket {
     private String finalBucket = "";
     private int otherBucket = Integer.MAX_VALUE;
 
-    private List<Map.Entry<Integer, Integer>> statesReached = new ArrayList<>();
+    private final List<Map.Entry<Integer, Integer>> statesReached = new ArrayList<>();
 
     TwoBucket(int bucketOneCap, int bucketTwoCap, int desiredLiters, String startBucket) {
         checkIfImpossible(desiredLiters, bucketOneCap, bucketTwoCap);
