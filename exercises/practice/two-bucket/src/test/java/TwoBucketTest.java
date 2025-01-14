@@ -9,11 +9,11 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeThreeBucketTwoSizeFiveStartWithOne() {
 
-        TwoBucket twoBucket = new TwoBucket(3, 5, 1, "one");
+        Result bucketResult = new TwoBucket(3, 5, 1, "one").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(4);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("one");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(5);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(4);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("one");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(5);
 
     }
 
@@ -21,11 +21,11 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeThreeBucketTwoSizeFiveStartWithTwo() {
 
-        TwoBucket twoBucket = new TwoBucket(3, 5, 1, "two");
+        Result bucketResult = new TwoBucket(3, 5, 1, "two").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(8);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(3);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(8);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("two");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(3);
 
     }
 
@@ -33,11 +33,11 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeSevenBucketTwoSizeElevenStartWithOne() {
 
-        TwoBucket twoBucket = new TwoBucket(7, 11, 2, "one");
+        Result bucketResult = new TwoBucket(7, 11, 2, "one").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(14);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("one");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(11);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(14);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("one");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(11);
 
     }
 
@@ -45,11 +45,11 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeSevenBucketTwoSizeElevenStartWithTwo() {
 
-        TwoBucket twoBucket = new TwoBucket(7, 11, 2, "two");
+        Result bucketResult = new TwoBucket(7, 11, 2, "two").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(18);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(7);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(18);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("two");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(7);
 
     }
 
@@ -57,11 +57,11 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeOneBucketTwoSizeThreeStartWithTwo() {
 
-        TwoBucket twoBucket = new TwoBucket(1, 3, 3, "two");
+        Result bucketResult = new TwoBucket(1, 3, 3, "two").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(1);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(0);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(1);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("two");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(0);
 
     }
 
@@ -69,28 +69,20 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeTwoBucketTwoSizeThreeStartWithOne() {
 
-        TwoBucket twoBucket = new TwoBucket(2, 3, 3, "one");
+        Result bucketResult = new TwoBucket(2, 3, 3, "one").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(2);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(2);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(2);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("two");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(2);
 
     }
 
     @Disabled("Remove to run test")
     @Test
     public void testReachingGoalIsImpossible() {
-
-        TwoBucket twoBucket = new TwoBucket(6, 15, 5, "one");
-
+        
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getTotalMoves())
-                .withMessage("impossible");
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getFinalBucket())
-                .withMessage("impossible");
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getOtherBucket())
+                .isThrownBy(() -> new TwoBucket(6, 15, 5, "one"))
                 .withMessage("impossible");
 
     }
@@ -99,11 +91,11 @@ public class TwoBucketTest {
     @Test
     public void testBucketOneSizeSixBucketTwoSizeFifteenStartWithOne() {
 
-        TwoBucket twoBucket = new TwoBucket(6, 15, 9, "one");
+        Result bucketResult = new TwoBucket(6, 15, 9, "one").getResult();
 
-        assertThat(twoBucket.getTotalMoves()).isEqualTo(10);
-        assertThat(twoBucket.getFinalBucket()).isEqualTo("two");
-        assertThat(twoBucket.getOtherBucket()).isEqualTo(0);
+        assertThat(bucketResult.getTotalMoves()).isEqualTo(10);
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("two");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo(0);
 
     }   
 
@@ -111,16 +103,8 @@ public class TwoBucketTest {
     @Test
     public void testGoalLargerThanBothBucketsIsImpossible() {
 
-        TwoBucket twoBucket = new TwoBucket(5, 7, 8, "one");
-
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getTotalMoves())
-                .withMessage("impossible");
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getFinalBucket())
-                .withMessage("impossible");
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> twoBucket.getOtherBucket())
+                .isThrownBy(() -> new TwoBucket(5, 7, 8, "one"))
                 .withMessage("impossible");
 
     }

@@ -2,16 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-class TwoBucket {
+final class TwoBucket {
     private int totalMoves = Integer.MAX_VALUE;
     private String finalBucket = "";
     private int otherBucket = Integer.MAX_VALUE;
 
-    private final int bucketOneCap;
-    private final int bucketTwoCap;
-    private final int desiredLiters;
-    
+    private List<Map.Entry<Integer, Integer>> statesReached = new ArrayList<>();
+
     TwoBucket(int bucketOneCap, int bucketTwoCap, int desiredLiters, String startBucket) {
+        checkIfImpossible(desiredLiters, bucketOneCap, bucketTwoCap);
+
         fillBuckets(
             startBucket.equals("one") ? bucketOneCap : 0,
             bucketOneCap,
@@ -21,13 +21,7 @@ class TwoBucket {
             1,
             startBucket
         );
-
-        this.bucketOneCap = bucketOneCap;
-        this.bucketTwoCap = bucketTwoCap;
-        this.desiredLiters = desiredLiters;
     }
-
-    private List<Map.Entry<Integer, Integer>> statesReached = new ArrayList<>();
 
     private void fillBuckets(
         int bucketOne,
@@ -105,7 +99,7 @@ class TwoBucket {
         }
     }
 
-    private void checkIfImpossible() {
+    private void checkIfImpossible(int desiredLiters, int bucketOneCap, int bucketTwoCap) {
         boolean exceedsCapacity = desiredLiters > bucketOneCap && desiredLiters > bucketTwoCap;
         boolean invalidDivision = desiredLiters % gcd(bucketOneCap, bucketTwoCap) != 0;
         
@@ -123,18 +117,7 @@ class TwoBucket {
         return a;
     }
 
-    int getTotalMoves() {
-        checkIfImpossible();
-        return totalMoves;
-    }
-
-    String getFinalBucket() {
-        checkIfImpossible();
-        return finalBucket;
-    }
-
-    int getOtherBucket() {
-        checkIfImpossible();
-        return otherBucket;
+    Result getResult() {
+        return new Result(totalMoves, finalBucket, otherBucket);
     }
 }
