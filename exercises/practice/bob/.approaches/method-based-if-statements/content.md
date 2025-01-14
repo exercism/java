@@ -1,4 +1,4 @@
-# method-based `if` statements
+# Method-Based `if` statements
 
 ```java
 class Bob {
