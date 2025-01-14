@@ -147,7 +147,23 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
 
 You can find more information on enhanced switch [here][switch1], [here][switch2] and on the [oracle documentation][oracle-doc].
 
+In addition, a feature called `Guarded Patterns` was added in Java 21, which allows you to do checks in the case label itself.
+
+```java
+String dayOfMonth = getDayOfMonth();
+String day = "";
+return switch (day) {
+    case "Tuesday" when dayOfMonth == 13 -> "Forbidden day!!";
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> "Week day";
+    case "Saturday", "Sunday" -> "Weekend";
+    default -> "Unknown";
+};
+```
+
+You can find more information on the switch expression on Java 21 [here][switch-on-Java-21]
+
 [yield-keyword]: https://www.codejava.net/java-core/the-java-language/yield-keyword-in-java
 [switch1]: https://www.vojtechruzicka.com/java-enhanced-switch/
 [switch2]: https://howtodoinjava.com/java14/switch-expressions/
 [oracle-doc]: https://docs.oracle.com/en/java/javase/13/language/switch-expressions.html
+[switch-on-Java-21]: https://blog.adamgamboa.dev/switch-expression-on-java-21/#3-guarded-pattern
