@@ -19,14 +19,16 @@
   "files": {
     "solution": [
       "src/main/java/TwoBucket.java",
-      "src/main/java/Result.java"
+      "src/main/java/Result.java",
+      "src/main/java/UnreachableGoalException.java"
     ],
     "test": [
       "src/test/java/TwoBucketTest.java"
     ],
     "example": [
       ".meta/src/reference/java/TwoBucket.java",
-      ".meta/src/reference/java/Result.java"
+      ".meta/src/reference/java/Result.java",
+      ".meta/src/reference/java/UnreachableGoalException.java"
     ],
     "invalidator": [
       "build.gradle"

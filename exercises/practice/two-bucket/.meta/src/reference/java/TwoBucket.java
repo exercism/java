@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Map;
 
 final class TwoBucket {
+    
     private int totalMoves = Integer.MAX_VALUE;
     private String finalBucket = "";
     private int otherBucket = Integer.MAX_VALUE;
