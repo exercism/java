@@ -82,7 +82,7 @@ public class TwoBucketTest {
     public void testReachingGoalIsImpossible() {
         
         assertThatExceptionOfType(UnreachableGoalException.class)
-                .isThrownBy(() -> new TwoBucket(6, 15, 5, "one"))
+                .isThrownBy(() -> new TwoBucket(6, 15, 5, "one").getResult())
                 .withMessage("impossible");
 
     }
@@ -104,7 +104,7 @@ public class TwoBucketTest {
     public void testGoalLargerThanBothBucketsIsImpossible() {
 
         assertThatExceptionOfType(UnreachableGoalException.class)
-                .isThrownBy(() -> new TwoBucket(5, 7, 8, "one"))
+                .isThrownBy(() -> new TwoBucket(5, 7, 8, "one").getResult())
                 .withMessage("impossible");
 
     }
