@@ -1,28 +1,17 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-final class Flattener {
+class Flattener {
 
-    List flatten(final List nestedList) {
-        if (nestedList.isEmpty()) {
-            return new ArrayList<>();
-        } else {
-            final List result = new ArrayList();
-
-            final Object head = nestedList.get(0);
-            final List tail = nestedList.subList(1, nestedList.size());
-
-            if (head instanceof List) {
-                result.addAll(flatten((List) head));
-            } else {
-                result.add(head);
+    List<Object> flatten(List<?> list) {
+        List<Object> flattenedList = new ArrayList<>();
+        for (Object element: list) {
+            if (element instanceof List<?> listAsElement) {
+                flattenedList.addAll(flatten(listAsElement));
+            } else if (element != null) {
+                flattenedList.add(element);
             }
-
-            result.addAll(flatten(tail));
-            result.removeAll(Collections.singleton(null));
-            return result;
         }
+        return flattenedList;
     }
-
 }
