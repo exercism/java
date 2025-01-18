@@ -84,7 +84,8 @@ class Bob {
 }
 ```
 
-This approach utilizes nested `if` statements and a predicate for determining if a message is a shout. For more details, refer to the [`if` Statements Approach][approach-if].
+This approach uses variables to avoid rechecking whether Bob is silent, shouting or questioning.
+For more details, refer to the [method-based `if` Statements Approach][approach-method-if].
 
 ## Approach: answer array
 
