@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ParallelLetterFrequencyTest {
 
-    private String calculateFrecuencies = 
+    private String calculateFrequencies =
         "There, peeping among the cloud-wrack above a dark tower high up in the mountains," +
         "Sam saw a white star twinkle for a while." +
         "The beauty of it smote his heart," +
@@ -338,7 +338,7 @@ public class ParallelLetterFrequencyTest {
     @Disabled("Remove to run test")
     @Test
     public void testCombinationOfLowerAndUppercaseLettersPunctuationAndWhiteSpace() {
-        String[] input = { calculateFrecuencies };
+        String[] input = {calculateFrequencies};
         Map<Character, Integer> expectedOutput = new HashMap<>() {
             {
                 put('a',  32);
