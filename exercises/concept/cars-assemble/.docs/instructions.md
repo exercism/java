@@ -20,7 +20,7 @@ CarsAssemble.productionRatePerHour(6)
 // => 1193.4
 ```
 
-Note that the value returned is a `double`.
+Note that the value returned is a `double`. You will need to take the success rate into account to get the correct result.
 
 ## 2. Calculate the number of working items produced per minute
 
