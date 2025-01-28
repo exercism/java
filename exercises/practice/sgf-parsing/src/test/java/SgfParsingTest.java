@@ -122,7 +122,7 @@ public class SgfParsingTest {
     @Test
     @Disabled("Remove to run test")
     public void withinPropertyValueWhitespace() throws SgfParsingException {
-        String input = "(;A[hello\\t\\tworld])";
+        String input = "(;A[hello\t\tworld])";
         SgfNode expected = new SgfNode(Map.of("A", List.of("hello  world")));
         SgfNode actual = new SgfParsing().parse(input);
         assertThat(actual).isEqualTo(expected);
