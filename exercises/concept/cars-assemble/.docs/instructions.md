@@ -13,14 +13,14 @@ You have two tasks.
 
 ## 1. Calculate the production rate per hour
 
-Implement the `CarsAssemble.productionRatePerHour()` method to calculate the assembly line's production rate per hour, taking into account its current assembly line's speed :
+Implement the `CarsAssemble.productionRatePerHour()` method to calculate the assembly line's production rate per hour, taking into account its current assembly line's speed and success rate:
 
 ```Java
 CarsAssemble.productionRatePerHour(6)
 // => 1193.4
 ```
 
-Note that the value returned is a `double`. You will need to take the success rate into account to get the correct result.
+Note that the value returned is a `double`.
 
 ## 2. Calculate the number of working items produced per minute
 
