@@ -126,7 +126,7 @@ This approach uses an array of answers and calculates the appropriate index base
 
 ## Which Approach to Use?
 
-The choice between the **Method-Based `if` Statements Approach**, **Nested `if` Statements Approach**, and the **Answer Array Approach** depends on readability, maintainability, and efficiency:
+The choice between the **Method-Based `if` Statements Approach**, **Variable-Based `if` Statements Approach**, and the **Answer Array Approach** depends on readability, maintainability, and efficiency:
 
 - **Method-Based `if` Statements Approach**: This is clear and easy to follow but checks conditions multiple times, potentially affecting performance. Storing results in variables like `questioning` and `shouting` can improve efficiency but may reduce clarity slightly.
 - **Variable-Based `if` Statements Approach**: This approach can be more efficient by avoiding redundant checks, but its nested structure can reduce readability and maintainability.
