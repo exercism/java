@@ -49,6 +49,11 @@ This approach simplifies the main method `hey` by breaking down each response co
 
    The `input` is trimmed using the `String` [`trim()`][trim] method to remove any leading or trailing whitespace. This helps to accurately detect if the input is empty and should prompt a `"Fine. Be that way!"` response.
 
+~~~~exercism/caution
+Note that a `null` `string` would be different from a `String` of all whitespace.
+A `null` `String` would throw a `NullPointerException` if `trim()` were applied to it.
+~~~~
+
 ### Delegating to Helper Methods
 
    Each condition is evaluated using the following helper methods:
