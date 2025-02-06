@@ -1,6 +1,8 @@
 # Introduction
 
-In this exercise, we’re working on a program to determine Bob’s responses based on the tone and style of given messages. Bob responds differently depending on whether a message is a question, a shout, both, or silence. Various approaches can be used to implement this logic efficiently and cleanly, ensuring the code remains readable and easy to maintain.
+In this exercise, we’re working on a program to determine Bob’s responses based on the tone and style of given messages.
+Bob responds differently depending on whether a message is a question, a shout, both, or silence.
+Various approaches can be used to implement this logic efficiently and cleanly, ensuring the code remains readable and easy to maintain.
 
 ## General guidance
 
@@ -50,9 +52,10 @@ class Bob {
 }
 ```
 
-This approach defines helper methods for each type of message—silent, shouting, and questioning—to keep each condition clean and easily testable. For more details, refer to the [method-based `if` Statements Approach][approach-method-if].
+This approach defines helper methods for each type of message—silent, shouting, and questioning—to keep each condition clean and easily testable. 
+For more details, refer to the [method-based `if` Statements Approach][approach-method-if].
 
-## Approach: `if` statements
+## Approach: variable-based `if` statements
 
 ```java
 import java.util.function.Predicate;
@@ -85,7 +88,7 @@ class Bob {
 ```
 
 This approach uses variables to avoid rechecking whether Bob is silent, shouting or questioning.
-For more details, refer to the [method-based `if` Statements Approach][approach-method-if].
+For more details, refer to the [variable-based `if` Statements Approach][approach-variable-if].
 
 ## Approach: answer array
 
@@ -122,7 +125,7 @@ This approach uses an array of answers and calculates the appropriate index base
 The choice between the **Method-Based `if` Statements Approach**, **Nested `if` Statements Approach**, and the **Answer Array Approach** depends on readability, maintainability, and efficiency:
 
 - **Method-Based `if` Statements Approach**: This is clear and easy to follow but checks conditions multiple times, potentially affecting performance. Storing results in variables like `questioning` and `shouting` can improve efficiency but may reduce clarity slightly.
-- **`if` Statements Approach**: This approach can be more efficient by avoiding redundant checks, but its nested structure can reduce readability and maintainability.
+- **Variable-Based `if` Statements Approach**: This approach can be more efficient by avoiding redundant checks, but its nested structure can reduce readability and maintainability.
 - **Answer Array Approach**: Efficient and compact, this method uses an array of responses based on flags for questioning and shouting. However, it may be less intuitive and harder to modify if more responses are needed.
 
 Each approach offers a balance between readability and performance, with trade-offs in flexibility and clarity.
@@ -131,5 +134,5 @@ Each approach offers a balance between readability and performance, with trade-o
 [endswith]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#endsWith(java.lang.String)
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [approach-method-if]: https://exercism.org/tracks/java/exercises/bob/approaches/method-based-if-statements
-[approach-if]: https://exercism.org/tracks/java/exercises/bob/approaches/if-statements
+[approach-variable-if]: https://exercism.org/tracks/java/exercises/bob/approaches/variable-based-if-statements
 [approach-answer-array]: https://exercism.org/tracks/java/exercises/bob/approaches/answer-array

@@ -1,4 +1,4 @@
-# `if` statements
+# Variable-Based `if` statements
 
 ```java
 import java.util.function.Predicate;
