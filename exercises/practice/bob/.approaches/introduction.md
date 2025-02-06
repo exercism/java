@@ -22,14 +22,18 @@ class Bob {
     String hey(String input) {
         var inputTrimmed = input.trim();
         
-        if (isSilent(inputTrimmed))
+        if (isSilent(inputTrimmed)) {
            return "Fine. Be that way!";
-        if (isShouting(inputTrimmed) && isQuestioning(inputTrimmed))
+        }
+        if (isShouting(inputTrimmed) && isQuestioning(inputTrimmed)) {
             return "Calm down, I know what I'm doing!";
-        if (isShouting(inputTrimmed))
+        }
+        if (isShouting(inputTrimmed)) {
             return "Whoa, chill out!";
-        if (isQuestioning(inputTrimmed))
+        }
+        if (isQuestioning(inputTrimmed)) {
             return "Sure.";
+        }
             
         return "Whatever.";
     }
