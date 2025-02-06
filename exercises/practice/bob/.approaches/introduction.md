@@ -52,7 +52,7 @@ class Bob {
 }
 ```
 
-This approach defines helper methods for each type of message—silent, shouting, and questioning—to keep each condition clean and easily testable. 
+This approach defines helper methods for each type of message—silent, shouting, and questioning—to keep each condition clean and easily testable.
 For more details, refer to the [method-based `if` Statements Approach][approach-method-if].
 
 ## Approach: variable-based `if` statements
