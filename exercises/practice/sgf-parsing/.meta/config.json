@@ -2,6 +2,10 @@
   "authors": [
     "tlphat"
   ],
+  "contributors": [
+    "jagdish-15",
+    "kahgoh"
+  ],
   "files": {
     "solution": [
       "src/main/java/SgfParsing.java"

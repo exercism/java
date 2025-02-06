@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up JDK 1.17
-        uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b
+        uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
         with:
           java-version: 17
           distribution: "temurin"
@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up JDK 1.17
-        uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b
+        uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
         with:
           java-version: 17
           distribution: "temurin"
@@ -47,7 +47,7 @@ jobs:
       - name: Test all exercises using java-test-runner
         run: bin/test-with-test-runner
       - name: Archive test results
-        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
           name: test-results
           path: exercises/**/build/results.json

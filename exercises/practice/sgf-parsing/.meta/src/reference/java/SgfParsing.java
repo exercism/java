@@ -29,26 +29,52 @@ public class SgfParsing {
         StringBuilder buffer = new StringBuilder();
         Map<String, List<String>> properties = new HashMap<>();
         String key = null;
+        boolean escape = false;
+        boolean inValue = false;
         while (index < input.length()) {
-            switch (input.charAt(index)) {
-                case '(':
-                    index = addNewChild(input, index, root);
-                    break;
-                case ')':
-                    break;
-                case '[':
-                    key = loadKeyFromBuffer(buffer, properties);
-                    break;
-                case ']':
-                    properties.get(key).add(popStringFromBuffer(buffer));
-                    if (input.charAt(index + 1) == ')') {
-                        root.setProperties(properties);
-                        return index + 1;
-                    }
-                    index = examineNextNode(input, index, root, properties);
-                    break;
-                default:
-                    index = appendCharToBuffer(input, index, buffer);
+            char nextChar = input.charAt(index);
+            if (escape) {
+                if (nextChar != '\n') {
+                    appendChar(buffer, nextChar);
+                }
+                escape = false;
+            } else {
+                switch (nextChar) {
+                    case '(':
+                        if (inValue) {
+                            buffer.append(nextChar);
+                        } else {
+                            index = addNewChild(input, index, root);
+                        }
+                        break;
+                    case ')':
+                        if (inValue) {
+                            buffer.append(nextChar);
+                        }
+                        break;
+                    case '[':
+                        if (inValue) {
+                            buffer.append(nextChar);
+                        } else {
+                            key = loadKeyFromBuffer(buffer, properties);
+                            inValue = true;
+                        }
+                        break;
+                    case ']':
+                        properties.get(key).add(popStringFromBuffer(buffer));
+                        if (input.charAt(index + 1) == ')') {
+                            root.setProperties(properties);
+                            return index + 1;
+                        }
+                        index = examineNextNode(input, index, root, properties);
+                        inValue = false;
+                        break;
+                    case '\\':
+                        escape = true;
+                        break;
+                    default:
+                        appendChar(buffer, nextChar);
+                }
             }
             ++index;
         }
@@ -101,14 +127,13 @@ public class SgfParsing {
         }
         return index;
     }
-
-    private int appendCharToBuffer(String input, int index, StringBuilder buffer) {
-        char character = input.charAt(index);
-        while (character == '\\') {
-            character = input.charAt(++index);
+    
+    private void appendChar(StringBuilder builder, char charToAdd) {
+        if (charToAdd != '\n' && Character.isWhitespace(charToAdd)) {
+            builder.append(" ");
+        } else {
+            builder.append(charToAdd);
         }
-        buffer.append(character);
-        return index;
     }
 
     private void checkIfThereAreDelimiters(StringBuilder buffer) throws SgfParsingException {
