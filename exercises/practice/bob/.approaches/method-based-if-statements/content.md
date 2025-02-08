@@ -39,7 +39,8 @@ class Bob {
 }
 ```
 
-In this approach, the different conditions for Bob’s responses are separated into dedicated private methods within the `Bob` class. This method-based approach improves readability and modularity by organizing each condition check into its own method, making the main response method easier to understand and maintain.
+In this approach, the different conditions for Bob’s responses are separated into dedicated private methods within the `Bob` class.
+This method-based approach improves readability and modularity by organizing each condition check into its own method, making the main response method easier to understand and maintain.
 
 ## Explanation
 
@@ -57,24 +58,24 @@ A `null` `String` would throw a `NullPointerException` if `trim()` were applied 
 
 ### Delegating to Helper Methods
 
-   Each condition is evaluated using the following helper methods:
+Each condition is evaluated using the following helper methods:
 
-   1. **`isSilent`**: Checks if the trimmed input has no characters.
-   2. **`isShouting`**: Checks if the input is all uppercase and contains at least one alphabetic character, indicating shouting.
-   3. **`isQuestioning`**: Verifies if the trimmed input ends with a question mark.
+1. **`isSilent`**: Checks if the trimmed input has no characters.
+2. **`isShouting`**: Checks if the input is all uppercase and contains at least one alphabetic character, indicating shouting.
+3. **`isQuestioning`**: Verifies if the trimmed input ends with a question mark.
 
-   This modular approach keeps each condition encapsulated, enhancing code clarity.
+This modular approach keeps each condition encapsulated, enhancing code clarity.
 
 ### Order of Checks
 
-   The order of checks within `hey` is important:
+The order of checks within `hey` is important:
 
-   1. Silence is evaluated first, as it requires an immediate response.
-   2. Shouted questions take precedence over individual checks for shouting and questioning.
-   3. Shouting comes next, requiring its response if not combined with a question.
-   4. Questioning (a non-shouted question) is checked afterward.
+1. Silence is evaluated first, as it requires an immediate response.
+2. Shouted questions take precedence over individual checks for shouting and questioning.
+3. Shouting comes next, requiring its response if not combined with a question.
+4. Questioning (a non-shouted question) is checked afterward.
 
-   This ordering ensures that Bob’s response matches the expected behavior without redundancy.
+This ordering ensures that Bob’s response matches the expected behavior without redundancy.
 
 ## Shortening
 
