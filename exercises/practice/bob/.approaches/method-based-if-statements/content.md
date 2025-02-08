@@ -91,7 +91,8 @@ if (isSilent(inputTrimmed))
     return "Fine. Be that way!";
 ```
 
-However, the [Java Coding Conventions][coding-conventions] advise always using curly braces for `if` statements, which helps to avoid errors. Your team may choose to overrule them at its own risk.
+However, the [Java Coding Conventions][coding-conventions] advise always using curly braces for `if` statements, which helps to avoid errors. 
+Your team may choose to overrule them at its own risk.
 
 [trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()  
 [coding-conventions]: https://www.oracle.com/java/technologies/javase/codeconventions-statements.html#449
