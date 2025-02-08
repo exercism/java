@@ -122,7 +122,8 @@ class Bob {
 }
 ```
 
-This approach uses an array of answers and calculates the appropriate index based on flags for shouting and questioning. For more details, refer to the [Answer Array Approach][approach-answer-array].
+This approach uses an array of answers and calculates the appropriate index based on flags for shouting and questioning. 
+For more details, refer to the [Answer Array Approach][approach-answer-array].
 
 ## Which Approach to Use?
 
