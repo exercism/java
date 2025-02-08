@@ -48,7 +48,7 @@ This approach simplifies the main method `hey` by breaking down each response co
 
 ### Trimming the Input
 
-The `input` is trimmed using the `String` [`trim()`][trim] method to remove any leading or trailing whitespace. 
+The `input` is trimmed using the `String` [`trim()`][trim] method to remove any leading or trailing whitespace.
 This helps to accurately detect if the input is empty and should prompt a `"Fine. Be that way!"` response.
 
 ~~~~exercism/caution
@@ -92,7 +92,7 @@ if (isSilent(inputTrimmed))
     return "Fine. Be that way!";
 ```
 
-However, the [Java Coding Conventions][coding-conventions] advise always using curly braces for `if` statements, which helps to avoid errors. 
+However, the [Java Coding Conventions][coding-conventions] advise always using curly braces for `if` statements, which helps to avoid errors.
 Your team may choose to overrule them at its own risk.
 
 [trim]: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()  
