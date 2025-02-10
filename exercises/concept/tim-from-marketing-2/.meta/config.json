@@ -1,0 +1,13 @@
+{
+  "authors": ["josealonso"],
+  "files": {
+    "solution": [
+      "src/main/java/TimFromMarketing2.java"
+    ],
+    "test": [
+      "src/test/java/TimFromMarketing2Test.java"
+    ],
+    "exemplar": []
+  },
+  "blurb": ""
+}

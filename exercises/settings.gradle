@@ -21,6 +21,7 @@ include 'concept:salary-calculator'
 include 'concept:secrets'
 include 'concept:squeaky-clean'
 include 'concept:tim-from-marketing'
+include 'concept:tim-from-marketing-2'
 include 'concept:wizards-and-warriors'
 include 'concept:wizards-and-warriors-2'
 
