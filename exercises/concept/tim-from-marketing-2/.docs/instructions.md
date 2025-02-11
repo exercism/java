@@ -3,21 +3,12 @@
 In this exercise you will be writing code to print all the names of the factory employees.
 
 Employees have an ID, a name and a department name, like in [tim-from-marketing](/exercises/concept/tim-from-marketing). 
-Assume that the ID of the first employee is 1, the ID of the second employee is 2, and so on. If an employee has an ID, the other two fields, name and department name, have valid values.
+Assume that the ID of the first employee is 1, the ID of the second employee is 2, and so on. The three fields of an employee may be empty, That's why they are declared as Optional<T> types.
 
 Two methods are already implemented:
 
 - `getAllTheEmployeesById()` returns an Optional<List<Employee>> object. Notice this method does NOT receive any parameter.
 - `getEmployeeById(id)` returns an Optional<Employee> object for the given ID, being Employee the following class:
-
-```java
-class Employee {
-    private int id;
-    private String name;
-    private String departmentName;
-    // Getters and setters
-}
-```
 
 ## 1.- Print the names of all the employees
 
@@ -42,4 +33,3 @@ printEmployeeNameAndDepartmentById(3) => "3 - Steve - Engineering"
 printEmployeeNameAndDepartmentById(4) => "4 - This employee does not exist"
 printEmployeeNameAndDepartmentById(5) => "5 - Charlotte - Owner"
 ```
-

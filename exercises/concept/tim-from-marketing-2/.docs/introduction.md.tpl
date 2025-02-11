@@ -1,5 +1,5 @@
 # Introduction
 
-## Optional
+%{concept:optional-types}
 
-%{concept:optional}
+%{concept:flatMap-operation}
