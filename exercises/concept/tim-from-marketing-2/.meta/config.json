@@ -13,6 +13,6 @@
       ".meta/src/reference/java/EmployeeService.java"
     ],
   },
-  "icon": "language-list",
+  "icon": "nullability",
   "blurb": "Learn to use the Optional class by helping Tim print details of his company employees."
 }

@@ -40,6 +40,19 @@ public Optional<Employee> getEmployee(String name) {
 }
 ```
 
+Other commonly used method is `ifPresentOrElse`, which is used to handle the case where the value is present and the case where the value is empty.
+
+```java
+public Optional<Employee> getEmployee(String name) {
+    // Assume that getEmployeeByName returns an Optional<Employee>
+    return getEmployeeByName(name)
+           .ifPresentOrElse(
+                   employee -> System.out.println(employee.getName()),
+                   () -> System.out.println("Employee not found")
+           );
+}
+```
+
 Provided all the invoked methods return Optional objects, many methods can be chained without having to worry about null checking:
 
 ```java
@@ -47,11 +60,13 @@ public Optional<Integer> getEmployeeAge(String name) {
     Optional<Employee> optionalEmployee = getEmployeeByName(name);
     return getEmployeeByName(name)
                .map(employee -> employee.getAge())
-               .orElse(0);
+               .orElse("No employee found");
 }
 ```
 
 It is important to understand that the Optional API does not eliminate the null checking, but it defers it until the end of a series of methods, as long as all those methods return an optional object. 
+
+The fields of the Employee class have an Optional type. Notice that this is not recommended, as explained by one well-known Java language architect in [this SO answer](https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type)
 
 ## Flatmap operation
 
@@ -68,7 +83,7 @@ List<Optional<String>> listOfOptionals = Arrays.asList(
 ```java
 // Using flatMap to extract present values
         List<String> result = listOfOptionals.stream()
-            .flatMap(Optional::stream)
+            .flatMap(language -> language.stream())
             .collect(Collectors.toList());
 
         System.out.println(result); // Output: [Java, Kotlin]

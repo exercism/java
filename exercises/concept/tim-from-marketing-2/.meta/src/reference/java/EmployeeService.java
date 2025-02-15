@@ -1,66 +1,60 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.stream.*;
-
 
 class EmployeeService {
-  
-    public List<Optional<Employee>> getAllTheEmployeesById() {
-        return getAllTheEmployeesById()
-        .stream()
-        .map(employee -> Optional.ofNullable(employee))
-        .collect(Collectors.toList());
+
+    //  This list is populated in the tests
+    private List<Optional<Employee>> nullableEmployeesList = new ArrayList<>();
+
+    public EmployeeService(List<Optional<Employee>> listOfEmployees) {
+        nullableEmployeesList = listOfEmployees;
     }
 
     public Optional<Employee> getEmployeeById(int employeeId) {
-       /* Solution using Streams
-        
-        return getAllTheEmployeesById(employeesList).stream()
-                                     .filter(employee -> employee.getId() == id)
-                                     .orElse("Employee not found");
-        */
-
-        return Optional.ofNullable(getEmployeeById(employeeId));
+        return nullableEmployeesList
+                .stream()
+                .flatMap(employee -> employee.stream())
+                .filter(employee -> employee.getNullableId()
+                        .map(id -> id == employeeId)
+                        .orElse(false))
+                .findFirst();
     }
 
-    public String printAllEmployeesNamesById() {
-        List<Optional<Employee>> nullableEmployeesList = getAllTheEmployeesById();
+    /* I could use IntStream.range(0, nullableEmployeesList.size()) instead of a for loop, but
+       understanding the Optional API is difficult enough.
+       I do not use method references for the same reason. */
+    public String printAllEmployeesNames() {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < nullableEmployeesList.size(); i++) {
             stringBuilder.append(i).append(" - ");
 
             nullableEmployeesList.get(i)
-                .flatMap(employee -> employee.getName())
-                .ifPresentOrElse(
-                    name -> stringBuilder.append(name).append("\n"),
-                    () -> stringBuilder.append("No employee found\n")
-                );
+                    .flatMap(employee -> employee.getNullableName())
+                    .ifPresentOrElse(
+                            name -> stringBuilder.append(name).append("\n"),
+                            () -> stringBuilder.append("No employee found\n")
+                    );
         }
         return stringBuilder.toString();
     }
 
     public String printEmployeeNameAndDepartmentById(int employeeId) {
-
-        var employee = getEmployeeById(employeeId);
+        Optional<Employee> employee = getEmployeeById(employeeId);
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(employeeId).append(" - ");
+        // Handle Optional values
         employee.ifPresentOrElse(
-            e -> {
-                // Handle Optional values
-                e.getName().ifPresentOrElse(
-                    name -> stringBuilder.append(name).append(" - "),
-                    () -> {}
-                );
-                e.getDepartment().ifPresentOrElse(
-                    department -> stringBuilder.append(department),
-                    () -> {}
-                );
-            },
-            () -> stringBuilder.append("No employee found")
+                e -> {
+                    e.getNullableName().ifPresent(name ->
+                            e.getNullableDepartment().ifPresent(department ->
+                                    stringBuilder.append(name).append(" - ").append(department)
+                            )
+                    );
+                },
+                () -> stringBuilder.append("No employee found")
         );
         return stringBuilder.toString();
-    }       
+    }
 
 }
-

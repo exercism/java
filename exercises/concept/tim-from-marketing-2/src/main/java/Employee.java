@@ -1,3 +1,6 @@
+import java.util.Objects;
+import java.util.Optional;
+
 class Employee {
     private final int id;  
     private final String name;
@@ -9,15 +12,29 @@ class Employee {
         this.department = department;
     }
 
-    public Optional<Integer> getId() {
-        return Optional.ofNullable(id); 
+    public Optional<Integer> getNullableId() {
+        return Optional.ofNullable(id);
     }
 
-    public Optional<String> getName() {
+    public Optional<String> getNullableName() {
         return Optional.ofNullable(name);
     }
 
-    public Optional<String> getDepartment() {
+    public Optional<String> getNullableDepartment() {
         return Optional.ofNullable(department);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id &&
+                Objects.equals(name, employee.name) && Objects.equals(department, employee.department);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, department);
     }
 }

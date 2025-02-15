@@ -3,7 +3,7 @@
 ## Goal
 
 The goal of this exercise is to teach the student how to use the Optional API.
-We will use the most common methods: `ifPresent`, `orElse`, `ifPresentOrElse`, `orElseThrown`. 
+We will use the most common methods: `ifPresent`, `orElse`, `ifPresentOrElse`, `orElseThrow`. 
 The `isPresent` and `get` methods are not presented, since they do not provide any value over an ordinary null check.
 
 Some methods of the Stream API are needed. This is a bit problematic, since they have not been explained in the current Java track.
@@ -35,15 +35,11 @@ This Concept Exercise's prerequisites Concepts are:
 
 ## Analyzer
 
-wip
-
 This exercise could benefit from the following rules in the [analyzer]:
 
-- `actionable`: If the solution did not use `contains` in the method `containsLanguage`, instruct the student to do so.
-- `actionable`: If the solution did not use `isEmpty` in the method `isEmpty`, instruct the student to do so.
-- `informative`: If the student did not reuse the implementation of the `containsLanguage` method in the `isExciting` method, instruct them to do so.
-  Explain that reusing existing code instead of copy-pasting can help make code easier to maintain.
-- `informative`: If the solution uses an `if statement` in the `containsLanguage` method, instruct the student to return directly the `contains` method.
+- `actionable`: If the solution uses `null` in any method, encourage the student to use `Optional<T>` instead.
+- `actionable`: If the solution uses the `get` or `isPresent` methods of the Optional<T> API, encourage the student to use `orElse`, `orElseThrow` or `ifPresentOrElse` instead. 
+- `informative`: TODO.
 
 If the solution does not receive any of the above feedback, it must be exemplar.
 Leave a `celebratory` comment to celebrate the success!
