@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin/main" path=".meta/src/reference/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="bin/starterSource" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="starterSource"/>
+			<attribute name="gradle_used_by_scope" value="starterSource"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="bin/starterTest" path="src/test/java">
+		<attributes>
+			<attribute name="gradle_scope" value="starterTest"/>
+			<attribute name="gradle_used_by_scope" value="starterTest"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

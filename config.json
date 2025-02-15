@@ -308,6 +308,13 @@
           "generic-types"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "tim-from-marketing-2",
+        "name": "tim-from-marketing-2",
+        "uuid": "a6cfc286-8c62-4f5b-8e59-f6bfc4374092",
+        "concepts": [],
+        "prerequisites": []
       }
     ],
     "practice": [

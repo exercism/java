@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "josealonso"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/EmployeeService.java"
+    ],
+    "test": [
+      "src/test/java/EmployeeServiceTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/EmployeeService.java"
+    ],
+  },
+  "icon": "nullability",
+  "blurb": "Learn to use the Optional class by helping Tim print details of his company employees."
+}
