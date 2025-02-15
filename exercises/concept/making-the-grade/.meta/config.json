@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "manumafe98"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/MakingTheGrade.java"
+    ],
+    "test": [
+      "src/test/java/MakingTheGradeTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/MakingTheGrade.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "forked_from": [
+    "python/making-the-grade"
+  ],
+  "blurb": "Learn to use different kinds of loops by automating the tasks of an assistant teacher."
+}

@@ -61,9 +61,7 @@
         "name": "Bird Watcher",
         "uuid": "60600885-8684-45c3-b8a9-a2f9e3ce2d97",
         "concepts": [
-          "arrays",
-          "for-loops",
-          "foreach-loops"
+          "arrays"
         ],
         "prerequisites": [
           "if-else-statements"
@@ -308,6 +306,19 @@
           "generic-types"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "making-the-grade",
+        "name": "Making the Grade",
+        "uuid": "e5d2a004-8c9b-4da3-831b-f7bbabf178a3",
+        "concepts": [
+          "loops"
+        ],
+        "prerequisites": [
+          "if-else-statements",
+          "lists"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -505,7 +516,7 @@
         "uuid": "8e983ed2-62f7-439a-a144-fb8fdbdf4d30",
         "practices": [],
         "prerequisites": [
-          "foreach-loops",
+          "loops",
           "strings"
         ],
         "difficulty": 2
@@ -516,7 +527,7 @@
         "uuid": "c31bbc6d-bdcf-44f7-bf35-5f98752e38d0",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "strings"
         ],
         "difficulty": 3
@@ -548,7 +559,7 @@
         "uuid": "ce899ca6-9cc7-47ba-b76f-1bbcf2630b76",
         "practices": [],
         "prerequisites": [
-          "for-loops"
+          "loops"
         ],
         "difficulty": 3
       },
@@ -700,7 +711,7 @@
         "practices": [],
         "prerequisites": [
           "chars",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 4
       },
@@ -711,7 +722,7 @@
         "practices": [],
         "prerequisites": [
           "if-else-statements",
-          "for-loops",
+          "loops",
           "strings"
         ],
         "difficulty": 4
@@ -746,7 +757,7 @@
         "prerequisites": [
           "chars",
           "numbers",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 4
       },
@@ -757,7 +768,7 @@
         "practices": [],
         "prerequisites": [
           "numbers",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 4
       },
@@ -779,7 +790,7 @@
         "practices": [],
         "prerequisites": [
           "exceptions",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "numbers"
         ],
@@ -791,7 +802,7 @@
         "uuid": "9906491b-a638-408d-86a4-4ad320a92658",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "arrays"
         ],
         "difficulty": 4
@@ -804,7 +815,7 @@
         "prerequisites": [
           "chars",
           "if-else-statements",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 4
       },
@@ -857,7 +868,7 @@
         "uuid": "581afdbb-dfb6-4dc5-9554-a025b5469a3c",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "arrays"
         ],
         "difficulty": 4
@@ -888,7 +899,7 @@
         "uuid": "6a617ddb-04e3-451c-bb30-27ccd0be9125",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "enums",
           "bit-manipulation"
         ],
@@ -901,7 +912,7 @@
         "practices": [],
         "prerequisites": [
           "chars",
-          "foreach-loops"
+          "loops"
         ],
         "difficulty": 5
       },
@@ -977,7 +988,7 @@
         "uuid": "85aa50ac-0141-49eb-bc6f-62f3f7a97647",
         "practices": [],
         "prerequisites": [
-          "foreach-loops",
+          "loops",
           "strings"
         ],
         "difficulty": 5
@@ -989,7 +1000,7 @@
         "practices": [],
         "prerequisites": [
           "if-else-statements",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 5
       },
@@ -1060,7 +1071,7 @@
         "prerequisites": [
           "chars",
           "if-else-statements",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 5
       },
@@ -1091,7 +1102,7 @@
         "uuid": "3603b770-87a5-4758-91f3-b4d1f9075bc1",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "arrays"
         ],
         "difficulty": 5
@@ -1103,7 +1114,7 @@
         "practices": [],
         "prerequisites": [
           "arrays",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "strings"
         ],
@@ -1117,7 +1128,7 @@
         "prerequisites": [
           "chars",
           "exceptions",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "numbers"
         ],
@@ -1131,7 +1142,7 @@
         "prerequisites": [
           "arrays",
           "exceptions",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "numbers"
         ],
@@ -1193,7 +1204,7 @@
         "uuid": "4b3f7771-c642-4278-a3d9-2fb958f26361",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "arrays"
         ],
         "difficulty": 6
@@ -1204,7 +1215,7 @@
         "uuid": "76d28d97-75d3-47eb-bb77-3d347b76f1b6",
         "practices": [],
         "prerequisites": [
-          "foreach-loops",
+          "loops",
           "strings"
         ],
         "difficulty": 6
@@ -1238,7 +1249,7 @@
         "practices": [],
         "prerequisites": [
           "strings",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 6
       },
@@ -1295,7 +1306,7 @@
         "prerequisites": [
           "arrays",
           "chars",
-          "foreach-loops",
+          "loops",
           "if-else-statements"
         ],
         "difficulty": 6
@@ -1339,7 +1350,7 @@
         "uuid": "163fcc6b-c054-4232-a88b-0aded846a6eb",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "numbers"
         ],
         "difficulty": 6
@@ -1360,7 +1371,7 @@
         "uuid": "57b76837-4610-466f-9373-d5c2697625f1",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "lists",
           "strings"
         ],
@@ -1387,7 +1398,7 @@
           "arrays",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 7
       },
@@ -1424,7 +1435,7 @@
         "prerequisites": [
           "chars",
           "constructors",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "numbers"
         ],
@@ -1495,7 +1506,7 @@
           "chars",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 7
       },
@@ -1675,7 +1686,7 @@
         "uuid": "1bac7473-9ee8-4cfc-928b-77792102ffc1",
         "practices": [],
         "prerequisites": [
-          "for-loops",
+          "loops",
           "randomness",
           "strings"
         ],
@@ -1701,7 +1712,7 @@
         "practices": [],
         "prerequisites": [
           "exceptions",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "numbers"
         ],
@@ -1716,7 +1727,7 @@
           "strings",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "loops"
         ],
         "difficulty": 8
       },
@@ -1761,7 +1772,7 @@
         "prerequisites": [
           "chars",
           "exceptions",
-          "for-loops",
+          "loops",
           "if-else-statements",
           "numbers",
           "randomness"
@@ -1876,16 +1887,6 @@
       "name": "Exceptions"
     },
     {
-      "uuid": "3a1f7a96-b4a5-43d3-99e2-7c248e74e6c8",
-      "slug": "foreach-loops",
-      "name": "For-Each Loops"
-    },
-    {
-      "uuid": "b1bb63e6-4540-48fc-9d11-4ee72653484e",
-      "slug": "for-loops",
-      "name": "For Loops"
-    },
-    {
       "uuid": "7de03b7d-ed91-4699-b275-96a6ab2e441c",
       "slug": "generic-types",
       "name": "Generic Types"
@@ -1904,6 +1905,11 @@
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
       "name": "Lists"
+    },
+    {
+      "uuid": "b84a2119-71cc-46d0-af7f-32fe9a07d0e2",
+      "slug": "loops",
+      "name": "Loops"
     },
     {
       "uuid": "54118389-9c01-431b-a850-f47da498f845",
