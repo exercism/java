@@ -2,7 +2,7 @@
 
 A **Map** is a data structure for storing key value pairs.
 It is similar to dictionaries in other programming languages.
-The [Map][map-javadoc] interface defines operations on a map.
+The [Map][map-javadoc] interface defines the operations you can make with a map.
 
 ## HashMap
 
@@ -152,7 +152,7 @@ Map<String, Integer> readOnlyFruitPrices = Map.copyOf(fruitPrices);
 
 Calling methods like `put`, `remove` or `clear` results in an `UnsupportedOperationException`.
 
-[map-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html
+[map-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html
 [hashmap-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html
 [map-put-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#put(K,V)
 [map-get-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#get(java.lang.Object)

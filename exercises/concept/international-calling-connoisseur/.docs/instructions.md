@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise you'll be wring code to manage a dictionary of international dialing codes using a `Map`.
+In this exercise you'll be writing code to manage a dictionary of international dialing codes using a `Map`.
 
 The dictionary allows looking up the name of a country (the map's value, as a `String`) by the international dialing code (the map's key, as an `Integer`),
 
