@@ -14,6 +14,11 @@ Java has a number of different Map implementations.
 Map<String, Integer> fruitPrices = new HashMap<>();
 ```
 
+~~~~exercism/note
+When defining a `Map` variable, it is recommended to define the variable as a `Map` type rather than the specific type, as in the above example.
+This practice makes it easy to change the `Map` implementation later.
+~~~~
+
 `HashMap` also has a copy constructor.
 
 ```java
