@@ -6,7 +6,7 @@
 
 ## 1. Return the codes in a map
 
-- Consider how the class will be able to track all the codes that will be added.
+- You will need to define a `Map` in [such a way][declaring-members] that you can use it in the class methods.
 
 ## 2. Add entries to the dictionary
 
@@ -29,6 +29,7 @@
 - Do not forget about the country's previous dialing code will be in the map.
 - There is a [method][map-remove-docs] to remove an entry from the map.
 
+[declaring-members]: https://dev.java/learn/classes-objects/creating-classes/#declaring-members
 [map-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html
 [map-put-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#put(K,V)
 [map-get-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#get(java.lang.Object)

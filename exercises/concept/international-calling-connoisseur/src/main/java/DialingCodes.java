@@ -1,9 +1,6 @@
-import java.util.HashMap;
 import java.util.Map;
 
 public class DialingCodes {
-
-    private final Map<Integer, String> countryByDialingCode = new HashMap<>();
 
     public Map<Integer, String> getCodes() {
         throw new UnsupportedOperationException(
