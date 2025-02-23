@@ -5,7 +5,6 @@
 ## Introduction
 
 The **Optional<T>** type was introduced in Java 8 as a way to indicate that a method will return an object of type T or an empty value. It is present in type signatures of many core Java methods. 
-
 Before Java 8, developers had to implement null checks:
 
 ```java
@@ -65,7 +64,6 @@ public Optional<Integer> getEmployeeAge(String name) {
 ```
 
 It is important to understand that the Optional API does not eliminate the null checking, but it defers it until the end of a series of methods, as long as all those methods return an optional object. 
-
 The fields of the Employee class have an Optional type. Notice that this is not recommended, as explained by one well-known Java language architect in [this SO answer](https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type)
 
 ## Flatmap operation

@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
 
-// Annotation in order to use @BeforeAll in a non-static method
-@TestInstance(Lifecycle.PER_CLASS)
+// @TestInstance(Lifecycle.PER_CLASS)
 public class EmployeeServiceTest {
 
     private EmployeeService employeeService;
@@ -33,7 +32,7 @@ public class EmployeeServiceTest {
         listOfEmployees.add(Optional.of(new Employee(2, "John", "Engineering")));
     }
 
-    @BeforeAll
+    @BeforeEach
     void setup() {
         initList();
         employeeService = new EmployeeService(listOfEmployees);
