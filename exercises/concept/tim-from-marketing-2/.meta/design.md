@@ -31,12 +31,11 @@ This Concept Exercise's prerequisites Concepts are:
 - `custom classes`.
 - `lists`.
 - `generic-types`.
-- `streams`.
 
 ## Analyzer
 
 This exercise could benefit from the following rules in the [analyzer]:
-- `actionable`: If the solution uses `null` in any method, encourage the student to use `Optional<T>` instead.
+- `essential`: If the solution uses `null` in any method, encourage the student to use `Optional<T>` instead.
 - `actionable`: If the solution uses the `get` or `isPresent` methods of the Optional<T> API, encourage the student to use `orElse`, `orElseThrow` or `ifPresentOrElse` instead. 
 - `informative`: TODO.
 

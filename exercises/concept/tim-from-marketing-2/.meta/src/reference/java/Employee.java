@@ -2,7 +2,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 class Employee {
-    private final int id;  
+    private final int id;
     private final String name;
     private final String department;
 
@@ -12,22 +12,24 @@ class Employee {
         this.department = department;
     }
 
-    public Optional<Integer> getNullableId() {
-        return Optional.ofNullable(id);
+    public int getId() {
+        return id;
     }
 
-    public Optional<String> getNullableName() {
-        return Optional.ofNullable(name);
+    public String getName() {
+        return name;
     }
 
-    public Optional<String> getNullableDepartment() {
-        return Optional.ofNullable(department);
+    public String getDepartment() {
+        return department;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Employee employee = (Employee) o;
         return id == employee.id &&
                 Objects.equals(name, employee.name) && Objects.equals(department, employee.department);
