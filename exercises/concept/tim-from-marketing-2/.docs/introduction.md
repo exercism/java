@@ -14,7 +14,7 @@ public Employee getEmployee(String name) {
     if (employee != null) {
         return employee;
     } else {
-        return throw new IllegalArgumentException("Employee not found");
+        throw new IllegalArgumentException("Employee not found");
     }
 }
 ```
