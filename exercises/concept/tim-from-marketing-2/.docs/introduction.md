@@ -63,28 +63,7 @@ public Optional<Integer> getEmployeeAge(String name) {
 }
 ```
 
-It is important to understand that the Optional API does not eliminate the null checking, but it defers it until the end of a series of methods, as long as all those methods return an optional object. 
-The fields of the Employee class have an Optional type. Notice that this is not recommended, as explained by one well-known Java language architect in [this SO answer](https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type)
-
-## Flatmap operation
-
-The **flatMap** method flattens a List of Optional objects into a List of those objects. In other words, extracts the value of each list element, discarding empty Optionals. For example:
-
-```java
-List<Optional<String>> listOfOptionals = Arrays.asList(
-    Optional.of("Java"),
-    Optional.empty(),
-    Optional.of("Kotlin")
-);
-```
-
-```java
-// Using flatMap to extract present values
-        List<String> result = listOfOptionals.stream()
-            .flatMap(language -> language.stream())
-            .collect(Collectors.toList());
-
-        System.out.println(result); // Output: [Java, Kotlin]
-    }
-}
-```
+It is important to understand that the Optional API does not eliminate the null checking, 
+but it defers it until the end of a series of methods, as long as all those methods return an optional object. 
+The Optional type is mainly used as returned type. Using it as a parameter type or field type is less common and 
+not recommended, as explained by one well-known Java language architect in [this SO answer](https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type)
