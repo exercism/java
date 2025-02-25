@@ -31,12 +31,23 @@ class Employee {
         if (o == null || getClass() != o.getClass())
             return false;
         Employee employee = (Employee) o;
-        return id == employee.id &&
-                Objects.equals(name, employee.name) && Objects.equals(department, employee.department);
+        return id == employee.id && Objects.equals(name, employee.name)
+                && Objects.equals(department, employee.department);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, department);
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
 }
+

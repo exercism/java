@@ -1,5 +1,4 @@
 import java.util.Objects;
-import java.util.Optional;
 
 class Employee {
     private final int id;  
@@ -12,16 +11,16 @@ class Employee {
         this.department = department;
     }
 
-    public Optional<Integer> getNullableId() {
-        return Optional.ofNullable(id);
+    public int getId() {
+        return id;
     }
 
-    public Optional<String> getNullableName() {
-        return Optional.ofNullable(name);
+    public String getName() {
+        return name;
     }
 
-    public Optional<String> getNullableDepartment() {
-        return Optional.ofNullable(department);
+    public String getDepartment() {
+        return department;
     }
 
     @Override
@@ -36,5 +35,14 @@ class Employee {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, department);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", department='" + department + '\'' +
+                '}';
     }
 }

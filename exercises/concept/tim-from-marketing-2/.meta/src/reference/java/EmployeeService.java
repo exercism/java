@@ -1,14 +1,13 @@
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
+import java.util.Objects;
 
 class EmployeeService {
 
+    // This list is populated in the tests
     private List<Employee> employeesList;
 
     public EmployeeService(List<Employee> listOfEmployees) {
-        //  This list is populated in the tests
         employeesList = listOfEmployees;
     }
 
@@ -28,24 +27,21 @@ class EmployeeService {
                 employee1 -> {
                     Optional.ofNullable(employee1.getName())
                             .ifPresentOrElse(name -> stringBuilder.append(employeeId).append(" - ")
-                                            .append(employee1.getName()).append(" - ")
-                                            .append(employee1.getDepartment()),
-                                    () -> {
-                                        stringBuilder.append("No employee found for id: ").append(employeeId);
-                                    });
+                                    .append(employee1.getName()).append(" - ")
+                                    .append(employee1.getDepartment()),
+                            () -> {
+                                stringBuilder.append("No employee found for id: ").append(employeeId);
+                            });
                 },
                 () -> {
-                    stringBuilder.append("No employee found for id: ").append(employeeId);
+                    stringBuilder.append("That id does not exist: ").append(employeeId);
                 });
         return stringBuilder.toString();
     }
-
-//    public Optional<Employee> getEmployeeById(int employeeId) {
-//        throw new UnsupportedOperationException("Please implement this method");
-//    }
-//
-//    public String getEmployeeDetailsById(int employeeId) {
-//        throw new UnsupportedOperationException("Please implement this method");
-//    }
-
 }
+
+
+
+
+
+

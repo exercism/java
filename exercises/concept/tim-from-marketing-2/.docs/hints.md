@@ -1,9 +1,10 @@
 # Hints
 
+## 1. Get an employee by ID
 
-## 1.- Print the name of all the employees
-WIP
+- This method returns an `Optional<Employee>` object, not an `Employee` one.
 
+## 2. Return the name and department of a given employee in a certain format 
 
-## 2.- Print the name and department of a given employee
-WIP
+- You can call the method `getEmployeeById(int)` to get the employee.
+- Remember the syntax of the `ifPresentOrElse()` method.
