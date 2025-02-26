@@ -135,5 +135,7 @@ public class DialingCodesTest {
         DialingCodes dialingCodes = new DialingCodes();
         dialingCodes.addNewDialingCode(88, "Japan");
         dialingCodes.updateCountryDialingCode(81, "Japan");
+
+        assertThat(dialingCodes.getCodes()).containsOnly(entry(81, "Japan"));
     }
 }
