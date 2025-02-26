@@ -56,7 +56,7 @@ The [size][map-size-javadoc] method returns the number of entries.
 fruitPrices.size();  // Returns 2
 ```
 
-You can use the [keys] or [values] methods to obtain the keys or the values in a Map as a Set or collection respectively.studentScores
+You can use the [keys] or [values] methods to obtain the keys or the values in a Map as a Set or collection respectively.
 
 ```java
 fruitPrices.keys();    // Returns "apple" and "pear" in a set
