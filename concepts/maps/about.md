@@ -51,15 +51,15 @@ fruitPrices.get("apple"); // => 100
 Use [containsKey][map-containskey-javadoc] to see if the map contains a particular key.
 
 ```java
-fruitPrices.containsKey("apple"); // => true
+fruitPrices.containsKey("apple");   // => true
 fruitPrices.containsKey("orange");  // => false
 ```
 
 Remove entries with [remove][map-remove-javadoc].
 
 ```java
-fruitPrices.put("plum", 90);    // Add plum to map
-fruitPrices.remove("plum");     // Removes plum from map
+fruitPrices.put("plum", 90);  // Add plum to map
+fruitPrices.remove("plum");   // Removes plum from map
 ```
 
 The [size][map-size-javadoc] method returns the number of entries.
@@ -68,10 +68,10 @@ The [size][map-size-javadoc] method returns the number of entries.
 fruitPrices.size();  // Returns 2
 ```
 
-You can use the [keys] or [values] methods to obtain the keys or the values in a Map as a Set or collection respectively.
+You can use the [keySet][map-keyset-javadoc] or [values][map-values-javadoc] methods to obtain the keys or the values in a Map as a Set or collection respectively.
 
 ```java
-fruitPrices.keys();    // Returns "apple" and "pear" in a set
+fruitPrices.keySet();  // Returns "apple" and "pear" in a set
 fruitPrices.values();  // Returns 100 and 80, in a Collection
 ```
 
@@ -169,3 +169,5 @@ Calling methods like `put`, `remove` or `clear` results in an `UnsupportedOperat
 [map-copyof-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#copyOf(java.util.Map)
 [object-hashcode-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()
 [object-equals-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)
+[map-keyset-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#keySet()
+[map-values-javadoc]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#values()
