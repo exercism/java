@@ -59,7 +59,7 @@ fruitPrices.size();  // Returns 2
 You can use the [keys] or [values] methods to obtain the keys or the values in a Map as a Set or collection respectively.
 
 ```java
-fruitPrices.keys();    // Returns "apple" and "pear" in a set
+fruitPrices.keySet();    // Returns "apple" and "pear" in a set
 fruitPrices.values();  // Returns 100 and 80, in a Collection
 ```
 
