@@ -39,15 +39,15 @@ fruitPrices.get("apple"); // => 100
 Use [containsKey][map-containskey-javadoc] to see if the map contains a particular key.
 
 ```java
-fruitPrices.containsKey("apple"); // => true
-fruitPrices.containsKey("orange");  // => false
+fruitPrices.containsKey("apple");  // => true
+fruitPrices.containsKey("orange"); // => false
 ```
 
 Remove entries with [remove][map-remove-javadoc].
 
 ```java
-fruitPrices.put("plum", 90);    // Add plum to map
-fruitPrices.remove("plum");     // Removes plum from map
+fruitPrices.put("plum", 90);  // Add plum to map
+fruitPrices.remove("plum");   // Removes plum from map
 ```
 
 The [size][map-size-javadoc] method returns the number of entries.
@@ -59,7 +59,7 @@ fruitPrices.size();  // Returns 2
 You can use the [keySet][map-keyset-javadoc] or [values][map-values-javadoc] methods to obtain the keys or the values in a Map as a Set or collection respectively.
 
 ```java
-fruitPrices.keySet();    // Returns "apple" and "pear" in a set
+fruitPrices.keySet();  // Returns "apple" and "pear" in a set
 fruitPrices.values();  // Returns 100 and 80, in a Collection
 ```
 
