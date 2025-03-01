@@ -171,6 +171,6 @@ So if the nested `for` loops approach is fast enough, it may be preferred for re
 [parallel]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#parallel--
 [flatmap]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#flatMap-java.util.function.IntFunction-
 [filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#filter-java.util.function.IntPredicate-
-[approach-for-loops]: https://exercism.org/tracks/java/exercises/pythagorean-triplets/approaches/for-loops
-[approach-intstream-parallel-flatmap-filter]: https://exercism.org/tracks/java/exercises/pythagorean-triplets/approaches/if-intstream-parallel-flatmap-filter
+[approach-for-loops]: https://exercism.org/tracks/java/exercises/pythagorean-triplet/approaches/for-loops
+[approach-intstream-parallel-flatmap-filter]: https://exercism.org/tracks/java/exercises/pythagorean-triplet/approaches/intstream-parallel-flatmap-filter
 [jmh]: https://github.com/openjdk/jmh
