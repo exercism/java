@@ -213,14 +213,14 @@ class FighterTest {
 
     private static class VulnerableFighter extends Fighter {
         @Override
-        boolean isVulnerable() {
+        public boolean isVulnerable() {
             return true;
         }
     }
 
     private static class InvulnerableFighter extends Fighter {
         @Override
-        boolean isVulnerable() {
+        public boolean isVulnerable() {
             return false;
         }
     }
