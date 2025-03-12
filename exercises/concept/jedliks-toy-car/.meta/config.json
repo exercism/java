@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "mirkoperillo"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/JedliksToyCar.java"
+    ],
+    "test": [
+      "src/test/java/JedliksToyCarTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/JedliksToyCar.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "icon": "jedliks-toys",
+  "blurb": "Learn about classes by working on a remote controlled car."
+}

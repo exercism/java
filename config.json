@@ -110,8 +110,8 @@
         "status": "active"
       },
       {
-        "slug": "elons-toy-car",
-        "name": "Elon's Toy Car",
+        "slug": "jedliks-toy-car",
+        "name": "Jedlik's Toy Car",
         "uuid": "2ae791e9-eb7a-4344-841d-0c4797e5106c",
         "concepts": [
           "classes"
