@@ -63,12 +63,12 @@ dialingCodes.addNewDialingCode(39, "Vatican City");
 
 Its rare, but mistakes can be made.
 To correct the mistake, we will need to know what dialing code the country is currently mapped to.
-To find which dialing code needs to be corrected, implement the `findDialingCode` method that takes in a map of dialing codes an a country and returns the country's dialing code.
+To find which dialing code needs to be corrected, implement the `findDialingCode` method that takes in a map of dialing codes and a country and returns the country's dialing code.
 Return `null` if the country is _not_ in the map.
 
 ```java
 DialingCodes dialingCodes = new DialingCodes();
-dialingCodes.addDialingCode(43, "UK");
+dialingCodes.addDialingCode(44, "UK");
 dialingCodes.findDialingCode("UK");
 // => 44
 
