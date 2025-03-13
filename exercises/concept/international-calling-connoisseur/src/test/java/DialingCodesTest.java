@@ -113,9 +113,9 @@ public class DialingCodesTest {
     @DisplayName("findDialingCode returns a country's dialing code")
     public void testFindDialingCode() {
         DialingCodes dialingCodes = new DialingCodes();
-        dialingCodes.addNewDialingCode(43, "UK");
+        dialingCodes.addNewDialingCode(44, "UK");
 
-        assertThat(dialingCodes.findDialingCode("UK")).isEqualTo(43);
+        assertThat(dialingCodes.findDialingCode("UK")).isEqualTo(44);
     }
 
     @Test
@@ -123,7 +123,7 @@ public class DialingCodesTest {
     @DisplayName("findDialingCode returns null for country not yet added")
     public void testFindDialingCodeWithUnlistedCountry() {
         DialingCodes dialingCodes = new DialingCodes();
-        dialingCodes.addNewDialingCode(43, "UK");
+        dialingCodes.addNewDialingCode(44, "UK");
 
         assertThat(dialingCodes.findDialingCode("Unlisted")).isNull();
     }
