@@ -1,4 +1,4 @@
-class ElonsToyCar {
+class JedliksToyCar {
     private int batteryPercentage = 100;
     private int distanceDrivenInMeters = 0;
 
@@ -21,7 +21,7 @@ class ElonsToyCar {
         return "Battery at " + batteryPercentage + "%";
     }
 
-    public static ElonsToyCar buy() {
-        return new ElonsToyCar();
+    public static JedliksToyCar buy() {
+        return new JedliksToyCar();
     }
 }
