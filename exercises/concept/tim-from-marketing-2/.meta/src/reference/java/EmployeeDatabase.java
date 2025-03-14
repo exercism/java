@@ -26,12 +26,13 @@ class EmployeeDatabase {
         nullableEmployee.ifPresentOrElse(
                 employee1 -> {
                     Optional.ofNullable(employee1.getName())
-                            .ifPresentOrElse(name -> stringBuilder.append(employeeId).append(" - ")
-                                    .append(employee1.getName()).append(" - ")
-                                    .append(employee1.getDepartment()),
-                            () -> {
-                                stringBuilder.append("No employee found for id: ").append(employeeId);
-                            });
+                            .ifPresentOrElse(name -> stringBuilder
+                                                .append(employeeId).append(" - ")
+                                                .append(employee1.getName()).append(" - ")
+                                                .append(employee1.getDepartment()),
+                                            () -> {
+                                                stringBuilder.append("No employee found for id: ").append(employeeId);
+                                            });
                 },
                 () -> {
                     stringBuilder.append("That id does not exist: ").append(employeeId);

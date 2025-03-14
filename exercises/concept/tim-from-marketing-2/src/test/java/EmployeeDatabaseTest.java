@@ -18,6 +18,8 @@ public class EmployeeDatabaseTest {
         listOfEmployees.add(new Employee(2, "Joe", "Sales"));
         listOfEmployees.add(new Employee(3, "Jane", "IT"));
         listOfEmployees.add(new Employee(4, null, null));
+        listOfEmployees.add(new Employee(5, null, "IT"));
+        listOfEmployees.add(new Employee(6, "Alice", null));
     }
 
     @BeforeEach
@@ -76,9 +78,25 @@ public class EmployeeDatabaseTest {
 
     @Test
     @Tag("task:7")
+    @DisplayName("Retrieve employee details by id when name is null and department is not null")
+    void retrieveEmployeeDetailsById_whenNameIsNull() {
+        assertThat(employeeDatabase.getEmployeeDetailsById(5))
+                .isEqualTo("No employee found for id: 5");
+    }
+
+    @Test
+    @Tag("task:8")
+    @DisplayName("Retrieve employee details by id when department is null and name is not null")
+    void retrieveEmployeeDetailsById_whenDepartmentIsNull() {
+        assertThat(employeeDatabase.getEmployeeDetailsById(6))
+                .isEqualTo("No employee found for id: 6");
+    }
+
+    @Test
+    @Tag("task:9")
     @DisplayName("Retrieve employee details by id when the id does not exist")
     void retrieveEmployeeDetailsById_forANonExistingId() {
-        assertThat(employeeDatabase.getEmployeeDetailsById(7))
-                .isEqualTo("No employee found for id: 7");
+        assertThat(employeeDatabase.getEmployeeDetailsById(10))
+                .isEqualTo("No employee found for id: 10");
     }
 }
