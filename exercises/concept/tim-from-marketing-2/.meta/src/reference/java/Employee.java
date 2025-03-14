@@ -1,5 +1,8 @@
 import java.util.Objects;
-import java.util.Optional;
+
+/**
+ * Holds information about an employee. There is no need to change this file.
+*/
 
 class Employee {
     private final int id;

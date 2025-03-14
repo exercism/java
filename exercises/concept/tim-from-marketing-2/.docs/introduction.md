@@ -2,24 +2,24 @@
 
 ## Optional
 
-## Introduction
+The **Optional<T>** type was introduced in Java 8 as a way to indicate that a method _may_ return a value.
 
-The **Optional<T>** type was introduced in Java 8 as a way to indicate that a method will return an object of type T or an empty value. It is present in type signatures of many core Java methods. 
-Before Java 8, developers had to implement null checks:
+In other words, there is a chance the method returns "no value" at all.
+
+## Creating an Optional<T> object
+
+Given an object of type Employee, an Optional<Employee> object is created as follows:
 
 ```java
-public Employee getEmployee(String name) {
-    // Assume that getEmployeeByName retrieves an Employee from a database
-    Employee employee = getEmployeeByName(name);
-    if (employee != null) {
-        return employee;
-    } else {
-        throw new IllegalArgumentException("Employee not found");
-    }
-}
+Employee employee = new Employee();
+Optional<Employee> optionalEmployee = Optional.of(employee);
 ```
 
-With the Optional API, the code above can be simplified to:
+`optionalEmployee` is a wrapper of `employee`.
+
+TBD: explain empty, present and get.
+
+## Usage
 
 ```java
 public Optional<Employee> getEmployee(String name) {
@@ -62,8 +62,3 @@ public Optional<Integer> getEmployeeAge(String name) {
                .orElse("No employee found");
 }
 ```
-
-It is important to understand that the Optional API does not eliminate the null checking, 
-but it defers it until the end of a series of methods, as long as all those methods return an optional object. 
-The Optional type is mainly used as returned type. Using it as a parameter type or field type is less common and 
-not recommended, as explained by one well-known Java language architect in [this SO answer](https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type)

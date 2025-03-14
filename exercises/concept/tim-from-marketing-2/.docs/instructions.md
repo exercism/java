@@ -8,7 +8,8 @@ You will be writing two methods: `getEmployeeById(int)` and `getEmployeeDetailsB
 
 ## 1. Get an employee by ID
 
-Implement the `getEmployeeById(int)` method so that it returns an Optional<Employee> object. 
+Implement the `getEmployeeById(int)` method so that it returns an Optional<Employee> object.
+
 If the employee does not exist, returns an empty Optional instance.
 
 ## 2. Return the name and department of a given employee in a certain format

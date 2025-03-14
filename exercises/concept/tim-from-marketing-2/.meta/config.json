@@ -1,17 +1,25 @@
 {
+  "name": "tim-from-marketing-2",
+  "uuid": "a6cfc286-8c62-4f5b-8e59-f6bfc4374092",
+  "concepts": [
+    "optional-type"
+  ],
   "authors": [
     "josealonso"
   ],
+  "contributors": [
+    "kahgoh"
+  ],
   "files": {
     "solution": [
-      "src/main/java/EmployeeService.java"
+      "src/main/java/EmployeeDatabase.java"
     ],
     "test": [
-      "src/test/java/EmployeeServiceTest.java"
+      "src/test/java/EmployeeDatabaseTest.java"
     ],
     "exemplar": [
       ".meta/src/reference/java/EmployeeService.java"
-    ],
+    ]
   },
   "icon": "nullability",
   "blurb": "Learn to use the Optional class by helping Tim print details of his company employees."

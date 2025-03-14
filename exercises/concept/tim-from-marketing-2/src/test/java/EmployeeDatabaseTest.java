@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class EmployeeServiceTest {
+public class EmployeeDatabaseTest {
 
-    private EmployeeService employeeService;
+    private EmployeeDatabase employeeDatabase;
     private List<Employee> listOfEmployees = new ArrayList<>();
 
     void initList() {
@@ -23,14 +23,14 @@ public class EmployeeServiceTest {
     @BeforeEach
     void setup() {
         initList();
-        employeeService = new EmployeeService(listOfEmployees);
+        employeeDatabase = new EmployeeDatabase(listOfEmployees);
     }
 
     @Test
     @Tag("task:1")
     @DisplayName("Retrieve one employee by id")
     void retrieveOneEmployeeById() {
-        assertThat(employeeService.getEmployeeById(2))
+        assertThat(employeeDatabase.getEmployeeById(2))
                 .isEqualTo(Optional.of(listOfEmployees.get(1)));
     }
 
@@ -38,7 +38,7 @@ public class EmployeeServiceTest {
     @Tag("task:2")
     @DisplayName("Retrieve other employee by id")
     void retrieveOtherEmployeeById() {
-        assertThat(employeeService.getEmployeeById(3))
+        assertThat(employeeDatabase.getEmployeeById(3))
                 .isEqualTo(Optional.of(listOfEmployees.get(2)));
     }
 
@@ -46,7 +46,7 @@ public class EmployeeServiceTest {
     @Tag("task:3")
     @DisplayName("Retrieve employee by id when some fields are null")
     void retrieveEmployeeById_withNullFields() {
-        assertThat(employeeService.getEmployeeById(4))
+        assertThat(employeeDatabase.getEmployeeById(4))
                 .isEqualTo(Optional.of(listOfEmployees.get(3)));
     }
 
@@ -54,7 +54,7 @@ public class EmployeeServiceTest {
     @Tag("task:4")
     @DisplayName("Retrieve employee by id when the id does not exist")
     void retrieveEmployeeById_forANonExistingId() {
-        assertThat(employeeService.getEmployeeById(7))
+        assertThat(employeeDatabase.getEmployeeById(7))
                 .isEqualTo(Optional.empty());
     }
 
@@ -62,7 +62,7 @@ public class EmployeeServiceTest {
     @Tag("task:5")
     @DisplayName("Retrieve employee details by id")
     void retrieveEmployeeDetailsById() {
-        assertThat(employeeService.getEmployeeDetailsById(2))
+        assertThat(employeeDatabase.getEmployeeDetailsById(2))
                 .isEqualTo("2 - Joe - Sales");
     }
 
@@ -70,7 +70,7 @@ public class EmployeeServiceTest {
     @Tag("task:6")
     @DisplayName("Retrieve employee details by id when some fields are null")
     void retrieveEmployeeDetailsById_withNullFields() {
-        assertThat(employeeService.getEmployeeDetailsById(4))
+        assertThat(employeeDatabase.getEmployeeDetailsById(4))
                 .isEqualTo("No employee found for id: 4");
     }
 
@@ -78,7 +78,7 @@ public class EmployeeServiceTest {
     @Tag("task:7")
     @DisplayName("Retrieve employee details by id when the id does not exist")
     void retrieveEmployeeDetailsById_forANonExistingId() {
-        assertThat(employeeService.getEmployeeDetailsById(7))
+        assertThat(employeeDatabase.getEmployeeDetailsById(7))
                 .isEqualTo("No employee found for id: 7");
     }
 }

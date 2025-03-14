@@ -2,12 +2,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Objects;
 
-class EmployeeService {
+class EmployeeDatabase {
 
     // This list is populated in the tests
     private List<Employee> employeesList;
 
-    public EmployeeService(List<Employee> listOfEmployees) {
+    public EmployeeDatabase(List<Employee> listOfEmployees) {
         employeesList = listOfEmployees;
     }
 
