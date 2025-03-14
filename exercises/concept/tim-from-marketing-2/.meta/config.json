@@ -18,7 +18,7 @@
       "src/test/java/EmployeeDatabaseTest.java"
     ],
     "exemplar": [
-      ".meta/src/reference/java/EmployeeService.java"
+      ".meta/src/reference/java/EmployeeDatabase.java"
     ]
   },
   "icon": "nullability",
