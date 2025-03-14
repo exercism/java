@@ -959,7 +959,7 @@
         "practices": [],
         "prerequisites": [
           "arrays",
-          "if-statements"
+          "if-else-statements"
         ],
         "difficulty": 5
       },
