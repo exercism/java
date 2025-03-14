@@ -317,7 +317,6 @@
           "optional-type"
         ],
         "prerequisites": [
-          "custom-classes",
           "lists",
           "generic-types"
         ]
