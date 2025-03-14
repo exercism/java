@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "kahgoh"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/DialingCodes.java"
+    ],
+    "test": [
+      "src/test/java/DialingCodesTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/DialingCodes.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Learn about maps while managing international calling codes."
+}

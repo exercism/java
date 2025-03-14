@@ -313,8 +313,27 @@
         "slug": "tim-from-marketing-2",
         "name": "tim-from-marketing-2",
         "uuid": "a6cfc286-8c62-4f5b-8e59-f6bfc4374092",
-        "concepts": [],
-        "prerequisites": []
+        "concepts": [
+          "optional-type"
+        ],
+        "prerequisites": [
+          "custom classes",
+          "lists",
+          "generic-types"
+        ]
+      },
+      { 
+        "slug": "international-calling-connoisseur",
+        "name": "International Calling Connoisseur",
+        "uuid": "03506c5a-601a-42cd-b037-c310208de84d",
+        "concepts": [
+          "maps"
+        ],
+        "prerequisites": [
+          "classes",
+          "foreach-loops",
+          "generic-types"
+        ]
       }
     ],
     "practice": [
@@ -996,7 +1015,8 @@
         "practices": [],
         "prerequisites": [
           "if-else-statements",
-          "for-loops"
+          "for-loops",
+          "maps"
         ],
         "difficulty": 5
       },
@@ -1099,7 +1119,8 @@
         "practices": [],
         "prerequisites": [
           "for-loops",
-          "arrays"
+          "arrays",
+          "maps"
         ],
         "difficulty": 5
       },
@@ -1151,7 +1172,8 @@
         "practices": [],
         "prerequisites": [
           "chars",
-          "exceptions"
+          "exceptions",
+          "maps"
         ],
         "difficulty": 6
       },
@@ -1212,6 +1234,7 @@
         "practices": [],
         "prerequisites": [
           "foreach-loops",
+          "maps",
           "strings"
         ],
         "difficulty": 6
@@ -1279,6 +1302,7 @@
         "uuid": "38a405e8-619d-400f-b53c-2f06461fdf9d",
         "practices": [],
         "prerequisites": [
+          "maps",
           "strings"
         ],
         "difficulty": 6
@@ -1454,7 +1478,8 @@
         "uuid": "2e760ae2-fadd-4d31-9639-c4554e2826e9",
         "practices": [],
         "prerequisites": [
-          "enums"
+          "enums",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -1502,7 +1527,8 @@
           "chars",
           "if-else-statements",
           "lists",
-          "for-loops"
+          "for-loops",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -1563,7 +1589,8 @@
         "prerequisites": [
           "arrays",
           "strings",
-          "if-else-statements"
+          "if-else-statements",
+          "maps"
         ],
         "difficulty": 7
       },
@@ -1710,6 +1737,7 @@
           "exceptions",
           "for-loops",
           "if-else-statements",
+          "maps",
           "numbers"
         ],
         "difficulty": 8
@@ -1911,6 +1939,11 @@
       "uuid": "87d25b56-8075-4c12-9d46-3f8173c3ff18",
       "slug": "lists",
       "name": "Lists"
+    },
+    {
+      "uuid": "2f6fdedb-a0ac-4bab-92d6-3be61520b9bc",
+      "slug": "maps",
+      "name": "Maps"
     },
     {
       "uuid": "54118389-9c01-431b-a850-f47da498f845",
