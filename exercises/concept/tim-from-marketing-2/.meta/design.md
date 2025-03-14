@@ -27,7 +27,7 @@ This Concepts Exercise's Concepts are:
 
 This Concept Exercise's prerequisites Concepts are:
 
-- `custom classes`.
+- `custom-classes`.
 - `lists`.
 - `generic-types`.
 

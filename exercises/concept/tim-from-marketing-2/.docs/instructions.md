@@ -1,7 +1,7 @@
 # Instructions
 
 In this exercise you will be writing code to retrieve the factory employees.
-Employees have an ID, a name and a department name, like in the [tim-from-marketing](/exercises/concept/tim-from-marketing) exercise. 
+Employees have an ID, a name and a department name, like in the [tim-from-marketing](/exercises/concept/tim-from-marketing) exercise.
 The first field of an employee is always an integer number, but the name and the department name may be empty or null.
 The class constructor receives a parameter of type List<Employee>, which is populated in the tests.
 You will be writing two methods: `getEmployeeById(int)` and `getEmployeeDetailsById(int)`.
@@ -14,8 +14,7 @@ If the employee does not exist, returns an empty Optional instance.
 
 ## 2. Return the name and department of a given employee in a certain format
 
-Implement the `getEmployeeDetailsById(int)` method to return a string containing the id, the name and 
-the department of a given employee:
+Implement the `getEmployeeDetailsById(int)` method to return a string containing the id, the name and the department of a given employee:
 
 ```java
 getEmployeeDetailsById(1) => "1 - Tim - Marketing"
