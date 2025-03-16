@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ElonsToyCarTest {
+public class JedliksToyCarTest {
     @Test
     @Tag("task:1")
     @DisplayName("The static buy method returns a new remote controlled car instance")
     public void buy_new_car_returns_instance() {
-        ElonsToyCar car = ElonsToyCar.buy();
+        JedliksToyCar car = JedliksToyCar.buy();
         assertThat(car).isNotNull();
     }
 
@@ -17,8 +17,8 @@ public class ElonsToyCarTest {
     @Tag("task:1")
     @DisplayName("The static buy method returns each time a new remote controlled car instance")
     public void buy_new_car_returns_new_car_each_time() {
-        ElonsToyCar car1 = ElonsToyCar.buy();
-        ElonsToyCar car2 = ElonsToyCar.buy();
+        JedliksToyCar car1 = JedliksToyCar.buy();
+        JedliksToyCar car2 = JedliksToyCar.buy();
         assertThat(car1).isNotEqualTo(car2);
     }
 
@@ -26,7 +26,7 @@ public class ElonsToyCarTest {
     @Tag("task:2")
     @DisplayName("The distanceDisplay method shows 0 meters message on a new car")
     public void new_car_distance_display() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 0 meters");
     }
 
@@ -34,7 +34,7 @@ public class ElonsToyCarTest {
     @Tag("task:3")
     @DisplayName("The batteryDisplay method shows full battery message on a new car")
     public void new_car_battery_display() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 100%");
     }
 
@@ -42,7 +42,7 @@ public class ElonsToyCarTest {
     @Tag("task:4")
     @DisplayName("The distanceDisplay method shows the correct message after driving once")
     public void distance_display_after_driving_once() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
         car.drive();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 20 meters");
     }
@@ -51,7 +51,7 @@ public class ElonsToyCarTest {
     @Tag("task:4")
     @DisplayName("The distanceDisplay method shows the correct message after driving multiple times")
     public void distance_display_after_driving_multiple_times() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
 
         for (int i = 0; i < 17; i++) {
             car.drive();
@@ -64,7 +64,7 @@ public class ElonsToyCarTest {
     @Tag("task:5")
     @DisplayName("The batteryDisplay method shows the correct message after driving once")
     public void battery_display_after_driving_once() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
         car.drive();
         
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 99%");
@@ -74,7 +74,7 @@ public class ElonsToyCarTest {
     @Tag("task:5")
     @DisplayName("The batteryDisplay method shows the correct battery percentage after driving multiple times")
     public void battery_display_after_driving_multiple_times() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
 
         for (int i = 0; i < 23; i++) {
             car.drive();
@@ -87,7 +87,7 @@ public class ElonsToyCarTest {
     @Tag("task:5")
     @DisplayName("The batteryDisplay method shows battery empty after draining all battery")
     public void battery_display_when_battery_empty() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
 
         // Drain the battery
         for (int i = 0; i < 100; i++) {
@@ -104,7 +104,7 @@ public class ElonsToyCarTest {
     @Tag("task:6")
     @DisplayName("The distanceDisplay method shows the correct message after driving and draining all battery")
     public void distance_display_when_battery_empty() {
-        ElonsToyCar car = new ElonsToyCar();
+        JedliksToyCar car = new JedliksToyCar();
 
         // Drain the battery
         for (int i = 0; i < 100; i++) {
