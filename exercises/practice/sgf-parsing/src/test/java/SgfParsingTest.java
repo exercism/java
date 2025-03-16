@@ -121,11 +121,114 @@ public class SgfParsingTest {
 
     @Test
     @Disabled("Remove to run test")
-    public void escapedProperty() throws SgfParsingException {
-        String input = "(;A[\\]b\nc\nd\t\te \n\\]])";
-        SgfNode expected = new SgfNode(Map.of("A", List.of("]b\nc\nd\t\te \n]")));
+    public void withinPropertyValueWhitespace() throws SgfParsingException {
+        String input = "(;A[hello\t\tworld])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("hello  world")));
         SgfNode actual = new SgfParsing().parse(input);
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    @Disabled("Remove to run test")
+    public void withinPropertyValueNewline() throws SgfParsingException {
+        String input = "(;A[hello\n\nworld])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("hello\n\nworld")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    public void escapedClosingBracket() throws SgfParsingException {
+        String input = "(;A[\\]])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("]")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    public void escapedBacklash() throws SgfParsingException {
+        String input = "(;A[\\\\])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("\\")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    public void openingBracketNeedNotToBeEscaped() throws SgfParsingException {
+        String input = "(;A[x[y\\]z][foo]B[bar];C[baz])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("x[y]z", "foo"),
+                "B", List.of("bar")),
+                List.of(
+                        new SgfNode(Map.of("C", List.of("baz")))
+                ));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    public void semicolonNeedNotToBeEscaped() throws SgfParsingException {
+        String input = "(;A[a;b][foo]B[bar];C[baz])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("a;b", "foo"),
+                "B", List.of("bar")),
+                List.of(
+                        new SgfNode(Map.of("C", List.of("baz")))
+                ));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    public void paranthesesNeedNotToBeEscaped() throws SgfParsingException {
+        String input = "(;A[x(y)z][foo]B[bar];C[baz])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("x(y)z", "foo"),
+                "B", List.of("bar")),
+                List.of(
+                        new SgfNode(Map.of("C", List.of("baz")))
+                ));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    public void escapedTab() throws SgfParsingException {
+        String input = "(;A[hello\\\tworld])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("hello world")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+    
+    @Test
+    @Disabled("Remove to run test")
+    public void escapedNewline() throws SgfParsingException {
+        String input = "(;A[hello\\\nworld])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("helloworld")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    
+    @Test
+    @Disabled("Remove to run test")
+    public void escapedTAndN() throws SgfParsingException {
+        String input = "(;A[\\t = t and \\n = n])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("t = t and n = n")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    
+    @Test
+    @Disabled("Remove to run test")
+    public void mixOfEscapedCharactersAndWhitespaces() throws SgfParsingException {
+        String input = "(;A[\\]b\nc\\\nd\t\te\\\\ \\\n\\]])";
+        SgfNode expected = new SgfNode(Map.of("A", List.of("]b\ncd  e\\ ]")));
+        SgfNode actual = new SgfParsing().parse(input);
+        assertThat(actual).isEqualTo(expected);
+    }
 }
