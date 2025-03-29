@@ -55,5 +55,4 @@ Scope in Java is defined between the `{` and `}` characters.
 
 Java supports two types of comments.
 Single line comments are preceded by `//` and multiline comments are inserted between `/*` and `*/`.
-
 [object-oriented-programming]: https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
