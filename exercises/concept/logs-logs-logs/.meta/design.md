@@ -38,9 +38,8 @@ This exercise could benefit from the following rules in the [analyzer][analyzer]
 3. Convert log line to short format
     - `essential`: Verify that the constructor is appropriately updated.
     - `essential`: Verify that there exists a field dedicated to the encoded log level.
-    - `actionable`: Said field should be private and final.
+    - `actionable`: Said field should be private and final (this will then require the use of a getter for the log level!).
     - `LogLine.getOutputForShortLog()`
-        - `celebratory`: Congratulate the student if they used a getter for the encoded log level.
         - `celebratory`: Celebrate if this was written in one line.
         - `informative`: Let them know they can write it in one line.
 
