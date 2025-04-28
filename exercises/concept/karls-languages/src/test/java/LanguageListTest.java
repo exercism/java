@@ -35,6 +35,17 @@ public class LanguageListTest {
     }
 
     @Test
+    @Tag("task:3")
+    @DisplayName("The removeLanguage method correctly removes a language from the list that has been added twice")
+    public void removeLanguageTwice() {
+        languageList.addLanguage("Python");
+        languageList.addLanguage("Python");
+        languageList.removeLanguage("Python");
+
+        assertThat(languageList.isEmpty()).isTrue();
+    }
+
+    @Test
     @Tag("task:4")
     @DisplayName("The firstLanguage method returns the first language that was added to the list")
     public void firstLanguage() {
@@ -54,6 +65,16 @@ public class LanguageListTest {
         languageList.addLanguage("Ruby");
 
         assertThat(languageList.count()).isEqualTo(3);
+    }
+
+    @Test
+    @Tag("task:5")
+    @DisplayName("The count method returns 1 when the same language has been added twice")
+    public void countOne() {
+        languageList.addLanguage("Python");
+        languageList.addLanguage("Python");
+
+        assertThat(languageList.count()).isEqualTo(1);
     }
 
     @Test

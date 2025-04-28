@@ -9,7 +9,9 @@ public class LanguageList {
     }
 
     public void addLanguage(String language) {
-        languages.add(language);
+        if (!containsLanguage(language)) {
+            languages.add(language)
+        }
     }
 
     public void removeLanguage(String language) {

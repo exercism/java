@@ -2,6 +2,9 @@
   "authors": [
     "jmrunkle"
   ],
+  "contributors": [
+    "Valmati"
+  ],
   "files": {
     "solution": [
       "src/main/java/LanguageList.java"
