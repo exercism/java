@@ -1,0 +1,5 @@
+{
+  "blurb": "Perform common and complex date adjustments using Java's `TemporalAdjuster` interface and `TemporalAdjusters` utility class.",
+  "authors": ["rabestro"],
+  "contributors": []
+}
