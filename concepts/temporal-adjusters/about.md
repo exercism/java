@@ -85,8 +85,8 @@ LocalDate lastDayOfYear = date.with(TemporalAdjusters.lastDayOfYear());
 
 Adjusters like `next()`, `previous()`, `nextOrSame()`, and `previousOrSame()` find the next or previous occurrence of a given day of the week, relative to the current date.
 
-* `next()`/`previous()`: Excludes the current date if it matches.
-* `nextOrSame()`/`previousOrSame()`: Includes the current date if it matches.
+- `next()`/`previous()`: Excludes the current date if it matches.
+- `nextOrSame()`/`previousOrSame()`: Includes the current date if it matches.
 
 ```java
 LocalDate thursday = LocalDate.of(2024, Month.AUGUST, 15); // A Thursday
@@ -107,6 +107,7 @@ LocalDate nextOrSameThursday = thursday.with(TemporalAdjusters.nextOrSame(DayOfW
 LocalDate previousMonday = thursday.with(TemporalAdjusters.previous(DayOfWeek.MONDAY));
 // => 2024-08-12
 ```
+
 The `nextOrSame()` adjuster is particularly useful for finding dates in ranges like the "teenth" days (13th-19th) of a month, as seen in the Meetup exercise. Applying `nextOrSame(targetDayOfWeek)` to the 13th day of the month will find the correct "teenth" date.
 
 ## Custom Adjusters
@@ -131,6 +132,7 @@ LocalDate sunday = LocalDate.of(2024, Month.AUGUST, 18);
 LocalDate nextWorkdayFromSunday = sunday.with(nextWorkday);
 // => 2024-08-19 (Monday)
 ```
+
 While custom adjusters are powerful, the predefined adjusters in the `TemporalAdjusters` class cover a wide range of common use cases.
 
 [temporaladjuster-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjuster.html
