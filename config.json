@@ -1494,17 +1494,6 @@
         "difficulty": 7
       },
       {
-        "slug": "meetup",
-        "name": "Meetup",
-        "uuid": "602511d5-7e89-4def-b072-4dd311816810",
-        "practices": [],
-        "prerequisites": [
-          "datetime",
-          "enums"
-        ],
-        "difficulty": 7
-      },
-      {
         "slug": "poker",
         "name": "Poker",
         "uuid": "57eeac00-741c-4843-907a-51f0ac5ea4cb",
