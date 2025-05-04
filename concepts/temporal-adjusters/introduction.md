@@ -23,7 +23,7 @@ LocalDate lastDay = date.with(TemporalAdjusters.lastDayOfMonth());
 
 Here are some key adjusters useful for scheduling calculations:
 
-### Finding Ordinal Day of Week
+## Finding Ordinal Day of Week
 
 Use `dayOfWeekInMonth(int ordinal, DayOfWeek dayOfWeek)` to find the nth occurrence of a day of the week.
 
@@ -33,7 +33,7 @@ LocalDate secondTuesday = date.with(TemporalAdjusters.dayOfWeekInMonth(2, DayOfW
 // => 2024-08-13
 ```
 
-### Finding First/Last Day of Week in Month
+## Finding First/Last Day of Week in Month
 
 Use `firstInMonth(DayOfWeek dayOfWeek)` or `lastInMonth(DayOfWeek dayOfWeek)`.
 
@@ -43,7 +43,7 @@ LocalDate lastMonday = date.with(TemporalAdjusters.lastInMonth(DayOfWeek.MONDAY)
 // => 2024-08-26
 ```
 
-### Finding Relative Occurrences ("Teenth" dates)
+## Finding Relative Occurrences ("Teenth" dates)
 
 Use `nextOrSame(DayOfWeek dayOfWeek)`. This is useful for finding dates like the "teenth" days (13th-19th). Apply it to the 13th day of the month to find the target day of the week within that "teenth" range.
 
