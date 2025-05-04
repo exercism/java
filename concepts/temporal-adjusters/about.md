@@ -137,6 +137,4 @@ While custom adjusters are powerful, the predefined adjusters in the `TemporalAd
 
 [temporaladjuster-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjuster.html
 [temporaladjusters-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html
-[localdate-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-[dayofweek-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/DayOfWeek.html
 [functionalinterface-docs]: https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html
