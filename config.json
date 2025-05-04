@@ -2090,6 +2090,11 @@
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
       "slug": "ternary-operators",
       "name": "Ternary Operators"
+    },
+    {
+      "uuid": "cc7a06d1-ddb3-4722-88a5-f762254d664e",
+      "slug": "temporal-adjusters",
+      "name": "Temporal Adjusters"
     }
   ],
   "key_features": [
