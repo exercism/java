@@ -30,7 +30,7 @@
     "test": [
       "src/test/java/MeetupTest.java"
     ],
-    "example": [
+    "exemplar": [
       ".meta/src/reference/java/Meetup.java"
     ],
     "editor": [
