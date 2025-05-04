@@ -33,12 +33,6 @@
     "exemplar": [
       ".meta/src/reference/java/Meetup.java"
     ],
-    "example": [
-      ".meta/src/reference/java/Meetup.java"
-    ],
-    "editor": [
-      "src/main/java/MeetupSchedule.java"
-    ],
     "invalidator": [
       "build.gradle"
     ]
