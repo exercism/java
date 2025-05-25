@@ -14,6 +14,9 @@
       ".meta/src/reference/java/LogLevel.java",
       ".meta/src/reference/java/LogLine.java"
     ],
+    "editot": [
+      "src/main/java/LogLine.java"
+    ],
     "invalidator": [
       "build.gradle"
     ]

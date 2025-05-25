@@ -18,6 +18,11 @@
       ".meta/src/reference/java/RemoteControlCar.java",
       ".meta/src/reference/java/TestTrack.java"
     ],
+    "editor": [
+      "src/main/java/ExperimentalRemoteControlCar.java",
+      "src/main/java/ProductionRemoteControlCar.java",
+      "src/main/java/TestTrack.java"
+    ],
     "invalidator": [
       "build.gradle"
     ]
