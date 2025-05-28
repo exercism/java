@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PaasioTest {
 
@@ -116,6 +117,7 @@ public class PaasioTest {
             FileOperations customFileReader = new FileOperations(tmpFile, true);
             customFileReader.read(null);
         });
+
     }
 
     @Test
@@ -205,17 +207,111 @@ public class PaasioTest {
     }
 
     @Test
-    void validateReadNBytesDataReadInBytes() {
+    void validateReadNBytesDataReadInBytesAndVerifyReadCount() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
 
-            fileOperations.readNBytes(5);
-            fileOperations.readNBytes(5);
-            assertThat(fileOperations.getBytesRead()).isEqualTo(10);
+            byte dataRead[] = new byte[100];
+            byte[] helloArray = "Hello! ".getBytes();
 
-        } catch (IOException ioException) {
+            for(int i=0;i<helloArray.length;i++)
+            {
+                dataRead[i] = helloArray[i];
+            }
+
+            int bytesRead = fileOperations.read(dataRead, helloArray.length, 40);
+            String finalVAlue = new String(dataRead,0, helloArray.length+bytesRead, StandardCharsets.UTF_8);
+
+            assertThat("Hello! This is data ").isEqualTo(finalVAlue);
+            assertThat(1).isEqualTo(fileOperations.getReadOperationCount());
+
+        }
+        catch (IOException ioException){
+
+        }
+
+    }
+
+    @Test
+    void verifyNumberOfWriteOperations(){
+
+        try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
+            fileOperations.write(23);
+            fileOperations.write(24);
+            fileOperations.write(25);
+            fileOperations.write(25);
+
+            assertThat(4).isEqualTo(fileOperations.getWriteOperationCount());
+
+        }catch (IOException ioException){
+            ioException.printStackTrace();
+        }
+
+    }
+
+    @Test
+    void verifyIfExceptionIsThrownIfFileOperationIsNotInWriteMode(){
+        assertThatThrownBy(()->{
+            FileOperations customFileReader = new FileOperations(tmpFile, true);
+            customFileReader.write(null);
+        });
+    }
+
+    @Test
+    void verifyFileContentAfterWritingByteArrayIntoTheFile(){
+
+
+        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+
+            byte writeFileContent[] = "This is additional Content.".getBytes();
+            fileOperations.write(writeFileContent);
+
+            FileOperations readFile = new FileOperations(tmpFile, true);
+
+            byte fileContent[] = readFile.readAllBytes();
+            assertThat("This is data This is additional Content.".getBytes()).isEqualTo(fileContent);
+
+        }catch(IOException ioException){
             ioException.printStackTrace();
         }
     }
+
+    @Test
+    void verifyWriteOperationCountAfterWritingByteArrayIntoTheFile(){
+
+        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+
+            byte writeFileContent[] = "This is additional Content.".getBytes();
+            fileOperations.write(writeFileContent);
+            fileOperations.write(writeFileContent);
+            fileOperations.write(43);
+
+            assertThat(3).isEqualTo(fileOperations.getWriteOperationCount());
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+    }
+
+
+    @Test
+    void verifyBytesOfDataWrittenInTheFile(){
+
+        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+
+            byte writeFileContent[] = "This is additional Content.".getBytes();
+            fileOperations.write(writeFileContent);
+            fileOperations.write(writeFileContent);
+            fileOperations.write(43);
+
+            assertThat((writeFileContent.length*2)+1).isEqualTo(fileOperations.getBytesWritten());
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+
+    }
+
+
 
 }
