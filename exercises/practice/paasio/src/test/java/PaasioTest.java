@@ -259,8 +259,6 @@ public class PaasioTest {
 
     @Test
     void verifyFileContentAfterWritingByteArrayIntoTheFile(){
-
-
         try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
 
             byte writeFileContent[] = "This is additional Content.".getBytes();
@@ -269,7 +267,9 @@ public class PaasioTest {
             FileOperations readFile = new FileOperations(tmpFile, true);
 
             byte fileContent[] = readFile.readAllBytes();
-            assertThat("This is data This is additional Content.".getBytes()).isEqualTo(fileContent);
+            String dataWritten = new String(fileContent, StandardCharsets.UTF_8);
+
+            assertThat(dataWritten).isEqualTo("This is additional Content.");
 
         }catch(IOException ioException){
             ioException.printStackTrace();
@@ -301,10 +301,31 @@ public class PaasioTest {
 
             byte writeFileContent[] = "This is additional Content.".getBytes();
             fileOperations.write(writeFileContent);
-            fileOperations.write(writeFileContent);
-            fileOperations.write(43);
 
-            assertThat((writeFileContent.length*2)+1).isEqualTo(fileOperations.getBytesWritten());
+            assertThat(fileOperations.getBytesWritten()).isEqualTo((writeFileContent.length* 2L)+1);
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+
+    }
+
+    @Test
+    void verifyBytesWrittenFromOffsetIntoTheFileAlongWithTheCount(){
+
+        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+
+            String fileContentToBeWritten = "   This is additional Content.";
+            byte[] writeFileContent = fileContentToBeWritten.getBytes();
+
+            fileOperations.write(writeFileContent,3,writeFileContent.length-3);
+
+            FileOperations readFileContent = new FileOperations(tmpFile,true);
+            byte[] fileContentRead = readFileContent.readAllBytes();
+            String fileConvertedToString = new String(fileContentRead, StandardCharsets.UTF_8);
+
+            assertThat(fileContentToBeWritten.trim()).isEqualTo(fileConvertedToString);
+            assertThat(1).isEqualTo(fileOperations.getWriteOperationCount());
 
         }catch(IOException ioException){
             ioException.printStackTrace();

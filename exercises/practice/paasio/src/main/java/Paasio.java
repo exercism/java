@@ -31,7 +31,7 @@ class FileOperations implements Closeable {
             int byteData = fileInputStream.read();
             if (byteData != -1) {
                 bytesRead += 1;
-                readOperationCount += 1;
+                readOperationCount++;
             }
             return byteData;
         } else {
@@ -45,7 +45,7 @@ class FileOperations implements Closeable {
             int totalBytesRead = fileInputStream.read(b);
             if (totalBytesRead != -1) {
                 bytesRead += totalBytesRead;
-                readOperationCount += 1;
+                readOperationCount++;
             }
             return totalBytesRead;
         } else {
@@ -56,9 +56,13 @@ class FileOperations implements Closeable {
     public int read(byte[] b, int off, int len) throws IOException {
 
         if (mode.equals("r")) {
-            int bytesRead = fileInputStream.read(b, off, len);
+            int bytesReadIntoBuffer = fileInputStream.read(b, off, len);
 
-            return bytesRead;
+            if (bytesReadIntoBuffer != -1) {
+                bytesRead += bytesReadIntoBuffer;
+                readOperationCount++;
+            }
+            return bytesReadIntoBuffer;
         } else {
             throw new UnsupportedOperationException("Not in read mode.");
         }
@@ -69,15 +73,80 @@ class FileOperations implements Closeable {
 
         if (mode.equals("r")) {
             byte[] allData = this.fileInputStream.readAllBytes();
+
+            if (allData.length > 0) {
+                readOperationCount++;
+                bytesRead += allData.length;
+            }
+            return allData;
+        } else {
+            throw new UnsupportedOperationException("Not in read mode.");
+        }
+    }
+
+    public byte[] readNBytes(int len) throws IOException {
+//        return new byte[0];
+
+        if (mode.equals("r")) {
+            byte[] allData = this.fileInputStream.readNBytes(len);
+            if (allData.length > 0) {
+                readOperationCount++;
+                bytesRead += allData.length;
+            }
+            return allData;
         } else {
             throw new UnsupportedOperationException("Not in read mode.");
         }
 
-        return new byte[0];
     }
 
-    public byte[] readNBytes(int len) throws IOException {
-        return new byte[0];
+    public void write(int b) throws IOException {
+
+        try {
+            if (mode.equals("w")) {
+                this.fileOutputStream.write(b);
+                writeOperationCount++;
+                bytesWritten++;
+
+            } else {
+                throw new UnsupportedOperationException("Not in read mode.");
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+    }
+
+    public void write(byte[] b) throws IOException {
+        try {
+            if (mode.equals("w")) {
+                this.fileOutputStream.write(b);
+                writeOperationCount++;
+                bytesWritten+= b.length;
+
+            } else {
+                throw new UnsupportedOperationException("Not in read mode.");
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+    }
+
+    public void write(byte[] b, int off, int len) throws IOException {
+
+        try {
+            if (mode.equals("w")) {
+                this.fileOutputStream.write(b,off,len);
+                writeOperationCount++;
+                bytesWritten+= len;
+
+            } else {
+                throw new UnsupportedOperationException("Not in read mode.");
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
     }
 
 
@@ -124,6 +193,12 @@ class FileOperations implements Closeable {
 
     @Override
     public void close() throws IOException {
+
+        if (this.mode.equals("r")) {
+            this.fileInputStream.close();
+        } else {
+            this.fileOutputStream.close();
+        }
 
     }
 }
