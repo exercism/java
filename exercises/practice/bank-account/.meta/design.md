@@ -11,5 +11,4 @@ This exercise could benefit from the following rules in the [analyzer](https://g
   them early.
 - `essential`: If the solution **does not throw an exception when `amount` exceeds `balance` during withdrawal**,
   instruct the student to add this check.
-- `actionable:`: If the solution **declares zero or more than one `boolean`/`Boolean` field to track account state**,
-  instruct the student to use exactly one such field.
+- `actionable`: Verify that the solution **declares exactly one `boolean`/`Boolean` field to track account state**; if the count is zero or greater than one, instruct the student to use exactly one such field.
