@@ -2,7 +2,7 @@
 
 ## Analyzer
 
-This exercise could benefit from the following rules in the [analyzer](https://github.com/exercism/java-analyzer):
+This exercise could benefit from the following rules in the [analyzer]:
 
 - `essential`: Verify that the solution **guards `deposit`, `withdraw`, and `getBalance` with `synchronized`** to avoid
   race conditions.
@@ -12,3 +12,5 @@ This exercise could benefit from the following rules in the [analyzer](https://g
 - `essential`: If the solution **does not throw an exception when `amount` exceeds `balance` during withdrawal**,
   instruct the student to add this check.
 - `actionable`: Verify that the solution **declares exactly one `boolean`/`Boolean` field to track account state**; if the count is zero or greater than one, instruct the student to use exactly one such field.
+
+[analyzer]: https://github.com/exercism/java-analyzer
