@@ -7,36 +7,36 @@ import java.util.Queue;
 
 class RelativeDistance {
 
-    private final Map<String, HashSet<String>> Graph;
+    private final Map<String, HashSet<String>> graph;
 
     RelativeDistance(Map<String, List<String>>  familyTree) {
-        final HashMap<String, HashSet<String>> graph = new HashMap<>();
+        final HashMap<String, HashSet<String>> connections = new HashMap<>();
 
         for (Map.Entry<String, List<String>> entry : familyTree.entrySet()) {
             String parent = entry.getKey();
             List<String> children = entry.getValue();
 
-            graph.putIfAbsent(parent, new HashSet<>());
+            connections.putIfAbsent(parent, new HashSet<>());
 
             for (String child : children) {
-                graph.putIfAbsent(child, new HashSet<>());
+                connections.putIfAbsent(child, new HashSet<>());
 
-                graph.get(parent).add(child);
-                graph.get(child).add(parent);
+                connections.get(parent).add(child);
+                connections.get(child).add(parent);
 
                 for (String sibling : children) {
                     if (!sibling.equals(child)) {
-                        graph.get(child).add(sibling);
+                        connections.get(child).add(sibling);
                     }
                 }
             }
         }
 
-        Graph = graph;
+        graph = connections;
     }
 
     int degreeOfSeparation(String personA, String personB) {
-        if (!Graph.containsKey(personA) || !Graph.containsKey(personB)) {
+        if (!graph.containsKey(personA) || !graph.containsKey(personB)) {
             return -1;
         }
 
@@ -52,7 +52,7 @@ class RelativeDistance {
             String current = queue.poll();
             int currentDistance = distances.get(current);
 
-            for (String relative : Graph.get(current)) {
+            for (String relative : graph.get(current)) {
                 if (!distances.containsKey(relative)) {
                     if (relative.equals(personB)) {
                         return currentDistance + 1;
