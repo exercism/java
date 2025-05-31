@@ -109,7 +109,7 @@ class FileOperations implements Closeable {
                 bytesWritten++;
 
             } else {
-                throw new UnsupportedOperationException("Not in read mode.");
+                throw new UnsupportedOperationException("Not in write mode.");
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();

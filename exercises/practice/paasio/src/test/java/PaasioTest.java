@@ -132,7 +132,7 @@ public class PaasioTest {
                 someMessage[i] = initialMessage[i];
             }
 
-            int bytesRead = fileOperations.read(someMessage, initialMessage.length, someMessage.length - initialMessage.length-2);
+            int bytesRead = fileOperations.read(someMessage, initialMessage.length, someMessage.length - initialMessage.length - 2);
 
             String dataInFile = new String(someMessage, 0, initialMessage.length + bytesRead, StandardCharsets.UTF_8);
             assertThat("Hello! This is data ").isEqualTo(dataInFile);
@@ -144,30 +144,30 @@ public class PaasioTest {
 
 
     @Test
-    void validateBytesOfDataReadWhileReadingItFromOffset(){
+    void validateBytesOfDataReadWhileReadingItFromOffset() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
 
             byte byteData[] = new byte[50];
-            int bytesRead = fileOperations.read(byteData,0,10);
+            int bytesRead = fileOperations.read(byteData, 0, 10);
 
             assertThat(bytesRead).isEqualTo(10);
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
     }
 
     @Test
-    void validateAllBytesReadingData(){
+    void validateAllBytesReadingData() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
 
             byte[] bytes = fileOperations.readAllBytes();
             assertThat(fileOperations.getBytesRead()).isEqualTo(bytes.length);
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
@@ -175,7 +175,7 @@ public class PaasioTest {
 
 
     @Test
-    void validateAllBytesReadOperationCount(){
+    void validateAllBytesReadOperationCount() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
 
@@ -184,7 +184,7 @@ public class PaasioTest {
             byte[] bytes = fileOperations.readAllBytes();
             assertThat(fileOperations.getReadOperationCount()).isEqualTo(3);
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
@@ -214,28 +214,26 @@ public class PaasioTest {
             byte dataRead[] = new byte[100];
             byte[] helloArray = "Hello! ".getBytes();
 
-            for(int i=0;i<helloArray.length;i++)
-            {
+            for (int i = 0; i < helloArray.length; i++) {
                 dataRead[i] = helloArray[i];
             }
 
             int bytesRead = fileOperations.read(dataRead, helloArray.length, 40);
-            String finalVAlue = new String(dataRead,0, helloArray.length+bytesRead, StandardCharsets.UTF_8);
+            String finalVAlue = new String(dataRead, 0, helloArray.length + bytesRead, StandardCharsets.UTF_8);
 
             assertThat("Hello! This is data ").isEqualTo(finalVAlue);
             assertThat(1).isEqualTo(fileOperations.getReadOperationCount());
 
-        }
-        catch (IOException ioException){
+        } catch (IOException ioException) {
 
         }
 
     }
 
     @Test
-    void verifyNumberOfWriteOperations(){
+    void verifyNumberOfWriteOperations() {
 
-        try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
+        try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
             fileOperations.write(23);
             fileOperations.write(24);
             fileOperations.write(25);
@@ -243,23 +241,23 @@ public class PaasioTest {
 
             assertThat(4).isEqualTo(fileOperations.getWriteOperationCount());
 
-        }catch (IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
     }
 
     @Test
-    void verifyIfExceptionIsThrownIfFileOperationIsNotInWriteMode(){
-        assertThatThrownBy(()->{
+    void verifyIfExceptionIsThrownIfFileOperationIsNotInWriteMode() {
+        assertThatThrownBy(() -> {
             FileOperations customFileReader = new FileOperations(tmpFile, true);
             customFileReader.write(null);
         });
     }
 
     @Test
-    void verifyFileContentAfterWritingByteArrayIntoTheFile(){
-        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+    void verifyFileContentAfterWritingByteArrayIntoTheFile() {
+        try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
 
             byte writeFileContent[] = "This is additional Content.".getBytes();
             fileOperations.write(writeFileContent);
@@ -271,15 +269,15 @@ public class PaasioTest {
 
             assertThat(dataWritten).isEqualTo("This is additional Content.");
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
     }
 
     @Test
-    void verifyWriteOperationCountAfterWritingByteArrayIntoTheFile(){
+    void verifyWriteOperationCountAfterWritingByteArrayIntoTheFile() {
 
-        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+        try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
 
             byte writeFileContent[] = "This is additional Content.".getBytes();
             fileOperations.write(writeFileContent);
@@ -288,51 +286,73 @@ public class PaasioTest {
 
             assertThat(3).isEqualTo(fileOperations.getWriteOperationCount());
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
     }
 
 
     @Test
-    void verifyBytesOfDataWrittenInTheFile(){
+    void verifyBytesOfDataWrittenInTheFile() {
 
-        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+        try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
 
             byte writeFileContent[] = "This is additional Content.".getBytes();
             fileOperations.write(writeFileContent);
+            fileOperations.write(writeFileContent);
+            fileOperations.write('s');
 
-            assertThat(fileOperations.getBytesWritten()).isEqualTo((writeFileContent.length* 2L)+1);
+            assertThat(fileOperations.getBytesWritten()).isEqualTo((writeFileContent.length * 2L) + 1);
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
     }
 
     @Test
-    void verifyBytesWrittenFromOffsetIntoTheFileAlongWithTheCount(){
+    void verifyBytesWrittenFromOffsetIntoTheFileAlongWithTheCount() {
 
-        try(FileOperations fileOperations = new FileOperations(tmpFile, false)){
+        try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
 
             String fileContentToBeWritten = "   This is additional Content.";
             byte[] writeFileContent = fileContentToBeWritten.getBytes();
 
-            fileOperations.write(writeFileContent,3,writeFileContent.length-3);
+            fileOperations.write(writeFileContent, 3, writeFileContent.length - 3);
 
-            FileOperations readFileContent = new FileOperations(tmpFile,true);
+            FileOperations readFileContent = new FileOperations(tmpFile, true);
             byte[] fileContentRead = readFileContent.readAllBytes();
             String fileConvertedToString = new String(fileContentRead, StandardCharsets.UTF_8);
 
             assertThat(fileContentToBeWritten.trim()).isEqualTo(fileConvertedToString);
             assertThat(1).isEqualTo(fileOperations.getWriteOperationCount());
 
-        }catch(IOException ioException){
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
     }
 
 
+    @Test
+    void verifyReadOperationStats() {
+
+        try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
+
+            byte[] dataRead = new byte[50];
+
+            fileOperations.read();
+            fileOperations.read();
+            fileOperations.read();
+            fileOperations.read(dataRead,0,5);
+
+            assertThat(4).isEqualTo(fileOperations.getReadOperationCount());
+            assertThat(8).isEqualTo(fileOperations.getBytesRead());
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+    }
 
 }
