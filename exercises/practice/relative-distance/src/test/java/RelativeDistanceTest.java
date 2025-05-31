@@ -43,7 +43,7 @@ public class RelativeDistanceTest {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
                 put("Khadija", List.of("Mateo"));
-                put("Rami", List.of("Rami"));
+                put("Mateo", List.of("Rami"));
             }
         };
 
@@ -126,7 +126,7 @@ public class RelativeDistanceTest {
         };
 
         RelativeDistance rd = new RelativeDistance(familyTree);
-        assertThat(rd.degreeOfSeparation("Dmitri", "Fabio")).isEqualTo(9);
+        assertThat(rd.degreeOfSeparation("Dimitri", "Fabio")).isEqualTo(9);
     }
 
     @Disabled("Remove to run test")
