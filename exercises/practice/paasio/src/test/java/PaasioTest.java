@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,13 +13,19 @@ public class PaasioTest {
     private File tmpFile;
 
     @BeforeEach
-    public void setUPTest() throws IOException {
-        tmpFile = File.createTempFile("sample", ".txt");
-        //Writing data to file to read its content
-        try (FileOutputStream writeToFile = new FileOutputStream(tmpFile)) {
-            writeToFile.write("This is data ".getBytes());
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+    public void setUPTest(TestInfo testInfo) throws IOException {
+
+        if(testInfo.getTags().contains("fileOperation")) {
+
+            System.out.println("File Operation testing");
+
+            tmpFile = File.createTempFile("sample", ".txt");
+            //Writing data to file to read its content
+            try (FileOutputStream writeToFile = new FileOutputStream(tmpFile)) {
+                writeToFile.write("This is data ".getBytes());
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
     }
 
@@ -34,6 +37,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void checkReadOperationCount() {
 
         try (FileOperations customFileReader = new FileOperations(tmpFile, true)) {
@@ -49,6 +53,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void throwUnsupportedOperationExceptionExceptionWhenTryingToReadInWriteMode() {
         Assertions.assertThrows(UnsupportedOperationException.class, () -> {
             FileOperations customFileReader = new FileOperations(tmpFile, false);
@@ -57,6 +62,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void checkAmountOfDataReadInBytes() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -75,6 +81,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void checkAmountOfDataReadInBytesForMultipleOperations() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -95,6 +102,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void checkByteValueReadFromTheFile() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -112,6 +120,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void checkIfNullPointerExceptionIsThrownWhenNullIsPassedInsteadOfByteArray() {
         Assertions.assertThrows(NullPointerException.class, () -> {
             FileOperations customFileReader = new FileOperations(tmpFile, true);
@@ -121,6 +130,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void checkIfDataFollowsTheOffsetWhileWritingInByteArray() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -144,6 +154,7 @@ public class PaasioTest {
 
 
     @Test
+    @Tag("fileOperation")
     void validateBytesOfDataReadWhileReadingItFromOffset() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -160,6 +171,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void validateAllBytesReadingData() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -175,6 +187,7 @@ public class PaasioTest {
 
 
     @Test
+    @Tag("fileOperation")
     void validateAllBytesReadOperationCount() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -192,6 +205,7 @@ public class PaasioTest {
 
 
     @Test
+    @Tag("fileOperation")
     void validateReadNBytesReadOperationCount() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -207,6 +221,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void validateReadNBytesDataReadInBytesAndVerifyReadCount() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -231,6 +246,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void verifyNumberOfWriteOperations() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
@@ -248,6 +264,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void verifyIfExceptionIsThrownIfFileOperationIsNotInWriteMode() {
         assertThatThrownBy(() -> {
             FileOperations customFileReader = new FileOperations(tmpFile, true);
@@ -256,6 +273,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void verifyFileContentAfterWritingByteArrayIntoTheFile() {
         try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
 
@@ -275,6 +293,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void verifyWriteOperationCountAfterWritingByteArrayIntoTheFile() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
@@ -293,6 +312,7 @@ public class PaasioTest {
 
 
     @Test
+    @Tag("fileOperation")
     void verifyBytesOfDataWrittenInTheFile() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
@@ -311,6 +331,7 @@ public class PaasioTest {
     }
 
     @Test
+    @Tag("fileOperation")
     void verifyBytesWrittenFromOffsetIntoTheFileAlongWithTheCount() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, false)) {
@@ -335,6 +356,7 @@ public class PaasioTest {
 
 
     @Test
+    @Tag("fileOperation")
     void verifyReadOperationStats() {
 
         try (FileOperations fileOperations = new FileOperations(tmpFile, true)) {
@@ -354,5 +376,9 @@ public class PaasioTest {
         }
 
     }
+
+
+    //Socket Testing
+
 
 }
