@@ -1055,6 +1055,19 @@
         "difficulty": 5
       },
       {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "a3cf95fd-c7c1-4199-a253-7bae8d1aba9a",
+        "practices": [
+          "maps"
+        ],
+        "prerequisites": [
+          "lists",
+          "maps"
+        ],
+        "difficulty": 5
+      },
+      {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "d7c2eed9-64c7-4c4a-b45d-c787d460337f",

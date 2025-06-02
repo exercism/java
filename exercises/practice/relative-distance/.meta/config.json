@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/RelativeDistance.java"
+    ],
+    "test": [
+      "src/test/java/RelativeDistanceTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RelativeDistance.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Given a family tree, calculate the degree of separation.",
+  "source": "vaeng",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2537"
+}
