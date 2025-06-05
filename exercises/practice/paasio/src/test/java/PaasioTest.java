@@ -505,6 +505,22 @@ public class PaasioTest {
 
     @Test
     @Tag("socketOperation")
+    void verifyIfDataWrittenInOutputStream(){
+
+        try(SocketOperations socketOperations = new SocketOperations(dummySocket)){
+
+            byte[] byteData = "Data to write".getBytes();
+            socketOperations.write(byteData);
+
+            assertThat(dummySocket.sampleOutputStream.toString()).isEqualTo("Data to write");
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+    }
+
+    @Test
+    @Tag("socketOperation")
     void verifyIfMethodThrowsExceptionIfSocketObjectIsNull(){
 
         assertThatThrownBy(()->{
