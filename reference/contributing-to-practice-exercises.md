@@ -19,7 +19,7 @@ This can just be a Pull Request with an empty commit that states which new exerc
 The Java specific details you need to know about adding an exercise are:
 
 - Please add an entry to the `exercises` array in `config.json`.
-  You can find details about what should be in that entry [here][docs-building-config-json].
+  You can find details about what should be in that entry at the [Exercism docs][docs-building-config-json].
   You can also look at other entries in `config.json` as examples and try to mimic them.
 
 - Please add an entry for your exercise to `settings.gradle`.

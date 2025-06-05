@@ -18,7 +18,7 @@ There are four access modifiers:
 - `protected`
 - default (No keyword required)
 
-You can read more about them [here][access-modifiers]
+You can read more about them [in this article][access-modifiers]
 
 ## Inheritance vs Composition
 

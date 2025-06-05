@@ -51,7 +51,7 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 >   throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 >   ```
 >
-> - Exercises of difficulty 5 or higher: copy the StubTemplate.java file (provided [here](https://github.com/exercism/java/blob/main/resources/exercise-template/src/main/java/ExerciseName.java)) and rename it to fit the exercise. For example, for the exercise linked-list the file could be named LinkedList.java. Then either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
+> - Exercises of difficulty 5 or higher: copy the StubTemplate.java file (provided in [this template file](https://github.com/exercism/java/blob/main/resources/exercise-template/src/main/java/ExerciseName.java)) and rename it to fit the exercise. For example, for the exercise linked-list the file could be named LinkedList.java. Then either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
 
 References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)], [[3](https://github.com/exercism/java/issues/977)], [[4](https://github.com/exercism/java/issues/1721)]
 
@@ -108,7 +108,7 @@ References: [[1](https://github.com/exercism/java/issues/365#issuecomment-292533
 
 ### Good first issues
 
-> Aim to keep 10-20 small and straightforward issues open at any given time. Identify any such issues by applying the "good first issue" label. You can view the current list of these issues [here](https://github.com/exercism/java/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+> Aim to keep 10-20 small and straightforward issues open at any given time. Identify any such issues by applying the "good first issue" label. You can view the current list of labeled issues [on GitHub](https://github.com/exercism/java/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 References: [[1](https://github.com/exercism/java/issues/220#issue-196447088)], [[2](https://github.com/exercism/java/issues/1669)]
 
