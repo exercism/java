@@ -3,7 +3,7 @@ name: Configlet Auto Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 1,15 * *'
+    - cron: '0 0 15 * *'
 
 jobs:
   configlet-auto-sync:
