@@ -160,7 +160,7 @@ return switch (day) {
 };
 ```
 
-You can find more information on the switch expression on Java 21 [here][switch-on-Java-21]
+You can find more information on the switch expression on Java 21 in [this blog][switch-on-Java-21]
 
 [yield-keyword]: https://www.codejava.net/java-core/the-java-language/yield-keyword-in-java
 [switch1]: https://www.vojtechruzicka.com/java-enhanced-switch/
