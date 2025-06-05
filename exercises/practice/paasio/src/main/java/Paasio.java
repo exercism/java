@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.Objects;
 
 class FileOperations implements Closeable {
 
@@ -12,6 +13,10 @@ class FileOperations implements Closeable {
 
 
     public FileOperations(File file, boolean readOperation) throws FileNotFoundException {
+
+        if(Objects.isNull(file)){
+            throw new RuntimeException("File object cannot be null");
+        }
 
         if (readOperation) {
             fileInputStream = new FileInputStream(file);
@@ -74,40 +79,34 @@ class FileOperations implements Closeable {
 
     public void write(int b) throws IOException {
 
-        try {
-            if (mode.equals("w")) {
-                this.genericWriteOperation.write(b);
-            } else {
-                throw new UnsupportedOperationException("Not in write mode.");
-            }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+
+        if (mode.equals("w")) {
+            this.genericWriteOperation.write(b);
+        } else {
+            throw new UnsupportedOperationException("Not in write mode.");
         }
+
 
     }
 
     public void write(byte[] b) throws IOException {
-        try {
-            if (mode.equals("w")) {
-                this.genericWriteOperation.write(b);
-            } else {
-                throw new UnsupportedOperationException("Not in read mode.");
-            }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+
+        if (mode.equals("w")) {
+            this.genericWriteOperation.write(b);
+        } else {
+            throw new UnsupportedOperationException("Not in read mode.");
         }
+
     }
 
     public void write(byte[] b, int off, int len) throws IOException {
-        try {
-            if (mode.equals("w")) {
-                this.genericWriteOperation.write(b, off, len);
-            } else {
-                throw new UnsupportedOperationException("Not in read mode.");
-            }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+
+        if (mode.equals("w")) {
+            this.genericWriteOperation.write(b, off, len);
+        } else {
+            throw new UnsupportedOperationException("Not in read mode.");
         }
+
 
     }
 
@@ -145,6 +144,68 @@ class FileOperations implements Closeable {
             this.genericWriteOperation.close();
         }
 
+    }
+}
+
+class SocketOperations extends Socket {
+
+    Socket socket;
+    private final GenericInputOperation genericInputOperation;
+    private final GenericWriteOperation genericWriteOperation;
+
+    SocketOperations(Socket socket) throws IOException {
+        this.socket = socket;
+        genericInputOperation = new GenericInputOperation(socket.getInputStream());
+        genericWriteOperation = new GenericWriteOperation(socket.getOutputStream());
+    }
+
+    public int read() throws IOException {
+        return genericInputOperation.read();
+    }
+
+    public int read(byte[] b) throws IOException {
+
+        return genericInputOperation.read(b);
+    }
+
+    public int read(byte[] b, int off, int len) throws IOException {
+        return genericInputOperation.read(b, off, len);
+    }
+
+    public byte[] readAllBytes() throws IOException {
+        return this.genericInputOperation.readAllBytes();
+    }
+
+    public byte[] readNBytes(int len) throws IOException {
+        return this.genericInputOperation.readNBytes(len);
+    }
+
+    public void write(int b) throws IOException {
+        this.genericWriteOperation.write(b);
+    }
+
+    public void write(byte[] b) throws IOException {
+        this.genericWriteOperation.write(b);
+    }
+
+    public void write(byte[] b, int off, int len) throws IOException {
+        this.genericWriteOperation.write(b, off, len);
+    }
+
+    public long getBytesRead() {
+        return genericInputOperation.getBytesRead();
+    }
+
+    public long getBytesWritten() {
+        return genericWriteOperation.getBytesWritten();
+    }
+
+    public long getReadOperationCount() {
+        return genericInputOperation.getReadOperationCount();
+    }
+
+    public long getWriteOperationCount() {
+        return genericWriteOperation.getWriteOperationCount();
     }
 }
 
@@ -235,7 +296,7 @@ class GenericInputOperation implements Closeable {
 
 }
 
-class GenericWriteOperation implements Closeable{
+class GenericWriteOperation implements Closeable {
 
 
     private long bytesWritten;
@@ -303,5 +364,6 @@ class GenericWriteOperation implements Closeable{
         return outputStream;
     }
 }
+
 
 

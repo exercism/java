@@ -1,20 +1,38 @@
 import org.junit.jupiter.api.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 
 public class PaasioTest {
 
     private File tmpFile;
+    class DummySocket extends Socket{
+
+        private final ByteArrayInputStream sampleInputStream = new ByteArrayInputStream("This is data".getBytes());
+        private final ByteArrayOutputStream sampleOutputStream = new ByteArrayOutputStream();
+
+        public DummySocket() {
+            super();
+        }
+
+        @Override
+        public InputStream getInputStream() throws IOException {
+            return sampleInputStream;
+        }
+
+        @Override
+        public OutputStream getOutputStream() throws IOException {
+            return sampleOutputStream;
+        }
+    }
+
+    private DummySocket dummySocket;
 
     @BeforeEach
     public void setUPTest(TestInfo testInfo) throws IOException {
-
         if(testInfo.getTags().contains("fileOperation")) {
 
             System.out.println("File Operation testing");
@@ -27,11 +45,16 @@ public class PaasioTest {
                 ioException.printStackTrace();
             }
         }
+
+        if(testInfo.getTags().contains("socketOperation")) {
+            dummySocket = new DummySocket();
+        }
     }
 
     @AfterEach
-    public void cleanFile() {
-        if (tmpFile.exists()) {
+    public void cleanFile(TestInfo testInfo) {
+
+        if (testInfo.getTags().contains("fileOperation") && tmpFile.exists()) {
             tmpFile.delete();
         }
     }
@@ -55,10 +78,16 @@ public class PaasioTest {
     @Test
     @Tag("fileOperation")
     void throwUnsupportedOperationExceptionExceptionWhenTryingToReadInWriteMode() {
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> {
+
+        assertThatThrownBy(()->{
             FileOperations customFileReader = new FileOperations(tmpFile, false);
             customFileReader.read();
-        });
+        }).isInstanceOf(UnsupportedOperationException.class);
+
+//        Assertions.assertThrows(UnsupportedOperationException.class, () -> {
+//            FileOperations customFileReader = new FileOperations(tmpFile, false);
+//            customFileReader.read();
+//        });
     }
 
     @Test
@@ -122,10 +151,16 @@ public class PaasioTest {
     @Test
     @Tag("fileOperation")
     void checkIfNullPointerExceptionIsThrownWhenNullIsPassedInsteadOfByteArray() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
+
+        assertThatThrownBy(()->{
             FileOperations customFileReader = new FileOperations(tmpFile, true);
             customFileReader.read(null);
-        });
+        }).isInstanceOf(NullPointerException.class);
+
+    //        Assertions.assertThrows(NullPointerException.class, () -> {
+    //            FileOperations customFileReader = new FileOperations(tmpFile, true);
+    //            customFileReader.read(null);
+    //        });
 
     }
 
@@ -269,7 +304,7 @@ public class PaasioTest {
         assertThatThrownBy(() -> {
             FileOperations customFileReader = new FileOperations(tmpFile, true);
             customFileReader.write(null);
-        });
+        }).isInstanceOf(UnsupportedOperationException.class);
     }
 
     @Test
@@ -378,7 +413,102 @@ public class PaasioTest {
     }
 
 
+    @Test
+    @Tag("fileOperation")
+    void verifyIfMethodThrowsExceptionIfObjectIsNull(){
+
+        assertThatThrownBy(()->{
+            FileOperations fileOperations = new FileOperations(null,true);
+        }).isInstanceOf(RuntimeException.class);
+    }
+
     //Socket Testing
 
+    @Test
+    @Tag("socketOperation")
+    public void checkReadOperationCountInSocket(){
 
+        try(SocketOperations socketOperations = new SocketOperations(dummySocket)){
+
+            socketOperations.read();
+            socketOperations.read();
+            socketOperations.read();
+            assertThat(socketOperations.getReadOperationCount()).isEqualTo(3);
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+
+    }
+
+
+    @Test
+    @Tag("socketOperation")
+    public void checkDataReadInAByte(){
+
+        byte[] data = new byte[100];
+        try(SocketOperations socketOperations = new SocketOperations(dummySocket)){
+
+            socketOperations.read(data);
+            String dataReadToString = new String(data, StandardCharsets.UTF_8).trim();
+            assertThat(dataReadToString).isEqualTo("This is data");
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+
+    }
+
+    @Test
+    @Tag("socketOperation")
+    public void checkOverAllReadOperationsAndBytesReadAfterReadingUsingDifferentMethods(){
+
+        byte[] someData = new byte[100];
+        try(SocketOperations socketOperations = new SocketOperations(dummySocket)){
+
+            socketOperations.read();
+            socketOperations.read();
+            socketOperations.read(someData,0,3);
+
+            assertThat(socketOperations.getReadOperationCount()).isEqualTo(3);
+            assertThat(socketOperations.getBytesRead()).isEqualTo(5);
+
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+
+
+    }
+
+
+    @Test
+    @Tag("socketOperation")
+    public void checkBytesOfDataWrittenAlongWithWriteOperationCount(){
+
+        byte[] someData = "Writing Data".getBytes();
+        try(SocketOperations socketOperations = new SocketOperations(dummySocket)){
+
+            socketOperations.write('3');
+            socketOperations.write('4');
+            socketOperations.write('6');
+            socketOperations.write(someData);
+
+            assertThat(socketOperations.getWriteOperationCount()).isEqualTo(4);
+            assertThat(socketOperations.getBytesWritten()).isEqualTo(15);
+
+        }catch(IOException ioException){
+            ioException.printStackTrace();
+        }
+
+    }
+
+    @Test
+    @Tag("socketOperation")
+    void verifyIfMethodThrowsExceptionIfSocketObjectIsNull(){
+
+        assertThatThrownBy(()->{
+            SocketOperations fileOperations = new SocketOperations(null);
+        }).isInstanceOf(RuntimeException.class);
+    }
 }
