@@ -12,7 +12,7 @@
 
 ## 2. Get log level from a log line
 
-- Changing a `String`'s casing is explored in [this][tutorial-changing-case-upper] and [this][tutorial-changing-case-lower] totorial.
+- Changing a `String`'s casing is explored in [this changing to upper case][tutorial-changing-case-upper] and [this changing to lower case][tutorial-changing-case-lower] tutorial.
 
 ## 3. Reformat a log line
 
