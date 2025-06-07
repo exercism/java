@@ -112,13 +112,13 @@ Seeing both kinds can be instructive and interesting.
 
 Mentors review submitted solutions for the track they've chosen to mentor to help users learn as much as possible.
 
-To read more about mentoring, go to the following [link][Mentoring].
+To read more about mentoring, go to the [Exercism docs][Mentoring].
 
 ### Contribute to Exercism
 
 The entire of Exercism is Open Source and is a labor of love for over 100 maintainers and many more contributors.
 
-A starting point to jumping in and becoming a contributor can be found [here][Contributing].
+A starting point to jumping in and becoming a contributor can be found in the [Exercism contributing guide][Contributing].
 
 [Tutorial]: #tutorial
 [Introduction]: #introduction

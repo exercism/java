@@ -7,12 +7,12 @@
 ## 1. Get message from a log line
 
 - Different options to search for text in a string are explored in [this tutorial][tutorial-search-text-in-string].
-- How to split strings can be seen [here][tutorial-split-strings]
+- How to split strings can be seen in [this tutorial][tutorial-split-strings]
 - Removing white space is [built-in][tutorial-trim-white-space].
 
 ## 2. Get log level from a log line
 
-- Changing a `String`'s casing is explored [here][tutorial-changing-case-upper] and [here][tutorial-changing-case-lower].
+- Changing a `String`'s casing is explored in [this changing to upper case][tutorial-changing-case-upper] and [this changing to lower case][tutorial-changing-case-lower] tutorial.
 
 ## 3. Reformat a log line
 

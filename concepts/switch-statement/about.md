@@ -145,7 +145,7 @@ Starting with Java 14 (available as a preview before in Java 12 and 13) it is po
    However if you use the new `->` notation it must be followed by either: a single statement/expression, a `throw` statement or a `{}` block.
    No more confusion!
 
-You can find more information on enhanced switch [here][switch1], [here][switch2] and on the [oracle documentation][oracle-doc].
+You can find more information on enhanced switch in [this article][switch1] and [this one][switch2], along with the official [Oracle documentation][oracle-doc].
 
 In addition, a feature called `Guarded Patterns` was added in Java 21, which allows you to do checks in the case label itself.
 
@@ -160,7 +160,7 @@ return switch (day) {
 };
 ```
 
-You can find more information on the switch expression on Java 21 [here][switch-on-Java-21]
+You can find more information on the switch expression on Java 21 in [this blog][switch-on-Java-21]
 
 [yield-keyword]: https://www.codejava.net/java-core/the-java-language/yield-keyword-in-java
 [switch1]: https://www.vojtechruzicka.com/java-enhanced-switch/
