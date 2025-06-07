@@ -2,7 +2,7 @@
 
 ## General
 
-- Refer to examples [here][ternary-operator-first] and [here][ternary-operator-second] for guidance on using _ternary operators_.
+- Refer to examples in [this article][ternary-operator-first] and [this one][ternary-operator-second] for guidance on using _ternary operators_.
 
 ## 1. Determine the salary multiplier
 
