@@ -321,6 +321,18 @@
           "foreach-loops",
           "generic-types"
         ]
+      },
+      {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "602511d5-7e89-4def-b072-4dd311816810",
+        "concepts": [
+          "temporal-adjusters"
+        ],
+        "prerequisites": [
+          "datetime",
+          "enums"
+        ]
       }
     ],
     "practice": [
@@ -1495,17 +1507,6 @@
         "difficulty": 7
       },
       {
-        "slug": "meetup",
-        "name": "Meetup",
-        "uuid": "602511d5-7e89-4def-b072-4dd311816810",
-        "practices": [],
-        "prerequisites": [
-          "datetime",
-          "enums"
-        ],
-        "difficulty": 7
-      },
-      {
         "slug": "poker",
         "name": "Poker",
         "uuid": "57eeac00-741c-4843-907a-51f0ac5ea4cb",
@@ -1984,6 +1985,11 @@
       "uuid": "78f3c7b2-cb9c-4d21-8cb4-7106a188f713",
       "slug": "ternary-operators",
       "name": "Ternary Operators"
+    },
+    {
+      "uuid": "cc7a06d1-ddb3-4722-88a5-f762254d664e",
+      "slug": "temporal-adjusters",
+      "name": "Temporal Adjusters"
     }
   ],
   "key_features": [
