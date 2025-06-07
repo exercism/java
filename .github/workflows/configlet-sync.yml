@@ -44,3 +44,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "🚨 configlet sync --test found unsynced tests"
           content-filepath: .github/auto-sync/sync-test-output.txt
+          unique: true
