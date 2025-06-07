@@ -32,7 +32,7 @@ jobs:
       - name: Run configlet sync for test and capture output
         id: sync_test
         run: |
-          ./bin/configlet sync --test | tee .github/auto-sync/sync-test-output.txt
+          ./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt
           echo "output<<EOF" >> $GITHUB_OUTPUT
           cat .github/auto-sync/sync-test-output.txt >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
