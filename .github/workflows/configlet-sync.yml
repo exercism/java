@@ -32,7 +32,6 @@ jobs:
       - name: Run configlet sync for test and capture output
         id: sync_test
         run: |
-          mkdir -p .github/auto-sync
           configlet_raw_output="$(./bin/configlet sync --tests)"
 
           echo "configlet output:"
