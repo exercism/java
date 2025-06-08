@@ -50,10 +50,10 @@ LocalDate date = LocalDate.of(2007, 12, 3);
 date.plusDays(3);
 // => 2007-12-06
 
-date.addMonths(1);
+date.plusMonths(1);
 // => 2008-01-03
 
-date.addYears(1);
+date.plusYears(1);
 // => 2008-12-03
 ```
 
