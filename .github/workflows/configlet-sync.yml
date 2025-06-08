@@ -29,11 +29,13 @@ jobs:
           branch: configlet-auto-sync
           delete-branch: true
 
-      - name: Run configlet sync for tests
+      - name: Run configlet sync for test and capture output
         id: sync_test
         run: |
+          mkdir -p .github/auto-sync
+          output="$(./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt)"
           echo "output<<EOF" >> $GITHUB_OUTPUT
-          ./bin/configlet sync --tests >> $GITHUB_OUTPUT
+          echo "$output" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       
       - name: Create issue if tests are not synced
