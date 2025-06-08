@@ -34,10 +34,12 @@ jobs:
         run: |
           mkdir -p .github/auto-sync
           output="$(./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt)"
+          echo "configlet output:"
+          echo "$output"
           echo "output<<EOF" >> $GITHUB_OUTPUT
           echo "$output" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-      
+           
       - name: Create issue if tests are not synced
         if: ${{ !contains(steps.sync_test.outputs.output, 'Every exercise has up-to-date tests!') }}
         uses: peter-evans/create-issue-from-file@v4
