@@ -33,11 +33,17 @@ jobs:
         id: sync_test
         run: |
           mkdir -p .github/auto-sync
-          output="$(./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt)"
+          configlet_raw_output="$(./bin/configlet sync --tests)"
+
           echo "configlet output:"
-          echo "$output"
+          echo "$configlet_raw_output"
+
+          echo '```' > .github/auto-sync/sync-test-output.txt
+          echo "$configlet_raw_output" >> .github/auto-sync/sync-test-output.txt
+          echo '```' >> .github/auto-sync/sync-test-output.txt
+
           echo "output<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$output" >> "$GITHUB_OUTPUT"
+          echo "$configlet_raw_output" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Find existing issue for test sync
@@ -66,4 +72,3 @@ jobs:
           title: "🚨 configlet sync --test found unsynced tests"
           content-filepath: .github/auto-sync/sync-test-output.txt
           issue-number: ${{ steps.find_issue.outputs.issue_number || '' }}
-          
