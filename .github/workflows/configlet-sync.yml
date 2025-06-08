@@ -1,0 +1,47 @@
+name: Configlet Auto Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 15 * *'
+
+jobs:
+  configlet-auto-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch configlet
+        run: ./bin/fetch-configlet
+
+      - name: Run configlet sync for files
+        run: ./bin/configlet sync --docs --metadata --filepaths -u -y
+
+      - name: Create pull request if changes
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🤖 Auto-sync docs, metadata, and filepaths"
+          title: "🤖 Configlet sync: docs, metadata, and filepaths"
+          body-path: .github/auto-sync/PR_BODY.md
+          branch: configlet-auto-sync
+          delete-branch: true
+
+      - name: Run configlet sync for test and capture output
+        id: sync_test
+        run: |
+          ./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt
+          echo "output<<EOF" >> $GITHUB_OUTPUT
+          cat .github/auto-sync/sync-test-output.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create issue if tests are not synced
+        if: ${{ !contains(steps.sync_test.outputs.output, 'Every exercise has up-to-date tests!') }}
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "🚨 configlet sync --test found unsynced tests"
+          content-filepath: .github/auto-sync/sync-test-output.txt
+          unique: true
