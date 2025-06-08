@@ -47,7 +47,7 @@ These methods return a _new_ `LocalDate` instance and do not update the existing
 ```java
 LocalDate date = LocalDate.of(2007, 12, 3);
 
-date.addDays(3);
+date.plusDays(3);
 // => 2007-12-06
 
 date.addMonths(1);
