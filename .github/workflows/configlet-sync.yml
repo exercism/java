@@ -36,15 +36,34 @@ jobs:
           output="$(./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt)"
           echo "configlet output:"
           echo "$output"
-          echo "output<<EOF" >> $GITHUB_OUTPUT
-          echo "$output" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-           
-      - name: Create issue if tests are not synced
+          echo "output<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Find existing issue for test sync
+        id: find_issue
         if: ${{ !contains(steps.sync_test.outputs.output, 'Every exercise has up-to-date tests!') }}
-        uses: peter-evans/create-issue-from-file@v4
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_TITLE="🚨 configlet sync --test found unsynced tests"
+          ISSUE_DATA=$(gh issue list --search "is:issue is:open in:title \"${ISSUE_TITLE}\" repo:${{ github.repository }}" --json number,title --jq '.[0]')
+
+          if [ -z "$ISSUE_DATA" ]; then
+            echo "No open issue found with title: '${ISSUE_TITLE}'. A new one will be created."
+            echo "issue_number=" >> $GITHUB_OUTPUT
+          else
+            ISSUE_NUMBER=$(echo "$ISSUE_DATA" | jq -r '.number')
+            echo "Found existing issue number: $ISSUE_NUMBER for title: '$ISSUE_TITLE'"
+            echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create or Update issue if tests are not synced
+        if: ${{ !contains(steps.sync_test.outputs.output, 'Every exercise has up-to-date tests!') }}
+        uses: peter-evans/create-issue-from-file@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "🚨 configlet sync --test found unsynced tests"
           content-filepath: .github/auto-sync/sync-test-output.txt
+          issue-number: ${{ steps.find_issue.outputs.issue_number || '' }}
           
