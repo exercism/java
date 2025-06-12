@@ -37,7 +37,8 @@ class Calculator {
 Invoking (or calling) a method is done by specifying its class and method name and passing arguments for each of the method's parameters.
 
 ```java
-int sum = new Calculator().add(1, 2);  // here the  "add" method has been called to perform the task of addition 
+// call "add" method to perform addition 
+int sum = new Calculator().add(1, 2);  
 ```
 
 Scope in Java is defined between the `{` and `}` characters.
