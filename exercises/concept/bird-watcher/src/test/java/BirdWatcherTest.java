@@ -16,7 +16,7 @@ public class BirdWatcherTest {
     private static final int TODAY = 4;
 
     private BirdWatcher birdWatcher;
-    private int lastWeek[] = {DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY};
+    private final int[] lastWeek = {DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY};
 
     @BeforeEach
     public void setUp() {
@@ -61,6 +61,13 @@ public class BirdWatcherTest {
         assertThat(birdWatcher.hasDayWithoutBirds()).isFalse();
     }
 
+    @Test
+    @Tag("task:4")
+    @DisplayName("The hasDayWithoutBirds method returns true if the last day has zero visits")
+    public void itHasLastDayWithoutBirds() {
+        birdWatcher = new BirdWatcher(new int[]{1, 2, 5, 3, 7, 8, 0});
+        assertThat(birdWatcher.hasDayWithoutBirds()).isTrue();
+    }
 
     @Test
     @Tag("task:5")
