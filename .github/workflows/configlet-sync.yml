@@ -51,15 +51,14 @@ jobs:
       - name: Run configlet sync for test and capture output
         id: sync_test
         run: |
-          mkdir -p .github/auto-sync
-          configlet_raw_output="$(./bin/configlet sync --tests | tee .github/auto-sync/sync-test-output.txt)"
+          configlet_raw_output="$(./bin/configlet sync --tests | tee .github/sync-test-output.txt)"
 
           echo "configlet output:"
           echo "$configlet_raw_output"
 
-          echo '```' > .github/auto-sync/sync-test-output.txt
-          echo "$configlet_raw_output" >> .github/auto-sync/sync-test-output.txt
-          echo '```' >> .github/auto-sync/sync-test-output.txt
+          echo '```' > .github/sync-test-output.txt
+          echo "$configlet_raw_output" >> .github/sync-test-output.txt
+          echo '```' >> .github/sync-test-output.txt
 
           echo "output<<EOF" >> "$GITHUB_OUTPUT"
           echo "$configlet_raw_output" >> "$GITHUB_OUTPUT"
@@ -89,5 +88,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "🚨 configlet sync --test found unsynced tests"
-          content-filepath: .github/auto-sync/sync-test-output.txt
+          content-filepath: .github/sync-test-output.txt
           issue-number: ${{ steps.find_issue.outputs.issue_number || '' }}
