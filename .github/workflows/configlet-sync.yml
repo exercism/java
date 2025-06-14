@@ -5,9 +5,6 @@ on:
   schedule:
     - cron: '0 0 15 * *'
 
-env:
-  EXECUTE_SECOND_JOB: true # Change to false to disable the second job
-
 jobs:
   sync-docs-metadata:
     runs-on: ubuntu-latest
@@ -37,14 +34,6 @@ jobs:
     needs: sync-docs-metadata
 
     steps:
-      - name: Check if second job should run
-        run: |
-          echo "EXECUTE_SECOND_JOB=${{ env.EXECUTE_SECOND_JOB }}"
-          if [[ "${{ env.EXECUTE_SECOND_JOB }}" != "true" ]]; then
-            echo "Skipping test sync job as EXECUTE_SECOND_JOB is not true"
-            exit 0
-          fi
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
