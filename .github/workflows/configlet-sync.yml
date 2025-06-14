@@ -25,7 +25,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "🤖 Auto-sync docs, metadata, and filepaths"
           title: "🤖 Configlet sync: docs, metadata, and filepaths"
-          body-path: .github/auto-sync/PR_BODY.md
+          body: |
+            This PR was generated automatically by a scheduled workflow.
+
+            It includes updates from `configlet sync` for:
+            - 📄 Documentation
+            - 🧭 Metadata
+            - 🗂️ Filepaths
+
+            Please review and merge if everything looks good!
           branch: configlet-auto-sync
           delete-branch: true
 
