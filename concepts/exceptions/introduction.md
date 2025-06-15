@@ -33,16 +33,6 @@ This type of exception is not checked at compile-time: methods that throw unchec
 
 All unchecked exceptions inherit from `RuntimeException`, which itself is an extension of `Exception`.
 
-## Errors
-
-Java also has a separate category called _Errors_ which are serious problems that are external to an application.
-An example of an error is the `OutOfMemoryError` which occurs when an application is trying to use more memory than is available on the system.
-
-Like unchecked exceptions, errors are not checked at compile-time and are not usually thrown from application code.
-Unlike exceptions, Errors represent serious system-level problems that applications should generally not attempt to catch or handle.
-
-All errors in Java inherit from the `Error` class.
-
 ## Throwing exceptions
 
 A method in Java can throw an exception by using the `throw` statement.
@@ -135,3 +125,13 @@ Withdrawing -10.0
 Withdrawal failed: Cannot withdraw a negative amount
 Current balance: 5.0
 ```
+
+## Errors
+
+Java also has a separate category called _Errors_ which are serious problems that are external to an application.
+An example of an error is the `OutOfMemoryError` which occurs when an application is trying to use more memory than is available on the system.
+
+Like unchecked exceptions, errors are not checked at compile-time and are not usually thrown from application code.
+Unlike exceptions, Errors represent serious system-level problems that applications should generally not attempt to catch or handle.
+
+All errors in Java inherit from the `Error` class.
