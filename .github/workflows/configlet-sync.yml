@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync-docs-metadata:
-    timeout-minutes: 30
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +39,7 @@ jobs:
           delete-branch: true
 
   check-test-sync:
-    timeout-minutes: 30
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     steps:
