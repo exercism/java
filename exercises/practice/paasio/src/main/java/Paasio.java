@@ -1,6 +1,4 @@
 import java.io.*;
-import java.net.Socket;
-import java.util.Objects;
 
 public class Paasio implements Closeable {
 
@@ -113,12 +111,15 @@ public class Paasio implements Closeable {
     public long getBytesRead() {
         return bytesRead;
     }
+
     public long getReadOperationCount() {
-        return readOperationCount;}
+        return readOperationCount;
+    }
 
     public long getBytesWritten() {
         return bytesWritten;
     }
+
     public long getWriteOperationCount() {
         return writeOperationCount;
     }
