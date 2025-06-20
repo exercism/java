@@ -1,0 +1,93 @@
+name: Configlet Auto Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 15 * *'
+
+jobs:
+  sync-docs-metadata:
+    timeout-minutes: 10
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch configlet
+        run: ./bin/fetch-configlet
+
+      - name: Run configlet sync for files
+        run: ./bin/configlet sync --docs --metadata --filepaths -u -y
+
+      - name: Create pull request if changes
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🤖 Auto-sync docs, metadata, and filepaths"
+          title: "🤖 Configlet sync: docs, metadata, and filepaths"
+          body: |
+            This PR was generated automatically by a scheduled workflow.
+
+            It includes updates from `configlet sync` for:
+            - 📄 Documentation
+            - 🧭 Metadata
+            - 🗂️ Filepaths
+
+            Please review and merge if everything looks good!
+          branch: configlet-auto-sync
+          delete-branch: true
+
+  check-test-sync:
+    timeout-minutes: 10
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch configlet
+        run: ./bin/fetch-configlet
+
+      - name: Run configlet sync for test and capture output
+        id: sync_test
+        run: |
+          configlet_raw_output="$(./bin/configlet sync --tests | tee .github/sync-test-output.txt)"
+
+          echo "configlet output:"
+          echo "$configlet_raw_output"
+
+          echo '```' > .github/sync-test-output.txt
+          echo "$configlet_raw_output" >> .github/sync-test-output.txt
+          echo '```' >> .github/sync-test-output.txt
+
+          echo "output<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$configlet_raw_output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Find existing issue for test sync
+        id: find_issue
+        if: ${{ !contains(steps.sync_test.outputs.output, 'Every exercise has up-to-date tests!') }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_TITLE="🚨 configlet sync --test found unsynced tests"
+          ISSUE_DATA=$(gh issue list --search "is:issue is:open in:title \"${ISSUE_TITLE}\" repo:${{ github.repository }}" --json number,title --jq '.[0]')
+
+          if [ -z "$ISSUE_DATA" ]; then
+            echo "No open issue found with title: '${ISSUE_TITLE}'. A new one will be created."
+            echo "issue_number=" >> $GITHUB_OUTPUT
+          else
+            ISSUE_NUMBER=$(echo "$ISSUE_DATA" | jq -r '.number')
+            echo "Found existing issue number: $ISSUE_NUMBER for title: '$ISSUE_TITLE'"
+            echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create or Update issue if tests are not synced
+        if: ${{ !contains(steps.sync_test.outputs.output, 'Every exercise has up-to-date tests!') }}
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "🚨 configlet sync --test found unsynced tests"
+          content-filepath: .github/sync-test-output.txt
+          issue-number: ${{ steps.find_issue.outputs.issue_number || '' }}
