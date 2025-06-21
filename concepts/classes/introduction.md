@@ -33,7 +33,7 @@ class Car {
 ```
 
 One can optionally assign an initial value to a field.
-If a field does _not_ specify an initial value, it wll be set to its type's default value.
+If a field does _not_ specify an initial value, it will be set to its type's default value.
 An instance's field values can be accessed and updated using dot-notation.
 
 ```java
