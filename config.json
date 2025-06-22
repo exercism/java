@@ -1308,6 +1308,18 @@
         "difficulty": 6
       },
       {
+        "slug": "piecing-it-together",
+        "name": "Piecing It Together",
+        "uuid": "be303729-ad8a-4f4c-a235-6828a6734f05",
+        "practices": [],
+        "prerequisites": [
+          "exceptions",
+          "for-loops",
+          "if-else-statements"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "5404109e-3ed9-4691-8eaf-af8b36024a44",
