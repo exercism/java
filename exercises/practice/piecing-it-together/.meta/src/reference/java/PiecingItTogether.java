@@ -2,130 +2,40 @@ import java.util.*;
 
 public class PiecingItTogether {
     private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
+    private static final int MAX_DIMENSION = 1000;
 
     public static JigsawInfo getCompleteInformation(JigsawInfo input) {
-        Integer rows = input.getRows().isPresent() ? input.getRows().getAsInt() : null;
-        Integer cols = input.getColumns().isPresent() ? input.getColumns().getAsInt() : null;
-        Integer pieces = input.getPieces().isPresent() ? input.getPieces().getAsInt() : null;
-        Integer border = input.getBorder().isPresent() ? input.getBorder().getAsInt() : null;
-        Integer inside = input.getInside().isPresent() ? input.getInside().getAsInt() : null;
-        Double aspect = input.getAspectRatio().isPresent() ? input.getAspectRatio().getAsDouble() : null;
-        String format = input.getFormat().orElse(null);
-
-        // Final information to be compared with the original input to detect inconsistencies
-        JigsawInfo result = null;
-
-        // Check format and aspect ratio don't contradict each other or set aspect if format is square
-        if (format != null && aspect != null) {
-            if (!format.equals(getFormatFromAspect(aspect))) {
-                throw new IllegalArgumentException("Contradictory data");
-            }
-        } else if ("square".equalsIgnoreCase(format)) {
-            aspect = 1.0;
-        }
-
-        // Derive any missing value among pieces, border, and inside
-        if (pieces != null && border != null && inside != null) {
-            if (pieces != border + inside) {
-                throw new IllegalArgumentException("Contradictory data");
-            }
-        } else if (pieces != null && border != null) {
-            inside = pieces - border;
-        } else if (border != null && inside != null) {
-            pieces = border + inside;
-        } else if (inside != null && pieces != null) {
-            border = pieces - inside;
-        }
-
-        // Try to compute missing information using the numbers of rows and cols
-        if (rows != null && cols != null) {
-            result = fromRowsAndCols(rows, cols);
-        } else if (rows != null) {
-            Optional<Integer> possibleCols = calculateOtherSide(rows, true, pieces, border, inside, aspect);
-
-            if (possibleCols.isPresent()) {
-                cols = possibleCols.get();
-                result = fromRowsAndCols(rows, cols);
-            }
-        } else if (cols != null) {
-            Optional<Integer> possibleRows = calculateOtherSide(cols, false, pieces, border, inside, aspect);
-
-            if (possibleRows.isPresent()) {
-                rows = possibleRows.get();
-                result = fromRowsAndCols(rows, cols);
-            }
-        }
-
-        if (result != null) {
-            checkConsistencyOrThrow(result, input);
-            return result;
-        }
-
-        // Try to compute missing information using the value of aspect ratio
-        if (aspect != null) {
-            if (pieces != null) {
-                double actualRows = Math.sqrt(pieces / aspect);
-                rows = roundIfClose(actualRows);
-
-                double actualCols = aspect * rows;
-                cols = roundIfClose(actualCols);
-
-                result = fromRowsAndCols(rows, cols);
-                checkConsistencyOrThrow(result, input);
-                return result;
-            } else if (inside != null && inside == 0) {
-                List<JigsawInfo> validGuesses = new ArrayList<>();
-
-                for (int fixed : List.of(1, 2)) {
-                    tryGuessWithFixedSide(fixed, true, aspect, input).ifPresent(validGuesses::add);  // rows = fixed
-                    tryGuessWithFixedSide(fixed, false, aspect, input).ifPresent(validGuesses::add); // cols = fixed
-                }
-
-                if (validGuesses.size() == 1) {
-                    return validGuesses.getFirst();
-                } else if (validGuesses.size() > 1) {
-                    throw new IllegalArgumentException("Insufficient data");
-                } else {
-                    throw new IllegalArgumentException("Contradictory data");
-                }
-            }
-        }
-
-        if (pieces == null && border == null && (inside == null || inside == 0)) {
-            throw new IllegalArgumentException("Insufficient data");
-        }
-
-        // Brute force as a last resort
         List<JigsawInfo> validGuesses = new ArrayList<>();
 
-        // Brute-force using pieces
-        if (pieces != null) {
-            for (int r = 1; r <= pieces; r++) {
-                if (pieces % r != 0) {
-                    continue; // cols must be integer
+        if (input.getPieces().isPresent()) {
+            // If pieces is known, we only test divisors of pieces
+            int pieces = input.getPieces().getAsInt();
+            for (int rows = 1; rows <= pieces; rows++) {
+                if (pieces % rows != 0) {
+                    continue;
                 }
-
-                int c = pieces / r;
-                tryGuess(r, c, input).ifPresent(validGuesses::add);
+                int columns = pieces / rows;
+                createValidJigsaw(rows, columns, input).ifPresent(validGuesses::add);
             }
-        } else if (inside != null) {
-            for (int r = 3; r <= inside + 2; r++) {
-                int innerRows = r - 2;
+        } else if (input.getInside().isPresent() && input.getInside().getAsInt() > 0) {
+            // If inside pieces is non-zero, we only test divisors of inside
+            int inside = input.getInside().getAsInt();
+            for (int innerRows = 1; innerRows <= inside; innerRows++) {
                 if (inside % innerRows != 0) {
                     continue;
                 }
-
-                int innerCols = inside / innerRows;
-                int c = innerCols + 2;
-
-                tryGuess(r, c, input).ifPresent(validGuesses::add);
+                int innerColumns = inside / innerRows;
+                createValidJigsaw(innerRows + 2, innerColumns + 2, input).ifPresent(validGuesses::add);
             }
         } else {
-            int max = Math.min(border, 1000);
+            // Brute force using border constraint if available
+            int maxDimension = input.getBorder().isPresent()
+                    ? Math.min(input.getBorder().getAsInt(), MAX_DIMENSION)
+                    : MAX_DIMENSION;
 
-            for (int r = 1; r <= max; r++) {
-                for (int c = 1; c <= max; c++) {
-                    tryGuess(r, c, input).ifPresent(validGuesses::add);
+            for (int rows = 1; rows <= maxDimension; rows++) {
+                for (int columns = 1; columns <= maxDimension; columns++) {
+                    createValidJigsaw(rows, columns, input).ifPresent(validGuesses::add);
                 }
             }
         }
@@ -140,170 +50,65 @@ public class PiecingItTogether {
     }
 
     private static String getFormatFromAspect(double aspectRatio) {
-        String format;
-
         if (Math.abs(aspectRatio - 1.0) < DOUBLE_EQUALITY_TOLERANCE) {
-            format = "square";
+            return "square";
         } else if (aspectRatio < 1.0) {
-            format = "portrait";
+            return "portrait";
         } else {
-            format = "landscape";
+            return "landscape";
         }
-
-        return format;
     }
 
-    private static Integer roundIfClose(double value) {
-        double rounded = Math.round(value);
-
-        if (Math.abs(value - rounded) < DOUBLE_EQUALITY_TOLERANCE) {
-            return (int) rounded;
-        }
-
-        throw new IllegalArgumentException("Contradictory data");
-    }
-
-    private static int calculateOtherSideFromPieces(int knownSide, int pieces) {
-        if (pieces <= 0 || pieces % knownSide != 0) {
-            throw new IllegalArgumentException("Contradictory data");
-        }
-
-        return pieces / knownSide;
-    }
-
-    private static int calculateOtherSideFromBorder(int knownSide, int border) {
-        if (knownSide == 1) {
-            return border;
-        }
-
-        if (knownSide == border) {
-            return 1;
-        }
-
-        if ((border + 4 <= 2 * knownSide) || border % 2 != 0) {
-            throw new IllegalArgumentException("Contradictory data");
-        }
-
-        return ((border + 4) - 2 * knownSide) / 2;
-    }
-
-    private static int calculateOtherSideFromInside(int knownSide, int inside) {
-        if (knownSide <= 2 || inside % (knownSide - 2) != 0) {
-            throw new IllegalArgumentException("Contradictory data");
-        }
-
-        return (inside / (knownSide - 2)) + 2;
-    }
-
-    private static Optional<Integer> calculateOtherSide(int knownSide, boolean isRowKnown, Integer pieces, Integer border, Integer inside, Double aspect) {
-        if (pieces != null) {
-            return Optional.of(calculateOtherSideFromPieces(knownSide, pieces));
-        } else if (border != null) {
-            return Optional.of(calculateOtherSideFromBorder(knownSide, border));
-        } else if (aspect != null) {
-            double raw = isRowKnown ? knownSide * aspect : knownSide / aspect;
-            return Optional.of(roundIfClose(raw));
-        } else if (inside != null) {
-            if (inside == 0) {
-                // When inside is zero and all other values (otherSide, pieces, border, aspect) are unknown,
-                // it only tells us that either rows or cols is 1 or 2, but provides no way to infer the rest.
-                // Since we can't make any further assumptions, we stop here.
-                throw new IllegalArgumentException("Insufficient data");
-            }
-
-            return Optional.of(calculateOtherSideFromInside(knownSide, inside));
-        }
-
-        return Optional.empty();
-    }
-
-    private static JigsawInfo fromRowsAndCols(int rows, int cols) {
-        int pieces = rows * cols;
-        int border = (rows == 1 || cols == 1) ? pieces : 2 * (rows + cols - 2);
+    private static JigsawInfo fromRowsAndCols(int rows, int columns) {
+        int pieces = rows * columns;
+        int border = (rows == 1 || columns == 1) ? pieces : 2 * (rows + columns - 2);
         int inside = pieces - border;
-        double aspect = (double) cols / rows;
-        String format = getFormatFromAspect(aspect);
+        double aspectRatio = (double) columns / rows;
+        String format = getFormatFromAspect(aspectRatio);
 
         return new JigsawInfo.Builder()
                 .pieces(pieces)
                 .border(border)
                 .inside(inside)
                 .rows(rows)
-                .columns(cols)
-                .aspectRatio(aspect)
+                .columns(columns)
+                .aspectRatio(aspectRatio)
                 .format(format)
                 .build();
     }
 
     /**
      * Verifies that all known values in the input match those in the computed result.
-     * If any known value in the input contradicts the corresponding computed value,
-     * an IllegalArgumentException is thrown.
+     * Returns false if any known value conflicts, true if all values are consistent.
      *
      * @param computed the fully inferred jigsaw information
-     * @param input    the original partial input with possibly known values
-     * @throws IllegalArgumentException if any known value in the input conflicts with the computed result
+     * @param input    the original partial input with possibly empty values
+     * @return true if all values are consistent, false if any conflict exists
      */
-    private static void checkConsistencyOrThrow(JigsawInfo computed, JigsawInfo input) {
-        if (!valuesMatch(computed.getPieces(), input.getPieces()) || !valuesMatch(computed.getBorder(), input.getBorder()) || !valuesMatch(computed.getInside(), input.getInside()) || !valuesMatch(computed.getRows(), input.getRows()) || !valuesMatch(computed.getColumns(), input.getColumns()) || !valuesMatch(computed.getAspectRatio(), input.getAspectRatio()) || !valuesMatch(computed.getFormat(), input.getFormat())) {
-            throw new IllegalArgumentException("Contradictory data");
-        }
+    private static boolean isConsistent(JigsawInfo computed, JigsawInfo input) {
+        return valuesMatch(computed.getPieces(), input.getPieces()) &&
+                valuesMatch(computed.getBorder(), input.getBorder()) &&
+                valuesMatch(computed.getInside(), input.getInside()) &&
+                valuesMatch(computed.getRows(), input.getRows()) &&
+                valuesMatch(computed.getColumns(), input.getColumns()) &&
+                valuesMatch(computed.getAspectRatio(), input.getAspectRatio()) &&
+                valuesMatch(computed.getFormat(), input.getFormat());
     }
 
     /**
-     * Attempts to compute a valid jigsaw configuration by fixing one dimension
-     * (either rows or columns) and inferring the other using the aspect ratio.
-     *
-     * @param fixed      the known size of one side (either rows or columns)
-     * @param isRowFixed true if the fixed value represents rows, false if columns
-     * @param aspect     the desired aspect ratio (cols / rows)
-     * @param input      the original input to check for consistency
-     * @return an Optional containing a valid inferred configuration, or empty if the guess is invalid
-     */
-    private static Optional<JigsawInfo> tryGuessWithFixedSide(int fixed, boolean isRowFixed, double aspect, JigsawInfo input) {
-        try {
-            int other = isRowFixed ? roundIfClose(fixed * aspect) : roundIfClose(fixed / aspect);
-
-            int rows = isRowFixed ? fixed : other;
-            int cols = isRowFixed ? other : fixed;
-
-            JigsawInfo guess = fromRowsAndCols(rows, cols);
-            checkConsistencyOrThrow(guess, input);
-            return Optional.of(guess);
-        } catch (IllegalArgumentException ignored) {
-            return Optional.empty();
-        }
-    }
-
-    /**
-     * Attempts to construct a jigsaw configuration using the specified number of rows and columns.
+     * Attempts to construct a valid jigsaw configuration using the specified number of rows and columns.
      * Returns a valid result only if the configuration is consistent with the input.
      *
-     * @param rows  number of rows to try
-     * @param cols  number of columns to try
-     * @param input the original input to check for consistency
+     * @param rows    number of rows to try
+     * @param columns number of columns to try
+     * @param input   the original input to check for consistency
      * @return an Optional containing a valid configuration, or empty if inconsistent
      */
-    private static Optional<JigsawInfo> tryGuess(int rows, int cols, JigsawInfo input) {
-        try {
-            JigsawInfo guess = fromRowsAndCols(rows, cols);
-            checkConsistencyOrThrow(guess, input);
-            return Optional.of(guess);
-        } catch (IllegalArgumentException ignored) {
-            return Optional.empty();
-        }
+    private static Optional<JigsawInfo> createValidJigsaw(int rows, int columns, JigsawInfo input) {
+        JigsawInfo candidate = fromRowsAndCols(rows, columns);
+        return isConsistent(candidate, input) ? Optional.of(candidate) : Optional.empty();
     }
 
-    /**
-     * Compares two optional values for equality.
-     * Returns true if either value is absent, or if both are present and equal.
-     * Used to check consistency between inferred and input data.
-     *
-     * @param a   the first optional value
-     * @param b   the second optional value
-     * @param <T> the type of the contained values
-     * @return true if the values are consistent (both missing or equal if present), false otherwise
-     */
     private static <T> boolean valuesMatch(Optional<T> a, Optional<T> b) {
         if (a.isPresent() && b.isPresent()) {
             return Objects.equals(a.get(), b.get());
