@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -6,14 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PiecingItTogetherTest {
-    private PiecingItTogether solver;
-    private double epsilon;
-
-    @BeforeEach
-    public void setup() {
-        solver = new PiecingItTogether();
-        epsilon = 1e-6;
-    }
+    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
 
     @Test
     public void test1000PiecesWithAspectRatio() {
@@ -32,8 +24,8 @@ public class PiecingItTogetherTest {
                 .format("landscape")
                 .build();
 
-        JigsawInfo actual = solver.getCompleteInformation(input);
-        assertJigsawEqualsWithTolerance(actual, expected);
+        JigsawInfo actual = PiecingItTogether.getCompleteInformation(input);
+        assertJigsawInfoEquals(actual, expected);
     }
 
     @Disabled("Remove to run test")
@@ -54,8 +46,8 @@ public class PiecingItTogetherTest {
                 .format("square")
                 .build();
 
-        JigsawInfo actual = solver.getCompleteInformation(input);
-        assertJigsawEqualsWithTolerance(actual, expected);
+        JigsawInfo actual = PiecingItTogether.getCompleteInformation(input);
+        assertJigsawInfoEquals(actual, expected);
     }
 
     @Disabled("Remove to run test")
@@ -76,8 +68,8 @@ public class PiecingItTogetherTest {
                 .format("square")
                 .build();
 
-        JigsawInfo actual = solver.getCompleteInformation(input);
-        assertJigsawEqualsWithTolerance(actual, expected);
+        JigsawInfo actual = PiecingItTogether.getCompleteInformation(input);
+        assertJigsawInfoEquals(actual, expected);
     }
 
     @Disabled("Remove to run test")
@@ -98,8 +90,8 @@ public class PiecingItTogetherTest {
                 .format("landscape")
                 .build();
 
-        JigsawInfo actual = solver.getCompleteInformation(input);
-        assertJigsawEqualsWithTolerance(actual, expected);
+        JigsawInfo actual = PiecingItTogether.getCompleteInformation(input);
+        assertJigsawInfoEquals(actual, expected);
     }
 
     @Disabled("Remove to run test")
@@ -121,8 +113,8 @@ public class PiecingItTogetherTest {
                 .format("portrait")
                 .build();
 
-        JigsawInfo actual = solver.getCompleteInformation(input);
-        assertJigsawEqualsWithTolerance(actual, expected);
+        JigsawInfo actual = PiecingItTogether.getCompleteInformation(input);
+        assertJigsawInfoEquals(actual, expected);
     }
 
     @Disabled("Remove to run test")
@@ -133,7 +125,7 @@ public class PiecingItTogetherTest {
                 .format("landscape")
                 .build();
 
-        assertThatThrownBy(() -> solver.getCompleteInformation(input))
+        assertThatThrownBy(() -> PiecingItTogether.getCompleteInformation(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Insufficient data");
     }
@@ -147,7 +139,7 @@ public class PiecingItTogetherTest {
                 .format("square")
                 .build();
 
-        assertThatThrownBy(() -> solver.getCompleteInformation(input))
+        assertThatThrownBy(() -> PiecingItTogether.getCompleteInformation(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Contradictory data");
     }
@@ -156,7 +148,7 @@ public class PiecingItTogetherTest {
      * Helper to compare two JigsawInfo objects,
      * allowing a small tolerance when comparing aspect ratio doubles.
      */
-    private void assertJigsawEqualsWithTolerance(JigsawInfo actual, JigsawInfo expected) {
+    private void assertJigsawInfoEquals(JigsawInfo actual, JigsawInfo expected) {
         assertThat(actual.getPieces()).isEqualTo(expected.getPieces());
         assertThat(actual.getBorder()).isEqualTo(expected.getBorder());
         assertThat(actual.getInside()).isEqualTo(expected.getInside());
@@ -167,6 +159,6 @@ public class PiecingItTogetherTest {
         Double actualAspect = actual.getAspectRatio().orElseThrow(() -> new AssertionError("Missing aspect ratio in actual result"));
         Double expectedAspect = expected.getAspectRatio().orElseThrow(() -> new AssertionError("Missing aspect ratio in expected result"));
 
-        assertThat(actualAspect).isCloseTo(expectedAspect, org.assertj.core.api.Assertions.within(epsilon));
+        assertThat(actualAspect).isCloseTo(expectedAspect, org.assertj.core.api.Assertions.within(DOUBLE_EQUALITY_TOLERANCE));
     }
 }

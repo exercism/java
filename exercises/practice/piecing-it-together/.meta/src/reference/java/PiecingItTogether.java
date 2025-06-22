@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class PiecingItTogether {
-    private final double epsilon = 1e-6;
+    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
 
-    public JigsawInfo getCompleteInformation(JigsawInfo input) {
+    public static JigsawInfo getCompleteInformation(JigsawInfo input) {
         Integer rows = input.getRows().isPresent() ? input.getRows().getAsInt() : null;
         Integer cols = input.getColumns().isPresent() ? input.getColumns().getAsInt() : null;
         Integer pieces = input.getPieces().isPresent() ? input.getPieces().getAsInt() : null;
@@ -139,10 +139,10 @@ public class PiecingItTogether {
         }
     }
 
-    private String getFormatFromAspect(double aspectRatio) {
+    private static String getFormatFromAspect(double aspectRatio) {
         String format;
 
-        if (Math.abs(aspectRatio - 1.0) < epsilon) {
+        if (Math.abs(aspectRatio - 1.0) < DOUBLE_EQUALITY_TOLERANCE) {
             format = "square";
         } else if (aspectRatio < 1.0) {
             format = "portrait";
@@ -153,17 +153,17 @@ public class PiecingItTogether {
         return format;
     }
 
-    private Integer roundIfClose(double value) {
+    private static Integer roundIfClose(double value) {
         double rounded = Math.round(value);
 
-        if (Math.abs(value - rounded) < epsilon) {
+        if (Math.abs(value - rounded) < DOUBLE_EQUALITY_TOLERANCE) {
             return (int) rounded;
         }
 
         throw new IllegalArgumentException("Contradictory data");
     }
 
-    private int calculateOtherSideFromPieces(int knownSide, int pieces) {
+    private static int calculateOtherSideFromPieces(int knownSide, int pieces) {
         if (pieces <= 0 || pieces % knownSide != 0) {
             throw new IllegalArgumentException("Contradictory data");
         }
@@ -171,7 +171,7 @@ public class PiecingItTogether {
         return pieces / knownSide;
     }
 
-    private int calculateOtherSideFromBorder(int knownSide, int border) {
+    private static int calculateOtherSideFromBorder(int knownSide, int border) {
         if (knownSide == 1) {
             return border;
         }
@@ -187,7 +187,7 @@ public class PiecingItTogether {
         return ((border + 4) - 2 * knownSide) / 2;
     }
 
-    private int calculateOtherSideFromInside(int knownSide, int inside) {
+    private static int calculateOtherSideFromInside(int knownSide, int inside) {
         if (knownSide <= 2 || inside % (knownSide - 2) != 0) {
             throw new IllegalArgumentException("Contradictory data");
         }
@@ -195,7 +195,7 @@ public class PiecingItTogether {
         return (inside / (knownSide - 2)) + 2;
     }
 
-    private Optional<Integer> calculateOtherSide(int knownSide, boolean isRowKnown, Integer pieces, Integer border, Integer inside, Double aspect) {
+    private static Optional<Integer> calculateOtherSide(int knownSide, boolean isRowKnown, Integer pieces, Integer border, Integer inside, Double aspect) {
         if (pieces != null) {
             return Optional.of(calculateOtherSideFromPieces(knownSide, pieces));
         } else if (border != null) {
@@ -217,7 +217,7 @@ public class PiecingItTogether {
         return Optional.empty();
     }
 
-    private JigsawInfo fromRowsAndCols(int rows, int cols) {
+    private static JigsawInfo fromRowsAndCols(int rows, int cols) {
         int pieces = rows * cols;
         int border = (rows == 1 || cols == 1) ? pieces : 2 * (rows + cols - 2);
         int inside = pieces - border;
@@ -244,7 +244,7 @@ public class PiecingItTogether {
      * @param input    the original partial input with possibly known values
      * @throws IllegalArgumentException if any known value in the input conflicts with the computed result
      */
-    public void checkConsistencyOrThrow(JigsawInfo computed, JigsawInfo input) {
+    private static void checkConsistencyOrThrow(JigsawInfo computed, JigsawInfo input) {
         if (!valuesMatch(computed.getPieces(), input.getPieces()) || !valuesMatch(computed.getBorder(), input.getBorder()) || !valuesMatch(computed.getInside(), input.getInside()) || !valuesMatch(computed.getRows(), input.getRows()) || !valuesMatch(computed.getColumns(), input.getColumns()) || !valuesMatch(computed.getAspectRatio(), input.getAspectRatio()) || !valuesMatch(computed.getFormat(), input.getFormat())) {
             throw new IllegalArgumentException("Contradictory data");
         }
@@ -260,7 +260,7 @@ public class PiecingItTogether {
      * @param input      the original input to check for consistency
      * @return an Optional containing a valid inferred configuration, or empty if the guess is invalid
      */
-    private Optional<JigsawInfo> tryGuessWithFixedSide(int fixed, boolean isRowFixed, double aspect, JigsawInfo input) {
+    private static Optional<JigsawInfo> tryGuessWithFixedSide(int fixed, boolean isRowFixed, double aspect, JigsawInfo input) {
         try {
             int other = isRowFixed ? roundIfClose(fixed * aspect) : roundIfClose(fixed / aspect);
 
@@ -284,7 +284,7 @@ public class PiecingItTogether {
      * @param input the original input to check for consistency
      * @return an Optional containing a valid configuration, or empty if inconsistent
      */
-    private Optional<JigsawInfo> tryGuess(int rows, int cols, JigsawInfo input) {
+    private static Optional<JigsawInfo> tryGuess(int rows, int cols, JigsawInfo input) {
         try {
             JigsawInfo guess = fromRowsAndCols(rows, cols);
             checkConsistencyOrThrow(guess, input);
@@ -304,7 +304,7 @@ public class PiecingItTogether {
      * @param <T> the type of the contained values
      * @return true if the values are consistent (both missing or equal if present), false otherwise
      */
-    private <T> boolean valuesMatch(Optional<T> a, Optional<T> b) {
+    private static <T> boolean valuesMatch(Optional<T> a, Optional<T> b) {
         if (a.isPresent() && b.isPresent()) {
             return Objects.equals(a.get(), b.get());
         }
@@ -312,7 +312,7 @@ public class PiecingItTogether {
         return true;
     }
 
-    private boolean valuesMatch(OptionalInt a, OptionalInt b) {
+    private static boolean valuesMatch(OptionalInt a, OptionalInt b) {
         if (a.isPresent() && b.isPresent()) {
             return a.getAsInt() == b.getAsInt();
         }
@@ -320,7 +320,7 @@ public class PiecingItTogether {
         return true;
     }
 
-    private boolean valuesMatch(OptionalDouble a, OptionalDouble b) {
+    private static boolean valuesMatch(OptionalDouble a, OptionalDouble b) {
         if (a.isPresent() && b.isPresent()) {
             return Double.compare(a.getAsDouble(), b.getAsDouble()) == 0;
         }
