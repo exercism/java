@@ -1,22 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 public class PiecingItTogether {
     private final double epsilon = 1e-6;
 
-    public PartialJigsawInformation getCompleteInformation(PartialJigsawInformation input) {
-        Integer rows = input.getRows().orElse(null);
-        Integer cols = input.getColumns().orElse(null);
-        Integer pieces = input.getPieces().orElse(null);
-        Integer border = input.getBorder().orElse(null);
-        Integer inside = input.getInside().orElse(null);
-        Double aspect = input.getAspectRatio().orElse(null);
+    public JigsawInfo getCompleteInformation(JigsawInfo input) {
+        Integer rows = input.getRows().isPresent() ? input.getRows().getAsInt() : null;
+        Integer cols = input.getColumns().isPresent() ? input.getColumns().getAsInt() : null;
+        Integer pieces = input.getPieces().isPresent() ? input.getPieces().getAsInt() : null;
+        Integer border = input.getBorder().isPresent() ? input.getBorder().getAsInt() : null;
+        Integer inside = input.getInside().isPresent() ? input.getInside().getAsInt() : null;
+        Double aspect = input.getAspectRatio().isPresent() ? input.getAspectRatio().getAsDouble() : null;
         String format = input.getFormat().orElse(null);
 
         // Final information to be compared with the original input to detect inconsistencies
-        PartialJigsawInformation result = null;
+        JigsawInfo result = null;
 
         // Check format and aspect ratio don't contradict each other or set aspect if format is square
         if (format != null && aspect != null) {
@@ -77,7 +74,7 @@ public class PiecingItTogether {
                 checkConsistencyOrThrow(result, input);
                 return result;
             } else if (inside != null && inside == 0) {
-                List<PartialJigsawInformation> validGuesses = new ArrayList<>();
+                List<JigsawInfo> validGuesses = new ArrayList<>();
 
                 for (int fixed : List.of(1, 2)) {
                     tryGuessWithFixedSide(fixed, true, aspect, input).ifPresent(validGuesses::add);  // rows = fixed
@@ -99,7 +96,7 @@ public class PiecingItTogether {
         }
 
         // Brute force as a last resort
-        List<PartialJigsawInformation> validGuesses = new ArrayList<>();
+        List<JigsawInfo> validGuesses = new ArrayList<>();
 
         // Brute-force using pieces
         if (pieces != null) {
@@ -220,14 +217,22 @@ public class PiecingItTogether {
         return Optional.empty();
     }
 
-    private PartialJigsawInformation fromRowsAndCols(int rows, int cols) {
+    private JigsawInfo fromRowsAndCols(int rows, int cols) {
         int pieces = rows * cols;
         int border = (rows == 1 || cols == 1) ? pieces : 2 * (rows + cols - 2);
         int inside = pieces - border;
         double aspect = (double) cols / rows;
         String format = getFormatFromAspect(aspect);
 
-        return new PartialJigsawInformation(pieces, border, inside, rows, cols, aspect, format);
+        return new JigsawInfo.Builder()
+                .pieces(pieces)
+                .border(border)
+                .inside(inside)
+                .rows(rows)
+                .columns(cols)
+                .aspectRatio(aspect)
+                .format(format)
+                .build();
     }
 
     /**
@@ -239,7 +244,7 @@ public class PiecingItTogether {
      * @param input    the original partial input with possibly known values
      * @throws IllegalArgumentException if any known value in the input conflicts with the computed result
      */
-    public void checkConsistencyOrThrow(PartialJigsawInformation computed, PartialJigsawInformation input) {
+    public void checkConsistencyOrThrow(JigsawInfo computed, JigsawInfo input) {
         if (!valuesMatch(computed.getPieces(), input.getPieces()) || !valuesMatch(computed.getBorder(), input.getBorder()) || !valuesMatch(computed.getInside(), input.getInside()) || !valuesMatch(computed.getRows(), input.getRows()) || !valuesMatch(computed.getColumns(), input.getColumns()) || !valuesMatch(computed.getAspectRatio(), input.getAspectRatio()) || !valuesMatch(computed.getFormat(), input.getFormat())) {
             throw new IllegalArgumentException("Contradictory data");
         }
@@ -255,14 +260,14 @@ public class PiecingItTogether {
      * @param input      the original input to check for consistency
      * @return an Optional containing a valid inferred configuration, or empty if the guess is invalid
      */
-    private Optional<PartialJigsawInformation> tryGuessWithFixedSide(int fixed, boolean isRowFixed, double aspect, PartialJigsawInformation input) {
+    private Optional<JigsawInfo> tryGuessWithFixedSide(int fixed, boolean isRowFixed, double aspect, JigsawInfo input) {
         try {
             int other = isRowFixed ? roundIfClose(fixed * aspect) : roundIfClose(fixed / aspect);
 
             int rows = isRowFixed ? fixed : other;
             int cols = isRowFixed ? other : fixed;
 
-            PartialJigsawInformation guess = fromRowsAndCols(rows, cols);
+            JigsawInfo guess = fromRowsAndCols(rows, cols);
             checkConsistencyOrThrow(guess, input);
             return Optional.of(guess);
         } catch (IllegalArgumentException ignored) {
@@ -279,9 +284,9 @@ public class PiecingItTogether {
      * @param input the original input to check for consistency
      * @return an Optional containing a valid configuration, or empty if inconsistent
      */
-    private Optional<PartialJigsawInformation> tryGuess(int rows, int cols, PartialJigsawInformation input) {
+    private Optional<JigsawInfo> tryGuess(int rows, int cols, JigsawInfo input) {
         try {
-            PartialJigsawInformation guess = fromRowsAndCols(rows, cols);
+            JigsawInfo guess = fromRowsAndCols(rows, cols);
             checkConsistencyOrThrow(guess, input);
             return Optional.of(guess);
         } catch (IllegalArgumentException ignored) {
@@ -302,6 +307,22 @@ public class PiecingItTogether {
     private <T> boolean valuesMatch(Optional<T> a, Optional<T> b) {
         if (a.isPresent() && b.isPresent()) {
             return Objects.equals(a.get(), b.get());
+        }
+
+        return true;
+    }
+
+    private boolean valuesMatch(OptionalInt a, OptionalInt b) {
+        if (a.isPresent() && b.isPresent()) {
+            return a.getAsInt() == b.getAsInt();
+        }
+
+        return true;
+    }
+
+    private boolean valuesMatch(OptionalDouble a, OptionalDouble b) {
+        if (a.isPresent() && b.isPresent()) {
+            return Double.compare(a.getAsDouble(), b.getAsDouble()) == 0;
         }
 
         return true;

@@ -13,7 +13,7 @@
       ".meta/src/reference/java/PiecingItTogether.java"
     ],
     "editor": [
-      ".meta/src/reference/java/PartialJigsawInformation.java"
+      ".meta/src/reference/java/JigsawInfo.java"
     ]
   },
   "blurb": "Fill in missing jigsaw puzzle details from partial data",

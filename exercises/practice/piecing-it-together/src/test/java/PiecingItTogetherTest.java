@@ -17,74 +17,146 @@ public class PiecingItTogetherTest {
 
     @Test
     public void test1000PiecesWithAspectRatio() {
-        PartialJigsawInformation input = new PartialJigsawInformation(1000, null, null, null, null, 1.6, null);
-        PartialJigsawInformation expected = new PartialJigsawInformation(1000, 126, 874, 25, 40, 1.6, "landscape");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .pieces(1000)
+                .aspectRatio(1.6)
+                .build();
 
-        PartialJigsawInformation actual = solver.getCompleteInformation(input);
+        JigsawInfo expected = new JigsawInfo.Builder()
+                .pieces(1000)
+                .border(126)
+                .inside(874)
+                .rows(25)
+                .columns(40)
+                .aspectRatio(1.6)
+                .format("landscape")
+                .build();
+
+        JigsawInfo actual = solver.getCompleteInformation(input);
         assertJigsawEqualsWithTolerance(actual, expected);
     }
 
     @Disabled("Remove to run test")
     @Test
     public void testSquarePuzzleWith32Rows() {
-        PartialJigsawInformation input = new PartialJigsawInformation(null, null, null, 32, null, null, "square");
-        PartialJigsawInformation expected = new PartialJigsawInformation(1024, 124, 900, 32, 32, 1.0, "square");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .rows(32)
+                .format("square")
+                .build();
 
-        PartialJigsawInformation actual = solver.getCompleteInformation(input);
+        JigsawInfo expected = new JigsawInfo.Builder()
+                .pieces(1024)
+                .border(124)
+                .inside(900)
+                .rows(32)
+                .columns(32)
+                .aspectRatio(1.0)
+                .format("square")
+                .build();
+
+        JigsawInfo actual = solver.getCompleteInformation(input);
         assertJigsawEqualsWithTolerance(actual, expected);
     }
 
     @Disabled("Remove to run test")
     @Test
     public void testInsideAndAspectRatioOnly() {
-        PartialJigsawInformation input = new PartialJigsawInformation(null, null, 324, null, null, 1.0, null);
-        PartialJigsawInformation expected = new PartialJigsawInformation(400, 76, 324, 20, 20, 1.0, "square");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .inside(324)
+                .aspectRatio(1.0)
+                .build();
 
-        PartialJigsawInformation actual = solver.getCompleteInformation(input);
+        JigsawInfo expected = new JigsawInfo.Builder()
+                .pieces(400)
+                .border(76)
+                .inside(324)
+                .rows(20)
+                .columns(20)
+                .aspectRatio(1.0)
+                .format("square")
+                .build();
+
+        JigsawInfo actual = solver.getCompleteInformation(input);
         assertJigsawEqualsWithTolerance(actual, expected);
     }
 
     @Disabled("Remove to run test")
     @Test
     public void testLandscape1500WithRowsAndAspect() {
-        PartialJigsawInformation input = new PartialJigsawInformation(null, null, null, 30, null, 1.6666666666666667, null);
-        PartialJigsawInformation expected = new PartialJigsawInformation(1500, 156, 1344, 30, 50, 1.6666666666666667, "landscape");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .rows(30)
+                .aspectRatio(1.6666666666666667)
+                .build();
 
-        PartialJigsawInformation actual = solver.getCompleteInformation(input);
+        JigsawInfo expected = new JigsawInfo.Builder()
+                .pieces(1500)
+                .border(156)
+                .inside(1344)
+                .rows(30)
+                .columns(50)
+                .aspectRatio(1.6666666666666667)
+                .format("landscape")
+                .build();
+
+        JigsawInfo actual = solver.getCompleteInformation(input);
         assertJigsawEqualsWithTolerance(actual, expected);
     }
 
     @Disabled("Remove to run test")
     @Test
     public void test300PiecesPortraitWithBorder() {
-        PartialJigsawInformation input = new PartialJigsawInformation(300, 70, null, null, null, null, "portrait");
-        PartialJigsawInformation expected = new PartialJigsawInformation(300, 70, 230, 25, 12, 0.48, "portrait");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .pieces(300)
+                .border(70)
+                .format("portrait")
+                .build();
 
-        PartialJigsawInformation actual = solver.getCompleteInformation(input);
+        JigsawInfo expected = new JigsawInfo.Builder()
+                .pieces(300)
+                .border(70)
+                .inside(230)
+                .rows(25)
+                .columns(12)
+                .aspectRatio(0.48)
+                .format("portrait")
+                .build();
+
+        JigsawInfo actual = solver.getCompleteInformation(input);
         assertJigsawEqualsWithTolerance(actual, expected);
     }
 
     @Disabled("Remove to run test")
     @Test
     public void testInsufficientData() {
-        PartialJigsawInformation input = new PartialJigsawInformation(1500, null, null, null, null, null, "landscape");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .pieces(1500)
+                .format("landscape")
+                .build();
 
-        assertThatThrownBy(() -> solver.getCompleteInformation(input)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Insufficient data");
+        assertThatThrownBy(() -> solver.getCompleteInformation(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Insufficient data");
     }
 
     @Disabled("Remove to run test")
     @Test
     public void testContradictoryData() {
-        PartialJigsawInformation input = new PartialJigsawInformation(null, null, null, 100, 1000, null, "square");
+        JigsawInfo input = new JigsawInfo.Builder()
+                .rows(100)
+                .columns(1000)
+                .format("square")
+                .build();
 
-        assertThatThrownBy(() -> solver.getCompleteInformation(input)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Contradictory data");
+        assertThatThrownBy(() -> solver.getCompleteInformation(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Contradictory data");
     }
 
     /**
-     * Helper to compare two PartialJigsawInformation objects,
+     * Helper to compare two JigsawInfo objects,
      * allowing a small tolerance when comparing aspect ratio doubles.
      */
-    private void assertJigsawEqualsWithTolerance(PartialJigsawInformation actual, PartialJigsawInformation expected) {
+    private void assertJigsawEqualsWithTolerance(JigsawInfo actual, JigsawInfo expected) {
         assertThat(actual.getPieces()).isEqualTo(expected.getPieces());
         assertThat(actual.getBorder()).isEqualTo(expected.getBorder());
         assertThat(actual.getInside()).isEqualTo(expected.getInside());
