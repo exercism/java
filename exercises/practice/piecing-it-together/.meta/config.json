@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/reference/java/PiecingItTogether.java"
+    ],
+    "editor": [
+      ".meta/src/reference/java/PartialJigsawInformation.java"
     ]
   },
   "blurb": "Fill in missing jigsaw puzzle details from partial data",
