@@ -18,56 +18,56 @@ public class JigsawInfo {
     private final Optional<String> format;
 
     private JigsawInfo(Builder builder) {
-        this.pieces = builder.pieces != null ? OptionalInt.of(builder.pieces) : OptionalInt.empty();
-        this.border = builder.border != null ? OptionalInt.of(builder.border) : OptionalInt.empty();
-        this.inside = builder.inside != null ? OptionalInt.of(builder.inside) : OptionalInt.empty();
-        this.rows = builder.rows != null ? OptionalInt.of(builder.rows) : OptionalInt.empty();
-        this.columns = builder.columns != null ? OptionalInt.of(builder.columns) : OptionalInt.empty();
-        this.aspectRatio = builder.aspectRatio != null ? OptionalDouble.of(builder.aspectRatio) : OptionalDouble.empty();
-        this.format = Optional.ofNullable(builder.format);
+        this.pieces = builder.pieces;
+        this.border = builder.border;
+        this.inside = builder.inside;
+        this.rows = builder.rows;
+        this.columns = builder.columns;
+        this.aspectRatio = builder.aspectRatio;
+        this.format = builder.format;
     }
 
     public static class Builder {
-        private Integer pieces;
-        private Integer border;
-        private Integer inside;
-        private Integer rows;
-        private Integer columns;
-        private Double aspectRatio;
-        private String format;
+        private OptionalInt pieces = OptionalInt.empty();
+        private OptionalInt border = OptionalInt.empty();
+        private OptionalInt inside = OptionalInt.empty();
+        private OptionalInt rows = OptionalInt.empty();
+        private OptionalInt columns = OptionalInt.empty();
+        private OptionalDouble aspectRatio = OptionalDouble.empty();
+        private Optional<String> format = Optional.empty();
 
-        public Builder pieces(Integer pieces) {
-            this.pieces = pieces;
+        public Builder pieces(int pieces) {
+            this.pieces = OptionalInt.of(pieces);
             return this;
         }
 
-        public Builder border(Integer border) {
-            this.border = border;
+        public Builder border(int border) {
+            this.border = OptionalInt.of(border);
             return this;
         }
 
-        public Builder inside(Integer inside) {
-            this.inside = inside;
+        public Builder inside(int inside) {
+            this.inside = OptionalInt.of(inside);
             return this;
         }
 
-        public Builder rows(Integer rows) {
-            this.rows = rows;
+        public Builder rows(int rows) {
+            this.rows = OptionalInt.of(rows);
             return this;
         }
 
-        public Builder columns(Integer columns) {
-            this.columns = columns;
+        public Builder columns(int columns) {
+            this.columns = OptionalInt.of(columns);
             return this;
         }
 
-        public Builder aspectRatio(Double aspectRatio) {
-            this.aspectRatio = aspectRatio;
+        public Builder aspectRatio(double aspectRatio) {
+            this.aspectRatio = OptionalDouble.of(aspectRatio);
             return this;
         }
 
         public Builder format(String format) {
-            this.format = format;
+            this.format = Optional.of(format);
             return this;
         }
 
@@ -106,9 +106,18 @@ public class JigsawInfo {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
         JigsawInfo that = (JigsawInfo) o;
-        return Objects.equals(pieces, that.pieces) && Objects.equals(border, that.border) && Objects.equals(inside, that.inside) && Objects.equals(rows, that.rows) && Objects.equals(columns, that.columns) && Objects.equals(aspectRatio, that.aspectRatio) && Objects.equals(format, that.format);
+        return Objects.equals(pieces, that.pieces)
+                && Objects.equals(border, that.border)
+                && Objects.equals(inside, that.inside)
+                && Objects.equals(rows, that.rows)
+                && Objects.equals(columns, that.columns)
+                && Objects.equals(aspectRatio, that.aspectRatio)
+                && Objects.equals(format, that.format);
     }
 
     @Override

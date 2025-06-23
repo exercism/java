@@ -156,9 +156,12 @@ public class PiecingItTogetherTest {
         assertThat(actual.getColumns()).isEqualTo(expected.getColumns());
         assertThat(actual.getFormat()).isEqualTo(expected.getFormat());
 
-        Double actualAspect = actual.getAspectRatio().orElseThrow(() -> new AssertionError("Missing aspect ratio in actual result"));
-        Double expectedAspect = expected.getAspectRatio().orElseThrow(() -> new AssertionError("Missing aspect ratio in expected result"));
+        Double actualAspect = actual.getAspectRatio()
+                .orElseThrow(() -> new AssertionError("Missing aspect ratio in actual result"));
+        Double expectedAspect = expected.getAspectRatio()
+                .orElseThrow(() -> new AssertionError("Missing aspect ratio in expected result"));
 
-        assertThat(actualAspect).isCloseTo(expectedAspect, org.assertj.core.api.Assertions.within(DOUBLE_EQUALITY_TOLERANCE));
+        assertThat(actualAspect).isCloseTo(expectedAspect,
+                org.assertj.core.api.Assertions.within(DOUBLE_EQUALITY_TOLERANCE));
     }
 }
