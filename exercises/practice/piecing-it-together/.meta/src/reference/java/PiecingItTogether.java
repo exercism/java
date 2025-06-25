@@ -41,7 +41,7 @@ public class PiecingItTogether {
         }
 
         if (validGuesses.size() == 1) {
-            return validGuesses.getFirst();
+            return validGuesses.get(0);
         } else if (validGuesses.size() > 1) {
             throw new IllegalArgumentException("Insufficient data");
         } else {
