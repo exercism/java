@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "zamora-carlos"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/PiecingItTogether.java"
+    ],
+    "test": [
+      "src/test/java/PiecingItTogetherTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/PiecingItTogether.java"
+    ],
+    "editor": [
+      "src/main/java/JigsawInfo.java"
+    ]
+  },
+  "blurb": "Fill in missing jigsaw puzzle details from partial data",
+  "source": "atk just started another 1000-pieces jigsaw puzzle when this idea hit him",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2554"
+}
