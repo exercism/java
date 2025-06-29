@@ -22,7 +22,7 @@
 
 ## 5. Find a country's dialing code
 
-- There is a [way][map-values-docs] to get an iterable collection of values in a map.
+- There is a [way][map-entry-set-docs] to get an iterable collection of entries in a map, which allows you to search through both keys and values.
 
 ## 6. Update the country's dialing code
 
@@ -35,5 +35,5 @@
 [map-get-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#get(java.lang.Object)
 [map-contains-key-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#containsKey(java.lang.Object)
 [map-contains-value-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#containsValue(java.lang.Object)
-[map-values-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#values()
+[map-entry-set-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#entrySet()
 [map-remove-docs]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#remove(java.lang.Object)
