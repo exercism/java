@@ -1240,6 +1240,17 @@
         "difficulty": 6
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "bddd180a-d634-454a-af03-4d625f77e1e2",
+        "practices": [],
+        "prerequisites": [
+          "maps",
+          "strings"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "dd3e6fd6-5359-4978-acd7-c39374cead4d",
@@ -1289,12 +1300,9 @@
         "name": "Minesweeper",
         "uuid": "416a1489-12af-4593-8540-0f55285c96b4",
         "practices": [],
-        "prerequisites": [
-          "constructors",
-          "lists",
-          "strings"
-        ],
-        "difficulty": 6
+        "prerequisites": [],
+        "difficulty": 6,
+        "status": "deprecated"
       },
       {
         "slug": "parallel-letter-frequency",

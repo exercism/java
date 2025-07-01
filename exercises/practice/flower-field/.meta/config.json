@@ -1,0 +1,41 @@
+{
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "BNAndras",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "jsertel",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "matthewstyler",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "vivshaw",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/FlowerFieldBoard.java"
+    ],
+    "test": [
+      "src/test/java/FlowerFieldBoardTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/FlowerFieldBoard.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
