@@ -1245,7 +1245,8 @@
         "uuid": "bddd180a-d634-454a-af03-4d625f77e1e2",
         "practices": [],
         "prerequisites": [
-          "maps",
+          "constructors",
+          "lists",
           "strings"
         ],
         "difficulty": 6
