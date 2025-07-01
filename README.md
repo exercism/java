@@ -10,7 +10,7 @@ This repository contains the source for the exercises of the Java track on Exerc
 Next to the exercises, the Java track also consists of the following tooling:
 
 - [exercism/java-test-runner] - The Exercism [test runner][docs-test-runners] for the Java track that automatically verifies if a submitted solution passes all of the exercise's tests.
-- [exercism/java-representer] - The Exercism [representer][docs-representers] for the Java track that creates normalized representations of submitted solutions.
+- [exercism/java-representer]a - The Exercism [representer][docs-representers] for the Java track that creates normalized representations of submitted solutions.
 - [exercism/java-analyzer] - The Exercism [analyzer][docs-analyzers] for the Java track that automatically provides comments on submitted solutions.
 
 ## Contributing Guide
