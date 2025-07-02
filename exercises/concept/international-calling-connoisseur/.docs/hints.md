@@ -22,7 +22,7 @@
 
 ## 5. Find a country's dialing code
 
-- There is a [way][map-entry-set-docs] to get an iterable collection of entries in a map, which allows you to search through both keys and values.
+- There is a [way][map-entry-set-docs] to get an iterable collection of entries in a map, which allows you to go through the key-value pairs.
 
 ## 6. Update the country's dialing code
 
