@@ -855,6 +855,17 @@
         "difficulty": 4
       },
       {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "7f5388dc-ce0e-40d4-98d1-7a00aeae018d",
+        "practices": [],
+        "prerequisites": [
+          "if-else-statements",
+          "datetime"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "ec268d8e-997b-4553-8c67-8bdfa1ecb888",
