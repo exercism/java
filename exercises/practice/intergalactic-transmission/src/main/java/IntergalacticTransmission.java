@@ -2,11 +2,11 @@ import java.util.List;
 
 public class IntergalacticTransmission {
 
-    public static List<String> getTransmitSequence(List<String> message) {
+    public static List<Integer> getTransmitSequence(List<Integer> message) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    public static List<String> decodeSequence(List<String> sequence) {
+    public static List<Integer> decodeSequence(List<Integer> sequence) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
