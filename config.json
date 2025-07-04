@@ -1869,6 +1869,14 @@
           "lists"
         ],
         "difficulty": 10
+      },
+      {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "b1c6dfc2-414b-45b2-9277-8b9f8bb3bcf3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ],
     "foregone": [
