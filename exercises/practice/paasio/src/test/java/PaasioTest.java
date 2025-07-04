@@ -10,10 +10,10 @@ public class PaasioTest {
 
     private ByteArrayInputStream dataInputStream;
     private ByteArrayOutputStream dataOutputStream;
-    private static final String  MESSAGECONSTANT = "This is additional Content.";
+    private static final String MESSAGECONSTANT = "This is additional Content.";
 
     @BeforeEach
-    public void setUPTest(TestInfo testInfo)  {
+    public void setUPTest(TestInfo testInfo) {
 
         this.dataInputStream = new ByteArrayInputStream("This is data ".getBytes());
         this.dataOutputStream = new ByteArrayOutputStream();
@@ -103,7 +103,7 @@ public class PaasioTest {
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
             byte[] initialMessage = "Hello! ".getBytes();
-            byte[] messageArray  = Arrays.copyOf(initialMessage, 50);
+            byte[] messageArray = Arrays.copyOf(initialMessage, 50);
 
             int length = messageArray.length - initialMessage.length - 2;
             //It will read data into the messageArray and will begin writing it from its  initialMessage.length index
@@ -188,7 +188,7 @@ public class PaasioTest {
 
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
             byte[] helloArray = "Hello! ".getBytes();
-            byte[] dataRead = Arrays.copyOf(helloArray,100);
+            byte[] dataRead = Arrays.copyOf(helloArray, 100);
 
             int bytesRead = fileOperations.read(dataRead, helloArray.length, 40);
             String finalVAlue = new String(dataRead, 0, helloArray.length + bytesRead, StandardCharsets.UTF_8);
