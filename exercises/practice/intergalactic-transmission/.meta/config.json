@@ -1,5 +1,5 @@
 {
-  "authors": [],
+  "authors": ["jagdish-15"],
   "files": {
     "solution": [
       "src/main/java/IntergalacticTransmission.java"
