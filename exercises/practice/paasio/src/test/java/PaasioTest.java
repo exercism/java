@@ -1,8 +1,8 @@
 import org.junit.jupiter.api.*;
 
 import java.io.*;
-import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -10,21 +10,14 @@ public class PaasioTest {
 
     private ByteArrayInputStream dataInputStream;
     private ByteArrayOutputStream dataOutputStream;
+    private static final String  MESSAGECONSTANT = "This is additional Content.";
 
     @BeforeEach
-    public void setUPTest(TestInfo testInfo) throws IOException {
+    public void setUPTest(TestInfo testInfo)  {
 
         this.dataInputStream = new ByteArrayInputStream("This is data ".getBytes());
         this.dataOutputStream = new ByteArrayOutputStream();
     }
-
-//    @AfterEach
-//    public void cleanFile(TestInfo testInfo) {
-//
-//        if (testInfo.getTags().contains("fileOperation") && tmpFile.exists()) {
-//            tmpFile.delete();
-//        }
-//    }
 
     @Test
     void checkReadOperationCount() {
@@ -50,7 +43,7 @@ public class PaasioTest {
             fileOperations.read();
             fileOperations.read();
 
-            assertThat(4).isEqualTo(fileOperations.getBytesRead());
+            assertThat(fileOperations.getBytesRead()).isEqualTo(4);
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -68,9 +61,9 @@ public class PaasioTest {
             fileOperations.read();
             fileOperations.read();
 
-            byte readByteData[] = new byte[5];
+            byte[] readByteData = new byte[5];
             fileOperations.read(readByteData);
-            assertThat(9).isEqualTo(fileOperations.getBytesRead());
+            assertThat(fileOperations.getBytesRead()).isEqualTo(9);
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -83,10 +76,10 @@ public class PaasioTest {
 
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
-            byte fileData[] = new byte[100];
+            byte[] fileData = new byte[100];
             int bytesRead = fileOperations.read(fileData);
             String dataInFile = new String(fileData, 0, bytesRead, StandardCharsets.UTF_8);
-            assertThat("This is data ").isEqualTo(dataInFile);
+            assertThat(dataInFile).isEqualTo("This is data ");
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -102,11 +95,6 @@ public class PaasioTest {
             fileOperations.read(null);
         }).isInstanceOf(NullPointerException.class);
 
-        //        Assertions.assertThrows(NullPointerException.class, () -> {
-        //            FileOperations customFileReader = new FileOperations(tmpFile, true);
-        //            customFileReader.read(null);
-        //        });
-
     }
 
     @Test
@@ -115,18 +103,14 @@ public class PaasioTest {
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
             byte[] initialMessage = "Hello! ".getBytes();
-            byte[] messageArray = new byte[50];
-
-            for (int i = 0; i < initialMessage.length; i++) {
-                messageArray[i] = initialMessage[i];
-            }
+            byte[] messageArray  = Arrays.copyOf(initialMessage, 50);
 
             int length = messageArray.length - initialMessage.length - 2;
             //It will read data into the messageArray and will begin writing it from its  initialMessage.length index
             int bytesRead = fileOperations.read(messageArray, initialMessage.length, length);
 
             String dataInFile = new String(messageArray, 0, initialMessage.length + bytesRead, StandardCharsets.UTF_8);
-            assertThat("Hello! This is data ").isEqualTo(dataInFile);
+            assertThat(dataInFile).isEqualTo("Hello! This is data ");
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -139,7 +123,7 @@ public class PaasioTest {
 
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
-            byte byteData[] = new byte[50];
+            byte[] byteData = new byte[50];
             int bytesRead = fileOperations.read(byteData, 0, 10);
 
             assertThat(bytesRead).isEqualTo(10);
@@ -172,7 +156,7 @@ public class PaasioTest {
 
             fileOperations.read();
             fileOperations.read();
-            byte[] bytes = fileOperations.readAllBytes();
+            fileOperations.readAllBytes();
             assertThat(fileOperations.getReadOperationCount()).isEqualTo(3);
 
         } catch (IOException ioException) {
@@ -203,13 +187,8 @@ public class PaasioTest {
     void validateReadNBytesDataReadInBytesAndVerifyReadCount() {
 
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
-
-            byte dataRead[] = new byte[100];
             byte[] helloArray = "Hello! ".getBytes();
-
-            for (int i = 0; i < helloArray.length; i++) {
-                dataRead[i] = helloArray[i];
-            }
+            byte[] dataRead = Arrays.copyOf(helloArray,100);
 
             int bytesRead = fileOperations.read(dataRead, helloArray.length, 40);
             String finalVAlue = new String(dataRead, 0, helloArray.length + bytesRead, StandardCharsets.UTF_8);
@@ -218,7 +197,7 @@ public class PaasioTest {
             assertThat(1).isEqualTo(fileOperations.getReadOperationCount());
 
         } catch (IOException ioException) {
-
+            ioException.printStackTrace();
         }
 
     }
@@ -232,7 +211,7 @@ public class PaasioTest {
             fileOperations.write(25);
             fileOperations.write(25);
 
-            assertThat(4).isEqualTo(fileOperations.getWriteOperationCount());
+            assertThat(fileOperations.getWriteOperationCount()).isEqualTo(4);
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -240,24 +219,15 @@ public class PaasioTest {
 
     }
 
-//    @Test
-//    @Tag("fileOperation")
-//    void verifyIfExceptionIsThrownIfFileOperationIsNotInWriteMode() {
-//        assertThatThrownBy(() -> {
-//            Paasio fileOperations = new Paasio(new FileInputStream(tmpFile), new FileOutputStream(tmpFile,true));
-//            fileOperations.write(null);
-//        }).isInstanceOf(UnsupportedOperationException.class);
-//    }
-
     @Test
     void verifyContentAfterWritingByteArrayIntoTheOutputStream() {
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
-            byte writeFileContent[] = "This is additional Content.".getBytes();
+            byte[] writeFileContent = MESSAGECONSTANT.getBytes();
             fileOperations.write(writeFileContent);
             String dataWritten = this.dataOutputStream.toString(StandardCharsets.UTF_8);
 
-            assertThat(dataWritten).isEqualTo("This is additional Content.");
+            assertThat(dataWritten).isEqualTo(MESSAGECONSTANT);
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -269,7 +239,7 @@ public class PaasioTest {
 
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
-            byte writeFileContent[] = "This is additional Content.".getBytes();
+            byte[] writeFileContent = MESSAGECONSTANT.getBytes();
             fileOperations.write(writeFileContent);
             fileOperations.write(writeFileContent);
             fileOperations.write(43);
@@ -287,7 +257,7 @@ public class PaasioTest {
 
         try (Paasio fileOperations = new Paasio(this.dataInputStream, this.dataOutputStream)) {
 
-            byte writeFileContent[] = "This is additional Content.".getBytes();
+            byte[] writeFileContent = MESSAGECONSTANT.getBytes();
             fileOperations.write(writeFileContent);
             fileOperations.write(writeFileContent);
             fileOperations.write('s');
@@ -312,7 +282,7 @@ public class PaasioTest {
 
             String fileConvertedToString = this.dataOutputStream.toString(StandardCharsets.UTF_8);
 
-            assertThat(fileContentToBeWritten.trim()).isEqualTo(fileConvertedToString);
+            assertThat(fileConvertedToString).isEqualTo(fileContentToBeWritten.trim());
             assertThat(fileOperations.getWriteOperationCount()).isEqualTo(1);
 
         } catch (IOException ioException) {
@@ -334,25 +304,14 @@ public class PaasioTest {
             fileOperations.read();
             fileOperations.read(dataRead, 0, 5);
 
-            assertThat(4).isEqualTo(fileOperations.getReadOperationCount());
-            assertThat(8).isEqualTo(fileOperations.getBytesRead());
+            assertThat(fileOperations.getReadOperationCount()).isEqualTo(4);
+            assertThat(fileOperations.getBytesRead()).isEqualTo(8);
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
     }
-
-
-//    @Test
-//    @Tag("fileOperation")
-//    void verifyIfMethodThrowsExceptionIfObjectIsNull(){
-//
-//        assertThatThrownBy(()->{
-//            Paasio fileOperations = new Paasio(new FileInputStream(tmpFile), new FileOutputStream(tmpFile,true));
-//        }).isInstanceOf(RuntimeException.class);
-//    }
-
 
     @Test
     public void checkBytesOfDataWrittenAlongWithWriteOperationCount() {
@@ -375,12 +334,4 @@ public class PaasioTest {
     }
 
 
-//    @Test
-//    @Tag("socketOperation")
-//    void verifyIfMethodThrowsExceptionIfSocketObjectIsNull(){
-//
-//        assertThatThrownBy(()->{
-//            SocketOperations fileOperations = new SocketOperations(null);
-//        }).isInstanceOf(RuntimeException.class);
-//    }
 }
