@@ -10,7 +10,7 @@ public class Paasio implements Closeable {
     private final InputStream inputStream;
     private final OutputStream outputStream;
 
-    public Paasio(InputStream inputStream, OutputStream outputStream) throws FileNotFoundException {
+    public Paasio(InputStream inputStream, OutputStream outputStream) {
         this.inputStream = inputStream;
         this.outputStream = outputStream;
     }
@@ -61,7 +61,6 @@ public class Paasio implements Closeable {
     }
 
     public byte[] readNBytes(int len) throws IOException {
-//        return new byte[0];
 
         byte[] allData = this.inputStream.readNBytes(len);
         if (allData.length > 0) {
