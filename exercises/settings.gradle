@@ -150,6 +150,7 @@ include 'practice:state-of-tic-tac-toe'
 // include 'practice:strain'  // deprecated
 include 'practice:sublist'
 include 'practice:sum-of-multiples'
+include 'practice:swift-scheduling'
 include 'practice:tournament'
 include 'practice:transpose'
 include 'practice:tree-building'
