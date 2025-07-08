@@ -1443,6 +1443,14 @@
         "difficulty": 6
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "b1c6dfc2-414b-45b2-9277-8b9f8bb3bcf3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "fb10dc2f-0ba1-44b6-8365-5e48e86d1283",
@@ -1881,14 +1889,6 @@
           "lists"
         ],
         "difficulty": 10
-      },
-      {
-        "slug": "intergalactic-transmission",
-        "name": "Intergalactic Transmission",
-        "uuid": "b1c6dfc2-414b-45b2-9277-8b9f8bb3bcf3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
       }
     ],
     "foregone": [
