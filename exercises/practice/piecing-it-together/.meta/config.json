@@ -14,6 +14,9 @@
     ],
     "editor": [
       "src/main/java/JigsawInfo.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Fill in missing jigsaw puzzle details from partial data",
