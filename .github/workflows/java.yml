@@ -13,7 +13,7 @@ on:
 jobs:
   build:
     name: Check if tests compile cleanly with starter sources
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up JDK 1.17
@@ -27,7 +27,7 @@ jobs:
 
   lint:
     name: Lint Java files using Checkstyle
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up JDK 1.17
@@ -41,7 +41,7 @@ jobs:
 
   test:
     name: Test all exercises using java-test-runner
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Test all exercises using java-test-runner
