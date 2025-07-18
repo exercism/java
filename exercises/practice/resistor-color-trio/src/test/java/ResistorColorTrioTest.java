@@ -90,4 +90,12 @@ public class ResistorColorTrioTest {
             resistorColorTrio.label(new String[]{"blue", "green", "yellow", "orange"})
         ).isEqualTo("650 kiloohms");
     }
+
+    @Disabled("Remove to run test")
+    @Test
+    public void testOrangeAndOrangeAndRed() {
+        assertThat(
+            resistorColorTrio.label(new String[]{"orange", "orange", "red"})
+        ).isEqualTo("3.3 kiloohms");
+    }
 }
