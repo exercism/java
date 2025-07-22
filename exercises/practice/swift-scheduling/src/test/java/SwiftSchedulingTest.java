@@ -128,7 +128,9 @@ class SwiftSchedulingTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("2M before the second month of this year translates to the first workday of the second month of this year")
+    @DisplayName(
+        "2M before the second month of this year translates to the first workday of the second month of this year"
+    )
     void test2MInJanuary() {
         LocalDateTime meetingStart = LocalDateTime.parse("2007-01-02T14:15:00");
         LocalDateTime expected = LocalDateTime.parse("2007-02-01T08:00:00");
