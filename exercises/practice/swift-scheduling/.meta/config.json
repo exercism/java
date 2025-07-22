@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/reference/java/SwiftScheduling.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Convert delivery date descriptions to actual delivery dates.",
