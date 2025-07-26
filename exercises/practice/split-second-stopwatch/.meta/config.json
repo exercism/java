@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "Jagdish Prajapati, Kah Goh & Emmanuel Berkowicz"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SplitSecondStopwatch.java"
+    ],
+    "test": [
+      "src/test/java/SplitSecondStopwatch.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SplitSecondStopwatch.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Time to create a new and improved split second stopwatch using your friendly neighbourhood OOP language!.",
+  "source": "Emmanuel Berkowicz",
+  "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/split-second-stopwatch"
+}
