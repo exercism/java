@@ -16,17 +16,17 @@ public class SplitSecondStopwatch {
     private enum State { READY, RUNNING, STOPPED }
 
     private State state;
-    private long totalElapsed;
-    private long currentLapStart;
-    private long lastStopTime;
+    private long totalCompletedLaps;  // Total time from completed laps
+    private long currentLapStart;     // When current lap started
+    private long accumulated;         // Accumulated time for current lap when stopped
     private List<String> previousLaps;
     private long mockTime;
 
     public SplitSecondStopwatch() {
         this.state = State.READY;
-        this.totalElapsed = 0;
+        this.totalCompletedLaps = 0;
         this.currentLapStart = 0;
-        this.lastStopTime = 0;
+        this.accumulated = 0;
         this.previousLaps = new ArrayList<>();
         this.mockTime = 0;
     }
@@ -36,13 +36,7 @@ public class SplitSecondStopwatch {
             throw new IllegalStateException("cannot start an already running stopwatch");
         }
 
-        if (state == State.READY) {
-            currentLapStart = mockTime;
-        } else if (state == State.STOPPED) {
-            long pausedDuration = mockTime - lastStopTime;
-            currentLapStart += pausedDuration;
-        }
-
+        currentLapStart = mockTime;
         state = State.RUNNING;
     }
 
@@ -51,8 +45,7 @@ public class SplitSecondStopwatch {
             throw new IllegalStateException("cannot stop a stopwatch that is not running");
         }
 
-        lastStopTime = mockTime;
-        totalElapsed += mockTime - currentLapStart;
+        accumulated += mockTime - currentLapStart;
         state = State.STOPPED;
     }
 
@@ -62,9 +55,9 @@ public class SplitSecondStopwatch {
         }
 
         state = State.READY;
-        totalElapsed = 0;
+        totalCompletedLaps = 0;
         currentLapStart = 0;
-        lastStopTime = 0;
+        accumulated = 0;
         previousLaps.clear();
     }
 
@@ -73,8 +66,12 @@ public class SplitSecondStopwatch {
             throw new IllegalStateException("cannot lap a stopwatch that is not running");
         }
 
-        long currentLapTime = mockTime - currentLapStart;
+        long currentLapTime = getCurrentLapTime();
+        totalCompletedLaps += currentLapTime;
         previousLaps.add(formatTime(currentLapTime));
+
+        // Reset current lap and restart
+        accumulated = 0;
         currentLapStart = mockTime;
     }
 
@@ -83,19 +80,11 @@ public class SplitSecondStopwatch {
     }
 
     public String currentLap() {
-        if (state == State.RUNNING) {
-            return formatTime(mockTime - currentLapStart);
-        } else {
-            return formatTime(lastStopTime - currentLapStart);
-        }
+        return formatTime(getCurrentLapTime());
     }
 
     public String total() {
-        if (state == State.RUNNING) {
-            return formatTime(totalElapsed + (mockTime - currentLapStart));
-        } else {
-            return formatTime(totalElapsed);
-        }
+        return formatTime(totalCompletedLaps + getCurrentLapTime());
     }
 
     public List<String> previousLaps() {
@@ -110,6 +99,19 @@ public class SplitSecondStopwatch {
 
         long milliseconds = (hours * 3600 + minutes * 60 + seconds) * 1000;
         mockTime += milliseconds;
+    }
+
+    private long getCurrentLapTime() {
+        switch (state) {
+            case READY:
+                return 0;
+            case RUNNING:
+                return accumulated + (mockTime - currentLapStart);
+            case STOPPED:
+                return accumulated;
+            default:
+                throw new IllegalStateException("Invalid state");
+        }
     }
 
     private String formatTime(long milliseconds) {

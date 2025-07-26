@@ -144,6 +144,7 @@ include 'practice:simple-linked-list'
 include 'practice:sgf-parsing'
 include 'practice:space-age'
 include 'practice:spiral-matrix'
+include 'practice:split-second-stopwatch'
 include 'practice:square-root'
 include 'practice:state-of-tic-tac-toe'
 // include 'practice:strain'  // deprecated

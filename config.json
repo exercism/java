@@ -1881,6 +1881,14 @@
           "lists"
         ],
         "difficulty": 10
+      },
+      {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "9510c0ae-9977-4260-8991-0e8e849094b0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ],
     "foregone": [
