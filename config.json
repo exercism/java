@@ -1887,7 +1887,10 @@
         "name": "Split-Second Stopwatch",
         "uuid": "9510c0ae-9977-4260-8991-0e8e849094b0",
         "practices": [],
-        "prerequisites": ["exceptions", "if-else-statements"],
+        "prerequisites": [
+          "exceptions",
+          "if-else-statements"
+        ],
         "difficulty": 4
       }
     ],
