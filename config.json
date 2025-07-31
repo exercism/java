@@ -843,6 +843,17 @@
         "difficulty": 4
       },
       {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "9510c0ae-9977-4260-8991-0e8e849094b0",
+        "practices": [],
+        "prerequisites": [
+          "exceptions",
+          "if-else-statements"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "2f244afc-3e7b-4f89-92af-e2b427f4ef35",
