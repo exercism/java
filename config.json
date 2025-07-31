@@ -1297,6 +1297,14 @@
         "difficulty": 6
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "b1c6dfc2-414b-45b2-9277-8b9f8bb3bcf3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "linked-list",
         "name": "Linked List",
         "uuid": "7ba5084d-3b75-4406-a0d7-87c26387f9c0",
@@ -1440,14 +1448,6 @@
           "numbers",
           "strings"
         ],
-        "difficulty": 6
-      },
-      {
-        "slug": "intergalactic-transmission",
-        "name": "Intergalactic Transmission",
-        "uuid": "b1c6dfc2-414b-45b2-9277-8b9f8bb3bcf3",
-        "practices": [],
-        "prerequisites": [],
         "difficulty": 6
       },
       {
