@@ -10,101 +10,59 @@ public class Paasio implements Closeable {
     private final InputStream inputStream;
     private final OutputStream outputStream;
 
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public OutputStream getOutputStream() {
+        return outputStream;
+    }
+
     public Paasio(InputStream inputStream, OutputStream outputStream) {
         this.inputStream = inputStream;
         this.outputStream = outputStream;
     }
 
     public int read() throws IOException {
-        int byteData = inputStream.read();
-        if (byteData != -1) {
-            bytesRead += 1;
-            readOperationCount++;
-        }
-        return byteData;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
     public int read(byte[] b) throws IOException {
-
-        int totalBytesRead = inputStream.read(b);
-        if (totalBytesRead != -1) {
-            bytesRead += totalBytesRead;
-            readOperationCount++;
-        }
-        return totalBytesRead;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 
     }
 
     public int read(byte[] b, int off, int len) throws IOException {
 
-        int bytesReadIntoBuffer = inputStream.read(b, off, len);
-
-        if (bytesReadIntoBuffer != -1) {
-            bytesRead += bytesReadIntoBuffer;
-            readOperationCount++;
-        }
-        return bytesReadIntoBuffer;
-
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 
     }
 
     public byte[] readAllBytes() throws IOException {
 
-        byte[] allData = this.inputStream.readAllBytes();
-
-        if (allData.length > 0) {
-            readOperationCount++;
-            bytesRead += allData.length;
-        }
-        return allData;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 
     }
 
     public byte[] readNBytes(int len) throws IOException {
 
-        byte[] allData = this.inputStream.readNBytes(len);
-        if (allData.length > 0) {
-            readOperationCount++;
-            bytesRead += allData.length;
-        }
-        return allData;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
     public void write(int b) throws IOException {
 
-        try {
-            this.outputStream.write(b);
-            writeOperationCount++;
-            bytesWritten++;
-
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 
     }
 
     public void write(byte[] b) throws IOException {
-        try {
 
-            this.outputStream.write(b);
-            writeOperationCount++;
-            bytesWritten += b.length;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
 
-
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
     }
 
     public void write(byte[] b, int off, int len) throws IOException {
-        try {
-            this.outputStream.write(b, off, len);
-            writeOperationCount++;
-            bytesWritten += len;
-
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
     public long getBytesRead() {

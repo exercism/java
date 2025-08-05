@@ -10,6 +10,15 @@ public class Paasio implements Closeable {
     private final InputStream inputStream;
     private final OutputStream outputStream;
 
+
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public OutputStream getOutputStream() {
+        return outputStream;
+    }
+
     public Paasio(InputStream inputStream, OutputStream outputStream) {
         this.inputStream = inputStream;
         this.outputStream = outputStream;
