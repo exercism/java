@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "zamora-carlos"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SwiftScheduling.java"
+    ],
+    "test": [
+      "src/test/java/SwiftSchedulingTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SwiftScheduling.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Convert delivery date descriptions to actual delivery dates.",
+  "source": "Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2536"
+}

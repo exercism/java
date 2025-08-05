@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "EmmanuelBerkowicz"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SplitSecondStopwatch.java"
+    ],
+    "test": [
+      "src/test/java/SplitSecondStopwatchTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SplitSecondStopwatch.java"
+    ]
+  },
+  "blurb": "Keep track of time through a digital stopwatch.",
+  "source": "Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2547"
+}

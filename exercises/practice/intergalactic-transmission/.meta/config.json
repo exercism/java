@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jagdish-15"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/IntergalacticTransmission.java"
+    ],
+    "test": [
+      "src/test/java/IntergalacticTransmissionTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/IntergalacticTransmission.java"
+    ]
+  },
+  "blurb": "Add parity bits to a message for transmission",
+  "source": "Kah Goh",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2543"
+}
