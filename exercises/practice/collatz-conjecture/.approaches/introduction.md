@@ -1,6 +1,6 @@
 # Introduction
 
-There are at east a couple of ways to solve Collatz Conjecture.
+There are at least a couple of ways to solve Collatz Conjecture.
 One approach is to use a [`while`][while-loop] loop to iterate to the answer.
 Another approach is to use `IntStream.iterate()` to iterate to the answer.
 

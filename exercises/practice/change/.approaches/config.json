@@ -7,13 +7,31 @@
   "approaches": [
     {
       "uuid": "d0b615ca-3a02-4d66-ad10-e0c513062189",
-      "slug": "dynamic-programming",
-      "title": "Dynamic Programming Approach",
-      "blurb": "Use dynamic programming to find the most efficient change combination.",
+      "slug": "dynamic-programming-top-down",
+      "title": "Dynamic Programming: Top Down",
+      "blurb": "Break the required amount into smaller amounts and reuse saved results to quickly find the final result.",
       "authors": [
         "jagdish-15"
       ],
       "contributors": [
+        "kahgoh"
+      ]
+    },
+    {
+      "uuid": "daf47878-1607-4f22-b2df-1049f3d6802c",
+      "slug": "dynamic-programming-bottom-up",
+      "title": "Dynamic Programming: Bottom Up",
+      "blurb": "Start from the available coins and calculate the amounts that can be made from them.",
+      "authors": [
+        "kahgoh"
+      ]
+    },
+    {
+      "uuid": "06ae63ec-5bf3-41a0-89e3-2772e4cdbf5d",
+      "slug": "recursive",
+      "title": "Recursive",
+      "blurb": "Use recursion to recursively find the most efficient change for a given amount.",
+      "authors": [
         "kahgoh"
       ]
     }
