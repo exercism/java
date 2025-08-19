@@ -1,0 +1,8 @@
+while (!queue.isEmpty()) {
+    int total = next.stream().mapToInt(Integer::intValue).sum();
+    if (total < grandTotal && reachableTotals.add(total)) {
+        for (Integer coin : currencyCoins) {
+            queue.add(append(next, coin));
+        }
+    }
+}

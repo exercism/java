@@ -1,0 +1,7 @@
+List<Integer> computeMostEfficientChange(int grandTotal) {
+    if (remaining == 0)
+        return List.of(coin);
+
+    return currencyCoins.stream().map(coin -> 
+            new ArrayList<>(computeMostEfficientChange(remaining)).add(coin));
+}
