@@ -56,6 +56,8 @@ class ChangeCalculator {
 }
 ```
 
+For a detailed look at the code and logic, see the full explanation in the [Recursive Approach][approach-recursive].
+
 ## Approach: Dynamic Programming - Top down
 
 ```java
