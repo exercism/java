@@ -1,16 +1,20 @@
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AcronymTest {
 
+    
+    @DisplayName("basic")
     @Test
     public void basic() {
         assertThat(new Acronym("Portable Network Graphics").get())
                 .isEqualTo("PNG");
     }
 
+    @DisplayName("lowercase words")
     @Disabled("Remove to run test")
     @Test
     public void lowercaseWords() {
@@ -18,6 +22,7 @@ public class AcronymTest {
                 .isEqualTo("ROR");
     }
 
+    @DisplayName("punctuation")
     @Disabled("Remove to run test")
     @Test
     public void punctuation() {
@@ -25,6 +30,7 @@ public class AcronymTest {
                 .isEqualTo("FIFO");
     }
 
+    @DisplayName("all caps word")
     @Disabled("Remove to run test")
     @Test
     public void nonAcronymAllCapsWord() {
@@ -32,6 +38,7 @@ public class AcronymTest {
                 .isEqualTo("GIMP");
     }
 
+    @DisplayName("punctuation without whitespace")
     @Disabled("Remove to run test")
     @Test
     public void punctuationWithoutWhitespace() {
@@ -39,6 +46,7 @@ public class AcronymTest {
                 .isEqualTo("CMOS");
     }
 
+    @DisplayName("very long abbreviation")
     @Disabled("Remove to run test")
     @Test
     public void veryLongAbbreviation() {
@@ -46,6 +54,7 @@ public class AcronymTest {
                 .isEqualTo("ROTFLSHTMDCOALM");
     }
 
+    @DisplayName("consecutive delimiters")
     @Disabled("Remove to run test")
     @Test
     public void consecutiveDelimiters() {
@@ -53,6 +62,7 @@ public class AcronymTest {
                 .isEqualTo("SIMUFTA");
     }
 
+    @DisplayName("apostrophes")
     @Disabled("Remove to run test")
     @Test
     public void apostrophes() {
@@ -60,6 +70,7 @@ public class AcronymTest {
                 .isEqualTo("HC");
     }
 
+    @DisplayName("underscore emphasis")
     @Disabled("Remove to run test")
     @Test
     public void underscoreEmphasis() {
