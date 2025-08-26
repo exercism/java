@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class BaseConverterTest {
 
-    @DisplayName("single bit one to decimal")
     @Test
+    @DisplayName("single bit one to decimal")
     public void testSingleBitOneToDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1});
 
@@ -16,9 +16,9 @@ public class BaseConverterTest {
                 .containsExactly(1);
     }
 
-    @DisplayName("binary to single decimal")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("binary to single decimal")
     public void testBinaryToSingleDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1});
 
@@ -26,9 +26,9 @@ public class BaseConverterTest {
                 .containsExactly(5);
     }
 
-    @DisplayName("single decimal to binary")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single decimal to binary")
     public void testSingleDecimalToBinary() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{5});
 
@@ -36,9 +36,9 @@ public class BaseConverterTest {
                 .containsExactly(1, 0, 1);
     }
 
-    @DisplayName("binary to multiple decimal")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("binary to multiple decimal")
     public void testBinaryToMultipleDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
 
@@ -46,9 +46,9 @@ public class BaseConverterTest {
                 .containsExactly(4, 2);
     }
 
-    @DisplayName("decimal to binary")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("decimal to binary")
     public void testDecimalToBinary() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{4, 2});
 
@@ -56,9 +56,9 @@ public class BaseConverterTest {
                 .containsExactly(1, 0, 1, 0, 1, 0);
     }
 
-    @DisplayName("trinary to hexadecimal")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("trinary to hexadecimal")
     public void testTrinaryToHexadecimal() {
         BaseConverter baseConverter = new BaseConverter(3, new int[]{1, 1, 2, 0});
 
@@ -66,9 +66,9 @@ public class BaseConverterTest {
                 .containsExactly(2, 10);
     }
 
-    @DisplayName("hexadecimal to trinary")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("hexadecimal to trinary")
     public void testHexadecimalToTrinary() {
         BaseConverter baseConverter = new BaseConverter(16, new int[]{2, 10});
 
@@ -76,9 +76,9 @@ public class BaseConverterTest {
                 .containsExactly(1, 1, 2, 0);
     }
 
-    @DisplayName("15-bit integer")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("15-bit integer")
     public void test15BitInteger() {
         BaseConverter baseConverter = new BaseConverter(97, new int[]{3, 46, 60});
 
@@ -86,9 +86,9 @@ public class BaseConverterTest {
                 .containsExactly(6, 10, 45);
     }
 
-    @DisplayName("empty list")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("empty list")
     public void testEmptyDigits() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{});
 
@@ -96,9 +96,9 @@ public class BaseConverterTest {
                 .containsExactly(0);
     }
 
-    @DisplayName("single zero")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single zero")
     public void testSingleZero() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{0});
 
@@ -106,9 +106,9 @@ public class BaseConverterTest {
                 .containsExactly(0);
     }
 
-    @DisplayName("multiple zeros")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple zeros")
     public void testMultipleZeros() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{0, 0, 0});
 
@@ -116,9 +116,9 @@ public class BaseConverterTest {
                 .containsExactly(0);
     }
 
-    @DisplayName("leading zeros")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("leading zeros")
     public void testLeadingZeros() {
         BaseConverter baseConverter = new BaseConverter(7, new int[]{0, 6, 0});
 
@@ -126,54 +126,54 @@ public class BaseConverterTest {
                 .containsExactly(4, 2);
     }
 
-    @DisplayName("input base is one")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("input base is one")
     public void testFirstBaseIsOne() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(1, new int[]{0}))
             .withMessage("Bases must be at least 2.");
     }
 
-    @DisplayName("input base is zero")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("input base is zero")
     public void testFirstBaseIsZero() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(0, new int[]{}))
             .withMessage("Bases must be at least 2.");
     }
 
-    @DisplayName("input base is negative")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("input base is negative")
     public void testFirstBaseIsNegative() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(-2, new int[]{1}))
             .withMessage("Bases must be at least 2.");
     }
 
-    @DisplayName("negative digit")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("negative digit")
     public void testNegativeDigit() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(2, new int[]{1, -1, 1, 0, 1, 0}))
             .withMessage("Digits may not be negative.");
     }
 
-    @DisplayName("invalid positive digit")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("invalid positive digit")
     public void testInvalidPositiveDigit() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(2, new int[]{1, 2, 1, 0, 1, 0}))
             .withMessage("All digits must be strictly less than the base.");
     }
 
-    @DisplayName("output base is one")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("output base is one")
     public void testSecondBaseIsOne() {
         BaseConverter baseConverter =
             new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
@@ -183,9 +183,9 @@ public class BaseConverterTest {
             .withMessage("Bases must be at least 2.");
     }
 
-    @DisplayName("output base is zero")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("output base is zero")
     public void testSecondBaseIsZero() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{7});
 
@@ -194,9 +194,9 @@ public class BaseConverterTest {
             .withMessage("Bases must be at least 2.");
     }
 
-    @DisplayName("output base is negative")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("output base is negative")
     public void testSecondBaseIsNegative() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1});
 
