@@ -1,15 +1,15 @@
 [
   {
-    "url": "https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html",
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/package-summary.html",
     "description": "Java Stream API Overview"
   },
   {
-    "url": "https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html",
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html",
     "description": "Collectors Class"
   },
   {
-    "url": "https://www.baeldung.com/java-8-streams",
-    "description": "Java Functional Programming with Streams"
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html",
+    "description": "Stream Interface Documentation"
   },
   {
     "url": "https://www.geeksforgeeks.org/stream-in-java/",

@@ -1,25 +1,21 @@
-# About
+# About Streams
 
-Streams in Java offer a modern, functional approach to processing data. Instead of writing verbose loops, you can build pipelines that transform collections with clarity and elegance.
+**Streams** are a functional abstraction for processing sequences of data in Java.
+Unlike collections like [`List`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html), a [`Stream`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html) does not store elements—it describes a pipeline of operations to transform or compute data.
 
-Streams are built on three key components:
+Streams are typically created from collections, arrays, or manually using `Stream.of(...)`.
 
-1. **Source** – Typically a collection like a `List` or `Set`.
-2. **Intermediate Operations** – Transformations such as `filter`, `map`, or `sorted`.
-3. **Terminal Operation** – Produces a result, like `collect`, `count`, or `forEach`.
+For example:
 
 ```java
-List<String> names = List.of("Dharshini", "Naveen", "Selena");
-
-List<String> filtered = names.stream()
-    .filter(name -> name.startsWith("N"))
-    .collect(Collectors.toList());
-
-// => ["Naveen"]
+Stream<String> emptyStream = Stream.of();
+Stream<Integer> singleInteger = Stream.of(1);
+Stream<Boolean> threeBooleans = Stream.of(true, false, true);
+Stream<Object> mixedTypes = Stream.of("hello", 1, true); // allowed in Stream<Object>
 ```
 
 
-[Java Stream API Overview]:https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
-[Collectors Class]:https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html
-[Java Functional Programming with Streams]:https://www.baeldung.com/java-8-streams
+[Java Stream API Overview]:https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/package-summary.html
+[Collectors Class]:https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html
+[Stream Interface Documentation]:https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html
 [Stream Operations Explained]:https://www.geeksforgeeks.org/stream-in-java/
