@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static java.util.Map.entry;
@@ -8,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class AlphameticsTest {
 
     @Test
+    @DisplayName("puzzle with three letters")
     public void testThreeLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("I + BB == ILL").solve())
                 .containsOnly(
@@ -18,6 +20,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("solution must have unique value for each letter")
     public void testUniqueValue() {
         Alphametics alphametics = new Alphametics("A == B");
 
@@ -27,6 +30,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("leading zero solution is invalid")
     public void testLeadingZero() {
         Alphametics alphametics = new Alphametics("ACA + DD == BD");
 
@@ -36,6 +40,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with two digits final carry")
     public void testTwoDigitsFinalCarry() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("A + A + A + A + A + A + A + A + A + A + A + B == BCC").solve())
                 .containsOnly(
@@ -46,6 +51,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with four letters")
     public void testFourLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("AS + A == MOM").solve())
                 .containsOnly(
@@ -57,6 +63,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with six letters")
     public void testSixLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("NO + NO + TOO == LATE").solve())
                 .containsOnly(
@@ -70,6 +77,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with seven letters")
     public void testSevenLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("HE + SEES + THE == LIGHT").solve())
                 .containsOnly(
@@ -84,6 +92,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with eight letters")
     public void testEightLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("SEND + MORE == MONEY").solve())
                 .containsOnly(
@@ -99,6 +108,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with ten letters")
     public void testTenLetters() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE").solve())
                 .containsOnly(
@@ -116,6 +126,7 @@ public class AlphameticsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with ten letters and 199 addends")
     public void testTenLetters41Addends() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL + A + " +
                 "TALE + THAT + FALSIFIES + ITS + TITLE + TIS + A + LIE + THE + TALE + OF + THE + LAST + FIRE + " +

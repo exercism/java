@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AnagramTest {
 
     @Test
+    @DisplayName("no matches")
     public void testNoMatches() {
         Anagram detector = new Anagram("diaper");
 
@@ -20,6 +22,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects two anagrams")
     public void testDetectsTwoAnagrams() {
         Anagram detector = new Anagram("solemn");
 
@@ -29,6 +32,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("does not detect anagram subsets")
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
 
@@ -37,6 +41,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects anagram")
     public void testDetectLongerAnagram() {
         Anagram detector = new Anagram("listen");
 
@@ -48,6 +53,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects three anagrams")
     public void testDetectMultipleAnagramsForLongerWord() {
         Anagram detector = new Anagram("allergy");
         assertThat(
@@ -64,6 +70,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects multiple anagrams with different case")
     public void testDetectsMultipleAnagramsWithDifferentCase() {
         Anagram detector = new Anagram("nose");
 
@@ -73,6 +80,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("does not detect non-anagrams with identical checksum")
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
 
@@ -82,6 +90,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects anagrams case-insensitively")
     public void testCaseInsensitiveWhenBothAnagramAndSubjectStartWithUpperCaseLetter() {
         Anagram detector = new Anagram("Orchestra");
 
@@ -93,6 +102,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects anagrams using case-insensitive subject")
     public void testCaseInsensitiveWhenSubjectStartsWithUpperCaseLetter() {
         Anagram detector = new Anagram("Orchestra");
 
@@ -104,6 +114,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("detects anagrams using case-insensitive possible matches")
     public void testCaseInsensitiveWhenAnagramStartsWithUpperCaseLetter() {
         Anagram detector = new Anagram("orchestra");
 
@@ -115,6 +126,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("does not detect an anagram if the original word is repeated")
     public void testIdenticalWordRepeatedIsNotAnagram() {
         Anagram detector = new Anagram("go");
 
@@ -124,6 +136,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("anagrams must use all letters exactly once")
     public void testAnagramMustUseAllLettersExactlyOnce() {
         Anagram detector = new Anagram("tapper");
 
@@ -133,6 +146,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("words are not anagrams of themselves")
     public void testWordsAreNotAnagramsOfThemselvesCaseInsensitive() {
         Anagram detector = new Anagram("BANANA");
 
@@ -142,6 +156,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("words are not anagrams of themselves even if letter case is partially different")
     public void testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsPartiallyDifferent() {
         Anagram detector = new Anagram("BANANA");
 
@@ -151,6 +166,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("words are not anagrams of themselves even if letter case is completely different")
     public void testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsCompletelyDifferent() {
         Anagram detector = new Anagram("BANANA");
 
@@ -160,6 +176,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("words other than themselves can be anagrams")
     public void testWordsOtherThanThemselvesCanBeAnagrams() {
         Anagram detector = new Anagram("LISTEN");
 
@@ -169,6 +186,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("handles case of greek letters")
     public void testHandlesCaseOfGreekLetters() {
         Anagram detector = new Anagram("ΑΒΓ");
 
@@ -178,6 +196,7 @@ public class AnagramTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("different characters may have the same bytes")
     public void testDifferentCharactersWithSameBytes() {
         Anagram detector = new Anagram("a⬂");
 
