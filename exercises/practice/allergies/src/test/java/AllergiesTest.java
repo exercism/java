@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ public class AllergiesTest {
 
     // Testing for eggs allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void eggsNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -15,6 +17,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.EGGS)).isFalse();
     }
 
+    @DisplayName("allergic only to eggs")
     @Disabled("Remove to run test")
     @Test
     public void eggsAllergicOnlyToEggs() {
@@ -23,6 +26,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.EGGS)).isTrue();
     }
 
+    @DisplayName("allergic to eggs and something else")
     @Disabled("Remove to run test")
     @Test
     public void eggsAllergicToEggsAndSomethingElse() {
@@ -31,6 +35,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.EGGS)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not eggs")
     @Disabled("Remove to run test")
     @Test
     public void eggsAllergicToSomethingButNotEggs() {
@@ -39,6 +44,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.EGGS)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void eggsAllergicToEverything() {
@@ -50,6 +56,7 @@ public class AllergiesTest {
 
     // Testing for peanuts allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void peanutsNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -57,6 +64,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.PEANUTS)).isFalse();
     }
 
+    @DisplayName("allergic only to peanuts")
     @Disabled("Remove to run test")
     @Test
     public void peanutsAllergicOnlyToPeanuts() {
@@ -65,6 +73,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.PEANUTS)).isTrue();
     }
 
+    @DisplayName("allergic to peanuts and something else")
     @Disabled("Remove to run test")
     @Test
     public void peanutsAllergicToPeanutsAndSomethingElse() {
@@ -73,6 +82,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.PEANUTS)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not peanuts")
     @Disabled("Remove to run test")
     @Test
     public void peanutsAllergicToSomethingButNotPeanuts() {
@@ -81,6 +91,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.PEANUTS)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void peanutsAllergicToEverything() {
@@ -92,6 +103,7 @@ public class AllergiesTest {
 
     // Testing for shellfish allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void shellfishNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -99,6 +111,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.SHELLFISH)).isFalse();
     }
 
+    @DisplayName("allergic only to shellfish")
     @Disabled("Remove to run test")
     @Test
     public void shellfishAllergicOnlyToShellfish() {
@@ -107,6 +120,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.SHELLFISH)).isTrue();
     }
 
+    @DisplayName("allergic to shellfish and something else")
     @Disabled("Remove to run test")
     @Test
     public void shellfishAllergicToShellfishAndSomethingElse() {
@@ -115,6 +129,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.SHELLFISH)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not shellfish")
     @Disabled("Remove to run test")
     @Test
     public void shellfishAllergicToSomethingButNotShellfish() {
@@ -123,6 +138,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.SHELLFISH)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void shellfishAllergicToEverything() {
@@ -134,6 +150,7 @@ public class AllergiesTest {
 
     // Testing for strawberries allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void strawberriesNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -141,6 +158,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.STRAWBERRIES)).isFalse();
     }
 
+    @DisplayName("allergic only to strawberries")
     @Disabled("Remove to run test")
     @Test
     public void strawberriesAllergicOnlyToStrawberries() {
@@ -149,6 +167,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.STRAWBERRIES)).isTrue();
     }
 
+    @DisplayName("allergic to strawberries and something else")
     @Disabled("Remove to run test")
     @Test
     public void strawberriesAllergicToStrawberriesAndSomethingElse() {
@@ -157,6 +176,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.STRAWBERRIES)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not strawberries")
     @Disabled("Remove to run test")
     @Test
     public void strawberriesAllergicToSomethingButNotStrawberries() {
@@ -165,6 +185,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.STRAWBERRIES)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void strawberriesAllergicToEverything() {
@@ -176,6 +197,7 @@ public class AllergiesTest {
 
     // Testing for tomatoes allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void tomatoesNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -183,6 +205,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.TOMATOES)).isFalse();
     }
 
+    @DisplayName("allergic only to tomatoes")
     @Disabled("Remove to run test")
     @Test
     public void tomatoesAllergicOnlyToTomatoes() {
@@ -191,6 +214,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.TOMATOES)).isTrue();
     }
 
+    @DisplayName("allergic to tomatoes and something else")
     @Disabled("Remove to run test")
     @Test
     public void tomatoesAllergicToTomatoesAndSomethingElse() {
@@ -199,6 +223,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.TOMATOES)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not tomatoes")
     @Disabled("Remove to run test")
     @Test
     public void tomatoesAllergicToSomethingButNotTomatoes() {
@@ -207,6 +232,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.TOMATOES)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void tomatoesAllergicToEverything() {
@@ -218,6 +244,7 @@ public class AllergiesTest {
 
     // Testing for chocolate allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void chocolateNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -225,6 +252,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CHOCOLATE)).isFalse();
     }
 
+    @DisplayName("allergic only to chocolate")
     @Disabled("Remove to run test")
     @Test
     public void chocolateAllergicOnlyToChocolate() {
@@ -233,6 +261,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CHOCOLATE)).isTrue();
     }
 
+    @DisplayName("allergic to chocolate and something else")
     @Disabled("Remove to run test")
     @Test
     public void chocolateAllergicToChocolateAndSomethingElse() {
@@ -241,6 +270,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CHOCOLATE)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not chocolate")
     @Disabled("Remove to run test")
     @Test
     public void chocolateAllergicToSomethingButNotChocolate() {
@@ -249,6 +279,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CHOCOLATE)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void chocolateAllergicToEverything() {
@@ -260,6 +291,7 @@ public class AllergiesTest {
 
     // Testing for pollen allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void pollenNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -267,6 +299,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.POLLEN)).isFalse();
     }
 
+    @DisplayName("allergic only to pollen")
     @Disabled("Remove to run test")
     @Test
     public void pollenAllergicOnlyToPollen() {
@@ -275,6 +308,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.POLLEN)).isTrue();
     }
 
+    @DisplayName("allergic to pollen and something else")
     @Disabled("Remove to run test")
     @Test
     public void pollenAllergicToPollenAndSomethingElse() {
@@ -283,6 +317,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.POLLEN)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not pollen")
     @Disabled("Remove to run test")
     @Test
     public void pollenAllergicToSomethingButNotPollen() {
@@ -291,6 +326,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.POLLEN)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void pollenAllergicToEverything() {
@@ -302,6 +338,7 @@ public class AllergiesTest {
 
     // Testing for cats allergy
 
+    @DisplayName("not allergic to anything")
     @Test
     public void catsNotAllergicToAnything() {
         Allergies allergies = new Allergies(0);
@@ -309,6 +346,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CATS)).isFalse();
     }
 
+    @DisplayName("allergic only to cats")
     @Disabled("Remove to run test")
     @Test
     public void catsAllergicOnlyToCats() {
@@ -317,6 +355,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CATS)).isTrue();
     }
 
+    @DisplayName("allergic to cats and something else")
     @Disabled("Remove to run test")
     @Test
     public void catsAllergicToCatsAndSomethingElse() {
@@ -325,6 +364,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CATS)).isTrue();
     }
 
+    @DisplayName("allergic to something, but not cats")
     @Disabled("Remove to run test")
     @Test
     public void catsAllergicToSomethingButNotCats() {
@@ -333,6 +373,7 @@ public class AllergiesTest {
         assertThat(allergies.isAllergicTo(Allergen.CATS)).isFalse();
     }
 
+    @DisplayName("allergic to everything")
     @Disabled("Remove to run test")
     @Test
     public void catsAllergicToEverything() {
@@ -344,6 +385,7 @@ public class AllergiesTest {
 
     // Testing listing allergies
 
+    @DisplayName("no allergies")
     @Disabled("Remove to run test")
     @Test
     public void listNoAllergies() {
@@ -352,6 +394,7 @@ public class AllergiesTest {
         assertThat(allergies.getList().size()).isEqualTo(0);
     }
 
+    @DisplayName("just eggs")
     @Disabled("Remove to run test")
     @Test
     public void listJustEggs() {
@@ -361,6 +404,7 @@ public class AllergiesTest {
                 .containsExactly(Allergen.EGGS);
     }
 
+    @DisplayName("just peanuts")
     @Disabled("Remove to run test")
     @Test
     public void listJustPeanuts() {
@@ -370,6 +414,7 @@ public class AllergiesTest {
                 .containsExactly(Allergen.PEANUTS);
     }
 
+    @DisplayName("just strawberries")
     @Disabled("Remove to run test")
     @Test
     public void listJustStrawberries() {
@@ -379,6 +424,7 @@ public class AllergiesTest {
                 .containsExactly(Allergen.STRAWBERRIES);
     }
 
+    @DisplayName("eggs and peanuts")
     @Disabled("Remove to run test")
     @Test
     public void listEggsAndPeanuts() {
@@ -390,6 +436,7 @@ public class AllergiesTest {
                         Allergen.PEANUTS);
     }
 
+    @DisplayName("more than eggs but not peanuts")
     @Disabled("Remove to run test")
     @Test
     public void listoMoreThanEggsButNotPeanuts() {
@@ -401,6 +448,7 @@ public class AllergiesTest {
                         Allergen.SHELLFISH);
     }
 
+    @DisplayName("lots of stuff")
     @Disabled("Remove to run test")
     @Test
     public void listManyAllergies() {
@@ -415,6 +463,7 @@ public class AllergiesTest {
                         Allergen.CATS);
     }
 
+    @DisplayName("everything")
     @Disabled("Remove to run test")
     @Test
     public void listEverything() {
@@ -432,6 +481,7 @@ public class AllergiesTest {
                         Allergen.CATS);
     }
 
+    @DisplayName("no allergen score parts")
     @Disabled("Remove to run test")
     @Test
     public void listNoAllergenScoreParts() {
@@ -448,6 +498,7 @@ public class AllergiesTest {
                         Allergen.CATS);
     }
 
+    @DisplayName("no allergen score parts without highest valid score")
     @Disabled("Remove to run test")
     @Test
     public void listNoAllergenScorePartsWithoutHighestValidScore() {

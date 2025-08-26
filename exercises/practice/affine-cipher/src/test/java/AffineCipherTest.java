@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,36 +9,41 @@ public class AffineCipherTest {
 
     private AffineCipher affineCipher = new AffineCipher();
 
+    @DisplayName("encode yes")
     @Test
     public void testEncodeYes() {
         assertThat(affineCipher.encode("yes", 5, 7)).isEqualTo("xbt");
     }
 
+    @DisplayName("encode no")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeNo() {
         assertThat(affineCipher.encode("no", 15, 18)).isEqualTo("fu");
     }
 
-
+    @DisplayName("encode OMG")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeOMG() {
         assertThat(affineCipher.encode("OMG", 21, 3)).isEqualTo("lvz");
     }
 
+    @DisplayName("encode O M G")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeO_M_G() {
         assertThat(affineCipher.encode("O M G", 25, 47)).isEqualTo("hjp");
     }
 
+    @DisplayName("encode mindblowingly")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeMindBlowingly() {
         assertThat(affineCipher.encode("mindblowingly", 11, 15)).isEqualTo("rzcwa gnxzc dgt");
     }
 
+    @DisplayName("encode numbers")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeNumbers() {
@@ -45,6 +51,7 @@ public class AffineCipherTest {
                 .isEqualTo("jqgjc rw123 jqgjc rw");
     }
 
+    @DisplayName("encode deep thought")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeDeepThought() {
@@ -52,6 +59,7 @@ public class AffineCipherTest {
                 .isEqualTo("iynia fdqfb ifje");
     }
 
+    @DisplayName("encode all the letters")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeAllTheLetters() {
@@ -59,6 +67,7 @@ public class AffineCipherTest {
                 .isEqualTo("swxtj npvyk lruol iejdc blaxk swxmh qzglf");
     }
 
+    @DisplayName("encode with a not coprime to m")
     @Disabled("Remove to run test")
     @Test
     public void testEncodeThrowsMeaningfulException() {
@@ -67,6 +76,7 @@ public class AffineCipherTest {
             .withMessage("Error: keyA and alphabet size must be coprime.");
     }
 
+    @DisplayName("decode exercism")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeExercism() {
@@ -74,6 +84,7 @@ public class AffineCipherTest {
                 .isEqualTo("exercism");
     }
 
+    @DisplayName("decode a sentence")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeSentence() {
@@ -81,6 +92,7 @@ public class AffineCipherTest {
                 .isEqualTo("anobstacleisoftenasteppingstone");
     }
 
+    @DisplayName("decode numbers")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeNumbers() {
@@ -88,6 +100,7 @@ public class AffineCipherTest {
                 .isEqualTo("testing123testing");
     }
 
+    @DisplayName("decode all the letters")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeAllTheLetters() {
@@ -95,6 +108,7 @@ public class AffineCipherTest {
                 .isEqualTo("thequickbrownfoxjumpsoverthelazydog");
     }
 
+    @DisplayName("decode with no spaces in input")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeWithNoSpaces() {
@@ -102,6 +116,7 @@ public class AffineCipherTest {
                 .isEqualTo("thequickbrownfoxjumpsoverthelazydog");
     }
 
+    @DisplayName("decode with too many spaces")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeWithTooManySpaces() {
@@ -109,6 +124,7 @@ public class AffineCipherTest {
                 .isEqualTo("jollygreengiant");
     }
 
+    @DisplayName("decode with a not coprime to m")
     @Disabled("Remove to run test")
     @Test
     public void testDecodeThrowsMeaningfulException() {
