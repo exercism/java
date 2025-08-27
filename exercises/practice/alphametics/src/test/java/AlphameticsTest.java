@@ -127,7 +127,7 @@ public class AlphameticsTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("puzzle with ten letters and 199 addends")
-    public void testTenLetters41Addends() throws UnsolvablePuzzleException {
+    public void testTenLetters199Addends() throws UnsolvablePuzzleException {
         assertThat(new Alphametics("THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL + A + " +
                 "TALE + THAT + FALSIFIES + ITS + TITLE + TIS + A + LIE + THE + TALE + OF + THE + LAST + FIRE + " +
                 "HORSES + LATE + AFTER + THE + FIRST + FATHERS + FORESEE + THE + HORRORS + THE + LAST + FREE + " +

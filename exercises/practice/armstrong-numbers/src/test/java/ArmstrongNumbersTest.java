@@ -63,7 +63,7 @@ public class ArmstrongNumbersTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("")
+    @DisplayName("Four-digit number that is not an Armstrong number")
     public void fourDigitNumberIsNotArmstrongNumber() {
         assertThat(armstrongNumbers.isArmstrongNumber(9475))
                 .isFalse();
@@ -71,7 +71,7 @@ public class ArmstrongNumbersTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Four-digit number that is not an Armstrong number")
+    @DisplayName("Seven-digit number that is an Armstrong number")
     public void sevenDigitNumberIsArmstrongNumber() {
         assertThat(armstrongNumbers.isArmstrongNumber(9926315))
                 .isTrue();
