@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -7,6 +8,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class BaseConverterTest {
 
     @Test
+    @DisplayName("single bit one to decimal")
     public void testSingleBitOneToDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1});
 
@@ -16,6 +18,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("binary to single decimal")
     public void testBinaryToSingleDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1});
 
@@ -25,6 +28,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single decimal to binary")
     public void testSingleDecimalToBinary() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{5});
 
@@ -34,6 +38,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("binary to multiple decimal")
     public void testBinaryToMultipleDecimal() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
 
@@ -43,6 +48,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("decimal to binary")
     public void testDecimalToBinary() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{4, 2});
 
@@ -52,6 +58,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("trinary to hexadecimal")
     public void testTrinaryToHexadecimal() {
         BaseConverter baseConverter = new BaseConverter(3, new int[]{1, 1, 2, 0});
 
@@ -61,6 +68,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("hexadecimal to trinary")
     public void testHexadecimalToTrinary() {
         BaseConverter baseConverter = new BaseConverter(16, new int[]{2, 10});
 
@@ -70,6 +78,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("15-bit integer")
     public void test15BitInteger() {
         BaseConverter baseConverter = new BaseConverter(97, new int[]{3, 46, 60});
 
@@ -79,6 +88,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("empty list")
     public void testEmptyDigits() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{});
 
@@ -88,6 +98,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single zero")
     public void testSingleZero() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{0});
 
@@ -97,6 +108,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple zeros")
     public void testMultipleZeros() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{0, 0, 0});
 
@@ -106,6 +118,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("leading zeros")
     public void testLeadingZeros() {
         BaseConverter baseConverter = new BaseConverter(7, new int[]{0, 6, 0});
 
@@ -115,22 +128,25 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("input base is one")
     public void testFirstBaseIsOne() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> new BaseConverter(1, new int[]{1}))
+            .isThrownBy(() -> new BaseConverter(1, new int[]{0}))
             .withMessage("Bases must be at least 2.");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("input base is zero")
     public void testFirstBaseIsZero() {
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> new BaseConverter(0, new int[]{1}))
+            .isThrownBy(() -> new BaseConverter(0, new int[]{}))
             .withMessage("Bases must be at least 2.");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("input base is negative")
     public void testFirstBaseIsNegative() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(-2, new int[]{1}))
@@ -139,6 +155,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("negative digit")
     public void testNegativeDigit() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(2, new int[]{1, -1, 1, 0, 1, 0}))
@@ -147,6 +164,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("invalid positive digit")
     public void testInvalidPositiveDigit() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new BaseConverter(2, new int[]{1, 2, 1, 0, 1, 0}))
@@ -155,6 +173,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("output base is one")
     public void testSecondBaseIsOne() {
         BaseConverter baseConverter =
             new BaseConverter(2, new int[]{1, 0, 1, 0, 1, 0});
@@ -166,6 +185,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("output base is zero")
     public void testSecondBaseIsZero() {
         BaseConverter baseConverter = new BaseConverter(10, new int[]{7});
 
@@ -176,6 +196,7 @@ public class BaseConverterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("output base is negative")
     public void testSecondBaseIsNegative() {
         BaseConverter baseConverter = new BaseConverter(2, new int[]{1});
 

@@ -1,78 +1,77 @@
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AcronymTest {
-
     
-    @DisplayName("basic")
     @Test
+    @DisplayName("basic")
     public void basic() {
         assertThat(new Acronym("Portable Network Graphics").get())
                 .isEqualTo("PNG");
     }
 
-    @DisplayName("lowercase words")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("lowercase words")
     public void lowercaseWords() {
         assertThat(new Acronym("Ruby on Rails").get())
                 .isEqualTo("ROR");
     }
 
-    @DisplayName("punctuation")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("punctuation")
     public void punctuation() {
         assertThat(new Acronym("First In, First Out").get())
                 .isEqualTo("FIFO");
     }
 
-    @DisplayName("all caps word")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("all caps word")
     public void nonAcronymAllCapsWord() {
         assertThat(new Acronym("GNU Image Manipulation Program").get())
                 .isEqualTo("GIMP");
     }
 
-    @DisplayName("punctuation without whitespace")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("punctuation without whitespace")
     public void punctuationWithoutWhitespace() {
         assertThat(new Acronym("Complementary metal-oxide semiconductor").get())
                 .isEqualTo("CMOS");
     }
 
-    @DisplayName("very long abbreviation")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("very long abbreviation")
     public void veryLongAbbreviation() {
         assertThat(new Acronym("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me").get())
                 .isEqualTo("ROTFLSHTMDCOALM");
     }
 
-    @DisplayName("consecutive delimiters")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("consecutive delimiters")
     public void consecutiveDelimiters() {
         assertThat(new Acronym("Something - I made up from thin air").get())
                 .isEqualTo("SIMUFTA");
     }
 
-    @DisplayName("apostrophes")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("apostrophes")
     public void apostrophes() {
         assertThat(new Acronym("Halley's Comet").get())
                 .isEqualTo("HC");
     }
 
-    @DisplayName("underscore emphasis")
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("underscore emphasis")
     public void underscoreEmphasis() {
         assertThat(new Acronym("The Road _Not_ Taken").get())
                 .isEqualTo("TRNT");
