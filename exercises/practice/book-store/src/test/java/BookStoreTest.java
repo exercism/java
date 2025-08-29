@@ -159,7 +159,9 @@ public class BookStoreTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Check that groups of four are created properly even when there are more groups of three than groups of five")
+    @DisplayName(
+        "Check that groups of four are created properly even when there are more groups of three than groups of five"
+    )
     public void groupsOfFourAreCreatedEvenWhenThereAreMoreGroupsOfThreeThanGroupsOfFive() {
         List<Integer> books = Arrays.asList(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 5, 5);
         assertThat(bookStore.calculateBasketCost(books))
