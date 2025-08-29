@@ -142,7 +142,7 @@ public class BookStoreTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Three each of first two books and two each of remaining books")
-    public void threeEachOFirst2BooksAnd2EachOfRemainingBooks() {
+    public void threeEachOfFirstTwoBooksAndTwoEachOfRemainingBooks() {
         List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2);
         assertThat(bookStore.calculateBasketCost(books))
                 .isCloseTo(75.20, Assertions.offset(EQUALITY_TOLERANCE));
