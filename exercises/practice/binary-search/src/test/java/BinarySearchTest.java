@@ -55,7 +55,7 @@ public class BinarySearchTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("")
+    @DisplayName("finds a value in an array of odd length")
     public void findsAValueInAnArrayOfOddLength() throws ValueNotFoundException {
         List<Integer> sortedListOfOddLength = List.of(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634);
 
