@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static java.util.Arrays.asList;
@@ -8,7 +9,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class ChangeCalculatorTest {
 
     @Test
-    public void testChangeFor1Cent() {
+    @DisplayName("change for 1 cent")
+    public void testChangeForOneCent() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 25));
 
         assertThat(changeCalculator.computeMostEfficientChange(1))
@@ -17,6 +19,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single coin change")
     public void testChangeThatCanBeGivenInASingleCoin() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 25, 100));
 
@@ -26,6 +29,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple coin change")
     public void testChangeThatMustBeGivenInMultipleCoins() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 25, 100));
 
@@ -35,6 +39,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("change with Lilliputian Coins")
     public void testLilliputianCurrency() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 4, 15, 20, 50));
 
@@ -44,6 +49,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("change with Lower Elbonia Coins")
     public void testLowerElbonianCurrency() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 21, 25));
 
@@ -53,6 +59,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("large target values")
     public void testLargeAmountOfChange() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 2, 5, 10, 20, 50, 100));
 
@@ -62,6 +69,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("possible change without unit coins available")
     public void testPossibleChangeWithoutUnitCoinAvailable() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(2, 5, 10, 20, 50));
 
@@ -71,6 +79,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("another possible change without unit coins available")
     public void testAnotherPossibleChangeWithoutUnitCoinAvailable() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(4, 5));
 
@@ -80,6 +89,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("a greedy approach is not optimal")
     public void testAGreedyApproachIsNotOptimal() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 10, 11));
 
@@ -89,6 +99,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("no coins make 0 change")
     public void testZeroChange() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 5, 10, 21, 25));
 
@@ -98,6 +109,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("error testing for change smaller than the smallest of coins")
     public void testChangeLessThanSmallestCoinInCurrencyCannotBeRepresented() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
 
@@ -108,6 +120,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("error if no combination can add up to target")
     public void testChangeLargerThanAllCoinsInCurrencyThatCannotBeRepresented() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(5, 10));
 
@@ -118,6 +131,7 @@ public class ChangeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("cannot find negative change values")
     public void testNegativeChangeIsRejected() {
         ChangeCalculator changeCalculator = new ChangeCalculator(asList(1, 2, 5));
 

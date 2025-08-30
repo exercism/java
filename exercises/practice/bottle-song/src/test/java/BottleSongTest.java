@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,6 +15,7 @@ public class BottleSongTest {
     }
 
     @Test
+    @DisplayName("first generic verse")
     public void firstGenericVerse() {
         assertThat(bottleSong.recite(10, 1)).isEqualTo(
             "Ten green bottles hanging on the wall,\n" +
@@ -25,6 +27,7 @@ public class BottleSongTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("last generic verse")
     public void lastGenericVerse() {
         assertThat(bottleSong.recite(3, 1)).isEqualTo(
             "Three green bottles hanging on the wall,\n" +
@@ -36,6 +39,7 @@ public class BottleSongTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse with 2 bottles")
     public void verseWithTwoBottles() {
         assertThat(bottleSong.recite(2, 1)).isEqualTo(
             "Two green bottles hanging on the wall,\n" +
@@ -47,6 +51,7 @@ public class BottleSongTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse with 1 bottle")
     public void verseWithOneBottle() {
         assertThat(bottleSong.recite(1, 1)).isEqualTo(
             "One green bottle hanging on the wall,\n" +
@@ -58,6 +63,7 @@ public class BottleSongTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("first two verses")
     public void firstTwoVerses() {
         assertThat(bottleSong.recite(10, 2)).isEqualTo(
             "Ten green bottles hanging on the wall,\n" +
@@ -74,6 +80,7 @@ public class BottleSongTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("last three verses")
     public void lastThreeVerses() {
         assertThat(bottleSong.recite(3, 3)).isEqualTo(
             "Three green bottles hanging on the wall,\n" +
@@ -95,6 +102,7 @@ public class BottleSongTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("all verses")
     public void allVerses() {
         assertThat(bottleSong.recite(10, 10))
             .isEqualTo(
