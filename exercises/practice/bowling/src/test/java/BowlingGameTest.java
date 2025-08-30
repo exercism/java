@@ -231,7 +231,9 @@ public class BowlingGameTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike")
+    @DisplayName(
+        "the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike"
+    )
     public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 10};
 
