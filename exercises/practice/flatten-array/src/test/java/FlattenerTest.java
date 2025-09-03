@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static java.util.Arrays.asList;
@@ -17,6 +18,7 @@ public class FlattenerTest {
     }
 
     @Test
+    @DisplayName("empty")
     public void testEmpty() {
         assertThat(flattener.flatten(emptyList()))
                 .isEmpty();
@@ -24,6 +26,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("no nesting")
     public void testFlatListIsPreserved() {
         assertThat(flattener.flatten(asList(0, '1', "two")))
                 .containsExactly(0, '1', "two");
@@ -31,6 +34,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("flattens a nested array")
     public void testNestedList() {
         assertThat(flattener.flatten(singletonList(emptyList())))
                 .isEmpty();
@@ -38,6 +42,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("flattens array with just integers present")
     public void testASingleLevelOfNestingWithNoNulls() {
         assertThat(flattener.flatten(asList(1, asList('2', 3, 4, 5, "six", "7"), 8)))
                 .containsExactly(1, '2', 3, 4, 5, "six", "7", 8);
@@ -45,6 +50,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("5 level nesting")
     public void testFiveLevelsOfNestingWithNoNulls() {
         assertThat(flattener.flatten(
                 asList(0,
@@ -59,6 +65,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("6 level nesting")
     public void testSixLevelsOfNestingWithNoNulls() {
         assertThat(flattener.flatten(
                 asList("one",
@@ -71,6 +78,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("null values are omitted from the final result")
     public void testNullValuesAreOmitted() {
         assertThat(flattener.flatten(asList("1", "two", null)))
                 .containsExactly("1", "two");
@@ -78,6 +86,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("consecutive null values at the front of the list are omitted from the final result")
     public void testConsecutiveNullValuesAtFrontOfListAreOmitted() {
         assertThat(flattener.flatten(asList(null, null, 3)))
                 .containsExactly(3);
@@ -85,6 +94,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("consecutive null values in the middle of the list are omitted from the final result")
     public void testConsecutiveNullValuesInMiddleOfListAreOmitted() {
         assertThat(flattener.flatten(asList(1, null, null, "4")))
                 .containsExactly(1, "4");
@@ -92,6 +102,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("6 level nest list with null values")
     public void testSixLevelsOfNestingWithNulls() {
         assertThat(flattener.flatten(
                 asList("0",
@@ -107,6 +118,7 @@ public class FlattenerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("all values in nested list are null")
     public void testNestedListsFullOfNullsOnly() {
         assertThat(flattener.flatten(
                 asList(null,
