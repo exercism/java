@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,30 +10,35 @@ public class CollatzCalculatorTest {
     private CollatzCalculator collatzCalculator = new CollatzCalculator();
 
     @Test
+    @DisplayName("zero steps for one")
     public void testZeroStepsRequiredWhenStartingFrom1() {
         assertThat(collatzCalculator.computeStepCount(1)).isEqualTo(0);
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("divide if even")
     public void testCorrectNumberOfStepsWhenAllStepsAreDivisions() {
         assertThat(collatzCalculator.computeStepCount(16)).isEqualTo(4);
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("even and odd steps")
     public void testCorrectNumberOfStepsWhenBothStepTypesAreNeeded() {
         assertThat(collatzCalculator.computeStepCount(12)).isEqualTo(9);
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("large number of even and odd steps")
     public void testAVeryLargeInput() {
         assertThat(collatzCalculator.computeStepCount(1000000)).isEqualTo(152);
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("zero is an error")
     public void testZeroIsConsideredInvalidInput() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> collatzCalculator.computeStepCount(0))
@@ -41,6 +47,7 @@ public class CollatzCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("negative value is an error")
     public void testNegativeIntegerIsConsideredInvalidInput() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> collatzCalculator.computeStepCount(-15))
