@@ -1,7 +1,8 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class DiamondPrinterTest {
@@ -14,6 +15,7 @@ public class DiamondPrinterTest {
     }
 
     @Test
+    @DisplayName("Degenerate case with a single 'A' row")
     public void testOneByOneDiamond() {
         assertThat(diamondPrinter.printToList('A'))
             .containsExactly("A");
@@ -21,6 +23,7 @@ public class DiamondPrinterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Degenerate case with no row containing 3 distinct groups of spaces")
     public void testTwoByTwoDiamond() {
         assertThat(diamondPrinter.printToList('B'))
             .containsExactly(
@@ -31,6 +34,7 @@ public class DiamondPrinterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Smallest non-degenerate case with odd diamond side length")
     public void testThreeByThreeDiamond() {
         assertThat(diamondPrinter.printToList('C'))
             .containsExactly(
@@ -43,6 +47,7 @@ public class DiamondPrinterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Smallest non-degenerate case with even diamond side length")
     public void testFourByFourDiamond() {
         assertThat(diamondPrinter.printToList('D'))
             .containsExactly(
@@ -57,6 +62,7 @@ public class DiamondPrinterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Largest possible diamond")
     public void testFullDiamond() {
         assertThat(diamondPrinter.printToList('Z'))
             .containsExactly(
