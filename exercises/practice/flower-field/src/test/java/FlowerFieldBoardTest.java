@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class FlowerFieldBoardTest {
 
     @Test
+    @DisplayName("no rows")
     public void testInputBoardWithNoRowsAndNoColumns() {
         List<String> inputBoard = Collections.emptyList();
         List<String> expectedNumberedBoard = Collections.emptyList();
@@ -20,6 +22,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("no columns")
     public void testInputBoardWithOneRowAndNoColumns() {
         List<String> inputBoard = Collections.singletonList("");
         List<String> expectedNumberedBoard = Collections.singletonList("");
@@ -30,6 +33,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("no flowers")
     public void testInputBoardWithNoFlowers() {
         List<String> inputBoard = Arrays.asList(
                 "   ",
@@ -50,6 +54,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("garden full of flowers")
     public void testInputBoardWithOnlyFlowers() {
         List<String> inputBoard = Arrays.asList(
                 "***",
@@ -70,6 +75,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("flower surrounded by spaces")
     public void testInputBoardWithSingleFlowerAtCenter() {
         List<String> inputBoard = Arrays.asList(
                 "   ",
@@ -90,6 +96,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("space surrounded by flowers")
     public void testInputBoardWithFlowersAroundPerimeter() {
         List<String> inputBoard = Arrays.asList(
                 "***",
@@ -110,6 +117,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("horizontal line")
     public void testInputBoardWithSingleRowAndTwoFlowers() {
         List<String> inputBoard = Collections.singletonList(
                 " * * "
@@ -126,6 +134,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("horizontal line, flowers at edges")
     public void testInputBoardWithSingleRowAndTwoFlowersAtEdges() {
         List<String> inputBoard = Collections.singletonList(
                 "*   *"
@@ -142,6 +151,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("vertical line")
     public void testInputBoardWithSingleColumnAndTwoFlowers() {
         List<String> inputBoard = Arrays.asList(
                 " ",
@@ -166,6 +176,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("vertical line, flowers at edges")
     public void testInputBoardWithSingleColumnAndTwoFlowersAtEdges() {
         List<String> inputBoard = Arrays.asList(
                 "*",
@@ -190,6 +201,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("cross")
     public void testInputBoardWithFlowersInCross() {
         List<String> inputBoard = Arrays.asList(
                 "  *  ",
@@ -214,6 +226,7 @@ public class FlowerFieldBoardTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("large garden")
     public void testLargeInputBoard() {
         List<String> inputBoard = Arrays.asList(
                 " *  * ",
