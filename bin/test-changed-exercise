@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+# Determine the base branch of the PR
+BASE_BRANCH=${GITHUB_BASE_REF:-main}
+
+# Fetch full history for proper diff
+git fetch origin "$BASE_BRANCH"
+
+# Compute merge base
+MERGE_BASE=$(git merge-base HEAD origin/$BASE_BRANCH)
+
+# Get changed files relative to merge base
+changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
+
+# Extract unique exercise directories
+changed_exercises=$(echo "$changed_files" | \
+  grep -E '^exercises/(practice|concept)/[^/]+/.+\.(java|gradle)$' | \
+  cut -d/ -f1-3 | sort -u)
+
+if [ -z "$changed_exercises" ]; then
+  echo "No relevant exercises changed, skipping tests."
+  exit 0
+fi
+
+# Print exercises
+echo "Changed exercises detected:"
+echo "$changed_exercises"
+echo "----------------------------------------"
+
+# Run tests
+for dir in $changed_exercises; do
+  slug=$(basename "$dir")
+
+  echo "========================================"
+  echo "=== Running tests for $slug ==="
+  echo "========================================"
+
+  if [[ $dir == exercises/practice/* ]]; then
+    ./exercises/gradlew -p exercises ":practice:$slug:test"
+  elif [[ $dir == exercises/concept/* ]]; then
+    ./exercises/gradlew -p exercises ":concept:$slug:test"
+  fi
+done
