@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 
@@ -13,6 +14,7 @@ public class ResistorColorDuoTest {
     }
 
     @Test
+    @DisplayName("Brown and black")
     public void testBrownAndBlack() {
         assertThat(
                 resistorColorDuo.value(new String[]{"brown", "black"})
@@ -21,6 +23,7 @@ public class ResistorColorDuoTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Blue and grey")
     public void testBlueAndGrey() {
         assertThat(
                 resistorColorDuo.value(new String[]{ "blue", "grey" })
@@ -29,6 +32,7 @@ public class ResistorColorDuoTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Yellow and violet")
     public void testYellowAndViolet() {
         assertThat(
                 resistorColorDuo.value(new String[]{ "yellow", "violet" })
@@ -37,6 +41,7 @@ public class ResistorColorDuoTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Orange and orange")
     public void testOrangeAndOrange() {
         assertThat(
                 resistorColorDuo.value(new String[]{ "orange", "orange" })
@@ -45,6 +50,7 @@ public class ResistorColorDuoTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("White and red")
     public void testWhiteAndRed() {
         assertThat(
                 resistorColorDuo.value(new String[]{ "white", "red" })
@@ -53,6 +59,7 @@ public class ResistorColorDuoTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Black and brown, one-digit")
     public void testBlackAndBrownOneDigit() {
         assertThat(
                 resistorColorDuo.value(new String[]{ "black", "brown" })
@@ -61,6 +68,7 @@ public class ResistorColorDuoTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ignore additional colors")
     public void testIgnoreAdditionalColors() {
         assertThat(
                 resistorColorDuo.value(new String[]{ "green", "brown", "orange" })
