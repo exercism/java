@@ -201,7 +201,10 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree")
+    @DisplayName(
+            "Complex graph, some shortcuts, cross-down and cross-up, " +
+                    "cousins several times removed, with unrelated family tree"
+    )
     public void testComplexGraphSomeShortcutsCrossDownAndCrossUpCousinsSeveralTimesRemovedWithUnrelatedFamilyTree() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
