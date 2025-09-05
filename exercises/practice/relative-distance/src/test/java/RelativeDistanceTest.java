@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
@@ -12,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RelativeDistanceTest {
 
     @Test
+    @DisplayName("Direct parent-child relation")
     public void testDirectParentChildRelation() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
@@ -26,6 +28,7 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Sibling relationship")
     public void testSiblingRelationship() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
@@ -39,6 +42,7 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Two degrees of separation, grandchild")
     public void testTwoDegreesOfSeparationGrandchild() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
@@ -53,6 +57,7 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Unrelated individuals")
     public void testUnrelatedIndividuals() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
@@ -67,6 +72,7 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Complex graph, cousins")
     public void testComplexGraphCousins() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
@@ -131,6 +137,7 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Complex graph, no shortcut, far removed nephew")
     public void testComplexGraphNoShortcutFarRemovedNephew() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
@@ -194,6 +201,7 @@ public class RelativeDistanceTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree")
     public void testComplexGraphSomeShortcutsCrossDownAndCrossUpCousinsSeveralTimesRemovedWithUnrelatedFamilyTree() {
         Map<String, List<String>> familyTree = new HashMap<>() {
             {
