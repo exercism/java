@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class PovTest {
 
     @Test
+    @DisplayName("Results in the same tree if the input tree is a singleton")
     public void testFromPovGivenSingletonTree() {
         Tree tree = Tree.of("x");
         Tree expected = Tree.of("x");
@@ -17,6 +19,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can reroot a tree with a parent and one sibling")
     public void testFromPovGivenTreeWithParentAndOneSibling() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x"),
@@ -30,6 +33,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can reroot a tree with a parent and many siblings")
     public void testFromPovGivenTreeWithParentAndManySibling() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x"),
@@ -48,6 +52,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("an reroot a tree with new root deeply nested in the tree")
     public void testFromPovGivenTreeWithNewRootDeeplyNested() {
         Tree tree = Tree.of("level-0",
                 List.of(Tree.of("level-1",
@@ -66,6 +71,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Moves children of the new root to same level as former parent")
     public void testFromPovGivenMovesChildrenOfNewRootToSameLevelAsFormerParent() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x",
@@ -82,6 +88,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can reroot a complex tree with cousins")
     public void testFromPovGivenComplexTreeWithCousins() {
         Tree tree = Tree.of("grandparent",
                 List.of(Tree.of("parent",
@@ -110,6 +117,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Errors if target does not exist in a singleton tree")
     public void testFromPovGivenNonExistentTargetInSingletonTree() {
         Tree tree = Tree.of("x");
         assertThatExceptionOfType(UnsupportedOperationException.class)
@@ -119,6 +127,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Errors if target does not exist in a larger tree")
     public void testFromPovGivenNonExistentTargetInLargeTree() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x",
@@ -134,6 +143,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can find path to parent")
     public void testPathToCanFindPathToParent() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x"),
@@ -158,6 +168,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can find path to cousin")
     public void testPathToCanFindPathToCousin() {
         Tree tree = Tree.of("grandparent",
                 List.of(Tree.of("parent",
@@ -176,6 +187,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can find path not involving root")
     public void testPathToCanFindPathNotEnvolvingRoot() {
         Tree tree = Tree.of("grandparent",
                 List.of(Tree.of("parent",
@@ -189,6 +201,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can find path from nodes other than x")
     public void testPathToCanFindPathFromNodesOtherThanX() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("a"),
@@ -202,6 +215,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Errors if destination does not exist")
     public void testPathWhenDestinationDoesNotExist() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x",
@@ -217,6 +231,7 @@ public class PovTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Errors if source does not exist")
     public void testPathWhenSourceDoesNotExist() {
         Tree tree = Tree.of("parent",
                 List.of(Tree.of("x",
