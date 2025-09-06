@@ -39,13 +39,31 @@ jobs:
         run: ./gradlew check --exclude-task test --continue
         working-directory: exercises
 
-  test:
+  test-all:
     name: Test all exercises using java-test-runner
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Test all exercises using java-test-runner
         run: bin/test-with-test-runner
+      - name: Archive test results
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: test-results
+          path: exercises/**/build/results.json
+        if: failure()
+        
+  test-changed:
+    name: Test changed exercises using java-test-runner
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          fetch-depth: 0
+      - name: Test changed exercises using java-test-runner
+        run: bin/test-changed-exercise
       - name: Archive test results
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
