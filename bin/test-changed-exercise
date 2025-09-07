@@ -13,9 +13,16 @@ MERGE_BASE=$(git merge-base HEAD origin/"$BASE_BRANCH")
 # Get changed files relative to merge base
 changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
 
+# 🔹 NEW: If any Gradle build file changed, run the full suite and exit
+if echo "$changed_files" | grep -qE '\.(gradle|gradlew|bat)$|settings\.gradle'; then
+  echo "Gradle build files changed, running full test suite..."
+  ./exercises/gradlew -p exercises test
+  exit 0
+fi
+
 # Extract unique exercise directories
 changed_exercises=$(echo "$changed_files" | \
-  grep -E '^exercises/(practice|concept)/[^/]+/.+\.(java|gradle)$' | \
+  grep -E '^exercises/(practice|concept)/[^/]+/.+\.java$' | \
   cut -d/ -f1-3 | sort -u)
 
 if [ -z "$changed_exercises" ]; then
