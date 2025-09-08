@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -18,6 +19,7 @@ public class GoCountingTest {
             "  W  ";
 
     @Test
+    @DisplayName("Black corner territory on 5x5 board")
     public void blackCorner5x5BoardTest() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -32,6 +34,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("White center territory on 5x5 board")
     public void whiteCenter5x5BoardTest() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -44,6 +47,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Open corner territory on 5x5 board")
     public void openCorner5x5BoardTest() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -58,6 +62,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("A stone and not a territory on 5x5 board")
     public void stoneNotTerritory5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -69,6 +74,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid because X is too low for 5x5 board")
     public void invalidXTooLow5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -79,6 +85,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid because X is too high for 5x5 board")
     public void invalidXTooHigh5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -89,6 +96,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid because Y is too low for 5x5 board")
     public void invalidYTooLow5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -99,6 +107,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid because Y is too high for 5x5 board")
     public void invalidYTooHigh5x5Board() {
         GoCounting gocounting = new GoCounting(board5x5);
 
@@ -109,6 +118,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One territory is the whole board")
     public void oneTerritoryIsWholeBoardTest() {
         GoCounting gocounting = new GoCounting(" ");
 
@@ -127,6 +137,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Two territory rectangular board")
     public void twoTerritoryRectangularBoardTest() {
         GoCounting gocounting = new GoCounting(" BW \n BW ");
 
@@ -150,6 +161,7 @@ public class GoCountingTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Two region rectangular board")
     public void twoRegionRectangularBoardTest() {
         GoCounting gocounting = new GoCounting(" B ");
 

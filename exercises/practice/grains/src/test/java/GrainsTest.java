@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
@@ -11,6 +12,7 @@ public class GrainsTest {
     private Grains grains = new Grains();
 
     @Test
+    @DisplayName("returns the number of grains on the square")
     public void countAtSquare1() {
         BigInteger result = grains.grainsOnSquare(1);
         assertThat(result).isEqualTo(new BigInteger("1"));
@@ -18,6 +20,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("grains on square 2")
     public void countAtSquare2() {
         BigInteger result = grains.grainsOnSquare(2);
         assertThat(result).isEqualTo(new BigInteger("2"));
@@ -25,6 +28,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("grains on square 3")
     public void countAtSquare3() {
         BigInteger result = grains.grainsOnSquare(3);
         assertThat(result).isEqualTo(new BigInteger("4"));
@@ -32,6 +36,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("grains on square 4")
     public void countAtSquare4() {
         BigInteger result = grains.grainsOnSquare(4);
         assertThat(result).isEqualTo(new BigInteger("8"));
@@ -39,6 +44,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("grains on square 16")
     public void countAtSquare16() {
         BigInteger result = grains.grainsOnSquare(16);
         assertThat(result).isEqualTo(new BigInteger("32768"));
@@ -46,6 +52,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("grains on square 32")
     public void countAtSquare32() {
         BigInteger result = grains.grainsOnSquare(32);
         assertThat(result).isEqualTo(new BigInteger("2147483648"));
@@ -53,6 +60,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("grains on square 64")
     public void countAtSquare64() {
         BigInteger result = grains.grainsOnSquare(64);
         assertThat(result).isEqualTo(new BigInteger("9223372036854775808"));
@@ -60,6 +68,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("square 0 is invalid")
     public void errorOnNullBoardSize() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> grains.grainsOnSquare(0))
@@ -68,6 +77,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("negative square is invalid")
     public void errorOnNegativeBoardSize() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> grains.grainsOnSquare(-1))
@@ -76,6 +86,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("square greater than 64 is invalid")
     public void errorOnExcessiveBoardSize() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> grains.grainsOnSquare(65))
@@ -84,6 +95,7 @@ public class GrainsTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("returns the total number of grains on the board")
     public void totalNumberOfGrainsOnABoard() {
         BigInteger total = grains.grainsOnBoard();
         assertThat(total).isEqualTo(new BigInteger("18446744073709551615"));
