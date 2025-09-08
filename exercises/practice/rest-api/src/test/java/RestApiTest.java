@@ -1,6 +1,7 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RestApiTest {
 
     @Test
+    @DisplayName("no users")
     public void noUsers() {
         String expected =
             new JSONObject().put("users", new JSONArray()).toString();
@@ -18,6 +20,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("add user")
     public void addUser() {
         String expected = new JSONObject()
             .put("name", "Adam")
@@ -33,6 +36,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("get single user")
     public void getSingleUser() {
         String expected = new JSONObject()
             .put(
@@ -56,6 +60,7 @@ public class RestApiTest {
     }
 
     @Test
+    @DisplayName("both users have 0 balance")
     public void bothUsersHave0Balance() {
         String expected =
             new JSONObject()
@@ -94,6 +99,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("borrower has negative balance")
     public void borrowerHasNegativeBalance() {
         String expected =
             new JSONObject()
@@ -135,6 +141,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("lender has negative balance")
     public void lenderHasNegativeBalance() {
         String expected =
             new JSONObject()
@@ -178,6 +185,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("lender owes borrower")
     public void lenderOwesBorrower() {
         String expected =
             new JSONObject()
@@ -216,6 +224,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("lender owes borrower less than new loan")
     public void lenderOwesBorrowerLessThanNewLoan() {
         String expected =
             new JSONObject()
@@ -254,6 +263,7 @@ public class RestApiTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("lender owes borrower same as new loan")
     public void lenderOwesBorrowerSameAsNewLoan() {
         String expected =
             new JSONObject()
