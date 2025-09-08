@@ -1900,6 +1900,14 @@
           "lists"
         ],
         "difficulty": 10
+      },
+      {
+        "slug": "rate-limiter",
+        "name": "rate-limiter",
+        "uuid": "b4b0c60e-4ce1-488e-948f-bcb6821c773c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ],
     "foregone": [

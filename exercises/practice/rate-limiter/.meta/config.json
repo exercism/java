@@ -1,0 +1,15 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "src/main/java/RateLimiter.java"
+    ],
+    "test": [
+      "src/test/java/RateLimiterTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RateLimiter.java"
+    ]
+  },
+  "blurb": ""
+}
