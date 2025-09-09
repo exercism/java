@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,6 +15,7 @@ public class HouseTest {
     }
 
     @Test
+    @DisplayName("verse one - the house that jack built")
     public void verseOne() {
         assertThat(house.verse(1)).isEqualTo(
             "This is the house that Jack built.");
@@ -21,6 +23,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse two - the malt that lay")
     public void verseTwo() {
         assertThat(house.verse(2)).isEqualTo(
             "This is the malt " +
@@ -30,6 +33,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse three - the rat that ate")
     public void verseThree() {
         assertThat(house.verse(3)).isEqualTo(
             "This is the rat " +
@@ -39,6 +43,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse four - the cat that killed")
     public void verseFour() {
         assertThat(house.verse(4)).isEqualTo(
             "This is the cat " +
@@ -49,6 +54,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse five - the dog that worried")
     public void verseFive() {
         assertThat(house.verse(5)).isEqualTo(
             "This is the dog " +
@@ -60,6 +66,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse six - the cow with the crumpled horn")
     public void verseSix() {
         assertThat(house.verse(6)).isEqualTo(
             "This is the cow with the crumpled horn " +
@@ -72,6 +79,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse seven - the maiden all forlorn")
     public void verseSeven() {
         assertThat(house.verse(7)).isEqualTo(
             "This is the maiden all forlorn " +
@@ -85,6 +93,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse eight - the man all tattered and torn")
     public void verseEight() {
         assertThat(house.verse(8)).isEqualTo(
             "This is the man all tattered and torn " +
@@ -99,6 +108,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse nine - the priest all shaven and shorn")
     public void verseNine() {
         assertThat(house.verse(9)).isEqualTo(
             "This is the priest all shaven and shorn " +
@@ -114,6 +124,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse 10 - the rooster that crowed in the morn")
     public void verse10() {
         assertThat(house.verse(10)).isEqualTo(
             "This is the rooster that crowed in the morn " +
@@ -130,6 +141,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse 11 - the farmer sowing his corn")
     public void verse11() {
         assertThat(house.verse(11)).isEqualTo(
             "This is the farmer sowing his corn " +
@@ -147,6 +159,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("verse 12 - the horse and the hound and the horn")
     public void verse12() {
         assertThat(house.verse(12)).isEqualTo(
             "This is the horse and the hound and the horn " +
@@ -165,6 +178,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple verses")
     public void multipleVerses() {
         int startVerse = 4;
         int endVerse = 8;
@@ -204,6 +218,7 @@ public class HouseTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("full rhyme")
     public void wholeRhyme() {
         assertThat(house.sing()).isEqualTo(
             "This is the house that Jack built.\n" +
