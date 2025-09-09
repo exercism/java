@@ -41,7 +41,7 @@ public class HighScoresTest {
 
     @Test
     @Disabled("Remove to run test")
-    @DisplayName("")
+    @DisplayName("Personal top highest to lowest")
     public void shouldReturnPersonalTopThreeSortedHighestToLowest() {
         HighScores highScores = new HighScores(Arrays.asList(20, 10, 30));
         assertThat(highScores.personalTopThree()).isEqualTo(Arrays.asList(30, 20, 10));
