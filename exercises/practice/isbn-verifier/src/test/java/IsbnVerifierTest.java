@@ -35,7 +35,7 @@ public class IsbnVerifierTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("")
+    @DisplayName("valid isbn with check digit padded with letters is invalid")
     public void validIsbnNumberWithCheckDigitPaddedWithLettersIsInvalid() {
         assertThat(isbnVerifier.isValid("ABCDEFG3-598-21507-XQWERTYUI")).isFalse();
     }
