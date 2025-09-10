@@ -122,8 +122,10 @@ public class QueenAttackCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("cannot attack if falling diagonals are only the same " +
-            "when reflected across the longest falling diagonal")
+    @DisplayName(
+           "cannot attack if falling diagonals are only the same " +
+           "when reflected across the longest falling diagonal"
+    )
     public void testQueenCannotAttackIfFallingDiagonalsAreOnlyTheSameWhenReflectedAcrossTheLongestFallingDiagonal() {
         QueenAttackCalculator calculator
                 = new QueenAttackCalculator(new Queen(4, 1), new Queen(2, 5));
