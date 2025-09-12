@@ -30,24 +30,7 @@ public class FixedWindowRateLimiter<K> implements RateLimiter<K> {
 
     @Override
     public boolean allow(K key) {
-        long now = timeSource.nowNanos();
-        WindowState s = states.get(key);
-        if (s == null) {
-            s = new WindowState(now, 0);
-            states.put(key, s);
-        }
-
-        long elapsed = now - s.windowStartNanos;
-        if (elapsed >= windowSizeNanos) {
-            s.windowStartNanos = now;
-            s.usedCount = 0;
-        }
-
-        if (s.usedCount < limit) {
-            s.usedCount += 1;
-            return true;
-        }
-        return false;
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }
 
