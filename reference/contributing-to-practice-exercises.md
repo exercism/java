@@ -1,24 +1,33 @@
 # Contributing to Practice Exercises
 
+There are two types of practice exercises in the Java track.
+
+- The most common are come from the [problem specifications repository][problem-specifications].
+  The repository contains data that is common for all implementations, such as the introduction, instructions and the test cases.
+
+- The others _do_ not have data in the problem specification and are specific to the Java track.
+
+If you are looking to add a completely new exercise that is not from the [problem specifications repository][problem-specifications], please open a discussion in the forums in the [Java][forum-java] category for Java specific exercises or the [Building Exercism][forum-building-exercism] category for adding to the [problem specifications repository][problem-specifications].
+
+If the exercise is already in the problem specifications, please check that no one else has claimed the issue or pull request.
+An issue can be "claimed" by asking (in a comment on the issue) if you can work on it.
+
 ## Adding a new Practice Exercise
 
-The easiest way to add a new exercise to the Java track is to port an exercise from another track.
-That means that you take an exercise that has already been implemented in another language, and you implement it in this track.
+Before adding an exercise to the Java track, please review the [practice exercise guide][docs-building-exercises-practice].
 
-To add a completely new exercise you need to open a pull request to the [problem specifications repository][problem-specifications].
-Any completely new exercise needs to be added and accepted there before it can be added to the Java track.
+The easiest way to get started is to use [configlet][docs-configlet] to provide some of the scaffolding.
 
-Before porting an exercise to the Java track, please review the [practice exercise guide][docs-building-exercises-practice].
+```sh
+configlet create --practice-exercise <exercise-slug>
+```
 
-Please make sure no one else has a pull request open to implement your chosen exercise before you start.
-
-It might also be a good idea to open a Pull Request to make it clear to others that you are working on this exercise.
-This can just be a Pull Request with an empty commit that states which new exercise you're working on.
-[Mark the Pull Request as Draft][github-draft-pr] to let the maintainers know that it's not ready for review yet.
+This will create the necessary entries in `config.json`, create the directory and pulls the exercise's document files from the problem specifications repository.
 
 The Java specific details you need to know about adding an exercise are:
 
-- Please add an entry to the `exercises` array in `config.json`.
+- Please check the entry added by configlet to the `exercises` array in `config.json`.
+  The entries are sorted by difficulty, then name.
   You can find details about what should be in that entry at the [Exercism docs][docs-building-config-json].
   You can also look at other entries in `config.json` as examples and try to mimic them.
 
@@ -30,11 +39,12 @@ The Java specific details you need to know about adding an exercise are:
   In the `resources/exercise-template` you will find a template to get you started.
   See [The Problem Submodules](../CONTRIBUTING.md#the-problem-submodules) section for details on how each exercise submodule is structured.
 
-- Use the configlet to [generate documentation and metadata files][docs-building-configlet-sync-new-exercise] for the new exercise.
+- Please copy and add the Gradle files and directories from the `resources/exercise-template` directory.
+  This should allow you to run Gradle from the exercise's directory.
 
 - Make sure you've followed the [track policies](../POLICIES.md), especially the ones for exercise added/updated.
 
-Hopefully that should be enough information to help you port an exercise to the Java track.
+Hopefully that should be enough information to help you add a practice exercise to the Java track.
 Feel free to open an issue or post in the [Building Exercism][forum-building-exercism] category of the [Exercism forum][forum] if you have any questions, and we'll try and answer as soon as we can.
 
 ## Updating the documentation for an exercise
@@ -48,8 +58,8 @@ bin/configlet sync --docs --metadata --update --exercise <exercise-slug>
 
 ## Updating the tests for an exercise
 
-The tests for practice exercises are based on the canonical data in [problem specification][problem-specifications].
-Each practice exercise should contain a `.meta/tests.toml` file containing the test cases that were implemented for that exercise.
+For exercises from the [problem specification][problem-specifications], the tests are based on the canonical data.
+The practice exercise should contain a `.meta/tests.toml` file containing the test cases that were implemented for that exercise.
 
 In case the canonical data for an exercise changes, this file can be updated by running the configlet from the root of this repository:
 
@@ -60,10 +70,12 @@ bin/configlet sync --tests --update --exercise <exercise-slug>
 Note that this only updates the `.meta/tests.toml` file.
 Any tests that were added or updated should be implemented in the exercise's unit tests!
 
+Syncing is _not_ required for Java specific exercises.
+
 [docs-building-config-json]: https://exercism.org/docs/building/tracks/config-json
-[docs-building-configlet-sync-new-exercise]: https://exercism.org/docs/building/configlet/sync#h-using-sync-when-adding-a-new-exercise-to-a-track
 [docs-building-exercises-practice]: https://exercism.org/docs/building/tracks/practice-exercises
+[docs-configlet]: https://exercism.org/docs/building/configlet
 [forum]: https://forum.exercism.org/
 [forum-building-exercism]: https://forum.exercism.org/c/exercism/building-exercism/125
-[github-draft-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request
+[forum-java]: https://forum.exercism.org/c/programming/java/91
 [problem-specifications]: https://github.com/exercism/problem-specifications/tree/main/exercises
