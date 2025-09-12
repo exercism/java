@@ -105,6 +105,7 @@
           "chars"
         ],
         "prerequisites": [
+          "arrays",
           "strings"
         ],
         "status": "active"
