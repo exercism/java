@@ -1,10 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Deterministic fixed-window rate limiter.
- * Single-threaded; per-key counters/windows; boundary rollover inclusive.
- */
 public class FixedWindowRateLimiter<K> implements RateLimiter<K> {
 
     private static final class WindowState {
