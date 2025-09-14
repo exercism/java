@@ -1,11 +1,13 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ProverbTest {
 
     @Test
+    @DisplayName("zero pieces")
     public void zeroWordsAreGiven() {
         String[] words  = new String[0];
 
@@ -14,6 +16,7 @@ public class ProverbTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("one piece")
     public void singlePieceOfProverb() {
         String[] words  = new String[]{"nail"};
 
@@ -23,6 +26,7 @@ public class ProverbTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two pieces")
     public void twoPiecesOfProverb() {
         String[] words  = new String[]{"nail", "shoe"};
 
@@ -34,6 +38,7 @@ public class ProverbTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("three pieces")
     public void shortChainOfConsequences() {
         String[] words  = new String[]{"nail", "shoe", "horse"};
 
@@ -46,6 +51,7 @@ public class ProverbTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("full proverb")
     public void fullProverb() {
         String[] words  = new String[]{"nail", "shoe", "horse", "rider", "message", "battle", "kingdom"};
 
@@ -62,6 +68,7 @@ public class ProverbTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("four pieces modernized")
     public void fourPiecesModernizedProverb() {
         String[] words  = new String[]{"pin", "gun", "soldier", "battle"};
 
