@@ -3,16 +3,14 @@
   "files": {
     "solution": [
       "src/main/java/RateLimiter.java",
-      "src/main/java/TimeSource.java",
-      "src/main/java/FixedWindowRateLimiter.java"
+      "src/main/java/TimeSource.java"
     ],
     "test": [
       "src/test/java/RateLimiterTest.java"
     ],
     "example": [
       ".meta/src/reference/java/RateLimiter.java",
-      ".meta/src/reference/java/TimeSource.java",
-      ".meta/src/reference/java/FixedWindowRateLimiter.java"
+      ".meta/src/reference/java/TimeSource.java"
     ]
   },
   "blurb": ""

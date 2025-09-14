@@ -1,24 +1,22 @@
-public interface TimeSource {
-    long nowNanos();
+import java.time.Duration;
+import java.time.Instant;
 
-    /**
-     * Deterministic fake clock for tests.
-     */
-    final class Fake implements TimeSource {
-        private long now;
+public class TimeSource {
+    private Instant now;
 
-        public Fake(long startNanos) {
-            this.now = startNanos;
-        }
+    public TimeSource(Instant start) {
+        this.now = start;
+    }
 
-        @Override
-        public long nowNanos() {
-            return now;
-        }
+    public Instant now() {
+        return now;
+    }
 
-        public void advance(long nanos) {
-            this.now += nanos;
-        }
+    public void advance(Duration d) {
+        this.now = this.now.plus(d);
+    }
+
+    public void advanceNanos(long nanos) {
+        this.now = this.now.plusNanos(nanos);
     }
 }
-
