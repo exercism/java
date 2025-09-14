@@ -13,5 +13,5 @@
       ".meta/src/reference/java/TimeSource.java"
     ]
   },
-  "blurb": ""
+  "blurb": "Practice stateful logic and time handling by implementing a fixed-window rate limiter"
 }
