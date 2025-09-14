@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ public class RailFenceCipherTest {
     private RailFenceCipher railFenceCipher;
 
     @Test
+    @DisplayName("encode with two rails")
     public void encodeWithTwoRails() {
         railFenceCipher = new RailFenceCipher(2);
         assertThat(railFenceCipher.getEncryptedData("XOXOXOXOXOXOXOXOXO"))
@@ -16,6 +18,7 @@ public class RailFenceCipherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("encode with three rails")
     public void encodeWithThreeRails() {
         railFenceCipher = new RailFenceCipher(3);
         assertThat(railFenceCipher.getEncryptedData("WEAREDISCOVEREDFLEEATONCE"))
@@ -24,6 +27,7 @@ public class RailFenceCipherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("encode with ending in the middle")
     public void encodeWithEndingInTheMiddle() {
         railFenceCipher = new RailFenceCipher(4);
         assertThat(railFenceCipher.getEncryptedData("EXERCISES"))
@@ -32,6 +36,7 @@ public class RailFenceCipherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("decode with three rails")
     public void decodeWithThreeRails() {
         railFenceCipher = new RailFenceCipher(3);
         assertThat(railFenceCipher.getDecryptedData("TEITELHDVLSNHDTISEIIEA"))
@@ -40,6 +45,7 @@ public class RailFenceCipherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("decode with five rails")
     public void decodeWithFiveRails() {
         railFenceCipher = new RailFenceCipher(5);
         assertThat(railFenceCipher.getDecryptedData("EIEXMSMESAORIWSCE"))
@@ -48,6 +54,7 @@ public class RailFenceCipherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("decode with six rails")
     public void decodeWithSixRails() {
         railFenceCipher = new RailFenceCipher(6);
         assertThat(railFenceCipher.getDecryptedData("133714114238148966225439541018335470986172518171757571896261"))
