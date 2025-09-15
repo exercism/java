@@ -16,7 +16,7 @@ changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
 # If any Gradle build file changed, run the full suite and exit
 if echo "$changed_files" | grep -qE '\.(gradle|gradlew|bat)$|settings\.gradle'; then
   echo "Gradle build files changed, running full test suite..."
-  ./exercises/gradlew -p exercises test
+  ./bin/test-with-test-runner
   exit 0
 fi
 
