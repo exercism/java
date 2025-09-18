@@ -55,7 +55,7 @@ jobs:
         if: failure()
         
   test-changed:
-    name: Test changed exercises using java-test-runner
+    name: Test changed exercises using gradlew
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
     steps:
