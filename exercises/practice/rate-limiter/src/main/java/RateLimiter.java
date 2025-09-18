@@ -1,8 +1,9 @@
+import java.time.Duration;
 import java.time.Instant;
 
 public class RateLimiter<K> {
 
-    public RateLimiter(int limit, long windowSizeNanos, TimeSource timeSource) {
+    public RateLimiter(int limit, Duration windowSize, TimeSource timeSource) {
 
     }
 

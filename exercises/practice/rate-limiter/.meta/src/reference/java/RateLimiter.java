@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,13 +16,13 @@ public class RateLimiter<K> {
     }
 
     private final int limit;
-    private final long windowSizeNanos;
+    private final Duration windowSize;
     private final TimeSource timeSource;
     private final Map<K, WindowState> states = new HashMap<>();
 
-    public RateLimiter(int limit, long windowSizeNanos, TimeSource timeSource) {
+    public RateLimiter(int limit, Duration windowSize, TimeSource timeSource) {
         this.limit = limit;
-        this.windowSizeNanos = windowSizeNanos;
+        this.windowSize = windowSize;
         this.timeSource = timeSource;
     }
 
@@ -36,7 +37,7 @@ public class RateLimiter<K> {
         }
 
         long elapsed = now - s.windowStartNanos;
-        if (elapsed >= windowSizeNanos) {
+        if (elapsed >= windowSize.toNanos()) {
             s.windowStartNanos = now;
             s.usedCount = 0;
         }

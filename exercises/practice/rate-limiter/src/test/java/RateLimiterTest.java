@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import java.time.Duration;
 import java.time.Instant;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +10,7 @@ class RateLimiterTest {
     @Test
     void allowsUpToLimitThenDeniesUntilBoundary() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
-        RateLimiter<String> limiter = new RateLimiter<>(3, 10_000L, clock);
+        RateLimiter<String> limiter = new RateLimiter<>(3, Duration.ofNanos(10_000L), clock);
 
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isTrue();
@@ -29,7 +30,7 @@ class RateLimiterTest {
     @Test
     void continuesCountingWithinWindowAfterBoundaryReset() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
-        RateLimiter<String> limiter = new RateLimiter<>(2, 5_000L, clock);
+        RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(5_000L), clock);
 
         assertThat(limiter.allow("key")).isTrue();
         assertThat(limiter.allow("key")).isTrue();
@@ -46,7 +47,7 @@ class RateLimiterTest {
     @Test
     void separateKeysHaveIndependentCountersAndWindows() {
         TimeSource clock = new TimeSource(Instant.EPOCH.plusNanos(42L));
-        RateLimiter<String> limiter = new RateLimiter<>(1, 100L, clock);
+        RateLimiter<String> limiter = new RateLimiter<>(1, Duration.ofNanos(100L), clock);
 
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isFalse();
@@ -62,7 +63,7 @@ class RateLimiterTest {
     @Test
     void longGapsResetWindowDeterministically() {
         TimeSource clock = new TimeSource(Instant.EPOCH.plusNanos(1_000L));
-        RateLimiter<String> limiter = new RateLimiter<>(2, 50L, clock);
+        RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(50L), clock);
 
         assertThat(limiter.allow("X")).isTrue();
         assertThat(limiter.allow("X")).isTrue();
@@ -79,7 +80,7 @@ class RateLimiterTest {
     @Test
     void exactBoundaryIsNewWindowEveryTime() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
-        RateLimiter<String> limiter = new RateLimiter<>(1, 10L, clock);
+        RateLimiter<String> limiter = new RateLimiter<>(1, Duration.ofNanos(10L), clock);
 
         assertThat(limiter.allow("k")).isTrue();
         assertThat(limiter.allow("k")).isFalse();
