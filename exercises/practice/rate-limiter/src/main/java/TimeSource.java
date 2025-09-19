@@ -15,8 +15,4 @@ public class TimeSource {
     public void advance(Duration d) {
         this.now = this.now.plus(d);
     }
-
-    public void advanceNanos(long nanos) {
-        this.now = this.now.plusNanos(nanos);
-    }
 }
