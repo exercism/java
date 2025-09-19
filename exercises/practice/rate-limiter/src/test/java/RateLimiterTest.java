@@ -18,11 +18,11 @@ class RateLimiterTest {
         assertThat(limiter.allow("A")).isFalse();
 
         // Just before boundary: still same window
-        clock.advanceNanos(9_999L);
+        clock.advance(Duration.ofNanos(9_999L));
         assertThat(limiter.allow("A")).isFalse();
 
         // At exact boundary: new window
-        clock.advanceNanos(1L);
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow("A")).isTrue();
     }
 
@@ -37,7 +37,7 @@ class RateLimiterTest {
         assertThat(limiter.allow("key")).isFalse();
 
         // Jump to next window
-        clock.advanceNanos(5_000L);
+        clock.advance(Duration.ofNanos(5_000L));
         assertThat(limiter.allow("key")).isTrue();
         assertThat(limiter.allow("key")).isTrue();
         assertThat(limiter.allow("key")).isFalse();
@@ -54,7 +54,7 @@ class RateLimiterTest {
         assertThat(limiter.allow("B")).isTrue(); // independent key
         assertThat(limiter.allow("B")).isFalse();
 
-        clock.advanceNanos(100L); // new window for both at boundary
+        clock.advance(Duration.ofNanos(100L)); // new window for both at boundary
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("B")).isTrue();
     }
@@ -70,7 +70,7 @@ class RateLimiterTest {
         assertThat(limiter.allow("X")).isFalse();
 
         // Advance several windows worth
-        clock.advanceNanos(1_000L);
+        clock.advance(Duration.ofNanos(1_000L));
         assertThat(limiter.allow("X")).isTrue();
         assertThat(limiter.allow("X")).isTrue();
         assertThat(limiter.allow("X")).isFalse();
@@ -87,7 +87,7 @@ class RateLimiterTest {
 
         // Move exactly to boundary repeatedly; each time should allow once
         for (int i = 0; i < 5; i++) {
-            clock.advanceNanos(10L);
+            clock.advance(Duration.ofNanos(10L));
             assertThat(limiter.allow("k")).isTrue();
             assertThat(limiter.allow("k")).isFalse();
         }
