@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RateLimiterTest {
 
     @Test
-    void allowsUpToLimitThenDeniesUntilBoundary() {
+    void allowsUpToLimit() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<String> limiter = new RateLimiter<>(3, Duration.ofNanos(10_000L), clock);
 
@@ -17,13 +17,35 @@ class RateLimiterTest {
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isFalse();
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    void denyCloseToBoundary() {
+        TimeSource clock = new TimeSource(Instant.EPOCH);
+        RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(10_000L), clock);
+
+        assertThat(limiter.allow("A")).isTrue();
+        assertThat(limiter.allow("A")).isTrue();
+        assertThat(limiter.allow("A")).isFalse();
 
         // Just before boundary: still same window
         clock.advance(Duration.ofNanos(9_999L));
         assertThat(limiter.allow("A")).isFalse();
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    void allowsNewBoundary() {
+        TimeSource clock = new TimeSource(Instant.EPOCH);
+        RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(10_000L), clock);
+
+        assertThat(limiter.allow("A")).isTrue();
+        assertThat(limiter.allow("A")).isTrue();
+        assertThat(limiter.allow("A")).isFalse();
 
         // At exact boundary: new window
-        clock.advance(Duration.ofNanos(1L));
+        clock.advance(Duration.ofNanos(10_000L));
         assertThat(limiter.allow("A")).isTrue();
     }
 
