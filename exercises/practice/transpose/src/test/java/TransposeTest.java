@@ -1,6 +1,7 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -8,222 +9,235 @@ public class TransposeTest {
     private Transpose transpose;
 
     @BeforeEach
+    @DisplayName("setup")
     public void setup() {
         transpose = new Transpose();
     }
 
     @Test
+    @DisplayName("empty string")
     public void emptyString() {
         assertThat(transpose.transpose("")).isEqualTo("");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two characters in a row")
     public void twoCharactersInARow() {
         assertThat(transpose.transpose("A1"))
-            .isEqualTo(
-                "A" +
-                "\n1");
+                .isEqualTo(
+                        "A" +
+                                "\n1");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two characters in a column")
     public void twoCharactersInAColumn() {
         assertThat(
-            transpose.transpose(
-                "A\n" +
-                "1"))
-            .isEqualTo("A1");
+                transpose.transpose(
+                        "A\n" +
+                                "1"))
+                .isEqualTo("A1");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("simple")
     public void simple() {
         assertThat(
-            transpose.transpose(
-                "ABC\n" +
-                "123"))
-            .isEqualTo(
-                "A1\n" +
-                "B2\n" +
-                "C3");
+                transpose.transpose(
+                        "ABC\n" +
+                                "123"))
+                .isEqualTo(
+                        "A1\n" +
+                                "B2\n" +
+                                "C3");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single line")
     public void singleLine() {
         assertThat(transpose.transpose("Single line."))
-            .isEqualTo(
-                "S\n" +
-                "i\n" +
-                "n\n" +
-                "g\n" +
-                "l\n" +
-                "e\n" +
-                " \n" +
-                "l\n" +
-                "i\n" +
-                "n\n" +
-                "e\n" +
-                ".");
+                .isEqualTo(
+                        "S\n" +
+                                "i\n" +
+                                "n\n" +
+                                "g\n" +
+                                "l\n" +
+                                "e\n" +
+                                " \n" +
+                                "l\n" +
+                                "i\n" +
+                                "n\n" +
+                                "e\n" +
+                                ".");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("first line longer than second line")
     public void firstLineLongerThanSecondLine() {
         assertThat(
-            transpose.transpose(
-                "The fourth line.\n" +
-                "The fifth line."))
-            .isEqualTo(
-                "TT\n" +
-                "hh\n" +
-                "ee\n" +
-                "  \n" +
-                "ff\n" +
-                "oi\n" +
-                "uf\n" +
-                "rt\n" +
-                "th\n" +
-                "h \n" +
-                " l\n" +
-                "li\n" +
-                "in\n" +
-                "ne\n" +
-                "e.\n" +
-                ".");
+                transpose.transpose(
+                        "The fourth line.\n" +
+                                "The fifth line."))
+                .isEqualTo(
+                        "TT\n" +
+                                "hh\n" +
+                                "ee\n" +
+                                "  \n" +
+                                "ff\n" +
+                                "oi\n" +
+                                "uf\n" +
+                                "rt\n" +
+                                "th\n" +
+                                "h \n" +
+                                " l\n" +
+                                "li\n" +
+                                "in\n" +
+                                "ne\n" +
+                                "e.\n" +
+                                ".");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("second line longer than first line")
     public void secondLineLongerThanFirstLine() {
         assertThat(
-            transpose.transpose(
-                "The first line.\n" +
-                "The second line."))
-            .isEqualTo(
-                "TT\n" +
-                "hh\n" +
-                "ee\n" +
-                "  \n" +
-                "fs\n" +
-                "ie\n" +
-                "rc\n" +
-                "so\n" +
-                "tn\n" +
-                " d\n" +
-                "l \n" +
-                "il\n" +
-                "ni\n" +
-                "en\n" +
-                ".e\n" +
-                " .");
+                transpose.transpose(
+                        "The first line.\n" +
+                                "The second line."))
+                .isEqualTo(
+                        "TT\n" +
+                                "hh\n" +
+                                "ee\n" +
+                                "  \n" +
+                                "fs\n" +
+                                "ie\n" +
+                                "rc\n" +
+                                "so\n" +
+                                "tn\n" +
+                                " d\n" +
+                                "l \n" +
+                                "il\n" +
+                                "ni\n" +
+                                "en\n" +
+                                ".e\n" +
+                                " .");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("mixed line length")
     public void mixedLineLength() {
         assertThat(
-            transpose.transpose(
-                "The longest line.\n" +
-                "A long line.\n" +
-                "A longer line.\n" +
-                "A line."))
-            .isEqualTo(
-                "TAAA\n" +
-                "h   \n" +
-                "elll\n" +
-                " ooi\n" +
-                "lnnn\n" +
-                "ogge\n" +
-                "n e.\n" +
-                "glr\n" +
-                "ei \n" +
-                "snl\n" +
-                "tei\n" +
-                " .n\n" +
-                "l e\n" +
-                "i .\n" +
-                "n\n" +
-                "e\n" +
-                ".");
+                transpose.transpose(
+                        "The longest line.\n" +
+                                "A long line.\n" +
+                                "A longer line.\n" +
+                                "A line."))
+                .isEqualTo(
+                        "TAAA\n" +
+                                "h   \n" +
+                                "elll\n" +
+                                " ooi\n" +
+                                "lnnn\n" +
+                                "ogge\n" +
+                                "n e.\n" +
+                                "glr\n" +
+                                "ei \n" +
+                                "snl\n" +
+                                "tei\n" +
+                                " .n\n" +
+                                "l e\n" +
+                                "i .\n" +
+                                "n\n" +
+                                "e\n" +
+                                ".");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("square")
     public void square() {
         assertThat(
-            transpose.transpose(
-                "HEART\n" +
-                "EMBER\n" +
-                "ABUSE\n" +
-                "RESIN\n" +
-                "TREND"))
-            .isEqualTo(
-                "HEART\n" +
-                "EMBER\n" +
-                "ABUSE\n" +
-                "RESIN\n" +
-                "TREND");
+                transpose.transpose(
+                        "HEART\n" +
+                                "EMBER\n" +
+                                "ABUSE\n" +
+                                "RESIN\n" +
+                                "TREND"))
+                .isEqualTo(
+                        "HEART\n" +
+                                "EMBER\n" +
+                                "ABUSE\n" +
+                                "RESIN\n" +
+                                "TREND");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("rectangle")
     public void rectangle() {
         assertThat(
-            transpose.transpose(
-                "FRACTURE\n" +
-                "OUTLINED\n" +
-                "BLOOMING\n" +
-                "SEPTETTE"))
-            .isEqualTo(
-                "FOBS\n" +
-                "RULE\n" +
-                "ATOP\n" +
-                "CLOT\n" +
-                "TIME\n" +
-                "UNIT\n" +
-                "RENT\n" +
-                "EDGE");
+                transpose.transpose(
+                        "FRACTURE\n" +
+                                "OUTLINED\n" +
+                                "BLOOMING\n" +
+                                "SEPTETTE"))
+                .isEqualTo(
+                        "FOBS\n" +
+                                "RULE\n" +
+                                "ATOP\n" +
+                                "CLOT\n" +
+                                "TIME\n" +
+                                "UNIT\n" +
+                                "RENT\n" +
+                                "EDGE");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("triangle")
     public void triangle() {
         assertThat(
-            transpose.transpose(
-                "T\n" +
-                "EE\n" +
-                "AAA\n" +
-                "SSSS\n" +
-                "EEEEE\n" +
-                "RRRRRR"))
-            .isEqualTo(
-                "TEASER\n" +
-                " EASER\n" +
-                "  ASER\n" +
-                "   SER\n" +
-                "    ER\n" +
-                "     R");
+                transpose.transpose(
+                        "T\n" +
+                                "EE\n" +
+                                "AAA\n" +
+                                "SSSS\n" +
+                                "EEEEE\n" +
+                                "RRRRRR"))
+                .isEqualTo(
+                        "TEASER\n" +
+                                " EASER\n" +
+                                "  ASER\n" +
+                                "   SER\n" +
+                                "    ER\n" +
+                                "     R");
     }
-    
+
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("jagged triangle")
     public void jaggedTriangle() {
         assertThat(
-            transpose.transpose(
-                "11\n" +
-                "2\n" +
-                "3333\n" +
-                "444\n" +
-                "555555\n" +
-                "66666"))
-            .isEqualTo(
-                "123456\n" +
-                "1 3456\n" +
-                "  3456\n" +
-                "  3 56\n" +
-                "    56\n" +
-                "    5");
+                transpose.transpose(
+                        "11\n" +
+                                "2\n" +
+                                "3333\n" +
+                                "444\n" +
+                                "555555\n" +
+                                "66666"))
+                .isEqualTo(
+                        "123456\n" +
+                                "1 3456\n" +
+                                "  3456\n" +
+                                "  3 56\n" +
+                                "    56\n" +
+                                "    5");
     }
 }
