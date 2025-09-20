@@ -6,11 +6,11 @@ import java.util.Map;
 public class RateLimiter<K> {
 
     private static final class WindowState {
-        long windowStartNanos;
+        Instant windowStart;
         int usedCount;
 
-        WindowState(long windowStartNanos, int usedCount) {
-            this.windowStartNanos = windowStartNanos;
+        WindowState(Instant windowStart, int usedCount) {
+            this.windowStart = windowStart;
             this.usedCount = usedCount;
         }
     }
@@ -27,8 +27,7 @@ public class RateLimiter<K> {
     }
 
     public boolean allow(K key) {
-        Instant nowInstant = timeSource.now();
-        long now = nowInstant.getEpochSecond() * 1_000_000_000L + nowInstant.getNano();
+        Instant now = timeSource.now();
 
         WindowState s = states.get(key);
         if (s == null) {
@@ -36,9 +35,8 @@ public class RateLimiter<K> {
             states.put(key, s);
         }
 
-        long elapsed = now - s.windowStartNanos;
-        if (elapsed >= windowSize.toNanos()) {
-            s.windowStartNanos = now;
+        if (!now.isBefore(s.windowStart.plus(windowSize))) {
+            s.windowStart = now;
             s.usedCount = 0;
         }
 
