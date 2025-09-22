@@ -2,8 +2,7 @@
   "authors": ["andreatanky"],
   "files": {
     "solution": [
-      "src/main/java/RateLimiter.java",
-      "src/main/java/TimeSource.java"
+      "src/main/java/RateLimiter.java"
     ],
     "test": [
       "src/test/java/RateLimiterTest.java"
@@ -11,6 +10,9 @@
     "example": [
       ".meta/src/reference/java/RateLimiter.java",
       ".meta/src/reference/java/TimeSource.java"
+    ],
+    "editor": [
+      "src/main/java/TimeSource.java"
     ]
   },
   "blurb": "Practice stateful logic and time handling by implementing a fixed-window rate limiter"
