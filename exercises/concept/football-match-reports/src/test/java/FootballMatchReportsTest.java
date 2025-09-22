@@ -68,17 +68,15 @@ public class FootballMatchReportsTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The onField method throws IllegalArgumentException for unknown shirt number")
+    @DisplayName("The onField method returns 'unknown' for unknown shirt number")
     public void test_exception() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> FootballMatchReports.onField(13));
+        assertThat(FootballMatchReports.onField(13)).isEqualTo("unknown");
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The onField method throws IllegalArgumentException for negative shirt number")
+    @DisplayName("The onField method returns 'unknown' for negative shirt number")
     public void test_exception_negative_number() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> FootballMatchReports.onField(-1));
+        assertThat(FootballMatchReports.onField(-1)).isEqualTo("unknown");
     }
 }
