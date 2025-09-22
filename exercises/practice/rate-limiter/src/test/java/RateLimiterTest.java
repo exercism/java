@@ -14,6 +14,8 @@ class RateLimiterTest {
         RateLimiter<String> limiter = new RateLimiter<>(3, Duration.ofNanos(10_000L), clock);
 
         assertThat(limiter.allow("A")).isTrue();
+        // Advance minimally to model time passage between requests
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isFalse();
@@ -56,6 +58,7 @@ class RateLimiterTest {
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(5_000L), clock);
 
         assertThat(limiter.allow("key")).isTrue();
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow("key")).isTrue();
         assertThat(limiter.allow("key")).isFalse();
 
@@ -73,6 +76,8 @@ class RateLimiterTest {
         RateLimiter<String> limiter = new RateLimiter<>(1, Duration.ofNanos(100L), clock);
 
         assertThat(limiter.allow("A")).isTrue();
+        // Advance a tiny amount to model time moving between requests
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow("A")).isFalse();
         assertThat(limiter.allow("B")).isTrue(); // independent key
         assertThat(limiter.allow("B")).isFalse();
@@ -89,6 +94,7 @@ class RateLimiterTest {
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(50L), clock);
 
         assertThat(limiter.allow("X")).isTrue();
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow("X")).isTrue();
         assertThat(limiter.allow("X")).isFalse();
 
@@ -128,6 +134,8 @@ class RateLimiterTest {
 
         assertThat(limiter.allow(a)).isTrue();
         assertThat(limiter.allow(a)).isFalse();
+        // Advance slightly so the second client's window anchors later
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow(b)).isTrue();
         assertThat(limiter.allow(b)).isFalse();
 
@@ -144,6 +152,7 @@ class RateLimiterTest {
 
         assertThat(limiter.allow(42)).isTrue();
         assertThat(limiter.allow(42)).isFalse();
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow(84)).isTrue(); // independent key of different type
         assertThat(limiter.allow(84)).isFalse();
 
@@ -162,6 +171,7 @@ class RateLimiterTest {
         assertThat(limiter.allow(1L)).isTrue();
         assertThat(limiter.allow(1L)).isFalse();
 
+        clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow(2L)).isTrue(); // independent key
         assertThat(limiter.allow(2L)).isTrue();
         assertThat(limiter.allow(2L)).isFalse();
