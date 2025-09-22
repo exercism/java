@@ -84,7 +84,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
-    void longGapsResetWindowDeterministically() {
+    void longGapsResetWindow() {
         TimeSource clock = new TimeSource(Instant.EPOCH.plusNanos(1_000L));
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(50L), clock);
 
