@@ -26,13 +26,13 @@ public class RateLimiter<K> {
         this.timeSource = timeSource;
     }
 
-    public boolean allow(K key) {
+    public boolean allow(K clientId) {
         Instant now = timeSource.now();
 
-        WindowState s = states.get(key);
+        WindowState s = states.get(clientId);
         if (s == null) {
             s = new WindowState(now, 0);
-            states.put(key, s);
+            states.put(clientId, s);
         }
 
         if (!now.isBefore(s.windowStart.plus(windowSize))) {

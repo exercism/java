@@ -7,7 +7,7 @@ public class RateLimiter<K> {
 
     }
 
-    public boolean allow(K key) {
+    public boolean allow(K clientId) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 }
