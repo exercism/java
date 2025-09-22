@@ -10,7 +10,7 @@ Different strategies exist; in this exercise you’ll implement a fixed‑window
 
 Fixed‑window rate limiting groups time into equal‑length windows (for example, every 10 seconds) and allows up to a certain number of requests within each window for each client.
 Once the window resets, the allowance refreshes for the next window.
-Each client is tracked separately.
+Each client is tracked separately, so another client can make requests within that same period.
 
 Examples:
 - Limit: 3 requests per 10 seconds per client.
