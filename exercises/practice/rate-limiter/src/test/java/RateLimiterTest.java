@@ -127,7 +127,8 @@ class RateLimiterTest {
     @Test
     void supportsUuidKeys() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
-        RateLimiter<UUID> limiter = new RateLimiter<>(1, Duration.ofNanos(100L), clock);
+        // Use a seconds-long window and advance in smaller units to mix Duration usage
+        RateLimiter<UUID> limiter = new RateLimiter<>(1, Duration.ofSeconds(1L), clock);
 
         UUID a = UUID.fromString("00000000-0000-0000-0000-000000000001");
         UUID b = UUID.fromString("00000000-0000-0000-0000-000000000002");
@@ -135,11 +136,12 @@ class RateLimiterTest {
         assertThat(limiter.allow(a)).isTrue();
         assertThat(limiter.allow(a)).isFalse();
         // Advance slightly so the second client's window anchors later
-        clock.advance(Duration.ofNanos(1L));
+        clock.advance(Duration.ofMillis(1L));
         assertThat(limiter.allow(b)).isTrue();
         assertThat(limiter.allow(b)).isFalse();
 
-        clock.advance(Duration.ofNanos(100L));
+        // Advance exactly one second to hit the window boundary
+        clock.advance(Duration.ofSeconds(1L));
         assertThat(limiter.allow(a)).isTrue();
         assertThat(limiter.allow(b)).isTrue();
     }
