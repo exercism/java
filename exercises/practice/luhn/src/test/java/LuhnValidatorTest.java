@@ -166,11 +166,8 @@ public class LuhnValidatorTest {
         assertThat(luhnValidator.isValid("59%59")).isFalse();
     }
 
-    /*
-     * The following test diverges from the canonical test data. This is because the
-     * corresponding canonical test does
-     * not account for Java specific functions (such as
-     * Character.getNumericValue()), which can be part of incorrect yet
+    /* The following test diverges from the canonical test data. This is because the corresponding canonical test does
+     * not account for Java specific functions (such as * Character.getNumericValue()), which can be part of incorrect yet
      * passing implementations. For more detail, check out issue #972 here:
      * (https://github.com/exercism/java/issues/972).
      */
