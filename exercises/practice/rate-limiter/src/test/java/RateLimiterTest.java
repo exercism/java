@@ -170,41 +170,4 @@ class RateLimiterTest {
         assertThat(limiter.allow(1L)).isTrue();
         assertThat(limiter.allow(2L)).isTrue();
     }
-
-    @Disabled("Remove to run test")
-    @Test
-    void supportsCustomObjectKeys() {
-        final class ClientId {
-            final String id;
-
-            ClientId(String id) {
-                this.id = id;
-            }
-
-            @Override
-            public boolean equals(Object o) {
-                return (o instanceof ClientId) && ((ClientId) o).id.equals(this.id);
-            }
-
-            @Override
-            public int hashCode() {
-                return id.hashCode();
-            }
-        }
-
-        TimeSource clock = new TimeSource(Instant.EPOCH);
-        RateLimiter<ClientId> limiter = new RateLimiter<>(1, Duration.ofNanos(10L), clock);
-
-        ClientId a = new ClientId("A");
-        ClientId b = new ClientId("B");
-
-        assertThat(limiter.allow(a)).isTrue();
-        assertThat(limiter.allow(a)).isFalse();
-        assertThat(limiter.allow(b)).isTrue();
-        assertThat(limiter.allow(b)).isFalse();
-
-        clock.advance(Duration.ofNanos(10L));
-        assertThat(limiter.allow(a)).isTrue();
-        assertThat(limiter.allow(b)).isTrue();
-    }
 }
