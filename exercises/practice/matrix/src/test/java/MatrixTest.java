@@ -11,7 +11,7 @@ public class MatrixTest {
     public void extractRowFromOneNumberMatrixTest() {
         String matrixAsString = "1";
         int rowIndex = 1;
-        int[] expectedRow = { 1 };
+        int[] expectedRow = {1};
 
         Matrix matrix = new Matrix(matrixAsString);
 
