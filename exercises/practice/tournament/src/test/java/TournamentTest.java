@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,6 +15,7 @@ public class TournamentTest {
     }
 
     @Test
+    @DisplayName("just the header if no input")
     public void justTheHeaderIfNoInput() {
         assertThat(tournament.printTable())
                 .isEqualTo("Team                           | MP |  W |  D |  L |  P\n");
@@ -21,6 +23,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("a win is three points, a loss is zero points")
     public void aWinIsThreePointsALossIsZeroPoints() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;win");
         assertThat(tournament.printTable())
@@ -32,6 +35,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("a win can also be expressed as a loss")
     public void aWinCanAlsoBeExpressedAsALoss() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;loss");
         assertThat(tournament.printTable())
@@ -43,6 +47,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("a different team can win")
     public void aDifferentTeamCanWin() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;win");
         assertThat(tournament.printTable())
@@ -54,6 +59,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("a draw is one point each")
     public void aDrawIsOnePointEach() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;draw");
         assertThat(tournament.printTable())
@@ -65,6 +71,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("There can be more than one match")
     public void thereCanBeMoreThanOneMatch() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -78,6 +85,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("There can be more than one winner")
     public void thereCanBeMoreThanOneWinner() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
@@ -91,6 +99,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("There can be more than two teams")
     public void thereCanBeMoreThanTwoTeams() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -106,6 +115,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("typical input")
     public void typicalInput() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;win\n" +
@@ -125,6 +135,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("incomplete competition (not all pairs have played)")
     public void incompleteCompetition() {
         tournament.applyResults(
                 "Allegoric Alaskans;Blithering Badgers;loss\n" +
@@ -142,6 +153,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ties broken alphabetically")
     public void tiesBrokenAlphabetically() {
         tournament.applyResults(
                 "Courageous Californians;Devastating Donkeys;win\n" +
@@ -161,6 +173,7 @@ public class TournamentTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ensure points sorted numerically")
     public void pointsSortedNumerically() {
         tournament.applyResults(
                 "Devastating Donkeys;Blithering Badgers;win\n" +
