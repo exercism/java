@@ -15,9 +15,9 @@ Once the window resets, the allowance refreshes for the next window.
 Each client is tracked separately, so another client can make requests within that same period.
 
 For example, consider a rate limiter configured to limit 2 requests per 10 seconds per client.
-Lets say a client sends a request: 
+Lets say a client sends a request:
 
 - Being its first request, the request is permitted.
 - A second request within 10 seconds after the first one is also permitted.
 - However, further requests after that would be denied _until_ at least 10 seconds has elapsed since the first request.
-- If a second client sends its first request within 10 seconds with of the first client's first request, it would also be permitted, _regardless_ of whether the first client has sent a second request. 
+- If a second client sends its first request within 10 seconds with of the first client's first request, it would also be permitted, _regardless_ of whether the first client has sent a second request.

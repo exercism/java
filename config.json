@@ -815,7 +815,9 @@
         "name": "rate-limiter",
         "uuid": "b4b0c60e-4ce1-488e-948f-bcb6821c773c",
         "practices": [],
-        "prerequisites": ["generic-types"],
+        "prerequisites": [
+          "generic-types"
+        ],
         "difficulty": 4
       },
       {
