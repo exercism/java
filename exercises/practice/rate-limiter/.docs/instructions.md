@@ -1,3 +1,5 @@
+# Instructions
+
 Your task is to build a fixed‑window rate limiter.
 
 Imagine a single server connected to one or more clients.
