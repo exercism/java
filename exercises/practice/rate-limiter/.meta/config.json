@@ -1,5 +1,7 @@
 {
-  "authors": ["andreatanky"],
+  "authors": [
+    "andreatanky"
+  ],
   "files": {
     "solution": [
       "src/main/java/RateLimiter.java"
