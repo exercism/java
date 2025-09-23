@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ public class RobotTest {
     /* Create robot */
 
     @Test
+    @DisplayName("at origin facing north")
     public void atOriginFacingNorth() {
         Orientation initialOrientation = Orientation.NORTH;
         GridPosition initialGridPosition = new GridPosition(0, 0);
@@ -19,6 +21,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("at negative position facing south")
     public void atNegativePositionFacingSouth() {
         GridPosition initialGridPosition = new GridPosition(-1, -1);
         Orientation initialOrientation = Orientation.SOUTH;
@@ -32,6 +35,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes north to east")
     public void changesNorthToEast() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
@@ -45,6 +49,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes east to south")
     public void changesEastToSouth() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.EAST);
@@ -58,6 +63,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes south to west")
     public void changesSouthToWest() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.SOUTH);
@@ -71,6 +77,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes west to north")
     public void changesWestToNorth() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.WEST);
@@ -86,6 +93,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes north to west")
     public void changesNorthToWest() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
@@ -99,6 +107,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes west to south")
     public void changesWestToSouth() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.WEST);
@@ -112,6 +121,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes south to east")
     public void changesSouthToEast() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.SOUTH);
@@ -125,6 +135,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("changes east to north")
     public void changesEastToNorth() {
         GridPosition initialGridPosition = new GridPosition(0, 0);
         Robot robot = new Robot(initialGridPosition, Orientation.EAST);
@@ -140,6 +151,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("facing north increments Y")
     public void facingNorthIncrementsY() {
         Orientation initialOrientation = Orientation.NORTH;
         Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
@@ -153,6 +165,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("facing south decrements Y")
     public void facingSouthDecrementsY() {
         Orientation initialOrientation = Orientation.SOUTH;
         Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
@@ -166,6 +179,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("facing east increments X")
     public void facingEastIncrementsX() {
         Orientation initialOrientation = Orientation.EAST;
         Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
@@ -179,6 +193,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("facing west decrements X")
     public void facingWestDecrementsX() {
         Orientation initialOrientation = Orientation.WEST;
         Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
@@ -194,6 +209,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("moving east and north from README")
     public void movingEastAndNorthFromReadme() {
         Robot robot = new Robot(new GridPosition(7, 3), Orientation.NORTH);
 
@@ -209,6 +225,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("moving west and north")
     public void movingWestAndNorth() {
         Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
 
@@ -223,6 +240,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("moving west and south")
     public void movingWestAndSouth() {
         Robot robot = new Robot(new GridPosition(2, -7), Orientation.EAST);
 
@@ -237,6 +255,7 @@ public class RobotTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("moving east and north")
     public void movingEastAndNorth() {
         Robot robot = new Robot(new GridPosition(8, 4), Orientation.SOUTH);
 
