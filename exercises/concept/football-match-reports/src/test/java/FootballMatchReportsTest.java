@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class FootballMatchReportsTest {
 
@@ -68,17 +67,15 @@ public class FootballMatchReportsTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The onField method throws IllegalArgumentException for unknown shirt number")
+    @DisplayName("The onField method returns 'invalid' for invalid shirt number")
     public void test_exception() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> FootballMatchReports.onField(13));
+        assertThat(FootballMatchReports.onField(13)).isEqualTo("invalid");
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The onField method throws IllegalArgumentException for negative shirt number")
+    @DisplayName("The onField method returns 'invalid' for negative shirt number")
     public void test_exception_negative_number() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> FootballMatchReports.onField(-1));
+        assertThat(FootballMatchReports.onField(-1)).isEqualTo("invalid");
     }
 }

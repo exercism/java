@@ -30,7 +30,7 @@ public class FootballMatchReports {
                 playerDescription = "striker";
                 break;
             default:
-                throw new IllegalArgumentException();
+                playerDescription = "invalid";
         }
         return playerDescription;
     }
