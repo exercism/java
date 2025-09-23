@@ -173,7 +173,8 @@ public class LuhnValidatorTest {
      */
     @Disabled("Remove to run test")
     @Test
-    public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
+    @DisplayName("string containing symbols is invalid (Java track specific)")
+    public void testStringContainingSymbolsIsInvalidJavaTrackSpecific() {
         assertThat(luhnValidator.isValid("85&")).isFalse();
     }
 }
