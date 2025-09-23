@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.time.Instant;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RateLimiterTest {
 
     @Test
+    @DisplayName("Allows up to window limit")
     void allowsUpToLimit() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<String> limiter = new RateLimiter<>(3, Duration.ofNanos(10_000L), clock);
@@ -23,6 +25,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Denies requests just before boundary")
     void denyCloseToBoundary() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(10_000L), clock);
@@ -38,6 +41,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Allows first request at exact boundary")
     void allowsNewBoundary() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(10_000L), clock);
@@ -53,6 +57,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Resets at boundary, then counts within window")
     void continuesCountingWithinWindowAfterBoundaryReset() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(5_000L), clock);
@@ -71,6 +76,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Independent counters/windows per key")
     void separateKeysHaveIndependentCountersAndWindows() {
         TimeSource clock = new TimeSource(Instant.EPOCH.plusNanos(42L));
         RateLimiter<String> limiter = new RateLimiter<>(1, Duration.ofNanos(100L), clock);
@@ -89,6 +95,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Long gaps reset window")
     void longGapsResetWindow() {
         TimeSource clock = new TimeSource(Instant.EPOCH.plusNanos(1_000L));
         RateLimiter<String> limiter = new RateLimiter<>(2, Duration.ofNanos(50L), clock);
@@ -107,6 +114,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Exact boundary starts a new window each time")
     void exactBoundaryIsNewWindowEveryTime() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<String> limiter = new RateLimiter<>(1, Duration.ofNanos(10L), clock);
@@ -125,6 +133,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Supports UUID keys with mixed time units")
     void supportsUuidKeys() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         // Use a seconds-long window and advance in smaller units to mix Duration usage
@@ -148,6 +157,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Supports Integer keys")
     void supportsIntegerKeys() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<Integer> limiter = new RateLimiter<>(1, Duration.ofNanos(100L), clock);
@@ -165,6 +175,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Supports Long keys")
     void supportsLongKeys() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<Long> limiter = new RateLimiter<>(2, Duration.ofNanos(50L), clock);
