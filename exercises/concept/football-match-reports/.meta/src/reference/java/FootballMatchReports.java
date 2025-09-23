@@ -30,7 +30,7 @@ public class FootballMatchReports {
                 playerDescription = "striker";
                 break;
             default:
-                playerDescription = "unknown";
+                playerDescription = "invalid";
         }
         return playerDescription;
     }

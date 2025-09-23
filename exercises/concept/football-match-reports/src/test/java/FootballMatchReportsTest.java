@@ -67,15 +67,15 @@ public class FootballMatchReportsTest {
 
     @Test
     @Tag("task:2")
-    @DisplayName("The onField method returns 'unknown' for unknown shirt number")
+    @DisplayName("The onField method returns 'invalid' for invalid shirt number")
     public void test_exception() {
-        assertThat(FootballMatchReports.onField(13)).isEqualTo("unknown");
+        assertThat(FootballMatchReports.onField(13)).isEqualTo("invalid");
     }
 
     @Test
     @Tag("task:2")
-    @DisplayName("The onField method returns 'unknown' for negative shirt number")
+    @DisplayName("The onField method returns 'invalid' for negative shirt number")
     public void test_exception_negative_number() {
-        assertThat(FootballMatchReports.onField(-1)).isEqualTo("unknown");
+        assertThat(FootballMatchReports.onField(-1)).isEqualTo("invalid");
     }
 }
