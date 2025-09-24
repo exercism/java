@@ -811,6 +811,16 @@
         "difficulty": 4
       },
       {
+        "slug": "rate-limiter",
+        "name": "Rate Limiter",
+        "uuid": "b4b0c60e-4ce1-488e-948f-bcb6821c773c",
+        "practices": [],
+        "prerequisites": [
+          "generic-types"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "9eb41883-55ef-4681-b5ac-5c2259302772",
