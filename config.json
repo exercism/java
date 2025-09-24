@@ -812,7 +812,7 @@
       },
       {
         "slug": "rate-limiter",
-        "name": "rate-limiter",
+        "name": "Rate Limiter",
         "uuid": "b4b0c60e-4ce1-488e-948f-bcb6821c773c",
         "practices": [],
         "prerequisites": [
