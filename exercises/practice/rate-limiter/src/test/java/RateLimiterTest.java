@@ -133,7 +133,7 @@ class RateLimiterTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Supports UUID keys with mixed time units")
+    @DisplayName("Supports UUID keys")
     void supportsUuidKeys() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
         RateLimiter<UUID> limiter = new RateLimiter<>(1, Duration.ofSeconds(1L), clock);
