@@ -136,7 +136,6 @@ class RateLimiterTest {
     @DisplayName("Supports UUID keys with mixed time units")
     void supportsUuidKeys() {
         TimeSource clock = new TimeSource(Instant.EPOCH);
-        // Use a seconds-long window and advance in smaller units to mix Duration usage
         RateLimiter<UUID> limiter = new RateLimiter<>(1, Duration.ofSeconds(1L), clock);
 
         UUID a = UUID.fromString("00000000-0000-0000-0000-000000000001");
