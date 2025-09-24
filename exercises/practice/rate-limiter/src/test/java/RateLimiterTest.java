@@ -16,7 +16,6 @@ class RateLimiterTest {
         RateLimiter<String> limiter = new RateLimiter<>(3, Duration.ofNanos(10_000L), clock);
 
         assertThat(limiter.allow("A")).isTrue();
-        // Advance minimally to model time passage between requests
         clock.advance(Duration.ofNanos(1L));
         assertThat(limiter.allow("A")).isTrue();
         assertThat(limiter.allow("A")).isTrue();
