@@ -11,5 +11,7 @@ jobs:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
         with:
           fetch-depth: 0
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
       - name: Test deprecated exercises using test-deprecated-exercises
         run: bin/test-deprecated-exercises

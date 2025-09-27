@@ -17,30 +17,23 @@ changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
 changed_exercises=$(echo "$changed_files" | grep -E '^exercises/(practice|concept)/' || true)
 changed_exercises=$(echo "$changed_exercises" | cut -d/ -f1-3 | sort -u)
 
-echo "$changed_exercises"
-
+# Early exit if no exercise changed
 if [ -z "$changed_exercises" ]; then
   echo "No exercises changed!"
   exit 0
 fi
 
-# Deprecated practice exercises
-deprecated_exercises=(
-  "exercises/practice/accumulate"
-  "exercises/practice/beer-song"
-  "exercises/practice/binary"
-  "exercises/practice/diffie-hellman"
-  "exercises/practice/hexadecimal"
-  "exercises/practice/minesweeper"
-  "exercises/practice/octal"
-  "exercises/practice/strain"
-  "exercises/practice/trinary"
-  "exercises/concept/play-your-cards"
-)
+# Load deprecated exercises from config.json
+deprecated_exercises=$(jq -r '
+  [ 
+    (.exercises.concept[]? | select(.status=="deprecated") | "exercises/concept/" + .slug),
+    (.exercises.practice[]? | select(.status=="deprecated") | "exercises/practice/" + .slug)
+  ] | .[]
+' config.json)
 
 # Check for deprecated ones
 for ex in $changed_exercises; do
-  if printf '%s\n' "${deprecated_exercises[@]}" | grep -qx "$ex"; then
+  if echo "$deprecated_exercises" | grep -qx "$ex"; then
     echo "❌ Deprecated exercise changed: $ex"
     exit 1
   fi
