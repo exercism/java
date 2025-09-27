@@ -14,9 +14,8 @@ MERGE_BASE=$(git merge-base HEAD origin/"$BASE_BRANCH")
 changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
 
 # Extract unique exercise directories
-changed_exercises=$(echo "$changed_files" | \
-  grep -E '^exercises/(practice|concept)/' | \
-  cut -d/ -f1-3 | sort -u)
+changed_exercises=$(echo "$changed_files" | grep -E '^exercises/(practice|concept)/' || true)
+changed_exercises=$(echo "$changed_exercises" | cut -d/ -f1-3 | sort -u)
 
 echo "$changed_exercises"
 
