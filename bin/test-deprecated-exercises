@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+# Determine the base branch of the PR
+BASE_BRANCH=${GITHUB_BASE_REF:-main}
+
+# Fetch full history for proper diff
+git fetch origin "$BASE_BRANCH"
+
+# Compute merge base
+MERGE_BASE=$(git merge-base HEAD origin/"$BASE_BRANCH")
+
+# Get changed files relative to merge base
+changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
+
+# Extract unique exercise directories
+changed_exercises=$(echo "$changed_files" | \
+  grep -E '^exercises/(practice|concept)/' | \
+  cut -d/ -f1-3 | sort -u)
+
+echo "$changed_exercises"
+
+if [ -z "$changed_exercises" ]; then
+  echo "No exercises changed!"
+  exit 0
+fi
+
+# Deprecated practice exercises
+deprecated_exercises=(
+  "exercises/practice/accumulate"
+  "exercises/practice/beer-song"
+  "exercises/practice/binary"
+  "exercises/practice/diffie-hellman"
+  "exercises/practice/hexadecimal"
+  "exercises/practice/minesweeper"
+  "exercises/practice/octal"
+  "exercises/practice/strain"
+  "exercises/practice/trinary"
+  "exercises/concept/play-your-cards"
+)
+
+# Check for deprecated ones
+for ex in $changed_exercises; do
+  if printf '%s\n' "${deprecated_exercises[@]}" | grep -qx "$ex"; then
+    echo "❌ Deprecated exercise changed: $ex"
+    exit 1
+  fi
+done
+
+echo "✅ No deprecated exercises changed!"
