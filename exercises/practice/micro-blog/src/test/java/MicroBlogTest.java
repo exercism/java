@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MicroBlogTest {
 
     private final MicroBlog microBlog = new MicroBlog();
-    
+
     @Test
     @DisplayName("English language short")
     public void englishLanguageShort() {
@@ -22,11 +22,11 @@ public class MicroBlogTest {
         String expected = "Hello";
         assertThat(microBlog.truncate("Hello there")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("German language short (broth)")
-    public void germanLanguageShort_broth() {
+    public void germanLanguageShortBroth() {
         String expected = "brühe";
         assertThat(microBlog.truncate("brühe")).isEqualTo(expected);
     }
@@ -34,15 +34,15 @@ public class MicroBlogTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("German language long (bear carpet → beards)")
-    public void germanLanguageLong_bearCarpet_to_beards() {
+    public void germanLanguageLongBearCarpetToBeards() {
         String expected = "Bärte";
         assertThat(microBlog.truncate("Bärteppich")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Bulgarian language short (good)")
-    public void bulgarianLanguageShort_good() {
+    public void bulgarianLanguageShortGood() {
         String expected = "Добър";
         assertThat(microBlog.truncate("Добър")).isEqualTo(expected);
     }
@@ -50,11 +50,11 @@ public class MicroBlogTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Greek language short (health)")
-    public void greekLanguageShort_health() {
+    public void greekLanguageShortHealth() {
         String expected = "υγειά";
         assertThat(microBlog.truncate("υγειά")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Maths short")
@@ -70,7 +70,7 @@ public class MicroBlogTest {
         String expected = "∅⊊ℕ⊊ℤ";
         assertThat(microBlog.truncate("∅⊊ℕ⊊ℤ⊊ℚ⊊ℝ⊊ℂ")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("English and emoji short")
@@ -78,7 +78,7 @@ public class MicroBlogTest {
         String expected = "Fly 🛫";
         assertThat(microBlog.truncate("Fly 🛫")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Emoji short")
@@ -86,7 +86,7 @@ public class MicroBlogTest {
         String expected = "💇";
         assertThat(microBlog.truncate("💇")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Emoji long")
@@ -94,7 +94,7 @@ public class MicroBlogTest {
         String expected = "❄🌡🤧🤒🏥";
         assertThat(microBlog.truncate("❄🌡🤧🤒🏥🕰😀")).isEqualTo(expected);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Royal Flush?")

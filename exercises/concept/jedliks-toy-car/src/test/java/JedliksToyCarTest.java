@@ -8,7 +8,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:1")
     @DisplayName("The static buy method returns a new remote controlled car instance")
-    public void buy_new_car_returns_instance() {
+    public void buyNewCarReturnsInstance() {
         JedliksToyCar car = JedliksToyCar.buy();
         assertThat(car).isNotNull();
     }
@@ -16,7 +16,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:1")
     @DisplayName("The static buy method returns each time a new remote controlled car instance")
-    public void buy_new_car_returns_new_car_each_time() {
+    public void buyNewCarReturnsNewCarEachTime() {
         JedliksToyCar car1 = JedliksToyCar.buy();
         JedliksToyCar car2 = JedliksToyCar.buy();
         assertThat(car1).isNotEqualTo(car2);
@@ -25,7 +25,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:2")
     @DisplayName("The distanceDisplay method shows 0 meters message on a new car")
-    public void new_car_distance_display() {
+    public void newCarDistanceDisplay() {
         JedliksToyCar car = new JedliksToyCar();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 0 meters");
     }
@@ -33,7 +33,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:3")
     @DisplayName("The batteryDisplay method shows full battery message on a new car")
-    public void new_car_battery_display() {
+    public void newCarBatteryDisplay() {
         JedliksToyCar car = new JedliksToyCar();
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 100%");
     }
@@ -41,7 +41,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:4")
     @DisplayName("The distanceDisplay method shows the correct message after driving once")
-    public void distance_display_after_driving_once() {
+    public void distanceDisplayAfterDrivingOnce() {
         JedliksToyCar car = new JedliksToyCar();
         car.drive();
         assertThat(car.distanceDisplay()).isEqualTo("Driven 20 meters");
@@ -50,7 +50,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:4")
     @DisplayName("The distanceDisplay method shows the correct message after driving multiple times")
-    public void distance_display_after_driving_multiple_times() {
+    public void distanceDisplayAfterDrivingMultipleTimes() {
         JedliksToyCar car = new JedliksToyCar();
 
         for (int i = 0; i < 17; i++) {
@@ -63,17 +63,17 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:5")
     @DisplayName("The batteryDisplay method shows the correct message after driving once")
-    public void battery_display_after_driving_once() {
+    public void batteryDisplayAfterDrivingOnce() {
         JedliksToyCar car = new JedliksToyCar();
         car.drive();
-        
+
         assertThat(car.batteryDisplay()).isEqualTo("Battery at 99%");
     }
 
     @Test
     @Tag("task:5")
     @DisplayName("The batteryDisplay method shows the correct battery percentage after driving multiple times")
-    public void battery_display_after_driving_multiple_times() {
+    public void batteryDisplayAfterDrivingMultipleTimes() {
         JedliksToyCar car = new JedliksToyCar();
 
         for (int i = 0; i < 23; i++) {
@@ -86,7 +86,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:5")
     @DisplayName("The batteryDisplay method shows battery empty after draining all battery")
-    public void battery_display_when_battery_empty() {
+    public void batteryDisplayWhenBatteryEmpty() {
         JedliksToyCar car = new JedliksToyCar();
 
         // Drain the battery
@@ -103,7 +103,7 @@ public class JedliksToyCarTest {
     @Test
     @Tag("task:6")
     @DisplayName("The distanceDisplay method shows the correct message after driving and draining all battery")
-    public void distance_display_when_battery_empty() {
+    public void distanceDisplayWhenBatteryEmpty() {
         JedliksToyCar car = new JedliksToyCar();
 
         // Drain the battery
