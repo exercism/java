@@ -209,7 +209,7 @@ Each problem/submodule has three source sets:
 
 ### Update/sync Gradle versions
 
-Please read [How to Update Gradle](../reference/how-to-update-gradle.md)
+Please read [How to Update Gradle](reference/how-to-update-gradle.md)
 
 ## Contributing to Concept Exercises
 
