@@ -3,12 +3,14 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.List;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SatelliteTest {
     Satellite satellite = new Satellite();
 
     @Test
+    @DisplayName("Empty tree")
     public void emptyTree() {
         List<Character> preorder = List.of();
         List<Character> inorder = List.of();
@@ -22,6 +24,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Tree with one item")
     public void treeWithOneItem() {
         List<Character> preorder = List.of('a');
         List<Character> inorder = List.of('a');
@@ -35,6 +38,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Tree with many items")
     public void treeWithManyItems() {
         List<Character> preorder = List.of('a', 'i', 'x', 'f', 'r');
         List<Character> inorder = List.of('i', 'a', 'f', 'x', 'r');
@@ -48,6 +52,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reject traversals of different length")
     public void rejectTraversalsOfDifferentLengths() {
         List<Character> preorder = List.of('a', 'b');
         List<Character> inorder = List.of('b', 'a', 'r');
@@ -60,6 +65,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reject inconsistent traversals of same length")
     public void rejectInconsistentTraversalsOfSameLength() {
         List<Character> preorder = List.of('x', 'y', 'z');
         List<Character> inorder = List.of('a', 'b', 'c');
@@ -71,6 +77,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reject traversals with repeated items")
     public void rejectTraversalsWithRepeatedItems() {
         List<Character> preorder = List.of('a', 'b', 'a');
         List<Character> inorder = List.of('b', 'a', 'a');
