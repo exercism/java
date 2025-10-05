@@ -26,7 +26,7 @@ public class MicroBlogTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("German language short (broth)")
-    public void germanLanguageShort_broth() {
+    public void germanLanguageShortBroth() {
         String expected = "brühe";
         assertThat(microBlog.truncate("brühe")).isEqualTo(expected);
     }
@@ -34,7 +34,7 @@ public class MicroBlogTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("German language long (bear carpet → beards)")
-    public void germanLanguageLong_bearCarpet_to_beards() {
+    public void germanLanguageLongBearCarpetToBeards() {
         String expected = "Bärte";
         assertThat(microBlog.truncate("Bärteppich")).isEqualTo(expected);
     }
@@ -42,7 +42,7 @@ public class MicroBlogTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Bulgarian language short (good)")
-    public void bulgarianLanguageShort_good() {
+    public void bulgarianLanguageShortGood() {
         String expected = "Добър";
         assertThat(microBlog.truncate("Добър")).isEqualTo(expected);
     }
@@ -50,7 +50,7 @@ public class MicroBlogTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("Greek language short (health)")
-    public void greekLanguageShort_health() {
+    public void greekLanguageShortHealth() {
         String expected = "υγειά";
         assertThat(microBlog.truncate("υγειά")).isEqualTo(expected);
     }
