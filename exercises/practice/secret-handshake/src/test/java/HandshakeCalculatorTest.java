@@ -97,23 +97,23 @@ public class HandshakeCalculatorTest {
     @DisplayName("handles input with more than five bits with reversal")
     public void testThatHandlesMoreThanFiveBinaryPlacesWithReversal() {
         assertThat(handshakeCalculator.calculateHandshake(51))
-            .containsExactly(Signal.DOUBLE_BLINK, Signal.WINK);
+                .containsExactly(Signal.DOUBLE_BLINK, Signal.WINK);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("handles input with more than five bits without reversal")
     public void testThatHandlesMoreThanFiveBinaryPlacesWithoutReversal() {
         assertThat(handshakeCalculator.calculateHandshake(35))
-            .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK);
+                .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK);
     }
-    
+
     @Disabled("Remove to run test")
     @Test
     @DisplayName("all actions for input with more than five bits")
     public void testInputThatYieldsAllActionsFromMoreThanFiveBinaryPlaces() {
         assertThat(handshakeCalculator.calculateHandshake(111))
-            .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP);
+                .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP);
     }
 
 }
