@@ -121,8 +121,7 @@ public class SayTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("nine hundred eighty-seven billion six hundred " +
-            "fifty-four\nmillion three hundred twenty-one thousand one hundred twenty-three")
+    @DisplayName("a big number")
     public void nineHundredEightySevenBillionSixHundredFiftyFourThreeHundredTwentyOneThousandOneHundredTwentyThree() {
         assertThat(say.say(987_654_321_123L))
                 .isEqualTo("nine hundred eighty-seven billion six hundred fifty-four million" +
