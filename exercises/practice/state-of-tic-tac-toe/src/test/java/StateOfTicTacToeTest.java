@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,6 +15,7 @@ public class StateOfTicTacToeTest {
     }
     
     @Test
+    @DisplayName("Finished game where X won via left column victory")
     public void testFinishedGameWhereXWonViaLeftColumnVictory() {
 
         assertThat(
@@ -23,6 +25,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via middle column victory")
     public void testFinishedGameWhereXWonViaMiddleColumnVictory() {
 
         assertThat(
@@ -32,6 +35,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via right column victory")
     public void testFinishedGameWhereXWonViaRightColumnVictory() {
 
         assertThat(
@@ -41,6 +45,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via left column victory")
     public void testFinishedGameWhereOWonViaLeftColumnVictory() {
 
         assertThat(
@@ -50,6 +55,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via middle column victory")
     public void testFinishedGameWhereOWonViaMiddleColumnVictory() {
 
         assertThat(
@@ -59,6 +65,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via right column victory")
     public void testFinishedGameWhereOWonViaRightColumnVictory() {
 
         assertThat(
@@ -68,6 +75,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via top row victory")
     public void testFinishedGameWhereXWonViaTopRowVictory() {
 
         assertThat(
@@ -77,6 +85,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via middle row victory")
     public void testFinishedGameWhereXWonViaMiddleRowVictory() {
 
         assertThat(
@@ -86,6 +95,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via middle row victory")
     public void testFinishedGameWhereXWonViaBottomRowVictory() {
 
         assertThat(
@@ -95,6 +105,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via top row victory")
     public void testFinishedGameWhereOWonViaTopRowVictory() {
 
         assertThat(
@@ -104,6 +115,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via middle row victory")
     public void testFinishedGameWhereOWonViaMiddleRowVictory() {
 
         assertThat(
@@ -113,6 +125,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via bottom row victory")
     public void testFinishedGameWhereOWonViaBottomRowVictory() {
 
         assertThat(
@@ -122,6 +135,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via falling diagonal victory")
     public void testFinishedGameWhereXWonViaFallingDiagonalVictory() {
 
         assertThat(
@@ -131,6 +145,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via rising diagonal victory")
     public void testFinishedGameWhereXWonViaRisingDiagonalVictory() {
 
         assertThat(
@@ -140,6 +155,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via falling diagonal victory")
     public void testFinishedGameWhereOWonViaFallingDiagonalVictory() {
 
         assertThat(
@@ -149,6 +165,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where O won via rising diagonal victory")
     public void testFinishedGameWhereOWonViaRisingDiagonalVictory() {
 
         assertThat(
@@ -158,6 +175,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via a row and a column victory")
     public void testFinishedGameWhereXWonViaARowAndAColumnVictory() {
 
         assertThat(
@@ -167,6 +185,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Finished game where X won via two diagonal victories")
     public void testFinishedGameWhereXWonViaTwoDiagonalVictories() {
 
         assertThat(
@@ -176,6 +195,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Drawn games")
     public void testDraw() {
 
         assertThat(
@@ -185,6 +205,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Another draw")
     public void testAnotherDraw() {
         
         assertThat(
@@ -194,6 +215,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ongoing game: one move in")
     public void testOngoingGameOneMoveIn() {
 
         assertThat(
@@ -203,6 +225,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ongoing game: two moves in")
     public void testOngoingGameTwoMovesIn() {
 
         assertThat(
@@ -212,6 +235,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ongoing game: five moves in")
     public void testOngoingGameFiveMovesIn() {
 
         assertThat(
@@ -221,6 +245,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid board: X went twice")
     public void testInvalidBoardXWentTwice() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -230,6 +255,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid board: O started")
     public void testInvalidBoardOStarted() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -239,6 +265,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid board")
     public void testInvalidBoard() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -248,6 +275,7 @@ public class StateOfTicTacToeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Invalid board: players kept playing after a win")
     public void testInvalidBoardPlayersKeptPlayingAfterAWin() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
