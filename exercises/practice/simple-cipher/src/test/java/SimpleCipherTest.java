@@ -37,8 +37,10 @@ public class SimpleCipherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Is reversible. I.e., if you apply decode in a encoded result, \n" +
-            "you must see the same plaintext encode parameter as a result of the decode method")
+    @DisplayName(
+            "Is reversible. I.e., if you apply decode in a encoded result, " +
+                    "you must see the same plaintext encode parameter as a result of the decode method"
+    )
     public void randomKeyCipherIsReversible() {
         String plainText = "abcdefghij";
         assertThat(randomKeyCipher.decode(randomKeyCipher.encode(plainText))).isEqualTo(plainText);
