@@ -107,6 +107,8 @@ public class HandshakeCalculatorTest {
     public void testInputThatYieldsAllActionsFromMoreThanFiveBinaryPlaces() {
         assertThat(handshakeCalculator.calculateHandshake(111))
                 .containsExactly(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP);
+    }
+
     /* The following tests diverge from the canonical test data to test numbers with binary representation with 
      * more than five digits are correctly handled. For more details, check out issue #1965 here:
      * (https://github.com/exercism/java/issues/1965).
