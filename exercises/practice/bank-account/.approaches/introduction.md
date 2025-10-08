@@ -13,8 +13,8 @@ If the threads happen to start simultaneously, they might both see the account s
 They each add $10 to this amount and update the account accordingly.
 In this case, each thread sets the amount to $10 even though the transaction was made twice.
 
-The problem here is both threads saw that was $0 in the account prior to adding the deposit.
-Instead, each thread needs to take turn to process the deposit for the account so that they can process the transaction one at a time.
+The problem here is that both threads saw that there was $0 in the account prior to adding the deposit.
+Instead, each thread needs to take turns to process the deposit for the account so that they can process the transaction one at a time.
 This way, the later thread can "see" the deposited amount from the first thread.
 
 ## Approach: Synchronized methods
@@ -342,10 +342,10 @@ For more information, check the [Read write lock approach][approach-read-write-l
 
 - The synchronized methods is the simplest, requiring no extra objects to be created.
 - Synchronized statements provide greater control over which code statements are performed with a lock and which object is to be used as the lock.
-- The read write lock allows greater concurrency by letting multiple read operations, such as `getBalance`, to run in parallel.
+- The read write lock allows greater concurrency by letting multiple read operations, such as `getBalance`, run in parallel.
   However, it requires the lock to be explicitly released.
 
-[approach-read-write-lock]: https://exercism.org/tracks/java/exercises/bank-account/approaches/read-write-lock
+[approach-read-write-lock]: https://exercism.org/tracks/java/exercises/bank-account/approaches/readwrite-lock
 [approach-reentrant-lock]: https://exercism.org/tracks/java/exercises/bank-acconuunt/approaches/reentrant-lock
 [approach-synchronized-methods]: https://exercism.org/tracks/java/exercises/bank-account/approaches/synchronized-methods
 [approach-synchronized-statements]: https://exercism.org/tracks/java/exercises/bank-account/approaches/synchronzied-statements

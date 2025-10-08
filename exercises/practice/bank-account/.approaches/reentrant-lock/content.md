@@ -84,7 +84,7 @@ class BankAccount {
 ```
 
 A [ReentrantLock][docs-reentrantlock] object represents a lock that threads must acquire to perform certain operations.
-It used here by the operation methods to ensure they are not trying to update the bank account at the same time.
+It is used here by the operation methods to ensure they are not trying to update the bank account at the same time.
 
 The lock is requested by calling [lock][docs-reentrantlock-lock].
 The lock is released at the end of the operation by calling [unlock][docs-reentrantlock-unlock] in a `finally` block.

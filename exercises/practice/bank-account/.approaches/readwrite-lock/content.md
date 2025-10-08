@@ -85,10 +85,10 @@ class BankAccount {
 }
 ```
 
-A [ReadWriteLock][docs-readwritelock] provides two types of locks - one for reading the other for writing.
+A [ReadWriteLock][docs-readwritelock] provides two types of locks - one for reading, the other for writing.
 [ReentrantReadWriteLock][docs-reentrantreadwritelock] is an implementation of a [ReadWriteLock][docs-readwritelock].
 
-Read locks are intended for read only type operations, such as `getBalance`, and is acquired by calling `readLock().lock()` on the [ReadWriteLock][docs-readwritelock].
+Read locks are intended for read-only type operations, such as `getBalance`, and are acquired by calling `readLock().lock()` on the [ReadWriteLock][docs-readwritelock].
 Multiple threads are allowed to acquire read locks at the same time because they are expected to only read data.
 This means multiple threads can run `getBalance` at the same time.
 
@@ -99,7 +99,7 @@ Write locks are acquired by calling `writeLock().lock()` on the [ReadWriteLock][
 Only one thread can hold a write lock at a time.
 Therefore, `withdraw`, `deposit`, `open` and `close` can not run at the same time.
 Additionally, a thread must _also_ wait for _all_ read locks to be released to obtain a write lock.
-Similarly, threads must wait for write locks to be released before they granted a read lock.
+Similarly, threads must wait for write locks to be released before they are granted a read lock.
 This means `getBalance` also can not run at the same time as any of the `withdraw`, `deposit`, `open` and `close` methods.
 
 The locks are released in the `finally` block to ensure they are released, even when an exception is thrown.
