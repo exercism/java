@@ -93,7 +93,7 @@ int getBalance() throws BankAccountActionInvalidException {
 }
 ```
 
-This is the same as using a synchronized method.
+This is the same as using a [synchronized method][approach-synchronized-methods], which requires a lock on the same `this` object to run the method.
 For example:
 
 ```java
