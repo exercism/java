@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SieveTest {
 
     @Test
+    @DisplayName("no primes under two")
     public void noPrimesUnder2() {
         Sieve sieve = new Sieve(1);
         List<Integer> expectedOutput = Collections.emptyList();
@@ -19,6 +21,7 @@ public class SieveTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find first prime")
     public void findFirstPrime() {
         Sieve sieve = new Sieve(2);
         List<Integer> expectedOutput = Collections.singletonList(2);
@@ -28,6 +31,7 @@ public class SieveTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find primes up to 10")
     public void findPrimesUpTo10() {
         Sieve sieve = new Sieve(10);
         List<Integer> expectedOutput = Arrays.asList(2, 3, 5, 7);
@@ -37,6 +41,7 @@ public class SieveTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("limit is prime")
     public void limitIsPrime() {
         Sieve sieve = new Sieve(13);
         List<Integer> expectedOutput = Arrays.asList(2, 3, 5, 7, 11, 13);
@@ -46,6 +51,7 @@ public class SieveTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find primes up to 1000")
     public void findPrimesUpTo1000() {
         Sieve sieve = new Sieve(1000);
         List<Integer> expectedOutput = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
