@@ -103,7 +103,7 @@ synchronized int getBalance() throws BankAccountActionInvalidException {
 }
 ```
 
-When using [synchronized methods][approach-synchronized-methods] and `synchronized(this)`, it is important to keep in mind that may be trying to acquire a lock on the same instance.
+When using [synchronized methods][approach-synchronized-methods] and `synchronized(this)`, it is important to keep in mind that it may be trying to acquire a lock on the same instance.
 For example:
 
 ```java
