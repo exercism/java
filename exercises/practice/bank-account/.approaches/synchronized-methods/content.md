@@ -69,7 +69,7 @@ If any other thread holds a lock on the `BankAccount` object, it must wait for t
 
 ~~~~exercism/note
 In Java, the is one other way to acquire a lock on the `BankAccount` object - [synchronized statements][approach-synchronized-statements].
-Since synchronized methods uses a lock on the `BankAccount` object, it will also have to wait for locks on the `BankAccount` that are used by [synchronized statements][approach-synchronized-statements] to be reused.
+Since synchronized methods use a lock on the `BankAccount` object, it will also have to wait for locks on the `BankAccount` that are used by [synchronized statements][approach-synchronized-statements] to be reused.
 
 [approach-synchronized-statements]: https://exercism.org/tracks/java/exercises/bank-account/approaches/synchronzied-statements
 ~~~~
