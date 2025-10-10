@@ -27,7 +27,7 @@
       "uuid": "0acd6f2b-27d0-4ae6-9c22-22b0b2047039",
       "slug": "reentrant-lock",
       "title": "Reentrant lock",
-      "blurb": "Use ",
+      "blurb": "Use an ReentrantLock to explicitly acquire and release locks",
       "authors": [
         "kahgoh"
       ]
