@@ -47,11 +47,9 @@ for dir in $changed_exercises; do
   mkdir -p "$(dirname "$results_path")"
 
   if [[ $dir == exercises/practice/* ]]; then
-    ./exercises/gradlew -p exercises ":practice:$slug:test" \
-      > "$results_path" 2>&1
+    ./exercises/gradlew -p exercises ":practice:$slug:test" 2>&1 | tee "$results_path"
   elif [[ $dir == exercises/concept/* ]]; then
-    ./exercises/gradlew -p exercises ":concept:$slug:test" \
-      > "$results_path" 2>&1
+    ./exercises/gradlew -p exercises ":concept:$slug:test" 2>&1 | tee "$results_path"
   fi
 
   echo "Results saved to: $results_path"
