@@ -11,7 +11,7 @@ public class ClockAddTest {
     @DisplayName("add minutes")
     public void addMinutes() {
         Clock clock = new Clock(10, 0);
-        clock.add(3);
+        clock.add(4);
 
         assertThat(clock.toString()).isEqualTo("10:03");
     }
