@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,6 +14,7 @@ public class TwelveDaysTest {
     }
 
     @Test
+    @DisplayName("first day a partridge in a pear tree")
     public void testVerseOne() {
         String expectedVerseOne = "On the first day of Christmas my true love gave to me: " +
                 "a Partridge in a Pear Tree.\n";
@@ -21,6 +23,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("second day two turtle doves")
     public void testVerseTwo() {
         String expectedVerseTwo = "On the second day of Christmas my true love gave to me: two Turtle Doves, " +
                 "and a Partridge in a Pear Tree.\n";
@@ -29,6 +32,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("third day three french hens")
     public void testVerseThree() {
         String expectedVerseThree = "On the third day of Christmas my true love gave to me: three French Hens, " +
                 "two Turtle Doves, and a Partridge in a Pear Tree.\n";
@@ -37,6 +41,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("fourth day four calling birds")
     public void testVerseFour() {
         String expectedVerseFour = "On the fourth day of Christmas my true love gave to me: four Calling Birds, " +
                 "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
@@ -45,6 +50,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("fifth day five gold rings")
     public void testVerseFive() {
         String expectedVerseFive = "On the fifth day of Christmas my true love gave to me: five Gold Rings, " +
                 "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
@@ -53,6 +59,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("sixth day six geese-a-laying")
     public void testVerseSix() {
         String expectedVerseSix = "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, " +
                 "five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, " +
@@ -62,6 +69,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("seventh day seven swans-a-swimming")
     public void testVerseSeven() {
         String expectedVerseSeven = "On the seventh day of Christmas my true love gave to me: " +
                 "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, " +
@@ -71,6 +79,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("eighth day eight maids-a-milking")
     public void testVerseEight() {
         String expectedVerseEight = "On the eighth day of Christmas my true love gave to me: eight Maids-a-Milking," +
                 " seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
@@ -80,6 +89,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ninth day nine ladies dancing")
     public void testVerseNine() {
         String expectedVerseNine = "On the ninth day of Christmas my true love gave to me: nine Ladies Dancing, " +
                 "eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, " +
@@ -89,6 +99,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("tenth day ten lords-a-leaping")
     public void testVerseTen() {
         String expectedVerseTen = "On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, " +
                 "nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, " +
@@ -99,6 +110,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("eleventh day eleven pipers piping")
     public void testVerseEleven() {
         String expectedVerseEleven = "On the eleventh day of Christmas my true love gave to me: " +
                 "eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, " +
@@ -109,6 +121,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("twelfth day twelve drummers drumming")
     public void testVerseTwelve() {
         String expectedVerseTwelve = "On the twelfth day of Christmas my true love gave to me: " +
                 "twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, " +
@@ -119,6 +132,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("recites first three verses of the song")
     public void testFirstThreeVerses() {
         String expectedVersesOneToThree = "On the first day of Christmas my true love gave to me: " +
                 "a Partridge in a Pear Tree.\n\n" +
@@ -131,6 +145,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("recites three verses from the middle of the song")
     public void testFourthToSixthVerses() {
         String expectedVersesFourToSix = "On the fourth day of Christmas my true love gave to me: " + 
                 "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
@@ -143,6 +158,7 @@ public class TwelveDaysTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("recites the whole song")
     public void testSingWholeSong() {
         String expectedSong = "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.\n" +
                 "\n" +
