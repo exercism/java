@@ -43,9 +43,12 @@ for dir in $changed_exercises; do
   echo "=== Running tests for $slug ==="
   echo "========================================"
 
+  results_path="$dir/build/results.txt"
+  mkdir -p "$(dirname "$results_path")"
+
   if [[ $dir == exercises/practice/* ]]; then
-    ./exercises/gradlew -p exercises ":practice:$slug:test"
+    ./exercises/gradlew -p exercises ":practice:$slug:test" 2>&1 | tee "$results_path"
   elif [[ $dir == exercises/concept/* ]]; then
-    ./exercises/gradlew -p exercises ":concept:$slug:test"
+    ./exercises/gradlew -p exercises ":concept:$slug:test" 2>&1 | tee "$results_path"
   fi
 done
