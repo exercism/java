@@ -126,7 +126,7 @@ public class TriangleTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("")
+    @DisplayName("no sides are equal")
     public void scaleneTrianglesHaveNoEqualSides() throws TriangleException {
         Triangle triangle = new Triangle(5, 4, 6);
 
@@ -135,7 +135,7 @@ public class TriangleTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("no sides are equal")
+    @DisplayName("all sides are equal")
     public void allSidesEqualAreNotScalene() throws TriangleException {
         Triangle triangle = new Triangle(4, 4, 4);
 
