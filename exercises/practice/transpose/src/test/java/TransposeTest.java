@@ -160,7 +160,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("")
+    @DisplayName("square")
     public void square() {
         assertThat(
             transpose.transpose(
@@ -179,7 +179,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("square")
+    @DisplayName("rectangle")
     public void rectangle() {
         assertThat(
             transpose.transpose(
@@ -200,7 +200,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("rectangle")
+    @DisplayName("triangle")
     public void triangle() {
         assertThat(
             transpose.transpose(
