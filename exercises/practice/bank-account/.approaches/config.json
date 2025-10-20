@@ -1,0 +1,45 @@
+{
+  "introduction": {
+    "authors": [
+      "kahgoh"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "78d753b0-aa58-43dc-83c0-9ea41496de84",
+      "slug": "synchronized-methods",
+      "title": "Synchronized methods",
+      "blurb": "Use synchronized methods to prevent methods from running simultaneously in different threads",
+      "authors": [
+        "kahgoh"
+      ]
+    },
+    {
+      "uuid": "5f3b0152-02eb-40d5-9104-5edc30b4447e",
+      "slug": "synchronized-statements",
+      "title": "Synchronized statements",
+      "blurb": "Use an object to prevent threads from running blocks of code at the same time",
+      "authors": [
+        "kahgoh"
+      ]
+    },
+    {
+      "uuid": "0acd6f2b-27d0-4ae6-9c22-22b0b2047039",
+      "slug": "reentrant-lock",
+      "title": "Reentrant lock",
+      "blurb": "Use an ReentrantLock to explicitly acquire and release locks",
+      "authors": [
+        "kahgoh"
+      ]
+    },
+    {
+      "uuid": "4ad42f88-f750-4af9-bbbd-d8b2dc5e8078",
+      "slug": "readwrite-lock",
+      "title": "Readwrite lock",
+      "blurb": "Use separate read and write locks to achieve greater concurrency",
+      "authors": [
+        "kahgoh"
+      ]
+    }
+  ]
+}

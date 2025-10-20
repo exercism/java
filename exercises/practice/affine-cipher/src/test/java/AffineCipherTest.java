@@ -32,7 +32,7 @@ public class AffineCipherTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName("encode O M G")
-    public void testEncodeO_M_G() {
+    public void testEncodeOMGWithSpaces() {
         assertThat(affineCipher.encode("O M G", 25, 47)).isEqualTo("hjp");
     }
 

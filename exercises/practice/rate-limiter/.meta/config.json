@@ -15,6 +15,9 @@
     ],
     "editor": [
       "src/main/java/TimeSource.java"
+    ],
+    "invalidator": [
+      "build.gradle"
     ]
   },
   "blurb": "Practice stateful logic and time handling by implementing a fixed-window rate limiter"

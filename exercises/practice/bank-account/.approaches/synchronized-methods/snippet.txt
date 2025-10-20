@@ -1,0 +1,3 @@
+synchronized void deposit(int amount) throws BankAccountActionInvalidException {
+    balance += amount;
+}
