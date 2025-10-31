@@ -70,6 +70,20 @@ public class IsbnVerifierTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("only one check digit is allowed")
+    public void onlyOneCheckDigitIsAllowed() {
+        assertThat(isbnVerifier.isValid("3-598-21508-96")).isFalse();
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("X is not substituted by the value 10")
+    public void xIsNotSubstitutedByTheValue10() {
+        assertThat(isbnVerifier.isValid("3-598-2X507-5")).isFalse();
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     @DisplayName("valid isbn without separating dashes")
     public void validIsbnWithoutSeparatingDashes() {
         assertThat(isbnVerifier.isValid("3598215088")).isTrue();
