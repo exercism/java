@@ -74,8 +74,10 @@ public class CryptoSquareTest {
 
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
     }
+    // Legacy test from older canonical-data.json – consider removing if outdated
 
-    @Disabled("Remove to run test")
+
+    /*@Disabled("Remove to run test")
     @Test
     @DisplayName("54 character plaintext results in 7 chunks, the last two with trailing spaces")
     public void fiftyFourCharacterPlaintextResultsInSevenChunksWithTrailingSpaces() {
@@ -84,5 +86,15 @@ public class CryptoSquareTest {
         String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ";
 
         assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
-    }
+    }*/
+    @Disabled("Remove to run test")
+@Test
+public void fiftyFourCharacterPlaintextResultsInEightChunksWithTrailingSpaces() {
+    CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have " +
+            "given us roots.");
+    String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ";
+
+    assertThat(cryptoSquare.getCiphertext()).isEqualTo(expectedOutput);
+}
+
 }
