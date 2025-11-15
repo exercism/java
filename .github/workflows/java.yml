@@ -68,5 +68,7 @@ jobs:
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: test-results
-          path: exercises/**/build/results.txt
+          path: |
+            exercises/**/build/results.txt
+            exercises/**/build/results.json
         if: failure()
