@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
@@ -37,6 +38,7 @@ public class MazeGeneratorTest {
     }
 
     @Test
+    @DisplayName("Generated maze has correct overall dimensions")
     public void theDimensionsOfTheMazeAreCorrect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         var expectedWidth = RECTANGLE_COLUMNS * 2 + 1;
@@ -49,6 +51,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Maze contains only allowed characters")
     public void theMazeContainsOnlyValidCharacters() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
@@ -63,6 +66,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Maze has a single entrance on the left side")
     public void theMazeHasOnlyOneEntranceOnTheLeftSide() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         int entranceCount = countEntrances(maze);
@@ -74,6 +78,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Maze has a single exit on the right side")
     public void theMazeHasSingleExitOnTheRightSideOfTheMaze() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         int exitCount = countExits(maze);
@@ -85,6 +90,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Consecutive maze generations produce different mazes")
     public void aMazeIsDifferentEachTimeItIsGenerated() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
         var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
@@ -96,6 +102,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Mazes generated with same seed are identical")
     public void twoMazesWithSameSeedShouldBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
         var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
@@ -107,6 +114,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Mazes generated with different seeds are different")
     public void twoMazesWithDifferentSeedsShouldNotBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
         var maze2 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_TWO);
@@ -118,6 +126,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Generated maze is perfect (single path, no isolated cells)")
     public void theMazeIsPerfect() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
 
@@ -127,6 +136,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Generated maze with seed is perfect (single path, no isolated cells)")
     public void theMazeIsPerfectWithSeed() {
         var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
 
@@ -136,6 +146,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Throws when rows less than minimum allowed")
     public void shouldThrowExceptionWhenRowsIsLessThanFive() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(0, RECTANGLE_COLUMNS));
@@ -143,6 +154,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Throws when columns less than minimum allowed")
     public void shouldThrowExceptionWhenColumnsIsLessThanFive() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(RECTANGLE_ROWS, 0));
@@ -150,6 +162,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Throws when rows exceed maximum allowed")
     public void shouldThrowExceptionWhenRowsIsMoreThenHundred() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(101, RECTANGLE_COLUMNS));
@@ -157,6 +170,7 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Throws when columns exceed maximum allowed")
     public void shouldThrowExceptionWhenColumnsIsMoreThenHundred() {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> sut.generatePerfectMaze(RECTANGLE_ROWS, 101));
