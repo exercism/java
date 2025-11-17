@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ public class PiecingItTogetherTest {
     private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
 
     @Test
+    @DisplayName("Complete information from pieces and aspect ratio is calculated")
     public void test1000PiecesWithAspectRatio() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(1000)
@@ -30,6 +32,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Square puzzle specified by rows yields expected info")
     public void testSquarePuzzleWith32Rows() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(32)
@@ -52,6 +55,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Inside count and aspect ratio determine full info")
     public void testInsideAndAspectRatioOnly() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .inside(324)
@@ -74,6 +78,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Landscape puzzle with given rows and aspect returns expected info")
     public void testLandscape1500WithRowsAndAspect() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(30)
@@ -96,6 +101,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Portrait puzzle with pieces and border returns expected info")
     public void test300PiecesPortraitWithBorder() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(300)
@@ -119,6 +125,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Insufficient data throws IllegalArgumentException")
     public void testInsufficientData() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(1500)
@@ -132,6 +139,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Contradictory data throws IllegalArgumentException")
     public void testContradictoryData() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(100)
