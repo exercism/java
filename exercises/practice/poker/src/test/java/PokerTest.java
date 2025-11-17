@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class PokerTest {
     @Test
+    @DisplayName("Single hand returns itself as best hand")
     public void oneHand() {
         String hand = "4S 5S 7H 8D JC";
         assertThat(new Poker(Collections.singletonList(hand)).getBestHands())
@@ -16,6 +18,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Highest single high card wins")
     public void highestCardWins() {
         String highest8 = "4D 5S 6S 8D 3C";
         String highest10 = "2S 4C 7S 9H 10H";
@@ -26,6 +29,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Tie results in multiple winners")
     public void tieHasMultipleWinners() {
         String highest8 = "4D 5S 6S 8D 3C";
         String highest10 = "2S 4C 7S 9H 10H";
@@ -37,6 +41,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Same high cards compared by next highest card")
     public void sameHighCards() {
         String nextHighest3 = "3S 5H 6S 8D 7H";
         String nextHighest2 = "2S 5D 6D 8C 7S";
@@ -46,6 +51,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Winning determined by lowest card when needed")
     public void winningWithLowestCard() {
         String lowest2 = "2S 5H 6S 8D 7H";
         String lowest3 = "3S 4D 6D 8C 7S";
@@ -55,6 +61,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One pair beats nothing")
     public void nothingVsOnePair() {
         String nothing = "4S 5H 6C 8D KH";
         String pairOf4 = "2S 4H 6S 4D JH";
@@ -64,6 +71,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two pairs correctly")
     public void twoPairs() {
         String pairOf2 = "4S 2H 6S 2D JH";
         String pairOf4 = "2S 4H 6C 4D JD";
@@ -73,6 +81,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Same pair compare by kickers")
     public void samePair() {
         String pairOf4Lower = "4H 4S AH JC 3D";
         String pairOf4Higher = "4C 4D AS 5D 6C";
@@ -82,6 +91,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Double pair beats single pair")
     public void onePairVsDoublePair() {
         String pairOf8 = "2S 8H 6S 8D JH";
         String doublePair = "4S 5H 4C 8C 5C";
@@ -91,6 +101,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two double pairs")
     public void twoDoublePairs() {
         String doublePair2And8 = "2S 8H 2D 8D 3H";
         String doublePair4And5 = "4S 5H 4C 8S 5D";
@@ -100,6 +111,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Highest pair compared when same pair values")
     public void sameHighestPair() {
         String doublePair2AndQ = "2S QS 2C QD JH";
         String doublePairJAndQ = "JD QH JS 8D QC";
@@ -109,6 +121,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Identically ranked pairs resolved by kicker")
     public void identicallyRankedPairs() {
         String kicker8 = "JD QH JS 8D QC";
         String kicker2 = "JS QS JC 2D QD";
@@ -118,6 +131,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Two pairs summing to same value compared correctly")
     public void twoPairsAddingToSameValue() {
         String doublePair6And3 = "6S 6H 3S 3H AS";
         String doublePair7And2 = "7H 7S 2H 2S AC";
@@ -127,6 +141,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ranked by largest pair value first")
     public void rankedByLargestPair() {
         String doublePairs5And4 = "5C 2S 5S 4H 4C";
         String doublePairs6And2 = "6S 2S 6H 7C 2C";
@@ -136,6 +151,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Three-of-a-kind beats two pairs")
     public void doublePairVsThree() {
         String doublePair2And8 = "2S 8H 2H 8D JH";
         String threeOf4 = "4S 5H 4C 8S 4H";
@@ -145,6 +161,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two three-of-a-kinds")
     public void twoThrees() {
         String threeOf2 = "2S 2H 2C 8D JH";
         String threeOf1 = "4S AH AS 8C AD";
@@ -154,6 +171,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Three-of-a-kind tie broken by remaining card")
     public void sameThreesMultipleDecks() {
         String remainingCard7 = "5S AH AS 7C AD";
         String remainingCard8 = "4S AH AS 8C AD";
@@ -163,6 +181,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Straight beats three-of-a-kind")
     public void threeVsStraight() {
         String threeOf4 = "4S 5H 4C 8D 4H";
         String straight = "3S 4D 2S 6D 5C";
@@ -172,6 +191,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ace can end a straight (high)")
     public void acesCanEndAStraight() {
         String hand = "4S 5H 4C 8D 4H";
         String straightEndsA = "10D JH QS KD AC";
@@ -181,6 +201,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ace can start a straight (low)")
     public void acesCanStartAStraight() {
         String hand = "4S 5H 4C 8D 4H";
         String straightStartA = "4D AH 3S 2D 5C";
@@ -190,6 +211,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ace cannot be in the middle of a straight")
     public void acesCannotBeInMiddleOfStraight() {
         String hand = "2C 3D 7H 5H 2S";
         String straightMiddleA = "QS KH AC 2D 3S";
@@ -199,6 +221,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Two straights compared by highest card")
     public void twoStraights() {
         String straightTo8 = "4S 6C 7S 8D 5H";
         String straightTo9 = "5S 7H 8S 9D 6H";
@@ -208,6 +231,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Lowest straight starts with Ace low")
     public void theLowestStraightStartsWithAce() {
         String straight = "2H 3C 4D 5D 6H";
         String straightStartA = "4S AH 3S 2D 5H";
@@ -217,6 +241,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Flush beats straight")
     public void straightVsFlush() {
         String straightTo8 = "4C 6H 7D 8D 5H";
         String flushTo7 = "2S 4S 5S 6S 7S";
@@ -226,6 +251,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two flushes")
     public void twoFlushs() {
         String flushTo9 = "2H 7H 8H 9H 6H";
         String flushTo7 = "3S 5S 6S 7S 8S";
@@ -235,6 +261,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Full house beats flush")
     public void flushVsFull() {
         String flushTo8 = "3H 6H 7H 8H 5H";
         String full = "4S 5H 4C 5D 4H";
@@ -244,6 +271,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two full houses")
     public void twoFulls() {
         String fullOf4By9 = "4H 4S 4D 9S 9D";
         String fullOf5By8 = "5H 5S 5D 8S 8D";
@@ -253,6 +281,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Full houses with same triplet compared by pair")
     public void twoFullssameThripletMultipleDecks() {
         String fullOf5By9 = "5H 5S 5D 9S 9D";
         String fullOf5By8 = "5H 5S 5D 8S 8D";
@@ -262,6 +291,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Four-of-a-kind beats full house")
     public void fullVsSquare() {
         String full = "4S 5H 4D 5D 4H";
         String squareOf3 = "3S 3H 2S 3D 3C";
@@ -271,6 +301,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two four-of-a-kinds")
     public void twoSquares() {
         String squareOf2 = "2S 2H 2C 8D 2D";
         String squareOf5 = "4S 5H 5S 5D 5C";
@@ -280,6 +311,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Four-of-a-kind tie broken by kicker")
     public void sameSquaresMultipleDecks() {
         String kicker2 = "3S 3H 2S 3D 3C";
         String kicker4 = "3S 3H 4S 3D 3C";
@@ -289,6 +321,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Straight flush beats four-of-a-kind")
     public void squareVsStraightFlush() {
         String squareOf5 = "4S 5H 5S 5D 5C";
         String straightFlushTo9 = "7S 8S 9S 6S 10S";
@@ -298,6 +331,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Straight flush ending with Ace is highest")
     public void acesEndingStraightFlush() {
         String hand = "KC AH AS AD AC";
         String straightFlushEndingWithA = "10C JC QC KC AC";
@@ -307,6 +341,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Straight flush starting with Ace (low) is allowed")
     public void acesStartingStraightFlush() {
         String straightFlushStartingWithA = "4H AH 3H 2H 5H";
         String hand = "KS AH AS AD AC";
@@ -316,6 +351,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ace cannot be in middle of straight flush")
     public void acesCannotBeInMiddleOfStraightFlush() {
         String straightFlushWithAInMiddle = "QH KH AH 2H 3H";
         String hand = "2C AC QC 10C KC";
@@ -325,6 +361,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Compare two straight flushes by highest card")
     public void twoStraightFlushes() {
         String straightFlushTo8 = "4H 6H 7H 8H 5H";
         String straightFlushTo9 = "5S 7S 8S 9S 6S";
@@ -334,6 +371,7 @@ public class PokerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Lowest straight flush to 5 is ranked lowest")
     public void straightFlushTo5IsTheLowestScoring() {
         String straightFlushTo6 = "2H 3H 4H 5H 6H";
         String straightFlushTo5 = "4D AD 3D 2D 5D";
