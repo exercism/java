@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,6 +10,7 @@ public class PascalsTriangleGeneratorTest {
         new PascalsTriangleGenerator();
 
     @Test
+    @DisplayName("Zero rows produces empty triangle")
     public void testTriangleWithZeroRows() {
         int[][] expectedOutput = new int[][]{};
 
@@ -17,6 +19,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One row produces single element row")
     public void testTriangleWithOneRow() {
         int[][] expectedOutput = new int[][]{
             {1}
@@ -27,6 +30,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Two rows produce proper Pascal triangle")
     public void testTriangleWithTwoRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -38,6 +42,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Three rows produce proper Pascal triangle")
     public void testTriangleWithThreeRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -50,6 +55,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Four rows produce proper Pascal triangle")
     public void testTriangleWithFourRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -63,6 +69,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Five rows produce proper Pascal triangle")
     public void testTriangleWithFiveRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -77,6 +84,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Six rows produce proper Pascal triangle")
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -92,6 +100,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Ten rows produce correct Pascal triangle up to 10")
     public void testTriangleWithTenRows() {
         int[][] expectedOutput = new int[][]{
             {1},
