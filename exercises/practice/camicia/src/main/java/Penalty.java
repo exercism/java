@@ -28,6 +28,10 @@ class Penalty {
         return penalty > 0;
     }
 
+    boolean isActive(Turn.Player player) {
+        return player != null && player.equals(this.player) && penalty > 0;
+    }
+
     boolean isFullyPaid() {
         return player != null && penalty == 0;
     }

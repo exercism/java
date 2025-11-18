@@ -135,10 +135,14 @@ class Turn {
                 previousRound.playedCard == null &&
                 getCards(otherPlayer).isEmpty();
 
+        boolean otherPlayerCannotPayPenalty = otherPlayer.equals(previousRound.player) &&
+                penalty.isActive(otherPlayer) &&
+                getCards(otherPlayer).isEmpty();
+
         boolean penaltyFullyPaidByOpponent = player.equals(playerPlacedLastPaymentCard) &&
                 penalty.isFullyPaid(otherPlayer);
 
-        if (otherPlayerCanPlayNoMore || penaltyFullyPaidByOpponent) {
+        if (otherPlayerCanPlayNoMore || otherPlayerCannotPayPenalty || penaltyFullyPaidByOpponent) {
             switch (player) {
                 case A -> playerADeck.addAll(pile);
                 case B -> playerBDeck.addAll(pile);
@@ -174,9 +178,14 @@ class Turn {
             return;
         }
 
-        if (isPenaltyActive() && !isPlayerDeckEmpty(penalty.getPlayer())) {
-            nextPlayer = penalty.getPlayer();
-            return;
+//        if (isPenaltyActive() && !isPlayerDeckEmpty(penalty.getPlayer())) {
+        if (isPenaltyActive()) {
+            if (!isPlayerDeckEmpty(penalty.getPlayer())) {
+                nextPlayer = penalty.getPlayer();
+                return;
+            } else {
+                nextPlayer = passPlayer(player);
+            }
         }
 
         if (penalty.isFullyPaid()) {
