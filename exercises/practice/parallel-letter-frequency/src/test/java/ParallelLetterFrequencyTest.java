@@ -206,7 +206,7 @@ public class ParallelLetterFrequencyTest {
         "- from the days of the Flood to the Schleswig-Holstein period.";
 
     @Test
-    @DisplayName("No input texts yields empty frequency map")
+    @DisplayName("no texts")
     public void testNoTexts() {
         String[] input = {};
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -217,7 +217,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Single text with a single letter counted")
+    @DisplayName("one text with one letter")
     public void testOneTextWithOneLetter() {
         String[] input = { "a" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -232,7 +232,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Single text with repeated letters counted correctly")
+    @DisplayName("one text with multiple letters")
     public void testOneTextWithMultipleLetters() {
         String[] input = { "bbcccd" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -249,7 +249,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Two texts each with one distinct letter counted")
+    @DisplayName("two texts with one letter")
     public void testTwoTextsWithOneLetter() {
         String[] input = { "e", "f" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -265,7 +265,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Two texts with overlapping letters aggregated correctly")
+    @DisplayName("two texts with multiple letters")
     public void testTwoTextsWithMultipleLetters() {
         String[] input = { "ggh", "hhi" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -282,7 +282,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Letter counting is case-insensitive")
+    @DisplayName("ignore letter casing")
     public void testIgnoreLetterCasing() {
         String[] input = { "m", "M" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -297,7 +297,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Whitespace-only inputs are ignored")
+    @DisplayName("ignore whitespace")
     public void testIgnoreWhitespace() {
         String[] input = { "   ", "\t", "\r\n" };
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -308,7 +308,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Punctuation-only inputs are ignored")
+    @DisplayName("ignore punctuation")
     public void testIgnorePunctuation() {
         String[] input = { "!", "?", ";", ",", "." };
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -319,7 +319,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Numeric characters are ignored")
+    @DisplayName("ignore numbers")
     public void testIgnoreNumbers() {
         String[] input = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -330,7 +330,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Unicode letters are counted correctly")
+    @DisplayName("Unicode letters")
     public void testUnicodeLetters() {
         String[] input = { "本", "φ", "ほ", "ø" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -348,7 +348,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Complex mixture of casing, punctuation and whitespace counted correctly")
+    @DisplayName("combination of lower- and uppercase letters, punctuation and white space")
     public void testCombinationOfLowerAndUppercaseLettersPunctuationAndWhiteSpace() {
         String[] input = {calculateFrequencies};
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -384,7 +384,7 @@ public class ParallelLetterFrequencyTest {
     
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Many small identical texts aggregate correctly")
+    @DisplayName("many small texts")
     public void testManySmallTexts() {
         String[] input = new String[50];
         Arrays.fill(input, "abbccc");
@@ -402,7 +402,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Large texts are counted correctly")
+    @DisplayName("large texts")
     public void testLargeTexts() {
         String[] input = { largeTexts1, largeTexts2, largeTexts3, largeTexts4 };
         Map<Character, Integer> expectedOutput = new HashMap<>() {

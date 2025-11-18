@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BracketCheckerTest {
 
     @Test
-    @DisplayName("Paired square brackets are matched and valid")
+    @DisplayName("paired square brackets")
     public void testPairedSquareBrackets() {
         BracketChecker bracketChecker = new BracketChecker("[]");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -15,7 +15,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Empty string contains no brackets and is valid")
+    @DisplayName("empty string")
     public void testEmptyString() {
         BracketChecker bracketChecker = new BracketChecker("");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -23,7 +23,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Unpaired brackets are invalid")
+    @DisplayName("unpaired brackets")
     public void testUnpairedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("[[");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -31,7 +31,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Wrong ordered brackets are invalid")
+    @DisplayName("wrong ordered brackets")
     public void testWrongOrderedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("}{");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -39,7 +39,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Wrong closing bracket type is invalid")
+    @DisplayName("wrong closing bracket")
     public void testWrongClosingBracket() {
         BracketChecker bracketChecker = new BracketChecker("{]");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -47,7 +47,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Paired brackets with whitespace are valid")
+    @DisplayName("paired with whitespace")
     public void testPairedWithWhitespace() {
         BracketChecker bracketChecker = new BracketChecker("{ }");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -55,7 +55,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Partially paired brackets are invalid")
+    @DisplayName("partially paired brackets")
     public void testPartiallyPairedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{[])");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -63,7 +63,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Simple nested brackets are valid")
+    @DisplayName("simple nested brackets")
     public void testSimpleNestedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{[]}");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -71,7 +71,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Several paired brackets in sequence are valid")
+    @DisplayName("several paired brackets")
     public void testSeveralPairedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{}[]");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -79,7 +79,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Paired and nested complex brackets are valid")
+    @DisplayName("paired and nested brackets")
     public void testPairedAndNestedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("([{}({}[])])");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -87,7 +87,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Unopened closing bracket is invalid")
+    @DisplayName("unopened closing brackets")
     public void testUnopenedClosingBracket() {
         BracketChecker bracketChecker = new BracketChecker("{[)][]}");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -95,7 +95,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Unpaired and nested brackets are invalid")
+    @DisplayName("unpaired and nested brackets")
     public void testUnpairedAndNestedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("([{])");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -103,7 +103,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Paired but wrongly nested brackets are invalid")
+    @DisplayName("paired and wrong nested brackets")
     public void testPairedAndWrongNestedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("[({]})");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -111,7 +111,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Innermost correct but overall wrong nesting is invalid")
+    @DisplayName("paired and wrong nested brackets but innermost are correct")
     public void testPairedAndWrongNestedBracketsButInnermostAreCorrect() {
         BracketChecker bracketChecker = new BracketChecker("[({}])");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -119,7 +119,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Paired and incomplete brackets are invalid")
+    @DisplayName("paired and incomplete brackets")
     public void testPairedAndIncompleteBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{}[");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -127,7 +127,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Too many closing brackets are invalid")
+    @DisplayName("too many closing brackets")
     public void testTooManyClosingBrackets() {
         BracketChecker bracketChecker = new BracketChecker("[]]");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -135,15 +135,15 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Early unexpected closing bracket is invalid")
+    @DisplayName("early unexpected brackets")
     public void testEarlyUnexpectedBrackets() {
         BracketChecker bracketChecker = new BracketChecker(")()");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
     }
-    
+
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Early mismatched brackets are invalid")
+    @DisplayName("early mismatched brackets")
     public void testEarlyMismatchedBrackets() {
         BracketChecker bracketChecker = new BracketChecker("{)()");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isFalse();
@@ -151,7 +151,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Math expression with balanced parentheses is valid")
+    @DisplayName("math expression")
     public void testMathExpression() {
         BracketChecker bracketChecker = new BracketChecker("(((185 + 223.85) * 15) - 543)/2");
         assertThat(bracketChecker.areBracketsMatchedAndNestedCorrectly()).isTrue();
@@ -159,7 +159,7 @@ public class BracketCheckerTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Complex LaTeX expression with matched brackets is valid")
+    @DisplayName("complex latex expression")
     public void testComplexLatexExpression() {
         BracketChecker bracketChecker = new BracketChecker(
                 "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)");

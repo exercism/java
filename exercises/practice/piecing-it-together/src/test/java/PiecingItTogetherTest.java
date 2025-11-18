@@ -9,7 +9,7 @@ public class PiecingItTogetherTest {
     private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
 
     @Test
-    @DisplayName("Complete information from pieces and aspect ratio is calculated")
+    @DisplayName("1000 pieces puzzle with 1.6 aspect ratio")
     public void test1000PiecesWithAspectRatio() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(1000)
@@ -32,7 +32,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Square puzzle specified by rows yields expected info")
+    @DisplayName("square puzzle with 32 rows")
     public void testSquarePuzzleWith32Rows() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(32)
@@ -55,7 +55,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Inside count and aspect ratio determine full info")
+    @DisplayName("400 pieces square puzzle with only inside pieces and aspect ratio")
     public void testInsideAndAspectRatioOnly() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .inside(324)
@@ -78,7 +78,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Landscape puzzle with given rows and aspect returns expected info")
+    @DisplayName("1500 pieces landscape puzzle with 30 rows and 1.6 aspect ratio")
     public void testLandscape1500WithRowsAndAspect() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(30)
@@ -101,7 +101,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Portrait puzzle with pieces and border returns expected info")
+    @DisplayName("300 pieces portrait puzzle with 70 border pieces")
     public void test300PiecesPortraitWithBorder() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(300)
@@ -125,7 +125,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Insufficient data throws IllegalArgumentException")
+    @DisplayName("puzzle with insufficient data")
     public void testInsufficientData() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(1500)
@@ -139,7 +139,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Contradictory data throws IllegalArgumentException")
+    @DisplayName("puzzle with contradictory data")
     public void testContradictoryData() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(100)

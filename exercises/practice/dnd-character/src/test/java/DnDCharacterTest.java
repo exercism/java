@@ -11,112 +11,112 @@ public class DnDCharacterTest {
     private DnDCharacter dndCharacter = new DnDCharacter();
 
     @Test
-    @DisplayName("Ability modifier for score 3 is -4")
+    @DisplayName("ability modifier for score 3 is -4")
     public void testAbilityModifierForScore3IsNegative4() {
         assertThat(dndCharacter.modifier(3)).isEqualTo(-4);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 4 is -3")
+    @DisplayName("ability modifier for score 4 is -3")
     public void testAbilityModifierForScore4IsNegative3() {
         assertThat(dndCharacter.modifier(4)).isEqualTo(-3);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 5 is -3")
+    @DisplayName("ability modifier for score 5 is -3")
     public void testAbilityModifierForScore5IsNegative3() {
         assertThat(dndCharacter.modifier(5)).isEqualTo(-3);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 6 is -2")
+    @DisplayName("ability modifier for score 6 is -2")
     public void testAbilityModifierForScore6IsNegative2() {
         assertThat(dndCharacter.modifier(6)).isEqualTo(-2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 7 is -2")
+    @DisplayName("ability modifier for score 7 is -2")
     public void testAbilityModifierForScore7IsNegative2() {
         assertThat(dndCharacter.modifier(7)).isEqualTo(-2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 8 is -1")
+    @DisplayName("ability modifier for score 8 is -1")
     public void testAbilityModifierForScore8IsNegative1() {
         assertThat(dndCharacter.modifier(8)).isEqualTo(-1);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 9 is -1")
+    @DisplayName("ability modifier for score 9 is -1")
     public void testAbilityModifierForScore9IsNegative1() {
         assertThat(dndCharacter.modifier(9)).isEqualTo(-1);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 10 is 0")
+    @DisplayName("ability modifier for score 10 is 0")
     public void testAbilityModifierForScore10Is0() {
         assertThat(dndCharacter.modifier(10)).isEqualTo(0);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 11 is 0")
+    @DisplayName("ability modifier for score 11 is 0")
     public void testAbilityModifierForScore11Is0() {
         assertThat(dndCharacter.modifier(11)).isEqualTo(0);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 12 is 1")
+    @DisplayName("ability modifier for score 12 is +1")
     public void testAbilityModifierForScore12Is1() {
         assertThat(dndCharacter.modifier(12)).isEqualTo(1);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 13 is 1")
+    @DisplayName("ability modifier for score 13 is +1")
     public void testAbilityModifierForScore13Is1() {
         assertThat(dndCharacter.modifier(13)).isEqualTo(1);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 14 is 2")
+    @DisplayName("ability modifier for score 14 is +2")
     public void testAbilityModifierForScore14Is2() {
         assertThat(dndCharacter.modifier(14)).isEqualTo(2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 15 is 2")
+    @DisplayName("ability modifier for score 15 is +2")
     public void testAbilityModifierForScore15Is2() {
         assertThat(dndCharacter.modifier(15)).isEqualTo(2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 16 is 3")
+    @DisplayName("ability modifier for score 16 is +3")
     public void testAbilityModifierForScore16Is3() {
         assertThat(dndCharacter.modifier(16)).isEqualTo(3);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 17 is 3")
+    @DisplayName("ability modifier for score 17 is +3")
     public void testAbilityModifierForScore17Is3() {
         assertThat(dndCharacter.modifier(17)).isEqualTo(3);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Ability modifier for score 18 is 4")
+    @DisplayName("ability modifier for score 18 is +4")
     public void testAbilityModifierForScore18Is4() {
         assertThat(dndCharacter.modifier(18)).isEqualTo(4);
     }
@@ -190,7 +190,7 @@ public class DnDCharacterTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Random character attributes are within valid range")
+    @DisplayName("random character is valid")
     public void testRandomCharacterIsValid() {
         for (int i = 0; i < 1000; i++) {
             DnDCharacter character = new DnDCharacter();
@@ -206,7 +206,7 @@ public class DnDCharacterTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Each ability value is calculated only once")
+    @DisplayName("each ability is only calculated once")
     public void testEachAbilityIsOnlyCalculatedOnce() {
         assertThat(dndCharacter.getStrength()).isEqualTo(dndCharacter.getStrength());
         assertThat(dndCharacter.getDexterity()).isEqualTo(dndCharacter.getDexterity());

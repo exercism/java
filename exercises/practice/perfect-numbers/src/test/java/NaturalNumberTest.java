@@ -8,56 +8,56 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class NaturalNumberTest {
 
     @Test
-    @DisplayName("Small perfect number (6) is classified as PERFECT")
+    @DisplayName("Smallest perfect number is classified correctly")
     public void testSmallPerfectNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(6).getClassification()).isEqualTo(Classification.PERFECT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Medium perfect number (28) is classified as PERFECT")
+    @DisplayName("Medium perfect number is classified correctly")
     public void testMediumPerfectNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(28).getClassification()).isEqualTo(Classification.PERFECT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Large perfect number is classified as PERFECT")
+    @DisplayName("Large perfect number is classified correctly")
     public void testLargePerfectNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(33550336).getClassification()).isEqualTo(Classification.PERFECT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Small abundant number is classified as ABUNDANT")
+    @DisplayName("Smallest abundant number is classified correctly")
     public void testSmallAbundantNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(12).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Medium abundant number is classified as ABUNDANT")
+    @DisplayName("Medium abundant number is classified correctly")
     public void testMediumAbundantNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(30).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Large abundant number is classified as ABUNDANT")
+    @DisplayName("Large abundant number is classified correctly")
     public void testLargeAbundantNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(33550335).getClassification()).isEqualTo(Classification.ABUNDANT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Smallest prime number (2) is classified as DEFICIENT")
+    @DisplayName("Smallest prime deficient number is classified correctly")
     public void testSmallestPrimeDeficientNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(2).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Smallest non-prime deficient number (4) is classified as DEFICIENT")
+    @DisplayName("Smallest non-prime deficient number is classified correctly")
     public void testSmallestNonPrimeDeficientNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(4).getClassification()).isEqualTo(Classification.DEFICIENT);
     }
@@ -78,7 +78,7 @@ public class NaturalNumberTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("One is classified as DEFICIENT (no proper divisors)")
+    @DisplayName("Edge case (no factors other than itself) is classified correctly")
     /*
      * The number 1 has no proper divisors (https://en.wikipedia.org/wiki/Divisor#Further_notions_and_facts), and the
      * additive identity is 0, so the aliquot sum of 1 should be 0. Hence 1 should be classified as deficient.
@@ -89,7 +89,7 @@ public class NaturalNumberTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Zero is rejected as not a natural number")
+    @DisplayName("Zero is rejected (as it is not a positive integer)")
     public void testThatNonNegativeIntegerIsRejected() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new NaturalNumber(0))
@@ -98,7 +98,7 @@ public class NaturalNumberTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Negative integers are rejected")
+    @DisplayName("Negative integer is rejected (as it is not a positive integer)")
     public void testThatNegativeIntegerIsRejected() {
         assertThatExceptionOfType(IllegalArgumentException.class)
             .isThrownBy(() -> new NaturalNumber(-1))
