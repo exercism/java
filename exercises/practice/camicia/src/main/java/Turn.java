@@ -72,7 +72,7 @@ class Turn {
     }
 
     private void playCard() {
-        if (getCards(player).isEmpty()) {
+        if (isDeckEmpty(player)) {
             // player cannot play
             return;
         }
@@ -165,7 +165,7 @@ class Turn {
 
         return opponent.equals(previousRound.player) &&
                 isPenaltyActive(opponent) &&
-                getCards(opponent).isEmpty();
+                isDeckEmpty(opponent);
     }
 
     private boolean isOpponentDeckExhausted() {
@@ -173,7 +173,7 @@ class Turn {
 
         return opponent.equals(previousRound.player) &&
                 previousRound.playedCard == null &&
-                getCards(opponent).isEmpty();
+                isDeckEmpty(opponent);
     }
 
     private int totalCards() {
@@ -191,7 +191,7 @@ class Turn {
         }
 
         if (isPenaltyActive()) {
-            if (isPlayerDeckEmpty(penalty.getPlayer())) {
+            if (isDeckEmpty(penalty.getPlayer())) {
                 nextPlayer = opponent(player);
             } else {
                 nextPlayer = penalty.getPlayer();
@@ -215,7 +215,7 @@ class Turn {
         return penalty != null && penalty.isActive(player);
     }
 
-    private boolean isPlayerDeckEmpty(Player player) {
+    private boolean isDeckEmpty(Player player) {
         return switch (player) {
             case A -> deckA.isEmpty();
             case B -> deckB.isEmpty();
@@ -223,11 +223,6 @@ class Turn {
     }
 
     private Player opponent(Player player) {
-        if (player == null) {
-            return Player.A;
-        }
-
-
         return switch (player) {
             case Player.A -> Player.B;
             case Player.B -> Player.A;
