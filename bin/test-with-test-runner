@@ -66,7 +66,7 @@ function verify_exercise() {
 
         # Create summary.txt with header only on first failure
         if [ ! -f "$summary_file" ]; then
-            echo "The following exercises did NOT pass:" > "$summary_file"
+            echo "The following exercises have test failures or test errors:" > "$summary_file"
         fi
 
         # Append the correct path (practice/slug or concept/slug)
