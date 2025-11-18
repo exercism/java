@@ -17,7 +17,6 @@ class Turn {
     private Player player;
     private Card playedCard;
     private Player nextPlayer;
-    private Player collector = null;
 
     Turn(List<String> playerAList, List<String> playerBList) {
         roundNumber = 0;
@@ -103,7 +102,7 @@ class Turn {
         }
 
         if (playedCard.isPaymentCard()) {
-            penalty.set(passPlayer(player), playedCard);
+            penalty.set(opponent(player), playedCard);
             return;
         }
 
@@ -115,7 +114,7 @@ class Turn {
             return;
         }
 
-        Player penaltyPlayer = passPlayer(player);
+        Player penaltyPlayer = opponent(player);
         penalty.set(penaltyPlayer, playedCard);
     }
 
@@ -129,20 +128,11 @@ class Turn {
     }
 
     private boolean collectPile() {
-        Player otherPlayer = passPlayer(player);
+        boolean opponentDeckExhausted = isOpponentDeckExhausted();
+        boolean opponentUnableToPayPenalty = isOpponentUnableToPayPenalty();
+        boolean penaltyFullyPaidByOpponent = isPenaltyFullyPaidByOpponent();
 
-        boolean otherPlayerCanPlayNoMore = otherPlayer.equals(previousRound.player) &&
-                previousRound.playedCard == null &&
-                getCards(otherPlayer).isEmpty();
-
-        boolean otherPlayerCannotPayPenalty = otherPlayer.equals(previousRound.player) &&
-                penalty.isActive(otherPlayer) &&
-                getCards(otherPlayer).isEmpty();
-
-        boolean penaltyFullyPaidByOpponent = player.equals(playerPlacedLastPaymentCard) &&
-                penalty.isFullyPaid(otherPlayer);
-
-        if (otherPlayerCanPlayNoMore || otherPlayerCannotPayPenalty || penaltyFullyPaidByOpponent) {
+        if (opponentDeckExhausted || opponentUnableToPayPenalty || penaltyFullyPaidByOpponent) {
             switch (player) {
                 case A -> playerADeck.addAll(pile);
                 case B -> playerBDeck.addAll(pile);
@@ -151,9 +141,8 @@ class Turn {
             pile.clear();
 
             trick++;
-            this.collector = player;
 
-            if (penaltyFullyPaidByOpponent) {
+            if (isPenaltyFullyPaidByOpponent()) {
                 nextPlayer = player;
                 penalty.clear();
             }
@@ -162,6 +151,29 @@ class Turn {
         }
 
         return false;
+    }
+
+    private boolean isPenaltyFullyPaidByOpponent() {
+        Player otherPlayer = opponent(player);
+
+        return player.equals(playerPlacedLastPaymentCard) &&
+                penalty.isFullyPaid(otherPlayer);
+    }
+
+    private boolean isOpponentUnableToPayPenalty() {
+        Player opponent = opponent(player);
+
+        return opponent.equals(previousRound.player) &&
+                isPenaltyActive(opponent) &&
+                getCards(opponent).isEmpty();
+    }
+
+    private boolean isOpponentDeckExhausted() {
+        Player opponent = opponent(player);
+
+        return opponent.equals(previousRound.player) &&
+                previousRound.playedCard == null &&
+                getCards(opponent).isEmpty();
     }
 
     private int totalCards() {
@@ -178,14 +190,13 @@ class Turn {
             return;
         }
 
-//        if (isPenaltyActive() && !isPlayerDeckEmpty(penalty.getPlayer())) {
         if (isPenaltyActive()) {
-            if (!isPlayerDeckEmpty(penalty.getPlayer())) {
-                nextPlayer = penalty.getPlayer();
-                return;
+            if (isPlayerDeckEmpty(penalty.getPlayer())) {
+                nextPlayer = opponent(player);
             } else {
-                nextPlayer = passPlayer(player);
+                nextPlayer = penalty.getPlayer();
             }
+            return;
         }
 
         if (penalty.isFullyPaid()) {
@@ -193,7 +204,7 @@ class Turn {
             return;
         }
 
-        nextPlayer = passPlayer(player);
+        nextPlayer = opponent(player);
     }
 
     private boolean isPenaltyActive() {
@@ -201,7 +212,7 @@ class Turn {
     }
 
     private boolean isPenaltyActive(Player player) {
-        return penalty != null && penalty.isActive() && penalty.getPlayer().equals(player);
+        return penalty != null && penalty.isActive(player);
     }
 
     private boolean isPlayerDeckEmpty(Player player) {
@@ -211,7 +222,7 @@ class Turn {
         };
     }
 
-    private Player passPlayer(Player player) {
+    private Player opponent(Player player) {
         if (player == null) {
             return Player.A;
         }
