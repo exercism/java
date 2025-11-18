@@ -74,8 +74,9 @@ public class TwoBucketTest {
     @Disabled("Remove to run test")
     @Test
     @DisplayName(
-            "Measure using bucket one of size 2 and bucket two of size 3 - " +
-                    "start with bucket one and end with bucket two")
+        "Measure using bucket one of size 2 and bucket two of size 3 - " +
+        "start with bucket one and end with bucket two"
+    )
     public void testBucketOneSizeTwoBucketTwoSizeThreeStartWithOne() {
 
         Result bucketResult = new TwoBucket(2, 3, 3, "one").getResult();
