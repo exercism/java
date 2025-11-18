@@ -16,6 +16,7 @@ class Turn {
 
     private Player player;
     private Card playedCard;
+    private Player collector = null;
 
     Turn(List<String> playerAList, List<String> playerBList) {
         roundNumber = 0;
@@ -30,12 +31,12 @@ class Turn {
 
     Turn(Turn previousRound) {
         this.roundNumber = previousRound.roundNumber + 1;
-        this.playerACards = previousRound.playerACards;
-        this.playerBCards = previousRound.playerBCards;
+        this.playerACards = new ArrayDeque<>(previousRound.playerACards);
+        this.playerBCards = new ArrayDeque<>(previousRound.playerBCards);
         this.previousRound = previousRound;
         this.pile = previousRound.pile;
         this.penalty = previousRound.penalty;
-        this.playerPlacedLastPaymentCard = previousRound.playerPlacedLastPaymentCard;
+        this.penalty = previousRound.penalty != null ? new Penalty(previousRound.penalty) : null;
         this.trick = previousRound.trick;
         this.playedCardCounter = previousRound.playedCardCounter;
     }
@@ -104,11 +105,11 @@ class Turn {
     }
 
     private void deductPenalty() {
-        if (penalty == null){
+        if (penalty == null) {
             return;
         }
 
-        if(!player.equals(penalty.getPlayer())) {
+        if (!player.equals(penalty.getPlayer())) {
             return;
         }
 
@@ -145,16 +146,21 @@ class Turn {
                 previousRound.playedCard == null &&
                 getCards(otherPlayer).isEmpty();
 
-        boolean otherPlayerHasToPayPenalty = getCards(otherPlayer).isEmpty() &&
+        boolean otherPlayerCannotPayPenalty = getCards(otherPlayer).isEmpty() &&
                 penalty != null &&
                 penalty.getPlayer().equals(otherPlayer) &&
                 penalty.getPenalty() > 0;
+//
+//        boolean currentPlayerPlacedLastPaymentCard = player.equals(playerPlacedLastPaymentCard) &&
+//                penalty != null &&
+//                !penalty.isInterrupted();
 
-        boolean currentPlayerPlacedLastPaymentCard = player.equals(playerPlacedLastPaymentCard) &&
+        boolean penaltyFullyPaidByOpponent = player.equals(playerPlacedLastPaymentCard) &&
                 penalty != null &&
-                !penalty.isInterrupted();
+                penalty.getPlayer().equals(otherPlayer) &&
+                penalty.getPenalty() == 0;
 
-        if (otherPlayerCanPlayNoMore || otherPlayerHasToPayPenalty || currentPlayerPlacedLastPaymentCard) {
+        if (otherPlayerCanPlayNoMore || otherPlayerCannotPayPenalty || penaltyFullyPaidByOpponent) {
             switch (player) {
                 case A -> playerACards.addAll(pile);
                 case B -> playerBCards.addAll(pile);
@@ -163,6 +169,7 @@ class Turn {
             pile.clear();
 
             trick++;
+            this.collector = player;
 
             return true;
         }
@@ -175,6 +182,10 @@ class Turn {
     }
 
     private Player definePlayer(Turn previousRound) {
+        if (previousRound.collector != null) {
+            return previousRound.collector;
+        }
+
         Penalty previousPenalty = previousRound.penalty;
 
         if (previousPenalty != null && previousPenalty.getPenalty() > 0 && !getCards(previousPenalty.getPlayer()).isEmpty()) {
@@ -242,6 +253,12 @@ class Turn {
         Penalty(Player player, int penalty) {
             this.player = player;
             this.penalty = penalty;
+        }
+
+        Penalty(Penalty other) {
+            this.player = other.player;
+            this.penalty = other.penalty;
+            this.interrupted = other.interrupted;
         }
 
         Player getPlayer() {
