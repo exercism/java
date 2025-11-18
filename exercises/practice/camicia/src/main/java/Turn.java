@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 class Turn {
     private final int roundNumber;
-    private final ArrayDeque<Card> playerADeck;
-    private final ArrayDeque<Card> playerBDeck;
+    private final ArrayDeque<Card> deckA;
+    private final ArrayDeque<Card> deckB;
     private final Penalty penalty;
     private ArrayDeque<Card> pile = new ArrayDeque<>();
     private Turn previousRound;
@@ -20,11 +20,11 @@ class Turn {
 
     Turn(List<String> playerAList, List<String> playerBList) {
         roundNumber = 0;
-        playerADeck = playerAList.stream()
+        deckA = playerAList.stream()
                 .map(Card::new)
                 .collect(Collectors.toCollection(ArrayDeque::new));
 
-        playerBDeck = playerBList.stream()
+        deckB = playerBList.stream()
                 .map(Card::new)
                 .collect(Collectors.toCollection(ArrayDeque::new));
 
@@ -33,8 +33,8 @@ class Turn {
 
     Turn(Turn previousRound) {
         this.roundNumber = previousRound.roundNumber + 1;
-        this.playerADeck = new ArrayDeque<>(previousRound.playerADeck);
-        this.playerBDeck = new ArrayDeque<>(previousRound.playerBDeck);
+        this.deckA = new ArrayDeque<>(previousRound.deckA);
+        this.deckB = new ArrayDeque<>(previousRound.deckB);
         this.previousRound = previousRound;
         this.pile = previousRound.pile;
         this.penalty = previousRound.penalty;
@@ -78,8 +78,8 @@ class Turn {
         }
 
         playedCard = switch (player) {
-            case A -> playerADeck.removeFirst();
-            case B -> playerBDeck.removeFirst();
+            case A -> deckA.removeFirst();
+            case B -> deckB.removeFirst();
         };
 
         pile.add(playedCard);
@@ -134,8 +134,8 @@ class Turn {
 
         if (opponentDeckExhausted || opponentUnableToPayPenalty || penaltyFullyPaidByOpponent) {
             switch (player) {
-                case A -> playerADeck.addAll(pile);
-                case B -> playerBDeck.addAll(pile);
+                case A -> deckA.addAll(pile);
+                case B -> deckB.addAll(pile);
             }
 
             pile.clear();
@@ -177,7 +177,7 @@ class Turn {
     }
 
     private int totalCards() {
-        return playerADeck.size() + playerBDeck.size() + pile.size();
+        return deckA.size() + deckB.size() + pile.size();
     }
 
     private void defineNextPlayer() {
@@ -217,8 +217,8 @@ class Turn {
 
     private boolean isPlayerDeckEmpty(Player player) {
         return switch (player) {
-            case A -> playerADeck.isEmpty();
-            case B -> playerBDeck.isEmpty();
+            case A -> deckA.isEmpty();
+            case B -> deckB.isEmpty();
         };
     }
 
@@ -236,8 +236,8 @@ class Turn {
 
     private Deque<Card> getCards(Player player) {
         return switch (player) {
-            case A -> playerADeck;
-            case B -> playerBDeck;
+            case A -> deckA;
+            case B -> deckB;
         };
     }
 
@@ -255,17 +255,11 @@ class Turn {
                 " player=" + player +
                 ", playedCard=" + playedCard +
                 ", nextPlayer=" + nextPlayer +
-                ", DeckA=" + playerADeck +
-                ", DeckB=" + playerBDeck +
+                ", DeckA=" + deckA +
+                ", DeckB=" + deckB +
                 ", pile=" + pile +
                 ", penalty=" + penalty +
                 ", trick=" + trick
                 ;
     }
-
-    enum Player {
-        A,
-        B
-    }
-
 }

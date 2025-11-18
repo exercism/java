@@ -1,11 +1,11 @@
 class Penalty {
-    private Turn.Player player;
+    private Player player;
     private int penalty;
 
     Penalty() {
     }
 
-    Turn.Player getPlayer() {
+    Player getPlayer() {
         return player;
     }
 
@@ -13,7 +13,7 @@ class Penalty {
         return penalty;
     }
 
-    void set(Turn.Player player, Card card) {
+    void set(Player player, Card card) {
         this.player = player;
         this.penalty = card.getPenalty();
     }
@@ -28,7 +28,7 @@ class Penalty {
         return penalty > 0;
     }
 
-    boolean isActive(Turn.Player player) {
+    boolean isActive(Player player) {
         return player != null && player.equals(this.player) && penalty > 0;
     }
 
@@ -36,7 +36,7 @@ class Penalty {
         return player != null && penalty == 0;
     }
 
-    boolean isFullyPaid(Turn.Player player) {
+    boolean isFullyPaid(Player player) {
         return player != null && player.equals(this.player) && penalty == 0;
     }
 
