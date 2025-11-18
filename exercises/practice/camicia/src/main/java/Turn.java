@@ -249,10 +249,6 @@ class Turn {
         return trick;
     }
 
-    public Card getPlayedCard() {
-        return playedCard;
-    }
-
     @Override
     public String toString() {
         return roundNumber + "." +

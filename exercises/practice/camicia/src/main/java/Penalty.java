@@ -13,7 +13,7 @@ class Penalty {
         return penalty;
     }
 
-    public void set(Turn.Player player, Card card) {
+    void set(Turn.Player player, Card card) {
         this.player = player;
         this.penalty = card.getPenalty();
     }
