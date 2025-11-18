@@ -42,6 +42,7 @@ class Turn {
         this.trick = previousRound.trick;
         this.playedCardCounter = previousRound.playedCardCounter;
         this.player = previousRound.nextPlayer;
+        this.playerPlacedLastPaymentCard = previousRound.playerPlacedLastPaymentCard;
     }
 
     boolean playTurn() {
@@ -52,7 +53,7 @@ class Turn {
 
         nextMove();
         defineNextPlayer();
-        return  win();
+        return win();
     }
 
     boolean isInitialRound() {
@@ -102,7 +103,6 @@ class Turn {
         }
 
         if (playedCard.isPaymentCard()) {
-//            penalty = new Penalty(passPlayer(player), playedCard.getPenalty());
             penalty.set(passPlayer(player), playedCard);
             return;
         }
@@ -116,7 +116,6 @@ class Turn {
         }
 
         Player penaltyPlayer = passPlayer(player);
-//        this.penalty = new Penalty(penaltyPlayer, playedCard.getPenalty());
         penalty.set(penaltyPlayer, playedCard);
     }
 
@@ -137,9 +136,7 @@ class Turn {
                 getCards(otherPlayer).isEmpty();
 
         boolean penaltyFullyPaidByOpponent = player.equals(playerPlacedLastPaymentCard) &&
-                penalty != null &&
-                penalty.getPlayer().equals(otherPlayer) &&
-                penalty.getPenalty() == 0;
+                penalty.isFullyPaid(otherPlayer);
 
         if (otherPlayerCanPlayNoMore || penaltyFullyPaidByOpponent) {
             switch (player) {
@@ -152,6 +149,11 @@ class Turn {
             trick++;
             this.collector = player;
 
+            if (penaltyFullyPaidByOpponent) {
+                nextPlayer = player;
+                penalty.clear();
+            }
+
             return true;
         }
 
@@ -162,21 +164,11 @@ class Turn {
         return playerADeck.size() + playerBDeck.size() + pile.size();
     }
 
-    private Player definePlayer(Turn previousRound) {
-        if (previousRound.collector != null) {
-            return previousRound.collector;
-        }
-
-        Penalty previousPenalty = previousRound.penalty;
-
-        if (previousPenalty != null && previousPenalty.getPenalty() > 0 && !getCards(previousPenalty.getPlayer()).isEmpty()) {
-            return previousRound.penalty.getPlayer();
-        }
-
-        return passPlayer(previousRound.player);
-    }
-
     private void defineNextPlayer() {
+        if (nextPlayer != null) {
+            return;
+        }
+
         if (isInitialRound()) {
             nextPlayer = Player.A;
             return;
@@ -184,6 +176,11 @@ class Turn {
 
         if (isPenaltyActive() && !isPlayerDeckEmpty(penalty.getPlayer())) {
             nextPlayer = penalty.getPlayer();
+            return;
+        }
+
+        if (penalty.isFullyPaid()) {
+            nextPlayer = playerPlacedLastPaymentCard;
             return;
         }
 
@@ -238,17 +235,16 @@ class Turn {
 
     @Override
     public String toString() {
-        return "MatchRound{" +
-                "roundNumber=" + roundNumber +
-                ", player=" + player +
-                ", nextPlayer=" + nextPlayer +
+        return roundNumber + "." +
+                " player=" + player +
                 ", playedCard=" + playedCard +
-                ", playerACards=" + playerADeck +
-                ", playerBCards=" + playerBDeck +
+                ", nextPlayer=" + nextPlayer +
+                ", DeckA=" + playerADeck +
+                ", DeckB=" + playerBDeck +
                 ", pile=" + pile +
                 ", penalty=" + penalty +
-                ", trick=" + trick +
-                '}';
+                ", trick=" + trick
+                ;
     }
 
     enum Player {
