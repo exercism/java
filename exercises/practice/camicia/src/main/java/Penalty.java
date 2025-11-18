@@ -24,22 +24,6 @@ class Penalty {
         }
     }
 
-    boolean isActive(){
-        return penalty > 0;
-    }
-
-    boolean isActive(Player player) {
-        return player != null && player.equals(this.player) && penalty > 0;
-    }
-
-    boolean isFullyPaid() {
-        return player != null && penalty == 0;
-    }
-
-    boolean isFullyPaid(Player player) {
-        return player != null && player.equals(this.player) && penalty == 0;
-    }
-
     void clear() {
         this.player = null;
         this.penalty = 0;

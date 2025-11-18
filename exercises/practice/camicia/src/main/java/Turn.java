@@ -7,12 +7,12 @@ class Turn {
     private final int roundNumber;
     private final ArrayDeque<Card> deckA;
     private final ArrayDeque<Card> deckB;
-    private final Penalty penalty;
     private ArrayDeque<Card> pile = new ArrayDeque<>();
-    private Turn previousRound;
+    private final Penalty penalty;
     private Player playerPlacedLastPaymentCard;
     private int trick = 0;
     private int playedCardCounter = 0;
+    private Turn previousRound;
 
     private Player player;
     private Card playedCard;
@@ -157,7 +157,7 @@ class Turn {
         Player otherPlayer = opponent(player);
 
         return player.equals(playerPlacedLastPaymentCard) &&
-                penalty.isFullyPaid(otherPlayer);
+                isPenaltyFullyPaid(otherPlayer);
     }
 
     private boolean isOpponentUnableToPayPenalty() {
@@ -199,7 +199,7 @@ class Turn {
             return;
         }
 
-        if (penalty.isFullyPaid()) {
+        if (isPenaltyFullyPaid()) {
             nextPlayer = playerPlacedLastPaymentCard;
             return;
         }
@@ -208,11 +208,19 @@ class Turn {
     }
 
     private boolean isPenaltyActive() {
-        return penalty != null && penalty.isActive();
+        return penalty != null && penalty.getPenalty() > 0;
     }
 
     private boolean isPenaltyActive(Player player) {
-        return penalty != null && penalty.isActive(player);
+        return penalty != null && penalty.getPenalty() > 0 && penalty.getPlayer().equals(player);
+    }
+
+    boolean isPenaltyFullyPaid() {
+        return penalty != null && penalty.getPlayer() != null && penalty.getPenalty() == 0;
+    }
+
+    boolean isPenaltyFullyPaid(Player player) {
+        return isPenaltyFullyPaid() && penalty.getPlayer().equals(player);
     }
 
     private boolean isDeckEmpty(Player player) {
