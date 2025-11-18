@@ -5,7 +5,7 @@ class Card {
 
     protected Card(String symbol) {
         this.symbol = symbol;
-        this.penalty = getPenalty(symbol);
+        this.penalty = definePenalty(symbol);
     }
 
     int getPenalty() {
@@ -24,7 +24,11 @@ class Card {
         return symbol;
     }
 
-    static int getPenalty(String card) {
+    static Card copyCard(Card card) {
+        return new Card(card.symbol);
+    }
+
+    static int definePenalty(String card) {
         return switch (card) {
             case "J" -> 1;
             case "Q" -> 2;
