@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RelationshipComputerTest {
 
     @Test
+    @DisplayName("empty lists")
     public void testThatTwoEmptyListsAreConsideredEqual() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 emptyList(),
@@ -20,6 +22,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("empty list within non empty list")
     public void testEmptyListIsSublistOfNonEmptyList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 emptyList(),
@@ -30,6 +33,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("non empty list contains empty list")
     public void testNonEmptyListIsSuperlistOfEmptyList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList('1', '2', '3'),
@@ -40,6 +44,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("list equals itself")
     public void testListIsEqualToItself() {
         List<String> anyList = asList("1", "2", "3");
 
@@ -52,6 +57,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("different lists")
     public void testDifferentListsOfTheSameLengthAreUnequal() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList(1, 2, 3),
@@ -62,6 +68,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("false start")
     public void testSublistCheckDoesNotAbortAfterFalseStart() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList('1', '2', '5'),
@@ -72,6 +79,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("consecutive")
     public void testSublistCheckHandlesExtraneousRepeatsOfFirstEntry() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList("1", "1", "2"),
@@ -82,6 +90,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("sublist at start")
     public void testSublistAtStart() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList(0, 1, 2),
@@ -92,6 +101,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("sublist in middle")
     public void testSublistInMiddle() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList('2', '3', '4'),
@@ -102,6 +112,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("sublist at end")
     public void testSublistAtEnd() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList("3", "4", "5"),
@@ -112,6 +123,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("at start of superlist")
     public void testAtStartOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList(0, 1, 2, 3, 4, 5),
@@ -122,6 +134,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("in middle of superlist")
     public void testInMiddleOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList('0', '1', '2', '3', '4', '5'),
@@ -132,6 +145,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("at end of superlist")
     public void testAtEndOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList("0", "1", "2", "3", "4", "5"),
@@ -142,6 +156,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("first list missing element from second list")
     public void testFirstListMissingElementFromSecondList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList(1, 3),
@@ -152,6 +167,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("second list missing element from first list")
     public void testSecondListMissingElementFromFirstList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList('1', '2', '3'),
@@ -162,6 +178,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("order matters to a list")
     public void testThatListOrderingIsAccountedFor() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList("1", "2", "3"),
@@ -172,6 +189,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("same digits but different numbers")
     public void testThatListsWithSameDigitsButDifferentNumbersAreUnequal() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList(1, 0, 1),
@@ -182,6 +200,7 @@ public class RelationshipComputerTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("first list missing additional digits from second list")
     public void testFirstListMissingAdditionalDigitsFromSecondList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
                 asList(1, 2),
