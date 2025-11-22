@@ -24,7 +24,7 @@ public class HangmanTest {
     }
 
     @Test
-    @DisplayName("Initial game state is set correctly for a new word")
+    @DisplayName("Initial game state is set correctly")
     public void initialization() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -90,7 +90,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Winning the game reveals full word and marks WIN status")
+    @DisplayName("Winning the game results in WIN status")
     public void wonGame() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -104,7 +104,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Losing the game results in LOSS status and all parts present")
+    @DisplayName("Losing the game results in LOSS status")
     public void lostGame() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -198,7 +198,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Cannot play the same correct guess twice")
+    @DisplayName("Cannot play the same guess twice")
     public void cannotPlayAGuessTwice() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
