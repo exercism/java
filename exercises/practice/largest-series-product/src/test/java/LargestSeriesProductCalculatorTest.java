@@ -129,8 +129,8 @@ public class LargestSeriesProductCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("reports 1 for empty string and empty product (0 span)")
-    public void testEmptyStringToSearchAndSeriesOfNonZeroLengthIsRejected() {
+    @DisplayName("rejects empty string and nonzero span")
+    public void testEmptyStringAndNonZeroSpanIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
