@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class SimpleLinkedListTest {
 
     @Test
-    @DisplayName("A new list is empty with size zero")
+    @DisplayName("A new list is empty")
     public void aNewListIsEmpty() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
         assertThat(list.size()).isEqualTo(0);
@@ -18,7 +18,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Create list from array sets correct size")
+    @DisplayName("Create list from array")
     public void canCreateFromArray() {
         Character[] values = new Character[]{'1', '2', '3'};
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>(values);
@@ -67,7 +67,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Convert list to array returns correct element order")
+    @DisplayName("Can return list as an array")
     public void canReturnListAsArray() {
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
         list.push('9');
@@ -81,7 +81,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Empty list as array returns empty array")
+    @DisplayName("Can return empty list as an empty array")
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
         Object[] expected = {};
