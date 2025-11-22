@@ -19,7 +19,7 @@ public class RobotTest {
     }
 
     @Test
-    @DisplayName("Robot has a valid name matching the pattern")
+    @DisplayName("Robot has a valid name")
     public void hasName() {
         assertIsValidName(robot.getName());
     }
@@ -51,7 +51,7 @@ public class RobotTest {
     
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Robot names are unique in a large sample")
+    @DisplayName("Robot names are unique")
     public void robotNamesAreUnique() {
         Set<String> robotNames = new HashSet<>();
         int sampleSize = 5000;
