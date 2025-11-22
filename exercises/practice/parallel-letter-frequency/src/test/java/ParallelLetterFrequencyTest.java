@@ -381,24 +381,6 @@ public class ParallelLetterFrequencyTest {
 
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
-    
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("many small texts")
-    public void testManySmallTexts() {
-        String[] input = new String[50];
-        Arrays.fill(input, "abbccc");
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
-            {
-                put('a', 50);
-                put('b', 100);
-                put('c', 150);
-            }
-        };
-        ParallelLetterFrequency p = new ParallelLetterFrequency(input);
-
-        assertThat(p.countLetters()).isEqualTo(expectedOutput);
-    }
 
     @Disabled("Remove to run test")
     @Test
@@ -437,6 +419,24 @@ public class ParallelLetterFrequencyTest {
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
-    }    
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("many small texts")
+    public void testManySmallTexts() {
+        String[] input = new String[50];
+        Arrays.fill(input, "abbccc");
+        Map<Character, Integer> expectedOutput = new HashMap<>() {
+            {
+                put('a', 50);
+                put('b', 100);
+                put('c', 150);
+            }
+        };
+        ParallelLetterFrequency p = new ParallelLetterFrequency(input);
+
+        assertThat(p.countLetters()).isEqualTo(expectedOutput);
+    }
 
 }
