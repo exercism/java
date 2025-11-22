@@ -1,8 +1,10 @@
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.disposables.Disposable;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ public class HangmanTest {
     }
 
     @Test
+    @DisplayName("Initial game state is set correctly")
     public void initialization() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -39,6 +42,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("First correct guess updates discovered and guess lists")
     public void firstGuess() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -54,6 +58,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("First incorrect guess registers a miss and adds a part")
     public void firstMiss() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -69,6 +74,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Game in progress accumulates guesses, misses and parts correctly")
     public void gameInProgress() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -84,6 +90,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Winning the game results in WIN status")
     public void wonGame() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -97,6 +104,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Losing the game results in LOSS status")
     public void lostGame() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -118,6 +126,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Handles consecutive games correctly with ordered emissions")
     public void consecutiveGames() {
         // This test setup is more complex because we have to order the emission of values in the
         // different observers.
@@ -189,6 +198,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot play the same guess twice")
     public void cannotPlayAGuessTwice() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
@@ -201,6 +211,7 @@ public class HangmanTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot play the same miss twice")
     public void cannotPlayAMissTwice() {
         Observable<Output> result = hangman.play(
             Observable.fromArray("secret"),
