@@ -1,14 +1,16 @@
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
 public class SimpleLinkedListTest {
 
     @Test
+    @DisplayName("A new list is empty")
     public void aNewListIsEmpty() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
         assertThat(list.size()).isEqualTo(0);
@@ -16,6 +18,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Create list from array")
     public void canCreateFromArray() {
         Character[] values = new Character[]{'1', '2', '3'};
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>(values);
@@ -24,6 +27,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Popping an empty list throws NoSuchElementException")
     public void popOnEmptyListWillThrow() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
 
@@ -32,6 +36,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Pop returns last added element (LIFO)")
     public void popReturnsLastAddedElement() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<Integer>();
         list.push(9);
@@ -44,6 +49,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reverse reverses the list order")
     public void reverseReversesList() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
         list.push("9");
@@ -61,6 +67,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can return list as an array")
     public void canReturnListAsArray() {
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
         list.push('9');
@@ -74,6 +81,7 @@ public class SimpleLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can return empty list as an empty array")
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
         Object[] expected = {};

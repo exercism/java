@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ public class PiecingItTogetherTest {
     private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
 
     @Test
+    @DisplayName("1000 pieces puzzle with 1.6 aspect ratio")
     public void test1000PiecesWithAspectRatio() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(1000)
@@ -30,6 +32,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("square puzzle with 32 rows")
     public void testSquarePuzzleWith32Rows() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(32)
@@ -52,6 +55,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("400 pieces square puzzle with only inside pieces and aspect ratio")
     public void testInsideAndAspectRatioOnly() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .inside(324)
@@ -74,6 +78,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("1500 pieces landscape puzzle with 30 rows and 1.6 aspect ratio")
     public void testLandscape1500WithRowsAndAspect() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(30)
@@ -96,6 +101,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("300 pieces portrait puzzle with 70 border pieces")
     public void test300PiecesPortraitWithBorder() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(300)
@@ -119,6 +125,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with insufficient data")
     public void testInsufficientData() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .pieces(1500)
@@ -132,6 +139,7 @@ public class PiecingItTogetherTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("puzzle with contradictory data")
     public void testContradictoryData() {
         JigsawInfo input = new JigsawInfo.Builder()
                 .rows(100)
