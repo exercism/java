@@ -102,6 +102,26 @@ public class MazeGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Maze is generated perfectly (single path, no isolated cells)")
+    public void theMazeIsPerfect() {
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
+
+        assertThatMazeHasSinglePath(maze);
+        assertThatMazeHasNoIsolatedSections(maze);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Maze with a seed is generated perfectly (single path, no isolated cells)")
+    public void theMazeIsPerfectWithSeed() {
+        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
+
+        assertThatMazeHasSinglePath(maze);
+        assertThatMazeHasNoIsolatedSections(maze);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     @DisplayName("Mazes generated with same seed are identical")
     public void twoMazesWithSameSeedShouldBeEqual() {
         var maze1 = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
@@ -122,26 +142,6 @@ public class MazeGeneratorTest {
         assertThat(maze1)
                 .as("Two mazes with different seeds should not be equal")
                 .isNotEqualTo(maze2);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Maze is generated perfectly (single path, no isolated cells)")
-    public void theMazeIsPerfect() {
-        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS);
-
-        assertThatMazeHasSinglePath(maze);
-        assertThatMazeHasNoIsolatedSections(maze);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Maze with a seed is generated perfectly (single path, no isolated cells)")
-    public void theMazeIsPerfectWithSeed() {
-        var maze = sut.generatePerfectMaze(RECTANGLE_ROWS, RECTANGLE_COLUMNS, SEED_ONE);
-
-        assertThatMazeHasSinglePath(maze);
-        assertThatMazeHasNoIsolatedSections(maze);
     }
 
     @Disabled("Remove to run test")
