@@ -47,6 +47,18 @@ jobs:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Test all exercises using java-test-runner
         run: bin/test-with-test-runner
+      - name: Print summary
+        run: |
+          if [ -f exercises/build/summary.txt ]; then
+            echo "===== TEST SUMMARY ====="
+            cat exercises/build/summary.txt
+            echo "========================"
+          else
+            echo "===== ALL TESTS PASSED ====="
+            echo "No summary file was generated."
+            echo "============================="
+          fi
+        if: always() 
       - name: Archive test results
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
@@ -64,6 +76,18 @@ jobs:
           fetch-depth: 0
       - name: Test changed exercises using java-test-runner
         run: bin/test-changed-exercise
+      - name: Print summary
+        run: |
+          if [ -f exercises/build/summary.txt ]; then
+            echo "===== TEST SUMMARY ====="
+            cat exercises/build/summary.txt
+            echo "========================"
+          else
+            echo "===== ALL TESTS PASSED ====="
+            echo "No summary file was generated."
+            echo "============================="
+          fi
+        if: always() 
       - name: Archive test results
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
