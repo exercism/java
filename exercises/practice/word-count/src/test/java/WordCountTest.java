@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class WordCountTest {
 
 
     @Test
+    @DisplayName("count one word")
     public void countOneWord() {
         expectedWordCount.put("word", 1);
 
@@ -30,6 +32,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("count one of each word")
     public void countOneOfEachWord() {
         expectedWordCount.put("one", 1);
         expectedWordCount.put("of", 1);
@@ -41,6 +44,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple occurrences of a word")
     public void multipleOccurrencesOfAWord() {
         expectedWordCount.put("one", 1);
         expectedWordCount.put("fish", 4);
@@ -54,6 +58,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("handles cramped lists")
     public void handlesCrampedLists() {
         expectedWordCount.put("one", 1);
         expectedWordCount.put("two", 1);
@@ -65,6 +70,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("handles expanded lists")
     public void handlesExpandedLists() {
         expectedWordCount.put("one", 1);
         expectedWordCount.put("two", 1);
@@ -76,6 +82,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ignore punctuation")
     public void ignorePunctuation() {
         expectedWordCount.put("car", 1);
         expectedWordCount.put("carpet", 1);
@@ -90,6 +97,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("include numbers")
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
         expectedWordCount.put("1", 1);
@@ -101,6 +109,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("normalize case")
     public void normalizeCase() {
         expectedWordCount.put("go", 3);
         expectedWordCount.put("stop", 2);
@@ -111,6 +120,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("with apostrophes")
     public void withApostrophes() {
         expectedWordCount.put("first", 1);
         expectedWordCount.put("don't", 2);
@@ -127,6 +137,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("substrings from the beginning")
     public void substringsFromTheBeginning() {
         expectedWordCount.put("joe", 1);
         expectedWordCount.put("can't", 1);
@@ -143,6 +154,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("with quotations")
     public void withQuotations() {
         expectedWordCount.put("joe", 1);
         expectedWordCount.put("can't", 1);
@@ -157,6 +169,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple spaces not detected as a word")
     public void multipleSpacesNotDetectedAsAWord() {
         expectedWordCount.put("multiple", 1);
         expectedWordCount.put("whitespaces", 1);
@@ -167,6 +180,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("alternating word separators not detected as a word")
     public void alternatingWordSeperatorsNotDetectedAsAWord() {
         expectedWordCount.put("one", 1);
         expectedWordCount.put("two", 1);
@@ -178,6 +192,7 @@ public class WordCountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("quotation for word with apostrophe")
     public void quotationForWordWithApostrophe() {
         expectedWordCount.put("can", 1);
         expectedWordCount.put("can't", 2);
