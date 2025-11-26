@@ -1,0 +1,17 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "src/main/java/Paasio.java"
+    ],
+    "test": [
+      "src/test/java/PaasioTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Paasio.java"
+    ]
+  },
+  "blurb": "Report network IO statistics.",
+  "source": "Brian Matsuo",
+  "source_url": "https://github.com/bmatsuo"
+}
