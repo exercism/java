@@ -77,8 +77,8 @@ public class CryptoSquareTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("54 character plaintext results in 7 chunks, the last two with trailing spaces")
-    public void fiftyFourCharacterPlaintextResultsInSevenChunksWithTrailingSpaces() {
+    @DisplayName("54 character plaintext results in 8 chunks, the last two with trailing spaces")
+    public void fiftyFourCharacterPlaintextResultsInEightChunksWithTrailingSpaces() {
         CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have " +
                 "given us roots.");
         String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ";

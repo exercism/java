@@ -2,13 +2,19 @@ name: Deprecated
 
 on:
   pull_request:
+    paths:
+      - "exercises/**"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   test-deprecated:
     name: Check for deprecated exercises
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
         with:
           fetch-depth: 0
       - name: Test deprecated exercises using test-deprecated-exercises

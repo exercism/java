@@ -12,6 +12,10 @@ docker pull exercism/java-test-runner
 
 exit_code=0
 
+summary_dir="exercises/build"
+summary_file="${summary_dir}/summary.txt"
+mkdir -p "$summary_dir"
+
 function run_test_runner() {
     local slug=$1
     local solution_dir=$2
@@ -56,6 +60,18 @@ function verify_exercise() {
 
     if [[ $(jq -r '.status' "${results_file}") != "pass" ]]; then
         echo "${slug}: ${implementation_file_key} solution did not pass the tests"
+
+        # Determine practice/slug or concept/slug
+        local relative_path=$(echo "$dir" | sed -E 's|.*/exercises/||')
+
+        # Create summary.txt with header only on first failure
+        if [ ! -f "$summary_file" ]; then
+            echo "The following exercises have test failures or test errors:" > "$summary_file"
+        fi
+
+        # Append the correct path (practice/slug or concept/slug)
+        echo "$relative_path" >> "$summary_file"
+
         exit_code=1
     fi
 
