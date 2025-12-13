@@ -29,7 +29,6 @@ class SqueakyClean {
         }
         cleanString = newString;
 
-
         return cleanString;
     }
 }
