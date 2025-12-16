@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Update Gradle wrappers across all exercises.
+# Usage:
+#   bin/update-gradle-wrappers [<gradle-version>]
+# Example:
+#   bin/update-gradle-wrappers 9.2.1
+
+DEFAULT_VERSION="9.2.1"
+VERSION="${1:-$DEFAULT_VERSION}"
+
+log() { printf "[update-wrappers] %s\n" "$*"; }
+err() { printf "[update-wrappers][ERROR] %s\n" "$*" >&2; }
+die() { printf "[update-wrappers][ERROR] %s\n" "$*" >&2; exit 1; }
+
+# Resolve repo root (works whether run from repo root or any subdir)
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+if REPO_ROOT=$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel 2>/dev/null); then
+  :
+else
+  # Fallback: assume script is in <repo>/bin
+  REPO_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+fi
+
+EXERCISES_DIR="$REPO_ROOT/exercises"
+CONCEPT_DIR="$EXERCISES_DIR/concept"
+PRACTICE_DIR="$EXERCISES_DIR/practice"
+SHARED_WRAPPER_DIR="$EXERCISES_DIR/gradle/wrapper"
+
+if [[ ! -d "$EXERCISES_DIR" ]]; then
+  err "Cannot find exercises directory at $EXERCISES_DIR"
+  exit 1
+fi
+
+log "Target Gradle version: $VERSION"
+
+# Use the fixed seed at exercises/gradle
+SEED_DIR="$EXERCISES_DIR"
+if [[ ! -d "$SEED_DIR" ]]; then
+  die "Seed directory not found: $SEED_DIR"
+fi
+if [[ ! -x "$SEED_DIR/gradlew" ]]; then
+  err "Seed does not contain an executable gradlew: $SEED_DIR/gradlew"
+  err "Ensure the seed directory contains a Gradle project with the wrapper scripts."
+  exit 1
+fi
+
+log "Using seed: $SEED_DIR"
+
+(
+  cd "$SEED_DIR"
+  log "Running: ./gradlew wrapper --gradle-version $VERSION"
+  ./gradlew --no-daemon wrapper --gradle-version "$VERSION" || die "Gradle wrapper task failed in $SEED_DIR"
+)
+
+SEED_WRAPPER_DIR="$SEED_DIR/gradle/wrapper"
+SEED_JAR="$SEED_WRAPPER_DIR/gradle-wrapper.jar"
+SEED_PROPS="$SEED_WRAPPER_DIR/gradle-wrapper.properties"
+
+if [[ ! -f "$SEED_JAR" || ! -f "$SEED_PROPS" ]]; then
+  die "Seed wrapper files not found at $SEED_WRAPPER_DIR"
+fi
+
+# Distribute seed wrapper files to all exercises (simplified)
+UPDATED_COUNT=0
+for path in "$CONCEPT_DIR"/*/ "$PRACTICE_DIR"/*/; do
+  [[ -d "$path" ]] || continue
+  mkdir -p "$path/gradle/wrapper"
+  cp -f "$SEED_JAR"   "$path/gradle/wrapper/gradle-wrapper.jar"
+  cp -f "$SEED_PROPS" "$path/gradle/wrapper/gradle-wrapper.properties"
+  cp -f "$SEED_DIR/gradlew" "$path/gradlew"
+  cp -f "$SEED_DIR/gradlew.bat" "$path/gradlew.bat"
+  chmod +x "$path/gradlew"
+  log "Updated wrapper files in: $path"
+  ((UPDATED_COUNT++))
+done
+
+log "Done. Updated: $UPDATED_COUNT"
+
+log "Reminder: wrappers also updated at $SHARED_WRAPPER_DIR"
