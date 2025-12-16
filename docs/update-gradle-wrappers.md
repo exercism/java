@@ -1,6 +1,6 @@
 # Update Gradle Wrappers Across All Exercises
 
-This repository contains many independent Gradle projects (one per exercise). 
+This repository contains many independent Gradle projects (one per exercise).
 To update all Gradle wrappers to a specific version (e.g., to support Java 25), use the helper script below.
 
 ## Script name
