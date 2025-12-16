@@ -14,23 +14,25 @@ Suggested name: `update-gradle-wrappers` (added under `bin/`).
 
 ## Usage
 
-```
+```shell
 bin/update-gradle-wrappers [<gradle-version>]
 ```
 
 - If omitted, the version defaults to `9.2.1`.
 - Example: update everything to Gradle 9.2.1
 
-```
+```shell
 bin/update-gradle-wrappers 9.2.1
 ```
 
 ## What the script does
 
 1. Uses the fixed seed at `exercises/gradle` and runs:
-   ```
+
+   ```shell
    ./gradlew wrapper --gradle-version <version>
    ```
+   
    This produces the correct `gradle-wrapper.jar` and `gradle-wrapper.properties` for the requested version.
 2. Copies the wrapper files from the seed to every exercise’s `gradle/wrapper/` directory
 
@@ -44,6 +46,7 @@ This aligns with the requested approach: update via Gradle, and ensure consisten
 ## Troubleshooting
 
 - If you see permission issues, make the script executable:
-  ```
+
+  ```shell
   chmod +x bin/update-gradle-wrappers
   ```
