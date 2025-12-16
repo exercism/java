@@ -1,18 +1,18 @@
-### Update Gradle Wrappers Across All Exercises
+# Update Gradle Wrappers Across All Exercises
 
 This repository contains many independent Gradle projects (one per exercise). 
 To update all Gradle wrappers to a specific version (e.g., to support Java 25), use the helper script below.
 
-#### Script name
+## Script name
 
 Suggested name: `update-gradle-wrappers` (added under `bin/`).
 
-#### Requirements
+## Requirements
 
 - macOS/Linux shell with Bash
 - Internet access (the first update will download the target Gradle distribution)
 
-#### Usage
+## Usage
 
 ```
 bin/update-gradle-wrappers [<gradle-version>]
@@ -25,7 +25,7 @@ bin/update-gradle-wrappers [<gradle-version>]
 bin/update-gradle-wrappers 9.2.1
 ```
 
-#### What the script does
+## What the script does
 
 1. Uses the fixed seed at `exercises/gradle` and runs:
    ```
@@ -36,12 +36,12 @@ bin/update-gradle-wrappers 9.2.1
 
 This aligns with the requested approach: update via Gradle, and ensure consistency by copying the wrapper files everywhere.
 
-#### Notes
+## Notes
 
 - The script uses `exercises/gradle` as the single source of truth (seed) and does not run Gradle in each exercise; it only copies the wrapper files.
 - The operation can take time on the first run due to Gradle downloads.
 
-#### Troubleshooting
+## Troubleshooting
 
 - If you see permission issues, make the script executable:
   ```
