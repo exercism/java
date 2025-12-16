@@ -2,6 +2,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 public class BuildTreeTest {
 
     @Test
+    @DisplayName("Empty list")
     public void testEmptyList() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
 
@@ -18,6 +20,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Single record")
     public void testOneRecord() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         Record record = new Record(0, 0);
@@ -30,6 +33,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Three records in order")
     public void testThreeRecordsInOrder() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 0));
@@ -48,6 +52,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Three records in reverse order")
     public void testThreeRecordsInReverseOrder() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(2, 0));
@@ -66,6 +71,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("More than two children")
     public void testRecordsWithMoreThanTwoChildren() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 0));
@@ -83,11 +89,11 @@ public class BuildTreeTest {
         assertThat(root.getChildren().get(0).getNodeId()).isEqualTo(1);
         assertThat(root.getChildren().get(1).getNodeId()).isEqualTo(2);
         assertThat(root.getChildren().get(2).getNodeId()).isEqualTo(3);
-
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Binary tree")
     public void testBinaryTree() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(6, 2));
@@ -119,6 +125,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Unbalanced tree")
     public void testUnbalancedTree() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 0));
@@ -149,6 +156,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Root has parent")
     public void testRootNodeHasParent() {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(0, 1));
@@ -163,6 +171,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("No root node")
     public void testNoRootNode() {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(1, 0));
@@ -177,6 +186,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Non continuous records")
     public void testNonContinuousRecords() {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(2, 0));
@@ -193,6 +203,7 @@ public class BuildTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cycle indirectly")
     public void testCycleIndirectly() {
         ArrayList<Record> records = new ArrayList<>();
         records.add(new Record(5, 2));
