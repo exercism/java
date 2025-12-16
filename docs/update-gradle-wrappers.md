@@ -32,7 +32,7 @@ bin/update-gradle-wrappers 9.2.1
    ```shell
    ./gradlew wrapper --gradle-version <version>
    ```
-   
+
    This produces the correct `gradle-wrapper.jar` and `gradle-wrapper.properties` for the requested version.
 2. Copies the wrapper files from the seed to every exercise’s `gradle/wrapper/` directory
 
