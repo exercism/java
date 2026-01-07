@@ -1212,6 +1212,20 @@
         "difficulty": 6
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "b534049a-5920-4906-9091-0fa6d81a3636",
+        "practices": [],
+        "prerequisites": [
+          "for-loops",
+          "lists",
+          "sets",
+          "randomness",
+          "datetime"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "bank-account",
         "name": "Bank Account",
         "uuid": "a242efc5-159d-492b-861d-12a1459fb334",
