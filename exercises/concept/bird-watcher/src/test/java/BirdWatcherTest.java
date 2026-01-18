@@ -1,26 +1,27 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BirdWatcherTest {
 
-    private static final int DAY1 = 0;
-    private static final int DAY2 = 2;
-    private static final int DAY3 = 5;
-    private static final int DAY4 = 3;
-    private static final int DAY5 = 7;
-    private static final int DAY6 = 8;
-    private static final int TODAY = 4;
+    private static final int DAY1 = 7;
+    private static final int DAY2 = 0;
+    private static final int DAY3 = 4;
+    private static final int DAY4 = 8;
+    private static final int DAY5 = 5;
+    private static final int DAY6 = 2;
+    private static final int TODAY = 3;
 
     private BirdWatcher birdWatcher;
-    private final int[] lastWeek = {DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY};
+    private final int[] currentWeek = {DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY};
+    private final int[] lastWeek = {0, 2, 5, 3, 7, 8, 4};
 
     @BeforeEach
     public void setUp() {
-        birdWatcher = new BirdWatcher(lastWeek);
+        birdWatcher = new BirdWatcher(currentWeek);
     }
 
     @Test
@@ -28,7 +29,7 @@ public class BirdWatcherTest {
     @DisplayName("The getLastWeek method correctly returns last week's counts")
     public void itTestGetLastWeek() {
         assertThat(birdWatcher.getLastWeek())
-            .containsExactly(DAY1, DAY2, DAY3, DAY4, DAY5, DAY6, TODAY);
+            .isEqualTo(lastWeek);
     }
 
     @Test
@@ -47,8 +48,16 @@ public class BirdWatcherTest {
     }
 
     @Test
+    @Tag("task:3")
+    @DisplayName("The incrementTodaysCount does not change count for other days")
+    public void itIncrementDoesNotChangeCountForOtherDays() {
+        birdWatcher.incrementTodaysCount();
+        assertThat(birdWatcher.getCountForFirstDays(6)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6);
+    }
+
+    @Test
     @Tag("task:4")
-    @DisplayName("The hasDayWithoutBirds method returns true when day had no visits")
+    @DisplayName("The hasDayWithoutBirds method returns true when at least one day had no visits")
     public void itHasDayWithoutBirds() {
         assertThat(birdWatcher.hasDayWithoutBirds()).isTrue();
     }
@@ -88,7 +97,7 @@ public class BirdWatcherTest {
     @Tag("task:6")
     @DisplayName("The getBusyDays method returns the correct count of busy days")
     public void itTestGetCountForBusyDays() {
-        // DAY3, DAY5 and DAY6 are all >= 5 birds
+        // DAY1, DAY4 and DAY5 are all >= 5 birds
         assertThat(birdWatcher.getBusyDays()).isEqualTo(3);
     }
 
