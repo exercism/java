@@ -51,8 +51,8 @@ public class BirdWatcherTest {
     @Tag("task:3")
     @DisplayName("The incrementTodaysCount does not change count for other days")
     public void itIncrementDoesNotChangeCountForOtherDays() {
-          birdWatcher.incrementTodaysCount();
-          assertThat(birdWatcher.getCountForFirstDays(6)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6);
+        birdWatcher.incrementTodaysCount();
+        assertThat(birdWatcher.getCountForFirstDays(6)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6);
     }
 
     @Test
