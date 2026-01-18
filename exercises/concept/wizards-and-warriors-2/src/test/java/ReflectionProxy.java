@@ -117,12 +117,14 @@ public abstract class ReflectionProxy {
      * Invokes a method from the target instance
      *
      * @param methodName      The name of the method
+     * @param returnType      The class representing the expected return type
      * @param parameterTypes  The list of parameter types
      * @param parameterValues The list with values for the method parameters
      * @param <T>             The result type we expect the method to be
      * @return The value returned by the method
      */
-    protected <T> T invokeMethod(String methodName, Class<?>[] parameterTypes, Object... parameterValues) {
+    protected <T> T invokeMethod(String methodName, Class<T> returnType, Class<?>[] parameterTypes,
+                                 Object... parameterValues) {
         if (target == null) {
             throw new UnsupportedOperationException();
         }
@@ -131,12 +133,12 @@ public abstract class ReflectionProxy {
                 // getDeclaredMethod is used to get protected/private methods
                 Method method = target.getClass().getDeclaredMethod(methodName, parameterTypes);
                 method.setAccessible(true);
-                return (T) method.invoke(target, parameterValues);
+                return returnType.cast(method.invoke(target, parameterValues));
             } catch (NoSuchMethodException e) {
                 // try getting it from parent class, but only public methods will work
                 Method method = target.getClass().getMethod(methodName, parameterTypes);
                 method.setAccessible(true);
-                return (T) method.invoke(target, parameterValues);
+                return returnType.cast(method.invoke(target, parameterValues));
             }
         } catch (Exception e) {
             throw new UnsupportedOperationException(e);
@@ -360,7 +362,6 @@ public abstract class ReflectionProxy {
 
     /**
      * Proxy for the 'equals' method
-     *
      * @param obj The ReflexionProxy object you want to compare against
      * @return True if both targets are equal, false otherwise
      */
@@ -379,7 +380,6 @@ public abstract class ReflectionProxy {
 
     /**
      * Proxy for the 'hashCode' method
-     *
      * @return The hashCode from the target class
      */
     public int hashCode() {
@@ -397,28 +397,26 @@ public abstract class ReflectionProxy {
 
     /**
      * Proxy for the 'toString' method from the target class
-     *
      * @return The result of 'toString' from the target instance
      */
     public String toString() {
-        return invokeMethod("toString", new Class[]{});
+        return invokeMethod("toString", String.class, new Class[]{ });
     }
 
     /**
      * Gets a property value from the target instance (if it exists)
-     *
      * @param propertyName The name of the property
-     * @param <T>          The type we are expecting it to be
+     * @param <T> The type we are expecting it to be
      * @return The value of the property (if it exists)
      */
-    protected <T> T getPropertyValue(String propertyName) {
+    protected <T> T getPropertyValue(String propertyName, Class<T> propertyType) {
         if (target == null || !hasProperty(propertyName)) {
             return null;
         }
         try {
             Field field = target.getClass().getDeclaredField(propertyName);
             field.setAccessible(true);
-            return (T) field.get(target);
+            return propertyType.cast(field.get(target));
         } catch (Exception e) {
             return null;
         }
@@ -426,7 +424,6 @@ public abstract class ReflectionProxy {
 
     /**
      * Checks if the target class is abstract
-     *
      * @return True if the target class exists and is abstract, false otherwise
      */
     public boolean isAbstract() {
@@ -439,7 +436,6 @@ public abstract class ReflectionProxy {
 
     /**
      * Checks if the target class extends another
-     *
      * @param className The fully qualified name of the class it should extend
      * @return True if the target class extends the specified one, false otherwise
      */
@@ -458,7 +454,6 @@ public abstract class ReflectionProxy {
 
     /**
      * Checks if the target class is an interface
-     *
      * @return True if the target class exists and is an interface, false otherwise
      */
     public boolean isInterface() {
@@ -471,8 +466,7 @@ public abstract class ReflectionProxy {
 
     /**
      * Checks if a method is abstract
-     *
-     * @param name           The name of the method
+     * @param name The name of the method
      * @param parameterTypes The list of method parameter types
      * @return True if the method exists and is abstract, false otherwise
      */
@@ -491,8 +485,7 @@ public abstract class ReflectionProxy {
 
     /**
      * Checks if a method is protected
-     *
-     * @param name           The name of the method
+     * @param name The name of the method
      * @param parameterTypes The list of method parameter types
      * @return True if the method exists and is protected, false otherwise
      */
@@ -511,3 +504,4 @@ public abstract class ReflectionProxy {
 
     //endregion
 }
+

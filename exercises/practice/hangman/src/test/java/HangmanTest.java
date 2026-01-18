@@ -16,6 +16,14 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class HangmanTest {
 
+    /**
+     * Used in {@link #consecutiveGames()} to tell when both are subscribed too.
+     */
+    private static class SubscribedEmitters {
+        private ObservableEmitter<String> word;
+        private ObservableEmitter<String> letter;
+    }
+
     private Hangman hangman;
 
     @BeforeEach
@@ -136,14 +144,14 @@ public class HangmanTest {
         // 4. Letter observable receiveds the letters for the second word
 
         // Emitters respectively for the word and letter observables
-        ObservableEmitter<String>[] emitters = new ObservableEmitter[2];
+        SubscribedEmitters emitters = new SubscribedEmitters();
         Runnable emit = () -> {
             // Process sending the inputs in the right order
-            emitters[0].onNext("secret");
-            Stream.of("a", "e", "o", "s", "c", "r", "g", "t").forEach(emitters[1]::onNext);
-            emitters[0].onNext("abba");
-            Stream.of("a", "e", "s", "b").forEach(emitters[1]::onNext);
-            emitters[0].onComplete();
+            emitters.word.onNext("secret");
+            Stream.of("a", "e", "o", "s", "c", "r", "g", "t").forEach(emitters.letter::onNext);
+            emitters.word.onNext("abba");
+            Stream.of("a", "e", "s", "b").forEach(emitters.letter::onNext);
+            emitters.word.onComplete();
         };
         Observable<String> words = createWordObservable(emitters, emit);
         Observable<String> letters = createLetterObservable(emitters, emit);
@@ -172,24 +180,24 @@ public class HangmanTest {
         }
     }
 
-    Observable createWordObservable(ObservableEmitter[] emitters, Runnable emit) {
+    Observable<String> createWordObservable(SubscribedEmitters emitters, Runnable emit) {
         return Observable.create(
             emitter -> {
                 // A new subscription was created for words, record it.
-                emitters[0] = emitter;
-                if (emitters[1] != null) {
+                emitters.word = emitter;
+                if (emitters.letter != null) {
                     // Start emitting only when both word and letter observable have subscriptions
                     emit.run();
                 }
             });
     }
 
-    Observable createLetterObservable(ObservableEmitter[] emitters, Runnable emit) {
+    Observable<String> createLetterObservable(SubscribedEmitters emitters, Runnable emit) {
         return Observable.create(
             emitter -> {
                 // A new subscription was created for letters, record it.
-                emitters[1] = emitter;
-                if (emitters[0] != null) {
+                emitters.letter = emitter;
+                if (emitters.word != null) {
                     // Start emitting only when both word and letter observable have subscriptions
                     emit.run();
                 }
