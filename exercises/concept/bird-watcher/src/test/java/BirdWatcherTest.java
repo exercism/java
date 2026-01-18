@@ -43,11 +43,16 @@ public class BirdWatcherTest {
     @Tag("task:3")
     @DisplayName("The incrementTodaysCount method correctly increments today's counts")
     public void itIncrementTodaysCount() {
-        int firstSixDaysBeforeIncrement = birdWatcher.getCountForFirstDays(6);
         birdWatcher.incrementTodaysCount();
-        int firstSixDaysAfterIncrement = birdWatcher.getCountForFirstDays(6);
         assertThat(birdWatcher.getToday()).isEqualTo(TODAY + 1);
-        assertThat(firstSixDaysAfterIncrement).isEqualTo(firstSixDaysBeforeIncrement);
+    }
+
+    @Test
+    @Tag("task:3")
+    @DisplayName("The incrementTodaysCount does not change count for other days")
+    public void itIncrementDoesNotChangeCountForOtherDays() {
+          birdWatcher.incrementTodaysCount();
+          assertThat(birdWatcher.getCountForFirstDays(6)).isEqualTo(DAY1 + DAY2 + DAY3 + DAY4 + DAY5 + DAY6);
     }
 
     @Test
