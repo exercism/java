@@ -1,11 +1,12 @@
+import java.time.LocalDate;
 import java.util.List;
 
 class BafflingBirthdays {
-    boolean sharedBirthday(List<String> birthdates) {
+    boolean sharedBirthday(List<LocalDate> birthdates) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    List<String> randomBirthdates(int groupSize) {
+    List<LocalDate> randomBirthdates(int groupSize) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

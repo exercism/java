@@ -9,27 +9,25 @@ class BafflingBirthdays {
     private static final int nonLeapYear = 2001;
     private static final int daysInYear = 365;
 
-    boolean sharedBirthday(List<String> birthdates) {
+    boolean sharedBirthday(List<LocalDate> birthdates) {
         Set<String> seen = new HashSet<>();
-        for (String birthdate : birthdates) {
-            String monthDay = birthdate.substring(5);
-            if (!seen.add(monthDay)) {
+        for (LocalDate birthdate : birthdates) {
+            if (!seen.add(birthdate.getMonth().toString() + birthdate.getDayOfMonth())) {
                 return true;
             }
         }
         return false;
     }
     
-    List<String> randomBirthdates(int groupSize) {
+    List<LocalDate> randomBirthdates(int groupSize) {
         if (groupSize <= 0) {
             return List.of();
         }
-        List<String> birthdates = new ArrayList<>(groupSize);
+        List<LocalDate> birthdates = new ArrayList<>(groupSize);
         ThreadLocalRandom random = ThreadLocalRandom.current();
         for (int i = 0; i < groupSize; i++) {
             int dayOfYear = random.nextInt(1, daysInYear + 1);
-            LocalDate date = LocalDate.ofYearDay(nonLeapYear, dayOfYear);
-            birthdates.add(date.toString());
+            birthdates.add(LocalDate.ofYearDay(nonLeapYear, dayOfYear));
         }
         return birthdates;
     }
