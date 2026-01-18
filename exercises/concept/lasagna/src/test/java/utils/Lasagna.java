@@ -8,18 +8,19 @@ public class Lasagna extends ReflectionProxy {
     }
 
     public int expectedMinutesInOven() {
-        return invokeMethod("expectedMinutesInOven", new Class[]{});
+        return invokeMethod("expectedMinutesInOven", Integer.class, new Class[]{});
     }
 
     public int remainingMinutesInOven(int actualMinutes) {
-        return invokeMethod("remainingMinutesInOven", new Class[]{int.class}, actualMinutes);
+        return invokeMethod("remainingMinutesInOven", Integer.class, new Class[]{int.class}, actualMinutes);
     }
 
     public int preparationTimeInMinutes(int amountLayers) {
-        return invokeMethod("preparationTimeInMinutes", new Class[]{int.class}, amountLayers);
+        return invokeMethod("preparationTimeInMinutes", Integer.class, new Class[]{int.class}, amountLayers);
     }
 
     public int totalTimeInMinutes(int amountLayers, int actualMinutes) {
-        return invokeMethod("totalTimeInMinutes", new Class[]{int.class, int.class}, amountLayers, actualMinutes);
+        return invokeMethod("totalTimeInMinutes", Integer.class, new Class[]{int.class, int.class},
+                amountLayers, actualMinutes);
     }
 }
