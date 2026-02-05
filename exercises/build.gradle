@@ -78,8 +78,8 @@ subprojects {
 
     // configuration of the linter
     checkstyle {
-      toolVersion '10.7.0'
-      configFile file("$rootDir/checkstyle.xml")
+      toolVersion = '10.7.0'
+      configFile = file("$rootDir/checkstyle.xml")
       sourceSets = [project.sourceSets.main, project.sourceSets.test]
     }
 
