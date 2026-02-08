@@ -12,4 +12,8 @@ Then, update the Gradle wrappers for each exercise to match the root version:
 ./gradlew allWrappers
 ```
 
+Copy the updated Gradle resources to the [exercise template directory][template-resource].
+
 Finally, commit and push your changes.
+
+[template-resource]: https://github.com/exercism/java/tree/main/resources/exercise-template
