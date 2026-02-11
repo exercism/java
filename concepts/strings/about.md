@@ -31,7 +31,7 @@ To put a newline character in a string, use the `\n` escape code (`\r\n` on Wind
 For code that should work on varying operating systems Java offers [`System.lineSeparator()`][system-line-separator], which returns the system-dependent line separator string.
 This is important if you're writing to files that will be read on the same system.
 
-To comfortable work with texts that contain a lot of newlines you can use [Text Blocks][text-blocks].
+To comfortably work with texts that contain a lot of newlines you can use [Text Blocks][text-blocks].
 These multi-line strings are delimited by triple double quote (`"`) characters.
 
 ```java
