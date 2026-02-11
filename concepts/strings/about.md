@@ -28,9 +28,6 @@ To put a newline character in a string, use the `\n` escape code (`\r\n` on Wind
 String multilineHtml = "<html>\n    <body>\n        <h1>Hello, World!</h1>\n    </body>\n</html>\n";
 ```
 
-For code that should work on varying operating systems Java offers [`System.lineSeparator()`][system-line-separator], which returns the system-dependent line separator string.
-This is important if you're writing to files that will be read on the same system.
-
 To comfortably work with texts that contain a lot of newlines you can use [Text Blocks][text-blocks].
 These multi-line strings are delimited by triple double quote (`"`) characters.
 
@@ -67,6 +64,15 @@ The conversion `%n` in a format string inserts a system-dependent line separator
 ```java
 String name = "Jane";
 String.format("Hello,%n%s!", name);
+// => "Hello,\nJane!" (Linux, macOS)
+// => "Hello,\r\nJane!" (Windows)
+```
+
+Alternatively you can call the function [`System.lineSeparator()`][system-line-separator], which returns the system-dependent line separator as a string.
+
+```java
+String name = "Jane";
+"Hello," + System.lineSeparator() + name;
 // => "Hello,\nJane!" (Linux, macOS)
 // => "Hello,\r\nJane!" (Windows)
 ```
