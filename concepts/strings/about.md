@@ -25,7 +25,7 @@ String escaped = "c:\\test.txt";
 To put a newline character in a string, use the `\n` escape code (`\r\n` on Windows):
 
 ```java
-"<html>\n    <body>\n        <h1>Hello, World!</h1>\n    </body>\n</html>\n"
+String multilineHtml = "<html>\n    <body>\n        <h1>Hello, World!</h1>\n    </body>\n</html>\n";
 ```
 
 For code that should work on varying operating systems Java offers [`System.lineSeparator()`][system-line-separator], which returns the system-dependent line separator string.
