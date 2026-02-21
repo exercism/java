@@ -101,6 +101,7 @@ include 'practice:nth-prime'
 include 'practice:nucleotide-count'
 include 'practice:ocr-numbers'
 // include 'practice:octal' // deprecated
+include 'practice:paasio'
 include 'practice:palindrome-products'
 include 'practice:pangram'
 include 'practice:parallel-letter-frequency'
