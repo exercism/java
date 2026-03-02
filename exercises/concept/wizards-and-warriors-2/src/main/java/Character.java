@@ -1,3 +1,8 @@
+/**
+ * Represents a Character in the game.
+ *
+ * NOTE: There is no need to change this file and is treated as read only by the Exercism test runners.
+ */
 public class Character {
     private String characterClass;
     private int level;
