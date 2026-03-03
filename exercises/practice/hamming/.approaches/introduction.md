@@ -139,4 +139,3 @@ the choice between the various approaches can be made by perceived readability.
 [approach-intstream-map-sum]:  https://exercism.org/tracks/java/exercises/hamming/approaches/intstream-map-sum
 [approach-intstream-reduce]:  https://exercism.org/tracks/java/exercises/hamming/approaches/intstream-reduce
 [jmh]: https://github.com/openjdk/jmh
-[final]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/final
