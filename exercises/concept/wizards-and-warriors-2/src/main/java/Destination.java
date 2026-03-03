@@ -1,3 +1,8 @@
+/**
+ * Represents a Destination.
+ *
+ * NOTE: There is no need to change this file and is treated as read only by the Exercism test runners.
+ */
 public class Destination {
     private String name;
     private int inhabitants;

@@ -8,7 +8,8 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/GameMaster.java"
+      "src/main/java/GameMaster.java",
+      "src/main/java/TravelMethod.java"
     ],
     "test": [
       "src/test/java/GameMasterTest.java"
@@ -18,8 +19,7 @@
     ],
     "editor": [
       "src/main/java/Character.java",
-      "src/main/java/Destination.java",
-      "src/main/java/TravelMethod.java"
+      "src/main/java/Destination.java"
     ],
     "invalidator": [
       "build.gradle"
