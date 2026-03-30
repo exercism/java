@@ -2,6 +2,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.List;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -85,5 +86,47 @@ public class SatelliteTest {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> satellite.treeFromTraversals(preorder, inorder))
                 .withMessage("traversals must contain unique items");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("A degenerate binary tree")
+    public void degenerateBinaryTree() {
+        List<Character> preorder = List.of('a', 'b', 'c', 'd');
+        List<Character> inorder = List.of('d', 'c', 'b', 'a');
+
+        Tree tree = satellite.treeFromTraversals(preorder, inorder);
+
+        assertThat(tree.preorder()).containsExactlyElementsOf(preorder);
+        assertThat(tree.inorder()).containsExactlyElementsOf(inorder);
+        assertThat(tree.postorder()).containsExactly('d', 'c', 'b', 'a');
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Another degenerate binary tree")
+    public void anotherDegenerateBinaryTree() {
+        List<Character> preorder = List.of('a', 'b', 'c', 'd');
+        List<Character> inorder = List.of('a', 'b', 'c', 'd');
+
+        Tree tree = satellite.treeFromTraversals(preorder, inorder);
+
+        assertThat(tree.preorder()).containsExactlyElementsOf(preorder);
+        assertThat(tree.inorder()).containsExactlyElementsOf(inorder);
+        assertThat(tree.postorder()).containsExactly('d', 'c', 'b', 'a');
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Tree with many more items")
+    public void treeWithManyMoreItems() {
+        List<Character> preorder = List.of('a', 'b', 'd', 'g', 'h', 'c', 'e', 'f', 'i');
+        List<Character> inorder = List.of('g', 'd', 'h', 'b', 'a', 'e', 'c', 'i', 'f');
+
+        Tree tree = satellite.treeFromTraversals(preorder, inorder);
+
+        assertThat(tree.preorder()).containsExactlyElementsOf(preorder);
+        assertThat(tree.inorder()).containsExactlyElementsOf(inorder);
+        assertThat(tree.postorder()).containsExactly('g', 'h', 'd', 'b', 'e', 'i', 'f', 'c', 'a');
     }
 }
