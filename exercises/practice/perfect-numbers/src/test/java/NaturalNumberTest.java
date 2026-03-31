@@ -50,6 +50,13 @@ public class NaturalNumberTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Perfect square abundant number is classified correctly")
+    public void testPerfectSquareAbundantNumberIsClassifiedCorrectly() {
+        assertThat(new NaturalNumber(196).getClassification()).isEqualTo(Classification.ABUNDANT);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     @DisplayName("Smallest prime deficient number is classified correctly")
     public void testSmallestPrimeDeficientNumberIsClassifiedCorrectly() {
         assertThat(new NaturalNumber(2).getClassification()).isEqualTo(Classification.DEFICIENT);
