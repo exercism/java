@@ -182,8 +182,8 @@ class GottaSnatchEmAllTest {
     void testCommonCardsMultipleCollections() {
         List<Set<String>> collections = List.of(
                 Set.of("Veevee", "Wigglycream", "Mayofried"),
-                Set.of("Gyros", "Wigglycream", "Shazam"),
-                Set.of("Cooltentbro", "Mayofried", "Wigglycream")
+                Set.of("Cooltentbro", "Mayofried", "Wigglycream"),
+                Set.of("Gyros", "Wigglycream", "Shazam")
         );
         Set<String> expected = Set.of("Wigglycream");
         assertThat(GottaSnatchEmAll.commonCards(collections)).isEqualTo(expected);
