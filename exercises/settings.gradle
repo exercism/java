@@ -40,6 +40,7 @@ include 'practice:bank-account'
 // include 'practice:binary' // deprecated
 include 'practice:binary-search'
 include 'practice:binary-search-tree'
+include 'practice:baffling-birthdays'
 include 'practice:bob'
 include 'practice:book-store'
 include 'practice:bottle-song'
