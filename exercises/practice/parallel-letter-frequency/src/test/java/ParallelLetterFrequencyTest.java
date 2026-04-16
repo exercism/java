@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -205,6 +206,7 @@ public class ParallelLetterFrequencyTest {
         "- from the days of the Flood to the Schleswig-Holstein period.";
 
     @Test
+    @DisplayName("no texts")
     public void testNoTexts() {
         String[] input = {};
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -215,6 +217,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("one text with one letter")
     public void testOneTextWithOneLetter() {
         String[] input = { "a" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -229,6 +232,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("one text with multiple letters")
     public void testOneTextWithMultipleLetters() {
         String[] input = { "bbcccd" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -245,6 +249,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two texts with one letter")
     public void testTwoTextsWithOneLetter() {
         String[] input = { "e", "f" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -260,6 +265,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two texts with multiple letters")
     public void testTwoTextsWithMultipleLetters() {
         String[] input = { "ggh", "hhi" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -276,6 +282,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ignore letter casing")
     public void testIgnoreLetterCasing() {
         String[] input = { "m", "M" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -290,6 +297,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ignore whitespace")
     public void testIgnoreWhitespace() {
         String[] input = { "   ", "\t", "\r\n" };
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -300,6 +308,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ignore punctuation")
     public void testIgnorePunctuation() {
         String[] input = { "!", "?", ";", ",", "." };
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -310,6 +319,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ignore numbers")
     public void testIgnoreNumbers() {
         String[] input = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         Map<Character, Integer> expectedOutput = new HashMap<>();
@@ -320,6 +330,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Unicode letters")
     public void testUnicodeLetters() {
         String[] input = { "本", "φ", "ほ", "ø" };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -337,6 +348,7 @@ public class ParallelLetterFrequencyTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("combination of lower- and uppercase letters, punctuation and white space")
     public void testCombinationOfLowerAndUppercaseLettersPunctuationAndWhiteSpace() {
         String[] input = {calculateFrequencies};
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -369,26 +381,10 @@ public class ParallelLetterFrequencyTest {
 
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
     }
-    
-    @Disabled("Remove to run test")
-    @Test
-    public void testManySmallTexts() {
-        String[] input = new String[50];
-        Arrays.fill(input, "abbccc");
-        Map<Character, Integer> expectedOutput = new HashMap<>() {
-            {
-                put('a', 50);
-                put('b', 100);
-                put('c', 150);
-            }
-        };
-        ParallelLetterFrequency p = new ParallelLetterFrequency(input);
-
-        assertThat(p.countLetters()).isEqualTo(expectedOutput);
-    }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("large texts")
     public void testLargeTexts() {
         String[] input = { largeTexts1, largeTexts2, largeTexts3, largeTexts4 };
         Map<Character, Integer> expectedOutput = new HashMap<>() {
@@ -423,6 +419,24 @@ public class ParallelLetterFrequencyTest {
         ParallelLetterFrequency p = new ParallelLetterFrequency(input);
 
         assertThat(p.countLetters()).isEqualTo(expectedOutput);
-    }    
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("many small texts")
+    public void testManySmallTexts() {
+        String[] input = new String[50];
+        Arrays.fill(input, "abbccc");
+        Map<Character, Integer> expectedOutput = new HashMap<>() {
+            {
+                put('a', 50);
+                put('b', 100);
+                put('c', 150);
+            }
+        };
+        ParallelLetterFrequency p = new ParallelLetterFrequency(input);
+
+        assertThat(p.countLetters()).isEqualTo(expectedOutput);
+    }
 
 }

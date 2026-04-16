@@ -1,11 +1,12 @@
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RobotTest {
 
@@ -18,24 +19,28 @@ public class RobotTest {
     }
 
     @Test
+    @DisplayName("Robot has a valid name")
     public void hasName() {
         assertIsValidName(robot.getName());
     }
 
     @Test
     @Disabled("Remove to run test")
+    @DisplayName("Same robot returns the same name on repeated calls")
     public void sameRobotsHaveSameNames() {
         assertThat(robot.getName()).isEqualTo(robot.getName());
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Different robots have different names")
     public void differentRobotsHaveDifferentNames() {
         assertThat(robot.getName()).isNotEqualTo(new Robot().getName());
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Resetting a robot assigns a new valid name")
     public void resetName() {
         final String name = robot.getName();
         robot.reset();
@@ -46,6 +51,7 @@ public class RobotTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Robot names are unique")
     public void robotNamesAreUnique() {
         Set<String> robotNames = new HashSet<>();
         int sampleSize = 5000;

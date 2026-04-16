@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,6 +10,7 @@ public class PascalsTriangleGeneratorTest {
         new PascalsTriangleGenerator();
 
     @Test
+    @DisplayName("zero rows")
     public void testTriangleWithZeroRows() {
         int[][] expectedOutput = new int[][]{};
 
@@ -17,6 +19,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single row")
     public void testTriangleWithOneRow() {
         int[][] expectedOutput = new int[][]{
             {1}
@@ -27,6 +30,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two rows")
     public void testTriangleWithTwoRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -38,6 +42,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("three rows")
     public void testTriangleWithThreeRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -50,6 +55,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("four rows")
     public void testTriangleWithFourRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -63,6 +69,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("five rows")
     public void testTriangleWithFiveRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -77,6 +84,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("six rows")
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
             {1},
@@ -92,6 +100,7 @@ public class PascalsTriangleGeneratorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("ten rows")
     public void testTriangleWithTenRows() {
         int[][] expectedOutput = new int[][]{
             {1},
