@@ -1,39 +1,172 @@
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-class Camicia {
+public class Camicia {
 
-    private MatchResult matchResult;
+    private Status status;
+    private int cards;
+    private int tricks;
 
-    void simulateGame(List<String> playerAList, List<String> playerBList) {
-        Turn initialTurn = new Turn(playerAList, playerBList);
-        boolean win = initialTurn.playTurn();
-        System.out.println(initialTurn);
-        Turn turn = initialTurn;
+    private enum Player {
+        PLAYER_A, PLAYER_B
+    }
 
-        while (!win) {
-            Turn newTurn = new Turn(turn);
-            win = newTurn.playTurn();
-            System.out.println(newTurn);
+    private enum Status {
+        FINISHED, LOOP
+    }
 
-            turn = newTurn;
+    private static int penaltyOf(String card) {
+        return switch (card) {
+            case "J" -> 1;
+            case "Q" -> 2;
+            case "K" -> 3;
+            case "A" -> 4;
+            default -> 0;
+        };
+    }
+
+    private static boolean isPaymentCard(String card) {
+        return penaltyOf(card) > 0;
+    }
+
+    /**
+     * Return a snapshot of the current state
+     */
+    private static String stateKey(Deque<String> deckA, Deque<String> deckB) {
+        StringBuilder sb = new StringBuilder();
+
+        for (String card : deckA) {
+            sb.append(isPaymentCard(card) ? card : "N");
         }
 
-        matchResult = MatchResult.builder()
-                .withStatus(MatchResult.Status.FINISHED)
-                .withCards(turn.getPlayedCardCounter())
-                .withTricks(turn.getTrick())
-                .build();
+        sb.append('|');
+
+        for (String card : deckB) {
+            sb.append(isPaymentCard(card) ? card : "N");
+        }
+
+        return sb.toString();
     }
 
-    String getStatus() {
-        return matchResult.getStatus().name().toLowerCase();
+    private static Player otherPlayer(Player player) {
+        return player == Player.PLAYER_A ? Player.PLAYER_B : Player.PLAYER_A;
     }
 
-    int getCards() {
-        return matchResult.getCards();
+    private static Deque<String> deckOf(Player player, Deque<String> deckA, Deque<String> deckB) {
+        return player == Player.PLAYER_A ? deckA : deckB;
     }
 
-    int getTricks() {
-        return matchResult.getTricks();
+    public void simulateGame(List<String> playerA, List<String> playerB) {
+        Deque<String> deckA = new ArrayDeque<>(playerA);
+        Deque<String> deckB = new ArrayDeque<>(playerB);
+
+        int cardsPlayed = 0;
+        int tricksCount = 0;
+        Player current = Player.PLAYER_A;
+
+        Set<String> seenStates = new HashSet<>();
+
+        while (true) {
+            String key = stateKey(deckA, deckB);
+            // Key already exists, which means this is a loop
+            if (!seenStates.add(key)) {
+                finishGame(Status.LOOP, cardsPlayed, tricksCount);
+                return;
+            }
+
+            // Otherwise, play next round
+            RoundResult result = playRound(deckA, deckB, current);
+
+            cardsPlayed += result.pileSize();
+            tricksCount++;
+
+            // Check if someone wins and finish the game
+            if (hasWinner(deckA, deckB)) {
+                finishGame(Status.FINISHED, cardsPlayed, tricksCount);
+                return;
+            }
+
+            // Otherwise, play next round
+            current = result.nextStarter();
+        }
+    }
+
+    private RoundResult playRound(Deque<String> deckA, Deque<String> deckB, Player startingPlayer) {
+        Deque<String> pile = new ArrayDeque<>(); // cards played in this round
+        Player currentPlayer = startingPlayer;
+        int pendingPenalty = 0;
+
+        while (true) {
+            Deque<String> currentPlayerDeck = deckOf(currentPlayer, deckA, deckB);
+            Player opponent = otherPlayer(currentPlayer);
+            Deque<String> opponentDeck = deckOf(opponent, deckA, deckB);
+
+            // Current player deck is empty, opponent collects all pile, end this round
+            if (currentPlayerDeck.isEmpty()) {
+                opponentDeck.addAll(pile);
+                return new RoundResult(opponent, pile.size());
+            }
+
+            // Otherwise, current player plays 1 card, add to pile
+            String card = currentPlayerDeck.poll();
+            pile.addLast(card);
+
+            // Current player must pay off pending penalty
+            if (pendingPenalty > 0) {
+                // And player reveals a payment card
+                if (isPaymentCard(card)) {
+                    // reset penalty based on new card, switch turn
+                    pendingPenalty = penaltyOf(card);
+                    currentPlayer = opponent;
+                } else {
+                    // Otherwise, deduct penalty
+                    pendingPenalty--;
+                    // No pending penalty
+                    if (pendingPenalty == 0) {
+                        // Opponent collects all pile and win the round
+                        deckOf(opponent, deckA, deckB).addAll(pile);
+                        return new RoundResult(opponent, pile.size());
+                    }
+                }
+            } else {
+                // Normal gameplay, without pending penalty
+                // If player reveals a payment card, update penalty
+                if (isPaymentCard(card)) {
+                    pendingPenalty = penaltyOf(card);
+                }
+                currentPlayer = opponent;
+            }
+        }
+    }
+
+    private void finishGame(Status status, int cardsPlayed, int tricksCount) {
+        this.status = status;
+        this.cards = cardsPlayed;
+        this.tricks = tricksCount;
+    }
+
+    private boolean hasWinner(Deque<String> deckA, Deque<String> deckB) {
+        return deckA.isEmpty() || deckB.isEmpty();
+    }
+
+    public String getStatus() {
+        return status != null ? status.name().toLowerCase() : "";
+    }
+
+    public int getCards() {
+        return cards;
+    }
+
+    public int getTricks() {
+        return tricks;
+    }
+
+    /**
+     * Immutable round result
+     */
+    private record RoundResult(Player nextStarter, int pileSize) {
     }
 }
