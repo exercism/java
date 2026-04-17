@@ -1276,6 +1276,19 @@
         "difficulty": 6
       },
       {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "b4f7c3b0-6d3c-45e2-a328-05e09c7467f4",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "for-loops",
+          "arrays",
+          "if-else-statements"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "etl",
         "name": "ETL",
         "uuid": "76d28d97-75d3-47eb-bb77-3d347b76f1b6",
