@@ -51,7 +51,7 @@ However, unlike `setDialingCode`, it does nothing if the dialing code or the cou
 DialingCodes dialingCodes = new DialingCodes();
 dialingCodes.addNewDialingCode(32, "Belgium");
 dialingCodes.addNewDialingCode(379, "Vatican City");
-// => { 39 => "Italy", 379 => "Vatican City" }
+// => { 32 => "Belgium", 379 => "Vatican City" }
 
 
 dialingCodes.addNewDialingCode(32, "Other");
