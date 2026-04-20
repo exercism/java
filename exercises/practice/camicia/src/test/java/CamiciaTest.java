@@ -10,63 +10,59 @@ public class CamiciaTest {
     private static final String FINISHED = "finished";
     private static final String LOOP = "loop";
 
-    private Camicia simulateGame(List<String> playerA, List<String> playerB) {
-        Camicia camicia = new Camicia();
-        camicia.simulateGame(playerA, playerB);
-
-        return camicia;
-    }
-
     @Test
     @DisplayName("two cards, one trick")
     public void twoCardsOneTrick() {
         List<String> playerA = List.of("2");
         List<String> playerB = List.of("3");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(2, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(2, result.cards());
+        assertEquals(1, result.tricks());
     }
 
+    @Disabled("Remove to run test")
     @Test
     @DisplayName("three cards, one trick")
     public void threeCardsOneTrick() {
         List<String> playerA = List.of("2", "4");
         List<String> playerB = List.of("3");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(3, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(3, result.cards());
+        assertEquals(1, result.tricks());
     }
 
+    @Disabled("Remove to run test")
     @Test
     @DisplayName("four cards, one trick")
     public void fourCardsOneTrick() {
         List<String> playerA = List.of("2", "4");
         List<String> playerB = List.of("3", "5", "6");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(4, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(4, result.cards());
+        assertEquals(1, result.tricks());
     }
 
+    @Disabled("Remove to run test")
     @Test
     @DisplayName("the ace reigns supreme")
     public void theAceReignsSupreme() {
         List<String> playerA = List.of("2", "A");
         List<String> playerB = List.of("3", "4", "5", "6", "7");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7, result.cards());
+        assertEquals(1, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -76,11 +72,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("2", "A");
         List<String> playerB = List.of("3", "4", "5", "6", "K");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7, result.cards());
+        assertEquals(1, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -90,11 +86,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("2", "A", "7", "8", "Q");
         List<String> playerB = List.of("3", "4", "5", "6", "K");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(10, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(10, result.cards());
+        assertEquals(1, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -104,11 +100,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("2", "A", "7", "8", "Q");
         List<String> playerB = List.of("3", "4", "5", "6", "K", "9", "J");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(12, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(12, result.cards());
+        assertEquals(1, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -118,11 +114,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("2", "A", "7", "8", "Q", "10");
         List<String> playerB = List.of("3", "4", "5", "6", "K", "9", "J");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(13, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(13, result.cards());
+        assertEquals(1, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -132,11 +128,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("J", "2", "3");
         List<String> playerB = List.of("4", "J", "5");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(LOOP, camicia.getStatus());
-        assertEquals(8, camicia.getCards());
-        assertEquals(3, camicia.getTricks());
+        assertEquals(LOOP, result.status());
+        assertEquals(8, result.cards());
+        assertEquals(3, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -167,11 +163,11 @@ public class CamiciaTest {
                 "Q", "Q", "6", "J", "K", "4", "7", "J", "J", "9", "9", "A", "Q", "Q", "K", "A", "6", "5", "K"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(361, camicia.getCards());
-        assertEquals(1, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(361, result.cards());
+        assertEquals(1, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -181,11 +177,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("J");
         List<String> playerB = List.of("3", "J");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(5, camicia.getCards());
-        assertEquals(2, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(5, result.cards());
+        assertEquals(2, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -195,11 +191,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("J", "2", "4");
         List<String> playerB = List.of("3", "J", "A");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(12, camicia.getCards());
-        assertEquals(4, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(12, result.cards());
+        assertEquals(4, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -209,11 +205,11 @@ public class CamiciaTest {
         List<String> playerA = List.of("2", "3", "J", "6");
         List<String> playerB = List.of("K", "5", "J", "7");
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(LOOP, camicia.getStatus());
-        assertEquals(16, camicia.getCards());
-        assertEquals(4, camicia.getTricks());
+        assertEquals(LOOP, result.status());
+        assertEquals(16, result.cards());
+        assertEquals(4, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -229,11 +225,11 @@ public class CamiciaTest {
                 "Q", "Q", "J", "J", "J", "J"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(40, camicia.getCards());
-        assertEquals(4, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(40, result.cards());
+        assertEquals(4, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -249,11 +245,11 @@ public class CamiciaTest {
                 "9", "8", "5", "9", "3", "4", "9"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(40, camicia.getCards());
-        assertEquals(4, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(40, result.cards());
+        assertEquals(4, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -269,11 +265,11 @@ public class CamiciaTest {
                 "9", "10", "6", "8", "3", "8", "5"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(59, camicia.getCards());
-        assertEquals(4, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(59, result.cards());
+        assertEquals(4, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -289,11 +285,11 @@ public class CamiciaTest {
                 "5", "K", "6", "A", "2", "A", "5"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(151, camicia.getCards());
-        assertEquals(21, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(151, result.cards());
+        assertEquals(21, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -309,11 +305,11 @@ public class CamiciaTest {
                 "A", "3", "Q", "5", "J", "2", "6"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(542, camicia.getCards());
-        assertEquals(76, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(542, result.cards());
+        assertEquals(76, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -329,11 +325,11 @@ public class CamiciaTest {
                 "Q", "4", "10", "4", "7", "4", "6"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(327, camicia.getCards());
-        assertEquals(42, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(327, result.cards());
+        assertEquals(42, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -349,11 +345,11 @@ public class CamiciaTest {
                 "10", "3", "K", "9", "6", "8", "Q"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(5790, camicia.getCards());
-        assertEquals(805, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(5790, result.cards());
+        assertEquals(805, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -369,11 +365,11 @@ public class CamiciaTest {
                 "7", "Q", "J", "3", "3", "K", "9"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(6913, camicia.getCards());
-        assertEquals(960, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(6913, result.cards());
+        assertEquals(960, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -389,11 +385,11 @@ public class CamiciaTest {
                 "6", "8", "7", "A", "Q", "5", "2"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7157, camicia.getCards());
-        assertEquals(1007, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7157, result.cards());
+        assertEquals(1007, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -409,11 +405,11 @@ public class CamiciaTest {
                 "7", "8", "J", "A", "7", "8", "7"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7207, camicia.getCards());
-        assertEquals(1015, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7207, result.cards());
+        assertEquals(1015, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -429,11 +425,11 @@ public class CamiciaTest {
                 "A", "6", "8", "Q", "K", "K", "2"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7225, camicia.getCards());
-        assertEquals(1016, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7225, result.cards());
+        assertEquals(1016, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -449,11 +445,11 @@ public class CamiciaTest {
                 "Q", "10", "K", "6", "J", "J", "K"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7959, camicia.getCards());
-        assertEquals(1122, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7959, result.cards());
+        assertEquals(1122, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -469,11 +465,11 @@ public class CamiciaTest {
                 "K", "2", "Q", "10", "Q", "10", "Q"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(7972, camicia.getCards());
-        assertEquals(1106, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(7972, result.cards());
+        assertEquals(1106, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -489,11 +485,11 @@ public class CamiciaTest {
                 "7", "8", "2", "A", "7", "4", "6"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(FINISHED, camicia.getStatus());
-        assertEquals(8344, camicia.getCards());
-        assertEquals(1164, camicia.getTricks());
+        assertEquals(FINISHED, result.status());
+        assertEquals(8344, result.cards());
+        assertEquals(1164, result.tricks());
     }
 
     @Disabled("Remove to run test")
@@ -509,10 +505,10 @@ public class CamiciaTest {
                 "5", "9", "8", "9", "9", "K", "A"
         );
 
-        Camicia camicia = simulateGame(playerA, playerB);
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
 
-        assertEquals(LOOP, camicia.getStatus());
-        assertEquals(474, camicia.getCards());
-        assertEquals(66, camicia.getTricks());
+        assertEquals(LOOP, result.status());
+        assertEquals(474, result.cards());
+        assertEquals(66, result.tricks());
     }
 }

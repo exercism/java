@@ -59,7 +59,7 @@ public class Camicia {
         return player == Player.PLAYER_A ? deckA : deckB;
     }
 
-    public void simulateGame(List<String> playerA, List<String> playerB) {
+    public static CamiciaResult simulateGame(List<String> playerA, List<String> playerB) {
         Deque<String> deckA = new ArrayDeque<>(playerA);
         Deque<String> deckB = new ArrayDeque<>(playerB);
 
@@ -73,8 +73,7 @@ public class Camicia {
             String key = stateKey(deckA, deckB);
             // Key already exists, which means this is a loop
             if (!seenStates.add(key)) {
-                finishGame(Status.LOOP, cardsPlayed, tricksCount);
-                return;
+                return finishGame(Status.LOOP, cardsPlayed, tricksCount);
             }
 
             // Otherwise, play next round
@@ -85,8 +84,7 @@ public class Camicia {
 
             // Check if someone wins and finish the game
             if (hasWinner(deckA, deckB)) {
-                finishGame(Status.FINISHED, cardsPlayed, tricksCount);
-                return;
+                return finishGame(Status.FINISHED, cardsPlayed, tricksCount);
             }
 
             // Otherwise, play next round
@@ -94,7 +92,7 @@ public class Camicia {
         }
     }
 
-    private RoundResult playRound(Deque<String> deckA, Deque<String> deckB, Player startingPlayer) {
+    private static RoundResult playRound(Deque<String> deckA, Deque<String> deckB, Player startingPlayer) {
         Deque<String> pile = new ArrayDeque<>(); // cards played in this round
         Player currentPlayer = startingPlayer;
         int pendingPenalty = 0;
@@ -142,26 +140,12 @@ public class Camicia {
         }
     }
 
-    private void finishGame(Status status, int cardsPlayed, int tricksCount) {
-        this.status = status;
-        this.cards = cardsPlayed;
-        this.tricks = tricksCount;
+    private static CamiciaResult finishGame(Status status, int cardsPlayed, int tricksCount) {
+        return new CamiciaResult(status == null ? null : status.toString().toLowerCase(), cardsPlayed, tricksCount);
     }
 
-    private boolean hasWinner(Deque<String> deckA, Deque<String> deckB) {
+    private static boolean hasWinner(Deque<String> deckA, Deque<String> deckB) {
         return deckA.isEmpty() || deckB.isEmpty();
-    }
-
-    public String getStatus() {
-        return status != null ? status.name().toLowerCase() : "";
-    }
-
-    public int getCards() {
-        return cards;
-    }
-
-    public int getTricks() {
-        return tricks;
     }
 
     /**
