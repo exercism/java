@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise, you will simulate a game very similar to the classic card game **CamiciaGame**.
+In this exercise, you will simulate a game very similar to the classic card game **Camicia**.
 Your program will receive the initial configuration of two players' decks and must simulate the game until it ends (or detect that it will never end).
 
 ## Rules
