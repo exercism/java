@@ -2,7 +2,6 @@
   "authors": [
     "thibault2705"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "src/main/java/Camicia.java",
