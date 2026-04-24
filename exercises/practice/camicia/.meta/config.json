@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "thibault2705"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Camicia.java",
+      "src/main/java/CamiciaResult.java"
+    ],
+    "test": [
+      "src/test/java/CamiciaTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Camicia.java",
+      ".meta/src/reference/java/CamiciaResult.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Simulate the card game and determine whether the match ends or enters an infinite loop.",
+  "source": "Beggar-My-Neighbour",
+  "source_url": "https://www.richardpmann.com/beggar-my-neighbour-records.html"
+}
