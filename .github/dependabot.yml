@@ -7,10 +7,3 @@ updates:
       interval: 'monthly'
     labels:
       - 'x:size/tiny'
-
-  - package-ecosystem: 'gradle'
-    directory: '/'
-    schedule:
-      interval: 'monthly'
-    labels:
-      - 'x:size/tiny'
