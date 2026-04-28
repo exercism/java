@@ -4,7 +4,11 @@ import java.util.HashMap;
 
 class BuildTree {
 
-    TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
+    static TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
+        if (records.isEmpty()) {
+            return null;
+        }
+
         HashMap<Integer, Integer> parentMap = new HashMap<>();
         HashMap<Integer, TreeNode> nodesMap = new HashMap<>();
         records.sort(Comparator.comparing(Record::recordId));
@@ -25,7 +29,8 @@ class BuildTree {
 
         for (int i = 0; i < records.size(); i++) {
             if (i != orderedRecordIds.get(i)) {
-                throw new InvalidRecordsException("Invalid Records");
+                // Matches "non-continuous" or "no root node"
+                throw new InvalidRecordsException("record id is invalid or out of order");
             }
             if (orderedRecordIds.get(i) != rootId) {
                 int parentId = parentMap.get(i);
@@ -36,14 +41,20 @@ class BuildTree {
         return nodesMap.get(rootId);
     }
 
-    private void validateRecord(Record record) throws InvalidRecordsException {
-        if (record.recordId() == record.parentId() && record.recordId() != 0) {
-            throw new InvalidRecordsException("Invalid Records");
+    private static void validateRecord(Record record) throws InvalidRecordsException {
+        // root must not have a parent other than itself
+        if (record.recordId() == 0 && record.parentId() != 0) {
+            throw new InvalidRecordsException("node parent_id should be smaller than its record_id");
         }
 
+        // recordId == parentId (for non-root)
+        if (record.recordId() == record.parentId() && record.recordId() != 0) {
+            throw new InvalidRecordsException("record id is invalid or out of order");
+        }
+
+        // parentId > recordId
         if (record.parentId() > record.recordId()) {
-            throw new InvalidRecordsException("Invalid Records");
+            throw new InvalidRecordsException("record id is invalid or out of order");
         }
     }
-
 }
