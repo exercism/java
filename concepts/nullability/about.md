@@ -28,7 +28,7 @@ Whilst accessing a reference variable which has a value of `null` will compile f
 int[] arr = null;
 
 // Throws NullPointerException at runtime
-arr.Length;
+arr.length;
 ```
 
 A [`NullPointerException` is thrown][null-pointer-exception] when trying to access a reference variable which is null but requires an object.

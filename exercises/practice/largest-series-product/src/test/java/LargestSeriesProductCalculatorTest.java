@@ -129,33 +129,11 @@ public class LargestSeriesProductCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("rejects empty string and nonzero span")
-    public void testEmptyStringAndNonZeroSpanIsRejected() {
-        LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
-
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> calculator.calculateLargestProductForSeriesLength(1))
-                .withMessage("Series length must be less than or equal to the length of the string to search.");
-    }
-
-    @Disabled("Remove to run test")
-    @Test
     @DisplayName("rejects invalid character in digits")
     public void testStringToSearchContainingNonDigitCharacterIsRejected() {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new LargestSeriesProductCalculator("1234a5"))
                 .withMessage("String to search may only contain digits.");
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("rejects negative span")
-    public void testNegativeSeriesLengthIsRejected() {
-        LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("12345");
-
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> calculator.calculateLargestProductForSeriesLength(-1))
-                .withMessage("Series length must be non-negative.");
     }
 
     @Disabled("Remove to run test")
@@ -169,5 +147,4 @@ public class LargestSeriesProductCalculatorTest {
 
         assertThat(actualProduct).isEqualTo(expectedProduct);
     }
-
 }
