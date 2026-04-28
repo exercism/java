@@ -859,6 +859,16 @@
         "difficulty": 4
       },
       {
+        "slug": "prism",
+        "name": "Prism",
+        "uuid": "1fca8759-0236-493c-a4ef-2807cb33fd2b",
+        "practices": [],
+        "prerequisites": [
+          "lists"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "9906491b-a638-408d-86a4-4ad320a92658",
