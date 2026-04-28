@@ -1,6 +1,5 @@
-import java.util.*;
-
-import static java.util.stream.Collectors.joining;
+import java.util.List;
+import java.util.Set;
 
 class Output {
 
@@ -30,61 +29,4 @@ class Output {
         this.remainingFailures = Math.max(0, MAX_FAILURES - 1 - parts.size());
     }
 
-    static Output empty() {
-        return new Output(
-            null,
-            null,
-            Collections.emptySet(),
-            Collections.emptySet(),
-            Collections.emptyList(),
-            null);
-    }
-
-    static Output initialState(final String secret) {
-        return new Output(
-            secret,
-            getGuessedWord(secret, Collections.emptySet()),
-            new LinkedHashSet<>(),
-            new LinkedHashSet<>(),
-            new ArrayList<>(),
-            Status.ON_GOING);
-    }
-
-    boolean isLetterAlreadyPlayed(final String letter) {
-        return guesses.contains(letter) || misses.contains(letter);
-    }
-
-    boolean isLetterInSecret(final String letter) {
-        return word.contains(letter);
-    }
-
-    static String getGuessedWord(String secret, Set<String> letters) {
-        return secret.chars()
-            .mapToObj(i -> String.valueOf((char) i))
-            .map(c -> letters.contains(c) ? c : "_")
-            .collect(joining());
-    }
-
-    static boolean isWin(String secret, Set<String> guessedLetters) {
-        return secret.chars()
-            .mapToObj(i -> String.valueOf((char) i))
-            .allMatch(guessedLetters::contains);
-    }
-
-    static boolean isLoss(List<Part> parts) {
-        return parts.size() >= MAX_FAILURES;
-    }
-
-    @Override
-    public String toString() {
-        return "Output{" +
-            "secret='" + word + '\'' +
-            ", discovered='" + maskedWord + '\'' +
-            ", guess=" + guesses +
-            ", misses=" + misses +
-            ", parts=" + parts +
-            ", status=" + state +
-            ", remainingFailures=" + remainingFailures +
-            '}';
-    }
 }
