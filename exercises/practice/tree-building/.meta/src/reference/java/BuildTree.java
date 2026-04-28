@@ -42,17 +42,14 @@ class BuildTree {
     }
 
     private static void validateRecord(Record record) throws InvalidRecordsException {
-        // root must not have a parent other than itself
         if (record.recordId() == 0 && record.parentId() != 0) {
             throw new InvalidRecordsException("node parent_id should be smaller than its record_id");
         }
 
-        // recordId == parentId (for non-root)
         if (record.recordId() == record.parentId() && record.recordId() != 0) {
             throw new InvalidRecordsException("record id is invalid or out of order");
         }
 
-        // parentId > recordId
         if (record.parentId() > record.recordId()) {
             throw new InvalidRecordsException("record id is invalid or out of order");
         }
