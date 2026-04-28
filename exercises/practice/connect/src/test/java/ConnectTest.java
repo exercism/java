@@ -163,10 +163,10 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                ". . X .",
-                " X X . .",
-                "  . X X X",
-                "   O O O O"
+            ". . X .",
+            " X X . .",
+            "  . X X X",
+            "   O O O O"
         };
         Connect cut = new Connect(board);
 
@@ -185,10 +185,10 @@ public class ConnectTest {
 
         //GIVEN
         var board = new String[]{
-                ". . X X",
-                " X X . .",
-                "  . X X .",
-                "   O O O O"
+            ". . X X",
+            " X X . .",
+            "  . X X .",
+            "   O O O O"
         };
         Connect cut = new Connect(board);
 
