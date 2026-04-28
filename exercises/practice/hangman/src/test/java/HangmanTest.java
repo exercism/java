@@ -1,9 +1,9 @@
-import io.reactivex.Observable;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -20,9 +20,7 @@ public class HangmanTest {
     @Test
     @DisplayName("Initially 9 failures are allowed and no letters are guessed")
     void initially9FailuresAreAllowedAndNoLettersAreGuessed() {
-        Output result = hangman
-                .guess("loot", Observable.empty())
-                .blockingLast();
+        Output result = hangman.guess("loot", List.of());
 
         assertEquals(Status.ON_GOING, result.state);
         assertEquals("____", result.maskedWord);
@@ -33,9 +31,10 @@ public class HangmanTest {
     @Test
     @DisplayName("After 10 failures the game is over")
     void after10FailuresTheGameIsOver() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"))
-                .blockingLast();
+        Output result = hangman.guess(
+            "loot",
+            List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "j")
+        );
 
         assertEquals(Status.LOSE, result.state);
         assertEquals("____", result.maskedWord);
@@ -46,9 +45,10 @@ public class HangmanTest {
     @Test
     @DisplayName("Losing with several correct guesses")
     void losingWithSeveralCorrectGuesses() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("t", "o", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"))
-                .blockingLast();
+        Output result = hangman.guess(
+            "loot",
+            List.of("t", "o", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j")
+        );
 
         assertEquals(Status.LOSE, result.state);
         assertEquals("_oot", result.maskedWord);
@@ -59,9 +59,7 @@ public class HangmanTest {
     @Test
     @DisplayName("Feeding a correct letter removes underscores")
     void feedingCorrectLetterRemovesUnderscores() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("t"))
-                .blockingLast();
+        Output result = hangman.guess("loot", List.of("t"));
 
         assertEquals(Status.ON_GOING, result.state);
         assertEquals("___t", result.maskedWord);
@@ -72,9 +70,7 @@ public class HangmanTest {
     @Test
     @DisplayName("Feeding a correct letter twice counts as a failure")
     void feedingCorrectLetterTwiceCountAsASuccess() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("t", "t"))
-                .blockingLast();
+        Output result = hangman.guess("loot", List.of("t", "t"));
 
         assertEquals(Status.ON_GOING, result.state);
         assertEquals("___t", result.maskedWord);
@@ -85,9 +81,7 @@ public class HangmanTest {
     @Test
     @DisplayName("Guessing a repeated letter reveals all instances")
     void guessingARepeatedLetterRevealsAllInstances() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("t", "t", "o"))
-                .blockingLast();
+        Output result = hangman.guess("loot", List.of("t", "t", "o"));
 
         assertEquals(Status.ON_GOING, result.state);
         assertEquals("_oot", result.maskedWord);
@@ -98,9 +92,7 @@ public class HangmanTest {
     @Test
     @DisplayName("Getting all the letters right makes for a win")
     void gettingAllTheLettersRightMakesForASuccess() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("t", "t", "o", "l"))
-                .blockingLast();
+        Output result = hangman.guess("loot", List.of("t", "t", "o", "l"));
 
         assertEquals(Status.WIN, result.state);
         assertEquals("loot", result.maskedWord);
@@ -111,9 +103,10 @@ public class HangmanTest {
     @Test
     @DisplayName("Winning on the last guess is still a win")
     void winningOnTheLastGuessIsStillAWin() {
-        Output result = hangman
-                .guess("loot", Observable.fromArray("a", "b", "c", "d", "e", "f", "g", "h", "i", "t", "o", "l"))
-                .blockingLast();
+        Output result = hangman.guess(
+            "loot",
+            List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "t", "o", "l")
+        );
 
         assertEquals(Status.WIN, result.state);
         assertEquals("loot", result.maskedWord);
@@ -125,10 +118,11 @@ public class HangmanTest {
     @DisplayName("Guessing after a lose is error")
     void guessingAfterALoseIsError() {
         IllegalStateException ex = assertThrows(
-                IllegalStateException.class,
-                () -> hangman
-                        .guess("loot", Observable.fromArray("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"))
-                        .blockingLast()
+            IllegalStateException.class,
+            () -> hangman.guess(
+                "loot",
+                List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k")
+            )
         );
 
         assertEquals("cannot guess after the game is lost", ex.getMessage());
@@ -139,10 +133,8 @@ public class HangmanTest {
     @DisplayName("Guessing after a win is error")
     void guessingAfterAWinIsError() {
         IllegalStateException ex = assertThrows(
-                IllegalStateException.class,
-                () -> hangman
-                        .guess("loot", Observable.fromArray("t", "o", "l", "l"))
-                        .blockingLast()
+            IllegalStateException.class,
+            () -> hangman.guess("loot", List.of("t", "o", "l", "l"))
         );
 
         assertEquals("cannot guess after the game is won", ex.getMessage());

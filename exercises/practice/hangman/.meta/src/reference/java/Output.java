@@ -19,12 +19,12 @@ class Output {
     public final int remainingFailures;
 
     Output(
-            final String word,
-            final String maskedWord,
-            final Set<String> guesses,
-            final Set<String> misses,
-            final List<Part> parts,
-            final Status state) {
+        final String word,
+        final String maskedWord,
+        final Set<String> guesses,
+        final Set<String> misses,
+        final List<Part> parts,
+        final Status state) {
         this.word = word;
         this.maskedWord = maskedWord;
         this.guesses = Set.copyOf(guesses);
@@ -36,22 +36,22 @@ class Output {
 
     static Output empty() {
         return new Output(
-                null,
-                null,
-                Collections.emptySet(),
-                Collections.emptySet(),
-                Collections.emptyList(),
-                null);
+            null,
+            null,
+            Collections.emptySet(),
+            Collections.emptySet(),
+            Collections.emptyList(),
+            null);
     }
 
     static Output initialState(final String secret) {
         return new Output(
-                secret,
-                getGuessedWord(secret, Collections.emptySet()),
-                new LinkedHashSet<>(),
-                new LinkedHashSet<>(),
-                new ArrayList<>(),
-                Status.ON_GOING);
+            secret,
+            getGuessedWord(secret, Collections.emptySet()),
+            new LinkedHashSet<>(),
+            new LinkedHashSet<>(),
+            new ArrayList<>(),
+            Status.ON_GOING);
     }
 
     boolean isLetterAlreadyPlayed(final String letter) {
@@ -64,15 +64,15 @@ class Output {
 
     static String getGuessedWord(String secret, Set<String> letters) {
         return secret.chars()
-                .mapToObj(i -> String.valueOf((char) i))
-                .map(c -> letters.contains(c) ? c : "_")
-                .collect(joining());
+            .mapToObj(i -> String.valueOf((char) i))
+            .map(c -> letters.contains(c) ? c : "_")
+            .collect(joining());
     }
 
     static boolean isWin(String secret, Set<String> guessedLetters) {
         return secret.chars()
-                .mapToObj(i -> String.valueOf((char) i))
-                .allMatch(guessedLetters::contains);
+            .mapToObj(i -> String.valueOf((char) i))
+            .allMatch(guessedLetters::contains);
     }
 
     static boolean isLoss(List<Part> parts) {
@@ -82,13 +82,13 @@ class Output {
     @Override
     public String toString() {
         return "Output{" +
-                "secret='" + word + '\'' +
-                ", discovered='" + maskedWord + '\'' +
-                ", guess=" + guesses +
-                ", misses=" + misses +
-                ", parts=" + parts +
-                ", status=" + state +
-                ", remainingFailures=" + remainingFailures +
-                '}';
+            "secret='" + word + '\'' +
+            ", discovered='" + maskedWord + '\'' +
+            ", guess=" + guesses +
+            ", misses=" + misses +
+            ", parts=" + parts +
+            ", status=" + state +
+            ", remainingFailures=" + remainingFailures +
+            '}';
     }
 }

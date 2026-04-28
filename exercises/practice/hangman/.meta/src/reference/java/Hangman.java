@@ -1,5 +1,3 @@
-import io.reactivex.Observable;
-
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -7,31 +5,25 @@ import java.util.Set;
 
 class Hangman {
 
-    Observable<Output> guess(
-            String word,
-            Observable<String> letters) {
-        return letters
-                .startWith("")
-                .scan(Output.empty(), (state, letter) -> {
-                    if (state == null || state.state == null) {
-                        return createNewGame(word);
-                    }
+    Output guess(
+        String word,
+        List<String> letters) {
 
-                    if (letter.isEmpty()) {
-                        return state;
-                    }
+        Output state = createNewGame(word);
 
-                    if (state.state == Status.WIN) {
-                        throw new IllegalStateException("cannot guess after the game is won");
-                    }
+        for (String letter : letters) {
+            if (state.state == Status.WIN) {
+                throw new IllegalStateException("cannot guess after the game is won");
+            }
 
-                    if (state.state == Status.LOSE) {
-                        throw new IllegalStateException("cannot guess after the game is lost");
-                    }
+            if (state.state == Status.LOSE) {
+                throw new IllegalStateException("cannot guess after the game is lost");
+            }
 
-                    return processNewLetter(state, letter);
-                })
-                .skip(1);
+            state = processNewLetter(state, letter);
+        }
+
+        return state;
     }
 
     private static Output createNewGame(String word) {
@@ -58,12 +50,12 @@ class Hangman {
         Status newStatus = Output.isWin(state.word, newGuesses) ? Status.WIN : Status.ON_GOING;
 
         return new Output(
-                state.word,
-                discovered,
-                newGuesses,
-                state.misses,
-                state.parts,
-                newStatus);
+            state.word,
+            discovered,
+            newGuesses,
+            state.misses,
+            state.parts,
+            newStatus);
     }
 
     private static Output processIncorrectGuess(Output state, String letter) {
@@ -78,12 +70,12 @@ class Hangman {
         Status newStatus = newParts.size() >= order.length ? Status.LOSE : Status.ON_GOING;
 
         return new Output(
-                state.word,
-                state.maskedWord,
-                state.guesses,
-                newMisses,
-                newParts,
-                newStatus);
+            state.word,
+            state.maskedWord,
+            state.guesses,
+            newMisses,
+            newParts,
+            newStatus);
     }
 
     static Part[] order = Part.values();
