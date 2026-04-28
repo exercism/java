@@ -7,18 +7,18 @@ class BuildTree {
     TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
         HashMap<Integer, Integer> parentMap = new HashMap<>();
         HashMap<Integer, TreeNode> nodesMap = new HashMap<>();
-        records.sort(Comparator.comparing(Record::getRecordId));
+        records.sort(Comparator.comparing(Record::recordId));
 
         ArrayList<Integer> orderedRecordIds = new ArrayList<>();
 
         for (Record record : records) {
-            orderedRecordIds.add(record.getRecordId());
+            orderedRecordIds.add(record.recordId());
         }
 
         for (Record record : records) {
             validateRecord(record);
-            parentMap.put(record.getRecordId(), record.getParentId());
-            nodesMap.put(record.getRecordId(), new TreeNode(record.getRecordId()));
+            parentMap.put(record.recordId(), record.parentId());
+            nodesMap.put(record.recordId(), new TreeNode(record.recordId()));
         }
 
         int rootId = 0;
@@ -37,11 +37,11 @@ class BuildTree {
     }
 
     private void validateRecord(Record record) throws InvalidRecordsException {
-        if (record.getRecordId() == record.getParentId() && record.getRecordId() != 0) {
+        if (record.recordId() == record.parentId() && record.recordId() != 0) {
             throw new InvalidRecordsException("Invalid Records");
         }
 
-        if (record.getParentId() > record.getRecordId()) {
+        if (record.parentId() > record.recordId()) {
             throw new InvalidRecordsException("Invalid Records");
         }
     }
