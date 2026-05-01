@@ -2,6 +2,9 @@
   "authors": [
     "kkyb123"
   ],
+  "contributors": [
+    "thibault2705"
+  ],
   "files": {
     "solution": [
       "src/main/java/Connect.java"
