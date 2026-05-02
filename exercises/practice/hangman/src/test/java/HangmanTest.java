@@ -1,28 +1,14 @@
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.disposables.Disposable;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class HangmanTest {
-
-    /**
-     * Used in {@link #consecutiveGames()} to tell when both are subscribed too.
-     */
-    private static class SubscribedEmitters {
-        private ObservableEmitter<String> word;
-        private ObservableEmitter<String> letter;
-    }
 
     private Hangman hangman;
 
@@ -32,201 +18,125 @@ public class HangmanTest {
     }
 
     @Test
-    @DisplayName("Initial game state is set correctly")
-    public void initialization() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray());
-        Output init = result.blockingFirst();
+    @DisplayName("Initially 9 failures are allowed and no letters are guessed")
+    void initially9FailuresAreAllowedAndNoLettersAreGuessed() {
+        Output result = hangman.guess("loot", List.of());
 
-        assertThat(init).isNotNull();
-        assertThat(init.secret).isEqualTo("secret");
-        assertThat(init.discovered).isEqualTo("______");
-        assertThat(init.guess).isEmpty();
-        assertThat(init.misses).isEmpty();
-        assertThat(init.parts).isEmpty();
-        assertThat(init.status).isEqualTo(Status.PLAYING);
+        assertEquals(Status.ON_GOING, result.state);
+        assertEquals("____", result.maskedWord);
+        assertEquals(9, result.remainingFailures);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("First correct guess updates discovered and guess lists")
-    public void firstGuess() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("e"));
-
-        Output last = result.blockingLast();
-        assertThat(last.discovered).isEqualTo("_e__e_");
-        assertThat(last.guess).containsExactly("e");
-        assertThat(last.misses).isEmpty();
-        assertThat(last.parts).isEmpty();
-        assertThat(last.status).isEqualTo(Status.PLAYING);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("First incorrect guess registers a miss and adds a part")
-    public void firstMiss() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("a"));
-        Output last = result.blockingLast();
-
-        assertThat(last.discovered).isEqualTo("______");
-        assertThat(last.guess).isEmpty();
-        assertThat(last.misses).containsExactly("a");
-        assertThat(last.parts).containsExactly(Part.HEAD);
-        assertThat(last.status).isEqualTo(Status.PLAYING);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Game in progress accumulates guesses, misses and parts correctly")
-    public void gameInProgress() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("a", "e", "o", "s"));
-        Output last = result.blockingLast();
-
-        assertThat(last.discovered).isEqualTo("se__e_");
-        assertThat(last.guess).containsExactlyInAnyOrder("e", "s");
-        assertThat(last.misses).containsExactlyInAnyOrder("a", "o");
-        assertThat(last.parts).containsExactlyInAnyOrder(Part.HEAD, Part.BODY);
-        assertThat(last.status).isEqualTo(Status.PLAYING);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Winning the game results in WIN status")
-    public void wonGame() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("a", "e", "o", "s", "c", "r", "g", "t"));
-        Output last = result.blockingLast();
-
-        assertThat(last.discovered).isEqualTo("secret");
-        assertThat(last.guess).containsExactlyInAnyOrder("c", "e", "r", "s", "t");
-        assertThat(last.status).isEqualTo(Status.WIN);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Losing the game results in LOSS status")
-    public void lostGame() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("a", "b", "c", "d", "e", "f", "g", "h"));
-        Output last = result.blockingLast();
-
-        assertThat(last.discovered).isEqualTo("_ec_e_");
-        assertThat(last.misses).containsExactlyInAnyOrder("a", "b", "d", "f", "g", "h");
-        assertThat(last.status).isEqualTo(Status.LOSS);
-        assertThat(last.parts).containsExactlyInAnyOrder(
-                Part.HEAD,
-                Part.BODY,
-                Part.LEFT_ARM,
-                Part.RIGHT_ARM,
-                Part.LEFT_LEG,
-                Part.RIGHT_LEG
+    @DisplayName("After 10 failures the game is over")
+    void after10FailuresTheGameIsOver() {
+        Output result = hangman.guess(
+            "loot",
+            List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "j")
         );
+
+        assertEquals(Status.LOSE, result.state);
+        assertEquals("____", result.maskedWord);
+        assertEquals(0, result.remainingFailures);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Handles consecutive games correctly with ordered emissions")
-    public void consecutiveGames() {
-        // This test setup is more complex because we have to order the emission of values in the
-        // different observers.
-        // 1. Word observable receives the work to guess
-        // 2. Letter observable receives the various letters tried
-        // 3. Word observable receives the new word to guess
-        // 4. Letter observable receiveds the letters for the second word
+    @DisplayName("Losing with several correct guesses")
+    void losingWithSeveralCorrectGuesses() {
+        Output result = hangman.guess(
+            "loot",
+            List.of("t", "o", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j")
+        );
 
-        // Emitters respectively for the word and letter observables
-        SubscribedEmitters emitters = new SubscribedEmitters();
-        Runnable emit = () -> {
-            // Process sending the inputs in the right order
-            emitters.word.onNext("secret");
-            Stream.of("a", "e", "o", "s", "c", "r", "g", "t").forEach(emitters.letter::onNext);
-            emitters.word.onNext("abba");
-            Stream.of("a", "e", "s", "b").forEach(emitters.letter::onNext);
-            emitters.word.onComplete();
-        };
-        Observable<String> words = createWordObservable(emitters, emit);
-        Observable<String> letters = createLetterObservable(emitters, emit);
-        Observable<Output> outputs = hangman.play(words, letters);
-
-        // We collect the results of the game
-        List<Output> results = new ArrayList<>();
-        Disposable subscription = outputs.filter(output -> output.status != Status.PLAYING)
-            .subscribe(results::add);
-        try {
-            assertThat(results.size()).isEqualTo(2);
-
-            Output first = results.get(0);
-            assertThat(first.discovered).isEqualTo("secret");
-            assertThat(first.guess).containsExactlyInAnyOrder("s", "e", "c", "r", "t");
-            assertThat(first.misses).containsExactlyInAnyOrder("a", "o", "g");
-            assertThat(first.status).isEqualTo(Status.WIN);
-
-            Output second = results.get(1);
-            assertThat(second.discovered).isEqualTo("abba");
-            assertThat(second.guess).containsExactlyInAnyOrder("a", "b");
-            assertThat(second.misses).containsExactlyInAnyOrder("e", "s");
-            assertThat(first.status).isEqualTo(Status.WIN);
-        } finally {
-            subscription.dispose();
-        }
-    }
-
-    Observable<String> createWordObservable(SubscribedEmitters emitters, Runnable emit) {
-        return Observable.create(
-            emitter -> {
-                // A new subscription was created for words, record it.
-                emitters.word = emitter;
-                if (emitters.letter != null) {
-                    // Start emitting only when both word and letter observable have subscriptions
-                    emit.run();
-                }
-            });
-    }
-
-    Observable<String> createLetterObservable(SubscribedEmitters emitters, Runnable emit) {
-        return Observable.create(
-            emitter -> {
-                // A new subscription was created for letters, record it.
-                emitters.letter = emitter;
-                if (emitters.word != null) {
-                    // Start emitting only when both word and letter observable have subscriptions
-                    emit.run();
-                }
-            });
+        assertEquals(Status.LOSE, result.state);
+        assertEquals("_oot", result.maskedWord);
+        assertEquals(0, result.remainingFailures);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Cannot play the same guess twice")
-    public void cannotPlayAGuessTwice() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("e", "c", "s", "c"));
+    @DisplayName("Feeding a correct letter removes underscores")
+    void feedingCorrectLetterRemovesUnderscores() {
+        Output result = hangman.guess("loot", List.of("t"));
 
-        assertThatThrownBy(() -> result.blockingLast())
-            .isInstanceOf(IllegalArgumentException.class)
-            .hasMessageContaining("Letter c was already played");
+        assertEquals(Status.ON_GOING, result.state);
+        assertEquals("___t", result.maskedWord);
+        assertEquals(9, result.remainingFailures);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Cannot play the same miss twice")
-    public void cannotPlayAMissTwice() {
-        Observable<Output> result = hangman.play(
-            Observable.fromArray("secret"),
-            Observable.fromArray("e", "a", "s", "a"));
+    @DisplayName("Feeding a correct letter twice counts as a failure")
+    void feedingCorrectLetterTwiceCountAsASuccess() {
+        Output result = hangman.guess("loot", List.of("t", "t"));
 
-        assertThatThrownBy(() -> result.blockingLast())
-            .isInstanceOf(IllegalArgumentException.class)
-            .hasMessageContaining("Letter a was already played");
+        assertEquals(Status.ON_GOING, result.state);
+        assertEquals("___t", result.maskedWord);
+        assertEquals(8, result.remainingFailures);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Guessing a repeated letter reveals all instances")
+    void guessingARepeatedLetterRevealsAllInstances() {
+        Output result = hangman.guess("loot", List.of("t", "t", "o"));
+
+        assertEquals(Status.ON_GOING, result.state);
+        assertEquals("_oot", result.maskedWord);
+        assertEquals(8, result.remainingFailures);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Getting all the letters right makes for a win")
+    void gettingAllTheLettersRightMakesForASuccess() {
+        Output result = hangman.guess("loot", List.of("t", "t", "o", "l"));
+
+        assertEquals(Status.WIN, result.state);
+        assertEquals("loot", result.maskedWord);
+        assertEquals(8, result.remainingFailures);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Winning on the last guess is still a win")
+    void winningOnTheLastGuessIsStillAWin() {
+        Output result = hangman.guess(
+            "loot",
+            List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "t", "o", "l")
+        );
+
+        assertEquals(Status.WIN, result.state);
+        assertEquals("loot", result.maskedWord);
+        assertEquals(0, result.remainingFailures);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Guessing after a lose is error")
+    void guessingAfterALoseIsError() {
+        IllegalStateException ex = assertThrows(
+            IllegalStateException.class,
+            () -> hangman.guess(
+                "loot",
+                List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k")
+            )
+        );
+
+        assertEquals("cannot guess after the game is lost", ex.getMessage());
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Guessing after a win is error")
+    void guessingAfterAWinIsError() {
+        IllegalStateException ex = assertThrows(
+            IllegalStateException.class,
+            () -> hangman.guess("loot", List.of("t", "o", "l", "l"))
+        );
+
+        assertEquals("cannot guess after the game is won", ex.getMessage());
     }
 }
