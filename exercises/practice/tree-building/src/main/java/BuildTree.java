@@ -3,20 +3,20 @@ import java.util.Comparator;
 
 class BuildTree {
 
-    TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
-        records.sort(Comparator.comparing(Record::getRecordId));
+    static TreeNode buildTree(ArrayList<Record> records) throws InvalidRecordsException {
+        records.sort(Comparator.comparing(Record::recordId));
         ArrayList<Integer> orderedRecordIds = new ArrayList<>();
 
         for (Record record : records) {
-            orderedRecordIds.add(record.getRecordId());
+            orderedRecordIds.add(record.recordId());
         }
 
         if (records.size() > 0) {
             if (orderedRecordIds.get(orderedRecordIds.size() - 1) != orderedRecordIds.size() - 1) {
-                throw new InvalidRecordsException("Invalid Records");
+                throw new InvalidRecordsException("record id is invalid or out of order");
             }
             if (orderedRecordIds.get(0) != 0) {
-                throw new InvalidRecordsException("Invalid Records");
+                throw new InvalidRecordsException("record id is invalid or out of order");
             }
         }
 
@@ -24,33 +24,33 @@ class BuildTree {
 
         for (int i = 0; i < orderedRecordIds.size(); i++) {
             for (Record record : records) {
-                if (orderedRecordIds.get(i) == record.getRecordId()) {
-                    if (record.getRecordId() == 0 && record.getParentId() != 0) {
-                        throw new InvalidRecordsException("Invalid Records");
+                if (orderedRecordIds.get(i) == record.recordId()) {
+                    if (record.recordId() == 0 && record.parentId() != 0) {
+                        throw new InvalidRecordsException("node parent_id should be smaller than its record_id");
                     }
-                    if (record.getRecordId() < record.getParentId()) {
-                        throw new InvalidRecordsException("Invalid Records");
+                    if (record.recordId() < record.parentId()) {
+                        throw new InvalidRecordsException("record id is invalid or out of order");
                     }
-                    if (record.getRecordId() == record.getParentId() && record.getRecordId() != 0) {
-                        throw new InvalidRecordsException("Invalid Records");
+                    if (record.recordId() == record.parentId() && record.recordId() != 0) {
+                        throw new InvalidRecordsException("record id is invalid or out of order");
                     }
-                    treeNodes.add(new TreeNode(record.getRecordId()));
+                    treeNodes.add(new TreeNode(record.recordId()));
                 }
             }
         }
 
         for (int i = 0; i < orderedRecordIds.size(); i++) {
             TreeNode parent;
-            for (TreeNode n: treeNodes) {
+            for (TreeNode n : treeNodes) {
                 if (i == n.getNodeId()) {
                     parent = n;
                     for (Record record : records) {
-                        if (record.getParentId() == i) {
+                        if (record.parentId() == i) {
                             for (TreeNode node : treeNodes) {
                                 if (node.getNodeId() == 0) {
                                     continue;
                                 }
-                                if (record.getRecordId() == node.getNodeId()) {
+                                if (record.recordId() == node.getNodeId()) {
                                     parent.getChildren().add(node);
                                 }
                             }
