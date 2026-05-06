@@ -24,7 +24,6 @@ Our policies are not set-in-stone. They represent directions chosen at a point i
 |                                      | [Ignore noninitial tests](#ignore-noninitial-tests)                                                                                 |
 |                                      | [Multiple file submissions](#multiple-file-submissions)                                                                             |
 |                                      | [Name test class after class under test](#name-test-class-after-class-under-test)                                                   |
-|                                      | [Add hint for the first exercises without starter implementation](#add-hint-for-the-first-exercises-without-starter-implementation) |
 |                                      | [Reference tutorial in the first exercises](#reference-tutorial-in-the-first-exercises)                                             |
 |                                      | [Avoid returning null](#avoid-returning-null)                                                                                       |
 |                                      | [Prefer AssertJ assertions](#prefer-assertj-assertions)                                                                             |
@@ -44,16 +43,14 @@ References: [[1](https://github.com/exercism/java/issues/177#issuecomment-261291
 
 ### Starter implementations
 
-> - Exercises of difficulty 4 or lower: provide stubs for all required constructors and methods. This means that you need to provide stubs for those constructors or methods that are necessary to pass all tests. E.g. stubs for private methods may be skipped.
->   Stubs should include the following body:
+> Provide stubs for all required constructors and methods. This means that you need to provide stubs for those constructors or methods that are necessary to pass all tests. E.g. stubs for private methods may be skipped.
+> Stubs should include the following body:
 >
->   ```java
->   throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
->   ```
->
-> - Exercises of difficulty 5 or higher: copy the StubTemplate.java file (provided in [this template file](https://github.com/exercism/java/blob/main/resources/exercise-template/src/main/java/ExerciseName.java)) and rename it to fit the exercise. For example, for the exercise linked-list the file could be named LinkedList.java. Then either (1) add hints to the hints.md file (which gets merged into the README.md for the exercise) or (2) provide stubs as above for exercises that demand complicated method signatures.
+> ```java
+> throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+> ```
 
-References: [[1](https://github.com/exercism/java/issues/178)], [[2](https://github.com/exercism/java/pull/683#discussion_r125506930)], [[3](https://github.com/exercism/java/issues/977)], [[4](https://github.com/exercism/java/issues/1721)]
+Reference: [[1](https://github.com/exercism/java/issues/2133)]
 
 ### Avoid using final
 
@@ -126,27 +123,14 @@ References: [[1](https://github.com/exercism/java/issues/395#issue-215734887)]
 
 References: [[1](https://github.com/exercism/java/issues/697)]
 
-### Add hint for the first exercises without starter implementation
-
-> According to the starter implementation policy, any exercise with difficulty 4 or lower should have starter implementation.
-> Any exercise with difficulty 5 or above will have no starter implementation (unless its signature is very complicated).
-> This could be confusing to users when tackling their first exercise with difficulty 5 when they are used to starter implementation being provided.
->
-> Therefore a hints.md file should be added to the .meta directory for every exercise with difficulty 5.
-> This file should explain what they need to do when there is no starter implementation.
-> The files should all be the same so you can copy it from any other exercise with difficulty 5, e.g. [flatten-array](https://github.com/exercism/java/tree/main/exercises/pratice/flatten-array/.meta/hints.md).
->
-> We add the file to every exercise with difficulty 5 because the structure of the track means that we don't know which exercise will be the first one without starter implementation that a user will be faced with.
-
-References: [[1](https://github.com/exercism/java/issues/1075)]
-
 ### Reference tutorial in the first exercises
 
 > The hello world exercise has an extensive tutorial on how to solve exercism exercises.
 > This tutorial would probably be useful to have as a reference when solving some of the other earlier exercises as well.
-> Therefore any exercise with difficulty less than 3 should have a hints.md file which references [the hello world tutorial](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial).
+> Therefore any exercise with difficulty less than 3 should have a instructions.append.md file which references [the hello world tutorial](https://github.com/exercism/java/blob/main/exercises/practice/hello-world/.docs/instructions.append.md#tutorial).
 
 References: [[1](https://github.com/exercism/java/issues/1389)]
+Note: The PRs in the referenced issue uses hints.md, but this is now instructions.append.md (see [commit 52617354](https://github.com/exercism/java/commit/5261735435192b5b10535b2fcf41c81b638e5de5))
 
 ### Avoid returning null
 
