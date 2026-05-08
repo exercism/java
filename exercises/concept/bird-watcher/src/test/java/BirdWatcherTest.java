@@ -84,7 +84,7 @@ public class BirdWatcherTest {
     public void itTestGetCountForMoreDaysThanTheArraySize() {
         int[] counts = new int[] {5, 9, 12, 6, 8, 8, 17};
         BirdWatcher birdWatcher = new BirdWatcher(counts);
-        assertThat(birdWatcher.getCountForFirstDays(65)).isEqualTo();
+        assertThat(birdWatcher.getCountForFirstDays(10)).isEqualTo(65);
     }
 
     @Test
