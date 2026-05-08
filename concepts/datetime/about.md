@@ -118,7 +118,18 @@ printer.format(date);
 // => "December 3, 2007"
 ```
 
+A [locale][locale] can also be specified when creating the custom format to format and parse for different regions:
+
+```java
+DateTimeFormatter.ofPattern("MMMM d, yyyy", Locale.FRENCH).format(date);
+// => décembre 3, 2007
+
+DateTimeFormatter.ofPattern("MMMM d, yyyy", Locale.of("pt")).format(date);
+// => dezembro 3, 2007
+```
+
 [iso-8601]: https://en.wikipedia.org/wiki/ISO_8601
 [localdate-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 [localdatetime-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html
+[locale]: https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html
 [datetimeformatter-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html

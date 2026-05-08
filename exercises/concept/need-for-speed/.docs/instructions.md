@@ -45,7 +45,7 @@ car.distanceDriven();
 
 ## 4. Check for a drained battery
 
-Update the `NeedForSpeed.drive()` method to drain the battery based on the car's battery drain. Also, implement the `NeedForSpeed.batteryDrained()` method that indicates if the battery is drained:
+Update the `NeedForSpeed.drive()` method to drain the battery based on the car's battery drain. Also, implement the `NeedForSpeed.batteryDrained()` method that indicates if the battery is too drained to drive:
 
 ```java
 int speed = 5;

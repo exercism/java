@@ -158,6 +158,50 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("X wins with left-hand dead end fork")
+    public void xWinsWithLeftHandDeadEndFork() {
+
+        //GIVEN
+        var board = new String[]{
+            ". . X .",
+            " X X . .",
+            "  . X X X",
+            "   O O O O"
+        };
+        Connect cut = new Connect(board);
+
+        //WHEN
+        var winner = cut.computeWinner();
+
+        //THEN
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
+
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("X wins with right-hand dead end fork")
+    public void xWinsWithRightHandDeadEndFork() {
+
+        //GIVEN
+        var board = new String[]{
+            ". . X X",
+            " X X . .",
+            "  . X X .",
+            "   O O O O"
+        };
+        Connect cut = new Connect(board);
+
+        //WHEN
+        var winner = cut.computeWinner();
+
+        //THEN
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
+
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     @DisplayName("O wins crossing from top to bottom")
     public void oWinsCrossingFromTopToBottom() {
 
