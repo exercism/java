@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+# Determine the base branch of the PR
+BASE_BRANCH=${GITHUB_BASE_REF:-main}
+
+# Fetch full history for proper diff
+git fetch origin "$BASE_BRANCH"
+
+# Compute merge base
+MERGE_BASE=$(git merge-base HEAD origin/"$BASE_BRANCH")
+
+# Get changed files relative to merge base
+changed_files=$(git diff --name-only "$MERGE_BASE" HEAD)
+
+# If any Gradle build file changed, run the full suite and exit
+if echo "$changed_files" | grep -qE '\.(gradle|gradlew|bat)$|settings\.gradle'; then
+  echo "Gradle build files changed, running full lint suite..."
+  cd exercises && ./gradlew check --exclude-task test --continue
+  exit 0
+fi
+
+# Extract unique exercise directories
+changed_exercises=$(echo "$changed_files" | \
+  grep -E '^exercises/(practice|concept)/[^/]+/.+\.java$' | \
+  cut -d/ -f1-3 | sort -u)
+
+if [ -z "$changed_exercises" ]; then
+  echo "No relevant exercises changed, skipping linting."
+  exit 0
+fi
+
+# Print exercises
+echo "Changed exercises detected:"
+echo "$changed_exercises"
+echo "----------------------------------------"
+
+# Run lint checks
+exit_code=0
+for dir in $changed_exercises; do
+  slug=$(basename "$dir")
+
+  echo "========================================"
+  echo "=== Running checkstyle for $slug ==="
+  echo "========================================"
+
+  if [[ $dir == exercises/practice/* ]]; then
+    ./exercises/gradlew -p exercises ":practice:$slug:check" --exclude-task test || exit_code=1
+  elif [[ $dir == exercises/concept/* ]]; then
+    ./exercises/gradlew -p exercises ":concept:$slug:check" --exclude-task test || exit_code=1
+  fi
+done
+
+exit $exit_code
