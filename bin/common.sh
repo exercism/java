@@ -18,7 +18,7 @@ check_gradle_changes() {
   local command="$1"
   local message="$2"
   
-  if echo "$changed_files" | grep -qE '\.(gradle|gradlew|bat)$|settings\.gradle'; then
+  if echo "$changed_files" | grep -qE '(\.gradle|gradlew|\.bat|settings\.gradle|gradle-wrapper\.(properties|jar))$'; then
     echo "$message"
     eval "$command"
     exit 0
