@@ -27,11 +27,11 @@ FootballMatchReports.onField(10);
 // => "striker"
 ```
 
-## 2. Raise an alert if an unknown shirt number is encountered
+## 2. Output "invalid" if the shirt number is not part of the official list
 
-Modify the `FootballMatchReports.onField()` method to throw an `IllegalArgumentException` when a shirt number outside the range 1-11 is processed.
+Modify the `FootballMatchReports.onField()` method to return 'invalid' when a shirt number outside the range 1-11 is processed.
 
 ```java
 FootballMatchReports.onField(13);
-// => Throw IllegalArgumentException
+// => "invalid"
 ```

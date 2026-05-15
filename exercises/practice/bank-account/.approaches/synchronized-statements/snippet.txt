@@ -1,0 +1,7 @@
+private final Object lock = new Object();
+
+void deposit(int amount) throws BankAccountActionInvalidException {
+    synchronized(lock) {
+        balance += amount;
+    }
+}

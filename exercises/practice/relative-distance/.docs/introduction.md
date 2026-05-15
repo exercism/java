@@ -9,4 +9,4 @@ Your algorithm will determine the **degree of separation** between two individua
 
 Will your app help crown a perfect match?
 
-[islendiga-app]: http://www.islendingaapp.is/information-in-english/
+[islendiga-app]: https://web.archive.org/web/20250816223614/http://www.islendingaapp.is/information-in-english/

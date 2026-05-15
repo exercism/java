@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class SeriesTest {
 
     @Test
+    @DisplayName("slices of one from one")
     public void slicesOfOneFromOne() {
         Series series = new Series("1");
         List<String> expected = Collections.singletonList("1");
@@ -20,6 +22,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slices of one from two")
     public void slicesOfOneFromTwo() {
         Series series = new Series("12");
         List<String> expected = Arrays.asList("1", "2");
@@ -29,6 +32,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slices of two")
     public void slicesOfTwo() {
         Series series = new Series("35");
         List<String> expected = Collections.singletonList("35");
@@ -38,6 +42,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slices of two overlap")
     public void slicesOfTwoOverlap() {
         Series series = new Series("9142");
         List<String> expected = Arrays.asList("91", "14", "42");
@@ -47,6 +52,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slices can include duplicates")
     public void slicesIncludeDuplicates() {
         Series series = new Series("777777");
         List<String> expected = Arrays.asList(
@@ -61,6 +67,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slices of a long series")
     public void slicesOfLongSeries() {
         Series series = new Series("918493904243");
         List<String> expected = Arrays.asList(
@@ -79,6 +86,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slice length is too large")
     public void sliceLengthIsToolarge() {
         Series series = new Series("12345");
 
@@ -89,6 +97,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slice length is way too large")
     public void sliceLengthIsWayToolarge() {
         Series series = new Series("12345");
 
@@ -99,6 +108,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slice length cannot be zero")
     public void sliceLengthZero() {
         Series series = new Series("12345");
 
@@ -109,6 +119,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("slice length cannot be negative")
     public void sliceLengthNegative() {
         Series series = new Series("123");
 
@@ -119,6 +130,7 @@ public class SeriesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("empty series is invalid")
     public void emptySeries() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)

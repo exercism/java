@@ -2,13 +2,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.util.List;
+
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SatelliteTest {
     Satellite satellite = new Satellite();
 
     @Test
+    @DisplayName("Empty tree")
     public void emptyTree() {
         List<Character> preorder = List.of();
         List<Character> inorder = List.of();
@@ -22,6 +25,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Tree with one item")
     public void treeWithOneItem() {
         List<Character> preorder = List.of('a');
         List<Character> inorder = List.of('a');
@@ -35,6 +39,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Tree with many items")
     public void treeWithManyItems() {
         List<Character> preorder = List.of('a', 'i', 'x', 'f', 'r');
         List<Character> inorder = List.of('i', 'a', 'f', 'x', 'r');
@@ -48,6 +53,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reject traversals of different length")
     public void rejectTraversalsOfDifferentLengths() {
         List<Character> preorder = List.of('a', 'b');
         List<Character> inorder = List.of('b', 'a', 'r');
@@ -60,6 +66,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reject inconsistent traversals of same length")
     public void rejectInconsistentTraversalsOfSameLength() {
         List<Character> preorder = List.of('x', 'y', 'z');
         List<Character> inorder = List.of('a', 'b', 'c');
@@ -71,6 +78,7 @@ public class SatelliteTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reject traversals with repeated items")
     public void rejectTraversalsWithRepeatedItems() {
         List<Character> preorder = List.of('a', 'b', 'a');
         List<Character> inorder = List.of('b', 'a', 'a');
@@ -78,5 +86,47 @@ public class SatelliteTest {
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> satellite.treeFromTraversals(preorder, inorder))
                 .withMessage("traversals must contain unique items");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("A degenerate binary tree")
+    public void degenerateBinaryTree() {
+        List<Character> preorder = List.of('a', 'b', 'c', 'd');
+        List<Character> inorder = List.of('d', 'c', 'b', 'a');
+
+        Tree tree = satellite.treeFromTraversals(preorder, inorder);
+
+        assertThat(tree.preorder()).containsExactlyElementsOf(preorder);
+        assertThat(tree.inorder()).containsExactlyElementsOf(inorder);
+        assertThat(tree.postorder()).containsExactly('d', 'c', 'b', 'a');
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Another degenerate binary tree")
+    public void anotherDegenerateBinaryTree() {
+        List<Character> preorder = List.of('a', 'b', 'c', 'd');
+        List<Character> inorder = List.of('a', 'b', 'c', 'd');
+
+        Tree tree = satellite.treeFromTraversals(preorder, inorder);
+
+        assertThat(tree.preorder()).containsExactlyElementsOf(preorder);
+        assertThat(tree.inorder()).containsExactlyElementsOf(inorder);
+        assertThat(tree.postorder()).containsExactly('d', 'c', 'b', 'a');
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Tree with many more items")
+    public void treeWithManyMoreItems() {
+        List<Character> preorder = List.of('a', 'b', 'd', 'g', 'h', 'c', 'e', 'f', 'i');
+        List<Character> inorder = List.of('g', 'd', 'h', 'b', 'a', 'e', 'c', 'i', 'f');
+
+        Tree tree = satellite.treeFromTraversals(preorder, inorder);
+
+        assertThat(tree.preorder()).containsExactlyElementsOf(preorder);
+        assertThat(tree.inorder()).containsExactlyElementsOf(inorder);
+        assertThat(tree.postorder()).containsExactly('g', 'h', 'd', 'b', 'e', 'i', 'f', 'c', 'a');
     }
 }

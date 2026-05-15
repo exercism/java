@@ -1,6 +1,7 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -13,12 +14,14 @@ public class TransposeTest {
     }
 
     @Test
+    @DisplayName("empty string")
     public void emptyString() {
         assertThat(transpose.transpose("")).isEqualTo("");
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two characters in a row")
     public void twoCharactersInARow() {
         assertThat(transpose.transpose("A1"))
             .isEqualTo(
@@ -28,6 +31,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("two characters in a column")
     public void twoCharactersInAColumn() {
         assertThat(
             transpose.transpose(
@@ -38,6 +42,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("simple")
     public void simple() {
         assertThat(
             transpose.transpose(
@@ -51,6 +56,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single line")
     public void singleLine() {
         assertThat(transpose.transpose("Single line."))
             .isEqualTo(
@@ -70,6 +76,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("first line longer than second line")
     public void firstLineLongerThanSecondLine() {
         assertThat(
             transpose.transpose(
@@ -96,6 +103,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("second line longer than first line")
     public void secondLineLongerThanFirstLine() {
         assertThat(
             transpose.transpose(
@@ -122,6 +130,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("mixed line length")
     public void mixedLineLength() {
         assertThat(
             transpose.transpose(
@@ -151,6 +160,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("square")
     public void square() {
         assertThat(
             transpose.transpose(
@@ -169,6 +179,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("rectangle")
     public void rectangle() {
         assertThat(
             transpose.transpose(
@@ -189,6 +200,7 @@ public class TransposeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("triangle")
     public void triangle() {
         assertThat(
             transpose.transpose(
@@ -209,6 +221,7 @@ public class TransposeTest {
     
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("jagged triangle")
     public void jaggedTriangle() {
         assertThat(
             transpose.transpose(

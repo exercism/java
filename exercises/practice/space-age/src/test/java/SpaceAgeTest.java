@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,6 +10,7 @@ public class SpaceAgeTest {
     private static final double MAXIMUM_DELTA = 1E-02;
 
     @Test
+    @DisplayName("age on Earth")
     public void ageOnEarth() {
         SpaceAge age = new SpaceAge(1000000000);
 
@@ -17,6 +19,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Mercury")
     public void ageOnMercury() {
         SpaceAge age = new SpaceAge(2134835688);
 
@@ -25,6 +28,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Venus")
     public void ageOnVenus() {
         SpaceAge age = new SpaceAge(189839836);
 
@@ -33,6 +37,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Mars")
     public void ageOnMars() {
         SpaceAge age = new SpaceAge(2129871239L);
 
@@ -41,6 +46,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Jupiter")
     public void ageOnJupiter() {
         SpaceAge age = new SpaceAge(901876382);
 
@@ -49,6 +55,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Saturn")
     public void ageOnSaturn() {
         SpaceAge age = new SpaceAge(2000000000L);
 
@@ -57,6 +64,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Uranus")
     public void ageOnUranus() {
         SpaceAge age = new SpaceAge(1210123456L);
 
@@ -65,6 +73,7 @@ public class SpaceAgeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("age on Neptune")
     public void ageOnNeptune() {
         SpaceAge age = new SpaceAge(1821023456L);
 

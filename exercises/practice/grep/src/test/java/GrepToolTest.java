@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -66,6 +67,7 @@ public class GrepToolTest {
     }
 
     @Test
+    @DisplayName("One file, one match, no flags")
     public void oneFileOneMatchNoFlags() {
         String expected = "Of Atreus, Agamemnon, King of men.";
 
@@ -80,6 +82,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, one match, print line numbers flag")
     public void oneFileOneMatchPrintLineNumbersFlag() {
         String expected = "2:Of that Forbidden Tree, whose mortal tast";
 
@@ -94,6 +97,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, one match, case-insensitive flag")
     public void oneFileOneMatchCaseInsensitiveFlag() {
         String expected = "Of that Forbidden Tree, whose mortal tast";
 
@@ -108,6 +112,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, one match, print file names flag")
     public void oneFileOneMatchPrintFileNamesFlag() {
         String expected = "paradise-lost.txt";
 
@@ -122,6 +127,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, one match, match entire lines flag")
     public void oneFileOneMatchEntireLinesFlag() {
         String expected = "With loss of Eden, till one greater Man";
 
@@ -136,6 +142,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, one match, multiple flags")
     public void oneFileOneMatchMultipleFlags() {
         String expected = "9:Of Atreus, Agamemnon, King of men.";
 
@@ -150,6 +157,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, several matches, no flags")
     public void oneFileSeveralMatchesNoFlags() {
         String expected = "Nor how it may concern my modesty,\n"
             + "But I beseech your grace that I may know\n"
@@ -166,6 +174,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, several matches, print line numbers flag")
     public void oneFileSeveralMatchesPrintLineNumbersFlag() {
         String expected = "3:Nor how it may concern my modesty,\n"
             + "5:But I beseech your grace that I may know\n"
@@ -182,6 +191,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, several matches, match entire lines flag")
     public void oneFileSeveralMatchesMatchEntireLineFlag() {
         String expected = "";
 
@@ -196,6 +206,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, several matches, case-insensitive flag")
     public void oneFileSeveralMatchesCaseInsensitiveFlag() {
         String expected = "Achilles sing, O Goddess! Peleus' son;\n"
             + "The noble Chief Achilles from the son";
@@ -211,6 +222,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, several matches, inverted flag")
     public void oneFileSeveralMatchesInvertedFlag() {
         String expected = "Brought Death into the World, and all our woe,\n"
             + "With loss of Eden, till one greater Man\n"
@@ -229,6 +241,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, no matches, various flags")
     public void oneFileNoMatchesVariousFlags() {
         String expected = "";
 
@@ -243,6 +256,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, one match, file flag takes precedence over line flag")
     public void oneFileOneMatchFileFlagTakesPrecedenceOverLineFlag() {
         String expected = "iliad.txt";
 
@@ -257,6 +271,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("One file, several matches, inverted and match entire lines flags")
     public void oneFileSeveralMatchesInvertedAndMatchEntireLinesFlags() {
         String expected = "Achilles sing, O Goddess! Peleus' son;\n"
             + "His wrath pernicious, who ten thousand woes\n"
@@ -278,6 +293,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, one match, no flags")
     public void multipleFilesOneMatchNoFlags() {
         String expected = "iliad.txt:Of Atreus, Agamemnon, King of men.";
 
@@ -292,6 +308,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, several matches, no flags")
     public void multipleFilesSeveralMatchesNoFlags() {
         String expected = "midsummer-night.txt:Nor how it may concern my modesty,\n"
             + "midsummer-night.txt:But I beseech your grace that I may know\n"
@@ -308,6 +325,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, several matches, print line numbers flag")
     public void multipleFilesSeveralMatchesPrintLineNumbersFlag() {
         String expected = "midsummer-night.txt:5:But I beseech your grace that I may know\n"
             + "midsummer-night.txt:6:The worst that may befall me in this case,\n"
@@ -325,6 +343,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, one match, print file names flag")
     public void multipleFilesOneMatchPrintFileNamesFlag() {
         String expected = "iliad.txt\n"
             + "paradise-lost.txt";
@@ -340,6 +359,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, several matches, case-insensitive flag")
     public void multipleFilesSeveralMatchesCaseInsensitiveFlag() {
         String expected = "iliad.txt:Caused to Achaia's host, sent many a soul\n"
             + "iliad.txt:Illustrious into Ades premature,\n"
@@ -363,6 +383,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, several matches, inverted flag")
     public void multipleFilesSeveralMatchesInvertedFlag() {
         String expected = "iliad.txt:Achilles sing, O Goddess! Peleus' son;\n"
             + "iliad.txt:The noble Chief Achilles from the son\n"
@@ -379,6 +400,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, one match, match entire lines flag")
     public void multipleFilesOneMatchEntireLinesFlag() {
         String expected = "midsummer-night.txt:But I beseech your grace that I may know";
 
@@ -393,6 +415,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, one match, multiple flags")
     public void multipleFilesOneMatchMultipleFlags() {
         String expected = "paradise-lost.txt:4:With loss of Eden, till one greater Man";
 
@@ -407,6 +430,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, no matches, various flags")
     public void multipleFilesNoMatchesVariousFlags() {
         String expected = "";
 
@@ -421,6 +445,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, several matches, file flag takes precedence over line number flag")
     public void multipleFilesSeveralMatchesFileFlagTakesPrecedenceOverLineNumberFlag() {
         String expected = "iliad.txt\n"
             + "paradise-lost.txt";
@@ -436,6 +461,7 @@ public class GrepToolTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple files, several matches, inverted and match entire lines flags")
     public void multipleFilesSeveralMatchesInvertedAndMatchEntireLinesFlags() {
         String expected = "iliad.txt:Achilles sing, O Goddess! Peleus' son;\n"
             + "iliad.txt:His wrath pernicious, who ten thousand woes\n"

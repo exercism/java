@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ReactTest {
 
     @Test
+    @DisplayName("input cells have a value")
     public void testInputCellHasValue() {
         var input = React.inputCell(10);
 
@@ -18,6 +20,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("an input cell's value can be set")
     public void testInputCellValueCanBeSet() {
         var input = React.inputCell(4);
         input.setValue(20);
@@ -27,6 +30,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("compute cells calculate initial value")
     public void testComputeCellCalculateInitialValue() {
         var input = React.inputCell(1);
         var output = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -36,6 +40,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("compute cells take inputs in the right order")
     public void testComputeCellsInTheRightOrder() {
         var first = React.inputCell(1);
         var second = React.inputCell(2);
@@ -46,6 +51,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("compute cells update value when dependencies are changed")
     public void testComputeCellsUpdateValueWhenDependenciesAreChanged() {
         var input = React.inputCell(1);
         var output = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -56,6 +62,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("compute cells can depend on other compute cells")
     public void testComputeCellsCanDependOnOtherComputeCells() {
         var input = React.inputCell(1);
         var timesTwo = React.computeCell(list -> list.get(0) * 2, List.of(input));
@@ -70,6 +77,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("compute cells fire callbacks")
     public void testComputeCellsFireCallbacks() {
         var input = React.inputCell(1);
         var output = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -83,6 +91,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("callback cells only fire on change")
     public void testCallbacksOnlyFireOnChange() {
         var input = React.inputCell(1);
         var output = React.computeCell(list -> list.get(0) < 3 ? 111 : 222, List.of(input));
@@ -99,6 +108,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("callbacks do not report already reported values")
     public void testCallbacksDoNotReportAlreadyReportedValues() {
         var input = React.inputCell(1);
         var output = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -116,6 +126,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("callbacks can fire from multiple cells")
     public void testCallbacksCanFireFromMultipleCells() {
         var input = React.inputCell(1);
         var plusOne = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -134,6 +145,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("callbacks can be added and removed")
     public void testCallbacksCanBeAddedAndRemoved() {
         var input = React.inputCell(11);
         var output = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -166,6 +178,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("removing a callback multiple times doesn't interfere with other callbacks")
     public void testRemovingACallbackMultipleTimesDoesntInterfereWithOtherCallbacks() {
         var input = React.inputCell(1);
         var output = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -189,6 +202,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("callbacks should only be called once even if multiple dependencies change")
     public void testCallbacksShouldOnlyBeCalledOnceEvenIfMultipleDependenciesChange() {
         var input = React.inputCell(1);
         var plusOne = React.computeCell(list -> list.get(0) + 1, List.of(input));
@@ -205,6 +219,7 @@ public class ReactTest {
 
     @Disabled("Remove to run")
     @Test
+    @DisplayName("callbacks should not be called if dependencies change but output value doesn't change")
     public void testCallbacksShouldNotBeCalledIfDependenciesChangeButOutputValueDoesntChange() {
         var input = React.inputCell(1);
         var plusOne = React.computeCell(list -> list.get(0) + 1, List.of(input));

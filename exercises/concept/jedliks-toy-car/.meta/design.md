@@ -28,3 +28,15 @@
 - `strings`: know how to do basic string interpolation.
 - `numbers`: know how to compare numbers.
 - `conditionals`: know how to do conditional logic.
+
+## Analyzer
+
+This exercise could benefit from the following rules in the [analyzer]:
+
+- `essential`: Verify that the solution keeps the void type for the drive function.
+- `essential`: Verify that the solution has fields in the class
+- `actionable`: If the solution defines the fields as `public`, instruct the student to use `private` and explain the encapsulation principle.
+- `informative`: If the solution does not use a primitive as a type for the fields, inform the student to use it.
+   Explain that the values cannot be null and it is less error-prone
+
+[analyzer]: https://github.com/exercism/java-analyzer

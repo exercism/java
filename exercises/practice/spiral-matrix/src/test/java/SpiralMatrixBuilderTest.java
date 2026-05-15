@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,12 +15,14 @@ public class SpiralMatrixBuilderTest {
     }
 
     @Test
+    @DisplayName("empty spiral")
     public void testEmptySpiral() {
         assertThat(spiralMatrixBuilder.buildMatrixOfSize(0)).isEmpty();
     }
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("trivial spiral")
     public void testTrivialSpiral() {
         int[][] expected = {
                 {1}
@@ -30,6 +33,7 @@ public class SpiralMatrixBuilderTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("spiral of size 2")
     public void testSpiralOfSize2() {
         int[][] expected = {
                 {1, 2},
@@ -41,6 +45,7 @@ public class SpiralMatrixBuilderTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("spiral of size 3")
     public void testSpiralOfSize3() {
         int[][] expected = {
                 {1, 2, 3},
@@ -53,6 +58,7 @@ public class SpiralMatrixBuilderTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("spiral of size 4")
     public void testSpiralOfSize4() {
         int[][] expected = {
                 { 1,  2,  3,  4},
@@ -66,6 +72,7 @@ public class SpiralMatrixBuilderTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("spiral of size 5")
     public void testSpiralOfSize5() {
         int[][] expected = {
                 { 1,  2,  3,  4,  5},

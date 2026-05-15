@@ -95,7 +95,7 @@
           "if-else-statements",
           "switch-statement"
         ],
-        "status": "beta"
+        "status": "active"
       },
       {
         "slug": "squeaky-clean",
@@ -105,6 +105,7 @@
           "chars"
         ],
         "prerequisites": [
+          "arrays",
           "strings"
         ],
         "status": "active"
@@ -232,7 +233,8 @@
           "strings",
           "switch-statement",
           "constructors"
-        ]
+        ],
+        "status": "active"
       },
       {
         "slug": "tim-from-marketing",
@@ -244,7 +246,8 @@
         "prerequisites": [
           "if-else-statements",
           "strings"
-        ]
+        ],
+        "status": "active"
       },
       {
         "slug": "captains-log",
@@ -257,7 +260,8 @@
           "arrays",
           "numbers",
           "strings"
-        ]
+        ],
+        "status": "active"
       },
       {
         "slug": "booking-up-for-beauty",
@@ -269,7 +273,8 @@
         "prerequisites": [
           "numbers",
           "strings"
-        ]
+        ],
+        "status": "active"
       },
       {
         "slug": "wizards-and-warriors-2",
@@ -294,7 +299,8 @@
         ],
         "prerequisites": [
           "numbers"
-        ]
+        ],
+        "status": "active"
       },
       {
         "slug": "gotta-snatch-em-all",
@@ -307,7 +313,7 @@
           "lists",
           "generic-types"
         ],
-        "status": "beta"
+        "status": "active"
       },
       {
         "slug": "international-calling-connoisseur",
@@ -320,7 +326,8 @@
           "classes",
           "foreach-loops",
           "generic-types"
-        ]
+        ],
+        "status": "active"
       }
     ],
     "practice": [
@@ -799,6 +806,16 @@
         "difficulty": 4
       },
       {
+        "slug": "prism",
+        "name": "Prism",
+        "uuid": "1fca8759-0236-493c-a4ef-2807cb33fd2b",
+        "practices": [],
+        "prerequisites": [
+          "lists"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "9906491b-a638-408d-86a4-4ad320a92658",
@@ -806,6 +823,16 @@
         "prerequisites": [
           "for-loops",
           "arrays"
+        ],
+        "difficulty": 4
+      },
+      {
+        "slug": "rate-limiter",
+        "name": "Rate Limiter",
+        "uuid": "b4b0c60e-4ce1-488e-948f-bcb6821c773c",
+        "practices": [],
+        "prerequisites": [
+          "generic-types"
         ],
         "difficulty": 4
       },
@@ -970,7 +997,7 @@
         "practices": [],
         "prerequisites": [
           "arrays",
-          "if-statements"
+          "if-else-statements"
         ],
         "difficulty": 5
       },
@@ -1201,6 +1228,20 @@
         "difficulty": 6
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "b534049a-5920-4906-9091-0fa6d81a3636",
+        "practices": [],
+        "prerequisites": [
+          "for-loops",
+          "lists",
+          "sets",
+          "randomness",
+          "datetime"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "bank-account",
         "name": "Bank Account",
         "uuid": "a242efc5-159d-492b-861d-12a1459fb334",
@@ -1247,6 +1288,19 @@
         "prerequisites": [
           "for-loops",
           "arrays"
+        ],
+        "difficulty": 6
+      },
+      {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "b4f7c3b0-6d3c-45e2-a328-05e09c7467f4",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "for-loops",
+          "arrays",
+          "if-else-statements"
         ],
         "difficulty": 6
       },

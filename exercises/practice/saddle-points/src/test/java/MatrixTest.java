@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MatrixTest {
 
     @Test
+    @DisplayName("Can identify single saddle point")
     public void testCanIdentifySingleSaddlePoint() {
         Matrix matrix = new Matrix(Arrays.asList(
             Arrays.asList(9, 8, 7),
@@ -26,6 +28,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify that empty matrix has no saddle points")
     public void testCanIdentifyThatEmptyMatrixHasNoSaddlePoints() {
         Matrix matrix = new Matrix(new ArrayList<>());
 
@@ -36,6 +39,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify lack of saddle points when there are none")
     public void testCanIdentifyLackOfSaddlePointsWhenThereAreNone() {
         Matrix matrix = new Matrix(Arrays.asList(
             Arrays.asList(1, 2, 3),
@@ -50,6 +54,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify multiple saddle points in a column")
     public void testCanIdentifyMultipleSaddlePointsInAColumn() {
         Matrix matrix = new Matrix(Arrays.asList(
             Arrays.asList(4, 5, 4),
@@ -68,6 +73,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify multiple saddle points in a Row")
     public void testCanIdentifyMultipleSaddlePointsInARow() {
         Matrix matrix = new Matrix(Arrays.asList(
                 Arrays.asList(6, 7, 8),
@@ -86,6 +92,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify saddle point in bottom right corner")
     public void testCanIdentifySaddlePointInBottomRightCorner() {
         Matrix matrix = new Matrix(Arrays.asList(
             Arrays.asList(8, 7, 9),
@@ -100,6 +107,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify saddle points in a non square matrix")
     public void testCanIdentifySaddlePointsInANonSquareMatrix() {
         Matrix matrix = new Matrix(Arrays.asList(
                 Arrays.asList(3, 1, 3),
@@ -116,6 +124,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify that saddle points in a single column matrix are those with the minimum value")
     public void testCanIdentifyThatSaddlePointsInASingleColumnMatrixAreThoseWithMinimumValue() {
         Matrix matrix = new Matrix(Arrays.asList(
                 Collections.singletonList(2),
@@ -134,6 +143,7 @@ public class MatrixTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can identify that saddle points in a single row matrix are those with the maximum value")
     public void testCanIdentifyThatSaddlePointsInASingleRowMatrixAreThoseWithMaximumValue() {
         Matrix matrix = new Matrix(Arrays.asList(
                 Arrays.asList(2, 5, 3, 5)

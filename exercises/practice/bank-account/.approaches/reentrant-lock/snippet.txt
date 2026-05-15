@@ -1,0 +1,7 @@
+private final ReentrantLock lock = new ReentrantLock();
+lock.lock();
+try {
+    balance += amount;
+} finally {
+    lock.unlock();
+}

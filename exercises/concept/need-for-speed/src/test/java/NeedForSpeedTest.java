@@ -10,7 +10,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:3")
     @DisplayName("The distanceDriven method returns 0 on a new car")
-    public void new_remote_control_car_has_not_driven_any_distance() {
+    public void newRemoteControlCarHasNotDrivenAnyDistance() {
         int speed = 10;
         int batteryDrain = 2;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -21,7 +21,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:3")
     @DisplayName("The distanceDriven method returns 5 after driving once")
-    public void drive_increases_distance_driven_with_speed() {
+    public void driveIncreasesDistanceDrivenWithSpeed() {
         int speed = 5;
         int batteryDrain = 1;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -34,7 +34,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:3")
     @DisplayName("The distanceDriven method returns the correct distance after driving multiple times")
-    public void drive_does_not_increase_distance_driven_when_battery_drained() {
+    public void driveDoesNotIncreaseDistanceDrivenWhenBatteryDrained() {
         int speed = 9;
         int batteryDrain = 50;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -52,7 +52,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:4")
     @DisplayName("The batteryDrained method returns false when car never drove")
-    public void new_remote_control_car_battery_is_not_drained() {
+    public void newRemoteControlCarBatteryIsNotDrained() {
         int speed = 15;
         int batteryDrain = 3;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -63,7 +63,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:4")
     @DisplayName("The batteryDrained method returns false when there's not enough battery")
-    public void new_remote_control_car_that_can_only_drive_once() {
+    public void newRemoteControlCarThatCanOnlyDriveOnce() {
         var car = new NeedForSpeed(1, 99);
         car.drive();
         assertThat(car.batteryDrained()).isTrue();
@@ -74,7 +74,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:4")
     @DisplayName("The batteryDrained method returns false when car battery did not completely drain after driving")
-    public void drive_to_almost_drain_battery() {
+    public void driveToAlmostDrainBattery() {
         int speed = 2;
         int batteryDrain = 1;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -90,7 +90,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:4")
     @DisplayName("The batteryDrained method returns true when battery completely drained after driving")
-    public void drive_until_battery_is_drained() {
+    public void driveUntilBatteryIsDrained() {
         int speed = 2;
         int batteryDrain = 1;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -106,7 +106,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:5")
     @DisplayName("The distanceDriven method returns 0 on a new nitro car")
-    public void nitro_car_has_not_driven_any_distance() {
+    public void nitroCarHasNotDrivenAnyDistance() {
         var car = NeedForSpeed.nitro();
         assertThat(car.distanceDriven()).isEqualTo(0);
     }
@@ -114,7 +114,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:5")
     @DisplayName("The batteryDrained method returns false when nitro car never drove")
-    public void nitro_car_has_battery_not_drained() {
+    public void nitroCarHasBatteryNotDrained() {
         var car = NeedForSpeed.nitro();
         assertThat(car.batteryDrained()).isFalse();
     }
@@ -122,7 +122,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:5")
     @DisplayName("The distanceDriven method returns the correct distance after driving a nitro car")
-    public void nitro_car_has_correct_speed() {
+    public void nitroCarHasCorrectSpeed() {
         var car = NeedForSpeed.nitro();
         car.drive();
         assertThat(car.distanceDriven()).isEqualTo(50);
@@ -131,7 +131,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:5")
     @DisplayName("The batteryDrained method returns false when nitro battery did not completely drain after driving")
-    public void nitro_has_correct_battery_drain() {
+    public void nitroHasCorrectBatteryDrain() {
         var car = NeedForSpeed.nitro();
 
         // The battery is almost drained
@@ -145,7 +145,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:5")
     @DisplayName("The batteryDrained method returns true when nitro battery completely drained after driving")
-    public void nitro_battery_completely_drains() {
+    public void nitroBatteryCompletelyDrains() {
         var car = NeedForSpeed.nitro();
 
         // The battery is drained
@@ -159,7 +159,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:6")
     @DisplayName("The canFinishRace method returns true when car can finish a race")
-    public void car_can_finish_with_car_that_can_easily_finish() {
+    public void carCanFinishWithCarThatCanEasilyFinish() {
         int speed = 10;
         int batteryDrain = 2;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -173,7 +173,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:6")
     @DisplayName("The canFinishRace method returns true when car can just finish a race")
-    public void car_can_finish_with_car_that_can_just_finish() {
+    public void carCanFinishWithCarThatCanJustFinish() {
         int speed = 2;
         int batteryDrain = 10;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -187,7 +187,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:6")
     @DisplayName("The canFinishRace method returns false when car just cannot finish a race")
-    public void car_can_finish_with_car_that_just_cannot_finish() {
+    public void carCanFinishWithCarThatJustCannotFinish() {
         int speed = 3;
         int batteryDrain = 20;
         var car = new NeedForSpeed(speed, batteryDrain);
@@ -201,7 +201,7 @@ public class NeedForSpeedTest {
     @Test
     @Tag("task:6")
     @DisplayName("The canFinishRace method returns false when car cannot finish a race")
-    public void car_can_finish_with_car_that_cannot_finish() {
+    public void carCanFinishWithCarThatCannotFinish() {
         int speed = 1;
         int batteryDrain = 20;
         var car = new NeedForSpeed(speed, batteryDrain);

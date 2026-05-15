@@ -9,7 +9,7 @@ Here at Exercism we recommend using [Eclipse Temurin by Adoptium][adoptium].
 
 ## Supported Java versions
 
-Exercism's Java track supports Java 21 LTS and earlier.
+Exercism's Java track supports Java 25 LTS and earlier.
 
 ## Installing Eclipse Temurin
 

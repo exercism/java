@@ -1,12 +1,12 @@
-
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
-
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class KindergartenGardenTest {
 
     @Test
+    @DisplayName("garden with single student")
     public void singleStudent() {
         String garden = "RC\nGG";
         String student = "Alice";
@@ -17,6 +17,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("different garden with single student")
     public void singleStudent2() {
         String garden = "VC\nRC";
         String student = "Alice";
@@ -27,6 +28,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("garden with two students")
     public void twoStudents() {
         String garden = "VVCG\nVVRC";
         String student = "Bob";
@@ -37,6 +39,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("second student's garden")
     public void oneGardenSecondStudent() {
         String garden = "VVCCGG\nVVCCGG";
         String student = "Bob";
@@ -47,6 +50,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("third student's garden")
     public void oneGardenThirdStudent() {
         String garden = "VVCCGG\nVVCCGG";
         String student = "Charlie";
@@ -57,6 +61,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Alice, first student's garden")
     public void fullGardenForAlice() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Alice";
@@ -67,6 +72,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Bob, second student's garden")
     public void fullGardenForBob() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Bob";
@@ -77,6 +83,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Charlie")
     public void fullGardenForCharlie() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Charlie";
@@ -87,6 +94,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for David")
     public void fullGardenForDavid() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "David";
@@ -97,6 +105,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Eve")
     public void fullGardenForEve() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Eve";
@@ -107,6 +116,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Fred")
     public void fullGardenForFred() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Fred";
@@ -117,6 +127,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Ginny")
     public void fullGardenForGinny() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Ginny";
@@ -127,6 +138,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Harriet")
     public void fullGardenForHarriet() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Harriet";
@@ -137,6 +149,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Ileana")
     public void fullGardenForIleana() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Ileana";
@@ -147,6 +160,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Joseph")
     public void fullGardenForJoseph() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Joseph";
@@ -157,6 +171,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Kincaid, second to last student's garden")
     public void fullGardenForKincaid() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Kincaid";
@@ -167,6 +182,7 @@ public class KindergartenGardenTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("for Larry, last student's garden")
     public void fullGardenForLarry() {
         String garden = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
         String student = "Larry";

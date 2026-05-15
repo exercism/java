@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -6,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DoublyLinkedListTest {
 
     @Test
+    @DisplayName("pop gets element from the list")
     public void popGetsElementFromTheList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -16,6 +18,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("push/pop respectively add/remove at the end of the list")
     public void pushAndPopRespectivelyAddsAndRemovesAtEndOfList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -28,6 +31,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("shift gets an element from the list")
     public void shiftGetsAnElementFromTheList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -38,6 +42,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("shift gets first element from the list")
     public void shiftGetsFirstElementFromTheList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -50,6 +55,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("unshift adds element at start of the list")
     public void unshiftAddsElementAtStartOfTheList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -62,6 +68,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("pop push shift unshift can be used in any order")
     public void popPushShiftUnshiftCanBeUsedInAnyOrder() {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
@@ -84,6 +91,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("popping to empty doesn't break the list")
     public void poppingToEmptyDoesNotBreakTheList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
@@ -98,6 +106,7 @@ public class DoublyLinkedListTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("shifting to empty doesn't break the list")
     public void shiftingToEmptyDoesNotBreakTheList() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 

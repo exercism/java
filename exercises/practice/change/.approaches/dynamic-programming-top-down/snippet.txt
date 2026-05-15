@@ -1,0 +1,8 @@
+for (int i = 1; i <= grandTotal; i++) {
+    for (int coin: currencyCoins) {
+        List<Integer> currentCombination = coinsUsed.get(i - coin).add(coin);
+        if (bestCombination == null || currentCombination.size() < bestCombination.size())
+            bestCombination = currentCombination;
+    }
+    coinsUsed.add(bestCombination);
+}

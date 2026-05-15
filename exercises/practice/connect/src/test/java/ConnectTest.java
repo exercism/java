@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -6,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ConnectTest {
 
     @Test
+    @DisplayName("an empty board has no winner")
     public void anEmptyBoardHasNoWinner() {
 
         //GIVEN
@@ -27,6 +29,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("X can win on a 1x1 board")
     public void xCanWinOnA1x1Board() {
 
         //GIVEN
@@ -45,6 +48,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("O can win on a 1x1 board")
     public void oCanWinOnA1x1Board() {
 
         //GIVEN
@@ -63,6 +67,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("only edges does not make a winner")
     public void onlyEdgesDoesNotMakeAWinner() {
 
         //GIVEN
@@ -84,6 +89,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("illegal diagonal does not make a winner")
     public void illegalDiagonalDoesNotMakeAWinner() {
 
         //GIVEN
@@ -106,6 +112,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("nobody wins crossing adjacent angles")
     public void nobodyWinsCrossingAdjacentAngles() {
 
         //GIVEN
@@ -128,6 +135,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("X wins crossing from left to right")
     public void xWinsCrossingFromLeftToRight() {
 
         //GIVEN
@@ -150,6 +158,51 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("X wins with left-hand dead end fork")
+    public void xWinsWithLeftHandDeadEndFork() {
+
+        //GIVEN
+        var board = new String[]{
+            ". . X .",
+            " X X . .",
+            "  . X X X",
+            "   O O O O"
+        };
+        Connect cut = new Connect(board);
+
+        //WHEN
+        var winner = cut.computeWinner();
+
+        //THEN
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
+
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("X wins with right-hand dead end fork")
+    public void xWinsWithRightHandDeadEndFork() {
+
+        //GIVEN
+        var board = new String[]{
+            ". . X X",
+            " X X . .",
+            "  . X X .",
+            "   O O O O"
+        };
+        Connect cut = new Connect(board);
+
+        //WHEN
+        var winner = cut.computeWinner();
+
+        //THEN
+        assertThat(winner).isEqualTo(Winner.PLAYER_X);
+
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("O wins crossing from top to bottom")
     public void oWinsCrossingFromTopToBottom() {
 
         //GIVEN
@@ -172,6 +225,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("X wins using a convoluted path")
     public void xWinsUsingConvolutedPath() {
 
         //GIVEN
@@ -194,6 +248,7 @@ public class ConnectTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("X wins using a spiral path")
     public void xWinsUsingASpiralPath() {
 
         //GIVEN

@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -14,6 +15,7 @@ public class EtlTest {
     private final Etl etl = new Etl();
 
     @Test
+    @DisplayName("single letter")
     public void testTransformOneValue() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {
@@ -34,6 +36,7 @@ public class EtlTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("single score with multiple letters")
     public void testTransformMoreValues() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {
@@ -58,6 +61,7 @@ public class EtlTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple scores with multiple letters")
     public void testMoreKeys() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {
@@ -82,6 +86,7 @@ public class EtlTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("multiple scores with differing numbers of letters")
     public void testFullDataset() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {

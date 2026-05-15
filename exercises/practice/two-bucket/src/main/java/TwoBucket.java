@@ -1,11 +1,11 @@
 class TwoBucket {
 
     TwoBucket(int bucketOneCap, int bucketTwoCap, int desiredLiters, String startBucket) {
-        throw new UnsupportedOperationException("Please implement the TwoBucket(int, int, int, String) constructor.");
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
     Result getResult() {
-        throw new UnsupportedOperationException("Please implement the TwoBucket(int, int, int, String) constructor.");
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
     
 }

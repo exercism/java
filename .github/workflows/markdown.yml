@@ -17,6 +17,6 @@ jobs:
     name: Lint Markdown files
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Lint markdown
-        uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e
+        uses: DavidAnson/markdownlint-cli2-action@6b51ade7a9e4a75a7ad929842dd298a3804ebe8b

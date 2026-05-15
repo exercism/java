@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PythagoreanTripletTest {
 
     @Test
+    @DisplayName("triplets whose sum is 12")
     public void tripletsWhoseSumIs12() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
@@ -23,6 +25,7 @@ public class PythagoreanTripletTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("triplets whose sum is 108")
     public void tripletsWhoseSumIs108() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
@@ -36,6 +39,7 @@ public class PythagoreanTripletTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("triplets whose sum is 1000")
     public void tripletsWhoseSumIs1000() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
@@ -50,6 +54,7 @@ public class PythagoreanTripletTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("no matching triplets for 1001")
     public void tripletsWhoseSumIs1001() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
@@ -62,6 +67,7 @@ public class PythagoreanTripletTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("returns all matching triplets")
     public void tripletsWhoseSumIs90() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
@@ -77,6 +83,7 @@ public class PythagoreanTripletTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("several matching triplets")
     public void tripletsWhoseSumIs840() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet
@@ -117,6 +124,7 @@ public class PythagoreanTripletTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("triplets for large number")
     public void tripletsWhoseSumIs30000() {
         List<PythagoreanTriplet> actual
                 = PythagoreanTriplet

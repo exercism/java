@@ -2,6 +2,9 @@
   "authors": [
     "Azumix"
   ],
+  "contributors": [
+    "AlvesJorge"
+  ],
   "files": {
     "solution": [
       "src/main/java/FootballMatchReports.java"

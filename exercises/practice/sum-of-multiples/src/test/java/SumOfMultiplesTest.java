@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -6,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SumOfMultiplesTest {
 
     @Test
+    @DisplayName("no multiples within limit")
     public void testNoMultiplesWithinLimit() {
 
         int[] set = {
@@ -19,6 +21,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("one factor has multiples within limit")
     public void testOneFactorHasMultiplesWithinLimit() {
 
         int[] set = {
@@ -32,6 +35,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("more than one multiple within limit")
     public void testMoreThanOneMultipleWithinLimit() {
 
         int[] set = {
@@ -44,6 +48,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("more than one factor with multiples within limit")
     public void testMoreThanOneFactorWithMultiplesWithinLimit() {
 
         int[] set = {
@@ -57,6 +62,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("each multiple is only counted once")
     public void testEachMultipleIsOnlyCountedOnce() {
 
         int[] set = {
@@ -70,6 +76,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("a much larger limit")
     public void testAMuchLargerLimit() {
 
         int[] set = {
@@ -83,6 +90,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("three factors")
     public void testThreeFactors() {
 
         int[] set = {
@@ -97,6 +105,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("factors not relatively prime")
     public void testFactorsNotRelativelyPrime() {
 
         int[] set = {
@@ -110,6 +119,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("some pairs of factors relatively prime and some not")
     public void testSomePairsOfFactorsRelativelyPrimeAndSomeNot() {
 
         int[] set = {
@@ -124,6 +134,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("one factor is a multiple of another")
     public void testOneFactorIsAMultipleOfAnother() {
 
         int[] set = {
@@ -137,6 +148,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("much larger factors")
     public void testMuchLargerFactors() {
 
         int[] set = {
@@ -150,6 +162,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("all numbers are multiples of 1")
     public void testAllNumbersAreMultiplesOf1() {
 
         int[] set = {
@@ -162,6 +175,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("no factors means an empty sum")
     public void testNoFactorsMeanAnEmptySum() {
 
         int[] set = {};
@@ -172,6 +186,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("the only multiple of 0 is 0")
     public void testSumOfMultiplesOfZeroIsZero() {
 
         int[] set = {
@@ -184,6 +199,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("the factor 0 does not affect the sum of multiples of other factors")
     public void testFactorZeroDoesNotAffectTheSumOfMultiplesOfOtherFactors() {
 
         int[] set = {
@@ -197,6 +213,7 @@ public class SumOfMultiplesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("solutions using include-exclude must extend to cardinality greater than 3")
     public void testSolutionsUsingIncludeExcludeMustExtendToCardinalityGreater3() {
 
         int[] set = {

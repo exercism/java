@@ -11,7 +11,9 @@
   ],
   "files": {
     "solution": [
-      "src/main/java/BuildTree.java"
+      "src/main/java/Record.java",
+      "src/main/java/BuildTree.java",
+      "src/main/java/TreeNode.java"
     ],
     "test": [
       "src/test/java/BuildTreeTest.java"
@@ -20,9 +22,7 @@
       ".meta/src/reference/java/BuildTree.java"
     ],
     "editor": [
-      "src/main/java/InvalidRecordsException.java",
-      "src/main/java/Record.java",
-      "src/main/java/TreeNode.java"
+      "src/main/java/InvalidRecordsException.java"
     ],
     "invalidator": [
       "build.gradle"

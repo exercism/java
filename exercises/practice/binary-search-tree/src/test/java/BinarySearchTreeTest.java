@@ -4,11 +4,13 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class BinarySearchTreeTest {
 
     @Test
+    @DisplayName("data is retained")
     public void dataIsRetained() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
 
@@ -24,6 +26,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("insert data at proper node")
     public void insertsLess() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
 
@@ -45,6 +48,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("same number at left node")
     public void insertsSame() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
         String expectedRoot = "4";
@@ -65,6 +69,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("greater number at right node")
     public void insertsRight() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         int expectedRoot = 4;
@@ -85,6 +90,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can create complex tree")
     public void createsComplexTree() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
         List<Character> expected = List.of('4', '2', '6', '1', '3', '5', '7');
@@ -97,6 +103,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can sort single number")
     public void sortsSingleElement() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
         List<String> expected = Collections.singletonList("2");
@@ -108,6 +115,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can sort if second number is smaller than first")
     public void sortsCollectionOfTwoIfSecondInsertedIsSmallerThanFirst() {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         List<Integer> expected = List.of(1, 2);
@@ -120,6 +128,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can sort if second number is same as first")
     public void sortsCollectionOfTwoIfSecondNumberisSameAsFirst() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
         List<Character> expected = List.of('2', '2');
@@ -132,6 +141,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can sort if second number is greater than first")
     public void sortsCollectionOfTwoIfSecondInsertedIsBiggerThanFirst() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
         List<Character> expected = List.of('2', '3');
@@ -144,6 +154,7 @@ public class BinarySearchTreeTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can sort complex tree")
     public void iteratesOverComplexTree() {
         BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
         List<String> expected = List.of("1", "2", "3", "5", "6", "7");

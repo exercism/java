@@ -31,7 +31,7 @@ dialingCodes.setDialingCode(679, "Fiji");
 
 ## 3. Lookup a dialing code's country
 
-Implement the `getCountry` method that takes a map of dialing codes and a dialing code and returns the country name with the dialing code.
+Implement the `getCountry` method that takes a dialing code and returns the country name with the dialing code.
 
 ```java
 DialingCodes dialingCodes = new DialingCodes();
@@ -51,7 +51,7 @@ However, unlike `setDialingCode`, it does nothing if the dialing code or the cou
 DialingCodes dialingCodes = new DialingCodes();
 dialingCodes.addNewDialingCode(32, "Belgium");
 dialingCodes.addNewDialingCode(379, "Vatican City");
-// => { 39 => "Italy", 379 => "Vatican City" }
+// => { 32 => "Belgium", 379 => "Vatican City" }
 
 
 dialingCodes.addNewDialingCode(32, "Other");
@@ -63,7 +63,7 @@ dialingCodes.addNewDialingCode(39, "Vatican City");
 
 Its rare, but mistakes can be made.
 To correct the mistake, we will need to know what dialing code the country is currently mapped to.
-To find which dialing code needs to be corrected, implement the `findDialingCode` method that takes in a map of dialing codes and a country and returns the country's dialing code.
+To find which dialing code needs to be corrected, implement the `findDialingCode` method that takes a country and returns the country's dialing code.
 Return `null` if the country is _not_ in the map.
 
 ```java

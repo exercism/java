@@ -1,4 +1,4 @@
-# Dynamic Programming Approach
+# Dynamic Programming - Top Down
 
 ```java
 import java.util.List;
@@ -12,7 +12,7 @@ class ChangeCalculator {
     }
 
     List<Integer> computeMostEfficientChange(int grandTotal) {
-        if (grandTotal < 0) 
+        if (grandTotal < 0)
             throw new IllegalArgumentException("Negative totals are not allowed.");
 
         List<List<Integer>> coinsUsed = new ArrayList<>(grandTotal + 1);
@@ -64,5 +64,5 @@ It minimizes the number of coins needed by breaking down the problem into smalle
 ## Time and Space Complexity
 
 The time complexity of this approach is **O(n * m)**, where `n` is the `grandTotal` and `m` is the number of available coin denominations. This is because we iterate over all coin denominations for each amount up to `grandTotal`.
-  
+
 The space complexity is **O(n)** due to the list `coinsUsed`, which stores the most efficient coin combination for each total up to `grandTotal`.

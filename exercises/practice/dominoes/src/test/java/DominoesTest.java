@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class DominoesTest {
 
     @Test
+    @DisplayName("empty input = empty output")
     public void emtpyInputEmptyOutputTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
 
@@ -24,6 +26,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("singleton input = singleton output")
     public void singletonInputSingletonOutput() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
 
@@ -37,6 +40,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("singleton that can't be chained")
     public void singletonCantBeChainedTest() {
         Dominoes dominoes = new Dominoes();
 
@@ -50,6 +54,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("three elements")
     public void threeElementsTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
 
@@ -63,6 +68,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can reverse dominoes")
     public void canReverseDominoesTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
 
@@ -76,6 +82,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can't be chained")
     public void cantBeChainedTest() {
         Dominoes dominoes = new Dominoes();
 
@@ -89,6 +96,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("disconnected - simple")
     public void disconnectedSimpleTest() {
         Dominoes dominoes = new Dominoes();
 
@@ -102,6 +110,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("disconnected - double loop")
     public void disconnectedDoubleLoopTest() {
         Dominoes dominoes = new Dominoes();
 
@@ -115,6 +124,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("disconnected - single isolated")
     public void disconnectedSingleIsolatedTest() {
         Dominoes dominoes = new Dominoes();
 
@@ -128,6 +138,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("need backtrack")
     public void needBacktrackTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
 
@@ -142,6 +153,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("separate loops")
     public void separateLoopsTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
 
@@ -156,6 +168,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("nine elements")
     public void nineElementsTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
         Domino[] dominoesArray = {new Domino(1, 2), new Domino(5, 3), new Domino(3, 1),
@@ -170,6 +183,7 @@ public class DominoesTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("separate three-domino loops")
     public void separateThreeDominoLoopsTest() {
         Dominoes dominoes = new Dominoes();
 

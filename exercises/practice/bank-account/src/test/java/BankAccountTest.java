@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -15,6 +16,7 @@ public class BankAccountTest {
     }
 
     @Test
+    @DisplayName("Newly opened account has zero balance")
     public void newlyOpenedAccountHasEmptyBalance() throws BankAccountActionInvalidException {
         bankAccount.open();
 
@@ -23,6 +25,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Single deposit")
     public void singleDeposit() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(100);
@@ -32,6 +35,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Multiple deposits")
     public void multipleDeposits() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(100);
@@ -42,6 +46,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Withdraw once")
     public void withdrawOnce() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(100);
@@ -52,6 +57,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Withdraw twice")
     public void withdrawTwice() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(100);
@@ -63,6 +69,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can do multiple operations sequentially")
     public void canDoMultipleOperationsSequentially() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(100);
@@ -76,6 +83,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot check balance of closed account")
     public void cannotCheckBalanceOfClosedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.close();
@@ -87,6 +95,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot deposit into closed account")
     public void cannotDepositIntoClosedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.close();
@@ -98,6 +107,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot deposit into unopened account")
     public void cannotDepositIntoUnopenedAccount() {
         assertThatExceptionOfType(BankAccountActionInvalidException.class)
                 .isThrownBy(() -> bankAccount.deposit(50))
@@ -106,6 +116,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot withdraw from closed account")
     public void cannotWithdrawFromClosedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.close();
@@ -117,6 +128,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot close an account that was not opened")
     public void cannotCloseAnAccountThatWasNotOpened() {
         assertThatExceptionOfType(BankAccountActionInvalidException.class)
                 .isThrownBy(bankAccount::close)
@@ -125,6 +137,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot open an already opened account")
     public void cannotOpenAnAlreadyOpenedAccount() throws BankAccountActionInvalidException {
         bankAccount.open();
 
@@ -135,6 +148,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Reopened account does not retain balance")
     public void reopenedAccountDoesNotRetainBalance() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(50);
@@ -146,7 +160,8 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
-    public void cannotWithdrawMoreThanWasDeposited() throws BankAccountActionInvalidException {
+    @DisplayName("Cannot withdraw more than deposited")
+    public void cannotWithdrawMoreThanDeposited() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(25);
 
@@ -157,6 +172,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot withdraw negative")
     public void cannotWithdrawNegativeAmount() throws BankAccountActionInvalidException {
         bankAccount.open();
         bankAccount.deposit(100);
@@ -168,6 +184,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Cannot deposit negative")
     public void cannotDepositNegativeAmount() throws BankAccountActionInvalidException {
         bankAccount.open();
 
@@ -178,6 +195,7 @@ public class BankAccountTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("Can handle concurrent transactions")
     public void canHandleConcurrentTransactions() throws BankAccountActionInvalidException, InterruptedException {
         bankAccount.open();
         bankAccount.deposit(1000);

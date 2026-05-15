@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class NucleotideCounterTest {
 
     @Test
+    @DisplayName("empty strand")
     public void testEmptyDnaStringHasNoNucleotides() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("");
 
@@ -19,6 +21,7 @@ public class NucleotideCounterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("can count one nucleotide in single-character input")
     public void testDnaStringHasOneNucleotide() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("G");
 
@@ -29,6 +32,7 @@ public class NucleotideCounterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("strand with repeated nucleotide")
     public void testRepetitiveSequenceWithOnlyGuanine() {
         NucleotideCounter nucleotideCounter = new NucleotideCounter("GGGGGGG");
 
@@ -39,6 +43,7 @@ public class NucleotideCounterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("strand with multiple nucleotides")
     public void testDnaStringHasMultipleNucleotide() {
         NucleotideCounter nucleotideCounter
             = new NucleotideCounter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
@@ -50,6 +55,7 @@ public class NucleotideCounterTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("strand with invalid nucleotides")
     public void testDnaStringHasInvalidNucleotides() {
         assertThatThrownBy(() -> new NucleotideCounter("AGXXACT"))
             .isInstanceOf(IllegalArgumentException.class);

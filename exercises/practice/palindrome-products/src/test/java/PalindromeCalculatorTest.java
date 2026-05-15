@@ -2,6 +2,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ public class PalindromeCalculatorTest {
     private PalindromeCalculator palindromeCalculator = new PalindromeCalculator();
 
     @Test
+    @DisplayName("find the smallest palindrome from single digit factors")
     public void smallestPalindromeFromSingleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -30,6 +32,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the largest palindrome from single digit factors")
     public void largestPalindromeFromSingleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -46,6 +49,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the smallest palindrome from double digit factors")
     public void largestPalindromeFromDoubleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -62,6 +66,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the largest palindrome from double digit factors")
     public void smallestPalindromeFromDoubleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -78,6 +83,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the largest palindrome from triple digit factors")
     public void largestPalindromeFromTripleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -94,6 +100,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the smallest palindrome from triple digit factors")
     public void smallestPalindromeFromTripleDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -110,6 +117,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the smallest palindrome from four digit factors")
     public void smallestPalindromeFromQuadDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -126,6 +134,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("find the largest palindrome from four digit factors")
     public void largestPalindromeFromQuadDigitFactors() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(
@@ -142,6 +151,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("empty result for smallest if no palindrome in the range")
     public void emtpyResultSmallestNoPalindromeInRange() {
 
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(1002,
@@ -151,6 +161,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("empty result for largest if no palindrome in the range")
     public void emptyResultLargestNoPalindromeInRange() {
 
         SortedMap<Long, List<List<Integer>>> palindromes = palindromeCalculator.getPalindromeProductsWithFactors(15,
@@ -160,6 +171,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("error result for smallest if min is more than max")
     public void errorSmallestMinIsMoreThanMax() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -169,6 +181,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("error result for largest if min is more than max")
     public void errorLargestMinIsMoreThanMax() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
@@ -178,6 +191,7 @@ public class PalindromeCalculatorTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("smallest product does not use the smallest factor")
     public void smallestProductDoesNotUseTheSmallestFactor() {
         List<List<Integer>> expected = Collections.unmodifiableList(
                 Arrays.asList(

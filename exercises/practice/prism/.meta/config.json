@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "kahgoh"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Prism.java"
+    ],
+    "test": [
+      "src/test/java/PrismTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Prism.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Calculate the path of a laser through refractive prisms.",
+  "source": "FraSanga",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2625"
+}
