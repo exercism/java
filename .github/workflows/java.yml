@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-all:
-    name: Check if tests compile cleanly with starter sources
+    name: Check if all exercise tests compile cleanly with starter sources
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
     steps:
@@ -43,7 +43,7 @@ jobs:
         run: bin/build-changed-exercise
 
   lint-all:
-    name: Lint all Java files using Checkstyle
+    name: Lint all exercises using Checkstyle
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
     steps:
@@ -58,7 +58,7 @@ jobs:
         working-directory: exercises
 
   lint-changed:
-    name: Lint changed Java exercises using Checkstyle
+    name: Lint changed exercises using Checkstyle
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
     steps:
