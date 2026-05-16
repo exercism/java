@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source "$(dirname "$0")/common.sh"
+
+# If any Gradle build file changed, run the full suite and exit
+check_gradle_changes \
+  "cd exercises && ./gradlew compileStarterTestJava --continue" \
+  "Gradle build files changed, running full build suite..."
+
+if [ -z "$changed_exercises" ]; then
+  echo "No relevant exercises changed, skipping compile checks."
+  exit 0
+fi
+
+# Print exercises
+echo "Changed exercises detected:"
+echo "$changed_exercises"
+echo "----------------------------------------"
+
+# Run build compile checks
+exit_code=0
+for dir in $changed_exercises; do
+  slug=$(basename "$dir")
+
+  echo "========================================"
+  echo "=== Running compileStarterTestJava for $slug ==="
+  echo "========================================"
+
+  if [[ $dir == exercises/practice/* ]]; then
+    ./exercises/gradlew -p exercises ":practice:$slug:compileStarterTestJava" || exit_code=1
+  elif [[ $dir == exercises/concept/* ]]; then
+    ./exercises/gradlew -p exercises ":concept:$slug:compileStarterTestJava" || exit_code=1
+  fi
+done
+
+exit $exit_code
