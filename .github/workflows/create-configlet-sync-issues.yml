@@ -1,0 +1,176 @@
+name: Create Configlet Sync Issues
+
+on:
+  workflow_call:
+  workflow_dispatch: 
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create-sync-issues:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PARENT_ISSUE_TITLE: "🚨 configlet sync --test found unsynced tests"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch configlet
+        run: ./bin/fetch-configlet
+
+      - name: Run configlet sync --tests and capture output
+        id: sync
+        shell: bash {0}
+        run: |
+          raw_output="$(./bin/configlet sync --tests 2>&1)"
+          exit_code=$?
+          printf "exit_code=%d\n" "$exit_code" >> "$GITHUB_OUTPUT"
+          {
+            printf "output<<CONFIGLET_EOF\n"
+            printf "%s\n" "$raw_output"
+            printf "CONFIGLET_EOF\n"
+          } >> "$GITHUB_OUTPUT"
+          printf "configlet exit code: %d\n" "$exit_code"
+          printf "%s\n" "$raw_output"
+
+      - name: Parse exercises with missing tests
+        id: parse
+        if: steps.sync.outputs.exit_code != '0'
+        shell: bash
+        run: |
+          output='${{ steps.sync.outputs.output }}'
+
+          # Extract exercise slugs from lines like: [warn] dot-dsl: missing 19 test cases
+          mapfile -t exercises < <(printf "%s\n" "$output" | grep -oP '(?<=\[warn\] )[a-z][a-z0-9-]+(?=: missing \d+ test case)')
+
+          if [[ ${#exercises[@]} -eq 0 ]]; then
+            printf "No exercises with missing tests found in output.\n"
+            printf "exercises_json=[]\n" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          printf "Found %d exercise(s) with missing tests:\n" "${#exercises[@]}"
+          printf "  - %s\n" "${exercises[@]}"
+
+          # Build JSON array of slugs
+          json="["
+          for i in "${!exercises[@]}"; do
+            [[ $i -gt 0 ]] && json+=","
+            json+="\"${exercises[$i]}\""
+          done
+          json+="]"
+          printf "exercises_json=%s\n" "$json" >> "$GITHUB_OUTPUT"
+
+          # Build per-exercise details: slug <TAB> test_name <TAB> uuid (one row per test)
+          {
+            printf "details<<DETAILS_EOF\n"
+            current_slug=""
+            while IFS= read -r line; do
+              if [[ "$line" =~ ^\[warn\]\ ([a-z][a-z0-9-]+):\ missing ]]; then
+                current_slug="${BASH_REMATCH[1]}"
+              elif [[ -n "$current_slug" && "$line" =~ ^[[:space:]]+-\ (.+)\ \(([a-f0-9-]+)\)$ ]]; then
+                printf "%s\t%s\t%s\n" "$current_slug" "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}"
+              elif [[ "$line" =~ ^\[warn\] && ! "$line" =~ missing ]]; then
+                current_slug=""
+              fi
+            done <<< "$output"
+            printf "DETAILS_EOF\n"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Find parent tracking issue
+        id: find_parent
+        if: steps.sync.outputs.exit_code != '0' && steps.parse.outputs.exercises_json != '[]'
+        shell: bash
+        run: |
+          issue_data=$(gh issue list \
+            --repo "${{ github.repository }}" \
+            --search "is:issue is:open in:title \"${PARENT_ISSUE_TITLE}\"" \
+            --json number \
+            --jq '.[0].number // empty')
+
+          if [[ -z "$issue_data" ]]; then
+            printf "::warning::Parent issue not found. Run 'Run Configlet Sync' first.\n"
+            printf "parent_number=\n" >> "$GITHUB_OUTPUT"
+          else
+            printf "Found parent issue #%s\n" "$issue_data"
+            printf "parent_number=%s\n" "$issue_data" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update child issues per exercise
+        if: steps.sync.outputs.exit_code != '0' && steps.parse.outputs.exercises_json != '[]'
+        shell: bash
+        env:
+          EXERCISES_JSON: ${{ steps.parse.outputs.exercises_json }}
+          DETAILS: ${{ steps.parse.outputs.details }}
+          PARENT_NUMBER: ${{ steps.find_parent.outputs.parent_number }}
+        run: |
+          repo="${{ github.repository }}"
+
+          mapfile -t exercises < <(printf "%s\n" "$EXERCISES_JSON" | jq -r '.[]')
+
+          for slug in "${exercises[@]}"; do
+            child_title="[configlet] ${slug}: missing test cases"
+
+            # Collect missing tests for this exercise
+            missing_tests=""
+            while IFS=$'\t' read -r es_slug test_name uuid; do
+              [[ "$es_slug" == "$slug" ]] || continue
+              missing_tests+="- \`${uuid}\` ${test_name}"$'\n'
+            done <<< "$DETAILS"
+
+            parent_ref=""
+            [[ -n "$PARENT_NUMBER" ]] && parent_ref="Part of #${PARENT_NUMBER}."
+
+            # Write body to a temp file to avoid quoting / indentation issues
+            body_file=$(mktemp)
+            cat > "$body_file" << ISSUE_BODY_EOF
+          ## Missing test cases for \`${slug}\`
+          
+          ${parent_ref}
+          
+          The following test cases from [problem-specifications](https://github.com/exercism/problem-specifications/tree/main/exercises/${slug}) are not yet implemented in this track:
+          
+          ${missing_tests}
+          ### How to help
+          
+          For detailed instructions on how to fetch configlet and update the tests, please see the **"How to do this task"** section in the main tracking issue:
+          👉 **[Read the instructions here](${{ github.server_url }}/${{ github.repository }}/issues/${PARENT_NUMBER:-"none"})**
+          
+          _This issue is managed automatically by the [Create Configlet Sync Issues](${{ github.server_url }}/${{ github.repository }}/actions/workflows/create-configlet-sync-issues.yml) workflow._
+          ISSUE_BODY_EOF
+
+            # Check for an existing open child issue
+            existing=$(gh issue list \
+              --repo "$repo" \
+              --search "is:issue is:open in:title \"${child_title}\"" \
+              --json number \
+              --jq '.[0].number // empty')
+
+            if [[ -z "$existing" ]]; then
+              printf "Creating child issue for: %s\n" "$slug"
+              issue_url=$(gh issue create \
+                --repo "$repo" \
+                --title "$child_title" \
+                --body-file "$body_file" \
+                --label "x:knowledge/elementary,x:module/practice-exercise")
+              new_number=$(basename "$issue_url")
+              printf "Created #%s for %s\n" "$new_number" "$slug"
+            else
+              printf "Updating existing child issue #%s for: %s\n" "$existing" "$slug"
+              gh issue edit "$existing" \
+                --repo "$repo" \
+                --body-file "$body_file"
+            fi
+
+            rm -f "$body_file"
+          done
+
+      - name: All tests synced — nothing to do
+        if: steps.sync.outputs.exit_code == '0'
+        run: printf "✅ All exercises are fully synced. No child issues needed.\n"
