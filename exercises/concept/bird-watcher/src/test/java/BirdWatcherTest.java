@@ -33,16 +33,6 @@ public class BirdWatcherTest {
     }
 
     @Test
-    @Tag("task:3")
-    @DisplayName("The incrementTodaysCount does not change count for other days")
-    public void itIncrementDoesNotChangeCountForOtherDays() {
-        int[] counts = new int[] {5, 1, 0, 4, 2, 3, 0};
-        BirdWatcher birdWatcher = new BirdWatcher(counts);
-        birdWatcher.incrementTodaysCount();
-        assertThat(birdWatcher.getCountForFirstDays(6)).isEqualTo(15);
-    }
-
-    @Test
     @Tag("task:4")
     @DisplayName("The hasDayWithoutBirds method returns true when at least one day had no visits")
     public void itHasDayWithoutBirds() {
@@ -85,6 +75,18 @@ public class BirdWatcherTest {
         int[] counts = new int[] {5, 9, 12, 6, 8, 8, 17};
         BirdWatcher birdWatcher = new BirdWatcher(counts);
         assertThat(birdWatcher.getCountForFirstDays(10)).isEqualTo(65);
+    }
+
+    @Test
+    @Tag("task:5")
+    @DisplayName("The incrementTodaysCount method adds one to getCountForFirstDays method")
+    public void itIncrementDoesNotChangeCountForOtherDays() {
+        int[] counts = new int[] {5, 1, 0, 4, 2, 3, 0};
+        BirdWatcher birdWatcher = new BirdWatcher(counts);
+        int countPriorIncrement = birdWatcher.getCountForFirstDays(7);
+        birdWatcher.incrementTodaysCount();
+        int countAfterIncrement = birdWatcher.getCountForFirstDays(7);
+        assertThat(countPriorIncrement).isEqualTo(countAfterIncrement - 1);
     }
 
     @Test
