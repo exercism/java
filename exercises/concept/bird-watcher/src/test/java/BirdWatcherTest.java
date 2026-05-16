@@ -83,10 +83,13 @@ public class BirdWatcherTest {
     public void itIncrementDoesNotChangeCountForOtherDays() {
         int[] counts = new int[] {5, 1, 0, 4, 2, 3, 0};
         BirdWatcher birdWatcher = new BirdWatcher(counts);
+
         int countPriorIncrement = birdWatcher.getCountForFirstDays(7);
         birdWatcher.incrementTodaysCount();
         int countAfterIncrement = birdWatcher.getCountForFirstDays(7);
-        assertThat(countPriorIncrement).isEqualTo(countAfterIncrement - 1);
+
+        assertThat(countPriorIncrement).isEqualTo(15);
+        assertThat(countAfterIncrement).isEqualTo(16);
     }
 
     @Test
