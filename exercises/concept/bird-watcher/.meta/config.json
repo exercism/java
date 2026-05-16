@@ -3,6 +3,9 @@
     "samuelteixeiras",
     "ystromm"
   ],
+  "contributors": [
+    "jagdish-15"
+  ],
   "files": {
     "solution": [
       "src/main/java/BirdWatcher.java"
