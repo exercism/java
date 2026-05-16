@@ -6,7 +6,7 @@ class BirdWatcher {
         this.birdsPerDay = birdsPerDay.clone();
     }
 
-    public int[] getLastWeek() {
+    public static int[] getLastWeek() {
         throw new UnsupportedOperationException("Please implement the BirdWatcher.getLastWeek() method");
     }
 
