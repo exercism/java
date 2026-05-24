@@ -1,8 +1,8 @@
-import io.reactivex.Observable;
+import java.util.List;
 
 class Hangman {
 
-    Observable<Output> play(Observable<String> words, Observable<String> letters) {
+    Output guess(String word, List<String> letters) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 

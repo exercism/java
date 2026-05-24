@@ -1,76 +1,82 @@
-import io.reactivex.Observable;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 class Hangman {
 
-    Observable<Output> play(
-            Observable<String> words,
-            Observable<String> letters) {
-        return Observable
-            .combineLatest(
-                words,
-                letters.startWith(""),
-                (word, letter) -> new AbstractMap.SimpleEntry<>(word, letter))
-            .scan(
-                Output.empty(),
-                (state, entry) -> {
-                    System.out.println(state + " -> " + entry);
-                    if (state == null || state.status != Status.PLAYING) {
-                        return createNewGame(entry.getKey());
-                    } else {
-                        return processNewLetter(state, entry.getValue());
-                    }
-                })
-            .skip(1); // Skip the initial state
+    Output guess(
+        String word,
+        List<String> letters) {
+
+        Output state = createNewGame(word);
+
+        for (String letter : letters) {
+            if (state.state == Status.WIN) {
+                throw new IllegalStateException("cannot guess after the game is won");
+            }
+
+            if (state.state == Status.LOSE) {
+                throw new IllegalStateException("cannot guess after the game is lost");
+            }
+
+            state = processNewLetter(state, letter);
+        }
+
+        return state;
     }
 
     private static Output createNewGame(String word) {
         return Output.initialState(word);
     }
 
-    private static Output processNewLetter(
-            Output state,
-            String letter) {
+    private static Output processNewLetter(Output state, String letter) {
         if (state.isLetterAlreadyPlayed(letter)) {
-            throw new IllegalArgumentException("Letter " + letter + " was already played");
-        }
-        if (state.isLetterInSecret(letter)) {
-            return processCorrectGuess(state, letter);
-        } else {
             return processIncorrectGuess(state, letter);
         }
+
+        if (state.isLetterInSecret(letter)) {
+            return processCorrectGuess(state, letter);
+        }
+
+        return processIncorrectGuess(state, letter);
     }
 
     private static Output processCorrectGuess(Output state, String letter) {
-        Set<String> newGuess = new HashSet<>(state.guess);
-        newGuess.add(letter);
-        String discovered = Output.getGuessedWord(state.secret, newGuess);
-        Status newStatus = Output.isWin(state.secret, newGuess) ? Status.WIN : Status.PLAYING;
+        Set<String> newGuesses = new LinkedHashSet<>(state.guesses);
+        newGuesses.add(letter);
+
+        String discovered = Output.getGuessedWord(state.word, newGuesses);
+        Status newStatus = Output.isWin(state.word, newGuesses) ? Status.WIN : Status.ON_GOING;
+
         return new Output(
-            state.secret,
+            state.word,
             discovered,
-            newGuess,
+            newGuesses,
             state.misses,
             state.parts,
             newStatus);
     }
 
     private static Output processIncorrectGuess(Output state, String letter) {
-        Set<String> newMisses = new HashSet<>(state.misses);
+        Set<String> newMisses = new LinkedHashSet<>(state.misses);
         newMisses.add(letter);
+
         List<Part> newParts = new ArrayList<>(state.parts);
-        newParts.add(order[newParts.size()]);
-        Status newStatus = Output.isLoss(newMisses) ? Status.LOSS : Status.PLAYING;
+        if (newParts.size() < order.length) {
+            newParts.add(order[newParts.size()]);
+        }
+
+        Status newStatus = newParts.size() >= order.length ? Status.LOSE : Status.ON_GOING;
+
         return new Output(
-                state.secret,
-                state.discovered,
-                state.guess,
-                newMisses,
-                newParts,
-                newStatus);
+            state.word,
+            state.maskedWord,
+            state.guesses,
+            newMisses,
+            newParts,
+            newStatus);
     }
 
     static Part[] order = Part.values();
-
 }

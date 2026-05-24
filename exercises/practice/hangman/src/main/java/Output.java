@@ -1,39 +1,32 @@
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 class Output {
 
-    public final String secret;
-    public final String discovered;
-    public final Set<String> guess;
+    static final int MAX_FAILURES = Part.values().length;
+
+    public final String word;
+    public final String maskedWord;
+    public final Set<String> guesses;
     public final Set<String> misses;
     public final List<Part> parts;
-    public final Status status;
+    public final Status state;
+    public final int remainingFailures;
 
     Output(
-        final String secret,
-        final String discovered,
-        final Set<String> guess,
+        final String word,
+        final String maskedWord,
+        final Set<String> guesses,
         final Set<String> misses,
         final List<Part> parts,
-        final Status status) {
-        this.secret = secret;
-        this.discovered = discovered;
-        this.guess = Set.copyOf(guess);
+        final Status state) {
+        this.word = word;
+        this.maskedWord = maskedWord;
+        this.guesses = Set.copyOf(guesses);
         this.misses = Set.copyOf(misses);
         this.parts = List.copyOf(parts);
-        this.status = status;
-    }
-
-    static Output empty() {
-        return new Output(
-            null,
-            null,
-            Collections.emptySet(),
-            Collections.emptySet(),
-            Collections.emptyList(),
-            null);
+        this.state = state;
+        this.remainingFailures = Math.max(0, MAX_FAILURES - 1 - parts.size());
     }
 
 }

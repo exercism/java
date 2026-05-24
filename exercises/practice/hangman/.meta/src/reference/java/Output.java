@@ -1,33 +1,37 @@
-import static java.util.stream.Collectors.joining;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import static java.util.stream.Collectors.joining;
+
 class Output {
 
-    public final String secret;
-    public final String discovered;
-    public final Set<String> guess;
+    static final int MAX_FAILURES = Part.values().length;
+
+    public final String word;
+    public final String maskedWord;
+    public final Set<String> guesses;
     public final Set<String> misses;
     public final List<Part> parts;
-    public final Status status;
+    public final Status state;
+    public final int remainingFailures;
 
     Output(
-        final String secret,
-        final String discovered,
-        final Set<String> guess,
+        final String word,
+        final String maskedWord,
+        final Set<String> guesses,
         final Set<String> misses,
         final List<Part> parts,
-        final Status status) {
-        this.secret = secret;
-        this.discovered = discovered;
-        this.guess = Set.copyOf(guess);
+        final Status state) {
+        this.word = word;
+        this.maskedWord = maskedWord;
+        this.guesses = Set.copyOf(guesses);
         this.misses = Set.copyOf(misses);
         this.parts = List.copyOf(parts);
-        this.status = status;
+        this.state = state;
+        this.remainingFailures = Math.max(0, MAX_FAILURES - 1 - parts.size());
     }
 
     static Output empty() {
@@ -44,18 +48,18 @@ class Output {
         return new Output(
             secret,
             getGuessedWord(secret, Collections.emptySet()),
-            new HashSet<>(),
-            new HashSet<>(),
+            new LinkedHashSet<>(),
+            new LinkedHashSet<>(),
             new ArrayList<>(),
-            Status.PLAYING);
+            Status.ON_GOING);
     }
 
     boolean isLetterAlreadyPlayed(final String letter) {
-        return guess.contains(letter) || misses.contains(letter);
+        return guesses.contains(letter) || misses.contains(letter);
     }
 
     boolean isLetterInSecret(final String letter) {
-        return secret.contains(letter);
+        return word.contains(letter);
     }
 
     static String getGuessedWord(String secret, Set<String> letters) {
@@ -71,19 +75,20 @@ class Output {
             .allMatch(guessedLetters::contains);
     }
 
-    static boolean isLoss(Set<String> missedLetters) {
-        return missedLetters.size() >= Part.values().length;
+    static boolean isLoss(List<Part> parts) {
+        return parts.size() >= MAX_FAILURES;
     }
 
     @Override
     public String toString() {
         return "Output{" +
-            "secret='" + secret + '\'' +
-            ", discovered='" + discovered + '\'' +
-            ", guess=" + guess +
+            "secret='" + word + '\'' +
+            ", discovered='" + maskedWord + '\'' +
+            ", guess=" + guesses +
             ", misses=" + misses +
             ", parts=" + parts +
-            ", status=" + status +
+            ", status=" + state +
+            ", remainingFailures=" + remainingFailures +
             '}';
     }
 }

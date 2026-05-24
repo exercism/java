@@ -1,5 +1,5 @@
 enum Status {
-    PLAYING,
+    ON_GOING,
     WIN,
-    LOSS
+    LOSE
 }
