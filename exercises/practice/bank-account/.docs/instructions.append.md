@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 This exercise introduces [concurrency][oracle-docs-concurrency].
 To pass the last test you might find the [`synchronized` keyword or locks][oracle-docs-synchronized] useful.
 

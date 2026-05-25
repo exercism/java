@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 The graph is represented in the DSL by the `Graph` class.
 The implementation for the nodes and edges (represented by the `Node` and `Edge` classes respectively) are provided.
 

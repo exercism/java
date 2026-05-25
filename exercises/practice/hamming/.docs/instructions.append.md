@@ -1,4 +1,6 @@
-# Hints
+# Instructions append
+
+## Hints
 
 This is the first exercise with tests that require you to throw an [`Exception`][exception-docs].
 `Exception`s are typically thrown to indicate that a program has encountered an unexpected input or state.
