@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 This exercise introduces [generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html).
 To make the tests pass you need to construct your class such that it accepts any type of input, e.g. `Integer` or `String`.
 
