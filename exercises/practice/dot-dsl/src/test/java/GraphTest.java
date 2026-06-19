@@ -2,6 +2,7 @@ import static java.util.Collections.emptyMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Map;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -95,7 +96,7 @@ public class GraphTest {
 
         assertThat(graph.getEdges())
                 .containsExactlyInAnyOrder(
-                        new Edge("a", "b", Map.of("color", "blue")), 
+                        new Edge("a", "b", Map.of("color", "blue")),
                         new Edge("b", "c"));
 
         assertThat(graph.getAttributes())
@@ -124,11 +125,11 @@ public class GraphTest {
         );
 
         assertThat(graph.getEdges())
-                .containsExactlyInAnyOrder(
-                        new Edge("a", "b", Map.of("style", "dotted")),
-                        new Edge("b", "c", Map.of("style", "dotted")),
-                        new Edge("c", "d", Map.of("style", "dotted"))
-                );
+            .containsExactlyInAnyOrder(
+                    new Edge("a", "b", Map.of("style", "dotted")),
+                    new Edge("b", "c", Map.of("style", "dotted")),
+                    new Edge("c", "d", Map.of("style", "dotted"))
+            );
         assertThat(graph.getAttributes()).isEmpty();
     }
 }
