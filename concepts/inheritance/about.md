@@ -27,13 +27,13 @@ These concepts are very similar and are often confused.
 - Inheritance means that the child has an IS-A relationship with the parent class.
 
 ```java
-interface Animal() {
-    public void bark();
+interface Animal {
+    void makeSound();
 }
 
 class Dog implements Animal {
-    public void bark() {
-        System.out.println("Bark");
+    public void makeSound() {
+        System.out.println("Woof!");
     }
 }
 ```
