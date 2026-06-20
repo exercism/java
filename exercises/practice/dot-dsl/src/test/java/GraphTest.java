@@ -2,6 +2,7 @@ import static java.util.Collections.emptyMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Map;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,8 +32,8 @@ public class GraphTest {
 
     @Test
     @Disabled
-    @DisplayName("graph with one node with keywords")
-    public void testGraphWithOneNodeWithKeywords() {
+    @DisplayName("graph with one node with attribute")
+    public void testGraphWithOneNodeWithAttribute() {
         Graph graph = new Graph().node("a", Map.of("color", "green"));
 
         assertThat(graph.getNodes())
@@ -55,8 +56,8 @@ public class GraphTest {
 
     @Test
     @Disabled
-    @DisplayName("graph with one edge with keywords")
-    public void testGraphWithOneEdgeWithKeywords() {
+    @DisplayName("graph with one edge with attribute")
+    public void testGraphWithOneEdgeWithAttribute() {
         Graph graph = new Graph().edge("a", "b", Map.of("color", "blue"));
 
         assertThat(graph.getNodes()).isEmpty();
@@ -78,8 +79,8 @@ public class GraphTest {
 
     @Test
     @Disabled
-    @DisplayName("graph with attributes")
-    public void testGraphWithAttributes() {
+    @DisplayName("graph with nodes, edges, and attributes")
+    public void testGraphWithNodesEdgesAndAttributes() {
         Graph graph = new Graph(Map.of("foo", "1", "title", "Testing Attrs", "bar", "true"))
                 .node("a", Map.of("color", "green"))
                 .node("c")
@@ -95,11 +96,40 @@ public class GraphTest {
 
         assertThat(graph.getEdges())
                 .containsExactlyInAnyOrder(
-                        new Edge("a", "b", Map.of("color", "blue")), 
+                        new Edge("a", "b", Map.of("color", "blue")),
                         new Edge("b", "c"));
 
         assertThat(graph.getAttributes())
                 .containsExactlyInAnyOrderEntriesOf(
                         Map.of("foo", "1", "title", "Testing Attrs", "bar", "true"));
+    }
+
+    @Test
+    @Disabled
+    @DisplayName("multiple edges on one line")
+    public void testMultipleEdgesOnOneLine() {
+        Graph graph = new Graph()
+                .node("a")
+                .node("b")
+                .node("c")
+                .node("d")
+                .edge("a", "b", Map.of("style", "dotted"))
+                .edge("b", "c", Map.of("style", "dotted"))
+                .edge("c", "d", Map.of("style", "dotted"));
+
+        assertThat(graph.getNodes()).containsExactlyInAnyOrder(
+                new Node("a"),
+                new Node("b"),
+                new Node("c"),
+                new Node("d")
+        );
+
+        assertThat(graph.getEdges())
+            .containsExactlyInAnyOrder(
+                    new Edge("a", "b", Map.of("style", "dotted")),
+                    new Edge("b", "c", Map.of("style", "dotted")),
+                    new Edge("c", "d", Map.of("style", "dotted"))
+            );
+        assertThat(graph.getAttributes()).isEmpty();
     }
 }
