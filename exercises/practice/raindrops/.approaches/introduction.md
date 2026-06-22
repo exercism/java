@@ -54,6 +54,32 @@ class RaindropConverter {
 
 For more information, check the [`Map` approach][approach-map].
 
+## Approach: `Modular Arithmetic`
+
+```java
+import        java.math.BigInteger;
+import static java.math.BigInteger.valueOf;
+
+class RaindropConverter {
+
+    String convert (int n) {
+        switch ( valueOf(n).modPow( valueOf(12), valueOf(105) ).intValue() ) {
+            case ( 1): { return String.valueOf(n); }
+            case (36): { return "Pling";           }
+            case (85): { return "Plang";           }
+            case (91): { return "Plong";           }
+            case (15): { return "PlingPlang";      }
+            case (21): { return "PlingPlong";      }
+            case (70): { return "PlangPlong";      }
+            default  : { return "PlingPlangPlong"; } // 0
+        }
+    }
+
+}
+```
+
+For more information, check the [`Modular arithmetic` approach][approach-modular].
+
 ## Which approach to use?
 
 Benchmarking with the [Java Microbenchmark Harness][jmh] is currently outside the scope of this document,
@@ -64,4 +90,5 @@ and no other code would need to be added.
 [remainder-operator]: https://www.geeksforgeeks.org/modulo-or-remainder-operator-in-java/
 [approach-if-statements]: https://exercism.org/tracks/java/exercises/raindrops/approaches/if-statements
 [approach-map]: https://exercism.org/tracks/java/exercises/raindrops/approaches/map
+[approach-modular]: https://philcrissman.net/posts/eulers-fizzbuzz/
 [jmh]: https://github.com/openjdk/jmh
