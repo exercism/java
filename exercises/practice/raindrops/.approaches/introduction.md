@@ -64,14 +64,14 @@ class RaindropConverter {
 
     String convert (int n) {
         switch ( valueOf(n).modPow( valueOf(12), valueOf(105) ).intValue() ) {
-            case ( 1): { return String.valueOf(n); }
             case (36): { return "Pling";           }
             case (85): { return "Plang";           }
             case (91): { return "Plong";           }
             case (15): { return "PlingPlang";      }
             case (21): { return "PlingPlong";      }
             case (70): { return "PlangPlong";      }
-            default  : { return "PlingPlangPlong"; } // 0
+            case ( 0): { return "PlingPlangPlong"; }
+            default  : { return String.valueOf(n); }
         }
     }
 
