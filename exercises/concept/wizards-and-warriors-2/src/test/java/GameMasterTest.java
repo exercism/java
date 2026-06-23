@@ -191,7 +191,6 @@ public class GameMasterTest {
         destination.setInhabitants(332);
 
         assertThat(new GameMasterProxy().describe(character, destination)).isEqualTo(
-                "You're a level 1 Warrior with 30 hit points. You're traveling to your destination by walking. You've" +
-                " arrived at Vo Mimbre, which has 332 inhabitants.");
+                "You're a level 1 Warrior with 30 hit points. You've arrived at Vo Mimbre, which has 332 inhabitants.");
     }
 }
