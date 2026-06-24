@@ -78,7 +78,7 @@ class RaindropConverter {
 }
 ```
 
-Fizz-Buzz is a related problem to raindrops. Both can be solved in the general case using Euler's totient theorem as long as all the sounds/factors are co-prime. For more information, check this article on a [`modular arithmetic` approach][approach-modular].
+For more information, check the [Modular Arithmetic approach][approach-modulus].
 
 ## Which approach to use?
 
@@ -90,5 +90,5 @@ and no other code would need to be added.
 [remainder-operator]: https://www.geeksforgeeks.org/modulo-or-remainder-operator-in-java/
 [approach-if-statements]: https://exercism.org/tracks/java/exercises/raindrops/approaches/if-statements
 [approach-map]: https://exercism.org/tracks/java/exercises/raindrops/approaches/map
-[approach-modular]: https://philcrissman.net/posts/eulers-fizzbuzz/
+[approach-modulus]: https://exercism.org/tracks/java/exercises/raindrops/approaches/modulus
 [jmh]: https://github.com/openjdk/jmh
