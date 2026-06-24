@@ -1,20 +1,17 @@
-
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
 class SimpleLinkedList<T> {
-
     private static class Element<T> {
-
         final T value;
         Element<T> next;
-
         Element(T value) {
             this.value = value;
         }
     }
-
     private Element<T> head;
     private int size;
 
@@ -48,6 +45,13 @@ class SimpleLinkedList<T> {
         return value;
     }
 
+    T peek() {
+        if (Objects.isNull(head)) {
+            throw new NoSuchElementException();
+        }
+        return head.value;
+    }
+
     void reverse() {
         Element<T> current = head;
         Element<T> next;
@@ -59,6 +63,16 @@ class SimpleLinkedList<T> {
             current = next;
         }
         head = previous;
+    }
+
+    List<T> toList() {
+        List<T> result = new ArrayList<>();
+        Element<T> current = head;
+        while (Objects.nonNull(current)) {
+            result.add(current.value);
+            current = current.next;
+        }
+        return result;
     }
 
     T[] asArray(Class<T> clazz) {
@@ -75,7 +89,6 @@ class SimpleLinkedList<T> {
     private T[] newArray(Class<T> clazz, int size) {
         @SuppressWarnings("unchecked")
         T[] arr = (T[]) Array.newInstance(clazz, size);
-
         return arr;
     }
 
