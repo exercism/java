@@ -1,0 +1,12 @@
+String convert (int n) {
+    return switch ( valueOf(n).modPow( valueOf(12), valueOf(105) ).intValue() ) {
+        case 36 -> "Pling";
+        case 85 -> "Plang";
+        case 91 -> "Plong";
+        case 15 -> "PlingPlang";
+        case 21 -> "PlingPlong";
+        case 70 -> "PlangPlong";
+        case  0 -> "PlingPlangPlong";
+        default -> String.valueOf(n); // 1
+    };
+}
