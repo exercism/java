@@ -57,28 +57,28 @@ For more information, check the [`Map` approach][approach-map].
 ## Approach: `Modular Arithmetic`
 
 ```java
-import        java.math.BigInteger;
+import java.math.BigInteger;
 import static java.math.BigInteger.valueOf;
 
 class RaindropConverter {
 
     String convert (int n) {
-        switch ( valueOf(n).modPow( valueOf(12), valueOf(105) ).intValue() ) {
-            case (36): { return "Pling";           }
-            case (85): { return "Plang";           }
-            case (91): { return "Plong";           }
-            case (15): { return "PlingPlang";      }
-            case (21): { return "PlingPlong";      }
-            case (70): { return "PlangPlong";      }
-            case ( 0): { return "PlingPlangPlong"; }
-            default  : { return String.valueOf(n); }
-        }
+        return switch ( valueOf(n).modPow( valueOf(12), valueOf(105) ).intValue() ) {
+            case 36 -> "Pling";
+            case 85 -> "Plang";
+            case 91 -> "Plong";
+            case 15 -> "PlingPlang";
+            case 21 -> "PlingPlong";
+            case 70 -> "PlangPlong";
+            case  0 -> "PlingPlangPlong";
+            default -> String.valueOf(n); // 1
+        };
     }
 
 }
 ```
 
-For more information, check the [`Modular arithmetic` approach][approach-modular].
+Fizz-Buzz is a related problem to raindrops. Both can be solved in the general case using Euler's totient theorem as long as all the sounds/factors are co-prime. For more information, check this article on a [`modular arithmetic` approach][approach-modular].
 
 ## Which approach to use?
 
