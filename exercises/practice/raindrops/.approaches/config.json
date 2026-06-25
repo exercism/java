@@ -25,7 +25,7 @@
     },
     {
       "uuid": "d16d4056-2434-44ff-aae6-2bd57eb53dd7",
-      "slug": "modular-arithmetic",
+      "slug": "modulus",
       "title": "Modular Arithmetic",
       "blurb": "Use modular arithmetic to generalize.",
       "authors": [
