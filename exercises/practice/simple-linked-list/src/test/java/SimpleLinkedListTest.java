@@ -8,87 +8,6 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class SimpleLinkedListTest {
 
     @Test
-    @DisplayName("A new list is empty")
-    public void aNewListIsEmpty() {
-        SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
-        assertThat(list.size()).isEqualTo(0);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Create list from array")
-    public void canCreateFromArray() {
-        Character[] values = new Character[]{'1', '2', '3'};
-        SimpleLinkedList<Character> list = new SimpleLinkedList<Character>(values);
-        assertThat(list.size()).isEqualTo(3);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Popping an empty list throws NoSuchElementException")
-    public void popOnEmptyListWillThrow() {
-        SimpleLinkedList<String> list = new SimpleLinkedList<String>();
-        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(list::pop);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Pop returns last added element (LIFO)")
-    public void popReturnsLastAddedElement() {
-        SimpleLinkedList<Integer> list = new SimpleLinkedList<Integer>();
-        list.push(9);
-        list.push(8);
-        assertThat(list.size()).isEqualTo(2);
-        assertThat(list.pop()).isEqualTo(8);
-        assertThat(list.pop()).isEqualTo(9);
-        assertThat(list.size()).isEqualTo(0);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Reverse reverses the list order")
-    public void reverseReversesList() {
-        SimpleLinkedList<String> list = new SimpleLinkedList<String>();
-        list.push("9");
-        list.push("8");
-        list.push("7");
-        list.push("6");
-        list.push("5");
-        list.reverse();
-        assertThat(list.pop()).isEqualTo("9");
-        assertThat(list.pop()).isEqualTo("8");
-        assertThat(list.pop()).isEqualTo("7");
-        assertThat(list.pop()).isEqualTo("6");
-        assertThat(list.pop()).isEqualTo("5");
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Can return list as an array")
-    public void canReturnListAsArray() {
-        SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
-        list.push('9');
-        list.push('8');
-        list.push('7');
-        list.push('6');
-        list.push('5');
-        Character[] expected = {'5', '6', '7', '8', '9'};
-        assertThat(list.asArray(Character.class)).isEqualTo(expected);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Can return empty list as an empty array")
-    public void canReturnEmptyListAsEmptyArray() {
-        SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
-        Object[] expected = {};
-        assertThat(list.asArray(Object.class)).isEqualTo(expected);
-    }
-
-    // count tests
-
-    @Disabled("Remove to run test")
-    @Test
     @DisplayName("count -> Empty list has length of zero")
     public void countEmptyListHasLengthOfZero() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
@@ -110,8 +29,6 @@ public class SimpleLinkedListTest {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2, 3});
         assertThat(list.size()).isEqualTo(3);
     }
-
-    // pop tests
 
     @Disabled("Remove to run test")
     @Test
@@ -158,8 +75,6 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(0);
     }
 
-    // push tests
-
     @Disabled("Remove to run test")
     @Test
     @DisplayName("push -> Can push to an empty list")
@@ -201,8 +116,6 @@ public class SimpleLinkedListTest {
         assertThat(list.pop()).isEqualTo(1);
         assertThat(list.size()).isEqualTo(0);
     }
-
-    // peek tests
 
     @Disabled("Remove to run test")
     @Test
@@ -251,8 +164,6 @@ public class SimpleLinkedListTest {
         assertThat(list.peek()).isEqualTo(3);
     }
 
-    // toList tests
-
     @Disabled("Remove to run test")
     @Test
     @DisplayName("toList LIFO -> Empty linked list to list is empty")
@@ -281,37 +192,6 @@ public class SimpleLinkedListTest {
         list.push(4);
         assertThat(list.toList()).containsExactly(4, 2, 1);
     }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("toList FIFO -> Empty linked list to list is empty")
-    public void toListFifoEmptyLinkedListToListIsEmpty() {
-        SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
-        assertThat(list.toList()).isEmpty();
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("toList FIFO -> To list with multiple values")
-    public void toListFifoToListWithMultipleValues() {
-        SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2, 3});
-        assertThat(list.toList()).containsExactly(1, 2, 3);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("toList FIFO -> To list after a pop")
-    public void toListFifoToListAfterAPop() {
-        SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
-        list.push(1);
-        list.push(2);
-        list.push(3);
-        assertThat(list.pop()).isEqualTo(3);
-        list.push(4);
-        assertThat(list.toList()).containsExactly(4, 2, 1);
-    }
-
-    // reverse tests
 
     @Disabled("Remove to run test")
     @Test
@@ -353,5 +233,37 @@ public class SimpleLinkedListTest {
         assertThat(list.pop()).isEqualTo(1);
         assertThat(list.pop()).isEqualTo(2);
         assertThat(list.pop()).isEqualTo(3);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Can return list as an array")
+    public void canReturnListAsArray() {
+        SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
+        list.push('9');
+        list.push('8');
+        list.push('7');
+        list.push('6');
+        list.push('5');
+        Character[] expected = {'5', '6', '7', '8', '9'};
+        assertThat(list.asArray(Character.class)).isEqualTo(expected);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Can return empty list as an empty array")
+    public void canReturnEmptyListAsEmptyArray() {
+        SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
+        Object[] expected = {};
+        assertThat(list.asArray(Object.class)).isEqualTo(expected);
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Create list from array")
+    public void canCreateFromArray() {
+        Character[] values = new Character[]{'1', '2', '3'};
+        SimpleLinkedList<Character> list = new SimpleLinkedList<Character>(values);
+        assertThat(list.size()).isEqualTo(3);
     }
 }
