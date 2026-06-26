@@ -78,7 +78,7 @@ class RaindropConverter {
 }
 ```
 
-For more information, check the [Modular Arithmetic approach][approach-modulus].
+For more information, check the [Modulus approach][approach-modulus].
 
 ## Which approach to use?
 
