@@ -54,7 +54,7 @@ class RaindropConverter {
 
 For more information, check the [`Map` approach][approach-map].
 
-## Approach: `Modular Arithmetic`
+## Approach: `Modulus`
 
 ```java
 import java.math.BigInteger;
