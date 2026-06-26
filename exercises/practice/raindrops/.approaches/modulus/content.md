@@ -1,4 +1,4 @@
-# modular arithmetic
+# modulus
 
 ```java
 import java.math.BigInteger;
