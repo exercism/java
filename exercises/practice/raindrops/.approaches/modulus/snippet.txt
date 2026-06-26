@@ -1,12 +1,8 @@
 String convert (int n) {
-    return switch ( valueOf(n).modPow( valueOf(12), valueOf(105) ).intValue() ) {
-        case 36 -> "Pling";
-        case 85 -> "Plang";
-        case 91 -> "Plong";
-        case 15 -> "PlingPlang";
-        case 21 -> "PlingPlong";
-        case 70 -> "PlangPlong";
+    return switch (BigInteger.valueOf(n).modPow(BigInteger.valueOf(12),BigInteger.valueOf(105)).intValue()) {
         case  0 -> "PlingPlangPlong";
+        case 36 -> "Pling";      case 85 -> "Plang";      case 91 -> "Plong";
+        case 15 -> "PlingPlang"; case 21 -> "PlingPlong"; case 70 -> "PlangPlong";
         default -> String.valueOf(n); // 1
     };
 }
