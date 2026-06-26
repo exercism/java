@@ -23,7 +23,7 @@ class RaindropConverter {
 ```
 
 We can generalize raindrops to any factors if they are [co-prime][co-prime].
-In raindrops the factors 3, 5 and 7 are co-prime (sets of prime numbers are all co-prime) and so we can use [Euler's totient function][euler-totient] to calculate `n¹² mod 105` to give us unique values for the various sounds.
+In raindrops, the factors 3, 5 and 7 are co-prime (all sets of prime numbers are co-prime), so we can use [Euler's totient function][euler-totient] to calculate `n¹² mod 105`, giving us unique values for the various sounds.
 The math behind how we find the right exponent and modulus is explained in an article on the related problem of [Fizz-Buzz][fizz-buzz].
 
 [co-prime]: https://en.wikipedia.org/wiki/Coprime_integers
