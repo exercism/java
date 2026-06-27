@@ -19,8 +19,8 @@ class SimpleLinkedList<T> {
     }
 
     SimpleLinkedList(T[] values) {
-        for (int i = values.length - 1; i >= 0; i--) {
-            push(values[i]);
+        for (T value : values) {
+            push(value);
         }
     }
 
@@ -73,23 +73,6 @@ class SimpleLinkedList<T> {
             current = current.next;
         }
         return result;
-    }
-
-    T[] asArray(Class<T> clazz) {
-        T[] result = newArray(clazz, size);
-        int index = 0;
-        Element<T> current = head;
-        while (Objects.nonNull(current)) {
-            result[index++] = current.value;
-            current = current.next;
-        }
-        return result;
-    }
-
-    private T[] newArray(Class<T> clazz, int size) {
-        @SuppressWarnings("unchecked")
-        T[] arr = (T[]) Array.newInstance(clazz, size);
-        return arr;
     }
 
     int size() {

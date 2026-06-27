@@ -22,9 +22,6 @@ class SimpleLinkedList<T> {
     List<T> toList() {
         throw new UnsupportedOperationException("Please implement the SimpleLinkedList.toList() method.");
     }
-    T[] asArray(Class<T> clazz) {
-        throw new UnsupportedOperationException("Please implement the SimpleLinkedList.asArray() method.");
-    }
     int size() {
         throw new UnsupportedOperationException("Please implement the SimpleLinkedList.size() method.");
     }

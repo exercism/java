@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 import java.util.NoSuchElementException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -51,7 +52,7 @@ public class SimpleLinkedListTest {
     @DisplayName("pop -> Can pop from non-empty list")
     public void canPopFromNonEmptyList() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2});
-        assertThat(list.pop()).isEqualTo(1);
+        assertThat(list.pop()).isEqualTo(2);
     }
 
     @Disabled("Remove to run test")
@@ -59,8 +60,8 @@ public class SimpleLinkedListTest {
     @DisplayName("pop -> Can pop multiple items")
     public void canPopMultipleItems() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2});
-        assertThat(list.pop()).isEqualTo(1);
         assertThat(list.pop()).isEqualTo(2);
+        assertThat(list.pop()).isEqualTo(1);
     }
 
     @Disabled("Remove to run test")
@@ -69,9 +70,9 @@ public class SimpleLinkedListTest {
     public void popUpdatesTheCount() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2});
         assertThat(list.size()).isEqualTo(2);
-        assertThat(list.pop()).isEqualTo(1);
-        assertThat(list.size()).isEqualTo(1);
         assertThat(list.pop()).isEqualTo(2);
+        assertThat(list.size()).isEqualTo(1);
+        assertThat(list.pop()).isEqualTo(1);
         assertThat(list.size()).isEqualTo(0);
     }
 
@@ -138,7 +139,7 @@ public class SimpleLinkedListTest {
     @DisplayName("peek -> Can peek on non-empty list")
     public void canPeekOnNonEmptyList() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2});
-        assertThat(list.peek()).isEqualTo(1);
+        assertThat(list.peek()).isEqualTo(2);
     }
 
     @Disabled("Remove to run test")
@@ -146,7 +147,7 @@ public class SimpleLinkedListTest {
     @DisplayName("peek -> Peek does not change the count")
     public void peekDoesNotChangeTheCount() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2});
-        assertThat(list.peek()).isEqualTo(1);
+        assertThat(list.peek()).isEqualTo(2);
         assertThat(list.size()).isEqualTo(2);
     }
 
@@ -177,7 +178,7 @@ public class SimpleLinkedListTest {
     @DisplayName("toList LIFO -> To list with multiple values")
     public void toListLifoToListWithMultipleValues() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2, 3});
-        assertThat(list.toList()).containsExactly(1, 2, 3);
+        assertThat(list.toList()).containsExactly(3, 2, 1);
     }
 
     @Disabled("Remove to run test")
@@ -218,9 +219,9 @@ public class SimpleLinkedListTest {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2, 3});
         list.reverse();
         assertThat(list.size()).isEqualTo(3);
-        assertThat(list.pop()).isEqualTo(3);
-        assertThat(list.pop()).isEqualTo(2);
         assertThat(list.pop()).isEqualTo(1);
+        assertThat(list.pop()).isEqualTo(2);
+        assertThat(list.pop()).isEqualTo(3);
     }
 
     @Disabled("Remove to run test")
@@ -230,32 +231,9 @@ public class SimpleLinkedListTest {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<>(new Integer[]{1, 2, 3});
         list.reverse();
         list.reverse();
-        assertThat(list.pop()).isEqualTo(1);
-        assertThat(list.pop()).isEqualTo(2);
         assertThat(list.pop()).isEqualTo(3);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Can return list as an array")
-    public void canReturnListAsArray() {
-        SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
-        list.push('9');
-        list.push('8');
-        list.push('7');
-        list.push('6');
-        list.push('5');
-        Character[] expected = {'5', '6', '7', '8', '9'};
-        assertThat(list.asArray(Character.class)).isEqualTo(expected);
-    }
-
-    @Disabled("Remove to run test")
-    @Test
-    @DisplayName("Can return empty list as an empty array")
-    public void canReturnEmptyListAsEmptyArray() {
-        SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
-        Object[] expected = {};
-        assertThat(list.asArray(Object.class)).isEqualTo(expected);
+        assertThat(list.pop()).isEqualTo(2);
+        assertThat(list.pop()).isEqualTo(1);
     }
 
     @Disabled("Remove to run test")
