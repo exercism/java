@@ -145,7 +145,11 @@ Another common way to create maps is to use [Map.of][map-of-javadoc] or [Map.ofE
 Map<String, Integer> temperatures = Map.of("Mon", 30, "Tue", 28, "Wed", 32);
 
 // or using Map.ofEntries
-Map<String, Integer> temperatures2 = Map.ofEntries(Map.entry("Mon", 30, "Tue", 28, "Wed", 32));
+Map<String, Integer> temperatures2 = Map.ofEntries(
+    Map.entry("Mon", 30),
+    Map.entry("Tue", 28),
+    Map.entry("Wed", 32)
+);
 ```
 
 Unlike `HashMap`, they populate the map upfront and become read-only once created.
