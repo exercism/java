@@ -282,4 +282,24 @@ public class StateOfTicTacToeTest {
             .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"XXX", "OOO", "XOX"}))
             .withMessage("Impossible board: game should have ended after the game was won");
     }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Invalid board: O kept playing after X wins")
+    public void testInvalidBoardOKeptPlayingAfterXWins() {
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"XXX", "OO ", "O  "}))
+            .withMessage("Impossible board: game should have ended after the game was won");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("Invalid board: X kept playing after O wins")
+    public void testInvalidBoardXKeptPlayingAfterOWins() {
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"OOO", "XX ", "XX "}))
+            .withMessage("Impossible board: game should have ended after the game was won");
+    }
 }

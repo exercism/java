@@ -51,6 +51,22 @@ class StateOfTicTacToe {
             }
         }
 
+        // --- NAYE CHECKS START ---
+        // Agar X jeeta hai, toh xCount zaroor (oCount + 1) hona chahiye. Agar barabar hai, matlab O ne extra move chala!
+        if (xWin > 0 && xCount != oCount + 1) {
+            throw new IllegalArgumentException(
+                "Impossible board: game should have ended after the game was won"
+            );
+        }
+
+        // Agar O jeeta hai, toh xCount zaroor oCount ke barabar hona chahiye. Agar xCount zyaada hai, matlab X ne extra move chala!
+        if (oWin > 0 && xCount != oCount) {
+            throw new IllegalArgumentException(
+                "Impossible board: game should have ended after the game was won"
+            );
+        }
+        // --- NAYE CHECKS END ---
+
         if (xWin > 0 || oWin > 0) {
             return GameState.WIN;
         }
