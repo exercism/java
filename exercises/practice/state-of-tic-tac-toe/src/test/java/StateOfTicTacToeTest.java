@@ -95,7 +95,7 @@ public class StateOfTicTacToeTest {
     
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Finished game where X won via middle row victory")
+    @DisplayName("Finished game where X won via bottom row victory")
     public void testFinishedGameWhereXWonViaBottomRowVictory() {
 
         assertThat(
@@ -207,7 +207,7 @@ public class StateOfTicTacToeTest {
     @Test
     @DisplayName("Another draw")
     public void testAnotherDraw() {
-        
+
         assertThat(
             stateOfTicTacToe.determineState(new String[]{"XXO", "OXX", "XOO"})
         ).isEqualTo(GameState.DRAW);
@@ -289,7 +289,7 @@ public class StateOfTicTacToeTest {
     public void testInvalidBoardOKeptPlayingAfterXWins() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"XXX", "OO ", "O  "}))
+            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"OO ", "XXX", " O "}))
             .withMessage("Impossible board: game should have ended after the game was won");
     }
 
@@ -299,7 +299,7 @@ public class StateOfTicTacToeTest {
     public void testInvalidBoardXKeptPlayingAfterOWins() {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"OOO", "XX ", "XX "}))
+            .isThrownBy(() -> stateOfTicTacToe.determineState(new String[]{"XX ", "OOO", " XX"}))
             .withMessage("Impossible board: game should have ended after the game was won");
     }
 }

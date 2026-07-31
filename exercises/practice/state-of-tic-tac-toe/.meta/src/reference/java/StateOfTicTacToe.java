@@ -51,21 +51,19 @@ class StateOfTicTacToe {
             }
         }
 
-        // --- NAYE CHECKS START ---
-        // Agar X jeeta hai, toh xCount zaroor (oCount + 1) hona chahiye. Agar barabar hai, matlab O ne extra move chala!
+        // If X wins, X must have played exactly one more move than O.
         if (xWin > 0 && xCount != oCount + 1) {
             throw new IllegalArgumentException(
                 "Impossible board: game should have ended after the game was won"
             );
         }
 
-        // Agar O jeeta hai, toh xCount zaroor oCount ke barabar hona chahiye. Agar xCount zyaada hai, matlab X ne extra move chala!
+        // If O wins, X and O must have played an equal number of moves.
         if (oWin > 0 && xCount != oCount) {
             throw new IllegalArgumentException(
                 "Impossible board: game should have ended after the game was won"
             );
         }
-        // --- NAYE CHECKS END ---
 
         if (xWin > 0 || oWin > 0) {
             return GameState.WIN;
@@ -98,7 +96,6 @@ class StateOfTicTacToe {
         String[] diags = new String[2];
 
         for (int i = 0; i < 3; i++) {
-            
             if (diags[0] == null) {
                 diags[0] = String.valueOf(board[i].charAt(i));
             } else {
