@@ -51,6 +51,18 @@ class StateOfTicTacToe {
             }
         }
 
+        if (xWin > 0 && xCount != oCount + 1) {
+            throw new IllegalArgumentException(
+                "Impossible board: game should have ended after the game was won"
+            );
+        }
+
+        if (oWin > 0 && xCount != oCount) {
+            throw new IllegalArgumentException(
+                "Impossible board: game should have ended after the game was won"
+            );
+        }
+
         if (xWin > 0 || oWin > 0) {
             return GameState.WIN;
         }
@@ -82,7 +94,6 @@ class StateOfTicTacToe {
         String[] diags = new String[2];
 
         for (int i = 0; i < 3; i++) {
-            
             if (diags[0] == null) {
                 diags[0] = String.valueOf(board[i].charAt(i));
             } else {
