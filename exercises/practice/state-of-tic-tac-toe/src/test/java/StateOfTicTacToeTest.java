@@ -276,5 +276,3 @@ public class StateOfTicTacToeTest {
             .withMessage("Impossible board: game should have ended after the game was won");
     }
 }
-
-

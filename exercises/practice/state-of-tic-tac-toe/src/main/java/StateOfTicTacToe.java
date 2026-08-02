@@ -3,4 +3,3 @@ class StateOfTicTacToe {
         throw new UnsupportedOperationException("Please implement the StateOfTicTacToe.determineState() method.");
     }
 }
-

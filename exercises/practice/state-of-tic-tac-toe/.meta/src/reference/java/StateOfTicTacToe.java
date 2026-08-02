@@ -122,5 +122,3 @@ class StateOfTicTacToe {
         return result;
     }
 }
-
-
