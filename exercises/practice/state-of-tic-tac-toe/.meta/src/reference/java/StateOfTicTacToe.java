@@ -58,7 +58,6 @@ class StateOfTicTacToe {
             );
         }
 
-        // If O wins, X and O must have played an equal number of moves.
         if (oWin > 0 && xCount != oCount) {
             throw new IllegalArgumentException(
                 "Impossible board: game should have ended after the game was won"
