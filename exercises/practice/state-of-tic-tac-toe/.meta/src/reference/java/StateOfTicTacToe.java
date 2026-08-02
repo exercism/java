@@ -51,7 +51,6 @@ class StateOfTicTacToe {
             }
         }
 
-        // If X wins, X must have played exactly one more move than O.
         if (xWin > 0 && xCount != oCount + 1) {
             throw new IllegalArgumentException(
                 "Impossible board: game should have ended after the game was won"
