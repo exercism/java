@@ -1,5 +1,3 @@
-package exercises.practice.state_of_tic_tac_toe; 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
