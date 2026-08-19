@@ -39,6 +39,14 @@ public class BobTest {
 
     @Disabled("Remove to run test")
     @Test
+    @DisplayName("shouting a statement containing a question mark")
+    public void shoutingAStatementContainingQuestionMark() {
+        assertThat(bob.hey("DO LIONS EAT PEOPLE? AHHHHH."))
+                .isEqualTo("Whoa, chill out!");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
     @DisplayName("asking a question")
     public void askingAQuestion() {
         assertThat(bob.hey("Does this cryogenic chamber make me look fat?"))
