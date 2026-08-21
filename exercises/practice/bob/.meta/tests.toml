@@ -18,6 +18,9 @@ description = "shouting"
 [d6c98afd-df35-4806-b55e-2c457c3ab748]
 description = "shouting gibberish"
 
+[3c954328-86fb-4c71-8961-e18d6a5e2517]
+description = "shouting a statement containing a question mark"
+
 [8a2e771d-d6f1-4e3f-b6c6-b41495556e37]
 description = "asking a question"
 
