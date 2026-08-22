@@ -1,58 +1,88 @@
 # Introduction
 
-Inheritance is a core concept in OOP (Object-Oriented Programming).
-It represents an IS-A relationship.
-It literally means in programming as it means in english, inheriting features from parent (in programming features is normally functions and variables).
-
-Consider a class, `Animal` as shown,
+Inheritance lets one class build on top of another, reusing its fields and methods without rewriting them.
+The class being extended is called the **parent** (or superclass); the class doing the extending is the **child** (or subclass).
+The relationship is described as IS-A: a `Dog` IS-A `Animal`.
 
 ```java
-//Creating an Animal class with bark() as a member function.
 public class Animal {
-
-    public void bark() {
-        System.out.println("This is an animal");
+    public void makeSound() {
+        System.out.println("...");
     }
-
 }
 ```
 
-`Animal` is a parent class, because the properties this class has can be extended to all the animals in general.
-
-Consider an animal named `Lion`, having a class like,
+Use the `extends` keyword to inherit from a class:
 
 ```java
-//Lion class is a child class of Animal.
-public class Lion extends Animal {
+public class Dog extends Animal {
 
     @Override
-    public void bark() {
-        System.out.println("Lion here!!");
+    public void makeSound() {
+        System.out.println("Woof!");
     }
-
 }
 ```
 
 ~~~~exercism/note
-The `Override` annotation is used to indicate that a method in a subclass is overriding a method of its superclass.
-It's not strictly necessary but it's a best practice to use it.
+The `@Override` annotation tells the compiler that you intend to replace a parent method.
+It's not required, but it's considered good practice — the compiler will warn you if the method name doesn't actually match anything in the parent.
 ~~~~
 
-Now whenever we do,
+Because `Dog` extends `Animal`, a `Dog` instance can be stored in an `Animal` variable.
+The actual type at runtime decides which method runs — this is called **polymorphism**:
 
 ```java
-Animal animal = new Lion(); //creating instance of Animal, of type Lion
-animal.bark();
+Animal animal = new Dog();
+animal.makeSound(); // prints "Woof!", not "..."
 ```
 
-Note: Initialising the `Animal` class with `Lion`.
-The output will look like
+## The `super` keyword
+
+Inside a child class, `super` refers to the parent.
+You can use it to call the parent's constructor or a method you've overridden:
 
 ```java
-Lion here!!
+public class Dog extends Animal {
+    private String name;
+
+    public Dog(String name) {
+        super(); // calls Animal's constructor
+        this.name = name;
+    }
+
+    @Override
+    public void makeSound() {
+        super.makeSound(); // calls Animal's version first
+        System.out.println(name + " says: Woof!");
+    }
+}
 ```
 
-According to OOP, there are many types of inheritance, but Java supports only some of them (Multi-level and Hierarchical).
-To read more about it, please read [this][java-inheritance].
+## Abstract classes
 
-[java-inheritance]: https://www.javatpoint.com/inheritance-in-java#:~:text=On%20the%20basis%20of%20class,will%20learn%20about%20interfaces%20later.
+If it doesn't make sense to instantiate the parent directly, mark it `abstract`.
+An abstract class can declare methods without providing a body — each subclass is then required to implement them:
+
+```java
+public abstract class Shape {
+    public abstract double area(); // subclasses must implement this
+}
+
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+```
+
+To read more about inheritance in Java, see the [official documentation][java-inheritance].
+
+[java-inheritance]: https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html
