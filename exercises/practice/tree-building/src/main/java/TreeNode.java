@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 class TreeNode {
-    private int nodeId;
-    private ArrayList<TreeNode> children;
+    private final int nodeId;
+    private final ArrayList<TreeNode> children;
 
     TreeNode(int nodeId) {
         this.nodeId = nodeId;
