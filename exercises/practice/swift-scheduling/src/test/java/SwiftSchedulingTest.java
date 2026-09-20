@@ -199,4 +199,18 @@ class SwiftSchedulingTest {
 
         assertThat(actual).isEqualTo(expected);
     }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName(
+        "Q2 starting in the last month of the second quarter translates to the last workday of the second quarter of this year"
+    )
+    void testQ2InQ2() {
+        LocalDateTime meetingStart = LocalDateTime.parse("2019-06-15T09:50:00");
+        LocalDateTime expected = LocalDateTime.parse("2019-06-28T08:00:00");
+
+        LocalDateTime actual = SwiftScheduling.convertToDeliveryDate(meetingStart, "Q2");
+
+        assertThat(actual).isEqualTo(expected);
+    }
 }
