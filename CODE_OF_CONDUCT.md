@@ -50,7 +50,7 @@ As someone who is part of this community, you agree that:
 - We have zero tolerance for abuse, harassment, or discrimination
 - We respect people’s boundaries and identities
 - We refrain from using language that can be considered offensive or oppressive (systemically or otherwise), eg. sexist, racist, homophobic, transphobic, ableist, classist, etc.
-  - this includes (but is not limited to) various slurs.
+- This includes (but is not limited to) various slurs.
 - We avoid using offensive topics as a form of humor
 
 We actively work towards:
