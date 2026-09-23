@@ -4,10 +4,11 @@
 
 - Java does not provide a function to choose an element from a collection at random.
 - Remember that you can retrieve an element from an array by its index, which is an integer.
+- The `java.util.Random` class provides a method to generate a random `int` between 0 and a given maximum.
 
 ## 2. Generate a random starship registry number
 
-- The `java.util.Random` class provides a method to generate a random `int` between 0 and a given maximum.
+- The `java.util.Random` class provides another method to generate a random `int` between given minimum (inclusive) and a given maximum (exclusive).
 
 ## 3. Generate a random stardate
 
