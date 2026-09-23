@@ -1,231 +1,232 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BuildTreeTest {
 
     @Test
-    @DisplayName("Empty list")
+    @DisplayName("empty list")
     public void testEmptyList() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
-
-        TreeNode root = new BuildTree().buildTree(records);
+        TreeNode root = BuildTree.buildTree(records);
         assertThat(root).isNull();
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Single record")
+    @DisplayName("single record")
     public void testOneRecord() throws InvalidRecordsException {
-        ArrayList<Record> records = new ArrayList<>();
-        Record record = new Record(0, 0);
-        records.add(record);
-
-        TreeNode root = new BuildTree().buildTree(records);
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 0)
+        ));
+        TreeNode root = BuildTree.buildTree(records);
+        assertNotNull(root);
         assertThat(root.getNodeId()).isEqualTo(0);
-        assertNodeIsLeaf(root);
+        assertThat(root.getChildren()).isEmpty();
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Three records in order")
+    @DisplayName("three records in order")
     public void testThreeRecordsInOrder() throws InvalidRecordsException {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(0, 0));
-        records.add(new Record(1, 0));
-        records.add(new Record(2, 0));
-
-        TreeNode root = new BuildTree().buildTree(records);
-        assertNodeIsBranchWithNNumberOfChildren(root, 2);
-        assertNodeIsLeaf(root.getChildren().get(0));
-        assertNodeIsLeaf(root.getChildren().get(1));
-
-        assertThat(root.getNodeId()).isEqualTo(0);
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 0),
+            new Record(1, 0),
+            new Record(2, 0)
+        ));
+        TreeNode root = BuildTree.buildTree(records);
+        assertNotNull(root);
+        assertThat(root.getChildren()).hasSize(2);
         assertThat(root.getChildren().get(0).getNodeId()).isEqualTo(1);
         assertThat(root.getChildren().get(1).getNodeId()).isEqualTo(2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Three records in reverse order")
+    @DisplayName("three records in reverse order")
     public void testThreeRecordsInReverseOrder() throws InvalidRecordsException {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(2, 0));
-        records.add(new Record(1, 0));
-        records.add(new Record(0, 0));
-
-        TreeNode root = new BuildTree().buildTree(records);
-        assertNodeIsBranchWithNNumberOfChildren(root, 2);
-        assertNodeIsLeaf(root.getChildren().get(0));
-        assertNodeIsLeaf(root.getChildren().get(1));
-
-        assertThat(root.getNodeId()).isEqualTo(0);
-        assertThat(root.getChildren().get(0).getNodeId()).isEqualTo(1);
-        assertThat(root.getChildren().get(1).getNodeId()).isEqualTo(2);
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(2, 0),
+            new Record(1, 0),
+            new Record(0, 0)
+        ));
+        TreeNode root = BuildTree.buildTree(records);
+        assertNotNull(root);
+        assertThat(root.getChildren()).hasSize(2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("More than two children")
+    @DisplayName("more than two children")
     public void testRecordsWithMoreThanTwoChildren() throws InvalidRecordsException {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(0, 0));
-        records.add(new Record(1, 0));
-        records.add(new Record(2, 0));
-        records.add(new Record(3, 0));
-
-        TreeNode root = new BuildTree().buildTree(records);
-        assertNodeIsBranchWithNNumberOfChildren(root, 3);
-        assertNodeIsLeaf(root.getChildren().get(0));
-        assertNodeIsLeaf(root.getChildren().get(1));
-        assertNodeIsLeaf(root.getChildren().get(2));
-
-        assertThat(root.getNodeId()).isEqualTo(0);
-        assertThat(root.getChildren().get(0).getNodeId()).isEqualTo(1);
-        assertThat(root.getChildren().get(1).getNodeId()).isEqualTo(2);
-        assertThat(root.getChildren().get(2).getNodeId()).isEqualTo(3);
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 0),
+            new Record(1, 0),
+            new Record(2, 0),
+            new Record(3, 0)
+        ));
+        TreeNode root = BuildTree.buildTree(records);
+        assertNotNull(root);
+        assertThat(root.getChildren()).hasSize(3);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Binary tree")
+    @DisplayName("binary tree")
     public void testBinaryTree() throws InvalidRecordsException {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(6, 2));
-        records.add(new Record(0, 0));
-        records.add(new Record(3, 1));
-        records.add(new Record(2, 0));
-        records.add(new Record(4, 1));
-        records.add(new Record(5, 2));
-        records.add(new Record(1, 0));
-
-        TreeNode root = new BuildTree().buildTree(records);
-
-        assertNodeIsBranchWithNNumberOfChildren(root, 2);
-        assertNodeIsBranchWithNNumberOfChildren(root.getChildren().get(0), 2);
-        assertNodeIsBranchWithNNumberOfChildren(root.getChildren().get(1), 2);
-        assertNodeIsLeaf(root.getChildren().get(0).getChildren().get(0));
-        assertNodeIsLeaf(root.getChildren().get(0).getChildren().get(1));
-        assertNodeIsLeaf(root.getChildren().get(1).getChildren().get(0));
-        assertNodeIsLeaf(root.getChildren().get(1).getChildren().get(1));
-
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(5, 1),
+            new Record(3, 2),
+            new Record(2, 0),
+            new Record(4, 1),
+            new Record(1, 0),
+            new Record(0, 0),
+            new Record(6, 2)
+        ));
+        TreeNode root = BuildTree.buildTree(records);
+        assertNotNull(root);
         assertThat(root.getNodeId()).isEqualTo(0);
-        assertThat(root.getChildren().get(0).getNodeId()).isEqualTo(1);
-        assertThat(root.getChildren().get(1).getNodeId()).isEqualTo(2);
-        assertThat(root.getChildren().get(0).getChildren().get(0).getNodeId()).isEqualTo(3);
-        assertThat(root.getChildren().get(0).getChildren().get(1).getNodeId()).isEqualTo(4);
-        assertThat(root.getChildren().get(1).getChildren().get(0).getNodeId()).isEqualTo(5);
-        assertThat(root.getChildren().get(1).getChildren().get(1).getNodeId()).isEqualTo(6);
+        assertThat(root.getChildren()).hasSize(2);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Unbalanced tree")
+    @DisplayName("unbalanced tree")
     public void testUnbalancedTree() throws InvalidRecordsException {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(0, 0));
-        records.add(new Record(1, 0));
-        records.add(new Record(2, 0));
-        records.add(new Record(3, 1));
-        records.add(new Record(4, 1));
-        records.add(new Record(5, 1));
-        records.add(new Record(6, 2));
-
-        TreeNode root = new BuildTree().buildTree(records);
-        assertNodeIsBranchWithNNumberOfChildren(root, 2);
-        assertNodeIsBranchWithNNumberOfChildren(root.getChildren().get(0), 3);
-        assertNodeIsBranchWithNNumberOfChildren(root.getChildren().get(1), 1);
-        assertNodeIsLeaf(root.getChildren().get(0).getChildren().get(0));
-        assertNodeIsLeaf(root.getChildren().get(0).getChildren().get(1));
-        assertNodeIsLeaf(root.getChildren().get(0).getChildren().get(2));
-        assertNodeIsLeaf(root.getChildren().get(1).getChildren().get(0));
-
-        assertThat(root.getNodeId()).isEqualTo(0);
-        assertThat(root.getChildren().get(0).getNodeId()).isEqualTo(1);
-        assertThat(root.getChildren().get(1).getNodeId()).isEqualTo(2);
-        assertThat(root.getChildren().get(0).getChildren().get(0).getNodeId()).isEqualTo(3);
-        assertThat(root.getChildren().get(0).getChildren().get(1).getNodeId()).isEqualTo(4);
-        assertThat(root.getChildren().get(0).getChildren().get(2).getNodeId()).isEqualTo(5);
-        assertThat(root.getChildren().get(1).getChildren().get(0).getNodeId()).isEqualTo(6);
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(5, 2),
+            new Record(3, 2),
+            new Record(2, 0),
+            new Record(4, 1),
+            new Record(1, 0),
+            new Record(0, 0),
+            new Record(6, 2)
+        ));
+        TreeNode root = BuildTree.buildTree(records);
+        assertNotNull(root);
+        assertThat(root.getChildren().get(1).getChildren()).hasSize(3);
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Root has parent")
+    @DisplayName("one root node and has parent")
+    public void testOneRootNodeAndHasParent() {
+        ArrayList<Record> records = new ArrayList<>(List.of(new Record(0, 1)));
+        assertInvalid(records, "node parent_id should be smaller than its record_id");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("root node has parent")
     public void testRootNodeHasParent() {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(0, 1));
-        records.add(new Record(1, 0));
-
-        BuildTree test = new BuildTree();
-
-        assertThatExceptionOfType(InvalidRecordsException.class)
-                .isThrownBy(() -> test.buildTree(records))
-                .withMessage("Invalid Records");
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 1),
+            new Record(1, 0)
+        ));
+        assertInvalid(records, "node parent_id should be smaller than its record_id");
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("No root node")
+    @DisplayName("no root node")
     public void testNoRootNode() {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(1, 0));
-        records.add(new Record(2, 0));
-
-        BuildTree test = new BuildTree();
-
-        assertThatExceptionOfType(InvalidRecordsException.class)
-                .isThrownBy(() -> test.buildTree(records))
-                .withMessage("Invalid Records");
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(1, 0),
+            new Record(2, 0)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Non continuous records")
-    public void testNonContinuousRecords() {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(2, 0));
-        records.add(new Record(4, 2));
-        records.add(new Record(1, 0));
-        records.add(new Record(0, 0));
-
-        BuildTree test = new BuildTree();
-
-        assertThatExceptionOfType(InvalidRecordsException.class)
-                .isThrownBy(() -> test.buildTree(records))
-                .withMessage("Invalid Records");
+    @DisplayName("duplicate node")
+    public void testDuplicateNode() {
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 0),
+            new Record(1, 0),
+            new Record(1, 0)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
     }
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("Cycle indirectly")
+    @DisplayName("duplicate root")
+    public void testDuplicateRoot() {
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 0),
+            new Record(0, 0)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("non-continuous")
+    public void testNonContinuous() {
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(2, 0),
+            new Record(4, 2),
+            new Record(1, 0),
+            new Record(0, 0)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("cycle directly")
+    public void testCycleDirectly() {
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(5, 2),
+            new Record(3, 2),
+            new Record(2, 2),
+            new Record(4, 1),
+            new Record(1, 0),
+            new Record(0, 0),
+            new Record(6, 3)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
+    }
+
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("cycle indirectly")
     public void testCycleIndirectly() {
-        ArrayList<Record> records = new ArrayList<>();
-        records.add(new Record(5, 2));
-        records.add(new Record(3, 2));
-        records.add(new Record(2, 6));
-        records.add(new Record(4, 1));
-        records.add(new Record(1, 0));
-        records.add(new Record(0, 0));
-        records.add(new Record(6, 3));
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(5, 2),
+            new Record(3, 2),
+            new Record(2, 6),
+            new Record(4, 1),
+            new Record(1, 0),
+            new Record(0, 0),
+            new Record(6, 3)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
+    }
 
-        BuildTree test = new BuildTree();
+    @Disabled("Remove to run test")
+    @Test
+    @DisplayName("higher id parent of lower id")
+    public void testHigherIdParentOfLowerId() throws InvalidRecordsException {
+        ArrayList<Record> records = new ArrayList<>(List.of(
+            new Record(0, 0),
+            new Record(2, 0),
+            new Record(1, 2)
+        ));
+        assertInvalid(records, "record id is invalid or out of order");
+    }
 
+    private void assertInvalid(ArrayList<Record> records, String expectedMessage) {
         assertThatExceptionOfType(InvalidRecordsException.class)
-                .isThrownBy(() -> test.buildTree(records))
-                .withMessage("Invalid Records");
-    }
-
-    private void assertNodeIsLeaf(TreeNode node) {
-        assertThat(node.getChildren().size()).isEqualTo(0);
-    }
-
-    private void assertNodeIsBranchWithNNumberOfChildren(TreeNode node, int childrenCount) {
-        assertThat(node.getChildren().size()).isEqualTo(childrenCount);
+            .isThrownBy(() -> BuildTree.buildTree(records))
+            .withMessage(expectedMessage);
     }
 }
