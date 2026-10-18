@@ -214,8 +214,8 @@ public class ListOpsTest {
 
     @Disabled("Remove to run test")
     @Test
-    @DisplayName("non-empty list")
-    public void testReversingNonEmptyList() {
+    @DisplayName("non-empty even-length list")
+    public void testReversingNonEmptyEvenLengthList() {
         assertThat(ListOps.reverse(List.of('1', '3', '5', '7')))
                 .containsExactly('7', '5', '3', '1');
     }
