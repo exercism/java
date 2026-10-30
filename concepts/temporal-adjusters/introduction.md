@@ -59,4 +59,26 @@ LocalDate teenthTuesday = thirteenth.with(TemporalAdjusters.nextOrSame(DayOfWeek
 // => 2024-08-13 (returns the same date as it matches)
 ```
 
+## Custom Adjusters
+
+`TemporalAdjuster` is a functional interface, so you can write an adjuster of your own as a lambda that takes the temporal to adjust and returns the adjusted one.
+It is applied with `.with()` just like the predefined adjusters, and it can use them internally.
+
+```java
+import java.time.temporal.TemporalAdjuster;
+
+// An adjuster that moves a weekend date to the following Monday
+TemporalAdjuster skipWeekend = temporal -> {
+    DayOfWeek day = DayOfWeek.from(temporal);
+    if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
+        return temporal.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
+    }
+    return temporal;
+};
+
+LocalDate saturday = LocalDate.of(2024, Month.AUGUST, 17);
+LocalDate monday = saturday.with(skipWeekend);
+// => 2024-08-19
+```
+
 Using these adjusters from the `TemporalAdjusters` class can greatly simplify date manipulation tasks.
