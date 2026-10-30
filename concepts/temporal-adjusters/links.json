@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/temporal/TemporalAdjuster.html",
+    "description": "TemporalAdjuster interface documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/temporal/TemporalAdjusters.html",
+    "description": "TemporalAdjusters utility class documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/temporal/Temporal.html",
+    "description": "Temporal interface documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/DayOfWeek.html",
+    "description": "DayOfWeek enum documentation"
+  }
+]
