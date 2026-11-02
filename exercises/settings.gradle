@@ -2,6 +2,7 @@ rootProject.name = 'exercism-java'
 
 // concept exercises
 include 'concept:annalyns-infiltration'
+include 'concept:beauty-salon-regulars'
 include 'concept:bird-watcher'
 // include 'concept:blackjack' // deprecated
 include 'concept:booking-up-for-beauty'

@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SalonCalendar.java"
+    ],
+    "test": [
+      "src/test/java/SalonCalendarTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/SalonCalendar.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Learn about temporal adjusters by scheduling standing appointments for a beauty salon's regular clients."
+}
