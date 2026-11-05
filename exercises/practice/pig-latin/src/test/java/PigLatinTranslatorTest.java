@@ -1,9 +1,9 @@
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class PigLatinTranslatorTest {
 
@@ -171,6 +171,7 @@ public class PigLatinTranslatorTest {
     @Test
     @DisplayName("a whole phrase")
     public void testAWholePhrase() {
-        assertThat(pigLatinTranslator.translate("quick fast run")).isEqualTo("ickquay astfay unray");
+        assertThat(pigLatinTranslator.translate("why do squids enjoy xrays"))
+                .isEqualTo("ywhay oday idssquay enjoyay xraysay");
     }
 }
