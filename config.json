@@ -384,8 +384,7 @@
         "name": "Leap",
         "uuid": "61fe1fa6-246d-4e38-92d6-b74af64c88af",
         "practices": [
-          "if-else-statements",
-          "booleans"
+          "if-else-statements"
         ],
         "prerequisites": [
           "booleans",
@@ -1068,9 +1067,7 @@
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "a732a838-8170-458a-a85e-d6b4c46f97a1",
-        "practices": [
-          "generic-types"
-        ],
+        "practices": [],
         "prerequisites": [
           "lists",
           "generic-types"
@@ -1343,9 +1340,7 @@
         "slug": "bank-account",
         "name": "Bank Account",
         "uuid": "a242efc5-159d-492b-861d-12a1459fb334",
-        "practices": [
-          "constructors"
-        ],
+        "practices": [],
         "prerequisites": [
           "constructors"
         ],
