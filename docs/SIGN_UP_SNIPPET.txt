@@ -1,0 +1,12 @@
+public static String mostCommonWord(String text) {
+    Map<String, Integer> counts = new HashMap<>();
+    String best = "";
+    for (String word : text.toLowerCase().split(" ")) {
+        int count = counts.getOrDefault(word, 0) + 1;
+        counts.put(word, count);
+        if (count > counts.getOrDefault(best, 0)) {
+            best = word;
+        }
+    }
+    return String.format("\"%s\" appears %d times", best, counts.get(best));
+}
