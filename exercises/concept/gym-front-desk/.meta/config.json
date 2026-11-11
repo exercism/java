@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "rabestro"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/FrontDesk.java"
+    ],
+    "test": [
+      "src/test/java/FrontDeskTest.java"
+    ],
+    "exemplar": [
+      ".meta/src/reference/java/FrontDesk.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Learn about durations and periods by answering members' questions at the front desk of a climbing gym."
+}
