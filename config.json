@@ -341,6 +341,19 @@
           "enums"
         ],
         "status": "active"
+      },
+      {
+        "slug": "gym-front-desk",
+        "name": "Gym Front Desk",
+        "uuid": "6553f255-154f-441d-a6e1-a428434f9653",
+        "concepts": [
+          "durations-and-periods"
+        ],
+        "prerequisites": [
+          "datetime",
+          "strings"
+        ],
+        "status": "active"
       }
     ],
     "practice": [
@@ -593,11 +606,13 @@
         "name": "Gigasecond",
         "uuid": "bf1641c8-dc0d-4d38-9cfe-b4c132ea3553",
         "practices": [
-          "datetime"
+          "datetime",
+          "durations-and-periods"
         ],
         "prerequisites": [
           "datetime",
-          "numbers"
+          "numbers",
+          "durations-and-periods"
         ],
         "difficulty": 3
       },
@@ -2211,6 +2226,11 @@
       "uuid": "cc7a06d1-ddb3-4722-88a5-f762254d664e",
       "slug": "temporal-adjusters",
       "name": "Temporal Adjusters"
+    },
+    {
+      "uuid": "16500ebe-104e-44c3-84b3-3126a49bdb89",
+      "slug": "durations-and-periods",
+      "name": "Durations and Periods"
     }
   ],
   "key_features": [
