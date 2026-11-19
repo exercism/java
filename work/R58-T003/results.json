@@ -1,0 +1,99 @@
+{
+  "task": "R58-T003",
+  "exercise": "bank-account",
+  "timestamp_unix": 1795104554,
+  "status": "PASSED",
+  "tool_versions": {
+    "python": "3.9.6",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "java": "openjdk version \"21.0.13.0.3\" 2026-10-24",
+    "gradle": "Gradle 9.5.0"
+  },
+  "inputs": {
+    "named_cases": [
+      {
+        "method": "newlyOpenedAccountHasEmptyBalance",
+        "display_name": "Newly opened account has zero balance",
+        "uuid": "983a1528-4ceb-45e5-8257-8ce01aceb5ed",
+        "operations": [
+          "open()",
+          "getBalance()"
+        ],
+        "expected": 0,
+        "is_rejecting_case": false
+      },
+      {
+        "method": "singleDeposit",
+        "display_name": "Single deposit",
+        "uuid": "e88d4ec3-c6bf-4752-8e59-5046c44e3ba7",
+        "operations": [
+          "open()",
+          "deposit(100)",
+          "getBalance()"
+        ],
+        "expected": 100,
+        "mutant_actual": -100,
+        "named_assertion": "assertThat(bankAccount.getBalance()).isEqualTo(100);",
+        "is_rejecting_case": true
+      },
+      {
+        "method": "multipleDeposits",
+        "display_name": "Multiple deposits",
+        "uuid": "3d9147d4-63f4-4844-8d2b-1fee2e9a2a0d",
+        "operations": [
+          "open()",
+          "deposit(100)",
+          "deposit(50)",
+          "getBalance()"
+        ],
+        "expected": 150,
+        "mutant_actual": -150,
+        "is_rejecting_case": false
+      }
+    ],
+    "minimal_diagnostic_case": {
+      "description": "Smallest valid positive deposit permitted by specification",
+      "operations": [
+        "open()",
+        "deposit(1)",
+        "getBalance()"
+      ],
+      "expected": 1,
+      "mutant_actual": -1,
+      "zero_deposit_rationale": "deposit(0) yields 0 for both correct and mutant implementations (0 + 0 == 0 - 0), so 1 is the minimal distinguishing input."
+    },
+    "deliberate_mutant": {
+      "file": "src/main/java/BankAccount.java",
+      "original_line": "balance += amount;",
+      "mutated_line": "balance -= amount; // MUTANT: inverts deposit arithmetic",
+      "mutation_type": "Arithmetic Operator Replacement (AOR): += replaced with -=",
+      "description": "Inverts deposit balance accumulation from addition to subtraction"
+    }
+  },
+  "checks": {
+    "reference": {
+      "exit_code": 0,
+      "total_tests": 17,
+      "executed_tests": 17,
+      "passed_tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "named_cases": {
+        "newlyOpenedAccountHasEmptyBalance": "PASSED",
+        "singleDeposit": "PASSED",
+        "multipleDeposits": "PASSED"
+      }
+    },
+    "mutant": {
+      "exit_code": 1,
+      "total_tests": 17,
+      "executed_tests": 17,
+      "passed_tests": 11,
+      "failures": 6,
+      "rejecting_case": "Single deposit",
+      "rejecting_case_status": "FAILED",
+      "rejecting_failure_message": "org.opentest4j.AssertionFailedError: \nexpected: 100\n but was: -100"
+    },
+    "working_tree_unchanged": true
+  }
+}
