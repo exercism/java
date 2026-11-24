@@ -1,0 +1,33 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class GigasecondTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "isEqual")~}}
+        LocalDateTime input = LocalDateTime.parse({{{formattedInputs.moment}}});
+        new Gigasecond(input).getDateTime();
+
+        assertThat(input).isEqualTo(LocalDateTime.parse({{{formattedInputs.moment}}}));
+        {{~else if (contains formattedInputs.moment "T")~}}
+        assertThat(new Gigasecond(LocalDateTime.parse({{{formattedInputs.moment}}})).getDateTime())
+                .isEqualTo(LocalDateTime.parse("{{{rawCase.expected.asText}}}"));
+        {{~else~}}
+        assertThat(new Gigasecond(LocalDate.parse({{{formattedInputs.moment}}})).getDateTime())
+                .isEqualTo(LocalDateTime.parse("{{{rawCase.expected.asText}}}"));
+        {{~/if}}
+    }
+{{/each}}
+}

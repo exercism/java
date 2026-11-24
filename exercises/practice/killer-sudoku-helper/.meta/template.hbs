@@ -1,0 +1,34 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class KillerSudokuHelperTest {
+
+    private KillerSudokuHelper helper = new KillerSudokuHelper();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (hasElements rawCase.input.cage.exclude)}}
+        assertThat(helper.combinationsInCage(
+                {{field rawCase.input.cage "sum"}},
+                {{field rawCase.input.cage "size"}},
+                {{{asIntList rawCase.input.cage.exclude}}}))
+                .isEqualTo({{{as2DIntList rawCase.expected}}});
+        {{else}}
+        assertThat(helper.combinationsInCage(
+                {{field rawCase.input.cage "sum"}},
+                {{field rawCase.input.cage "size"}}))
+                .isEqualTo({{{as2DIntList rawCase.expected}}});
+        {{/if}}
+    }
+{{/each}}
+}

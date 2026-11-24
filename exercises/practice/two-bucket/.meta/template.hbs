@@ -1,0 +1,39 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class TwoBucketTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if rawCase.expected.error}}
+        assertThatExceptionOfType(UnreachableGoalException.class)
+                .isThrownBy(() -> new TwoBucket(
+                        {{rawCase.input.bucketOne}},
+                        {{rawCase.input.bucketTwo}},
+                        {{rawCase.input.goal}},
+                        "{{rawCase.input.startBucket}}"
+                ).getResult());
+        {{else}}
+        Result bucketResult = new TwoBucket(
+                {{rawCase.input.bucketOne}},
+                {{rawCase.input.bucketTwo}},
+                {{rawCase.input.goal}},
+                "{{rawCase.input.startBucket}}"
+        ).getResult();
+
+        assertThat(bucketResult.getTotalMoves()).isEqualTo({{rawCase.expected.moves}});
+        assertThat(bucketResult.getFinalBucket()).isEqualTo("{{rawCase.expected.goalBucket}}");
+        assertThat(bucketResult.getOtherBucket()).isEqualTo({{rawCase.expected.otherBucket}});
+        {{/if}}
+    }
+{{/each}}
+}

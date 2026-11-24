@@ -1,0 +1,25 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class HandshakeCalculatorTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.expected.size 0)~}}
+        assertThat(new HandshakeCalculator().calculateHandshake({{{formattedInputs.number}}}))
+                .isEmpty();
+        {{~else~}}
+        assertThat(new HandshakeCalculator().calculateHandshake({{{formattedInputs.number}}}))
+                .containsExactly({{{asSignals rawCase.expected}}});
+        {{~/if}}
+    }
+{{/each}}
+}

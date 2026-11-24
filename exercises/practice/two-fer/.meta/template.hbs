@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class {{testClassName}} {
+
+    private Twofer twofer;
+
+    @BeforeEach
+    public void setup() {
+        twofer = new Twofer();
+    }
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    @DisplayName("{{{description}}}")
+    public void {{methodName}}() {
+        assertThat(twofer.twofer({{{formattedInputs.name}}}))
+                .isEqualTo({{{expectedValue}}});
+    }
+{{/each}}
+}

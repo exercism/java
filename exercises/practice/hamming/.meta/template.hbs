@@ -1,0 +1,27 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class {{testClassName}} {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    @DisplayName("{{{description}}}")
+    public void {{methodName}}() {
+        {{#if expectedError}}
+        assertThatExceptionOfType({{expectedException}}.class)
+                .isThrownBy(() -> new Hamming({{{formattedInputs.strand1}}}, {{{formattedInputs.strand2}}}))
+                .withMessage("{{{expectedErrorMessage}}}");
+        {{else}}
+        assertThat(new Hamming({{{formattedInputs.strand1}}}, {{{formattedInputs.strand2}}}).getHammingDistance())
+                .isEqualTo({{{expectedValue}}});
+        {{/if}}
+    }
+{{/each}}
+}

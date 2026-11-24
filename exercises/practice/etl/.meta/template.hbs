@@ -1,0 +1,27 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class EtlTest {
+
+    private final Etl etl = new Etl();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        Map<Integer, List<String>> legacy = {{{formatEtlInput inputNodes.legacy}}};
+        Map<String, Integer> expected = {{{formatEtlExpected rawCase.expected}}};
+
+        assertThat(etl.transform(legacy)).isEqualTo(expected);
+    }
+{{/each}}
+}

@@ -1,0 +1,23 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.Random;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.fail;
+
+public class BankAccountTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() throws Exception {
+        {{{renderBankAccountCase rawCase}}}
+    }
+{{/each}}
+}

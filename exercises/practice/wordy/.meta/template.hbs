@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class WordProblemSolverTest {
+
+    private WordProblemSolver solver = new WordProblemSolver();
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if rawCase.expected.error}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> solver.solve("{{{escapeJava rawCase.input.question}}}"))
+                .withMessage("I'm sorry, I don't understand the question!");
+        {{else}}
+        assertThat(solver.solve("{{{escapeJava rawCase.input.question}}}")).isEqualTo({{rawCase.expected}});
+        {{/if}}
+    }
+{{/each}}
+}

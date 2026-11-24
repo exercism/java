@@ -1,0 +1,27 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class FoodChainTest {
+
+    private FoodChain foodChain = new FoodChain();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.input.startVerse rawCase.input.endVerse)}}
+        assertThat(foodChain.verse({{{formattedInputs.startVerse}}}))
+                .isEqualTo({{{foodChainExpected rawCase.expected}}});
+        {{else}}
+        assertThat(foodChain.verses({{{formattedInputs.startVerse}}}, {{{formattedInputs.endVerse}}}))
+                .isEqualTo({{{foodChainExpected rawCase.expected}}});
+        {{/if}}
+    }
+{{/each}}
+}

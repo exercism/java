@@ -1,0 +1,33 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.withPrecision;
+
+public class {{testClassName}} {
+
+    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-15;
+
+    private void assertDoublesEqual(double d1, double d2, String numberPart) {
+        String errorMessage = "While testing " + numberPart + " part of number";
+
+        assertThat(d1).as(errorMessage).isCloseTo(d2, withPrecision(DOUBLE_EQUALITY_TOLERANCE));
+    }
+
+    private void assertComplexNumbersEqual(ComplexNumber c1, ComplexNumber c2) {
+        assertDoublesEqual(c1.getReal(), c2.getReal(), "real");
+        assertDoublesEqual(c1.getImaginary(), c2.getImaginary(), "imaginary");
+    }
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{{renderComplexNumberCase this}}}
+    }
+{{/each}}
+}

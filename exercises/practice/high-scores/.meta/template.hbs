@@ -1,0 +1,40 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class HighScoresTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "latestAfterTopThree")~}}
+        HighScores highScores = new HighScores({{{formattedInputs.scores}}});
+        highScores.personalTopThree();
+        assertThat(highScores.latest()).isEqualTo({{{expectedValue}}});
+        {{~else if (eq property "scoresAfterTopThree")~}}
+        HighScores highScores = new HighScores({{{formattedInputs.scores}}});
+        highScores.personalTopThree();
+        assertThat(highScores.scores()).isEqualTo({{{expectedValue}}});
+        {{~else if (eq property "latestAfterBest")~}}
+        HighScores highScores = new HighScores({{{formattedInputs.scores}}});
+        highScores.personalBest();
+        assertThat(highScores.latest()).isEqualTo({{{expectedValue}}});
+        {{~else if (eq property "scoresAfterBest")~}}
+        HighScores highScores = new HighScores({{{formattedInputs.scores}}});
+        highScores.personalBest();
+        assertThat(highScores.scores()).isEqualTo({{{expectedValue}}});
+        {{~else~}}
+        assertThat(new HighScores({{{formattedInputs.scores}}}).{{property}}())
+                .isEqualTo({{{expectedValue}}});
+        {{~/if}}
+    }
+{{/each}}
+}

@@ -1,0 +1,23 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class GameOfLifeTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        int[][] matrix = {{{as2DIntArray rawCase.input.matrix 8}}};
+        int[][] expected = {{{as2DIntArray rawCase.expected 8}}};
+
+        assertThat(new GameOfLife().tick(matrix))
+                .isDeepEqualTo(expected);
+    }
+{{/each}}
+}

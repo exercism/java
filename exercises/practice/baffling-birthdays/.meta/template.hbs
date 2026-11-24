@@ -1,0 +1,53 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
+
+public class BafflingBirthdaysTest {
+
+    private BafflingBirthdays birthdays = new BafflingBirthdays();
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.property "sharedBirthday")}}
+        List<LocalDate> birthdates = {{{asLocalDateList rawCase.input.birthdates}}};
+        {{#if (eq rawCase.expected true)}}
+        assertThat(birthdays.sharedBirthday(birthdates)).isTrue();
+        {{else}}
+        assertThat(birthdays.sharedBirthday(birthdates)).isFalse();
+        {{/if}}
+        {{else if (eq rawCase.property "randomBirthdates")}}
+            {{#if rawCase.expected.years}}
+        assertThat(birthdays.randomBirthdates(100)).noneMatch(LocalDate::isLeapYear);
+            {{else if rawCase.expected.months}}
+        assertThat(birthdays.randomBirthdates(500).stream().map(LocalDate::getMonth).distinct())
+                .hasSizeGreaterThanOrEqualTo(7);
+            {{else if rawCase.expected.days}}
+        assertThat(birthdays.randomBirthdates(500).stream().map(LocalDate::getDayOfMonth).distinct())
+                .hasSizeGreaterThanOrEqualTo(11);
+            {{else}}
+        int groupSize = 50;
+        assertThat(birthdays.randomBirthdates(groupSize).size()).isEqualTo(groupSize);
+            {{/if}}
+        {{else if (eq rawCase.property "estimatedProbabilityOfSharedBirthday")}}
+            {{#if (eq rawCase.expected 0.0)}}
+        assertThat(birthdays.estimatedProbabilityOfSharedBirthday({{rawCase.input.groupSize}}))
+                .isEqualTo(0.0);
+            {{else}}
+        assertThat(birthdays.estimatedProbabilityOfSharedBirthday({{rawCase.input.groupSize}}))
+                .isCloseTo({{rawCase.expected}}, offset(1.0));
+            {{/if}}
+        {{/if}}
+    }
+{{/each}}
+}

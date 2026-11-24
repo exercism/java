@@ -1,0 +1,29 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class LargestSeriesProductCalculatorTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if expectedError}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new LargestSeriesProductCalculator({{{formattedInputs.digits}}})
+                        .calculateLargestProductForSeriesLength({{{formattedInputs.span}}}))
+                .withMessage("{{{largestSeriesProductExpectedMessage this}}}");
+        {{else}}
+        assertThat(new LargestSeriesProductCalculator({{{formattedInputs.digits}}})
+                .calculateLargestProductForSeriesLength({{{formattedInputs.span}}}))
+                .isEqualTo({{{asLong expectedValue}}});
+        {{/if}}
+    }
+{{/each}}
+}

@@ -1,0 +1,27 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class NaturalNumberTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if expectedError~}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new NaturalNumber({{{formattedInputs.number}}}))
+                .withMessage("You must supply a natural number (positive integer)");
+        {{~else~}}
+        assertThat(new NaturalNumber({{{formattedInputs.number}}}).getClassification())
+                .isEqualTo(Classification.{{#if (eq expectedValue "\"perfect\"")}}PERFECT{{else if (eq expectedValue "\"abundant\"")}}ABUNDANT{{else}}DEFICIENT{{/if}});
+        {{~/if}}
+    }
+{{/each}}
+}

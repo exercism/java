@@ -1,0 +1,30 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class RelativeDistanceTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        Map<String, List<String>> familyTree = {{{formatJava inputNodes.familyTree}}};
+        RelativeDistance rd = new RelativeDistance(familyTree);
+
+        assertThat(rd.degreeOfSeparation("{{escapeJava rawCase.input.personA}}", "{{escapeJava rawCase.input.personB}}"))
+        {{#if isNullExpected}}
+                .isEqualTo(-1);
+        {{else}}
+                .isEqualTo({{rawCase.expected}});
+        {{/if}}
+    }
+{{/each}}
+}

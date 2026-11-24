@@ -1,0 +1,49 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class PiecingItTogetherTest {
+
+    private static final double DOUBLE_EQUALITY_TOLERANCE = 1e-9;
+
+    private void assertJigsawInfoEquals(JigsawInfo actual, JigsawInfo expected) {
+        assertThat(actual.getPieces()).isEqualTo(expected.getPieces());
+        assertThat(actual.getBorder()).isEqualTo(expected.getBorder());
+        assertThat(actual.getInside()).isEqualTo(expected.getInside());
+        assertThat(actual.getRows()).isEqualTo(expected.getRows());
+        assertThat(actual.getColumns()).isEqualTo(expected.getColumns());
+        assertThat(actual.getFormat()).isEqualTo(expected.getFormat());
+
+        Double actualAspect = actual.getAspectRatio()
+                .orElseThrow(() -> new AssertionError("Missing aspect ratio in actual result"));
+        Double expectedAspect = expected.getAspectRatio()
+                .orElseThrow(() -> new AssertionError("Missing aspect ratio in expected result"));
+
+        assertThat(actualAspect).isCloseTo(expectedAspect,
+                org.assertj.core.api.Assertions.within(DOUBLE_EQUALITY_TOLERANCE));
+    }
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if rawCase.expected.error}}
+        JigsawInfo input = {{{asJigsawInfo rawCase.input}}};
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> PiecingItTogether.getCompleteInformation(input))
+                .withMessage("{{{escapeJava rawCase.expected.error}}}");
+        {{else}}
+        JigsawInfo input = {{{asJigsawInfo rawCase.input}}};
+        JigsawInfo expected = {{{asJigsawInfo rawCase.expected}}};
+        JigsawInfo actual = PiecingItTogether.getCompleteInformation(input);
+        assertJigsawInfoEquals(actual, expected);
+        {{/if}}
+    }
+{{/each}}
+}

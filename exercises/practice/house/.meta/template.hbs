@@ -1,0 +1,30 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class HouseTest {
+
+    private House house = new House();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.input.startVerse rawCase.input.endVerse)}}
+        assertThat(house.verse({{{formattedInputs.startVerse}}}))
+                .isEqualTo({{{houseExpected rawCase.expected}}});
+        {{else}}{{#if (and (eq rawCase.input.startVerse 1) (eq rawCase.input.endVerse 12))}}
+        assertThat(house.sing())
+                .isEqualTo({{{houseExpected rawCase.expected}}});
+        {{else}}
+        assertThat(house.verses({{{formattedInputs.startVerse}}}, {{{formattedInputs.endVerse}}}))
+                .isEqualTo({{{houseExpected rawCase.expected}}});
+        {{/if}}{{/if}}
+    }
+{{/each}}
+}

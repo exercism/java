@@ -1,0 +1,30 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class TwelveDaysTest {
+
+    private TwelveDays twelveDays = new TwelveDays();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.input.startVerse rawCase.input.endVerse)}}
+        assertThat(twelveDays.verse({{{formattedInputs.startVerse}}}))
+                .isEqualTo({{{twelveDaysExpected rawCase.expected}}});
+        {{else}}{{#if (and (eq rawCase.input.startVerse 1) (eq rawCase.input.endVerse 12))}}
+        assertThat(twelveDays.sing())
+                .isEqualTo({{{twelveDaysExpected rawCase.expected}}});
+        {{else}}
+        assertThat(twelveDays.verses({{{formattedInputs.startVerse}}}, {{{formattedInputs.endVerse}}}))
+                .isEqualTo({{{twelveDaysExpected rawCase.expected}}});
+        {{/if}}{{/if}}
+    }
+{{/each}}
+}

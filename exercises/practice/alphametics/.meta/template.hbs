@@ -1,0 +1,29 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.Map;
+
+import static java.util.Map.entry;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class AlphameticsTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() throws UnsolvablePuzzleException {
+        {{#if isNullExpected}}
+        assertThatExceptionOfType(UnsolvablePuzzleException.class)
+                .isThrownBy(() -> new Alphametics({{{alphameticsPuzzle rawCase.input.puzzle}}}).solve());
+        {{else}}
+        assertThat(new Alphametics({{{alphameticsPuzzle rawCase.input.puzzle}}}).solve())
+                .isEqualTo({{{formatAlphameticsExpected rawCase.expected}}});
+        {{/if}}
+    }
+{{/each}}
+}

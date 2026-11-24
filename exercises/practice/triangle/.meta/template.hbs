@@ -1,0 +1,26 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class TriangleTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() throws TriangleException {
+        {{#if (isIllegalTriangle inputNodes.sides)~}}
+        assertThatExceptionOfType(TriangleException.class)
+                .isThrownBy(() -> new Triangle({{{formatElements inputNodes.sides}}}));
+        {{~else~}}
+        assertThat(new Triangle({{{formatElements inputNodes.sides}}}).is{{pascalCase property}}())
+                .{{#if (eq expectedValue "true")}}isTrue(){{else}}isFalse(){{/if}};
+        {{~/if}}
+    }
+{{/each}}
+}

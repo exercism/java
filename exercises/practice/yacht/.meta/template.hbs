@@ -1,0 +1,21 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class YachtTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        assertThat(new Yacht({{{asIntArray rawCase.input.dice}}}, YachtCategory.{{{toYachtCategory rawCase.input.category}}})
+                .score())
+                .isEqualTo({{{expectedValue}}});
+    }
+{{/each}}
+}

@@ -1,0 +1,16 @@
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class GreeterTest {
+{{#each testCases}}
+
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        assertThat(new Greeter().getGreeting())
+                .isEqualTo({{{expectedValue}}});
+    }
+{{/each}}
+}

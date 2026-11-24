@@ -1,0 +1,26 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class KnapsackTest {
+
+    private Knapsack knapsack = new Knapsack();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        List<Item> items = {{{asKnapsackItems rawCase.input.items}}};
+
+        assertThat(knapsack.maximumValue({{{formattedInputs.maximumWeight}}}, items))
+                .isEqualTo({{{expectedValue}}});
+    }
+{{/each}}
+}

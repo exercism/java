@@ -1,0 +1,39 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class SeriesTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if expectedError~}}
+        {{#if (eq formattedInputs.series "\"\"")~}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Series({{{formattedInputs.series}}}))
+                .withMessage("series cannot be empty");
+        {{~else if (lte formattedInputs.sliceLength 0)~}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Series({{{formattedInputs.series}}}).slices({{{formattedInputs.sliceLength}}}))
+                .withMessage("slice length cannot be negative or zero");
+        {{~else~}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Series({{{formattedInputs.series}}}).slices({{{formattedInputs.sliceLength}}}))
+                .withMessage("slice length cannot be greater than series length");
+        {{~/if}}
+        {{~else~}}
+        assertThat(new Series({{{formattedInputs.series}}}).slices({{{formattedInputs.sliceLength}}}))
+                .isEqualTo({{{expectedValue}}});
+        {{~/if}}
+    }
+{{/each}}
+}

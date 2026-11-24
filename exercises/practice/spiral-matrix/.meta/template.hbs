@@ -1,0 +1,32 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class SpiralMatrixBuilderTest {
+
+    private SpiralMatrixBuilder spiralMatrixBuilder;
+
+    @BeforeEach
+    public void setUp() {
+        spiralMatrixBuilder = new SpiralMatrixBuilder();
+    }
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.input.size 0)}}
+        assertThat(spiralMatrixBuilder.buildMatrixOfSize(0)).isEmpty();
+        {{else}}
+        int[][] expected = {{{as2DIntArray rawCase.expected 8}}};
+        assertThat(spiralMatrixBuilder.buildMatrixOfSize({{rawCase.input.size}})).isDeepEqualTo(expected);
+        {{/if}}
+    }
+{{/each}}
+}

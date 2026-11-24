@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class DifferenceOfSquaresCalculatorTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "squareOfSum")~}}
+        assertThat(new DifferenceOfSquaresCalculator().computeSquareOfSumTo({{{formattedInputs.number}}}))
+                .isEqualTo({{{expectedValue}}});
+        {{~else if (eq property "sumOfSquares")~}}
+        assertThat(new DifferenceOfSquaresCalculator().computeSumOfSquaresTo({{{formattedInputs.number}}}))
+                .isEqualTo({{{expectedValue}}});
+        {{~else~}}
+        assertThat(new DifferenceOfSquaresCalculator().computeDifferenceOfSquares({{{formattedInputs.number}}}))
+                .isEqualTo({{{expectedValue}}});
+        {{~/if}}
+    }
+{{/each}}
+}

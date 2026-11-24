@@ -1,0 +1,33 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
+
+public class {{testClassName}} {
+
+    // A 0.01 tolerance covers minor rounding variations in floating point calculations
+    private static final double EQUALITY_TOLERANCE = 0.01;
+
+    private BookStore bookStore;
+
+    @BeforeEach
+    public void setUp() {
+        bookStore = new BookStore();
+    }
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{{renderBookStoreCase this}}}
+    }
+{{/each}}
+}

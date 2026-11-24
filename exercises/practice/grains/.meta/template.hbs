@@ -1,0 +1,36 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.math.BigInteger;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class GrainsTest {
+
+    private Grains grains = new Grains();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "total")}}
+        assertThat(grains.grainsOnBoard())
+                .isEqualTo(new BigInteger("{{{rawCase.expected}}}"));
+        {{else}}
+        {{#if expectedError}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> grains.grainsOnSquare({{{formattedInputs.square}}}))
+                .withMessage("square must be between 1 and 64");
+        {{else}}
+        assertThat(grains.grainsOnSquare({{{formattedInputs.square}}}))
+                .isEqualTo(new BigInteger("{{{rawCase.expected}}}"));
+        {{/if}}
+        {{/if}}
+    }
+{{/each}}
+}

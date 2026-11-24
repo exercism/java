@@ -1,0 +1,38 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class QueenAttackCalculatorTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq rawCase.property "create")}}
+            {{#if rawCase.expected.error}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new Queen({{rawCase.input.queen.position.row}}, {{rawCase.input.queen.position.column}}));
+            {{else}}
+        new Queen({{rawCase.input.queen.position.row}}, {{rawCase.input.queen.position.column}});
+            {{/if}}
+        {{else if (eq rawCase.property "canAttack")}}
+        QueenAttackCalculator calculator = new QueenAttackCalculator(
+                new Queen({{rawCase.input.white_queen.position.row}}, {{rawCase.input.white_queen.position.column}}),
+                new Queen({{rawCase.input.black_queen.position.row}}, {{rawCase.input.black_queen.position.column}})
+        );
+
+            {{#if (eq rawCase.expected true)}}
+        assertThat(calculator.canQueensAttackOneAnother()).isTrue();
+            {{else}}
+        assertThat(calculator.canQueensAttackOneAnother()).isFalse();
+            {{/if}}
+        {{/if}}
+    }
+{{/each}}
+}
