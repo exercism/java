@@ -4,9 +4,10 @@ The **Java Track Test Generator** is an automated tool that synchronizes and gen
 
 ## Features
 
-- **Upstream Synchronization**: Fetches `canonical-data.json` directly from the raw GitHub content URL.
-- **`tests.toml` Awareness**: Automatically includes active tests and excludes any tests marked `include = false`.
+- **Upstream Synchronization**: Fetches `canonical-data.json` directly from GitHub, local sibling directories (`../problem-specifications`), or cached downloads.
+- **`tests.toml` Awareness**: Automatically includes active tests and excludes any tests marked `include = false`. Respects `reimplements` UUID mappings.
 - **Idiomatic JUnit 5 + AssertJ**: Generates standard annotations (`@Test`, `@DisplayName`, `@Disabled("Remove to run test")` on subsequent tests, and `assertThat` / `assertThatExceptionOfType`).
+- **Zero-Config Formatting**: Automatically cleans up and normalizes indentation and annotation spacing in generated files.
 - **Template-Driven**: Uses Handlebars templates with a clean fallback system:
   1. If an exercise has `.meta/template.hbs`, that template is rendered.
   2. Otherwise, the built-in `default.hbs` template is used.
@@ -14,62 +15,77 @@ The **Java Track Test Generator** is an automated tool that synchronizes and gen
 
 ---
 
-## Prerequisites
-
-- Java 17 or higher
-- Gradle wrapper (included: `./gradlew`)
-
----
-
 ## Usage
+
+### 1. Using the CLI Script (Recommended)
+
+From the repository root, use the `bin/generate-tests` wrapper (it builds the distribution binary on first run):
+
+```bash
+# Show help and all CLI options
+./bin/generate-tests --help
+
+# Generate tests for a single exercise
+./bin/generate-tests -e acronym
+
+# Generate tests for multiple exercises
+./bin/generate-tests -e acronym -e two-fer -e hamming
+
+# Dry run (print generated test suite to console without writing to disk)
+./bin/generate-tests -e two-fer -d
+
+# Generate tests for all practice exercises
+./bin/generate-tests -a
+
+# Bypass cache and re-fetch canonical data from upstream GitHub
+./bin/generate-tests -e acronym -f
+
+# Use a local problem-specifications directory instead of downloading
+./bin/generate-tests -a -p ../problem-specifications
+```
+
+### 2. Using Gradle Directly
 
 From the `test-generator/` directory:
 
-### 1. Show Help & Options
 ```bash
-./gradlew run --args="--help"
-```
+# Build & install the distribution binary
+./gradlew installDist
 
-### 2. Dry Run (Preview without writing)
-```bash
-./gradlew run --args="-e two-fer -d"
-```
+# Run unit tests
+./gradlew test
 
-### 3. Generate Tests for a Single Exercise
-```bash
+# Run generator via Gradle
 ./gradlew run --args="-e acronym"
-```
-
-### 4. Generate Tests for Multiple Exercises
-```bash
-./gradlew run --args="-e acronym -e two-fer -e hamming"
-```
-
-### 5. Generate Tests for All Practice Exercises
-```bash
-./gradlew run --args="--all"
+./gradlew run --args="-a"
 ```
 
 ---
 
 ## Exercise-Specific Templates
 
-If an exercise has a non-standard API (e.g., stateful classes or custom constructor signatures), you can place a `template.hbs` inside the exercise's `.meta/` directory:
+If an exercise has a custom API (such as stateful objects, builder patterns, or custom method signatures), add a `template.hbs` inside the exercise's `.meta/` directory:
 
 `exercises/practice/<slug>/.meta/template.hbs`
 
-### Available Template Context:
+### Available Context Variables:
 - `testClassName`: e.g. `AcronymTest`
 - `solutionClassName`: e.g. `Acronym`
-- `hasExceptions`: boolean (true if any test case expects an error)
+- `hasExceptions`: boolean (true if any active test case expects an error)
 - `testCases`: list of active test cases, each containing:
-  - `uuid`: test UUID
-  - `description`: canonical description
+  - `uuid`: canonical test UUID
+  - `description`: canonical test description
   - `methodName`: sanitized camelCase Java method name
-  - `disabled`: true for all tests after the first one
-  - `expectedError`: true if an exception is expected
+  - `disabled`: boolean (true for all tests after the first one)
+  - `expectedError`: boolean (true if an exception is expected)
   - `expectedException`: e.g. `IllegalArgumentException`
   - `expectedErrorMessage`: message expected from the exception
   - `expectedValue`: formatted Java literal (e.g. `"PNG"`, `List.of(...)`, `42L`)
-  - `formattedInputs`: map of parameter name to formatted Java literal (e.g. `formattedInputs.phrase`)
+  - `formattedInputs`: map of parameter names to formatted Java literals (e.g. `formattedInputs.phrase`)
   - `invocationCode`: default method invocation string
+  - `rawCase`: raw canonical JSON case node (for custom helper inspection)
+
+### Built-in Helpers:
+- `renderExceptionAssertion`: formats standard AssertJ `assertThatExceptionOfType` blocks
+- `asIntList`, `asStringList`, `as2DIntArray`, `asStringArray`: helpers for array/list literals
+- Exercise-specific helpers registered in `TemplateRenderer` (e.g., `renderClockCase`, `renderListOpsCase`, etc.)

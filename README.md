@@ -12,6 +12,7 @@ Next to the exercises, the Java track also consists of the following tooling:
 - [exercism/java-test-runner] - The Exercism [test runner][docs-test-runners] for the Java track that automatically verifies if a submitted solution passes all of the exercise's tests.
 - [exercism/java-representer] - The Exercism [representer][docs-representers] for the Java track that creates normalized representations of submitted solutions.
 - [exercism/java-analyzer] - The Exercism [analyzer][docs-analyzers] for the Java track that automatically provides comments on submitted solutions.
+- [test-generator](test-generator) - Tool to generate JUnit 5 practice exercise test suites from canonical data.
 
 ## Contributing Guide
 
