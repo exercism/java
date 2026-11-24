@@ -2475,21 +2475,28 @@ public class TemplateRenderer {
                     if (nested.isEmpty()) {
                         lines.add("assertThat(ListOps.concat(List.of())).isEmpty();");
                     } else if (nested.get(0).isArray() && !nested.get(0).isEmpty() && nested.get(0).get(0).isArray()) {
-                        java.util.List<String> inBlocks = new java.util.ArrayList<>();
-                        for (JsonNode outer : nested) {
+                        lines.add("List<List<List<Character>>> listOfNestedLists = List.of(");
+                        for (int outerIdx = 0; outerIdx < nested.size(); outerIdx++) {
+                            JsonNode outer = nested.get(outerIdx);
                             java.util.List<String> subItems = new java.util.ArrayList<>();
                             for (JsonNode inner : outer) {
                                 subItems.add(formatCharTree.apply(inner));
                             }
-                            inBlocks.add("        List.of(\n                " + String.join(",\n                ", subItems) + "\n        )");
+                            if (subItems.isEmpty()) {
+                                lines.add("        List.of()" + (outerIdx < nested.size() - 1 ? "," : ""));
+                            } else {
+                                lines.add("        List.of(");
+                                for (int innerIdx = 0; innerIdx < subItems.size(); innerIdx++) {
+                                    lines.add("                " + subItems.get(innerIdx) + (innerIdx < subItems.size() - 1 ? "," : ""));
+                                }
+                                lines.add("        )" + (outerIdx < nested.size() - 1 ? "," : ""));
+                            }
                         }
+                        lines.add(");");
                         java.util.List<String> expItems = new java.util.ArrayList<>();
                         for (JsonNode expItem : c.expected()) {
                             expItems.add(formatCharTree.apply(expItem));
                         }
-                        lines.add("List<List<List<Character>>> listOfNestedLists = List.of(");
-                        lines.add(String.join(",\n", inBlocks));
-                        lines.add(");");
                         lines.add("assertThat(ListOps.concat(listOfNestedLists))");
                         lines.add("        .isEqualTo(List.of(");
                         for (int i = 0; i < expItems.size(); i++) {
@@ -2592,7 +2599,7 @@ public class TemplateRenderer {
                     } else {
                         java.util.List<String> inVals = new java.util.ArrayList<>();
                         for (JsonNode v : list) inVals.add(String.format(java.util.Locale.ROOT, "%.1f", v.asDouble()));
-                        lines.add("assertThat(ListOps.foldLeft(List.of(" + String.join(", ", inVals) + "), " + String.format(java.util.Locale.ROOT, "%.1f", init) + ", (acc, el) -> acc / el))");
+                        lines.add("assertThat(ListOps.foldLeft(List.of(" + String.join(", ", inVals) + "), " + String.format(java.util.Locale.ROOT, "%.1f", init) + ", (acc, el) -> el / acc))");
                         lines.add("        .isEqualTo(" + exp + ");");
                     }
                 }
