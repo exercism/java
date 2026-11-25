@@ -1,4 +1,7 @@
-import java.io.*;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Paasio implements Closeable {
 
@@ -45,6 +48,12 @@ public class Paasio implements Closeable {
     }
 
     public byte[] readNBytes(int len) throws IOException {
+
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+    }
+
+    public int readNBytes(byte[] byteArray, int offset, int len) throws IOException  {
 
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }

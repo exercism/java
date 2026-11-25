@@ -1,4 +1,7 @@
-import java.io.*;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Paasio implements Closeable {
 
@@ -77,6 +80,16 @@ public class Paasio implements Closeable {
             bytesRead += allData.length;
         }
         return allData;
+    }
+
+    public int readNBytes(byte[] byteArray, int offset, int len) throws IOException {
+
+        int totalBytesRead = this.inputStream.readNBytes(byteArray, offset, len);
+        if (totalBytesRead > 0) {
+            readOperationCount++;
+            bytesRead += totalBytesRead;
+        }
+        return totalBytesRead;
     }
 
     public void write(int b) throws IOException {

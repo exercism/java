@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -8,17 +8,18 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.Objects;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PaasioTest {
+
+    private static final String MESSAGE_CONSTANT = "This is additional Content.";
 
     private Paasio paasioReaderWriter;
 
     private ByteArrayInputStream dataInputStream;
     private ByteArrayOutputStream dataOutputStream;
-    private static final String MESSAGECONSTANT = "This is additional Content.";
 
     @BeforeEach
     public void setUpTest() {
@@ -30,12 +31,7 @@ public class PaasioTest {
 
     @AfterEach
     public void closeOpenStream() throws IOException {
-        if (!Objects.isNull(this.paasioReaderWriter.getInputStream())) {
-            this.paasioReaderWriter.getInputStream().close();
-        }
-        if (!Objects.isNull(this.paasioReaderWriter.getOutputStream())) {
-            this.paasioReaderWriter.getOutputStream().close();
-        }
+        this.paasioReaderWriter.close();
     }
 
     @Test
@@ -73,18 +69,16 @@ public class PaasioTest {
         assertThat(readByteData).isEqualTo(" is ".getBytes());
         assertThat(paasioReaderWriter.getBytesRead()).isEqualTo(8);
 
-
     }
 
     @Test
     @Disabled("Remove to run test")
     void checkByteValueReadFromTheFile() throws IOException {
 
-        byte[] fileData = new byte[100];
-        int bytesRead = paasioReaderWriter.read(fileData);
-        String dataInFile = new String(fileData, 0, bytesRead, StandardCharsets.UTF_8);
+        byte[] data = new byte[100];
+        int bytesRead = paasioReaderWriter.read(data);
+        String dataInFile = new String(data, 0, bytesRead, StandardCharsets.UTF_8);
         assertThat(dataInFile).isEqualTo("This is data ");
-
 
     }
 
@@ -95,8 +89,8 @@ public class PaasioTest {
         byte[] initialMessage = "Hello! ".getBytes();
         byte[] messageArray = Arrays.copyOf(initialMessage, 50);
 
-        int length = messageArray.length - initialMessage.length - 2;
-        //It will read data into the messageArray and will begin writing it from its  initialMessage.length index
+        int length = messageArray.length - initialMessage.length;
+        //It will read data into the messageArray and will begin writing it from its initialMessage.length index
         int bytesRead = paasioReaderWriter.read(messageArray, initialMessage.length, length);
 
         String dataInFile = new String(messageArray, 0, initialMessage.length + bytesRead, StandardCharsets.UTF_8);
@@ -107,10 +101,20 @@ public class PaasioTest {
     @Test
     @Disabled("Remove to run test")
     void validateBytesOfDataReadWhileReadingItFromOffset() throws IOException {
-        byte[] byteData = new byte[50];
+        byte[] byteData = new byte[20];
         int bytesRead = paasioReaderWriter.read(byteData, 0, 10);
+        String dataRead = new String(byteData, 0, bytesRead);
 
         assertThat(bytesRead).isEqualTo(10);
+        assertThat(dataRead).isEqualTo("This is da");
+    }
+
+    @Test
+    @Disabled("Remove to run test")
+    void shouldThrowExceptionWhenReadRangeExceedsArrayBounds() throws IOException {
+        byte[] byteData = new byte[20];
+        assertThatThrownBy(() -> paasioReaderWriter.read(byteData, 0, 30))
+                .isInstanceOf(IndexOutOfBoundsException.class);
     }
 
     @Test
@@ -118,8 +122,10 @@ public class PaasioTest {
     void validateAllBytesReadingData() throws IOException {
 
         byte[] bytes = paasioReaderWriter.readAllBytes();
-        assertThat(paasioReaderWriter.getBytesRead()).isEqualTo(bytes.length);
+        String dataRead = new String(bytes);
 
+        assertThat(paasioReaderWriter.getBytesRead()).isEqualTo(bytes.length);
+        assertThat(dataRead).isEqualTo("This is data ");
     }
 
 
@@ -139,9 +145,11 @@ public class PaasioTest {
     @Disabled("Remove to run test")
     void validateReadNBytesReadOperationCount() throws IOException {
 
-        paasioReaderWriter.readNBytes(5);
-        paasioReaderWriter.readNBytes(5);
+        byte[] bytesOne = paasioReaderWriter.readNBytes(5);
+        byte[] bytesTwo = paasioReaderWriter.readNBytes(5);
 
+        assertThat(new String(bytesOne)).isEqualTo("This ");
+        assertThat(new String(bytesTwo)).isEqualTo("is da");
         assertThat(paasioReaderWriter.getReadOperationCount()).isEqualTo(2);
     }
 
@@ -152,10 +160,10 @@ public class PaasioTest {
         byte[] helloArray = "Hello! ".getBytes();
         byte[] dataRead = Arrays.copyOf(helloArray, 100);
 
-        int bytesRead = paasioReaderWriter.read(dataRead, helloArray.length, 40);
-        String finalVAlue = new String(dataRead, 0, helloArray.length + bytesRead, StandardCharsets.UTF_8);
+        int bytesRead = paasioReaderWriter.readNBytes(dataRead, helloArray.length, 40);
+        String finalValue = new String(dataRead, 0, helloArray.length + bytesRead, StandardCharsets.UTF_8);
 
-        assertThat("Hello! This is data ").isEqualTo(finalVAlue);
+        assertThat("Hello! This is data ").isEqualTo(finalValue);
         assertThat(1).isEqualTo(paasioReaderWriter.getReadOperationCount());
     }
 
@@ -176,18 +184,18 @@ public class PaasioTest {
     @Disabled("Remove to run test")
     void verifyContentAfterWritingByteArrayIntoTheOutputStream() throws IOException {
 
-        byte[] writeFileContent = MESSAGECONSTANT.getBytes();
+        byte[] writeFileContent = MESSAGE_CONSTANT.getBytes();
         paasioReaderWriter.write(writeFileContent);
         String dataWritten = this.dataOutputStream.toString(StandardCharsets.UTF_8);
 
-        assertThat(dataWritten).isEqualTo(MESSAGECONSTANT);
+        assertThat(dataWritten).isEqualTo(MESSAGE_CONSTANT);
     }
 
     @Test
     @Disabled("Remove to run test")
     void verifyWriteOperationCountAfterWritingByteArrayIntoTheOutputStream() throws IOException {
 
-        byte[] writeFileContent = MESSAGECONSTANT.getBytes();
+        byte[] writeFileContent = MESSAGE_CONSTANT.getBytes();
         paasioReaderWriter.write(writeFileContent);
         paasioReaderWriter.write(writeFileContent);
         paasioReaderWriter.write(43);
@@ -200,7 +208,7 @@ public class PaasioTest {
     @Disabled("Remove to run test")
     void verifyBytesOfDataWrittenInTheOutputStream() throws IOException {
 
-        byte[] writeFileContent = MESSAGECONSTANT.getBytes();
+        byte[] writeFileContent = MESSAGE_CONSTANT.getBytes();
         paasioReaderWriter.write(writeFileContent);
         paasioReaderWriter.write(writeFileContent);
         paasioReaderWriter.write('s');
@@ -213,14 +221,14 @@ public class PaasioTest {
     @Disabled("Remove to run test")
     void verifyBytesWrittenFromOffsetIntoTheOutputStreamAlongWithTheCount() throws IOException {
 
-        String fileContentToBeWritten = "   This is additional Content.";
-        byte[] writeFileContent = fileContentToBeWritten.getBytes();
+        String contentToBeWritten = "   This is additional Content.";
+        byte[] writeFileContent = contentToBeWritten.getBytes();
 
         paasioReaderWriter.write(writeFileContent, 3, writeFileContent.length - 3);
 
         String fileConvertedToString = this.dataOutputStream.toString(StandardCharsets.UTF_8);
 
-        assertThat(fileConvertedToString).isEqualTo(fileContentToBeWritten.trim());
+        assertThat(fileConvertedToString).isEqualTo(contentToBeWritten.trim());
         assertThat(paasioReaderWriter.getWriteOperationCount()).isEqualTo(1);
 
     }
