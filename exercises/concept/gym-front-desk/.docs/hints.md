@@ -2,8 +2,8 @@
 
 ## General
 
-- A [`Period`][period-docs] is an amount of time in years, months and days, and is used with dates.
-- A [`Duration`][duration-docs] is an amount of time in seconds and nanoseconds, and is used with times and date-times.
+- A [`Period`][period-docs] is an amount of time in years, months and days, and is used with dates and date-times.
+- A [`Duration`][duration-docs] is an amount of time in hours, minutes, seconds, milliseconds and nanoseconds, and is used with times and date-times.
 - Both classes are immutable: their methods return a new instance and leave the original unchanged.
 
 ## 1. Work out when a membership ends

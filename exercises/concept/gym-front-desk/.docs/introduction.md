@@ -6,10 +6,10 @@ Classes like `LocalDate` and `LocalDateTime` describe a _point_ in time.
 The `java.time` package also has two classes that describe an _amount_ of time:
 
 - `java.time.Period` is an amount of time in years, months and days, such as "2 months and 5 days".
-- `java.time.Duration` is an amount of time in seconds and nanoseconds, such as "1 hour and 30 minutes".
+- `java.time.Duration` is an amount of time in hours, minutes, seconds, milliseconds and nanoseconds, such as "1 hour and 30 minutes".
 
-A `Period` follows the calendar, so it is used with dates.
-A `Duration` measures exact time, so it is used with times and date-times.
+A `Period` follows the calendar, so it is used with dates and date-times.
+A `Duration` measures exact time, so it is used with times and date-times, but not with dates.
 
 ```exercism/note
 Like the other `java.time` classes, `Period` and `Duration` are immutable.

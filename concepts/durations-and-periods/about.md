@@ -4,7 +4,7 @@ Classes like `LocalDate` and `LocalDateTime` describe a _point_ in time.
 The `java.time` package also has two classes that describe an _amount_ of time:
 
 - [`Period`][period-docs] is a date-based amount of time in years, months and days, such as "2 months and 5 days".
-- [`Duration`][duration-docs] is a time-based amount of time in seconds and nanoseconds, such as "1 hour and 30 minutes".
+- [`Duration`][duration-docs] is a time-based amount of time in hours, minutes, seconds, milliseconds and nanoseconds, such as "1 hour and 30 minutes".
 
 The difference matters because calendar units do not have a fixed length.
 A month can have 28, 29, 30 or 31 days, so "one month" is not a fixed number of seconds.
@@ -13,9 +13,7 @@ A `Period` follows the calendar, while a `Duration` measures exact time.
 | | `Period` | `Duration` |
 | --- | --- | --- |
 | Stores | years, months and days | seconds and nanoseconds |
-| Used with | `LocalDate` | `LocalTime`, `LocalDateTime`, `Instant` |
-| Example | "the membership lasts 1 month" | "the visit lasted 95 minutes" |
-| `toString()` | `P1Y2M15D` | `PT1H35M` |
+| Used with | `LocalDate`, `LocalDateTime` | `LocalTime`, `LocalDateTime`, `Instant` |
 
 Both classes are immutable.
 Methods such as `plusDays()` or `multipliedBy()` return a _new_ instance and leave the original unchanged.
@@ -59,6 +57,26 @@ date.plus(Period.ofMonths(2));
 
 date.minus(Period.ofDays(10));
 // => 2024-02-29
+```
+
+A period can be added to a `LocalDateTime` in the same way, and the time of day stays the same:
+
+```java
+LocalDateTime.of(2024, 3, 10, 9, 30).plus(Period.ofMonths(1));
+// => 2024-04-10T09:30
+```
+
+An `Instant` has no calendar, so only a period of days can be added to it.
+A period with years or months throws an exception:
+
+```java
+Instant instant = Instant.parse("2024-03-10T09:30:00Z");
+
+instant.plus(Period.ofDays(2));
+// => 2024-03-12T09:30:00Z
+
+instant.plus(Period.ofMonths(1));
+// => throws UnsupportedTemporalTypeException
 ```
 
 The years are added first, then the months and then the days.
@@ -300,7 +318,8 @@ Duration.ofHours(2).dividedBy(Duration.ofMinutes(15));
 
 ## `Period` or `Duration`?
 
-For local dates and times, the choice is usually made for you: a date has no time to measure, and a time has no calendar.
+For a `LocalDate` or a `LocalTime`, the choice is made for you: a date has no time to measure, and a time has no calendar.
+A `LocalDateTime` has both, but no time zone, so adding `Period.ofDays(1)` or `Duration.ofDays(1)` to it gives the same result.
 The difference becomes visible with time zones.
 When the clocks move forward for daylight saving time, a calendar day is only 23 hours long:
 
