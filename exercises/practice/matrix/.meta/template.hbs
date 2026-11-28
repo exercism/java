@@ -1,0 +1,25 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class MatrixTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "row")~}}
+        assertThat(new Matrix({{{formattedInputs.string}}}).getRow({{{formattedInputs.index}}}))
+                .isEqualTo({{asIntArray rawCase.expected}});
+        {{~else~}}
+        assertThat(new Matrix({{{formattedInputs.string}}}).getColumn({{{formattedInputs.index}}}))
+                .isEqualTo({{asIntArray rawCase.expected}});
+        {{~/if}}
+    }
+{{/each}}
+}

@@ -1,0 +1,38 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+import java.util.SortedMap;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class {{testClassName}} {
+
+    private PalindromeCalculator palindromeCalculator = new PalindromeCalculator();
+
+    private void checkPalindromeWithFactorsMatchesExpected(List<List<Integer>> expectedPalindromeFactors,
+                                                           long expectedValueOfPalindrome,
+                                                           SortedMap<Long, List<List<Integer>>> actualPalindromes,
+                                                           long actualValueOfPalindrome) {
+        assertThat(actualPalindromes).isNotNull();
+        assertThat(actualPalindromes.isEmpty()).isFalse();
+
+        assertThat(actualValueOfPalindrome).isEqualTo(expectedValueOfPalindrome);
+
+        List<List<Integer>> actualPalindromeFactors = actualPalindromes.get(actualValueOfPalindrome);
+        assertThat(actualPalindromeFactors).containsExactlyInAnyOrderElementsOf(expectedPalindromeFactors);
+    }
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{{renderPalindromeProductsCase this}}}
+    }
+{{/each}}
+}

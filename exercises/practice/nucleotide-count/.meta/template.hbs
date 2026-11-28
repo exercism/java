@@ -1,0 +1,33 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+public class NucleotideCounterTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if expectedError}}
+        assertThatThrownBy(() -> new NucleotideCounter({{{formattedInputs.strand}}}))
+                .isInstanceOf(IllegalArgumentException.class);
+        {{else}}
+        NucleotideCounter counter = new NucleotideCounter(
+                {{{formattedInputs.strand}}});
+
+        assertThat(counter.nucleotideCounts())
+                .containsExactlyInAnyOrderEntriesOf(
+                        Map.of('A', {{rawCase.expected.A}}, 'C', {{rawCase.expected.C}},
+                                'G', {{rawCase.expected.G}}, 'T', {{rawCase.expected.T}}));
+        {{/if}}
+    }
+{{/each}}
+}

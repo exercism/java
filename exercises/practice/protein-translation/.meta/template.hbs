@@ -1,0 +1,31 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class ProteinTranslatorTest {
+
+    private ProteinTranslator proteinTranslator = new ProteinTranslator();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if expectedError}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> proteinTranslator.translate({{{formattedInputs.strand}}}))
+                .withMessage("{{{escapeJava expectedErrorMessage}}}");
+        {{else}}
+        assertThat(proteinTranslator.translate({{{formattedInputs.strand}}}))
+                .isEqualTo({{{expectedValue}}});
+        {{/if}}
+    }
+{{/each}}
+}

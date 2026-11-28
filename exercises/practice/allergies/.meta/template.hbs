@@ -1,0 +1,30 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class AllergiesTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "allergicTo")~}}
+        assertThat(new Allergies({{{formattedInputs.score}}}).isAllergicTo({{toAllergen inputNodes.item}}))
+                .{{#if (eq expectedValue "true")}}isTrue(){{else}}isFalse(){{/if}};
+        {{~else~}}
+        {{#if (eq rawCase.expected.size 0)~}}
+        assertThat(new Allergies({{{formattedInputs.score}}}).getList())
+                .isEmpty();
+        {{~else~}}
+        assertThat(new Allergies({{{formattedInputs.score}}}).getList())
+                .containsExactly({{{asAllergens rawCase.expected}}});
+        {{~/if}}
+        {{~/if}}
+    }
+{{/each}}
+}

@@ -1,0 +1,87 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.Collections;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class DominoesTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() throws ChainNotFoundException {
+        Dominoes dominoes = new Dominoes();
+        List<Domino> dominoesList = {{{asDominoList rawCase}}};
+
+        {{#if (eq rawCase.expected true)}}
+        List<Domino> chain = dominoes.formChain(dominoesList);
+        assertValidChain(dominoesList, chain);
+        {{else}}
+        assertThatExceptionOfType(ChainNotFoundException.class)
+                .isThrownBy(() -> dominoes.formChain(dominoesList))
+                .withMessage("No domino chain found.");
+        {{/if}}
+    }
+{{/each}}
+
+    private void assertValidChain(List<Domino> inputDominoes, List<Domino> outputDominoes) {
+        assertSameDominoes(inputDominoes, outputDominoes);
+        assertEndDominoesMatch(outputDominoes);
+        assertConsecutiveDominoes(outputDominoes);
+    }
+
+    private void assertEndDominoesMatch(List<Domino> outputDominoes) {
+        if (outputDominoes.isEmpty()) {
+            return;
+        }
+        int leftValueOfFirstDomino = outputDominoes.get(0).getLeft();
+        int rightValueOfLastDomino = outputDominoes.get(outputDominoes.size() - 1).getRight();
+        String errorMessage = "The left value of the first domino ("
+                + leftValueOfFirstDomino
+                + ") needs to match the right value of the last domino ("
+                + rightValueOfLastDomino
+                + ").";
+
+        assertThat(leftValueOfFirstDomino).withFailMessage(errorMessage).isEqualTo(rightValueOfLastDomino);
+    }
+
+    private void assertSameDominoes(List<Domino> inputDominoes, List<Domino> outputDominoes) {
+        String errorMessage = "The number of dominoes in the input list (" + inputDominoes.size()
+                + ") needs to match the number of dominoes in the output chain (" + outputDominoes.size() + ")";
+
+        assertThat(inputDominoes).withFailMessage(errorMessage).hasSameSizeAs(outputDominoes);
+
+        for (Domino domino : inputDominoes) {
+            int inputFrequency = Collections.frequency(inputDominoes, domino);
+            int outputFrequency = Collections.frequency(outputDominoes, domino);
+
+            String frequencyErrorMessage = "The frequency of domino (" + domino.getLeft() + ", "
+                    + domino.getRight() + ")"
+                    + " in the input is (" + inputFrequency + "), but (" + outputFrequency + ") in the output.";
+
+            assertThat(inputFrequency).withFailMessage(frequencyErrorMessage).isEqualTo(outputFrequency);
+        }
+    }
+
+    private void assertConsecutiveDominoes(List<Domino> dominoes) {
+        for (int i = 0; i < dominoes.size() - 1; i++) {
+            int rightValueOfIthDomino = dominoes.get(i).getRight();
+            int leftValueOfNextDomino = dominoes.get(i + 1).getLeft();
+            String errorMessage = "The right value of domino number " + i + " ("
+                    + rightValueOfIthDomino
+                    + ") needs to match the left value of domino number " + (i + 1) + " ("
+                    + leftValueOfNextDomino
+                    + ").";
+
+            assertThat(dominoes.get(i).getRight()).withFailMessage(errorMessage)
+                    .isEqualTo(dominoes.get(i + 1).getLeft());
+        }
+    }
+}

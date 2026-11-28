@@ -1,0 +1,34 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class {{testClassName}} {
+
+    Zipper zipper;
+    BinaryTree binaryTree;
+
+    @BeforeEach
+    public void setup() {
+        zipper = new Zipper(1);
+        binaryTree = new BinaryTree(zipper);
+
+        zipper.setLeft(new Zipper(2));
+        zipper.left.setRight(new Zipper(3));
+
+        zipper.setRight(new Zipper(4));
+    }
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{{renderZipperCase this}}}
+    }
+{{/each}}
+}

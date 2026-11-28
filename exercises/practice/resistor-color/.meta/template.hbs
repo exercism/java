@@ -1,0 +1,25 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class ResistorColorTest {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "colors")~}}
+        assertThat(new ResistorColor().colors())
+                .containsExactly({{{formatElements rawCase.expected}}});
+        {{~else~}}
+        assertThat(new ResistorColor().colorCode({{{formattedInputs.color}}}))
+                .isEqualTo({{{expectedValue}}});
+        {{~/if}}
+    }
+{{/each}}
+}

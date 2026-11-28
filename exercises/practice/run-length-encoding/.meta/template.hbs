@@ -1,0 +1,27 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class RunLengthEncodingTest {
+
+    private RunLengthEncoding runLengthEncoding = new RunLengthEncoding();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if (eq property "consistency")}}
+        assertThat(runLengthEncoding.decode(runLengthEncoding.encode("{{{escapeJava rawCase.input.string}}}")))
+                .isEqualTo("{{{escapeJava rawCase.expected}}}");
+        {{else}}
+        assertThat(runLengthEncoding.{{property}}("{{{escapeJava rawCase.input.string}}}"))
+                .isEqualTo("{{{escapeJava rawCase.expected}}}");
+        {{/if}}
+    }
+{{/each}}
+}

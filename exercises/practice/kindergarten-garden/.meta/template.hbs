@@ -1,0 +1,21 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class KindergartenGardenTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        assertThat(new KindergartenGarden({{{formattedInputs.diagram}}})
+                .getPlantsOfStudent({{{formattedInputs.student}}}))
+                .containsExactly({{{asPlants rawCase.expected}}});
+    }
+{{/each}}
+}

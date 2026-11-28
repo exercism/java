@@ -1,0 +1,22 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class PascalsTriangleGeneratorTest {
+
+    private PascalsTriangleGenerator pascalsTriangleGenerator = new PascalsTriangleGenerator();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        assertThat(pascalsTriangleGenerator.generateTriangle({{{formattedInputs.count}}}))
+                .isDeepEqualTo({{{as2DIntArray rawCase.expected}}});
+    }
+{{/each}}
+}

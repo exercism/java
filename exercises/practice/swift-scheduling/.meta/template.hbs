@@ -1,0 +1,25 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDateTime;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class SwiftSchedulingTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        LocalDateTime meetingStart = LocalDateTime.parse("{{{escapeJava rawCase.input.meetingStart}}}");
+        LocalDateTime expected = LocalDateTime.parse("{{{escapeJava rawCase.expected}}}");
+
+        assertThat(SwiftScheduling.convertToDeliveryDate(meetingStart, "{{{escapeJava rawCase.input.description}}}"))
+                .isEqualTo(expected);
+    }
+{{/each}}
+}

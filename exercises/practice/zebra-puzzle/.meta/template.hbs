@@ -1,0 +1,25 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class {{testClassName}} {
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    @DisplayName("{{{description}}}")
+    public void {{methodName}}() {
+        ZebraPuzzle zebraPuzzle = new ZebraPuzzle();
+        {{#if (eq property "drinksWater")}}
+        assertThat(zebraPuzzle.getWaterDrinker()).isEqualTo({{{expectedValue}}});
+        {{/if}}
+        {{#if (eq property "ownsZebra")}}
+        assertThat(zebraPuzzle.getZebraOwner()).isEqualTo({{{expectedValue}}});
+        {{/if}}
+    }
+{{/each}}
+}

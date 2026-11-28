@@ -1,0 +1,52 @@
+# This is an auto-generated file by configlet to track which test cases
+# are implemented by this exercise.
+
+[2419ffe6-16d8-4059-856a-9a101998a418]
+description = "Initially 9 failures are allowed and no letters are guessed"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[17c4296d-daab-44dc-8155-37c77caa52c1]
+description = "After 10 failures the game is over"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[77c9ae1f-bbc4-4ed4-b67e-08110cbcfc17]
+description = "Losing with several correct guesses"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[25101d8d-9874-405b-9825-193a14b69753]
+description = "Feeding a correct letter removes underscores"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[8e6bd521-bc9b-458f-9cce-f57f4140c173]
+description = "Feeding a correct letter twice counts as a failure"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[5e6971b7-5e5f-49c2-b85d-1dd6aeb53bd5]
+description = "Guessing a repeated letter reveals all instances"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[a6c69d92-01ef-4b81-b9d9-801131e79bbb]
+description = "Getting all the letters right makes for a win"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[2dc47994-b434-4a26-b70c-1eebeff77fe4]
+description = "Winning on the last guess is still a win"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[52801d56-6963-494b-a901-5736e46ddc12]
+description = "Guessing after a lose is error"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"
+
+[29a874f3-a413-4e1b-9a60-6be018e70b60]
+description = "Guessing after a win is error"
+include = false
+comment = "Java track uses RxJava reactive streams (FRP) instead of synchronous guess()"

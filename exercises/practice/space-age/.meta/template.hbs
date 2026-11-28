@@ -1,0 +1,23 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
+
+public class SpaceAgeTest {
+
+    private static final double MAXIMUM_DELTA = 1E-02;
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        assertThat(new SpaceAge({{{asLong formattedInputs.seconds}}}).{{spaceAgeMethod inputNodes.planet}}())
+                .isEqualTo({{{expectedValue}}}, offset(MAXIMUM_DELTA));
+    }
+{{/each}}
+}

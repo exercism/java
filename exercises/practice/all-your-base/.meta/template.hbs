@@ -1,0 +1,29 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class BaseConverterTest {
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{#if expectedError}}
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new BaseConverter({{{formattedInputs.inputBase}}}, {{{asIntArray rawCase.input.digits}}})
+                        .convertToBase({{{formattedInputs.outputBase}}}))
+                .withMessage("{{{allYourBaseErrorMessage this}}}");
+        {{else}}
+        assertThat(new BaseConverter({{{formattedInputs.inputBase}}}, {{{asIntArray rawCase.input.digits}}})
+                .convertToBase({{{formattedInputs.outputBase}}}))
+                .containsExactly({{{formatElements rawCase.expected}}});
+        {{/if}}
+    }
+{{/each}}
+}

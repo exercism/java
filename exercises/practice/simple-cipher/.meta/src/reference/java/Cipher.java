@@ -66,15 +66,16 @@ public class Cipher {
 
     public String decode(String cipherText) {
         StringBuilder plainText = new StringBuilder(cipherText.length());
+        String sameLengthKey = getSufficientlyLongKeyForPlaintext(cipherText, key);
 
         for (int i = 0; i < cipherText.length(); i++) {
-            plainText.append(decodeCharacter(cipherText, i));
+            plainText.append(decodeCharacter(cipherText, i, sameLengthKey));
         }
 
         return plainText.toString();
     }
 
-    private char decodeCharacter(String cipherText, int index) {
+    private char decodeCharacter(String cipherText, int index, String key) {
         int alphabetIdx = ALPHABET
                 .indexOf(cipherText.toCharArray()[index]) - ALPHABET.indexOf(key.toCharArray()[index]);
 

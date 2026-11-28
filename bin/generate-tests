@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Default to --help if no arguments provided
+if [ $# -eq 0 ]; then
+  ARGS="--help"
+else
+  ARGS="$*"
+fi
+
+INSTALLED_APP="$REPO_ROOT/test-generator/build/install/test-generator/bin/test-generator"
+
+# If not installed yet, build the distribution once
+if [ ! -f "$INSTALLED_APP" ]; then
+  "$REPO_ROOT/test-generator/gradlew" -p "$REPO_ROOT/test-generator" installDist --quiet
+fi
+
+# Run pre-compiled binary directly (instant startup, zero Gradle daemon overhead!)
+"$INSTALLED_APP" $ARGS

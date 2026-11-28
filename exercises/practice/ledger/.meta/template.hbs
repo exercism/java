@@ -1,0 +1,27 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@ExtendWith(LocaleExtension.class)
+public class LedgerTest {
+
+    private Ledger ledger = new Ledger();
+{{#each testCases}}
+
+    {{#if disabled}}
+    @Disabled("Remove to run test")
+    {{/if}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        assertThat(ledger.format(
+                "{{rawCase.input.currency}}",
+                "{{ledgerLocale rawCase.input.locale}}",
+                {{{formatLedgerEntries rawCase.input.entries}}}))
+                .isEqualTo({{{formatLedgerExpected rawCase.expected}}});
+    }
+{{/each}}
+}

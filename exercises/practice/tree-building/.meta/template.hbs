@@ -1,0 +1,30 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+public class BuildTreeTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() throws InvalidRecordsException {
+        {{{renderTreeBuildingCase rawCase}}}
+    }
+{{/each}}
+
+    private void assertNode(TreeNode actual, int expectedId, int... expectedChildren) {
+        assertThat(actual.getNodeId()).isEqualTo(expectedId);
+        assertThat(actual.getChildren()).hasSize(expectedChildren.length);
+        for (int i = 0; i < expectedChildren.length; i++) {
+            assertThat(actual.getChildren().get(i).getNodeId()).isEqualTo(expectedChildren[i]);
+        }
+    }
+}

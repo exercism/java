@@ -1,0 +1,25 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class MeetupTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        LocalDate expected = {{{asLocalDate rawCase.expected}}};
+        Meetup meetup = new Meetup({{rawCase.input.month}}, {{rawCase.input.year}});
+        assertThat(meetup.day(DayOfWeek.{{upper rawCase.input.dayofweek}}, MeetupSchedule.{{upper rawCase.input.week}}))
+                .isEqualTo(expected);
+    }
+{{/each}}
+}

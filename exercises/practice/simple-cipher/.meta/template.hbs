@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class {{testClassName}} {
+
+    private Cipher randomKeyCipher;
+    private Cipher substitutionCipher = new Cipher("abcdefghij");
+
+    @BeforeEach
+    public void setup() {
+        randomKeyCipher = new Cipher();
+    }
+{{#each testCases}}
+
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        {{{renderSimpleCipherCase this}}}
+    }
+{{/each}}
+}

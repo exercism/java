@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class CamiciaTest {
+
+{{#each testCases}}
+    {{#if disabled~}}
+    @Disabled("Remove to run test")
+    {{/if~}}
+    @Test
+    {{{displayNameAnnotation}}}
+    public void {{methodName}}() {
+        List<String> playerA = {{{asCamiciaCards rawCase.input.playerA}}};
+        List<String> playerB = {{{asCamiciaCards rawCase.input.playerB}}};
+
+        CamiciaResult result = Camicia.simulateGame(playerA, playerB);
+
+        assertThat(result.status()).isEqualTo("{{{escapeJava rawCase.expected.status}}}");
+        assertThat(result.cards()).isEqualTo({{{rawCase.expected.cards}}});
+        assertThat(result.tricks()).isEqualTo({{{rawCase.expected.tricks}}});
+    }
+{{/each}}
+}
