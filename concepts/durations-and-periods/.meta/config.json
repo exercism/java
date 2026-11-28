@@ -1,0 +1,7 @@
+{
+  "blurb": "Represent amounts of time with Java's date-based `Period` and time-based `Duration` classes.",
+  "authors": [
+    "rabestro"
+  ],
+  "contributors": []
+}

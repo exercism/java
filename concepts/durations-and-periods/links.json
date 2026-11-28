@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Period.html",
+    "description": "Period class documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html",
+    "description": "Duration class documentation"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/ChronoUnit.html",
+    "description": "ChronoUnit enum documentation"
+  },
+  {
+    "url": "https://dev.java/learn/date-time/period-duration/",
+    "description": "Period and Duration tutorial on dev.java"
+  }
+]
